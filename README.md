@@ -23,7 +23,7 @@ See `LICENSE` and `NOTICE`.
 | `encyclopedia/` | Championship 60 transcribes (sheet emails redacted) |
 | `authoring/` | Generators and apply helpers used to *build* the live wiki |
 
-Card scans, PDFs, and extract rasters stay on the live wiki (size). Dump those separately with MediaWiki `dumpBackup.php` plus an image dump, or Internet Archive.
+Card scans, PDFs, and other `File:` uploads live on the wiki and in the sibling backup [billbisco/swccg-wiki-files](https://github.com/billbisco/swccg-wiki-files). Dump them with `python tools/dump_images.py --out path/to/swccg-wiki-files`. GEMP XML/text uploads are skipped. Extract rasters and dest-note dumps stay off GitHub.
 
 ## Update GitHub from the live wiki
 
@@ -59,4 +59,6 @@ python tools/import_pages.py
 That prints MediaWiki `edit` commands driven by the index. The same TSV is what `authoring/apply-tsv.sh` consumes on a box that already has MediaWiki.
 
 3. Copy `chrome/` into the site skin/header as on wiki.swccg.com.
-4. Import images from a separate dump (not in this repo).
+4. Import images from [billbisco/swccg-wiki-files](https://github.com/billbisco/swccg-wiki-files) (`importImages.php` using `INDEX.tsv`).
+
+See [billbisco/swccg-site](https://github.com/billbisco/swccg-site) for how GEMP, wiki, holotable, and files fit together.
