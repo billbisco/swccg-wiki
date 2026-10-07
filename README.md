@@ -52,7 +52,3 @@ That prints MediaWiki `edit` commands driven by the index. The same TSV is what 
 
 3. Copy `chrome/` into the site skin/header as on wiki.swccg.com.
 4. Import images from a separate dump (not in this repo).
-
-## What this is not
-
-This is a fan encyclopedia. It is not Lucasfilm, Disney, Decipher, or the Players Committee.
