@@ -1,0 +1,87 @@
+{{hatnote|This page documents the historical PHP-Nuke Encyclopedia module on the official Players Committee site swccgpc.com (archived 2008). It is not a card-by-card encyclopedia and does not replace live card pages on this wiki.}}
+
+The '''swccgpc.com Encyclopedia''' was a PHP-Nuke '''Encyclopedia''' module on the official Star Wars CCG Players Committee website at [http://www.swccgpc.com/ swccgpc.com]. A Wayback Machine capture dated '''31 August 2008''' presents the module as a '''player-resource hub''' (rules, virtual cards, tournaments, volunteers, tools, store, and premium membership)&mdash;not an A&ndash;Z card encyclopedia with letter indexes.<ref name="enc2008">[https://web.archive.org/web/20080831140913/http://www.swccgpc.com/modules.php?name=Encyclopedia Encyclopedia], swccgpc.com modules.php?name=Encyclopedia (Wayback, 31 August 2008)</ref>
+
+Parent narrative: [[History of the Players Committee]]. Domain context: [[Swccgpc.com]]. Advocate roster from the Volunteer category: [[Players Committee advocates#Snapshot ~August 2008 (Encyclopedia Volunteer Information)]].
+
+== What it was (Aug 2008) ==
+
+The Encyclopedia index introduces a '''list of available Encyclopedias''' (PHP-Nuke categories / ''eid'' values). Wayback CDX for <code>modules.php?name=Encyclopedia*</code> in this era collapses to the '''index''' plus '''nine''' <code>op=list_content&eid=&hellip;</code> category URLs&mdash;'''no''' letter-index or per-card article URLs in the checked Internet Archive samples.<ref name="enc2008" />
+
+{| class="wikitable"
+! eid
+! Category title (as listed)
+! Notes (from 31 Aug 2008 capture)
+|-
+| 3
+| Rules Resources
+| Rules Advocate contact; Advanced Rulebook (legal 29 July 2007); Advanced Rulebook Quarterly Update (legal July 2008); Online Rules Document; Characteristics Reference Card; Icon Guide; rules forum; Spanish resources
+|-
+| 5
+| Virtual Card Resources
+| Links to all Virtual Card files / game aids / errata sheets; listing of Virtual card errata; Enhanced Packs / Special Virtual Slips
+|-
+| 6
+| Tournament Resources
+| Tournament Advocate contact; PC Store; Command Card; Decklists; Tournament Guide; Player Locator; Cube / Scenario formats; posting guidance; 2008 results
+|-
+| 7
+| Volunteer Information
+| Named '''Advocate Council''', key volunteers, and '''Flight Leaders''' (regional contacts)&mdash;see [[Players Committee advocates#Snapshot ~August 2008 (Encyclopedia Volunteer Information)]]
+|-
+| 8
+| General Resources
+| Community tools of the era (e.g. sw-ip, vkit, Polarhaven, Holotable); card image database; sales/auction/trading/collecting forums
+|-
+| 9
+| Marketing Resources
+| Marketing Advocate; marketing forum; in-store posters / banner ads
+|-
+| 10
+| New Player Resource
+| New Player Forum pointer; cross-links to Virtual / Tournament / Rules resources
+|-
+| 11
+| shop.swccgpc.com - The PC Store
+| Store for tournament registrations, prize packages, cards
+|-
+| 12
+| Premium Membership
+| Paid forum tiers (6-month $15 / 12-month $25 / Lifetime $150) with private forums, earlier decklist visibility, full Virtual PDFs, Worlds entry discount, custom avatars / blogs (as described on that capture)
+|}
+
+== Relationship to other sources ==
+
+* Mid-2006 '''Advocates''' roster on the same domain was a separate PHP-Nuke '''Content''' page (pid=3), not this Encyclopedia module.<ref name="advocates2006enc">[https://web.archive.org/web/20060617221233/http://www.swccgpc.com/modules.php?name=Content&pa=showpage&pid=3 Advocates], swccgpc.com Content pid=3 (published 2006-05-01; Wayback capture 17 June 2006)</ref>
+* Domain/server move to '''starwarsccg.org''' was announced '''10 June 2009'''.<ref name="domain2009enc">[https://web.archive.org/web/20090706102740/http://www.starwarsccg.org/news/news.php?id=69 New Domain and Server], starwarsccg.org (posted 10 June 2009; Wayback 6 July 2009)</ref>
+* This wiki's Decipher Glossary / Supplement errata face work is a different source layer; do not conflate Encyclopedia hub links with Decipher printed errata faces.
+
+== Gaps ==
+
+* Individual download file bodies (PDF lids) are '''not''' mirrored on this page&mdash;only the Encyclopedia HTML hub structure is summarized here.
+* Two category HTML mirrors (eid=6, eid=10) had intermittent Wayback TLS failures during the 25 September 2026 research pass; category '''titles and on-index body text''' for those eids are still taken from the captured Encyclopedia '''index''' (31 Aug 2008), which embeds the category content.
+* No claim that the Encyclopedia module launched on a specific date beyond what dated captures show.
+
+== See also ==
+
+* [[Swccgpc.com]]
+* [[History of the Players Committee]]
+* [[Players Committee advocates]]
+* [[Players Committee]]
+* [[Rulebooks]]
+* [[Virtual Sets (2002-2009)]]
+
+== Sources ==
+
+* [https://web.archive.org/web/20080831140913/http://www.swccgpc.com/modules.php?name=Encyclopedia Encyclopedia index] (Wayback, 31 August 2008) — Bill lock 2026-09-24
+* Category <code>list_content</code> captures (same module; nearby Aug 2008 timestamps): eid 3, 5, 7, 8, 9, 11, 12 mirrored under research <code>raw/</code>; eid 6 and 10 cited from index body when child HTML fetch failed
+* [https://web.archive.org/web/20060617221233/http://www.swccgpc.com/modules.php?name=Content&pa=showpage&pid=3 Advocates Content pid=3] (published 2006-05-01; Wayback 17 June 2006)
+* [https://web.archive.org/web/20090706102740/http://www.starwarsccg.org/news/news.php?id=69 New Domain and Server] (posted 10 June 2009)
+
+{{#if:1|<nowiki />
+<h2>References</h2>
+<references />}}
+
+[[Category:Players Committee]]
+[[Category:History]]
+[[Category:Meta]]
