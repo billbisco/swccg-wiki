@@ -1,0 +1,592 @@
+/* Logo centered over the left sidebar; search in the header to its right. */
+
+body.mediawiki {
+  background: #f6f6f6 !important;
+  font-size: 0.92em;
+}
+
+body.mediawiki .swccg-header,
+body.mediawiki .swccg-footer,
+body.mediawiki #siteNotice,
+#mw-indicator-mw-helplink {
+  display: none !important;
+}
+
+#footer-icons,
+#footer-poweredbyico,
+li#footer-poweredbyico,
+.mw-wiki-poweredbyico {
+  display: none !important;
+}
+
+#mw-page-base {
+  height: 72px !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #a7d7f9;
+  margin: 0 !important;
+  margin-left: 11em !important;
+}
+#mw-head-base {
+  height: 0 !important;
+  margin: 0 !important;
+  margin-left: 11em !important;
+  background: transparent !important;
+}
+
+/* Header starts AFTER the sidebar so it never covers the logo */
+#mw-head {
+  left: 11em !important;
+  right: 0 !important;
+  width: auto !important;
+  height: 72px;
+}
+
+/* Bigger logo, centered in the sidebar column */
+#p-logo,
+#mw-panel #p-logo {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 11em !important;
+  height: 130px !important;
+  margin: 0 auto !important;
+  z-index: 20;
+}
+#p-logo a.mw-wiki-logo {
+  background-image: url(/resources/assets/swccg-wiki-logo.png?v=8) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  width: 11em !important;
+  height: 124px !important;
+  margin: 4px auto 0 !important;
+}
+
+/* Search immediately right of the logo column â€” text field only, no overlay buttons */
+#p-search {
+  position: absolute !important;
+  left: 8px !important;
+  top: 10px !important;
+  width: 24em !important;
+  margin: 0 !important;
+  float: none !important;
+  z-index: 20;
+  background: transparent !important;
+}
+#p-search h3,
+.vector-search-box h3 {
+  display: none !important;
+}
+#searchform,
+#simpleSearch,
+.vector-search-box-inner {
+  position: relative !important;
+  width: 24em !important;
+  height: 2.1em !important;
+  background: transparent !important;
+  margin: 0 !important;
+}
+#searchInput {
+  position: relative !important;
+  z-index: 3 !important;
+  height: 2.1em !important;
+  width: 24em !important;
+  max-width: 100% !important;
+  font-size: 0.95em !important;
+  background: #fff !important;
+  border: 1px solid #a2a9b1 !important;
+  padding: 0 2.2em 0 0.5em !important;
+  box-sizing: border-box !important;
+}
+/* Hide the giant white Search/Go buttons that sat on top of the field */
+#searchButton,
+#mw-searchButton,
+.searchButton {
+  position: absolute !important;
+  top: 2px !important;
+  right: 2px !important;
+  width: 1.9em !important;
+  height: 1.9em !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  background: transparent url(/resources/assets/swccg-wiki-logo.png?v=8) no-repeat !important;
+  background-size: 0 !important;
+  cursor: pointer !important;
+  z-index: 4;
+}
+#mw-searchButton {
+  display: none !important;
+}
+#searchButton {
+  background: #f8f9fa !important;
+  border: 1px solid #a2a9b1 !important;
+  text-indent: 0 !important;
+  font-size: 0.75em !important;
+  color: #202122 !important;
+  width: auto !important;
+  padding: 0 0.45em !important;
+}
+
+.vector-search-box-auto-expand-width,
+.vector-search-box-show-thumbnail {
+  width: 24em !important;
+  max-width: 24em !important;
+}
+.vector-search-box-show-thumbnail .vector-search-box-input {
+  padding-left: 0.5em !important;
+  background-image: none !important;
+}
+
+#p-personal {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  left: auto !important;
+  z-index: 80 !important;
+  background: #ffffff !important;
+  padding: 2px 6px 2px 10px;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+#left-navigation {
+  margin-left: 0 !important;
+  margin-top: 42px !important;
+  float: left;
+}
+#right-navigation {
+  margin-top: 42px !important;
+}
+
+.vector-menu-tabs,
+.vector-menu-tabs-legacy {
+  background: transparent !important;
+  padding-top: 0 !important;
+  height: auto !important;
+  background-image: none !important;
+}
+.vector-menu-tabs ul {
+  height: auto !important;
+  background-image: none !important;
+}
+.vector-menu-tabs li {
+  height: auto !important;
+  margin: 0 1px 0 0 !important;
+  padding: 0 !important;
+  background: #f3f3f3 !important;
+  background-image: none !important;
+  font-size: 0.8em !important;
+  line-height: 1.15 !important;
+}
+.vector-menu-tabs li.selected {
+  background: #ffffff !important;
+}
+.vector-menu-tabs li a,
+.vector-menu-tabs li a span {
+  padding: 0.18em 0.55em !important;
+  line-height: 1.15 !important;
+  background-image: none !important;
+}
+#p-namespaces .vector-menu-heading,
+#p-views .vector-menu-heading,
+#p-search .vector-menu-heading {
+  display: none;
+}
+
+#mw-panel,
+.vector-legacy-sidebar {
+  background: #ffffff !important;
+  top: 0 !important;
+  width: 11em !important;
+  z-index: 12;
+  padding-top: 0;
+}
+#mw-panel .vector-menu-heading,
+#mw-panel .vector-menu-heading-label {
+  color: #54595d;
+  font-size: 0.8em;
+}
+#mw-panel a {
+  color: #0645ad;
+}
+
+#content {
+  margin-top: 0 !important;
+  margin-left: 11em !important;
+  padding-top: 0.45em;
+  background: #fff;
+  border: 1px solid #a7d7f9;
+  border-top: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1.2em;
+}
+#firstHeading {
+  margin-top: 0.1em;
+  margin-bottom: 0.25em;
+  font-size: 1.55em;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 0.08em;
+}
+.page-Main_Page #firstHeading {
+  display: none !important;
+}
+#siteSub,
+#contentSub,
+#contentSub2 {
+  display: none;
+}
+
+.page-Main_Page #toc,
+.page-Main_Page .toc,
+.page-Main_Page .flaggedrevs_short,
+.page-Main_Page #mw-fr-revision-details,
+.page-Main_Page .mw-fr-revision-details,
+.page-Main_Page .mw-fr-reviewNotice {
+  display: none !important;
+}
+
+.set-tile {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 168px;
+  max-width: 100%;
+  margin: 0.3em 0.45em 0.85em;
+  text-align: center;
+  vertical-align: top;
+  font-size: 0.8em;
+  line-height: 1.25;
+}
+.set-tile img {
+  box-sizing: border-box;
+  width: 160px;
+  max-width: 100%;
+  height: 110px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid #ccc;
+  background: #111;
+}
+.set-tile .set-name {
+  display: block;
+  margin-top: 0.25em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+  min-height: 2.6em; /* dampen uneven rows from 2â€“3 line titles */
+}
+.set-tile .set-meta {
+  display: block;
+  color: #54595d;
+  font-size: 0.92em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Virtual Original pack facsimiles: vertical, do not crop like title banners */
+.set-tile.set-tile-vert {
+  width: 118px;
+}
+.set-tile.set-tile-vert img {
+  width: 100px;
+  height: auto;
+  max-height: 170px;
+  object-fit: contain;
+  object-position: center top;
+  background: #111;
+}
+.set-tile.set-tile-text {
+  min-height: 8em;
+  padding-top: 0.5em;
+  border: 1px dashed #ccc;
+  box-sizing: border-box;
+  background: #fafafa;
+}
+.set-tile.set-tile-text .set-name {
+  min-height: 3.2em;
+  margin-top: 1.5em;
+}
+@media (max-width: 600px) {
+  .set-tile.set-tile-vert img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+  .set-tile.set-tile-text {
+    min-height: 0;
+  }
+}
+
+/* Narrow viewports: collapse legacy Vector sidebar + kill Vector ~500px min-width / header overflow */
+@media (max-width: 720px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  #mw-panel,
+  .vector-legacy-sidebar {
+    display: none !important;
+  }
+  /* skins.vector.styles.legacy historically sets min-width ~500px on content chrome */
+  #content,
+  .mw-body,
+  #mw-page-base,
+  #mw-head-base,
+  #footer {
+    min-width: 0 !important;
+    margin-left: 0 !important;
+  }
+  #mw-head {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+  #p-personal {
+    position: static !important;
+    float: none !important;
+    right: auto !important;
+    max-width: 100%;
+  }
+  #left-navigation,
+  #right-navigation {
+    float: none;
+    max-width: 100%;
+  }
+  /* Absolute #p-search was extending scrollWidth past viewport (~523 on 390) */
+  #p-search,
+  .vector-search-box-vue {
+    position: static !important;
+    float: none !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.35em 0 !important;
+    box-sizing: border-box;
+  }
+  #searchform,
+  #simpleSearch,
+  #searchInput {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .page-Main_Page .wikitable {
+    max-width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+}
+/* Mobile: shrink tiles to reduce horizontal overflow */
+@media (max-width: 600px) {
+  .set-tile {
+    width: 46%;
+    margin: 0.25em 1.5% 0.65em;
+    font-size: 0.74em;
+  }
+  .set-tile img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 11;
+  }
+  .set-tile .set-name {
+    min-height: 0;
+  }
+}
+
+.expansion-infobox {
+  float: right;
+  clear: right;
+  width: 280px;
+  margin: 0 0 1em 1em;
+}
+.set-pair td {
+  width: 50%;
+  text-align: center;
+  vertical-align: middle;
+}
+.set-pair img {
+  max-height: 380px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.card-rail {
+  float: left;
+  clear: left;
+  width: 280px;
+  margin: 0 1em 1em 0;
+}
+.card-rail-right {
+  float: right;
+  clear: right;
+  margin: 0 0 1em 1em;
+}
+.card-rail > p {
+  display: none;
+}
+.card-body {
+  overflow: hidden;
+}
+.card-body h2 {
+  margin-top: 0.9em;
+  margin-bottom: 0.35em;
+}
+.card-body p,
+.card-body ul,
+.card-body ol.references {
+  margin-top: 0.25em;
+  margin-bottom: 0.45em;
+  margin-left: 0;
+  padding-left: 1.6em;
+}
+.card-body .mw-references-wrap {
+  margin: 0.25em 0 0.45em;
+  padding-left: 0;
+  margin-left: 0;
+}
+.card-body .mw-references-wrap > ol.references {
+  margin: 0;
+  padding-left: 1.6em;
+}
+.card-rail .card-infobox {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+.card-portrait {
+  margin: 0 0 0.45em;
+  text-align: center;
+}
+.card-portrait img {
+  width: 280px;
+  height: auto;
+  border: 1px solid #ccc;
+  background: #111;
+}
+
+.card-rail-dual {
+  width: 580px;
+}
+.card-portraits-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.45em;
+  margin: 0 0 0.45em;
+  align-items: flex-start;
+}
+.card-portraits-row > p {
+  display: none;
+}
+.card-portraits-row .card-portrait {
+  margin: 0;
+  flex: 0 0 auto;
+}
+.card-portraits-row .card-portrait img {
+  width: 280px;
+  height: auto;
+}
+
+/* Objective dual portraits: responsive mode (~phone/tablet portrait ≤720px stacks; wider = side-by-side) */
+@media (max-width: 720px) {
+  .card-rail-dual.card-rail-responsive {
+    width: 280px;
+  }
+  .card-portraits-row.card-portraits-responsive {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .card-portraits-row.card-portraits-responsive .card-portrait {
+    margin: 0 0 0.45em;
+  }
+}
+
+/* Primary phone path with viewport width=1120: html.card-device-narrow from
+   Common.js when screen.width ≤720. @media path above still helps desktop resize. */
+html.card-device-narrow .card-rail-dual.card-rail-responsive {
+  width: 280px;
+}
+html.card-device-narrow .card-portraits-row.card-portraits-responsive {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+html.card-device-narrow .card-portraits-row.card-portraits-responsive .card-portrait {
+  margin: 0 0 0.45em;
+}
+
+.card-nav {
+  font-size: 0.9em;
+  margin: 0 0 0.6em;
+}
+.card-hatnote {
+  font-size: 0.92em;
+  margin: 0 0 0.6em;
+  color: #54595d;
+}
+.card-infobox th {
+  width: 38%;
+  text-align: left;
+  vertical-align: top;
+}
+.card-infobox td {
+  width: 62%;
+}
+.card-infobox caption {
+  font-weight: bold;
+  padding: 0.25em 0.4em;
+  text-align: left;
+}
+
+table.card-thumbs {
+  width: 100%;
+  overflow: visible;
+}
+table.card-thumbs td,
+table.card-thumbs th {
+  vertical-align: top;
+  font-size: 0.88em;
+  overflow: visible;
+}
+table.card-thumbs td:first-child {
+  width: 210px;
+  overflow: visible;
+}
+table.card-thumbs img {
+  width: 200px;
+  height: auto;
+  vertical-align: top;
+}
+table.card-thumbs a {
+  display: inline-block;
+}
+
+/* Card hover popup: size from natural image aspect (portrait OR landscape sites).
+   Do NOT clamp every card to vertical 450x630 â€” that scrunches horizontal locations. */
+#swccg-card-zoom {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  width: auto;
+  height: auto;
+  max-height: min(630px, 92vh);
+  max-width: min(900px, 92vw);
+  object-fit: contain;
+  pointer-events: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+  background: #111;
+  border: 2px solid #fff;
+}
+#swccg-card-zoom.is-on {
+  display: block;
+}
+#swccg-card-zoom.is-landscape {
+  max-height: min(520px, 85vh);
+  max-width: min(920px, 94vw);
+}

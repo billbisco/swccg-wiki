@@ -1,0 +1,83 @@
+'''GEMP planned features''' is the public list of work this wiki's [[GEMP]] table ([https://play.swccg.com/ play.swccg.com]) intends to add. The page records product intent without a schedule. Work is grouped into six phases, in this order.
+
+== Phases ==
+
+# '''Complete Game'''
+# '''Enhanced UI'''
+# '''Enhanced Game Modes / Tournaments, Events'''
+# '''Enhanced AI Bots'''
+# '''Single Player Campaign'''
+# '''Dynamic Card and GEMP translations to Many Languages'''
+
+Anything Goes, True Sabacc, tournaments, collections, and Enhanced UI below sit in Phases 1–3. Phases 4–6 come after those.
+
+== [[Anything Goes]] ==
+
+'''Anything Goes''' is the intended default environment for Casual tables and AI tables on this instance: a constructed collection, every set, no format-pool bans, and a deck size of 40–60 cards. [[Open]] remains a named environment in the format list.
+
+Structural checks still apply. A list with both Light and Dark cards, no side, more than one [[Objective]], more than one Starting Effect, uniqueness violations, or unrecognizable cards does not start a game.
+
+Further Anything Goes work this instance intends:
+
+* '''Same-side tables''' — Light versus Light and Dark versus Dark, in addition to the usual Light versus Dark pairing.
+* '''True any-size lists''' — decks smaller than 40 or larger than 60 that still start a game.
+* '''Empty Reserve / short-hand autoloss''' — a game that cannot continue because a player's [[Reserve Deck]] is empty, or because that player has too few cards in [[Hand]], ends as an automatic loss for that player.
+* '''Account-stored settings''' — hall and in-game preferences saved on the logged-in account so they follow the player across browsers and machines. Browser cookies remain a local cache.
+
+== [[True Sabacc]] ==
+
+'''True Sabacc''' is a planned GEMP game mode for the Star Wars CCG sabacc mini-game: two to six cards, destiny numbers as values, closest to 11 without going over.<ref name="ar2023">[https://res.starwarsccg.org/rules/SWCCG_2023_AdvancedRulebook.pdf Players Committee Advanced Rulebook] (2023), Appendix C, Sabacc.</ref> Interrupt cards that start a sabacc hand during a regular CCG game include [[Cloud City Sabacc]], [[Dune Sea Sabacc]], [[Jabba's Palace Sabacc]], and [[Trooper Sabacc]]. True Sabacc seats that mini-game as its own table and as the last resort of a tournament pairing.
+
+Two uses on this table:
+
+* '''Standalone play.''' A hall table you sit for its own sake. Each player uses a deck as the sabacc deck. A full CCG game is not required first.
+* '''Final tournament tiebreaker.''' When a Swiss or Single Elimination Match Play pairing is still tied after victory points, Life Force differential, [[Lost Pile]] count, and hand count, the players play True Sabacc. Tournament Guide 2.2's last-resort hand uses each player's last-played deck — everything that would be in hand, Life Force, and Lost Pile, excluding Starting Effects and cards that started on table — with no wild or clone cards, and with both players choosing actions and revealing together. Replay until there is a winner.<ref name="tg22">[https://res.starwarsccg.org/wp/wp-content/uploads/Star-Wars-CCG-Tournament-Guide-2.2.pdf Star Wars CCG Official Tournament Guide 2.2] (revised July 2018), §3.8.1. Wiki history of that procedure: [[Tournaments]].</ref>
+
+Rules text for the mini-game lives in the [[Players Committee Advanced Rulebook]] (Sabacc). Tournament procedure lives in Tournament Guide 2.2.
+
+== Tournaments on this table ==
+
+This instance intends player-hosted constructed events: Swiss and Single Elimination Match Play. Each player brings two decks (one [[Light Side]], one [[Dark Side]]). A round is two games so each allegiance is played. Game counts stay even. Pairing keeps Light and Dark play even. History and paperwork for paper and Players Committee events remain on [[Tournaments]].
+
+Later Create Tournament types:
+
+* Sealed
+* Solo Draft
+* Live Draft
+
+Also intended: a tournament infobox so Table Info stays short, and admin-granted prizes. Player-hosted events themselves carry no prizes.
+
+== Collections ==
+
+This instance intends that different players can open packs, buy and sell at the merchant, and receive collection prizes at the same time. Two actions on the same collection belonging to the same player still run one after the other, so a pack cannot be opened twice and cards cannot disappear. A later pass will replace the current single-file collection lock with per-collection locking.
+
+== Enhanced UI ==
+
+Phase 2 is a hall-wide UI and UX pass, not a one-dialog fix. Type, buttons, and modal chrome that read on a desktop are often too small on a phone. The leftover Open All packs prompt (Yes / No / close) is one example: on a phone the text and buttons are hard to see and should be larger. The same size and contrast problems show up in other hall, collection, merchant, and in-game dialogs. This instance intends one shared mobile-readable type and control scale, then apply it across those surfaces together.
+
+== See also ==
+
+* [[GEMP]]
+* [[Anything Goes]]
+* [[True Sabacc]]
+* [[Formats]]
+* [[Tournaments]]
+* [[Tournament Guidelines]]
+* [[Players Committee Advanced Rulebook]]
+* [https://play.swccg.com/ play.swccg.com]
+
+== Sources ==
+
+* [https://play.swccg.com/ play.swccg.com] — this wiki's GEMP table. Archive: [https://web.archive.org/web/20261005165306/https://play.swccg.com/ Wayback, 5 October 2026]
+* [https://res.starwarsccg.org/wp/wp-content/uploads/Star-Wars-CCG-Tournament-Guide-2.2.pdf Tournament Guide 2.2] (July 2018). Archive: [https://web.archive.org/web/20250118015847/https://res.starwarsccg.org/wp/wp-content/uploads/Star-Wars-CCG-Tournament-Guide-2.2.pdf Wayback, 18 January 2025]
+* [https://res.starwarsccg.org/rules/SWCCG_2023_AdvancedRulebook.pdf Players Committee Advanced Rulebook] (2023). Archive: [https://web.archive.org/web/20260422134639/https://res.starwarsccg.org/rules/SWCCG_2023_AdvancedRulebook.pdf Wayback, 22 April 2026]
+* [[Tournaments]] — Decipher and Players Committee tournament procedure on this wiki
+* [[Formats]] — constructed pools and GEMP environment names
+
+{{#if:1|<nowiki />
+<h2>References</h2>
+<references />}}
+
+[[Category:GEMP]]
+[[Category:Platforms]]
+[[Category:Meta]]

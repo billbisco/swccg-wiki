@@ -1,0 +1,27 @@
+= How card printings are numbered =
+
+Each '''physical or labeled text''' is its own wiki card page. We do not stack empty &ldquo;errata&rdquo; headings on a card that was never changed.
+
+== Identifiers ==
+Do '''not''' renumber GEMP blueprint ids. When a Players Committee (PC) game-text delta exists, the '''bare GEMP id''' is the PC / Modern playable id. Letter suffixes mark older layers.
+
+* '''Family key''' &mdash; bare GEMP id (example: <code>3_1</code> for 2-1B).
+* '''PC / Modern playable''' (when a PC delta exists) &mdash; '''same bare id''' (example: <code>3_1</code>). Human title: '''Title (PC Errata)'''. Label: ''Players Committee errata &mdash; not published by Decipher.''
+* '''Print / Original''' (Decipher printed text; no Decipher Glossary errata, or the print face) &mdash; suffix <code>o</code> (example: <code>3_1o</code>). Pages: bare '''Title''' (when bare shows print) and/or '''Title (Original)'''.
+* '''Decipher errata''' (only if Decipher published one) &mdash; suffix <code>d</code> (example: <code>2_42d</code>). Human title often '''Title (Errata)'''. Formats asking for <code>decipher</code> with no <code>d</code> layer fall through to print.
+* '''No PC and no Decipher errata''' &mdash; only bare <code>N_M</code>; all eras resolve to it.
+* '''Virtual cards''' &mdash; their own ids (200+ / Set N). Keep <code>(V)</code> titles. Not an errata of a Decipher card unless a real replacement is sourced.
+
+Do '''not''' use wiki-only <code>-PC</code> / <code>-OR</code> / <code>-DE</code> as playable ids (migrate to letter suffixes). Human titles stay '''(PC Errata)''' / '''(Original)''' / '''(Errata)'''; ids are letters.
+
+Example (PC-only App A): [[2-1B (Too-Onebee)]] and [[2-1B (Too-Onebee) (Original)]] use <code>3_1o</code>; [[2-1B (Too-Onebee) (PC Errata)]] uses bare <code>3_1</code>. Attack Run–style (Decipher + PC) uses print <code>…o</code>, Decipher <code>…d</code>, PC bare.
+
+Human titles ([[Sense (Premiere)]]) redirect to the '''original''' id when used that way. From there, later printings are links, not empty extra sections. Bare default titles (example: [[Projective Telepathy]]) may show Decipher-final / play-default wording with printings links to (Original) / (Errata) / (V) siblings.
+
+== What you see on a page ==
+A card with no known errata shows '''one''' game-text block. Errata headings appear only when <code>errata_of</code> or <code>errata_cards</code> is filled (or when sibling (Original)/(Errata) pages are linked from printings).
+
+== See also ==
+* [[Errata]] &middot; [[PC Errata]] &middot; [[Errata on Projective Telepathy]]
+
+[[Category:Meta]]
