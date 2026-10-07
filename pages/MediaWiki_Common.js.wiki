@@ -1,0 +1,199 @@
+/* Phone dual-Objective stack WITHOUT changing site viewport:
+   Vector legacy keeps viewport width=1120 (desktop chrome scaled on phone).
+   CSS @media (max-width:720px) does NOT match on phones (innerWidth ~1120).
+   Use window.screen.width (device CSS px), NOT innerWidth. Toggle
+   html.card-device-narrow when ≤720. Keep @media path for desktop window resize. */
+(function () {
+  function syncCardDeviceNarrow() {
+    var w = (window.screen && window.screen.width) ? window.screen.width : 0;
+    document.documentElement.classList.toggle('card-device-narrow', w > 0 && w <= 720);
+  }
+  syncCardDeviceNarrow();
+  window.addEventListener('orientationchange', function () {
+    setTimeout(syncCardDeviceNarrow, 50);
+  });
+})();
+
+/* Logo stays in the sidebar. Search sits at the left of the header.
+   Card list: 200px thumbs for load; hover shows a fixed popup of the full GEMP image.
+   Chrome/Edge ignore src changes while srcset is set, so we never swap the thumb src.
+   CardLink / #swccg-card-zoom: clear src and hide until the new image loads so Firefox
+   never flashes the previous card art.
+   Landscape locations (e.g. Spaceport Docking Bay): size from naturalWidth/Height —
+   do not force portrait 450x630 (that scrunches horizontal sites). */
+(function () {
+  function originalFromImg(img) {
+    var src = img.getAttribute('src') || img.src || '';
+    var ss = img.getAttribute('srcset') || '';
+    var m = src.match(/\/images\/thumb\/([^/]+\/[^/]+\/[^/?#]+)\/\d+px-/);
+    if (m) {
+      return '/images/' + m[1];
+    }
+    m = ss.match(/\/images\/thumb\/([^/]+\/[^/]+\/[^/?#]+)\//);
+    if (m) {
+      return '/images/' + m[1];
+    }
+    m = src.match(/\/images\/[^/]+\/[^/]+\/Premiere-[LD]-[^/?#]+/i);
+    if (m) {
+      return m[0];
+    }
+    return src.split(' ')[0];
+  }
+
+  function ensureZoomPop() {
+    var pop = document.getElementById('swccg-card-zoom');
+    if (!pop) {
+      pop = document.createElement('img');
+      pop.id = 'swccg-card-zoom';
+      pop.alt = '';
+      document.body.appendChild(pop);
+    }
+    return pop;
+  }
+
+  /** Place popup using natural image aspect (portrait or landscape). */
+  function placeZoom(pop, rect) {
+    var nw = pop.naturalWidth || 450;
+    var nh = pop.naturalHeight || 630;
+    var landscape = nw > nh;
+    if (landscape) {
+      pop.classList.add('is-landscape');
+    } else {
+      pop.classList.remove('is-landscape');
+    }
+    var maxH = landscape
+      ? Math.min(520, Math.floor(window.innerHeight * 0.85))
+      : Math.min(630, Math.floor(window.innerHeight * 0.92));
+    var maxW = landscape
+      ? Math.min(920, Math.floor(window.innerWidth * 0.94))
+      : Math.min(465, Math.floor(window.innerWidth * 0.92));
+    var scale = Math.min(maxW / nw, maxH / nh);
+    if (!isFinite(scale) || scale <= 0) {
+      scale = 1;
+    }
+    var w = Math.max(1, Math.round(nw * scale));
+    var h = Math.max(1, Math.round(nh * scale));
+    pop.style.width = w + 'px';
+    pop.style.height = h + 'px';
+    var left = rect.right + 10;
+    if (left + w > window.innerWidth - 8) {
+      left = Math.max(8, rect.left - w - 10);
+    }
+    var top = rect.top;
+    if (top + h > window.innerHeight - 8) {
+      top = Math.max(8, window.innerHeight - h - 8);
+    }
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+  }
+
+  /** Show full-size art without flashing the previously loaded card (Firefox). */
+  function showZoom(pop, full, rect) {
+    if (!full) {
+      return;
+    }
+    placeZoom(pop, rect);
+    var cur = pop.getAttribute('src') || '';
+    if (cur === full && pop.complete && pop.naturalWidth > 0) {
+      placeZoom(pop, rect);
+      pop.classList.add('is-on');
+      return;
+    }
+    pop.classList.remove('is-on');
+    pop.removeAttribute('src');
+    pop.style.width = '';
+    pop.style.height = '';
+    var gen = (parseInt(pop.getAttribute('data-zoom-gen') || '0', 10) || 0) + 1;
+    pop.setAttribute('data-zoom-gen', String(gen));
+    function reveal() {
+      if (pop.getAttribute('data-zoom-gen') !== String(gen)) {
+        return;
+      }
+      if (pop.naturalWidth > 0) {
+        placeZoom(pop, rect);
+        pop.classList.add('is-on');
+      }
+    }
+    pop.onload = reveal;
+    pop.onerror = function () {
+      if (pop.getAttribute('data-zoom-gen') === String(gen)) {
+        pop.classList.remove('is-on');
+      }
+    };
+    pop.src = full;
+    if (pop.complete) {
+      reveal();
+    }
+  }
+
+  function hideZoom(pop) {
+    pop.classList.remove('is-on');
+  }
+
+  function bindCardLinks(root) {
+    var pop = ensureZoomPop();
+    var nodes = (root || document).querySelectorAll('span.swccg-card-link[data-card-image]');
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].getAttribute('data-zoom-bound')) {
+        continue;
+      }
+      nodes[i].setAttribute('data-zoom-bound', '1');
+      (function (el) {
+        el.addEventListener('mouseenter', function () {
+          showZoom(pop, el.getAttribute('data-card-image'), el.getBoundingClientRect());
+        });
+        el.addEventListener('mouseleave', function () {
+          hideZoom(pop);
+        });
+      })(nodes[i]);
+    }
+  }
+
+  function bindZoom(root) {
+    var pop = ensureZoomPop();
+    var links = (root || document).querySelectorAll('table.card-thumbs a, .card-portrait a');
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].getAttribute('data-zoom-bound')) {
+        continue;
+      }
+      links[i].setAttribute('data-zoom-bound', '1');
+      (function (a) {
+        var img = a.querySelector('img');
+        if (!img) {
+          return;
+        }
+        a.addEventListener('mouseenter', function () {
+          showZoom(pop, originalFromImg(img), img.getBoundingClientRect());
+        });
+        a.addEventListener('mouseleave', function () {
+          hideZoom(pop);
+        });
+      })(links[i]);
+    }
+  }
+
+  function moveSearch() {
+    var search = document.getElementById('p-search');
+    var head = document.getElementById('mw-head');
+    if (search && head && search.parentNode !== head) {
+      head.insertBefore(search, head.firstChild);
+    }
+  }
+
+  function start() {
+    moveSearch();
+    bindZoom(document);
+    bindCardLinks(document);
+  }
+
+  if (window.mw && mw.hook) {
+    mw.hook('wikipage.content').add(function () {
+      start();
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start);
+  } else {
+    start();
+  }
+})();

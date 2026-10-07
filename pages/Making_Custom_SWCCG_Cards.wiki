@@ -1,0 +1,251 @@
+'''Making custom Star Wars CCG cards''' is the community practice of reconstructing, updating, and printing cards using high-resolution templates. This wiki keeps a preservation copy of those templates so they remain downloadable if a Drive folder moves.
+
+The templates on this page are '''[[Bardez]]'''’s 600&nbsp;DPI GIMP (<code>.xcf</code>) files, first posted on r/starwarsccgalters in 2021. They are free community work, not Decipher or Players Committee product. Credit [[Bardez]] (Reddit [https://www.reddit.com/user/Bardez u/Bardez]) when you use them.
+
+== Why this page exists ==
+A second download location matters. Google Drive folders get quota-locked, renamed, or unpublished. The templates are how people remake cards in the modern look, fix bad scans, and print [[Playtest cards]] or [[Reflections Gold]] reconstructions. This wiki stores the files and the notes that came with them.
+
+== Credit and source folders ==
+* '''Bardez''' — 600&nbsp;DPI GIMP templates. Drive: [https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ SWCCG Templates]. Announcement: [https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ 600 DPI Templates] (7 May 2021).
+* '''MPC print-ready hub''' — [https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ MPC Print Ready Cards — links to drives] on r/starwarsccgalters (11 January 2021). That post indexes several Drive folders (print-ready cards, playtests, card backs). This wiki's [[Playtest cards]] page already uses the Playtest folder from that hub.
+* '''IPFS mirror''' (community, from the 2021 thread): <code>ipfs://QmcyTrAxapWxJaqTnpPYDwsERJSHZGNdLairPM5WBi38cP</code>
+
+== Size, fonts, and GIMP notes ==
+Bardez's <code>Card Fonts and dimensions.txt</code> (preserved here) is the working spec:
+
+* '''Total card size:''' 1632 × 2220 pixels (about 600&nbsp;DPI at 63×88&nbsp;mm / Euro poker, the English retail size).
+* '''Title:''' Fiorello CG Condensed, 80&nbsp;px, kerning 1.0
+* '''Destiny:''' Akzidenz-Grotesk BQ Extended Medium, 80&nbsp;px
+* '''Lore:''' Akzidenz-Grotesk BQ Light Condensed, size 58, kerning 0.8
+* '''Game text:''' Akzidenz-Grotesk BQ Condensed Medium, size 60, kerning 1.5
+* '''Card type / Power / Ability:''' Akzidenz-Grotesk BQ Condensed (Ability kerning is fiddly: IL +1, ITY −1.3)
+* '''Deploy / Forfeit:''' Fiorello CG Condensed, 70&nbsp;px
+* '''Parsec:''' Craft Gothic Heavy Expanded, 65&nbsp;px
+* Use typographic quotes <code>‘’ “”</code> and the uniqueness bullet <code>•</code> in titles; in game text the square bullet is different.
+
+The templates are GIMP <code>.xcf</code> layered files (GIMP is free). Photoshop users convert XCF→PSD. Light Side carbon scoring is a separate layer problem Bardez noted in 2021; horizontal wide-vision / Enhanced templates were added later for some types.
+
+A matching font pack is <code>fonts.7z</code> in the same folder. Expansion-symbol and icon layers live in '''Assets/'''.
+
+== How to use them ==
+Open the template that matches the card type and side (Light or Dark). Replace the art layer, edit title / lore / game text, and export a print-ready PNG or PDF. Card backs are a separate template; this wiki also has no-text backs on [[Light Side]] and [[Dark Side]].
+
+These files are for reconstruction, playtest printing, and historical study. They are not a license to sell counterfeit Decipher product.
+
+== Template inventory ==
+Every file from the Drive folder as of the copy on this wiki. '''Download''' is the preservation copy hosted here. PNG rows also have a preview.
+
+{| class="wikitable sortable"
+! Preview !! File !! Type !! Size
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Blank%20Card%20Template.xcf Blank Card Template.xcf] || XCF || 150 KB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Card%20Backs%20Template.xcf Card Backs Template.xcf] || XCF || 22.5 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Card%20Fonts%20and%20dimensions.txt Card Fonts and dimensions.txt] || TXT || 1 KB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Creature.xcf Creature.xcf] || XCF || 14.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Dark%20Starship%20(Horizontal).xcf Dark Starship (Horizontal).xcf] || XCF || 3.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Dark%20Weapon%20(Horizontal).xcf Dark Weapon (Horizontal).xcf] || XCF || 5.1 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Admiral%27s%20Order.xcf DS - Admiral's Order.xcf] || XCF || 15.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Character%20-%20Alien.xcf DS - Character - Alien.xcf] || XCF || 13.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Character%20-%20Dark%20Jedi%20Master.xcf DS - Character - Dark Jedi Master.xcf] || XCF || 11.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Character%20-%20Droid%20%5BManeuver%5D.xcf DS - Character - Droid [Maneuver].xcf] || XCF || 17.4 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Character%20-%20Droid.xcf DS - Character - Droid.xcf] || XCF || 13.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Character%20-%20Imperial.xcf DS - Character - Imperial.xcf] || XCF || 17.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Character%20-%20MultiAffil.xcf DS - Character - MultiAffil.xcf] || XCF || 21.0 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Character%20-%20Republic.xcf DS - Character - Republic.xcf] || XCF || 14.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Character%20-%20Sith.xcf DS - Character - Sith.xcf] || XCF || 19.9 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Dark%20Jedi%20Test.xcf DS - Dark Jedi Test.xcf] || XCF || 20.5 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Defensive%20Shield.xcf DS - Defensive Shield.xcf] || XCF || 22.0 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Device.xcf DS - Device.xcf] || XCF || 11.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Effect%20%5B7%20lines%5D.xcf DS - Effect [7 lines].xcf] || XCF || 20.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Effect%20%5BCombo%5D.xcf DS - Effect [Combo].xcf] || XCF || 10.6 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Effect%20%5BHorizontal%5D.xcf DS - Effect [Horizontal].xcf] || XCF || 6.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Effect%20%5BLArge%5D.xcf DS - Effect [LArge].xcf] || XCF || 16.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Effect%20%5BMid-Large%5D.xcf DS - Effect [Mid-Large].xcf] || XCF || 13.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Effect.xcf DS - Effect.xcf] || XCF || 13.0 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Epic%20Event.xcf DS - Epic Event.xcf] || XCF || 13.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Interrupt%20%5B6%20Lines%5D.xcf DS - Interrupt [6 Lines].xcf] || XCF || 13.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Interrupt%20%5BCombo%5D.xcf DS - Interrupt [Combo].xcf] || XCF || 16.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Interrupt%20%5BHorizontal%5D.xcf DS - Interrupt [Horizontal].xcf] || XCF || 3.6 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Interrupt.xcf DS - Interrupt.xcf] || XCF || 13.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Mission.xcf DS - Mission.xcf] || XCF || 11.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Objective.xcf DS - Objective.xcf] || XCF || 10.4 MB
+|-
+| [[File:Bardez-DS---Podracer.png|120px]] || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Podracer.png DS - Podracer.png] || PNG || 1.1 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Podracer.xcf DS - Podracer.xcf] || XCF || 17.9 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Sharship%20%5BHorizontal%5D.xcf DS - Sharship [Horizontal].xcf] || XCF || 6.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Sharship.xcf DS - Sharship.xcf] || XCF || 5.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Site%20-%20Blue%20-%20Fat.xcf DS - Site - Blue - Fat.xcf] || XCF || 21.4 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Site%20-%20Blue.xcf DS - Site - Blue.xcf] || XCF || 25.5 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Starship.xcf DS - Starship.xcf] || XCF || 5.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Vehicle.xcf DS - Vehicle.xcf] || XCF || 15.1 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Weapon%20%5BHorizontal%5D.xcf DS - Weapon [Horizontal].xcf] || XCF || 29.0 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/DS%20-%20Weapon.xcf DS - Weapon.xcf] || XCF || 11.6 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Expansions.xcf Expansions.xcf] || XCF || 252 KB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/fonts.7z fonts.7z] || 7Z || 119 KB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Location%20-%20Site%20%5BLarger%20Text%20Box%5D.xcf Location - Site [Larger Text Box].xcf] || XCF || 24.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Location%20-%20Site%20%5BTwo%20Box%5D.xcf Location - Site [Two Box].xcf] || XCF || 19.4 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Location%20-%20Site.xcf Location - Site.xcf] || XCF || 14.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Location%20-%20System%20%5BLarge%20Text%20Area%5D.xcf Location - System [Large Text Area].xcf] || XCF || 32.5 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Location%20-%20System.xcf Location - System.xcf] || XCF || 27.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Admiral%27s%20Order.xcf LS - Admiral's Order.xcf] || XCF || 34.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Character%20-%20Alien.xcf LS - Character - Alien.xcf] || XCF || 14.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Character%20-%20Droid%20%5BMultiple%20Destiny%5D.xcf LS - Character - Droid [Multiple Destiny].xcf] || XCF || 39.8 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Character%20-%20Droid.xcf LS - Character - Droid.xcf] || XCF || 11.0 MB
+|-
+| [[File:Bardez-LS---Character---Jabbas-Prize-(Rebel).png|120px]] || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Character%20-%20Jabba%27s%20Prize%20(Rebel).png LS - Character - Jabba's Prize (Rebel).png] || PNG || 4.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Character%20-%20Jabba%27s%20Prize%20(Rebel).xcf LS - Character - Jabba's Prize (Rebel).xcf] || XCF || 21.2 MB
+|-
+| [[File:Bardez-LS---Character---Multiple-Affiliation.png|120px]] || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Character%20-%20Multiple%20Affiliation.png LS - Character - Multiple Affiliation.png] || PNG || 2.5 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Character%20-%20Multiple%20Affiliation.xcf LS - Character - Multiple Affiliation.xcf] || XCF || 22.1 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Character%20-%20Rebel.xcf LS - Character - Rebel.xcf] || XCF || 23.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Defensive%20Shield%20%5BLarger%20Text%20Area%5D.xcf LS - Defensive Shield [Larger Text Area].xcf] || XCF || 19.6 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Defensive%20Shield.xcf LS - Defensive Shield.xcf] || XCF || 21.4 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Device.xcf LS - Device.xcf] || XCF || 19.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Effect%20%5BCombo%5D.xcf LS - Effect [Combo].xcf] || XCF || 31.5 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Effect%20%5BHorizontal%5D.xcf LS - Effect [Horizontal].xcf] || XCF || 95.6 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Effect%20%5BLarge%20Text%20Box%5D.xcf LS - Effect [Large Text Box].xcf] || XCF || 31.4 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Effect.xcf LS - Effect.xcf] || XCF || 24.1 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Epic%20Objective.xcf LS - Epic Objective.xcf] || XCF || 17.9 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Interrupt%20%5BCombo%5D.xcf LS - Interrupt [Combo].xcf] || XCF || 25.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Interrupt%20%5BHorizontal%5D.xcf LS - Interrupt [Horizontal].xcf] || XCF || 13.0 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Interrupt%20%5BLarger%5D.xcf LS - Interrupt [Larger].xcf] || XCF || 10.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Interrupt.xcf LS - Interrupt.xcf] || XCF || 19.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Jedi%20Test.xcf LS - Jedi Test.xcf] || XCF || 22.9 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Location%20-%20Site%20-%20Starship%20%5BExpanded%20GT%5D.xcf LS - Location - Site - Starship [Expanded GT].xcf] || XCF || 27.9 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Location%20-%20Site%20-%20Starship.xcf LS - Location - Site - Starship.xcf] || XCF || 27.6 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Location%20-%20Site%20-%20Vehicle.xcf LS - Location - Site - Vehicle.xcf] || XCF || 19.3 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Mission.xcf LS - Mission.xcf] || XCF || 11.1 MB
+|-
+| [[File:Bardez-LS---Podracer-2.0.png|120px]] || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Podracer%20%5B2.0%5D.png LS - Podracer [2.0].png] || PNG || 2.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Podracer.xcf LS - Podracer.xcf] || XCF || 17.4 MB
+|-
+| [[File:Bardez-LS---Starship-Multiple-Destiny.png|120px]] || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Starship%20%5BMultiple%20Destiny%5D.png LS - Starship [Multiple Destiny].png] || PNG || 2.9 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Starship%20%5BMultiple%20Destiny%5D.xcf LS - Starship [Multiple Destiny].xcf] || XCF || 13.4 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Starship%20Restoration.xcf LS - Starship Restoration.xcf] || XCF || 5.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Starship%20Squadron.xcf LS - Starship Squadron.xcf] || XCF || 96.7 MB
+|-
+| [[File:Bardez-LS---Starship.png|120px]] || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Starship.png LS - Starship.png] || PNG || 3.0 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Starship.xcf LS - Starship.xcf] || XCF || 19.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Vehicle.xcf LS - Vehicle.xcf] || XCF || 13.7 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/LS%20-%20Weapon.xcf LS - Weapon.xcf] || XCF || 16.7 MB
+|-
+| [[File:Bardez-star-in-power-and-GT.PNG|120px]] || [https://wiki.swccg.com/preserved/bardez/star%20in%20power%20&%20GT.PNG star in power & GT.PNG] || PNG || 123 KB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/SWCCG%20Helper.xcf SWCCG Helper.xcf] || XCF || 14.5 MB
+|-
+| [[File:Bardez-Unique-Dot-in-game-text.PNG|120px]] || [https://wiki.swccg.com/preserved/bardez/Unique%20Dot%20in%20game%20text.PNG Unique Dot in game text.PNG] || PNG || 1024 KB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Working%20-%204LS%20-%20Starship%20%5BMultiple%20Destiny%5D.xcf Working - 4LS - Starship [Multiple Destiny].xcf] || XCF || 28.2 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Working%20-%20LS%20-%20Epic%20Objective.xcf Working - LS - Epic Objective.xcf] || XCF || 313.9 MB
+|-
+|  || [https://wiki.swccg.com/preserved/bardez/Working%20-%20LS%20-%20Jedi.xcf Working - LS - Jedi.xcf] || XCF || 22.3 MB
+|}
+
+=== Assets ===
+{| class="wikitable"
+! File !! Size
+|-
+| [https://wiki.swccg.com/preserved/bardez/Assets/Affiliations.xcf Assets/Affiliations.xcf] || 1.4 MB
+|-
+| [https://wiki.swccg.com/preserved/bardez/Assets/Defensive%20Shield.xcf Assets/Defensive Shield.xcf] || 2.1 MB
+|-
+| [https://wiki.swccg.com/preserved/bardez/Assets/Expansions.xcf Assets/Expansions.xcf] || 770 KB
+|-
+| [https://wiki.swccg.com/preserved/bardez/Assets/Rings.xcf Assets/Rings.xcf] || 944 KB
+|-
+| [https://wiki.swccg.com/preserved/bardez/Assets/Skill%20Icons.xcf Assets/Skill Icons.xcf] || 891 KB
+|}
+
+== Related ==
+* [[Playtest cards]] — early Decipher tests from the same MPC Drive hub
+* [[Card Layout]] — how to read a printed card
+* [[Light Side]] / [[Dark Side]] — card backs
+* [[V-slips]] — Players Committee print overlays for virtual cards
+* [[Reflections Gold]] — cancelled 2001 reconstructions that use these templates
+
+== Sources ==
+* [https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ Bardez SWCCG Templates] on Google Drive. Wayback: [https://web.archive.org/web/20210507000000/https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ requested]; live folder remains the working copy.
+* [https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ 600 DPI Templates], u/Bardez, r/starwarsccgalters, 7 May 2021. [https://web.archive.org/web/20210507120000/https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ Wayback]
+* [https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ MPC Print Ready Cards], r/starwarsccgalters, 11 January 2021. [https://web.archive.org/web/20210129183450/https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ Wayback 29 January 2021]; [https://archive.ph/ZUIVX archive.today]
+* Card Fonts and dimensions.txt (copied from the Drive folder)
+
+[[Category:Meta]]
+[[Category:Card production]]

@@ -1,0 +1,8 @@
+<noinclude>
+Inline card link with hover art preview (reuses site <code>swccg-card-zoom</code> popup from [[MediaWiki:Common.js]]).
+
+<pre>{{CardLink|Darth Vader|Premiere-D-darthvader.gif}}</pre>
+<pre>{{CardLink|Darth Vader|Premiere-D-darthvader.gif|label=Vader}}</pre>
+
+Requires an existing <code>File:</code> for the image argument. This is wiki card-page hover &mdash; '''not''' Phase 3 GEMP hover.
+</noinclude><includeonly><span class="swccg-card-link" data-card-image="{{filepath:{{{2}}}}}">[[{{{1}}}|{{{label|{{{1}}}}}}]]</span></includeonly>

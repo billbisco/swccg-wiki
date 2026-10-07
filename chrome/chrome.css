@@ -1,0 +1,69 @@
+/* Shared swccg.com chrome. Landing and wiki both load this. */
+:root {
+  --swccg-bg: #0b0d10;
+  --swccg-ink: #e8e4d9;
+  --swccg-muted: #9a9588;
+  --swccg-well: #f3efe4;
+  --swccg-accent: #c4a35a;
+}
+
+.swccg-header,
+.swccg-footer {
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--swccg-bg);
+  color: var(--swccg-ink);
+  box-sizing: border-box;
+}
+
+.swccg-header a,
+.swccg-footer a {
+  color: var(--swccg-ink);
+  text-decoration: none;
+}
+
+.swccg-header a:hover,
+.swccg-footer a:hover {
+  color: var(--swccg-accent);
+}
+
+.swccg-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid #2a2e34;
+}
+
+.swccg-brand {
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.swccg-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+  font-size: 0.92rem;
+}
+
+.swccg-nav a.play {
+  color: var(--swccg-accent);
+}
+
+.swccg-footer {
+  padding: 1.25rem 1.25rem 1.75rem;
+  border-top: 1px solid #2a2e34;
+  font-size: 0.88rem;
+  color: var(--swccg-muted);
+  line-height: 1.5;
+}
+
+.swccg-footer p {
+  margin: 0 0 0.4rem;
+  max-width: 46rem;
+}
+
+
