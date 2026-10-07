@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -932,6 +933,279 @@ Reitzel published this as the 60-card Dark deck he played at Vail. Titles normal
     )
 
 
+VERM_LS = "https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-champion-decklists-from.html"
+VERM_LS_WAYBACK = "https://web.archive.org/web/20150729042221/http://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-champion-decklists-from.html"
+
+
+def groups_table(groups, side: str) -> str:
+    mid = (len(groups) + 1) // 2
+
+    def col(parts):
+        chunks = []
+        for t, rows in parts:
+            chunks.append(f"'''{t}'''")
+            for qty, name in rows:
+                chunks.append(f"* {qty}x {wiki_card(name, side)}")
+            chunks.append("")
+        return "\n".join(chunks).rstrip()
+
+    return (
+        '{| class="wikitable" style="width:100%;"\n|-\n'
+        f'| style="width:50%; vertical-align:top;" |\n{col(groups[:mid])}\n'
+        f'| style="width:50%; vertical-align:top;" |\n{col(groups[mid:])}\n|}}'
+    )
+
+
+def write_verms_1996_ls() -> None:
+    """Scrye Light lists for 1996 2nd/3rd as transcribed by Vermithrax (2013)."""
+    sorgjerd = [
+        (
+            "Character",
+            [
+                (1, "Biggs Darklighter"),
+                (1, "Chewbacca"),
+                (1, "Figrin D'an"),
+                (2, "Han Solo"),
+                (1, "Jek Porkins"),
+                (2, "Kal'Falnl C'ndros"),
+                (1, "Leia Organa"),
+                (3, "Luke Skywalker"),
+                (2, "Obi-Wan Kenobi"),
+                (1, "R2-D2 (Artoo-Detoo)"),
+                (1, "Red Leader"),
+                (2, "Talz"),
+                (2, "Wedge Antilles"),
+            ],
+        ),
+        ("Weapon", [(1, "Jedi Lightsaber"), (1, "Obi-Wan's Lightsaber")]),
+        ("Vehicle", [(1, "Luke's X-34 Landspeeder")]),
+        (
+            "Starship",
+            [
+                (1, "Millennium Falcon"),
+                (1, "Red 6"),
+                (1, "Tantive IV"),
+            ],
+        ),
+        (
+            "Location",
+            [
+                (1, "Dejarik Hologameboard"),
+                (1, "Tatooine: Cantina"),
+                (1, "Tatooine: Lars' Moisture Farm"),
+                (2, "Tatooine: Mos Eisley"),
+                (1, "Tatooine: Obi-Wan's Hut"),
+                (1, "Yavin 4: Jungle"),
+                (1, "Yavin 4: Massassi Ruins"),
+                (1, "Yavin 4: Massassi Throne Room"),
+                (1, "Yavin 4: Massassi War Room"),
+            ],
+        ),
+        (
+            "Effect",
+            [
+                (2, "Demotion"),
+                (1, "Lightsaber Proficiency"),
+                (1, "Mantellian Savrip"),
+                (2, "Revolution"),
+            ],
+        ),
+        (
+            "Interrupt",
+            [
+                (3, "Alter"),
+                (1, "Don't Get Cocky"),
+                (1, "Double Agent"),
+                (2, "Gift Of The Mentor"),
+                (2, "Grimtaash"),
+                (1, "Houjix"),
+                (2, "Nabrun Leids"),
+                (3, "Sense"),
+                (1, "Sorry About The Mess"),
+                (2, "The Force Is Strong With This One"),
+            ],
+        ),
+    ]
+    alread = [
+        (
+            "Character",
+            [
+                (1, "Biggs Darklighter"),
+                (1, "BoShek"),
+                (1, "Chewbacca"),
+                (1, "Commander Evram Lajaie"),
+                (1, "Commander Vanden Willard"),
+                (1, "Dutch"),
+                (1, "General Dodonna"),
+                (1, "Han Solo"),
+                (1, "Jek Porkins"),
+                (1, "Kal'Falnl C'ndros"),
+                (1, "Leia Organa"),
+                (1, "LIN-V8K (Elleyein-Veeatekay)"),
+                (2, "Luke Skywalker"),
+                (1, "Momaw Nadon"),
+                (2, "Obi-Wan Kenobi"),
+                (1, "Owen Lars"),
+                (1, "Pops"),
+                (1, "Red Leader"),
+                (1, "Tiree"),
+                (1, "Wedge Antilles"),
+                (1, "Wioslea"),
+            ],
+        ),
+        ("Weapon", [(1, "Jedi Lightsaber"), (2, "Obi-Wan's Lightsaber")]),
+        (
+            "Starship",
+            [
+                (5, "Corellian Corvette"),
+                (1, "Tantive IV"),
+                (6, "X-wing"),
+            ],
+        ),
+        (
+            "Location",
+            [
+                (1, "Alderaan"),
+                (1, "Dantooine"),
+                (1, "Kashyyyk"),
+                (1, "Tatooine"),
+                (1, "Tatooine: Lars' Moisture Farm"),
+                (1, "Tatooine: Mos Eisley"),
+                (1, "Tatooine: Obi-Wan's Hut"),
+                (1, "Yavin 4: Jungle"),
+                (1, "Yavin 4: Massassi Ruins"),
+                (1, "Yavin 4: Massassi War Room"),
+            ],
+        ),
+        ("Effect", [(3, "Revolution")]),
+        (
+            "Interrupt",
+            [
+                (7, "A Few Maneuvers"),
+                (1, "Sense"),
+                (1, "The Force Is Strong With This One"),
+            ],
+        ),
+    ]
+
+    def qty_sum(groups) -> int:
+        return sum(q for _t, rows in groups for q, _n in rows)
+
+    assert qty_sum(sorgjerd) == 60, qty_sum(sorgjerd)
+    assert qty_sum(alread) == 60, qty_sum(alread)
+
+    verm_src = f"""* [{VERM_LS} Star Wars CCG: 1996 Light Side Champion Decklists], Vermithrax's Game Blog (5 April 2013; Scrye magazine transcription)
+* [{VERM_LS_WAYBACK} Wayback copy]
+* [https://web.archive.org/web/20050517110350/http://trandosite.mcmail.com/wf00p2.htm History of the World Finals], [[Trandosite]] (Wayback)
+
+{CATS}
+[[Category:Decklists]]
+[[Category:Championships]]
+[[Category:1996]]
+"""
+    note = (
+        "Scrye magazine championship list as transcribed by Vermithrax (2013) from "
+        "1996–1998 Scrye issues. Spelling normalized to printed titles "
+        "(Lars' Moisture Farm, Millennium Falcon, X-wing). Scrye did not star a "
+        "starting location on this list."
+    )
+    write_page(
+        "1996 Decipher World Championship Bjørn Sørgjerd LS",
+        f"""== Deck info ==
+* '''Player:''' [[Bjørn Sørgjerd]]
+* '''Event:''' [[1996 Decipher World Championship]]
+* '''Stage:''' Finals
+* '''Finish:''' 2nd
+* '''Format:''' [[Premiere - A New Hope]]
+* '''Side:''' [[Light]]
+* '''Starting Card:''' —
+* '''Strategy:''' Mains
+
+{note}
+
+== Decklist ==
+
+{groups_table(sorgjerd, 'light')}
+
+== See also ==
+
+* [[1996 Decipher World Championship]]
+* [[Bjørn Sørgjerd]]
+* [[Championships]]
+
+== Sources ==
+
+{verm_src}
+""",
+    )
+    write_page(
+        "1996 Decipher World Championship Joe Alread LS",
+        f"""== Deck info ==
+* '''Player:''' [[Joe Alread]]
+* '''Event:''' [[1996 Decipher World Championship]]
+* '''Stage:''' Finals
+* '''Finish:''' 3rd
+* '''Format:''' [[Premiere - A New Hope]]
+* '''Side:''' [[Light]]
+* '''Starting Card:''' —
+* '''Strategy:''' Revolution
+
+{note}
+
+== Decklist ==
+
+{groups_table(alread, 'light')}
+
+== See also ==
+
+* [[1996 Decipher World Championship]]
+* [[Joe Alread]]
+* [[Championships]]
+
+== Sources ==
+
+{verm_src}
+""",
+    )
+
+
+def patch_1996_hub_verms() -> None:
+    path = PAGES / "1996_Decipher_World_Championship.wiki"
+    text = path.read_text(encoding="utf-8")
+    text = text.replace(
+        "| 2 || [[Bjørn Sørgjerd]] || — || —",
+        "| 2 || [[Bjørn Sørgjerd]] || — || [[1996 Decipher World Championship Bjørn Sørgjerd LS|Mains]]",
+    )
+    text = text.replace(
+        "| 3 || [[Joe Alread]] || — || —",
+        "| 3 || [[Joe Alread]] || — || [[1996 Decipher World Championship Joe Alread LS|Revolution]]",
+    )
+    extra = (
+        " Sørgjerd and Alread Light lists are the Scrye-era championship lists as "
+        "transcribed by Vermithrax (2013). Reitzel's Light on that transcription is 55 cards; "
+        "this wiki uses the 60-card pair Reitzel later published from the decks he kept."
+    )
+    old_note = (
+        "Asselin's lists are the Scrye-era championship lists as reconstructed on SWCCGDB (2018). "
+        "Reitzel published his own 1996 pair in 2025–2026 from the decks he kept; a commenter remembered those lists in Scrye."
+    )
+    new_note = old_note + extra
+    if extra not in text:
+        text = text.replace(old_note, new_note)
+    src = (
+        f"* [{VERM_LS} Star Wars CCG: 1996 Light Side Champion Decklists], "
+        "Vermithrax's Game Blog (5 April 2013)"
+    )
+    if VERM_LS not in text:
+        text = text.replace(
+            "* [https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/ Kevin Reitzel, 1996 championship deck lists] (Facebook)",
+            src
+            + "\n* [https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/ Kevin Reitzel, 1996 championship deck lists] (Facebook)",
+        )
+    path.write_text(text.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
+    TITLES.append(("1996 Decipher World Championship", "pages/1996_Decipher_World_Championship.wiki"))
+
+
 def write_hubs() -> None:
     a_ls = hub_cell(DECK_META[0])
     a_ds = hub_cell(DECK_META[1])
@@ -960,14 +1234,14 @@ Several finalists later became Decipher staff or [[Squadron Members]] (Kevin Rei
 |-
 | 1 || [[Raphael Asselin]] || {a_ds} || {a_ls}
 |-
-| 2 || [[Bjørn Sørgjerd]] || — || —
+| 2 || [[Bjørn Sørgjerd]] || — || [[1996 Decipher World Championship Bjørn Sørgjerd LS|Mains]]
 |-
-| 3 || [[Joe Alread]] || — || —
+| 3 || [[Joe Alread]] || — || [[1996 Decipher World Championship Joe Alread LS|Revolution]]
 |-
 | 4 || [[Kevin Reitzel]] || [[1996 Decipher World Championship Kevin Reitzel DS|Death Star]] || [[1996 Decipher World Championship Kevin Reitzel LS|Yavin 4: Massassi Throne Room]]
 |}}
 
-Asselin's lists are the Scrye-era championship lists as reconstructed on SWCCGDB (2018). Reitzel published his own 1996 pair in 2025–2026 from the decks he kept; a commenter remembered those lists in Scrye.
+Asselin's lists are the Scrye-era championship lists as reconstructed on SWCCGDB (2018). Reitzel published his own 1996 pair in 2025–2026 from the decks he kept; a commenter remembered those lists in Scrye. Sørgjerd and Alread Light lists are the Scrye-era championship lists as transcribed by Vermithrax (2013). Reitzel's Light on that transcription is 55 cards; this wiki uses the 60-card pair Reitzel later published from the decks he kept.
 
 == See also ==
 
@@ -981,6 +1255,7 @@ Asselin's lists are the Scrye-era championship lists as reconstructed on SWCCGDB
 * [https://en.wikipedia.org/wiki/Star_Wars_Customizable_Card_Game Wikipedia: Star Wars Customizable Card Game] (World Champions table)
 * [https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0 1996 World Champion (Light)], SWCCGDB
 * [https://swccgdb.com/decklist/view/2/1996-world-champion-dark-1.0 1996 World Champion (Dark)], SWCCGDB
+* [{VERM_LS} Star Wars CCG: 1996 Light Side Champion Decklists], Vermithrax's Game Blog (5 April 2013)
 * [https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/ Kevin Reitzel, 1996 championship deck lists] (Facebook)
 
 {REF}
@@ -1521,6 +1796,8 @@ def write_url_list() -> None:
         "https://www.starwarsccg.org/jawa/",
         "https://www.starwarsccg.org/tournaments/",
         "https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/",
+        VERM_LS,
+        "https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-1996-dark-side-champion.html",
         "https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0",
         "https://swccgdb.com/decklist/view/2/1996-world-champion-dark-1.0",
         "https://swccgdb.com/decklist/view/3/mains-toys-1997-world-champion-1.0",
@@ -1553,6 +1830,7 @@ def main() -> None:
     for meta in DECK_META:
         write_swccgdb_deck(meta)
     write_reitzel_decks()
+    write_verms_1996_ls()
     write_hubs()
     write_people()
     write_url_list()
@@ -1566,5 +1844,15 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    if "--verms-ls" in sys.argv:
+        write_verms_1996_ls()
+        patch_1996_hub_verms()
+        seen: dict[str, str] = {}
+        for t, r in TITLES:
+            seen[t] = r
+        tsv = ROOT / "y1996-verms-ls-delta.tsv"
+        tsv.write_text("\n".join(f"{t}\t{r}" for t, r in seen.items()) + "\n", encoding="utf-8")
+        print("pages", len(seen), "tsv", tsv)
+    else:
+        main()
 
