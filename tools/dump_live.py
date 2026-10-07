@@ -5,6 +5,7 @@ Live wiki is the source of truth. Run locally or from GitHub Actions:
 
     python tools/dump_live.py
     python tools/dump_live.py --titles-only
+    python tools/dump_live.py --from-tsv path/to/delta.tsv
     python tools/dump_live.py --limit 20
 """
 from __future__ import annotations
@@ -44,6 +45,48 @@ def dest_for(title: str, existing: dict[str, Path]) -> Path:
     if stub.exists():
         return stub
     return PAGES / key
+
+
+def dest_from_tsv(title: str, rel: str, existing: dict[str, Path]) -> Path:
+    rel = rel.replace("\\", "/").lstrip("/")
+    if rel.startswith("pages/"):
+        return ROOT / rel
+    return dest_for(title, existing)
+
+
+def load_tsv(path: Path) -> list[tuple[str, str]]:
+    rows: list[tuple[str, str]] = []
+    seen: dict[str, int] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip() or "\t" not in line:
+            continue
+        title, rel = line.split("\t", 1)
+        title, rel = title.strip(), rel.strip().replace("\\", "/")
+        if not title:
+            continue
+        if title in seen:
+            rows[seen[title]] = (title, rel)
+        else:
+            seen[title] = len(rows)
+            rows.append((title, rel))
+    return rows
+
+
+def page_text(page: dict) -> str | None:
+    if page.get("missing"):
+        return None
+    revs = page.get("revisions") or []
+    if not revs:
+        return None
+    slot = revs[0].get("slots", {}).get("main", {})
+    text = slot.get("content")
+    if text is None:
+        text = revs[0].get("content")
+    if text is None:
+        return None
+    if not text.endswith("\n"):
+        text += "\n"
+    return text.replace("\r\n", "\n").replace("\r", "\n")
 
 
 def write_text(path: Path, text: str) -> None:
@@ -133,22 +176,12 @@ def dump_namespace(ns: int, existing: dict[str, Path], limit: int, written: list
         data = api(params)
         pages = data.get("query", {}).get("pages", [])
         for page in pages:
-            if page.get("missing"):
-                continue
             title = page.get("title") or ""
-            revs = page.get("revisions") or []
-            if not title or not revs:
+            text = page_text(page)
+            if not title or text is None:
                 continue
-            slot = revs[0].get("slots", {}).get("main", {})
-            text = slot.get("content")
-            if text is None:
-                text = revs[0].get("content")
-            if text is None:
-                continue
-            if not text.endswith("\n"):
-                text += "\n"
             dest = dest_for(title, existing)
-            write_text(dest, text.replace("\r\n", "\n").replace("\r", "\n"))
+            write_text(dest, text)
             existing[dest.name] = dest
             rel = dest.relative_to(ROOT).as_posix()
             written.append((title, rel))
@@ -163,6 +196,54 @@ def dump_namespace(ns: int, existing: dict[str, Path], limit: int, written: list
         time.sleep(0.15)
 
 
+def dump_from_tsv(
+    tsv: Path, existing: dict[str, Path], written: list[tuple[str, str]]
+) -> list[str]:
+    rows = load_tsv(tsv)
+    if not rows:
+        raise RuntimeError(f"empty TSV: {tsv}")
+    wanted = {title: rel for title, rel in rows}
+    missing: list[str] = []
+    titles = list(wanted)
+    batch = 50
+    for i in range(0, len(titles), batch):
+        chunk = titles[i : i + batch]
+        data = api(
+            {
+                "action": "query",
+                "titles": "|".join(chunk),
+                "prop": "revisions",
+                "rvprop": "content",
+                "rvslots": "main",
+            }
+        )
+        query = data.get("query", {})
+        aliases = {title: title for title in chunk}
+        for row in query.get("normalized") or []:
+            if row.get("from") and row.get("to"):
+                aliases[row["from"]] = row["to"]
+        by_returned: dict[str, dict] = {}
+        for page in query.get("pages") or []:
+            t = page.get("title") or ""
+            if t:
+                by_returned[t] = page
+        for orig in chunk:
+            returned_title = aliases.get(orig, orig)
+            page = by_returned.get(returned_title)
+            text = page_text(page) if page else None
+            if text is None:
+                missing.append(orig)
+                continue
+            dest = dest_from_tsv(orig, wanted[orig], existing)
+            write_text(dest, text)
+            existing[dest.name] = dest
+            rel = dest.relative_to(ROOT).as_posix()
+            written.append((orig, rel))
+        print(f"tsv {min(i + batch, len(titles))}/{len(titles)} pages", flush=True)
+        time.sleep(0.1)
+    return missing
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="stop after N pages (debug)")
@@ -171,10 +252,27 @@ def main() -> int:
         action="store_true",
         help="write pages/INDEX.tsv from live titles; do not rewrite wikitext",
     )
+    ap.add_argument(
+        "--from-tsv",
+        type=Path,
+        help="dump only titles listed in a leftover/apply TSV (title<TAB>path)",
+    )
     args = ap.parse_args()
     PAGES.mkdir(parents=True, exist_ok=True)
-    existing = index_existing()
     written: list[tuple[str, str]] = []
+    if args.from_tsv:
+        tsv = args.from_tsv.expanduser().resolve()
+        if not tsv.is_file():
+            print(f"missing TSV {tsv}", file=sys.stderr)
+            return 1
+        missing = dump_from_tsv(tsv, {}, written)
+        write_index(_merge_index(written, keep_old=True))
+        print(f"wrote {len(written)} pages from {tsv.name} index {INDEX}")
+        if missing:
+            print("MISSING " + "; ".join(missing), file=sys.stderr)
+            return 2
+        return 0
+    existing = index_existing()
     dump = dump_titles if args.titles_only else dump_namespace
     for ns in NAMESPACES:
         dump(ns, existing, args.limit, written)
