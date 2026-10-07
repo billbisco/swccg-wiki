@@ -39,6 +39,14 @@ Title index only (no wikitext rewrite):
 python tools/dump_live.py --titles-only
 ```
 
+After a leftover dest (or any apply TSV) has landed on the live wiki and passed QA, dump **only those titles** and commit:
+
+```text
+python tools/sync_delta.py --from-tsv path/to/event-xerox-delta.tsv --push
+```
+
+`--push` needs a GitHub token in `GH_TOKEN`. Do not dump the whole encyclopedia after every pair. The Sunday Action is the backstop.
+
 ## Rebuild a wiki from this repo
 
 1. Install MediaWiki (FlaggedRevs optional; the live site uses it).
