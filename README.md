@@ -31,7 +31,13 @@ Card scans, PDFs, and extract rasters stay on the live wiki (size). Dump those s
 python tools/dump_live.py
 ```
 
-Writes each article under `pages/` and `pages/INDEX.tsv` (`title<TAB>path`). A GitHub Action runs that dump weekly and on **Actions → Sync from live wiki → Run workflow**.
+Pulls current article text from [wiki.swccg.com](https://wiki.swccg.com) into `pages/` and writes `pages/INDEX.tsv` (`title<TAB>path`). A GitHub Action does the same every Sunday and on **Actions → Sync from live wiki → Run workflow**.
+
+Title index only (no wikitext rewrite):
+
+```text
+python tools/dump_live.py --titles-only
+```
 
 ## Rebuild a wiki from this repo
 
@@ -39,10 +45,10 @@ Writes each article under `pages/` and `pages/INDEX.tsv` (`title<TAB>path`). A G
 2. Import wikitext from `pages/INDEX.tsv`:
 
 ```bash
-python tools/import_pages.py --pages pages --index pages/INDEX.tsv
+python tools/import_pages.py
 ```
 
-`import_pages.py` prints MediaWiki `edit` / `importTextFiles` commands. On the live VPS the existing apply path is `apply-tsv.sh` in `authoring/`.
+That prints MediaWiki `edit` commands driven by the index. The same TSV is what `authoring/apply-tsv.sh` consumes on a box that already has MediaWiki.
 
 3. Copy `chrome/` into the site skin/header as on wiki.swccg.com.
 4. Import images from a separate dump (not in this repo).
