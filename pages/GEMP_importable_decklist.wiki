@@ -1,0 +1,98 @@
+A '''GEMP importable decklist''' is a UTF-8 XML file saved as <code>.txt</code>. The GEMP deck builder '''Import''' control reads that file. The '''filename minus <code>.txt</code>''' becomes the saved deck name.
+
+== File shape ==
+
+<pre>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<deck>
+    <card blueprintId="1_172" horizontal="false" title="Luke Skywalker"/>
+    <card blueprintId="1_127" horizontal="true" title="Yavin 4: Massassi Throne Room"/>
+</deck>
+</pre>
+
+* One <code>&lt;card&gt;</code> per copy (3× Luke is three lines).
+* <code>blueprintId</code> is the GEMP set_card id (<code>1_172</code>). Prefer the printing whose set is in the format pool.
+* <code>title</code> is the GEMP printed title (no uniqueness bullets).
+* <code>horizontal="true"</code> only for '''sites'''. Systems (Death Star, Ralltiir), characters, starships, effects, interrupts, objectives, and shields are <code>false</code>.
+* Shared Light/Dark titles ([[Alter]], [[Sense]], [[Control]], [[Undercover]]) use the blueprint for '''that deck's side'''.
+* Optional <code>cardOutsideDeck="true"</code> for defensive shields and other outside-deck cards. 1996 [[Premiere - A New Hope]] lists have none.
+
+Download a ready file from a championship deck page, or copy the XML into a <code>.txt</code> whose name is the deck name, then Import.
+
+== Suggested name ==
+
+Space-separated tokens, ASCII, no quotes and no slash. Include side on event pairs (same player, Light and Dark). A one-sided personal list may omit side.
+
+<code>{Format} {Archetype} {Player} {LS|DS} {Year} {Event}</code>
+
+Worked examples:
+
+* <code>PANH TRM Sorgjerd LS 1996 Worlds</code>
+* <code>PDS2 ROps dillen 2026 RetroGempc</code>
+
+Drop '''Event''' first, then '''Year''', if the name is too long. Keep '''Format''', '''Archetype''', '''Player''', and '''Side''' (when used).
+
+The Players Committee GEMP UI stores imported names in 3–40 characters. Filenames meant for that table must fit. [https://play.swccg.com/ play.swccg.com] can raise that cap later; wiki files still target 40 so they import on both tables.
+
+=== Format tokens ===
+
+{| class="wikitable"
+! Token !! Format
+|-
+| PANH || [[Premiere - A New Hope]]
+|-
+| PHoth || [[Premiere - Hoth]]
+|-
+| PCC || [[Premiere - Cloud City]]
+|-
+| PSE || [[Premiere - Special Edition]]
+|-
+| PEndor || [[Premiere - Endor]]
+|-
+| PDS2 || [[Premiere - Death Star II]]
+|-
+| PR3 || [[Premiere - Reflections III]]
+|-
+| Open || [[Open]]
+|-
+| Legacy || [[Legacy Open]]
+|-
+| AG || [[Anything Goes]]
+|}
+
+=== Archetype tokens ===
+
+Use the short name the community already says. Add a row here when a championship dest needs a new one.
+
+{| class="wikitable"
+! Token !! Meaning
+|-
+| TRM || Throne Room Mains ([[Yavin 4: Massassi Throne Room]] start)
+|-
+| Revolut || [[Revolution]]
+|-
+| DarkMan || [[Dark Maneuvers]]
+|-
+| Mains || Mains
+|-
+| DeathStar || [[Death Star]] start / Death Star systems
+|-
+| ROps || Ralltiir Operations (and the same short token a player already uses in a filename)
+|-
+| EOps || Endor Operations
+|}
+
+'''Player''' is the GEMP handle when it is known, otherwise the ASCII last name (<code>Sorgjerd</code> for [[Bjørn Sørgjerd]]).
+
+== Championship files ==
+
+[[1996 Decipher World Championship]] publishes eight import files, one per published Light and Dark list.
+
+== See also ==
+
+* [[GEMP]]
+* [[Formats]]
+* [[1996 Decipher World Championship]]
+
+[[Category:GEMP]]
+[[Category:Decklists]]
