@@ -1,6 +1,8 @@
 <noinclude>
 One page = one printing. Do '''not''' put empty errata sections on a card that was never errata'd.
 
+Optional '''likeness''' — photographic model Decipher (or later the Players Committee) cast for this card's art. Wiki-link the person page. Worked: [[Mara Jade, The Emperor's Hand]] → [[Shannon Baksa]]. Omit when the art is illustration, film stills of a different performer, a starship/weapon, or a later virtual photograph that is not that model.
+
 Optional '''image2''' — second portrait under '''image''' (same 280px width). Used for Objective 0/7 faces; omit on single-face cards.
 
 Optional '''image2_layout''' — how to place '''image2''' when set:
@@ -34,6 +36,7 @@ Optional '''image2_layout''' — how to place '''image2''' when set:
 |game_text=
 |game_text_note=
 |printings=
+|likeness=
 |notes=
 |see_also=
 |sources=
@@ -103,7 +106,7 @@ Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px =
 <tr><th>Uniqueness</th><td>{{{uniqueness}}}</td></tr>
 <tr><th>Destiny</th><td>{{{destiny|}}}</td></tr>{{#if:{{{power|}}}|<tr><th>Power</th><td>{{{power}}}</td></tr>}}{{#if:{{{ability|}}}|<tr><th>Ability</th><td>{{{ability}}}</td></tr>}}{{#if:{{{deploy|}}}|<tr><th>Deploy</th><td>{{{deploy}}}</td></tr>}}{{#if:{{{forfeit|}}}|<tr><th>Forfeit</th><td>{{{forfeit}}}</td></tr>}}{{#if:{{{armor|}}}|<tr><th>Armor</th><td>{{{armor}}}</td></tr>}}{{#if:{{{maneuver|}}}|<tr><th>Maneuver</th><td>{{{maneuver}}}</td></tr>}}{{#if:{{{hyperspeed|}}}|<tr><th>Hyperspeed</th><td>{{{hyperspeed}}}</td></tr>}}{{#if:{{{landspeed|}}}|<tr><th>Landspeed</th><td>{{{landspeed}}}</td></tr>}}{{#if:{{{dark_icons|}}}|<tr><th>Dark Side Icons</th><td>{{{dark_icons}}}</td></tr>}}{{#if:{{{light_icons|}}}|<tr><th>Light Side Icons</th><td>{{{light_icons}}}</td></tr>}}{{#if:{{{icons|}}}|<tr><th>Icons</th><td>{{{icons}}}</td></tr>}}<tr><th>card_uid</th><td>[[Card:{{{card_uid}}}|{{{card_uid}}}]]</td></tr>
 <tr><th>Version</th><td>{{{version_label|printed}}}</td></tr>
-<tr><th>Printings</th><td>{{{printings}}}</td></tr>
+<tr><th>Printings</th><td>{{{printings}}}</td></tr>{{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}
 </table>
 </div>{{#if:{{{hatnote|}}}|<div class="card-hatnote">''{{{hatnote}}}''</div>}}
 <div class="card-body">
