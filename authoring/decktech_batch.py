@@ -155,7 +155,15 @@ INDEX_TYPE = {
 }
 
 
+OVS_TYPE = {"Character Weapon": "WEAPON", "Starship Weapon": "WEAPON", "Vehicle Weapon": "WEAPON", "Automated Weapon": "WEAPON",
+            "Artillery Weapon": "WEAPON", "Death Star Weapon": "WEAPON", "Defensive Shield": "DEFENSIVE_SHIELD", "Admiral's Order": "ADMIRALS_ORDER",
+            "Epic Event": "EPIC_EVENT", "Jedi Test": "JEDI_TEST"}
+
+
 def card_type(title: str) -> str:
+    if re.search(r"\(Virtual Set \d+\)$", title):
+        t = cl.ovs_info(title).get("type", "")
+        return OVS_TYPE.get(t) or (t.split()[-1].upper() if t else "")
     canon()
     t = _TYPES.get(title, "")
     return "JEDI_TEST" if t.startswith("Jedi Test") else INDEX_TYPE.get(t, "")
@@ -187,6 +195,9 @@ def nicknames() -> dict[str, dict]:
 def suggest(posted: str, side: str) -> tuple[str, str]:
     """(status, card) where status is exact | nickname | fuzzy | ? ."""
     name = re.sub(r"\s+", " ", posted).strip(" -*•")
+    if re.search(r"\(Virtual Set \d+\)$", name):  # original-era virtual card page
+        base = re.sub(r" \(Virtual Set \d+\)$", "", name)
+        return ("exact", name) if name in cl.ovs_index().get(base, []) else ("?", "")
     c = canon()
     key = f"{side}|{cl.lookup_key(name).casefold()}"
     if key in c:
@@ -663,7 +674,7 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
     rows, omitted = [], []
     for r in d["cards"]:
         q, t = int(r[0]), r[1]
-        if t in gd.ORIGINAL_VS or r[2] in ("DEFENSIVE_SHIELD", "UNKNOWN"):
+        if t in gd.ORIGINAL_VS or "(Virtual Set" in t or r[2] in ("DEFENSIVE_SHIELD", "UNKNOWN"):
             omitted.append(t)
             continue
         rows.append((q, t, None))
@@ -850,6 +861,9 @@ def cmd_learn(ids: list[str]) -> None:
                 continue
             name = parsed[0][1].strip()
             if not name or name.casefold() == r[1].casefold() or suggest(name, d["side"]) == ("exact", r[1]):
+                continue
+            # Virtual dests are a per-deck call; an unmarked name must keep meaning the printed card.
+            if "(V)" in r[1] and not re.search(r"\(\s*v\s*\)|\bv\b|virtual|\(v", posted, re.I):
                 continue
             k = by_key.get(name.casefold())
             if k is None:

@@ -6502,6 +6502,8 @@ def lookup_title(title: str, side: str) -> str:
 
 
 def wiki_card(title: str, side: str) -> str:
+    if re.search(r"\(Virtual Set \d+\)$", title) and title not in ORIGINAL_VS:
+        return cl.ovs_link(title)
     if title == "Another Pathetic Lifeform (Reflections III: A Collector's Bounty)":
         return cl.cardlink(
             title,
