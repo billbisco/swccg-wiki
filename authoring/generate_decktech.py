@@ -6633,12 +6633,38 @@ def slug_file(title: str) -> str:
     return t + ".wiki"
 
 
+_GEMP_BACKFILL: dict | None = None
+
+
+def _keep_gemp_line(title: str, body: str) -> str:
+    """GEMP downloads added to live pages by gemp_backfill.py (gemp-backfill.json) survive rebuilds."""
+    global _GEMP_BACKFILL
+    if _GEMP_BACKFILL is None:
+        p = Path(__file__).resolve().parent / "gemp-backfill.json"
+        import json
+        _GEMP_BACKFILL = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    e = _GEMP_BACKFILL.get(title)
+    if not e or "GEMP Importable deck" in body:
+        return body
+    lines = body.split("\n")
+    for i, ln in enumerate(lines):
+        if ln.startswith("* '''Strategy:'''"):
+            lines.insert(i, e["line"])
+            return "\n".join(lines)
+    for i, ln in enumerate(lines):
+        if ln.startswith("* '''Side:'''"):
+            lines.insert(i + 1, e["line"])
+            return "\n".join(lines)
+    return body
+
+
 def write_page(title: str, body: str) -> Path:
     PAGES.mkdir(exist_ok=True)
     path = PAGES / slug_file(title)
     if not body.endswith("\n"):
         body += "\n"
     body = cl.fix_shield_section(body)  # shields -> Reflections III shield pages (2026-10-10)
+    body = _keep_gemp_line(title, body)
     path.write_text(body.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
     print("WROTE", path.name)
     return path
