@@ -65,8 +65,12 @@ class Wiki:
         return self._open(urllib.request.Request(API, urllib.parse.urlencode(q).encode("utf-8")))
 
     def edit(self, title: str, text: str, summary: str) -> str:
-        d = self.post(action="edit", title=title, text=text, summary=summary, bot="1",
-                      token=self.csrf, maxlag="5")
+        for wait in (0, 20, 40, 60, 60, 60):  # the wiki rate-limits edits per account; wait it out
+            time.sleep(wait)
+            d = self.post(action="edit", title=title, text=text, summary=summary, bot="1",
+                          token=self.csrf, maxlag="5")
+            if d.get("error", {}).get("code") != "ratelimited":
+                break
         if "error" in d:
             return f"ERROR {d['error'].get('code')}: {d['error'].get('info', '')[:120]}"
         e = d["edit"]
