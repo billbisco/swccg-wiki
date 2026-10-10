@@ -203,7 +203,8 @@ def suggest(posted: str, side: str) -> tuple[str, str]:
 
 QTY_PATTERNS = [
     re.compile(r"^[\[(](\d+)[\])}]\s*(.+)$"),  # [3] Name / (2) Name / [2} Name
-    re.compile(r"^(\d+)\s*x\s*(.+)$", re.I),
+    re.compile(r"^(\d+)\s*x\s*(?![-\d])(.+)$", re.I),  # not "2X-3KPR"
+    re.compile(r"^(.+?)\s+[x×]\s*(\d+)\s*\([^)]*\)$", re.I),  # "2X-3KPR x3 (Nighttime Droid)"
     re.compile(r"^(.+?)\s*[x×]\s*(\d+)$", re.I),
     re.compile(r"^(.+?)\s*\((\d+)\)$"),
 ]
@@ -216,6 +217,9 @@ def parse_card_list(cards: str) -> list[tuple[int, str, str]]:
         line = raw.strip().strip("'`").strip()
         if not line:
             continue
+        line = re.sub(r"^(.+?)\s*\(\s*[x×]\s*(\d+)\b[^)]*\)$", r"\1 x\2", line, flags=re.I)  # "Shmi Skywalker(x2)", "(x4, best card ever)"
+        line = re.sub(r"^\(([A-Za-z' ]+)\)\s*-?\s*(\d*)$", lambda m: f"{m.group(1)} ({m.group(2)})" if m.group(2) else m.group(1), line)  # "(Inturrupts)-16"
+        line = re.sub(r"^([A-Za-z]+) & [A-Za-z]+$", lambda m: m.group(1) if m.group(1).lower().rstrip("s") in HEADER_WORDS else m.group(0), line)  # "Starships & Vehicles"
         line = re.sub(r"^([A-Za-z'/ ]+?)\s+-\s*(\d+)$", r"\1 (\2)", line)  # "CHARACTERS -19"
         line = re.sub(r"^[-=\s(]+([A-Za-z' ]+?)[-=\s)]+$", r"\1", line)  # "-STARTING-", "((( STARTING )))"
         line = re.sub(r"^([A-Za-z']+)-\s*\((\d+)\)$", r"\1 (\2)", line)  # "Starships- (5)"
@@ -223,10 +227,10 @@ def parse_card_list(cards: str) -> list[tuple[int, str, str]]:
         line = re.sub(r"^([A-Za-z']+) ?(\d+)$", lambda m: f"{m.group(1)} ({m.group(2)})" if m.group(1).lower().rstrip("s") in HEADER_WORDS - {"green", "blue"} else m.group(0), line)  # "starting6", "Locations 7"
         head = re.match(r"^([A-Za-z'/ ]+?)\s*(?:\([^)]*\))?\s*:?$", line)
         counted = bool(re.search(r"\([^)]*\)\s*:?$|:$", line)) and not re.search(r"\(\d+\)$", line) or bool(re.search(r"\(\d+\)\s*:?$", line)) and len(line.split()) <= 3
-        if head and (counted or len(head.group(1).split()) == 1 or head.group(1).strip().lower() in ("admirals order", "admiral's order", "weapons/devices", "starting cards")):
+        if head and (counted or len(head.group(1).split()) == 1 or head.group(1).strip().lower() in ("admirals order", "admirals orders", "admiral's order", "admiral's orders", "weapons/devices", "starting cards")):
             word = head.group(1).strip().lower().split("/")[0].split()[0] if head.group(1).strip() else ""
             word = word.rstrip("s")
-            hit = difflib.get_close_matches(word, list(TYPE_HEADERS), n=1, cutoff=0.75)
+            hit = difflib.get_close_matches(word, list(TYPE_HEADERS), n=1, cutoff=0.8)  # 0.75 read 'Shmi' as 'ship'
             if word in ("green", "blue", "racer", "epice"):  # joke / short headers seen in posts
                 kind = {"green": "WEAPON", "blue": "STARSHIP", "racer": "PODRACER", "epice": "EPIC_EVENT"}[word]
                 continue
@@ -314,36 +318,28 @@ def _us_date(pid: str) -> str:
     return f"{d.strftime('%B')} {d.day}, {d.year}"
 
 
+def live_url(pid) -> str:
+    return f"http://www.decktech.net/starwarsccg/deck/{pid}"
+
+
+WB_QUEUE = ROOT.parent / "ops" / "wayback" / "queue.txt"
+WB_DONE = ROOT.parent / "ops" / "wayback" / "done.json"
+
+
 def cmd_wayback(ids: list[str]) -> None:
-    """Save live + Skilton copies to the Wayback Machine, all in parallel (~2 min per batch).
+    """Queue the decktech.net page of each deck for a Wayback save (Bill 2026-10-10: the original
+    decktech.net link is the one to preserve; Skilton/GitHub Pages copies are cited, not re-saved).
 
-    web.archive.org/save is blocked from some cloud sandboxes; run this where it works
-    (e.g. Bill's PC shell). Results merge into decktech-wayback.json.
+    Appends to ops/wayback/queue.txt; commit + push it and the VPS worker (ops/wayback_worker.py)
+    saves them one at a time. Until that worker runs, Bill's PC can run
+    claude-agent/wbq.py STATE ID:live ... instead and its results go in decktech-wayback.json.
     """
-    from concurrent.futures import ThreadPoolExecutor
-    data = json.loads(WAYBACK_FILE.read_text(encoding="utf-8")) if WAYBACK_FILE.exists() else {}
-    jobs = [(pid, kind, url) for pid in ids for kind, url in (
-        ("live", f"http://www.decktech.net/starwarsccg/deck/{pid}"),
-        ("skilton", f"https://www.stephenskilton.com/decktech_archives/{pid}/"),
-    ) if not data.get(pid, {}).get(kind)]
-
-    def save(job):
-        pid, kind, url = job
-        try:
-            req = urllib.request.Request("https://web.archive.org/save/" + url, headers=UA)
-            with urllib.request.urlopen(req, context=CTX, timeout=240) as r:
-                m = re.search(r"/web/(\d{14})/", r.geturl())
-            return pid, kind, (f"https://web.archive.org/web/{m.group(1)}/{url.rstrip('/')}/" if m else None)
-        except Exception as e:  # noqa: BLE001
-            print("FAIL", pid, kind, type(e).__name__, e, flush=True)
-            return pid, kind, None
-
-    with ThreadPoolExecutor(max_workers=8) as ex:
-        for pid, kind, url in ex.map(save, jobs):
-            if url:
-                data.setdefault(pid, {})[kind] = url
-                print("SAVED", pid, kind, url, flush=True)
-    WAYBACK_FILE.write_text(json.dumps(data, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+    have = WB_QUEUE.read_text(encoding="utf-8").splitlines() if WB_QUEUE.exists() else []
+    new = [live_url(p) for p in ids if live_url(p) not in have]
+    WB_QUEUE.parent.mkdir(parents=True, exist_ok=True)
+    with WB_QUEUE.open("a", encoding="utf-8") as fh:
+        fh.writelines(u + "\n" for u in new)
+    print(f"queued {len(new)} URLs in {WB_QUEUE.relative_to(ROOT.parent)}; commit + push it")
 
 
 def cmd_draft(pid: str) -> None:
@@ -409,7 +405,12 @@ def label(d: dict) -> str:
 
 def register_wayback(d: dict) -> None:
     wb = json.loads(WAYBACK_FILE.read_text(encoding="utf-8")) if WAYBACK_FILE.exists() else {}
-    for kind, url in {**wb.get(str(d["id"]), {}), **d.get("wayback", {})}.items():
+    found = dict(wb.get(str(d["id"]), {}))
+    if WB_DONE.exists():  # VPS queue results (status ok = capture confirmed)
+        e = json.loads(WB_DONE.read_text(encoding="utf-8")).get(live_url(d["id"]))
+        if e and e.get("status") == "ok":
+            found.setdefault("live", e["capture"])
+    for kind, url in {**found, **d.get("wayback", {})}.items():
         gd.WAYBACK[(kind, d["id"])] = url
 
 
@@ -798,6 +799,40 @@ def cmd_check(tsv: str, ids: list[str] | None = None) -> None:
         print("LEDGER", sorted(led))
 
 
+def cmd_learn(ids: list[str]) -> None:
+    """Teach card_nicknames.json every posted-name -> card match confirmed in finished decks, so the
+    next fetch resolves them automatically. A name already mapped to a different card is reported,
+    never overwritten."""
+    raw = json.loads(NICKNAMES.read_text(encoding="utf-8")) if NICKNAMES.exists() else {}
+    by_key = {k.casefold(): k for k in raw}
+    added, clash = 0, []
+    for pid in ids:
+        d = load_deck(pid)
+        for r in d.get("cards", []) + d.get("shields", []):
+            if len(r) < 4 or r[2] == "UNKNOWN" or not str(r[3]).startswith("posted: "):
+                continue
+            posted = re.sub(r"\s*\((?:fuzzy|exact|nickname|\?)\)$", "", r[3][8:]).strip()
+            parsed = parse_card_list(posted)
+            if len(parsed) != 1:
+                continue
+            name = parsed[0][1].strip()
+            if not name or name.casefold() == r[1].casefold() or suggest(name, d["side"]) == ("exact", r[1]):
+                continue
+            k = by_key.get(name.casefold())
+            if k is None:
+                raw[name] = {"card": r[1], "seen": 1}
+                by_key[name.casefold()] = name
+                added += 1
+            elif raw[k]["card"] == r[1]:
+                raw[k]["seen"] = raw[k].get("seen", 1) + 1
+            else:
+                clash.append(f"{name!r}: has {raw[k]['card']!r}, deck {pid} says {r[1]!r}")
+    NICKNAMES.write_text(json.dumps(dict(sorted(raw.items(), key=lambda kv: kv[0].casefold())), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"learned {added} new nicknames ({len(raw)} total)")
+    for c in clash:
+        print("CLASH", c)
+
+
 def main(argv: list[str]) -> None:
     if len(argv) < 2:
         raise SystemExit(__doc__)
@@ -813,6 +848,9 @@ def main(argv: list[str]) -> None:
         cmd_build(args[0], args[1:])
     elif cmd == "check":
         cmd_check(args[0], args[1:])
+        cmd_learn(args[1:])  # live + verified: safe to learn from
+    elif cmd == "learn":
+        cmd_learn(args)
     else:
         raise SystemExit(__doc__)
 
