@@ -23,7 +23,7 @@ See `LICENSE` and `NOTICE`.
 | `encyclopedia/` | Championship 60 transcribes (sheet emails redacted) |
 | `authoring/` | Generators and apply helpers used to *build* the live wiki |
 
-Card scans, PDFs, and other `File:` uploads live on the wiki and in the sibling backup [billbisco/swccg-wiki-files](https://github.com/billbisco/swccg-wiki-files). Dump them with `python tools/dump_images.py --out path/to/swccg-wiki-files`. GEMP XML/text uploads are skipped. Extract rasters and dest-note dumps stay off GitHub.
+Card scans, PDFs, and other `File:` uploads live on the wiki and in the sibling backup [billbisco/swccg-wiki-files](https://github.com/billbisco/swccg-wiki-files). Dump them with `python tools/dump_images.py --out path/to/swccg-wiki-files/files`. GEMP importable decklists (XML/text uploads) are backed up too, and `files/USAGE.tsv` maps every file to the article(s) that use it. Extract rasters and dest-note dumps stay off GitHub.
 
 ## Update GitHub from the live wiki
 
