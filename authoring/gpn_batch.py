@@ -103,7 +103,8 @@ def load(did) -> dict:
 def title_of(d: dict) -> str:
     if not d.get("use_published_title", True):
         return g.WITHHELD_TITLE.get(d["gpn_id"]) or f"{d['player']} {'DS' if d['side'] == 'Dark' else 'LS'}"
-    return g.wiki_title_for(d["byline"], d["published_title"], d["gpn_id"])
+    # Posts holding two decks get one page per side: title_suffix " (DS)" / " (LS)".
+    return g.wiki_title_for(d["byline"], d["published_title"], d["gpn_id"]) + d.get("title_suffix", "")
 
 
 def fmt_of(d: dict) -> str:
@@ -341,8 +342,8 @@ def cmd_check(tsv: str, ids: list[str]) -> None:
                 bad += 1
                 print("NOT REVIEWED", p["title"])
     live = set(json.loads(LIVE.read_text())) if LIVE.exists() else set()
-    live |= {int(x) for x in ids}
-    LIVE.write_text(json.dumps(sorted(live)) + "\n")
+    live |= {int(x) if str(x).isdigit() else x for x in ids}
+    LIVE.write_text(json.dumps(sorted(live, key=str)) + "\n")
     print("checked", len(titles), "not reviewed", bad, "gpn live", len(live))
     b.cmd_learn([f"gpn-{x}" for x in ids])
 

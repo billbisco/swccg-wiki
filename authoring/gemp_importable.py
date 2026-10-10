@@ -79,6 +79,7 @@ FORMAT_ABBR = {
     "Premiere - Original VS5": "POVS5",
     "Premiere - Original VS6": "POVS6",
     "Premiere - Original VS7": "POVS7",
+    "Premiere - Original VS8": "POVS8",
     "Premiere": "Prem",
     "premiere": "Prem",
     "Open": "Open",
