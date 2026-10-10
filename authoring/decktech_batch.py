@@ -535,7 +535,7 @@ def player_page(d: dict, current: str | None) -> str:
 [[Category:People]]
 [[Category:{d['date'][:4]}]]
 """
-    text = current
+    text = ensure_player_sections(current)
     note = d.get("player_page_note")
     if note and note not in text:
         cut = text.find("\n\n== ")
@@ -544,6 +544,23 @@ def player_page(d: dict, current: str | None) -> str:
     text = gd.add_see_also(text, f"* [[{dest_title(d)}]]")
     text = gd.add_source_line(text, gd.post_source_bullets(pid, lbl))
     return gd.add_category(text, d["date"][:4])
+
+
+def ensure_player_sections(text: str) -> str:
+    """Stub player pages (e.g. created from a 2008 Worlds list) lack the sections the add_* helpers
+    write into; add empty ones above the categories so the DeckTech row, See also and Sources land."""
+    cat = re.search(r"^\[\[Category:", text, re.M)
+    at = cat.start() if cat else len(text)
+    add = ""
+    if "== Miscellaneous decklists ==" not in text:
+        add += "== Miscellaneous decklists ==\n\n{| class=\"wikitable\"\n|-\n! Date !! Format !! Title !! Side\n|}\n\n"
+    if "== See also ==" not in text:
+        add += "== See also ==\n\n* [[DeckTech decks]]\n\n"
+    if "== Sources ==" not in text:
+        add += "== Sources ==\n\n\n{{#if:1|<nowiki />\n<h2>References</h2>\n<references />}}\n\n"
+    if not add:
+        return text
+    return text[:at].rstrip("\n") + "\n\n" + add + text[at:]
 
 
 def sort_misc_rows(text: str) -> str:
