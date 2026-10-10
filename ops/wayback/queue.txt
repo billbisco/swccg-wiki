@@ -1,0 +1,3 @@
+# Wayback Machine save queue — one URL per line. Append and push; the VPS worker
+# (ops/wayback_worker.py, every 15 min) saves them one at a time and records results
+# in ops/wayback/done.json (status ok = capture confirmed). Never edit done.json by hand.
