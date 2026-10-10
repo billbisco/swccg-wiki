@@ -494,7 +494,7 @@ def _fix_shields_in(section: str) -> str:
 # Players Committee virtual cards of 2002-2009 are wiki pages "X (V) (Virtual Set N)" (set pages
 # "Virtual Set N (Original)"); later re-virtualized cards share the "X (V)" name, so the dest depends
 # on the post date. Index of those pages: original-vs-index.json ("X (V)" -> [page, ...]).
-OVS_LEGAL = {1: "2002-03-09", 2: "2002-06-01", 3: "2002-09-20", 4: "2003-02-05", 5: "2003-06-01", 6: "2003-11-01"}
+OVS_LEGAL = {1: "2002-03-09", 2: "2002-06-01", 3: "2002-09-20", 4: "2003-02-05", 5: "2003-06-01", 6: "2003-11-01", 7: "2004-07-19"}  # VS7: out by GPN 5733 (19 Jul 2004, "With the release of V set 7")
 _OVS: dict[str, list[str]] | None = None
 _OVS_INFO: dict[str, dict] = {}
 
@@ -514,7 +514,7 @@ def ovs_set(page: str) -> int:
 
 def ovs_pick(name: str, date_iso: str, side: str | None = None) -> tuple[str | None, list[str]]:
     """Page for virtual card `name` ("X (V)" or "X") as legal on date_iso: the newest original-era
-    printing legal by then (sets 7+ have no proven ship date and count only after 2004).
+    printing legal by then (sets 7+ have no proven ship date here, so they are never auto-picked).
     Returns (page or None, all candidates)."""
     base = name if name.endswith("(V)") else f"{name} (V)"
     sides = [side.title()] if side else ["Light", "Dark"]
@@ -523,7 +523,7 @@ def ovs_pick(name: str, date_iso: str, side: str | None = None) -> tuple[str | N
     for k in keys:
         cands = sorted(ovs_index().get(k, []), key=ovs_set)
         allc += cands
-        legal = [p for p in cands if ovs_set(p) >= 1 and OVS_LEGAL.get(ovs_set(p), "2004-06-01") <= (date_iso or "9999")]
+        legal = [p for p in cands if ovs_set(p) >= 1 and OVS_LEGAL.get(ovs_set(p), "9999") <= (date_iso or "9999")]
         if legal:
             return legal[-1], allc
     return None, allc
