@@ -620,6 +620,7 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
     fn = d.get("gemp_file_live") or base + ".txt"  # a deck already live keeps its uploaded file name
     if not d.get("gemp_file_live") and (fn.lower() in taken or file_exists(fn)):
         fn = gi.safe_deck_filename(gi.deck_name(d["format"], _arch(start), d["player"], d["side"], d["date"][:4], str(d["id"]))) + ".txt"
+    fn = re.sub(r"\s+", " ", fn.replace("_", " "))  # MediaWiki stores "_" as a space
     taken.add(fn.lower())
     GEMP_OUT.mkdir(exist_ok=True)
     (GEMP_OUT / fn).write_text(xml, encoding="utf-8", newline="\n")
