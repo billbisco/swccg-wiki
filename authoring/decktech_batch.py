@@ -100,6 +100,24 @@ def live_text(title: str) -> str | None:
     return p["revisions"][0]["slots"]["main"]["content"]
 
 
+REF3 = "Reflections III: A Collector's Bounty"
+_SHIELD_PAGES: dict[str, str | None] = {}
+
+
+def shield_link(name: str, side: str) -> str | None:
+    """Decipher's Defensive Shields were printed in Reflections III; same-named older cards are Effects.
+    Link the Reflections III shield page (titled "X (Reflections III: ...)" or "X (Dark|Light)") with its own image."""
+    for page in (f"{name} ({REF3})", f"{name} ({side})", name):
+        if page not in _SHIELD_PAGES:
+            txt = live_text(page) or ""
+            ok = "type=Defensive Shield" in txt and f"side={side}" in txt and f"set={REF3}" in txt
+            m = re.search(r"^\|image=(.+)$", txt, re.M)
+            _SHIELD_PAGES[page] = m.group(1).strip() if ok and m else None
+        if _SHIELD_PAGES[page]:
+            return gd.cl.cardlink(page, _SHIELD_PAGES[page], name)
+    return None
+
+
 def long_date(iso: str) -> str:
     d = date.fromisoformat(iso)
     return f"{d.day} {d.strftime('%B')} {d.year}"
@@ -446,7 +464,7 @@ def deck_page(d: dict) -> str:
         info.append(f"* '''Strategy:''' {d['description']}")
     shields = ""
     if d.get("shields"):
-        sh = "\n".join(f"* {q}x {wc(n)}" for q, n, _ in rows_of(d, "shields"))
+        sh = "\n".join(f"* {q}x {shield_link(n, d['side']) or wc(n)}" for q, n, _ in rows_of(d, "shields"))
         shields = f"\n== Defensive Shields ==\n\nThese cards were posted as Defensive Shields outside the 60. They do not count toward the 60.\n\n{sh}\n"
     note = f"\n{d['shields_note']}\n" if d.get("shields_note") else ""
     see = ([] if d.get("player_page") == "none" else [f"* [[{d['player']}]]"]) + ([f"* [[{d['event']}]]"] if d.get("event") else []) + [
