@@ -44,6 +44,9 @@ import wiki_cardlink as cl  # noqa: E402
 # Posted "X (V)" in a 2002 deck dests the original slip page, not current virtual.
 EXTRA_ORIGINAL_VS = {
     "Assault Rifle (V)": ("Assault Rifle (V) (Virtual Set 1)", "VS1O-07-Assault Rifle.png"),
+    "Gold 1 (V)": ("Gold 1 (V) (Virtual Set 1)", "VS1O-03-Gold 1.png"),
+    "Fusion Generator Supply Tanks (V) (Light)": ("Fusion Generator Supply Tanks (V) (Light) (Virtual Set 1)", "VS1O-02-Fusion Generator Supply Tanks.png"),
+    "Fusion Generator Supply Tanks (V) (Dark)": ("Fusion Generator Supply Tanks (V) (Dark) (Virtual Set 1)", "VS1O-11-Fusion Generator Supply Tanks.png"),
 }
 for _k, _v in EXTRA_ORIGINAL_VS.items():
     gd.ORIGINAL_VS.setdefault(_k, _v)
@@ -64,6 +67,9 @@ FORMAT_ANCHORS = {
     "Premiere - Original VS1": re.compile(r"^(?=\[\[[^\]]+\]\] (?:is printed Decipher through|dests \[\[))", re.M),
 }
 
+HEADER_WORDS = {"starting", "start", "location", "site", "character", "starship", "ship", "vehicle", "weapon",
+                "device", "effect", "interrupt", "interupt", "interrrupt", "inturrupt", "interuppt", "racer", "podracer",
+                "admiral", "ao", "epic", "epice", "creature", "shield", "green", "blue"}
 TYPE_HEADERS = {
     "objective": "OBJECTIVE", "location": "LOCATION", "site": "LOCATION", "system": "LOCATION",
     "character": "CHARACTER", "starship": "STARSHIP", "ship": "STARSHIP", "vehicle": "VEHICLE",
@@ -193,12 +199,19 @@ def parse_card_list(cards: str) -> list[tuple[int, str, str]]:
         if not line:
             continue
         line = re.sub(r"^([A-Za-z'/ ]+?)\s+-\s*(\d+)$", r"\1 (\2)", line)  # "CHARACTERS -19"
+        line = re.sub(r"^[-=\s(]+([A-Za-z' ]+?)[-=\s)]+$", r"\1", line)  # "-STARTING-", "((( STARTING )))"
+        line = re.sub(r"^([A-Za-z']+)-\s*\((\d+)\)$", r"\1 (\2)", line)  # "Starships- (5)"
+        line = re.sub(r"^([A-Za-z']+)-$", r"\1", line)  # "Effects-"
+        line = re.sub(r"^([A-Za-z']+) ?(\d+)$", lambda m: f"{m.group(1)} ({m.group(2)})" if m.group(1).lower().rstrip("s") in HEADER_WORDS - {"green", "blue"} else m.group(0), line)  # "starting6", "Locations 7"
         head = re.match(r"^([A-Za-z'/ ]+?)\s*(?:\([^)]*\))?\s*:?$", line)
         counted = bool(re.search(r"\([^)]*\)\s*:?$|:$", line)) and not re.search(r"\(\d+\)$", line) or bool(re.search(r"\(\d+\)\s*:?$", line)) and len(line.split()) <= 3
         if head and (counted or len(head.group(1).split()) == 1 or head.group(1).strip().lower() in ("admirals order", "admiral's order", "weapons/devices", "starting cards")):
             word = head.group(1).strip().lower().split("/")[0].split()[0] if head.group(1).strip() else ""
             word = word.rstrip("s")
             hit = difflib.get_close_matches(word, list(TYPE_HEADERS), n=1, cutoff=0.75)
+            if word in ("green", "blue", "racer", "epice"):  # joke / short headers seen in posts
+                kind = {"green": "WEAPON", "blue": "STARSHIP", "racer": "PODRACER", "epice": "EPIC_EVENT"}[word]
+                continue
             if word in ("starting", "start"):
                 kind = "STARTING"
                 continue
@@ -358,7 +371,7 @@ def cmd_draft(pid: str) -> None:
 
 def load_deck(pid: str) -> dict:
     d = json.loads((DECKS / f"{pid}.json").read_text(encoding="utf-8"))
-    bad = [r for r in d["cards"] if str(r[1]).startswith("??") or r[2] == "?"]
+    bad = [r for r in d["cards"] if str(r[1]).startswith("??") or r[2] == "?"]  # UNKNOWN is allowed (explicit)
     if bad:
         raise SystemExit(f"{pid}: unresolved cards {bad[:5]}")
     return d
@@ -369,7 +382,7 @@ def dest_title(d: dict) -> str:
         return d["dest_title"]
     tail = d["published_title"] if d.get("use_published_title") else ("DS" if d["side"] == "Dark" else "LS")
     pre = f"{d['event']} " if d.get("kind") == "tournament" else ""
-    return f"{pre}{d['player']} {tail}"
+    return " ".join(f"{pre}{d['player']} {tail}".split())  # MediaWiki collapses runs of spaces
 
 
 def label(d: dict) -> str:
@@ -383,7 +396,16 @@ def register_wayback(d: dict) -> None:
 
 
 def rows_of(d: dict, key: str = "cards") -> list[tuple[int, str, str]]:
-    return [(int(r[0]), r[1], r[2]) for r in d.get(key, [])]
+    """Table rows. Type UNKNOWN = a posted name that matches no card; shown as text, never guessed."""
+    return [(int(r[0]), r[1], r[2]) for r in d.get(key, []) if r[2] != "UNKNOWN"]
+
+
+def unknown_note(d: dict) -> str:
+    unk = [f"{int(r[0])}x {r[1]}" for r in d.get("cards", []) if r[2] == "UNKNOWN"]
+    if not unk:
+        return ""
+    return ("\nThe post also lists " + ", ".join(unk) + ", which matches no known card; it is shown as posted "
+            "and counted in the published total.\n")
 
 
 def plink(d: dict) -> str:
@@ -437,7 +459,7 @@ def deck_page(d: dict) -> str:
 == Decklist ==
 
 {gd.table_from_rows(rows_of(d), side_u)}
-{shields}{note}
+{shields}{note}{unknown_note(d)}
 {gd.formatted_original_post(pid, description=d.get("description", ""))}
 
 == See also ==
@@ -605,7 +627,7 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
     rows, omitted = [], []
     for r in d["cards"]:
         q, t = int(r[0]), r[1]
-        if t in gd.ORIGINAL_VS or r[2] == "DEFENSIVE_SHIELD":
+        if t in gd.ORIGINAL_VS or r[2] in ("DEFENSIVE_SHIELD", "UNKNOWN"):
             omitted.append(t)
             continue
         rows.append((q, t, None))
@@ -616,10 +638,11 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
         print(f"NOGEMP {d['id']}: {e}")
         return None, omitted
     start = (d.get("starting") or {}).get("card") or d.get("published_title") or ""
-    base = gi.safe_deck_filename(gi.deck_name(d["format"], _arch(start), d["player"], d["side"], d["date"][:4], "DeckTech"))
+    arch = d.get("gemp_arch") or _arch(start)  # gemp_arch: the post's own archetype name when the start card says nothing
+    base = gi.safe_deck_filename(gi.deck_name(d["format"], arch, d["player"], d["side"], d["date"][:4], "DeckTech"))
     fn = d.get("gemp_file_live") or base + ".txt"  # a deck already live keeps its uploaded file name
     if not d.get("gemp_file_live") and (fn.lower() in taken or file_exists(fn)):
-        fn = gi.safe_deck_filename(gi.deck_name(d["format"], _arch(start), d["player"], d["side"], d["date"][:4], str(d["id"]))) + ".txt"
+        fn = gi.safe_deck_filename(gi.deck_name(d["format"], arch, d["player"], d["side"], d["date"][:4], str(d["id"]))) + ".txt"
     fn = re.sub(r"\s+", " ", fn.replace("_", " "))  # MediaWiki stores "_" as a space
     taken.add(fn.lower())
     GEMP_OUT.mkdir(exist_ok=True)
@@ -716,7 +739,7 @@ if [ -d gemp-import-{batch} ] && ls gemp-import-{batch}/*.txt >/dev/null 2>&1; t
   docker exec swccg_wiki mkdir -p /tmp/gemp-import-{batch}
   docker cp gemp-import-{batch}/. swccg_wiki:/tmp/gemp-import-{batch}/
   docker exec swccg_wiki php maintenance/run.php importImages --user="$USER_NAME" \\
-    --comment="DeckTech {batch} GEMP importable decklists" --extensions=txt /tmp/gemp-import-{batch} || true
+    --comment="DeckTech {batch} GEMP importable decklists" --extensions=txt --overwrite /tmp/gemp-import-{batch} || true
   docker exec -u root swccg_wiki chown -R www-data:www-data /var/www/html/images || true
 fi
 bash apply-tsv.sh /opt/swccg-wiki/y-{batch}.tsv "DeckTech {batch}"
