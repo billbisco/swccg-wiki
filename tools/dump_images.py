@@ -71,7 +71,7 @@ def one(im: dict, out: Path, files_root: Path) -> tuple[str, tuple[str, str, str
     mime = im.get("mime") or ""
     if not any(mime.startswith(k) or mime == k.rstrip("/") for k in KEEP_MIME):
         return "skip", None
-    title = im.get("name") or ""
+    title = (im.get("name") or "").replace("_", " ")  # same title form as USAGE.tsv
     url = im.get("url") or ""
     if not title or not url:
         return "skip", None
