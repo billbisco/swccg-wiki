@@ -555,7 +555,10 @@ def player_page(d: dict, current: str | None) -> str:
         text = text[:cut] + " " + note + text[cut:] if cut > 0 else text
     text = sort_misc_rows(gd.add_misc_row(text, player_row(d)))
     text = gd.add_see_also(text, f"* [[{dest_title(d)}]]")
-    text = gd.add_source_line(text, gd.post_source_bullets(pid, lbl))
+    # Add each source bullet on its own so a rebuild adds only what's new (e.g. a Wayback line).
+    for line in gd.post_source_bullets(pid, lbl).splitlines():
+        if line.strip() and line not in text:
+            text = gd.add_source_line(text, line)
     return gd.add_category(text, d["date"][:4])
 
 
