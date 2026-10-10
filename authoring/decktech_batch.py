@@ -651,6 +651,15 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
             continue
         rows.append((q, t, None))
     code = GEMP_FORMAT.get(d["format"], "open_no_virtual")
+    allowed = gi.load_format_sets().get(code)
+    keep = []
+    for q, t, h in rows:  # a real card GEMP has no blueprint for is left out and named, not fatal
+        try:
+            gi.lookup(t, d["side"], allowed)
+            keep.append((q, t, h))
+        except KeyError:
+            omitted.append(t)
+    rows = keep
     try:
         xml, notes = gi.xml_for(rows, d["side"], code)
     except KeyError as e:
