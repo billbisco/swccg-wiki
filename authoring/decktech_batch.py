@@ -872,10 +872,10 @@ def cmd_learn(ids: list[str]) -> None:
                 raw[name] = {"card": r[1], "seen": 1}
                 by_key[name.casefold()] = name
                 added += 1
-            elif raw[k]["card"] == r[1]:
+            elif raw[k].get("card") == r[1]:
                 raw[k]["seen"] = raw[k].get("seen", 1) + 1
             else:
-                clash.append(f"{name!r}: has {raw[k]['card']!r}, deck {pid} says {r[1]!r}")
+                clash.append(f"{name!r}: has {raw[k].get('card', raw[k])!r}, deck {pid} says {r[1]!r}")
     NICKNAMES.write_text(json.dumps(dict(sorted(raw.items(), key=lambda kv: kv[0].casefold())), indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"learned {added} new nicknames ({len(raw)} total)")
     for c in clash:
