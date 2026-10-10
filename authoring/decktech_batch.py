@@ -834,7 +834,14 @@ def cmd_learn(ids: list[str]) -> None:
     added, clash = 0, []
     for pid in ids:
         d = load_deck(pid)
-        for r in d.get("cards", []) + d.get("shields", []):
+        rows = d.get("cards", []) + d.get("shields", [])
+        multi = {}  # a posted line dested to several cards ("lord maul 383-21") teaches nothing
+        for r in rows:
+            if len(r) >= 4:
+                multi.setdefault(str(r[3]), set()).add(r[1])
+        for r in rows:
+            if len(r) >= 4 and len(multi.get(str(r[3]), ())) > 1:
+                continue
             if len(r) < 4 or r[2] == "UNKNOWN" or not str(r[3]).startswith("posted: "):
                 continue
             posted = re.sub(r"\s*\((?:fuzzy|exact|nickname|\?)\)$", "", r[3][8:]).strip()
