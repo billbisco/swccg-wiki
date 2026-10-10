@@ -38,6 +38,12 @@ FORMATS_JSON = (
     / "swccgFormats.json"
 )
 
+# Cloud / repo-only runs: fall back to snapshots in authoring/gemp-data/.
+if not CARD_DB.exists():
+    CARD_DB = ROOT / "gemp-data" / "card_blueprint_database.json"
+if not FORMATS_JSON.exists():
+    FORMATS_JSON = ROOT / "gemp-data" / "swccgFormats.json"
+
 # Suggested filename tokens. Keep ASCII. PC GEMP import name = filename, max 40.
 FORMAT_ABBR = {
     "Premiere - A New Hope": "PANH",
@@ -304,6 +310,7 @@ def is_horizontal(card: dict) -> bool:
 
 # Wiki dest / Decipher slang -> GEMP printed title when they differ.
 TITLE_ALIAS = {
+    "Short-range Fighters": "Short Range Fighters",
     "What Are You Trying To Push On Us?": "What're You Tryin' To Push On Us?",
     "What're you trying to push on us?": "What're You Tryin' To Push On Us?",
     "R2 in Red 5": "Artoo-Detoo In Red 5",
