@@ -1,0 +1,614 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Game Players Network</title>
+	<script language="javascript" src="../js/common.js"></script>
+	<script language="javascript">
+		<!-- //
+		var strToRoot = "../";
+    
+		if(isNS){thisBrowser = "ns";}
+		else{thisBrowser = "ie";}
+		document.write("  <link rel=STYLESHEET href=\"../main_"+ thisBrowser +".css\" type=\"text/css\">  ");   
+		// -->
+    </script>
+</head>
+
+<body bgcolor="#ffffff" topmargin="0" rightmargin="0" bottommargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+
+
+<table cellpadding="2" cellspacing="0" border="0" width="100%" bgcolor="#000000">
+	<tr><td height="25">&nbsp;<a href="../default.asp"><b style="color:#cccccc">GPN Home</b></a></td>
+
+		<td align="center"><a href="../forum/default.asp" class="navTop">Forums</a></td>
+
+		<td align="center"><a href="../club/default.asp" class="navTop">Club/Group Locator</a></td>
+
+		<td align="center"><a href="../about/default.asp" class="navTop">About GPN</a></td>
+</tr>
+</table>
+
+
+
+<!-- Graphics: Backround -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#222222">
+	<tr><td><img src="../card/graphics/headers/starwarsHeader01.jpg" height="100" alt="" border="0"></td>
+		<td background="../card/graphics/headers/starwarsHeaderFill.jpg" width="100%"></td>
+		<td><img src="../card/graphics/headers/starwarsHeader02.jpg" height="100" alt="" border="0"></td></tr>
+	<tr><td colspan="3" bgcolor="#666666"><img src="../graphics/00.gif" width="1" height="1" alt="" border="0"></td></tr>
+</table>
+	
+<!-- Page Header -->
+	
+<table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#999999">
+	<tr><td><a href="../default.asp" class="navSub">&nbsp;Home</a> > 
+			<a href="./default.asp" class="navSub">Card Games</a>
+
+			> <a href="./games.asp?gm=starwars" class="navSub">Star Wars</a>
+
+		<td align="right" nowrap><a href="../search.asp?sct=card&gm=starwars&cat=decks">Search</a>&nbsp; &nbsp; &nbsp;</td>
+		</td></tr>
+	<tr><td bgcolor="#999999"><img src="../graphics/00.gif" width="1" height="1" alt="" border="0"></td></tr>
+	<tr><td bgcolor="#666666"><img src="../graphics/00.gif" width="1" height="1" alt="" border="0"></td></tr>
+	</td></tr>
+</table>
+<img src="../graphics/00.gif" width="1" height="10" alt="" border="0"><br>
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tr><td>&nbsp;</td>
+		<td width="145" valign="top" background="../graphics/bkgdLeftNav.gif">
+
+
+<!-- Navigation: Games -->
+				<table cellpadding="0" cellspacing="0" border="0" width="100%">
+				<tr><td colspan="2"><img src="../graphics/00.gif" width="150" height="1" alt="" border="0"><br>
+					<table cellpadding="0" cellspacing="1" border="0" bgcolor="#999999" width="100%">
+		<tr><td bgcolor="#cccccc" background="../graphics/sectionHeader/default_bkgd.gif" nowrap>&nbsp;<b>Star Wars</b></td></tr></table>
+
+				</td></tr>
+				<tr><td class="navLeft"><img src="../graphics/00.gif" width="3" height="1" alt="" border="0"></td><td>
+		
+							<a href="./decks.asp?gm=starwars" class="navLeft"><b>Decks</b></a><br>
+		&nbsp;&nbsp;&#149;<a href="./decks.asp?gm=starwars&cat=Standard" class="navLeft">Standard</a><br>&nbsp;&nbsp;&#149;<a href="./decks.asp?gm=starwars&cat=Theme%2FFun" class="navLeft">Theme/Fun</a><br>&nbsp;&nbsp;&#149;<a href="./decks.asp?gm=starwars&cat=Scenario" class="navLeft">Scenario</a><br>					
+							<a href="./reports.asp?gm=starwars" class="navLeft">Tournament Reports</a><br>
+							
+							<a href="./strategy.asp?gm=starwars" class="navLeft">Strategy Articles</a><br>
+		
+					<a href="../forum/showTopics.asp?ForumID=2" class="navLeft">Discussion</a><br>
+							
+							<a href="./features.asp?gm=starwars" class="navLeft">Features Archives</a><br>
+							
+							<a href="./news.asp?gm=starwars" class="navLeft">News Archives</a><br>
+		
+				</td></tr>
+			</table><p>&nbsp;<br>
+
+
+		<img src="../graphics/00.gif" width="1" height="60" alt="" border="0"><br>
+	<center>
+		<a href="http://www.posterplanet.net" target="_new"><img src="../ad0401_posterPlanet.jpg" width="140" height="133" border="0"></a>
+		<i style="font-size:8pt;color:#999999;">Site Sponsor</i>
+	</center><br>
+
+	
+	
+<!-- Main Body: Center -->
+			</td>
+	    <td><img src="../graphics/00.gif" width="5" height="1" alt="" border="0"></td>
+		<td valign="top"><img src="../graphics/0Grey.gif" width="1" height="250" alt="" border="0"></td>
+		<td><img src="../graphics/00.gif" width="10" height="1" alt="" border="0"></td>
+		<td width="100%" valign="top">
+
+	<script language="JavaScript">
+		function confirmAction(a_id, a_top){
+			var rsConfirm = false
+			rsConfirm = confirm("Are you certain you wish to remove this Message?");
+			if(rsConfirm == true){
+				if(a_top == 'rating'){
+				   window.location.href = "../submit/processRating.asp?act=delete&editID=" + a_id + "&top=decks&rurl=card/decks.asp?gm=starwars&ord=&pg=59"
+				} else {
+					window.location.href = "../submit/processSubmit.asp?act=delete&editID=" + a_id + "&top=" + a_top +"&rurl=card/decks.asp?gm=starwars&ord=&pg=59"
+				}
+			}
+		}
+	</script>
+
+
+			<img src="../graphics/00.gif" width="1" height="2" alt="" border="0"><br>
+			
+			<b class="pageTitle">
+				User-Submitted Decks
+			</b><br>
+			<table border="0" bgcolor="#666666" cellpadding="0" cellspacing="0" width="100%">
+				<tr><td><img src="../graphics/00.gif" width="1" height="1" alt="" border="0"></td></tr>
+			</table>
+			
+			<div class="navQuick" align="right">
+				<a href="#all_decks">All Decks</a> |
+				<a href="#ratings_legend">Ratings Legend</a>
+			</div><p>
+
+	<!-- Section: List All -->
+			<a name="all_decks"></a>
+						<table cellpadding="0" cellspacing="1" border="0" bgcolor="#999999" width="100%">
+		<tr><td width="100%" bgcolor="#cccccc" nowrap>&nbsp;<b>All Decks Listing</b><br></td></tr></table>
+
+			<img src="../graphics/00.gif" width="1" height="2" alt="" border="0"><br>
+			<table border="0" cellpadding="2" cellspacing="1" align="center" width="95%" bgcolor="#cccccc">
+				<tr><td class="listDesc" bgcolor="#ffffe1">Items are ordered by Date, you can change the sort by clicking on the bold header.</td></tr>
+			</table>			
+			<table border="0" cellpadding="2" cellspacing="2" align="center" width="95%">
+
+
+				<tr><td colspan="7" align="center">Select a Page: <a href="./decks.asp?gm=starwars&ord=&pg=58" title="View previous page">&lt;&lt;</a><a href="./decks.asp?gm=starwars&ord=&pg=1">&nbsp;1&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=2">&nbsp;2&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=3">&nbsp;3&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=4">&nbsp;4&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=5">&nbsp;5&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=6">&nbsp;6&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=7">&nbsp;7&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=8">&nbsp;8&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=9">&nbsp;9&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=10">&nbsp;10&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=11">&nbsp;11&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=12">&nbsp;12&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=13">&nbsp;13&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=14">&nbsp;14&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=15">&nbsp;15&nbsp;</a><br><a href="./decks.asp?gm=starwars&ord=&pg=16">&nbsp;16&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=17">&nbsp;17&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=18">&nbsp;18&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=19">&nbsp;19&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=20">&nbsp;20&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=21">&nbsp;21&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=22">&nbsp;22&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=23">&nbsp;23&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=24">&nbsp;24&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=25">&nbsp;25&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=26">&nbsp;26&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=27">&nbsp;27&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=28">&nbsp;28&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=29">&nbsp;29&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=30">&nbsp;30&nbsp;</a><br><a href="./decks.asp?gm=starwars&ord=&pg=31">&nbsp;31&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=32">&nbsp;32&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=33">&nbsp;33&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=34">&nbsp;34&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=35">&nbsp;35&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=36">&nbsp;36&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=37">&nbsp;37&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=38">&nbsp;38&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=39">&nbsp;39&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=40">&nbsp;40&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=41">&nbsp;41&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=42">&nbsp;42&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=43">&nbsp;43&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=44">&nbsp;44&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=45">&nbsp;45&nbsp;</a><br><a href="./decks.asp?gm=starwars&ord=&pg=46">&nbsp;46&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=47">&nbsp;47&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=48">&nbsp;48&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=49">&nbsp;49&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=50">&nbsp;50&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=51">&nbsp;51&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=52">&nbsp;52&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=53">&nbsp;53&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=54">&nbsp;54&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=55">&nbsp;55&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=56">&nbsp;56&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=57">&nbsp;57&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=58">&nbsp;58&nbsp;</a>&nbsp;<b>59</b>&nbsp;<a href="./decks.asp?gm=starwars&ord=&pg=60">&nbsp;60&nbsp;</a><br><a href="./decks.asp?gm=starwars&ord=&pg=61">&nbsp;61&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=62">&nbsp;62&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=63">&nbsp;63&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=60" title="View Next page">&gt;&gt;</a></td></tr>
+
+					</td></tr>
+				<tr bgcolor="#eeeeee">
+					<td colspan="2"><a href="./decks.asp?gm=starwars&ord=rate&cat="><b style="color:#666666;">Rating</b></a>&nbsp;</td>
+					<td colspan="2"><a href="./decks.asp?gm=starwars&ord=date&cat="><b style="color:#666666;">Date</b></a></td>
+					<td colspan="2"><a href="./decks.asp?gm=starwars&ord=title&cat="><b style="color:#666666;">Title/Description</b></a></td>
+					<td nowrap align="right"><a href="./decks.asp?gm=starwars&ord=info&cat="><b style="color:#666666;">Info</b></a></td>
+				</tr>			
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=300" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/12/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=300" class="listName" title="View this Deck">WHAT!!! Another LS combat deck!!! WHAT!!! I said anothe... </a>&nbsp;<br>
+						<span class="listDesc">
+							Yep, another LS combat deck!
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Mr%2E+Monday+Night" class="listAuthor" title="Click to View Profile">Mr. Monday Night</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=299" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/12/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=299" class="listName" title="View this Deck">Droid&#39;s To The Left Of Me...Droid&#39;s To The Righ... </a>&nbsp;<br>
+						<span class="listDesc">
+							This deck is actually a lot larger than the 60 card limit, but I am hoping I can get some reviews and some advice on what to cut and what to add. Thanks.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Mr%2E+Monday+Night" class="listAuthor" title="Click to View Profile">Mr. Monday Night</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=296" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/12/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=296" class="listName" title="View this Deck">Not A Normal Deal</a>&nbsp;<br>
+						<span class="listDesc">
+							A Dark Deal deck based on the Real happenings in Empire.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=DarthShadow" class="listAuthor" title="Click to View Profile">DarthShadow</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=294" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/12/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=294" class="listName" title="View this Deck">&quot;Ewok Gliders for sale!&quot;</a>&nbsp;<br>
+						<span class="listDesc">
+							Old school Spaceport Speeders deck with some slight modifications.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=dr%5Fdivot" class="listAuthor" title="Click to View Profile">dr_divot</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=278" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/12/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=278" class="listName" title="View this Deck">Watch Out For That Hole!!!!  :P </a>&nbsp;<br>
+						<span class="listDesc">
+							luuuke, luuuuuke, dont listen to him, stay in the hole, stay in the hole...
+no, of course its not carbon freeze, just stay in that hole away from your father, errr, vader, stay in there away from vader...
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Winsafra" class="listAuthor" title="Click to View Profile">Winsafra</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=264" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/11/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=264" class="listName" title="View this Deck">The Lollipop Guild</a>&nbsp;<br>
+						<span class="listDesc">
+							First off, let me explain the title.  It&#39;s from the Wizard of Oz, and is from the song sung by the munchkins when Dorothy lands her house on the witch.  Anyway, Ewoks always seem to remind me of those little munchkins, so...on to the deck...
+
+An Ewo... [ <a href="./decks.asp?gm=starwars&id=264" class="listName" title="View this item">more</a> ]
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=dr%5Fdivot" class="listAuthor" title="Click to View Profile">dr_divot</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=244" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/11/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=244" class="listName" title="View this Deck">Enter the Beraucrats V2.0 (LSEN)</a>&nbsp;<br>
+						<span class="listDesc">
+							LS senate with R3 injections, just a nice deck that i am taking ti chase the can so help is needed
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=silentjames" class="listAuthor" title="Click to View Profile">silentjames</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=241" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=241" class="listName" title="View this Deck">The Jedi Council laughs at you, and asks &quot;Why Both... </a>&nbsp;<br>
+						<span class="listDesc">
+							i didnt think i&#39;d post this deck again, but i revamped it a little and posted it here specifically for The Jedi Knight to see, and didnt you notice that my Dark Deal deck is rated #3 here Jedi? please try again :P
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Winsafra" class="listAuthor" title="Click to View Profile">Winsafra</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=239" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=239" class="listName" title="View this Deck">Defending the Sacred Land</a>&nbsp;<br>
+						<span class="listDesc">
+							All the Jedi defend Tatooine from the evil Dark Side.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Ruwon" class="listAuthor" title="Click to View Profile">Ruwon</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=238" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=238" class="listName" title="View this Deck">EBOP</a>&nbsp;<br>
+						<span class="listDesc">
+							Kind of like EBOX but with Podracing...thus EBOP.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=mc9457" class="listAuthor" title="Click to View Profile">mc9457</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=236" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=236" class="listName" title="View this Deck">Lott Dod&#39;s Senate/BIG Blue beatdown (DSEN)</a>&nbsp;<br>
+						<span class="listDesc">
+							This has all the makings of a quality all around deck.  It has equal parts ground and space with the added bonuses of the Senate.  I would like your opinion and any suggestions would be great.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Darth+Aragorn" class="listAuthor" title="Click to View Profile">Darth Aragorn</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=225" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=225" class="listName" title="View this Deck">Maul&#39;s bad day</a>&nbsp;<br>
+						<span class="listDesc">
+							lightside lightsaber combat/beatdown/podrace
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=evilbrat" class="listAuthor" title="Click to View Profile">evilbrat</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=220" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=220" class="listName" title="View this Deck">Hunter&#39;s Deal</a>&nbsp;<br>
+						<span class="listDesc">
+							A bounty hunting deck based on TDIGWATT
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Ultima1" class="listAuthor" title="Click to View Profile">Ultima1</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=214" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=214" class="listName" title="View this Deck">Solid HD Qui style (LLSC)</a>&nbsp;<br>
+						<span class="listDesc">
+							This deck has it all. Basically this drains and harasse the darkside in type2 enviroment. Should do well considering the amount of force activation and power. very tech as well.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=hjedi" class="listAuthor" title="Click to View Profile">hjedi</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=213" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=213" class="listName" title="View this Deck">SOLID DeStH 4 LuKe`S PaLs (DLSC)</a>&nbsp;<br>
+						<span class="listDesc">
+							Maul basically kick`s Luke in between the legs as you win.. Seroiusly this deck revos around Maul
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=hjedi" class="listAuthor" title="Click to View Profile">hjedi</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=211" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/10/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=211" class="listName" title="View this Deck">Hunt down And Rape the Jedi, errr, wait, what jedi, the... </a>&nbsp;<br>
+						<span class="listDesc">
+							the dark side, much more enticing, much more appealing, much more powerful, whats not to like? join our ranks now and gain the benefits of 2 dark jedi masters! how could you possibly lose? :P
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Winsafra" class="listAuthor" title="Click to View Profile">Winsafra</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=210" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/9/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=210" class="listName" title="View this Deck">Let&#39;s Duel (HDADTJ)</a>&nbsp;<br>
+						<span class="listDesc">
+							This classic Hunt Down Deck goes out to duel.  It has beaten even saber combat decks.  Win the Podrace and let the bad guys take over.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Capt%5FWaRPed" class="listAuthor" title="Click to View Profile">Capt_WaRPed</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=208" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/9/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=208" class="listName" title="View this Deck">Dark Side: Any Methods Necessary</a>&nbsp;<br>
+						<span class="listDesc">
+							Bounty Hunters
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=MistHunter" class="listAuthor" title="Click to View Profile">MistHunter</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=207" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/9/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=207" class="listName" title="View this Deck">XTR: Xizor Team Racing</a>&nbsp;<br>
+						<span class="listDesc">
+							This is a post-RIII pre-Theed Palace Black Sun Racing deck, its pretty good.  hope u like it.
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=craiger186" class="listAuthor" title="Click to View Profile">craiger186</a><br>
+						
+					</td>
+				</tr>
+
+				<tr>
+					<td nowrap valign="top"><a href="./decks.asp?gm=starwars&id=203" class="listRating" title="View this Deck"><b><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></a></td>
+					<td>&nbsp;</td>
+					<td nowrap valign="top" class="listDate">12/9/2001</td>
+					<td>&nbsp;</td>
+					<td width="100%" valign="top">
+						<a href="./decks.asp?gm=starwars&id=203" class="listName" title="View this Deck">RTP Deck for review been working on it for along time l... </a>&nbsp;<br>
+						<span class="listDesc">
+							its a mains and toys RTP deck
+						</span></td>
+					<td>&nbsp;</td>
+					<td align="right" class="listDesc" valign="top">
+						<a href="../member/profile.asp?id=Tonz+of+Fun" class="listAuthor" title="Click to View Profile">Tonz of Fun</a><br>
+						
+					</td>
+				</tr>
+				
+
+				<tr bgcolor="#eeeeee">
+					<td colspan="2"><a href="./decks.asp?gm=starwars&ord=rate&cat="><b style="color:#666666;">Rating</b></a>&nbsp;</td>
+					<td colspan="2"><a href="./decks.asp?gm=starwars&ord=date&cat="><b style="color:#666666;">Date</b></a></td>
+					<td colspan="2"><a href="./decks.asp?gm=starwars&ord=title&cat="><b style="color:#666666;">Title/Description</b></a></td>
+					<td nowrap align="right"><a href="./decks.asp?gm=starwars&ord=info"><b style="color:#666666;">Info</b></a></td>
+				</tr>
+
+				<tr><td colspan="7" align="center">Select a Page: <a href="./decks.asp?gm=starwars&ord=&pg=58" title="View previous page">&lt;&lt;</a><a href="./decks.asp?gm=starwars&ord=&pg=1">&nbsp;1&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=2">&nbsp;2&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=3">&nbsp;3&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=4">&nbsp;4&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=5">&nbsp;5&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=6">&nbsp;6&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=7">&nbsp;7&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=8">&nbsp;8&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=9">&nbsp;9&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=10">&nbsp;10&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=11">&nbsp;11&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=12">&nbsp;12&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=13">&nbsp;13&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=14">&nbsp;14&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=15">&nbsp;15&nbsp;</a><br><a href="./decks.asp?gm=starwars&ord=&pg=16">&nbsp;16&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=17">&nbsp;17&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=18">&nbsp;18&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=19">&nbsp;19&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=20">&nbsp;20&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=21">&nbsp;21&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=22">&nbsp;22&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=23">&nbsp;23&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=24">&nbsp;24&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=25">&nbsp;25&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=26">&nbsp;26&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=27">&nbsp;27&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=28">&nbsp;28&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=29">&nbsp;29&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=30">&nbsp;30&nbsp;</a><br><a href="./decks.asp?gm=starwars&ord=&pg=31">&nbsp;31&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=32">&nbsp;32&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=33">&nbsp;33&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=34">&nbsp;34&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=35">&nbsp;35&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=36">&nbsp;36&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=37">&nbsp;37&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=38">&nbsp;38&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=39">&nbsp;39&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=40">&nbsp;40&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=41">&nbsp;41&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=42">&nbsp;42&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=43">&nbsp;43&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=44">&nbsp;44&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=45">&nbsp;45&nbsp;</a><br><a href="./decks.asp?gm=starwars&ord=&pg=46">&nbsp;46&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=47">&nbsp;47&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=48">&nbsp;48&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=49">&nbsp;49&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=50">&nbsp;50&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=51">&nbsp;51&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=52">&nbsp;52&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=53">&nbsp;53&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=54">&nbsp;54&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=55">&nbsp;55&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=56">&nbsp;56&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=57">&nbsp;57&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=58">&nbsp;58&nbsp;</a>&nbsp;<b>59</b>&nbsp;<a href="./decks.asp?gm=starwars&ord=&pg=60">&nbsp;60&nbsp;</a><br><a href="./decks.asp?gm=starwars&ord=&pg=61">&nbsp;61&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=62">&nbsp;62&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=63">&nbsp;63&nbsp;</a><a href="./decks.asp?gm=starwars&ord=&pg=60" title="View Next page">&gt;&gt;</a></td></tr>
+			</table>
+			<img src="../graphics/00.gif" width="1" height="1" alt="" border="0">
+			<p>	
+
+
+	<!-- Rating Legend -->
+					
+			<a name="ratings_legend"></a>
+						<table cellpadding="0" cellspacing="1" border="0" bgcolor="#999999" width="100%">
+		<tr><td width="100%" bgcolor="#cccccc" nowrap>&nbsp;<b>Ratings Legend</b><br></td><td bgcolor="#dfdfdf" align="right" nowrap>&nbsp;<a href="#top" class="navSectionHeader">Back to Top</a>&nbsp;</td></tr></table>
+	
+			<table border="0" cellpadding="0" cellspacing="2" align="center" width="95%">
+
+				<tr><td valign="top"><b style="color:#ff0000;"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></td>
+					<td>&nbsp;</td>
+					<td class="listDescription"><b class="listTitle">World Championship Caliber</b> - A truly exceptional design. This deck should perform well at the top level tournaments in the world.</td>
+					</tr>
+
+				<tr><td valign="top"><b style="color:#ff0000;"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></td>
+					<td>&nbsp;</td>
+					<td class="listDescription"><b class="listTitle">Expert Level Deck</b> - Should do well in the most competitive environment.</td>
+					</tr>
+
+				<tr><td valign="top"><b style="color:#ff0000;"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></td>
+					<td>&nbsp;</td>
+					<td class="listDescription"><b class="listTitle">Advanced Level Deck</b> - With minor changes could be even better.</td>
+					</tr>
+
+				<tr><td valign="top"><b style="color:#ff0000;"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></td>
+					<td>&nbsp;</td>
+					<td class="listDescription"><b class="listTitle">Beginner Level Deck</b> - This deck looks fun to play but not up to tournament standards.</td>
+					</tr>
+
+				<tr><td valign="top"><b style="color:#ff0000;"><img src="../card/graphics/icons/starwars_10.gif" border="0"><img src="..//graphics/00.gif" width="1" height="1" border="0"></b></td>
+					<td>&nbsp;</td>
+					<td class="listDescription"><b class="listTitle">Start Over</b> - Doesn't even look fun to play in pick up games.</td>
+					</tr>
+
+			</table>
+			<img src="../graphics/00.gif" width="1" height="1" alt="" border="0">
+			<p>	
+
+
+						
+<!-- Main Body:  Members Info -->
+			</td>
+	    <td><img src="../graphics/00.gif" width="10" height="1" alt="" border="0"></td>
+		<td valign="top"><img src="../graphics/0GreyLight.gif" width="1" height="250" alt="" border="0"></td>
+		<td><img src="../graphics/00.gif" width="10" height="1" alt="" border="0"></td>
+		<td width="140" valign="top">
+			<img src="../graphics/00.gif" width="140" height="1" alt="" border="0"><br>
+
+
+<!-- Member: Login  -->
+
+			<table cellspacing="1" border="0" bgcolor="#999999" width="100%" align="center">
+				<tr><td bgcolor="#dddddd" background="../graphics/sectionHeader/default_bkgd.gif"" align="center">Member Center</td></tr>
+				<tr><td bgcolor="#ffffff" class="sideText">
+						<form method="post" action="../member/login.asp">
+							<input type="hidden" name="rurl" value="card/decks.asp?gm=starwars&ord=&pg=59">
+							<input type="hidden" name="act" value="auth">
+							&nbsp;Log In:<br>
+							<center><input size="15" name="uid" value=""></center><br>
+							&nbsp;Password:<br>
+							<center><input type="password" size="15" name="pwd" value=""><br>
+							<span class="whatsnew"><input type="checkbox" name="remember" value="true">&nbsp;Remember Login</center><br>
+							<center><input type="submit" value="   Log In   "></center>
+							
+						</form>
+						</td></tr>
+			</table><p>
+			
+<!-- Member: Registration  -->
+			<table cellspacing="1" border="0" bgcolor="#999999" width="100%" align="center">
+				<tr><td bgcolor="#dddddd" background="../graphics/sectionHeader/default_bkgd.gif"" align="center"><b>Not A Member?</b></td></tr>
+				<tr><td bgcolor="#ffffff" class="sideText">
+						<table width="130" cellpadding="0" cellspacing="0" border="0" align="center">
+							<tr><td align="center"><b><a href="../member/terms.asp">Register Now!</a></b></td></tr>
+							<tr><td><img src="../graphics/00.gif" width="1" height="4" alt="" border="0"></td></tr>
+						</table>
+					</td></tr>
+			</table><p>	
+
+
+<!-- Member: Site Rules  -->
+			<table cellpadding="0" cellspacing="0" border="0">
+				<tr><td colspan="2"><b>Site Rules</b></td></tr>
+				<tr><td valign="top">1.</td><td class="sideText">No Bad language.<br></td></tr>
+				<tr><td valign="top">2.</td><td class="sideText">No flaming. Constructive criticism is encouraged.</td></tr>
+			</table>
+
+
+
+<!-- Page Footer and Completion -->
+	
+<!-- Main Body: Closing & Legal information -->
+			</td>
+		<td><img src../graphics/00.gif" width="10" height="1"></td></tr>
+	</table><p><table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#cccccc">
+	<tr><td bgcolor="#666666"><img src="../graphics/00.gif" width="1" height="1" alt="" border="0"><br></td></tr>
+	<tr><td align="center" class="noteText">
+		This site contains Intellectual property, artwork, and photography of whose copyright is
+		held by their respective manufacturer(s) and/or their licensees.  
+		No rights are given or implied, and no claims are made to the copyright or ownership of said property.
+</td></tr>
+	<tr><td bgcolor="#666666"><img src="../graphics/00.gif" width="1" height="1" alt="" border="0"><br></td></tr>
+</table>
+		
+</body>
+</html>
