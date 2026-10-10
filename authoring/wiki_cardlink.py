@@ -408,3 +408,83 @@ def infer_side_from_page(text: str, title: str = "") -> str:
     if re.search(r"\bDark Side\b", text[:400]):
         return "Dark"
     return ""
+
+
+# ---------------------------------------------------------------- Defensive Shields (2026-10-10)
+# Decipher printed Defensive Shields only in Reflections III. Most share a name with an older
+# Effect (Battle Plan, Aim High, Your Insight Serves You Well, Resistance, ...), and the plain-name
+# wiki page is that older card. A "Defensive Shields" section must link the shield page, which the
+# wiki titles "X (Reflections III: A Collector's Bounty)" or "X (Light|Dark)"; shields printed only
+# in Reflections III keep the plain name. Looked up live (cached) so new pages are found.
+REF3 = "Reflections III: A Collector's Bounty"
+_SHIELD_CACHE: dict[str, str | None] = {}
+
+
+def _wiki_raw(title: str) -> str:
+    import urllib.parse
+    import urllib.request
+    url = "https://wiki.swccg.com/index.php?" + urllib.parse.urlencode({"title": title, "action": "raw"})
+    req = urllib.request.Request(url, headers={"User-Agent": "swccg-wiki-dest/1.0 (shield links)"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            return r.read().decode("utf-8")
+    except Exception:  # noqa: BLE001 - missing page = 404
+        return ""
+
+
+def shield_page(name: str, side: str) -> tuple[str, str] | None:
+    """(page title, image) of the Reflections III Defensive Shield `name` for side Light|Dark."""
+    side = "Dark" if side.upper().startswith("D") else "Light"
+    for page in (f"{name} ({REF3})", f"{name} ({side})", name):
+        if page not in _SHIELD_CACHE:
+            txt = _wiki_raw(page)
+            ok = "type=Defensive Shield" in txt and f"side={side}" in txt and f"set={REF3}" in txt
+            m = re.search(r"^\|image=(.+)$", txt, re.M)
+            _SHIELD_CACHE[page] = m.group(1).strip() if ok and m else None
+        if _SHIELD_CACHE[page]:
+            return page, _SHIELD_CACHE[page]
+    return None
+
+
+def fix_shield_section(text: str) -> str:
+    """Point every card link inside a 'Defensive Shields' section ({{CardLink}} or [[link]]) at the
+    Reflections III shield page. Other sections are untouched."""
+    out, pos = [], 0
+    for m in re.finditer(r"^(=+) *Defensive Shields *\1[ \t]*$", text, re.M):
+        if m.start() < pos:
+            continue
+        level = len(m.group(1))
+        nxt = re.search(rf"^={{1,{level}}}[^=]", text[m.end():], re.M)
+        stop = m.end() + (nxt.start() if nxt else len(text) - m.end())
+        out.append(text[pos:m.end()])
+        out.append(_fix_shields_in(text[m.end():stop]))
+        pos = stop
+    out.append(text[pos:])
+    return "".join(out)
+
+
+def _shield_any_side(name: str, side_hint: str | None) -> tuple[str, str] | None:
+    if side_hint:
+        return shield_page(name, side_hint)
+    hits = [h for h in (shield_page(name, "Light"), shield_page(name, "Dark")) if h]
+    return hits[0] if len(hits) == 1 else None
+
+
+def _fix_shields_in(section: str) -> str:
+    def card(cm: re.Match) -> str:
+        dest, img, label = cm.group(1).strip(), cm.group(2).strip(), (cm.group(3) or "").strip()
+        name = label or dest
+        if "(V)" in name or REF3 in dest:
+            return cm.group(0)
+        hit = _shield_any_side(name, "Dark" if "-D-" in img else "Light" if "-L-" in img else None)
+        return cardlink(hit[0], hit[1], name) if hit and hit[0] != dest else cm.group(0)
+
+    def link(lm: re.Match) -> str:
+        dest, label = lm.group(1).strip(), (lm.group(2) or "").strip()
+        if dest.startswith(("File:", "Category:", ":")) or "(V)" in dest or REF3 in dest:
+            return lm.group(0)
+        hit = _shield_any_side(dest, None)
+        return f"[[{hit[0]}|{label or dest}]]" if hit and hit[0] != dest else lm.group(0)
+
+    section = re.sub(r"\{\{CardLink\|([^|}]+)\|([^|}]+)(?:\|label=([^}]+))?\}\}", card, section)
+    return re.sub(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", link, section)

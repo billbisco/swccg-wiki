@@ -6638,6 +6638,7 @@ def write_page(title: str, body: str) -> Path:
     path = PAGES / slug_file(title)
     if not body.endswith("\n"):
         body += "\n"
+    body = cl.fix_shield_section(body)  # shields -> Reflections III shield pages (2026-10-10)
     path.write_text(body.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
     print("WROTE", path.name)
     return path

@@ -85,6 +85,8 @@ def write_page(title: str, body: str) -> None:
                 if re.search(pat, text):
                     text = re.sub(pat, rf"\1\n{line}", text, count=1)
                     break
+    import wiki_cardlink as cl
+    text = cl.fix_shield_section(text)  # shields -> Reflections III shield pages (2026-10-10)
     path.write_text(text.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
     TITLES.append((title, f"pages/{path.name}"))
 
