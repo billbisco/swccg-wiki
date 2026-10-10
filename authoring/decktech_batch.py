@@ -95,7 +95,9 @@ def api(**kw) -> dict:
 def live_text(title: str) -> str | None:
     d = api(action="query", prop="revisions", rvprop="content", rvslots="main", titles=title)
     p = d["query"]["pages"][0]
-    if p.get("missing"):
+    if p.get("missing") or p.get("invalid") or "revisions" not in p:
+        if p.get("invalid"):
+            print("INVALID TITLE", repr(title), p.get("invalidreason", ""))
         return None
     return p["revisions"][0]["slots"]["main"]["content"]
 
