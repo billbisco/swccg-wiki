@@ -74,7 +74,23 @@ class Wiki:
         if "error" in d:
             return f"ERROR {d['error'].get('code')}: {d['error'].get('info', '')[:120]}"
         e = d["edit"]
-        return "nochange" if e.get("nochange") else ("created" if e.get("new") else "edited")
+        status = "nochange" if e.get("nochange") else ("created" if e.get("new") else "edited")
+        return status + self.review(title)
+
+    def review(self, title: str) -> str:
+        """FlaggedRevs autoreview skips new pages and edits on top of an unreviewed revision;
+        review the current revision explicitly (Holocron Claude has the review right)."""
+        p = self.get(action="query", titles=title, prop="flagged|revisions", rvprop="ids")["query"]["pages"][0]
+        f = p.get("flagged")
+        if p.get("missing") or "revisions" not in p:
+            return ""
+        if f is not None and not f.get("pending_since"):
+            return ""
+        d = self.post(action="review", revid=str(p["revisions"][0]["revid"]), flag_accuracy="1",
+                      comment="Holocron Claude batch apply", token=self.csrf)
+        if "error" in d:
+            return f" (review ERROR {d['error'].get('code')})"
+        return " (reviewed)"
 
     def upload(self, path: Path, comment: str) -> str:
         boundary = uuid.uuid4().hex
