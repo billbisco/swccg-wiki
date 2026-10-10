@@ -13,7 +13,7 @@ Workflow (see SKILL swccg-wiki § DeckTech):
     python decktech_batch.py wayback 22698 22685 ...   # run in background; fills decktech-wayback.json
     python decktech_batch.py draft 22698                # skeleton decktech-decks/22698.json to finish by hand
     python decktech_batch.py build dt-batch-01 22698 22685 ...   # pages/ + y-dt-batch-01.tsv + tar
-    python decktech_batch.py check y-dt-batch-01.tsv    # after apply: reviewed + no new red links
+    python decktech_batch.py check y-dt-batch-01.tsv 22698 22685 ...  # after apply: reviewed, red links; records ids in decktech-live.json
 
 Apply on the VPS exactly like other batches: scp the tar + apply-tsv.sh, run
 `apply-tsv.sh y-dt-<batch>.tsv "<summary>"`.
@@ -50,6 +50,7 @@ for _k, _v in EXTRA_ORIGINAL_VS.items():
 DECKS = ROOT / "decktech-decks"
 POSTS = ROOT / "decktech-posts"
 WAYBACK_FILE = ROOT / "decktech-wayback.json"
+LIVE_FILE = ROOT / "decktech-live.json"  # ids verified live by `check`; hub/format pages always include them
 NICKNAMES = ROOT / "card_nicknames.json"
 API = "https://wiki.swccg.com/api.php"
 UA = {"User-Agent": "swccg-wiki-dest/1.0 (wiki.swccg.com historian)"}
@@ -485,10 +486,33 @@ def player_page(d: dict, current: str | None) -> str:
 [[Category:People]]
 [[Category:{d['date'][:4]}]]
 """
-    text = gd.add_misc_row(current, player_row(d))
+    text = current
+    note = d.get("player_page_note")
+    if note and note not in text:
+        cut = text.find("\n\n== ")
+        text = text[:cut] + " " + note + text[cut:] if cut > 0 else text
+    text = sort_misc_rows(gd.add_misc_row(text, player_row(d)))
     text = gd.add_see_also(text, f"* [[{dest_title(d)}]]")
     text = gd.add_source_line(text, gd.post_source_bullets(pid, lbl))
     return gd.add_category(text, d["date"][:4])
+
+
+def sort_misc_rows(text: str) -> str:
+    """Keep a player's Miscellaneous decklists table oldest-first."""
+    i = text.find("== Miscellaneous decklists ==")
+    if i < 0:
+        return text
+    head_end = text.find("|-\n|", i)
+    end = text.find("\n|}", i)
+    rows = [r.rstrip("\n") for r in text[head_end:end].split("|-\n") if r.strip()]
+
+    def key(r: str):
+        m = re.match(r"\|\s*(\d{1,2}) (\w+) (\d{4})", r)
+        if not m:
+            return (9999, 0, 0)
+        return (int(m.group(3)), time.strptime(m.group(2), "%B").tm_mon, int(m.group(1)))
+    rows.sort(key=key)
+    return text[:head_end] + "".join(f"|-\n{r}\n" for r in rows).rstrip("\n") + text[end:]
 
 
 def hub_row(d: dict) -> tuple[str, str]:
@@ -568,6 +592,7 @@ def cmd_build(batch: str, ids: list[str]) -> None:
         path = gd.write_page(title, body)
         titles.append((title, f"pages/{path.name}"))
 
+    players: dict[str, str] = {}
     for d in decks:
         qty = sum(int(r[0]) for r in d["cards"])
         print(f"{d['id']} {dest_title(d)} qty={qty}")
@@ -575,14 +600,26 @@ def cmd_build(batch: str, ids: list[str]) -> None:
         emit(dest_title(d), deck_page(d))
         if d.get("player_page") == "none":
             continue
-        cur = None if d.get("player_page") == "new" else live_text(d["player"])
-        if d.get("player_page") == "new" and live_text(d["player"]) is not None:
-            raise SystemExit(f"{d['player']} already exists on the wiki; set player_page to existing")
-        emit(d["player"], player_page(d, cur))
-    emit("DeckTech decks", insert_hub_rows(gd.decktech_decks(), decks))
-    for fmt in sorted({d["format"] for d in decks}):
+        if d["player"] in players:  # several decks by one player in this batch
+            cur = players[d["player"]]
+        else:
+            cur = None if d.get("player_page") == "new" else live_text(d["player"])
+            if d.get("player_page") == "new" and live_text(d["player"]) is not None:
+                raise SystemExit(f"{d['player']} already exists on the wiki; set player_page to existing")
+        players[d["player"]] = player_page(d, cur)
+    for name, body in players.items():
+        emit(name, body)
+    # Hub + format pages are rebuilt from generate_decktech.py, so they must carry every
+    # data-file deck already live (ledger) plus this batch — not just this batch.
+    live_ids = [str(i) for i in json.loads(LIVE_FILE.read_text(encoding="utf-8"))] if LIVE_FILE.exists() else []
+    every = {str(d["id"]): d for d in [load_deck(i) for i in live_ids if i not in ids] + decks}
+    for d in every.values():
+        register_wayback(d)
+    all_decks = list(every.values())
+    emit("DeckTech decks", insert_hub_rows(gd.decktech_decks(), all_decks))
+    for fmt in sorted({d["format"] for d in all_decks}):
         base = getattr(gd, FORMAT_BUILDERS[fmt])()
-        emit(fmt, insert_format_sentences(base, fmt, [d for d in decks if d["format"] == fmt]))
+        emit(fmt, insert_format_sentences(base, fmt, [d for d in all_decks if d["format"] == fmt]))
     seen, lines = set(), []
     for t, rel in titles:
         if t not in seen:
@@ -598,7 +635,7 @@ def cmd_build(batch: str, ids: list[str]) -> None:
     print("TSV", tsv.name, "n", len(lines), "TAR", tar.name)
 
 
-def cmd_check(tsv: str) -> None:
+def cmd_check(tsv: str, ids: list[str] | None = None) -> None:
     titles = [l.split("\t")[0] for l in Path(tsv).read_text(encoding="utf-8").splitlines() if l.strip()]
     bad = 0
     for i in range(0, len(titles), 40):
@@ -614,6 +651,11 @@ def cmd_check(tsv: str) -> None:
         if red:
             print("RED", t, red[:8])
     print(f"checked {len(titles)} not reviewed {bad}")
+    if ids and not bad:
+        led = set(json.loads(LIVE_FILE.read_text(encoding="utf-8"))) if LIVE_FILE.exists() else set()
+        led |= {int(i) for i in ids}
+        LIVE_FILE.write_text(json.dumps(sorted(led)) + "\n", encoding="utf-8")
+        print("LEDGER", sorted(led))
 
 
 def main(argv: list[str]) -> None:
@@ -630,7 +672,7 @@ def main(argv: list[str]) -> None:
     elif cmd == "build":
         cmd_build(args[0], args[1:])
     elif cmd == "check":
-        cmd_check(args[0])
+        cmd_check(args[0], args[1:])
     else:
         raise SystemExit(__doc__)
 

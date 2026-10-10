@@ -226,7 +226,7 @@ WEHNER_LS_TITLE = "Matt Wehner Good PunJab Hunting"
 MANN_DS_TITLE = "Zach Mann None shall pass choke damn I guess you can"
 BHASKER_DS_TITLE = "Arvind Bhasker Maul’s Combat"
 KESKIC_LS_TITLE = "Vjeko Keskic Rumble In The Bronx With Mains"
-BOWMAN_DS_TITLE = "Geoff Bowman BHBM - Bastard He Bit Me - Well that’s cuz you won"
+BOWMAN_DS_TITLE = "Geoff Bowman DS"  # published title withheld (Bill 2026-10-10)
 WEHNER_DS_TITLE = "Matt Wehner Court Of the Vile Gangsta - Limp Bizkit Style"
 WODICKA_DS_TITLE = "Chris Wodicka 6th place Coruscant regionals"
 MCCOMBIE_LS_TITLE = "Adam McCombie Throne Room Mains So Hot Right Now"
@@ -246,7 +246,7 @@ ATKIN_DS_TITLE = "2002 Alderaan Regionals Clayton Atkin Atkins’ Alderaan 2nd P
 HUNTER_LS_TITLE = "2002 Vegas DPC Brian Hunter LS Senate done RIGHT aka Ghhhks Away"
 HT_LS_TITLE = "Matthew Harrison-Trainor Secret Siths Profit"
 JURCOVIC_WATD_TITLE = "Peter Jurcovic There Are Those Droidekas"
-HAYWARD_LS_TITLE = "Taylor Hayward I like blowin sht up"
+HAYWARD_LS_TITLE = "Taylor Hayward LS"  # published title withheld (Bill 2026-10-10)
 BLAKE_DS_TITLE = "Lewis Blake YEEeeah I've got the Hoth (Big) Blues Baby"
 JACOB_BHBM_TITLE = "Jacob Taylor Jacob's BHBM aka Blame Canada"
 SCOTT_DS_TITLE = "Drew Scott BHBM how to kill combat"
@@ -6548,11 +6548,8 @@ def wiki_card(title: str, side: str) -> str:
         "Coruscant",
         "Naboo",
         "Bespin",
-        "Cloud City",
-        "Death Star",
-        "Executor",
         "Lando Calrissian",
-    }:
+    }:  # Executor / Death Star / Cloud City exist only as Dark cards: plain titles (no "(Dark)" page)
         dest = f"{title} (Dark)"
         return cl.wrap(title, side, dest=dest, label=title)
     if " / " in dest:
@@ -8569,7 +8566,7 @@ Tables match [[Decipher deck designs]]: tournament rows when the post names an e
 |-
 | 5/11/02 || [[Premiere - Original VS1]] || [[{BLAKE_DS_TITLE}|YEEeeah I've got the Hoth (Big) Blues Baby]] || [[Dark]] || [[Lewis Blake]]
 |-
-| 5/13/02 || [[Premiere - Original VS1]] || [[{HAYWARD_LS_TITLE}|I like blowin sht up]] || [[Light]] || [[Taylor Hayward]]
+| 5/13/02 || [[Premiere - Original VS1]] || [[{HAYWARD_LS_TITLE}]] || [[Light]] || [[Taylor Hayward]]
 |-
 | 5/14/02 || [[Premiere - Original VS1]] || [[{JURCOVIC_WATD_TITLE}|There Are Those Droidekas]] || [[Dark]] || [[Peter Jurcovic]]
 |-
@@ -8601,7 +8598,7 @@ Tables match [[Decipher deck designs]]: tournament rows when the post names an e
 |-
 | 6/9/02 || [[Premiere - Original VS2]] || [[{WEHNER_DS_TITLE}|Court Of the Vile Gangsta - Limp Bizkit Style]] || [[Dark]] || [[Matt Wehner]]
 |-
-| 6/9/02 || [[Premiere - Original VS2]] || [[{BOWMAN_DS_TITLE}|BHBM - Bastard He Bit Me - Well that’s cuz you won]] || [[Dark]] || [[Geoff Bowman]]
+| 6/9/02 || [[Premiere - Original VS2]] || [[{BOWMAN_DS_TITLE}]] || [[Dark]] || [[Geoff Bowman]]
 |-
 | 6/10/02 || [[Premiere - Original VS2]] || [[{KESKIC_LS_TITLE}|Rumble In The Bronx With Mains]] || [[Light]] || [[Vjeko Keskic]]
 |-
@@ -12043,12 +12040,11 @@ def bowman_ds_page() -> str:
     start = wiki_card("Bring Him Before Me / Take Your Father's Place", "DARK")
     published = "BHBM - Bastard He Bit Me - Well that’s cuz you won"
     desc = "Classic Ghetto BMBM Deck with tons of battle damage potential."
-    return f"""'''{BOWMAN_DS_TITLE}''' is the [[Dark]] constructed list [[Geoff Bowman]] posted on DeckTech.{post_ref("dt-23847", 23847, published, 'Geoff "GG BLADE" Bowman, 9 June 2002')}
+    return f"""'''{BOWMAN_DS_TITLE}''' is the [[Dark]] constructed list [[Geoff Bowman]] posted on DeckTech. The published title is not used as the page title; it is kept in the original post below.{post_ref("dt-23847", 23847, published, 'Geoff "GG BLADE" Bowman, 9 June 2002')}
 
 == Deck info ==
 * '''Player:''' [[Geoff Bowman]]
 * '''Published:''' 9 June 2002 (DeckTech)
-* '''Published title:''' ''{published}''
 * '''Format:''' [[Premiere - Original VS2]]
 * '''Side:''' [[Dark]]
 * '''Starting Card:''' {start}
@@ -12092,9 +12088,9 @@ def geoff_page() -> str:
     )
     row = (
         "| 9 June 2002 || [[Premiere - Original VS2]] || "
-        f"[[{BOWMAN_DS_TITLE}|{published}]] || [[Dark]]"
+        f"[[{BOWMAN_DS_TITLE}]] || [[Dark]]"
     )
-    return f"""'''Geoff Bowman''' (DeckTech handle '''GG BLADE'''){ref} posted a [[Dark]] [[Bring Him Before Me / Take Your Father's Place|Bring Him Before Me]] list on DeckTech (''{published}'') and played in 2025 Players Committee constructed events.<ref name="pc-2025">[https://www.starwarsccg.org/2025-01-las-vegas-grand-prix-las-vegas-nevada-jan-11-12-2025/ 2025 Las Vegas Grand Prix], starwarsccg.org</ref>
+    return f"""'''Geoff Bowman''' (DeckTech handle '''GG BLADE'''){ref} posted a [[Dark]] [[Bring Him Before Me / Take Your Father's Place|Bring Him Before Me]] list on DeckTech and played in 2025 Players Committee constructed events.<ref name="pc-2025">[https://www.starwarsccg.org/2025-01-las-vegas-grand-prix-las-vegas-nevada-jan-11-12-2025/ 2025 Las Vegas Grand Prix], starwarsccg.org</ref>
 
 == Tournament Results ==
 
@@ -14097,12 +14093,11 @@ def hayward_ls_page() -> str:
         "NON-EP1...AKA NO EPISODE 1 CARDS...AKA NO CARDS WITH AN EPISODE 1 "
         "ICON...other than that a rebel strike team deck"
     )
-    return f"""'''{HAYWARD_LS_TITLE}''' is the [[Light]] constructed list [[Taylor Hayward]] posted on DeckTech.{post_ref("dt-23334", 23334, published, 'Taylor "JediMaster10" Hayward, 13 May 2002')}
+    return f"""'''{HAYWARD_LS_TITLE}''' is the [[Light]] constructed list [[Taylor Hayward]] posted on DeckTech. The published title is not used as the page title; it is kept in the original post below.{post_ref("dt-23334", 23334, published, 'Taylor "JediMaster10" Hayward, 13 May 2002')}
 
 == Deck info ==
 * '''Player:''' [[Taylor Hayward]]
 * '''Published:''' 13 May 2002 (DeckTech)
-* '''Published title:''' ''{published}''
 * '''Format:''' [[Premiere - Original VS1]]
 * '''Side:''' [[Light]]
 * '''Starting Card:''' {start}
@@ -14145,9 +14140,9 @@ def taylor_hayward_stub() -> str:
     )
     row = (
         "| 13 May 2002 || [[Premiere - Original VS1]] || "
-        f"[[{HAYWARD_LS_TITLE}|{published}]] || [[Light]]"
+        f"[[{HAYWARD_LS_TITLE}]] || [[Light]]"
     )
-    return f"""'''Taylor Hayward''' (DeckTech handle '''JediMaster10'''){ref} posted a [[Light]] [[Rebel Strike Team / Garrison Destroyed|Rebel Strike Team]] list on DeckTech (''{published}'').
+    return f"""'''Taylor Hayward''' (DeckTech handle '''JediMaster10'''){ref} posted a [[Light]] [[Rebel Strike Team / Garrison Destroyed|Rebel Strike Team]] list on DeckTech.
 
 == Miscellaneous decklists ==
 
