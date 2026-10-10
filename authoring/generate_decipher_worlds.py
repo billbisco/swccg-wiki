@@ -55,26 +55,49 @@ TITLES: list[tuple[str, str]] = []
 
 
 def slug_file(title: str) -> str:
-    return title.replace(" ", "_").replace("/", "-") + ".wiki"
+    t = title.replace(" ", "_").replace("/", "-")
+    t = re.sub(r'[:*?"<>|\\]', "-", t)
+    return t + ".wiki"
+
+
+def gemp_download_line(filename: str) -> str:
+    return f"* '''GEMP Importable deck:''' [[Media:{filename} |Download]]"
 
 
 def write_page(title: str, body: str) -> None:
     PAGES.mkdir(parents=True, exist_ok=True)
     path = PAGES / slug_file(title)
+    old = path.read_text(encoding="utf-8") if path.exists() else ""
     text = body.strip() + "\n"
+    text = re.sub(
+        r"\n== GEMP import ==.*?(?=\n== |\Z)",
+        "\n",
+        text,
+        count=1,
+        flags=re.S,
+    )
+    if "GEMP Importable deck:" not in text:
+        m = re.search(r"\* '''GEMP Importable deck:'''[^\n]+", old)
+        if m:
+            line = m.group(0)
+            for field in ("Strategy", "Starting Card", "Side"):
+                pat = rf"(\* '''{field}:'''[^\n]+)"
+                if re.search(pat, text):
+                    text = re.sub(pat, rf"\1\n{line}", text, count=1)
+                    break
     path.write_text(text.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
     TITLES.append((title, f"pages/{path.name}"))
 
 
 def wiki_card(name: str, side: str) -> str:
+    import wiki_cardlink as cl
+
     if name in OBJ_DEST:
         dest, vis = OBJ_DEST[name]
-        return f"[[{dest}|{vis}]]"
-    dest = name
+        return cl.wrap(name, side, dest=dest, label=vis)
     if side == "dark" and name in DARK_SHARED:
-        dest = f"{name} (Dark)"
-        return f"[[{dest}|{name}]]"
-    return f"[[{name}]]"
+        return cl.wrap(name, side, dest=f"{name} (Dark)", label=name)
+    return cl.wrap(name, side)
 
 
 def decklist_table(slots: dict[str, int], side: str) -> str:
@@ -767,14 +790,27 @@ def write_swccgdb_deck(meta: dict) -> None:
     obj = objective_of(deck)
     start = starting_cell(obj, meta["start"] or "—")
     if obj:
-        dest, vis = OBJ_DEST[obj]
-        start_field = f"[[{dest}|{vis}]]"
+        start_field = wiki_card(obj, side)
     elif meta["start"]:
-        start_field = f"[[{meta['start']}]]"
+        start_field = wiki_card(meta["start"], side)
     else:
         start_field = "—"
     side_title = "Light" if side == "light" else "Dark"
     event = f"{meta['year']} Decipher World Championship"
+    from gemp_importable import deck_name
+
+    fn = (
+        deck_name(
+            format_link(meta["year"]).strip("[]"),
+            meta["theme"],
+            meta["player"],
+            side_title,
+            meta["year"],
+            "Worlds",
+        )
+        + ".txt"
+    )
+    gemp = gemp_download_line(fn) + "\n"
     note = ""
     if meta["year"] == 1996:
         note = (
@@ -801,7 +837,7 @@ def write_swccgdb_deck(meta: dict) -> None:
 * '''Side:''' [[{side_title}]]
 * '''Starting Card:''' {start_field}
 * '''Strategy:''' {meta['theme']}
-{note}
+{gemp}{note}
 == Decklist ==
 
 {decklist_table(deck['slots'], side)}
@@ -888,6 +924,8 @@ def write_reitzel_decks() -> None:
 * '''Format:''' [[Premiere - A New Hope]]
 * '''Side:''' [[Light]]
 * '''Starting Card:''' [[Yavin 4: Massassi Throne Room]]
+* '''Strategy:''' Throne Room Mains
+{gemp_download_line("PANH TRM Reitzel LS 1996 Worlds.txt")}
 
 Reitzel published these as the 60-card Light deck he played at Vail. Spelling normalized to printed titles (Tatooine, not Tattooine).
 
@@ -914,6 +952,8 @@ Reitzel published these as the 60-card Light deck he played at Vail. Spelling no
 * '''Format:''' [[Premiere - A New Hope]]
 * '''Side:''' [[Dark]]
 * '''Starting Card:''' [[Death Star]]
+* '''Strategy:''' Death Star
+{gemp_download_line("PANH DeathStar Reitzel DS 1996 Worlds.txt")}
 
 Reitzel published this as the 60-card Dark deck he played at Vail. Titles normalized (Monnok, Boring Conversation Anyway, I Have You Now, Tatooine).
 
@@ -935,6 +975,8 @@ Reitzel published this as the 60-card Dark deck he played at Vail. Titles normal
 
 VERM_LS = "https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-champion-decklists-from.html"
 VERM_LS_WAYBACK = "https://web.archive.org/web/20150729042221/http://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-champion-decklists-from.html"
+VERM_DS = "https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-1996-dark-side-champion.html"
+VERM_DS_WAYBACK = "https://web.archive.org/web/20150729003158/http://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-1996-dark-side-champion.html"
 
 
 def groups_table(groups, side: str) -> str:
@@ -1103,12 +1145,6 @@ def write_verms_1996_ls() -> None:
 [[Category:Championships]]
 [[Category:1996]]
 """
-    note = (
-        "Scrye magazine championship list as transcribed by Vermithrax (2013) from "
-        "1996–1998 Scrye issues. Spelling normalized to printed titles "
-        "(Lars' Moisture Farm, Millennium Falcon, X-wing). Scrye did not star a "
-        "starting location on this list."
-    )
     write_page(
         "1996 Decipher World Championship Bjørn Sørgjerd LS",
         f"""== Deck info ==
@@ -1118,10 +1154,11 @@ def write_verms_1996_ls() -> None:
 * '''Finish:''' 2nd
 * '''Format:''' [[Premiere - A New Hope]]
 * '''Side:''' [[Light]]
-* '''Starting Card:''' —
-* '''Strategy:''' Mains
+* '''Starting Card:''' [[Yavin 4: Massassi Throne Room]]
+* '''Strategy:''' Throne Room Mains
+{gemp_download_line("PANH TRM Sorgjerd LS 1996 Worlds.txt")}
 
-{note}
+Scrye magazine championship list as transcribed by Vermithrax (2013) from 1996–1998 Scrye issues. Spelling normalized to printed titles (Lars' Moisture Farm, Millennium Falcon). Light lists with [[Yavin 4: Massassi Throne Room]] and no Objective start at that site (Throne Room Mains).
 
 == Decklist ==
 
@@ -1147,10 +1184,11 @@ def write_verms_1996_ls() -> None:
 * '''Finish:''' 3rd
 * '''Format:''' [[Premiere - A New Hope]]
 * '''Side:''' [[Light]]
-* '''Starting Card:''' —
+* '''Starting Card:''' [[Tatooine: Obi-Wan's Hut]]
 * '''Strategy:''' Revolution
+{gemp_download_line("PANH Revolut Alread LS 1996 Worlds.txt")}
 
-{note}
+Scrye magazine championship list as transcribed by Vermithrax (2013) from 1996–1998 Scrye issues. Spelling normalized to printed titles (Lars' Moisture Farm, X-wing). Starting location inferred as [[Tatooine: Obi-Wan's Hut]] (no Objective; the list has no Massassi Throne Room).
 
 == Decklist ==
 
@@ -1169,19 +1207,244 @@ def write_verms_1996_ls() -> None:
     )
 
 
+def write_verms_1996_ds() -> None:
+    """Scrye Dark lists for 1996 2nd/3rd as transcribed by Vermithrax (2013)."""
+    sorgjerd = [
+        (
+            "Character",
+            [
+                (2, "Admiral Motti"),
+                (1, "Commander Praji"),
+                (1, "Danz Borin"),
+                (3, "Darth Vader"),
+                (2, "Dr. Evazan"),
+                (1, "DS-61-2"),
+                (1, "DS-61-3"),
+                (1, "DS-61-4"),
+                (1, "Garindan"),
+                (2, "Grand Moff Tarkin"),
+                (1, "Mosep"),
+                (1, "Officer Evax"),
+                (1, "Ponda Baba"),
+                (2, "Reserve Pilot"),
+                (1, "U-3PO (Yoo-Threepio)"),
+            ],
+        ),
+        ("Weapon", [(2, "Vader's Lightsaber")]),
+        (
+            "Starship",
+            [
+                (1, "Black 2"),
+                (1, "Black 3"),
+                (1, "Black 4"),
+                (1, "Conquest"),
+                (1, "Devastator"),
+                (2, "Imperial-Class Star Destroyer"),
+            ],
+        ),
+        (
+            "Location",
+            [
+                (1, "Death Star"),
+                (1, "Eriadu"),
+                (1, "Kashyyyk"),
+                (1, "Kessel"),
+                (1, "Ralltiir"),
+                (1, "Tatooine"),
+                (1, "Tatooine: Lars' Moisture Farm"),
+                (1, "Tatooine: Mos Eisley"),
+                (1, "Yavin 4"),
+                (1, "Yavin 4: Jungle"),
+            ],
+        ),
+        ("Effect", [(1, "Disarmed"), (2, "Presence Of The Force")]),
+        (
+            "Interrupt",
+            [
+                (3, "Alter"),
+                (2, "Boring Conversation Anyway"),
+                (1, "Charming To The Last"),
+                (1, "Dark Collaboration"),
+                (2, "Elis Helrot"),
+                (1, "Evader"),
+                (1, "I Have You Now"),
+                (1, "Nevar Yalnal"),
+                (3, "Sense"),
+                (1, "Sniper"),
+                (1, "The Circle Is Now Complete"),
+            ],
+        ),
+    ]
+    alread = [
+        (
+            "Character",
+            [
+                (1, "Admiral Motti"),
+                (1, "Chief Bast"),
+                (1, "Colonel Wullf Yularen"),
+                (1, "Commander Praji"),
+                (1, "Danz Borin"),
+                (2, "Darth Vader"),
+                (1, "Djas Puhr"),
+                (1, "Dr. Evazan"),
+                (1, "DS-61-2"),
+                (1, "DS-61-3"),
+                (1, "DS-61-4"),
+                (1, "Garindan"),
+                (1, "General Tagge"),
+                (2, "Grand Moff Tarkin"),
+                (1, "Hem Dazon"),
+                (1, "Kitik Keed'kak"),
+                (1, "Labria"),
+                (1, "Lieutenant Tanbris"),
+                (1, "Officer Evax"),
+                (1, "Prophetess"),
+                (1, "Tonnika Sisters"),
+                (1, "Trooper Davin Felth"),
+                (1, "U-3PO (Yoo-Threepio)"),
+            ],
+        ),
+        ("Weapon", [(2, "Vader's Lightsaber")]),
+        (
+            "Starship",
+            [
+                (1, "Conquest"),
+                (1, "Devastator"),
+                (6, "TIE Advanced x1"),
+                (4, "Victory-Class Star Destroyer"),
+            ],
+        ),
+        (
+            "Location",
+            [
+                (1, "Death Star"),
+                (1, "Death Star: Central Core"),
+                (1, "Death Star: Detention Block Corridor"),
+                (1, "Death Star: Level 4 Military Corridor"),
+                (1, "Death Star: War Room"),
+                (1, "Eriadu"),
+                (1, "Kashyyyk"),
+                (1, "Kessel"),
+                (1, "Ralltiir"),
+                (1, "Tatooine: Jundland Wastes"),
+                (1, "Tatooine: Mos Eisley"),
+            ],
+        ),
+        (
+            "Interrupt",
+            [
+                (7, "Dark Maneuvers"),
+                (1, "Evader"),
+                (1, "The Circle Is Now Complete"),
+                (1, "Your Powers Are Weak, Old Man"),
+            ],
+        ),
+    ]
+
+    def qty_sum(groups) -> int:
+        return sum(q for _t, rows in groups for q, _n in rows)
+
+    assert qty_sum(sorgjerd) == 60, qty_sum(sorgjerd)
+    assert qty_sum(alread) == 60, qty_sum(alread)
+
+    verm_src = f"""* [{VERM_DS} Star Wars CCG: 1996 Dark Side Champion Decklists], Vermithrax's Game Blog (7 April 2013; Scrye magazine transcription)
+* [{VERM_DS_WAYBACK} Wayback copy]
+* [https://web.archive.org/web/20050517110350/http://trandosite.mcmail.com/wf00p2.htm History of the World Finals], [[Trandosite]] (Wayback)
+
+{CATS}
+[[Category:Decklists]]
+[[Category:Championships]]
+[[Category:1996]]
+"""
+    write_page(
+        "1996 Decipher World Championship Bjørn Sørgjerd DS",
+        f"""== Deck info ==
+* '''Player:''' [[Bjørn Sørgjerd]]
+* '''Event:''' [[1996 Decipher World Championship]]
+* '''Stage:''' Finals
+* '''Finish:''' 2nd
+* '''Format:''' [[Premiere - A New Hope]]
+* '''Side:''' [[Dark]]
+* '''Starting Card:''' [[Death Star]]
+* '''Strategy:''' Mains
+{gemp_download_line("PANH Mains Sorgjerd DS 1996 Worlds.txt")}
+
+Scrye magazine championship list as transcribed by Vermithrax (2013) from 1996–1998 Scrye issues. Spelling normalized to printed titles (Dr. Evazan, Boring Conversation Anyway, I Have You Now, Lars' Moisture Farm, Tatooine).
+
+== Decklist ==
+
+{groups_table(sorgjerd, 'dark')}
+
+== See also ==
+
+* [[1996 Decipher World Championship]]
+* [[Bjørn Sørgjerd]]
+* [[Championships]]
+
+== Sources ==
+
+{verm_src}
+""",
+    )
+    write_page(
+        "1996 Decipher World Championship Joe Alread DS",
+        f"""== Deck info ==
+* '''Player:''' [[Joe Alread]]
+* '''Event:''' [[1996 Decipher World Championship]]
+* '''Stage:''' Finals
+* '''Finish:''' 3rd
+* '''Format:''' [[Premiere - A New Hope]]
+* '''Side:''' [[Dark]]
+* '''Starting Card:''' [[Death Star]]
+* '''Strategy:''' Dark Maneuvers
+{gemp_download_line("PANH DarkMan Alread DS 1996 Worlds.txt")}
+
+Scrye magazine championship list as transcribed by Vermithrax (2013) from 1996–1998 Scrye issues. Spelling normalized to printed titles (Colonel Wullf Yularen, Death Star: Detention Block Corridor, Kessel, TIE Advanced x1, Your Powers Are Weak, Old Man). [[Trandosite]] notes the seven [[Dark Maneuvers]].
+
+== Decklist ==
+
+{groups_table(alread, 'dark')}
+
+== See also ==
+
+* [[1996 Decipher World Championship]]
+* [[Joe Alread]]
+* [[Championships]]
+
+== Sources ==
+
+{verm_src}
+""",
+    )
+
+
 def patch_1996_hub_verms() -> None:
     path = PAGES / "1996_Decipher_World_Championship.wiki"
     text = path.read_text(encoding="utf-8")
-    text = text.replace(
+    s_row = (
+        "| 2 || [[Bjørn Sørgjerd]] || "
+        "[[1996 Decipher World Championship Bjørn Sørgjerd DS|Death Star]] || "
+        "[[1996 Decipher World Championship Bjørn Sørgjerd LS|Yavin 4: Massassi Throne Room]]"
+    )
+    j_row = (
+        "| 3 || [[Joe Alread]] || "
+        "[[1996 Decipher World Championship Joe Alread DS|Death Star]] || "
+        "[[1996 Decipher World Championship Joe Alread LS|Tatooine: Obi-Wan's Hut]]"
+    )
+    for old in (
         "| 2 || [[Bjørn Sørgjerd]] || — || —",
         "| 2 || [[Bjørn Sørgjerd]] || — || [[1996 Decipher World Championship Bjørn Sørgjerd LS|Mains]]",
-    )
-    text = text.replace(
+        "| 2 || [[Bjørn Sørgjerd]] || [[1996 Decipher World Championship Bjørn Sørgjerd DS|Death Star]] || [[1996 Decipher World Championship Bjørn Sørgjerd LS|Mains]]",
+    ):
+        text = text.replace(old, s_row)
+    for old in (
         "| 3 || [[Joe Alread]] || — || —",
         "| 3 || [[Joe Alread]] || — || [[1996 Decipher World Championship Joe Alread LS|Revolution]]",
-    )
+        "| 3 || [[Joe Alread]] || [[1996 Decipher World Championship Joe Alread DS|Death Star]] || [[1996 Decipher World Championship Joe Alread LS|Revolution]]",
+    ):
+        text = text.replace(old, j_row)
     extra = (
-        " Sørgjerd and Alread Light lists are the Scrye-era championship lists as "
+        " Sørgjerd and Alread Light and Dark lists are the Scrye-era championship lists as "
         "transcribed by Vermithrax (2013). Reitzel's Light on that transcription is 55 cards; "
         "this wiki uses the 60-card pair Reitzel later published from the decks he kept."
     )
@@ -1189,19 +1452,35 @@ def patch_1996_hub_verms() -> None:
         "Asselin's lists are the Scrye-era championship lists as reconstructed on SWCCGDB (2018). "
         "Reitzel published his own 1996 pair in 2025–2026 from the decks he kept; a commenter remembered those lists in Scrye."
     )
-    new_note = old_note + extra
+    old_extra = (
+        " Sørgjerd and Alread Light lists are the Scrye-era championship lists as "
+        "transcribed by Vermithrax (2013). Reitzel's Light on that transcription is 55 cards; "
+        "this wiki uses the 60-card pair Reitzel later published from the decks he kept."
+    )
     if extra not in text:
-        text = text.replace(old_note, new_note)
-    src = (
+        if old_extra in text:
+            text = text.replace(old_extra, extra)
+        else:
+            text = text.replace(old_note, old_note + extra)
+    src_ls = (
         f"* [{VERM_LS} Star Wars CCG: 1996 Light Side Champion Decklists], "
         "Vermithrax's Game Blog (5 April 2013)"
     )
-    if VERM_LS not in text:
-        text = text.replace(
-            "* [https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/ Kevin Reitzel, 1996 championship deck lists] (Facebook)",
-            src
-            + "\n* [https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/ Kevin Reitzel, 1996 championship deck lists] (Facebook)",
+    src_ds = (
+        f"* [{VERM_DS} Star Wars CCG: 1996 Dark Side Champion Decklists], "
+        "Vermithrax's Game Blog (7 April 2013)"
+    )
+    if VERM_DS not in text:
+        insert_after = src_ls if VERM_LS in text else (
+            "* [https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/ Kevin Reitzel, 1996 championship deck lists] (Facebook)"
         )
+        if VERM_LS not in text:
+            text = text.replace(
+                insert_after,
+                src_ls + "\n" + src_ds + "\n" + insert_after,
+            )
+        else:
+            text = text.replace(src_ls, src_ls + "\n" + src_ds)
     path.write_text(text.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
     TITLES.append(("1996 Decipher World Championship", "pages/1996_Decipher_World_Championship.wiki"))
 
@@ -1234,18 +1513,19 @@ Several finalists later became Decipher staff or [[Squadron Members]] (Kevin Rei
 |-
 | 1 || [[Raphael Asselin]] || {a_ds} || {a_ls}
 |-
-| 2 || [[Bjørn Sørgjerd]] || — || [[1996 Decipher World Championship Bjørn Sørgjerd LS|Mains]]
+| 2 || [[Bjørn Sørgjerd]] || [[1996 Decipher World Championship Bjørn Sørgjerd DS|Death Star]] || [[1996 Decipher World Championship Bjørn Sørgjerd LS|Yavin 4: Massassi Throne Room]]
 |-
-| 3 || [[Joe Alread]] || — || [[1996 Decipher World Championship Joe Alread LS|Revolution]]
+| 3 || [[Joe Alread]] || [[1996 Decipher World Championship Joe Alread DS|Death Star]] || [[1996 Decipher World Championship Joe Alread LS|Tatooine: Obi-Wan's Hut]]
 |-
 | 4 || [[Kevin Reitzel]] || [[1996 Decipher World Championship Kevin Reitzel DS|Death Star]] || [[1996 Decipher World Championship Kevin Reitzel LS|Yavin 4: Massassi Throne Room]]
 |}}
 
-Asselin's lists are the Scrye-era championship lists as reconstructed on SWCCGDB (2018). Reitzel published his own 1996 pair in 2025–2026 from the decks he kept; a commenter remembered those lists in Scrye. Sørgjerd and Alread Light lists are the Scrye-era championship lists as transcribed by Vermithrax (2013). Reitzel's Light on that transcription is 55 cards; this wiki uses the 60-card pair Reitzel later published from the decks he kept.
+Asselin's lists are the Scrye-era championship lists as reconstructed on SWCCGDB (2018). Reitzel published his own 1996 pair in 2025–2026 from the decks he kept; a commenter remembered those lists in Scrye. Sørgjerd and Alread Light and Dark lists are the Scrye-era championship lists as transcribed by Vermithrax (2013). Reitzel's Light on that transcription is 55 cards; this wiki uses the 60-card pair Reitzel later published from the decks he kept.
 
 == See also ==
 
 * [[Championships]]
+* [[GEMP importable decklist]]
 * [[List of SWCCG tournaments]]
 * [[Raphael Asselin]] · [[Bjørn Sørgjerd]] · [[Joe Alread]] · [[Kevin Reitzel]]
 
@@ -1256,6 +1536,7 @@ Asselin's lists are the Scrye-era championship lists as reconstructed on SWCCGDB
 * [https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0 1996 World Champion (Light)], SWCCGDB
 * [https://swccgdb.com/decklist/view/2/1996-world-champion-dark-1.0 1996 World Champion (Dark)], SWCCGDB
 * [{VERM_LS} Star Wars CCG: 1996 Light Side Champion Decklists], Vermithrax's Game Blog (5 April 2013)
+* [{VERM_DS} Star Wars CCG: 1996 Dark Side Champion Decklists], Vermithrax's Game Blog (7 April 2013)
 * [https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/ Kevin Reitzel, 1996 championship deck lists] (Facebook)
 
 {REF}
@@ -1626,33 +1907,67 @@ Decipher's Star Wars, Young Jedi, and Jedi Knights licenses ended 31 December 20
     )
 
 
-def insert_tourney(path: Path, title: str, bullets: str, lead: str | None = None) -> None:
+TIMO_HEADER = "! Date !! Event !! Format !! Finish !! Dark !! Light"
+
+
+def result_table(rows: list[tuple[str, str, str, str, str, str]]) -> str:
+    """Date / Event / Format / Finish / Dark / Light — same shape as [[Timo Dusel]]."""
+    lines = ["{| class=\"wikitable\"", "|-", TIMO_HEADER]
+    for date, event, fmt, finish, dark, light in rows:
+        lines.append("|-")
+        lines.append(f"| {date} || {event} || {fmt} || {finish} || {dark} || {light}")
+    lines.append("|}")
+    return "\n".join(lines) + "\n"
+
+
+def replace_results_section(text: str, table: str) -> str:
+    block = "== Tournament Results ==\n\n" + table
+    m = re.search(r"^==+\s*Tournament [Rr]esults\s*==+\s*\n", text, re.M)
+    if m:
+        rest = text[m.end() :]
+        nxt = re.search(r"^==", rest, re.M)
+        end = m.end() + (nxt.start() if nxt else len(rest))
+        return text[: m.start()] + block + text[end:]
+    if "== See also ==" in text:
+        return text.replace("== See also ==", block + "\n== See also ==", 1)
+    if "== Sources ==" in text:
+        return text.replace("== Sources ==", block + "\n== Sources ==", 1)
+    return text.rstrip() + "\n\n" + block
+
+
+def insert_tourney(
+    path: Path,
+    title: str,
+    rows: list[tuple[str, str, str, str, str, str]],
+    lead: str | None = None,
+) -> None:
     text = path.read_text(encoding="utf-8")
     if lead:
         text = re.sub(r"^'''.*?'''[^\n]*\n", lead.rstrip() + "\n", text, count=1)
-    if "== Tournament results ==" in text:
+    if TIMO_HEADER in text:
         path.write_text(text, encoding="utf-8", newline="\n")
         TITLES.append((title, f"pages/{path.name}"))
         return
-    block = "\n== Tournament results ==\n\n" + bullets.strip() + "\n"
-    if "== See also ==" in text:
-        text = text.replace("== See also ==", block + "\n== See also ==", 1)
-    elif "== Sources ==" in text:
-        text = text.replace("== Sources ==", block + "\n== Sources ==", 1)
-    else:
-        text = text.rstrip() + "\n" + block
+    text = replace_results_section(text, result_table(rows))
     path.write_text(text, encoding="utf-8", newline="\n")
     TITLES.append((title, f"pages/{path.name}"))
 
 
-def stub_person(title: str, lead: str, bullets: str, extra_src: str = "") -> None:
+def stub_person(
+    title: str,
+    lead: str,
+    rows: list[tuple[str, str, str, str, str, str]],
+    extra_src: str = "",
+) -> None:
+    path = PAGES / (title.replace(" ", "_") + ".wiki")
+    if path.exists() and TIMO_HEADER in path.read_text(encoding="utf-8"):
+        TITLES.append((title, f"pages/{path.name}"))
+        return
     body = f"""'''{title}''' {lead}
 
-This page is a '''fan encyclopedia''' stub. Facts below are from published SWCCG tournament sources. It does not add unsourced biography.
+== Tournament Results ==
 
-== Tournament results ==
-
-{bullets.strip()}
+{result_table(rows).rstrip()}
 
 == See also ==
 
@@ -1677,60 +1992,105 @@ def write_people() -> None:
     insert_tourney(
         PAGES / "Raphael_Asselin.wiki",
         "Raphael Asselin",
-        "* 1st, [[1996 Decipher World Championship]] (def. [[Bjørn Sørgjerd]])\n* 12th, [[1997 Decipher World Championship]]\n* Day 3 (7th), [[2000 Decipher World Championship]]",
+        [
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 3)", "[[Premiere - Death Star II]]", "7th", "[[2000 Decipher World Championship Raphael Asselin DS|Bring Him Before Me]]", "[[2000 Decipher World Championship Raphael Asselin LS|Mind What You Have Learned]]"),
+            ("1997", "[[1997 Decipher World Championship]]", "[[Premiere - Cloud City]]", "12th", "—", "—"),
+            ("1996", "[[1996 Decipher World Championship]]", "[[Premiere - A New Hope]]", "1st", "[[1996 Decipher World Championship Raphael Asselin DS|Death Star]]", "[[1996 Decipher World Championship Raphael Asselin LS|Yavin 4: Massassi War Room]]"),
+        ],
     )
     insert_tourney(
         PAGES / "Philipp_Jacobs.wiki",
         "Philipp Jacobs",
-        "* 1st, [[1997 Decipher World Championship]] (def. [[Michael Riboulet]])\n* missed the 1998 final twelve",
+        [
+            ("21–22 November 1998", "[[1998 Decipher World Championship]]", "[[Premiere - Special Edition]]", "missed the final twelve", "—", "—"),
+            ("1997", "[[1997 Decipher World Championship]]", "[[Premiere - Cloud City]]", "1st", "[[1997 Decipher World Championship Philipp Jacobs DS|Mains & Toys]]", "[[1997 Decipher World Championship Philipp Jacobs LS|Dagobah turtle]]"),
+        ],
     )
     insert_tourney(
         PAGES / "Gary_Carman.wiki",
         "Gary Carman",
-        "* 1st, [[1999 Decipher World Championship]] (def. [[Steven Lewis]] 2 (+19))\n* Day 3 (10th), [[2000 Decipher World Championship]]",
+        [
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 3)", "[[Premiere - Death Star II]]", "10th", "—", "—"),
+            ("12–13 November 1999", "[[1999 Decipher World Championship]]", "[[Premiere - Endor]]", "1st", "[[1999 Decipher World Championship Gary Carman DS|ISB Operations]]", "[[1999 Decipher World Championship Gary Carman LS|Hidden Base]]"),
+        ],
     )
     insert_tourney(
         PAGES / "Matt_Sokol.wiki",
         "Matt Sokol",
-        "* 1st, [[2000 Decipher World Championship]] (def. [[Yannick Lapointe]])\n* 1998 Worlds (Coruscant regional winner); 1999 Wildcard 3rd",
+        [
+            ("5–7 October 2000", "[[2000 Decipher World Championship]]", "[[Premiere - Death Star II]]", "1st", "[[2000 Decipher World Championship Matt Sokol DS|ISB Operations]]", "[[2000 Decipher World Championship Matt Sokol LS|Hidden Base]]"),
+            ("1999", "[[1999 Decipher World Championship]] (Wildcard)", "[[Premiere - Endor]]", "3rd", "—", "—"),
+            ("1998", "[[1998 Decipher World Championship]]", "[[Premiere - Special Edition]]", "Coruscant regional winner", "—", "—"),
+        ],
     )
     insert_tourney(
         PAGES / "Bastian_Winkelhaus.wiki",
         "Bastian Winkelhaus",
-        "* final twelve, [[1997 Decipher World Championship]]\n* Day 1 leader, [[1999 Decipher World Championship]]\n* 1st, [[2001 Decipher World Championship]] (def. [[Martin Akesson]], FreedomCon)\n* 1st, 2018 and 2019 World Championships (Players Committee era; [https://www.starwarsccg.org/community/awards/ PC Hall of Fame])",
+        [
+            ("2001", "[[2001 Decipher World Championship]]", "[[Premiere - Reflections III]]", "1st", "—", "—"),
+            ("March 2001", "[[2001 Brugge Belgian Open]]", "[[Premiere - Tatooine]]", "1st", "—", "[[2001 Brugge Belgian Open Bastian Winkelhaus LS|Watch Your Step]]"),
+            ("12 November 1999", "[[1999 Decipher World Championship]] (Day 1)", "[[Premiere - Endor]]", "1st", "—", "—"),
+            ("1997", "[[1997 Decipher World Championship]]", "[[Premiere - Cloud City]]", "Final twelve", "—", "—"),
+        ],
         lead="'''Bastian Winkelhaus''' is the 2001 SWCCG World Champion (FreedomCon, Virginia Beach). He was a World Finalist in 1997 and 1999. [[Trandosite]] interviewed him on 26 May 2000, before that title.<ref name=\"trando-iv3\">[https://web.archive.org/web/20041026204829/http://www.trandosite.mcmail.com/iv3.htm Bastian Winkelhaus interview], [[Trandosite]] (26 May 2000)</ref>\n",
     )
     insert_tourney(
         PAGES / "Martin_Akesson.wiki",
         "Martin Akesson",
-        "* European Champion 2000\n* 2nd, [[2001 Decipher World Championship]]\n* Day 2 of [[2000 Decipher World Championship]]: 10 (+69), missed the twelve by one differential",
+        [
+            ("2001", "[[2001 Decipher World Championship]]", "[[Premiere - Reflections III]]", "2nd", "—", "—"),
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 2)", "[[Premiere - Death Star II]]", "missed the twelve", "—", "—"),
+            ("August 2000", "[[2000 European Championship]]", "[[Premiere - Death Star II]]", "1st", "—", "—"),
+        ],
         lead="'''Martin Akesson''' was European Champion 2000 and runner-up at the [[2001 Decipher World Championship]]. [[Trandosite]] interviewed him on 31 August 2000.<ref name=\"trando-iv7\">[https://web.archive.org/web/20041026204829/http://www.trandosite.mcmail.com/iv7.htm Martin Akesson interview], [[Trandosite]] (31 August 2000)</ref>\n",
     )
     insert_tourney(
         PAGES / "Steven_Lewis.wiki",
         "Steven Lewis",
-        "* 2nd, [[1999 Decipher World Championship]]",
+        [
+            ("12–13 November 1999", "[[1999 Decipher World Championship]]", "[[Premiere - Endor]]", "2nd", "[[1999 Decipher World Championship Steven Lewis DS|Hunt Down And Destroy The Jedi]]", "[[1999 Decipher World Championship Steven Lewis LS|Local Uprising]]"),
+        ],
     )
     insert_tourney(
         PAGES / "Yannick_Lapointe.wiki",
         "Yannick Lapointe",
-        "* final twelve, [[1997 Decipher World Championship]]\n* 2nd, [[2000 Decipher World Championship]] (led Day 3; lost the Final Confrontation to [[Matt Sokol]])",
+        [
+            ("5–7 October 2000", "[[2000 Decipher World Championship]]", "[[Premiere - Death Star II]]", "2nd", "[[2000 Decipher World Championship Yannick Lapointe DS|Bring Him Before Me]]", "[[2000 Decipher World Championship Yannick Lapointe LS|Mind What You Have Learned]]"),
+            ("1997", "[[1997 Decipher World Championship]]", "[[Premiere - Cloud City]]", "Final twelve", "—", "—"),
+        ],
     )
     insert_tourney(
         PAGES / "Clint_Hays.wiki",
         "Clint Hays",
-        "* Day 1 2nd, [[1999 Decipher World Championship]]\n* Day 2 leader (14 / +85), [[2000 Decipher World Championship]]; 8th on Day 3",
+        [
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 3)", "[[Premiere - Death Star II]]", "8th", "—", "—"),
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 2)", "[[Premiere - Death Star II]]", "1st", "—", "—"),
+            ("12 November 1999", "[[1999 Decipher World Championship]] (Day 1)", "[[Premiere - Endor]]", "2nd", "—", "—"),
+            ("July 1999", "[[1999 Origins Open]]", "[[Premiere - Endor]]", "1st", "[[1999 Origins Open Clint Hays DS|Swamp]]", "[[1999 Origins Open Clint Hays LS|Local Uprising]]"),
+        ],
     )
     insert_tourney(
         PAGES / "Joe_Alread.wiki",
         "Joe Alread",
-        "* 3rd, [[1996 Decipher World Championship]]\n* final twelve, [[1997 Decipher World Championship]]\n* Ironman winner, missed the 1999 main event",
+        [
+            ("1999", "Ironman (missed the 1999 Worlds main event)", "—", "1st", "—", "—"),
+            ("1997", "[[1997 Decipher World Championship]]", "[[Premiere - Cloud City]]", "Final twelve", "—", "—"),
+            ("1996", "[[1996 Decipher World Championship]]", "[[Premiere - A New Hope]]", "3rd", "[[1996 Decipher World Championship Joe Alread DS|Death Star]]", "[[1996 Decipher World Championship Joe Alread LS|Tatooine: Obi-Wan's Hut]]"),
+        ],
     )
 
     stub_person(
         "Bjørn Sørgjerd",
         "was the runner-up at the [[1996 Decipher World Championship]] in Vail, Colorado (Norway). Trandosite spells the name Bjorn Sorgjerd; Wikipedia uses Bjørn Sørgjerd.",
-        "* 2nd, [[1996 Decipher World Championship]] (lost the final to [[Raphael Asselin]])",
+        [
+            ("1996", "[[1996 Decipher World Championship]]", "[[Premiere - A New Hope]]", "2nd", "[[1996 Decipher World Championship Bjørn Sørgjerd DS|Death Star]]", "[[1996 Decipher World Championship Bjørn Sørgjerd LS|Yavin 4: Massassi Throne Room]]"),
+        ],
+        extra_src=(
+            f"* [{VERM_LS} Star Wars CCG: 1996 Light Side Champion Decklists], "
+            "Vermithrax's Game Blog (5 April 2013)\n"
+            f"* [{VERM_DS} Star Wars CCG: 1996 Dark Side Champion Decklists], "
+            "Vermithrax's Game Blog (7 April 2013)"
+        ),
     )
     write_page("Bjorn Sorgjerd", "#REDIRECT [[Bjørn Sørgjerd]]\n")
     write_page("Bjorn Sørgjerd", "#REDIRECT [[Bjørn Sørgjerd]]\n")
@@ -1740,40 +2100,57 @@ def write_people() -> None:
     stub_person(
         "Michael Riboulet",
         "was runner-up at the [[1997 Decipher World Championship]] and the [[1998 Decipher World Championship]] (United Kingdom). He was the first player in two Grand Finals. Gary Carman later named him as a Bristol playtest partner.",
-        "* 2nd, [[1997 Decipher World Championship]]\n* 2nd, [[1998 Decipher World Championship]]",
+        [
+            ("21–22 November 1998", "[[1998 Decipher World Championship]]", "[[Premiere - Special Edition]]", "2nd", "—", "—"),
+            ("1997", "[[1997 Decipher World Championship]]", "[[Premiere - Cloud City]]", "2nd", "[[1997 Decipher World Championship Michael Riboulet DS|Dagobah manipulator]]", "[[1997 Decipher World Championship Michael Riboulet LS|Dagobah Miner's Guild]]"),
+        ],
     )
     stub_person(
         "Matt Potter",
         "is the 1998 SWCCG World Champion (United States), the first American winner. He defeated [[Michael Riboulet]] 2 (+9) in the Operatives final at the Cavalier Hotel.",
-        "* 1st, [[1998 Decipher World Championship]]",
+        [
+            ("21–22 November 1998", "[[1998 Decipher World Championship]]", "[[Premiere - Special Edition]]", "1st", "[[1998 Decipher World Championship Matt Potter DS|Imperial Occupation]]", "[[1998 Decipher World Championship Matt Potter LS|Local Uprising]]"),
+        ],
     )
-    # Paul Todd Feldman already has a 2025 Retro GEMPC table. Do not overwrite; merge by hand.
+    # Paul Todd Feldman already has a Timo table. Do not overwrite; merge by hand.
     stub_person(
         "Kevin Shannon",
         "finished 4th at the [[2000 Decipher World Championship]] Day 3. His Game 2 modified win vs Steve Brentson is the cut-math example on [[Tournaments]].",
-        "* 4th Day 3, [[2000 Decipher World Championship]] (5 / +29; Modified Win vs Steve Brentson)",
+        [
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 3)", "[[Premiere - Death Star II]]", "4th", "—", "—"),
+        ],
         extra_src="* [https://web.archive.org/web/20010303120030/http://decipher.com/deciphercon/2000/events/results/starwars3.html DecipherCon 2000 Day 3]",
     )
     stub_person(
         "Kyle Craft",
         "finished 3rd at the [[2000 Decipher World Championship]] Day 3 (6 / +2), one differential slot behind [[Matt Sokol]] for the Final Confrontation.",
-        "* 2nd after Day 2 (14 / +65) and 3rd Day 3, [[2000 Decipher World Championship]]",
+        [
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 3)", "[[Premiere - Death Star II]]", "3rd", "—", "—"),
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 2)", "[[Premiere - Death Star II]]", "2nd", "—", "—"),
+        ],
         extra_src="* [https://web.archive.org/web/20010303120030/http://decipher.com/deciphercon/2000/events/results/starwars3.html DecipherCon 2000 Day 3]",
     )
     stub_person(
         "Lucas Hernandez",
         "made the [[1998 Decipher World Championship]] final twelve. Trandosite says he dominated day 2 until [[Michael Riboulet]] beat him by a large margin in the last game and took the final slot.",
-        "* final twelve, [[1998 Decipher World Championship]]",
+        [
+            ("21–22 November 1998", "[[1998 Decipher World Championship]]", "[[Premiere - Special Edition]]", "Final twelve", "—", "—"),
+        ],
     )
     stub_person(
         "Maarten Logghe",
         "was one of the twelve finalists at the [[1996 Decipher World Championship]] in Vail.",
-        "* finalist, [[1996 Decipher World Championship]]",
+        [
+            ("1996", "[[1996 Decipher World Championship]]", "[[Premiere - A New Hope]]", "Final twelve", "—", "—"),
+        ],
     )
     stub_person(
         "Dominic Gaudreault",
         "took the 12th and last Day 3 slot at the [[2000 Decipher World Championship]] (Day 2: 10 / +70) and finished 5th on Day 3.",
-        "* 12th Day 2 / 5th Day 3, [[2000 Decipher World Championship]]",
+        [
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 3)", "[[Premiere - Death Star II]]", "5th", "—", "—"),
+            ("5–7 October 2000", "[[2000 Decipher World Championship]] (Day 2)", "[[Premiere - Death Star II]]", "12th", "—", "—"),
+        ],
         extra_src="* [https://web.archive.org/web/20001026043505/http://www.decipher.com/deciphercon/2000/events/results/starwars.html DecipherCon 2000 Day 2]",
     )
 
@@ -1831,6 +2208,7 @@ def main() -> None:
         write_swccgdb_deck(meta)
     write_reitzel_decks()
     write_verms_1996_ls()
+    write_verms_1996_ds()
     write_hubs()
     write_people()
     write_url_list()
@@ -1844,13 +2222,16 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    if "--verms-ls" in sys.argv:
+    if "--verms-ls" in sys.argv or "--verms" in sys.argv:
         write_verms_1996_ls()
+        write_verms_1996_ds()
         patch_1996_hub_verms()
+        TITLES.append(("Bjørn Sørgjerd", "pages/Bjørn_Sørgjerd.wiki"))
+        TITLES.append(("Joe Alread", "pages/Joe_Alread.wiki"))
         seen: dict[str, str] = {}
         for t, r in TITLES:
             seen[t] = r
-        tsv = ROOT / "y1996-verms-ls-delta.tsv"
+        tsv = ROOT / "y1996-verms-delta.tsv"
         tsv.write_text("\n".join(f"{t}\t{r}" for t, r in seen.items()) + "\n", encoding="utf-8")
         print("pages", len(seen), "tsv", tsv)
     else:
