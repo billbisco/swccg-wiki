@@ -488,3 +488,57 @@ def _fix_shields_in(section: str) -> str:
 
     section = re.sub(r"\{\{CardLink\|([^|}]+)\|([^|}]+)(?:\|label=([^}]+))?\}\}", card, section)
     return re.sub(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]", link, section)
+
+
+# ---------------------------------------------------------------- original-era Virtual cards (2026-10-10)
+# Players Committee virtual cards of 2002-2009 are wiki pages "X (V) (Virtual Set N)" (set pages
+# "Virtual Set N (Original)"); later re-virtualized cards share the "X (V)" name, so the dest depends
+# on the post date. Index of those pages: original-vs-index.json ("X (V)" -> [page, ...]).
+OVS_LEGAL = {1: "2002-03-09", 2: "2002-06-01", 3: "2002-09-20", 4: "2003-02-05", 5: "2003-06-01", 6: "2003-11-01"}
+_OVS: dict[str, list[str]] | None = None
+_OVS_INFO: dict[str, dict] = {}
+
+
+def ovs_index() -> dict[str, list[str]]:
+    global _OVS
+    if _OVS is None:
+        p = Path(__file__).resolve().parent / "original-vs-index.json"
+        _OVS = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    return _OVS
+
+
+def ovs_set(page: str) -> int:
+    m = re.search(r"\(Virtual Set (\d+)\)$", page)
+    return int(m.group(1)) if m else 0
+
+
+def ovs_pick(name: str, date_iso: str, side: str | None = None) -> tuple[str | None, list[str]]:
+    """Page for virtual card `name` ("X (V)" or "X") as legal on date_iso: the newest original-era
+    printing legal by then (sets 7+ have no proven ship date and count only after 2004).
+    Returns (page or None, all candidates)."""
+    base = name if name.endswith("(V)") else f"{name} (V)"
+    sides = [side.title()] if side else ["Light", "Dark"]
+    keys = [base] + [f"{base} ({sd})" for sd in sides]
+    allc: list[str] = []
+    for k in keys:
+        cands = sorted(ovs_index().get(k, []), key=ovs_set)
+        allc += cands
+        legal = [p for p in cands if ovs_set(p) >= 1 and OVS_LEGAL.get(ovs_set(p), "2004-06-01") <= (date_iso or "9999")]
+        if legal:
+            return legal[-1], allc
+    return None, allc
+
+
+def ovs_info(page: str) -> dict:
+    """{'image','type','side'} of an original-era virtual card page (live, cached)."""
+    if page not in _OVS_INFO:
+        txt = _wiki_raw(page)
+        f = {k: (re.search(rf"^\|{k}=(.*)$", txt, re.M) or [None, ""])[1].strip() for k in ("image", "type", "side")}
+        _OVS_INFO[page] = f
+    return _OVS_INFO[page]
+
+
+def ovs_link(page: str) -> str:
+    info = ovs_info(page)
+    label = re.sub(r" \(Virtual Set \d+\)$", "", page)
+    return cardlink(page, info.get("image") or None, label)
