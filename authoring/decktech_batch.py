@@ -36,6 +36,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
+import gemp_importable as gi  # noqa: E402
 import generate_decktech as gd  # noqa: E402
 import wiki_cardlink as cl  # noqa: E402
 
@@ -177,6 +178,7 @@ def suggest(posted: str, side: str) -> tuple[str, str]:
 
 
 QTY_PATTERNS = [
+    re.compile(r"^[\[(](\d+)[\])}]\s*(.+)$"),  # [3] Name / (2) Name / [2} Name
     re.compile(r"^(\d+)\s*x\s*(.+)$", re.I),
     re.compile(r"^(.+?)\s*[x×]\s*(\d+)$", re.I),
     re.compile(r"^(.+?)\s*\((\d+)\)$"),
@@ -190,6 +192,7 @@ def parse_card_list(cards: str) -> list[tuple[int, str, str]]:
         line = raw.strip().strip("'`").strip()
         if not line:
             continue
+        line = re.sub(r"^([A-Za-z'/ ]+?)\s+-\s*(\d+)$", r"\1 (\2)", line)  # "CHARACTERS -19"
         head = re.match(r"^([A-Za-z'/ ]+?)\s*(?:\([^)]*\))?\s*:?$", line)
         counted = bool(re.search(r"\([^)]*\)\s*:?$|:$", line)) and not re.search(r"\(\d+\)$", line) or bool(re.search(r"\(\d+\)\s*:?$", line)) and len(line.split()) <= 3
         if head and (counted or len(head.group(1).split()) == 1 or head.group(1).strip().lower() in ("admirals order", "admiral's order", "weapons/devices", "starting cards")):
@@ -412,6 +415,11 @@ def deck_page(d: dict) -> str:
     for k, lab in (("card", "Starting Card"), ("interrupt", "Starting Interrupt"), ("effect", "Starting Effect")):
         if st.get(k):
             info.append(f"* '''{lab}:''' {wc(st[k])}")
+    if d.get("gemp_file"):
+        line = gi.wiki_download_line(d["gemp_file"])
+        if d.get("gemp_omitted"):
+            line += " (omits " + ", ".join(dict.fromkeys(d["gemp_omitted"])) + ": no GEMP blueprint)"
+        info.append(line)
     if d.get("description"):
         info.append(f"* '''Strategy:''' {d['description']}")
     shields = ""
@@ -577,6 +585,54 @@ def insert_format_sentences(text: str, fmt: str, decks: list[dict]) -> str:
     return text[:m.start()] + new + text[m.start():]
 
 
+GEMP_OUT = ROOT / "gemp-import-dt"
+GEMP_FORMAT = {  # wiki format -> GEMP format code (original-era Virtual slips have no blueprints)
+    "Premiere - Original VS1": "open_no_virtual",
+    "Premiere - Original VS2": "open_no_virtual",
+    "Premiere - Original VS3": "open_no_virtual",
+}
+
+
+def _arch(start: str) -> str:
+    face = (start or "").split(" / ")[0]
+    if face in gi.ARCHETYPE_ABBR or len(face) <= 10:
+        return face
+    return "".join(w[0] for w in re.findall(r"[A-Za-z0-9']+", face) if w[0].isalnum()).upper()
+
+
+def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
+    """Write the GEMP importable decklist for a deck. Returns (filename, omitted cards)."""
+    rows, omitted = [], []
+    for r in d["cards"]:
+        q, t = int(r[0]), r[1]
+        if t in gd.ORIGINAL_VS or r[2] == "DEFENSIVE_SHIELD":
+            omitted.append(t)
+            continue
+        rows.append((q, t, None))
+    code = GEMP_FORMAT.get(d["format"], "open_no_virtual")
+    try:
+        xml, notes = gi.xml_for(rows, d["side"], code)
+    except KeyError as e:
+        print(f"NOGEMP {d['id']}: {e}")
+        return None, omitted
+    start = (d.get("starting") or {}).get("card") or d.get("published_title") or ""
+    base = gi.safe_deck_filename(gi.deck_name(d["format"], _arch(start), d["player"], d["side"], d["date"][:4], "DeckTech"))
+    fn = d.get("gemp_file_live") or base + ".txt"  # a deck already live keeps its uploaded file name
+    if not d.get("gemp_file_live") and (fn.lower() in taken or file_exists(fn)):
+        fn = gi.safe_deck_filename(gi.deck_name(d["format"], _arch(start), d["player"], d["side"], d["date"][:4], str(d["id"]))) + ".txt"
+    taken.add(fn.lower())
+    GEMP_OUT.mkdir(exist_ok=True)
+    (GEMP_OUT / fn).write_text(xml, encoding="utf-8", newline="\n")
+    if notes:
+        print("GEMP NOTES", d["id"], notes[:6])
+    return fn, omitted
+
+
+def file_exists(fn: str) -> bool:
+    p = api(action="query", titles="File:" + fn)["query"]["pages"][0]
+    return not p.get("missing")
+
+
 FORMAT_BUILDERS = {"Premiere - Original VS1": "povs1_page", "Premiere - Original VS2": "povs2_page"}
 
 
@@ -592,6 +648,14 @@ def cmd_build(batch: str, ids: list[str]) -> None:
         path = gd.write_page(title, body)
         titles.append((title, f"pages/{path.name}"))
 
+    taken: set[str] = set()
+    gemp_files: list[str] = []
+    for d in decks:
+        if d.get("gemp", True):
+            fn, omitted = gemp_file(d, taken)
+            d["gemp_file"], d["gemp_omitted"] = fn, omitted
+            if fn:
+                gemp_files.append(fn)
     players: dict[str, str] = {}
     for d in decks:
         qty = sum(int(r[0]) for r in d["cards"])
@@ -628,11 +692,35 @@ def cmd_build(batch: str, ids: list[str]) -> None:
     tsv = ROOT / f"y-{batch}.tsv"
     tsv.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     tar = ROOT / f"y-{batch}.tar"
+    apply_sh = ROOT / f"apply-{batch}.sh"
+    apply_sh.write_text(APPLY_TEMPLATE.format(batch=batch), encoding="utf-8", newline="\n")
     with tarfile.open(tar, "w") as tf:
         tf.add(tsv, arcname=tsv.name)
+        tf.add(apply_sh, arcname=apply_sh.name)
+        for fn in gemp_files:
+            tf.add(GEMP_OUT / fn, arcname=f"gemp-import-{batch}/{fn}")
         for _, rel in [l.split("\t") for l in lines]:
             tf.add(ROOT / rel, arcname=rel)
     print("TSV", tsv.name, "n", len(lines), "TAR", tar.name)
+
+
+APPLY_TEMPLATE = """#!/bin/bash
+# DeckTech batch {batch}: upload GEMP importable decklists, then pages (apply-tsv.sh).
+# Run on the VPS in /opt/swccg-wiki after: tar xf y-{batch}.tar
+set -euo pipefail
+export LANG=C.UTF-8
+cd /opt/swccg-wiki
+USER_NAME="${{EDIT_USER:-Admin}}"
+if [ -d gemp-import-{batch} ] && ls gemp-import-{batch}/*.txt >/dev/null 2>&1; then
+  docker exec swccg_wiki mkdir -p /tmp/gemp-import-{batch}
+  docker cp gemp-import-{batch}/. swccg_wiki:/tmp/gemp-import-{batch}/
+  docker exec swccg_wiki php maintenance/run.php importImages --user="$USER_NAME" \\
+    --comment="DeckTech {batch} GEMP importable decklists" --extensions=txt /tmp/gemp-import-{batch} || true
+  docker exec -u root swccg_wiki chown -R www-data:www-data /var/www/html/images || true
+fi
+bash apply-tsv.sh /opt/swccg-wiki/y-{batch}.tsv "DeckTech {batch}"
+echo APPLY-{batch}-DONE
+"""
 
 
 def cmd_check(tsv: str, ids: list[str] | None = None) -> None:
@@ -652,6 +740,16 @@ def cmd_check(tsv: str, ids: list[str] | None = None) -> None:
             print("RED", t, red[:8])
     print(f"checked {len(titles)} not reviewed {bad}")
     if ids and not bad:
+        for i in ids:  # once live: player page exists, GEMP file name is fixed
+            f = DECKS / f"{i}.json"
+            d = json.loads(f.read_text(encoding="utf-8"))
+            if d.get("player_page") == "new":
+                d["player_page"] = "existing"
+            page = live_text(dest_title(d)) or ""
+            m = re.search(r"GEMP Importable deck:\'\'\'\s*\[\[Media:([^|\]]+)", page)
+            if m:
+                d["gemp_file_live"] = m.group(1).strip()
+            f.write_text(json.dumps(d, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         led = set(json.loads(LIVE_FILE.read_text(encoding="utf-8"))) if LIVE_FILE.exists() else set()
         led |= {int(i) for i in ids}
         LIVE_FILE.write_text(json.dumps(sorted(led)) + "\n", encoding="utf-8")
