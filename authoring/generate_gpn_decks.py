@@ -7588,7 +7588,19 @@ def lookup_rows(raw: list[tuple[int, str]], side: str, allowed) -> tuple[list[tu
     return out, misses
 
 
+# Controversial published titles: page title is {handle} DS|LS (Bill 2026-10-10).
+# The published title stays in the source citation. Review list: ai-team-skills
+# shared/swccg-wiki/wiki-docs/RENAMED-TITLES.md.
+WITHHELD_TITLE = {
+    3874: "LordHoban DS",
+    1957: "ltkettch17 LS",
+    211: "Winsafra DS",
+}
+
+
 def wiki_title_for(author: str, title: str, did: int | None = None) -> str:
+    if did in WITHHELD_TITLE:
+        return WITHHELD_TITLE[did]
     t = f"{author} {title}"
     t = t.replace("\u2019", "'").replace("\u2018", "'").replace("`", "'")
     t = t.replace("|", "/")
@@ -7794,7 +7806,8 @@ def write_deck(
         if rec.get("non_swccg_list") or not fn
         else "* [[GEMP importable decklist]]\n"
     )
-    body = f"""'''{wiki_title}''' is a [[{side_title}]] constructed list published on [[Game Players Network]].
+    withheld = " The published title is not used as the page title; it is kept in the source citation." if rec.get("id") in WITHHELD_TITLE else ""
+    body = f"""'''{wiki_title}''' is a [[{side_title}]] constructed list published on [[Game Players Network]].{withheld}
 
 == Deck info ==
 * '''Player:''' {player_link(author)}
@@ -7843,7 +7856,7 @@ def rewrite_hub(recs: list[dict]) -> None:
     for rec in sorted(recs, key=lambda r: (sort_key(r["posted"]), r["id"])):
         vis = rec.get("start") or rec["title"]
         disp = rec["title"].replace("|", "/").replace("\u2019", "'").replace("\u2018", "'")
-        title_cell = f"[[{rec['wiki_title']}|{disp}]]"
+        title_cell = f"[[{rec['wiki_title']}]]" if rec.get("id") in WITHHELD_TITLE else f"[[{rec['wiki_title']}|{disp}]]"
         rows.append(
             f"| {display_date(rec['posted'])}\n| [[{rec['fmt']}]]\n| {title_cell}\n"
             f"| [[{ 'Light' if rec['side']=='LIGHT' else 'Dark' }]]\n| {player_link(rec['author'])}"

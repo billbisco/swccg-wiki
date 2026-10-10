@@ -1,5 +1,6 @@
 #!/bin/bash
 # Apply a titles TSV (title<TAB>relpath) via docker edit + FlaggedRevs + purge.
+# EDIT_USER selects the wiki account (Holocron Claude, Datacard Grok; default Admin).
 set -euo pipefail
 export LANG=C.UTF-8
 ROOT=/opt/swccg-wiki
@@ -35,7 +36,7 @@ if not text.endswith("\n"):
     text += "\n"
 p.write_text(text, encoding="utf-8", newline="\n")
 PY
-  docker exec -i swccg_wiki php maintenance/run.php edit --user=Admin \
+  docker exec -i swccg_wiki php maintenance/run.php edit --user="${EDIT_USER:-Admin}" --bot \
     --summary="$SUMMARY" \
     "$title" < "$f" || echo "EDITFAIL $title" >&2
 done < "$TSV"
