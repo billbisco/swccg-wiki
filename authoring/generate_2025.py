@@ -343,6 +343,8 @@ def render_deck(ev, player, t8, side, obj, counts, cards, media, companion, bp, 
     body = body.replace("[[Category:2026]]", "[[Category:2025]]")
     if ev == "retro":  # Retro GEMPC is Premiere - Death Star II, not Open
         body = body.replace("* '''Format:''' [[Open]]", "* '''Format:''' [[Premiere - Death Star II]]")
+    if ev == "charity":  # Charity event is Premiere to Virtual Set 3, not Open
+        body = body.replace("* '''Format:''' [[Open]]", "* '''Format:''' [[Premiere to Virtual Set 3]]")
     body = body.replace("* [[List of SWCCG tournaments]]", "* [[List of SWCCG tournaments]]\n* [[European Championships]]" if ev == "euro" else "* [[List of SWCCG tournaments]]")
     return title, body, hub
 
@@ -475,7 +477,7 @@ def process_gemp():
         url, date = src[ev]
         dt, hl, _st = subset(ev)
         rows = []
-        fmt = "[[Premiere - Death Star II]]" if ev == "retro" else "[[Open]]"
+        fmt = {"retro": "[[Premiere - Death Star II]]", "charity": "[[Premiere to Virtual Set 3]]"}.get(ev, "[[Open]]")
         if any(t8s):
             fin = "—"
             order = {
