@@ -341,6 +341,8 @@ def render_deck(ev, player, t8, side, obj, counts, cards, media, companion, bp, 
         ev, player, t8, side, obj, counts, cards, media, companion, bp, dests, title_map
     )
     body = body.replace("[[Category:2026]]", "[[Category:2025]]")
+    if ev == "retro":  # Retro GEMPC is Premiere - Death Star II, not Open
+        body = body.replace("* '''Format:''' [[Open]]", "* '''Format:''' [[Premiere - Death Star II]]")
     body = body.replace("* [[List of SWCCG tournaments]]", "* [[List of SWCCG tournaments]]\n* [[European Championships]]" if ev == "euro" else "* [[List of SWCCG tournaments]]")
     return title, body, hub
 
@@ -473,6 +475,7 @@ def process_gemp():
         url, date = src[ev]
         dt, hl, _st = subset(ev)
         rows = []
+        fmt = "[[Premiere - Death Star II]]" if ev == "retro" else "[[Open]]"
         if any(t8s):
             fin = "—"
             order = {
@@ -484,14 +487,14 @@ def process_gemp():
             if player in order:
                 fin = f"#{order.index(player)+1}"
             rows.append(
-                f"|- \n| {date} || [[{et}]] (Top 8) || [[Open]] || {fin} || {cell(dt, hl, player, True, 'DS')} || {cell(dt, hl, player, True, 'LS')}"
+                f"|- \n| {date} || [[{et}]] (Top 8) || {fmt} || {fin} || {cell(dt, hl, player, True, 'DS')} || {cell(dt, hl, player, True, 'LS')}"
             )
         if (not all(t8s)) or ev in ("worlds", "nats", "gempc"):
             if any(not t for t in t8s) or ev in ("worlds", "nats", "gempc"):
                 if not any(t8s) or True:
                     if any(not x for x in t8s):
                         rows.append(
-                            f"|- \n| {date} || [[{et}]] (Day 1) || [[Open]] || — || {cell(dt, hl, player, False, 'DS')} || {cell(dt, hl, player, False, 'LS')}"
+                            f"|- \n| {date} || [[{et}]] (Day 1) || {fmt} || — || {cell(dt, hl, player, False, 'DS')} || {cell(dt, hl, player, False, 'LS')}"
                         )
         # dedupe empty day1
         rows = [r for r in rows if "|| — || —" not in r or "Top 8" in r]
