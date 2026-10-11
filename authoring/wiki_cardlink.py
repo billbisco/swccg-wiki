@@ -494,7 +494,7 @@ def _fix_shields_in(section: str) -> str:
 # Players Committee virtual cards of 2002-2009 are wiki pages "X (V) (Virtual Set N)" (set pages
 # "Virtual Set N (Original)"); later re-virtualized cards share the "X (V)" name, so the dest depends
 # on the post date. Index of those pages: original-vs-index.json ("X (V)" -> [page, ...]).
-OVS_LEGAL = {1: "2002-03-09", 2: "2002-06-01", 3: "2002-09-20", 4: "2003-02-05", 5: "2003-06-01", 6: "2003-11-01", 7: "2004-07-19"}  # VS7: out by GPN 5733 (19 Jul 2004, "With the release of V set 7")
+OVS_LEGAL = {1: "2002-03-09", 2: "2002-06-01", 3: "2002-09-20", 4: "2003-02-05", 5: "2003-06-01", 6: "2003-11-01", 7: "2004-07-08", 8: "2004-11-25"}  # VS7: GPN 5716 (8 Jul 2004) plays Tantive IV (V), a VS7-only card; GPN 5733 (19 Jul) says "With the release of V set 7". VS8: GPN 5901 (25 Nov 2004) "After looking at the new V8 cards".
 _OVS: dict[str, list[str]] | None = None
 _OVS_INFO: dict[str, dict] = {}
 
