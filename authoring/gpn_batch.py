@@ -162,6 +162,14 @@ def gemp(d: dict, fmt: str, taken: set[str]) -> tuple[str | None, list[str]]:
     return fn, omitted
 
 
+def _wb_date(ts: str) -> str:
+    import datetime
+    try:
+        return datetime.datetime.strptime(str(ts)[:8], '%Y%m%d').strftime('%-d %B %Y')
+    except ValueError:
+        return str(ts)
+
+
 def page_body(d: dict, title: str, fmt: str, fn: str | None, omitted: list[str]) -> str:
     side_u = d["side"].upper()
     st = d.get("starting") or {}
@@ -171,7 +179,9 @@ def page_body(d: dict, title: str, fmt: str, fn: str | None, omitted: list[str])
     rows = b.rows_of(d)
     n = sum(q for q, _, _ in rows) + sum(int(r[0]) for r in d["cards"] if r[2] == "UNKNOWN")
     intro_bits = [d["description"].strip()] if d.get("description", "").strip() else []
-    if n != 60:
+    if d.get("uncaptured"):
+        intro_bits.append("The deck page itself was not captured by the Wayback Machine, so only the listing-page entry (title, author, date and blurb) survives; the card list is lost.")
+    elif n != 60:
         intro_bits.append(f"The published list has {n} cards.")
     intro_sec = "== Introduction ==\n\n" + "\n\n".join(intro_bits) + "\n\n" if intro_bits else ""
     strat = (d.get("strategy") or "").strip()
@@ -181,13 +191,18 @@ def page_body(d: dict, title: str, fmt: str, fn: str | None, omitted: list[str])
         download = gi.wiki_download_line(fn)
         if omitted:
             download += " (omits " + ", ".join(dict.fromkeys(omitted)) + ": no GEMP blueprint)"
-    info = [f"* '''Player:''' {g.player_link(d['byline'])}", f"* '''Published:''' {g.display_date(d['posted'])} (Game Players Network)",
-            f"* '''GPN category:''' {d['category']}", f"* '''Format:''' [[{fmt}]]", f"* '''Side:''' [[{d['side']}]]",
-            f"* '''Starting Card:''' {start_field}"]
+    info = [f"* '''Player:''' {g.player_link(d['byline'])}", f"* '''Published:''' {g.display_date(d['posted'])} (Game Players Network)"]
+    if d.get("category"):
+        info.append(f"* '''GPN category:''' {d['category']}")
+    if d.get("uncaptured"):
+        info.append(f"* '''Side:''' [[{d['side']}]] (inferred from the title)")
+    else:
+        info += [f"* '''Format:''' [[{fmt}]]", f"* '''Side:''' [[{d['side']}]]", f"* '''Starting Card:''' {start_field}"]
     for k, lab in (("interrupt", "Starting Interrupt"), ("effect", "Starting Effect")):
         if st.get(k):
             info.append(f"* '''{lab}:''' {gd.wiki_card(st[k], side_u)}")
-    info.append(f"* '''Strategy:''' {vis}")
+    if not d.get("uncaptured"):
+        info.append(f"* '''Strategy:''' {vis}")
     if download:
         info.append(download)
     shields = ""
@@ -206,10 +221,7 @@ def page_body(d: dict, title: str, fmt: str, fn: str | None, omitted: list[str])
 == Deck info ==
 {chr(10).join(info)}
 
-{intro_sec}== Decklist ==
-
-{gd.table_from_rows(rows, side_u)}
-{b.unknown_note(d)}{shields}{shnote}{notes}{after_sec}
+{intro_sec}{"" if d.get("uncaptured") else "== Decklist ==" + chr(10) + chr(10) + gd.table_from_rows(rows, side_u) + chr(10)}{b.unknown_note(d)}{shields}{shnote}{notes}{after_sec}
 == See also ==
 
 * [[Game Players Network decks]]
@@ -219,8 +231,7 @@ def page_body(d: dict, title: str, fmt: str, fn: str | None, omitted: list[str])
 
 == Sources ==
 
-* [{d['url']} {d['published_title']}] (Wayback, {g.DETAIL_TS})
-* [{g.listing_url(pg)} GPN Star Wars Decks page {pg}] (Wayback, {g.INDEX_TS})
+{"" if d.get("uncaptured") else "* [" + d['url'] + " " + d['published_title'] + "] (Wayback, " + _wb_date(d.get('detail_ts') or g.DETAIL_TS) + ")" + chr(10)}* [{g.listing_url(pg)} GPN Star Wars Decks page {pg}] (Wayback, {_wb_date(g.INDEX_TS)})
 
 {g.CATS}[[Category:Decklists]]
 [[Category:{year}]]
@@ -265,9 +276,17 @@ def hub_text(current: str, new_rows: list[tuple[tuple, str]], pages: set[int]) -
             return (0, 0, 0)
         mon = [k for k, v in enumerate(g.MONTHS) if v == m.group(2)]
         return (int(m.group(3)), mon[0] if mon else 0, int(m.group(1)))
+    def page_of(row: str) -> str:
+        m = re.search(r"^\| \[\[([^\]|]+)", row, re.M | re.S)
+        # third cell is the deck link; find the "[[title|" or "[[title]]" in the Title column
+        cells = row.split("\n| ")
+        return cells[2].split("|")[0].strip("[] ") if len(cells) > 2 else ""
     for _k, r in new_rows:
-        if r not in have:
-            rows.append(r)
+        if r in have:
+            continue
+        pg = page_of(r)
+        rows = [x for x in rows if page_of(x) != pg]   # a rebuilt deck replaces its old row (format may change)
+        rows.append(r)
     rows.sort(key=key)
     table = head + "\n|-\n" + "\n|-\n".join(rows)
     text = current[:start] + table + current[end:]
@@ -293,9 +312,9 @@ def cmd_build(batch: str, ids: list[str]) -> None:
         bad = [r for r in d["cards"] if r[2] == "?" or r[1].startswith("??")]
         if bad:
             raise SystemExit(f"gpn-{did}: unresolved {bad}")
-        fmt = fmt_of(d)
+        fmt = "" if d.get("uncaptured") else fmt_of(d)
         title = title_of(d)
-        fn, omitted = gemp(d, fmt, taken)
+        fn, omitted = (None, []) if d.get("uncaptured") else gemp(d, fmt, taken)
         if fn:
             files.append(fn)
         path = gd.write_page(title, page_body(d, title, fmt, fn, omitted))
@@ -307,7 +326,8 @@ def cmd_build(batch: str, ids: list[str]) -> None:
         players[dest] = player_text(d, title, cur)
         disp = d["published_title"].replace("|", "/").replace("’", "'").replace("‘", "'")
         cell = f"[[{title}]]" if not d.get("use_published_title", True) else f"[[{title}|{disp}]]"
-        hub_rows.append(((), f"| {g.display_date(d['posted'])}\n| [[{fmt}]]\n| {cell}\n| [[{d['side']}]]\n| {g.player_link(d['byline'])}"))
+        fmt_cell = f"[[{fmt}]]" if fmt else "—"
+        hub_rows.append(((), f"| {g.display_date(d['posted'])}\n| {fmt_cell}\n| {cell}\n| [[{d['side']}]]\n| {g.player_link(d['byline'])}"))
         pgs.add(d.get("page") or 0)
         print(f"BUILT gpn-{did} {title!r} {fmt} qty={sum(int(r[0]) for r in d['cards'])} gemp={fn}")
     for dest, text in players.items():
