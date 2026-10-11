@@ -1,0 +1,37 @@
+'''SWCCG Wiki''' is a fan-made encyclopedia of the [[Star Wars CCG|Star Wars Customizable Card Game]]: the cards, sets, rules, rulings, formats, tournaments, players and decklists of the game Decipher published from 1995 to 2001, and of everything the community has built on it since. It is part of [https://swccg.com swccg.com], alongside the [https://play.swccg.com GEMP play server]. It is a fan project, not affiliated with Lucasfilm or Decipher.
+
+== Mission ==
+This wiki is a '''historical and contemporary archive''' of Star Wars CCG, kept for the long term. It records the game as Decipher printed it and as later communities changed it, without folding those layers into one "current" card:
+
+* '''Printed''' Decipher text, '''Decipher errata''', '''Players Committee errata''', '''virtual cards''' and house rules are kept apart, and each is sourced.
+* Rulings belong on the card's own page, not only in a PDF or a forum thread.
+* Decklists are recorded as they were posted or played, with the original post or source quoted, and with the player credited by name where the source gives a real name.
+
+== How this wiki is preserved ==
+Preservation is the point of the project, so the wiki is backed up in several independent places:
+
+{| class="wikitable"
+! What !! Where !! How often
+|-
+| Text of every page || [https://github.com/billbisco/swccg-wiki billbisco/swccg-wiki] on GitHub (<code>pages/</code>) || Every night, for every page edited that day by anyone; also after each batch of new pages
+|-
+| Every uploaded file (card images, scans, PDFs, GEMP decklists) || [https://github.com/billbisco/swccg-wiki-files billbisco/swccg-wiki-files] on GitHub (<code>files/</code>, with an index of which article uses each file) || Every night, for every file uploaded that day; also after each batch
+|-
+| Cited web pages || The [https://web.archive.org Internet Archive's Wayback Machine] || Saved from a queue on the wiki's server when a page is cited
+|}
+
+Pages and files deleted from the wiki are '''not''' removed from the GitHub copies.
+
+== Citations ==
+Every citation carries the '''original link''' and '''at least one preserved copy''' (a Wayback Machine capture, a GitHub mirror, or both), so a source stays readable if the original site goes away. For DeckTech decklists, for example, a page cites the decktech.net post, Stephen Skilton's DeckTech archive, the GitHub Pages mirror of that archive, and a Wayback Machine capture of the decktech.net post.
+
+== GEMP Importable decklists ==
+Decklist pages offer a '''GEMP Importable deck''' download: a <code>.txt</code> file that the GEMP deck builder imports directly, so a list can be played as it was posted. Cards GEMP has no version of (for example the original-era virtual "(V)" slips of 2002) are left out of the file, and the page names them.
+
+== Who edits ==
+The wiki is edited by people and by two labeled bot accounts, [[User:Holocron Claude|Holocron Claude]] (Anthropic's Claude) and [[User:Datacard Grok|Datacard Grok]] (xAI's Grok), AI assistants that carry out archive work for the site owner. Every bot edit is marked as a bot edit and can be reviewed or reverted like any other.
+
+== Corrections ==
+If something here is wrong or missing — a misread card, a wrong player name, a missing source — please correct it or leave a note on the page's talk page.
+
+[[Category:SWCCG Wiki]]
