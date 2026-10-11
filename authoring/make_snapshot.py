@@ -13,7 +13,7 @@
 Asset fetch order (auto): direct HTTP (with optional cookies/UA from FlareSolverr),
 then the Wayback Machine raw capture (id_) of the exact URL, then without its query string.
 """
-import argparse, base64, datetime, mimetypes, re, sys, urllib.parse
+import argparse, base64, datetime, html as htmllib, mimetypes, re, sys, urllib.parse
 import requests
 from bs4 import BeautifulSoup
 
@@ -24,8 +24,9 @@ def clean(u):
     return u[:-1] if u.endswith(('?', '&')) else u
 
 class Fetcher:
-    def __init__(self, mode, ua, cookie_file):
+    def __init__(self, mode, ua, cookie_file, flaresolverr=None):
         self.mode, self.cache, self.log, self.rebase = mode, {}, [], {}
+        self.fs = flaresolverr
         self.s = requests.Session()
         self.s.headers['User-Agent'] = ua
         if cookie_file:
@@ -43,18 +44,38 @@ class Fetcher:
             pass
         return None
 
+    def _fs_css(self, url):
+        """Cloudflare fingerprints plain HTTP clients even with cf_clearance, so fetch stylesheets
+        through FlareSolverr (a real browser). Chrome shows text files inside <pre>; unwrap it."""
+        try:
+            r = requests.post(self.fs, json={'cmd': 'request.get', 'url': url, 'maxTimeout': 60000,
+                                             'session': 'snap'}, timeout=120).json()
+            body = r.get('solution', {}).get('response', '')
+            m = re.search(r'<pre[^>]*>(.*)</pre>', body, re.S)
+            if m and 'Just a moment' not in body:
+                return htmllib.unescape(m.group(1)).encode('utf-8'), 'text/css'
+        except (requests.RequestException, ValueError):
+            pass
+        return None
+
     def get(self, url):
         if url in self.cache:
             return self.cache[url]
         got, how = None, None
         if self.mode in ('direct', 'auto'):
             got, how = self._get(url), 'direct'
+            if not got and self.fs and url.split('?')[0].endswith('.css'):
+                got, how = self._fs_css(url), 'flaresolverr'
         if not got and 'font-awesome' in url and url.split('?')[0].endswith('font-awesome.min.css'):
             # phpBB 3.x bundles Font Awesome 4.7; use the identical public copy if the site's is unreachable
             got = self._get('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
             if got:
                 how = 'cdnjs FA 4.7.0'; url_base = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/'
                 self.rebase[url] = url_base
+        m = re.search(r'/fontawesome/5\.15\.4/webfonts/([^/?#]+)', url)
+        if not got and m:  # Font Awesome 5.15.4 ships with Beaver Builder; use the identical public copy
+            got = self._get('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/' + m.group(1))
+            how = 'cdnjs FA 5.15.4'
         if not got and self.mode in ('wayback', 'auto'):
             for cand in (url, url.split('?')[0]):
                 got = self._get('https://web.archive.org/web/2026id_/' + cand)
@@ -99,10 +120,11 @@ def main():
     ap.add_argument('html'); ap.add_argument('--url', required=True); ap.add_argument('-o', required=True)
     ap.add_argument('--fetcher', default='auto', choices=['direct', 'wayback', 'auto'])
     ap.add_argument('--cookie-file'); ap.add_argument('--user-agent', default='Mozilla/5.0 (swccg-wiki snapshot)')
+    ap.add_argument('--flaresolverr', help='FlareSolverr endpoint, e.g. http://localhost:8191/v1: used to fetch stylesheets Cloudflare blocks for plain HTTP clients')
     ap.add_argument('--captured', help='ISO time the page was captured (default now)')
     a = ap.parse_args()
     live = clean(a.url)
-    fetch = Fetcher(a.fetcher, a.user_agent, a.cookie_file)
+    fetch = Fetcher(a.fetcher, a.user_agent, a.cookie_file, a.flaresolverr)
     soup = BeautifulSoup(open(a.html, encoding='utf-8', errors='replace').read(), 'html.parser')
 
     for t in soup(['script', 'noscript', 'iframe', 'object', 'embed', 'template', 'base']):
