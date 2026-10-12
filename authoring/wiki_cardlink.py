@@ -508,7 +508,7 @@ def ovs_index() -> dict[str, list[str]]:
 
 
 def ovs_set(page: str) -> int:
-    m = re.search(r"\(Virtual Set (\d+)\)$", page)
+    m = re.search(r"\(Virtual Set (\d+)(?:: [^)]+)?\)$", page)   # "(Virtual Set 3: Revolution)" since 2026-10-12; bare "(Virtual Set N)" for sets not yet renamed
     return int(m.group(1)) if m else 0
 
 
@@ -540,5 +540,5 @@ def ovs_info(page: str) -> dict:
 
 def ovs_link(page: str) -> str:
     info = ovs_info(page)
-    label = re.sub(r" \(Virtual Set \d+\)$", "", page)
+    label = re.sub(r" \(Virtual Set \d+(?:: [^)]+)?\)$", "", page)
     return cardlink(page, info.get("image") or None, label)
