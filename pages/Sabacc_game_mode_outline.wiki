@@ -1,0 +1,196 @@
+'''Sabacc game mode outline''' is the working plan for the [[True Sabacc]] game mode on this wiki's [[GEMP]] table.
+
+''Status: planning. Items marked ''decided'' were chosen by Bill, and items marked ''accepted'' are ideas he agreed with but that are not designed yet. Everything else is a proposal or an open question. Nothing is final, including the name.''
+
+== Overview ==
+
+The mode would let a player play sabacc hands for in-game currency at themed tables, against a dealer or against other players. It would sit alongside regular casual and tournament play. It is based on the sabacc rules of the card game (see [[#Rules|Rules]]). The same hand logic would also serve as an automatic tiebreaker in tournaments (see [[#Tournament tiebreaker|below]]), and sabacc would appear in some missions of the Single Player Campaign (see [[#Mini-campaign (idea)|Mini-campaign]]). True Sabacc would play out the four sabacc variants directly.
+
+== Locations and themes ==
+
+There would be one theme for each sabacc variant in the card game. Each variant has a Light Side card and a Dark Side card, so each theme has a Light Side and a Dark Side version. The player picks the variant and the background. Each location could also add a small table modifier (accepted as an idea; none designed yet).
+
+{| class="wikitable"
+! Variant !! Cards !! Background ideas
+|-
+| Cloud City || [[Cloud City Sabacc]], [[Cloud City Sabacc (Dark)|Dark]] || Inside the casino ([[Cloud City: Casino]]), outside it, or other Cloud City locales, each with a Light and a Dark version.
+|-
+| Dune Sea || [[Dune Sea Sabacc]], [[Dune Sea Sabacc (Dark)|Dark]] || Jawas playing sabacc in the desert, a Jawa camp ([[Tatooine: Jawa Camp]]), and other areas. Light Side Jawas, including [[R'kik D'nec, Hero Of The Dune Sea]], play in the Dune Sea. Dark Side Jawas play too.
+|-
+| Jabba's Palace || [[Jabba's Palace Sabacc]], [[Jabba's Palace Sabacc (Dark)|Dark]] || Light Side palace locales with Light Side gamblers. The Dark Side version has other gamblers, probably [[Brangus Glee]]. Any character with the gambler characteristic in its lore should be considered as an appearance.
+|-
+| Trooper || [[Trooper Sabacc]], [[Trooper Sabacc (Dark)|Dark]] || A location theme as well; not yet chosen.
+|}
+
+== Dealers ==
+
+Each table would have a dealer matching the sabacc version being played, with a Light Side and a Dark Side dealer. The player can alternate dealers. A dealer picture would be shown in front. Real SWCCG characters with the gambler label would enrich the mode.
+
+'''Dealer personalities (accepted idea).''' Each dealer could have quirks and tells: Lando cheats, a nervous Jawa overdraws, and [[Brangus Glee]] plays cautiously. None are designed yet.
+
+'''Dealer decks (decided).''' A dealer may play a better deck than the player's, shown openly to the player. The sample decks are on [[Sabacc game mode Dune Sea decks]].
+
+Candidates from existing cards:
+
+* '''Cloud City:''' [[Lando Calrissian]] (Light) and [[Lando Calrissian (Dark)]].
+* '''Dune Sea:''' [[R'kik D'nec, Hero Of The Dune Sea]] (Light) and [[Iasa, The Traitor Of Jawa Canyon]] (Dark). Both cards have Dune Sea Sabacc text. R'kik is the boss of the Dune Sea table in the mini-campaign.
+* '''Jabba's Palace:''' Light gamblers such as [[Max Rebo]], [[Devaronian]], [[Tamtel Skreej]], and [[Sergeant Doallyn]]; Dark gamblers such as [[Klaatu]], [[Thul Fain]], [[Vedain]], and [[Brangus Glee]].
+* '''Trooper:''' not chosen. [[Cara Dune With Heavy Blaster Rifle]] is a Light Side trooper and gambler.
+
+== Rules ==
+
+'''In the card game,''' two players each draw two to six cards from their own Reserve Deck and try to total as close to 11 as possible without going over. A card's value is its destiny number. Wild and clone cards are set by the sabacc Interrupt. Both players reveal their hands at the end. If both go over 11, the player closer to 11 wins. A tie goes to the player with fewer cards. The loser gives up a stake card. If a player's first two cards total exactly 11 with no wild or clone cards, that is a perfect sabacc and the win counts double.<ref name="ar2023">[https://res.starwarsccg.org/rules/SWCCG_2023_AdvancedRulebook.pdf Players Committee Advanced Rulebook] (2023), Appendix C, Sabacc.</ref>
+
+The four variants differ in who may start them, their wild and clone cards, and their stakes. The Light Side and Dark Side card of each variant have the same game text.
+
+{| class="wikitable"
+! Variant !! Wild cards !! Clone cards !! Stakes
+|-
+| Cloud City || 1–6: Lando and Weather Vane || Locations and Ugnaughts || One starfighter, weapon, or device
+|-
+| Dune Sea || 0–7: Sandcrawler sites, Magnetic Suction Tube, Jawa Siesta, Jawa Pack || Tatooine locations, sandcrawlers, Jawa weapons, Utinni! || One device or droid without armor
+|-
+| Jabba's Palace || 1–6: Passenger Deck and deserts || Aliens and Jabba's Palace sites || One character weapon or non-unique alien
+|-
+| Trooper || 2–7: Imperial and Rebel leaders || Locations and droids || One transport vehicle without armor, or one character weapon
+|}
+
+'''In the game mode,''' the plan is to copy the dealer-table structure of blackjack, with 11 as the target instead of 21, and to flip over actual SWCCG cards. The player sees two cards, chooses hit or stand, and sees one dealer card. The player can also play hands against other players. Players could bring a deck to their sabacc table or use a pre-made deck for casual play.
+
+=== Design principles (decided) ===
+
+* '''Same hands as the card game.''' A hand in True Sabacc follows the card game: hit or pass, closest to 11 wins, and fewer cards wins a tie. What a player learns at the table carries over to sabacc in the card game, and the tournament tiebreaker uses the same rules. Differences go in the table, the dealer, the deck, and the rewards.
+* '''Dealer and player hands.''' Against a dealer the hand may be more like blackjack, with the dealer showing one card. Between players, both reveal at the same time and hands stay hidden until then, as in the card game.
+* '''The house needs an edge.''' It is fun to lose on average, and an edge keeps gold and silver from inflating just because players wait a week.
+* '''Wild cards.''' Every version of the four sabaccs would have wild cards in the deck, and the option button below turns them off for fair decks.
+* '''Unequal decks.''' The dealer's deck may be better than the player's, shown openly.
+* '''Campaign.''' The Single Player Campaign will feature sabacc in some missions as another way to defeat enemies, earn cards, and improve decks.
+
+=== Standard deck (decided) ===
+
+The standard ''fair deck'' for hands against the dealer, and for betting real gold and silver, is '''Deck C''': 60 cards using only the values 0 to 7. The dealer draws on 7 or less and stands on 8 or more. A perfect sabacc (first two cards total 11) pays 3:2. Deck C was picked from decks built to match blackjack's odds; the working is on the [[Talk:Sabacc game mode outline|talk page]].
+
+{| class="wikitable"
+! Card value !! 0 !! 1 !! 2 !! 3 !! 4 !! 5 !! 6 !! 7 !! Total
+|-
+! Cards
+| 19 || 10 || 3 || 1 || 5 || 11 || 5 || 6 || 60
+|}
+
+=== Going over 11 and ties (decided) ===
+
+The mode uses the card game's comparison unchanged: the total closest to 11 wins; if both players go over 11, the total closer to 11 wins; a tie goes to the player with fewer cards; equal cards are a draw. A player who goes over still loses to a dealer who did not. This replaces the earlier plan of treating ties as a push for now.
+
+With these rules the dealer is behind. On Deck C, with the same deck on both sides and a dealer who draws on 7 or less, the player is ahead by about 1.8% (a perfect sabacc paying double both ways). A dealer who could see the player's finished hand before drawing would be far ahead, with the house at about 10%, so the dealer would commit: he plays a fixed rule that does not use the player's hand, as at a blackjack table. The house edge is then set by the dealer's deck instead of by tie rules. For example, replacing three 0s with three 3s in the dealer's deck gives the house about 2.3% (see [[Sabacc game mode Dune Sea decks]]). The earlier idea, that the dealer wins ties on totals of 9, 10, and 11, is on the talk page. The choice is not made.
+
+=== The dealer's cards (proposal) ===
+
+The dealer would get two cards, one face up and one face down (the hole card), as at a blackjack table. Only a face-up 4, 5, 6, or 7 can make a perfect sabacc with one more card, so in those cases the dealer would check the hole card before the player acts, as a United States blackjack dealer does. Any further dealer cards are dealt face up after the player stands. In the card game, hands stay hidden until the end, so this is a change for the dealer-table format. Between players, hands would stay hidden and be revealed together (decided).
+
+=== Wild and clone cards (decided) ===
+
+The sabacc Interrupt cards define the wild and clone cards (see the table above), and themed decks would gain those properties. Wild cards are real choices: the player picks each value within the range on the Interrupt (accepted). An option button would turn off clone cards, wild cards, and similar effects, so that a fair deck is played with less randomness. The odds on the talk page are for that setting.
+
+=== Shoe (accepted idea) ===
+
+The deck would not be reshuffled after every hand, so players can track the cards already played, which SWCCG players are used to. How often it reshuffles is not designed.
+
+=== Fun mode and campaign stakes (proposal) ===
+
+Current proposal: actual gold and silver are won or lost only in the Campaign mode (or whatever it is called). Outside the campaign the mode is for fun and practice, with separate chips that are not tied to the account. This reshapes the earlier plan of a Fun mode and a standalone ''For keeps'' mode with a weekly reset. The standalone For keeps mode would be dropped. The wording is waiting for Bill's confirmation.
+
+* '''Fun and practice:''' the player starts with a set amount of chips and can bet any of it. After a loss the player starts a new game and the balance resets.
+* '''Campaign:''' hands in the Campaign mode use the actual gold and silver on the account.
+
+Side bets are an open idea Bill is still thinking about.
+
+=== Themed sample decks (decided idea, first set drafted) ===
+
+Sample decks would be made only for sabacc mode, one set for each area, as playable ''balanced sabacc decks'' with the same spread of values as Deck C. A Dune Sea deck uses Tatooine locations as the 0s and Jawas, sandcrawlers, Jawa weapons, droids, and other Tatooine cards as the rest. The first draft, with Light Side and Dark Side decks, boss decks, and the effect of a different dealer deck, is on [[Sabacc game mode Dune Sea decks]]. Tatooine locations are clone cards in Dune Sea Sabacc, so the option button above would affect such a deck.
+
+== Currency ==
+
+Bets would use the gold and silver that GEMP players already have. Players bet through sabacc hands to increase their money. A new name for the currency in this mode is open; one idea is ''gold credits'' and ''silver credits''. How balances work in each play mode is under [[#Fun mode and campaign stakes (proposal)|Fun mode and campaign stakes]]. The existing merchant system already gives other ways to earn gold. The aim is to add more ways to earn it and make earning it mean more, so heavy new gold sinks are to be avoided (open).
+
+== Progression and Lando ==
+
+The plan is to run this as an experiment. A player who does well moves up through levels, up to a Light Side or Dark Side Lando. A ceiling on how far a player can get is being considered.
+
+Lando is a scoundrel who cheats, as his card text does: when playing sabacc he may add 1 to or subtract 1 from his total, so a 10 or a 12 can count as 11.<ref name="lando">[[Lando Calrissian]] (Light, Cloud City) and [[Lando Calrissian (Dark)]] (Dark, Cloud City) game text. The rulebook adds that a player who uses such a modifier cannot have a perfect sabacc.</ref> In the mode he would also be the way to handle a player who wins too many hands. At some point the House, Lando, steps in with his inside advantage and brings the player back to size. His arrival should be a big event, and beating him despite the cheating should feel rewarded.
+
+'''House attention (accepted idea).''' A meter would rise as the player wins. When it reaches a threshold, Lando steps in. How the meter fills is not designed.
+
+How strong he is depends on how often he may adjust. On Deck C under the card-game rules, with a dealer who draws on 7 or less, a Lando who may adjust on 10% of hands gives the house about 2.3%, where a plain dealer leaves the player ahead by 1.8%. Each further 5% of hands adds about 2 points, and a Lando who adjusts on every hand gives the house about 39%, which makes him practically unbeatable. These figures assume he sees the player's finished hand when he adjusts, so they are an upper bound. The trigger and the frequency are open; the numbers are on the [[Talk:Sabacc game mode outline|talk page]].
+
+'''Lando as a teacher (idea).''' At the start, the player has been cheated by Lando, who then hands over some credits, teaches the game, and wishes the player well. That makes revenge at the end of the campaign sweeter.
+
+=== Mini-campaign (idea) ===
+
+The player could progress from dealer to dealer: Dune Sea Sabacc, then Jabba's Palace Sabacc, then Trooper Sabacc, then Cloud City Sabacc. Each area would have several dealers on each side of the Force. The boss of the Dune Sea table is [[R'kik D'nec, Hero Of The Dune Sea]], whose card says he wins double when he wins at Dune Sea Sabacc.<ref name="rkik">[[R'kik D'nec, Hero Of The Dune Sea]] game text.</ref> The final boss is Light Side or Dark Side Lando. Beating Lando might win the player control of his casino, a short story to go with the mode.
+
+Sabacc would also appear in some missions of the Single Player Campaign as another way to defeat enemies, earn cards, and improve decks. Rewards such as information, cards, and deck upgrades would be limited. This is for later campaign design.
+
+== Tournament tiebreaker ==
+
+The mode would also be reused as an automatic tiebreaker for a true tie in a tournament: take the two players' decks and have them play sabacc. The current tiebreaker procedure is on [[True Sabacc]].
+
+== Music ==
+
+Every location has its own music: Cloud City, Dune Sea, Jabba's Palace, and Trooper Sabacc. Cloud City has a demo track that needs improving. Tracks for the other three are still needed. See [[Sabacc game mode music]].
+
+== Visuals ==
+
+Green felt is the default for poker and blackjack tables. Alternatives are to be investigated, so the mode is not a pure copy of a real-life blackjack table. The look would be semi-futuristic and semi-Star Wars.
+
+=== Cloud City table layout (concept) ===
+
+A first idea for the Cloud City table, for discussion only. The look uses cyan and amber glass in place of green felt, with the casino as the background ([[Cloud City: Casino]]).
+
+{| class="wikitable"
+! Zone !! Idea
+|-
+| Dealer area, top centre || The dealer's picture ([[Lando Calrissian]] on the Light Side, [[Lando Calrissian (Dark)]] on the Dark Side, or another Cloud City dealer), with the dealer's face-up card and face-down hole card beside it.
+|-
+| Player hands, centre || The player's cards face up, with the running total and the number of cards. Other players' seats sit beside it for hands between players.
+|-
+| Bet area, bottom || The player's bet and balance, in whichever currency name is chosen, and the practice or campaign label.
+|-
+| Hit and stand controls || Beside the bet area.
+|-
+| Lando appearance cue || When the House steps in, the amber light and the dealer picture change to Lando and a short music sting plays, so the moment feels like an event.
+|-
+| Music cue || The Cloud City casino track plays during normal hands ([[Sabacc game mode music]]); a different cue marks Lando's arrival.
+|}
+
+== Open questions ==
+
+* Final name of the mode ("True Sabacc" for now).
+* Bill's confirmation that real gold and silver are won or lost only in the Campaign mode, which would replace the standalone For keeps mode.
+* The house edge tool: a different dealer deck, a boss perk, or a tie rule. The card-game rules alone leave the player ahead. Options are on the talk page and [[Sabacc game mode Dune Sea decks]].
+* The perfect sabacc payout: 3:2 was chosen with Deck C, but the card game pays double.
+* Whether the stakes and who-may-start rules of each variant apply, or only the wild and clone cards that come with the decks.
+* What value cards without a destiny number have in a player's own deck.
+* The Trooper Sabacc location theme and its dealers.
+* Whether Jawas appear on the Dark Side at Jabba's Palace. The Jabba's Palace Sabacc card does not require a Jawa; Dune Sea Sabacc does.
+* Rules for hands between players: stakes, any house cut, and ties.
+* Side bets.
+* Gold sinks and other ways to drain inflation, given the existing merchant system.
+* The currency names, the starting amount of practice chips, and abuse protection.
+* Lando: how often he adjusts, what makes the house-attention meter rise, the ceiling on progression, and what beating him gives.
+* Mini-campaign details: how many dealers in each area, the story, the campaign rewards, and what controlling the casino means.
+* How the tiebreaker use fits the dealer-table design, since the tournament hand is between two players.
+
+== See also ==
+
+* [[True Sabacc]]
+* [[Sabacc game mode Dune Sea decks]]
+* [[Sabacc game mode music]]
+* [[GEMP planned features]]
+* [[Players Committee Advanced Rulebook]]
+
+{{#if:1|<nowiki />
+<h2>References</h2>
+<references />}}
+
+[[Category:GEMP]]
+[[Category:Meta]]
