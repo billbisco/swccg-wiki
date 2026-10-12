@@ -309,9 +309,9 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # Green 1 / Blue 7 dested as written (no Dark File: / blueprint; not Light Green Squadron 1).
 # vProphetess / vHyperwave Scan / vMolator dest original-era slips, not
 # current-virtual V21 or Virtual Block (2002 original-virtual pool).
-# Live dests: Prophetess (V) (Virtual Set 1) File VS1O-12-Prophetess.png;
-# Molator (V) (Virtual Set 2) File VS2O-42-Molator.png;
-# Hyperwave Scan (V) (Virtual Set 3) File VS3O-34-Hyperwave_Scan.png.
+# Live dests: Prophetess (V) (Virtual Set 1: Legacy) File VS1O-12-Prophetess.png;
+# Molator (V) (Virtual Set 2: Our Most Desperate Hour) File VS2O-42-Molator.png;
+# Hyperwave Scan (V) (Virtual Set 3: Revolution) File VS3O-34-Hyperwave_Scan.png.
 # Blow Parried dested Blow Parried (Reflections III combo).
 # MMove Combo dested Masterful Move & Endor Occupation (Coruscant combo).
 # They're Still Coming dested They're Still Coming Through!
@@ -330,10 +330,10 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # Consoli 26297 dest notes stay here.
 # Published DeckTech title is German vulgar slang; dest title is
 # 2002 World Championship Angelo Consoli DS.
-# Ket Malis (V) dested Ket Maliss (V) (Virtual Set 3) — original-era Effect
+# Ket Malis (V) dested Ket Maliss (V) (Virtual Set 3: Revolution) — original-era Effect
 # slip, not VB1 character.
-# Reegesk (V) dested Reegesk (V) (Virtual Set 3), not VB1.
-# Prophetess (V) dested Prophetess (V) (Virtual Set 1).
+# Reegesk (V) dested Reegesk (V) (Virtual Set 3: Revolution), not VB1.
+# Prophetess (V) dested Prophetess (V) (Virtual Set 1: Legacy).
 # FIMA 10 from outside the 60: I Find Your Lack Of Faith Disturbing (V)
 # dested Virtual Set 2; Reactor Terminal (V) dested Virtual Set 3; rest
 # dest Decipher Effects as printed. Consoli labeled them Defensive Shields.
@@ -402,15 +402,15 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # CoruscantJedi Council Chamber dested Coruscant: Jedi Council Chamber.
 # EndorLanding Platform dested Endor: Landing Platform (Docking Bay).
 # EndorChief Chirpa's Hut dested Endor: Chief Chirpa's Hut.
-# Leia [v] dested Leia (V) (Virtual Set 3).
+# Leia [v] dested Leia (V) (Virtual Set 3: Revolution).
 # Owen & Beru Lars dested Owen Lars & Beru Lars.
 # Obi-Wan w/Lightsaber dested Obi-Wan With Lightsaber.
 # Qui-Gon Jinn w/Lightsaber dested Qui-Gon Jinn With Lightsaber.
 # Yoda, Master of the Force dested Yoda, Master Of The Force.
 # Threepio w/His Parts Showing dested Threepio With His Parts Showing.
-# Scanner Techs [v] dested Scanner Techs (V) (Virtual Set 3).
+# Scanner Techs [v] dested Scanner Techs (V) (Virtual Set 3: Revolution).
 # YISYW & Staging Areas dested Your Insight Serves You Well & Staging Areas.
-# Escape Pod [v] dested Escape Pod (V) (Virtual Set 2).
+# Escape Pod [v] dested Escape Pod (V) (Virtual Set 2: Our Most Desperate Hour).
 # Speak w/The Jedi Council dested Speak With The Jedi Council.
 # OOC & Transmission Terminated dested Out Of Commission & Transmission Terminated.
 # Han, Chewie and the Falcon dested Han, Chewie, And The Falcon.
@@ -430,12 +430,12 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # Green pile dested Weapons.
 # Alter (coruscant) dested Alter.
 # I Hope Shes Alright dested I Hope She's All Right.
-# Sai torr Kal Fas (v) dested Sai'torr Kal Fas (V) (Virtual Set 1).
-# Escape Pod (v) dested Escape Pod (V) (Virtual Set 2).
+# Sai torr Kal Fas (v) dested Sai'torr Kal Fas (V) (Virtual Set 1: Legacy).
+# Escape Pod (v) dested Escape Pod (V) (Virtual Set 2: Our Most Desperate Hour).
 # Wise Advise dested Wise Advice (published spelling stays in original post).
 # Dont Do That Again dested Don't Do That Again.
-# Affect Mind (v) dested Affect Mind (V) (Virtual Set 2).
-# Traffic Control (v) dested Traffic Control (V) (Virtual Set 3).
+# Affect Mind (v) dested Affect Mind (V) (Virtual Set 2: Our Most Desperate Hour).
+# Traffic Control (v) dested Traffic Control (V) (Virtual Set 3: Revolution).
 # Defensive Shields (10) posted outside the 60; dest that pile separately.
 # FIMA is not in the 60; do not invent it. Qty 60 excludes the 10.
 # No GEMP: original-VS slips.
@@ -472,11 +472,11 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # TatooineJabba's Palace dested Tatooine: Jabba's Palace.
 # Jabba's PalaceLower Passages dested Jabba's Palace: Lower Passages.
 # Jabba's Sail BargePassenger Deck dested Jabba's Sail Barge: Passenger Deck.
-# Rodian [v] dested Rodian (V) (Virtual Set 3).
-# Greedo [v] dested Greedo (V) (Virtual Set 3).
-# Molatar [v] dested Molator (V) (Virtual Set 2).
-# Ket Maliss [v] dested Ket Maliss (V) (Virtual Set 3).
-# Oo-ta Goo-ta Solo [v] dested Oo-ta Goo-ta, Solo? (V) (Virtual Set 3).
+# Rodian [v] dested Rodian (V) (Virtual Set 3: Revolution).
+# Greedo [v] dested Greedo (V) (Virtual Set 3: Revolution).
+# Molatar [v] dested Molator (V) (Virtual Set 2: Our Most Desperate Hour).
+# Ket Maliss [v] dested Ket Maliss (V) (Virtual Set 3: Revolution).
+# Oo-ta Goo-ta Solo [v] dested Oo-ta Goo-ta, Solo? (V) (Virtual Set 3: Revolution).
 # Prince Xixor dested Prince Xizor.
 # IG-88 w/Riot Gun dested IG-88 With Riot Gun.
 # 4-Lom dested 4-LOM With Concussion Rifle.
@@ -499,7 +499,7 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # D DB dested Death Star: Docking Bay 327.
 # Detention Block Corridor dested Death Star: Detention Block Corridor.
 # DODN/WA dested Do, Or Do Not & Wise Advice.
-# Cell 2187 dested Cell 2187 (V) (Virtual Set 3) (strategy names (V)).
+# Cell 2187 dested Cell 2187 (V) (Virtual Set 3: Revolution) (strategy names (V)).
 # Prisoner 2187 listed in Start and Characters; dest 2 copies (published
 # arithmetic that hits 60).
 # Jedi Council dested Coruscant: Jedi Council Chamber.
@@ -533,7 +533,7 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # Fear Is My Ally, plus 10 unnamed D-Shields outside the 60.
 # Fear Is My Alley dested Fear Is My Ally; Alley stays in original post.
 # Mobilization Point dested You Cannot Hide Forever & Mobilization Points.
-# Tarkin (v) dested Tarkin (V) (Virtual Set 3).
+# Tarkin (v) dested Tarkin (V) (Virtual Set 3: Revolution).
 # Baron Soontir Fel aka Der Rote Baron dested Baron Soontir Fel.
 # Prince Xizor dested Prince Xizor.
 # IG-88 dested IG-88 (Premiere; no riot gun).
@@ -550,8 +550,8 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # Start 9: Objective, Generator Core, Generator, Deep Hatred, Prepared Defenses,
 # Blaster Rack (V), IAO/SP, Wipe Them Out All Of Them, Fear Is My Ally.
 # FIMA is inside the 9 and counts toward 60; do not invent Held 10.
-# Blaster Rack (v) dested Blaster Rack (V) (Virtual Set 1).
-# Reacotor Terminal dested Reactor Terminal (V) (Virtual Set 3).
+# Blaster Rack (v) dested Blaster Rack (V) (Virtual Set 1: Legacy).
+# Reacotor Terminal dested Reactor Terminal (V) (Virtual Set 3: Revolution).
 # U-3P0 dested U-3PO (Yoo-Threepio).
 # Lord Maul dested Lord Maul (Ref3), not Darth Maul With Lightsaber.
 # Lord Vader dested Lord Vader (DS2), not Darth Vader With Lightsaber.
@@ -561,143 +561,143 @@ def post_source_bullets(pid: int, label: str, *, github: bool = True) -> str:
 # wrap() otherwise picks Virtual Block / Virtual Shields / current-virtual.
 ORIGINAL_VS = {
     "Prophetess (V)": (
-        "Prophetess (V) (Virtual Set 1)",
+        "Prophetess (V) (Virtual Set 1: Legacy)",
         "VS1O-12-Prophetess.png",
     ),
     "Molator (V)": (
-        "Molator (V) (Virtual Set 2)",
+        "Molator (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-42-Molator.png",
     ),
     "I Find Your Lack Of Faith Disturbing (V)": (
-        "I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2)",
+        "I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-35-I_Find_Your_Lack_Of_Faith_Disturbing.png",
     ),
     "Hyperwave Scan (V)": (
-        "Hyperwave Scan (V) (Virtual Set 3)",
+        "Hyperwave Scan (V) (Virtual Set 3: Revolution)",
         "VS3O-34-Hyperwave_Scan.png",
     ),
     "Ket Maliss (V)": (
-        "Ket Maliss (V) (Virtual Set 3)",
+        "Ket Maliss (V) (Virtual Set 3: Revolution)",
         "VS3O-38-Ket_Maliss.png",
     ),
     "Reactor Terminal (V)": (
-        "Reactor Terminal (V) (Virtual Set 3)",
+        "Reactor Terminal (V) (Virtual Set 3: Revolution)",
         "VS3O-42-Reactor_Terminal.png",
     ),
     "Reegesk (V)": (
-        "Reegesk (V) (Virtual Set 3)",
+        "Reegesk (V) (Virtual Set 3: Revolution)",
         "VS3O-43-Reegesk.png",
     ),
     "Sai'torr Kal Fas (V)": (
-        "Sai'torr Kal Fas (V) (Virtual Set 1)",
+        "Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)",
         "VS1O-06-Saitorr_Kal_Fas.png",
     ),
     "Blaster Rack (V)": (
-        "Blaster Rack (V) (Virtual Set 1)",
+        "Blaster Rack (V) (Virtual Set 1: Legacy)",
         "VS1O-09-Blaster_Rack.png",
     ),
     "Affect Mind (V)": (
-        "Affect Mind (V) (Virtual Set 2)",
+        "Affect Mind (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-01-Affect_Mind.png",
     ),
     "Escape Pod (V)": (
-        "Escape Pod (V) (Virtual Set 2)",
+        "Escape Pod (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-06-Escape_Pod.png",
     ),
     "Leia (V)": (
-        "Leia (V) (Virtual Set 3)",
+        "Leia (V) (Virtual Set 3: Revolution)",
         "VS3O-12-Leia.png",
     ),
     "Scanner Techs (V)": (
-        "Scanner Techs (V) (Virtual Set 3)",
+        "Scanner Techs (V) (Virtual Set 3: Revolution)",
         "VS3O-20-Scanner_Techs.png",
     ),
     "Traffic Control (V)": (
-        "Traffic Control (V) (Virtual Set 3)",
+        "Traffic Control (V) (Virtual Set 3: Revolution)",
         "VS3O-23-Traffic_Control.png",
     ),
     "Rodian (V)": (
-        "Rodian (V) (Virtual Set 3)",
+        "Rodian (V) (Virtual Set 3: Revolution)",
         "VS3O-45-Rodian.png",
     ),
     "Greedo (V)": (
-        "Greedo (V) (Virtual Set 3)",
+        "Greedo (V) (Virtual Set 3: Revolution)",
         "VS3O-32-Greedo.png",
     ),
     "Oo-ta Goo-ta, Solo? (V)": (
-        "Oo-ta Goo-ta, Solo? (V) (Virtual Set 3)",
+        "Oo-ta Goo-ta, Solo? (V) (Virtual Set 3: Revolution)",
         "VS3O-41-Oota_Goota_Solo.png",
     ),
     "Cell 2187 (V)": (
-        "Cell 2187 (V) (Virtual Set 3)",
+        "Cell 2187 (V) (Virtual Set 3: Revolution)",
         "VS3O-03-Cell_2187.png",
     ),
     "Tarkin (V)": (
-        "Tarkin (V) (Virtual Set 3)",
+        "Tarkin (V) (Virtual Set 3: Revolution)",
         "VS3O-47-Tarkin.png",
     ),
     "Leia's Back (V)": (
-        "Leia's Back (V) (Virtual Set 2)",
+        "Leia's Back (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-13-Leias_Back.png",
     ),
     "Yavin Sentry (V)": (
-        "Yavin Sentry (V) (Virtual Set 2)",
+        "Yavin Sentry (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-25-Yavin_Sentry.png",
     ),
     "Fear Will Keep Them In Line (V)": (
-        "Fear Will Keep Them In Line (V) (Virtual Set 2)",
+        "Fear Will Keep Them In Line (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-32-Fear_Will_Keep_Them_In_Line.png",
     ),
     "Imperial-Class Star Destroyer (V)": (
-        "Imperial-Class Star Destroyer (V) (Virtual Set 2)",
+        "Imperial-Class Star Destroyer (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-36-Imperial_Class_Star_Destroyer.png",
     ),
     "Luke Skywalker (V)": (
-        "Luke Skywalker (V) (Virtual Set 1)",
+        "Luke Skywalker (V) (Virtual Set 1: Legacy)",
         "VS1O-05-Luke Skywalker.png",
     ),
     "Imperial Reinforcements (V)": (
-        "Imperial Reinforcements (V) (Virtual Set 2)",
+        "Imperial Reinforcements (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-37-Imperial_Reinforcements.png",
     ),
     "Darth Vader (V)": (
-        "Darth Vader (V) (Virtual Set 1)",
+        "Darth Vader (V) (Virtual Set 1: Legacy)",
         "VS1O-10-Darth_Vader.png",
     ),
     "Commander Praji (V)": (
-        "Commander Praji (V) (Virtual Set 2)",
+        "Commander Praji (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-28-Commander_Praji.png",
     ),
     "The Empire's Back (V)": (
-        "The Empire's Back (V) (Virtual Set 2)",
+        "The Empire's Back (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-48-The_Empires_Back.png",
     ),
     "Black 2 (V)": (
-        "Black 2 (V) (Virtual Set 1)",
+        "Black 2 (V) (Virtual Set 1: Legacy)",
         "VS1O-08-Black_2.png",
     ),
     "Death Star Sentry (V)": (
-        "Death Star Sentry (V) (Virtual Set 2)",
+        "Death Star Sentry (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-29-Death_Star_Sentry.png",
     ),
     "Rycar Ryjerd (V)": (
-        "Rycar Ryjerd (V) (Virtual Set 2)",
+        "Rycar Ryjerd (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-21-Rycar_Ryjerd.png",
     ),
     "K'lor'slug (V)": (
-        "K'lor'slug (V) (Virtual Set 2)",
+        "K'lor'slug (V) (Virtual Set 2: Our Most Desperate Hour)",
         "VS2O-12-Klorslug.png",
     ),
     "Bo Shek (V)": (
-        "Bo Shek (V) (Virtual Set 1)",
+        "Bo Shek (V) (Virtual Set 1: Legacy)",
         "VS1O-01-Bo Shek.png",
     ),
     "BoShek (V)": (
-        "Bo Shek (V) (Virtual Set 1)",
+        "Bo Shek (V) (Virtual Set 1: Legacy)",
         "VS1O-01-Bo Shek.png",
     ),
     "Han's Heavy Blaster Pistol (V)": (
-        "Han's Heavy Blaster Pistol (V) (Virtual Set 1)",
+        "Han's Heavy Blaster Pistol (V) (Virtual Set 1: Legacy)",
         "VS1O-04-Hans Heavy Blaster Pistol.png",
     ),
 }
@@ -1572,7 +1572,7 @@ SNEED_DS = [
 # CC Leia's Hut dested Cloud City: Guest Quarters (QMC start site; Leia Guest
 # Quarters slang; no Cloud City Hut).
 # Chewie, Engraged dested Chewie, Enraged.
-# Luke Skywalker (V) dested Luke Skywalker (V) (Virtual Set 1)
+# Luke Skywalker (V) dested Luke Skywalker (V) (Virtual Set 1: Legacy)
 # File VS1O-05-Luke Skywalker.png.
 # X-Wing Laser Cannons dested X-wing Laser Cannon.
 # Alter (Lost) dested Alter (Coruscant) Light File Cor-L-alter.gif.
@@ -1657,8 +1657,8 @@ MARSHALL_LS = [
 # bith shuffle/desperate reach dested The Bith Shuffle & Desperate Reach.
 # grimtash dested Grimtaash. It's a trap dested It's A Trap!.
 # profit dested You Can Either Profit By This.... i did it dested I Did It!.
-# sal torr kal fas(V) dested Sai'torr Kal Fas (V) (Virtual Set 1).
-# escape pod(v) dested Escape Pod (V) (Virtual Set 2).
+# sal torr kal fas(V) dested Sai'torr Kal Fas (V) (Virtual Set 1: Legacy).
+# escape pod(v) dested Escape Pod (V) (Virtual Set 2: Our Most Desperate Hour).
 # AUOF inside EFFECTS counts toward 60.
 # Sai'torr Kal Fas (V) has no STARTING: in original VS1 game text — omit
 # Starting Effect. Frozen Han / Audience Chamber / Jabba's Palace are
@@ -2125,7 +2125,7 @@ NYSTROM_SHIELDS = [
 # Posted Ghhhk & Those Rebels Wont Escape Us dested Ghhhk & Those Rebels Won't Escape Us.
 # Posted Executor dested Executor (Dark). Posted Endor dested Endor (Dark).
 # Posted Bespin dested Bespin (Dark).
-# Posted Blaster Rack (V) dested Blaster Rack (V) (Virtual Set 1).
+# Posted Blaster Rack (V) dested Blaster Rack (V) (Virtual Set 1: Legacy).
 # Posted We Must Accelerate Our Plans dested as printed Coruscant Dark.
 # Posted Bad Feeling Have I under Effects dested Interrupt.
 # Lord Maul dested Lord Maul. Lord Vader dested Lord Vader (not DLOTS).
@@ -8284,7 +8284,7 @@ def povs1_page() -> str:
     return """{{Hatnote|This page is printed Decipher cards plus original Virtual Set 1 (2002 PDF slips). It is not current [[Virtual Set 1]] and not [[Premiere to Virtual Set 3]].}}
 '''Premiere - Original VS1''' is the constructed pool of printed Decipher cards through [[Theed Palace]] plus original [[Players Committee]] [[Virtual Set 1: Legacy|Virtual Set 1]]. [[Virtual Set 1: Legacy|Virtual Set 1]] became tournament-legal on 9 March 2002.<ref name="vs2002">[[Virtual Sets (2002-2009)]]</ref> The short name '''POVS1''' redirects here.
 
-[[Darryll Silva DS]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (9 April 2002). [[Casey Merry Celebration what]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (9 April 2002). [[Mike Stevens ls senate]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (19 April 2002). [[2002 Yavin 4 Regionals Kevin Elia 2002 Yavin 4 regional 2nd Place- I Am Jacks Anger]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (21 April 2002). [[Jacob Taylor Jacob's Profit aka Big Trouble]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[Dunya Ertan beefed up profit]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (27 April 2002). [[Chris Burnett My senate]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (27 April 2002). [[Taylor Hayward A Hidden Base Deck]] dests [[Luke Skywalker (V) (Virtual Set 1)]]. [[Dennis Jeffris Rebel Strike Team - Da Non-Bomb]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (28 April 2002). [[Dunya Ertan we dont need a sticking hypergenerator]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (29 April 2002). [[Jason Herrin Voice of the council solid]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[Taylor Hayward Agents In The Court]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (4 May 2002). [[Dunya Ertan power of Rebel strike team]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (4 May 2002). [[Thomas Papp HDADTJ aka there are no Jedi alive]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (5 May 2002). [[Sam Diamond The CIA Is Trying To Kill Me]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (5 May 2002). [[Drew Scott BHBM how to kill combat]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (6 May 2002). [[Jacob Taylor Jacob's BHBM aka Blame Canada]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (9 May 2002). [[Lewis Blake YEEeeah I've got the Hoth (Big) Blues Baby]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (11 May 2002). [[Taylor Hayward LS]] dests [[Luke Skywalker (V) (Virtual Set 1)]]. [[Peter Jurcovic There Are Those Droidekas]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (14 May 2002). [[Matthew Harrison-Trainor Secret Siths Profit]] dests [[Bo Shek (V) (Virtual Set 1)]] and [[Han's Heavy Blaster Pistol (V) (Virtual Set 1)]]. [[2002 Vegas DPC Brian Hunter LS Senate done RIGHT aka Ghhhks Away]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (12 May 2002). [[2002 Alderaan Regionals Clayton Atkin Atkins’ Alderaan 2nd Place TDIGWATT]] dests [[Prophetess (V) (Virtual Set 1)]] and [[Black 2 (V) (Virtual Set 1)]]. [[Cody Jewell ’Saber Combat My Way V1 00(UnRevised)]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[Wes Brown Imperial Blues]] dests [[Darth Vader (V) (Virtual Set 1)]]. [[Mike (Quione) Rebel Strike Team- Stay the hell of endor]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (22 May 2002). [[Vjeko Keskic H-TOWN Jedis vs NRW Jedis]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[Vjeko Keskic All Your Damage Belongs To Watto]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (25 May 2002). [[Maximilien Bouchard WYS Choke BETA]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (25 May 2002). [[Jon Manning Cloud City trooper deck]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (25 May 2002). [[Quirin Fürgut Unbeatable EBO aka fun for everyone]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (26 May 2002). [[Brian Hunter Saber Combat done RIGHT aka No Mans Land]] dests [[Prophetess (V) (Virtual Set 1)]] and [[Blaster Rack (V) (Virtual Set 1)]]. [[Uriah Watkins Testing Testing 1 2 3 (4 5 6)]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[2002 Ralltiir Regionals Vjeko Keskic Court Likes Direct Damage aka Gailid Superstar]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (19 May 2002). Game Players Network lists posted from that legal day dest original-era slips such as [[Blaster Rack (V) (Virtual Set 1)]], [[Darth Vader (V) (Virtual Set 1)]], [[Prophetess (V) (Virtual Set 1)]], [[Luke Skywalker (V) (Virtual Set 1)]], and [[Bo Shek (V) (Virtual Set 1)]].
+[[Darryll Silva DS]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (9 April 2002). [[Casey Merry Celebration what]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (9 April 2002). [[Mike Stevens ls senate]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (19 April 2002). [[2002 Yavin 4 Regionals Kevin Elia 2002 Yavin 4 regional 2nd Place- I Am Jacks Anger]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (21 April 2002). [[Jacob Taylor Jacob's Profit aka Big Trouble]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[Dunya Ertan beefed up profit]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (27 April 2002). [[Chris Burnett My senate]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (27 April 2002). [[Taylor Hayward A Hidden Base Deck]] dests [[Luke Skywalker (V) (Virtual Set 1: Legacy)]]. [[Dennis Jeffris Rebel Strike Team - Da Non-Bomb]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (28 April 2002). [[Dunya Ertan we dont need a sticking hypergenerator]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (29 April 2002). [[Jason Herrin Voice of the council solid]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[Taylor Hayward Agents In The Court]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (4 May 2002). [[Dunya Ertan power of Rebel strike team]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (4 May 2002). [[Thomas Papp HDADTJ aka there are no Jedi alive]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (5 May 2002). [[Sam Diamond The CIA Is Trying To Kill Me]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (5 May 2002). [[Drew Scott BHBM how to kill combat]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (6 May 2002). [[Jacob Taylor Jacob's BHBM aka Blame Canada]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (9 May 2002). [[Lewis Blake YEEeeah I've got the Hoth (Big) Blues Baby]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (11 May 2002). [[Taylor Hayward LS]] dests [[Luke Skywalker (V) (Virtual Set 1: Legacy)]]. [[Peter Jurcovic There Are Those Droidekas]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (14 May 2002). [[Matthew Harrison-Trainor Secret Siths Profit]] dests [[Bo Shek (V) (Virtual Set 1: Legacy)]] and [[Han's Heavy Blaster Pistol (V) (Virtual Set 1: Legacy)]]. [[2002 Vegas DPC Brian Hunter LS Senate done RIGHT aka Ghhhks Away]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (12 May 2002). [[2002 Alderaan Regionals Clayton Atkin Atkins’ Alderaan 2nd Place TDIGWATT]] dests [[Prophetess (V) (Virtual Set 1: Legacy)]] and [[Black 2 (V) (Virtual Set 1: Legacy)]]. [[Cody Jewell ’Saber Combat My Way V1 00(UnRevised)]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[Wes Brown Imperial Blues]] dests [[Darth Vader (V) (Virtual Set 1: Legacy)]]. [[Mike (Quione) Rebel Strike Team- Stay the hell of endor]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (22 May 2002). [[Vjeko Keskic H-TOWN Jedis vs NRW Jedis]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[Vjeko Keskic All Your Damage Belongs To Watto]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (25 May 2002). [[Maximilien Bouchard WYS Choke BETA]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (25 May 2002). [[Jon Manning Cloud City trooper deck]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (25 May 2002). [[Quirin Fürgut Unbeatable EBO aka fun for everyone]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (26 May 2002). [[Brian Hunter Saber Combat done RIGHT aka No Mans Land]] dests [[Prophetess (V) (Virtual Set 1: Legacy)]] and [[Blaster Rack (V) (Virtual Set 1: Legacy)]]. [[Uriah Watkins Testing Testing 1 2 3 (4 5 6)]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[2002 Ralltiir Regionals Vjeko Keskic Court Likes Direct Damage aka Gailid Superstar]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (19 May 2002). Game Players Network lists posted from that legal day dest original-era slips such as [[Blaster Rack (V) (Virtual Set 1: Legacy)]], [[Darth Vader (V) (Virtual Set 1: Legacy)]], [[Prophetess (V) (Virtual Set 1: Legacy)]], [[Luke Skywalker (V) (Virtual Set 1: Legacy)]], and [[Bo Shek (V) (Virtual Set 1: Legacy)]].
 
 == Organized play ==
 
@@ -8322,7 +8322,7 @@ def povs2_page() -> str:
     return """{{Hatnote|This page is printed Decipher cards plus original Virtual Sets 1–2 (2002 PDF slips). It is not current [[Virtual Set 2]] and not [[Premiere to Virtual Set 3]].}}
 '''Premiere - Original VS2''' is the constructed pool of printed Decipher cards through [[Theed Palace]] plus original [[Players Committee]] Virtual Sets 1–2. [[Virtual Set 2: Our Most Desperate Hour|Virtual Set 2]] became tournament-legal on 1 June 2002.<ref name="vs2002">[[Virtual Sets (2002-2009)]]</ref> The short name '''POVS2''' redirects here.
 
-[[Stephen Beckham Too Hot in da Hot Tub]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[Chris Wodicka 6th place Coruscant regionals]] dests [[Darth Vader (V) (Virtual Set 1)]]. [[Adam McCombie Throne Room Mains So Hot Right Now]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[Matt Wehner Court Of the Vile Gangsta - Limp Bizkit Style]] dests [[Molator (V) (Virtual Set 2)]]. [[Geoff Bowman DS]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (9 June 2002). [[Greg Zinn Shes Virtually Back]] dests original-era slips such as [[Leia's Back (V) (Virtual Set 2)]], [[Yavin Sentry (V) (Virtual Set 2)]], and [[Affect Mind (V) (Virtual Set 2)]]. [[Maximilien Bouchard Fear Will Keep Them In Line (V) ALPHA]] dests [[Fear Will Keep Them In Line (V) (Virtual Set 2)]] and [[Imperial-Class Star Destroyer (V) (Virtual Set 2)]]. [[John Irving 3B3-888 Superstar aka Agents of pure BS]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (7 August 2002). [[Ryan McLain The Rx Throne Room Wrex]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (4 August 2002). [[Tulsa Mini-Open Michael Sneed Subterranean Homesick Alien]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (August 2002). [[Steve Marshall Viperstyle - Keeping The Senators Out Forever]] dests [[Luke Skywalker (V) (Virtual Set 1)]]. [[2002 Origins Open Ken Cross Squires Origins Profit]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]] and [[Escape Pod (V) (Virtual Set 2)]]. [[Justin Warren Raging Bull (Hoostino's Hunt Down Hammer)]] dests [[I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2)]]. [[David Burnett JediGamler's Watto aka The Unstoppable Machine]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (20 July 2002 post; [[2002 Houston DPC]] 14 July 2002). [[Kyle Krueger The Beast on the Beach]] dests [[Imperial Reinforcements (V) (Virtual Set 2)]]. [[Kyle Krueger the beast on the beach v2]] dests [[Imperial Reinforcements (V) (Virtual Set 2)]]. [[Mike (Quione) Saber combat my way]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (24 June 2002). [[Seth Van Winkle Seth's Mad Huntdown Deck]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (10 July 2002). [[Pyry Nystrom Empire is virtually back]] dests [[Darth Vader (V) (Virtual Set 1)]], [[Commander Praji (V) (Virtual Set 2)]], [[The Empire's Back (V) (Virtual Set 2)]], [[Imperial-Class Star Destroyer (V) (Virtual Set 2)]], [[Fear Will Keep Them In Line (V) (Virtual Set 2)]], and [[I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2)]]. [[Bill Kafer LSC TacoBill style]] dests [[Blaster Rack (V) (Virtual Set 1)]]. [[Matt Carulli Hunt Down and Revive the SCUM]] dests [[Blaster Rack (V) (Virtual Set 1)]] and [[I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2)]]. [[Chris Davis TDIGWATT/PIDAIAF CC Dark Deal Deck]] dests [[Black 2 (V) (Virtual Set 1)]]. [[Chris McCoy Quiet Macking of Cloud city]] dests [[Escape Pod (V) (Virtual Set 2)]]. [[Mike Guarino I’m Getting Too Old For This]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (19 June 2002). [[Arvind Bhasker Maul’s Combat]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (13 June 2002). [[Vjeko Keskic Rumble In The Bronx With Mains]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[Zach Mann None shall pass choke damn I guess you can]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (16 June 2002). [[Matt Wehner Good PunJab Hunting]] dests [[Rycar Ryjerd (V) (Virtual Set 2)]], [[Escape Pod (V) (Virtual Set 2)]], and [[K'lor'slug (V) (Virtual Set 2)]]. [[David Kangas QMC Clouds]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1)]]. [[James Zajic die die die]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (16 June 2002). [[Adam Nelson Droid Deal v 1 0]] dests [[I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2)]], [[Imperial-Class Star Destroyer (V) (Virtual Set 2)]], and [[Death Star Sentry (V) (Virtual Set 2)]]. [[Zach Mann What my step It’s yours I should be watching]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (17 June 2002).
+[[Stephen Beckham Too Hot in da Hot Tub]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[Chris Wodicka 6th place Coruscant regionals]] dests [[Darth Vader (V) (Virtual Set 1: Legacy)]]. [[Adam McCombie Throne Room Mains So Hot Right Now]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[Matt Wehner Court Of the Vile Gangsta - Limp Bizkit Style]] dests [[Molator (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Geoff Bowman DS]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (9 June 2002). [[Greg Zinn Shes Virtually Back]] dests original-era slips such as [[Leia's Back (V) (Virtual Set 2: Our Most Desperate Hour)]], [[Yavin Sentry (V) (Virtual Set 2: Our Most Desperate Hour)]], and [[Affect Mind (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Maximilien Bouchard Fear Will Keep Them In Line (V) ALPHA]] dests [[Fear Will Keep Them In Line (V) (Virtual Set 2: Our Most Desperate Hour)]] and [[Imperial-Class Star Destroyer (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[John Irving 3B3-888 Superstar aka Agents of pure BS]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (7 August 2002). [[Ryan McLain The Rx Throne Room Wrex]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (4 August 2002). [[Tulsa Mini-Open Michael Sneed Subterranean Homesick Alien]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (August 2002). [[Steve Marshall Viperstyle - Keeping The Senators Out Forever]] dests [[Luke Skywalker (V) (Virtual Set 1: Legacy)]]. [[2002 Origins Open Ken Cross Squires Origins Profit]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]] and [[Escape Pod (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Justin Warren Raging Bull (Hoostino's Hunt Down Hammer)]] dests [[I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[David Burnett JediGamler's Watto aka The Unstoppable Machine]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (20 July 2002 post; [[2002 Houston DPC]] 14 July 2002). [[Kyle Krueger The Beast on the Beach]] dests [[Imperial Reinforcements (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Kyle Krueger the beast on the beach v2]] dests [[Imperial Reinforcements (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Mike (Quione) Saber combat my way]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (24 June 2002). [[Seth Van Winkle Seth's Mad Huntdown Deck]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (10 July 2002). [[Pyry Nystrom Empire is virtually back]] dests [[Darth Vader (V) (Virtual Set 1: Legacy)]], [[Commander Praji (V) (Virtual Set 2: Our Most Desperate Hour)]], [[The Empire's Back (V) (Virtual Set 2: Our Most Desperate Hour)]], [[Imperial-Class Star Destroyer (V) (Virtual Set 2: Our Most Desperate Hour)]], [[Fear Will Keep Them In Line (V) (Virtual Set 2: Our Most Desperate Hour)]], and [[I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Bill Kafer LSC TacoBill style]] dests [[Blaster Rack (V) (Virtual Set 1: Legacy)]]. [[Matt Carulli Hunt Down and Revive the SCUM]] dests [[Blaster Rack (V) (Virtual Set 1: Legacy)]] and [[I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Chris Davis TDIGWATT/PIDAIAF CC Dark Deal Deck]] dests [[Black 2 (V) (Virtual Set 1: Legacy)]]. [[Chris McCoy Quiet Macking of Cloud city]] dests [[Escape Pod (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Mike Guarino I’m Getting Too Old For This]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (19 June 2002). [[Arvind Bhasker Maul’s Combat]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (13 June 2002). [[Vjeko Keskic Rumble In The Bronx With Mains]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[Zach Mann None shall pass choke damn I guess you can]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (16 June 2002). [[Matt Wehner Good PunJab Hunting]] dests [[Rycar Ryjerd (V) (Virtual Set 2: Our Most Desperate Hour)]], [[Escape Pod (V) (Virtual Set 2: Our Most Desperate Hour)]], and [[K'lor'slug (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[David Kangas QMC Clouds]] dests [[Sai'torr Kal Fas (V) (Virtual Set 1: Legacy)]]. [[James Zajic die die die]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (16 June 2002). [[Adam Nelson Droid Deal v 1 0]] dests [[I Find Your Lack Of Faith Disturbing (V) (Virtual Set 2: Our Most Desperate Hour)]], [[Imperial-Class Star Destroyer (V) (Virtual Set 2: Our Most Desperate Hour)]], and [[Death Star Sentry (V) (Virtual Set 2: Our Most Desperate Hour)]]. [[Zach Mann What my step It’s yours I should be watching]] is printed Decipher through [[Theed Palace]] (no original (V) cards); the format cell is still this pool by legal day (17 June 2002).
 
 == Organized play ==
 
