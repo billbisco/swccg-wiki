@@ -110,6 +110,31 @@ class Wiki:
         u = d["upload"]
         return u.get("result", "?") + (" (unchanged)" if "duplicate" in json.dumps(u.get("warnings", {})) else "")
 
+    def upload_new(self, path: Path, filename: str, text: str, comment: str) -> str:
+        """Upload under a NEW name only: no ignorewarnings, refuses if the file exists."""
+        p = self.get(action="query", titles="File:" + filename)["query"]["pages"][0]
+        if not p.get("missing"):
+            return "ERROR exists: refusing to overwrite"
+        boundary = uuid.uuid4().hex
+        fields = {"action": "upload", "format": "json", "formatversion": "2", "filename": filename,
+                  "comment": comment, "text": text, "token": self.csrf}
+        body = b"".join(
+            f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
+            for k, v in fields.items())
+        body += (f"--{boundary}\r\nContent-Disposition: form-data; name=\"file\"; filename=\"{path.name}\"\r\n"
+                 f"Content-Type: application/octet-stream\r\n\r\n").encode("utf-8") + path.read_bytes() + f"\r\n--{boundary}--\r\n".encode()
+        d = self._open(urllib.request.Request(API, body, {"Content-Type": f"multipart/form-data; boundary={boundary}"}))
+        if "error" in d:
+            return f"ERROR {d['error'].get('code')}: {d['error'].get('info', '')[:120]}"
+        u = d["upload"]
+        if u.get("result") != "Success":
+            return f"ERROR {u.get('result')}: {json.dumps(u.get('warnings', {}))[:200]}"
+        self.post(action="purge", titles="File:" + filename, forcelinkupdate="1")
+        return "Success" + self.review("File:" + filename)
+
+    def purge(self, *titles: str) -> dict:
+        return self.post(action="purge", titles="|".join(titles), forcelinkupdate="1")
+
 
 def main() -> int:
     ap = argparse.ArgumentParser()
