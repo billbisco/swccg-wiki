@@ -1,5 +1,18 @@
 This page sets the editing standards for everyone who writes on the SWCCG Wiki, human or AI. The same rules apply to all editors. The wiki is an encyclopedia: a compendium of existing knowledge that is honest about where the knowledge comes from. Editors do not invent knowledge.
 
+== Standing rule: SWCCG is a small world (identity matching) ==
+'''Bill (2026-10-12; repeated many times):''' SWCCG is a small world. If a match is about '''99.8%''' likely to be the same person, treat them as one person and go with it. '''Never ask Bill to confirm near-certain matches.''' Skip only genuinely ambiguous cases.
+
+This covers '''all''' identity matching:
+* '''Name variants:''' nickname or short form, middle initial, obvious typo, same events (Charlie/Charles, Matt/Matthew).
+* '''Nicknames and handles:''' forum shorthand (for example "BFred" for [[Brian Fred]]), and GEMP, Holotable, DeckTech, or Slack handles when context makes the match near-certain.
+* '''Photo identification:''' a tag or caption, the person's own comment, elimination within a tagged group, '''or''' a nickname or handle plus thread or event context that makes the person near-certain. Uncertain faces stay unidentified.
+* '''Decklist and results attribution:''' last-name-only sheets, first name plus initial, Username boxes, and published nicknames — merge onto the identified player page when context makes the match about 99.8%.
+
+One canonical page per person; other names redirect. Link as <code>[[Canonical|Name as in source]]</code>. Add an "also known as" or handle note on the person page.
+
+'''Conflicting spellings.''' When name variants conflict, compare the sources (results, forums, decklists, videos) and use the best-supported name for the page; the other spellings are redirects, with a "sometimes spelled" note on the page. Example: [[JW Millet]] (also published as J.W. Miller and JD Millet).
+
 == Write for the reader ==
 * '''Reader value decides what stays.''' Include a fact if it changes what a player understands or what a collector does. Cut it if it does not, even when it is true and sourced. Catalog bookkeeping, such as a rarity code or how an encyclopedia labels a pack slot, is not reader value.
 * '''Be concise.''' Use short, neutral sentences. Cut repetition and unnecessary detail. Cut words before facts. When a source has a long list, put it in one sentence and move on.
@@ -11,6 +24,7 @@ This page sets the editing standards for everyone who writes on the SWCCG Wiki, 
 * Important facts deserve a citation: numbers, dates, rules, and anything a reader might doubt. Not every sentence needs one.
 * When a fact is well established, add the reference and move on.
 * When a claim is disputed, doubtful, or an opinion, name the source in the sentence itself ("According to ...").
+* '''Private source documents (Bill, 2026-10-12).''' When Bill provides private source documents (for example, an organizer's email), host them under swccg.com/snapshots/ (for example, snapshots/email/) and archive them like any other source, with a Preserved copy.
 * '''Do not add inferences.''' If no source states it, it does not go in the article. Put the idea on the article's Talk page, labeled as an inference.
 
 == Accuracy ==
@@ -23,6 +37,24 @@ This page sets the editing standards for everyone who writes on the SWCCG Wiki, 
 * '''No repeated person.''' Never repeat a person across rows when their tenure is continuous; show each name once on the row where they belong so one line shows their full tenure.
 * '''Merge identical adjacent rows.''' Merge adjacent rows with identical holders into one row with the combined date range.
 * '''Close gaps.''' Check for gaps between one holder's end and the next holder's start; research the true handoff date rather than leaving a gap.
+* '''One range, not capture dates.''' When nothing changed between documented dates, show one range from the start date to present (or to the last documented date if no longer current), not a list of capture dates. Never split a continuous tenure at a year or archive-snapshot boundary unless the role, team or title actually changed per a source.
+* '''Same role, one row.''' Abbreviations or wording variants of the same role (e.g. Dev = Developer) are one role: merge into one row with the full name.
+* '''Position first.''' In organization and roster lists, write every entry position first, then person (for example "Design Advocate: [[Chris Kelly]]"), including advocates, in the same format as team entries. Service roles inside teams (for example lead GEMP slicer) are positions too: write "Lead GEMP slicer: [[Jeremy DiPaolo]]", one sub-bullet per role, not "[[Jeremy DiPaolo]] (lead GEMP slicer)".
+
+== Photos of people ==
+* '''Photo sources (Bill, 2026-10-12).''' Photos must be posted on SWCCG websites or associated with SWCCG events (tournaments, get-togethers). Never search out private or personal photos, or people's own Facebook photos that aren't associated with SWCCG.
+* '''Public SWCCG Facebook photos are allowed.''' Public SWCCG-related Facebook photos may be used (for example, Kevin Reitzel's album, which he shared publicly). Never use private Facebook photos that need an account to view.
+* '''Identify from evidence under the small-world rule.''' Name a person from a tag or caption on the source (or the person's own comment), by elimination within a tagged group, '''or''' from a nickname or handle plus thread or event context that makes the match about 99.8% certain (see [[#Standing rule: SWCCG is a small world (identity matching)|Standing rule]]). Mark anything truly uncertain as unidentified rather than guessing.
+* '''No obscene gestures on person pages (Bill, 2026-10-12).''' Do not put a photo that shows an obscene gesture (for example a middle finger) on a person page. Such a photo may be used only as an identification reference; do not upload it to the person page or display it there.
+* '''Cite the source and an archive copy.''' On the File page, link the source photo or post and add a preserved copy (<code>Preserved copy: [https://web.archive.org/web/... Internet Archive]</code>). If no archive can capture it, say so.
+* '''Credit the photographer only when known.''' Otherwise leave the photographer field blank. A still from a video is credited to the video's creator.
+* '''New file names only.''' Never overwrite an existing file; check for duplicates on the wiki first.
+
+== Tournament and league pages ==
+* '''Formats are single GEMP format names''', e.g. "Premiere - Jabba's Palace Sealed Deck" or "Premiere - Cloud City (Modified)". Link the exact format page if it exists; otherwise write the exact name as plain text.
+* '''Standings''': show the top 8, with the full list in a collapsed table (<code>class="wikitable sortable mw-collapsible mw-collapsed"</code>).
+* '''GEMP handles''' go in a standings column, filled where known from the player's page or the sources; leave the cell blank if unknown.
+* '''No handles in prose.''' Link the person; their page gives the handle.
 
 == Talk pages ==
 Use an article's Talk page as the editors' notebook after any substantial edit. Useful sections are:
