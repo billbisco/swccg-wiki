@@ -467,8 +467,9 @@ li#footer-poweredbyico,
 .card-portrait img {
   width: 280px;
   height: auto;
-  border: 1px solid #ccc;
-  background: #111;
+  /* card images have transparent rounded corners (PC scans and remasters): no box, no fill */
+  border: none;
+  background: transparent;
 }
 
 .card-rail-dual {
