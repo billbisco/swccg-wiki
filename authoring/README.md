@@ -16,3 +16,5 @@ python3 authoring/style_lint.py draft.wiki --title "Page"     # local draft vs l
 ```
 
 Flags: banned hedge/meta words (note, research, pending, inferred, reportedly, appears to, probably, unclear, …), headings named Gaps/Notes/Research/Open questions/Sources, captions over 12 words or describing the image (shows, visible, left, right, pictured, …), sentences over 30 words. Prints body word count vs previous revision. Exits 1 on any flag; fix all flags before saving. No login needed.
+
+Exemptions (2026-10-14): `{| |}` tables are stripped before sentence and word checks; each line or list item is checked separately, and `."`/`.”` end a sentence; quoted speech is not scanned for banned words; sentences with 6+ commas (name lists) are not length-checked; list/sub-pages (title contains `/` or body starts "This page lists") may say "this page"/"we" and skip the length check; `== Sources ==` is allowed on decklist and event pages (detected from Deck/Event/Tournament/Regionals/Grand Slam categories or infobox templates).
