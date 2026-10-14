@@ -43,6 +43,7 @@ def body(t):
     t = re.sub(r"<ref[^>]*>.*?</ref>", " ", t, flags=re.S)
     t = re.sub(r"<references[^>]*>.*?</references>|<references\s*/>", " ", t, flags=re.S)
     t = re.sub(r"<gallery[^>]*>.*?</gallery>", " ", t, flags=re.S)
+    for _ in range(3): t = re.sub(r"^\{\|(?:(?!^\{\|).)*?^\|\}", " ", t, flags=re.S | re.M)
     for _ in range(3): t = re.sub(r"\{\{[^{}]*\}\}", " ", t)
     for _ in range(3): t = re.sub(r"\[\[(?:File|Image|Category):[^\[\]]*(?:\[\[[^\]]*\]\][^\[\]]*)*\]\]", " ", t)
     # drop See also / References sections entirely
@@ -50,15 +51,27 @@ def body(t):
     t = re.sub(r"\[\[[^|\]]*\|([^\]]*)\]\]", r"\1", t)
     t = re.sub(r"\[\[([^\]]*)\]\]", r"\1", t)
     t = re.sub(r"\[https?://\S+\s([^\]]*)\]", r"\1", t)
+    t = re.sub(r"<br\s*/?>", "\n", t, flags=re.I)
     t = re.sub(r"'''?|<[^>]+>|^[*#:;]+", "", t, flags=re.M)
     return t
 
 def words(t): return len(re.findall(r"[A-Za-z0-9][\w'’.-]*", re.sub(r"^=+.*?=+\s*$", "", t, flags=re.M)))
 
-def lint(text):
+def unquote(t):
+    return re.sub(r"\"[^\"\n]*\"|“[^”\n]*”", " ", t)
+
+def is_list_page(title, text):
+    return bool(title and "/" in title) or body(text).lstrip().lower().startswith("this page lists")
+
+def allows_sources(text):
+    return bool(re.search(r"\[\[Category:[^\]]*(Deck|Decklist|Event|Tournament|Championship|Regionals|Grand Slam)[^\]]*\]\]|\{\{\s*(Infobox[ _]?(Tournament|Event|Deck)|Deck|Decklist|Event)", text, re.I))
+
+def lint(text, title=None):
     flags = []
     for h in re.findall(r"^=+\s*(.*?)\s*=+\s*$", text, re.M):
-        if h.strip().lower() in BAD_HEADINGS: flags.append(f"HEADING  '{h}' is not allowed")
+        hl = h.strip().lower()
+        if hl == "sources" and allows_sources(text): continue
+        if hl in BAD_HEADINGS: flags.append(f"HEADING  '{h}' is not allowed")
     for c in captions(text):
         plain = re.sub(r"\[\[[^|\]]*\|([^\]]*)\]\]|\[\[([^\]]*)\]\]", lambda m: m.group(1) or m.group(2), c)
         n = len(plain.split())
@@ -67,11 +80,17 @@ def lint(text):
             if re.search(rf"\b{wd}\b", plain, re.I): flags.append(f"CAPTION  describes image ('{wd}'): {plain[:90]}")
     b = body(text)
     prose = re.sub(r"^=+.*?=+\s*$", "", b, flags=re.M)
+    scan = unquote(prose)
     for wd in BANNED:
-        for m in re.finditer(rf"\b{re.escape(wd.strip())}\b", prose, re.I):
-            ctx = " ".join(prose[max(0, m.start()-50):m.end()+50].split())
+        if wd.strip() in ("this page", "we") and is_list_page(title, text): continue
+        for m in re.finditer(rf"\b{re.escape(wd.strip())}\b", scan, re.I):
+            ctx = " ".join(scan[max(0, m.start()-50):m.end()+50].split())
             flags.append(f"BANNED   '{wd.strip()}': …{ctx}…")
-    for s in re.split(r"(?<=[.!?])\s+(?=[A-Z\"'])", " ".join(prose.split())):
+    paras = prose.split("\n")  # list items and lines are separate units
+    sents = [x for para in paras for x in re.split(r"(?<=[.!?])[\"”’']?\s+(?=[A-Z\"“'])", " ".join(para.split()))]
+    for s in sents:
+        if is_list_page(title, text): break          # transcripts and lists: no sentence-length check
+        if s.count(",") >= 6: continue                # name lists (credits, playtesters)
         n = len(s.split())
         if n > MAX_SENT: flags.append(f"LONG     {n} words: {s[:100]}…")
     return flags, words(b)
@@ -89,10 +108,10 @@ def main():
         r = fetch(a.target, 2)
         if not r: sys.exit(f"no such page: {a.target}")
         text = r[0][1]; prev = r[1][1] if len(r) > 1 else None
-    flags, n = lint(text)
+    flags, n = lint(text, a.title or (None if os.path.isfile(a.target) else a.target))
     for f in flags: print(f)
     if prev is not None:
-        pn = lint(prev)[1]; print(f"WORDS    body {n} (previous {pn}, {n-pn:+d})")
+        pn = lint(prev, a.title)[1]; print(f"WORDS    body {n} (previous {pn}, {n-pn:+d})")
     else: print(f"WORDS    body {n}")
     print(f"{len(flags)} flag(s)")
     sys.exit(1 if flags else 0)
