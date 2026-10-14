@@ -298,6 +298,14 @@
   "status": "retry",
   "tries": 1
  },
+ "https://starwars.fandom.com/wiki/Dagobah_Revised_Unlimited": {
+  "capture": "",
+  "error": "error:no-request",
+  "job_id": "spn2-eda32b5a08c31564398dc34f51c36578d52f3b5c",
+  "last": "2026-10-14T17:06:16Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://starwars.fandom.com/wiki/Hoth_Revised_Unlimited": {
   "capture": "",
   "error": "error:no-request",
@@ -2101,9 +2109,9 @@
  "https://swccg.com/snapshots/pc/2020-worlds-day-3-bastian-winkelhaus-ds-bespin-crv.html": {
   "capture": "https://web.archive.org/web/20261014140605/https://swccg.com/snapshots/pc/2020-worlds-day-3-bastian-winkelhaus-ds-bespin-crv.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-14T16:31:12Z",
+  "last": "2026-10-14T17:04:16Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-3-bastian-winkelhaus-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261014140727/https://swccg.com/snapshots/pc/2020-worlds-day-3-bastian-winkelhaus-ls-legend.html",
@@ -2194,24 +2202,24 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-3-quirin-furgut-ds-hunt-down-v.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261014141036/https://swccg.com/snapshots/pc/2020-worlds-day-3-quirin-furgut-ds-hunt-down-v.html",
   "job_id": "spn2-de0c46a6c203bfae6eea3dfcf1f8b8c9c2f18f37",
-  "last": "2026-10-14T14:09:43Z",
-  "status": "pending",
+  "last": "2026-10-14T17:03:32Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-3-quirin-furgut-ls-hitco.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261014144028/https://swccg.com/snapshots/pc/2020-worlds-day-3-quirin-furgut-ls-hitco.html",
   "job_id": "spn2-4598515ec34217eb15c0f26c0c54112c8730c700",
-  "last": "2026-10-14T14:39:32Z",
-  "status": "pending",
+  "last": "2026-10-14T17:03:38Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2021-retro-event-top-8-pds2.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261014165113/https://swccg.com/snapshots/pc/2021-retro-event-top-8-pds2.html",
   "job_id": "spn2-ff6ec390ec6ff28c8346a4bef0249c779e33e7fa",
-  "last": "2026-10-14T16:50:06Z",
-  "status": "pending",
+  "last": "2026-10-14T17:03:41Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2021-worlds-adam-schellberg-ds-isb.html": {
@@ -2222,10 +2230,10 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2021-worlds-adam-schellberg-ls-qui-communing.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261014141140/https://swccg.com/snapshots/pc/2021-worlds-adam-schellberg-ls-qui-communing.html",
   "job_id": "spn2-dd12145e04dc63d01bdacb71ebccadb991234dbc",
-  "last": "2026-10-14T14:10:35Z",
-  "status": "pending",
+  "last": "2026-10-14T17:03:46Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2021-worlds-alex-hatoum-ds-map.html": {
@@ -2243,17 +2251,17 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2021-worlds-amar-banger-ds-invasion.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261014142034/https://swccg.com/snapshots/pc/2021-worlds-amar-banger-ds-invasion.html",
   "job_id": "spn2-df4f82e3c9face815f33975f5c4e8d0bea53780d",
-  "last": "2026-10-14T14:19:28Z",
-  "status": "pending",
+  "last": "2026-10-14T17:03:49Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2021-worlds-amar-banger-ls-rendezvous-point-ltww.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261014141942/https://swccg.com/snapshots/pc/2021-worlds-amar-banger-ls-rendezvous-point-ltww.html",
   "job_id": "spn2-fc4f7f9ef48a5e4dd60ecfb7df7501695b93f933",
-  "last": "2026-10-14T14:19:38Z",
-  "status": "pending",
+  "last": "2026-10-14T17:03:52Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2021-worlds-anthony-howard-ds-mauls-chambers-ssav.html": {
@@ -2545,9 +2553,9 @@
  "https://swccg.com/snapshots/pc/2021-worlds-day-2-top-8-jared-napolitano-ls-profit.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-14T16:31:22Z",
+  "last": "2026-10-14T17:04:26Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2021-worlds-day-2-top-8-joe-olson-ds-aobs.html": {
   "capture": "",
@@ -2818,9 +2826,9 @@
  "https://swccg.com/snapshots/pc/2021-worlds-justin-miyashiro-ds-hd.html": {
   "capture": "https://web.archive.org/web/20261014152843/https://swccg.com/snapshots/pc/2021-worlds-justin-miyashiro-ds-hd.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-14T16:31:32Z",
+  "last": "2026-10-14T17:04:36Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2021-worlds-justin-miyashiro-ls-yoda-communing.html": {
   "capture": "",
@@ -3167,9 +3175,9 @@
  },
  "https://swccg.com/snapshots/pc/2021-worlds-ryan-jellison-ds-isb.html": {
   "capture": "https://web.archive.org/web/20261014155640/https://swccg.com/snapshots/pc/2021-worlds-ryan-jellison-ds-isb.html",
-  "last": "2026-10-14T16:16:08Z",
-  "status": "retry",
-  "tries": 1
+  "last": "2026-10-14T17:05:34Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2021-worlds-ryan-jellison-ls-aitc.html": {
   "capture": "",
@@ -3432,9 +3440,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-jeff-lavigne-ds-desert-landing-site-ssav.html": {
   "capture": "https://web.archive.org/web/20261014161215/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-jeff-lavigne-ds-desert-landing-site-ssav.html",
-  "last": "2026-10-14T16:31:08Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-14T17:04:57Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-justin-desai-ds-walkers-ssav.html": {
   "capture": "https://web.archive.org/web/20261014161932/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-justin-desai-ds-walkers-ssav.html",
@@ -3761,6 +3770,13 @@
   "capture": "https://web.archive.org/web/20261014164831/https://swccg.com/snapshots/pc/2023-ocs-playoffs-top-16-mike-kessling-ls-yoda-communing.html",
   "job_id": "spn2-84d56ee92099f6ed4003d22cd0402761d703ffe4",
   "last": "2026-10-14T16:53:17Z",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2024-08-north-american-continental-championship-new-brunswick-new-jersey-august-9-112024.html": {
+  "capture": "https://web.archive.org/web/20261014140710/https://swccg.com/snapshots/pc/2024-08-north-american-continental-championship-new-brunswick-new-jersey-august-9-112024.html",
+  "job_id": "spn2-90f924b23a5f44bb829c3ebf782d68855e82fc41",
+  "last": "2026-10-14T17:05:42Z",
   "status": "ok",
   "tries": 1
  },
@@ -4444,8 +4460,8 @@
  },
  "https://swccg.com/snapshots/pc/2025-01-las-vegas-grand-prix-las-vegas-nevada-jan-11-12-2025.html": {
   "capture": "https://web.archive.org/web/20261014140215/https://swccg.com/snapshots/pc/2025-01-las-vegas-grand-prix-las-vegas-nevada-jan-11-12-2025.html",
-  "last": "2026-10-14T16:54:00Z",
-  "status": "pending",
+  "last": "2026-10-14T17:04:15Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-02-morristown-melee-morristown-new-jersey-apr-24-27-2025.html": {
