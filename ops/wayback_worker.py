@@ -113,12 +113,28 @@ def spn2_submit(url: str) -> dict:
         "User-Agent": UA, "Accept": "application/json", "Authorization": AUTH,
         "Content-Type": "application/x-www-form-urlencoded"})
     j = _json(req)
+    if not j.get("job_id") and "same snapshot had been made" in str(j.get("message", "")):
+        j["recent"] = latest_capture(url)
+        if j["recent"]:
+            return j
     if not j.get("job_id"):
         msg = str(j.get("message") or j.get("status_ext") or j)[:120]
         if "too many" in msg.lower() or "limit" in msg.lower():
             raise Throttled(msg)
         raise RuntimeError(f"no job_id: {msg}")
     return j
+
+
+def latest_capture(url: str) -> str:
+    """Newest existing capture of url (used when SPN2 skips a URL archived within 30d)."""
+    q = "https://archive.org/wayback/available?url=" + urllib.parse.quote(url, safe="")
+    try:
+        with urllib.request.urlopen(urllib.request.Request(q, headers={"User-Agent": UA}), timeout=60) as r:
+            snap = json.loads(r.read().decode()).get("archived_snapshots", {}).get("closest") or {}
+    except Exception:  # noqa: BLE001
+        return ""
+    cap = snap.get("url", "")
+    return cap.replace("http://web.archive.org", "https://web.archive.org") if snap.get("available") else ""
 
 
 def spn2_status(job_id: str) -> dict:
@@ -234,6 +250,15 @@ def run(repo: Path, minutes: float) -> None:
         try:
             if AUTH:
                 j = spn2_submit(url)
+                if j.get("recent"):
+                    e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
+                         "note": "already archived within 30d"}
+                    print("RECENT", url, j["recent"], flush=True)
+                    done[url] = e
+                    changed[url] = e
+                    errors_in_row = 0
+                    time.sleep(GAP_S)
+                    continue
                 e = {"capture": (e or {}).get("capture", ""), "status": "pending", "tries": tries,
                      "last": iso(now()), "job_id": j["job_id"]}
                 submitted.append(url)
