@@ -3,6 +3,8 @@ This page sets the editing standards for everyone who writes on the SWCCG Wiki, 
 == Standing rule: SWCCG is a small world (identity matching) ==
 '''Bill (2026-10-12; repeated many times):''' SWCCG is a small world. If a match is about '''99.8%''' likely to be the same person, treat them as one person and go with it. '''Never ask Bill to confirm near-certain matches.''' Skip only genuinely ambiguous cases.
 
+'''State near-certain matches plainly (Bill, 2026-10-13):''' once a match passes this rule, write it as fact. Do not add "(inferred)", "matched by name" or conflict/hedging notes on pages, tables or Talk pages. Keep factual spelling-variant notes (e.g. listed as "Clint Hayes").
+
 This covers '''all''' identity matching:
 * '''Name variants:''' nickname or short form, middle initial, obvious typo, same events (Charlie/Charles, Matt/Matthew).
 * '''Nicknames and handles:''' forum shorthand (for example "BFred" for [[Brian Fred]]), and GEMP, Holotable, DeckTech, or Slack handles when context makes the match near-certain.
@@ -19,12 +21,21 @@ One canonical page per person; other names redirect. Link as <code>[[Canonical|N
 * '''Describe the subject, not the sources.''' Write "X is Y", not "The Encyclopedia lists X as Y". Where the information came from belongs in the citation.
 * '''Minor facts are welcome.''' Many readers collect and never played, so short, sourced collector and pack facts, such as the original price of a pack, add to the article.
 * '''Give an example for an unusual rule.''' A concrete example makes a strange concept clear, for example "if both cards were in hand, they would be lost to [[Monnok]]". Not every rule needs one.
+* '''Lead with the fact (Bill, 2026-10-13).''' The first sentence says what the subject is and the most important thing about it. Context and background come after the facts, never before.
+* '''State facts plainly.''' When a reliable source, or Bill's own knowledge, supports a fact, state it directly ("Decipher showed Lucasfilm the card"). Do not soften it with "reportedly", "is said to", "appears to", or labels such as "soft" or "secondary". If a claim is genuinely disputed, name who says it ("According to Holland, ...") once, then move on.
+* '''No research notes in articles.''' The article body never contains process or meta text: no "research note", "this pass", "this page does not invent", "not found", "no source says", "unverified", and no Gaps, Open questions, Research, or Sources-checked sections. Open questions and empty searches go on the Talk page under Missing data.
+* '''Do not describe what an image shows.''' Captions identify the subject and credit the photographer ("Sealed first-series box. Photo: BoardGameGeek user KaosBound."). Do not narrate visible content (art, colours, frames, which box is on the left). Quote printed text only when the text itself is the fact.
+* '''Length discipline.''' Write the shortest article that covers the facts. Each section earns its place. Do not repeat a fact in a table and in prose, or in the lead and again later. A rewrite should usually be shorter.
+* '''End directly.''' The last section ends on a fact, usually the outcome or the current state. No summary paragraph, no caveats, no "more research is needed".
+* '''One reference list.''' Use the References section only; do not add a separate Sources list that repeats it.
+* '''Filler check before saving.''' Search the body for "note", "research", "pass", "not found", "no source", "unverified", "soft", "reportedly", "appears", "Gaps", "Inferred". Rewrite each match as a plain fact or move it to the Talk page. "Inferred" is still allowed as a Talk-page or reference note (likely facts may be published marked inferred there); just do not put an "Inferred:" label in body prose.
 
 == Cite your sources ==
 * Important facts deserve a citation: numbers, dates, rules, and anything a reader might doubt. Not every sentence needs one.
 * When a fact is well established, add the reference and move on.
 * When a claim is disputed, doubtful, or an opinion, name the source in the sentence itself ("According to ...").
 * '''Private source documents (Bill, 2026-10-12).''' When Bill provides private source documents (for example, an organizer's email), host them under swccg.com/snapshots/ (for example, snapshots/email/) and archive them like any other source, with a Preserved copy.
+* '''Don't narrate source disagreements (Bill, 2026-10-13).''' When sources differ, state the best-supported fact and cite all the relevant sources on it. Explain the discrepancy on the Talk page, not in the article. Avoid sentences such as "Decipher announced 11 July; the Players Committee gives only Summer 2001."
 * '''Do not add inferences.''' If no source states it, it does not go in the article. Put the idea on the article's Talk page, labeled as an inference.
 
 == Accuracy ==
@@ -55,14 +66,10 @@ One canonical page per person; other names redirect. Link as <code>[[Canonical|N
 * '''Standings''': show the top 8, with the full list in a collapsed table (<code>class="wikitable sortable mw-collapsible mw-collapsed"</code>).
 * '''GEMP handles''' go in a standings column, filled where known from the player's page or the sources; leave the cell blank if unknown.
 * '''No handles in prose.''' Link the person; their page gives the handle.
-
-== Holder and tenure tables ==
-* '''No repeated person.''' Never repeat a person across rows when their tenure is continuous; show each name once on the row where they belong so one line shows their full tenure.
-* '''Merge identical adjacent rows.''' Merge adjacent rows with identical holders into one row with the combined date range.
-* '''Close gaps.''' Check for gaps between one holder's end and the next holder's start; research the true handoff date rather than leaving a gap.
-* '''One range, not capture dates.''' When nothing changed between documented dates, show one range from the start date to present (or to the last documented date if no longer current), not a list of capture dates. Never split a continuous tenure at a year or archive-snapshot boundary unless the role, team or title actually changed per a source.
-* '''Same role, one row.''' Abbreviations or wording variants of the same role (e.g. Dev = Developer) are one role: merge into one row with the full name.
-* '''Position first.''' In organization and roster lists, write every entry position first, then person (for example "Design Advocate: [[Chris Kelly]]"), including advocates, in the same format as team entries. Service roles inside teams (for example lead GEMP slicer) are positions too: write "Lead GEMP slicer: [[Jeremy DiPaolo]]", one sub-bullet per role, not "[[Jeremy DiPaolo]] (lead GEMP slicer)".
+* '''Newest first (Bill, 2026-10-13).''' On player pages, Tournament Results and Retro League rows run newest first: latest year at the top, and within a year the latest event first (season standings and ROCS playoffs above that year's events).
+* '''Lead with the best result (Bill, 2026-10-13).''' A player page's lead opens with the player's best or most notable sourced result (a win, a top finish, or a season or ROCS title), not a weaker or older placement. Mention other results after it, keep it to a sentence or two, and cite it, reusing the result row's reference.
+* '''Every decklist page needs a source plus an archive copy (Bill, 2026-10-13).''' Cite where the list came from (the PC decklist page, a GEMP deck share, a forum post, or a Bill-provided email) under Sources, with a Wayback Preserved copy. Forum and PC pages are first saved as a snapshot under swccg.com/snapshots/, and that snapshot is archived; cite both the original and the archive. Never invent a source; if none can be found, say so on the Talk page.
+* '''Unmarked cards are the original (Bill, 2026-10-13).''' In a decklist, a card or objective not marked (V) is the regular Decipher card: link the original printing (for an objective, its two-sided page, e.g. [[Hunt Down And Destroy The Jedi / Their Fire Has Gone Out Of The Universe|Hunt Down And Destroy The Jedi]]). Link the (V) card only when the list says (V). If an objective is on the wrong side for the deck, it is a transcription error: leave the link and note it on the Talk page.
 
 == Talk pages ==
 Use an article's Talk page as the editors' notebook after any substantial edit. Useful sections are:
@@ -70,6 +77,7 @@ Use an article's Talk page as the editors' notebook after any substantial edit. 
 * '''Possibly faulty data''': facts you doubt, with the conflicting sources.
 * '''Marginal cuts''': things you left out that another editor might want back, with their sources.
 * '''Build notes''': how a fact was traced, for the next editor.
+When tightening an article, move anything cut that may be useful (open questions, weak sources, cut text) to the Talk page under Missing data or Marginal cuts, so the article stays clean and nothing is lost.
 
 == Working together ==
 * If you disagree with another editor's change, or think it is wrong or incomplete, say so and give your reason.
