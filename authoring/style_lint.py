@@ -66,6 +66,58 @@ def is_list_page(title, text):
 def allows_sources(text):
     return bool(re.search(r"\[\[Category:[^\]]*(Deck|Decklist|Event|Tournament|Championship|Regionals|Grand Slam)[^\]]*\]\]|\{\{\s*(Infobox[ _]?(Tournament|Event|Deck)|Deck|Decklist|Event)", text, re.I))
 
+
+# Service rule (Bill, 2026-10-14): any service named in a person page's prose needs a row in == Service ==.
+SERVICE_TERMS = {
+    "tournament director": r"tournament director|\bTDs?\b|TD'?d",
+    "judge": r"\b(?:was|is|as|became) an? (?:head )?judge\b|\bjudged (?:at|the)\b|\bjudging at\b",
+    "Squadron": r"\bSquadron Member\b(?! tables?| lists?| roster)|\b(?:Red|Gold|Blue|Green|Bravo|Rogue) \d+\b(?!'s)|\bSquadron Leader|\bGold Leader",
+    "volunteer": r"\bvolunteer(?:ed|s)?\b",
+    "Players Committee": r"\b(?:member|volunteer|advocate|chair)s? (?:of|for|on) the Players'? Committee|\bPC (?:member|advocate|chair)|(?<![-\d] )(?<!-)\badvocate\b(?! award)(?!\))",
+    "Decipher": r"\bDecipherian\b|worked (?:at|for) Decipher|Decipher employee|(?<!independent )Decipher staff(?:er)?\b(?! [A-Z][a-z]+ [A-Z])",
+    "host": r"\bhost(?:ed|s|ing)? (?:a|an|the|three|two|several|\d+)\b|\boriginal host\b",
+    "organizer": r"\borganiz(?:ed|er|es|ing) (?:the|a|an)\b|\b(?:league|event|tournament)'?s? organizer\b|\bran (?:the|an|a)\b",
+    "GEMP/dev": r"\bslicer\b|\bdeveloper\b|\bcoder\b|\bprogrammer\b",
+}
+SERVICE_ACCEPT = {
+    "tournament director": r"tournament director|\bTDs?\b|\bran\b|organi[sz]|director|host",
+    "judge": r"judge",
+    "Squadron": r"Squadron",
+    "volunteer": r"Players'? Committee|\bPC\b|Advocate|orgchart|organi[sz]ation chart|team|Council|volunteer|Squadron",
+    "Players Committee": r"Players'? Committee|\bPC\b|Advocate|orgchart|organi[sz]ation chart|team|Council",
+    "Decipher": r"Decipher",
+    "host": r"host|organi[sz]|\bran\b|director",
+    "organizer": r"host|organi[sz]|\bran\b|director",
+    "GEMP/dev": r"GEMP|slicer|develop|coder|program",
+}
+def is_person_page(text):
+    if re.search(r"\[\[Category:(?:Teams|Star Wars CCG teams|Organizations)\b", text, re.I): return False
+    lead = body(text).lstrip()[:300]
+    # handle redirects-in-prose and articles about a feature/card are not person pages
+    if re.search(r"^[^\n.]{0,80}? is (?:the (?:forum |GEMP |online )?handle of|an? (?:[\w-]+ ){0,4}(?:feature|article|card|interview|poll)\b)", lead): return False
+    return bool(re.search(r"\[\[Category:(?:Players|People|Decipher Squadron Members|Decipherians|Tournament Directors)\s*(?:\||\]\])", text, re.I)) or "== Tournament Results ==" in text or "== Squadron listing ==" in text
+
+def service_flags(text, title=None):
+    if not is_person_page(text): return []
+    m = re.search(r"^==\s*Service\s*==\s*$(.*?)(?=^==[^=]|\Z)", text, re.M | re.S)
+    svc = body(m.group(1)) + " " + (m.group(1) if m else "") if m else ""
+    rest = text if not m else text[:m.start()] + text[m.end():]
+    # prose only: drop tables and the Squadron listing / Tournament Results sections
+    prose = body(re.sub(r"^==\s*(?:Tournament Results|Retro League|Squadron listing)\s*==.*?(?=^==[^=]|\Z)", "", rest, flags=re.M | re.S | re.I))
+    prose = unquote(re.sub(r"^=+.*?=+\s*$", "", prose, flags=re.M))
+    out = []
+    for name, rx in SERVICE_TERMS.items():
+        for mm in re.finditer(rx, prose, re.I if name not in ("tournament director",) else 0):
+            # someone else did it: a capitalised non-subject word right before "ran a"/"hosted" etc.
+            if name in ("organizer", "host") and re.search(r"\b(?!He\b|She\b|They\b)[A-Z][a-z]+ $", prose[max(0, mm.start()-30):mm.start()]) and not (title and prose[max(0, mm.start()-30):mm.start()].split()[-1] in title.split()): continue
+            # PC/volunteer: any existing Service row counts (orgchart-sourced pages)
+            if m and name in ("volunteer", "Players Committee") and re.search(r"^\|(?![-}])", m.group(1), re.M): break
+            ctx = " ".join(prose[max(0, mm.start()-50):mm.end()+50].split())
+            if not m: out.append(f"SERVICE  '{mm.group(0)}' in prose but page has no == Service == table: …{ctx}…")
+            elif not re.search(SERVICE_ACCEPT[name], m.group(1), re.I): out.append(f"SERVICE  '{mm.group(0)}' in prose has no matching Service row: …{ctx}…")
+            break
+    return out
+
 def lint(text, title=None):
     flags = []
     for h in re.findall(r"^=+\s*(.*?)\s*=+\s*$", text, re.M):
@@ -93,6 +145,7 @@ def lint(text, title=None):
         if s.count(",") >= 6: continue                # name lists (credits, playtesters)
         n = len(s.split())
         if n > MAX_SENT: flags.append(f"LONG     {n} words: {s[:100]}…")
+    flags += service_flags(text, title)
     return flags, words(b)
 
 def main():
