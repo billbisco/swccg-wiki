@@ -189,6 +189,10 @@ def resolve(text: str, page: str, groups: dict[str, dict], img2page: dict[str, s
     m = re.search(r"\* '''Side:''' \[\[(Light|Dark)\]\]", text)
     if m:
         deck_side = m.group(1)
+    if not deck_side and not card:  # older deck pages: side in the deck category or the title
+        m = re.search(r"\[\[Category:(Light|Dark) Side decks\]\]", text) or re.search(r"(?:^|\s)(LS|DS)(?:\s|$)", page)
+        if m:
+            deck_side = {"LS": "Light", "DS": "Dark"}.get(m.group(1), m.group(1))
     is_deck = bool(deck_side) and not card
     ids = set(gemp_ids(text)) if is_deck else set()
     year = deck_year(page, text) if is_deck else None
@@ -255,7 +259,7 @@ def main(argv: list[str]) -> None:
     scan = json.loads(Path(argv[1]).read_text(encoding="utf-8"))
     out = Path(argv[2])
     (out / "pages").mkdir(parents=True, exist_ok=True)
-    titles = argv[3:]
+    titles = [a for a in argv[3:] if not a.startswith("--")]
     cards = [c for c in scan if c.get("card")]
     groups = {T: plan_group(T, cards) for T in titles}
     page2new = {c["page"]: c["new"] for g in groups.values() for c in g["members"] + g["states"]}
@@ -267,6 +271,7 @@ def main(argv: list[str]) -> None:
         if c.get("uid") and not STATE.search(c["page"]):
             uid2page.setdefault(c["uid"], dest)
     ops, report = [], []
+    relink_only = "--relink-only" in argv
 
     def fname(t: str) -> str:  # hash keeps names unique on case-insensitive file systems (Windows)
         import hashlib
@@ -274,27 +279,27 @@ def main(argv: list[str]) -> None:
         return "pages/" + re.sub(r"[^A-Za-z0-9._-]+", "_", t)[:120] + "-" + h + ".wiki"
 
     # 1. moves (members, then text-state pages)
-    for g in groups.values():
+    for g in ([] if relink_only else groups.values()):
         for c in g["members"] + g["states"]:
             if c["new"] != c["page"]:
                 ops.append({"op": "move", "from": c["page"], "to": c["new"]})
         report.append(f"## {g['title']}\n" + "\n".join(f"- {c['page']} → **{c['new']}** ({c['side']}, {c['set']}, {c['uid']})"
                                                         for c in g["members"] + g["states"]))
     # 2. decision pages
-    for T, g in groups.items():
+    for T, g in ({} if relink_only else groups).items():
         f = fname(T + "__dab")
         (out / f).write_text(dab_text(g), encoding="utf-8")
         ops.append({"op": "edit", "title": T, "file": f, "summary": "Disambiguation page (SWCCG Wiki:Disambiguation)"})
     # 3. hatnotes on members (by new title; the moved page keeps its text)
-    old_texts = texts([c["page"] for g in groups.values() for c in g["members"]])
+    old_texts = {} if relink_only else texts([c["page"] for g in groups.values() for c in g["members"]])
     edited: dict[str, str] = {}
-    for g in groups.values():
+    for g in ([] if relink_only else groups.values()):
         for c in g["members"]:
             t = old_texts.get(c["page"], "")
             edited[c["new"]] = with_hatnote(t, g, c)
     # 4. relink every page that links a bare group title
     linkers = sorted({b for T in titles for b in backlinks(T)})
-    lt = texts([p for p in linkers if p not in page2new])
+    lt = texts([p for p in linkers if p not in page2new and p not in page2new.values()])
     pagecard = {page2new.get(c["page"], c["page"]): c for c in cards}
     prefetch_gemp(list(lt.values()))
     unresolved_all = defaultdict(list)
