@@ -6503,7 +6503,8 @@ def lookup_title(title: str, side: str) -> str:
 
 # Light card titles whose bare wiki page is an expansion set page, not the card (2026-10-15).
 SET_PAGE_DEST = {"Tatooine": "Tatooine (Premiere)", "Endor": "Endor (location)", "Hoth": "Hoth (location)",
-                 "Dagobah": "Dagobah (location)", "Coruscant": "Coruscant (location)"}
+                 "Dagobah": "Dagobah (location)", "Coruscant": "Coruscant (location)",
+                 "Kiffex": "Kiffex (Jabba's Palace)", "Artoo": "Artoo (Jabba's Palace)"}
 
 
 def wiki_card(title: str, side: str) -> str:
