@@ -57,6 +57,7 @@ def main() -> int:
     ap.add_argument("ops", type=Path)
     ap.add_argument("--summary", default="Disambiguation rollout (Holocron Claude)")
     ap.add_argument("--budget", type=float, default=160.0, help="seconds before stopping cleanly")
+    ap.add_argument("--pause", type=float, default=1.0, help="seconds between operations (spare the server)")
     a = ap.parse_args()
     start = time.time()
     done_f = a.ops.with_suffix(a.ops.suffix + ".done")
@@ -71,6 +72,25 @@ def main() -> int:
             print(f"BUDGET stop at op {i}/{len(lines)}")
             break
         op = json.loads(line)
+        time.sleep(a.pause)
+        try:
+            res, label = run_op(w, op, a)
+        except Exception as e:  # server trouble (502/timeouts): stop cleanly, resume next call
+            print(f"SERVER ERROR at op {i}: {e}; stopping")
+            break
+        print(f"{label}: {res}")
+        if res.startswith("ERROR"):
+            errors += 1
+        else:
+            done.add(i)
+            done_f.write_text(" ".join(map(str, sorted(done))))
+    left = len([i for i, l in enumerate(lines) if l.strip() and i not in done])
+    print(f"DONE errors {errors} remaining {left}")
+    return 1 if errors else 0
+
+
+def run_op(w: Wiki, op: dict, a) -> tuple[str, str]:
+    if True:
         if op["op"] == "move":
             res = do_move(w, op["from"], op["to"], a.summary)
             label = f"MOVE {op['from']} -> {op['to']}"
@@ -83,15 +103,7 @@ def main() -> int:
             res, label = "ok", f"PURGE {len(op['titles'])}"
         else:
             res, label = "ERROR unknown op", str(op)
-        print(f"{label}: {res}")
-        if res.startswith("ERROR"):
-            errors += 1
-        else:
-            done.add(i)
-            done_f.write_text(" ".join(map(str, sorted(done))))
-    left = len([i for i, l in enumerate(lines) if l.strip() and i not in done])
-    print(f"DONE errors {errors} remaining {left}")
-    return 1 if errors else 0
+        return res, label
 
 
 if __name__ == "__main__":
