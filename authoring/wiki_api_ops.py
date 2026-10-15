@@ -22,7 +22,27 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from wiki_api_apply import Wiki  # noqa: E402
+from wiki_api_apply import Wiki as _Wiki  # noqa: E402
+import urllib.error  # noqa: E402
+
+
+class Wiki(_Wiki):
+    """Short request timeout: a hung request costs 30 s, not the whole time-boxed call."""
+
+    def _open(self, req, tries: int = 4) -> dict:
+        for i in range(tries):
+            try:
+                with self.op.open(req, timeout=30) as r:
+                    d = json.loads(r.read().decode("utf-8"))
+                if d.get("error", {}).get("code") == "maxlag":
+                    time.sleep(5 * (i + 1))
+                    continue
+                return d
+            except (urllib.error.URLError, TimeoutError, OSError):
+                if i == tries - 1:
+                    raise
+                time.sleep(3 * (i + 1))
+        raise RuntimeError("API retries exhausted")
 
 
 def page_info(w: Wiki, title: str) -> dict:
