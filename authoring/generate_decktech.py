@@ -6501,7 +6501,13 @@ def lookup_title(title: str, side: str) -> str:
     return title
 
 
+# Light card titles whose bare wiki page is an expansion set page, not the card (2026-10-15).
+SET_PAGE_DEST = {"Tatooine": "Tatooine (Premiere)", "Endor": "Endor (location)"}
+
+
 def wiki_card(title: str, side: str) -> str:
+    if title in SET_PAGE_DEST and side.upper() in {"LIGHT", "LS"}:
+        return cl.cardlink(SET_PAGE_DEST[title], cl.image_for(title, side), title)
     if re.search(r"\(Virtual Set \d+\)$", title) and title not in ORIGINAL_VS:
         return cl.ovs_link(title)
     if title == "Another Pathetic Lifeform (Reflections III: A Collector's Bounty)":

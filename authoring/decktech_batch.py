@@ -43,10 +43,10 @@ import wiki_cardlink as cl  # noqa: E402
 # Original-era (2002) Virtual slips not yet in generate_decktech.ORIGINAL_VS.
 # Posted "X (V)" in a 2002 deck dests the original slip page, not current virtual.
 EXTRA_ORIGINAL_VS = {
-    "Assault Rifle (V)": ("Assault Rifle (V) (Virtual Set 1)", "VS1O-07-Assault Rifle.png"),
-    "Gold 1 (V)": ("Gold 1 (V) (Virtual Set 1)", "VS1O-03-Gold 1.png"),
-    "Fusion Generator Supply Tanks (V) (Light)": ("Fusion Generator Supply Tanks (V) (Light) (Virtual Set 1)", "VS1O-02-Fusion Generator Supply Tanks.png"),
-    "Fusion Generator Supply Tanks (V) (Dark)": ("Fusion Generator Supply Tanks (V) (Dark) (Virtual Set 1)", "VS1O-11-Fusion Generator Supply Tanks.png"),
+    "Assault Rifle (V)": ("Assault Rifle (V) (Virtual Set 1: Legacy)", "VS1O-07-Assault Rifle.png"),
+    "Gold 1 (V)": ("Gold 1 (V) (Virtual Set 1: Legacy)", "VS1O-03-Gold 1.png"),
+    "Fusion Generator Supply Tanks (V) (Light)": ("Fusion Generator Supply Tanks (V) (Light) (Virtual Set 1: Legacy)", "VS1O-02-Fusion Generator Supply Tanks.png"),
+    "Fusion Generator Supply Tanks (V) (Dark)": ("Fusion Generator Supply Tanks (V) (Dark) (Virtual Set 1: Legacy)", "VS1O-11-Fusion Generator Supply Tanks.png"),
 }
 for _k, _v in EXTRA_ORIGINAL_VS.items():
     gd.ORIGINAL_VS.setdefault(_k, _v)
@@ -687,10 +687,16 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
     allowed = gi.load_format_sets().get(code)
     keep = []
     for q, t, h in rows:  # a real card GEMP has no blueprint for is left out and named, not fatal
-        try:
-            gi.lookup(t, d["side"], allowed)
-            keep.append((q, t, h))
-        except KeyError:
+        # wiki page titles carry "•" in combos and a "(Dark)"/"(Light)" disambiguator; GEMP knows the printed title
+        plain = re.sub(r" \((?:Dark|Light)\)(?= \(|$)", "", t.replace("•", ""))
+        for cand in dict.fromkeys([t, plain]):
+            try:
+                gi.lookup(cand, d["side"], allowed)
+                keep.append((q, cand, h))
+                break
+            except KeyError:
+                continue
+        else:
             omitted.append(t)
     rows = keep
     try:
