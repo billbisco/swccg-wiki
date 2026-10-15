@@ -20,3 +20,14 @@ Fills existing empty decklist stubs (2015–2017 PC events) from the Players Com
 7. `gemp_build.py decks-canon.json final_copy` — GEMP import file only when every main-deck card resolves (full pool;
    retired 2015 shields GEMP lacks are left out and listed in `gemp-report.txt`); adds the `GEMP Importable deck` line.
 8. Apply on the PC as Holocron Claude (see ai-team-skills CLAUDE.md § Wiki publishing): chunked `apply_resilient.py`.
+
+## Wave 3 (2017–2020, 2026-10-15)
+
+- Posts fetched per event folder (`claude-agent\pc-posts-wave3\<event>\html`); event pages' deck links, or a site-wide CDX
+  search where the event page capture had none (2017 MPC/Worlds/EGP). `SLUG_EVENT=slug-event-wave3.json` maps slug → event.
+- 2018+ posts use the Beaver Builder theme (`fl-module-fl-post-content`); `parse_posts.py` handles it, typo headings,
+  `(N total)`, `(Ref N)`, inner `(xN)`, site footer lines.
+- `gemp_build.py`: set `GEMP_TAKEN=<file of names already on the wiki>` so a new batch never reuses (overwrites) another
+  batch's GEMP file name. Dedupe now compares the final cleaned name (wave 2 had one shared name; fixed and republished).
+- 681 of the 800 unmatched wave-3 posts belong to decks that already had full pages (Grok's earlier work); the other 119
+  have no page yet (quality pass).

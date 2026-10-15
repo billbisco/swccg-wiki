@@ -29,6 +29,9 @@ for _r in json.load(open(gi.CARD_DB)):
     _NK.setdefault((_r.get("side"), _nk(_r["title"])), _r["title"])
 allowed = None  # historical decks: full card pool (2015-era shields were later retired from Open)
 taken, report, n_ok = set(), [], 0
+import os
+if os.environ.get("GEMP_TAKEN"):  # filenames already used by other batches on the wiki
+    taken |= {l.strip().lower() for l in open(os.environ["GEMP_TAKEN"], encoding="utf-8") if l.strip()}
 for d in decks:
     side = "DARK" if d["side"] == "DS" else "LIGHT"
     keep, omitted = [], []
@@ -70,11 +73,11 @@ for d in decks:
     tok = next((v for k, v in TOKEN.items() if k in d["event"]), "PC")
     arch = d["title"].split(f" {d['side']} ", 1)[-1]
     base = gi.safe_deck_filename(gi.deck_name("Open", arch, d["player"], d["side"], year, tok))
-    fn = base + ".txt"
+    clean = lambda f: re.sub(r"\s+", " ", f.replace("_", " "))
+    fn = clean(base + ".txt")
     i = 2
     while fn.lower() in taken:
-        fn = f"{base[:36]} {i}.txt"; i += 1
-    fn = re.sub(r"\s+", " ", fn.replace("_", " "))
+        fn = clean(f"{base[:36]} {i}.txt"); i += 1
     taken.add(fn.lower())
     (out / fn).write_text(xml, encoding="utf-8", newline="\n")
     page = final / rows_tsv[d["title"]]
