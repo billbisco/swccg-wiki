@@ -6,7 +6,7 @@ usage: later.py N [N ...]   reads live/ovsN.wiki, writes final/ovsN.wiki and fin
 import json, re, sys, difflib, os
 
 ROWS = json.load(open(os.path.join(os.path.dirname(__file__), 'rows.json')))
-MODERN_MIN = 0.5   # modern card counts as a re-use only when its game text is this close to the OV text
+MODERN_MIN = 0.0   # Bill 2026-10-15: every later card with the same title and side counts
 
 
 def norm(s):
