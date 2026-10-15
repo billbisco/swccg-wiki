@@ -7229,10 +7229,10 @@
  },
  "https://www.youtube.com/watch?v=Q0sFxQ2i3Hk": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 165 hours, 27 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-15T19:47:11Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-15T20:18:56Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://www.youtube.com/watch?v=QcWmvQmOijU": {
   "capture": "https://web.archive.org/web/20261015193721/https://www.youtube.com/watch?v=QcWmvQmOijU",
@@ -7284,8 +7284,8 @@
  },
  "https://www.youtube.com/watch?v=SRSDhM-exTA": {
   "capture": "https://web.archive.org/web/20261015193735/https://www.youtube.com/watch?v=SRSDhM-exTA",
-  "last": "2026-10-15T20:06:41Z",
-  "status": "pending",
+  "last": "2026-10-15T20:18:35Z",
+  "status": "ok",
   "tries": 2
  },
  "https://www.youtube.com/watch?v=STmWyKL1cww": {
@@ -7557,24 +7557,24 @@
   "tries": 2
  },
  "https://www.youtube.com/watch?v=bG5FuNkJK_8": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261015200402/https://www.youtube.com/watch?v=bG5FuNkJK_8",
   "job_id": "spn2-69e31323bc9d24f979884c147abedeafeea364fd",
-  "last": "2026-10-15T19:03:42Z",
-  "status": "pending",
+  "last": "2026-10-15T20:18:38Z",
+  "status": "ok",
   "tries": 1
  },
  "https://www.youtube.com/watch?v=baSHi2wRess": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261015190444/https://www.youtube.com/watch?v=baSHi2wRess",
   "job_id": "spn2-fac378e4c601edf89859adf1b3a835ee3e73dba6",
-  "last": "2026-10-15T19:03:53Z",
-  "status": "pending",
+  "last": "2026-10-15T20:18:41Z",
+  "status": "ok",
   "tries": 1
  },
  "https://www.youtube.com/watch?v=bsR2VwHtK-M": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261015190435/https://www.youtube.com/watch?v=bsR2VwHtK-M",
   "job_id": "spn2-d5646e0c9524602c5ca12867323344e714b97b5f",
-  "last": "2026-10-15T19:04:04Z",
-  "status": "pending",
+  "last": "2026-10-15T20:18:44Z",
+  "status": "ok",
   "tries": 1
  },
  "https://www.youtube.com/watch?v=cJM5AzxLXzk": {
@@ -7585,10 +7585,10 @@
   "tries": 2
  },
  "https://www.youtube.com/watch?v=cJZWQ46mVP8": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261015190533/https://www.youtube.com/watch?v=cJZWQ46mVP8",
   "job_id": "spn2-a9f83a5cc73ba18395825bced8f7e8f26e13bb85",
-  "last": "2026-10-15T19:04:26Z",
-  "status": "pending",
+  "last": "2026-10-15T20:18:47Z",
+  "status": "ok",
   "tries": 1
  },
  "https://www.youtube.com/watch?v=cNOUOKErOag": {
@@ -7599,9 +7599,8 @@
   "tries": 2
  },
  "https://www.youtube.com/watch?v=cZF3EiKBh1g": {
-  "capture": "",
-  "job_id": "spn2-c49324179687b2b7529795d03b24d718de12f596",
-  "last": "2026-10-15T19:05:08Z",
+  "capture": "https://web.archive.org/web/20261015190619/https://www.youtube.com/watch?v=cZF3EiKBh1g",
+  "last": "2026-10-15T20:18:48Z",
   "status": "pending",
   "tries": 1
  },
@@ -7761,9 +7760,10 @@
  },
  "https://www.youtube.com/watch?v=gi-bgIKsd98": {
   "capture": "https://web.archive.org/web/20261015192007/https://www.youtube.com/watch?v=gi-bgIKsd98",
-  "last": "2026-10-15T19:44:18Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-15T20:19:06Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=gu6ZFTFfbSs": {
   "capture": "",
@@ -7795,9 +7795,10 @@
  },
  "https://www.youtube.com/watch?v=hoAJ_0BM_Bo": {
   "capture": "https://web.archive.org/web/20261015192019/https://www.youtube.com/watch?v=hoAJ_0BM_Bo",
-  "last": "2026-10-15T19:44:20Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-15T20:19:16Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=hqCVRo6lJNk": {
   "capture": "",
@@ -8121,6 +8122,20 @@
   "capture": "",
   "error": "no job_id: This host has been already captured 250 times today by your user account. Please try again tomorrow. Please e",
   "last": "2026-10-15T20:12:38Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.youtube.com/watch?v=ssHHojfxZ7I": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-15T20:19:27Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.youtube.com/watch?v=stUSEeSNbpE": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-15T20:19:37Z",
   "status": "retry",
   "tries": 1
  },
