@@ -6691,6 +6691,8 @@ def write_page(title: str, body: str) -> Path:
         body += "\n"
     body = cl.fix_shield_section(body)  # shields -> Reflections III shield pages (2026-10-10)
     body = _keep_gemp_line(title, body)
+    # Posted text can hold "~~~"; MediaWiki would expand it into the editor's signature on save (2026-10-15).
+    body = re.sub(r"~{3,}", lambda m: "&#126;" * len(m.group()), body)
     path.write_text(body.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
     print("WROTE", path.name)
     return path
