@@ -106,13 +106,15 @@ for title, fn in rows:
         if _ex.get(t, True):
             return m.group(0)
         if " / " not in t:
-            r = api(action="query", list="allpages", apprefix=t + " / ", aplimit=10)["query"]["allpages"]
+            cap = re.sub(r"\b(of|to|the|and)\b", lambda m: m.group(1).capitalize(), t)
+            r = api(action="query", list="allpages", apprefix=cap + " / ", aplimit=10)["query"]["allpages"]
             full = [p["title"] for p in r if not re.search(r"\((?:Virtual|AI|Errata|Original|PC Errata|Dark)", p["title"])]
             if full:
                 return m.group(0).replace("CardLink|" + m.group(1) + "|", "CardLink|" + full[0] + "|", 1)
         printed.append(t)
         return t
     body = cl_re.sub(fix_cl, body)
+    head = link_re.sub(fix, cl_re.sub(fix_cl, head))  # Starting Card line too (objective front names, case variants)
     text = head + sep + body + sep2 + tail
     if printed:
         report.append(f"PLAIN {title}: {sorted(set(printed))}")
