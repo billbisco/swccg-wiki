@@ -97,6 +97,22 @@ for title, fn in rows:
         return m.group(2) or t
 
     body = link_re.sub(fix, body)
+    # {{CardLink|Target|img...}}: front-only objective names -> full "Front / Back" title; else plain text
+    cl_re = re.compile(r"\{\{CardLink\|([^|}]+)\|[^}]*\}\}")
+    exists_many(sorted({m.group(1).strip() for m in cl_re.finditer(body)}))
+
+    def fix_cl(m):
+        t = m.group(1).strip()
+        if _ex.get(t, True):
+            return m.group(0)
+        if " / " not in t:
+            r = api(action="query", list="allpages", apprefix=t + " / ", aplimit=10)["query"]["allpages"]
+            full = [p["title"] for p in r if not re.search(r"\((?:Virtual|AI|Errata|Original|PC Errata|Dark)", p["title"])]
+            if full:
+                return m.group(0).replace("CardLink|" + m.group(1) + "|", "CardLink|" + full[0] + "|", 1)
+        printed.append(t)
+        return t
+    body = cl_re.sub(fix_cl, body)
     text = head + sep + body + sep2 + tail
     if printed:
         report.append(f"PLAIN {title}: {sorted(set(printed))}")
