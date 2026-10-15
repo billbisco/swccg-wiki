@@ -6501,6 +6501,11 @@ def lookup_title(title: str, side: str) -> str:
     return title
 
 
+import json as _json
+from pathlib import Path as _Path
+_DT = _Path(__file__).resolve().parent / "wiki-dark-titles.json"
+DARK_PAGES = set(_json.loads(_DT.read_text(encoding="utf-8"))) if _DT.exists() else set()
+
 # Light card titles whose bare wiki page is an expansion set page, not the card (2026-10-15).
 SET_PAGE_DEST = {"Tatooine": "Tatooine (Premiere)", "Endor": "Endor (location)", "Hoth": "Hoth (location)",
                  "Dagobah": "Dagobah (location)", "Coruscant": "Coruscant (location)",
@@ -6545,6 +6550,16 @@ def wiki_card(title: str, side: str) -> str:
     if title in CROSS_SIDE:
         dest = title
         return cl.wrap(dest, CROSS_SIDE[title], dest=dest)
+    if side.upper() in {"DARK", "DS"}:
+        # A card printed on both sides has a "(Dark)" wiki page for the Dark one; the bare title is the Light card
+        # (2026-10-15: Dark decks were linking the Light page with the Dark image). Page list: wiki-dark-titles.json.
+        if title in DARK_PAGES and title.endswith(" (Dark)"):
+            base = title[: -len(" (Dark)")]
+            return cl.wrap(base, side, dest=title, label=base.split(" / ", 1)[0])
+        base = re.sub(r" \(Dark\)$", "", title)
+        res = lookup_title(base, side)
+        if f"{res} (Dark)" in DARK_PAGES:
+            return cl.wrap(base, side, dest=f"{res} (Dark)", label=res.split(" / ", 1)[0])
     resolved = lookup_title(title, side)
     dest = resolved
     if side.upper() in {"DARK", "DS"} and title in {
