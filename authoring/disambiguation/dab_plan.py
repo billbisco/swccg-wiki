@@ -134,7 +134,28 @@ PARAM = re.compile(r"^(\|\s*(prev|next)\s*=\s*)(.*?)\s*$", re.M)
 # Decipher set number -> release year (a deck cannot hold a card printed after its year)
 SET_YEAR = {1: 1995, 2: 1996, 3: 1996, 4: 1997, 5: 1997, 6: 1998, 7: 1998, 8: 1998, 9: 1999, 10: 2000, 11: 2001,
             12: 2001, 13: 2001, 14: 2001}
-GEMP_CACHE: dict[str, list[str]] = {}
+GEMP_CACHE_FILE = Path(__file__).resolve().parent / "gemp-ids-cache.json"
+GEMP_CACHE: dict[str, list[str]] = json.loads(GEMP_CACHE_FILE.read_text()) if GEMP_CACHE_FILE.exists() else {}
+MEDIA = re.compile(r"\[\[Media:([^|\]]+?\.txt)\s*\|")
+
+
+def prefetch_gemp(texts_: list[str]) -> None:
+    """Download every deck's GEMP file in parallel once (cached in gemp-ids-cache.json)."""
+    from concurrent.futures import ThreadPoolExecutor
+    names = sorted({m.group(1).strip() for t in texts_ for m in [MEDIA.search(t)] if m} - set(GEMP_CACHE))
+
+    def one(fn):
+        try:
+            ii = api(action="query", titles="File:" + fn, prop="imageinfo", iiprop="url")["query"]["pages"][0]
+            with urllib.request.urlopen(ii["imageinfo"][0]["url"], timeout=60) as r:
+                return fn, re.findall(r'blueprintId="([^"]+)"', r.read().decode("utf-8", "replace"))
+        except Exception:
+            return fn, []
+    with ThreadPoolExecutor(16) as ex:
+        for fn, ids in ex.map(one, names):
+            GEMP_CACHE[fn] = ids
+    GEMP_CACHE_FILE.write_text(json.dumps(GEMP_CACHE))
+    print(f"GEMP files cached: {len(GEMP_CACHE)} (+{len(names)})")
 
 
 def gemp_ids(text: str) -> list[str]:
@@ -273,6 +294,7 @@ def main(argv: list[str]) -> None:
     linkers = sorted({b for T in titles for b in backlinks(T)})
     lt = texts([p for p in linkers if p not in page2new])
     pagecard = {page2new.get(c["page"], c["page"]): c for c in cards}
+    prefetch_gemp(list(lt.values()))
     unresolved_all = defaultdict(list)
     for p, t in list(lt.items()) + [(k, v) for k, v in edited.items()]:
         newt, un = resolve(t, p, groups, img2page, uid2page, pagecard.get(p))
