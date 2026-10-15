@@ -29,12 +29,14 @@ One canonical page per person; other names redirect. Link as <code>[[Canonical|N
 * '''End directly.''' The last section ends on a fact, usually the outcome or the current state. No summary paragraph, no caveats, no "more research is needed".
 * '''One reference list.''' Use the References section only; do not add a separate Sources list that repeats it.
 * '''Filler check before saving.''' Search the body for "note", "research", "pass", "not found", "no source", "unverified", "soft", "reportedly", "appears", "Gaps", "Inferred". Rewrite each match as a plain fact or move it to the Talk page. "Inferred" is still allowed as a Talk-page or reference note (likely facts may be published marked inferred there); just do not put an "Inferred:" label in body prose.
+* '''Run the style lint (Bill, 2026-10-14).''' AI agents must run <code>python3 authoring/style_lint.py draft.wiki --title "Page"</code> (in the billbisco/swccg-wiki repo) and fix every flag before saving any article, then run <code>style_lint.py "Page"</code> on the live page after saving; never save with open flags. Human editors may run it too (optional). It flags hedge and meta words, Gaps/Notes/Research/Sources headings, captions that describe the image, sentences over 30 words, and reports the body word count against the previous revision.
 
 == Cite your sources ==
 * Important facts deserve a citation: numbers, dates, rules, and anything a reader might doubt. Not every sentence needs one.
 * When a fact is well established, add the reference and move on.
 * When a claim is disputed, doubtful, or an opinion, name the source in the sentence itself ("According to ...").
 * '''Private source documents (Bill, 2026-10-12).''' When Bill provides private source documents (for example, an organizer's email), host them under swccg.com/snapshots/ (for example, snapshots/email/) and archive them like any other source, with a Preserved copy.
+* '''No personal email addresses on wiki pages (Bill, 2026-10-14).''' Do not publish personal email addresses (player contacts, mailto strategy credits that only carry a private address, or emails embedded in Service rows). Keep callsigns, hometowns, dates, and citations. Drop an emptied email column. Exception: a clearly defunct, historically significant, non-personal address may stay (for example a Decipher corporate strategy credit such as joea@decipher.com).
 * '''Don't narrate source disagreements (Bill, 2026-10-13).''' When sources differ, state the best-supported fact and cite all the relevant sources on it. Explain the discrepancy on the Talk page, not in the article. Avoid sentences such as "Decipher announced 11 July; the Players Committee gives only Summer 2001."
 * '''Do not add inferences.''' If no source states it, it does not go in the article. Put the idea on the article's Talk page, labeled as an inference.
 
@@ -42,6 +44,7 @@ One canonical page per person; other names redirect. Link as <code>[[Canonical|N
 * Link card titles and use the exact card title, including the printing's own title (for example, the Alternate Image of [[Queen Amidala, Ruler Of Naboo]] is [[Queen Amidala, Ruler Of Naboo (AI)]]).
 * Give a price only where it shows something, such as an Alternate Image against the regular printing. A pack's original price is welcome.
 * Proofread and read the changes before saving.
+* '''Always give the deck's format (Bill, 2026-10-14).''' Every decklist page and table row names a format. If the source does not state it, use the smallest format that fits the newest set in the list and the date, and mark it "(from the card pool)".
 * '''Deck format comes from the tournament.''' A DeckTech post date does not determine a deck's format; use the tournament's format. For example, every FreedomCon 2001 deck is [[Premiere - Reflections III]].
 
 == Holder and tenure tables ==
@@ -62,6 +65,7 @@ One canonical page per person; other names redirect. Link as <code>[[Canonical|N
 * '''New file names only.''' Never overwrite an existing file; check for duplicates on the wiki first.
 
 == Tournament and league pages ==
+* '''All service goes in the Service table (Bill, 2026-10-14).''' Whenever a person page or a source mentions any service by that person, it must be a cited row in the person's <code>== Service ==</code> table, not just prose. Service includes tournament director, judge, Squadron or other volunteer roles, Players Committee or Decipher roles, event host, and GEMP or development work. Each row gives the dates and the role in the source's own words, with a reference. If the page has no Service section, add one just above the first section.
 * '''Formats are single GEMP format names''', e.g. "Premiere - Jabba's Palace Sealed Deck" or "Premiere - Cloud City (Modified)". Link the exact format page if it exists; otherwise write the exact name as plain text.
 * '''Standings''': show the top 8, with the full list in a collapsed table (<code>class="wikitable sortable mw-collapsible mw-collapsed"</code>).
 * '''GEMP handles''' go in a standings column, filled where known from the player's page or the sources; leave the cell blank if unknown.
@@ -70,6 +74,16 @@ One canonical page per person; other names redirect. Link as <code>[[Canonical|N
 * '''Lead with the best result (Bill, 2026-10-13).''' A player page's lead opens with the player's best or most notable sourced result (a win, a top finish, or a season or ROCS title), not a weaker or older placement. Mention other results after it, keep it to a sentence or two, and cite it, reusing the result row's reference.
 * '''Every decklist page needs a source plus an archive copy (Bill, 2026-10-13).''' Cite where the list came from (the PC decklist page, a GEMP deck share, a forum post, or a Bill-provided email) under Sources, with a Wayback Preserved copy. Forum and PC pages are first saved as a snapshot under swccg.com/snapshots/, and that snapshot is archived; cite both the original and the archive. Never invent a source; if none can be found, say so on the Talk page.
 * '''Unmarked cards are the original (Bill, 2026-10-13).''' In a decklist, a card or objective not marked (V) is the regular Decipher card: link the original printing (for an objective, its two-sided page, e.g. [[Hunt Down And Destroy The Jedi / Their Fire Has Gone Out Of The Universe|Hunt Down And Destroy The Jedi]]). Link the (V) card only when the list says (V). If an objective is on the wrong side for the deck, it is a transcription error: leave the link and note it on the Talk page.
+
+== Websites and sources ==
+* '''Include the site's images (Bill, 2026-10-14).''' An article about a website or source includes its relevant images (banners, deck or event graphics) from archived copies. Each File page cites the source page and a Wayback copy.
+
+== Cross-linking checklist (Bill, 2026-10-14) ==
+When you create a page, add it to every index it belongs in, and create missing pages for what it mentions:
+* '''Fan site:''' the [[Fan sites]] table and [[:Category:Fan sites]].
+* '''Decklist:''' a page for every list an article mentions. Link it from the decklists index ([[Decklists]] or its source catalog), the event page, the player's Deck designs section and the source article.
+* '''Tournament:''' an article for every tournament mentioned, listed on [[List of SWCCG tournaments]], with a row in the TD's Service table.
+* '''People:''' named team members and organizers get player pages (stubs are fine), linked from the event and team. A personal opinion list (someone's Top 10) is not cross-referenced onto each named player's page.
 
 == Talk pages ==
 Use an article's Talk page as the editors' notebook after any substantial edit. Useful sections are:
