@@ -268,8 +268,10 @@ def main(argv: list[str]) -> None:
             uid2page.setdefault(c["uid"], dest)
     ops, report = [], []
 
-    def fname(t: str) -> str:
-        return "pages/" + re.sub(r"[^A-Za-z0-9._-]+", "_", t)[:150] + ".wiki"
+    def fname(t: str) -> str:  # hash keeps names unique on case-insensitive file systems (Windows)
+        import hashlib
+        h = hashlib.sha1(t.encode("utf-8")).hexdigest()[:8]
+        return "pages/" + re.sub(r"[^A-Za-z0-9._-]+", "_", t)[:120] + "-" + h + ".wiki"
 
     # 1. moves (members, then text-state pages)
     for g in groups.values():
