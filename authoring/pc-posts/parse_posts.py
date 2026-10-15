@@ -12,15 +12,20 @@ SHIELD_HEADS = {"defensive shields", "defensive shield", "shields"}
 BARE_HEADS = {"starting", "locations", "location", "characters", "character", "starships", "starship", "vehicles", "vehicle",
               "weapons", "weapon", "devices", "device", "weapons/devices", "effects", "effect", "interrupts", "interrupt",
               "admiral's orders", "admiral's order", "admirals' orders", "epic events", "epic event", "creatures", "creature",
-              "jedi tests", "jedi test", "record", "admirals order", "admirals orders"} | SHIELD_HEADS
+              "jedi tests", "jedi test", "record", "admirals order", "admirals orders",
+              "vehciles", "loctions", "interupts", "objective", "objectives", "starting cards", "starting interrupt", "charaters", "starhips", "efects"} | SHIELD_HEADS
 
 
 def post_body(raw: str) -> tuple[str, str]:
     t = re.search(r"<title>(.*?)</title>", raw, re.S)
     title = H.unescape(t.group(1)).split(" | ")[0].strip() if t else ""
     m = re.search(r'class="entry-content"[^>]*>([\s\S]*?)(?:<div class="sharedaddy|<footer|</article>)', raw)
+    if not m:  # 2017+ Beaver Builder theme
+        m = re.search(r'fl-module-fl-post-content[\s\S]*?fl-module-content fl-node-content">([\s\S]*?)<div class="fl-col fl-node-5d13d237ac255"', raw) \
+            or re.search(r'fl-module-fl-post-content[\s\S]*?fl-module-content fl-node-content">([\s\S]*?)</div>\s*</div>\s*</div>\s*</div>', raw)
     c = m.group(1) if m else raw
-    c = re.sub(r"(?i)<br\s*/?>|</p>|</li>|</h\d>|</div>", "\n", c)
+    c = re.sub(r"\n\s*\(V\)", " (V)", c)
+    c = re.sub(r"(?i)<br\s*/?>|</p>|</li>|</h\d>|</div>|<div[^>]*>|<p[^>]*>", "\n", c)
     c = H.unescape(re.sub(r"<[^>]+>", "", c)).replace("\xa0", " ")
     c = c.replace("’", "'").replace("‘", "'").replace("“", '"').replace("”", '"')
     lines = [re.sub(r"\s+", " ", l).strip() for l in c.splitlines()]
@@ -28,7 +33,12 @@ def post_body(raw: str) -> tuple[str, str]:
 
 
 def split_item(line: str):
-    s = re.sub(r"[\u200b-\u200f\u2060\ufeff]", "", line).strip().lstrip("•*-").rstrip("*").strip()
+    s = re.sub(r"[\u200b-\u200f\u2060\ufeff]", "", line).strip().lstrip("•*-").rstrip("*").strip().replace("\u2026", "...")
+    s = re.sub(r"\s*\((?:[^)]*\btotal|ref \d+|destiny \d+|rep|prem)\)", "", s, flags=re.I)
+    s = re.sub(r"\s*\+\s*\d+\s+effects?$", "", s, flags=re.I)
+    m0 = re.search(r"\s*\(x\s*(\d+)\)", s, re.I) or re.search(r"\s+x(\d+)(?=\s*\()", s, re.I)
+    if m0 and not s.endswith(m0.group(0)):
+        s = s[:m0.start()] + s[m0.end():] + f" x{m0.group(1)}"
     q = 1
     m = (re.search(r"\s*[x×]\s*(\d+)\s*$", s, re.I) or re.search(r"\s*\((?:x\s*)?(\d+)\)\s*$", s, re.I)
          or re.search(r"\s*\((\d+)\s*x\)\s*$", s, re.I))
@@ -73,7 +83,7 @@ def parse(path: Path, force_start: bool = False):
             continue
         if not started:
             continue
-        if l.lower().startswith(("this entry was posted", "posted in", "leave a")) or re.match(r"^(?:\d+\s+)?(?:replies|reply|responses?|comments?)$", l, re.I):
+        if l.lower().startswith(("this entry was posted", "posted in", "leave a", "join players from around", "online play")) or re.match(r"^(?:\d+\s+)?(?:replies|reply|responses?|comments?)$", l, re.I):
             break
         if head == "record" or l.startswith(("(", "+")) or re.search(r"illegible", l, re.I) or l.lower() in ("none", "n/a"):
             notes.append(l); continue

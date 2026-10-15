@@ -11,6 +11,16 @@ DB = "/home/claude/swccg-gemp/src/gemp-swccg-cards/src/main/resources/card_bluep
 EP1 = r"\((?:ep\.?\s*(?:1|i)|ep1|e1|episode\s*(?:1|i))\)"
 NOTE = r"\s*\((?:[^)]*(?:card start|card hand|starting hand|\d+ starting|alternate|not a legal|indicator|start\b)[^)]*)\)"
 EXPLICIT = {
+    "dr. chelli aphra": "Dr. Chelli Lona Aphra", "i'm getting kind of good at this": "I'm Getting Pretty Good At This",
+    "corran in rogue 9": "Corran Horn In Rogue 9", "stolen first order tie": "Stolen First Order TIE Fighter",
+    "jedha city": "Jedha: Jedha City", "taunal villager": "Tuanul Villager", "fn-2199 'nines'": "FN-2199 (Nines)",
+    "k2so": "K-2SO (Kay-Tuesso)", "mara jade in vt-49": "Mara Jade In VT-49 Decimator",
+    "mara jade in decimator vt-49": "Mara Jade In VT-49 Decimator", "mara jade in decimater vt-49": "Mara Jade In VT-49 Decimator",
+    "le-b0209 (leebo)": "LE-BO2D9 (Leebo)", "lando's not a system": "Lando's Not A System, He's A Man",
+    "tatooine epi": "Tatooine (Coruscant)", "masterful move and endor occupation": "Masterful Move & Endor Occupation",
+    "you can either profit by this...": "You Can Either Profit By This... / Or Be Destroyed",
+    "you can either profit by this": "You Can Either Profit By This... / Or Be Destroyed",
+    "i've got a bad feeling about...": "I've Got A Bad Feeling About This",
     "colonel jendon in ony": "Colonel Jendon In Onyx 1", "colonel jendon in onyx": "Colonel Jendon In Onyx 1",
     "ony": "Onyx 1",
     "marek steele, the emperor's reach": "Maarek Stele, The Emperor's Reach",

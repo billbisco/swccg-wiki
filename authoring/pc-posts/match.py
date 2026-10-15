@@ -18,6 +18,8 @@ def norm(s):
 
 
 posts = json.load(open(sys.argv[1]))
+import os
+SLUGEV = json.load(open(os.environ["SLUG_EVENT"])) if os.environ.get("SLUG_EVENT") else {}  # slug -> event (wave 3: per-event folders)
 _DB = json.load(open("/home/claude/swccg-gemp/src/gemp-swccg-cards/src/main/resources/card_blueprint_database.json"))
 _SIDE = {}
 for _r in _DB:
@@ -46,7 +48,7 @@ queue = list(posts)
 for PASS in (1, 2):
   todo, queue = queue, []
   for p in todo:
-    ev = next((e for pre, e in EVENTS if p["slug"].startswith(pre)), None)
+    ev = SLUGEV.get(p["slug"]) or next((e for pre, e in EVENTS if p["slug"].startswith(pre)), None)
     side = p["side"] or ("DS" if re.search(r"-ds(-|$)", p["slug"]) else "LS" if re.search(r"-ls(-|$)", p["slug"]) else None) or infer_side(p)
     slug = norm(p.get("slug_m", p["slug"]).replace("-", " "))
     _d = re.search(r"day-(\d)", p["slug"])
