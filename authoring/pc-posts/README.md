@@ -31,3 +31,13 @@ Fills existing empty decklist stubs (2015–2017 PC events) from the Players Com
   batch's GEMP file name. Dedupe now compares the final cleaned name (wave 2 had one shared name; fixed and republished).
 - 681 of the 800 unmatched wave-3 posts belong to decks that already had full pages (Grok's earlier work); the other 119
   have no page yet (quality pass).
+
+## Wave 4 (live PC site via Chrome, 2026-10-15)
+
+- The 2017–2020 per-deck pages that Wayback never captured (e.g. 2017 Worlds Day 2) are live on starwarsccg.org behind
+  Cloudflare. Read them through Claude in Chrome (Bill's real browser): in-page `fetch()` of each event page's deck
+  links, body = `.fl-module-fl-post-content .fl-module-content` (or `.entry-content`), saved as one JSON download
+  (`pc-deck-posts-2017-2020.json`, Bill-approved) → wrapped as `<title>…</title><div class="entry-content">…` HTML.
+- `match.py` aliases: jonas-hagen→Nørregaard, gyorgy-bill→Póra, kent-l→Larsen, pete-the-welsh→Rowlands,
+  casper-jorgenson→Jørgensen; "Drops" stubs accept any posted stage.
+- `finalize_pc.py` now also resolves front-only objective names on the Starting Card line (and case variants).
