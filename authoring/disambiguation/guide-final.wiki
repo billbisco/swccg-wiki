@@ -1,0 +1,57 @@
+A '''disambiguation page''' is a short list that lets a reader choose between pages that share a name. Searching for "Jawa" should land on a page that shows the four Jawa cards and lets the reader pick one. This guide follows [https://en.wikipedia.org/wiki/Wikipedia:Disambiguation Wikipedia's disambiguation guideline], adapted for cards.
+
+== When a title needs one ==
+Make a disambiguation page when two or more '''different cards''' share a printed title. Different cards have different card IDs. Examples: the Light and Dark side versions of a card, an Episode I reprint in [[Coruscant (expansion)|Coruscant]], or a Virtual card with the same title.
+
+These are '''not''' different cards and do not get a row of their own:
+* the printed text, Decipher errata and PC errata pages of one card (Original, Errata, PC Errata);
+* the Alternate Image (AI) of one card.
+They are listed inside the card's row. Two pages for the same card ID are a duplicate: merge them into one page and redirect the other title.
+
+Make one also when a card shares its name with a page readers search for, such as an expansion set or a team (see [[ICBW]]). The same applies when two expansion sets share a name.
+
+== Page titles ==
+SWCCG cards have no primary version. The Light and Dark cards of a shared title are equals, and a reader who types the title has not said which one they want. So the bare title is the disambiguation page, and every card gets a qualified title.
+
+Qualifiers, in this order, using only what is needed to tell the cards apart:
+# '''Side''' — <code>(Light)</code> or <code>(Dark)</code>, when the cards are on different sides.
+# '''Set''' — the set's short name, when two cards are on the same side: <code>(Premiere)</code>, <code>(Coruscant)</code>, <code>(Special Edition)</code>, <code>(Cloud City)</code>, <code>(Reflections III)</code>.
+# '''Virtual cards''' keep the Virtual naming scheme: <code>Title (V) (Virtual Set N: Subtitle)</code>, <code>Title (V) (Virtual Block N)</code>.
+
+Never use <code>(2)</code>, <code>(location)</code> or <code>(card)</code> as a qualifier. The infobox '''Title''' always shows the printed title without qualifiers.
+
+{| class="wikitable"
+! Printed title !! Cards !! Page titles
+|-
+| Tatooine: Cantina || Light and Dark, both Premiere || Tatooine: Cantina (Light) · Tatooine: Cantina (Dark)
+|-
+| Boba Fett || two Dark cards: Cloud City, Special Edition || Boba Fett (Cloud City) · Boba Fett (Special Edition)
+|-
+| Tatooine || Light and Dark, Premiere and Coruscant || Tatooine (Light) (Premiere) · Tatooine (Light) (Coruscant) · Tatooine (Dark) (Premiere) · Tatooine (Dark) (Coruscant)
+|-
+| Coruscant || Light and Dark, Special Edition and Coruscant || Coruscant (Light) (Special Edition) · Coruscant (Light) (Coruscant) · Coruscant (Dark) (Special Edition) · Coruscant (Dark) (Coruscant)
+|}
+
+When a card moves to a qualified title, its old title stays as a redirect, except the bare title, which becomes the disambiguation page. An expansion set that shares its name with a card takes the qualifier <code>(expansion)</code>: the Tatooine set is [[Tatooine (expansion)]], and [[Tatooine]] lists the set and the four Tatooine cards.
+
+== Layout ==
+# '''Lead:''' one line, "'''Title''' may refer to:".
+# '''Cards:''' a table, oldest printing first. Columns: card image (80px, linked to the card page), card link, side, set, type. Card images help readers recognize the card at a glance; every row has one. When the card has errata or AI pages, list them in a last column, "Also".
+# '''Other uses:''' non-card pages with the same name (expansion set, team, concept), one line each.
+# '''See also:''' cards whose title starts with the same words (Tatooine Occupation, Tatooine: Mos Eisley), or a category.
+# '''Footer:''' <code><nowiki>{{Disambiguation}}</nowiki></code>, which explains the page and adds [[:Category:Disambiguation]].
+
+A disambiguation page has no references, no lore and no game text. Each row gives only what a reader needs to choose.
+
+== Hatnotes ==
+Every card listed on a disambiguation page carries a hatnote at the top:
+: <code><nowiki>{{Other versions|Tatooine}}</nowiki></code> → ''For the other cards titled Tatooine, see [[Tatooine]].''
+Errata and AI pages keep their own hatnote linking the card's main page.
+
+== Linking ==
+Articles, decklists, set lists and templates never link to a disambiguation page. A link names the exact card: a Dark deck's Cantina links Tatooine: Cantina (Dark). Deck generators resolve the card from its side and set. [[SWCCG Wiki:Links to disambiguation pages]] lists every link that still lands on a disambiguation page; fix them by pointing each link at the intended card.
+
+Links to a disambiguation page are correct only from other disambiguation pages, hatnotes and maintenance pages.
+
+== Search ==
+Typing an exact title in the search box opens that page. Because the bare title is the disambiguation page, a search for "Jawa" lands on the choice of four Jawa cards.
