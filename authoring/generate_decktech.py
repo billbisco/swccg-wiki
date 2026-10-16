@@ -6578,6 +6578,14 @@ def wiki_card(title: str, side: str) -> str:
         res = lookup_title(base, side)
         if f"{res} (Dark)" in DARK_PAGES and not _bare_is_dark_only(res):
             return cl.wrap(base, side, dest=f"{res} (Dark)", label=res.split(" / ", 1)[0])
+        if f"{res} (Dark)" in DARK_PAGES and _bare_is_dark_only(res):
+            # bare page = the earlier Dark printing (e.g. JP Sealed Deck Effect No Escape); "(Dark)" = its Reflections III
+            # Defensive Shield. Use the bare printing's image, not the Ref3 one.
+            cands = sorted(cl._load_index().get(("Dark", cl.lookup_key(res).casefold()), []),
+                           key=lambda c: cl._set_rank(c, False))
+            imgs = [cl.wiki_file_name(c) for c in cands]
+            img = next((i for i in imgs if i and not i.startswith("Ref3-")), None) or (imgs[0] if imgs else None)
+            return cl.cardlink(res, img)
     resolved = lookup_title(title, side)
     dest = resolved
     if side.upper() in {"DARK", "DS"} and title in {

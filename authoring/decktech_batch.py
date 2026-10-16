@@ -485,7 +485,7 @@ def deck_page(d: dict) -> str:
         sh = "\n".join(f"* {q}x {shield_link(n, d['side']) or wc(n)}" for q, n, _ in rows_of(d, "shields"))
         shields = f"\n== Defensive Shields ==\n\nThese cards were posted as Defensive Shields outside the 60. They do not count toward the 60.\n\n{sh}\n"
     note = f"\n{d['shields_note']}\n" if d.get("shields_note") else ""
-    see = ([] if d.get("player_page") == "none" else [f"* [[{d['player']}]]"]) + ([f"* [[{d['event']}]]"] if d.get("event") else []) + [
+    see = ([] if d.get("player_page") == "none" else [f"* {plink(d)}"]) + ([f"* [[{d['event']}]]"] if d.get("event") else []) + [
         "* [[DeckTech decks]]", "* [[Decklists]]", f"* [[{d['format']}]]"]
     return f"""{intro}{gd.post_ref(f"dt-{pid}", pid, lbl, byline)}
 
