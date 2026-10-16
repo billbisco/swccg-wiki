@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <link rel="stylesheet" type="text/css" href="/css/banner-styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/iconochive.css">
+  <title>QMC lots of retreival</title>
+
+  <meta name="keywords" content="CCG, TCG, Collectible card games, Trading card game, SW:CCG, ST:CCG, M:TG, Customizable Card Game, CCG, Star Wars CCG, Star Trek CCG, Card Gaming">
+  <meta name="description" content="DeckTech has one mission: To build a self sustaining community that adds entertainment value to the CCGs we all enjoy. All CCG players welcome.">
+
+  <style type="text/css">
+    .deck-rating { font-size: 12pt; font-family: monospace; color:#09d8dc; }
+    .deck-side { font-size: 12pt; color:yellow; }
+    .deck-title { font-size: 12pt; font-weight:bold; color:#ffa600; }
+    .deck-author { font-size: 12pt; color:#56c0a7; }
+    .deck-description { text-decoration:italicized; font-size:10pt; color:#c8c8c8; }
+    ul.deck-index li { padding-bottom:15px; }
+
+
+    body { 
+      font-family: Arial, Helvetica, sans-serif; 
+      color: #ffffff; 
+      font-size: 10pt; 
+      font-style: normal; 
+      text-decoration: none; 
+      background-color: #000000; 
+      margin: 0in; 
+      margin-left: 0in; 
+      margin-top: 0in; 
+      border-style: none;
+    }
+    .level1nav {
+      color: #00FF00; 
+      text-decoration: none; 
+      font-weight: bold; 
+      font-size: 10pt;
+    }
+    a {  
+      color: #00FF00; 
+      text-decoration: none;
+    }
+    .header_bg {  background: #001F90}
+    a:hover { color: #FFFFFF; text-decoration: none }
+    .border {  border: thin #001F90 solid}
+    input {
+      font-family: Arial, Helvetica, sans-serif; 
+      font-size: 10pt; 
+      border: 1px solid black;
+    }   
+  </style>
+</head>
+<body link="#00FF00" vlink="#CCCCCC" alink="#00FF00" text="#FFFFFF" margin="0" marginwidth="0" marginheight="0" bgcolor="#000000" background="/img/background.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr> 
+    <td width="1" valign="top"><img src="/img/trans_header1.gif" width="1" height="1" vspace="0" hspace="0" border="0"></td>
+    <td width="130" valign="top"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr valign="top" align="left"> 
+          <td><a href="/"><img src="/img/dt_2logo.gif" border="0"></a></td>
+        </tr>
+      </tbody></table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr valign="top"> 
+          <td height="2"><img src="/img/trans.gif" width="130" height="8"></td>
+        </tr>
+        <tr valign="top"><td height="2"></td></tr>
+        <tr valign="top"> 
+          <td>
+<!-- sidebar -->
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="border"><tbody><tr class="header_bg">
+  <td height="2"><font face="Arial, Helvetica, sans-serif" size="2"><b>DeckTech.net</b></font></td></tr>
+  <tr valign="top"><td><font face="Arial, Helvetica, sans-serif" size="2">
+    <table width="98%" border="0" cellspacing="0" cellpadding="2">
+      <tbody><tr> 
+        <td colspan="2"><font color="#00FF00"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="/">Home</a></font></b></font></td></tr>
+                    <tr><td height="13">&nbsp;</td><td height="13"><font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/ccg">Card Games?</a></font><br>
+                        <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/about">About DeckTech</a></font><br>
+                        <!-- font color="#00FF00"><font face="Arial, Helvetica, sans-serif" size="2"><a href="/join">Sign 
+                        Me Up!</a></font><br -->
+                        <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/faq">FAQ</a></font></td></tr>
+                    <!tr><td colspan="2"><font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><b><a href="/dpc">DPC</a></font></b></td></tr>
+                    <!-- tr><td colspan="2" height="2"><font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><b><a href="/groups">DeckTech Groups</a></b></font></td></tr -->
+                  </tbody></table>
+</font></td></tr></tbody></table>
+
+</td></tr><tr><td><img src="/img/trans.gif" width="8" height="6"></td></tr><tr valign="top"><td>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="border"><tbody><tr class="header_bg">
+  <td height="2"><font face="Arial, Helvetica, sans-serif" size="2"><b>Star Wars CCG</b></font></td></tr>
+  <tr valign="top"><td><font face="Arial, Helvetica, sans-serif" size="2">
+    <table width="98%" border="0" cellspacing="0" cellpadding="2">
+      <tbody>
+        <tr><td colspan="2"><font color="#00FF00"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/">Home</a></font></b></font></td></tr>
+        <tr><td height="13">&nbsp;</td><td height="13">
+
+          <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/about">About the Game</a></font></font><br />
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/decktech">About DeckTech</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/directory">Member Directory</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/join">Sign Up Now!</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/articles">Articles</a></font></font><br / -->
+          <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/decks">Decks</a></font></font><br />
+          <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/tournament-reports">Tournament Reports</a></font></font><br />
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/academy">Jedi Academy</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/resources">Resources</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/premium">Premium Memberships</a></font></font><br / -->
+
+        </td></tr>
+                  </tbody></table>
+</font></td></tr></tbody></table>
+
+
+
+
+</td></tr>
+         <tr><td><img src="/img/trans.gif" width="8" height="6"></td></tr>
+         <tr valign="top"><td><table width="100%" border="0" cellspacing="0" cellpadding="3" class="border"><tbody><tr class="header_bg"><td height="2"><font face="Arial, Helvetica, sans-serif" size="2"><b>CCGs</b></font></td></tr><tr valign="top"><td><font face="Arial, Helvetica, sans-serif" size="2">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="6">
+  <tbody>
+    <tr align="center" valign="middle"><td><a href="/magination"  class="level1nav"><img src="/img/magi_grey.gif" width="110" height="99" border="0" alt="MagiNation Duel"></a></td></tr>
+    <tr align="center" valign="middle"><td><a href="/lotr"        class="level1nav"><img src="/img/lotr_grey.gif" width="110" height="96" border="0" alt="Lord of the Rings Card Game"></a></td></tr>
+    <tr align="center" valign="middle"><td><a href="/starwarsccg" class="level1nav"><img src="/img/sw.gif"        width="108" height="72" border="0" alt="Star Wars Customizable Card Game"></a></td></tr>
+    <tr align="center" valign="middle"><td><a href="/swtcg"       class="level1nav"><img src="/img/swt_grey.gif"  width="108" height="73" border="0" alt="Star Wars Trading Card Game"></a></td></tr>
+    <tr align="center" valign="middle"><td><a href="/st"          class="level1nav"><img src="/img/st_grey.gif"   width="108"             border="0" alt="Star Trek Customizable Card Game"></a></td></tr>
+  </tbody>
+</table>
+
+</font></td></tr></tbody></table></td></tr><tr><td><img src="/img/trans.gif" width="8" height="6"></td></tr> 
+        <tr valign="top"> 
+          <td> </td>
+        </tr>
+      </tbody></table>
+    </td>
+    <td align="left" valign="top" colspan="2" width="90%"> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr valign="top"> 
+    <td height="75" width="1%"><img src="/img/trans_header1.gif" width="22" height="2" vspace="0" hspace="0" border="0"></td>
+    <td height="75" width="99%">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr valign="top"> 
+          <td height="75"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="6">
+              <tbody><tr> 
+                <td><!-- header banner -->
+                  <img src="/img/trans_header1.gif" />
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+        <tr valign="top"> 
+          <td height="9"><font face="Arial, Helvetica, sans-serif" size="1"><b><font size="2"> 
+            </font></b></font> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr> 
+                <td height="18">&nbsp; </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+ 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr> 
+          <td valign="top" width="1"><img src="/img/trans_header1.gif" width="22" height="2" vspace="0" hspace="0" border="0"></td>
+          <td bgcolor="#001F90" valign="top"><!-- #BeginEditable "Body" --> 
+            
+<!-- center -->
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="border"><tbody><tr class="header_bg"><td height="2"><font face="Haettenschweiler, Impact, Arial Black" size="5">QMC lots of retreival</font></td></tr><tr valign="top"><td bgcolor="#000066"><font face="Arial, Helvetica, sans-serif" size="2"><ul>
+              <br>
+              <p>
+                <p class=""><strong>Deck ID:</strong> 19697</p>
+<p class="deck-author"><strong>Author:</strong> p "drnoodles16" n</p>
+<p class="deck-title"><strong>Title:</strong> QMC lots of retreival</p>
+<p class="deck-side"><strong>Side:</strong> Light</p>
+<p class=""><strong>Date Published:</strong> 2001-11-12</p>
+<p class="deck-description"><strong>Description:</strong><br />Quiet mining colony with big retrievel</p>
+<p class="deck-rating"><strong>Rating:</strong><br />3.0</p>
+
+<p>
+Cards: <br />
+<br />
+'starting (8)<br />
+<br />
+QMC/IO<br />
+<br />
+Bespin<br />
+<br />
+CC guest quarters<br />
+<br />
+medical frigate<br />
+<br />
+keeping the empire out<br />
+<br />
+squadron assignments<br />
+<br />
+twighlight is upon me<br />
+<br />
+unusual ammount of fear<br />
+<br />
+10 sheilds<br />
+<br />
+<br />
+characters (13)<br />
+<br />
+Luke skywalker jedi knight<br />
+<br />
+obi wan kenobi<br />
+<br />
+daughter of skywalker<br />
+<br />
+master qui gon<br />
+<br />
+chewie, enraged<br />
+<br />
+corran horn<br />
+<br />
+padme<br />
+<br />
+Wedge, RSL<br />
+<br />
+Hobbie<br />
+<br />
+green leader<br />
+<br />
+tycho<br />
+<br />
+dash rendar<br />
+<br />
+jar jar<br />
+<br />
+<br />
+ships (6)<br />
+<br />
+Han, chewie and falcon<br />
+<br />
+red squad 1 <br />
+<br />
+red squad 4<br />
+<br />
+green 1<br />
+<br />
+green 3<br />
+<br />
+outrider<br />
+<br />
+<br />
+effect (2)<br />
+<br />
+Cloud city celebration<br />
+<br />
+lightsaber profieciency<br />
+<br />
+<br />
+interupt (16)<br />
+<br />
+skywalkers<br />
+<br />
+warriors courage<br />
+<br />
+smokescreen x2<br />
+<br />
+the force is strong with this one x2<br />
+<br />
+houjix & out of nowhere x2<br />
+<br />
+rebel artillery x2<br />
+<br />
+on the edge x2<br />
+<br />
+armed and dangerous x2<br />
+<br />
+it could be worse x2<br />
+<br />
+<br />
+weapons (9)<br />
+<br />
+lukes saber<br />
+<br />
+obis saber<br />
+<br />
+anakins saber<br />
+<br />
+qui gons saber<br />
+<br />
+chewies bowcaster<br />
+<br />
+awing laser x2<br />
+<br />
+xwing laser x2<br />
+<br />
+<br />
+admirals orders (2)<br />
+<br />
+i’ll take the leader x2<br />
+<br />
+<br />
+sites (4)<br />
+<br />
+bespin cc<br />
+<br />
+cc downtown plaza<br />
+<br />
+cc platform 327<br />
+<br />
+cc casino<br />
+<br />
+'<br />
+<br />
+Strategy: '<br />
+<br />
+early get out sites. flip as soon as you can, since it cant flip back. establish a ground force and drain.<br />
+<br />
+<br />
+mid game get out cc celebration and retrieve and drain. keep a hold on bespin and cc.<br />
+<br />
+<br />
+late game use on the edge to replenish force. drain to win.<br />
+<br />
+<br />
+card choice  <br />
+<br />
+Awing cannon green leader adds 3 to targeting, plus destiny 4<br />
+<br />
+<br />
+on the edge you can use off the edge if you want, doesn’t matter.<br />
+<br />
+<br />
+2 chewies i know there are 2, if you get both, just stop paying for one so you can play the other.<br />
+<br />
+<br />
+cloud city casino if you play the casino, people may think you are sabaccing.  they might waste a sheild. if not, its 2 force for you and 1 for them, and you can land ships here if nessecary.<br />
+<br />
+<br />
+match ups<br />
+<br />
+<br />
+dark deal stop the opponent from getting it out. if he plays occupation, control bespin and cancel it.<br />
+<br />
+<br />
+rall ops ignore opponent, you’ll probably drain for more, and you’ll definetly retreive more.<br />
+<br />
+<br />
+carbon chanmber chop the ugnaughts. get a ground force to stop the transport of the frozen guy. if they actualy freeze him, use it could be worse to block the damage.<br />
+<br />
+<br />
+any space deck use dash/outrider to knock down executer, wedge and tycho or corran to block a destiny, and xwing lasers to waste bounty hunter ships, and use i’ll take the leader to mess up bounty hunter ships.<br />
+<br />
+<br />
+deck won 2 of 3 games it played at a local tournament, losing to a lightsaber combat objective by 2 force. '<br />
+
+</p>
+
+              <p>
+            </ul>
+</font></td></tr></tbody></table>
+<!-- center -->
+
+            <!-- #EndEditable --></td>
+          <td width="1" valign="top"><img src="/img/trans_header1.gif" width="16" height="2" vspace="0" hspace="0" border="0"></td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr> </tr>
+  <tr> 
+    <td colspan="4"> 
+
+<img style="width:100%;" src="/img/footer.gif" />
+
+<table width="100%" border="0" cellspacing="0" cellpadding="1" style="background-color:#000000;">
+  <tbody><tr align="center"><td><font face="Arial, Helvetica, sans-serif" size="2"></font><p><font face="Arial, Helvetica, sans-serif" size="2"><a href="/terms">Terms of Service</a>, TM, and &copy;2002 www.decktech.net. All Rights Reserved.</font></p></td></tr></tbody></table>
+</td></tr>
+</tbody></table>
+
+
+
+</body></html>
