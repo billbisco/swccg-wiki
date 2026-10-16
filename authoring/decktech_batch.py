@@ -807,11 +807,20 @@ def cmd_build(batch: str, ids: list[str]) -> None:
     all_decks = list(every.values())
     emit("DeckTech decks", insert_hub_rows(gd.decktech_decks(), all_decks))
     for fmt in sorted({d["format"] for d in all_decks}):
-        base = getattr(gd, FORMAT_BUILDERS[fmt])()
         live = live_text(fmt) or ""
+        if fmt not in FORMAT_BUILDERS and "=== Printed Decipher cards only ===" not in live:
+            # first DeckTech deck on a printed-only format page (e.g. Premiere - Reflections III): add the list section
+            sec = ("== Decklists ==\n=== Printed Decipher cards only ===\n"
+                   "These decks use only printed Decipher cards. Each is listed with its legal day.\n")
+            i = live.find("== See also ==")
+            live = (live[:i] + sec + live[i:]) if i >= 0 else live + "\n" + sec
+        base = getattr(gd, FORMAT_BUILDERS[fmt])() if fmt in FORMAT_BUILDERS else live
         fdecks = [d for d in all_decks if d["format"] == fmt]
         if "=== Printed Decipher cards only ===" in live:  # list layout (style pass 2026-10-15): add to the live page
-            emit(fmt, insert_format_list(live, fdecks))
+            out = insert_format_list(live, fdecks)
+            out = re.sub(r"(legal day\.)\n(\* \[\[)", r"\1\n\n\2", out)  # blank line before the first item
+            out = re.sub(r"(\n\* \[\[[^\n]+)\n(==)", r"\1\n\n\2", out)  # and after the last
+            emit(fmt, out)
         else:
             emit(fmt, insert_format_sentences(base, fmt, fdecks))
     seen, lines = set(), []
