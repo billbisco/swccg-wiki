@@ -442,7 +442,11 @@ def unknown_note(d: dict) -> str:
 
 def plink(d: dict) -> str:
     """Player link, or plain text when the post's name is not a person to page (player_page: none)."""
-    return d["player"] if d.get("player_page") == "none" else f"[[{d['player']}]]"
+    if d.get("player_page") == "none":
+        return d["player"]
+    if d.get("player_link"):  # person page under another name, e.g. [[Mike Gemme|Michael Gemme]]
+        return f"[[{d['player_link']}|{d['player']}]]"
+    return f"[[{d['player']}]]"
 
 
 def deck_page(d: dict) -> str:
@@ -606,7 +610,8 @@ def hub_row(d: dict) -> tuple[str, str]:
         return "tournament", (f"| {short_date(d['date'])} || [[{d['format']}]] || [[{d['event']}]] || {d['finish']} || "
                               f"{plink(d)} || {dark} || {light}")
     shown = f"[[{t}|{d['published_title']}]]" if d.get("use_published_title") else f"[[{t}]]"
-    return "general", f"| {short_date(d['date'])} || [[{d['format']}]] || {shown} || [[{d['side']}]] || {plink(d)}"
+    fmt = d.get("hub_format") or d["format"]  # hub cell can name the event's format (FreedomCon 2001 = Reflections III)
+    return "general", f"| {short_date(d['date'])} || [[{fmt}]] || {shown} || [[{d['side']}]] || {plink(d)}"
 
 
 def _row_date(row: str) -> tuple:
