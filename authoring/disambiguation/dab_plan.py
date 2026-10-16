@@ -22,6 +22,9 @@ from collections import defaultdict
 from pathlib import Path
 
 API = "https://wiki.swccg.com/api.php"
+# Set name -> its page, for set names that are also card titles (Template:Set page)
+SET_PAGE = {"Tatooine": "Tatooine (expansion)", "Coruscant": "Coruscant (expansion)", "Endor": "Endor (expansion)",
+            "Death Star II": "Death Star II (expansion)", "Hoth": "Hoth Limited", "Dagobah": "Dagobah Limited"}
 STATE = re.compile(r" \((Original|Errata|PC Errata|AI)\)$")
 SHORT = {"Premiere Limited": "Premiere", "A New Hope Limited": "A New Hope", "Hoth Limited": "Hoth",
          "Dagobah Limited": "Dagobah", "Cloud City Limited": "Cloud City", "Jabba's Palace Limited": "Jabba's Palace",
@@ -67,7 +70,7 @@ def backlinks(title: str) -> list[str]:
         cont = {"blcontinue": r["continue"]["blcontinue"]}
 
 
-def plan_group(T: str, scan: list[dict]) -> dict:
+def plan_group(T: str, scan: list[dict], other: str | None = None) -> dict:
     allp = [c for c in scan if norm(c["title"]) == T]
     members = [c for c in allp if not STATE.search(c["page"])]
     states = [c for c in allp if STATE.search(c["page"])]
@@ -77,7 +80,7 @@ def plan_group(T: str, scan: list[dict]) -> dict:
         by_side[c["side"]].append(c)
     for c in members:
         name = T
-        if len(sides) > 1:
+        if len(sides) > 1 or other:  # a non-card page shares the name: every card needs a qualifier
             name += f" ({c['side']})"
         if len(by_side[c["side"]]) > 1:
             name += f" ({set_short(c['set'])})"
@@ -90,7 +93,7 @@ def plan_group(T: str, scan: list[dict]) -> dict:
         owner = next((c for c in members if c["page"] == base), None)
         s["new"] = (owner["new"] + STATE.search(s["page"]).group(0)) if owner else s["page"]
     members.sort(key=lambda c: uid_key(c["uid"]))
-    return {"title": T, "members": members, "states": states}
+    return {"title": T, "members": members, "states": states, "other": other}
 
 
 def dab_text(g: dict, extra: str = "") -> str:
@@ -101,11 +104,13 @@ def dab_text(g: dict, extra: str = "") -> str:
         also_txt = " · ".join(f"[[{a}|{re.search(r'\(([^()]+)\)$', a).group(1)}]]" for a in also)
         typ = c["type"] + (f" ({c['subtype']})" if c.get("subtype") else "")
         rows.append(f"|-\n| [[File:{c['image']}|80px|link={c['new']}]] || [[{c['new']}]] || [[{c['side']}]] || "
-                    f"[[{c['set']}|{set_short(c['set'])}]] || {typ}" + (f" || {also_txt}" if any(
+                    f"[[{SET_PAGE.get(c['set'], c['set'])}|{set_short(c['set'])}]] || {typ}" + (f" || {also_txt}" if any(
                         s['new'].startswith(m['new'] + ' (') for m in g['members'] for s in g['states']) else ""))
     has_also = any(s["new"].startswith(m["new"] + " (") for m in g["members"] for s in g["states"])
     head = "! !! Card !! Side !! Set !! Type" + (" !! Also" if has_also else "")
     see = f"\n== See also ==\n* [[Special:PrefixIndex/{T}|All titles starting with {T}]]\n"
+    if g.get("other"):
+        extra = f"\n== Other uses ==\n* [[{g['other']}]], the expansion set\n" + extra
     return (f"'''{T}''' may refer to:\n\n== Cards ==\n{{| class=\"wikitable\"\n{head}\n" + "\n".join(rows) +
             "\n|}\n" + extra + see + "\n{{Disambiguation}}\n")
 
@@ -242,7 +247,16 @@ def resolve(text: str, page: str, groups: dict[str, dict], img2page: dict[str, s
 
     def wl(m):
         T = m.group(1).strip()
-        if T not in groups or not is_deck:
+        if T not in groups:
+            return m.group(0)
+        other = groups[T].get("other")
+        ls = m.string.rfind("\n", 0, m.start()) + 1
+        if m.string[ls:ls + 9] == "{{Hatnote":  # hatnotes point at the decision page on purpose
+            return m.group(0)
+        row = is_deck and re.match(r"\s*[*#]", m.string[ls:m.start()])
+        if other and not row:  # the link meant the expansion set before the move: keep that meaning
+            return f"[[{other}{m.group(2) or '|' + T}]]"
+        if not is_deck:
             return m.group(0)
         dest = pick(T)
         if not dest:
@@ -259,9 +273,11 @@ def main(argv: list[str]) -> None:
     scan = json.loads(Path(argv[1]).read_text(encoding="utf-8"))
     out = Path(argv[2])
     (out / "pages").mkdir(parents=True, exist_ok=True)
-    titles = [a for a in argv[3:] if not a.startswith("--")]
+    specs = [a for a in argv[3:] if not a.startswith("--")]
+    others = {a.split("=>")[0]: a.split("=>")[1] for a in specs if "=>" in a}  # "Tatooine=>Tatooine (expansion)"
+    titles = [a.split("=>")[0] for a in specs]
     cards = [c for c in scan if c.get("card")]
-    groups = {T: plan_group(T, cards) for T in titles}
+    groups = {T: plan_group(T, cards, others.get(T)) for T in titles}
     page2new = {c["page"]: c["new"] for g in groups.values() for c in g["members"] + g["states"]}
     img2page, uid2page = {}, {}
     for c in cards:
@@ -278,6 +294,16 @@ def main(argv: list[str]) -> None:
         h = hashlib.sha1(t.encode("utf-8")).hexdigest()[:8]
         return "pages/" + re.sub(r"[^A-Za-z0-9._-]+", "_", t)[:120] + "-" + h + ".wiki"
 
+    # 0. expansion pages that sit at the bare title move to their own title first
+    bare_info = {} if relink_only else {p["title"]: p for T in others for p in api(
+        action="query", titles=T, prop="info")["query"]["pages"]}
+    set_texts: dict[str, str] = {}
+    for T, target in ({} if relink_only else others).items():
+        if not bare_info[T].get("missing") and not bare_info[T].get("redirect"):
+            ops.append({"op": "move", "from": T, "to": target})
+            set_texts[target] = texts([T])[T]
+        else:
+            set_texts[target] = texts([target]).get(target, "")
     # 1. moves (members, then text-state pages)
     for g in ([] if relink_only else groups.values()):
         for c in g["members"] + g["states"]:
@@ -293,13 +319,18 @@ def main(argv: list[str]) -> None:
     # 3. hatnotes on members (by new title; the moved page keeps its text)
     old_texts = {} if relink_only else texts([c["page"] for g in groups.values() for c in g["members"]])
     edited: dict[str, str] = {}
+    for target, t in set_texts.items():  # hatnote on the expansion page
+        T = next(k for k, v in others.items() if v == target)
+        hat = f"{{{{Hatnote|1=For the cards titled ''{T}'', see [[{T}]].}}}}\n"
+        edited[target] = t if hat in t else hat + t
     for g in ([] if relink_only else groups.values()):
         for c in g["members"]:
             t = old_texts.get(c["page"], "")
             edited[c["new"]] = with_hatnote(t, g, c)
     # 4. relink every page that links a bare group title
     linkers = sorted({b for T in titles for b in backlinks(T)})
-    lt = texts([p for p in linkers if p not in page2new and p not in page2new.values()])
+    lt = texts([p for p in linkers if p not in page2new and p not in page2new.values() and p not in edited
+                and p not in others])
     pagecard = {page2new.get(c["page"], c["page"]): c for c in cards}
     prefetch_gemp(list(lt.values()))
     unresolved_all = defaultdict(list)
