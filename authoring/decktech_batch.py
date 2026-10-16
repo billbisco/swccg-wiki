@@ -409,7 +409,8 @@ def dest_title(d: dict) -> str:
         return d["dest_title"]
     tail = d["published_title"] if d.get("use_published_title") else ("DS" if d["side"] == "Dark" else "LS")
     pre = f"{d['event']} " if d.get("kind") == "tournament" else ""
-    return " ".join(f"{pre}{d['player']} {tail}".split())  # MediaWiki collapses runs of spaces
+    t = " ".join(f"{pre}{d['player']} {tail}".split())  # MediaWiki collapses runs of spaces
+    return t.translate(str.maketrans("[]{}", "()()")).replace("|", "/")  # characters MediaWiki titles cannot hold
 
 
 def label(d: dict) -> str:
