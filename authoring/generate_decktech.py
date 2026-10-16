@@ -6504,6 +6504,24 @@ def lookup_title(title: str, side: str) -> str:
 import json as _json
 from pathlib import Path as _Path
 _DT = _Path(__file__).resolve().parent / "wiki-dark-titles.json"
+_BARE_DARK: set | None = None
+
+
+def _bare_is_dark_only(title: str) -> bool:
+    """True when the bare title is printed only on the Dark side (e.g. the Coruscant Effect Allegations Of Corruption,
+    whose "(Dark)" page is the Reflections III Defensive Shield). Then the bare page IS the Dark card: keep it."""
+    global _BARE_DARK
+    if _BARE_DARK is None:
+        sides: dict[str, set] = {}
+        for (sd, _key), cards in cl._load_index().items():
+            for c in cards:
+                t = cl.strip_uniqueness((c.get("front") or {}).get("title") or "")
+                if t:
+                    sides.setdefault(t, set()).add(sd)
+        _BARE_DARK = {t for t, v in sides.items() if v == {"Dark"}}
+    return title in _BARE_DARK
+
+
 DARK_PAGES = set(_json.loads(_DT.read_text(encoding="utf-8"))) if _DT.exists() else set()
 
 # Light card titles whose bare wiki page is an expansion set page, not the card (2026-10-15).
@@ -6558,7 +6576,7 @@ def wiki_card(title: str, side: str) -> str:
             return cl.wrap(base, side, dest=title, label=base.split(" / ", 1)[0])
         base = re.sub(r" \(Dark\)$", "", title)
         res = lookup_title(base, side)
-        if f"{res} (Dark)" in DARK_PAGES:
+        if f"{res} (Dark)" in DARK_PAGES and not _bare_is_dark_only(res):
             return cl.wrap(base, side, dest=f"{res} (Dark)", label=res.split(" / ", 1)[0])
     resolved = lookup_title(title, side)
     dest = resolved
