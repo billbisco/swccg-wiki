@@ -6684,6 +6684,28 @@ def _keep_gemp_line(title: str, body: str) -> str:
     return body
 
 
+_DAB_F = _Path(__file__).resolve().parent / "wiki-dab-map.json"
+DAB = _json.loads(_DAB_F.read_text(encoding="utf-8")) if _DAB_F.exists() else {"renamed": {}, "image_page": {}, "decision_pages": {}}
+_CL = re.compile(r"\{\{CardLink\|([^|}]+)\|([^|}]+)((?:\|[^}]*)?)\}\}")
+
+
+def dab_fix_links(body: str) -> str:
+    """CardLinks to a renamed card or a decision page point at the exact card, chosen by its image."""
+    ren, img2, dabs = DAB["renamed"], DAB["image_page"], DAB["decision_pages"]
+
+    def fix(m):
+        dest, im, tail = m.group(1).strip(), m.group(2).strip(), m.group(3)
+        new = img2.get(im) if (dest in dabs or dest in ren or dest in img2.values()) else None
+        new = new or ren.get(dest)
+        if not new or new == dest:
+            return m.group(0)
+        if "label=" not in tail:
+            tail += "|label=" + re.sub(r" \((?:Light|Dark)\)(?: \([^()]+\))?$", "", dest.split(" (Dark)")[0]) \
+                if dest not in dabs else "|label=" + dest
+        return f"{{{{CardLink|{new}|{im}{tail}}}}}"
+    return _CL.sub(fix, body)
+
+
 def write_page(title: str, body: str) -> Path:
     PAGES.mkdir(exist_ok=True)
     path = PAGES / slug_file(title)
@@ -6691,6 +6713,7 @@ def write_page(title: str, body: str) -> Path:
         body += "\n"
     body = cl.fix_shield_section(body)  # shields -> Reflections III shield pages (2026-10-10)
     body = _keep_gemp_line(title, body)
+    body = dab_fix_links(body)  # renamed cards / decision pages -> exact card page (SWCCG Wiki:Disambiguation)
     # Posted text can hold "~~~"; MediaWiki would expand it into the editor's signature on save (2026-10-15).
     body = re.sub(r"~{3,}", lambda m: "&#126;" * len(m.group()), body)
     path.write_text(body.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
