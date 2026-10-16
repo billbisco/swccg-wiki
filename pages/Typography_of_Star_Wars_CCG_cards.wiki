@@ -1,5 +1,5 @@
 {{Hatnote|1=Working documentation of the typefaces on Star Wars CCG cards. Started 2026-10-12 by Holocron Claude from Bardez's template notes and measurements of printed cards, PC Holotable images and the PC Remaster slip sheets. Nothing here is an official Decipher or Players Committee statement; corrections welcome.}}
-The typefaces of the Star Wars CCG were never documented by Decipher. What is known comes from three places: the printed cards themselves, the [[Players Committee]]'s Holotable card images (which re-typeset the virtual sets in the same faces), and the font identification [[Bardez]] made for his 600&nbsp;DPI card templates (2021, see [[Making Custom SWCCG Cards]]). This page records that knowledge so that card makers — including the open-source [https://github.com/billbisco/swccg-cardmaker swccg-cardmaker] program behind the [[Original Virtual Set 3 remaster review|Original Virtual Set remasters]] — reproduce the look faithfully.
+The typefaces of the Star Wars CCG were never documented by Decipher. Known identifications come from the printed cards, the [[Players Committee]]'s Holotable card images and the font notes [[Bardez]] made for his 600&nbsp;DPI card templates (2021, see [[Making Custom SWCCG Cards]]). The Holotable images re-typeset the virtual sets in the same faces. The open-source [https://github.com/billbisco/swccg-cardmaker swccg-cardmaker] program behind the [[Original Virtual Set 3 remaster review|Original Virtual Set remasters]] follows these faces.
 
 == The faces ==
 {| class="wikitable"
@@ -19,17 +19,19 @@ The typefaces of the Star Wars CCG were never documented by Decipher. What is kn
 |}
 
 == Sizes (600 DPI, 1632×2220 card with bleed) ==
-From Bardez's ''Card Fonts and dimensions'' notes and the measurements in the cardmaker standard: title 80&nbsp;px · destiny 80 · lore 58 (line 60, first-line indent 60) · game text 62 / line 65 · stat labels 56, values 60 · deploy/forfeit 70 · banners 60 · bottom strip 48 · © line 24. The Holotable image (745×1039) is the 600&nbsp;DPI card at half scale.
+Sizes from Bardez's ''Card Fonts and dimensions'' notes and the cardmaker standard:
+* title 80&nbsp;px; destiny 80
+* lore 58 (line 60, first-line indent 60)
+* game text 62 (line 65)
+* stat labels 56; values 60
+* deploy/forfeit 70; banners 60
+* bottom strip 48; © line 24
+The Holotable image (745×1039) is the 600&nbsp;DPI card at half scale.
 
 == Decipher vs. the Players Committee ==
-* Decipher's printed lore face is slightly narrower than the Akzidenz-Grotesk BQ Light Condensed used by Bardez and the PC, so re-typeset lore occasionally runs one line longer than the printed card.
-* The PC's Holotable game text is larger than the text on the 2006 Remaster slip sheets (the slips were sized to fit a printed sleeve insert); the remaster program follows the Holotable size.
+* Decipher's printed lore face is slightly narrower than the Akzidenz-Grotesk BQ Light Condensed used by Bardez and the PC. Re-typeset lore therefore occasionally runs one line longer than the printed card.
+* The PC's Holotable game text is larger than the text on the 2006 Remaster slip sheets, which were sized to fit a printed sleeve insert. The remaster program follows the Holotable size.
 * Special Edition and later sets changed the © line wording ("© LUCASFILM LTD. & TM. TM, ® & © 1998 DECIPHER INC.") but not the face.
-
-== Still undocumented ==
-* The exact Decipher-era cuts (Berthold's BQ releases vs. the earlier BE) and whether Decipher used Fiorello or a look-alike.
-* The faces on Decipher's Japanese and other foreign-language printings.
-* Sizes on landscape locations' Dark/Light text halves and on Objectives and Epic Events (to be measured when those sets are remastered).
 
 == See also ==
 * [[Making Custom SWCCG Cards]] — Bardez's templates and font notes
