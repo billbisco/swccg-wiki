@@ -635,6 +635,35 @@ def insert_hub_rows(hub: str, decks: list[dict]) -> str:
     return hub
 
 
+def insert_format_list(live: str, decks: list[dict]) -> str:
+    """Add decks missing from the live format page's decklist lists, keeping its order (by date) and text."""
+    head_p, head_v = "=== Printed Decipher cards only ===", "=== With original Virtual Set 1 cards ==="
+    for d in decks:
+        t = dest_title(d)
+        if f"[[{t}]]" in live or f"[[{t}|" in live:
+            continue
+        ovs = sorted({r[1] for r in d["cards"] if "(Virtual Set" in r[1]})
+        if ovs:
+            line = f"* [[{t}]]: " + ", ".join(f"[[{x}]]" for x in ovs)
+            live = live.replace(head_v + "\n\n", head_v + "\n\n" + line + "\n", 1)
+            continue
+        line = f"* [[{t}]] ({long_date(d['date'])})"
+        a = live.index(head_p)
+        b = live.index("\n=", a + len(head_p))
+        block = live[a:b].split("\n")
+        items = [i for i, l in enumerate(block) if l.startswith("* [[")]
+        key = d["date"]
+        pos = items[-1] + 1 if items else len(block)
+        for i in items:  # first live item dated later than this deck
+            m = re.search(r"\((\d{1,2} \w+ \d{4})\)\s*$", block[i])
+            if m and time.strptime(m.group(1), "%d %B %Y") > time.strptime(key, "%Y-%m-%d"):
+                pos = i
+                break
+        block.insert(pos, line)
+        live = live[:a] + "\n".join(block) + live[b:]
+    return live
+
+
 def insert_format_sentences(text: str, fmt: str, decks: list[dict]) -> str:
     anchor = FORMAT_ANCHORS.get(fmt)
     if not anchor:
@@ -774,7 +803,12 @@ def cmd_build(batch: str, ids: list[str]) -> None:
     emit("DeckTech decks", insert_hub_rows(gd.decktech_decks(), all_decks))
     for fmt in sorted({d["format"] for d in all_decks}):
         base = getattr(gd, FORMAT_BUILDERS[fmt])()
-        emit(fmt, insert_format_sentences(base, fmt, [d for d in all_decks if d["format"] == fmt]))
+        live = live_text(fmt) or ""
+        fdecks = [d for d in all_decks if d["format"] == fmt]
+        if "=== Printed Decipher cards only ===" in live:  # list layout (style pass 2026-10-15): add to the live page
+            emit(fmt, insert_format_list(live, fdecks))
+        else:
+            emit(fmt, insert_format_sentences(base, fmt, fdecks))
     seen, lines = set(), []
     for t, rel in titles:
         if t not in seen:
