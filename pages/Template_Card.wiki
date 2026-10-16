@@ -5,6 +5,8 @@ Optional '''likeness''' — person whose face is on the card: a photographic mod
 
 Optional '''anagram''' — one sentence that the printed title is an anagram of a named person. Renders as '''Anagram'''. Omit when none. Worked: [[Nabrun Leids]] → [[Tom Braunlich]].
 
+Optional '''easter_egg''' — the hidden joke or extra image on this printing, cited. Renders as '''Easter egg''' after Anagram. Omit when none. Link [[Easter eggs]] from See also. Worked: [[Death Star: Trench]].
+
 Optional '''image2''' — second portrait under '''image''' (same 280px width). Used for Objective 0/7 faces; omit on single-face cards.
 
 Optional '''image2_layout''' — how to place '''image2''' when set:
@@ -36,6 +38,7 @@ Optional '''image2_layout''' — how to place '''image2''' when set:
 |icons=[[Droid]]
 |lore=
 |anagram=
+|easter_egg=
 |game_text=
 |game_text_note=
 |printings=
@@ -125,7 +128,9 @@ Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px =
 
 {{#if:{{{anagram|}}}|<nowiki />
 <h2>Anagram</h2>
-{{{anagram}}}}}{{#if:{{{notes|}}}|<nowiki />
+{{{anagram}}}}}{{#if:{{{easter_egg|}}}|<nowiki />
+<h2>Easter egg</h2>
+{{{easter_egg}}}}}{{#if:{{{notes|}}}|<nowiki />
 <h2>Notes</h2>
 {{{notes}}}}}{{#if:{{{strategy|}}}|<nowiki />
 <h2>Strategy</h2>
