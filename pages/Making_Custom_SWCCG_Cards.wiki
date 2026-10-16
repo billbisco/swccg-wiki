@@ -1,17 +1,14 @@
-'''Making custom Star Wars CCG cards''' is the community practice of reconstructing, updating, and printing cards using high-resolution templates. This wiki keeps a preservation copy of those templates so they remain downloadable if a Drive folder moves.
+'''Making custom Star Wars CCG cards''' is the community practice of reconstructing, updating, and printing cards from high-resolution templates. People use them to remake cards in the modern look, fix bad scans, and print [[Playtest cards]] or [[Reflections Gold]] reconstructions.
 
-The templates on this page are '''[[Bardez]]'''’s 600&nbsp;DPI GIMP (<code>.xcf</code>) files, first posted on r/starwarsccgalters in 2021. They are free community work, not Decipher or Players Committee product. Credit [[Bardez]] (Reddit [https://www.reddit.com/user/Bardez u/Bardez]) when you use them.
-
-== Why this page exists ==
-A second download location matters. Google Drive folders get quota-locked, renamed, or unpublished. The templates are how people remake cards in the modern look, fix bad scans, and print [[Playtest cards]] or [[Reflections Gold]] reconstructions. This wiki stores the files and the notes that came with them.
+The wiki hosts preservation copies of '''[[Bardez]]'''’s 600&nbsp;DPI GIMP (<code>.xcf</code>) templates, first posted on r/starwarsccgalters on 7 May 2021.<ref name="bardez-reddit">[https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ 600 DPI Templates], u/Bardez, r/starwarsccgalters, 7 May 2021. [https://web.archive.org/web/20210507120000/https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ Wayback]</ref> They are free community work, not Decipher or Players Committee product. Credit [[Bardez]] (Reddit [https://www.reddit.com/user/Bardez u/Bardez]) when you use them.
 
 == Credit and source folders ==
-* '''Bardez''' — 600&nbsp;DPI GIMP templates. Drive: [https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ SWCCG Templates]. Announcement: [https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ 600 DPI Templates] (7 May 2021).
-* '''MPC print-ready hub''' — [https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ MPC Print Ready Cards — links to drives] on r/starwarsccgalters (11 January 2021). That post indexes several Drive folders (print-ready cards, playtests, card backs). This wiki's [[Playtest cards]] page already uses the Playtest folder from that hub.
+* '''Bardez''' — 600&nbsp;DPI GIMP templates. Drive: [https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ SWCCG Templates].<ref name="bardez-drive">[https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ Bardez SWCCG Templates] on Google Drive. Wayback: [https://web.archive.org/web/20210507000000/https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ requested]; live folder remains the working copy.</ref> Announcement: [https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ 600 DPI Templates] (7 May 2021).<ref name="bardez-reddit" />
+* '''MPC print-ready hub''' — [https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ MPC Print Ready Cards — links to drives] on r/starwarsccgalters (11 January 2021). That post indexes several Drive folders (print-ready cards, playtests, card backs).<ref name="mpc">[https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ MPC Print Ready Cards], r/starwarsccgalters, 11 January 2021. [https://web.archive.org/web/20210129183450/https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ Wayback 29 January 2021]; [https://archive.ph/ZUIVX archive.today]</ref>
 * '''IPFS mirror''' (community, from the 2021 thread): <code>ipfs://QmcyTrAxapWxJaqTnpPYDwsERJSHZGNdLairPM5WBi38cP</code>
 
-== Size, fonts, and GIMP notes ==
-Bardez's <code>Card Fonts and dimensions.txt</code> (preserved here) is the working spec:
+== Size and fonts ==
+Bardez's specification, from <code>Card Fonts and dimensions.txt</code>:<ref name="spec">Card Fonts and dimensions.txt, copied from the Bardez Drive folder ([https://wiki.swccg.com/preserved/bardez/Card%20Fonts%20and%20dimensions.txt preserved copy]).</ref>
 
 * '''Total card size:''' 1632 × 2220 pixels (about 600&nbsp;DPI at 63×88&nbsp;mm / Euro poker, the English retail size).
 * '''Title:''' Fiorello CG Condensed, 80&nbsp;px, kerning 1.0
@@ -23,7 +20,7 @@ Bardez's <code>Card Fonts and dimensions.txt</code> (preserved here) is the work
 * '''Parsec:''' Craft Gothic Heavy Expanded, 65&nbsp;px
 * Use typographic quotes <code>‘’ “”</code> and the uniqueness bullet <code>•</code> in titles; in game text the square bullet is different.
 
-The templates are GIMP <code>.xcf</code> layered files (GIMP is free). Photoshop users convert XCF→PSD. Light Side carbon scoring is a separate layer problem Bardez noted in 2021; horizontal wide-vision / Enhanced templates were added later for some types.
+The templates are GIMP <code>.xcf</code> layered files (GIMP is free). Photoshop users convert XCF→PSD. In 2021 Bardez called Light Side carbon scoring a separate layer problem.<ref name="bardez-reddit" /> Horizontal wide-vision / Enhanced templates were added later for some types.
 
 A matching font pack is <code>fonts.7z</code> in the same folder. Expansion-symbol and icon layers live in '''Assets/'''.
 
@@ -33,7 +30,7 @@ Open the template that matches the card type and side (Light or Dark). Replace t
 These files are for reconstruction, playtest printing, and historical study. They are not a license to sell counterfeit Decipher product.
 
 == Template inventory ==
-Every file from the Drive folder as of the copy on this wiki. '''Download''' is the preservation copy hosted here. PNG rows also have a preview.
+Every file in the Drive folder, linked to the copy hosted on the wiki. PNG rows also have a preview.
 
 {| class="wikitable sortable"
 ! Preview !! File !! Type !! Size
@@ -241,11 +238,8 @@ Every file from the Drive folder as of the copy on this wiki. '''Download''' is 
 * [[V-slips]] — Players Committee print overlays for virtual cards
 * [[Reflections Gold]] — cancelled 2001 reconstructions that use these templates
 
-== Sources ==
-* [https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ Bardez SWCCG Templates] on Google Drive. Wayback: [https://web.archive.org/web/20210507000000/https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ requested]; live folder remains the working copy.
-* [https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ 600 DPI Templates], u/Bardez, r/starwarsccgalters, 7 May 2021. [https://web.archive.org/web/20210507120000/https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/ Wayback]
-* [https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ MPC Print Ready Cards], r/starwarsccgalters, 11 January 2021. [https://web.archive.org/web/20210129183450/https://www.reddit.com/r/starwarsccgalters/comments/ku0xau/mpc_print_ready_cards_links_to_drives_and/ Wayback 29 January 2021]; [https://archive.ph/ZUIVX archive.today]
-* Card Fonts and dimensions.txt (copied from the Drive folder)
+== References ==
+<references />
 
 [[Category:Meta]]
 [[Category:Card production]]
