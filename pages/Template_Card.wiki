@@ -5,7 +5,7 @@ Optional '''likeness''' — person whose face is on the card: a photographic mod
 
 Optional '''anagram''' — one sentence that the printed title is an anagram of a named person. Renders as '''Anagram'''. Omit when none. Worked: [[Nabrun Leids]] → [[Tom Braunlich]].
 
-Optional '''easter_egg''' — the hidden joke or extra image on this printing, cited. Renders as '''Easter egg''' after Anagram. Omit when none. Link [[Easter eggs]] from See also. Worked: [[Death Star: Trench]].
+Optional '''easter_egg''' — the hidden joke or extra image on this printing, cited. Renders as '''Easter egg''' immediately before See Also. Omit when none. Link [[Easter eggs]] from See also. Worked: [[Death Star: Trench]].
 
 Optional '''image2''' — second portrait under '''image''' (same 280px width). Used for Objective 0/7 faces; omit on single-face cards.
 
@@ -128,9 +128,7 @@ Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px =
 
 {{#if:{{{anagram|}}}|<nowiki />
 <h2>Anagram</h2>
-{{{anagram}}}}}{{#if:{{{easter_egg|}}}|<nowiki />
-<h2>Easter egg</h2>
-{{{easter_egg}}}}}{{#if:{{{notes|}}}|<nowiki />
+{{{anagram}}}}}{{#if:{{{notes|}}}|<nowiki />
 <h2>Notes</h2>
 {{{notes}}}}}{{#if:{{{strategy|}}}|<nowiki />
 <h2>Strategy</h2>
@@ -160,7 +158,9 @@ Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px =
 <h2>Counterpart</h2>
 {{{counterpart}}}}}{{#if:{{{underlying_card_for|}}}|<nowiki />
 <h2>Underlying card for</h2>
-{{{underlying_card_for}}}}}
+{{{underlying_card_for}}}}}{{#if:{{{easter_egg|}}}|<nowiki />
+<h2>Easter egg</h2>
+{{{easter_egg}}}}}
 
 == See Also ==
 {{{see_also|}}}
