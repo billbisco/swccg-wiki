@@ -606,6 +606,7 @@ def hub_row(d: dict) -> tuple[str, str]:
     t = dest_title(d)
     if d.get("kind") == "tournament":
         start = (d.get("starting") or {}).get("card") or d["published_title"]
+        start = re.sub(r" \((?:Dark|Light)\)(?: \([^()]+\))?$", "", start.split(" / ", 1)[0]) or start  # front side, no page suffix
         dark = f"[[{t}|{start}]]" if d["side"] == "Dark" else "—"
         light = f"[[{t}|{start}]]" if d["side"] == "Light" else "—"
         return "tournament", (f"| {short_date(d['date'])} || [[{d['format']}]] || [[{d['event']}]] || {d['finish']} || "
@@ -790,13 +791,16 @@ def cmd_build(batch: str, ids: list[str]) -> None:
         emit(dest_title(d), deck_page(d))
         if d.get("player_page") == "none":
             continue
-        if d["player"] in players:  # several decks by one player in this batch
-            cur = players[d["player"]]
+        pname = d.get("player_link") or d["player"]  # the person page itself, never a redirect to it
+        if pname in players:  # several decks by one player in this batch
+            cur = players[pname]
         else:
-            cur = None if d.get("player_page") == "new" else live_text(d["player"])
-            if d.get("player_page") == "new" and live_text(d["player"]) is not None:
-                raise SystemExit(f"{d['player']} already exists on the wiki; set player_page to existing")
-        players[d["player"]] = player_page(d, cur)
+            cur = None if d.get("player_page") == "new" else live_text(pname)
+            if cur and cur.lstrip().upper().startswith("#REDIRECT"):
+                raise SystemExit(f"{pname} is a redirect; set player_link to the person page")
+            if d.get("player_page") == "new" and live_text(pname) is not None:
+                raise SystemExit(f"{pname} already exists on the wiki; set player_page to existing")
+        players[pname] = player_page(d, cur)
     for name, body in players.items():
         emit(name, body)
     # Hub + format pages are rebuilt from generate_decktech.py, so they must carry every
