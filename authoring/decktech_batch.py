@@ -743,10 +743,10 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
     start = (d.get("starting") or {}).get("card") or d.get("published_title") or ""
     arch = d.get("gemp_arch") or _arch(start)  # gemp_arch: the post's own archetype name when the start card says nothing
     base = gi.safe_deck_filename(gi.deck_name(d["format"], arch, d["player"], d["side"], d["date"][:4], "DeckTech"))
-    fn = d.get("gemp_file_live") or base + ".txt"  # a deck already live keeps its uploaded file name
+    norm = lambda f: re.sub(r"\s+", " ", f.replace("_", " "))  # MediaWiki stores "_" as a space
+    fn = norm(d.get("gemp_file_live") or base + ".txt")  # a deck already live keeps its uploaded file name
     if not d.get("gemp_file_live") and (fn.lower() in taken or file_exists(fn)):
-        fn = gi.safe_deck_filename(gi.deck_name(d["format"], arch, d["player"], d["side"], d["date"][:4], str(d["id"]))) + ".txt"
-    fn = re.sub(r"\s+", " ", fn.replace("_", " "))  # MediaWiki stores "_" as a space
+        fn = norm(gi.safe_deck_filename(gi.deck_name(d["format"], arch, d["player"], d["side"], d["date"][:4], str(d["id"]))) + ".txt")
     taken.add(fn.lower())
     GEMP_OUT.mkdir(exist_ok=True)
     (GEMP_OUT / fn).write_text(xml, encoding="utf-8", newline="\n")
