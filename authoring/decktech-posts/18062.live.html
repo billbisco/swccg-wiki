@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <link rel="stylesheet" type="text/css" href="/css/banner-styles.css">
+  <link rel="stylesheet" type="text/css" href="/css/iconochive.css">
+  <title>Non-flipping Agents</title>
+
+  <meta name="keywords" content="CCG, TCG, Collectible card games, Trading card game, SW:CCG, ST:CCG, M:TG, Customizable Card Game, CCG, Star Wars CCG, Star Trek CCG, Card Gaming">
+  <meta name="description" content="DeckTech has one mission: To build a self sustaining community that adds entertainment value to the CCGs we all enjoy. All CCG players welcome.">
+
+  <style type="text/css">
+    .deck-rating { font-size: 12pt; font-family: monospace; color:#09d8dc; }
+    .deck-side { font-size: 12pt; color:yellow; }
+    .deck-title { font-size: 12pt; font-weight:bold; color:#ffa600; }
+    .deck-author { font-size: 12pt; color:#56c0a7; }
+    .deck-description { text-decoration:italicized; font-size:10pt; color:#c8c8c8; }
+    ul.deck-index li { padding-bottom:15px; }
+
+
+    body { 
+      font-family: Arial, Helvetica, sans-serif; 
+      color: #ffffff; 
+      font-size: 10pt; 
+      font-style: normal; 
+      text-decoration: none; 
+      background-color: #000000; 
+      margin: 0in; 
+      margin-left: 0in; 
+      margin-top: 0in; 
+      border-style: none;
+    }
+    .level1nav {
+      color: #00FF00; 
+      text-decoration: none; 
+      font-weight: bold; 
+      font-size: 10pt;
+    }
+    a {  
+      color: #00FF00; 
+      text-decoration: none;
+    }
+    .header_bg {  background: #001F90}
+    a:hover { color: #FFFFFF; text-decoration: none }
+    .border {  border: thin #001F90 solid}
+    input {
+      font-family: Arial, Helvetica, sans-serif; 
+      font-size: 10pt; 
+      border: 1px solid black;
+    }   
+  </style>
+</head>
+<body link="#00FF00" vlink="#CCCCCC" alink="#00FF00" text="#FFFFFF" margin="0" marginwidth="0" marginheight="0" bgcolor="#000000" background="/img/background.jpg">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr> 
+    <td width="1" valign="top"><img src="/img/trans_header1.gif" width="1" height="1" vspace="0" hspace="0" border="0"></td>
+    <td width="130" valign="top"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr valign="top" align="left"> 
+          <td><a href="/"><img src="/img/dt_2logo.gif" border="0"></a></td>
+        </tr>
+      </tbody></table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr valign="top"> 
+          <td height="2"><img src="/img/trans.gif" width="130" height="8"></td>
+        </tr>
+        <tr valign="top"><td height="2"></td></tr>
+        <tr valign="top"> 
+          <td>
+<!-- sidebar -->
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="border"><tbody><tr class="header_bg">
+  <td height="2"><font face="Arial, Helvetica, sans-serif" size="2"><b>DeckTech.net</b></font></td></tr>
+  <tr valign="top"><td><font face="Arial, Helvetica, sans-serif" size="2">
+    <table width="98%" border="0" cellspacing="0" cellpadding="2">
+      <tbody><tr> 
+        <td colspan="2"><font color="#00FF00"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="/">Home</a></font></b></font></td></tr>
+                    <tr><td height="13">&nbsp;</td><td height="13"><font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/ccg">Card Games?</a></font><br>
+                        <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/about">About DeckTech</a></font><br>
+                        <!-- font color="#00FF00"><font face="Arial, Helvetica, sans-serif" size="2"><a href="/join">Sign 
+                        Me Up!</a></font><br -->
+                        <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/faq">FAQ</a></font></td></tr>
+                    <!tr><td colspan="2"><font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><b><a href="/dpc">DPC</a></font></b></td></tr>
+                    <!-- tr><td colspan="2" height="2"><font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><b><a href="/groups">DeckTech Groups</a></b></font></td></tr -->
+                  </tbody></table>
+</font></td></tr></tbody></table>
+
+</td></tr><tr><td><img src="/img/trans.gif" width="8" height="6"></td></tr><tr valign="top"><td>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="border"><tbody><tr class="header_bg">
+  <td height="2"><font face="Arial, Helvetica, sans-serif" size="2"><b>Star Wars CCG</b></font></td></tr>
+  <tr valign="top"><td><font face="Arial, Helvetica, sans-serif" size="2">
+    <table width="98%" border="0" cellspacing="0" cellpadding="2">
+      <tbody>
+        <tr><td colspan="2"><font color="#00FF00"><b><font face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/">Home</a></font></b></font></td></tr>
+        <tr><td height="13">&nbsp;</td><td height="13">
+
+          <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/about">About the Game</a></font></font><br />
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/decktech">About DeckTech</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/directory">Member Directory</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/join">Sign Up Now!</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/articles">Articles</a></font></font><br / -->
+          <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/decks">Decks</a></font></font><br />
+          <font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/tournament-reports">Tournament Reports</a></font></font><br />
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/academy">Jedi Academy</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/starwarsccg/resources">Resources</a></font></font><br / -->
+          <!-- font color="#00FF00" face="Arial, Helvetica, sans-serif" size="2"><a href="/premium">Premium Memberships</a></font></font><br / -->
+
+        </td></tr>
+                  </tbody></table>
+</font></td></tr></tbody></table>
+
+
+
+
+</td></tr>
+         <tr><td><img src="/img/trans.gif" width="8" height="6"></td></tr>
+         <tr valign="top"><td><table width="100%" border="0" cellspacing="0" cellpadding="3" class="border"><tbody><tr class="header_bg"><td height="2"><font face="Arial, Helvetica, sans-serif" size="2"><b>CCGs</b></font></td></tr><tr valign="top"><td><font face="Arial, Helvetica, sans-serif" size="2">
+
+<table width="100%" border="0" cellspacing="0" cellpadding="6">
+  <tbody>
+    <tr align="center" valign="middle"><td><a href="/magination"  class="level1nav"><img src="/img/magi_grey.gif" width="110" height="99" border="0" alt="MagiNation Duel"></a></td></tr>
+    <tr align="center" valign="middle"><td><a href="/lotr"        class="level1nav"><img src="/img/lotr_grey.gif" width="110" height="96" border="0" alt="Lord of the Rings Card Game"></a></td></tr>
+    <tr align="center" valign="middle"><td><a href="/starwarsccg" class="level1nav"><img src="/img/sw.gif"        width="108" height="72" border="0" alt="Star Wars Customizable Card Game"></a></td></tr>
+    <tr align="center" valign="middle"><td><a href="/swtcg"       class="level1nav"><img src="/img/swt_grey.gif"  width="108" height="73" border="0" alt="Star Wars Trading Card Game"></a></td></tr>
+    <tr align="center" valign="middle"><td><a href="/st"          class="level1nav"><img src="/img/st_grey.gif"   width="108"             border="0" alt="Star Trek Customizable Card Game"></a></td></tr>
+  </tbody>
+</table>
+
+</font></td></tr></tbody></table></td></tr><tr><td><img src="/img/trans.gif" width="8" height="6"></td></tr> 
+        <tr valign="top"> 
+          <td> </td>
+        </tr>
+      </tbody></table>
+    </td>
+    <td align="left" valign="top" colspan="2" width="90%"> 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr valign="top"> 
+    <td height="75" width="1%"><img src="/img/trans_header1.gif" width="22" height="2" vspace="0" hspace="0" border="0"></td>
+    <td height="75" width="99%">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr valign="top"> 
+          <td height="75"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="6">
+              <tbody><tr> 
+                <td><!-- header banner -->
+                  <img src="/img/trans_header1.gif" />
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+        <tr valign="top"> 
+          <td height="9"><font face="Arial, Helvetica, sans-serif" size="1"><b><font size="2"> 
+            </font></b></font> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody><tr> 
+                <td height="18">&nbsp; </td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+</tbody></table>
+ 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody><tr> 
+          <td valign="top" width="1"><img src="/img/trans_header1.gif" width="22" height="2" vspace="0" hspace="0" border="0"></td>
+          <td bgcolor="#001F90" valign="top"><!-- #BeginEditable "Body" --> 
+            
+<!-- center -->
+<table width="100%" border="0" cellspacing="0" cellpadding="3" class="border"><tbody><tr class="header_bg"><td height="2"><font face="Haettenschweiler, Impact, Arial Black" size="5">Non-flipping Agents</font></td></tr><tr valign="top"><td bgcolor="#000066"><font face="Arial, Helvetica, sans-serif" size="2"><ul>
+              <br>
+              <p>
+                <p class=""><strong>Deck ID:</strong> 18062</p>
+<p class="deck-author"><strong>Author:</strong> Mike "YaggleGakkle" Camp</p>
+<p class="deck-title"><strong>Title:</strong> Non-flipping Agents</p>
+<p class="deck-side"><strong>Side:</strong> Light</p>
+<p class=""><strong>Date Published:</strong> 2001-08-04</p>
+<p class="deck-description"><strong>Description:</strong><br />Palace Raiders wreck even outside WYS.</p>
+<p class="deck-rating"><strong>Rating:</strong><br />4.5</p>
+
+<p>
+Cards: <br />
+<br />
+'Objective<br />
+<br />
+Agents in the Court/ Barely Ever See This Side<br />
+<br />
+<br />
+Characters (17)<br />
+<br />
+Qui-Gon x2<br />
+<br />
+EPP Luke<br />
+<br />
+Lando w/AX x2<br />
+<br />
+Owen&Beru x2<br />
+<br />
+Jar Jar Binks<br />
+<br />
+Harc Seff<br />
+<br />
+Tessek<br />
+<br />
+Naked 3PO<br />
+<br />
+Palace Raider x6<br />
+<br />
+<br />
+Vehicles (6)<br />
+<br />
+Patrol Craft x6<br />
+<br />
+<br />
+Weapon (1)<br />
+<br />
+Qui-Gon’s<br />
+<br />
+<br />
+Interrupts (17)<br />
+<br />
+Harvest x4<br />
+<br />
+OOC/TT x2<br />
+<br />
+Nar Shadaa Chimes x2<br />
+<br />
+Ke Chu Ke Kukuta? x2<br />
+<br />
+Changing the odds x2<br />
+<br />
+You Will Take Me To Jabba Now x2<br />
+<br />
+Signal x2<br />
+<br />
+Heading FTMF<br />
+<br />
+<br />
+Effects (12)<br />
+<br />
+Yarna<br />
+<br />
+Your Insight SYW<br />
+<br />
+The Camp<br />
+<br />
+Uh-Oh<br />
+<br />
+Ounee Ta<br />
+<br />
+Dont Do That Again<br />
+<br />
+Underworld Contacts<br />
+<br />
+Seeking An Audience<br />
+<br />
+Bargaining Table<br />
+<br />
+A Gift<br />
+<br />
+I Hope She’s Alright<br />
+<br />
+Do Or Do Not/ WA<br />
+<br />
+<br />
+Locations (6)<br />
+<br />
+Hutt Trade Route<br />
+<br />
+Jabba’s Palace<br />
+<br />
+Audience Chamber<br />
+<br />
+Antechamber<br />
+<br />
+Lars Moisture Farm x2<br />
+<br />
+<br />
+<br />
+<br />
+'<br />
+<br />
+Strategy: '<br />
+<br />
+This deck is meant to dominate Tatooine and drain, but it can go other places if you need to.  Every game, start the Hutt Trade Route and Audience Chamber.  Reveal Jar Jar, Tessek, or Harc Seff as your Rep.  Start Yarna if you suspect Monnok.  Otherwise, leave a 6 in your deck.  Use the 2 Signals to get Seeking An Audience, which will get 3Po, who gives you a new card each turn.  The game will unfold from there.  His Name Is Anakin does nothing.  If the opponent wants to waste a slot with that and make the raiders deploy +2, let them.  I generate more than enough anyway.<br />
+<br />
+<br />
+Card Choices<br />
+<br />
+<br />
+Jar Jar<br />
+<br />
+Kill Jerjerrod in a Build D*2 deck, kill Ephant Mon in a Court or MKOS deck, cancel Visage in a Huntdown deck, bomb that pesky Guri.  Very useful.<br />
+<br />
+<br />
+Harc Seff<br />
+<br />
+If the opponent manages to hold a Tatooine site and is draining for lots, just save some force and make the drain zero.<br />
+<br />
+<br />
+Ke Chu Ke Kukata?<br />
+<br />
+When the opponent sends Vader & such to kill Tessek, send him back to their hand.<br />
+<br />
+<br />
+You Will Take Me to Jabba Now<br />
+<br />
+One Tessek is enough, especially when you can pull him.  Destiny 5.<br />
+<br />
+<br />
+A Gift<br />
+<br />
+Messes up Court, MKOS, any deck with Mara, Aurra, etc.<br />
+<br />
+<br />
+Changing the Odds<br />
+<br />
+Turn a 1 into a 0, cancelling attrition against you, put Imperial Commands, Force Lightnings, dueling cards out of play.<br />
+<br />
+<br />
+Matchups<br />
+<br />
+<br />
+Huntdown DBays<br />
+<br />
+Start Uh-Oh, DDTA, and YISYW if you suspect odds, Camp if you dont.  Jar Jar & TT cancel Visage.  Qui-Gon is hard to duel, since he redraws stuff.  If you can hold a couple sites and drain for lots, or OOC Vader, you win.<br />
+<br />
+<br />
+Huntdown Racing<br />
+<br />
+Harvest back the losses of the race.  Add in Anakin’s if this is popular in your area.  Otherwise, same as above.<br />
+<br />
+<br />
+ISB<br />
+<br />
+Start DDTA and whatever else seems appropriate.  Take the fight to their DBays.  Most space decks are weak on ground, so use that to your advantage and eliminate their ground forces.  They may be draining for more, but you’re Harvesting.<br />
+<br />
+<br />
+Court<br />
+<br />
+Start The Camp.  Use everything you’ve got to take the chamber & hold it. Try to OOC Gailid or Jabba or strong bounty hunters.  If you can get the chamber, you win.  Qui-Gon helps enormously.<br />
+<br />
+<br />
+MKOS (flip)<br />
+<br />
+If you play against this, be happy, since you win.  You can flip your objective, since no MKOS decks play non-Tatooine locations.  The Camp kills, Qui-Gon kills.  A Gift kills.  Jar-jar bombs the Rep.  Win.<br />
+<br />
+<br />
+RalOps<br />
+<br />
+Start Ounee Ta.  With it out, each Raider/Craft combo costs 1 to deploy to Ralltir.  Get those and Qui-Gon to Ralltir, and they will never flip.  Lars Harvest back the little damage you would take.<br />
+<br />
+<br />
+BHBM<br />
+<br />
+Start Ounee Ta and DDTA, YISYW if you suspect Odds, or DODN/WA if you suspect SAC.  The only reason a Luke is in here.  Try to get Vader or Emp OOC, and game over.  Drain on Tatooine while Palace Raiders and Lando rack up attrition.<br />
+<br />
+<br />
+TIES<br />
+<br />
+This matchup is up in the air (no pun intended).  You retrieve, they retrieve, you drain, they drain, it all depends on who gets set up faster.  With Tessek, a Palace Raider at each site, and Qui-Gon and saber out, you drain for 11.  I Hope She’s Alright adds another 1 every turn.  Good chance of winning.<br />
+<br />
+<br />
+Garrison<br />
+<br />
+Ice Storm doesnt affect Crafts, so take those to Hoth and battle.  Pretty hard matchup.  Use attrition to take out walkers.  <br />
+<br />
+<br />
+Pile (Combat Readiness for Maul’s place and Jabba’s Palace, etc.)<br />
+<br />
+Start Uh-Oh and OOC left and right.  Not hard to beat.<br />
+<br />
+<br />
+Capture the Queen<br />
+<br />
+Throw everything you’ve got at Maul and OOC.  Similar to above.  Drain in the Palace.<br />
+<br />
+<br />
+Build DS2<br />
+<br />
+Drain for 10 or so on Tatooine, and set up I Hope She’s Alright.  Harvest back losses.  If Qui-Gon follows Jar-jar into Jerjerrod’s pad on turn 2, that’s game.<br />
+<br />
+<br />
+Dark Deal<br />
+<br />
+Invade Cloud City early game and keep the opponent off of it.  Fight for the Bespin system.  You retrieve, they don’t.  Shouldn’t be too hard.<br />
+<br />
+<br />
+Thanks for reading and reviewing the deck.<br />
+<br />
+<br />
+<br />
+<br />
+'<br />
+
+</p>
+
+              <p>
+            </ul>
+</font></td></tr></tbody></table>
+<!-- center -->
+
+            <!-- #EndEditable --></td>
+          <td width="1" valign="top"><img src="/img/trans_header1.gif" width="16" height="2" vspace="0" hspace="0" border="0"></td>
+        </tr>
+      </tbody></table>
+    </td>
+  </tr>
+  <tr> </tr>
+  <tr> 
+    <td colspan="4"> 
+
+<img style="width:100%;" src="/img/footer.gif" />
+
+<table width="100%" border="0" cellspacing="0" cellpadding="1" style="background-color:#000000;">
+  <tbody><tr align="center"><td><font face="Arial, Helvetica, sans-serif" size="2"></font><p><font face="Arial, Helvetica, sans-serif" size="2"><a href="/terms">Terms of Service</a>, TM, and &copy;2002 www.decktech.net. All Rights Reserved.</font></p></td></tr></tbody></table>
+</td></tr>
+</tbody></table>
+
+
+
+</body></html>
