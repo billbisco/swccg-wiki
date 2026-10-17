@@ -15,6 +15,8 @@ Rules:
   * In a "Premiere - Original VS*" deck a "(V)" title is an Original Virtual slip: left out (swccg-gemp has not coded the
     Original Virtual cards yet; mapping it would land on a PC "(V)" or printed card).
   * Only ids swccg-gemp has go in the file; the rest are named in the GEMP line "(omits …: not in GEMP)".
+  * A card of the other side (posted in error) is left out and named "(leaves out …: Light card in a Dark list, as posted)".
+  * --texts-json: locally fixed page texts (e.g. wrong-side row fixes) are used, and written to pages/, instead of the live text.
 """
 from __future__ import annotations
 
@@ -110,7 +112,7 @@ def build(text: str) -> tuple[str | None, list[str], list[str]]:
     if not side:
         return None, [], ["no Side"]
     original_vs = "Original VS" in fmt
-    cards, omitted = [], []
+    cards, omitted, wrong = [], [], []
     for q, t in decklist_rows(text):
         t = t.replace("•", "").strip()
         if (original_vs and re.search(r"\(V\)", t)) or "(Virtual Set" in t:
@@ -119,10 +121,16 @@ def build(text: str) -> tuple[str | None, list[str], list[str]]:
         card, _ = gemp_map.resolve(t, side)
         if not card and t.endswith(" (Dark)"):
             card, _ = gemp_map.resolve(t[:-7], side)
+        if not card and gemp_map.resolve(t, "Light" if side == "Dark" else "Dark")[0]:
+            wrong.append(t)  # a card of the other side, as posted: GEMP cannot hold it in this deck
+            continue
         if not card or not gemp_map.in_target(card["cardId"]):
             omitted.append(t)
             continue
         cards += [card] * q
+    omitted = list(dict.fromkeys(omitted))
+    if wrong:
+        omitted.append(("wrong", list(dict.fromkeys(wrong)), side))
     if not cards:
         return None, omitted, ["no importable cards"]
     lines = ['<?xml version="1.0" encoding="UTF-8" standalone="no"?>', "<deck>"]
@@ -131,7 +139,7 @@ def build(text: str) -> tuple[str | None, list[str], list[str]]:
         title = gemp_map.db_title(c["cardId"]) or c["title"]
         lines.append(f'    <card blueprintId="{gi.escape(c["cardId"])}" horizontal="{hz}" '
                      f'title="{gi.escape(title, {chr(34): "&quot;"})}"/>')
-    return "\n".join(lines + ["</deck>", ""]), list(dict.fromkeys(omitted)), []
+    return "\n".join(lines + ["</deck>", ""]), omitted, []
 
 
 def main() -> int:
@@ -139,12 +147,16 @@ def main() -> int:
     ap.add_argument("--category")
     ap.add_argument("--titles-file")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--texts-json", help="JSON {title: wikitext} of locally fixed pages to use instead of the live text")
     a = ap.parse_args()
     titles = category_titles(a.category) if a.category else [l.strip() for l in open(a.titles_file) if l.strip()]
     out = Path(a.out)
     (out / "files").mkdir(parents=True, exist_ok=True)
     (out / "pages").mkdir(exist_ok=True)
     texts = page_texts(titles)
+    texts_live = dict(texts)
+    if a.texts_json:  # local fixed page texts override the live ones (e.g. wrong-side row fixes)
+        texts.update({k: v for k, v in json.load(open(a.texts_json, encoding="utf-8")).items() if k in texts})
     have = {t: GEMP_LINE.search(x) for t, x in texts.items()}
     names = [m.group(1).strip() for m in have.values() if m]
     shas = file_sha1(names)
@@ -156,7 +168,7 @@ def main() -> int:
         fn = m.group(1).strip()
         xml, omitted, err = build(x)
         if err:
-            rep.append([t, fn, "skip: " + "; ".join(err), ", ".join(omitted)])
+            rep.append([t, fn, "skip: " + "; ".join(err), ", ".join(o for o in omitted if isinstance(o, str))])
             continue
         data = xml.encode("utf-8")
         file_changed = hashlib.sha1(data).hexdigest() != shas.get(fn)
@@ -166,13 +178,19 @@ def main() -> int:
         if file_changed:
             (out / "files" / fn).write_bytes(data)
         line = m.group(0)[: m.group(0).index("|Download]]") + len("|Download]]")]  # keep the page's own link text
-        if omitted:
-            line += " (omits " + ", ".join(omitted) + ": not in GEMP)"
-        mo = re.search(r"\(omits (.*): (?:no GEMP blueprint|not in GEMP)\)", m.group(0))
-        if set((mo.group(1).split(", ") if mo else [])) == set(omitted):
+        wrong = [o for o in omitted if isinstance(o, tuple)]
+        plain = [o for o in omitted if not isinstance(o, tuple)]
+        if plain:
+            line += " (omits " + ", ".join(plain) + ": not in GEMP)"
+        for _, ws, side in wrong:
+            other = "Light" if side == "Dark" else "Dark"
+            line += f" (leaves out {', '.join(ws)}: {other} {'card' if len(ws) == 1 else 'cards'} in a {side} list, as posted)"
+        mo = re.search(r"\(omits (.*?): (?:no GEMP blueprint|not in GEMP)\)", m.group(0))
+        if not wrong and set((mo.group(1).split(", ") if mo else [])) == set(plain) and "(leaves out" not in m.group(0):
             line = m.group(0)  # same omissions: leave the page alone
+        omitted = plain + [w for _, ws, _ in wrong for w in ws]
         new = x[:m.start()] + line + x[m.end():]
-        page_changed = new != x
+        page_changed = new != texts_live.get(t, x)
         if page_changed:
             p = out / "pages" / (re.sub(r'[\\/:*?"<>|]', "_", t.replace(" ", "_")) + ".wiki")
             p.write_text(new, encoding="utf-8")
