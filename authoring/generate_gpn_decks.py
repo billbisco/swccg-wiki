@@ -1558,7 +1558,7 @@ GPN_ALIAS = {
     "CC occupation": "Cloud City Occupation",
     "I'd just as soon kiss a wookie": "I'd Just As Soon Kiss A Wookiee",
     "imp supply": "Imperial Supply",
-    "they must never again leave this city": "They Will Be Lost And Confused",
+    "they must never again leave this city": "They Must Never Again Leave This City",  # was mapped to a Light objective back (fixed 2026-10-17)
     "masterful move/endor occupation": "Masterful Move & Endor Occupation",
     "imp command": "Imperial Command",
     "Maul's jedi kabob": "Maul's Double-Bladed Lightsaber",
