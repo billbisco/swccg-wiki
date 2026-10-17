@@ -38,6 +38,7 @@ sys.path.insert(0, str(ROOT))
 
 import gemp_importable as gi
 import gemp_map  # noqa: E402
+import player_tidy  # noqa: E402
 import generate_decktech as gd  # noqa: E402
 import wiki_cardlink as cl  # noqa: E402
 
@@ -565,7 +566,7 @@ def player_page(d: dict, current: str | None) -> str:
     for line in gd.post_source_bullets(pid, lbl).splitlines():
         if line.strip() and line not in text:
             text = gd.add_source_line(text, line)
-    return gd.add_category(text, d["date"][:4])
+    return player_tidy.tidy(gd.add_category(text, d["date"][:4]))  # keep house section order (2026-10-17)
 
 
 def ensure_player_sections(text: str) -> str:
