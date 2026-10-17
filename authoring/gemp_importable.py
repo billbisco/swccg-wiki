@@ -63,6 +63,7 @@ FORMAT_ABBR = {
     "Premiere - Reflections III": "PR3",
     "premiere_reflections3": "PR3",
     "Premiere - Coruscant": "PCor",
+    "Episode I Closed Environment": "EP1",
     "Premiere - Theed Palace": "PTheed",
     "open_no_virtual": "DCO",
     "Decipher Cards Only": "DCO",
