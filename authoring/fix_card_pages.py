@@ -9,6 +9,7 @@ printing in Episode I decks) when it picks one; otherwise listed for a person.
 """
 import json, re, sys, urllib.parse, urllib.request
 import decktech_batch as db
+import regen_gemp_from_wiki as R
 from dt_validate import page_sides, disambiguation_pages
 
 def api(**k):
@@ -25,16 +26,33 @@ def candidates(title, side):
     sides = page_sides(titles) if titles else {}
     dis = disambiguation_pages(titles) if titles else set()
     out = [t for t in titles if sides.get(t) == side and t not in dis]
-    _cand[key] = out
-    return out
+    # follow redirects ("Tatooine (Dark)" -> "Tatooine (Dark) (Premiere)") so a redirect and its target count once
+    res = {}
+    if out:
+        q = api(action="query", titles="|".join(out), redirects=1)["query"]
+        red = {r["from"]: r["to"] for r in q.get("redirects", [])}
+        res = {t: red.get(t, t) for t in out}
+    final = sorted(set(res.values()))
+    _alias[key] = res
+    _cand[key] = final
+    return final
+
+_alias = {}
+def is_location(t):
+    x = R.page_texts([t]).get(t, "")
+    return "|type=Location" in x
 
 def pick(title, side, fmt, cands):
     if len(cands) == 1:
         return cands[0]
+    if not cands or not all(is_location(c) for c in cands):
+        return None  # only reprinted systems/sites are picked by era; other cards need a person
+    alias = _alias.get((title, side), {})
     ep1 = fmt == "Episode I Closed Environment"
     pref = [f"{title} ({side}) (Coruscant)"] if ep1 else []
     pref += [f"{title} ({side}) (Premiere)", f"{title} ({side})", f"{title} ({side}) (Special Edition)"]
     for p in pref:
+        p = alias.get(p, p)
         if p in cands:
             return p
     return None
