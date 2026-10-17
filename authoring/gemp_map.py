@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Wiki card title -> GEMP blueprint (title + id), with an audit of whether the id really exists in GEMP.
 
-Bill 2026-10-17: every GEMP importable decklist must only use blueprint ids that GEMP actually has, and there should be
-one table mapping each transcribed card to its wiki article, GEMP card name and GEMP card id.
+Bill 2026-10-17: every GEMP importable decklist must only use blueprint ids that our GEMP (billbisco/swccg-gemp) actually
+has, and there should be one table mapping each transcribed card to its wiki article, GEMP card name and GEMP card id.
+swccg-gemp is the target; PC GEMP compatibility (same ids, no conflicts) is kept where reasonable but is secondary.
 
 Resolution order for a deck row (side + wiki page title):
   1. gemp-card-overrides.tsv (side, wiki title -> gemp id) for the few titles that can't be derived.
@@ -10,8 +11,8 @@ Resolution order for a deck row (side + wiki page title):
      ("Tatooine (Light) (Coruscant)" -> "Tatooine", preferring the CORUSCANT printing).
   3. gemp_importable.lookup as the last resort (aliases, prefix matches).
 
-Existence is checked against the Java card classes of the public GEMP server (PlayersCommittee/gemp-swccg-public) and
-Bill's fork (billbisco/swccg-gemp), when those clones are present, else against the blueprint JSON only.
+Existence is checked against the Java card classes of billbisco/swccg-gemp (the target) and, for the compatibility column,
+PlayersCommittee/gemp-swccg-public, when those clones are present, else against the blueprint JSON only.
 """
 from __future__ import annotations
 
@@ -124,16 +125,19 @@ def java_ids() -> dict[str, set[str]]:
 
 
 def status_of(card_id: str) -> str:
-    """'gemp' (public GEMP has the card class), 'fork-only' (only Bill's fork has it), 'db-only' (in the blueprint
-    JSON but no Java class found), 'missing'."""
+    """Bill 2026-10-17: the target GEMP is billbisco/swccg-gemp; PC GEMP compatibility is secondary.
+    'both' = swccg-gemp and PC GEMP have the card class; 'swccg-gemp' = only ours (PC hasn't coded it);
+    'pc-only' = only PC GEMP (swccg-gemp should catch up); 'missing' = neither has it (a swccg-gemp coding to-do)."""
     j = java_ids()
-    if card_id in j["upstream"]:
-        return "gemp"
-    if card_id in j["fork"]:
-        return "fork-only"
-    if any(c["cardId"] == card_id for c in gi.load_cards()):
-        return "db-only" if j["upstream"] else "gemp"
-    return "missing"
+    if not j["fork"] and not j["upstream"]:
+        return "both" if any(c["cardId"] == card_id for c in gi.load_cards()) else "missing"
+    f, u = card_id in j["fork"], card_id in j["upstream"]
+    return "both" if f and u else "swccg-gemp" if f else "pc-only" if u else "missing"
+
+
+def in_target(card_id: str) -> bool:
+    """True when swccg-gemp (our GEMP) has the card, so the id may go in an importable file."""
+    return status_of(card_id) in ("both", "swccg-gemp")
 
 
 def _norm(t: str) -> str:
@@ -201,7 +205,8 @@ def resolve(title: str, side: str, allowed: set[int] | None = None) -> tuple[dic
                 a = [c for c in hit if gi.set_num(c["cardId"]) in allowed]
                 if a:
                     hit = a
-            hit.sort(key=lambda c: (status_of(c["cardId"]) != "gemp",) + tuple(gi.card_id_key(c["cardId"])))
+            # ours first, then the id PC GEMP shares (cross-compatibility), then the lowest id
+            hit.sort(key=lambda c: (not in_target(c["cardId"]), status_of(c["cardId"]) != "both") + tuple(gi.card_id_key(c["cardId"])))
             return hit[0], "title"
     try:  # aliases and prefix matches from the older importer
         c = gi.lookup(title.replace("•", ""), side_u, allowed)
@@ -256,6 +261,6 @@ if __name__ == "__main__":
     from collections import Counter
     print(Counter(r["gemp_status"] for r in rows))
     for r in rows:
-        if r["gemp_status"] in ("missing", "fork-only", "db-only"):
+        if r["gemp_status"] in ("missing", "swccg-gemp", "pc-only"):
             print(r["gemp_status"], r["side"], r["wiki_article"], "->", r["gemp_card_name"], r["gemp_card_id"], f"({r['decks']} decks)")
     sys.exit(0)

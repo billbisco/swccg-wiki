@@ -722,12 +722,12 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
         rows.append((q, t, None))
     code = GEMP_FORMAT.get(d["format"], "open_no_virtual")
     allowed = gi.load_format_sets().get(code)
-    # Bill 2026-10-17: only blueprint ids the public GEMP server really has go in the file (gemp_map checks the Java
-    # card classes); anything else is left out and named on the page.
+    # Bill 2026-10-17: only blueprint ids our GEMP (billbisco/swccg-gemp) really has go in the file (gemp_map checks the
+    # Java card classes); anything else is left out and named on the page.
     cards = []
     for q, t, _ in rows:
         card, _how = gemp_map.resolve(t, d["side"], allowed)
-        if not card or gemp_map.status_of(card["cardId"]) != "gemp":
+        if not card or not gemp_map.in_target(card["cardId"]):
             omitted.append(t)
             continue
         cards.extend([card] * q)
