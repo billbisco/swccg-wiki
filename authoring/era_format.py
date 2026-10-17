@@ -30,11 +30,16 @@ def main(argv):
     for pid in [a for a in argv if a.isdigit()]:
         p = DECKS / f"{pid}.json"
         raw = p.read_text(encoding="utf-8"); d = json.loads(raw)
-        if d.get("format") != "Premiere - Tatooine" or d["date"] >= TAT_RELEASE:
+        # the drafter's default is "Premiere - Original VS1" (a 2002 pool); pre-Tatooine posts are re-dated here too
+        if d.get("format") not in ("Premiere - Tatooine", "Premiere - Original VS1") or d["date"] >= TAT_RELEASE:
             continue
         tat = [r[1] for r in d["cards"] if r[2] != "UNKNOWN" and card_set(r[1]).startswith("Tatooine")]
         if tat:
-            print(pid, d["date"], "keeps Premiere - Tatooine (Tatooine cards:", ", ".join(tat[:3]) + ")")
+            print(pid, d["date"], "-> Premiere - Tatooine (Tatooine cards:", ", ".join(tat[:3]) + ")")
+            if apply and d["format"] != "Premiere - Tatooine":
+                d["format"] = "Premiere - Tatooine"
+                ind = 1 if raw.startswith('{\n "') else 2
+                p.write_text(json.dumps(d, ensure_ascii=False, indent=ind) + "\n", encoding="utf-8")
             continue
         print(pid, d["date"], "-> Premiere - Reflections II")
         if apply:
