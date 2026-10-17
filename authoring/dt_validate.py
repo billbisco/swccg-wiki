@@ -56,40 +56,46 @@ def disambiguation_pages(titles):
     return out
 
 
-for pid in sys.argv[1:]:
-    d = json.loads((db.DECKS / f"{pid}.json").read_text(encoding="utf-8"))
-    side = d["side"]; c = db.canon()
-    sidecards = {t for k, ts in c.items() if k.startswith(side + "|") for t in ts}
-    other = {t for k, ts in c.items() if not k.startswith(side + "|") for t in ts}
-    probs = []; maybe = []
-    rows = d["cards"] + d.get("shields", [])
-    for row in rows:
-        q, t = row[0], row[1]
-        if t.startswith("??"):
-            probs.append(f"UNRESOLVED {t}")
-        elif re.search(r"\(Virtual Set \d+(: [^)]+)?\)$", t) or t in db.gd.ORIGINAL_VS:
-            pass
-        elif t not in sidecards:
-            maybe.append(t)
-    other_side = "Light" if side == "Dark" else "Dark"
-    for t, s2 in sorted(page_sides([r[1] for r in rows if not r[1].startswith(("??", "UNKNOWN"))]).items()):
-        if s2 == other_side:  # the linked wiki page is the other side's card (e.g. Light Audience Chamber in a Dark deck)
-            probs.append(f"WRONG SIDE PAGE: {t} is a {other_side} card page")
-    for t in sorted(disambiguation_pages([r[1] for r in rows if not r[1].startswith(("??", "UNKNOWN"))]) - DISAMBIG_OK):
-        probs.append(f"DISAMBIGUATION PAGE (pick the printing): {t}")
-    if maybe:
-        ex = wiki_pages(maybe)
-        for t in maybe:
-            if not ex[t]:
-                probs.append(f"NO WIKI PAGE and not a {side} GEMP title: {t}" + (" (title exists on other side)" if t in other else ""))
-    tot = sum(r[0] for r in d["cards"])
-    st = d.get("starting") or {}
-    for k in ("card", "interrupt", "effect"):
-        if st.get(k) and st[k] not in {r[1] for r in d["cards"]}:
-            probs.append(f"starting.{k} not in cards: {st[k]}")
-    if d.get("player_page") in ("existing", "new") and d.get("player"):
-        ex = wiki_pages([d["player"]])[d["player"]]
-        if ex and d["player_page"] == "new": probs.append(f"player page EXISTS on wiki but player_page=new: {d['player']}")
-        if not ex and d["player_page"] == "existing": probs.append(f"player page MISSING but player_page=existing: {d['player']}")
-    print(f"{pid}: {d['side']} total {tot} (+{sum(r[0] for r in d.get('shields', []))} shields) " + ("OK" if not probs else ""))
-    for p in probs: print("   -", p)
+
+def main(ids):
+    for pid in ids:
+        d = json.loads((db.DECKS / f"{pid}.json").read_text(encoding="utf-8"))
+        side = d["side"]; c = db.canon()
+        sidecards = {t for k, ts in c.items() if k.startswith(side + "|") for t in ts}
+        other = {t for k, ts in c.items() if not k.startswith(side + "|") for t in ts}
+        probs = []; maybe = []
+        rows = d["cards"] + d.get("shields", [])
+        for row in rows:
+            q, t = row[0], row[1]
+            if t.startswith("??"):
+                probs.append(f"UNRESOLVED {t}")
+            elif re.search(r"\(Virtual Set \d+(: [^)]+)?\)$", t) or t in db.gd.ORIGINAL_VS:
+                pass
+            elif t not in sidecards:
+                maybe.append(t)
+        other_side = "Light" if side == "Dark" else "Dark"
+        for t, s2 in sorted(page_sides([r[1] for r in rows if not r[1].startswith(("??", "UNKNOWN"))]).items()):
+            if s2 == other_side:  # the linked wiki page is the other side's card (e.g. Light Audience Chamber in a Dark deck)
+                probs.append(f"WRONG SIDE PAGE: {t} is a {other_side} card page")
+        for t in sorted(disambiguation_pages([r[1] for r in rows if not r[1].startswith(("??", "UNKNOWN"))]) - DISAMBIG_OK):
+            probs.append(f"DISAMBIGUATION PAGE (pick the printing): {t}")
+        if maybe:
+            ex = wiki_pages(maybe)
+            for t in maybe:
+                if not ex[t]:
+                    probs.append(f"NO WIKI PAGE and not a {side} GEMP title: {t}" + (" (title exists on other side)" if t in other else ""))
+        tot = sum(r[0] for r in d["cards"])
+        st = d.get("starting") or {}
+        for k in ("card", "interrupt", "effect"):
+            if st.get(k) and st[k] not in {r[1] for r in d["cards"]}:
+                probs.append(f"starting.{k} not in cards: {st[k]}")
+        if d.get("player_page") in ("existing", "new") and d.get("player"):
+            ex = wiki_pages([d["player"]])[d["player"]]
+            if ex and d["player_page"] == "new": probs.append(f"player page EXISTS on wiki but player_page=new: {d['player']}")
+            if not ex and d["player_page"] == "existing": probs.append(f"player page MISSING but player_page=existing: {d['player']}")
+        print(f"{pid}: {d['side']} total {tot} (+{sum(r[0] for r in d.get('shields', []))} shields) " + ("OK" if not probs else ""))
+        for p in probs: print("   -", p)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
