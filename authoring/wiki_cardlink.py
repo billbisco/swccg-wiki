@@ -280,7 +280,40 @@ def wrap(title: str, side: str, dest: str | None = None, label: str | None = Non
     img = image_for(title or dest_s, side, prefer_legacy=prefer)
     if not img and dest_s != title:
         img = image_for(dest_s, side, prefer_legacy=prefer)
+    if not img and dest_s.endswith(")"):
+        # set-qualified page ("Kiffex (Jabba's Palace)", "Coruscant (Light) (Special Edition)"):
+        # take the image and printed title from the card page itself
+        page = page_card_fields(dest_s)
+        img = page.get("image")
+        if img and vis is None and page.get("title") and page["title"] != dest_s:
+            vis = page["title"]
     return cardlink(dest_s, img, vis)
+
+
+_PAGE_CACHE: dict[str, dict] = {}
+
+
+def page_card_fields(title: str) -> dict:
+    """{title, image} from the {{Card}} template on a wiki card page (follows redirects); {} if none."""
+    if title in _PAGE_CACHE:
+        return _PAGE_CACHE[title]
+    out: dict = {}
+    try:
+        import regen_gemp_from_wiki as R
+        text = R.page_texts([title]).get(title) or ""
+        m = re.match(r"#REDIRECT\s*\[\[([^\]|#]+)", text, re.I)
+        if m:
+            text = R.page_texts([m.group(1).strip()]).get(m.group(1).strip()) or ""
+        im = re.search(r"^\|image=([^\n|]+)", text, re.M)
+        ti = re.search(r"^\|title=([^\n|]+)", text, re.M)
+        if im:
+            out["image"] = im.group(1).strip()
+        if ti:
+            out["title"] = ti.group(1).strip()
+    except Exception:
+        out = {}
+    _PAGE_CACHE[title] = out
+    return out
 
 
 def strip_markup_title(text: str) -> str:
