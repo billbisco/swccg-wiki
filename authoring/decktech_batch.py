@@ -36,7 +36,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-import gemp_importable as gi  # noqa: E402
+import gemp_importable as gi
+import gemp_map  # noqa: E402
 import generate_decktech as gd  # noqa: E402
 import wiki_cardlink as cl  # noqa: E402
 
@@ -477,7 +478,7 @@ def deck_page(d: dict) -> str:
     if d.get("gemp_file"):
         line = gi.wiki_download_line(d["gemp_file"])
         if d.get("gemp_omitted"):
-            line += " (omits " + ", ".join(dict.fromkeys(d["gemp_omitted"])) + ": no GEMP blueprint)"
+            line += " (omits " + ", ".join(dict.fromkeys(d["gemp_omitted"])) + ": not in GEMP)"
         info.append(line)
     if d.get("description"):
         info.append(f"* '''Strategy:''' {d['description']}")
@@ -721,25 +722,25 @@ def gemp_file(d: dict, taken: set[str]) -> tuple[str | None, list[str]]:
         rows.append((q, t, None))
     code = GEMP_FORMAT.get(d["format"], "open_no_virtual")
     allowed = gi.load_format_sets().get(code)
-    keep = []
-    for q, t, h in rows:  # a real card GEMP has no blueprint for is left out and named, not fatal
-        # wiki page titles carry "•" in combos and a "(Dark)"/"(Light)" disambiguator; GEMP knows the printed title
-        plain = re.sub(r" \((?:Dark|Light)\)(?= \(|$)", "", t.replace("•", ""))
-        for cand in dict.fromkeys([t, plain]):
-            try:
-                gi.lookup(cand, d["side"], allowed)
-                keep.append((q, cand, h))
-                break
-            except KeyError:
-                continue
-        else:
+    # Bill 2026-10-17: only blueprint ids the public GEMP server really has go in the file (gemp_map checks the Java
+    # card classes); anything else is left out and named on the page.
+    cards = []
+    for q, t, _ in rows:
+        card, _how = gemp_map.resolve(t, d["side"], allowed)
+        if not card or gemp_map.status_of(card["cardId"]) != "gemp":
             omitted.append(t)
-    rows = keep
-    try:
-        xml, notes = gi.xml_for(rows, d["side"], code)
-    except KeyError as e:
-        print(f"NOGEMP {d['id']}: {e}")
+            continue
+        cards.extend([card] * q)
+    if not cards:
+        print(f"NOGEMP {d['id']}: no importable cards")
         return None, omitted
+    lines = ['<?xml version="1.0" encoding="UTF-8" standalone="no"?>', "<deck>"]
+    for c in cards:
+        hz = "true" if (c.get("cardSubtype") or "").upper() == "SITE" else "false"
+        title = gemp_map.db_title(c["cardId"]) or c["title"]  # blueprint-JSON title, as the earlier files used
+        lines.append(f'    <card blueprintId="{gi.escape(c["cardId"])}" horizontal="{hz}" title="{gi.escape(title, {'"': '&quot;'})}"/>')
+    xml = "\n".join(lines + ["</deck>", ""])
+    notes = []
     start = (d.get("starting") or {}).get("card") or d.get("published_title") or ""
     arch = d.get("gemp_arch") or _arch(start)  # gemp_arch: the post's own archetype name when the start card says nothing
     base = gi.safe_deck_filename(gi.deck_name(d["format"], arch, d["player"], d["side"], d["date"][:4], "DeckTech"))

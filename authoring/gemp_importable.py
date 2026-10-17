@@ -646,7 +646,7 @@ MISSING_BLUEPRINTS = {
         "side": "DARK",
     },
     ("DARK", "Go For Help!"): {
-        "cardId": "8_133",
+        "cardId": "8_144",
         "title": "Go For Help!",
         "cardSubtype": "INTERRUPT",
         "cardCategory": "INTERRUPT",
