@@ -40,13 +40,24 @@ def candidates(title, side):
 _alias = {}
 def is_location(t):
     x = R.page_texts([t]).get(t, "")
+    m = re.match(r"#REDIRECT\s*\[\[([^\]|#]+)", x, re.I)
+    if m:
+        x = R.page_texts([m.group(1).strip()]).get(m.group(1).strip(), "")
     return "|type=Location" in x
 
+FACE = re.compile(r" \((?:Original|PC Errata|Errata)\)$")
+
 def pick(title, side, fmt, cands):
+    # a printed-era list means the printed card: drop Virtual (V) pages unless the posted title is a (V);
+    # drop the Original / PC Errata face pages when the default page for the card is a candidate
+    if "(V)" not in title:
+        cands = [c for c in cands if "(V)" not in c]
+    cands = [c for c in cands if not (FACE.search(c) and FACE.sub("", c) in cands)]
     if len(cands) == 1:
         return cands[0]
-    if not cands or not all(is_location(c) for c in cands):
-        return None  # only reprinted systems/sites are picked by era; other cards need a person
+    same_card = all(c.startswith(f"{title} ({side})") or c == f"{title} (Coruscant)" for c in cands)
+    if not cands or not (same_card or all(is_location(c) for c in cands)):
+        return None  # only reprints of one card are picked by era; other cards need a person
     alias = _alias.get((title, side), {})
     ep1 = fmt == "Episode I Closed Environment"
     pref = [f"{title} ({side}) (Coruscant)"] if ep1 else []
@@ -75,6 +86,12 @@ def main(argv):
         swaps = {}
         for t in sorted(bad):
             new = pick(t, side, d.get("format"), candidates(t, side))
+            base = re.sub(r" \([^()]+\)$", "", t)
+            if not new and base != t:
+                if page_sides([base]).get(base) == side and base not in disambiguation_pages([base]):
+                    new = base
+                else:
+                    new = pick(base, side, d.get("format"), candidates(base, side))
             if new:
                 swaps[t] = new
             else:
