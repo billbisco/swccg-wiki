@@ -144,6 +144,8 @@ def main() -> int:
     a = ap.parse_args()
     base = a.tsv.resolve().parent
     w = Wiki()
+    # since.txt (ISO UTC, written when the pages were built) turns on the edit-conflict guard
+    since = (base / "since.txt").read_text().strip() if (base / "since.txt").exists() else ""
     bad = 0
     for f in a.files:
         r = w.upload(f, a.summary)
@@ -153,6 +155,13 @@ def main() -> int:
         if "\t" not in line:
             continue
         title, rel = line.split("\t", 1)
+        if since:  # someone else edited after the build read the page: never overwrite their work
+            p = w.get(action="query", titles=title, prop="revisions", rvprop="timestamp|user")["query"]["pages"][0]
+            rv = (p.get("revisions") or [{}])[0]
+            if rv and rv["timestamp"] > since and rv["user"] != "Holocron Claude":
+                bad += 1
+                print(f"PAGE {title}: CONFLICT edited by {rv['user']} at {rv['timestamp']} after the build; rebuild", flush=True)
+                continue
         r = w.edit(title, (base / rel).read_text(encoding="utf-8"), a.summary)
         bad += r.startswith("ERROR")
         print(f"PAGE {title}: {r}", flush=True)
