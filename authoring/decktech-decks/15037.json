@@ -6,14 +6,14 @@
  "byline": "Zared \"newbi\" Gehrig",
  "player": "Zared Gehrig",
  "player_page": "new",
- "player_intro": "posted a [[Dark]] list on DeckTech.",
+ "player_intro": "(DeckTech handle '''newbi''') posted a [[Dark]] list on DeckTech in April 2001.",
  "side": "Dark",
  "format": "Premiere - Reflections II",
  "kind": "general",
  "event": null,
  "finish": null,
  "starting": {
-  "card": null,
+  "card": "Sullust (Dark)",
   "interrupt": null,
   "effect": null
  },
@@ -21,168 +21,145 @@
  "cards": [
   [
    1,
-   "Bombing Run",
-   "EFFECT",
-   "posted: Bombing Run (exact)"
-  ],
-  [
-   1,
-   "Sienar Fleet Systems",
-   "EFFECT",
-   "posted: SFS (nickname)"
-  ],
-  [
-   1,
-   "Sullust",
+   "Tatooine (Dark) (Premiere)",
    "LOCATION",
-   "posted: Sullust (exact)"
+   "posted: Tatooine"
   ],
   [
    1,
-   "Oppressive Enforcement",
-   "DEFENSIVE_SHIELD",
-   "posted: Oppresive Enforcement (nickname)"
-  ],
-  [
-   1,
-   "Fear",
-   "INTERRUPT",
-   "posted: 1 Fear (fuzzy)"
-  ],
-  [
-   1,
-   "Tatooine",
+   "Sullust (Dark)",
    "LOCATION",
-   "posted: Tatooine (exact)"
+   "posted: Sullust"
   ],
   [
    1,
-   "Sullust",
+   "Ord Mantell (Dark)",
    "LOCATION",
-   "posted: Sullust (exact)"
+   "posted: Ord Mantell"
   ],
   [
    1,
-   "Ord Mantell",
+   "Asteroid Field (Dark)",
    "LOCATION",
-   "posted: Ord Mantell (exact)"
+   "posted: Astoroid Field"
   ],
   [
-   1,
-   "Asteroid Field",
-   "LOCATION",
-   "posted: Astoroid Field (fuzzy)"
-  ],
-  [
-   1,
-   "?? 15 Scimitar Squadron Tie Bombers",
+   15,
+   "Scimitar Squadron TIE",
    "STARSHIP",
-   "posted: 15 Scimitar Squadron Tie Bombers (?)"
+   "posted: 15 Scimitar Squadron Tie Bombers"
   ],
   [
-   1,
-   "?? 15 Time Bombers",
+   15,
+   "TIE Bomber",
    "STARSHIP",
-   "posted: 15 Time Bombers (?)"
+   "posted: 15 Time Bombers"
   ],
   [
-   1,
+   6,
    "Proton Bombs",
    "WEAPON",
-   "posted: 6 Proton Bombs (fuzzy)"
+   "posted: 6 Proton Bombs"
   ],
   [
    1,
    "Short-range Fighters",
    "INTERRUPT",
-   "posted: Short Range Fighters (nickname)"
+   "posted: Short Range Fighters"
   ],
   [
-   1,
-   "Sense",
+   2,
+   "Sense (Dark) (Premiere)",
    "INTERRUPT",
-   "posted: 2 Sense (fuzzy)"
+   "posted: 2 Sense"
   ],
   [
-   1,
-   "Alter",
+   2,
+   "Alter (Dark) (Premiere)",
    "INTERRUPT",
-   "posted: 2 Alter (nickname)"
+   "posted: 2 Alter"
   ],
   [
-   1,
-   "Control",
+   2,
+   "Control (Dark)",
    "INTERRUPT",
-   "posted: 2 Control (fuzzy)"
+   "posted: 2 Control"
   ],
   [
    1,
    "All Power To Weapons",
    "INTERRUPT",
-   "posted: All Power To Weapons (exact)"
+   "posted: All Power To Weapons"
   ],
   [
    1,
    "Fear",
    "INTERRUPT",
-   "posted: Fear (exact)"
+   "posted: Fear"
   ],
   [
    1,
    "Bombing Run",
    "EFFECT",
-   "posted: Bombing Run (exact)"
+   "posted: Bombing Run"
   ],
   [
    1,
    "Sienar Fleet Systems",
    "EFFECT",
-   "posted: SFS (nickname)"
+   "posted: SFS"
   ],
   [
    1,
    "Oppressive Enforcement",
-   "DEFENSIVE_SHIELD",
-   "posted: Oppresive Enforcement (nickname)"
+   "EFFECT",
+   "posted: Oppresive Enforcement"
   ],
   [
    1,
    "Reactor Terminal",
    "EFFECT",
-   "posted: Reactor Terminal (exact)"
+   "posted: Reactor Terminal"
   ],
   [
    1,
    "Return To Base",
    "EFFECT",
-   "posted: Return To Base (exact)"
+   "posted: Return To Base"
   ],
   [
    1,
-   "?? Planet Subjectary",
+   "Planetary Subjugation",
    "EFFECT",
-   "posted: Planet Subjectary (?)"
+   "posted: Planet Subjectary"
   ],
   [
    1,
-   "Rogue Asteroid",
+   "Rogue Asteroid (Dark)",
    "EFFECT",
-   "posted: Rouge Astoroid (fuzzy)"
+   "posted: Rouge Astoroid"
   ],
   [
-   1,
+   3,
    "Pride Of The Empire",
    "EFFECT",
-   "posted: 3 Pride Of The Empire (fuzzy)"
+   "posted: 3 Pride Of The Empire"
   ],
   [
    1,
    "Rebel Base Occupation",
    "EFFECT",
-   "posted: Rebel Base Occupation (exact)"
+   "posted: Rebel Base Occupation"
   ]
  ],
  "shields": [],
  "shields_note": null,
- "notes": []
+ "notes": [
+  "The post's 'Starting' section (Bombing Run, SFS, Sullust, Oppresive Enforcement, 1 Fear) repeats cards that are also listed in their own sections (Sullust under Locations; Fear under Interrupts; Bombing Run, SFS and Oppresive Enforcement under Effects). It is treated as a list of starting cards, not extra copies: the sections alone total 60, with the Starting rows counted again it would be 65.",
+  "Starting location taken as Sullust (Dark); the deck has no Objective and the post names no starting Interrupt (Fear is an ordinary Lost Interrupt). Bombing Run, Sienar Fleet Systems and Oppressive Enforcement are posted as starting Effects; starting.effect is left empty because three Effects start.",
+  "Posted 'Time Bombers' dested TIE Bomber (typo; the deck is a TIE bomber deck and Scimitar Squadron TIE is listed separately). Posted 'Planet Subjectary' dested Planetary Subjugation (the strategy describes it as adding to bombers' destiny draws). Posted 'Rouge Astoroid' dested Rogue Asteroid (Dark); 'Astoroid Field' dested Asteroid Field (Dark); 'SFS' dested Sienar Fleet Systems.",
+  "Oppressive Enforcement is the April 2001 Special Edition Effect, not the later Reflections III Defensive Shield.",
+  "Generic systems and Sense/Alter/Control use the Dark Premiere/Hoth/Dagobah printings (pre-Coruscant post).",
+  "The Strategy text mentions 'Hidden Base Occupation' and 'SRS'; these are not in the list (Rebel Base Occupation and Short-range Fighters are)."
+ ]
 }
