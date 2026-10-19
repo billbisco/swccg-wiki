@@ -28,9 +28,17 @@ FlaggedRevs is **not** bundled; it is bind-mounted from `/opt/swccg-wiki/extensi
 Before upgrading, record its version (`git -C /opt/swccg-wiki/extensions/FlaggedRevs log -1` or extension.json)
 and, if it is a REL1_43 checkout, `git pull` the REL1_43 branch in the same window.
 
+## Rehearsal
+
+Rehearsed on the staging copy at `test.swccg.com/wiki/` (a copy of the production DB in its own DB
+server, see `staging/STAGING.md`): `update.php --quick` from 1.43.9 data on the 1.43.11 image.
+
 ## Steps (≈ 10 minutes, one short outage)
 
-1. Backups: `docker exec swccg_wiki_db mariadb-dump --single-transaction -u root -p… wiki > wiki-$(date +%F).sql`
+0. **Prerequisite (Alpha3 owns wiki + GEMP backups):** get a fresh backup path and its sha256 from Alpha3
+   and agree the window with Alpha3 so the nightly backup (`swccg-backup.timer`, 07:15 UTC) does not overlap it.
+   Do not start step 2 until both the path and the sha256 are recorded in the change note.
+1. Backups (only if Alpha3's backup above is not used): `docker exec swccg_wiki_db mariadb-dump --single-transaction -u root -p… wiki > wiki-$(date +%F).sql`
    (password from `/opt/swccg-wiki/.env` via env var, never typed on the command line); copy `/opt/swccg-wiki/*.php`.
 2. `docker pull mediawiki:1.43.11`
 3. `cd /opt/swccg-wiki && docker compose -f docker-compose.yml -f docker-compose.localsettings.yml -f ops/wiki-config/docker-compose.mw-1.43.11.yml up -d wiki`

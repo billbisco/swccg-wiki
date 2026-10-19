@@ -30,13 +30,23 @@ $wgGroupPermissions['emailconfirmed']['editcontent'] = true;
 $wgGroupPermissions['sysop']['editcontent'] = true;
 $wgGroupPermissions['bot']['editcontent'] = true;
 $wgGroupPermissions['editor']['editcontent'] = true;
+# While real email is not live (SES pending), existing editors without a confirmed email go into
+# this group instead (maintenance/grantConfirmedEditor.php). It grants editcontent only; unlike
+# FlaggedRevs' 'editor' it carries no review rights.
+$wgGroupPermissions['confirmed-editor']['editcontent'] = true;
+$wgAddGroups['sysop'][] = 'confirmed-editor';
+$wgRemoveGroups['sysop'][] = 'confirmed-editor';
 $wgGroupPermissions['user']['edit'] = true;            # talk / user pages stay open to logged-in users
 # FlaggedRevs unchanged: 'user' has autoreview=false, so Level 3 edits still queue for review.
 
 # --- Level 4: 2FA for admins ---------------------------------------------------------------
 wfLoadExtension( 'OATHAuth' );   # bundled in the mediawiki:1.43 image
-# Members of these groups lose the group's rights until they enrol at Special:OATHManage.
-$wgOATHRequiredForGroups = [ 'sysop', 'bureaucrat', 'interface-admin' ];
+# Two phases (Bill, 2026-10-19), see UNIFIED-LOGIN-RUNBOOK.md "Admin 2FA":
+#   1. OATHAuth loaded, requirement OFF: admins enrol at Special:OATHManage.
+#   2. After Bill confirms his enrolment, flip the next line to true and reload Apache.
+# While required, members of these groups lose the group's rights until they enrol.
+$swccgRequireAdmin2FA = false;
+$wgOATHRequiredForGroups = $swccgRequireAdmin2FA ? [ 'sysop', 'bureaucrat', 'interface-admin' ] : [];
 $wgGroupPermissions['user']['oathauth-enable'] = true;
 # 2FA protects the session; keep "remember me" for admins shorter than the 180-day default.
 # (Applies to everyone; leave at 180 days until Bill decides. See runbook "Decisions".)

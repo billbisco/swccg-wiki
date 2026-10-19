@@ -40,8 +40,26 @@ class SecurityConfigTest extends MediaWikiIntegrationTestCase {
 		unset( $_SERVER['HTTP_X_FORWARDED_FOR'] );
 	}
 
-	public function testAdminsWithout2faLoseAdminRights() {
-		$this->assertSame( [ 'sysop', 'bureaucrat', 'interface-admin' ], $this->getConfVar( 'OATHRequiredForGroups' ) );
+	public function testPhase1OathLoadedRequirementOff() {
+		$this->assertTrue( \MediaWiki\Registration\ExtensionRegistry::getInstance()->isLoaded( 'OATHAuth' ) );
+		$this->assertSame( [], $this->getConfVar( 'OATHRequiredForGroups' ), 'phase 1: requirement off' );
+		$admin = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
+		$ugm = $this->getServiceContainer()->getUserGroupManager();
+		$ugm->clearCache( $admin );
+		$this->assertContains( 'sysop', $ugm->getUserEffectiveGroups( $admin ), 'admins keep rights while they enrol' );
+		$this->assertTrue( $this->getServiceContainer()->getPermissionManager()->userHasRight( $admin, 'oathauth-enable' ) );
+		$this->assertNotNull( $this->getServiceContainer()->getSpecialPageFactory()->getPage( 'OATHManage' ) );
+	}
+
+	public function testPhase2FlipLineIsExactlyAsDocumented() {
+		$src = file_get_contents( dirname( __DIR__, 5 ) . '/login-security.php' );
+		$this->assertSame( 1, substr_count( $src, "\n\$swccgRequireAdmin2FA = false;\n" ), 'the runbook sed command targets this exact line' );
+		$this->assertStringContainsString(
+			"\$wgOATHRequiredForGroups = \$swccgRequireAdmin2FA ? [ 'sysop', 'bureaucrat', 'interface-admin' ] : [];", $src );
+	}
+
+	public function testPhase2AdminsWithout2faLoseAdminRights() {
+		$this->overrideConfigValue( 'OATHRequiredForGroups', [ 'sysop', 'bureaucrat', 'interface-admin' ] );
 		$admin = $this->getMutableTestUser( [ 'sysop', 'bureaucrat' ] )->getUser();
 		RequestContext::getMain()->setUser( $admin );
 		$ugm = $this->getServiceContainer()->getUserGroupManager();
@@ -50,6 +68,12 @@ class SecurityConfigTest extends MediaWikiIntegrationTestCase {
 		$this->assertNotContains( 'sysop', $effective );
 		$this->assertNotContains( 'bureaucrat', $effective );
 		$this->assertTrue( $this->getServiceContainer()->getPermissionManager()->userHasRight( $admin, 'oathauth-enable' ) );
+	}
+
+	public function testConfirmedEditorGroupGrantsOnlyEditcontent() {
+		$perms = $this->getConfVar( 'GroupPermissions' );
+		$this->assertSame( [ 'editcontent' => true ], $perms['confirmed-editor'] );
+		$this->assertContains( 'confirmed-editor', $this->getConfVar( 'AddGroups' )['sysop'] );
 	}
 
 	public function testRateLimitsPresent() {

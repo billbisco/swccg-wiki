@@ -27,7 +27,9 @@ for _ in $(seq 50); do [ -S "$SOCK" ] && break; sleep 0.2; done
 SQL -e "CREATE USER 'e2e'@'%' IDENTIFIED BY 'e2e-pw'; GRANT ALL ON *.* TO 'e2e'@'%'; CREATE USER 'e2e'@'localhost' IDENTIFIED BY 'e2e-pw'; GRANT ALL ON *.* TO 'e2e'@'localhost';"
 
 echo "== GEMP schema: pre-#284 creation script + update_password_hashing.sql"
-BASEREV=$(git -C "$GEMP" merge-base HEAD origin/master)
+# Schema as it was just before the commit that added the migration (#284).
+MIGREV=$(git -C "$GEMP" log --diff-filter=A --format=%H -1 -- src/db-scripts/update_password_hashing.sql)
+BASEREV=$(git -C "$GEMP" rev-parse "$MIGREV^")
 git -C "$GEMP" show "$BASEREV:src/db-scripts/database_creation_script.sql" > "$BASE/schema-old.sql"
 SQL < "$BASE/schema-old.sql"
 SQL gemp-swccg -e "SHOW COLUMNS FROM player LIKE 'password'" | tail -1

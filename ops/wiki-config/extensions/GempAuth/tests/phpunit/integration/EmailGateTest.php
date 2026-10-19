@@ -54,6 +54,17 @@ class EmailGateTest extends MediaWikiIntegrationTestCase {
 		$this->assertContains( 'gempauth-confirm-email-to-edit', array_map( static fn ( $e ) => $e[0], $errors ) );
 	}
 
+	public function testConfirmedEditorGroupCanEditContentWithoutEmail() {
+		$user = $this->freshUser();
+		$this->assertFalse( $this->can( $user, 'edit', 'Luke Skywalker' ) );
+		$this->getServiceContainer()->getUserGroupManager()->addUserToGroup( $user, 'confirmed-editor' );
+		$this->getServiceContainer()->getPermissionManager()->invalidateUsersRightsCache( $user );
+		$this->assertFalse( $user->isEmailConfirmed() );
+		$this->assertTrue( $this->can( $user, 'edit', 'Luke Skywalker' ) );
+		$this->assertTrue( $this->can( $user, 'edit', 'Talk:Luke Skywalker' ) );
+		$this->assertFalse( $this->getServiceContainer()->getPermissionManager()->userHasRight( $user, 'review' ), 'no FlaggedRevs review rights' );
+	}
+
 	public function testConfirmationMailLinkUnlocksEditing() {
 		$user = $this->freshUser();
 		RequestContext::getMain()->setUser( $user );
