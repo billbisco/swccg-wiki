@@ -13,13 +13,16 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserRigorOptions;
 use StatusValue;
+use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Log in to the wiki with a GEMP (play.swccg.com) name and password.
  *
  * - Runs before LocalPassword (sort 50 < 100) and is non-authoritative: it ABSTAINS for every
  *   existing wiki account that is not linked to GEMP (Admin and the bot accounts keep their
- *   local passwords, and their passwords are never sent to GEMP).
+ *   local passwords, and their passwords are never sent to GEMP). The same holds for any case
+ *   variant of an unlinked account's name ("ADMIN" for Admin): refused locally, GEMP not contacted.
  * - A GEMP login whose name maps to no wiki account auto-creates it and links it to the GEMP
  *   player id (user option gempauth-id; deliberately not a registered preference, so a user
  *   cannot set it through the API).
@@ -33,6 +36,7 @@ class GempPrimaryAuthenticationProvider extends AbstractPasswordPrimaryAuthentic
 		private GempClient $client,
 		private UserIdentityLookup $userIdentityLookup,
 		private UserOptionsManager $userOptionsManager,
+		private IConnectionProvider $connectionProvider,
 		array $params = []
 	) {
 		parent::__construct( $params + [ 'authoritative' => false ] );
@@ -42,6 +46,48 @@ class GempPrimaryAuthenticationProvider extends AbstractPasswordPrimaryAuthentic
 	public function getLinkedGempId( UserIdentity $user ): ?int {
 		$v = $this->userOptionsManager->getOption( $user, self::LINK_OPTION );
 		return ( $v === null || $v === '' ) ? null : (int)$v;
+	}
+
+	/**
+	 * SQL condition: user_name equals $name ignoring case. MediaWiki stores user_name as VARBINARY on
+	 * MySQL/MariaDB, where LOWER() is a no-op on binary strings, so it is converted to utf8mb4 first.
+	 * The value is passed through addQuotes(); nothing typed by the user is concatenated raw.
+	 */
+	public static function caseInsensitiveNameCond( IReadableDatabase $db, string $name ): string {
+		if ( $db->getType() === 'mysql' ) {
+			return 'LOWER(CONVERT(user_name USING utf8mb4)) = ' . $db->addQuotes( mb_strtolower( $name, 'UTF-8' ) );
+		}
+		if ( $db->getType() === 'sqlite' ) {
+			// SQLite's LOWER() folds ASCII only; fold the value the same way.
+			return 'LOWER(user_name) = ' . $db->addQuotes( strtolower( $name ) );
+		}
+		return 'LOWER(user_name) = ' . $db->addQuotes( mb_strtolower( $name, 'UTF-8' ) );
+	}
+
+	/**
+	 * Name of a wiki account that differs from $wikiName only by case and is not linked to GEMP,
+	 * or null. Such a login is refused before GEMP is contacted, so the password stays on the wiki.
+	 */
+	public function findUnlinkedCaseVariant( string $wikiName ): ?string {
+		$dbr = $this->connectionProvider->getReplicaDatabase();
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( [ 'user_id', 'user_name' ] )
+			->from( 'user' )
+			->where( self::caseInsensitiveNameCond( $dbr, $wikiName ) )
+			->limit( 20 )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+		foreach ( $rows as $row ) {
+			$name = (string)$row->user_name;
+			if ( $name === $wikiName ) {
+				continue; // exact match: handled by the caller
+			}
+			$identity = $this->userIdentityLookup->getUserIdentityByUserId( (int)$row->user_id );
+			if ( $identity && $this->getLinkedGempId( $identity ) === null ) {
+				return $name;
+			}
+		}
+		return null;
 	}
 
 	public function beginPrimaryAuthentication( array $reqs ) {
@@ -59,6 +105,13 @@ class GempPrimaryAuthenticationProvider extends AbstractPasswordPrimaryAuthentic
 		if ( $existing && $existing->isRegistered() && $linkedId === null ) {
 			// Local-only wiki account: let LocalPassword handle it; never send its password to GEMP.
 			return AuthenticationResponse::newAbstain();
+		}
+		$variant = $this->findUnlinkedCaseVariant( $wikiName );
+		if ( $variant !== null ) {
+			// "ADMIN" vs local-only "Admin": refuse here; the password is not sent to GEMP.
+			$this->logger->info( 'GempAuth: {typed} is a case variant of local-only account {name}; refused without GEMP',
+				[ 'typed' => $wikiName, 'name' => $variant ] );
+			return AuthenticationResponse::newFail( wfMessage( 'gempauth-local-case-variant', $variant ) );
 		}
 
 		// Real client IP (WebRequest::getIP() honours $wgCdnServersNoPurge), never the proxy.

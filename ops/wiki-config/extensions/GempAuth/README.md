@@ -13,3 +13,5 @@ Tests (from a MediaWiki 1.43 checkout with dev dependencies, extension at `exten
 php vendor/bin/phpunit extensions/GempAuth/tests/phpunit
 ```
 The integration tests need the site config from `ops/wiki-config/login-security.php` loaded in LocalSettings.
+Run them on MariaDB/MySQL as well as SQLite before deploying: the case-insensitive account lookup uses a
+MySQL-specific `CONVERT(user_name USING utf8mb4)`, which only the MySQL run exercises.

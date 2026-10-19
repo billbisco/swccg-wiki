@@ -160,12 +160,58 @@ class GempPrimaryAuthenticationProviderTest extends MediaWikiIntegrationTestCase
 		$this->assertFalse( $this->getServiceContainer()->getUserFactory()->newFromName( 'SKYWALKER' )->isRegistered() );
 	}
 
-	public function testCanonicalNameCannotTakeOverLocalAccount() {
+	public static function provideCaseVariants() {
+		return [
+			'all caps' => [ 'strtoupper' ],
+			'all lower' => [ 'strtolower' ],
+			'mixed' => [ static fn ( $n ) => strtolower( substr( $n, 0, 2 ) ) . strtoupper( substr( $n, 2 ) ) ],
+		];
+	}
+
+	/**
+	 * "ADMIN" against a local-only "Admin": refused on the wiki, the password never reaches GEMP.
+	 * @dataProvider provideCaseVariants
+	 */
+	public function testCaseVariantOfLocalAccountNeverReachesGemp( callable $variant ) {
 		$local = $this->getMutableTestUser()->getUser()->getName();
-		$typed = strtoupper( $local );
-		$this->assertNotSame( $local, $typed );
-		$this->gemp->answers[$typed] = [ 'status' => 'ok', 'user' => [ 'id' => 6, 'name' => $local, 'admin' => false ] ];
-		$res = $this->login( $typed, 'pw-12345678' );
+		$typed = $variant( $local );
+		$this->assertNotSame( $local, $this->getServiceContainer()->getUserNameUtils()->getCanonical( $typed ) );
+		// Even if GEMP would accept it, it must not be asked.
+		$this->gemp->answers[$typed] = [ 'status' => 'ok', 'user' => [ 'id' => 6, 'name' => $typed, 'admin' => false ] ];
+		$res = $this->login( $typed, 'the-local-password' );
+		$this->assertSame( AuthenticationResponse::FAIL, $res->status );
+		$this->assertSame( 'gempauth-local-case-variant', $res->message->getKey() );
+		$this->assertSame( [], $this->gemp->calls, 'password must not be sent to GEMP' );
+		$this->assertNull( $this->linkedId( $local ) );
+		$this->assertFalse( $this->getServiceContainer()->getUserFactory()
+			->newFromName( $this->getServiceContainer()->getUserNameUtils()->getCanonical( $typed ) )->isRegistered() );
+	}
+
+	public function testLocalAccountsKeepWorkingWithExactName() {
+		$testUser = $this->getMutableTestUser();
+		$name = $testUser->getUser()->getName();
+		$this->assertSame( AuthenticationResponse::PASS, $this->login( $name, $testUser->getPassword() )->status );
+		// lower-case first letter is the same wiki name, so it is the exact account, not a variant
+		$this->assertSame( AuthenticationResponse::PASS, $this->login( lcfirst( $name ), $testUser->getPassword() )->status );
+		$this->assertSame( [], $this->gemp->calls );
+	}
+
+	public function testCaseVariantOfLinkedAccountStillAsksGemp() {
+		$this->gemp->answers['Hansolo'] = [ 'status' => 'ok', 'user' => [ 'id' => 11, 'name' => 'Hansolo', 'admin' => false ] ];
+		$this->assertSame( AuthenticationResponse::PASS, $this->login( 'Hansolo', 'pw-12345678' )->status );
+		$this->gemp->answers['HANSOLO'] = [ 'status' => 'ok', 'user' => [ 'id' => 11, 'name' => 'Hansolo', 'admin' => false ] ];
+		$res = $this->login( 'HANSOLO', 'pw-12345678' );
+		$this->assertSame( AuthenticationResponse::PASS, $res->status );
+		$this->assertSame( 'Hansolo', $res->username );
+		$this->assertCount( 2, $this->gemp->calls );
+	}
+
+	public function testCanonicalNameCannotTakeOverLocalAccount() {
+		// Defence in depth after GEMP: the typed name is no variant of the local one, but GEMP's
+		// canonical name maps onto it.
+		$local = $this->getMutableTestUser()->getUser()->getName();
+		$this->gemp->answers['Otherwise'] = [ 'status' => 'ok', 'user' => [ 'id' => 6, 'name' => $local, 'admin' => false ] ];
+		$res = $this->login( 'Otherwise', 'pw-12345678' );
 		$this->assertSame( AuthenticationResponse::FAIL, $res->status );
 		$this->assertSame( 'gempauth-link-mismatch', $res->message->getKey() );
 		$this->assertNull( $this->linkedId( $local ) );

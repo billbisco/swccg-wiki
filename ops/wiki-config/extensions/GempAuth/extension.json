@@ -14,7 +14,7 @@
 		"primaryauth": {
 			"MediaWiki\\Extension\\GempAuth\\GempPrimaryAuthenticationProvider": {
 				"class": "MediaWiki\\Extension\\GempAuth\\GempPrimaryAuthenticationProvider",
-				"services": [ "GempAuth.Client", "UserIdentityLookup", "UserOptionsManager" ],
+				"services": [ "GempAuth.Client", "UserIdentityLookup", "UserOptionsManager", "ConnectionProvider" ],
 				"sort": 50
 			}
 		}
