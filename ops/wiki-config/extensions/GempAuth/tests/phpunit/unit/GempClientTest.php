@@ -68,10 +68,14 @@ class GempClientTest extends MediaWikiUnitTestCase {
 	public static function provideOutcomes() {
 		return [
 			'wrong password' => [ 200, '{"ok":false,"error":"invalid_credentials"}', 'invalid_credentials' ],
-			'reset' => [ 200, '{"ok":false,"error":"password_reset_required"}', 'password_reset_required' ],
+			'reset required' => [ 200, '{"ok":false,"error":"reset_required"}', 'reset_required' ],
 			'banned' => [ 200, '{"ok":false,"error":"banned"}', 'banned' ],
 			'temp banned' => [ 200, '{"ok":false,"error":"temp_banned","until":1760003600}', 'temp_banned' ],
-			'rate limited' => [ 429, '{"ok":false,"error":"rate_limited","retry_after":30}', 'rate_limited' ],
+			'deactivated' => [ 200, '{"ok":false,"error":"deactivated"}', 'deactivated' ],
+			'throttled (AuthService)' => [ 200, '{"ok":false,"error":"throttled"}', 'throttled' ],
+			'throttled (endpoint limit)' => [ 429, '{"ok":false,"error":"throttled","retry_after":30}', 'throttled' ],
+			'old reset code is unknown' => [ 200, '{"ok":false,"error":"password_reset_required"}', 'unavailable' ],
+			'ok false with user is not a login' => [ 200, '{"ok":false,"error":"reset_required","user":{"id":1,"name":"bill"}}', 'reset_required' ],
 			'unknown error code' => [ 200, '{"ok":false,"error":"weird"}', 'unavailable' ],
 			'server error' => [ 503, '{"ok":false,"error":"unavailable"}', 'unavailable' ],
 			'ok without user' => [ 200, '{"ok":true}', 'unavailable' ],
@@ -81,28 +85,41 @@ class GempClientTest extends MediaWikiUnitTestCase {
 
 	/** @dataProvider provideOutcomes */
 	public function testOutcomes( $status, $body, $expected ) {
-		$this->assertSame( $expected, $this->client( $status, $body )->verify( 'bill', 'x', null )['status'] );
+		$this->assertSame( $expected, $this->client( $status, $body )->verify( 'bill', 'x', '203.0.113.7' )['status'] );
 	}
 
-	public function testRateLimitAndBanDetails() {
-		$this->assertSame( 30, $this->client( 429, '{"ok":false,"error":"rate_limited","retry_after":30}' )
-			->verify( 'bill', 'x', null )['retry_after'] );
+	public function testThrottleAndBanDetails() {
+		$this->assertSame( 30, $this->client( 429, '{"ok":false,"error":"throttled","retry_after":30}' )
+			->verify( 'bill', 'x', '203.0.113.7' )['retry_after'] );
+		$this->assertSame( 300, $this->client( 200, '{"ok":false,"error":"throttled"}' )
+			->verify( 'bill', 'x', '203.0.113.7' )['retry_after'] );
+		$this->assertArrayNotHasKey( 'until', $this->client( 200, '{"ok":false,"error":"banned","until":5}' )
+			->verify( 'bill', 'x', '203.0.113.7' ) );
 		$this->assertSame( 1760003600, $this->client( 200, '{"ok":false,"error":"temp_banned","until":1760003600}' )
-			->verify( 'bill', 'x', null )['until'] );
+			->verify( 'bill', 'x', '203.0.113.7' )['until'] );
 	}
 
 	public function testRejectsUnsignedOrForgedResponses() {
 		$ok = '{"ok":true,"user":{"id":1,"name":"bill"}}';
-		$this->assertSame( 'unavailable', $this->client( 200, $ok, '' )->verify( 'bill', 'x', null )['status'] );
+		$this->assertSame( 'unavailable', $this->client( 200, $ok, '' )->verify( 'bill', 'x', '203.0.113.7' )['status'] );
 		$forged = ( new GempClient( $this->createMock( HttpRequestFactory::class ), self::ENDPOINT, str_repeat( 'z', 32 ) ) )
 			->sign( GempClient::responseCanonical( self::NONCE, 200, $ok ) );
-		$this->assertSame( 'unavailable', $this->client( 200, $ok, $forged )->verify( 'bill', 'x', null )['status'] );
+		$this->assertSame( 'unavailable', $this->client( 200, $ok, $forged )->verify( 'bill', 'x', '203.0.113.7' )['status'] );
+	}
+
+	public function testClientIpIsRequiredAndSigned() {
+		$factory = $this->createNoOpMock( HttpRequestFactory::class );
+		$this->assertSame( 'unavailable', ( new GempClient( $factory, self::ENDPOINT, self::SECRET ) )->verify( 'bill', 'x', '' )['status'] );
+		// client_ip is inside the body, whose SHA-256 is in the signed canonical string
+		$a = GempClient::requestCanonical( '1', self::NONCE, 'POST', '/internal/v1/verify', '{"username":"bill","password":"x","client_ip":"203.0.113.7"}' );
+		$b = GempClient::requestCanonical( '1', self::NONCE, 'POST', '/internal/v1/verify', '{"username":"bill","password":"x","client_ip":"198.51.100.1"}' );
+		$this->assertNotSame( $a, $b );
 	}
 
 	public function testNotConfigured() {
 		$factory = $this->createNoOpMock( HttpRequestFactory::class );
 		$this->assertFalse( ( new GempClient( $factory, '', self::SECRET ) )->isConfigured() );
 		$this->assertFalse( ( new GempClient( $factory, self::ENDPOINT, 'short' ) )->isConfigured() );
-		$this->assertSame( 'unavailable', ( new GempClient( $factory, self::ENDPOINT, 'short' ) )->verify( 'a', 'b', null )['status'] );
+		$this->assertSame( 'unavailable', ( new GempClient( $factory, self::ENDPOINT, 'short' ) )->verify( 'a', 'b', '203.0.113.7' )['status'] );
 	}
 }

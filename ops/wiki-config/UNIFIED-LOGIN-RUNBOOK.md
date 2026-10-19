@@ -30,7 +30,7 @@ Contract: [`docs/wiki-auth-api.md`](../../docs/wiki-auth-api.md). Plan: `/worksp
 
 ## Deploy order (each step needs Bill's OK)
 
-0. Prerequisites: GEMP must-fix items 2–5 merged and live (Alpha3) — otherwise the wiki inherits the blank-password and SHA-256 issues. (GempAuth already refuses blank-password accounts.) MediaWiki upgrade (separate runbook) can go first.
+0. Prerequisites: GEMP must-fix items 2–5 merged and live (Alpha3). swccg-gemp PR #287 is stacked on #284 (`security/a-password-hashing`, which adds `AuthService` and the `update_password_hashing.sql` migration): deploy #284 (with its migration) before or together with #287. The GEMP endpoint calls `AuthService.verifyCredentials`, so blank stored hashes never verify and reset codes return `reset_required`, never a login. MediaWiki upgrade (separate runbook) can go first.
 1. **Backups**: `mysqldump --single-transaction` of `swccg_wiki_db` (and copy `/opt/swccg-wiki/*.php`, compose files, nginx vhost).
 2. **Admin 2FA order**: enrolment needs OATHAuth loaded, and once `$wgOATHRequiredForGroups` is live, Admin has no sysop until enrolled. So in step 5 first deploy with `$wgOATHRequiredForGroups = [];`, let Bill enrol Admin at Special:OATHManage (keep the scratch codes offline), then restore the three groups and `apachectl graceful`. (If it is done in one go, Admin can still log in and enrol; it just has no admin rights for those minutes.)
 3. **Network + secret**: `docker network create --internal swccg-auth`; generate the secret once (`openssl rand -base64 48`), write it to GEMP `.env` (`GEMP_INTERNAL_AUTH_SECRET`, `INTERNAL_AUTH_PORT=8090`) and to `/opt/swccg-wiki/secrets/gempauth-secret.php`. Never echo it to a terminal log or chat.

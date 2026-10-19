@@ -61,7 +61,8 @@ class GempPrimaryAuthenticationProvider extends AbstractPasswordPrimaryAuthentic
 			return AuthenticationResponse::newAbstain();
 		}
 
-		$ip = $this->manager->getRequest()->getIP();
+		// Real client IP (WebRequest::getIP() honours $wgCdnServersNoPurge), never the proxy.
+		$ip = (string)$this->manager->getRequest()->getIP();
 		$result = $this->client->verify( $typed, $req->password, $ip );
 		switch ( $result['status'] ) {
 			case GempClient::OK:
@@ -75,21 +76,36 @@ class GempPrimaryAuthenticationProvider extends AbstractPasswordPrimaryAuthentic
 			case GempClient::TEMP_BANNED:
 				return AuthenticationResponse::newFail( wfMessage( 'gempauth-temp-banned',
 					Message::dateTimeParam( wfTimestamp( TS_MW, $result['until'] ?? 0 ) ) ) );
-			case GempClient::RATE_LIMITED:
-				return AuthenticationResponse::newFail( wfMessage( 'gempauth-rate-limited',
-					Message::durationParam( $result['retry_after'] ?? 60 ) ) );
+			case GempClient::DEACTIVATED:
+				return AuthenticationResponse::newFail( wfMessage( 'gempauth-deactivated' ) );
+			case GempClient::THROTTLED:
+				return AuthenticationResponse::newFail( wfMessage( 'gempauth-throttled',
+					Message::durationParam( $result['retry_after'] ?? 300 ) ) );
 			default:
 				return AuthenticationResponse::newFail( wfMessage( 'gempauth-unavailable' ) );
 		}
 
-		// GEMP is case-sensitive; map its canonical name (not what was typed) to the wiki name.
+		// GEMP matches names case-insensitively and returns its canonical (stored) name; that name,
+		// not what was typed, becomes the wiki name. "BILL" logs in as wiki "Bill" when GEMP says "Bill".
 		$gempId = $result['user']['id'];
 		$mapped = $this->userNameUtils->getCanonical( $result['user']['name'], UserRigorOptions::RIGOR_CREATABLE );
+		if ( $mapped === false ) {
+			$this->logger->warning( 'GempAuth: GEMP name for id {id} is not a valid wiki name', [ 'id' => $gempId ] );
+			return AuthenticationResponse::newFail( wfMessage( 'gempauth-name-invalid' ) );
+		}
 		if ( $mapped !== $wikiName ) {
-			return AuthenticationResponse::newFail( wfMessage( 'gempauth-name-mismatch' ) );
+			$target = $this->userIdentityLookup->getUserIdentityByName( $mapped );
+			$linkedId = ( $target && $target->isRegistered() ) ? $this->getLinkedGempId( $target ) : null;
+			if ( $target && $target->isRegistered() && $linkedId === null ) {
+				// Never let a GEMP login take over an unlinked local wiki account.
+				$this->logger->warning( 'GempAuth: GEMP id {id} maps to local-only wiki account {name}; refused',
+					[ 'id' => $gempId, 'name' => $mapped ] );
+				return AuthenticationResponse::newFail( wfMessage( 'gempauth-link-mismatch' ) );
+			}
+			$wikiName = $mapped;
 		}
 		if ( $linkedId !== null && $linkedId !== $gempId ) {
-			// e.g. GEMP "bill" and "Bill" both map to wiki "Bill": only the first linked one gets in.
+			// e.g. legacy GEMP "bill" and "Bill" both map to wiki "Bill": only the first linked one gets in.
 			$this->logger->warning( 'GempAuth: {name} is linked to GEMP id {linked}, refused id {id}',
 				[ 'name' => $wikiName, 'linked' => $linkedId, 'id' => $gempId ] );
 			return AuthenticationResponse::newFail( wfMessage( 'gempauth-link-mismatch' ) );

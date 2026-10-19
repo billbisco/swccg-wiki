@@ -1,12 +1,17 @@
 {
-	"@metadata": { "authors": [ "SWCCG wiki team" ] },
+	"@metadata": {
+		"authors": [
+			"SWCCG wiki team"
+		]
+	},
 	"gempauth-desc": "{{desc|name=GempAuth}}",
 	"gempauth-unavailable": "Login error when GEMP cannot be reached or answers wrongly.",
 	"gempauth-banned": "Login error for a permanently banned GEMP account.",
 	"gempauth-temp-banned": "Login error for a suspended GEMP account. $1 - end of the suspension.",
-	"gempauth-rate-limited": "Login error when GEMP rate-limits. $1 - wait duration.",
-	"gempauth-reset-required": "Login error for an admin-reset GEMP account. $1 - GEMP URL.",
-	"gempauth-name-mismatch": "Login error when the typed name maps differently from GEMP's canonical name.",
+	"gempauth-throttled": "Login refused because GEMP's login throttle (or the wiki-auth endpoint limit) is active. $1 - wait time (duration).",
+	"gempauth-reset-required": "Login refused: the password was a valid GEMP one-time reset code. Tells the user to finish the reset on GEMP. $1 - GEMP URL.",
+	"gempauth-deactivated": "Login refused: the GEMP account is deactivated.",
+	"gempauth-name-invalid": "Login refused: GEMP's canonical name is not a valid MediaWiki user name.",
 	"gempauth-link-mismatch": "Login error when the wiki name is linked to another GEMP id.",
 	"gempauth-password-on-gemp": "Shown instead of the wiki password change/reset for GEMP-linked accounts. $1 - GEMP URL.",
 	"gempauth-confirm-email-to-edit": "Permission error for users without a confirmed email on content pages.",

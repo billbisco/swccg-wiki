@@ -15,7 +15,7 @@ class FakeGempClient extends GempClient {
 		parent::__construct( MediaWikiServices::getInstance()->getHttpRequestFactory(), 'http://gemp.invalid/internal/v1/verify', str_repeat( 's', 32 ) );
 	}
 
-	public function verify( string $username, string $password, ?string $clientIp ): array {
+	public function verify( string $username, string $password, string $clientIp ): array {
 		$this->calls[] = [ $username, $password, $clientIp ];
 		return $this->answers[$username] ?? [ 'status' => self::INVALID ];
 	}

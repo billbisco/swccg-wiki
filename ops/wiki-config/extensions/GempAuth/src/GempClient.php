@@ -12,10 +12,13 @@ use MediaWiki\Logger\LoggerFactory;
 class GempClient {
 	public const OK = 'ok';
 	public const INVALID = 'invalid_credentials';
-	public const RESET = 'password_reset_required';
+	/** The password was a valid GEMP one-time reset code: finish the reset on GEMP. Never a login. */
+	public const RESET = 'reset_required';
 	public const BANNED = 'banned';
 	public const TEMP_BANNED = 'temp_banned';
-	public const RATE_LIMITED = 'rate_limited';
+	public const DEACTIVATED = 'deactivated';
+	/** GEMP's AuthService throttle (200) or this endpoint's second-layer limit (429). */
+	public const THROTTLED = 'throttled';
 	public const UNAVAILABLE = 'unavailable';
 
 	/** @var callable():int */
@@ -52,17 +55,17 @@ class GempClient {
 	}
 
 	/**
+	 * @param string $clientIp the end user's IP as MediaWiki resolved it through the trusted proxy
+	 *   ($wgCdnServersNoPurge). Sent inside the signed body, so it is covered by the HMAC; GEMP uses it
+	 *   for its login throttle instead of the docker peer address.
 	 * @return array{status:string, user?:array{id:int,name:string,admin:bool}, until?:int, retry_after?:int}
 	 */
-	public function verify( string $username, string $password, ?string $clientIp ): array {
+	public function verify( string $username, string $password, string $clientIp ): array {
 		$log = LoggerFactory::getInstance( 'GempAuth' );
-		if ( !$this->isConfigured() ) {
+		if ( !$this->isConfigured() || $clientIp === '' ) {
 			return [ 'status' => self::UNAVAILABLE ];
 		}
-		$payload = [ 'username' => $username, 'password' => $password ];
-		if ( $clientIp !== null && $clientIp !== '' ) {
-			$payload['client_ip'] = $clientIp;
-		}
+		$payload = [ 'username' => $username, 'password' => $password, 'client_ip' => $clientIp ];
 		$body = json_encode( $payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
 		$path = (string)parse_url( $this->endpoint, PHP_URL_PATH );
 		$ts = (string)( $this->clock )();
@@ -94,7 +97,7 @@ class GempClient {
 			return [ 'status' => self::UNAVAILABLE ];
 		}
 		if ( $code === 429 ) {
-			return [ 'status' => self::RATE_LIMITED, 'retry_after' => (int)( $data['retry_after'] ?? 60 ) ];
+			return [ 'status' => self::THROTTLED, 'retry_after' => (int)( $data['retry_after'] ?? 300 ) ];
 		}
 		if ( $code !== 200 ) {
 			$log->warning( 'GEMP verify: HTTP {code} {error}', [ 'code' => $code, 'error' => $data['error'] ?? '' ] );
@@ -108,10 +111,14 @@ class GempClient {
 			] ];
 		}
 		$error = (string)( $data['error'] ?? '' );
-		$known = [ self::INVALID, self::RESET, self::BANNED, self::TEMP_BANNED ];
+		// Anything that is not ok:true is a refusal; unknown codes are treated as unavailable.
+		$known = [ self::INVALID, self::RESET, self::BANNED, self::TEMP_BANNED, self::DEACTIVATED, self::THROTTLED ];
 		$out = [ 'status' => in_array( $error, $known, true ) ? $error : self::UNAVAILABLE ];
-		if ( isset( $data['until'] ) ) {
+		if ( $error === self::TEMP_BANNED && isset( $data['until'] ) ) {
 			$out['until'] = (int)$data['until'];
+		}
+		if ( $error === self::THROTTLED ) {
+			$out['retry_after'] = (int)( $data['retry_after'] ?? 300 );
 		}
 		return $out;
 	}

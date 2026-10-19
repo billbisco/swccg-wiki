@@ -87,11 +87,13 @@ class GempPrimaryAuthenticationProviderTest extends MediaWikiIntegrationTestCase
 
 	public static function provideGempRefusals() {
 		return [
-			[ [ 'status' => 'banned' ], 'gempauth-banned' ],
-			[ [ 'status' => 'temp_banned', 'until' => 1900000000 ], 'gempauth-temp-banned' ],
-			[ [ 'status' => 'password_reset_required' ], 'gempauth-reset-required' ],
-			[ [ 'status' => 'rate_limited', 'retry_after' => 60 ], 'gempauth-rate-limited' ],
-			[ [ 'status' => 'unavailable' ], 'gempauth-unavailable' ],
+			'INVALID' => [ [ 'status' => 'invalid_credentials' ], 'wrongpassword' ],
+			'BANNED' => [ [ 'status' => 'banned' ], 'gempauth-banned' ],
+			'TEMP_BANNED' => [ [ 'status' => 'temp_banned', 'until' => 1900000000 ], 'gempauth-temp-banned' ],
+			'RESET_REQUIRED' => [ [ 'status' => 'reset_required' ], 'gempauth-reset-required' ],
+			'DEACTIVATED' => [ [ 'status' => 'deactivated' ], 'gempauth-deactivated' ],
+			'THROTTLED' => [ [ 'status' => 'throttled', 'retry_after' => 300 ], 'gempauth-throttled' ],
+			'unavailable' => [ [ 'status' => 'unavailable' ], 'gempauth-unavailable' ],
 		];
 	}
 
@@ -101,6 +103,40 @@ class GempPrimaryAuthenticationProviderTest extends MediaWikiIntegrationTestCase
 		$res = $this->login( 'refused', 'pw-12345678' );
 		$this->assertSame( AuthenticationResponse::FAIL, $res->status );
 		$this->assertSame( $msg, $res->message->getKey() );
+		$this->assertFalse( $this->getServiceContainer()->getUserFactory()->newFromName( 'Refused' )->isRegistered(),
+			'no account is created for a refused login' );
+	}
+
+	public function testResetRequiredTellsUserToFinishOnGempAndNeverLogsIn() {
+		$this->gemp->answers['resetme'] = [ 'status' => 'reset_required' ];
+		$res = $this->login( 'resetme', 'ABCD-EFGH-JKLM' );
+		$this->assertSame( AuthenticationResponse::FAIL, $res->status );
+		$this->assertSame( 'gempauth-reset-required', $res->message->getKey() );
+		$this->assertStringContainsString( 'Finish the reset on', $res->message->inLanguage( 'en' )->plain() );
+		$this->assertFalse( $this->getServiceContainer()->getUserFactory()->newFromName( 'Resetme' )->isRegistered() );
+	}
+
+	public function testTempBanShowsDate() {
+		$this->gemp->answers['suspended'] = [ 'status' => 'temp_banned', 'until' => 1900000000 ];
+		$res = $this->login( 'suspended', 'pw-12345678' );
+		$this->assertSame( 'gempauth-temp-banned', $res->message->getKey() );
+		$this->assertStringContainsString( '2030', $res->message->inLanguage( 'en' )->text() );
+	}
+
+	public function testSendsRealClientIpFromTrustedProxy() {
+		$this->overrideConfigValue( 'CdnServersNoPurge', [ '172.18.0.1' ] );
+		// TCP peer is the docker bridge gateway (nginx on the host); nginx sets X-Forwarded-For
+		$req = new class extends FauxRequest {
+			protected function getRawIP() {
+				return '172.18.0.1';
+			}
+		};
+		$req->setHeader( 'X-Forwarded-For', '203.0.113.50' );
+		RequestContext::getMain()->setRequest( $req );
+		$this->resetServices();
+		$this->setService( 'GempAuth.Client', $this->gemp );
+		$this->login( 'whoever', 'pw-12345678' );
+		$this->assertSame( '203.0.113.50', $this->gemp->calls[0][2], 'end-user IP, not the docker gateway' );
 	}
 
 	public function testCaseCollisionOnlyFirstLinkedAccountGetsIn() {
@@ -114,11 +150,25 @@ class GempPrimaryAuthenticationProviderTest extends MediaWikiIntegrationTestCase
 		$this->assertSame( '1', $this->linkedId( 'Bill' ) );
 	}
 
-	public function testNameMustMapToTypedName() {
-		$this->gemp->answers['alias'] = [ 'status' => 'ok', 'user' => [ 'id' => 5, 'name' => 'someoneelse', 'admin' => false ] ];
-		$res = $this->login( 'alias', 'pw-12345678' );
+	public function testCanonicalGempNameIsTheWikiName() {
+		// GEMP matches "SKYWALKER" case-insensitively and returns the stored name "Skywalker"
+		$this->gemp->answers['SKYWALKER'] = [ 'status' => 'ok', 'user' => [ 'id' => 5, 'name' => 'Skywalker', 'admin' => false ] ];
+		$res = $this->login( 'SKYWALKER', 'pw-12345678' );
+		$this->assertSame( AuthenticationResponse::PASS, $res->status );
+		$this->assertSame( 'Skywalker', $res->username );
+		$this->assertSame( '5', $this->linkedId( 'Skywalker' ) );
+		$this->assertFalse( $this->getServiceContainer()->getUserFactory()->newFromName( 'SKYWALKER' )->isRegistered() );
+	}
+
+	public function testCanonicalNameCannotTakeOverLocalAccount() {
+		$local = $this->getMutableTestUser()->getUser()->getName();
+		$typed = strtoupper( $local );
+		$this->assertNotSame( $local, $typed );
+		$this->gemp->answers[$typed] = [ 'status' => 'ok', 'user' => [ 'id' => 6, 'name' => $local, 'admin' => false ] ];
+		$res = $this->login( $typed, 'pw-12345678' );
 		$this->assertSame( AuthenticationResponse::FAIL, $res->status );
-		$this->assertSame( 'gempauth-name-mismatch', $res->message->getKey() );
+		$this->assertSame( 'gempauth-link-mismatch', $res->message->getKey() );
+		$this->assertNull( $this->linkedId( $local ) );
 	}
 
 	public function testLinkedAccountsCannotSetWikiPasswordOrReset() {
