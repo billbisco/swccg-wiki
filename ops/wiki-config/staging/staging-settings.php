@@ -15,7 +15,43 @@ foreach ( $wgLogos ?? [] as $k => $v ) {
 $wgCookiePrefix = 'swccgstaging';
 $wgCookieSecure = true;
 $wgDefaultRobotPolicy = 'noindex,nofollow';
-$wgEnableUploads = false;
+$wgEnableUploads = false;   # production's extra-settings.php turns uploads on; staging keeps them off
+
+# Images: production's originals are bind-mounted READ-ONLY at $IP/images (see docker-compose.staging.yml).
+# Thumbnails, temp files and deletions go to staging's own volume at $IP/staging-thumbs, and the
+# backend uses no lock files (lockdir would be inside the read-only mount).
+$wgFileBackends[] = [
+	'name' => 'staging-local-backend',
+	'class' => FSFileBackend::class,
+	'lockManager' => 'nullLockManager',
+	'containerPaths' => [
+		'local-public' => "$IP/images",
+		'local-thumb' => "$IP/staging-thumbs/thumb",
+		'local-transcoded' => "$IP/staging-thumbs/transcoded",
+		'local-temp' => "$IP/staging-thumbs/temp",
+		'local-deleted' => "$IP/staging-thumbs/deleted",
+	],
+	'fileMode' => 0644,
+	'directoryMode' => 0755,
+];
+$wgLocalFileRepo = [
+	'class' => LocalRepo::class,
+	'name' => 'local',
+	'backend' => 'staging-local-backend',
+	'url' => '/w/images',
+	'thumbUrl' => '/w/staging-thumbs/thumb',
+	'transcodedUrl' => '/w/staging-thumbs/transcoded',
+	'hashLevels' => 2,
+	'deletedHashLevels' => 3,
+	'thumbScriptUrl' => false,
+	'transformVia404' => false,
+	'abbrvThreshold' => 255,
+	'isPrivate' => false,
+	'updateCompatibleMetadata' => false,
+	'reserializeMetadata' => false,
+];
+$wgUploadDirectory = "$IP/staging-thumbs";   # lockdir, temp and anything else written under the upload dir
+$wgDeletedDirectory = "$IP/staging-thumbs/deleted";
 
 # Own DB server (docker service "db"), own secrets: DB password, $wgSecretKey, $wgUpgradeKey.
 $wgDBserver = 'db';

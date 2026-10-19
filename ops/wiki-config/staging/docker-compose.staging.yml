@@ -1,6 +1,6 @@
 # Wiki staging on test.swccg.com (https://test.swccg.com/wiki/...). Self-contained: its own wiki DB
-# server, GEMP-auth DB server, volumes and (empty) images volume. Shares nothing writable with
-# production. Project dir on the VPS: /opt/swccg-wiki-staging (see STAGING.md).
+# server, GEMP-auth DB server and volumes. Production's images are mounted read-only; thumbnails are
+# rendered into staging's own volume. Shares nothing writable with production. Project dir on the VPS: /opt/swccg-wiki-staging (see STAGING.md).
 name: swccg-wiki-staging
 services:
   wiki:
@@ -10,7 +10,10 @@ services:
     ports:
       - "127.0.0.1:17013:80"
     volumes:
-      - staging_images:/var/www/html/images
+      # Production's images, READ-ONLY (host path of the swccg-wiki_wiki_images volume; a bind mount, so
+      # 'docker compose down -v' here never touches it). Thumbnails go to staging_images (staging-settings.php).
+      - /var/lib/docker/volumes/swccg-wiki_wiki_images/_data:/var/www/html/images:ro
+      - staging_images:/var/www/html/staging-thumbs
       - ./LocalSettings.php:/var/www/html/LocalSettings.php:ro
       - ./copy/chrome:/swccg-chrome:ro
       - ./copy/SwccgChrome.php:/var/www/html/SwccgChrome.php:ro

@@ -47,6 +47,8 @@ wfLoadExtension( 'OATHAuth' );   # bundled in the mediawiki:1.43 image
 # While required, members of these groups lose the group's rights until they enrol.
 $swccgRequireAdmin2FA = false;
 $wgOATHRequiredForGroups = $swccgRequireAdmin2FA ? [ 'sysop', 'bureaucrat', 'interface-admin' ] : [];
+# Every logged-in user may enrol: Special:Preferences > User profile shows a "Two-factor
+# authentication" row with a Manage link (OATHAuth only adds it for users with this right).
 $wgGroupPermissions['user']['oathauth-enable'] = true;
 # 2FA protects the session; keep "remember me" for admins shorter than the 180-day default.
 # (Applies to everyone; leave at 180 days until Bill decides. See runbook "Decisions".)

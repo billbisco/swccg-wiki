@@ -14,6 +14,12 @@ open(p, 'w').write(s)
 PY
   nginx -t && systemctl reload nginx && echo "vhost: wiki-staging blocks removed, nginx reloaded"
 fi
-[ -f "$S/docker-compose.yml" ] && (cd "$S" && docker compose down -v --remove-orphans)
+if [ -f "$S/docker-compose.yml" ]; then
+  # Production's images are a read-only BIND mount (not a volume), so "down -v" cannot remove them.
+  # Guard anyway: refuse if the project would own any volume that is not staging's.
+  bad=$(cd "$S" && docker compose config --volumes | grep -v -E '^staging_(db|images|gemp_db)$' || true)
+  [ -z "$bad" ] || { echo "refusing: unexpected volumes in staging project: $bad"; exit 1; }
+  (cd "$S" && docker compose down -v --remove-orphans)
+fi
 rm -rf "$S"
 echo "staging removed (mediawiki:1.43.11 image kept; 'docker rmi mediawiki:1.43.11' drops it)"

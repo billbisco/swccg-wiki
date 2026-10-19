@@ -14,8 +14,11 @@ URL: `https://test.swccg.com/wiki/Main_Page` (scripts under `/w/`). The test GEM
 | `gempauth` (`swccg_gempauth_staging`) | `gemp_app` (Java runtime only) | PR #287 build: real `AuthService` + `DbPlayerDAO`, private listener only, internal networks, no host port |
 | `gempdb` (`swccg_gemp_staging_db`) | `mariadb:10.11` | fresh GEMP schema (pre-#284) + `update_password_hashing.sql`; one test player `wikistage` |
 
-Nothing is shared with production: separate DB servers, volumes, networks, secrets (`$wgSecretKey`,
-cookie prefix `swccgstaging`), and an **empty images volume** (page images are broken on staging; uploads stay off).
+Nothing writable is shared with production: separate DB servers, volumes, networks, secrets (`$wgSecretKey`,
+cookie prefix `swccgstaging`). **Images:** production's image files are bind-mounted **read-only**
+(`/var/lib/docker/volumes/swccg-wiki_wiki_images/_data` → `/var/www/html/images:ro`); thumbnails, temp files and
+locks go to staging's own volume (`staging_images` at `/var/www/html/staging-thumbs`, served as `/w/staging-thumbs/`).
+Uploads stay off (`$wgEnableUploads = false`).
 Mail: `dev-mail-logonly.php` writes to `/tmp/gempauth-mail.log` in the wiki container; nothing is sent.
 
 Why not the test GEMP (`gemp_swccg_app_2`): it runs a pre-#284 build with local changes and is shared;

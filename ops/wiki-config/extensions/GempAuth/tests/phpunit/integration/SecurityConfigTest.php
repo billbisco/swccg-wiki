@@ -70,6 +70,22 @@ class SecurityConfigTest extends MediaWikiIntegrationTestCase {
 		$this->assertTrue( $this->getServiceContainer()->getPermissionManager()->userHasRight( $admin, 'oathauth-enable' ) );
 	}
 
+	public function testEveryUserSeesTwoFactorRowInPreferences() {
+		$user = $this->getMutableTestUser()->getUser();
+		$this->assertSame( [], $this->getServiceContainer()->getUserGroupManager()->getUserGroups( $user ) );
+		$this->assertTrue( $this->getServiceContainer()->getPermissionManager()->userHasRight( $user, 'oathauth-enable' ) );
+
+		$context = new RequestContext();
+		$context->setUser( $user );
+		$context->setTitle( \MediaWiki\SpecialPage\SpecialPage::getTitleFor( 'Preferences' ) );
+		$prefs = $this->getServiceContainer()->getPreferencesFactory()->getFormDescriptor( $user, $context );
+		$this->assertArrayHasKey( 'oathauth-module', $prefs );
+		$this->assertSame( 'personal/info', $prefs['oathauth-module']['section'] );
+		$this->assertSame( 'oathauth-prefs-label', $prefs['oathauth-module']['label-message'] );
+		$manage = \MediaWiki\SpecialPage\SpecialPage::getTitleFor( 'OATHManage' )->getLocalURL();
+		$this->assertStringContainsString( $manage, (string)$prefs['oathauth-module']['default'] );
+	}
+
 	public function testConfirmedEditorGroupGrantsOnlyEditcontent() {
 		$perms = $this->getConfVar( 'GroupPermissions' );
 		$this->assertSame( [ 'editcontent' => true ], $perms['confirmed-editor'] );
