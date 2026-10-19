@@ -71,13 +71,13 @@ Contract: [`docs/wiki-auth-api.md`](../../docs/wiki-auth-api.md). Plan: `/worksp
 F=/opt/swccg-wiki-staging/wiki-config/login-security.php C=swccg_wiki_staging
 # production (after the production deploy):  F=/opt/swccg-wiki/login-security.php C=swccg_wiki
 sudo cp -a "$F" "$F.bak-2fa-$(date +%F)" \
-  && sed 's/^\$swccgRequireAdmin2FA = false;$/$swccgRequireAdmin2FA = true;/' "$F" | sudo tee "$F" >/dev/null \
-  ; grep -n '^\$swccgRequireAdmin2FA' "$F" \
+  && sudo sh -c 'sed "s/^\$swccgRequireAdmin2FA = false;\$/\$swccgRequireAdmin2FA = true;/" "$1" > "$1.new" && cat "$1.new" > "$1" && rm "$1.new"' _ "$F" \
+  && grep -n '^\$swccgRequireAdmin2FA' "$F" \
   && docker exec "$C" apachectl -k graceful \
-  && docker exec "$C" php maintenance/run.php eval 'echo json_encode($wgOATHRequiredForGroups), "\n";'
+  && docker exec "$C" php maintenance/run.php getConfiguration --settings=wgOATHRequiredForGroups --format=json
 ```
-Do **not** use `sed -i`: it replaces the file, and a single-file bind mount keeps showing the old file to the container. `tee` rewrites it in place (`sed` reads all of a small file before `tee` truncates it; the `.bak` copy is the safety net). `grep` must print `$swccgRequireAdmin2FA = true;` and the last command `["sysop","bureaucrat","interface-admin"]`. Then Admin (enrolled) still has its rights; check Special:UserRights/Admin and that Special:Block loads. Commit the same one-line change in git (the PHPUnit test `testPhase2FlipLineIsExactlyAsDocumented` guards that the `false` line exists exactly once before the flip).
-**Undo phase 2:** `sudo tee "$F" < "$F.bak-2fa-<date>" >/dev/null && docker exec "$C" apachectl -k graceful` (in place, same reason as above).
+Do **not** use `sed -i`: it replaces the file, and a single-file bind mount keeps showing the old file to the container. `cat new > file` rewrites it in place (same inode); the `.bak` copy is the safety net. `grep` must print `$swccgRequireAdmin2FA = true;` and the last command `{"wgOATHRequiredForGroups":["sysop","bureaucrat","interface-admin"]}` (phase 1 prints `[]`). Then Admin (enrolled) still has its rights; check Special:UserRights/Admin and that Special:Block loads. Commit the same one-line change in git (the PHPUnit test `testPhase2FlipLineIsExactlyAsDocumented` guards that the `false` line exists exactly once before the flip).
+**Undo phase 2:** `sudo sh -c 'cat "$1" > "$2"' _ "$F.bak-2fa-<date>" "$F" && docker exec "$C" apachectl -k graceful` (in place, same reason as above).
 
 ## Staging (test.swccg.com)
 
