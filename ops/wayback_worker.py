@@ -9,8 +9,14 @@ capture really loads, and records results in ops/wayback/done.json:
     {"<url>": {"capture": "https://web.archive.org/web/<ts>/<url>", "status": "ok",
                "tries": 1, "last": "2026-10-10T16:00:00Z", "job_id": "spn2-..."}}
 
-status: pending (submitted, not yet confirmed) | ok (capture loads) | retry (save or check
-failed; retried later, up to MAX_TRIES) | failed (gave up after MAX_TRIES).
+status: pending (submitted, not yet confirmed) | verified (capture fetched as id_ and matches
+the live source: sha256 for files, page text for HTML; this is "opened and checked") |
+unverified (capture loads but does not match, or the source could not be fetched; look at it)
+| ok (capture loads, not verified yet; the worker verifies these each run, newest first) |
+retry (save or check failed; retried later, up to MAX_TRIES) | failed (gave up after MAX_TRIES).
+
+Bots: push the URL to queue.txt, then read done.json. Cite the capture once status is "verified".
+No Wayback access from the bot's own machine is needed.
 
 Auth: archive.org S3-style keys, IA_S3_ACCESS / IA_S3_SECRET, read from the environment or
 from KEYS_FILE (root-only, chmod 600, outside any git repo). They are never logged or committed.
@@ -23,7 +29,12 @@ Usage: wayback_worker.py REPO_DIR [--minutes 10]
 from __future__ import annotations
 
 import argparse
+import collections
+import hashlib
+import html
 import json
+import re
+import zlib
 import os
 import sys
 import time
@@ -171,6 +182,176 @@ def capture_ok(capture: str) -> bool:
         return False
 
 
+# ---------------------------------------------------------------------------------------------
+# Verification (Bill, 2026-10-20): after a capture loads, fetch the capture's id_ URL (the bytes
+# Wayback stored, without its toolbar) and compare it with the live source: sha256 for files
+# (PDF, images, ...), visible page text for HTML. A match sets status "verified", which counts as
+# "opened and checked" for citations, so bots only push queue.txt and read done.json.
+#
+#   verified    capture matches the source (verify: {"method": "sha256"|"text", ...})
+#   unverified  capture loads but does not match (Cloudflare page, different file, text differs),
+#               or the source could not be fetched VERIFY_TRIES times; a human or bot must look
+#   ok          capture loads, verification not done yet (older entries; the worker works through
+#               them each run, newest first)
+# ---------------------------------------------------------------------------------------------
+VERIFY_TRIES = 3
+TEXT_MATCH = 0.85            # share of words the capture and the live page have in common
+MAX_BODY = 20 * 1024 * 1024  # bytes kept in memory for HTML comparison (files are hashed streaming)
+MAX_FETCH = 300 * 1024 * 1024
+BACKLOG_SECONDS = 150        # time per run spent verifying older "ok" entries
+VERIFY_GAP_S = 4             # pause between backlog verifications (archive.org refuses bursts)
+CLOUDFLARE_RX = re.compile(r"<title>\s*(?:Just a moment\.\.\.|Attention Required! \| Cloudflare)|cf-chl-|challenge-platform", re.I)
+
+
+class VerifyRetry(Exception):
+    """Transient: try verifying again on a later run. side="capture" means archive.org itself failed
+    (throttling, outage); that does not count against the entry's VERIFY_TRIES."""
+
+    def __init__(self, msg: str, side: str = "source"):
+        super().__init__(msg)
+        self.side = side
+
+
+def id_url(capture: str) -> str:
+    """https://web.archive.org/web/<ts>/<url> -> https://web.archive.org/web/<ts>id_/<url>"""
+    return re.sub(r"(/web/\d{14})(?:[a-z]{2}_)?/", r"\1id_/", capture, count=1)
+
+
+def _decoder(encoding: str):
+    """Wayback replays id_ captures with the Content-Encoding the site sent (usually gzip)."""
+    enc = (encoding or "identity").strip().lower()
+    if enc in ("", "identity"):
+        return None
+    if enc in ("gzip", "x-gzip"):
+        return zlib.decompressobj(16 + zlib.MAX_WBITS)
+    if enc == "deflate":
+        return zlib.decompressobj()
+    if enc == "br":
+        try:
+            import brotli  # type: ignore
+        except ImportError as ex:
+            raise VerifyRetry("brotli-encoded body and no brotli module") from ex
+        return brotli.Decompressor()
+    raise VerifyRetry(f"unsupported Content-Encoding {enc}")
+
+
+def fetch(url: str) -> dict:
+    """GET url; return status, content type, sha256 and size of the whole (decoded) body, and its
+    first MAX_BODY bytes."""
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
+    h, size, head = hashlib.sha256(), 0, bytearray()
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            status, ctype = resp.status, resp.headers.get("Content-Type", "")
+            dec = _decoder(resp.headers.get("Content-Encoding", ""))
+            while True:
+                raw = resp.read(1 << 16)
+                if not raw:
+                    chunk = dec.flush() if dec is not None and hasattr(dec, "flush") else b""
+                    if not chunk:
+                        break
+                else:
+                    chunk = (dec.decompress(raw) if hasattr(dec, "decompress") else dec.process(raw)) if dec is not None else raw
+                h.update(chunk)
+                size += len(chunk)
+                if len(head) < MAX_BODY:
+                    head += chunk[:MAX_BODY - len(head)]
+                if size > MAX_FETCH:
+                    raise VerifyRetry(f"larger than {MAX_FETCH} bytes: {url[:80]}")
+    except urllib.error.HTTPError as e:
+        return {"status": e.code, "ctype": e.headers.get("Content-Type", "") if e.headers else "", "sha256": "",
+                "size": 0, "body": b""}
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, zlib.error) as e:
+        raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}") from e
+    return {"status": status, "ctype": ctype, "sha256": h.hexdigest(), "size": size, "body": bytes(head)}
+
+
+def is_html(r: dict) -> bool:
+    if "html" in r["ctype"].lower() or "xml" in r["ctype"].lower():
+        return True
+    start = r["body"][:512].lstrip().lower()
+    return start.startswith((b"<!doctype html", b"<html", b"<?xml")) or b"<html" in start
+
+
+def page_words(body: bytes, ctype: str = "") -> collections.Counter:
+    m = re.search(r"charset=([\w-]+)", ctype or "", re.I) or re.search(rb"<meta[^>]+charset=[\"']?([\w-]+)", body[:4096], re.I)
+    enc = (m.group(1).decode() if isinstance(m.group(1), bytes) else m.group(1)) if m else "utf-8"
+    try:
+        t = body.decode(enc, "replace")
+    except LookupError:
+        t = body.decode("utf-8", "replace")
+    t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
+    t = re.sub(r"<(script|style|noscript|template)\b.*?</\1\s*>", " ", t, flags=re.S | re.I)
+    t = html.unescape(re.sub(r"<[^>]+>", " ", t))
+    return collections.Counter(w.lower() for w in re.findall(r"\w+", t))
+
+
+def text_match(a: collections.Counter, b: collections.Counter) -> float:
+    total = max(sum(a.values()), sum(b.values()))
+    return sum((a & b).values()) / total if total else 1.0
+
+
+def verify(url: str, capture: str, get=None) -> tuple[str, dict]:
+    """Compare a capture with its live source. Returns ("verified" | "unverified", details).
+    Raises VerifyRetry when either side could not be fetched (try again later)."""
+    get = get or fetch
+    try:
+        cap = get(id_url(capture))
+    except VerifyRetry as ex:
+        raise VerifyRetry(f"capture: {ex}", side="capture") from ex
+    if cap["status"] != 200:
+        raise VerifyRetry(f"capture HTTP {cap['status']}", side="capture")
+    src = get(url)
+    if src["status"] != 200:
+        raise VerifyRetry(f"source HTTP {src['status']}")
+    info = {"at": iso(now()), "capture_id": id_url(capture)}
+    if cap["sha256"] == src["sha256"]:
+        return "verified", {**info, "method": "sha256", "sha256": src["sha256"], "bytes": src["size"]}
+    if not (is_html(src) and is_html(cap)):
+        return "unverified", {**info, "method": "sha256", "reason": "file differs from the source",
+                              "sha256": src["sha256"], "capture_sha256": cap["sha256"]}
+    cap_text = cap["body"].decode("utf-8", "replace")
+    if CLOUDFLARE_RX.search(cap_text) and not CLOUDFLARE_RX.search(src["body"].decode("utf-8", "replace")):
+        return "unverified", {**info, "method": "text", "reason": "capture is a Cloudflare challenge page"}
+    ratio = text_match(page_words(src["body"], src["ctype"]), page_words(cap["body"], cap["ctype"]))
+    status = "verified" if ratio >= TEXT_MATCH else "unverified"
+    out = {**info, "method": "text", "text_match": round(ratio, 3)}
+    if status == "unverified":
+        out["reason"] = f"page text matches {ratio:.0%} (< {TEXT_MATCH:.0%})"
+    return status, out
+
+
+def verify_entry(url: str, e: dict, get=None) -> bool:
+    """Verify a loaded capture in place (status ok -> verified/unverified). Returns True if e changed."""
+    if not e.get("capture"):
+        return False
+    try:
+        status, info = verify(url, e["capture"], get)
+    except VerifyRetry as ex:
+        print("VERIFY-ERR", url, str(ex)[:80], flush=True)
+        if ex.side == "capture":  # archive.org trouble: leave the entry alone, try next run
+            raise
+        n = e.get("verify_tries", 0) + 1
+        e["verify_tries"] = n
+        e["verify"] = {"at": iso(now()), "error": str(ex)[:120]}
+        if n >= VERIFY_TRIES:
+            e["status"] = "unverified"
+            e["verify"]["reason"] = f"could not fetch after {n} tries"
+        return True
+    e["status"], e["verify"] = status, info
+    e.pop("verify_tries", None)
+    print("VERIFY", status, url, info.get("text_match", info.get("method")), flush=True)
+    return True
+
+
+def try_verify(url: str, e: dict) -> None:
+    """Verify right after a capture loads; archive.org errors leave it "ok" for the backlog pass."""
+    try:
+        verify_entry(url, e)
+    except VerifyRetry:
+        pass
+
+
 def load(repo: Path) -> tuple[list[str], dict]:
     q = repo / QUEUE
     urls = []
@@ -206,6 +387,8 @@ def confirm(url: str, e: dict) -> bool:
             e["status"] = "ok" if capture_ok(e["capture"]) else "pending"
             if e["status"] == "pending":
                 e.pop("job_id", None)  # fall back to plain capture check next run
+            else:
+                try_verify(url, e)
         else:
             e["status"] = "retry" if e.get("tries", 1) < MAX_TRIES else "failed"
             e["error"] = str(st.get("status_ext") or st.get("message") or s)[:120]
@@ -216,6 +399,8 @@ def confirm(url: str, e: dict) -> bool:
         return False
     e["status"] = "ok" if capture_ok(e["capture"]) else ("retry" if e.get("tries", 1) < MAX_TRIES else "failed")
     e["last"] = iso(now())
+    if e["status"] == "ok":
+        try_verify(url, e)
     return True
 
 
@@ -244,7 +429,8 @@ def run(repo: Path, minutes: float) -> None:
         if banned(url):
             continue
         e = done.get(url)
-        if e and (e["status"] in ("ok", "pending", "failed") or now() - parse(e["last"]) < RETRY_AFTER):
+        if e and (e["status"] in ("ok", "verified", "unverified", "pending", "failed")
+                  or now() - parse(e["last"]) < RETRY_AFTER):
             continue
         tries = (e or {}).get("tries", 0) + 1
         try:
@@ -254,6 +440,7 @@ def run(repo: Path, minutes: float) -> None:
                     e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
                          "note": "already archived within 30d"}
                     print("RECENT", url, j["recent"], flush=True)
+                    try_verify(url, e)
                     done[url] = e
                     changed[url] = e
                     errors_in_row = 0
@@ -295,6 +482,24 @@ def run(repo: Path, minutes: float) -> None:
         if submitted:
             time.sleep(15)
 
+    # 4. verify older loaded captures ("ok"), newest first, in the time left
+    stop = min(deadline - 60, time.monotonic() + BACKLOG_SECONDS)
+    def due(e: dict) -> bool:  # transient verify errors wait RETRY_AFTER before the next try
+        v = e.get("verify") or {}
+        return not (v.get("error") and v.get("at") and now() - parse(v["at"]) < RETRY_AFTER)
+    backlog = sorted((u for u, e in done.items() if e.get("status") == "ok" and e.get("capture") and due(e)),
+                     key=lambda u: done[u].get("last", ""), reverse=True)
+    for url in backlog:
+        if time.monotonic() > stop:
+            break
+        try:
+            if verify_entry(url, done[url]):
+                changed[url] = done[url]
+        except VerifyRetry:
+            print("archive.org not answering; backlog stops for this run", flush=True)
+            break
+        time.sleep(VERIFY_GAP_S)
+
     if not changed:
         print("nothing to do")
         return
@@ -306,8 +511,10 @@ def run(repo: Path, minutes: float) -> None:
         return [DONE]
 
     write_done(repo, done)
+    ver = sum(1 for e in changed.values() if e["status"] == "verified")
     ok = sum(1 for e in changed.values() if e["status"] in ("ok", "pending"))
-    commit_and_push(repo, [DONE], f"wayback: {ok} saved/confirmed, {len(changed) - ok} to retry", redo)
+    bad = len(changed) - ver - ok
+    commit_and_push(repo, [DONE], f"wayback: {ver} verified, {ok} saved/confirmed, {bad} unverified or to retry", redo)
     print("pushed", len(changed), "updates")
 
 
