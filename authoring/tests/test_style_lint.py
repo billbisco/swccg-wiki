@@ -1,0 +1,180 @@
+"""Tests for authoring/style_lint.py citation checks. Run: python3 -m unittest discover -s authoring/tests"""
+import os
+import subprocess
+import sys
+import unittest
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE.parent))
+import style_lint as L  # noqa: E402
+
+FX = HERE / "fixtures"
+WB = "https://web.archive.org/web/20261020174512/"
+
+
+def fx(name):
+    return (FX / name).read_text(encoding="utf-8")
+
+
+def kinds(flags):
+    return [f.split()[0] for f in flags]
+
+
+class LivePageFixtures(unittest.TestCase):
+    """Saved wikitext of real pages (revision ids in the file names)."""
+
+    def test_virtual_block_4_flags_unarchived_sources(self):
+        flags = L.archive_flags(fx("Virtual_Block_4.r113951.wiki"))
+        self.assertEqual(len(flags), 3)
+        self.assertTrue(any("boardgamegeek.com" in f for f in flags))
+        self.assertTrue(any("star-wars.pl/News/10786" in f for f in flags))
+
+    def test_virtual_block_7_flags_refs_and_external_links(self):
+        flags = L.archive_flags(fx("Virtual_Block_7.r112843.wiki"))
+        joined = "\n".join(flags)
+        # <ref> without its own Preserved copy, although another ref archives the same PDF
+        self.assertIn("<ref> cites https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf", joined)
+        self.assertIn("forum.starwarsccg.org/viewtopic.php?t=36308", joined)
+        # External links are no longer skipped
+        self.assertIn("https://www.starwarsccg.org/resources/virtual-slips/", joined)
+        self.assertIn("https://res.starwarsccg.org/cardlists/VBlock7Type.html", joined)
+
+    def test_reflections_iv_before_and_after_archive_pass(self):
+        before = L.archive_flags(fx("Reflections_IV_Virtual_Block_6.r112812.wiki"))
+        self.assertEqual(len(before), 2)
+        self.assertTrue(all("swccg-card-json" in f for f in before))
+        self.assertEqual(L.archive_flags(fx("Reflections_IV_Virtual_Block_6.r113339.wiki")), [])
+
+    def test_christian_mccarty_passes(self):
+        text = fx("Christian_McCarty.r112964.wiki")
+        flags, _ = L.lint(text, "Christian McCarty")
+        self.assertEqual(flags, [])
+
+    def test_christian_mccarty_earlier_revision_flags_table_links(self):
+        flags = L.archive_flags(fx("Christian_McCarty.r112725.wiki"))
+        self.assertEqual(sorted(f.split()[1] for f in flags), ["https://lotrtcgpc.net/", "https://wiki.lotrtcgpc.net/"])
+
+    def test_cli_exit_codes(self):
+        script = str(HERE.parent / "style_lint.py")
+        bad = subprocess.run([sys.executable, script, str(FX / "Virtual_Block_4.r113951.wiki")], capture_output=True, text=True)
+        self.assertEqual(bad.returncode, 1)
+        self.assertIn("ARCHIVE", bad.stdout)
+        good = subprocess.run([sys.executable, script, str(FX / "Christian_McCarty.r112964.wiki")], capture_output=True, text=True)
+        self.assertEqual(good.returncode, 0, good.stdout)
+
+
+class ArchiveCheck(unittest.TestCase):
+    def test_ref_with_copy_passes(self):
+        t = f'Fact.<ref>[https://example.com/a Title], site. Preserved copy: [{WB}https://example.com/a Internet Archive]</ref>'
+        self.assertEqual(L.archive_flags(t), [])
+
+    def test_ref_without_copy_fails_even_if_copy_elsewhere(self):
+        t = (f'A.<ref>[https://example.com/a Title]</ref>\n'
+             f'B.<ref>[https://example.com/a Title]. Preserved copy: [{WB}https://example.com/a Internet Archive]</ref>')
+        self.assertEqual(kinds(L.archive_flags(t)), ["ARCHIVE"])
+
+    def test_snapshot_route_copy_in_same_ref_passes(self):
+        t = ('<ref>[https://forum.starwarsccg.org/viewtopic.php?t=1 Thread]. Preserved copy: '
+             f'[{WB}https://swccg.com/snapshots/forum/t1.html Internet Archive]</ref>')
+        self.assertEqual(L.archive_flags(t), [])
+
+    def test_archive_org_details_counts(self):
+        t = ('<ref>[https://www.youtube.com/watch?v=abc Video]. Preserved copy: '
+             '[https://archive.org/details/youtube-abc Internet Archive]</ref>')
+        self.assertEqual(L.archive_flags(t), [])
+
+    def test_body_link_passes_with_copy_anywhere_on_page(self):
+        t = (f'| Admin, [https://www.example.com/ Example]\n'
+             f'<ref>[https://example.com Example]. Preserved copy: [{WB}https://example.com/ Internet Archive]</ref>')
+        self.assertEqual(L.archive_flags(t), [])
+
+    def test_body_link_without_copy_fails(self):
+        self.assertEqual(kinds(L.archive_flags("See [https://example.org/x X].")), ["ARCHIVE"])
+
+    def test_external_links_item_needs_copy(self):
+        t = "== External links ==\n* [https://example.org/read Further reading]\n"
+        self.assertEqual(kinds(L.archive_flags(t)), ["ARCHIVE"])
+        t2 = f"== External links ==\n* [https://example.org/read Further reading]. Preserved copy: [{WB}https://example.org/read Internet Archive]\n"
+        self.assertEqual(L.archive_flags(t2), [])
+
+    def test_wayback_needs_14_digits(self):
+        t = '<ref>[https://example.com/a T]. Copy: [https://web.archive.org/web/2026/https://example.com/a IA]</ref>'
+        self.assertEqual(kinds(L.archive_flags(t)), ["ARCHIVE"])
+
+    def test_skipped_hosts(self):
+        t = ("[https://wiki.swccg.com/wiki/Main_Page Main]\n"
+             "[https://swccg.com/images/a/ab/X.png X]\n"
+             "[https://www.swccg.com/images/a/ab/Y.png Y]\n"
+             f"[{WB}https://example.com/ IA]\n")
+        self.assertEqual(L.archive_flags(t), [])
+
+    def test_comments_and_trailing_punctuation(self):
+        self.assertEqual(L.archive_flags("<!-- https://example.com/hidden -->"), [])
+        t = f"See https://example.com/a. Copy: [{WB}https://example.com/a IA]"
+        self.assertEqual(L.archive_flags(t), [])
+
+    def test_named_ref_reuse_is_fine(self):
+        t = (f'A.<ref name="x">[https://example.com/a T]. Preserved copy: [{WB}https://example.com/a IA]</ref> '
+             f'B.<ref name="x" /> C.<ref name="a/b" />')
+        self.assertEqual(L.archive_flags(t), [])
+
+
+class EmailCheck(unittest.TestCase):
+    def test_personal_email_flagged(self):
+        self.assertEqual(kinds(L.email_flags("Contact: someone123@aol.com")), ["EMAIL"])
+
+    def test_mailto_flagged(self):
+        self.assertEqual(kinds(L.email_flags("[mailto:someone@hotmail.com Mail]")), ["EMAIL"])
+
+    def test_allowed_addresses(self):
+        self.assertEqual(L.email_flags("Write to rules@starwarsccg.org or support@decipher.com."), [])
+        self.assertEqual(L.email_flags("Kept: old@isp.net <!-- email-ok: defunct club address -->"), [])
+
+    def test_not_emails(self):
+        self.assertEqual(L.email_flags("[[File:Logo@2x.png]] and https://medium.com/@user/post and [[A_B@c.wiki]]"), [])
+
+
+class RefCheck(unittest.TestCase):
+    def test_empty_and_placeholder_refs(self):
+        self.assertEqual(kinds(L.ref_flags('A<ref name="oc">None</ref> B<ref></ref>')), ["REF", "REF"])
+
+    def test_source_text_without_url_passes(self):
+        self.assertEqual(L.ref_flags("A<ref>''Scrye'' 45, p. 12 (May 1999).</ref>"), [])
+        self.assertEqual(L.ref_flags("A<ref>[[Decipher]] rulebook</ref>"), [])
+
+
+class SourcesSection(unittest.TestCase):
+    def test_person_page_sources_flagged(self):
+        flags, _ = L.lint("'''X''' is a player.\n== Sources ==\n* Foo\n[[Category:People]]\n[[Category:Tournament Directors]]")
+        self.assertIn("HEADING", kinds(flags))
+
+    def test_deck_and_event_pages_allowed(self):
+        for cat in ("Decklists", "Dark Side decks", "Tournaments", "Retro League", "Championships"):
+            t = f"Deck.\n== Sources ==\n* [https://example.com/d PC decklist]. Preserved copy: [{WB}https://example.com/d IA]\n[[Category:{cat}]]"
+            flags, _ = L.lint(t)
+            self.assertNotIn("HEADING", kinds(flags), cat)
+
+    def test_card_type_category_does_not_allow(self):
+        flags, _ = L.lint("A card.\n== Sources ==\n* Foo\n[[Category:Epic Event]]")
+        self.assertIn("HEADING", kinds(flags))
+
+    def test_live_categories_count(self):
+        flags, _ = L.lint("Deck.\n== Sources ==\n* Foo", cats={"Category:Decklists"})
+        self.assertNotIn("HEADING", kinds(flags))
+
+
+class ExternalLinksProse(unittest.TestCase):
+    def test_external_links_annotation_is_linted(self):
+        t = f"Body.\n== External links ==\n* [https://example.org/x X]. Preserved copy: [{WB}https://example.org/x IA] (reportedly the first)\n"
+        flags, _ = L.lint(t)
+        self.assertIn("BANNED", kinds(flags))
+
+    def test_external_links_titles_are_not(self):
+        t = f"Body.\n== External links ==\n* [https://example.org/x Research notes]. Preserved copy: [{WB}https://example.org/x IA]\n"
+        flags, _ = L.lint(t)
+        self.assertEqual(flags, [])
+
+
+if __name__ == "__main__":
+    unittest.main()
