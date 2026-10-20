@@ -144,5 +144,53 @@ class RunLoop(unittest.TestCase):
         self.assertEqual(self.pushed, [])
 
 
+class Fetch(unittest.TestCase):
+    """fetch() decodes the Content-Encoding Wayback replays (gzip) before hashing."""
+
+    def serve(self, body, headers):
+        import http.server
+        import threading
+
+        class H(http.server.BaseHTTPRequestHandler):
+            def do_GET(self):
+                self.send_response(200)
+                for k, v in headers.items():
+                    self.send_header(k, v)
+                self.send_header("Content-Length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+            def log_message(self, *a):
+                pass
+
+        srv = http.server.HTTPServer(("127.0.0.1", 0), H)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        self.addCleanup(srv.shutdown)
+        return f"http://127.0.0.1:{srv.server_address[1]}/x.pdf"
+
+    def test_gzip_capture_hashes_like_source(self):
+        import gzip
+        url = self.serve(gzip.compress(PDF), {"Content-Type": "application/pdf", "Content-Encoding": "gzip"})
+        r = W.fetch(url)
+        self.assertEqual(r["sha256"], hashlib.sha256(PDF).hexdigest())
+        self.assertEqual(r["size"], len(PDF))
+
+    def test_plain_body(self):
+        url = self.serve(PAGE, {"Content-Type": "text/html"})
+        r = W.fetch(url)
+        self.assertEqual(r["body"], PAGE)
+        self.assertTrue(W.is_html(r))
+
+
+class CaptureSideErrors(unittest.TestCase):
+    def test_capture_side_error_does_not_use_up_tries(self):
+        e = {"capture": CAP, "status": "ok", "last": "2026-10-20T00:00:00Z"}
+        get = fake_get({W.id_url(CAP): W.VerifyRetry("URLError: Connection refused")})
+        with self.assertRaises(W.VerifyRetry):
+            W.verify_entry("https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf", e, get)
+        self.assertEqual(e["status"], "ok")
+        self.assertNotIn("verify_tries", e)
+
+
 if __name__ == "__main__":
     unittest.main()
