@@ -3962,8 +3962,15 @@
   "capture": "https://web.archive.org/web/20261018232333/https://www.decktech.net/starwarsccg/deck/124/",
   "job_id": "spn2-e9b6f2640c47ff936c3ede3c0cfafde5e64aa938",
   "last": "2026-10-18T23:26:44Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:03:35Z",
+   "bytes": 13830,
+   "capture_id": "https://web.archive.org/web/20261018232333id_/https://www.decktech.net/starwarsccg/deck/124/",
+   "method": "sha256",
+   "sha256": "41f0b6feeaa8eb7fefea2699191651582241f264690d665ccc616d426c3266fa"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/12401": {
   "capture": "https://web.archive.org/web/20261018082926/https://www.decktech.net/starwarsccg/deck/12401/",
@@ -7408,8 +7415,15 @@
   "capture": "https://web.archive.org/web/20261018232324/https://www.decktech.net/starwarsccg/deck/141/",
   "job_id": "spn2-40476b372fa74942a0de772dc25acd1c6732ac2f",
   "last": "2026-10-18T23:26:46Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:03:30Z",
+   "bytes": 13800,
+   "capture_id": "https://web.archive.org/web/20261018232324id_/https://www.decktech.net/starwarsccg/deck/141/",
+   "method": "sha256",
+   "sha256": "17040c47adfe61f2eaa31de684cdb6795f82a5359409cd48dd2145b04eb7c3b4"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/14106": {
   "capture": "https://web.archive.org/web/20261018042922/https://www.decktech.net/starwarsccg/deck/14106/",
@@ -9479,8 +9493,15 @@
   "capture": "https://web.archive.org/web/20261018232312/https://www.decktech.net/starwarsccg/deck/152/",
   "job_id": "spn2-4dc7f12d80f59114ea52ea86f1df3809120ebc62",
   "last": "2026-10-18T23:26:49Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:03:24Z",
+   "bytes": 14265,
+   "capture_id": "https://web.archive.org/web/20261018232312id_/https://www.decktech.net/starwarsccg/deck/152/",
+   "method": "sha256",
+   "sha256": "6b40c1ad76d2fc3d7448686925abe266ca14dc8229e26a7dc2864654e0266b7e"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/15201": {
   "capture": "https://web.archive.org/web/20261018020544/https://www.decktech.net/starwarsccg/deck/15201/",
@@ -19420,8 +19441,15 @@
   "capture": "https://web.archive.org/web/20261018231735/https://www.decktech.net/starwarsccg/deck/296/",
   "job_id": "spn2-eeaac77945ef0b187350ef77f7ae5d55f89f2cca",
   "last": "2026-10-18T23:24:25Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:03:40Z",
+   "bytes": 13647,
+   "capture_id": "https://web.archive.org/web/20261018231735id_/https://www.decktech.net/starwarsccg/deck/296/",
+   "method": "sha256",
+   "sha256": "ec018bab419d7e14f9c91bf54f39572ba6a390cb00a3f865e98248d389e68580"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/297": {
   "capture": "https://web.archive.org/web/20261018231723/https://www.decktech.net/starwarsccg/deck/297/",
@@ -27374,6 +27402,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://play.swccg.com/": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 274 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-20T20:03:02Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://pod.link/1553640008": {
   "capture": "",
   "error": "please try again in ~10 min. crawling this host is paused because they notified us that they are overloaded right now. (",
@@ -27709,6 +27744,13 @@
   "last": "2026-10-14T14:30:42Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/Star-Wars-CCG-Tournament-Guide-2.2.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 289 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-20T20:03:13Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1995/vp951211/12090048.htm": {
   "capture": "",
