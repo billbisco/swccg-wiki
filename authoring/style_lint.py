@@ -5,6 +5,19 @@ Usage:
   style_lint.py "Page title"            # lint current revision, compare to previous
   style_lint.py page.wiki [--title T]   # lint a local draft; with --title, compare to live page
 Exit 1 if any flag is raised.
+
+Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
+  ARCHIVE  every external URL cited on the page (<ref>, list items, body, External links) needs a
+           Preserved copy: a web.archive.org/web/<14 digits>/<url> or archive.org/details link.
+           A URL inside a <ref> needs the copy inside that same <ref>; a URL anywhere else passes
+           if its own line has a copy or the same URL has a Wayback copy anywhere on the page.
+           Skipped: wiki.swccg.com, swccg.com/images and the archive links themselves.
+  EMAIL    personal email addresses (decipher.com addresses and lines marked "email-ok" pass).
+  REF      a <ref> with no URL and no source text.
+  HEADING  a == Sources == section on a page that is not a deck or event page. Deck/event pages
+           are detected by category: Decklists, Dark Side decks, Light Side decks, GEMP
+           importable decklists, Tournaments, Championships, World Championships, Events,
+           Retro League (in the wikitext, plus the live page's categories when linting by title).
 """
 import json, re, sys, urllib.parse, urllib.request, argparse, os
 
@@ -46,8 +59,11 @@ def body(t):
     for _ in range(3): t = re.sub(r"^\{\|(?:(?!^\{\|).)*?^\|\}", " ", t, flags=re.S | re.M)
     for _ in range(3): t = re.sub(r"\{\{[^{}]*\}\}", " ", t)
     for _ in range(3): t = re.sub(r"\[\[(?:File|Image|Category):[^\[\]]*(?:\[\[[^\]]*\]\][^\[\]]*)*\]\]", " ", t)
-    # drop See also / References sections entirely
-    t = re.split(r"^==\s*(?:See also|References|External links)\s*==", t, flags=re.M | re.I)[0]
+    # drop See also / References sections entirely; External links stays in (Bill, 2026-10-20),
+    # minus its link titles (those are the linked page's own wording)
+    t = re.sub(r"^==\s*(?:See also|References)\s*==.*?(?=^==[^=]|\Z)", " ", t, flags=re.M | re.S | re.I)
+    t = re.sub(r"(^==\s*External links\s*==.*?)(?=^==[^=]|\Z)",
+               lambda m: re.sub(r"\[https?://[^\]]*\]", " ", m.group(1)), t, flags=re.M | re.S | re.I)
     t = re.sub(r"\[\[[^|\]]*\|([^\]]*)\]\]", r"\1", t)
     t = re.sub(r"\[\[([^\]]*)\]\]", r"\1", t)
     t = re.sub(r"\[https?://\S+\s([^\]]*)\]", r"\1", t)
@@ -63,8 +79,100 @@ def unquote(t):
 def is_list_page(title, text):
     return bool(title and "/" in title) or body(text).lstrip().lower().startswith("this page lists")
 
-def allows_sources(text):
-    return bool(re.search(r"\[\[Category:[^\]]*(Deck|Decklist|Event|Tournament|Championship|Regionals|Grand Slam)[^\]]*\]\]|\{\{\s*(Infobox[ _]?(Tournament|Event|Deck)|Deck|Decklist|Event)", text, re.I))
+# Deck and event pages keep a == Sources == list (decklist URL + Preserved copy); no other page does.
+SOURCES_CATEGORIES = {"decklists", "dark side decks", "light side decks", "gemp importable decklists",
+                      "tournaments", "championships", "world championships", "events", "retro league"}
+
+def page_categories(text):
+    return {re.sub(r"[\s_]+", " ", c).strip().lower()
+            for c in re.findall(r"\[\[\s*Category\s*:\s*([^\]|]+)", text, re.I)}
+
+def allows_sources(text, cats=None):
+    have = page_categories(text) | {re.sub(r"^Category:", "", c, flags=re.I).strip().lower() for c in (cats or ())}
+    return bool(have & SOURCES_CATEGORIES)
+
+
+# Preserved copies (Bill, 2026-10-20): every cited external URL needs a Wayback / archive.org copy.
+URL_RX = re.compile(r"https?://[^\s\[\]|<>\"{}]+", re.I)
+ARCHIVE_LINK_RX = re.compile(r"https?://(?:web\.archive\.org/web/\d{14}(?:[a-z]{2}_)?/\S|archive\.org/details/\S)", re.I)
+WAYBACK_RX = re.compile(r"https?://web\.archive\.org/web/\d{14}(?:[a-z]{2}_)?/((?:https?://)?[^\s\[\]|<>\"{}]+)", re.I)
+SKIP_URL_RX = re.compile(r"https?://(?:[\w-]+\.)*(?:archive\.org|archive\.ph|archive\.today|archive\.is|archive\.li|"
+                         r"wiki\.swccg\.com)(?=[/:?#]|$)|https?://(?:www\.)?swccg\.com/images/", re.I)
+REF_RX = re.compile(r"<ref\b[^>]*?(?<!/)>(.*?)</ref\s*>", re.S | re.I)
+
+def clean_url(u):
+    u = u.replace("&amp;", "&")
+    while u and u[-1] in ".,;:!?'\u2019\"":
+        u = u[:-1]
+    while u.endswith(")") and u.count(")") > u.count("("):
+        u = u[:-1]
+    return u
+
+def norm_url(u):
+    u = clean_url(u).split("#", 1)[0]
+    u = re.sub(r"^(?:https?:)?//", "", u, flags=re.I)
+    u = re.sub(r"^www\.", "", u, flags=re.I)
+    host, _, rest = u.partition("/")
+    return (host.lower().split(":", 1)[0] + ("/" + rest if rest else "")).rstrip("/")
+
+def cited_units(text):
+    """(kind, text) units: each <ref> body, then each remaining line that carries a URL."""
+    t = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
+    t = re.sub(r"<nowiki>.*?</nowiki>", " ", t, flags=re.S | re.I)
+    for m in REF_RX.finditer(t):
+        yield "ref", m.group(1)
+    for line in REF_RX.sub(" ", t).splitlines():
+        if URL_RX.search(line):
+            yield "line", line
+
+def archive_flags(text):
+    archived = {norm_url(m.group(1)) for m in WAYBACK_RX.finditer(text)}
+    out, seen = [], set()
+    for kind, unit in cited_units(text):
+        unit_has_copy = bool(ARCHIVE_LINK_RX.search(unit))
+        for raw in URL_RX.findall(unit):
+            url = clean_url(raw)
+            if SKIP_URL_RX.match(url) or url in seen:
+                continue
+            if kind == "ref":
+                if unit_has_copy: continue
+                msg = f"ARCHIVE  <ref> cites {url} with no Preserved copy (Wayback/archive.org) in the same <ref>"
+            else:
+                if unit_has_copy or norm_url(url) in archived: continue
+                msg = f"ARCHIVE  {url} has no Preserved copy (Wayback/archive.org) on the page"
+            seen.add(url); out.append(msg)
+    return out
+
+
+# Personal email addresses (Bill, 2026-10-14). Decipher corporate addresses and Players Committee role
+# addresses (rules@starwarsccg.org, ...) are organisational, not personal.
+EMAIL_RX = re.compile(r"(?<![\w.%+-])[A-Za-z0-9][A-Za-z0-9._%+-]*@(?:[A-Za-z0-9-]+\.)+([A-Za-z]{2,})\b")
+EMAIL_OK_DOMAINS = re.compile(r"@(?:[\w-]+\.)*decipher\.com$|^(?:rules|design|marketing|multimedia|communications|"
+                              r"webmaster|info|tournaments|events|gemp|errata|ocs|leagues?)@(?:www\.)?starwarsccg\.org$", re.I)
+FILE_EXT = {"png", "jpg", "jpeg", "gif", "svg", "webp", "pdf", "txt", "htm", "html", "tif", "tiff", "bmp", "zip", "wiki"}
+
+def email_flags(text):
+    out = []
+    for line in re.sub(r"<!--(?!\s*email-ok).*?-->", " ", text, flags=re.S).splitlines():
+        if re.search(r"email-ok", line, re.I): continue
+        scan = re.sub(r"https?://[^\s\[\]|<>\"]+", " ", line, flags=re.I)
+        for m in EMAIL_RX.finditer(scan):
+            if m.group(1).lower() in FILE_EXT or EMAIL_OK_DOMAINS.search(m.group(0)): continue
+            out.append(f"EMAIL    personal email address on the page: {m.group(0)}")
+    return out
+
+
+def ref_flags(text):
+    out = []
+    t = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
+    for m in REF_RX.finditer(t):
+        b = m.group(1)
+        if URL_RX.search(b): continue
+        plain = re.sub(r"\[\[[^|\]]*\|([^\]]*)\]\]", r"\1", b)
+        plain = re.sub(r"<[^>]+>|'{2,}|[{}\[\]|=]", " ", plain)
+        if len(re.findall(r"[^\W\d_]{2,}", plain)) < 2:
+            out.append(f"REF      <ref> has no URL and no source text: {' '.join(m.group(0).split())[:90]}")
+    return out
 
 
 # Service rule (Bill, 2026-10-14): any service named in a person page's prose needs a row in == Service ==.
@@ -118,11 +226,15 @@ def service_flags(text, title=None):
             break
     return out
 
-def lint(text, title=None):
+def lint(text, title=None, cats=None):
     flags = []
     for h in re.findall(r"^=+\s*(.*?)\s*=+\s*$", text, re.M):
         hl = h.strip().lower()
-        if hl == "sources" and allows_sources(text): continue
+        if hl == "sources" and allows_sources(text, cats): continue
+        if hl == "sources":
+            flags.append("HEADING  'Sources' is only for deck and event pages; cite sources as <ref> in References "
+                         "(Preserved copy inside each ref) and keep further reading in External links")
+            continue
         if hl in BAD_HEADINGS: flags.append(f"HEADING  '{h}' is not allowed")
     for c in captions(text):
         plain = re.sub(r"\[\[[^|\]]*\|([^\]]*)\]\]|\[\[([^\]]*)\]\]", lambda m: m.group(1) or m.group(2), c)
@@ -146,7 +258,20 @@ def lint(text, title=None):
         n = len(s.split())
         if n > MAX_SENT: flags.append(f"LONG     {n} words: {s[:100]}…")
     flags += service_flags(text, title)
+    flags += archive_flags(text)
+    flags += email_flags(text)
+    flags += ref_flags(text)
     return flags, words(b)
+
+def fetch_categories(title):
+    q = urllib.parse.urlencode({"action": "query", "titles": title, "prop": "categories", "cllimit": "max",
+                                "format": "json", "formatversion": 2})
+    req = urllib.request.Request(f"{API}?{q}", headers={"User-Agent": "swccg-style-lint/1.0"})
+    try:
+        p = json.load(urllib.request.urlopen(req, timeout=60))["query"]["pages"][0]
+    except Exception:  # noqa: BLE001 - categories are a bonus; wikitext categories still count
+        return set()
+    return {c["title"] for c in p.get("categories", [])}
 
 def main():
     ap = argparse.ArgumentParser()
@@ -161,10 +286,12 @@ def main():
         r = fetch(a.target, 2)
         if not r: sys.exit(f"no such page: {a.target}")
         text = r[0][1]; prev = r[1][1] if len(r) > 1 else None
-    flags, n = lint(text, a.title or (None if os.path.isfile(a.target) else a.target))
+    title = a.title or (None if os.path.isfile(a.target) else a.target)
+    cats = fetch_categories(title) if title else None
+    flags, n = lint(text, title, cats)
     for f in flags: print(f)
     if prev is not None:
-        pn = lint(prev, a.title)[1]; print(f"WORDS    body {n} (previous {pn}, {n-pn:+d})")
+        pn = lint(prev, title, cats)[1]; print(f"WORDS    body {n} (previous {pn}, {n-pn:+d})")
     else: print(f"WORDS    body {n}")
     print(f"{len(flags)} flag(s)")
     sys.exit(1 if flags else 0)
