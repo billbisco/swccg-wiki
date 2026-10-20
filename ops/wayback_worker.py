@@ -205,7 +205,8 @@ CLOUDFLARE_RX = re.compile(r"<title>\s*(?:Just a moment\.\.\.|Attention Required
 
 class VerifyRetry(Exception):
     """Transient: try verifying again on a later run. side="capture" means archive.org itself failed
-    (throttling, outage); that does not count against the entry's VERIFY_TRIES."""
+    (connection refused, 429, 5xx); that does not count against the entry's VERIFY_TRIES and stops
+    the backlog pass for the run. Anything else (source unreachable, capture 403/404) counts."""
 
     def __init__(self, msg: str, side: str = "source"):
         super().__init__(msg)
@@ -299,8 +300,9 @@ def verify(url: str, capture: str, get=None) -> tuple[str, dict]:
         cap = get(id_url(capture))
     except VerifyRetry as ex:
         raise VerifyRetry(f"capture: {ex}", side="capture") from ex
-    if cap["status"] != 200:
-        raise VerifyRetry(f"capture HTTP {cap['status']}", side="capture")
+    if cap["status"] != 200:  # 429/5xx = archive.org throttling or outage; 403/404 = this capture's problem
+        side = "capture" if cap["status"] == 429 or cap["status"] >= 500 else "source"
+        raise VerifyRetry(f"capture HTTP {cap['status']}", side=side)
     src = get(url)
     if src["status"] != 200:
         raise VerifyRetry(f"source HTTP {src['status']}")
