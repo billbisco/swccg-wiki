@@ -247,6 +247,42 @@ def service_flags(text, title=None):
             break
     return out
 
+# Card titles and link text are names, not the editor's voice (Chief, 2026-10-20): the banned-word
+# check skips [[link text]], [url link titles] (templates such as {{CardLink|...}} are already
+# stripped by body()) and printed card titles from card_title_map.json ("We Have A Prisoner",
+# "Probably Not...", "Note The Drop" ...).
+CARD_TITLE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_title_map.json")
+_card_titles = None
+
+def card_title_phrases():
+    """Printed card titles (and each half of a combo card) that contain a banned word, longest first."""
+    global _card_titles
+    if _card_titles is None:
+        try:
+            with open(CARD_TITLE_FILE, encoding="utf-8") as fh:
+                names = set(json.load(fh).values())
+        except (OSError, ValueError):
+            names = set()
+        phrases = set()
+        for n in names:
+            n = n.replace("\u2022", "").replace("&amp;", "&")
+            n = re.sub(r"\s*\([^()]*\)", "", n).strip()   # (V), (Dark), (AI), (Virtual Block 5) ...
+            for part in [n] + [x.strip() for x in re.split(r" & | / ", n)]:
+                if len(part.split()) >= 2 and any(re.search(rf"\b{re.escape(w.strip())}\b", part, re.I) for w in BANNED):
+                    phrases.add(part)
+        _card_titles = sorted(phrases, key=len, reverse=True)
+    return _card_titles
+
+def mask_names(t):
+    """Blank out link text and card titles so the banned-word scan does not read them."""
+    t = re.sub(r"\[\[(?!\s*(?:File|Image|Category)\s*:)[^\[\]]*\]\]", " ", t, flags=re.I)
+    t = re.sub(r"\[(?:https?:)?//[^\s\]]+\s[^\]]*\]", " ", t, flags=re.I)
+    t = t.replace("&amp;", "&").replace("\u2022", "")
+    for ph in card_title_phrases():
+        if ph in t:
+            t = re.sub(rf"(?<![\w'])(?:{re.escape(ph)})(?![\w'])", " ", t)
+    return t
+
 def lint(text, title=None, cats=None):
     flags = []
     for h in own_headings(text):
@@ -265,7 +301,7 @@ def lint(text, title=None, cats=None):
             if re.search(rf"\b{wd}\b", plain, re.I): flags.append(f"CAPTION  describes image ('{wd}'): {plain[:90]}")
     b = body(text)
     prose = re.sub(r"^=+.*?=+\s*$", "", b, flags=re.M)
-    scan = unquote(prose)
+    scan = unquote(re.sub(r"^=+.*?=+\s*$", "", body(mask_names(text)), flags=re.M))
     for wd in BANNED:
         if wd.strip() in ("this page", "we") and is_list_page(title, text): continue
         for m in re.finditer(rf"\b{re.escape(wd.strip())}\b", scan, re.I):
