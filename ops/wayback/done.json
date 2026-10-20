@@ -14534,35 +14534,30 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18131": {
   "capture": "https://web.archive.org/web/20261017203925/https://www.decktech.net/starwarsccg/deck/18131/",
-  "error": "requeued: recorded capture 404s and is not in the CDX index",
   "job_id": "spn2-a1f54ad68f63f986d7956a48b77891805a935825",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "last": "2026-10-20T23:29:48Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18145": {
   "capture": "https://web.archive.org/web/20261017203902/https://www.decktech.net/starwarsccg/deck/18145/",
-  "error": "requeued: recorded capture 404s and is not in the CDX index",
-  "job_id": "spn2-7a02d82906ca151ec1dcbfdd3f9216e63894917d",
-  "last": "2026-10-20T00:00:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T23:29:38Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18147": {
-  "capture": "https://web.archive.org/web/20261017203851/https://www.decktech.net/starwarsccg/deck/18147/",
-  "error": "requeued: recorded capture 404s and is not in the CDX index",
-  "job_id": "spn2-f6e1161d4dac2ad87c05e279c5baf6f11fdabbc0",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "capture": "https://web.archive.org/web/20261020232931/https://www.decktech.net/starwarsccg/deck/18147/",
+  "last": "2026-10-20T23:31:26Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18148": {
   "capture": "https://web.archive.org/web/20261017205808/https://www.decktech.net/starwarsccg/deck/18148/",
-  "error": "requeued: recorded capture 404s and is not in the CDX index",
-  "job_id": "spn2-3ca676a6fa4d92055aaeb05778406e32230007f0",
-  "last": "2026-10-20T00:00:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T23:29:17Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18156": {
   "capture": "https://web.archive.org/web/20261020230252/https://www.decktech.net/starwarsccg/deck/18156/",
@@ -14637,9 +14632,16 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18188": {
   "capture": "https://web.archive.org/web/20261020230119/https://www.decktech.net/starwarsccg/deck/18188/",
-  "last": "2026-10-20T23:04:10Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T23:19:27Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T23:19:28Z",
+   "bytes": 14315,
+   "capture_id": "https://web.archive.org/web/20261020230119id_/https://www.decktech.net/starwarsccg/deck/18188/",
+   "method": "sha256",
+   "sha256": "f0e4eb10ef095e3078a1d6f24c7c98e5f457586211f9976bb7fcc0be8d86b939"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18189": {
   "capture": "https://web.archive.org/web/20261017203613/https://www.decktech.net/starwarsccg/deck/18189/",
@@ -14684,16 +14686,30 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18200": {
   "capture": "https://web.archive.org/web/20261020230026/https://www.decktech.net/starwarsccg/deck/18200/",
-  "last": "2026-10-20T23:06:01Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T23:19:30Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T23:19:32Z",
+   "bytes": 14094,
+   "capture_id": "https://web.archive.org/web/20261020230026id_/https://www.decktech.net/starwarsccg/deck/18200/",
+   "method": "sha256",
+   "sha256": "a10e1807a931f63b854a344f3b572ab5bc1df4b1b9206732f8db867265ff89b7"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18203": {
-  "capture": "https://web.archive.org/web/20261017205723/https://www.decktech.net/starwarsccg/deck/18203/",
+  "capture": "https://web.archive.org/web/20261020230047/https://www.decktech.net/starwarsccg/deck/18203/",
   "job_id": "spn2-8e47f1b234252b7335652a239c6baa3faaf7530a",
-  "last": "2026-10-20T23:00:12Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T23:19:35Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T23:19:35Z",
+   "bytes": 16351,
+   "capture_id": "https://web.archive.org/web/20261020230047id_/https://www.decktech.net/starwarsccg/deck/18203/",
+   "method": "sha256",
+   "sha256": "6f63b6d46023870b30d2c179693b8552a4c8ca9ee822202f00c809d6f69e4e5b"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18206": {
   "capture": "https://web.archive.org/web/20261020231607/https://www.decktech.net/starwarsccg/deck/18206/",
@@ -14722,18 +14738,32 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18230": {
-  "capture": "https://web.archive.org/web/20261017205657/https://www.decktech.net/starwarsccg/deck/18230/",
+  "capture": "https://web.archive.org/web/20261020230010/https://www.decktech.net/starwarsccg/deck/18230/",
   "job_id": "spn2-05307d1847cf29161c9345eda10c24179c9c41ce",
-  "last": "2026-10-20T22:59:19Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T23:19:40Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T23:19:40Z",
+   "bytes": 16550,
+   "capture_id": "https://web.archive.org/web/20261020230010id_/https://www.decktech.net/starwarsccg/deck/18230/",
+   "method": "sha256",
+   "sha256": "bde99e0cfcec32c7c203a1a19dd8b13a109aeb2b6f1b049fc5daca5a543ff0cf"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18233": {
-  "capture": "https://web.archive.org/web/20261017203317/https://www.decktech.net/starwarsccg/deck/18233/",
+  "capture": "https://web.archive.org/web/20261020225911/https://www.decktech.net/starwarsccg/deck/18233/",
   "job_id": "spn2-19a29e662f0897ead56ff6efe4d716eb70f01a74",
-  "last": "2026-10-20T22:59:08Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T23:19:43Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T23:19:43Z",
+   "bytes": 15992,
+   "capture_id": "https://web.archive.org/web/20261020225911id_/https://www.decktech.net/starwarsccg/deck/18233/",
+   "method": "sha256",
+   "sha256": "b4f441b58dd056d05f9c33c59af14e17496d1f42b5cf9eb8a6fe7b7ded9ee612"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18234": {
   "capture": "https://web.archive.org/web/20261017202804/https://www.decktech.net/starwarsccg/deck/18234/",
@@ -14750,16 +14780,15 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18245": {
-  "capture": "https://web.archive.org/web/20261017202731/https://www.decktech.net/starwarsccg/deck/18245/",
-  "job_id": "spn2-1159ce7c0eeed8f705d9a8734a95e0df8896ec73",
-  "last": "2026-10-20T22:58:27Z",
+  "capture": "https://web.archive.org/web/20261020225830/https://www.decktech.net/starwarsccg/deck/18245/",
+  "last": "2026-10-20T23:19:45Z",
   "status": "pending",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18264": {
   "capture": "https://web.archive.org/web/20261020225819/https://www.decktech.net/starwarsccg/deck/18264/",
-  "last": "2026-10-20T23:03:59Z",
-  "status": "pending",
+  "last": "2026-10-20T23:19:46Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18272": {
@@ -14812,16 +14841,15 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18317": {
-  "capture": "https://web.archive.org/web/20261017202452/https://www.decktech.net/starwarsccg/deck/18317/",
-  "job_id": "spn2-1febe559f23976833f5fc0a2736713cfed29ab2c",
-  "last": "2026-10-20T22:56:40Z",
+  "capture": "https://web.archive.org/web/20261020225703/https://www.decktech.net/starwarsccg/deck/18317/",
+  "last": "2026-10-20T23:19:49Z",
   "status": "pending",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18322": {
   "capture": "https://web.archive.org/web/20261020225632/https://www.decktech.net/starwarsccg/deck/18322/",
-  "last": "2026-10-20T23:03:50Z",
-  "status": "pending",
+  "last": "2026-10-20T23:19:50Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18324": {
@@ -14882,8 +14910,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18374": {
   "capture": "https://web.archive.org/web/20261020225458/https://www.decktech.net/starwarsccg/deck/18374/",
-  "last": "2026-10-20T23:03:00Z",
-  "status": "pending",
+  "last": "2026-10-20T23:19:51Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18380": {
@@ -15290,10 +15318,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18612": {
   "capture": "https://web.archive.org/web/20261017142303/https://www.decktech.net/starwarsccg/deck/18612/",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T22:52:56Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-041b1f10c66c7cdb604d192b9f35bf3b14b60528",
+  "last": "2026-10-20T23:28:36Z",
+  "status": "pending",
+  "tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/18619": {
   "capture": "https://web.archive.org/web/20261017142335/https://www.decktech.net/starwarsccg/deck/18619/",
@@ -28269,6 +28297,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://challonge.com/18vokbxb": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 291 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
+  "last": "2026-10-20T23:25:15Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://challonge.com/51m1q7zu/standings": {
   "capture": "",
   "error": "HTTP Error 520: UNKNOWN",
@@ -29446,6 +29481,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/forum/t81218.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T23:20:08Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t83879.html": {
   "capture": "https://web.archive.org/web/20261012185125/https://swccg.com/snapshots/forum/t83879.html",
   "last": "2026-10-12T20:06:19Z",
@@ -29470,6 +29512,13 @@
   "capture": "https://web.archive.org/web/20261016162035/https://swccg.com/snapshots/forum/t84638.html",
   "last": "2026-10-16T16:36:31Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/t85193.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T23:19:58Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/t86628-v2.html": {
@@ -31133,10 +31182,10 @@
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-2-matt-sokol-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261016131426/https://swccg.com/snapshots/pc/2020-worlds-day-2-matt-sokol-ls-hitco.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T22:52:46Z",
+  "error": "no job_id: The same snapshot had been made 106 hours, 13 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-20T23:28:14Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-2-matthew-harrison-trainor-ds-hunt-down.html": {
   "capture": "https://web.archive.org/web/20261016131407/https://swccg.com/snapshots/pc/2020-worlds-day-2-matthew-harrison-trainor-ds-hunt-down.html",
@@ -32455,6 +32504,26 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-04-pc20-tournament.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T23:20:18Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-06-2022-regional-championship-events-bf.html": {
+  "capture": "https://web.archive.org/web/20261020232529/https://swccg.com/snapshots/pc/2022-06-2022-regional-championship-events-bf.html",
+  "last": "2026-10-20T23:31:14Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-09-european-championship.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T23:20:28Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-bespin-regionals-will-scinocca-ls-combat.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
@@ -33125,6 +33194,20 @@
    "sha256": "8aca286a136a4a582ccd3f891b49eb1ad21b5522031ece8974f11fdb643b4f68"
   }
  },
+ "https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc.html": {
+  "capture": "https://web.archive.org/web/20261020232116/https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc.html",
+  "job_id": "spn2-5939b3eeb2ccdd3b1f0edb735a307137709048f3",
+  "last": "2026-10-20T23:31:01Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T23:31:01Z",
+   "bytes": 7123218,
+   "capture_id": "https://web.archive.org/web/20261020232116id_/https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc.html",
+   "method": "sha256",
+   "sha256": "82b7e6e238de49f0eea351c2512fc76500548b30a6ce1b27a336452973f6a60c"
+  }
+ },
  "https://swccg.com/snapshots/pc/2022-jawa-cup-top-8-bill-kafer-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261013170924/https://swccg.com/snapshots/pc/2022-jawa-cup-top-8-bill-kafer-ls-diplo.html",
   "last": "2026-10-13T17:34:51Z",
@@ -33213,6 +33296,12 @@
   "status": "ok",
   "tries": 4
  },
+ "https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events.html": {
+  "capture": "https://web.archive.org/web/20261020232054/https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events.html",
+  "last": "2026-10-20T23:31:03Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-04-us-nationals-minneapolis-minnesota-april-1-2.html": {
   "capture": "https://web.archive.org/web/20261014140307/https://swccg.com/snapshots/pc/2023-04-us-nationals-minneapolis-minnesota-april-1-2.html",
   "error": "error:not-found",
@@ -33220,6 +33309,26 @@
   "last": "2026-10-14T19:45:20Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://swccg.com/snapshots/pc/2023-06-annual-online-retro-event-premiere-special-edition-april-june-2023.html": {
+  "capture": "",
+  "job_id": "spn2-1dcac11fbeec58d33a876266c3d87bb1f2d8461d",
+  "last": "2026-10-20T23:21:02Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13.html": {
+  "capture": "https://web.archive.org/web/20261020232540/https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13.html",
+  "last": "2026-10-20T23:31:15Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-11-outrider-cup-iii.html": {
+  "capture": "",
+  "job_id": "spn2-502c200c2533955c7de3f81f28e2f6367958e554",
+  "last": "2026-10-20T23:21:12Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-gempc7-semi-finals-quirin-furgut-ls-there-is-good-in-him.html": {
   "capture": "https://web.archive.org/web/20261013171746/https://swccg.com/snapshots/pc/2023-gempc7-semi-finals-quirin-furgut-ls-there-is-good-in-him.html",
@@ -33651,6 +33760,12 @@
   "status": "ok",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2024-02-regional-championships.html": {
+  "capture": "https://web.archive.org/web/20261020232127/https://swccg.com/snapshots/pc/2024-02-regional-championships.html",
+  "last": "2026-10-20T23:30:04Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2024-07-online-retro-event-for-charity-classic-no-v.html": {
   "capture": "https://web.archive.org/web/20261016161850/https://swccg.com/snapshots/pc/2024-07-online-retro-event-for-charity-classic-no-v.html",
   "job_id": "spn2-ea7f7ce0b1eec20634660c02fd3109bda4b42c2a",
@@ -33663,6 +33778,20 @@
   "job_id": "spn2-90f924b23a5f44bb829c3ebf782d68855e82fc41",
   "last": "2026-10-14T17:05:42Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2024-10-online-championship-series-ocs-playoffs-oct-nov-2024.html": {
+  "capture": "",
+  "job_id": "spn2-4c10f84b512ab828a114e7b648ec7d4457aca83a",
+  "last": "2026-10-20T23:22:04Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2024-12-champions-league-dec-2024-feb-2025.html": {
+  "capture": "",
+  "job_id": "spn2-86b4806e1d967bf4198a3fa9627a3ebe895267a8",
+  "last": "2026-10-20T23:22:15Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-champions-league-finals-matthew-harrison-trainor-ds-cct.html": {
@@ -34366,6 +34495,20 @@
   "status": "failed",
   "tries": 6
  },
+ "https://swccg.com/snapshots/pc/2025-04-retro-gemp-match-play-championship-premiere-to-dsii-may-to-july-2025.html": {
+  "capture": "",
+  "job_id": "spn2-5ed82132b36b93b008f73315ada4b4efe7cb94bf",
+  "last": "2026-10-20T23:22:26Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2025-06-online-retro-event-for-charity-premiere-to-virtual-set-3.html": {
+  "capture": "",
+  "job_id": "spn2-b29e29ecd3aaf0e8f00d9cf4c5992bd74d907224",
+  "last": "2026-10-20T23:23:07Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2025-08-european-championship-bochum-germany-sept-20-21-2025.html": {
   "capture": "https://web.archive.org/web/20261014140950/https://swccg.com/snapshots/pc/2025-08-european-championship-bochum-germany-sept-20-21-2025.html",
   "error": "error:not-found",
@@ -34373,6 +34516,13 @@
   "last": "2026-10-14T19:51:35Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://swccg.com/snapshots/pc/2025-10-online-championship-series-ocs-playoffs-oct-to-nov-2025.html": {
+  "capture": "",
+  "job_id": "spn2-3951ad389cb295b524e48b13c0fcd7db95c32aca",
+  "last": "2026-10-20T23:23:18Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-wrap-up-joe-olson-starts-the-year-off-strong.html": {
   "capture": "https://web.archive.org/web/20261016105758/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-wrap-up-joe-olson-starts-the-year-off-strong.html",
@@ -34742,12 +34892,32 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2026-02-outrider-cup-iv.html": {
+  "capture": "https://web.archive.org/web/20261020232333/https://swccg.com/snapshots/pc/2026-02-outrider-cup-iv.html",
+  "last": "2026-10-20T23:30:11Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2026-05-regional-championships.html": {
   "capture": "https://web.archive.org/web/20261014140847/https://swccg.com/snapshots/pc/2026-05-regional-championships.html",
   "job_id": "spn2-fb56a5e1ba05ef112f56e187d1be3a1214c53c16",
   "last": "2026-10-14T17:02:21Z",
   "status": "ok",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2026-10-european-championship-bochum-germany-sept-19-20-2026.html": {
+  "capture": "https://web.archive.org/web/20261020232414/https://swccg.com/snapshots/pc/2026-10-european-championship-bochum-germany-sept-19-20-2026.html",
+  "job_id": "spn2-5574d9878b1bc1a6320c41449dc026bfe33855ab",
+  "last": "2026-10-20T23:30:19Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T23:30:19Z",
+   "bytes": 7128059,
+   "capture_id": "https://web.archive.org/web/20261020232414id_/https://swccg.com/snapshots/pc/2026-10-european-championship-bochum-germany-sept-19-20-2026.html",
+   "method": "sha256",
+   "sha256": "8f10540967b9969d1c62084ed0ee765f8518daa791c572174bd2da5bd0b588ea"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-jawa-cup-finals-andrew-moss-ds-imperial-entanglements.html": {
   "capture": "https://web.archive.org/web/20261014030700/https://swccg.com/snapshots/pc/2026-jawa-cup-finals-andrew-moss-ds-imperial-entanglements.html",
@@ -35706,6 +35876,19 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html": {
+  "capture": "https://web.archive.org/web/20261020232518/https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html",
+  "last": "2026-10-20T23:30:20Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/team-europe-wins-the-2021-outrider-cup.html": {
+  "capture": "",
+  "job_id": "spn2-07842c6c445073480bfffdee21c4903930775b66",
+  "last": "2026-10-20T23:24:33Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/the-beautiful-and-thematic-virtual-set-19-has-arrived.html": {
   "capture": "https://web.archive.org/web/20261020230859/https://swccg.com/snapshots/pc/the-beautiful-and-thematic-virtual-set-19-has-arrived.html",
   "last": "2026-10-20T23:17:05Z",
@@ -36443,9 +36626,10 @@
  },
  "https://swccg.com/snapshots/scomp/card-115.html": {
   "capture": "https://web.archive.org/web/20261020223314/https://swccg.com/snapshots/scomp/card-115.html",
-  "last": "2026-10-20T22:52:26Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-349098b749393e95f75f0056365bbd6774800107",
+  "last": "2026-10-20T23:27:22Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-121.html": {
   "capture": "https://web.archive.org/web/20261020224043/https://swccg.com/snapshots/scomp/card-121.html",
@@ -36477,16 +36661,16 @@
  },
  "https://swccg.com/snapshots/scomp/card-138.html": {
   "capture": "https://web.archive.org/web/20261020223307/https://swccg.com/snapshots/scomp/card-138.html",
-  "last": "2026-10-20T22:52:27Z",
-  "status": "retry",
-  "tries": 1
+  "last": "2026-10-20T23:31:19Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-1399.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T22:39:31Z",
+  "last": "2026-10-20T23:26:28Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-1400.html": {
   "capture": "https://web.archive.org/web/20261020222940/https://swccg.com/snapshots/scomp/card-1400.html",
@@ -36539,9 +36723,10 @@
  },
  "https://swccg.com/snapshots/scomp/card-158.html": {
   "capture": "https://web.archive.org/web/20261020223120/https://swccg.com/snapshots/scomp/card-158.html",
-  "last": "2026-10-20T22:52:29Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-213e053a4d356ec8ae44c41748df58379685396a",
+  "last": "2026-10-20T23:27:00Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-2123.html": {
   "capture": "",
@@ -36674,10 +36859,10 @@
  },
  "https://swccg.com/snapshots/scomp/card-2391.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T22:25:34Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-9350f5bf6c2b6f2cf54bd66d42c08e0eba5aff06",
+  "last": "2026-10-20T23:25:48Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-25.html": {
   "capture": "https://web.archive.org/web/20261020224109/https://swccg.com/snapshots/scomp/card-25.html",
@@ -36702,9 +36887,9 @@
  },
  "https://swccg.com/snapshots/scomp/card-464.html": {
   "capture": "https://web.archive.org/web/20261020223016/https://swccg.com/snapshots/scomp/card-464.html",
-  "last": "2026-10-20T22:52:32Z",
-  "status": "retry",
-  "tries": 1
+  "last": "2026-10-20T23:30:28Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-5321.html": {
   "capture": "",
@@ -36722,10 +36907,10 @@
  },
  "https://swccg.com/snapshots/scomp/card-60.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T22:52:35Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-b90e968c75744edb210c02d9c2bdcb7e2e553bb5",
+  "last": "2026-10-20T23:28:03Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-6085.html": {
   "capture": "https://web.archive.org/web/20261020222507/https://swccg.com/snapshots/scomp/card-6085.html",
@@ -36799,9 +36984,10 @@
  },
  "https://swccg.com/snapshots/scomp/card-975.html": {
   "capture": "https://web.archive.org/web/20261020223020/https://swccg.com/snapshots/scomp/card-975.html",
-  "last": "2026-10-20T22:52:33Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T23:26:39Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-98.html": {
   "capture": "",
@@ -37736,9 +37922,10 @@
  },
  "https://www.youtube.com/watch?v=9fhlw8npo9w": {
   "capture": "https://web.archive.org/web/20261020221717/https://www.youtube.com/watch?v=9fhlw8npo9w",
-  "last": "2026-10-20T22:39:05Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ab75917612632c65f0f44d7fba11047219d1a5e3",
+  "last": "2026-10-20T23:28:25Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=9iDfdYsVSC0": {
   "capture": "https://web.archive.org/web/20261016003108/https://www.youtube.com/watch?v=9iDfdYsVSC0",
