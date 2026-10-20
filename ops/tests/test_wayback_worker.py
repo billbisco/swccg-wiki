@@ -86,6 +86,14 @@ class Verify(unittest.TestCase):
             self.assertEqual(e["status"], "ok" if i < W.VERIFY_TRIES - 1 else "unverified")
         self.assertIn("could not fetch", e["verify"]["reason"])
 
+    def test_capture_403_counts_against_the_entry(self):
+        e = {"capture": CAP, "status": "ok", "last": "2026-10-20T00:00:00Z"}
+        get = fake_get({W.id_url(CAP): resp(b"", status=403)})
+        for _ in range(W.VERIFY_TRIES):
+            self.assertTrue(W.verify_entry(self.src, e, get))  # no raise: the backlog goes on
+        self.assertEqual(e["status"], "unverified")
+        self.assertIn("403", e["verify"]["error"])
+
     def test_capture_http_error_is_transient(self):
         get = fake_get({W.id_url(CAP): resp(b"", status=503)})
         with self.assertRaises(W.VerifyRetry):
