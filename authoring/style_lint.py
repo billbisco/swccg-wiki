@@ -16,10 +16,12 @@ Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
            citations; Chief, 2026-10-20). Its URLs are still queued for Wayback.
   EMAIL    personal email addresses (decipher.com addresses and lines marked "email-ok" pass).
   REF      a <ref> with no URL and no source text.
-  HEADING  a == Sources == section on a page that is not a deck or event page. Deck/event pages
+  HEADING  a == Sources == section on a page that is not a deck, event, card or set-table page. Deck/event pages
            are detected by category: Decklists, Dark Side decks, Light Side decks, GEMP
            importable decklists, Tournaments, Championships, World Championships, Events,
            Retro League (in the wikitext, plus the live page's categories when linting by title).
+           Card pages ({{Card}} or Category:Cards) and set-table pages (Category:Sets or any
+           "... sets" category) may also keep Sources (Bill, 2026-10-20).
            Only a heading written in the page's own wikitext fails. A heading a template generates
            (Template:Card's == Sources ==, inside <includeonly>) is exempt, both on the template
            page and on the pages that transclude it (Chief, 2026-10-20).
@@ -108,9 +110,20 @@ def own_headings(text):
     t = re.sub(r"<includeonly>.*?(?:</includeonly>|\Z)", " ", t, flags=re.S | re.I)
     return re.findall(r"^=+\s*(.*?)\s*=+\s*$", t, re.M)
 
+# Bill, 2026-10-20 (Sources vs References): a Sources list is also allowed on pages that transcribe a
+# single source: card pages (pages using Template:Card, or in Category:Cards) and set-table pages
+# (Category:Sets or any "... sets" category, e.g. Decipher sets, Virtual Legacy sets).
+CARD_TEMPLATE_RX = re.compile(r"\{\{\s*(?:Template\s*:\s*)?Card\s*(?:\||\n|\}\})", re.I)
+CARD_CATEGORIES = {"cards"}
+
+def is_set_category(c):
+    return c == "sets" or c.endswith(" sets")
+
 def allows_sources(text, cats=None):
     have = page_categories(text) | {re.sub(r"^Category:", "", c, flags=re.I).strip().lower() for c in (cats or ())}
-    return bool(have & SOURCES_CATEGORIES)
+    if have & (SOURCES_CATEGORIES | CARD_CATEGORIES) or any(is_set_category(c) for c in have):
+        return True
+    return bool(CARD_TEMPLATE_RX.search(re.sub(r"<!--.*?-->", " ", text, flags=re.S)))
 
 
 # Preserved copies (Bill, 2026-10-20): every cited external URL needs a Wayback / archive.org copy.
@@ -289,7 +302,7 @@ def lint(text, title=None, cats=None):
         hl = h.strip().lower()
         if hl == "sources" and allows_sources(text, cats): continue
         if hl == "sources":
-            flags.append("HEADING  'Sources' is only for deck and event pages; cite sources as <ref> in References "
+            flags.append("HEADING  'Sources' is only for deck, event, card and set-table pages; cite sources as <ref> in References "
                          "(Preserved copy inside each ref) and keep further reading in External links")
             continue
         if hl in BAD_HEADINGS: flags.append(f"HEADING  '{h}' is not allowed")

@@ -232,9 +232,10 @@ class TemplateSourcesHeading(unittest.TestCase):
         flags, _ = L.lint(text, "Admiral Motti, Battlestation Coordinator (V)")
         self.assertEqual(flags, [])
 
-    def test_own_sources_heading_on_card_page_fails(self):
-        text = fx("Admiral_Motti_Battlestation_Coordinator_V.r114110.wiki") + "\n== Sources ==\n* x\n"
-        flags, _ = L.lint(text, "Admiral Motti, Battlestation Coordinator (V)")
+    def test_own_sources_heading_on_other_page_fails(self):
+        # card pages may now keep Sources (Bill, 2026-10-20); a person page using a template may not
+        text = "{{Infobox person\n|name=X\n}}\nX is a player.\n== Sources ==\n* x\n[[Category:Players]]\n"
+        flags, _ = L.lint(text, "X")
         self.assertEqual(kinds(flags), ["HEADING"])
 
     def test_heading_outside_includeonly_on_template_fails(self):
@@ -267,3 +268,35 @@ class BannedWordsSkipNames(unittest.TestCase):
     def test_editor_voice_still_flagged(self):
         self.assertEqual(kinds(L.lint("We think the card was probably reprinted.")[0]), ["BANNED", "BANNED"])
         self.assertEqual(kinds(L.lint("We Have A Prisoner was reprinted, we think.")[0]), ["BANNED"])
+
+
+class SourcesOnCardAndSetPages(unittest.TestCase):
+    """Bill, 2026-10-20: Sources lists are for pages that transcribe one source: card pages and
+    set tables join deck and event pages."""
+    SRC = f"\n== Sources ==\n* [https://example.com/c Card list]. Preserved copy: [{WB}https://example.com/c IA]\n"
+
+    def test_card_template_page_allowed(self):
+        text = fx("Admiral_Motti_Battlestation_Coordinator_V.r114110.wiki") + self.SRC
+        flags, _ = L.lint(text, "Admiral Motti, Battlestation Coordinator (V)")
+        self.assertEqual(flags, [])
+
+    def test_cards_category_allowed(self):
+        self.assertNotIn("HEADING", kinds(L.lint("A card." + self.SRC + "[[Category:Cards]]")[0]))
+        self.assertNotIn("HEADING", kinds(L.lint("A card." + self.SRC, cats={"Category:Cards"})[0]))
+
+    def test_set_table_pages_allowed(self):
+        for cat in ("Sets", "Decipher sets", "Virtual Legacy sets", "Current Virtual sets"):
+            self.assertNotIn("HEADING", kinds(L.lint("A set." + self.SRC + f"[[Category:{cat}]]")[0]), cat)
+        self.assertNotIn("HEADING", kinds(L.lint("A set." + self.SRC, cats={"Category:Decipher sets"})[0]))
+
+    def test_virtual_block_7_fixture_sources_allowed(self):
+        text = fx("Virtual_Block_7.r112843.wiki")
+        self.assertNotIn("HEADING", kinds(L.lint(text, "Virtual Block 7", cats={"Category:Sets"})[0]))
+
+    def test_cardlink_and_sandbox_do_not_make_a_card_page(self):
+        for t in ("Played {{CardLink|Motti}}.", "{{Card/sandbox\n|title=X\n}}", "<!-- {{Card|x}} -->"):
+            self.assertIn("HEADING", kinds(L.lint(t + self.SRC)[0]), t)
+
+    def test_other_pages_still_flagged(self):
+        for cat in ("People", "Players", "Rules", "Epic Event", "Card types"):
+            self.assertIn("HEADING", kinds(L.lint("Text." + self.SRC + f"[[Category:{cat}]]")[0]), cat)
