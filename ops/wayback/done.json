@@ -34,6 +34,41 @@
   "status": "retry",
   "tries": 1
  },
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2011/Worlds/2011+World_d2.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 288 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-20T20:43:19Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2011/Worlds/2011+World_d3.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 288 hours, 5 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-20T20:43:30Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2011/Worlds/2011+World_team.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 286 hours, 42 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-20T20:43:43Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 288 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-20T20:43:54Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://res.starwarsccg.org/tuskens_scavenging.png": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T20:44:05Z",
+  "status": "retry",
+  "tries": 1
+ },
  "http://www.decktech.net/starwarsccg/deck/10012": {
   "capture": "https://web.archive.org/web/20261018125649/https://www.decktech.net/starwarsccg/deck/10012/",
   "job_id": "spn2-85c261940484d9f48f556dda891a6bb878695f1d",
@@ -23316,10 +23351,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T20:12:13Z",
+   "at": "2026-10-20T20:44:15Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/6761": {
   "capture": "https://web.archive.org/web/20261018170928/https://www.decktech.net/starwarsccg/deck/6761/",
@@ -32060,9 +32095,16 @@
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-koen-meijssen-ls-oa.html": {
   "capture": "https://web.archive.org/web/20261020202851/https://swccg.com/snapshots/pc/2022-endor-grand-prix-koen-meijssen-ls-oa.html",
-  "last": "2026-10-20T20:31:13Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T20:43:08Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:43:11Z",
+   "bytes": 7121813,
+   "capture_id": "https://web.archive.org/web/20261020202851id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-koen-meijssen-ls-oa.html",
+   "method": "sha256",
+   "sha256": "170426353d52f870a804ab1d522f3a468af04d1711569d6afdd091490fce6918"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-matt-thornton-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261020202849/https://swccg.com/snapshots/pc/2022-endor-grand-prix-matt-thornton-ds-bhbm.html",
