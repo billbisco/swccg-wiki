@@ -1,4 +1,39 @@
 {
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D2.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 288 hours, 9 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-20T20:40:49Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D3.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 287 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-20T20:41:00Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+Team.pdf": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T20:41:10Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2010/2010+Worlds+D2.pdf": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T20:41:20Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://res.starwarsccg.org/Resources/tournaments/Decklists/2010/2010+Worlds+D3.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 287 hours, 37 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-20T20:41:33Z",
+  "status": "retry",
+  "tries": 1
+ },
  "http://www.decktech.net/starwarsccg/deck/10012": {
   "capture": "https://web.archive.org/web/20261018125649/https://www.decktech.net/starwarsccg/deck/10012/",
   "job_id": "spn2-85c261940484d9f48f556dda891a6bb878695f1d",
@@ -5301,7 +5336,12 @@
   "capture": "https://web.archive.org/web/20261018222446/https://www.decktech.net/starwarsccg/deck/1309/",
   "last": "2026-10-18T22:46:28Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:41:53Z",
+   "error": "capture HTTP 404"
+  },
+  "verify_tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/13091": {
   "capture": "https://web.archive.org/web/20261018070646/https://www.decktech.net/starwarsccg/deck/13091/",
@@ -20693,10 +20733,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T20:07:53Z",
+   "at": "2026-10-20T20:41:44Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/4037": {
   "capture": "https://web.archive.org/web/20261018200602/https://www.decktech.net/starwarsccg/deck/4037/",
@@ -21805,10 +21845,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T20:10:05Z",
+   "at": "2026-10-20T20:41:48Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/5191": {
   "capture": "https://web.archive.org/web/20261018184550/https://www.decktech.net/starwarsccg/deck/5191/",
@@ -31925,9 +31965,16 @@
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261020202546/https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ds-cct.html",
-  "last": "2026-10-20T20:29:00Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T20:40:23Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:40:25Z",
+   "bytes": 7121919,
+   "capture_id": "https://web.archive.org/web/20261020202546id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ds-cct.html",
+   "method": "sha256",
+   "sha256": "26f8333e42f97330c45dadd897350f1e032fca7b344361b905cdcb3bc32793c8"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ls-no-idea.html": {
   "capture": "https://web.archive.org/web/20261020203622/https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ls-no-idea.html",
@@ -31959,9 +32006,16 @@
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-joe-phillips-ds-tatooine-crv.html": {
   "capture": "https://web.archive.org/web/20261020202716/https://swccg.com/snapshots/pc/2022-endor-grand-prix-joe-phillips-ds-tatooine-crv.html",
-  "last": "2026-10-20T20:30:15Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T20:40:29Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:40:32Z",
+   "bytes": 7121660,
+   "capture_id": "https://web.archive.org/web/20261020202716id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-joe-phillips-ds-tatooine-crv.html",
+   "method": "sha256",
+   "sha256": "07701fba88f8a49f6867452b00e62ad0c1f87c1954d6c60539bd9c3681169302"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-joe-phillips-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261020202649/https://swccg.com/snapshots/pc/2022-endor-grand-prix-joe-phillips-ls-trm.html",
@@ -31993,9 +32047,16 @@
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ls-tatooine-slave-quarters-ltwwv.html": {
   "capture": "https://web.archive.org/web/20261020202813/https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ls-tatooine-slave-quarters-ltwwv.html",
-  "last": "2026-10-20T20:29:05Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-20T20:40:35Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:40:41Z",
+   "bytes": 7122099,
+   "capture_id": "https://web.archive.org/web/20261020202813id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ls-tatooine-slave-quarters-ltwwv.html",
+   "method": "sha256",
+   "sha256": "5e692233363d19b1e08a30838b6b5738fdcea6966c87eb2e545c90d9f3b75dc5"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-koen-meijssen-ls-oa.html": {
   "capture": "https://web.archive.org/web/20261020202851/https://swccg.com/snapshots/pc/2022-endor-grand-prix-koen-meijssen-ls-oa.html",
