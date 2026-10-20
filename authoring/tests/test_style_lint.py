@@ -244,3 +244,26 @@ class TemplateSourcesHeading(unittest.TestCase):
 
     def test_unclosed_includeonly(self):
         self.assertEqual(L.own_headings("== Lead ==\n<includeonly>\n== Sources ==\n"), ["Lead"])
+
+
+class BannedWordsSkipNames(unittest.TestCase):
+    """Chief, 2026-10-20: card titles and link text are names, not the editor's voice."""
+
+    def test_2009_reorganization_card_title_not_banned(self):
+        text = fx("2009_Virtual_Block_Reorganization.r94305.wiki")
+        self.assertIn("# We Have A Prisoner &amp; I Can't Shake Him!", text)
+        flags, _ = L.lint(text, "2009 Virtual Block Reorganization")
+        self.assertEqual([f for f in flags if f.startswith("BANNED")], [])
+
+    def test_card_titles_plain_text(self):
+        for line in ("* We Have A Prisoner", "Deploy We're Doomed (V) early.", "Old Allies / We Need Your Help is an Objective."):
+            self.assertEqual([f for f in L.lint(line)[0] if f.startswith("BANNED")], [], line)
+
+    def test_link_text_and_cardlink(self):
+        for line in ("Played [[We Have A Plan|We Have A Plan]] first.", "Played [[Here We Go Again]] first.",
+                     "Played {{CardLink|We're Doomed}} first.", "Read [https://example.org/x We probably won] (copy)."):
+            self.assertEqual([f for f in L.lint(line)[0] if f.startswith("BANNED")], [], line)
+
+    def test_editor_voice_still_flagged(self):
+        self.assertEqual(kinds(L.lint("We think the card was probably reprinted.")[0]), ["BANNED", "BANNED"])
+        self.assertEqual(kinds(L.lint("We Have A Prisoner was reprinted, we think.")[0]), ["BANNED"])
