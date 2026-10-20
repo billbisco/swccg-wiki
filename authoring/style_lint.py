@@ -12,12 +12,17 @@ Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
            A URL inside a <ref> needs the copy inside that same <ref>; a URL anywhere else passes
            if its own line has a copy or the same URL has a Wayback copy anywhere on the page.
            Skipped: wiki.swccg.com, swccg.com/images and the archive links themselves.
+           Exempt: the Main Page (its body links are navigation to live resources, not
+           citations; Chief, 2026-10-20). Its URLs are still queued for Wayback.
   EMAIL    personal email addresses (decipher.com addresses and lines marked "email-ok" pass).
   REF      a <ref> with no URL and no source text.
   HEADING  a == Sources == section on a page that is not a deck or event page. Deck/event pages
            are detected by category: Decklists, Dark Side decks, Light Side decks, GEMP
            importable decklists, Tournaments, Championships, World Championships, Events,
            Retro League (in the wikitext, plus the live page's categories when linting by title).
+           Only a heading written in the page's own wikitext fails. A heading a template generates
+           (Template:Card's == Sources ==, inside <includeonly>) is exempt, both on the template
+           page and on the pages that transclude it (Chief, 2026-10-20).
 """
 import json, re, sys, urllib.parse, urllib.request, argparse, os
 
@@ -86,6 +91,22 @@ SOURCES_CATEGORIES = {"decklists", "dark side decks", "light side decks", "gemp 
 def page_categories(text):
     return {re.sub(r"[\s_]+", " ", c).strip().lower()
             for c in re.findall(r"\[\[\s*Category\s*:\s*([^\]|]+)", text, re.I)}
+
+# Pages whose body links are navigation, not citations (Chief, 2026-10-20): no ARCHIVE check.
+ARCHIVE_EXEMPT_TITLES = {"main page"}
+
+def norm_title(title):
+    return re.sub(r"[\s_]+", " ", title or "").strip().lower()
+
+def archive_exempt(title):
+    return norm_title(title) in ARCHIVE_EXEMPT_TITLES
+
+def own_headings(text):
+    """Headings written in the page's own wikitext. Template output (the <includeonly> part of a
+    template page) is not the page's own heading: it renders on the pages that transclude it."""
+    t = re.sub(r"<!--.*?-->", " ", text, flags=re.S)
+    t = re.sub(r"<includeonly>.*?(?:</includeonly>|\Z)", " ", t, flags=re.S | re.I)
+    return re.findall(r"^=+\s*(.*?)\s*=+\s*$", t, re.M)
 
 def allows_sources(text, cats=None):
     have = page_categories(text) | {re.sub(r"^Category:", "", c, flags=re.I).strip().lower() for c in (cats or ())}
@@ -228,7 +249,7 @@ def service_flags(text, title=None):
 
 def lint(text, title=None, cats=None):
     flags = []
-    for h in re.findall(r"^=+\s*(.*?)\s*=+\s*$", text, re.M):
+    for h in own_headings(text):
         hl = h.strip().lower()
         if hl == "sources" and allows_sources(text, cats): continue
         if hl == "sources":
@@ -258,7 +279,7 @@ def lint(text, title=None, cats=None):
         n = len(s.split())
         if n > MAX_SENT: flags.append(f"LONG     {n} words: {s[:100]}…")
     flags += service_flags(text, title)
-    flags += archive_flags(text)
+    if not archive_exempt(title): flags += archive_flags(text)
     flags += email_flags(text)
     flags += ref_flags(text)
     return flags, words(b)
