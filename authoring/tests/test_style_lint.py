@@ -300,3 +300,31 @@ class SourcesOnCardAndSetPages(unittest.TestCase):
     def test_other_pages_still_flagged(self):
         for cat in ("People", "Players", "Rules", "Epic Event", "Card types"):
             self.assertIn("HEADING", kinds(L.lint("Text." + self.SRC + f"[[Category:{cat}]]")[0]), cat)
+
+
+class BannedWordsSkipDeckTitle(unittest.TestCase):
+    """Chief, 2026-10-20: a deck page's bold name and decklist titles are names, not the editor's voice."""
+    TITLE = "2007 Worlds Day 1 Adam Howland LS We'll Handle This"
+
+    def test_2007_deck_fixture_bold_title_not_banned(self):
+        text = fx("2007_Worlds_Day_1_Adam_Howland_LS_Well_Handle_This.r102390.wiki")
+        self.assertTrue(text.startswith("'''" + self.TITLE + "'''"))
+        for title in (self.TITLE, None):   # by title, and as a bare file
+            flags, _ = L.lint(text, title)
+            self.assertEqual([f for f in flags if f.startswith("BANNED")], [], title)
+
+    def test_bold_title_skipped(self):
+        for text, title in (("'''2007 Worlds Day 2 X LS We Have A Plan''' was the Light Side list.", "2007 Worlds Day 2 X LS We Have A Plan"),
+                            ("'''We'll Handle This Deck''' was a Light Side list.", None),
+                            ("Played it. The list was named '''Team X LS We Rule'''.", "Team X LS We Rule"),
+                            ("* '''Deck title:''' We'll Handle This", None),
+                            ("Sheet deck title '''We Came, We Saw''' on page 3.", None)):
+            self.assertEqual([f for f in L.lint(text, title)[0] if f.startswith("BANNED")], [], text)
+
+    def test_prose_we_still_flagged(self):
+        page = "'''2007 Worlds Day 1 X LS We'll Handle This''' was the Light Side list.\n\nWe think it won."
+        self.assertEqual(kinds(L.lint(page, "2007 Worlds Day 1 X LS We'll Handle This")[0]), ["BANNED"])
+        self.assertEqual(kinds(L.lint(page)[0]), ["BANNED"])
+        self.assertEqual(kinds(L.lint("'''We''' won the event.")[0]), ["BANNED"])   # one bold word is not a name
+        self.assertEqual(kinds(L.lint("Intro.\n\n'''Character'''\n\nWe also played it.")[0]), ["BANNED"])
+        self.assertEqual(kinds(L.lint("* '''Notes:''' we played it twice.")[0]), ["BANNED"])
