@@ -25,4 +25,6 @@ Citation checks (Bill, 2026-10-20):
 - `REF`: a `<ref>` with no URL and fewer than two words of source text (e.g. `<ref>None</ref>`).
 - `HEADING 'Sources'`: deck/event pages are detected by category, from the wikitext plus the live page's categories when linting by title: Decklists, Dark Side decks, Light Side decks, GEMP importable decklists, Tournaments, Championships, World Championships, Events, Retro League. Every other page cites in References. Only a heading written in the page's own wikitext fails (Chief, 2026-10-20): a heading inside a template's `<includeonly>` (e.g. `== Sources ==` in [[Template:Card]]) is template output, so it is exempt on the template page, and card pages that only pass `|sources=` to the template pass.
 
+Banned words skip names (Chief, 2026-10-20): `[[link text]]`, `[url link titles]`, templates such as `{{CardLink|...}}` and printed card titles from `authoring/card_title_map.json` (each half of a combo or Objective, with `(V)`/`(Dark)`-style qualifiers dropped) are not scanned, so a card like *We Have A Prisoner* is not read as "we". The editor's own prose around them is still checked.
+
 Tests: `python3 -m unittest discover -s authoring/tests` (fixtures are saved revisions of live pages).
