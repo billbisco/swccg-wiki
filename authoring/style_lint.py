@@ -286,8 +286,27 @@ def card_title_phrases():
         _card_titles = sorted(phrases, key=len, reverse=True)
     return _card_titles
 
-def mask_names(t):
-    """Blank out link text and card titles so the banned-word scan does not read them."""
+# The page's own bold name and a decklist's title are names too (Chief, 2026-10-20): the lead's
+# '''We'll Handle This''' on a deck page, any bold span equal to the page title, and the title on a
+# decklist title line ('''Deck title:''' ... / Sheet deck title '''...''') are not scanned for "we".
+DECK_TITLE_LINE = re.compile(r"^([*#:;\s]*'''\s*(?:deck|decklist|list)\s*(?:title|name)\s*:?\s*'''\s*:?)[^\n]*$", re.I | re.M)
+DECK_TITLE_BOLD = re.compile(r"(\b(?:deck|decklist|list)\s+(?:title|name)\s*:?\s*)'''(?:(?!''')[^\n])+'''", re.I)
+
+def mask_page_name(t, title=None):
+    """Blank the page's bold name in the lead, bold spans equal to the title, and decklist titles."""
+    lead = re.split(r"^==", t, maxsplit=1, flags=re.M)[0]
+    m = re.search(r"^'''((?:(?!''')[^\n])+)'''(?=[^\n]*\w)", lead, re.M)   # bold name opening the first prose line
+    if m and (len(m.group(1).split()) >= 2 or (title and m.group(1).strip() == title.strip())):
+        t = t[:m.start()] + " " + t[m.end():]
+    if title:
+        t = re.sub(r"'''\s*" + re.escape(title.strip()) + r"\s*'''", " ", t)
+    t = DECK_TITLE_LINE.sub(r"\1 ", t)
+    t = DECK_TITLE_BOLD.sub(r"\1 ", t)
+    return t
+
+def mask_names(t, title=None):
+    """Blank out link text, card titles and the page's own name so the banned-word scan does not read them."""
+    t = mask_page_name(t, title)
     t = re.sub(r"\[\[(?!\s*(?:File|Image|Category)\s*:)[^\[\]]*\]\]", " ", t, flags=re.I)
     t = re.sub(r"\[(?:https?:)?//[^\s\]]+\s[^\]]*\]", " ", t, flags=re.I)
     t = t.replace("&amp;", "&").replace("\u2022", "")
@@ -314,7 +333,7 @@ def lint(text, title=None, cats=None):
             if re.search(rf"\b{wd}\b", plain, re.I): flags.append(f"CAPTION  describes image ('{wd}'): {plain[:90]}")
     b = body(text)
     prose = re.sub(r"^=+.*?=+\s*$", "", b, flags=re.M)
-    scan = unquote(re.sub(r"^=+.*?=+\s*$", "", body(mask_names(text)), flags=re.M))
+    scan = unquote(re.sub(r"^=+.*?=+\s*$", "", body(mask_names(text, title)), flags=re.M))
     for wd in BANNED:
         if wd.strip() in ("this page", "we") and is_list_page(title, text): continue
         for m in re.finditer(rf"\b{re.escape(wd.strip())}\b", scan, re.I):
