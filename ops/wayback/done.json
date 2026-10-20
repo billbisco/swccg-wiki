@@ -6109,7 +6109,12 @@
   "capture": "https://web.archive.org/web/20261018222334/https://www.decktech.net/starwarsccg/deck/1345/",
   "last": "2026-10-18T22:46:30Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:39:08Z",
+   "error": "capture HTTP 404"
+  },
+  "verify_tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/13450": {
   "capture": "https://web.archive.org/web/20261018060612/https://www.decktech.net/starwarsccg/deck/13450/",
@@ -11987,10 +11992,10 @@
   "status": "ok",
   "tries": 3,
   "verify": {
-   "at": "2026-10-20T19:54:32Z",
+   "at": "2026-10-20T20:37:47Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/16666": {
   "capture": "https://web.archive.org/web/20261017231341/https://www.decktech.net/starwarsccg/deck/16666/",
@@ -18533,10 +18538,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T20:01:23Z",
+   "at": "2026-10-20T20:38:06Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/23606": {
   "capture": "",
@@ -19205,10 +19210,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T19:57:10Z",
+   "at": "2026-10-20T20:37:51Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/269": {
   "capture": "https://web.archive.org/web/20261018232830/https://www.decktech.net/starwarsccg/deck/269/",
@@ -19559,10 +19564,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T20:05:01Z",
+   "at": "2026-10-20T20:38:11Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/2991": {
   "capture": "https://web.archive.org/web/20261018205229/https://www.decktech.net/starwarsccg/deck/2991/",
@@ -20116,10 +20121,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T20:00:52Z",
+   "at": "2026-10-20T20:38:01Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/3435": {
   "capture": "https://web.archive.org/web/20261018202505/https://www.decktech.net/starwarsccg/deck/3435/",
@@ -23962,10 +23967,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T20:05:56Z",
+   "at": "2026-10-20T20:38:16Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://www.decktech.net/starwarsccg/deck/7311": {
   "capture": "https://web.archive.org/web/20261018163534/https://www.decktech.net/starwarsccg/deck/7311/",
@@ -24344,8 +24349,15 @@
   "capture": "https://web.archive.org/web/20261018224325/https://www.decktech.net/starwarsccg/deck/759/",
   "job_id": "spn2-7bfcb10baedd82b42fb7d62d2904ae75cd35cd22",
   "last": "2026-10-18T22:46:33Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:39:03Z",
+   "bytes": 13390,
+   "capture_id": "https://web.archive.org/web/20261018224325id_/https://www.decktech.net/starwarsccg/deck/759/",
+   "method": "sha256",
+   "sha256": "988f5f96a288f8562398ccb968c9cdb30d03cf47fb26e3c90efefb7c2ef18e7e"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/7596": {
   "capture": "https://web.archive.org/web/20261018162110/https://www.decktech.net/starwarsccg/deck/7596/",
@@ -24463,8 +24475,15 @@
   "capture": "https://web.archive.org/web/20261018224244/https://www.decktech.net/starwarsccg/deck/768/",
   "job_id": "spn2-a0e396d5322b6817f71d83e88d8fea84ac779838",
   "last": "2026-10-18T22:46:35Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:38:58Z",
+   "bytes": 16562,
+   "capture_id": "https://web.archive.org/web/20261018224244id_/https://www.decktech.net/starwarsccg/deck/768/",
+   "method": "sha256",
+   "sha256": "e5ce1f81259e67d1278e9971d3f0e21bd800d70344834d682e3f85eec8784406"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/7680": {
   "capture": "https://web.archive.org/web/20261018160822/https://www.decktech.net/starwarsccg/deck/7680/",
@@ -24591,8 +24610,15 @@
   "capture": "https://web.archive.org/web/20261018224233/https://www.decktech.net/starwarsccg/deck/776/",
   "job_id": "spn2-8c0b49b870fc470979f1ad43d8e1c7cb2aa92bbc",
   "last": "2026-10-18T22:46:38Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:38:53Z",
+   "bytes": 13540,
+   "capture_id": "https://web.archive.org/web/20261018224233id_/https://www.decktech.net/starwarsccg/deck/776/",
+   "method": "sha256",
+   "sha256": "fa2c5164cb7e453b75b9e4790f89fb402a7fdc68b6b919ff0f803b07d3cb702b"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/7763": {
   "capture": "https://web.archive.org/web/20261018155723/https://www.decktech.net/starwarsccg/deck/7763/",
@@ -24891,8 +24917,15 @@
   "capture": "https://web.archive.org/web/20261018224129/https://www.decktech.net/starwarsccg/deck/802/",
   "job_id": "spn2-ff604bf122e0af978d2abd337939c603d2dce514",
   "last": "2026-10-18T22:46:40Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:38:47Z",
+   "bytes": 13354,
+   "capture_id": "https://web.archive.org/web/20261018224129id_/https://www.decktech.net/starwarsccg/deck/802/",
+   "method": "sha256",
+   "sha256": "a8cad4469faaacaa2e0b18ddda70e350e9ee6967050e202f0b70de2849355fd1"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/8021": {
   "capture": "https://web.archive.org/web/20261018154022/https://www.decktech.net/starwarsccg/deck/8021/",
@@ -25114,7 +25147,12 @@
   "job_id": "spn2-8e8c86169cc2a8e7290c5052b26d18a9d8afaf3f",
   "last": "2026-10-18T22:46:42Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:38:42Z",
+   "error": "capture HTTP 404"
+  },
+  "verify_tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/8354": {
   "capture": "https://web.archive.org/web/20261018152525/https://www.decktech.net/starwarsccg/deck/8354/",
@@ -25174,8 +25212,15 @@
   "capture": "https://web.archive.org/web/20261018224036/https://www.decktech.net/starwarsccg/deck/839/",
   "job_id": "spn2-98d4e6b57c5c3b06ac61bed4453e70f28391a9fb",
   "last": "2026-10-18T22:46:45Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:38:36Z",
+   "bytes": 13133,
+   "capture_id": "https://web.archive.org/web/20261018224036id_/https://www.decktech.net/starwarsccg/deck/839/",
+   "method": "sha256",
+   "sha256": "48a02ec0eb268be679a709c7c8732b2cd82e9ba8245b4b16598c76aa00ddf1b7"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/8394": {
   "capture": "https://web.archive.org/web/20261018151718/https://www.decktech.net/starwarsccg/deck/8394/",
@@ -25624,13 +25669,15 @@
   "capture": "https://web.archive.org/web/20261018233614/https://www.decktech.net/starwarsccg/deck/88/",
   "job_id": "spn2-d85ed952a0445aa4b9eb4eb20d7868e402667851",
   "last": "2026-10-18T23:36:50Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T19:57:56Z",
-   "error": "capture HTTP 404"
-  },
-  "verify_tries": 1
+   "at": "2026-10-20T20:37:57Z",
+   "bytes": 14224,
+   "capture_id": "https://web.archive.org/web/20261018233614id_/https://www.decktech.net/starwarsccg/deck/88/",
+   "method": "sha256",
+   "sha256": "80292c63a1ca29cbec33093474fa6d20a913e591decfafccbd5b0bb2a3dc17a1"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/8803": {
   "capture": "https://web.archive.org/web/20261018145236/https://www.decktech.net/starwarsccg/deck/8803/",
@@ -26718,8 +26765,15 @@
   "capture": "https://web.archive.org/web/20261018223922/https://www.decktech.net/starwarsccg/deck/959/",
   "job_id": "spn2-1db9637b1f3cbea41f0e1889981e3dda3599f59d",
   "last": "2026-10-18T22:46:47Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:38:31Z",
+   "bytes": 15280,
+   "capture_id": "https://web.archive.org/web/20261018223922id_/https://www.decktech.net/starwarsccg/deck/959/",
+   "method": "sha256",
+   "sha256": "1e419d58f652837240e3a7a0fe2f5bf0ad96a511ca1f3079c7ec76ba17f67bcb"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/9591": {
   "capture": "https://web.archive.org/web/20261018134526/https://www.decktech.net/starwarsccg/deck/9591/",
@@ -26916,8 +26970,15 @@
   "capture": "https://web.archive.org/web/20261018223914/https://www.decktech.net/starwarsccg/deck/971/",
   "job_id": "spn2-560186bf5410b9b00180a62703585676f19cb2a2",
   "last": "2026-10-18T22:46:49Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:38:26Z",
+   "bytes": 13089,
+   "capture_id": "https://web.archive.org/web/20261018223914id_/https://www.decktech.net/starwarsccg/deck/971/",
+   "method": "sha256",
+   "sha256": "a8a4629825d5509ffb8c5a13e27a0024f7cdff1b6ee3640672cebcbea1394e2e"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/9715": {
   "capture": "https://web.archive.org/web/20261018132256/https://www.decktech.net/starwarsccg/deck/9715/",
@@ -27225,7 +27286,12 @@
   "job_id": "spn2-968caf9eca14a41343ccdaf6521a52d5e7f0fab7",
   "last": "2026-10-18T22:46:52Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:38:20Z",
+   "error": "capture HTTP 404"
+  },
+  "verify_tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/9913": {
   "capture": "https://web.archive.org/web/20261018131633/https://www.decktech.net/starwarsccg/deck/9913/",
@@ -27492,13 +27558,14 @@
   "capture": "https://web.archive.org/web/20261020173715/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set1281/light/Card1281_044.java",
   "job_id": "spn2-c4eeba2eb0110f40328441ec34affab4121fec35",
   "last": "2026-10-20T17:47:02Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T19:53:17Z",
-   "error": "capture HTTP 404"
-  },
-  "verify_tries": 1
+   "at": "2026-10-20T20:37:42Z",
+   "capture_id": "https://web.archive.org/web/20261020173715id_/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set1281/light/Card1281_044.java",
+   "method": "text",
+   "text_match": 0.999
+  }
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set1281/light/Card1281_044_BACK.java": {
   "capture": "https://web.archive.org/web/20261020173814/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set1281/light/Card1281_044_BACK.java",
@@ -27659,13 +27726,14 @@
   "capture": "https://web.archive.org/web/20261020174137/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/light/Card225_051.java",
   "job_id": "spn2-0a91e4d2c4589458a2e94ad37fa0cd99aff81c22",
   "last": "2026-10-20T17:48:47Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T19:52:28Z",
-   "error": "capture HTTP 404"
-  },
-  "verify_tries": 1
+   "at": "2026-10-20T20:37:34Z",
+   "capture_id": "https://web.archive.org/web/20261020174137id_/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/light/Card225_051.java",
+   "method": "text",
+   "text_match": 0.997
+  }
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set301/light/Card301_005.java": {
   "capture": "https://web.archive.org/web/20261020174254/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set301/light/Card301_005.java",
@@ -27735,13 +27803,14 @@
   "capture": "https://web.archive.org/web/20261020174244/https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/LightLegacy.json",
   "job_id": "spn2-fa1204ca99cb311579623d31c6d51fc667b177aa",
   "last": "2026-10-20T17:50:29Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T19:51:05Z",
-   "error": "capture HTTP 404"
-  },
-  "verify_tries": 1
+   "at": "2026-10-20T20:37:29Z",
+   "capture_id": "https://web.archive.org/web/20261020174244id_/https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/LightLegacy.json",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://grognard.com/info1/gencon00.txt": {
   "capture": "https://web.archive.org/web/20261014165019/https://grognard.com/info1/gencon00.txt",
@@ -27961,13 +28030,15 @@
   "capture": "https://web.archive.org/web/20261020174331/https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf",
   "job_id": "spn2-3a7574bcc56c150d698d02ba79d890365e6dd947",
   "last": "2026-10-20T17:50:34Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-20T19:50:50Z",
-   "error": "capture HTTP 404"
-  },
-  "verify_tries": 1
+   "at": "2026-10-20T20:37:23Z",
+   "bytes": 14727066,
+   "capture_id": "https://web.archive.org/web/20261020174331id_/https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf",
+   "method": "sha256",
+   "sha256": "43f09c1ead137ff40e86af0c9a5c73c8ed9c686f1df9ee89633249e189847189"
+  }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf": {
   "capture": "https://web.archive.org/web/20261020175310/https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf",
@@ -28185,10 +28256,10 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/Star-Wars-CCG-Tournament-Guide-2.2.pdf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 289 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-20T20:03:13Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-20T20:34:31Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1995/vp951211/12090048.htm": {
   "capture": "",
@@ -31810,6 +31881,20 @@
    "sha256": "0deaabaec2003bd6cda5e837680d3057251113cf31f87471cdd1edd658d72e53"
   }
  },
+ "https://swccg.com/snapshots/pc/2022-endor-grand-prix-derek-jackson-ls-skywalker-saga-my-father-has-it.html": {
+  "capture": "https://web.archive.org/web/20261020203446/https://swccg.com/snapshots/pc/2022-endor-grand-prix-derek-jackson-ls-skywalker-saga-my-father-has-it.html",
+  "job_id": "spn2-fe403f24ab60d91ac52d9e7ee82fd3f228856e61",
+  "last": "2026-10-20T20:36:09Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:36:09Z",
+   "bytes": 7124053,
+   "capture_id": "https://web.archive.org/web/20261020203446id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-derek-jackson-ls-skywalker-saga-my-father-has-it.html",
+   "method": "sha256",
+   "sha256": "f0d3e53472e2bc1e8bb5e2b8411429379372b0f07e74e6f4dcd211a7c5e5cf23"
+  }
+ },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-eric-spijksma-ds-mustafar-crv.html": {
   "capture": "https://web.archive.org/web/20261020202524/https://swccg.com/snapshots/pc/2022-endor-grand-prix-eric-spijksma-ds-mustafar-crv.html",
   "job_id": "spn2-21ee72fbfabb4f1cfef16d3844d1b805ba9a7730",
@@ -31828,14 +31913,35 @@
   "capture": "https://web.archive.org/web/20261020202610/https://swccg.com/snapshots/pc/2022-endor-grand-prix-eric-spijksma-ls-oa.html",
   "job_id": "spn2-b4893f39deed34d0eca3556ab044a52cdbeb2dcf",
   "last": "2026-10-20T20:28:59Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:37:15Z",
+   "bytes": 7121902,
+   "capture_id": "https://web.archive.org/web/20261020202610id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-eric-spijksma-ls-oa.html",
+   "method": "sha256",
+   "sha256": "807583b42fd1f14c8c951d17dd7dd53ee7a41a9ac1415b16a324b57d305bee9b"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261020202546/https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ds-cct.html",
   "last": "2026-10-20T20:29:00Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ls-no-idea.html": {
+  "capture": "https://web.archive.org/web/20261020203622/https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ls-no-idea.html",
+  "job_id": "spn2-81e6f6babdd08233cdadf8d4e85a4490e78538f4",
+  "last": "2026-10-20T20:36:42Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:36:42Z",
+   "bytes": 7121857,
+   "capture_id": "https://web.archive.org/web/20261020203622id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ls-no-idea.html",
+   "method": "sha256",
+   "sha256": "953f3ba423dc08154126350245442f7d138f132cccd7c6b0d2b2d59a26662db1"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-hayes-hunter-ds-sc.html": {
   "capture": "https://web.archive.org/web/20261020202719/https://swccg.com/snapshots/pc/2022-endor-grand-prix-hayes-hunter-ds-sc.html",
@@ -31871,6 +31977,20 @@
    "sha256": "cd5b46dfbe706b4abcc483bdf9d8d5bf73ac14b2d2ae3033daabce4a6409c8d0"
   }
  },
+ "https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ds-sc.html": {
+  "capture": "https://web.archive.org/web/20261020203632/https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ds-sc.html",
+  "job_id": "spn2-1c0ada2a7e8f1de137928e43850fd87a68651cd6",
+  "last": "2026-10-20T20:37:06Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:37:06Z",
+   "bytes": 7121824,
+   "capture_id": "https://web.archive.org/web/20261020203632id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ds-sc.html",
+   "method": "sha256",
+   "sha256": "2c69038f8b05c90e9607ae77b4616edc75e58fb1421d72535d7f4f3088ba7f4b"
+  }
+ },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ls-tatooine-slave-quarters-ltwwv.html": {
   "capture": "https://web.archive.org/web/20261020202813/https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ls-tatooine-slave-quarters-ltwwv.html",
   "last": "2026-10-20T20:29:05Z",
@@ -31887,8 +32007,29 @@
   "capture": "https://web.archive.org/web/20261020202849/https://swccg.com/snapshots/pc/2022-endor-grand-prix-matt-thornton-ds-bhbm.html",
   "job_id": "spn2-66c20a2da3406ec2322a6abc4e334ca8adaa883b",
   "last": "2026-10-20T20:29:58Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:37:09Z",
+   "bytes": 7121811,
+   "capture_id": "https://web.archive.org/web/20261020202849id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-matt-thornton-ds-bhbm.html",
+   "method": "sha256",
+   "sha256": "3df593b43a8e66651d81e0ddc9a2b5a67b76b4e571452906bd7063bcd4225276"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-grand-prix-michael-turner-ds-cct.html": {
+  "capture": "https://web.archive.org/web/20261020203555/https://swccg.com/snapshots/pc/2022-endor-grand-prix-michael-turner-ds-cct.html",
+  "job_id": "spn2-506629b03df0954c6bf0b158462c4f110c88bff1",
+  "last": "2026-10-20T20:36:21Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:36:21Z",
+   "bytes": 7123823,
+   "capture_id": "https://web.archive.org/web/20261020203555id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-michael-turner-ds-cct.html",
+   "method": "sha256",
+   "sha256": "8aca286a136a4a582ccd3f891b49eb1ad21b5522031ece8974f11fdb643b4f68"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-jawa-cup-top-8-bill-kafer-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261013170924/https://swccg.com/snapshots/pc/2022-jawa-cup-top-8-bill-kafer-ls-diplo.html",
