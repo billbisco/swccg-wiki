@@ -31,7 +31,12 @@
   "capture": "https://web.archive.org/web/20261018223903/https://www.decktech.net/starwarsccg/deck/1002/",
   "last": "2026-10-18T23:00:00Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:14:29Z",
+   "error": "capture HTTP 404"
+  },
+  "verify_tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/10022": {
   "capture": "https://web.archive.org/web/20261018125616/https://www.decktech.net/starwarsccg/deck/10022/",
@@ -243,7 +248,12 @@
   "capture": "https://web.archive.org/web/20261018223833/https://www.decktech.net/starwarsccg/deck/1017/",
   "last": "2026-10-18T23:00:01Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:14:24Z",
+   "error": "capture HTTP 404"
+  },
+  "verify_tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/10170": {
   "capture": "https://web.archive.org/web/20261018123935/https://www.decktech.net/starwarsccg/deck/10170/",
@@ -21897,8 +21907,15 @@
   "capture": "https://web.archive.org/web/20261018225655/https://www.decktech.net/starwarsccg/deck/533/",
   "job_id": "spn2-f6d97b0c792f5b81945a870a3d9440b183b8fde3",
   "last": "2026-10-18T23:00:04Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:14:19Z",
+   "bytes": 14221,
+   "capture_id": "https://web.archive.org/web/20261018225655id_/https://www.decktech.net/starwarsccg/deck/533/",
+   "method": "sha256",
+   "sha256": "902b7366dbd03e397134feb182b4292db2227a04381eec476cb805b3257503d9"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/5333": {
   "capture": "https://web.archive.org/web/20261018183424/https://www.decktech.net/starwarsccg/deck/5333/",
@@ -21923,8 +21940,15 @@
   "capture": "https://web.archive.org/web/20261018225726/https://www.decktech.net/starwarsccg/deck/537/",
   "job_id": "spn2-a15931c01c35368bd78cd7412cdbb407c5f449d4",
   "last": "2026-10-18T23:00:07Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:14:13Z",
+   "bytes": 15160,
+   "capture_id": "https://web.archive.org/web/20261018225726id_/https://www.decktech.net/starwarsccg/deck/537/",
+   "method": "sha256",
+   "sha256": "0f08a1d46de41131a42adb7974dbb5928c040dbc45a4e5e5f365643fafe80bd4"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/5370": {
   "capture": "https://web.archive.org/web/20261018183339/https://www.decktech.net/starwarsccg/deck/5370/",
@@ -22191,8 +22215,15 @@
   "capture": "https://web.archive.org/web/20261018225554/https://www.decktech.net/starwarsccg/deck/573/",
   "job_id": "spn2-f1a5ad78bc720000e951a8b35a037b8fb7f46b09",
   "last": "2026-10-18T23:00:10Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:14:07Z",
+   "bytes": 14831,
+   "capture_id": "https://web.archive.org/web/20261018225554id_/https://www.decktech.net/starwarsccg/deck/573/",
+   "method": "sha256",
+   "sha256": "70a1150c4b0909ad855d6ead1530da4501e805a7f0e5317caa5e83217005578b"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/5738": {
   "capture": "https://web.archive.org/web/20261018181809/https://www.decktech.net/starwarsccg/deck/5738/",
@@ -22994,8 +23025,15 @@
   "capture": "https://web.archive.org/web/20261018225529/https://www.decktech.net/starwarsccg/deck/657/",
   "job_id": "spn2-8f63e992ac225aff8052bff9c9e6ae92e8c0e958",
   "last": "2026-10-18T23:00:13Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:14:02Z",
+   "bytes": 13146,
+   "capture_id": "https://web.archive.org/web/20261018225529id_/https://www.decktech.net/starwarsccg/deck/657/",
+   "method": "sha256",
+   "sha256": "59e7dc11cdac7c1f3149124e85a8b5e1dcbf508a72d8c9f53ca3d2d7b0da73ba"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/6579": {
   "capture": "https://web.archive.org/web/20261018172033/https://www.decktech.net/starwarsccg/deck/6579/",
@@ -23621,8 +23659,15 @@
   "capture": "https://web.archive.org/web/20261018225324/https://www.decktech.net/starwarsccg/deck/714/",
   "job_id": "spn2-37593127c633a67b12ec3ce3d530e86bcfcf072e",
   "last": "2026-10-18T22:58:18Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-20T20:14:34Z",
+   "bytes": 13810,
+   "capture_id": "https://web.archive.org/web/20261018225324id_/https://www.decktech.net/starwarsccg/deck/714/",
+   "method": "sha256",
+   "sha256": "753ecc42c56661e8a9b51ce08bcd704e950973d269150233d003442f3c6585f2"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/7148": {
   "capture": "https://web.archive.org/web/20261018164829/https://www.decktech.net/starwarsccg/deck/7148/",
@@ -28057,10 +28102,10 @@
  },
  "https://star-wars.pl/Tekst/1963,Star_Wars_CCG_Virtual_Sets.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 288 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-20T19:42:41Z",
+  "error": "no job_id: The same snapshot had been made 288 hours, 43 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-20T20:13:50Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://starwars-union.de/decipher-starwars-ccg-update/": {
   "capture": "https://web.archive.org/web/20261014182704/https://starwars-union.de/decipher-starwars-ccg-update/",
