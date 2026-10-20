@@ -178,3 +178,69 @@ class ExternalLinksProse(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class MainPageArchiveExemption(unittest.TestCase):
+    """Chief, 2026-10-20: Main Page body links are navigation, not citations."""
+
+    def test_main_page_fixture_has_unarchived_links(self):
+        flags = L.archive_flags(fx("Main_Page.r113732.wiki"))
+        self.assertEqual(len(flags), 3)
+        joined = "\n".join(flags)
+        self.assertIn("https://play.swccg.com/", joined)
+        self.assertIn("https://www.starwarsccg.org/vkit/", joined)
+        self.assertIn("Star-Wars-CCG-Tournament-Guide-2.2.pdf", joined)
+
+    def test_main_page_exempt_from_archive(self):
+        text = fx("Main_Page.r113732.wiki")
+        for title in ("Main Page", "Main_Page", "main page"):
+            flags, _ = L.lint(text, title)
+            self.assertFalse([f for f in flags if f.startswith("ARCHIVE")], title)
+
+    def test_other_pages_not_exempt(self):
+        text = "Play on [https://play.swccg.com/ GEMP].\n"
+        self.assertEqual(kinds(L.lint(text, "Main Page")[0]), [])
+        self.assertEqual(kinds(L.lint(text, "Main Page/Draft")[0]), ["ARCHIVE"])
+        self.assertEqual(kinds(L.lint(text, "Virtual Block 7")[0]), ["ARCHIVE"])
+        self.assertEqual(kinds(L.lint(text)[0]), ["ARCHIVE"])
+
+    def test_main_page_other_checks_still_run(self):
+        text = "Contact someone@example.com.\n\n== Sources ==\n* x\n"
+        self.assertEqual(sorted(kinds(L.lint(text, "Main Page")[0])), ["EMAIL", "HEADING"])
+
+    def test_cli_main_page_draft(self):
+        script = str(HERE.parent / "style_lint.py")
+        fixture = str(FX / "Main_Page.r113732.wiki")
+        # no --title: not known to be the Main Page, so ARCHIVE applies
+        bad = subprocess.run([sys.executable, script, fixture], capture_output=True, text=True)
+        self.assertEqual(bad.returncode, 1)
+        self.assertIn("ARCHIVE", bad.stdout)
+
+
+class TemplateSourcesHeading(unittest.TestCase):
+    """Chief, 2026-10-20: only a Sources heading in the page's own wikitext fails."""
+
+    def test_card_template_heading_is_exempt(self):
+        text = fx("Template_Card.r111232.wiki")
+        self.assertIn("== Sources ==", text)
+        flags, _ = L.lint(text, "Template:Card")
+        self.assertFalse([f for f in flags if f.startswith("HEADING")])
+
+    def test_card_page_using_template_passes(self):
+        text = fx("Admiral_Motti_Battlestation_Coordinator_V.r114110.wiki")
+        self.assertIn("|sources=", text)
+        flags, _ = L.lint(text, "Admiral Motti, Battlestation Coordinator (V)")
+        self.assertEqual(flags, [])
+
+    def test_own_sources_heading_on_card_page_fails(self):
+        text = fx("Admiral_Motti_Battlestation_Coordinator_V.r114110.wiki") + "\n== Sources ==\n* x\n"
+        flags, _ = L.lint(text, "Admiral Motti, Battlestation Coordinator (V)")
+        self.assertEqual(kinds(flags), ["HEADING"])
+
+    def test_heading_outside_includeonly_on_template_fails(self):
+        text = "<noinclude>\n== Sources ==\n</noinclude><includeonly>\n== Sources ==\n{{{sources}}}</includeonly>"
+        self.assertEqual(kinds(L.lint(text, "Template:X")[0]), ["HEADING"])
+        self.assertEqual(L.own_headings("<includeonly>\n== Sources ==\n</includeonly>\n== Notes ==\n"), ["Notes"])
+
+    def test_unclosed_includeonly(self):
+        self.assertEqual(L.own_headings("== Lead ==\n<includeonly>\n== Sources ==\n"), ["Lead"])
