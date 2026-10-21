@@ -107,9 +107,9 @@
  "http://www.angelfire.com/scifi2/thx113806107": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T07:20:47Z",
+  "last": "2026-10-21T08:01:06Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "http://www.decktech.net/starwarsccg/deck/10012": {
   "capture": "https://web.archive.org/web/20261018125649/https://www.decktech.net/starwarsccg/deck/10012/",
@@ -30247,6 +30247,13 @@
   "status": "retry",
   "tries": 2
  },
+ "https://swccg.com/snapshots/forum/t83759.html": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 184 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T08:06:14Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t83879.html": {
   "capture": "https://web.archive.org/web/20261012185125/https://swccg.com/snapshots/forum/t83879.html",
   "last": "2026-10-12T20:06:19Z",
@@ -36956,9 +36963,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-robert-smolarek-ls-communing-obi-wan.html": {
   "capture": "https://web.archive.org/web/20261021050722/https://swccg.com/snapshots/pc/2022-european-championship-robert-smolarek-ls-communing-obi-wan.html",
-  "last": "2026-10-21T07:20:21Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-0c88d7ef569d3b6e27df3c55d77f7de9f44e2ea4",
+  "last": "2026-10-21T08:10:48Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T08:10:48Z",
+   "bytes": 7122255,
+   "capture_id": "https://web.archive.org/web/20261021050722id_/https://swccg.com/snapshots/pc/2022-european-championship-robert-smolarek-ls-communing-obi-wan.html",
+   "method": "sha256",
+   "sha256": "a83ee9b822186ac48509b3c6754eb089993ac265ef495866374d05ac08ca9e3b"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ds-bhbm.html": {
   "capture": "",
@@ -37529,10 +37544,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021061647/https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T07:20:57Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-1213b09af52a5f5a51cf5bfd4d2ac67a6005d6f9",
+  "last": "2026-10-21T08:10:54Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-21T08:10:54Z",
+   "bytes": 7121677,
+   "capture_id": "https://web.archive.org/web/20261021061647id_/https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html",
+   "method": "sha256",
+   "sha256": "d9df1a0645cceb08d63acde22052fcb0e397ab4d0eefccefb9fdaf3505a2f4e2"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ls-old-allies.html": {
   "capture": "",
@@ -37809,10 +37831,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-stephen-squirlock-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021061835/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-stephen-squirlock-ds-sycfa.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T07:21:07Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-6908a206433ab2343e929f75132363b3ac383251",
+  "last": "2026-10-21T08:11:04Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T08:11:04Z",
+   "bytes": 7121915,
+   "capture_id": "https://web.archive.org/web/20261021061835id_/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-stephen-squirlock-ds-sycfa.html",
+   "method": "sha256",
+   "sha256": "d9aebfa72cc20954141f29f0b784882d350faf61172423c51c2db2a57b23c221"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-stephen-squirlock-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261021062751/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-stephen-squirlock-ls-legend.html",
@@ -38700,9 +38729,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-garrett-larson-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261021070256/https://swccg.com/snapshots/pc/2023-bespin-regionals-garrett-larson-ds-endor-operations.html",
-  "last": "2026-10-21T07:20:42Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-e2557a87eb46493362ba7bcf3272068d64a59106",
+  "last": "2026-10-21T08:11:11Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T08:11:11Z",
+   "bytes": 7121991,
+   "capture_id": "https://web.archive.org/web/20261021070256id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-garrett-larson-ds-endor-operations.html",
+   "method": "sha256",
+   "sha256": "6da5c57808138ee90b4ca0c5b3a7cee345609b30eccc60f2d999042bbdcc66e4"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-garrett-larson-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021070931/https://swccg.com/snapshots/pc/2023-bespin-regionals-garrett-larson-ls-hitco.html",
@@ -38794,9 +38831,23 @@
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ds-rots-vader.html": {
   "capture": "https://web.archive.org/web/20261021073947/https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ds-rots-vader.html",
-  "last": "2026-10-21T07:44:33Z",
-  "status": "pending",
+  "last": "2026-10-21T08:00:52Z",
+  "status": "retry",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ls-skywalker-saga-anakin.html": {
+  "capture": "https://web.archive.org/web/20261021080322/https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ls-skywalker-saga-anakin.html",
+  "job_id": "spn2-2fc04069528efa8cb3331cc98c5553ecb646bee2",
+  "last": "2026-10-21T08:11:23Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T08:11:23Z",
+   "bytes": 7121881,
+   "capture_id": "https://web.archive.org/web/20261021080322id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ls-skywalker-saga-anakin.html",
+   "method": "sha256",
+   "sha256": "880d35eff4eff7b2a9a9ad338fe5e01e69361d9a04fe6d929de5d0e173f15987"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-ryan-ritter-ds-imperial-entanglements.html": {
   "capture": "",
@@ -38849,8 +38900,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-stew-yoo-ds-tdigwatt.html": {
   "capture": "https://web.archive.org/web/20261021074226/https://swccg.com/snapshots/pc/2023-bespin-regionals-stew-yoo-ds-tdigwatt.html",
-  "last": "2026-10-21T07:44:44Z",
-  "status": "pending",
+  "last": "2026-10-21T08:00:54Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-stew-yoo-ls-communing-yoda.html": {
@@ -38876,8 +38927,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-will-scinocca-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261021074255/https://swccg.com/snapshots/pc/2023-bespin-regionals-will-scinocca-ls-zero-hour.html",
-  "last": "2026-10-21T07:44:43Z",
-  "status": "pending",
+  "last": "2026-10-21T08:00:56Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-will-tarbox-ds-tdigwatt.html": {
@@ -38951,9 +39002,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-brian-fred-ds-invasion.html": {
-  "capture": "",
-  "job_id": "spn2-9e8749aa21b6545524c58bbb9fdfec006bd4b735",
-  "last": "2026-10-21T07:37:37Z",
+  "capture": "https://web.archive.org/web/20261021073830/https://swccg.com/snapshots/pc/2023-corellia-regionals-brian-fred-ds-invasion.html",
+  "last": "2026-10-21T08:00:58Z",
   "status": "pending",
   "tries": 1
  },
@@ -39044,6 +39094,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-corellia-regionals-hayes-hunter-ls-communing-obi-wan.html": {
+  "capture": "",
+  "job_id": "spn2-ae71b57924b1a2d38185f9897255431e57c8f426",
+  "last": "2026-10-21T08:03:34Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-jim-boyle-ds-hunt-down.html": {
   "capture": "",
   "job_id": "spn2-75c358e7546ff0c0bc8bc7eed068538a9ed325f6",
@@ -39063,6 +39120,13 @@
   "job_id": "spn2-fe35c32936cefcf304a8a9a4b016ae59d6c67128",
   "last": "2026-10-21T07:51:43Z",
   "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-corellia-regionals-karl-koenig-ls-communing-obi-wan.html": {
+  "capture": "https://web.archive.org/web/20261021080326/https://swccg.com/snapshots/pc/2023-corellia-regionals-karl-koenig-ls-communing-obi-wan.html",
+  "job_id": "spn2-182c3b7f22df35726b96765d160366f35bb3abcd",
+  "last": "2026-10-21T08:11:38Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-kendall-halman-ds-bhbm.html": {
@@ -39105,6 +39169,20 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-coruscant-regionals-amar-banger-ds-rops.html": {
+  "capture": "",
+  "job_id": "spn2-013c004fd189abc3636ac3c2ff39cfb2ef1aa33d",
+  "last": "2026-10-21T08:04:47Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-coruscant-regionals-bill-kafer-ds-rots-vader.html": {
+  "capture": "",
+  "job_id": "spn2-4d5edbf135059fc49c9d0b4316d3fc6aefd6cb63",
+  "last": "2026-10-21T08:03:44Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-bill-kafer-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021075602/https://swccg.com/snapshots/pc/2023-coruscant-regionals-bill-kafer-ls-hitco.html",
   "last": "2026-10-21T07:57:48Z",
@@ -39137,9 +39215,50 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ds-bhbm.html": {
+  "capture": "",
+  "job_id": "spn2-63d274319936d371aed0b582fe55385cf9d520a1",
+  "last": "2026-10-21T08:04:26Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ls-old-allies.html": {
+  "capture": "",
+  "job_id": "spn2-1e117fde589142d7bf2ae0046b80f770ca50aec2",
+  "last": "2026-10-21T08:04:36Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-jared-napolitano-ls-watch-your-step.html": {
   "capture": "https://web.archive.org/web/20261021075611/https://swccg.com/snapshots/pc/2023-coruscant-regionals-jared-napolitano-ls-watch-your-step.html",
   "last": "2026-10-21T07:58:36Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-coruscant-regionals-scott-lingrell-ds-aobs.html": {
+  "capture": "",
+  "job_id": "spn2-f312b13e5fbf2ab98b7cf367a21b0f2d1a228b66",
+  "last": "2026-10-21T08:05:30Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-coruscant-regionals-scott-lingrell-ls-wattos-junkyard-ltwwv.html": {
+  "capture": "",
+  "job_id": "spn2-195903e192307618aac9c5b4f347c76a27f2f9af",
+  "last": "2026-10-21T08:05:41Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-coruscant-regionals-tom-sarachan-ds-hunt-down.html": {
+  "capture": "",
+  "job_id": "spn2-f911acf4888b88ef31f5e10b1c87168506196b1a",
+  "last": "2026-10-21T08:05:52Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-coruscant-regionals-tom-sarachan-ls-anakin-saga.html": {
+  "capture": "https://web.archive.org/web/20261021080633/https://swccg.com/snapshots/pc/2023-coruscant-regionals-tom-sarachan-ls-anakin-saga.html",
+  "last": "2026-10-21T08:11:49Z",
   "status": "pending",
   "tries": 1
  },
@@ -39148,6 +39267,20 @@
   "last": "2026-10-21T07:57:28Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-dagobah-regionals-jeremy-dipaolo-ls-watch-your-step.html": {
+  "capture": "https://web.archive.org/web/20261021080403/https://swccg.com/snapshots/pc/2023-dagobah-regionals-jeremy-dipaolo-ls-watch-your-step.html",
+  "job_id": "spn2-3b96fca42ff1273a639d64b90d52dda162827047",
+  "last": "2026-10-21T08:11:33Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T08:11:33Z",
+   "bytes": 7121902,
+   "capture_id": "https://web.archive.org/web/20261021080403id_/https://swccg.com/snapshots/pc/2023-dagobah-regionals-jeremy-dipaolo-ls-watch-your-step.html",
+   "method": "sha256",
+   "sha256": "d9fbac5def6f6022cf1c4ede0622ecd70e738112fe91d6b2efe526b797436af0"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-dagobah-regionals-jonathan-murray-ds-combat.html": {
   "capture": "",
@@ -39187,6 +39320,114 @@
  "https://swccg.com/snapshots/pc/2023-dagobah-regionals-thomas-santosuosso-ls-communing-obi-wan.html": {
   "capture": "https://web.archive.org/web/20261021075130/https://swccg.com/snapshots/pc/2023-dagobah-regionals-thomas-santosuosso-ls-communing-obi-wan.html",
   "last": "2026-10-21T07:58:18Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-endor-regionals-derek-jackson-ls-clones.html": {
+  "capture": "",
+  "job_id": "spn2-dcf2cb9b1da9832b1fae4fb880bf8fd58fc39995",
+  "last": "2026-10-21T08:10:30Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-endor-regionals-joe-olson-ds-ralltiir-operations-v.html": {
+  "capture": "https://web.archive.org/web/20261021080900/https://swccg.com/snapshots/pc/2023-endor-regionals-joe-olson-ds-ralltiir-operations-v.html",
+  "job_id": "spn2-f527f2c2a7103c0ac75f522a7fdcd1a2283c64db",
+  "last": "2026-10-21T08:13:35Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T08:13:35Z",
+   "bytes": 7121906,
+   "capture_id": "https://web.archive.org/web/20261021080900id_/https://swccg.com/snapshots/pc/2023-endor-regionals-joe-olson-ds-ralltiir-operations-v.html",
+   "method": "sha256",
+   "sha256": "521186408d5c0c7fd0d421bf99f9ae6a354fd0d6c0a8146549de30a1bf036ecd"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2023-endor-regionals-joe-olson-ls-communing-obi-wan.html": {
+  "capture": "https://web.archive.org/web/20261021080846/https://swccg.com/snapshots/pc/2023-endor-regionals-joe-olson-ls-communing-obi-wan.html",
+  "job_id": "spn2-eba95041f6202c58ad541787bc786e7c7d643a4e",
+  "last": "2026-10-21T08:13:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T08:13:44Z",
+   "bytes": 7121956,
+   "capture_id": "https://web.archive.org/web/20261021080846id_/https://swccg.com/snapshots/pc/2023-endor-regionals-joe-olson-ls-communing-obi-wan.html",
+   "method": "sha256",
+   "sha256": "5c27b48049aee70a9288bb9f9bc980d5032610d0cf728ec6a394aba1bd31c8d2"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2023-endor-regionals-kyle-krueger-ls-no-idea.html": {
+  "capture": "https://web.archive.org/web/20261021081024/https://swccg.com/snapshots/pc/2023-endor-regionals-kyle-krueger-ls-no-idea.html",
+  "job_id": "spn2-69ff84e4cb45fac4d5c8f1da8b2d33dbaf19f103",
+  "last": "2026-10-21T08:13:51Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T08:13:51Z",
+   "bytes": 7121923,
+   "capture_id": "https://web.archive.org/web/20261021081024id_/https://swccg.com/snapshots/pc/2023-endor-regionals-kyle-krueger-ls-no-idea.html",
+   "method": "sha256",
+   "sha256": "b782a3eac54dd29bfe08afe5b23be25d7035475e78c50eec98dabf2a8191f34a"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2023-endor-regionals-mark-sebring-ds-endor-operations.html": {
+  "capture": "https://web.archive.org/web/20261021080939/https://swccg.com/snapshots/pc/2023-endor-regionals-mark-sebring-ds-endor-operations.html",
+  "job_id": "spn2-1e9a8432e3b5881f767c9f0bf0848d4effd19640",
+  "last": "2026-10-21T08:13:59Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T08:13:59Z",
+   "bytes": 7797649,
+   "capture_id": "https://web.archive.org/web/20261021080939id_/https://swccg.com/snapshots/pc/2023-endor-regionals-mark-sebring-ds-endor-operations.html",
+   "method": "sha256",
+   "sha256": "0c8da88d7342799c97ec721485dd476db9f67cb10d07f8830cdf74f804a157a4"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2023-endor-regionals-mark-sebring-ls-whap.html": {
+  "capture": "https://web.archive.org/web/20261021080950/https://swccg.com/snapshots/pc/2023-endor-regionals-mark-sebring-ls-whap.html",
+  "last": "2026-10-21T08:14:01Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-endor-regionals-phil-aasen-ls-zero-hour.html": {
+  "capture": "https://web.archive.org/web/20261021080856/https://swccg.com/snapshots/pc/2023-endor-regionals-phil-aasen-ls-zero-hour.html",
+  "last": "2026-10-21T08:13:27Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-angelo-consoli-ds-rots-maul.html": {
+  "capture": "https://web.archive.org/web/20261021080634/https://swccg.com/snapshots/pc/2023-european-championship-angelo-consoli-ds-rots-maul.html",
+  "last": "2026-10-21T08:11:50Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-angelo-consoli-ls-diplomatic-mission-to-alderaan.html": {
+  "capture": "",
+  "job_id": "spn2-63f289004bcbd9d10ea90574209fb347739ef607",
+  "last": "2026-10-21T08:06:35Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-bastian-winkelhaus-ds-desert-landing-site-ssav.html": {
+  "capture": "",
+  "job_id": "spn2-96fd59011c770905acfea0546b962a18e51942b5",
+  "last": "2026-10-21T08:07:17Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-bastian-winkelhaus-ls-communing-obi-wan.html": {
+  "capture": "",
+  "job_id": "spn2-bde84bebd5a4ff4644e1bbb4585adb4f446ef8eb",
+  "last": "2026-10-21T08:07:28Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-casper-jorgensen-ds-rops.html": {
+  "capture": "https://web.archive.org/web/20261021080814/https://swccg.com/snapshots/pc/2023-european-championship-casper-jorgensen-ds-rops.html",
+  "last": "2026-10-21T08:11:56Z",
   "status": "pending",
   "tries": 1
  },
