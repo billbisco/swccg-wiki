@@ -29615,19 +29615,17 @@
  },
  "https://melee.gg/Profile/Index/jademasters": {
   "capture": "",
-  "error": "error:no-request",
-  "job_id": "spn2-10acce8fa7183ea64be627dcc325f3b83f708813",
-  "last": "2026-10-21T13:14:19Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T14:01:15Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://melee.gg/Profile/Index/redv": {
   "capture": "",
-  "error": "error:no-request",
-  "job_id": "spn2-48117b1b10c19b611f50fcb2ba0a1a7368c438bc",
-  "last": "2026-10-21T13:28:05Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T14:01:25Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://pente.org/help/helpWindow.jsp?file=playGameRules": {
   "capture": "https://web.archive.org/web/20261016020533/https://www.pente.org/help/helpWindow.jsp?file=playGameRules",
@@ -43392,9 +43390,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-dennis-reinhardt-ds-rots-maul.html": {
-  "capture": "",
-  "job_id": "spn2-80a1491d37bfe476a0baf94c602fd0fa61eb6cc1",
-  "last": "2026-10-21T10:57:13Z",
+  "capture": "https://web.archive.org/web/20261021105716/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-dennis-reinhardt-ds-rots-maul.html",
+  "last": "2026-10-21T14:00:36Z",
   "status": "pending",
   "tries": 1
  },
@@ -43952,8 +43949,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261021121040/https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ds-cct.html",
-  "last": "2026-10-21T13:49:46Z",
-  "status": "pending",
+  "last": "2026-10-21T14:00:39Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ls-qmc.html": {
@@ -48430,8 +48427,8 @@
  },
  "https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html": {
   "capture": "https://web.archive.org/web/20261021123645/https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html",
-  "last": "2026-10-21T13:50:19Z",
-  "status": "pending",
+  "last": "2026-10-21T14:00:41Z",
+  "status": "retry",
   "tries": 4
  },
  "https://www.kendallcast.ninja/2020/12/the-justin-desai-interview.html": {
@@ -48535,22 +48532,34 @@
  },
  "https://www.kendallcast.ninja/2022/08/corran-on-horn-7-nationals-special.html": {
   "capture": "https://web.archive.org/web/20261021123713/https://www.kendallcast.ninja/2022/08/corran-on-horn-7-nationals-special.html",
-  "last": "2026-10-21T13:49:50Z",
-  "status": "pending",
+  "last": "2026-10-21T14:00:44Z",
+  "status": "retry",
   "tries": 4
  },
  "https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html": {
   "capture": "https://web.archive.org/web/20261021123727/https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html",
   "job_id": "spn2-cd9ded143b7615499f317a816cbb136f244b3b13",
-  "last": "2026-10-21T13:44:08Z",
-  "status": "pending",
-  "tries": 4
+  "last": "2026-10-21T14:00:50Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-21T14:00:50Z",
+   "capture_id": "https://web.archive.org/web/20261021123727id_/https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html": {
   "capture": "https://web.archive.org/web/20261021123838/https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html",
-  "last": "2026-10-21T13:49:52Z",
-  "status": "pending",
-  "tries": 4
+  "last": "2026-10-21T14:00:52Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-21T14:00:54Z",
+   "capture_id": "https://web.archive.org/web/20261021123838id_/https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://www.kendallcast.ninja/2022/09/corran-on-horn-11-tom-haid.html": {
   "capture": "",
@@ -48615,9 +48624,15 @@
  "https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html": {
   "capture": "https://web.archive.org/web/20261021123831/https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html",
   "job_id": "spn2-de181adfa0a368641f0b939d38f78f7dc018ea81",
-  "last": "2026-10-21T13:44:33Z",
-  "status": "pending",
-  "tries": 4
+  "last": "2026-10-21T14:01:01Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-21T14:01:01Z",
+   "capture_id": "https://web.archive.org/web/20261021123831id_/https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://www.kendallcast.ninja/2022/12/corran-on-horn-18-sam-tashima.html": {
   "capture": "",
@@ -48709,7 +48724,12 @@
   "last": "2026-10-21T03:19:56Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:03:29Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.kendallcast.ninja/2023/11/corran-on-horn-28-ideatrack.html": {
   "capture": "https://web.archive.org/web/20261014231643/https://www.kendallcast.ninja/2023/11/corran-on-horn-28-ideatrack.html",
@@ -48904,13 +48924,14 @@
   "capture": "https://web.archive.org/web/20261008200808/https://www.reddit.com/user/Bardez",
   "error": "no job_id: The same snapshot had been made 294 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
   "last": "2026-10-21T11:22:08Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T13:28:55Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-21T14:02:38Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.stephenskilton.com/decktech_archives/16248/": {
   "capture": "https://web.archive.org/web/20261020233420/https://www.stephenskilton.com/decktech_archives/16248/",
@@ -49190,17 +49211,17 @@
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQ7P-amyYKPKPRsHqvWVGoT": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 302 hours, 47 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:25:30Z",
+  "error": "no job_id: The same snapshot had been made 303 hours, 24 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T14:02:07Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQOr2wLL2JQMshuie6hLniG": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 305 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-10-21T13:25:46Z",
+  "error": "no job_id: The same snapshot had been made 305 hours, 38 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T14:02:19Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQ_9BL8VcsfvHD371AW5aWM": {
   "capture": "",
@@ -49238,11 +49259,18 @@
   "tries": 2
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YSLTWbvHWtx5fUpPGtT0xII": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021134619/https://www.youtube.com/playlist?list=PLQSFYZX0M9YSLTWbvHWtx5fUpPGtT0xII",
   "job_id": "spn2-653ef10f347cb5c185218c111fb26a32ea0117f0",
-  "last": "2026-10-21T13:46:16Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-10-21T14:01:10Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:02:31Z",
+   "capture_id": "https://web.archive.org/web/20261021134619id_/https://www.youtube.com/playlist?list=PLQSFYZX0M9YSLTWbvHWtx5fUpPGtT0xII",
+   "method": "text",
+   "reason": "page text matches 31% (< 85%)",
+   "text_match": 0.31
+  }
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YSYv6Dzhaem9Vt_IGBvO5gf": {
   "capture": "",
@@ -49391,8 +49419,8 @@
  },
  "https://www.youtube.com/watch?v=-pqN6QbPAaA": {
   "capture": "https://web.archive.org/web/20261021134941/https://www.youtube.com/watch?v=-pqN6QbPAaA",
-  "last": "2026-10-21T13:50:25Z",
-  "status": "pending",
+  "last": "2026-10-21T14:01:11Z",
+  "status": "retry",
   "tries": 1
  },
  "https://www.youtube.com/watch?v=-uXSofF_cPs": {
@@ -50072,7 +50100,12 @@
   "capture": "https://web.archive.org/web/20261020232825/https://www.youtube.com/watch?v=9fhlw8npo9w",
   "last": "2026-10-21T03:33:47Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:02:45Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=9iDfdYsVSC0": {
   "capture": "https://web.archive.org/web/20261016003108/https://www.youtube.com/watch?v=9iDfdYsVSC0",
@@ -51099,7 +51132,12 @@
   "capture": "https://web.archive.org/web/20261020221726/https://www.youtube.com/watch?v=SGbnL0KL2N8",
   "last": "2026-10-21T03:33:47Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:02:53Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=SRSDhM-exTA": {
   "capture": "https://web.archive.org/web/20261015193735/https://www.youtube.com/watch?v=SRSDhM-exTA",
@@ -51195,7 +51233,12 @@
   "capture": "https://web.archive.org/web/20261020221638/https://www.youtube.com/watch?v=TSKiBckXoZQ",
   "last": "2026-10-21T03:33:47Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:02:59Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=TiGlb6KFqqY": {
   "capture": "https://web.archive.org/web/20261016003311/https://www.youtube.com/watch?v=TiGlb6KFqqY",
@@ -51401,7 +51444,12 @@
   "capture": "https://web.archive.org/web/20261020224209/https://www.youtube.com/watch?v=X-gRjVXcqw4",
   "last": "2026-10-21T03:33:47Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:03:08Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=X-uATChisG0": {
   "capture": "https://web.archive.org/web/20261016012336/https://www.youtube.com/watch?v=X-uATChisG0",
@@ -52398,7 +52446,12 @@
   "capture": "https://web.archive.org/web/20261020221840/https://www.youtube.com/watch?v=ncBpi-0ktOU",
   "last": "2026-10-21T03:33:47Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:03:15Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=njLwNSYWEWo": {
   "capture": "",
@@ -52473,7 +52526,12 @@
   "capture": "https://web.archive.org/web/20261020221818/https://www.youtube.com/watch?v=q2if46mo7tQ",
   "last": "2026-10-21T03:33:47Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:03:22Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=qErV_KgLAgA": {
   "capture": "https://web.archive.org/web/20261016010143/https://www.youtube.com/watch?v=qErV_KgLAgA",
