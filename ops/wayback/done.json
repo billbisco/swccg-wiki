@@ -30110,11 +30110,24 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/forum/t80594.html": {
+  "capture": "https://web.archive.org/web/20261021062041/https://swccg.com/snapshots/forum/t80594.html",
+  "last": "2026-10-21T06:21:23Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t80665.html": {
   "capture": "https://web.archive.org/web/20261013154950/https://swccg.com/snapshots/forum/t80665.html",
   "last": "2026-10-21T04:17:28Z",
   "note": "already archived within 30d",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/t80756.html": {
+  "capture": "",
+  "job_id": "spn2-aeb16521ad403287e1e12bff1ea2e14d5ef99059",
+  "last": "2026-10-21T06:19:28Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/t80902.html": {
@@ -31258,8 +31271,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ls.html": {
   "capture": "https://web.archive.org/web/20261021015641/https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ls.html",
-  "last": "2026-10-21T05:56:08Z",
-  "status": "pending",
+  "last": "2026-10-21T06:09:47Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html": {
@@ -31916,9 +31929,10 @@
  },
  "https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html": {
   "capture": "https://web.archive.org/web/20261021034750/https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html",
-  "last": "2026-10-21T05:12:35Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T06:10:40Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2018-worlds-day-3-tom-kelly-oa.html": {
   "capture": "",
@@ -32180,8 +32194,8 @@
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-david-destefanis-ds-invasion.html": {
   "capture": "https://web.archive.org/web/20261021035212/https://swccg.com/snapshots/pc/2019-worlds-day-2-david-destefanis-ds-invasion.html",
-  "last": "2026-10-21T05:50:32Z",
-  "status": "pending",
+  "last": "2026-10-21T06:09:57Z",
+  "status": "retry",
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-dennis-reinhardt-ds-map.html": {
@@ -32284,14 +32298,22 @@
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-carulli-ls-profit.html": {
   "capture": "https://web.archive.org/web/20261021044830/https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-carulli-ls-profit.html",
-  "last": "2026-10-21T05:12:43Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-4420128c0c881cfdb542cee109c4d11b4952982e",
+  "last": "2026-10-21T06:20:16Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T06:20:16Z",
+   "bytes": 7121587,
+   "capture_id": "https://web.archive.org/web/20261021044830id_/https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-carulli-ls-profit.html",
+   "method": "sha256",
+   "sha256": "19159368a2e802f1adeea68c63d409c4fbab40f781fd29131cb53df95bff6aae"
+  }
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-miyashiro-ds-hunt-down.html": {
   "capture": "https://web.archive.org/web/20261021035928/https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-miyashiro-ds-hunt-down.html",
-  "last": "2026-10-21T05:51:19Z",
-  "status": "pending",
+  "last": "2026-10-21T06:09:59Z",
+  "status": "retry",
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-matthew-harrison-trainor-ds-hunt-down.html": {
@@ -35410,11 +35432,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ds-bhbm-bf.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T05:27:46Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261021061148/https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ds-bhbm-bf.html",
+  "job_id": "spn2-e8647cb1136f835ca78ec677e59a3e2390e2560c",
+  "last": "2026-10-21T06:20:23Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-21T06:20:23Z",
+   "bytes": 7120896,
+   "capture_id": "https://web.archive.org/web/20261021061148id_/https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ds-bhbm-bf.html",
+   "method": "sha256",
+   "sha256": "d547d43d3b439413e2909a78b466c7a90a7b81e1f33f34426e97ae45a60dc159"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261016171943/https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ds-bhbm.html",
@@ -35696,8 +35725,7 @@
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ds-walkers-bf.html": {
   "capture": "https://web.archive.org/web/20261021040215/https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ds-walkers-bf.html",
-  "job_id": "spn2-dbe9c3d94adcae275f3cd8de3455c8694f480457",
-  "last": "2026-10-21T05:01:25Z",
+  "last": "2026-10-21T06:10:04Z",
   "status": "pending",
   "tries": 2
  },
@@ -36491,9 +36519,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-casper-jorgensen-ls-zero-hour-bf.html": {
   "capture": "https://web.archive.org/web/20261021050435/https://swccg.com/snapshots/pc/2022-european-championship-casper-jorgensen-ls-zero-hour-bf.html",
-  "last": "2026-10-21T05:26:16Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-b9738c6480b9118d07725411374337fef1513aec",
+  "last": "2026-10-21T06:20:30Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T06:20:30Z",
+   "bytes": 7121284,
+   "capture_id": "https://web.archive.org/web/20261021050435id_/https://swccg.com/snapshots/pc/2022-european-championship-casper-jorgensen-ls-zero-hour-bf.html",
+   "method": "sha256",
+   "sha256": "f770b396914a52bf1593a02a77504c6e860b7a55d55f856f94dbb9acce8c394f"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-cedrik-vanderhaegen-ds-rops-v-bf.html": {
   "capture": "",
@@ -36579,9 +36615,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-floris-de-vries-ls-communing-yoda-bf.html": {
   "capture": "https://web.archive.org/web/20261021051428/https://swccg.com/snapshots/pc/2022-european-championship-floris-de-vries-ls-communing-yoda-bf.html",
-  "last": "2026-10-21T05:40:28Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-e2fc70a72a09459d7d27ef4d8bbcb6ad77f758b2",
+  "last": "2026-10-21T06:20:36Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T06:20:36Z",
+   "bytes": 7121070,
+   "capture_id": "https://web.archive.org/web/20261021051428id_/https://swccg.com/snapshots/pc/2022-european-championship-floris-de-vries-ls-communing-yoda-bf.html",
+   "method": "sha256",
+   "sha256": "0915cff8843fdecbcf789588935ec4e87bec699a9ecdfe5874046877d9fc4869"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-grady-hutchins-ds-dooku-rots-bf.html": {
   "capture": "",
@@ -36592,8 +36636,8 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-kevin-jaap-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021054140/https://swccg.com/snapshots/pc/2022-european-championship-kevin-jaap-ds-bhbm.html",
-  "last": "2026-10-21T05:50:35Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:11Z",
+  "status": "retry",
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-kevin-jaap-ls-zero-hour.html": {
@@ -36667,9 +36711,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261021045224/https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ls-communing-yoda.html",
-  "last": "2026-10-21T05:12:57Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-9a645dae83675a3d11672fa65e4b50e145e52c72",
+  "last": "2026-10-21T06:20:57Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T06:20:57Z",
+   "bytes": 7121982,
+   "capture_id": "https://web.archive.org/web/20261021045224id_/https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ls-communing-yoda.html",
+   "method": "sha256",
+   "sha256": "54dddd6a5f637f487314ac74961074b34c60a1d03805ade226f7b28f7375806a"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ds-map.html": {
   "capture": "",
@@ -36694,9 +36746,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-peter-jacobson-ls-aitc.html": {
   "capture": "https://web.archive.org/web/20261021050611/https://swccg.com/snapshots/pc/2022-european-championship-peter-jacobson-ls-aitc.html",
-  "last": "2026-10-21T05:26:20Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-abf93ac7ffb25784ffff4aac6f5f63021b83131d",
+  "last": "2026-10-21T06:13:19Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-peter-soetens-ds-cct.html": {
   "capture": "",
@@ -36714,9 +36767,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ds-rots-dooku.html": {
   "capture": "https://web.archive.org/web/20261021045327/https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ds-rots-dooku.html",
-  "last": "2026-10-21T05:12:59Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-c67d95ffb53a070bc8abad4c64d86e37bcfaed81",
+  "last": "2026-10-21T06:12:27Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ls-communing-yoda.html": {
   "capture": "",
@@ -36768,8 +36822,8 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-timo-dusel-ds-ropsv.html": {
   "capture": "https://web.archive.org/web/20261021044028/https://swccg.com/snapshots/pc/2022-european-championship-timo-dusel-ds-ropsv.html",
-  "last": "2026-10-21T05:51:57Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:15Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-timo-dusel-ls-zero-hour.html": {
@@ -36781,9 +36835,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ds-mustafar-crv.html": {
   "capture": "https://web.archive.org/web/20261021051635/https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ds-mustafar-crv.html",
-  "last": "2026-10-21T05:40:33Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-4b09b7fbd99213bfd4dd2803cab944fb9a8516a8",
+  "last": "2026-10-21T06:13:08Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html": {
   "capture": "",
@@ -36857,9 +36912,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261021051531/https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ls-yoda-communing.html",
-  "last": "2026-10-21T05:40:35Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-1e523cf02fbb4d50be6b87ffa8fd773c9946dba7",
+  "last": "2026-10-21T06:20:48Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T06:20:48Z",
+   "bytes": 7121254,
+   "capture_id": "https://web.archive.org/web/20261021051531id_/https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ls-yoda-communing.html",
+   "method": "sha256",
+   "sha256": "da62a4a6e5be0cb440f6fef6cc5242497ed7e204a05d7e09a1c7c09398e6fe6c"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ds-sc.html": {
   "capture": "",
@@ -36971,9 +37034,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-eric-hunter-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021051718/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-eric-hunter-ls-qmc.html",
-  "last": "2026-10-21T05:40:38Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-2525f11629727aa67f354bc62814b9411b6b2c98",
+  "last": "2026-10-21T06:13:30Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-jared-greenwald-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021051742/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-jared-greenwald-ds-map.html",
@@ -37004,9 +37068,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-jules-kroehl-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261021051821/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-jules-kroehl-ds-thrawn.html",
-  "last": "2026-10-21T05:40:42Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-e7d09ee84a4cad3ae0f607191e38f15ce2df5bc2",
+  "last": "2026-10-21T06:14:11Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-jules-kroehl-ls-zero-hour.html": {
   "capture": "",
@@ -37079,8 +37144,8 @@
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-tommy-santosuosso-jr-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021054232/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-tommy-santosuosso-jr-ls-qmc.html",
-  "last": "2026-10-21T05:51:59Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:21Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-match-play-championship.html": {
@@ -37100,9 +37165,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-adam-harper-ds-rots-maul.html": {
   "capture": "https://web.archive.org/web/20261021052004/https://swccg.com/snapshots/pc/2022-naboo-regionals-adam-harper-ds-rots-maul.html",
-  "last": "2026-10-21T05:40:45Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-44ffd8ad26d255740da82c1e893023b2c5894a79",
+  "last": "2026-10-21T06:14:33Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-adam-harper-ls-whap.html": {
   "capture": "",
@@ -37134,9 +37200,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-angelo-consoli-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261021051953/https://swccg.com/snapshots/pc/2022-naboo-regionals-angelo-consoli-ls-diplo.html",
-  "last": "2026-10-21T05:40:47Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-678aac53be3793db8fd64933b3dcaa59ea59dfaa",
+  "last": "2026-10-21T06:14:22Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-cedrik-vanderhaegen-ds-rops-v.html": {
   "capture": "",
@@ -37174,47 +37241,47 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-eric-spijksma-ds-ties.html": {
   "capture": "https://web.archive.org/web/20261021054537/https://swccg.com/snapshots/pc/2022-naboo-regionals-eric-spijksma-ds-ties.html",
-  "last": "2026-10-21T05:52:03Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:23Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-eric-spijksma-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021054548/https://swccg.com/snapshots/pc/2022-naboo-regionals-eric-spijksma-ls-old-allies.html",
-  "last": "2026-10-21T05:51:26Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:24Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-jeroen-wauters-ds-bhbm.html": {
   "capture": "",
-  "error": "<urlopen error timed out>",
-  "last": "2026-10-21T05:45:12Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-09d58f5f54a18af3d04389a630e27c1e10f93975",
+  "last": "2026-10-21T06:16:17Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-jeroen-wauters-ls-jcc-mains.html": {
   "capture": "https://web.archive.org/web/20261021054559/https://swccg.com/snapshots/pc/2022-naboo-regionals-jeroen-wauters-ls-jcc-mains.html",
-  "last": "2026-10-21T05:50:42Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:26Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-john-moorley-ds-asm.html": {
   "capture": "https://web.archive.org/web/20261021054808/https://swccg.com/snapshots/pc/2022-naboo-regionals-john-moorley-ds-asm.html",
-  "last": "2026-10-21T05:50:53Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:27Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-john-moorley-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021054819/https://swccg.com/snapshots/pc/2022-naboo-regionals-john-moorley-ls-old-allies.html",
-  "last": "2026-10-21T05:50:55Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:28Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-justin-branch-ds-shadow-collective.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T05:33:02Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-7cf2ff00a15515ee8483253fc1fb57703f0edeaa",
+  "last": "2026-10-21T06:15:14Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-justin-branch-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021053406/https://swccg.com/snapshots/pc/2022-naboo-regionals-justin-branch-ls-old-allies.html",
@@ -37232,16 +37299,22 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ds-watto.html": {
   "capture": "https://web.archive.org/web/20261021054830/https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ds-watto.html",
-  "last": "2026-10-21T05:53:40Z",
+  "last": "2026-10-21T06:10:29Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ls-legend.html": {
+  "capture": "",
+  "job_id": "spn2-8b241f74a54036437057bd54aa00fbb844c3376f",
+  "last": "2026-10-21T06:17:21Z",
   "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T05:33:45Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021061647/https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html",
+  "last": "2026-10-21T06:21:08Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ls-old-allies.html": {
   "capture": "",
@@ -37252,22 +37325,22 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-l-pater-ds-bhbm.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T05:45:55Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-0f232ec9fd1fc6995d732aab39756855d63ddf03",
+  "last": "2026-10-21T06:16:29Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-l-pater-ls-qui-gon-communing.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T05:46:05Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-1270761e8e60a9302aa20f935b048142f28e1595",
+  "last": "2026-10-21T06:16:40Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-marc-nickels-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261021054325/https://swccg.com/snapshots/pc/2022-naboo-regionals-marc-nickels-ds-endor-operations.html",
-  "last": "2026-10-21T05:52:01Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:30Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-marc-nickels-ls-the-hyperdrive-generators-gone.html": {
@@ -37340,6 +37413,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-naboo-regionals-stephan-fox-ls-old-allies.html": {
+  "capture": "",
+  "job_id": "spn2-64e2b738ea0bb7a7788ba9ea50f1703beef65b02",
+  "last": "2026-10-21T06:15:36Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-tamas-papp-ds-asm.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
@@ -37349,8 +37429,8 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-tamas-papp-ls-qui-gon-communing.html": {
   "capture": "https://web.archive.org/web/20261021054632/https://swccg.com/snapshots/pc/2022-naboo-regionals-tamas-papp-ls-qui-gon-communing.html",
-  "last": "2026-10-21T05:50:46Z",
-  "status": "pending",
+  "last": "2026-10-21T06:10:33Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-tom-damen-ds-walkers.html": {
@@ -37397,7 +37477,20 @@
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-fred-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261021055009/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-fred-ls-legend.html",
-  "last": "2026-10-21T05:51:36Z",
+  "last": "2026-10-21T06:10:34Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-west-ds-thrawn.html": {
+  "capture": "https://web.archive.org/web/20261021061828/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-west-ds-thrawn.html",
+  "last": "2026-10-21T06:21:18Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-west-ls-zero-hour.html": {
+  "capture": "",
+  "job_id": "spn2-2888c08d44ccc470dce276c3b7bea8492df4110f",
+  "last": "2026-10-21T06:18:35Z",
   "status": "pending",
   "tries": 1
  },
@@ -37415,6 +37508,13 @@
    "sha256": "e0b455bbe017e63c2f425223961537ffc0834eed52cff43843302f44e751e9f1"
   }
  },
+ "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-kendall-halman-ls-tigih.html": {
+  "capture": "",
+  "job_id": "spn2-cca9506588a149649a87ba0b90e116044ed6f9d0",
+  "last": "2026-10-21T06:17:32Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ds-rops-v.html": {
   "capture": "https://web.archive.org/web/20261021055014/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ds-rops-v.html",
   "job_id": "spn2-6b83570b3f2ac867227165b5ba6542d5cb4e41c4",
@@ -37431,7 +37531,20 @@
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ls-communing-qui-gon.html": {
   "capture": "https://web.archive.org/web/20261021055025/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ls-communing-qui-gon.html",
-  "last": "2026-10-21T05:51:40Z",
+  "last": "2026-10-21T06:10:35Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-nick-gorski-ds-rots-dooku.html": {
+  "capture": "",
+  "job_id": "spn2-0949af462641754f04ebd158e7abd08599264bc0",
+  "last": "2026-10-21T06:18:46Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-stephen-squirlock-ds-sycfa.html": {
+  "capture": "https://web.archive.org/web/20261021061835/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-stephen-squirlock-ds-sycfa.html",
+  "last": "2026-10-21T06:21:16Z",
   "status": "pending",
   "tries": 1
  },
@@ -37493,6 +37606,19 @@
   "capture": "https://web.archive.org/web/20261013171707/https://swccg.com/snapshots/pc/2022-ocs-top-16-ziemowit-skwara-ls-skywalker-saga-anakin.html",
   "last": "2026-10-13T17:35:26Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ds-watto.html": {
+  "capture": "",
+  "job_id": "spn2-ccfa1a2fdf5d8c86e5ac10093a803c95cb8ee421",
+  "last": "2026-10-21T06:19:50Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ds-rots-dooku.html": {
+  "capture": "https://web.archive.org/web/20261021062058/https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ds-rots-dooku.html",
+  "last": "2026-10-21T06:21:26Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-world-championship-wrap-desai-wins-third-title.html": {
