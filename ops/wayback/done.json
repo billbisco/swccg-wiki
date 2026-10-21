@@ -39916,8 +39916,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-endor-regionals-ming-huo-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021082431/https://swccg.com/snapshots/pc/2023-endor-regionals-ming-huo-ds-map.html",
-  "last": "2026-10-21T10:51:53Z",
-  "status": "pending",
+  "last": "2026-10-21T11:06:15Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-endor-regionals-ming-huo-ls-no-idea.html": {
@@ -40107,8 +40107,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ds-desert-landing-site-ssav.html": {
   "capture": "https://web.archive.org/web/20261021083955/https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ds-desert-landing-site-ssav.html",
-  "last": "2026-10-21T10:52:03Z",
-  "status": "pending",
+  "last": "2026-10-21T11:06:17Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ls-skywalker-saga-anakin.html": {
@@ -41567,9 +41567,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-john-moorley-ds-revenge-of-the-sith-maul.html": {
   "capture": "https://web.archive.org/web/20261021095450/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-john-moorley-ds-revenge-of-the-sith-maul.html",
-  "last": "2026-10-21T10:14:56Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T11:06:41Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-john-moorley-ls-rtpv.html": {
   "capture": "https://web.archive.org/web/20261021101013/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-john-moorley-ls-rtpv.html",
@@ -41785,6 +41786,20 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-ryloth-regionals-grady-hutchins-ls-yoda-communing.html": {
+  "capture": "https://web.archive.org/web/20261021110733/https://swccg.com/snapshots/pc/2023-ryloth-regionals-grady-hutchins-ls-yoda-communing.html",
+  "job_id": "spn2-9fc49b5f10a1cc8fa54f151290642413bcf5dfc5",
+  "last": "2026-10-21T11:14:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T11:14:44Z",
+   "bytes": 7121142,
+   "capture_id": "https://web.archive.org/web/20261021110733id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-grady-hutchins-ls-yoda-communing.html",
+   "method": "sha256",
+   "sha256": "a1ec793f5f23c7c8c7f6654de6ea77a5a24492f9dfa29571d79be315d3382af4"
+  }
+ },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021095553/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html",
   "job_id": "spn2-c75cb39aa2197d0305b04451fbfc887b9f36b024",
@@ -41800,8 +41815,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261021104152/https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ds-thrawn.html",
-  "last": "2026-10-21T10:48:24Z",
-  "status": "pending",
+  "last": "2026-10-21T11:06:31Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ls-skywalker-saga-anakin.html": {
@@ -41859,6 +41874,33 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-blake-silkwood-ds-hunt-down-v.html": {
+  "capture": "",
+  "job_id": "spn2-cf26d15ec9387a30cbfca78ace57128b4ad845f6",
+  "last": "2026-10-21T11:11:39Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-blake-silkwood-ls-yavin-4-base-operations.html": {
+  "capture": "",
+  "job_id": "spn2-ae2d96e35226d5ed388463c43b460b0c20c2228a",
+  "last": "2026-10-21T11:12:20Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brett-bailey-ds-ropsv.html": {
+  "capture": "https://web.archive.org/web/20261021111135/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brett-bailey-ds-ropsv.html",
+  "last": "2026-10-21T11:16:14Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brett-bailey-ls-diplo.html": {
+  "capture": "",
+  "job_id": "spn2-e4d57394184c906a9337b2915062f23f3ae904e7",
+  "last": "2026-10-21T11:11:17Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brian-fred-ds-verge.html": {
   "capture": "",
   "job_id": "spn2-d9374abfa1b43ebfd5ce6c73672df2ab99ce0c16",
@@ -41866,12 +41908,82 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brian-fred-ls-zero-hour.html": {
+  "capture": "https://web.archive.org/web/20261021110811/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brian-fred-ls-zero-hour.html",
+  "job_id": "spn2-20fe2c7d98974d6dfa54b9538ba829df28dda9a0",
+  "last": "2026-10-21T11:15:13Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T11:15:13Z",
+   "bytes": 7121944,
+   "capture_id": "https://web.archive.org/web/20261021110811id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brian-fred-ls-zero-hour.html",
+   "method": "sha256",
+   "sha256": "cb216707c77d5b488f5290266b88191d2163752c568a1445eb9b2ecb205d1142"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-cal-aldred-ds-thrawn.html": {
+  "capture": "https://web.archive.org/web/20261021110822/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-cal-aldred-ds-thrawn.html",
+  "job_id": "spn2-6b0aac3107723d40278628430e36d085b6ab7279",
+  "last": "2026-10-21T11:15:19Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T11:15:19Z",
+   "bytes": 7121029,
+   "capture_id": "https://web.archive.org/web/20261021110822id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-cal-aldred-ds-thrawn.html",
+   "method": "sha256",
+   "sha256": "311783abee346a5a94d697467b5f48220b9a377ca5c0fa0c066beb1faf98fc9c"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-casey-anis-ds-ropsv.html": {
+  "capture": "https://web.archive.org/web/20261021110730/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-casey-anis-ds-ropsv.html",
+  "job_id": "spn2-f91264ae0b46f93fe0793c9e02cf46c1a7a519ab",
+  "last": "2026-10-21T11:15:05Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T11:15:05Z",
+   "bytes": 7121852,
+   "capture_id": "https://web.archive.org/web/20261021110730id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-casey-anis-ds-ropsv.html",
+   "method": "sha256",
+   "sha256": "0f9ef3a110b3242d5c4f3b6228bdbe60b02bf1e1da1fd442b484f2fc269ca708"
+  }
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-casey-anis-ls-communing-yoda.html": {
   "capture": "",
   "job_id": "spn2-2e73d0e2202184520e2b26acaa587964e5a32d81",
   "last": "2026-10-21T10:59:09Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-chris-wirfs-ds-cct.html": {
+  "capture": "",
+  "job_id": "spn2-322f2a2444f7656e653e6fc9d7a30df711bb3cce",
+  "last": "2026-10-21T11:09:22Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-chris-wirfs-ls-wys.html": {
+  "capture": "https://web.archive.org/web/20261021111016/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-chris-wirfs-ls-wys.html",
+  "job_id": "spn2-87cdd2aa120f587f75982983bb51c985382e5c8a",
+  "last": "2026-10-21T11:16:10Z",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-conor-britain-ds-hoth-walkers.html": {
+  "capture": "https://web.archive.org/web/20261021110719/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-conor-britain-ds-hoth-walkers.html",
+  "job_id": "spn2-f70f443189476eb4b984bd9e6a0b861544a19ff6",
+  "last": "2026-10-21T11:14:58Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T11:14:58Z",
+   "bytes": 7122073,
+   "capture_id": "https://web.archive.org/web/20261021110719id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-conor-britain-ds-hoth-walkers.html",
+   "method": "sha256",
+   "sha256": "a39a841afc41d79c01e4f5d0bdbb5a0f144b231a75de2bde81184561a91cffbf"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-conor-britain-ls-rescue-the-princessv.html": {
   "capture": "",
@@ -41882,14 +41994,21 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021104719/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ds-aobs.html",
-  "last": "2026-10-21T10:48:43Z",
-  "status": "pending",
+  "last": "2026-10-21T11:06:34Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ls-qmc.html": {
   "capture": "",
   "job_id": "spn2-10dbd2901a475f52a62a5ec88ab29d8d1e9c8833",
   "last": "2026-10-21T10:56:29Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-drew-lichtenstein-ds-bhbm.html": {
+  "capture": "",
+  "job_id": "spn2-8da88e71973fc105bae18e8192e50b8440710958",
+  "last": "2026-10-21T11:14:28Z",
   "status": "pending",
   "tries": 1
  },
@@ -41906,6 +42025,20 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-blake-silkwood-ls-yavin-4-base-operations.html": {
+  "capture": "https://web.archive.org/web/20261021111235/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-blake-silkwood-ls-yavin-4-base-operations.html",
+  "job_id": "spn2-d7a1d5e6c35cc385fc4629efd03f7256bd9ce75d",
+  "last": "2026-10-21T11:16:25Z",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brett-bailey-ls-diplo.html": {
+  "capture": "",
+  "job_id": "spn2-0e402a9801335963d85bd3793d68e9e058b299ef",
+  "last": "2026-10-21T11:11:28Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ds-rots-dooku.html": {
   "capture": "",
   "job_id": "spn2-a493ad6fa36e424b1e76d585306dff75c33a271e",
@@ -41917,6 +42050,26 @@
   "capture": "",
   "job_id": "spn2-c49a2e77e5c601548040f11a601b32338cb46d23",
   "last": "2026-10-21T11:01:16Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-cal-aldred-ds-thrawn.html": {
+  "capture": "https://web.archive.org/web/20261021110833/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-cal-aldred-ds-thrawn.html",
+  "job_id": "spn2-a18257b1ea129a45ef31f9450a11204cd7712ad7",
+  "last": "2026-10-21T11:16:01Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T11:16:01Z",
+   "bytes": 7121082,
+   "capture_id": "https://web.archive.org/web/20261021110833id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-cal-aldred-ds-thrawn.html",
+   "method": "sha256",
+   "sha256": "95a7534131502255709eca48f86853393116f7ee3ba605a6e37ea47e4f05ae6d"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-cal-aldred-ls-hitco.html": {
+  "capture": "https://web.archive.org/web/20261021110914/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-cal-aldred-ls-hitco.html",
+  "last": "2026-10-21T11:16:03Z",
   "status": "pending",
   "tries": 1
  },
@@ -41969,6 +42122,20 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-drew-lichtenstein-ls-skywalker-saga-anakin.html": {
+  "capture": "https://web.archive.org/web/20261021110742/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-drew-lichtenstein-ls-skywalker-saga-anakin.html",
+  "job_id": "spn2-2f26f160734270024d82e2574a5073708f5d7e15",
+  "last": "2026-10-21T11:14:51Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T11:14:51Z",
+   "bytes": 7121424,
+   "capture_id": "https://web.archive.org/web/20261021110742id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-drew-lichtenstein-ls-skywalker-saga-anakin.html",
+   "method": "sha256",
+   "sha256": "f987698d3b68497bbc512f556e38c1bf3aaf2dfe8a620d6bd8f39a469fd266e2"
+  }
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ds-thrawn.html": {
   "capture": "",
   "job_id": "spn2-4804d122004193fa80be180a2fdeac3e8ef18825",
@@ -41980,6 +42147,46 @@
   "capture": "",
   "job_id": "spn2-a077eed7584a3ef4cd09a82e416cd57db1f6c100",
   "last": "2026-10-21T10:57:02Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-jacy-smith-ls-skywalker-saga-anakin.html": {
+  "capture": "",
+  "job_id": "spn2-ab413c14926ee52c56b840d73e4548a4f854fbab",
+  "last": "2026-10-21T11:10:14Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-joe-olson-ds-aobs.html": {
+  "capture": "https://web.archive.org/web/20261021111036/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-joe-olson-ds-aobs.html",
+  "last": "2026-10-21T11:16:13Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-brett-bailey-ds-hunt-down.html": {
+  "capture": "https://web.archive.org/web/20261021111246/https://swccg.com/snapshots/pc/2023-scarif-regionals-brett-bailey-ds-hunt-down.html",
+  "last": "2026-10-21T11:16:27Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ds-endor-operations.html": {
+  "capture": "",
+  "job_id": "spn2-b76085e0d1786ab413da914c4ed69b78fde0e721",
+  "last": "2026-10-21T11:13:46Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-chris-schoenthal-ds-rots-vader.html": {
+  "capture": "",
+  "job_id": "spn2-8569644b7a745d391695046002f83ec7c230092e",
+  "last": "2026-10-21T11:13:24Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-chris-schoenthal-ls-no-idea.html": {
+  "capture": "",
+  "job_id": "spn2-a51a144560edc2d70c150b71755c6b7a8ad5b8e0",
+  "last": "2026-10-21T11:13:35Z",
   "status": "pending",
   "tries": 1
  },
