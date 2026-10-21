@@ -1,4 +1,18 @@
 {
+ "http://blessed-souls.mine.sk/": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:32:28Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://creativecommons.org/licenses/by-sa/3.0/": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 87 hours, 12 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T02:32:40Z",
+  "status": "retry",
+  "tries": 1
+ },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D2.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
@@ -15653,11 +15667,18 @@
   }
  },
  "http://www.decktech.net/starwarsccg/deck/18663": {
-  "capture": "https://web.archive.org/web/20261017142023/https://www.decktech.net/starwarsccg/deck/18663/",
+  "capture": "https://web.archive.org/web/20261020224247/https://www.decktech.net/starwarsccg/deck/18663/",
   "job_id": "spn2-a9e58da80730218146b1ad0172925fdadede4502",
-  "last": "2026-10-20T22:42:44Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T02:31:38Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:31:38Z",
+   "bytes": 19978,
+   "capture_id": "https://web.archive.org/web/20261020224247id_/https://www.decktech.net/starwarsccg/deck/18663/",
+   "method": "sha256",
+   "sha256": "bf7aabfaa8eb0becadea466f3b1627c2580ce3ec65ffee9c670838600b610062"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18668": {
   "capture": "https://web.archive.org/web/20261017142657/https://www.decktech.net/starwarsccg/deck/18668/",
@@ -28517,6 +28538,13 @@
   "status": "ok",
   "tries": 1
  },
+ "http://www.swccgpc.com/": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 289 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T02:32:51Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://arctic-shift.photon-reddit.com/api/comments/search?link_id=hx9o77&limit=100": {
   "capture": "https://web.archive.org/web/20261014163933/https://arctic-shift.photon-reddit.com/api/comments/search?link_id=hx9o77&limit=100",
   "job_id": "spn2-2e0add911380a80580b022c41ea513bfe5e787dd",
@@ -28571,6 +28599,54 @@
   "last": "2026-10-14T00:47:16Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://challonge.com/kapftrvm": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 294 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T02:33:04Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://childcancerfund.org/": {
+  "capture": "https://web.archive.org/web/20261021023424/https://childcancerfund.org/",
+  "job_id": "spn2-911e4b562031201620b6f286b66e157be0aea51b",
+  "last": "2026-10-21T02:36:52Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:37:57Z",
+   "capture_id": "https://web.archive.org/web/20261021023424id_/https://childcancerfund.org/",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://creativecommons.org/licenses/by-sa/2.0/": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 32 hours, 34 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T02:33:26Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://creativecommons.org/licenses/by-sa/4.0": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 47 hours, 15 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T02:33:37Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://creativecommons.org/licenses/by/1.0": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:33:47Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://docs.google.com/document/d/17TqWsm6AtmGREZlerTsMWjy5K9qfaamf/edit": {
+  "capture": "https://web.archive.org/web/20261008194744/https://docs.google.com/document/d/17TqWsm6AtmGREZlerTsMWjy5K9qfaamf/edit",
+  "last": "2026-10-21T02:33:59Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://en.wikipedia.org/wiki/Decipher,_Inc.": {
   "capture": "https://web.archive.org/web/20261013234544/https://en.wikipedia.org/wiki/Decipher,_Inc.",
@@ -28674,6 +28750,12 @@
    "method": "text",
    "text_match": 1.0
   }
+ },
+ "https://github.com/billbisco/swccg-cardmaker": {
+  "capture": "https://web.archive.org/web/20261021023413/https://github.com/billbisco/swccg-cardmaker",
+  "last": "2026-10-21T02:37:16Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set1272/light/Card1272_019.java": {
   "capture": "https://web.archive.org/web/20261020173759/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set1272/light/Card1272_019.java",
@@ -29053,6 +29135,52 @@
    "sha256": "eae643034c133d68bd0706360dcd8f07b2da8898a1d4a0de1003714009ecb318"
   }
  },
+ "https://melee.gg/Profile/Index/AdamCFC": {
+  "capture": "",
+  "error": "error:no-request",
+  "job_id": "spn2-3f717c8bc9ec8f971499012da5ef461cd332c727",
+  "last": "2026-10-21T02:37:52Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://melee.gg/Profile/Index/Eweuge": {
+  "capture": "",
+  "error": "error:no-request",
+  "job_id": "spn2-6292fc57c9f3f52173853b9e35f7b659b502767b",
+  "last": "2026-10-21T02:36:56Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://melee.gg/Profile/Index/allstarz97": {
+  "capture": "",
+  "error": "error:no-request",
+  "job_id": "spn2-798c5f932ae0ca86e6e3241a51297b497809391d",
+  "last": "2026-10-21T02:37:36Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://melee.gg/Profile/Index/dillen": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 95 hours, 31 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T02:35:24Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://melee.gg/Profile/Index/jademasters": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:35:35Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://melee.gg/Profile/Index/redv": {
+  "capture": "",
+  "error": "error:no-request",
+  "job_id": "spn2-48117b1b10c19b611f50fcb2ba0a1a7368c438bc",
+  "last": "2026-10-21T02:36:59Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://pente.org/help/helpWindow.jsp?file=playGameRules": {
   "capture": "https://web.archive.org/web/20261016020533/https://www.pente.org/help/helpWindow.jsp?file=playGameRules",
   "job_id": "spn2-f00d9c4ce7616b15f4dcb048b144f13cdd00a2ed",
@@ -29241,6 +29369,20 @@
    "method": "sha256",
    "sha256": "8969aaf3ba29b9f4df0f71aa6d7e846e54324dfd9f501fca52e6f9da96698f98"
   }
+ },
+ "https://res.starwarsccg.org/cards/Virtual10-Dark/large/inthehandsoftheempire.gif": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 287 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T02:35:57Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://res.starwarsccg.org/cards/Virtual10-Dark/large/ralltiiroperations.gif": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 287 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T02:36:08Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://res.starwarsccg.org/legacyblocks/": {
   "capture": "",
@@ -29518,6 +29660,13 @@
   "status": "ok",
   "tries": 2
  },
+ "https://res.starwarsccg.org/rules/SWCCG-Beginners-Rulebook-v2.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 294 hours, 59 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T02:36:19Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2014MPC_Holotable.zip": {
   "capture": "https://web.archive.org/web/20261008205656/https://res.starwarsccg.org/wp/wp-content/uploads/2014MPC_Holotable.zip",
   "last": "2026-10-20T22:12:18Z",
@@ -29580,6 +29729,20 @@
   "last": "2026-10-20T21:35:11Z",
   "status": "retry",
   "tries": 4
+ },
+ "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/mapchart_map_world_20250320.jpg": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:36:30Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/region_map_us_v1.jpg": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 279 hours, 39 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T02:36:41Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1995/vp951211/12090048.htm": {
   "capture": "",
@@ -29984,11 +30147,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-casper-hb.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021003828/https://swccg.com/snapshots/pc/2017-ec-day-2-casper-hb.html",
   "job_id": "spn2-166d73c22815981eb3d9a2abfaa88e8589f7fe55",
-  "last": "2026-10-21T00:38:23Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T02:31:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:31:44Z",
+   "bytes": 7120809,
+   "capture_id": "https://web.archive.org/web/20261021003828id_/https://swccg.com/snapshots/pc/2017-ec-day-2-casper-hb.html",
+   "method": "sha256",
+   "sha256": "0123d600a80dd326f588a2d968541ac9d65532b1f9fef2e74b50c687282f1947"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-casper-watto.html": {
   "capture": "",
@@ -29998,9 +30168,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-bhbm.html": {
-  "capture": "",
-  "job_id": "spn2-ededab6af06fa68a06c9e45f53c9b7b252304673",
-  "last": "2026-10-21T00:37:50Z",
+  "capture": "https://web.archive.org/web/20261021003753/https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-bhbm.html",
+  "last": "2026-10-21T02:31:46Z",
   "status": "pending",
   "tries": 1
  },
@@ -30054,8 +30223,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html": {
   "capture": "https://web.archive.org/web/20261021004117/https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html",
-  "last": "2026-10-21T02:18:05Z",
-  "status": "pending",
+  "last": "2026-10-21T02:31:47Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html": {
@@ -30197,8 +30366,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-jonathan-bauer-eops.html": {
   "capture": "https://web.archive.org/web/20261021005326/https://swccg.com/snapshots/pc/2017-tmw-day-1-jonathan-bauer-eops.html",
-  "last": "2026-10-21T02:18:09Z",
-  "status": "pending",
+  "last": "2026-10-21T02:31:51Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-jonny-chu-senate.html": {
@@ -30265,8 +30434,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-senate.html": {
   "capture": "https://web.archive.org/web/20261021010747/https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-senate.html",
-  "last": "2026-10-21T02:15:51Z",
-  "status": "pending",
+  "last": "2026-10-21T02:31:53Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-trm.html": {
@@ -30285,8 +30454,7 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-qmc.html": {
   "capture": "https://web.archive.org/web/20261021011606/https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-qmc.html",
-  "job_id": "spn2-c516394ee8032403faef9bbe0a594f55baf61f12",
-  "last": "2026-10-21T02:08:03Z",
+  "last": "2026-10-21T02:31:55Z",
   "status": "pending",
   "tries": 2
  },
@@ -30601,8 +30769,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-westergard-ls.html": {
   "capture": "https://web.archive.org/web/20261021011726/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-westergard-ls.html",
-  "last": "2026-10-21T02:15:04Z",
-  "status": "pending",
+  "last": "2026-10-21T02:32:01Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ds.html": {
@@ -30649,8 +30817,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-dennis-reinhardt-ls.html": {
   "capture": "https://web.archive.org/web/20261021012207/https://swccg.com/snapshots/pc/2017-worlds-day-2-dennis-reinhardt-ls.html",
-  "last": "2026-10-21T02:15:55Z",
-  "status": "pending",
+  "last": "2026-10-21T02:32:03Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ds.html": {
@@ -30669,8 +30837,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ds.html": {
   "capture": "https://web.archive.org/web/20261021021023/https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ds.html",
-  "last": "2026-10-21T02:15:08Z",
-  "status": "pending",
+  "last": "2026-10-21T02:32:04Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ls.html": {
@@ -30757,9 +30925,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-aobs.html": {
-  "capture": "",
-  "job_id": "spn2-86c054d3590708099ac3b8d582dcbb1d0b81e35c",
-  "last": "2026-10-21T01:45:25Z",
+  "capture": "https://web.archive.org/web/20261021014527/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-aobs.html",
+  "last": "2026-10-21T02:32:07Z",
   "status": "pending",
   "tries": 1
  },
@@ -31125,8 +31292,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-haid-ls.html": {
   "capture": "https://web.archive.org/web/20261021021346/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-haid-ls.html",
-  "last": "2026-10-21T02:16:03Z",
-  "status": "pending",
+  "last": "2026-10-21T02:32:13Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ds.html": {
@@ -31187,14 +31354,14 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ds.html": {
   "capture": "https://web.archive.org/web/20261021021232/https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ds.html",
-  "last": "2026-10-21T02:15:23Z",
-  "status": "pending",
+  "last": "2026-10-21T02:32:15Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ls.html": {
   "capture": "https://web.archive.org/web/20261021021327/https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ls.html",
-  "last": "2026-10-21T02:15:24Z",
-  "status": "pending",
+  "last": "2026-10-21T02:32:16Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-3-phil-aasen-ls.html": {
@@ -34390,8 +34557,8 @@
  },
  "https://swccg.com/snapshots/pc/2022-09-european-championship.html": {
   "capture": "https://web.archive.org/web/20261021003239/https://swccg.com/snapshots/pc/2022-09-european-championship.html",
-  "last": "2026-10-21T02:14:56Z",
-  "status": "pending",
+  "last": "2026-10-21T02:32:20Z",
+  "status": "retry",
   "tries": 4
  },
  "https://swccg.com/snapshots/pc/2022-bespin-regionals-will-scinocca-ls-combat.html": {
@@ -37943,8 +38110,8 @@
  },
  "https://swccg.com/snapshots/pc/vkit.html": {
   "capture": "https://web.archive.org/web/20261020230838/https://swccg.com/snapshots/pc/vkit.html",
-  "last": "2026-10-21T02:15:47Z",
-  "status": "pending",
+  "last": "2026-10-21T02:32:24Z",
+  "status": "retry",
   "tries": 4
  },
  "https://swccg.com/snapshots/pc/world-championship-2025-wrap-up-greg-shaw-wins-his-crown.html": {
