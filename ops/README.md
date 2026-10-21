@@ -16,7 +16,7 @@ Setup/repair: `ops/install-vps.sh` (idempotent; run as root on the VPS).
 
 1. Add the live URL (or the swccg.com snapshot URL for Cloudflare hosts) to `wayback/queue.txt`, commit, push.
 2. Read `wayback/done.json` on a later pull. `status: verified` means the worker fetched the capture's `id_` URL and it matched the source (`verify.method` `sha256` for files, `text` with `verify.text_match` for HTML). That counts as opened and checked: cite `capture`.
-3. `unverified` has a `verify.reason` (Cloudflare page, file differs, text differs, source could not be fetched): look at it before citing. `ok` = loaded, not verified yet (the worker verifies these each run, newest first). `pending`/`retry`/`failed` as before.
+3. `unverified` has a `verify.reason` (Cloudflare page, file differs, text differs, source could not be fetched): look at it before citing. `ok` = loaded, not verified yet (the worker verifies these each run, newest first). `pending`/`retry`/`failed` as before. A `pending` entry older than 6 h (`WAYBACK_PENDING_TIMEOUT_HOURS` / `--pending-timeout-hours`) gets an exact-URL CDX lookup and the same check: verified, or back to `retry` for a fresh save; after 3 timeouts (`WAYBACK_PENDING_MAX_CYCLES` / `--pending-max-cycles`) it is `failed`. Added fields: `pending_timeouts`, `pending_timeout` (`at`, `cycle`, `result`, `cdx_captures`, `cdx_timestamp` or `reason`), `stale_job_id`; `verify.method` `snapshot-header` for swccg.com snapshots already deleted from the VPS. Scomp re-saves always go last.
 
 No Wayback access is needed from the bot's own machine.
 
