@@ -29874,11 +29874,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/f1168.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021034928/https://swccg.com/snapshots/forum/f1168.html",
   "job_id": "spn2-2414ff28ac46388811d6c40f5ad6c4401ec547d8",
-  "last": "2026-10-21T03:49:25Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T03:55:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T03:55:44Z",
+   "bytes": 1475191,
+   "capture_id": "https://web.archive.org/web/20261021034928id_/https://swccg.com/snapshots/forum/f1168.html",
+   "method": "sha256",
+   "sha256": "8f1e4fa9cbc0cc12ad2cf5f1e2a1e9a0c78749ac38a2088f2a5c68016ea5271f"
+  }
  },
  "https://swccg.com/snapshots/forum/f1592.html": {
   "capture": "",
@@ -30009,12 +30016,26 @@
   "status": "pending",
   "tries": 1
  },
- "https://swccg.com/snapshots/forum/t74291.html": {
+ "https://swccg.com/snapshots/forum/t74065.html": {
   "capture": "",
-  "job_id": "spn2-906cd773f620bad9729dea987a6a0a0dba963966",
-  "last": "2026-10-21T03:49:13Z",
-  "status": "pending",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:57:04Z",
+  "status": "retry",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/t74291.html": {
+  "capture": "https://web.archive.org/web/20261021034916/https://swccg.com/snapshots/forum/t74291.html",
+  "job_id": "spn2-906cd773f620bad9729dea987a6a0a0dba963966",
+  "last": "2026-10-21T03:55:49Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T03:55:49Z",
+   "bytes": 2209597,
+   "capture_id": "https://web.archive.org/web/20261021034916id_/https://swccg.com/snapshots/forum/t74291.html",
+   "method": "sha256",
+   "sha256": "93203fd783477fa257679e30dc3f8ad4910617e28430c8096ebad8843c3a98f8"
+  }
  },
  "https://swccg.com/snapshots/forum/t75427-start20.html": {
   "capture": "https://web.archive.org/web/20261016161936/https://swccg.com/snapshots/forum/t75427-start20.html",
@@ -30622,8 +30643,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-shawn-dickson-coruscant-crv.html": {
   "capture": "https://web.archive.org/web/20261021011520/https://swccg.com/snapshots/pc/2017-tmw-day-1-shawn-dickson-coruscant-crv.html",
-  "last": "2026-10-21T03:32:49Z",
-  "status": "pending",
+  "last": "2026-10-21T03:55:53Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-senate.html": {
@@ -30702,20 +30723,19 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-jonny-chu-senate.html": {
   "capture": "https://web.archive.org/web/20261021005043/https://swccg.com/snapshots/pc/2017-tmw-day-2-jonny-chu-senate.html",
-  "last": "2026-10-21T03:42:11Z",
-  "status": "pending",
+  "last": "2026-10-21T03:55:54Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-jonny-chu-wys.html": {
   "capture": "https://web.archive.org/web/20261021011457/https://swccg.com/snapshots/pc/2017-tmw-day-2-jonny-chu-wys.html",
-  "last": "2026-10-21T03:42:13Z",
-  "status": "pending",
+  "last": "2026-10-21T03:55:55Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-matt-scott-diplo.html": {
-  "capture": "",
-  "job_id": "spn2-6372a59fd6367cdc90f828e5dd8f2f8bb64188f1",
-  "last": "2026-10-21T01:04:30Z",
+  "capture": "https://web.archive.org/web/20261021010549/https://swccg.com/snapshots/pc/2017-tmw-day-2-matt-scott-diplo.html",
+  "last": "2026-10-21T03:55:57Z",
   "status": "pending",
   "tries": 1
  },
@@ -30999,8 +31019,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ls.html": {
   "capture": "https://web.archive.org/web/20261021011538/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ls.html",
-  "last": "2026-10-21T03:42:18Z",
-  "status": "pending",
+  "last": "2026-10-21T03:56:02Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ds.html": {
@@ -31154,8 +31174,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jeremy-dipaolo-court.html": {
   "capture": "https://web.archive.org/web/20261021022341/https://swccg.com/snapshots/pc/2017-worlds-day-2-jeremy-dipaolo-court.html",
-  "last": "2026-10-21T03:32:59Z",
-  "status": "pending",
+  "last": "2026-10-21T03:56:05Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jeremy-dipaolo-diplo.html": {
@@ -31531,8 +31551,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-marlin-ls.html": {
   "capture": "https://web.archive.org/web/20261021022145/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-marlin-ls.html",
-  "last": "2026-10-21T03:42:26Z",
-  "status": "pending",
+  "last": "2026-10-21T03:56:11Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-vikram-bali-ds.html": {
@@ -31740,6 +31760,13 @@
   "status": "retry",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2018-worlds-day-3-jonny-chu-tdigwatt.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:56:22Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html": {
   "capture": "https://web.archive.org/web/20261021034750/https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html",
   "last": "2026-10-21T03:52:49Z",
@@ -31821,6 +31848,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html": {
+  "capture": "https://web.archive.org/web/20261021035648/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html",
+  "job_id": "spn2-a6941e7560d57c638e0c7f4acc55bb69d27204c4",
+  "last": "2026-10-21T04:06:22Z",
+  "status": "ok",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2018-worlds-reid-smith-hitco.html": {
   "capture": "",
   "job_id": "spn2-48c0f433e8cc698dca3752795f8a2b6e96092331",
@@ -31846,6 +31880,13 @@
   "job_id": "spn2-3eb59b7d8ab1ea6c4cc925379cda3f3c82694b43",
   "last": "2026-10-21T03:44:16Z",
   "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2018-worlds-steve-brentson-wys.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:56:32Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-tom-haid-qmc.html": {
@@ -31888,6 +31929,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html": {
+  "capture": "",
+  "job_id": "spn2-60d5127d394a57d5d59649fc3cc6074cc235739b",
+  "last": "2026-10-21T03:56:54Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html": {
   "capture": "",
   "job_id": "spn2-280cc9ffd201c8c038abee5d70348242cc2d95cd",
@@ -31915,6 +31963,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ls-trm.html": {
+  "capture": "",
+  "job_id": "spn2-524c9e448bcc7948affa46030e1843331a3b82b1",
+  "last": "2026-10-21T03:57:18Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ds-map.html": {
   "capture": "",
   "job_id": "spn2-c7dc16af071c3c7de34f28b7ae247ae7a3881ef8",
@@ -31926,6 +31981,13 @@
   "capture": "",
   "job_id": "spn2-4c5891d08bc628c6cc15be5cc07ab702dac8f20d",
   "last": "2026-10-21T03:50:39Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ds-map.html": {
+  "capture": "",
+  "job_id": "spn2-5c739454313f2091367bdb54a6ced2fb2bdb7255",
+  "last": "2026-10-21T03:57:29Z",
   "status": "pending",
   "tries": 1
  },
@@ -31948,6 +32010,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2019-worlds-day-2-justin-branch-ds-map.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:57:39Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-kyle-krueger-ls-trm.html": {
   "capture": "",
   "job_id": "spn2-852fdb2ac56a7349f2168153653f402988119b92",
@@ -31955,10 +32024,72 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2019-worlds-day-2-moritz-karge-ds-map.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:57:49Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2019-worlds-day-3-bryan-mischke-ds-map.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:57:59Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:58:09Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2019-worlds.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-10-21T00:07:21Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2020-day-1-wayne-cullen-ds-asm.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:59:35Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-kelly-ls-hitco.html": {
+  "capture": "",
+  "job_id": "spn2-0acbe144aa58b430b3a1b7912d229825fe87a5b5",
+  "last": "2026-10-21T03:58:21Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-menzel-ds-hunt-down.html": {
+  "capture": "",
+  "job_id": "spn2-77392e16616587849b02e2b839fad1118c8f8669",
+  "last": "2026-10-21T03:58:33Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html": {
+  "capture": "",
+  "job_id": "spn2-1bb4b53b202df1320d89631badc1add19adfdcbb",
+  "last": "2026-10-21T03:58:43Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-miyashiro-ds-hunt-down.html": {
+  "capture": "https://web.archive.org/web/20261021035928/https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-miyashiro-ds-hunt-down.html",
+  "last": "2026-10-21T04:06:31Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2020-mpc-day-1-matthew-harrison-trainor-ds-hunt-down.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:59:45Z",
   "status": "retry",
   "tries": 1
  },
@@ -34979,11 +35110,25 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-corellia-regionals-brian-fred-ds-bhbm-bf.html": {
+  "capture": "",
+  "job_id": "spn2-e15b6a3a20b0504570bd55b864abbe189b2115cc",
+  "last": "2026-10-21T04:00:07Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-brian-fred-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261016154724/https://swccg.com/snapshots/pc/2022-corellia-regionals-brian-fred-ds-bhbm.html",
   "job_id": "spn2-96acd20fab5e2d429a1367cb2a583dc20e019ab1",
   "last": "2026-10-16T15:55:33Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-corellia-regionals-david-center-ls-rescue-the-princess-v-bf.html": {
+  "capture": "",
+  "job_id": "spn2-7726ae7f203d1d06014099a1e7e08b2b869fbc8e",
+  "last": "2026-10-21T04:00:18Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-david-center-ls-rescue-the-princess-v.html": {
@@ -34998,6 +35143,12 @@
   "job_id": "spn2-8e30086ca98371b44cbb36d99da97473fb3f055d",
   "last": "2026-10-16T17:23:29Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-corellia-regionals-jim-boyle-ls-profit-bf.html": {
+  "capture": "https://web.archive.org/web/20261021040032/https://swccg.com/snapshots/pc/2022-corellia-regionals-jim-boyle-ls-profit-bf.html",
+  "last": "2026-10-21T04:07:26Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-jim-boyle-ls-profit.html": {
@@ -35049,6 +35200,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ds-rops-v-bf.html": {
+  "capture": "",
+  "job_id": "spn2-7115edaaea4356f2677ec252fc0a59366f971c73",
+  "last": "2026-10-21T04:05:26Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ds-rops-v.html": {
   "capture": "https://web.archive.org/web/20261016154133/https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ds-rops-v.html",
   "last": "2026-10-16T17:36:27Z",
@@ -35060,6 +35218,13 @@
   "job_id": "spn2-1d7029ddd13b74526503abb34841dfd9d8d33352",
   "last": "2026-10-16T17:26:42Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-bill-kafer-ds-hunt-down-v-bf.html": {
+  "capture": "",
+  "job_id": "spn2-136bd9c9c6c63de9127d6ec35c8f5898f7498872",
+  "last": "2026-10-21T04:02:46Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-bill-kafer-ds-hunt-down-v.html": {
@@ -35076,12 +35241,26 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ds-map-bf.html": {
+  "capture": "",
+  "job_id": "spn2-280133d242802921619a0c09307737b89015e0ec",
+  "last": "2026-10-21T04:05:05Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ds-map.html": {
   "capture": "https://web.archive.org/web/20261016154126/https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ds-map.html",
   "job_id": "spn2-95af3cbce41cfacc197cff270411d79df0d1326a",
   "last": "2026-10-16T18:37:34Z",
   "status": "ok",
   "tries": 4
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ls-family-luke-bf.html": {
+  "capture": "",
+  "job_id": "spn2-6154995551a5dd1306c1ed88bddfdab0db094b4c",
+  "last": "2026-10-21T04:05:15Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ls-family-luke.html": {
   "capture": "https://web.archive.org/web/20261016154816/https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ls-family-luke.html",
@@ -35104,12 +35283,26 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ds-court-bf.html": {
+  "capture": "",
+  "job_id": "spn2-a51cfdbcf20007a9afb12a53fdbb4dd695e2b8ac",
+  "last": "2026-10-21T04:02:24Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ds-court.html": {
   "capture": "https://web.archive.org/web/20261016163238/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ds-court.html",
   "job_id": "spn2-73edb92eccb23cd02ae6c33a375f599ad579d9ce",
   "last": "2026-10-16T16:33:18Z",
   "status": "ok",
   "tries": 2
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend-bf.html": {
+  "capture": "https://web.archive.org/web/20261021040251/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend-bf.html",
+  "job_id": "spn2-cc5fa6ac7b2e0dadabcfcd4f948535335122301a",
+  "last": "2026-10-21T04:06:47Z",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261016154919/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend.html",
@@ -35118,10 +35311,24 @@
   "status": "ok",
   "tries": 3
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-zinn-ds-walkers-bf.html": {
+  "capture": "",
+  "job_id": "spn2-54e70e00a3b4cc8b5bb1bd1f8ebb654b23dc735d",
+  "last": "2026-10-21T04:06:08Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-zinn-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261016154930/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-zinn-ds-walkers.html",
   "job_id": "spn2-7a319f799f9f74d9a19d72ded1a86addc4e2d6fc",
   "last": "2026-10-16T15:56:35Z",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea-bf.html": {
+  "capture": "https://web.archive.org/web/20261021040416/https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea-bf.html",
+  "job_id": "spn2-a7642bf86bfe688ec552dd1f4ff1724c4d0cb84d",
+  "last": "2026-10-21T04:07:39Z",
   "status": "ok",
   "tries": 1
  },
@@ -35139,11 +35346,25 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-mike-pistone-ds-map-bf.html": {
+  "capture": "",
+  "job_id": "spn2-d2cca3c4b5cae865b89bb6190014498de7173708",
+  "last": "2026-10-21T04:01:31Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-mike-pistone-ds-map.html": {
   "capture": "https://web.archive.org/web/20261016155026/https://swccg.com/snapshots/pc/2022-coruscant-regionals-mike-pistone-ds-map.html",
   "job_id": "spn2-9420b6e157274210ebab6e3b02b8670610330451",
   "last": "2026-10-16T17:28:13Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-mike-pistone-ls-communing-yoda-bf.html": {
+  "capture": "",
+  "job_id": "spn2-1004bbb2b02541d8170d91022b3c99b5dbada833",
+  "last": "2026-10-21T04:01:42Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-mike-pistone-ls-communing-yoda.html": {
@@ -35153,6 +35374,12 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-tim-simon-ds-coruscant-crv-bf.html": {
+  "capture": "https://web.archive.org/web/20261021040348/https://swccg.com/snapshots/pc/2022-coruscant-regionals-tim-simon-ds-coruscant-crv-bf.html",
+  "last": "2026-10-21T04:07:32Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-tim-simon-ds-coruscant-crv.html": {
   "capture": "https://web.archive.org/web/20261016155045/https://swccg.com/snapshots/pc/2022-coruscant-regionals-tim-simon-ds-coruscant-crv.html",
   "job_id": "spn2-71562b6dc94ab4c24bf102f7637a7f698165c87b",
@@ -35160,11 +35387,25 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-tim-simon-ls-communing-yoda-bf.html": {
+  "capture": "",
+  "job_id": "spn2-de3d166506208f915e0781166c5a6a9054bf19eb",
+  "last": "2026-10-21T04:03:39Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-tim-simon-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261016160129/https://swccg.com/snapshots/pc/2022-coruscant-regionals-tim-simon-ls-communing-yoda.html",
   "job_id": "spn2-13cb86f07ae4793b56e6323c31a7a6da5efe7f0c",
   "last": "2026-10-16T16:09:22Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-tom-sacharan-ds-map-bf.html": {
+  "capture": "",
+  "job_id": "spn2-5c05cff05da092a73896cd3397674536f1f7096f",
+  "last": "2026-10-21T04:04:23Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-tom-sacharan-ds-map.html": {
@@ -35180,11 +35421,24 @@
   "status": "ok",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ds-walkers-bf.html": {
+  "capture": "https://web.archive.org/web/20261021040215/https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ds-walkers-bf.html",
+  "last": "2026-10-21T04:06:37Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261016155149/https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ds-walkers.html",
   "job_id": "spn2-e3cdb423dd2987424a06c69f7d01ec29e8978720",
   "last": "2026-10-16T17:33:05Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ls-whap-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:01:20Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ls-whap.html": {
@@ -35194,11 +35448,24 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ds-map-bf.html": {
+  "capture": "",
+  "job_id": "spn2-78d4baa3d8bb6cf3aaccb744748910363120bcc1",
+  "last": "2026-10-21T04:03:49Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ds-map.html": {
   "capture": "https://web.archive.org/web/20261016155230/https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ds-map.html",
   "job_id": "spn2-5bbbdd7be59779afcfc71f7e2e378c7d01debb0d",
   "last": "2026-10-16T17:33:09Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ls-whap-bf.html": {
+  "capture": "https://web.archive.org/web/20261021040403/https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ls-whap-bf.html",
+  "last": "2026-10-21T04:06:53Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ls-whap.html": {
@@ -38463,6 +38730,12 @@
   "status": "retry",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html": {
+  "capture": "https://web.archive.org/web/20261021040051/https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html",
+  "last": "2026-10-21T04:06:32Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/jokerking-wins-batmouses-5th-gempc.html": {
   "capture": "https://web.archive.org/web/20261020233716/https://swccg.com/snapshots/pc/jokerking-wins-batmouses-5th-gempc.html",
   "last": "2026-10-21T02:06:28Z",
@@ -40455,8 +40728,8 @@
  },
  "https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html": {
   "capture": "https://web.archive.org/web/20261021024633/https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html",
-  "last": "2026-10-21T03:35:38Z",
-  "status": "pending",
+  "last": "2026-10-21T03:56:18Z",
+  "status": "retry",
   "tries": 2
  },
  "https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html": {
@@ -41440,8 +41713,8 @@
  },
  "https://www.youtube.com/watch?v=2Zu0-Ut4vJA": {
   "capture": "https://web.archive.org/web/20261021032526/https://www.youtube.com/watch?v=2Zu0-Ut4vJA",
-  "last": "2026-10-21T03:37:48Z",
-  "status": "pending",
+  "last": "2026-10-21T03:56:20Z",
+  "status": "retry",
   "tries": 1
  },
  "https://www.youtube.com/watch?v=2fdSd2MGoKs": {
