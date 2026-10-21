@@ -13,7 +13,7 @@ for i in range(7):
         d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": ua}), timeout=60))
         break
     except urllib.error.HTTPError as e:
-        if e.code not in (429, 503) or i == 6:
+        if e.code not in (429, 502, 503, 504) or i == 6:
             raise
         ra = (e.headers.get("Retry-After") or "").strip()
         time.sleep(float(ra) if ra.isdigit() else min(2 * 2 ** i, 60))

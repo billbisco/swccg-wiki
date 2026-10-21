@@ -62,7 +62,7 @@ def _wiki_api_get(params, timeout=90, tries=7):
             with _ur.urlopen(_ur.Request(url, headers={"User-Agent": _WIKI_UA}), timeout=timeout) as r:
                 return _json.loads(r.read().decode("utf-8"))
         except _ue.HTTPError as e:
-            if e.code in (429, 503) and attempt < tries - 1:
+            if e.code in (429, 502, 503, 504) and attempt < tries - 1:
                 ra = (e.headers.get("Retry-After") or "").strip()
                 _time.sleep(float(ra) if ra.isdigit() else delay); delay = min(delay * 2, 60.0); continue
             raise
