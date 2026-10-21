@@ -454,14 +454,15 @@ _SHIELD_CACHE: dict[str, str | None] = {}
 
 
 def _wiki_raw(title: str) -> str:
-    import urllib.parse
-    import urllib.request
-    url = "https://wiki.swccg.com/index.php?" + urllib.parse.urlencode({"title": title, "action": "raw"})
-    req = urllib.request.Request(url, headers={"User-Agent": "swccg-wiki-dest/1.0 (shield links)"})
+    """Current wikitext through api.php (anonymous index.php?action=raw is rate-limited); "" if missing."""
+    import sys
+    here = str(Path(__file__).resolve().parent)
+    if here not in sys.path:
+        sys.path.insert(0, here)
+    from wiki_api_fetch import fetch_raw_many
     try:
-        with urllib.request.urlopen(req, timeout=60) as r:
-            return r.read().decode("utf-8")
-    except Exception:  # noqa: BLE001 - missing page = 404
+        return fetch_raw_many([title])[title] or ""
+    except Exception:  # noqa: BLE001 - network/API error: treat as missing, as before
         return ""
 
 
