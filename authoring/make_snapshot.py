@@ -4,6 +4,7 @@
 
     python make_snapshot.py page.html --url https://forum.example.org/viewtopic.php?t=1 -o out.html
            [--fetcher direct|wayback|auto] [--cookie-file cookies.txt] [--user-agent UA]
+           [--flaresolverr http://localhost:8191/v1 [--fs-session NAME] [--keep-fs-session]]
 
 - CSS: <link rel=stylesheet> fetched and inlined; @import followed; url(...) -> data: URIs
 - images (img, input[type=image], inline style url()) -> data: URIs; srcset / lazy attrs dropped
@@ -12,8 +13,12 @@
 - visible provenance banner: live URL + capture time
 Asset fetch order (auto): direct HTTP (with optional cookies/UA from FlareSolverr),
 then the Wayback Machine raw capture (id_) of the exact URL, then without its query string.
+
+FlareSolverr session: each run uses its own session (default snap-<pid>-<UTC timestamp>, or
+--fs-session NAME) and destroys it when the run ends, even on errors, so parallel runs never share
+or leak a browser. --keep-fs-session leaves a named session open for the caller to reuse.
 """
-import argparse, base64, datetime, html as htmllib, mimetypes, re, sys, urllib.parse
+import argparse, base64, datetime, html as htmllib, mimetypes, os, re, sys, urllib.parse
 import requests
 from bs4 import BeautifulSoup
 
@@ -23,10 +28,17 @@ def clean(u):
     u = SID.sub(r'\1', u)
     return u[:-1] if u.endswith(('?', '&')) else u
 
+def default_fs_session():
+    """A per-run FlareSolverr session name, unique across processes and runs."""
+    return 'snap-%d-%s' % (os.getpid(), datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S%f'))
+
 class Fetcher:
-    def __init__(self, mode, ua, cookie_file, flaresolverr=None):
+    def __init__(self, mode, ua, cookie_file, flaresolverr=None, fs_session=None, keep_fs_session=False):
         self.mode, self.cache, self.log, self.rebase = mode, {}, [], {}
         self.fs = flaresolverr
+        self.fs_session = fs_session or default_fs_session()
+        self.keep_fs_session = keep_fs_session
+        self._fs_used = False
         self.s = requests.Session()
         self.s.headers['User-Agent'] = ua
         if cookie_file:
@@ -44,12 +56,30 @@ class Fetcher:
             pass
         return None
 
+    def close(self):
+        """Destroy this run's FlareSolverr session (if one was opened). Never raises."""
+        if not (self.fs and self._fs_used) or self.keep_fs_session:
+            return
+        self._fs_used = False
+        try:
+            requests.post(self.fs, json={'cmd': 'sessions.destroy', 'session': self.fs_session}, timeout=60)
+        except requests.RequestException:
+            pass
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        self.close()
+        return False
+
     def _fs_css(self, url):
         """Cloudflare fingerprints plain HTTP clients even with cf_clearance, so fetch stylesheets
         through FlareSolverr (a real browser). Chrome shows text files inside <pre>; unwrap it."""
+        self._fs_used = True  # FlareSolverr creates the session on first use
         try:
             r = requests.post(self.fs, json={'cmd': 'request.get', 'url': url, 'maxTimeout': 60000,
-                                             'session': 'snap'}, timeout=120).json()
+                                             'session': self.fs_session}, timeout=120).json()
             body = r.get('solution', {}).get('response', '')
             m = re.search(r'<pre[^>]*>(.*)</pre>', body, re.S)
             if m and 'Just a moment' not in body:
@@ -115,16 +145,25 @@ def inline_css(fetch, css, base, depth=0):
         return f'url("{data_uri(fetch, urllib.parse.urljoin(base, u))}")'
     return URL_RE.sub(rep, css)
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument('html'); ap.add_argument('--url', required=True); ap.add_argument('-o', required=True)
     ap.add_argument('--fetcher', default='auto', choices=['direct', 'wayback', 'auto'])
     ap.add_argument('--cookie-file'); ap.add_argument('--user-agent', default='Mozilla/5.0 (swccg-wiki snapshot)')
     ap.add_argument('--flaresolverr', help='FlareSolverr endpoint, e.g. http://localhost:8191/v1: used to fetch stylesheets Cloudflare blocks for plain HTTP clients')
+    ap.add_argument('--fs-session', help='FlareSolverr session name (default: unique per run, snap-<pid>-<timestamp>)')
+    ap.add_argument('--keep-fs-session', action='store_true', help='do not destroy the FlareSolverr session at the end')
     ap.add_argument('--captured', help='ISO time the page was captured (default now)')
-    a = ap.parse_args()
+    a = ap.parse_args(argv)
+    fetch = Fetcher(a.fetcher, a.user_agent, a.cookie_file, a.flaresolverr,
+                    fs_session=a.fs_session, keep_fs_session=a.keep_fs_session)
+    try:
+        build(a, fetch)
+    finally:
+        fetch.close()
+
+def build(a, fetch):
     live = clean(a.url)
-    fetch = Fetcher(a.fetcher, a.user_agent, a.cookie_file, a.flaresolverr)
     soup = BeautifulSoup(open(a.html, encoding='utf-8', errors='replace').read(), 'html.parser')
 
     for t in soup(['script', 'noscript', 'iframe', 'object', 'embed', 'template', 'base']):
