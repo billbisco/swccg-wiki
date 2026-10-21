@@ -13,7 +13,15 @@ status: pending (submitted, not yet confirmed) | verified (capture fetched as id
 the live source: sha256 for files, page text for HTML; this is "opened and checked") |
 unverified (capture loads but does not match, or the source could not be fetched; look at it)
 | ok (capture loads, not verified yet; the worker verifies these each run, newest first) |
-retry (save or check failed; retried later, up to MAX_TRIES) | failed (gave up after MAX_TRIES).
+retry (save or check failed; retried later, up to MAX_TRIES) | failed (gave up after MAX_TRIES,
+or after PENDING_MAX_CYCLES pending timeouts).
+
+Stuck pending (Chief, 2026-10-20): an entry still "pending" PENDING_TIMEOUT after its "last" stamp
+gets an exact-URL CDX lookup; each capture found (newest first) is checked like any other capture.
+Verified -> status "verified" with that capture. Otherwise the entry goes back to "retry" for a fresh
+save, and after PENDING_MAX_CYCLES timeouts it is "failed". Additive fields: "pending_timeouts" (int),
+"pending_timeout" ({"at", "cycle", "result", "cdx_captures", "cdx_timestamp" | "reason"}) and
+"stale_job_id". Scomp re-saves (scomp.starwarsccg.org, or its swccg.com/snapshots/scomp/ copies) go last.
 
 Bots: push the URL to queue.txt, then read done.json. Cite the capture once status is "verified".
 No Wayback access from the bot's own machine is needed.
@@ -60,6 +68,21 @@ CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
 BANNED_HOSTS = {"forum.starwarsccg.org", "www.starwarsccg.org", "starwarsccg.org"}
 
 
+def _env_num(name: str, default: float) -> float:
+    try:
+        return float(os.environ.get(name, "") or default)
+    except ValueError:
+        return default
+
+
+# Pending timeout (Chief, 2026-10-20). Env vars, or --pending-timeout-hours / --pending-max-cycles.
+PENDING_TIMEOUT = timedelta(hours=_env_num("WAYBACK_PENDING_TIMEOUT_HOURS", 6))
+PENDING_MAX_CYCLES = int(_env_num("WAYBACK_PENDING_MAX_CYCLES", 3))
+PENDING_SECONDS = 120   # time per run spent on timed-out pending entries
+CDX_CANDIDATES = 3      # newest exact-URL captures checked per timed-out entry
+SCOMP_SNAPSHOT_RX = re.compile(r"^https?://(?:www\.)?swccg\.com/snapshots/scomp/", re.I)
+
+
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, *a, **k):  # keep the 302 so we can read Location
         return None
@@ -80,8 +103,37 @@ def iso(t: datetime) -> str:
     return t.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def parse(s: str) -> datetime:
-    return datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+EPOCH = datetime(1970, 1, 1, tzinfo=timezone.utc)
+
+
+def parse(s) -> datetime:
+    """Timestamps in done.json: "2026-10-20T22:02:22Z" (the worker's own), plus anything a bot or a
+    reconciliation may write: +00:00 / -04:00 offsets, fractional seconds, a space instead of "T",
+    no zone (taken as UTC), a 14-digit Wayback timestamp, or epoch seconds. Missing or unreadable ->
+    EPOCH (very old)."""
+    if isinstance(s, (int, float)) and not isinstance(s, bool):
+        return datetime.fromtimestamp(s, timezone.utc)
+    s = str(s or "").strip()
+    if re.fullmatch(r"\d{14}", s):
+        return datetime.strptime(s, "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+    try:
+        t = datetime.fromisoformat(re.sub(r"(?i)z$", "+00:00", s))
+    except ValueError:
+        return EPOCH
+    return (t.replace(tzinfo=timezone.utc) if t.tzinfo is None else t.astimezone(timezone.utc)).replace(microsecond=0)
+
+
+def is_scomp(url: str) -> bool:
+    """Scomp card pages and their swccg.com snapshots: always last in the save order (Bill, 2026-10-20)."""
+    try:
+        host = (urllib.parse.urlsplit(url).hostname or "").lower()
+    except ValueError:
+        return False
+    return host == "scomp.starwarsccg.org" or bool(SCOMP_SNAPSHOT_RX.match(url))
+
+
+def scomp_last(urls) -> list[str]:
+    return sorted(urls, key=is_scomp)  # stable: everything else keeps its order
 
 
 def load_keys() -> str | None:
@@ -146,6 +198,30 @@ def latest_capture(url: str) -> str:
         return ""
     cap = snap.get("url", "")
     return cap.replace("http://web.archive.org", "https://web.archive.org") if snap.get("available") else ""
+
+
+def cdx_captures(url: str, limit: int = CDX_CANDIDATES) -> list[str]:
+    """Exact-URL CDX lookup: newest-first capture URLs of url with HTTP 200. Archive.org trouble
+    (429, 5xx, connection refused) raises VerifyRetry(side="capture")."""
+    q = ("https://web.archive.org/cdx/search/cdx?" + urllib.parse.urlencode(
+        {"url": url, "matchType": "exact", "output": "json", "fl": "timestamp,original,statuscode",
+         "filter": "statuscode:200", "limit": f"-{limit}"}))
+    try:
+        with urllib.request.urlopen(urllib.request.Request(q, headers={"User-Agent": UA}), timeout=90) as r:
+            body = r.read().decode("utf-8", "replace").strip()
+    except urllib.error.HTTPError as e:
+        raise VerifyRetry(f"CDX HTTP {e.code}", side="capture" if e.code == 429 or e.code >= 500 else "source") from e
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+        raise VerifyRetry(f"CDX {type(e).__name__}: {str(e)[:80]}", side="capture") from e
+    return parse_cdx(body)
+
+
+def parse_cdx(body: str) -> list[str]:
+    rows = json.loads(body) if body else []
+    if rows and rows[0] and rows[0][0] == "timestamp":
+        rows = rows[1:]
+    caps = [f"https://web.archive.org/web/{r[0]}/{r[1]}" for r in rows if len(r) >= 2 and re.fullmatch(r"\d{14}", str(r[0]))]
+    return sorted(set(caps), key=lambda c: re.search(r"/web/(\d{14})", c).group(1), reverse=True)
 
 
 def spn2_status(job_id: str) -> dict:
@@ -304,9 +380,11 @@ def verify(url: str, capture: str, get=None) -> tuple[str, dict]:
         side = "capture" if cap["status"] == 429 or cap["status"] >= 500 else "source"
         raise VerifyRetry(f"capture HTTP {cap['status']}", side=side)
     src = get(url)
+    info = {"at": iso(now()), "capture_id": id_url(capture)}
+    if src["status"] in (404, 410) and SNAPSHOT_URL_RX.match(url):
+        return snapshot_header_check(cap, info)
     if src["status"] != 200:
         raise VerifyRetry(f"source HTTP {src['status']}")
-    info = {"at": iso(now()), "capture_id": id_url(capture)}
     if cap["sha256"] == src["sha256"]:
         return "verified", {**info, "method": "sha256", "sha256": src["sha256"], "bytes": src["size"]}
     if not (is_html(src) and is_html(cap)):
@@ -321,6 +399,22 @@ def verify(url: str, capture: str, get=None) -> tuple[str, dict]:
     if status == "unverified":
         out["reason"] = f"page text matches {ratio:.0%} (< {TEXT_MATCH:.0%})"
     return status, out
+
+
+# Our own swccg.com/snapshots/ pages are deleted from the VPS once Wayback has them
+# (snapshots/DELETED-after-wayback.log), so there is no live source to compare with. The capture is
+# then checked for the header make_snapshot.py writes: <!-- snapshot-of: <url> captured: <ts> -->.
+SNAPSHOT_URL_RX = re.compile(r"^https?://(?:www\.)?swccg\.com/snapshots/.+\.html?$", re.I)
+SNAPSHOT_HEADER_RX = re.compile(r"<!--\s*snapshot-of:\s*(\S+)\s+captured:\s*(\S+)")
+
+
+def snapshot_header_check(cap: dict, info: dict) -> tuple[str, dict]:
+    text = cap["body"].decode("utf-8", "replace")
+    m = SNAPSHOT_HEADER_RX.search(text[:65536])
+    if m and is_html(cap) and not CLOUDFLARE_RX.search(text):
+        return "verified", {**info, "method": "snapshot-header", "snapshot_of": m.group(1), "snapshot_captured": m.group(2),
+                            "sha256": cap["sha256"], "bytes": cap["size"], "note": "source snapshot deleted after Wayback"}
+    return "unverified", {**info, "method": "snapshot-header", "reason": "source snapshot gone and capture has no snapshot-of header"}
 
 
 def verify_entry(url: str, e: dict, get=None) -> bool:
@@ -392,18 +486,69 @@ def confirm(url: str, e: dict) -> bool:
             else:
                 try_verify(url, e)
         else:
-            e["status"] = "retry" if e.get("tries", 1) < MAX_TRIES else "failed"
+            e["status"] = "retry" if int(e.get("tries", 1) or 1) < MAX_TRIES else "failed"
             e["error"] = str(st.get("status_ext") or st.get("message") or s)[:120]
         e["last"] = iso(now())
         print("CONFIRM", e["status"], url, e.get("capture", ""), flush=True)
         return True
-    if now() - parse(e["last"]) < CHECK_AFTER:
+    if not e.get("capture") or now() - parse(e.get("last")) < CHECK_AFTER:
         return False
-    e["status"] = "ok" if capture_ok(e["capture"]) else ("retry" if e.get("tries", 1) < MAX_TRIES else "failed")
+    e["status"] = "ok" if capture_ok(e["capture"]) else ("retry" if int(e.get("tries", 1) or 1) < MAX_TRIES else "failed")
     e["last"] = iso(now())
     if e["status"] == "ok":
         try_verify(url, e)
     return True
+
+
+KEEP_FIELDS = ("pending_timeouts", "pending_timeout")
+
+
+def keep(e: dict | None) -> dict:
+    """Fields that survive a re-save (the timeout cycle count must, or the cap never bites)."""
+    return {k: e[k] for k in KEEP_FIELDS if e and k in e}
+
+
+def pending_timed_out(e: dict, at: datetime | None = None) -> bool:
+    return e.get("status") == "pending" and (at or now()) - parse(e.get("last")) >= PENDING_TIMEOUT
+
+
+def resolve_timed_out(url: str, e: dict, cdx=None, get=None) -> str:
+    """A pending entry older than PENDING_TIMEOUT: exact-URL CDX, then check each capture (newest first).
+    Returns the new status. Raises VerifyRetry(side="capture") if archive.org is not answering; the
+    entry is then left as it was."""
+    cdx = cdx or cdx_captures
+    caps = cdx(url)
+    cycle = int(e.get("pending_timeouts", 0) or 0) + 1
+    rec = {"at": iso(now()), "cycle": cycle, "cdx_captures": len(caps)}
+    last_reason = "no capture in CDX" if not caps else ""
+    for i, cap in enumerate(caps):
+        if i:
+            time.sleep(VERIFY_GAP_S)
+        try:
+            status, info = verify(url, cap, get)
+        except VerifyRetry as ex:
+            if ex.side == "capture":
+                raise
+            last_reason = str(ex)[:120]
+            continue
+        if status == "verified":
+            ts = re.search(r"/web/(\d{14})", cap).group(1)
+            e.update(status="verified", capture=cap, verify=info, last=iso(now()), pending_timeouts=cycle,
+                     pending_timeout={**rec, "result": "verified", "cdx_timestamp": ts})
+            e.pop("job_id", None)
+            e.pop("verify_tries", None)
+            e.pop("error", None)
+            print("PENDING-TIMEOUT verified", url, cap, flush=True)
+            return "verified"
+        last_reason = info.get("reason", status)
+    failed = cycle >= PENDING_MAX_CYCLES
+    e.update(status="failed" if failed else "retry", last=iso(now()), pending_timeouts=cycle,
+             error=f"pending timeout {cycle}/{PENDING_MAX_CYCLES}: {last_reason}"[:120],
+             pending_timeout={**rec, "result": "failed" if failed else "resave", "reason": last_reason})
+    if e.get("job_id"):
+        e["stale_job_id"] = e.pop("job_id")
+    print("PENDING-TIMEOUT", e["status"], url, last_reason[:80], flush=True)
+    return e["status"]
 
 
 def run(repo: Path, minutes: float) -> None:
@@ -415,31 +560,53 @@ def run(repo: Path, minutes: float) -> None:
     backoff = BACKOFF_START
     print("auth:", "SPN2 authenticated" if AUTH else "anonymous", flush=True)
 
+    # 0. pending past PENDING_TIMEOUT: CDX + check, else back to retry (Scomp last), one at a time
+    stop0 = min(deadline - 120, time.monotonic() + PENDING_SECONDS)
+    for url in scomp_last([u for u, e in done.items() if isinstance(e, dict) and pending_timed_out(e)]):
+        if time.monotonic() > stop0:
+            break
+        try:
+            resolve_timed_out(url, done[url])
+            changed[url] = done[url]
+        except VerifyRetry as ex:
+            print("archive.org not answering (", str(ex)[:80], "); pending timeouts stop for this run", flush=True)
+            break
+        except Exception as ex:  # noqa: BLE001  (bad CDX JSON etc.: leave the entry, go on)
+            print("PENDING-TIMEOUT-ERR", url, str(ex)[:80], flush=True)
+        time.sleep(VERIFY_GAP_S)
+
     # 1. confirm earlier captures
     for url, e in list(done.items()):
         if time.monotonic() > deadline - 60:
             break
-        if e.get("status") == "pending" and confirm(url, e):
+        if isinstance(e, dict) and e.get("status") == "pending" and confirm(url, e):
             changed[url] = e
             time.sleep(1)
 
     # 2. save what is new or due a retry
+    # Timed-out entries are re-saved even if their URL has left queue.txt; Scomp always goes last.
+    resave = [u for u, e in done.items() if isinstance(e, dict) and e.get("status") == "retry" and e.get("pending_timeouts")]
     submitted: list[str] = []
-    for url in urls:
+    for url in scomp_last(list(dict.fromkeys(urls + resave))):
         if time.monotonic() > deadline - 90 or errors_in_row >= 5:
             break
         if banned(url):
             continue
         e = done.get(url)
-        if e and (e["status"] in ("ok", "verified", "unverified", "pending", "failed")
-                  or now() - parse(e["last"]) < RETRY_AFTER):
+        if e is not None and not isinstance(e, dict):
             continue
-        tries = (e or {}).get("tries", 0) + 1
+        # Only "retry" is due a new save; a status this worker does not know is left alone.
+        if e and (e.get("status") != "retry" or now() - parse(e.get("last")) < RETRY_AFTER):
+            continue
+        try:
+            tries = int((e or {}).get("tries", 0) or 0) + 1
+        except (TypeError, ValueError):
+            tries = 1
         try:
             if AUTH:
                 j = spn2_submit(url)
                 if j.get("recent"):
-                    e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
+                    e = {**keep(e), "capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
                          "note": "already archived within 30d"}
                     print("RECENT", url, j["recent"], flush=True)
                     try_verify(url, e)
@@ -448,13 +615,13 @@ def run(repo: Path, minutes: float) -> None:
                     errors_in_row = 0
                     time.sleep(GAP_S)
                     continue
-                e = {"capture": (e or {}).get("capture", ""), "status": "pending", "tries": tries,
+                e = {**keep(e), "capture": (e or {}).get("capture", ""), "status": "pending", "tries": tries,
                      "last": iso(now()), "job_id": j["job_id"]}
                 submitted.append(url)
                 print("SUBMITTED", url, j["job_id"], flush=True)
             else:
                 cap = save_anon(url)
-                e = {"capture": cap, "status": "pending", "tries": tries, "last": iso(now())}
+                e = {**keep(e), "capture": cap, "status": "pending", "tries": tries, "last": iso(now())}
                 print("SAVED", url, cap, flush=True)
             errors_in_row = 0
             backoff = BACKOFF_START
@@ -465,7 +632,7 @@ def run(repo: Path, minutes: float) -> None:
             errors_in_row += 1
             continue  # not counted as a try
         except Exception as ex:  # noqa: BLE001
-            e = {"capture": (e or {}).get("capture", ""), "status": "retry" if tries < MAX_TRIES else "failed",
+            e = {**keep(e), "capture": (e or {}).get("capture", ""), "status": "retry" if tries < MAX_TRIES else "failed",
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
             errors_in_row += 1
             print("ERROR", url, str(ex)[:120], flush=True)
@@ -489,8 +656,8 @@ def run(repo: Path, minutes: float) -> None:
     def due(e: dict) -> bool:  # transient verify errors wait RETRY_AFTER before the next try
         v = e.get("verify") or {}
         return not (v.get("error") and v.get("at") and now() - parse(v["at"]) < RETRY_AFTER)
-    backlog = sorted((u for u, e in done.items() if e.get("status") == "ok" and e.get("capture") and due(e)),
-                     key=lambda u: done[u].get("last", ""), reverse=True)
+    backlog = sorted((u for u, e in done.items() if isinstance(e, dict) and e.get("status") == "ok" and e.get("capture") and due(e)),
+                     key=lambda u: parse(done[u].get("last")), reverse=True)
     for url in backlog:
         if time.monotonic() > stop:
             break
@@ -513,18 +680,27 @@ def run(repo: Path, minutes: float) -> None:
         return [DONE]
 
     write_done(repo, done)
-    ver = sum(1 for e in changed.values() if e["status"] == "verified")
-    ok = sum(1 for e in changed.values() if e["status"] in ("ok", "pending"))
+    ver = sum(1 for e in changed.values() if e.get("status") == "verified")
+    ok = sum(1 for e in changed.values() if e.get("status") in ("ok", "pending"))
     bad = len(changed) - ver - ok
     commit_and_push(repo, [DONE], f"wayback: {ver} verified, {ok} saved/confirmed, {bad} unverified or to retry", redo)
     print("pushed", len(changed), "updates")
 
 
 def main() -> int:
+    global PENDING_TIMEOUT, PENDING_MAX_CYCLES
     ap = argparse.ArgumentParser()
     ap.add_argument("repo", type=Path)
     ap.add_argument("--minutes", type=float, default=10)
+    ap.add_argument("--pending-timeout-hours", type=float, default=None,
+                    help=f"re-check pending entries older than this (default {PENDING_TIMEOUT.total_seconds() / 3600:g}; env WAYBACK_PENDING_TIMEOUT_HOURS)")
+    ap.add_argument("--pending-max-cycles", type=int, default=None,
+                    help=f"pending timeouts before status failed (default {PENDING_MAX_CYCLES}; env WAYBACK_PENDING_MAX_CYCLES)")
     a = ap.parse_args()
+    if a.pending_timeout_hours is not None:
+        PENDING_TIMEOUT = timedelta(hours=a.pending_timeout_hours)
+    if a.pending_max_cycles is not None:
+        PENDING_MAX_CYCLES = a.pending_max_cycles
     run(a.repo.resolve(), a.minutes)
     return 0
 
