@@ -120,6 +120,15 @@ class ArchiveCheck(unittest.TestCase):
         self.assertEqual(L.archive_flags(t), [])
 
 
+    def test_twitter_capture_covers_x_com_body_link(self):
+        t = ('* [https://x.com/swccg/status/1327598657764356098 Tweet]\n'
+             f'<ref>[https://twitter.com/swccg/status/1327598657764356098 Tweet]. Preserved copy: '
+             f'[{WB}https://twitter.com/swccg/status/1327598657764356098 Internet Archive]</ref>')
+        self.assertEqual(L.archive_flags(t), [])
+        self.assertEqual(L.norm_url("https://www.x.com/a/status/1"), L.norm_url("http://twitter.com/a/status/1"))
+        self.assertNotEqual(L.norm_url("https://box.com/a"), L.norm_url("https://twitter.com/a"))
+
+
 class EmailCheck(unittest.TestCase):
     def test_personal_email_flagged(self):
         self.assertEqual(kinds(L.email_flags("Contact: someone123@aol.com")), ["EMAIL"])
