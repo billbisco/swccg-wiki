@@ -30362,13 +30362,14 @@
   "capture": "https://web.archive.org/web/20260907062502/https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game",
   "last": "2026-10-21T13:42:36Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 5,
   "verify": {
-   "at": "2026-10-21T14:48:09Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-21T15:20:13Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://stevetotheizz0.github.io/decktech_archives/16248/": {
   "capture": "https://web.archive.org/web/20261020234725/https://www.stephenskilton.com/decktech_archives/16248/",
@@ -30892,10 +30893,10 @@
  },
  "https://swccg.com/snapshots/forum/t83395.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T14:42:20Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 191 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:14:57Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/forum/t83759.html": {
   "capture": "",
@@ -31149,13 +31150,14 @@
   "capture": "https://web.archive.org/web/20261021004056/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-oa.html",
   "job_id": "spn2-276f1a260205b418bb78398eb5fe7c14706d7b77",
   "last": "2026-10-21T02:39:41Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:49:53Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T15:21:55Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-jimmy-faelens-invasion.html": {
   "capture": "https://web.archive.org/web/20261021003918/https://swccg.com/snapshots/pc/2017-ec-day-2-jimmy-faelens-invasion.html",
@@ -43085,9 +43087,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ds-rots-maul.html": {
-  "capture": "",
-  "job_id": "spn2-2bfe64ac87ca9c658d82a9c55f6703102b3852aa",
-  "last": "2026-10-21T11:26:12Z",
+  "capture": "https://web.archive.org/web/20261021112701/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ds-rots-maul.html",
+  "last": "2026-10-21T15:13:14Z",
   "status": "pending",
   "tries": 1
  },
@@ -43345,9 +43346,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-phil-aasen-ls-skywalker-saga-luke.html": {
   "capture": "https://web.archive.org/web/20261021112612/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-phil-aasen-ls-skywalker-saga-luke.html",
-  "last": "2026-10-21T14:41:50Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-9634e13030ad0a30c9980402a6aee86b7f4f6d36",
+  "last": "2026-10-21T15:19:57Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T15:19:57Z",
+   "bytes": 7121145,
+   "capture_id": "https://web.archive.org/web/20261021112612id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-phil-aasen-ls-skywalker-saga-luke.html",
+   "method": "sha256",
+   "sha256": "e10e799f028900c36106aa04fcfc553c31adccaa71e730da48af28284779eff7"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-ryan-jellison-ds-endor-ops.html": {
   "capture": "",
@@ -43534,9 +43543,9 @@
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021104730/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T14:42:00Z",
+  "last": "2026-10-21T15:13:25Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ls-qmc.html": {
   "capture": "",
@@ -44121,10 +44130,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261021121040/https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ds-cct.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T14:42:10Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-bb266d2424c3ddeb909a4c11aff525b72d54823f",
+  "last": "2026-10-21T15:20:05Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-21T15:20:05Z",
+   "bytes": 7122015,
+   "capture_id": "https://web.archive.org/web/20261021121040id_/https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ds-cct.html",
+   "method": "sha256",
+   "sha256": "c1e6881010dd87b901c228e4b7cf48ef28d4d6846071263d5b8643386f1e6dc9"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021121945/https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ls-qmc.html",
@@ -44495,24 +44511,26 @@
  "https://swccg.com/snapshots/pc/2024-10-online-championship-series-ocs-playoffs-oct-nov-2024.html": {
   "capture": "https://web.archive.org/web/20261020232208/https://swccg.com/snapshots/pc/2024-10-online-championship-series-ocs-playoffs-oct-nov-2024.html",
   "last": "2026-10-21T03:12:52Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:49:14Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T15:21:13Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-12-champions-league-dec-2024-feb-2025.html": {
   "capture": "https://web.archive.org/web/20261020232259/https://swccg.com/snapshots/pc/2024-12-champions-league-dec-2024-feb-2025.html",
   "last": "2026-10-21T03:12:52Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:49:21Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T15:21:19Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-champions-league-finals-matthew-harrison-trainor-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261013171825/https://swccg.com/snapshots/pc/2024-champions-league-finals-matthew-harrison-trainor-ds-cct.html",
@@ -45217,35 +45235,38 @@
  "https://swccg.com/snapshots/pc/2025-04-retro-gemp-match-play-championship-premiere-to-dsii-may-to-july-2025.html": {
   "capture": "https://web.archive.org/web/20261020232324/https://swccg.com/snapshots/pc/2025-04-retro-gemp-match-play-championship-premiere-to-dsii-may-to-july-2025.html",
   "last": "2026-10-21T03:12:52Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:49:27Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T15:21:29Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-05-9th-annual-gempc-may-to-july-2025.html": {
   "capture": "https://web.archive.org/web/20261020233558/https://swccg.com/snapshots/pc/2025-05-9th-annual-gempc-may-to-july-2025.html",
   "last": "2026-10-21T03:12:52Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:49:34Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T15:21:36Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-06-online-retro-event-for-charity-premiere-to-virtual-set-3.html": {
   "capture": "https://web.archive.org/web/20261020232311/https://swccg.com/snapshots/pc/2025-06-online-retro-event-for-charity-premiere-to-virtual-set-3.html",
   "last": "2026-10-21T03:12:52Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:49:41Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T15:21:42Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-08-european-championship-bochum-germany-sept-20-21-2025.html": {
   "capture": "https://web.archive.org/web/20261014140950/https://swccg.com/snapshots/pc/2025-08-european-championship-bochum-germany-sept-20-21-2025.html",
@@ -45659,13 +45680,14 @@
  "https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026.html": {
   "capture": "https://web.archive.org/web/20261020233611/https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026.html",
   "last": "2026-10-21T03:12:52Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:49:47Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T15:21:48Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-10-european-championship-bochum-germany-sept-19-20-2026.html": {
   "capture": "https://web.archive.org/web/20261020232414/https://swccg.com/snapshots/pc/2026-10-european-championship-bochum-germany-sept-19-20-2026.html",
@@ -49061,13 +49083,14 @@
   "capture": "https://web.archive.org/web/20261015063513/https://www.kendallcast.ninja/2023/08/corran-on-horn-26-nate-meeker.html",
   "last": "2026-10-21T03:19:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "verified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-21T14:49:08Z",
-   "error": "source HTTP 429"
-  },
-  "verify_tries": 2
+   "at": "2026-10-21T15:21:07Z",
+   "capture_id": "https://web.archive.org/web/20261015063513id_/https://www.kendallcast.ninja/2023/08/corran-on-horn-26-nate-meeker.html",
+   "method": "text",
+   "text_match": 0.995
+  }
  },
  "https://www.kendallcast.ninja/2023/11/corran-on-horn-28-ideatrack.html": {
   "capture": "https://web.archive.org/web/20261014231643/https://www.kendallcast.ninja/2023/11/corran-on-horn-28-ideatrack.html",
@@ -49563,10 +49586,10 @@
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQ_9BL8VcsfvHD371AW5aWM": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 300 hours, 36 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T14:44:12Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 301 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T15:16:08Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQyN9rdxO76-KtAPoVIbhCA": {
   "capture": "",
@@ -49577,24 +49600,24 @@
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YR-JV379jsT7S5GYTvy_hkk": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 303 hours, 21 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T14:45:23Z",
+  "error": "no job_id: The same snapshot had been made 303 hours, 53 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:17:18Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRDizhlUKOtAE2RXQamMzwr": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 306 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-21T14:46:34Z",
+  "error": "no job_id: The same snapshot had been made 306 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:18:30Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRcSzce7qXC2-eP2cROWz4-": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 301 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T14:47:45Z",
+  "error": "no job_id: The same snapshot had been made 301 hours, 52 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:19:41Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YSLTWbvHWtx5fUpPGtT0xII": {
   "capture": "https://web.archive.org/web/20261021134619/https://www.youtube.com/playlist?list=PLQSFYZX0M9YSLTWbvHWtx5fUpPGtT0xII",
@@ -49999,13 +50022,14 @@
  "https://www.youtube.com/watch?v=2RWRKJjkttw": {
   "capture": "https://web.archive.org/web/20261020221715/https://www.youtube.com/watch?v=2RWRKJjkttw",
   "last": "2026-10-21T03:33:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-21T14:48:20Z",
-   "error": "source HTTP 429"
+   "at": "2026-10-21T15:20:20Z",
+   "error": "source HTTP 429",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.youtube.com/watch?v=2X55QynCUmw": {
   "capture": "",
@@ -50189,10 +50213,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-21T14:47:58Z",
+   "at": "2026-10-21T15:20:08Z",
    "error": "source HTTP 429"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://www.youtube.com/watch?v=4YbGdbfoDXA": {
   "capture": "",
@@ -50253,13 +50277,14 @@
  "https://www.youtube.com/watch?v=5bwUtdJlERM": {
   "capture": "https://web.archive.org/web/20261020221829/https://www.youtube.com/watch?v=5bwUtdJlERM",
   "last": "2026-10-21T03:33:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-21T14:48:26Z",
-   "error": "source HTTP 429"
+   "at": "2026-10-21T15:20:26Z",
+   "error": "source HTTP 429",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.youtube.com/watch?v=5cZZiAnYgmI": {
   "capture": "https://web.archive.org/web/20261016014331/https://www.youtube.com/watch?v=5cZZiAnYgmI",
@@ -50535,13 +50560,14 @@
  "https://www.youtube.com/watch?v=9fhlw8npo9w": {
   "capture": "https://web.archive.org/web/20261020232825/https://www.youtube.com/watch?v=9fhlw8npo9w",
   "last": "2026-10-21T03:33:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-21T14:48:32Z",
-   "error": "source HTTP 429"
+   "at": "2026-10-21T15:20:32Z",
+   "error": "source HTTP 429",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.youtube.com/watch?v=9iDfdYsVSC0": {
   "capture": "https://web.archive.org/web/20261016003108/https://www.youtube.com/watch?v=9iDfdYsVSC0",
@@ -51567,13 +51593,14 @@
  "https://www.youtube.com/watch?v=SGbnL0KL2N8": {
   "capture": "https://web.archive.org/web/20261020221726/https://www.youtube.com/watch?v=SGbnL0KL2N8",
   "last": "2026-10-21T03:33:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:48:38Z",
-   "error": "source HTTP 429"
+   "at": "2026-10-21T15:20:38Z",
+   "error": "source HTTP 429",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.youtube.com/watch?v=SRSDhM-exTA": {
   "capture": "https://web.archive.org/web/20261015193735/https://www.youtube.com/watch?v=SRSDhM-exTA",
@@ -51668,13 +51695,14 @@
  "https://www.youtube.com/watch?v=TSKiBckXoZQ": {
   "capture": "https://web.archive.org/web/20261020221638/https://www.youtube.com/watch?v=TSKiBckXoZQ",
   "last": "2026-10-21T03:33:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:48:44Z",
-   "error": "source HTTP 429"
+   "at": "2026-10-21T15:20:44Z",
+   "error": "source HTTP 429",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.youtube.com/watch?v=TiGlb6KFqqY": {
   "capture": "https://web.archive.org/web/20261016003311/https://www.youtube.com/watch?v=TiGlb6KFqqY",
@@ -51879,13 +51907,14 @@
  "https://www.youtube.com/watch?v=X-gRjVXcqw4": {
   "capture": "https://web.archive.org/web/20261020224209/https://www.youtube.com/watch?v=X-gRjVXcqw4",
   "last": "2026-10-21T03:33:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:48:50Z",
-   "error": "source HTTP 429"
+   "at": "2026-10-21T15:20:49Z",
+   "error": "source HTTP 429",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.youtube.com/watch?v=X-uATChisG0": {
   "capture": "https://web.archive.org/web/20261016012336/https://www.youtube.com/watch?v=X-uATChisG0",
@@ -52881,13 +52910,14 @@
  "https://www.youtube.com/watch?v=ncBpi-0ktOU": {
   "capture": "https://web.archive.org/web/20261020221840/https://www.youtube.com/watch?v=ncBpi-0ktOU",
   "last": "2026-10-21T03:33:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:48:56Z",
-   "error": "source HTTP 429"
+   "at": "2026-10-21T15:20:55Z",
+   "error": "source HTTP 429",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.youtube.com/watch?v=njLwNSYWEWo": {
   "capture": "",
@@ -52961,13 +52991,14 @@
  "https://www.youtube.com/watch?v=q2if46mo7tQ": {
   "capture": "https://web.archive.org/web/20261020221818/https://www.youtube.com/watch?v=q2if46mo7tQ",
   "last": "2026-10-21T03:33:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-21T14:49:02Z",
-   "error": "source HTTP 429"
+   "at": "2026-10-21T15:21:01Z",
+   "error": "source HTTP 429",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://www.youtube.com/watch?v=qErV_KgLAgA": {
   "capture": "https://web.archive.org/web/20261016010143/https://www.youtube.com/watch?v=qErV_KgLAgA",
