@@ -29159,9 +29159,9 @@
  "https://melee.gg/Profile/Index/Mantron": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:40:13Z",
+  "last": "2026-10-21T03:13:08Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://melee.gg/Profile/Index/allstarz97": {
   "capture": "",
@@ -29795,9 +29795,9 @@
  "https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:40:23Z",
+  "last": "2026-10-21T03:13:18Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/16248/": {
   "capture": "https://web.archive.org/web/20261020234725/https://www.stephenskilton.com/decktech_archives/16248/",
@@ -29820,11 +29820,11 @@
   "tries": 2
  },
  "https://swccg.com": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:40:33Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021031424/https://swccg.com/",
+  "job_id": "spn2-1d1d3c95175d91f3d2b522cf4e3cde9f15131d27",
+  "last": "2026-10-21T03:16:22Z",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/bgg/bgg-thread-2902121.html": {
   "capture": "https://web.archive.org/web/20261016162150/https://swccg.com/snapshots/bgg/bgg-thread-2902121.html",
@@ -30364,9 +30364,16 @@
  },
  "https://swccg.com/snapshots/pc/2017-mpc-vikram-bali-day-1-ds-hd.html": {
   "capture": "https://web.archive.org/web/20261021005423/https://swccg.com/snapshots/pc/2017-mpc-vikram-bali-day-1-ds-hd.html",
-  "last": "2026-10-21T02:58:30Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T03:12:28Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T03:12:35Z",
+   "bytes": 7120978,
+   "capture_id": "https://web.archive.org/web/20261021005423id_/https://swccg.com/snapshots/pc/2017-mpc-vikram-bali-day-1-ds-hd.html",
+   "method": "sha256",
+   "sha256": "10977725488cd8bb957455e54f63325f36558a591f2a4eb0ff1273895df89f6c"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-mpc-vikram-bali-day-1-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261021005425/https://swccg.com/snapshots/pc/2017-mpc-vikram-bali-day-1-ls-trm.html",
@@ -30505,16 +30512,15 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-matt-scott-eops.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021005534/https://swccg.com/snapshots/pc/2017-tmw-day-1-matt-scott-eops.html",
   "job_id": "spn2-b97baab42ea8eb2692d250ac5dd9efb3c7e20535",
-  "last": "2026-10-21T00:55:30Z",
-  "status": "pending",
+  "last": "2026-10-21T03:12:39Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-matt-scott-hb-sandwhirl.html": {
-  "capture": "",
-  "job_id": "spn2-38db7dbc158c01916acaa04fa439a4e61b23dc25",
-  "last": "2026-10-21T01:06:20Z",
+  "capture": "https://web.archive.org/web/20261021010723/https://swccg.com/snapshots/pc/2017-tmw-day-1-matt-scott-hb-sandwhirl.html",
+  "last": "2026-10-21T03:12:41Z",
   "status": "pending",
   "tries": 1
  },
@@ -30771,9 +30777,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ls.html": {
-  "capture": "",
-  "job_id": "spn2-8418d4a6320bbf33098d8f49a373777a36553d71",
-  "last": "2026-10-21T01:09:21Z",
+  "capture": "https://web.archive.org/web/20261021011004/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ls.html",
+  "last": "2026-10-21T03:12:46Z",
   "status": "pending",
   "tries": 1
  },
@@ -30873,8 +30878,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-menzel-ds.html": {
   "capture": "https://web.archive.org/web/20261021012049/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-menzel-ds.html",
-  "last": "2026-10-21T02:58:38Z",
-  "status": "pending",
+  "last": "2026-10-21T03:12:48Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-menzel-ls.html": {
@@ -31219,8 +31224,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-matt-scott-ls.html": {
   "capture": "https://web.archive.org/web/20261021021223/https://swccg.com/snapshots/pc/2017-worlds-day-2-matt-scott-ls.html",
-  "last": "2026-10-21T02:58:44Z",
-  "status": "pending",
+  "last": "2026-10-21T03:12:54Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-kessling-ds.html": {
@@ -31578,8 +31583,8 @@
  },
  "https://swccg.com/snapshots/pc/2018-worlds-angelo-consoli-aobs.html": {
   "capture": "https://web.archive.org/web/20261021022548/https://swccg.com/snapshots/pc/2018-worlds-angelo-consoli-aobs.html",
-  "last": "2026-10-21T02:58:51Z",
-  "status": "pending",
+  "last": "2026-10-21T03:12:59Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-angelo-consoli-oa.html": {
@@ -39795,25 +39800,46 @@
   "tries": 6
  },
  "https://www.facebook.com/photo/?fbid=10230980413511313&set=a.10230980334389335": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 269 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-10-21T02:40:57Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261008182533/https://www.facebook.com/photo/?fbid=10230980413511313&set=a.10230980334389335",
+  "last": "2026-10-21T03:13:41Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T03:13:43Z",
+   "capture_id": "https://web.archive.org/web/20261008182533id_/https://www.facebook.com/photo/?fbid=10230980413511313&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10230980415791370&set=a.10230980334389335": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:41:07Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261008180926/https://www.facebook.com/photo/?fbid=10230980415791370&set=a.10230980334389335",
+  "last": "2026-10-21T03:13:54Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T03:13:56Z",
+   "capture_id": "https://web.archive.org/web/20261008180926id_/https://www.facebook.com/photo/?fbid=10230980415791370&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10230980420711493&set=a.10230980334389335": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:41:17Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261008180745/https://www.facebook.com/photo/?fbid=10230980420711493&set=a.10230980334389335",
+  "last": "2026-10-21T03:14:08Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T03:14:10Z",
+   "capture_id": "https://web.archive.org/web/20261008180745id_/https://www.facebook.com/photo/?fbid=10230980420711493&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10230980424991600&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008181932/https://www.facebook.com/photo/?fbid=10230980424991600&set=a.10230980334389335",
@@ -39830,11 +39856,18 @@
   "tries": 1
  },
  "https://www.facebook.com/photo/?fbid=10230980938044426&set=a.10230980334389335": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:41:54Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261008181517/https://www.facebook.com/photo/?fbid=10230980938044426&set=a.10230980334389335",
+  "last": "2026-10-21T03:14:21Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T03:14:23Z",
+   "capture_id": "https://web.archive.org/web/20261008181517id_/https://www.facebook.com/photo/?fbid=10230980938044426&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10231012025261587&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008181725/https://www.facebook.com/photo/?fbid=10231012025261587&set=a.10230980334389335",
@@ -39851,11 +39884,18 @@
   "tries": 1
  },
  "https://www.facebook.com/photo/?fbid=10239148005456007&set=a.10230980334389335": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:42:28Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261008181056/https://www.facebook.com/photo/?fbid=10239148005456007&set=a.10230980334389335",
+  "last": "2026-10-21T03:14:34Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T03:14:37Z",
+   "capture_id": "https://web.archive.org/web/20261008181056id_/https://www.facebook.com/photo/?fbid=10239148005456007&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10241711409299501&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008182400/https://www.facebook.com/photo/?fbid=10241711409299501&set=a.10230980334389335",
@@ -39902,9 +39942,9 @@
  "https://www.kendallcast.ninja/2020/10/the-chris-kelly-interview.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:43:25Z",
+  "last": "2026-10-21T03:14:47Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html": {
   "capture": "https://web.archive.org/web/20261014155506/https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html",
@@ -39940,11 +39980,11 @@
   }
  },
  "https://www.kendallcast.ninja/2020/12/blog-post.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:44:04Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021031502/https://www.kendallcast.ninja/2020/12/blog-post.html",
+  "job_id": "spn2-cc3625ee765bb91e19c4bf6cd7b2fb4792c68a55",
+  "last": "2026-10-21T03:16:42Z",
+  "status": "ok",
+  "tries": 2
  },
  "https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html": {
   "capture": "https://web.archive.org/web/20261021024419/https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html",
@@ -39999,11 +40039,10 @@
   "tries": 2
  },
  "https://www.kendallcast.ninja/2022/02/corran-on-horn-2-matt-sperling.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:45:02Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021031512/https://www.kendallcast.ninja/2022/02/corran-on-horn-2-matt-sperling.html",
+  "last": "2026-10-21T03:17:00Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.kendallcast.ninja/2022/03/corran-on-horn-3-doug-taylor.html": {
   "capture": "https://web.archive.org/web/20261015164101/https://www.kendallcast.ninja/2022/03/corran-on-horn-3-doug-taylor.html",
@@ -40601,6 +40640,41 @@
   "capture": "",
   "error": "no job_id: The same snapshot had been made 294 hours, 39 minutes ago. You can make new capture of this URL after 720 hou",
   "last": "2026-10-21T03:03:06Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQ_9BL8VcsfvHD371AW5aWM": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 289 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T03:15:21Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQyN9rdxO76-KtAPoVIbhCA": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 291 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T03:15:33Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.youtube.com/playlist?list=PLQSFYZX0M9YR-JV379jsT7S5GYTvy_hkk": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 291 hours, 52 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T03:15:46Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRDizhlUKOtAE2RXQamMzwr": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 294 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T03:15:58Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRcSzce7qXC2-eP2cROWz4-": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 289 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T03:16:10Z",
   "status": "retry",
   "tries": 1
  },
