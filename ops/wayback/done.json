@@ -29048,18 +29048,30 @@
   "verify_tries": 3
  },
  "https://challonge.com/18vokbxb.svg": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:37:45Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20261021234327/https://challonge.com/18vokbxb.svg",
+  "job_id": "spn2-15ebc86186f4187bd1ce8e5e61db7ca653495507",
+  "last": "2026-10-21T23:51:28Z",
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-10-21T23:51:28Z",
+   "capture_id": "https://web.archive.org/web/20261021234327id_/https://challonge.com/18vokbxb.svg",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://challonge.com/18vokbxb/module": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:18:43Z",
-  "status": "retry",
-  "tries": 5
+  "capture": "https://web.archive.org/web/20261021234452/https://challonge.com/18vokbxb/module",
+  "job_id": "spn2-1aa8bf3ca7f5e59ecf5ea8ac5446db07387f4f3b",
+  "last": "2026-10-21T23:51:22Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-10-21T23:51:22Z",
+   "capture_id": "https://web.archive.org/web/20261021234452id_/https://challonge.com/18vokbxb/module",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://challonge.com/51m1q7zu/standings": {
   "capture": "",
@@ -30934,11 +30946,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/t85193.html": {
-  "capture": "",
-  "error": "<urlopen error timed out>",
-  "last": "2026-10-21T01:53:28Z",
-  "status": "retry",
-  "tries": 5
+  "capture": "https://web.archive.org/web/20261021234456/https://swccg.com/snapshots/forum/t85193.html",
+  "last": "2026-10-21T23:51:30Z",
+  "status": "pending",
+  "tries": 6
  },
  "https://swccg.com/snapshots/forum/t86534.html": {
   "capture": "",
@@ -31000,11 +31011,17 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2015-match-play-championship.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:06:35Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261013163223/https://swccg.com/snapshots/pc/2015-match-play-championship.html",
+  "last": "2026-10-21T23:43:01Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T23:43:04Z",
+   "capture_id": "https://web.archive.org/web/20261013163223id_/https://swccg.com/snapshots/pc/2015-match-play-championship.html",
+   "method": "text",
+   "text_match": 0.994
+  }
  },
  "https://swccg.com/snapshots/pc/2016-match-play-championship.html": {
   "capture": "https://web.archive.org/web/20261013163128/https://swccg.com/snapshots/pc/2016-match-play-championship.html",
@@ -31319,17 +31336,17 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-james-barnes-mwyhl.html": {
-  "capture": "https://web.archive.org/web/20261021013021/https://swccg.com/snapshots/pc/2017-tmw-day-1-james-barnes-mwyhl.html",
-  "last": "2026-10-21T01:50:58Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021234943/https://swccg.com/snapshots/pc/2017-tmw-day-1-james-barnes-mwyhl.html",
+  "last": "2026-10-21T23:51:49Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-jeremy-dipaolo-diplo.html": {
   "capture": "https://web.archive.org/web/20261021005257/https://swccg.com/snapshots/pc/2017-tmw-day-1-jeremy-dipaolo-diplo.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:54:32Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-108e36d78f5728bdedb4570d0b9dd56dae1c51d7",
+  "last": "2026-10-21T23:49:15Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-jeremy-dipaolo-eops.html": {
   "capture": "https://web.archive.org/web/20261021005242/https://swccg.com/snapshots/pc/2017-tmw-day-1-jeremy-dipaolo-eops.html",
@@ -31360,9 +31377,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-jonathan-bauer-eops.html": {
   "capture": "https://web.archive.org/web/20261021005326/https://swccg.com/snapshots/pc/2017-tmw-day-1-jonathan-bauer-eops.html",
-  "last": "2026-10-21T02:31:51Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-5e7d258a2ce456362c9a45361ffd50c6789b1acd",
+  "last": "2026-10-21T23:49:33Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-jonny-chu-senate.html": {
   "capture": "https://web.archive.org/web/20261021005608/https://swccg.com/snapshots/pc/2017-tmw-day-1-jonny-chu-senate.html",
@@ -31446,10 +31464,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-court.html": {
-  "capture": "https://web.archive.org/web/20261021013843/https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-court.html",
-  "last": "2026-10-21T02:04:32Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021235140/https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-court.html",
+  "last": "2026-10-21T23:51:56Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-oa.html": {
   "capture": "https://web.archive.org/web/20261021005651/https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-oa.html",
@@ -31500,16 +31518,17 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-ie.html": {
   "capture": "https://web.archive.org/web/20261021005529/https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-ie.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:54:53Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-3e0eea5cd39a9ad8a303e8ff1b43a4cb57decea8",
+  "last": "2026-10-21T23:50:15Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-qmc.html": {
   "capture": "https://web.archive.org/web/20261021011606/https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-qmc.html",
-  "last": "2026-10-21T02:53:13Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-c516394ee8032403faef9bbe0a594f55baf61f12",
+  "last": "2026-10-21T23:50:26Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-brian-fred-hb-sandwhirl.html": {
   "capture": "https://web.archive.org/web/20261021005024/https://swccg.com/snapshots/pc/2017-tmw-day-2-brian-fred-hb-sandwhirl.html",
@@ -31541,9 +31560,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-jeremy-dipaolo-diplo.html": {
   "capture": "https://web.archive.org/web/20261021005230/https://swccg.com/snapshots/pc/2017-tmw-day-2-jeremy-dipaolo-diplo.html",
-  "last": "2026-10-21T02:18:12Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-201e049317aff6e6396cd4fad0c03734b15a0713",
+  "last": "2026-10-21T23:48:22Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-jeremy-dipaolo-eops.html": {
   "capture": "https://web.archive.org/web/20261021005212/https://swccg.com/snapshots/pc/2017-tmw-day-2-jeremy-dipaolo-eops.html",
@@ -31561,15 +31581,17 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-jonny-chu-senate.html": {
   "capture": "https://web.archive.org/web/20261021005043/https://swccg.com/snapshots/pc/2017-tmw-day-2-jonny-chu-senate.html",
-  "last": "2026-10-21T03:55:54Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-341acca37c3a73bcc0b0dc618dc0b0e4939030bf",
+  "last": "2026-10-21T23:47:50Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-jonny-chu-wys.html": {
   "capture": "https://web.archive.org/web/20261021011457/https://swccg.com/snapshots/pc/2017-tmw-day-2-jonny-chu-wys.html",
-  "last": "2026-10-21T03:55:55Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-036da02f0f643467096cd67498faeb3978e762ce",
+  "last": "2026-10-21T23:48:01Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-matt-scott-diplo.html": {
   "capture": "https://web.archive.org/web/20261021010549/https://swccg.com/snapshots/pc/2017-tmw-day-2-matt-scott-diplo.html",
@@ -31626,10 +31648,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-richards-oa.html": {
   "capture": "https://web.archive.org/web/20261021010638/https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-richards-oa.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:07:42Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-ee2d62658ed873cd04761f5f13a05569a11e1bf7",
+  "last": "2026-10-21T23:48:12Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-schellberg-ds.html": {
   "capture": "https://web.archive.org/web/20261021011611/https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-schellberg-ds.html",
@@ -36178,9 +36200,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-06-2022-regional-championship-events-bf.html": {
   "capture": "https://web.archive.org/web/20261020232529/https://swccg.com/snapshots/pc/2022-06-2022-regional-championship-events-bf.html",
-  "last": "2026-10-21T02:55:09Z",
-  "status": "retry",
-  "tries": 4
+  "job_id": "spn2-e06b2a4f7d83d569e78798825bdbb39e50b4f30c",
+  "last": "2026-10-21T23:46:25Z",
+  "status": "pending",
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2022-06-2022-regional-championship-events.html": {
   "capture": "",
@@ -36190,10 +36213,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-09-european-championship.html": {
-  "capture": "https://web.archive.org/web/20261021003239/https://swccg.com/snapshots/pc/2022-09-european-championship.html",
-  "last": "2026-10-21T02:32:20Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20261021234636/https://swccg.com/snapshots/pc/2022-09-european-championship.html",
+  "last": "2026-10-21T23:52:13Z",
+  "status": "pending",
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2022-bespin-regionals-will-scinocca-ls-combat.html": {
   "capture": "",
@@ -39376,9 +39399,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events.html": {
   "capture": "https://web.archive.org/web/20261020232054/https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events.html",
-  "last": "2026-10-21T02:06:22Z",
-  "status": "retry",
-  "tries": 4
+  "job_id": "spn2-f5588ec5b83e6e731f202ed152f31cadba5ce26e",
+  "last": "2026-10-21T23:44:29Z",
+  "status": "pending",
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2023-04-us-nationals-minneapolis-minnesota-april-1-2.html": {
   "capture": "https://web.archive.org/web/20261014140307/https://swccg.com/snapshots/pc/2023-04-us-nationals-minneapolis-minnesota-april-1-2.html",
@@ -39389,9 +39413,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-06-annual-online-retro-event-premiere-special-edition-april-june-2023.html": {
   "capture": "https://web.archive.org/web/20261020232105/https://swccg.com/snapshots/pc/2023-06-annual-online-retro-event-premiere-special-edition-april-june-2023.html",
-  "last": "2026-10-21T01:51:14Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-1dcac11fbeec58d33a876266c3d87bb1f2d8461d",
+  "last": "2026-10-21T23:44:39Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13-bf.html": {
   "capture": "",
@@ -45672,9 +45697,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-02-outrider-cup-iv.html": {
   "capture": "https://web.archive.org/web/20261020232333/https://swccg.com/snapshots/pc/2026-02-outrider-cup-iv.html",
-  "last": "2026-10-21T01:51:16Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-25a0f3e49d0456d76dc5dda0c29932a678b6b0e1",
+  "last": "2026-10-21T23:45:22Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026.html": {
   "capture": "",
@@ -46502,9 +46528,10 @@
  },
  "https://swccg.com/snapshots/pc/about-us.html": {
   "capture": "https://web.archive.org/web/20261020234816/https://swccg.com/snapshots/pc/about-us.html",
-  "last": "2026-10-21T02:18:34Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-93d9e6d6ef66064454e75989c1a5c7a27da73cce",
+  "last": "2026-10-21T23:46:36Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/about.html": {
   "capture": "https://web.archive.org/web/20261021000500/https://swccg.com/snapshots/pc/about.html",
@@ -46805,9 +46832,10 @@
  },
  "https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html": {
   "capture": "https://web.archive.org/web/20261020232518/https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html",
-  "last": "2026-10-21T02:40:08Z",
-  "status": "retry",
-  "tries": 4
+  "job_id": "spn2-6ec74c7fa247b562928862b1678d600e90cdbe7d",
+  "last": "2026-10-21T23:45:33Z",
+  "status": "pending",
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/remembering-devon-hubner-1978-2024-bf.html": {
   "capture": "",
@@ -46839,9 +46867,10 @@
  },
  "https://swccg.com/snapshots/pc/team-europe-wins-the-2021-outrider-cup.html": {
   "capture": "https://web.archive.org/web/20261020232436/https://swccg.com/snapshots/pc/team-europe-wins-the-2021-outrider-cup.html",
-  "last": "2026-10-21T02:18:37Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-07842c6c445073480bfffdee21c4903930775b66",
+  "last": "2026-10-21T23:45:44Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/the-beautiful-and-thematic-virtual-set-19-has-arrived.html": {
   "capture": "https://web.archive.org/web/20261020230859/https://swccg.com/snapshots/pc/the-beautiful-and-thematic-virtual-set-19-has-arrived.html",
@@ -46880,9 +46909,11 @@
  },
  "https://swccg.com/snapshots/pc/vkit.html": {
   "capture": "https://web.archive.org/web/20261020230838/https://swccg.com/snapshots/pc/vkit.html",
-  "last": "2026-10-21T02:32:24Z",
+  "error": "error:not-found",
+  "job_id": "spn2-e61ae477c02c8261fb74c1ba09f0dc71dd65420f",
+  "last": "2026-10-21T23:52:22Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/world-championship-2025-wrap-up-greg-shaw-wins-his-crown.html": {
   "capture": "https://web.archive.org/web/20261016161935/https://swccg.com/snapshots/pc/world-championship-2025-wrap-up-greg-shaw-wins-his-crown.html",
@@ -47963,10 +47994,11 @@
  },
  "https://swccg.com/snapshots/scomp/card-2123.html": {
   "capture": "https://web.archive.org/web/20261020222913/https://swccg.com/snapshots/scomp/card-2123.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:19:57Z",
+  "error": "error:not-found",
+  "job_id": "spn2-56eab99ad8edf326713c0743ccd515a61f40904f",
+  "last": "2026-10-21T23:51:43Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/card-2124.html": {
   "capture": "https://web.archive.org/web/20261020222830/https://swccg.com/snapshots/scomp/card-2124.html",
@@ -48003,9 +48035,10 @@
  },
  "https://swccg.com/snapshots/scomp/card-2312.html": {
   "capture": "https://web.archive.org/web/20261020222806/https://swccg.com/snapshots/scomp/card-2312.html",
-  "last": "2026-10-21T02:18:40Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-a96695da0b6a87499c5a5a988c9f490029959b7d",
+  "last": "2026-10-21T23:47:29Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/card-2313.html": {
   "capture": "https://web.archive.org/web/20261020222724/https://swccg.com/snapshots/scomp/card-2313.html",
@@ -48171,11 +48204,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/card-287.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:51:27Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021234411/https://swccg.com/snapshots/scomp/card-287.html",
+  "job_id": "spn2-d557fa62b27aa795beec2cbe3a27ae5d5f95c078",
+  "last": "2026-10-21T23:51:13Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T23:51:13Z",
+   "bytes": 611760,
+   "capture_id": "https://web.archive.org/web/20261021234411id_/https://swccg.com/snapshots/scomp/card-287.html",
+   "method": "sha256",
+   "sha256": "c6c28634c389a28918a26348a606598385ba577a105f7d0e062b1c157d449ba7"
+  }
  },
  "https://swccg.com/snapshots/scomp/card-463.html": {
   "capture": "https://web.archive.org/web/20261020223059/https://swccg.com/snapshots/scomp/card-463.html",
@@ -48224,11 +48264,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/card-5618.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:51:37Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021234413/https://swccg.com/snapshots/scomp/card-5618.html",
+  "job_id": "spn2-49fd70d4385fa79dad3b2df134b4b49e7fa47d40",
+  "last": "2026-10-21T23:51:17Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T23:51:17Z",
+   "bytes": 876585,
+   "capture_id": "https://web.archive.org/web/20261021234413id_/https://swccg.com/snapshots/scomp/card-5618.html",
+   "method": "sha256",
+   "sha256": "42993455287b240f35f86cbc0bff684e7c512c96a18de2fe8fa3ab1398b15fda"
+  }
  },
  "https://swccg.com/snapshots/scomp/card-60.html": {
   "capture": "https://web.archive.org/web/20261020232807/https://swccg.com/snapshots/scomp/card-60.html",
@@ -57433,6 +57480,28 @@
   "capture": "",
   "error": "no job_id: The same snapshot had been made 311 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
   "last": "2026-10-21T23:38:44Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://youtu.be/xR72a7lhST8": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T23:42:04Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://youtu.be/z6UspCGLxGw": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 313 hours, 29 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T23:42:16Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://youtube.com/playlist?list=PLtAFd-JMBC2Gi3jJ7nLGqYl0zTS1qgQE1": {
+  "capture": "",
+  "error": "error:not-found",
+  "job_id": "spn2-ae61767f31c1e1b3d8e511d884d4b20a4f24bdce",
+  "last": "2026-10-21T23:51:09Z",
   "status": "retry",
   "tries": 1
  }
