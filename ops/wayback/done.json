@@ -29595,9 +29595,9 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-535ce3d4d5cf29c2523103ed67546a792c1c52d6",
-  "last": "2026-10-21T13:04:13Z",
+  "last": "2026-10-21T13:50:17Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://melee.gg/Profile/Index/allstarz97": {
   "capture": "",
@@ -30251,10 +30251,10 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/region_map_us_v1.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 290 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-21T13:00:29Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 290 hours, 44 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:42:23Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1995/vp951211/12090048.htm": {
   "capture": "",
@@ -30294,11 +30294,16 @@
   "tries": 6
  },
  "https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 305 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:00:42Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20260907062502/https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game",
+  "last": "2026-10-21T13:42:36Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 5,
+  "verify": {
+   "at": "2026-10-21T13:42:39Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://stevetotheizz0.github.io/decktech_archives/16248/": {
   "capture": "https://web.archive.org/web/20261020234725/https://www.stephenskilton.com/decktech_archives/16248/",
@@ -39518,9 +39523,9 @@
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ds-invasion.html": {
   "capture": "https://web.archive.org/web/20261021071337/https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ds-invasion.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T13:07:25Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-21T13:39:55Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ls-clones.html": {
   "capture": "https://web.archive.org/web/20261021073516/https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ls-clones.html",
@@ -41293,10 +41298,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-top-8-justin-branch-ls-skywalker-saga-anakin.html": {
-  "capture": "https://web.archive.org/web/20261021090528/https://swccg.com/snapshots/pc/2023-european-championship-top-8-justin-branch-ls-skywalker-saga-anakin.html",
-  "last": "2026-10-21T13:06:22Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021134014/https://swccg.com/snapshots/pc/2023-european-championship-top-8-justin-branch-ls-skywalker-saga-anakin.html",
+  "job_id": "spn2-268dfba4ad00bc564fcddea38f86f5590c2d44a1",
+  "last": "2026-10-21T13:49:07Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T13:49:07Z",
+   "bytes": 7122238,
+   "capture_id": "https://web.archive.org/web/20261021134014id_/https://swccg.com/snapshots/pc/2023-european-championship-top-8-justin-branch-ls-skywalker-saga-anakin.html",
+   "method": "sha256",
+   "sha256": "3b60858c99a2ade64b3611068a4afa8bc62a9f4306d078a308ed98c0e651a706"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-top-8-koen-meijssen-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021090614/https://swccg.com/snapshots/pc/2023-european-championship-top-8-koen-meijssen-ds-aobs.html",
@@ -41703,10 +41716,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ds-hunt-down.html": {
-  "capture": "https://web.archive.org/web/20261021093221/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ds-hunt-down.html",
-  "last": "2026-10-21T13:06:26Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021134029/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ds-hunt-down.html",
+  "job_id": "spn2-8b7105dc4d9bccd805e64d47dc8a186b7de67b7d",
+  "last": "2026-10-21T13:49:17Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T13:49:17Z",
+   "bytes": 7121788,
+   "capture_id": "https://web.archive.org/web/20261021134029id_/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ds-hunt-down.html",
+   "method": "sha256",
+   "sha256": "03f3b615d7d7f9236d282f0dbe8f73a3b029dcc152ee9f817d8beec6044d5249"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ls-zero-hour.html": {
   "capture": "",
@@ -42224,9 +42245,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-angelo-consoli-ds-revenge-of-the-sith-dooku.html": {
   "capture": "https://web.archive.org/web/20261021095405/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-angelo-consoli-ds-revenge-of-the-sith-dooku.html",
-  "last": "2026-10-21T13:06:28Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-3dfeb39caade0a5c3a61139b22229a42ae4dff19",
+  "last": "2026-10-21T13:49:28Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T13:49:28Z",
+   "bytes": 7121887,
+   "capture_id": "https://web.archive.org/web/20261021095405id_/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-angelo-consoli-ds-revenge-of-the-sith-dooku.html",
+   "method": "sha256",
+   "sha256": "81e5d2ebbbd941c957d4ba1aaad436a7ec1f5d291a8a22039e46d572b8f12904"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-angelo-consoli-ls-diplo.html": {
   "capture": "",
@@ -42551,9 +42580,8 @@
   }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-cedrik-vanderhaegen-ls-zero-hour.html": {
-  "capture": "",
-  "job_id": "spn2-d5ed71228037422e643f467bdb925c9acd645af5",
-  "last": "2026-10-21T10:21:20Z",
+  "capture": "https://web.archive.org/web/20261021102124/https://swccg.com/snapshots/pc/2023-ryloth-regionals-cedrik-vanderhaegen-ls-zero-hour.html",
+  "last": "2026-10-21T13:39:40Z",
   "status": "pending",
   "tries": 1
  },
@@ -43595,9 +43623,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-scarif-regionals-brett-bailey-ls-yavin-4-base-operations.html": {
   "capture": "https://web.archive.org/web/20261021112340/https://swccg.com/snapshots/pc/2023-scarif-regionals-brett-bailey-ls-yavin-4-base-operations.html",
-  "last": "2026-10-21T13:06:45Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-54a357419e2c567ec4cedff63ea80739da4e359d",
+  "last": "2026-10-21T13:49:36Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T13:49:36Z",
+   "bytes": 7122216,
+   "capture_id": "https://web.archive.org/web/20261021112340id_/https://swccg.com/snapshots/pc/2023-scarif-regionals-brett-bailey-ls-yavin-4-base-operations.html",
+   "method": "sha256",
+   "sha256": "43947c710d1eef41283e03bc933d858dadb52fa8a3f92564536b7b7ac3a88c49"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261021111349/https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ds-endor-operations.html",
@@ -43713,9 +43749,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-scarif-regionals-rudy-rojas-ds-my-kind-of-scum.html": {
   "capture": "https://web.archive.org/web/20261021115716/https://swccg.com/snapshots/pc/2023-scarif-regionals-rudy-rojas-ds-my-kind-of-scum.html",
-  "last": "2026-10-21T13:06:46Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-656afff3b7978dff6fe0b30d7f116cc4053a66f5",
+  "last": "2026-10-21T13:49:44Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T13:49:44Z",
+   "bytes": 7121751,
+   "capture_id": "https://web.archive.org/web/20261021115716id_/https://swccg.com/snapshots/pc/2023-scarif-regionals-rudy-rojas-ds-my-kind-of-scum.html",
+   "method": "sha256",
+   "sha256": "cdd606509102608e123717581670f1cd0d8369abc1d2688e392d1ad6324eb138"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-scarif-regionals-rudy-rojas-ls-no-idea.html": {
   "capture": "",
@@ -43879,9 +43923,9 @@
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261021121040/https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ds-cct.html",
-  "last": "2026-10-21T13:06:48Z",
-  "status": "retry",
-  "tries": 1
+  "last": "2026-10-21T13:49:46Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021121945/https://swccg.com/snapshots/pc/2023-tatooine-regionals-randall-scott-ls-qmc.html",
@@ -43947,9 +43991,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-toola-regionals-casper-jorgensen-ds-thrawn.html": {
-  "capture": "",
-  "job_id": "spn2-4bbf46e207aca5dc1bcdb4c6a78590c65265dd10",
-  "last": "2026-10-21T12:13:03Z",
+  "capture": "https://web.archive.org/web/20261021121307/https://swccg.com/snapshots/pc/2023-toola-regionals-casper-jorgensen-ds-thrawn.html",
+  "last": "2026-10-21T13:39:50Z",
   "status": "pending",
   "tries": 1
  },
@@ -48297,11 +48340,16 @@
   "tries": 1
  },
  "https://www.kendallcast.ninja/2020/10/the-chris-kelly-interview.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 165 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:12:19Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20261014155408/https://www.kendallcast.ninja/2020/10/the-chris-kelly-interview.html",
+  "last": "2026-10-21T13:43:26Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 5,
+  "verify": {
+   "at": "2026-10-21T13:43:29Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html": {
   "capture": "https://web.archive.org/web/20261014155506/https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html",
@@ -48345,9 +48393,9 @@
  },
  "https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html": {
   "capture": "https://web.archive.org/web/20261021123645/https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html",
-  "last": "2026-10-21T12:56:09Z",
-  "status": "retry",
-  "tries": 3
+  "last": "2026-10-21T13:50:19Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://www.kendallcast.ninja/2020/12/the-justin-desai-interview.html": {
   "capture": "https://web.archive.org/web/20261021024429/https://www.kendallcast.ninja/2020/12/the-justin-desai-interview.html",
@@ -48450,21 +48498,22 @@
  },
  "https://www.kendallcast.ninja/2022/08/corran-on-horn-7-nationals-special.html": {
   "capture": "https://web.archive.org/web/20261021123713/https://www.kendallcast.ninja/2022/08/corran-on-horn-7-nationals-special.html",
-  "last": "2026-10-21T12:56:15Z",
-  "status": "retry",
-  "tries": 3
+  "last": "2026-10-21T13:49:50Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html": {
   "capture": "https://web.archive.org/web/20261021123727/https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html",
-  "last": "2026-10-21T12:56:16Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-cd9ded143b7615499f317a816cbb136f244b3b13",
+  "last": "2026-10-21T13:44:08Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html": {
   "capture": "https://web.archive.org/web/20261021123838/https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html",
-  "last": "2026-10-21T12:56:17Z",
-  "status": "retry",
-  "tries": 3
+  "last": "2026-10-21T13:49:52Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://www.kendallcast.ninja/2022/09/corran-on-horn-11-tom-haid.html": {
   "capture": "",
@@ -48528,9 +48577,10 @@
  },
  "https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html": {
   "capture": "https://web.archive.org/web/20261021123831/https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html",
-  "last": "2026-10-21T12:56:19Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-de181adfa0a368641f0b939d38f78f7dc018ea81",
+  "last": "2026-10-21T13:44:33Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://www.kendallcast.ninja/2022/12/corran-on-horn-18-sam-tashima.html": {
   "capture": "",
@@ -48736,11 +48786,17 @@
   }
  },
  "https://www.kendallcast.ninja/2025/08/corran-on-horn-39-matt-manning.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 167 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:12:49Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261014131730/https://www.kendallcast.ninja/2025/08/corran-on-horn-39-matt-manning.html",
+  "last": "2026-10-21T13:45:18Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-21T13:45:21Z",
+   "capture_id": "https://web.archive.org/web/20261014131730id_/https://www.kendallcast.ninja/2025/08/corran-on-horn-39-matt-manning.html",
+   "method": "text",
+   "text_match": 0.995
+  }
  },
  "https://www.kendallcast.ninja/2025/09/anthony-batmouse-howard-sheriff-of-gemp.html": {
   "capture": "https://web.archive.org/web/20261014131724/https://www.kendallcast.ninja/2025/09/anthony-batmouse-howard-sheriff-of-gemp.html",
@@ -49118,10 +49174,10 @@
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQyN9rdxO76-KtAPoVIbhCA": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 301 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:01:34Z",
+  "error": "no job_id: The same snapshot had been made 301 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:45:37Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YR-JV379jsT7S5GYTvy_hkk": {
   "capture": "",
@@ -49132,45 +49188,45 @@
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRDizhlUKOtAE2RXQamMzwr": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 294 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T03:15:58Z",
+  "error": "no job_id: The same snapshot had been made 305 hours, 4 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T13:45:49Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRcSzce7qXC2-eP2cROWz4-": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 289 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T03:16:10Z",
+  "error": "no job_id: The same snapshot had been made 300 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:46:01Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YSLTWbvHWtx5fUpPGtT0xII": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:20:06Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-653ef10f347cb5c185218c111fb26a32ea0117f0",
+  "last": "2026-10-21T13:46:16Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YSYv6Dzhaem9Vt_IGBvO5gf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 293 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T03:20:20Z",
+  "error": "no job_id: The same snapshot had been made 303 hours, 38 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:46:30Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YT2GfXh-UzVT0r4VU30gAXP": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 291 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T03:20:33Z",
+  "error": "no job_id: The same snapshot had been made 301 hours, 38 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:46:42Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YTCrWDXcWybAWlrzF3kph1q": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 290 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-21T03:20:45Z",
+  "error": "no job_id: The same snapshot had been made 300 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:46:58Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YTcAIe2G5fmIGbmz-M8bYNs": {
   "capture": "",
@@ -49195,9 +49251,10 @@
  },
  "https://www.youtube.com/watch?v=-3y7fX455Ok": {
   "capture": "https://web.archive.org/web/20261021032148/https://www.youtube.com/watch?v=-3y7fX455Ok",
-  "last": "2026-10-21T03:42:32Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-6f15b1418c37b1e0739546541800319c2fed0002",
+  "last": "2026-10-21T13:47:09Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=-9I4_7oaAjs": {
   "capture": "https://web.archive.org/web/20261016000307/https://www.youtube.com/watch?v=-9I4_7oaAjs",
@@ -49235,10 +49292,10 @@
  },
  "https://www.youtube.com/watch?v=-R6jdaUBlBk": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 290 hours, 57 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T03:21:19Z",
+  "error": "no job_id: The same snapshot had been made 301 hours, 23 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:47:29Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=-RA6URmq97U": {
   "capture": "https://web.archive.org/web/20261015174525/https://www.youtube.com/watch?v=-RA6URmq97U",
@@ -49295,6 +49352,12 @@
   "status": "ok",
   "tries": 1
  },
+ "https://www.youtube.com/watch?v=-pqN6QbPAaA": {
+  "capture": "https://web.archive.org/web/20261021134941/https://www.youtube.com/watch?v=-pqN6QbPAaA",
+  "last": "2026-10-21T13:50:25Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://www.youtube.com/watch?v=-uXSofF_cPs": {
   "capture": "",
   "job_id": "spn2-822a46a7da53cf33cb8b4602f05a85b28992c144",
@@ -49317,16 +49380,17 @@
  },
  "https://www.youtube.com/watch?v=00lP1TCpIjw": {
   "capture": "",
-  "error": "HTTP Error 404: NOT FOUND",
-  "last": "2026-10-21T03:22:33Z",
+  "error": "no job_id: The same snapshot had been made 288 hours, 10 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:47:59Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=03DG4ufCkUA": {
   "capture": "https://web.archive.org/web/20261021032338/https://www.youtube.com/watch?v=03DG4ufCkUA",
-  "last": "2026-10-21T03:42:34Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-6ada79776415ec746fd5a4feb6b8e4564ce8a430",
+  "last": "2026-10-21T13:48:10Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=05iuHotBmqQ": {
   "capture": "https://web.archive.org/web/20261015180640/https://www.youtube.com/watch?v=05iuHotBmqQ",
@@ -49378,10 +49442,10 @@
  },
  "https://www.youtube.com/watch?v=0mWrFS_BsgE": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:23:06Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-559e0627e37decb5f5e0c0eacad18c1ed24532c5",
+  "last": "2026-10-21T13:48:25Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=0pGC1fMww90": {
   "capture": "https://web.archive.org/web/20261016010931/https://www.youtube.com/watch?v=0pGC1fMww90",
@@ -49391,9 +49455,10 @@
  },
  "https://www.youtube.com/watch?v=0wrtl5opd18": {
   "capture": "https://web.archive.org/web/20261021032439/https://www.youtube.com/watch?v=0wrtl5opd18",
-  "last": "2026-10-21T04:59:35Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-1d09645e20bb7eca51d36eea0ab6ab3f56622794",
+  "last": "2026-10-21T13:48:36Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=1-DpMOAozgg": {
   "capture": "https://web.archive.org/web/20261016010806/https://www.youtube.com/watch?v=1-DpMOAozgg",
