@@ -328,3 +328,47 @@ class BannedWordsSkipDeckTitle(unittest.TestCase):
         self.assertEqual(kinds(L.lint("'''We''' won the event.")[0]), ["BANNED"])   # one bold word is not a name
         self.assertEqual(kinds(L.lint("Intro.\n\n'''Character'''\n\nWe also played it.")[0]), ["BANNED"])
         self.assertEqual(kinds(L.lint("* '''Notes:''' we played it twice.")[0]), ["BANNED"])
+
+
+class TranscriptSpeechSkipped(unittest.TestCase):
+    """Chief, 2026-10-20: on transcript pages quoted speech is the speaker's, not the editor's voice."""
+    TITLE = "2007 World Championship interviews (transcript)"
+    SPEECH = "'''[00:10] Henry Dunn:''' We probably need more judges, and it is unclear who will help."
+
+    def test_detected_by_title_or_category(self):
+        self.assertTrue(L.is_transcript_page(self.TITLE, "x"))
+        self.assertTrue(L.is_transcript_page("Some interview/Transcript", "x"))
+        self.assertTrue(L.is_transcript_page("Some interview", "x\n[[Category:Transcripts]]"))
+        self.assertTrue(L.is_transcript_page("Some interview", "x", ["Category:Transcripts"]))
+        self.assertFalse(L.is_transcript_page("2007 World Championship", "x\n[[Category:Interviews]]"))
+
+    def test_fixture_speech_not_flagged(self):
+        text = fx("2007_World_Championship_interviews_transcript.r92965.wiki")
+        flags, _ = L.lint(text, self.TITLE)
+        speech = [f for f in flags if f.split()[0] in ("BANNED", "LONG") and "Dunn:" not in f]
+        # only the editor's own lead and transcription note remain (fixture is the pre-cleanup revision)
+        self.assertEqual(sorted(kinds(speech)), ["BANNED", "LONG"])
+        self.assertTrue(any("marked [unclear]" in f for f in speech))
+        self.assertTrue(any(f.startswith("LONG     31 words: The 2007 World Championship interviews") for f in speech))
+        self.assertTrue(any("watch?v=LpWqJgmgh2Q" in f for f in flags))   # ARCHIVE still applies
+
+    def test_speech_skipped_on_transcript_page(self):
+        page = "Intro line.\n\n" + self.SPEECH + "\n'''Interviewer:''' We think this one probably ran long, " + "word " * 30 + "end.\n"
+        self.assertEqual([f for f in L.lint(page, self.TITLE)[0] if f.split()[0] in ("BANNED", "LONG")], [])
+        self.assertEqual([f for f in L.lint(page + "[[Category:Transcripts]]", "Some interview")[0]
+                          if f.split()[0] in ("BANNED", "LONG")], [])
+
+    def test_own_prose_still_flagged(self):
+        page = "We probably filmed these.\n\n" + self.SPEECH + "\n"
+        self.assertEqual(sorted(kinds(L.lint(page, self.TITLE)[0])), ["BANNED", "BANNED"])
+        self.assertEqual(sorted(kinds(L.lint("''Words marked [unclear] were inaudible.''\n\n" + self.SPEECH, self.TITLE)[0])), ["BANNED"])
+
+    def test_speech_still_flagged_on_ordinary_pages(self):
+        self.assertIn("BANNED", kinds(L.lint(self.SPEECH, "Henry Dunn")[0]))
+        self.assertEqual(sorted(kinds(L.lint("'''Note:''' we probably won.", self.TITLE)[0])), ["BANNED"] * 3)   # editorial label: note, we, probably
+
+    def test_we_in_linked_card_name_accepted(self):
+        for line in ("Shield 11 is listed as [[Ultimatum (Reflections III: A Collector's Bounty)|Ultimatum]].",
+                     "Starting card [[We'll Handle This / Duel Of The Fates|We'll Handle This]].",
+                     "Combo [[We Shall Double Our Efforts!]] was not in the deck."):
+            self.assertEqual([f for f in L.lint(line)[0] if f.startswith("BANNED")], [], line)
