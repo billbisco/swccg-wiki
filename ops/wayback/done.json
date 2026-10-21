@@ -2,16 +2,16 @@
  "http://blessed-souls.mine.sk/": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:32:28Z",
+  "last": "2026-10-21T03:05:39Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "http://creativecommons.org/licenses/by-sa/3.0/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 87 hours, 12 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-21T02:32:40Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:05:49Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D2.pdf": {
   "capture": "",
@@ -28540,10 +28540,10 @@
  },
  "http://www.swccgpc.com/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 289 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T02:32:51Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T03:05:59Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://arctic-shift.photon-reddit.com/api/comments/search?link_id=hx9o77&limit=100": {
   "capture": "https://web.archive.org/web/20261014163933/https://arctic-shift.photon-reddit.com/api/comments/search?link_id=hx9o77&limit=100",
@@ -28602,10 +28602,10 @@
  },
  "https://challonge.com/kapftrvm": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 294 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T02:33:04Z",
+  "error": "no job_id: The same snapshot had been made 295 hours, 19 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T03:06:11Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://childcancerfund.org/": {
   "capture": "https://web.archive.org/web/20261021023424/https://childcancerfund.org/",
@@ -28622,10 +28622,10 @@
  },
  "https://creativecommons.org/licenses/by-sa/2.0/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 32 hours, 34 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-21T02:33:26Z",
+  "error": "no job_id: The same snapshot had been made 33 hours, 7 minutes ago. You can make new capture of this URL after 720 hours",
+  "last": "2026-10-21T03:06:22Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://creativecommons.org/licenses/by-sa/4.0": {
   "capture": "",
@@ -30333,9 +30333,16 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-jonas-hagen-aobs.html": {
   "capture": "https://web.archive.org/web/20261021004045/https://swccg.com/snapshots/pc/2017-ec-day-2-jonas-hagen-aobs.html",
-  "last": "2026-10-21T02:53:09Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T03:04:55Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T03:04:58Z",
+   "bytes": 7120773,
+   "capture_id": "https://web.archive.org/web/20261021004045id_/https://swccg.com/snapshots/pc/2017-ec-day-2-jonas-hagen-aobs.html",
+   "method": "sha256",
+   "sha256": "5fe8a88191b9acd1130c786557feae5b564c9b95fe13d484a6094da5b91e034d"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-jonas-hagen-rst.html": {
   "capture": "https://web.archive.org/web/20261021003956/https://swccg.com/snapshots/pc/2017-ec-day-2-jonas-hagen-rst.html",
@@ -30419,11 +30426,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-james-barnes-cct.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021010630/https://swccg.com/snapshots/pc/2017-tmw-day-1-james-barnes-cct.html",
   "job_id": "spn2-77090b8c3e4a2e7c0194a63ce86f35c8702f09d6",
-  "last": "2026-10-21T01:05:27Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T03:05:05Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T03:05:05Z",
+   "bytes": 7120805,
+   "capture_id": "https://web.archive.org/web/20261021010630id_/https://swccg.com/snapshots/pc/2017-tmw-day-1-james-barnes-cct.html",
+   "method": "sha256",
+   "sha256": "52c134a3bdad25224ce7be99cf84107339bf09e7de7500521611e3548d2af471"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-james-barnes-mwyhl.html": {
   "capture": "https://web.archive.org/web/20261021013021/https://swccg.com/snapshots/pc/2017-tmw-day-1-james-barnes-mwyhl.html",
@@ -30439,16 +30453,22 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-jeremy-dipaolo-eops.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021005242/https://swccg.com/snapshots/pc/2017-tmw-day-1-jeremy-dipaolo-eops.html",
   "job_id": "spn2-c99170bfcd3bb0a9f147e54d8d57a65cd814d704",
-  "last": "2026-10-21T00:52:38Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T03:05:11Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T03:05:11Z",
+   "bytes": 7120795,
+   "capture_id": "https://web.archive.org/web/20261021005242id_/https://swccg.com/snapshots/pc/2017-tmw-day-1-jeremy-dipaolo-eops.html",
+   "method": "sha256",
+   "sha256": "302c574061304a3d03944c9bbf10fcc9d215f13ba4c75a9660314912479aff29"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-jonathan-bauer-diplo.html": {
-  "capture": "",
-  "job_id": "spn2-315363957ec3d8fa9d8941e2da571a44ba83a088",
-  "last": "2026-10-21T01:05:38Z",
+  "capture": "https://web.archive.org/web/20261021010649/https://swccg.com/snapshots/pc/2017-tmw-day-1-jonathan-bauer-diplo.html",
+  "last": "2026-10-21T03:05:13Z",
   "status": "pending",
   "tries": 1
  },
@@ -30487,9 +30507,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-michael-richards-tigih.html": {
-  "capture": "",
-  "job_id": "spn2-2d807516935f0ad10b36c75ab4df5003e6e3884e",
-  "last": "2026-10-21T00:56:24Z",
+  "capture": "https://web.archive.org/web/20261021005724/https://swccg.com/snapshots/pc/2017-tmw-day-1-michael-richards-tigih.html",
+  "last": "2026-10-21T03:05:15Z",
   "status": "pending",
   "tries": 1
  },
@@ -30788,8 +30807,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-charlie-arlandson-ls.html": {
   "capture": "https://web.archive.org/web/20261021011100/https://swccg.com/snapshots/pc/2017-worlds-day-2-charlie-arlandson-ls.html",
-  "last": "2026-10-21T02:54:49Z",
-  "status": "pending",
+  "last": "2026-10-21T03:05:20Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-charlie-herren-ds.html": {
