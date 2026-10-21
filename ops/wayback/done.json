@@ -30083,6 +30083,20 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/forum/t80665.html": {
+  "capture": "https://web.archive.org/web/20261013154950/https://swccg.com/snapshots/forum/t80665.html",
+  "last": "2026-10-21T04:17:28Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/t80902.html": {
+  "capture": "",
+  "job_id": "spn2-6dc228cefab7759c915b054058924a38657b9fd5",
+  "last": "2026-10-21T04:17:17Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t80947-start20.html": {
   "capture": "https://web.archive.org/web/20261021003320/https://swccg.com/snapshots/forum/t80947-start20.html",
   "job_id": "spn2-e0cd0bd5b8423d027c7c05f15b8f6d1382253adc",
@@ -30761,9 +30775,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-kessling-oa.html": {
-  "capture": "",
-  "job_id": "spn2-0f6e4462ab9d9df63ed529ff2929ef6f3e57acfc",
-  "last": "2026-10-21T00:49:18Z",
+  "capture": "https://web.archive.org/web/20261021004923/https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-kessling-oa.html",
+  "last": "2026-10-21T04:12:35Z",
   "status": "pending",
   "tries": 1
  },
@@ -31079,9 +31092,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ls.html": {
-  "capture": "",
-  "job_id": "spn2-d4ef46e75b661233abd0a0a3acdc4ab75f31ad00",
-  "last": "2026-10-21T01:38:51Z",
+  "capture": "https://web.archive.org/web/20261021013854/https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ls.html",
+  "last": "2026-10-21T04:12:40Z",
   "status": "pending",
   "tries": 2
  },
@@ -31140,9 +31152,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jacy-smith-qmc.html": {
-  "capture": "",
-  "job_id": "spn2-8a1d4f1b0c89f323f40b64575b4c14709b483d3f",
-  "last": "2026-10-21T01:22:26Z",
+  "capture": "https://web.archive.org/web/20261021012230/https://swccg.com/snapshots/pc/2017-worlds-day-2-jacy-smith-qmc.html",
+  "last": "2026-10-21T04:12:43Z",
   "status": "pending",
   "tries": 1
  },
@@ -31713,9 +31724,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-barry-alperstein-aobs.html": {
-  "capture": "",
-  "job_id": "spn2-5f0ac281730477c5e540aa13305728f64c098ad0",
-  "last": "2026-10-21T02:26:59Z",
+  "capture": "https://web.archive.org/web/20261021022800/https://swccg.com/snapshots/pc/2018-worlds-barry-alperstein-aobs.html",
+  "last": "2026-10-21T04:12:51Z",
   "status": "pending",
   "tries": 1
  },
@@ -31828,11 +31838,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-joe-giannetti-trm.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:42:51Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021041316/https://swccg.com/snapshots/pc/2018-worlds-joe-giannetti-trm.html",
+  "job_id": "spn2-2d1b1cf56c7cd384aa7eaf36d0063f0a3346a43c",
+  "last": "2026-10-21T04:23:10Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T04:23:10Z",
+   "bytes": 7120867,
+   "capture_id": "https://web.archive.org/web/20261021041316id_/https://swccg.com/snapshots/pc/2018-worlds-joe-giannetti-trm.html",
+   "method": "sha256",
+   "sha256": "31f7de5f99cc846ed699b033ad4874a10335cde24a0dd8760796f9a8f2e94bc4"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-johnny-chu-tdigwatt.html": {
   "capture": "",
@@ -31844,16 +31861,16 @@
  "https://swccg.com/snapshots/pc/2018-worlds-kyle-krueger-hd.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:42:41Z",
+  "last": "2026-10-21T04:13:02Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-worlds-matt-scott-aobs.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:43:01Z",
+  "last": "2026-10-21T04:13:23Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html": {
   "capture": "",
@@ -35193,6 +35210,12 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-corellia-regionals-tom-pylinski-ds-hunt-down-v-bf.html": {
+  "capture": "https://web.archive.org/web/20261021041709/https://swccg.com/snapshots/pc/2022-corellia-regionals-tom-pylinski-ds-hunt-down-v-bf.html",
+  "last": "2026-10-21T04:24:19Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-tom-pylinski-ds-hunt-down-v.html": {
   "capture": "https://web.archive.org/web/20261016153939/https://swccg.com/snapshots/pc/2022-corellia-regionals-tom-pylinski-ds-hunt-down-v.html",
   "job_id": "spn2-9a2dc4fb6c7a049f4764d7172fff96a11a56fa8a",
@@ -35207,12 +35230,26 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ds-bhbm-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:16:44Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261016171943/https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ds-bhbm.html",
   "job_id": "spn2-458bec3f793186a2c0510a6364cbc42f6ba38727",
   "last": "2026-10-16T17:19:59Z",
   "status": "ok",
   "tries": 3
+ },
+ "https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ls-steady-steady-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:16:54Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ls-steady-steady.html": {
   "capture": "https://web.archive.org/web/20261016154031/https://swccg.com/snapshots/pc/2022-corellia-regionals-travis-morris-ls-steady-steady.html",
@@ -35231,6 +35268,13 @@
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ds-rops-v.html": {
   "capture": "https://web.archive.org/web/20261016154133/https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ds-rops-v.html",
   "last": "2026-10-16T17:36:27Z",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ls-old-allies-bf.html": {
+  "capture": "https://web.archive.org/web/20261021041337/https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ls-old-allies-bf.html",
+  "job_id": "spn2-70a9fc47bba93e1c36c73f819bd8d9b6e70ccd5b",
+  "last": "2026-10-21T04:24:07Z",
   "status": "ok",
   "tries": 1
  },
@@ -35531,11 +35575,25 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ls-communing-yoda-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:14:37Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261016160154/https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ls-communing-yoda.html",
   "job_id": "spn2-94f9880649b2766202621bb64b1089d090270879",
   "last": "2026-10-16T16:09:34Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ds-asm-bf.html": {
+  "capture": "",
+  "job_id": "spn2-6395134f2299d7cba6497e4df399db02990565bd",
+  "last": "2026-10-21T04:14:48Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ds-asm.html": {
@@ -35552,11 +35610,25 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-hayes-hunter-ds-revenge-dooku-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:13:55Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-hayes-hunter-ds-revenge-dooku.html": {
   "capture": "https://web.archive.org/web/20261016155440/https://swccg.com/snapshots/pc/2022-dagobah-regionals-hayes-hunter-ds-revenge-dooku.html",
   "job_id": "spn2-71e413a7e10c2b062e0c73e0525cac998d2f80ca",
   "last": "2026-10-16T17:34:53Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-hayes-hunter-ls-saga-rey-bf.html": {
+  "capture": "",
+  "job_id": "spn2-3eb1dbd31e7ae5966765b337ed0059d715327778",
+  "last": "2026-10-21T04:14:05Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-hayes-hunter-ls-saga-rey.html": {
@@ -35566,11 +35638,25 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jeremy-dipaolo-ds-cct-bf.html": {
+  "capture": "",
+  "job_id": "spn2-86fc758de15b98b35f0e9cef59667dbcf64d33e4",
+  "last": "2026-10-21T04:16:02Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jeremy-dipaolo-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261016155526/https://swccg.com/snapshots/pc/2022-dagobah-regionals-jeremy-dipaolo-ds-cct.html",
   "job_id": "spn2-32755f58dd706b87a9a87847c1f8b3b4b8425144",
   "last": "2026-10-16T17:35:03Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jeremy-dipaolo-ls-diplo-bf.html": {
+  "capture": "",
+  "job_id": "spn2-7529e9e0ebd8e398204ab74b070f4e53d2a73f96",
+  "last": "2026-10-21T04:16:13Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jeremy-dipaolo-ls-diplo.html": {
@@ -35580,6 +35666,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-joe-laporta-ds-asm-bf.html": {
+  "capture": "",
+  "job_id": "spn2-eb09517c8f5417b4591cf93ed7dedbb6785f13f2",
+  "last": "2026-10-21T04:15:30Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-joe-laporta-ds-asm.html": {
   "capture": "https://web.archive.org/web/20261016161646/https://swccg.com/snapshots/pc/2022-dagobah-regionals-joe-laporta-ds-asm.html",
   "job_id": "spn2-a744923f0ffcc930f70af1d4c475084ab5f6cc93",
@@ -35587,11 +35680,25 @@
   "status": "ok",
   "tries": 3
  },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-joe-laporta-ls-wys-bf.html": {
+  "capture": "",
+  "job_id": "spn2-058645a4b2edcdb009e244cce97ff1d84c8a0a7d",
+  "last": "2026-10-21T04:15:41Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-joe-laporta-ls-wys.html": {
   "capture": "https://web.archive.org/web/20261016155509/https://swccg.com/snapshots/pc/2022-dagobah-regionals-joe-laporta-ls-wys.html",
   "job_id": "spn2-8bf068b4f7160d3178f43f2c3c854a0615341f1c",
   "last": "2026-10-16T17:36:31Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-joel-pittman-ds-shadow-collective-bf.html": {
+  "capture": "",
+  "job_id": "spn2-4fd7d27bafdd8cc77b5e49c1d21c524ea4e98b50",
+  "last": "2026-10-21T04:16:24Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-joel-pittman-ds-shadow-collective.html": {
@@ -35601,12 +35708,25 @@
   "status": "ok",
   "tries": 4
  },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-joel-pittman-ls-communing-yoda-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:16:34Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-joel-pittman-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261016160250/https://swccg.com/snapshots/pc/2022-dagobah-regionals-joel-pittman-ls-communing-yoda.html",
   "job_id": "spn2-20505e87b3e95e438fa3b9982cbb4fef591744bc",
   "last": "2026-10-16T18:02:08Z",
   "status": "ok",
   "tries": 4
+ },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ds-walkers-bf.html": {
+  "capture": "https://web.archive.org/web/20261021041505/https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ds-walkers-bf.html",
+  "last": "2026-10-21T04:24:11Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261016160340/https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ds-walkers.html",
@@ -35615,6 +35735,13 @@
   "status": "ok",
   "tries": 3
  },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ls-profit-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:14:27Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ls-profit.html": {
   "capture": "https://web.archive.org/web/20261016160411/https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ls-profit.html",
   "job_id": "spn2-f028b7644d49d264edc6e7c837f30e5310dbc4be",
@@ -35622,11 +35749,24 @@
   "status": "ok",
   "tries": 3
  },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-mike-kessling-ds-ropsv-bf.html": {
+  "capture": "",
+  "job_id": "spn2-2ffd8a0f0b12af43f2126ffb3af0048902737c4a",
+  "last": "2026-10-21T04:13:45Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-mike-kessling-ds-ropsv.html": {
   "capture": "https://web.archive.org/web/20261016160315/https://swccg.com/snapshots/pc/2022-dagobah-regionals-mike-kessling-ds-ropsv.html",
   "job_id": "spn2-c477c71027f4e36a0d77ba4146c8886992a76210",
   "last": "2026-10-16T17:36:36Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-dagobah-regionals-travis-cooper-ls-zero-hour-bf.html": {
+  "capture": "https://web.archive.org/web/20261021041555/https://swccg.com/snapshots/pc/2022-dagobah-regionals-travis-cooper-ls-zero-hour-bf.html",
+  "last": "2026-10-21T04:23:20Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-travis-cooper-ls-zero-hour.html": {
@@ -35950,6 +36090,150 @@
    "method": "sha256",
    "sha256": "8aca286a136a4a582ccd3f891b49eb1ad21b5522031ece8974f11fdb643b4f68"
   }
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ds-isb-bf.html": {
+  "capture": "",
+  "job_id": "spn2-a03f82c81ea4636a3c850cf633d1a86c518a1465",
+  "last": "2026-10-21T04:20:06Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ls-communing-yoda-bf.html": {
+  "capture": "",
+  "job_id": "spn2-16018fb1b6143899689323937e760fa0d7f289a7",
+  "last": "2026-10-21T04:20:17Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-benji-jones-ds-hunt-down-v-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:20:27Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-benji-jones-ls-communing-obi-wan-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:20:37Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-chris-wirfs-ds-sycfa-bf.html": {
+  "capture": "",
+  "job_id": "spn2-3727fc1db9dd40aec11b5db60f836caa65101eab",
+  "last": "2026-10-21T04:18:20Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-chris-wirfs-ls-family-anakin-bf.html": {
+  "capture": "",
+  "job_id": "spn2-76b7b4ae678249cdaf3dee1edcabc7c42714481e",
+  "last": "2026-10-21T04:18:31Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-derek-jackson-ds-verge-bf.html": {
+  "capture": "",
+  "job_id": "spn2-5917846aa4fc95f729ae1f3db3f2eb645951c1b1",
+  "last": "2026-10-21T04:19:45Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-derek-jackson-ls-family-anakin-bf.html": {
+  "capture": "",
+  "job_id": "spn2-f928b3be8315194bbbb5546d62b9bbe4557c1adb",
+  "last": "2026-10-21T04:19:56Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-joe-olson-ds-rops-v-bf.html": {
+  "capture": "",
+  "job_id": "spn2-64f0c740dfbf4e2b5bbb1b75ccdab870e3a2f653",
+  "last": "2026-10-21T04:17:39Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ds-map-bf.html": {
+  "capture": "",
+  "job_id": "spn2-2477c4175bbfadd8f053d97788c91804bafa540a",
+  "last": "2026-10-21T04:19:23Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ls-qmc-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:19:34Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ds-shadow-collective-bf.html": {
+  "capture": "https://web.archive.org/web/20261021041845/https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ds-shadow-collective-bf.html",
+  "last": "2026-10-21T04:23:31Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-bastian-winklehaus-ds-bhbm-bf.html": {
+  "capture": "",
+  "job_id": "spn2-4f7a69d2d2e7cc2e47346093db972cac61dcf6f5",
+  "last": "2026-10-21T04:21:09Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-bastian-winklehaus-ls-legend-bf.html": {
+  "capture": "https://web.archive.org/web/20261021042124/https://swccg.com/snapshots/pc/2022-european-championship-bastian-winklehaus-ls-legend-bf.html",
+  "last": "2026-10-21T04:23:40Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-brian-fred-ds-bhbm-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:22:23Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-brian-fred-ls-communing-yoda-bf.html": {
+  "capture": "https://web.archive.org/web/20261021042237/https://swccg.com/snapshots/pc/2022-european-championship-brian-fred-ls-communing-yoda-bf.html",
+  "last": "2026-10-21T04:24:36Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-cedrik-vanderhaegen-ls-communing-yoda-bf.html": {
+  "capture": "",
+  "job_id": "spn2-6aadfa2ca86f7bc1a1f212e035c17f998197d8b9",
+  "last": "2026-10-21T04:22:13Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-emil-wallin-ds-asm-bf.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T04:20:48Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-emil-wallin-ls-old-allies-bf.html": {
+  "capture": "",
+  "job_id": "spn2-2686ecaeec98d927e4917ad5e87f4350802c57ff",
+  "last": "2026-10-21T04:20:59Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ds-ropsv.html": {
+  "capture": "",
+  "job_id": "spn2-39df533c66911060fbaf00a5bb47028ee46cf1bd",
+  "last": "2026-10-21T04:22:46Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championships-jonas-hagen-ds-walkers.html": {
+  "capture": "",
+  "job_id": "spn2-b2add47d7ecab6bc83b32128f149d0f18806403f",
+  "last": "2026-10-21T04:21:31Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc.html": {
   "capture": "https://web.archive.org/web/20261020232116/https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc.html",
