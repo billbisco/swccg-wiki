@@ -56684,8 +56684,15 @@
  "https://www.youtube.com/watch?v=vlYSiVC9vzY": {
   "capture": "https://web.archive.org/web/20261021194218/https://www.youtube.com/watch?v=vlYSiVC9vzY",
   "last": "2026-10-21T21:38:01Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T21:43:22Z",
+   "capture_id": "https://web.archive.org/web/20261021194218id_/https://www.youtube.com/watch?v=vlYSiVC9vzY",
+   "method": "text",
+   "reason": "page text matches 13% (< 85%)",
+   "text_match": 0.132
+  }
  },
  "https://www.youtube.com/watch?v=w0SFZ6nFYKk": {
   "capture": "",
@@ -57226,38 +57233,38 @@
  },
  "https://youtu.be/K7PIzyidp7A": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 312 hours, 38 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T21:09:18Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T21:42:21Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://youtu.be/Kp74Cpcis8M": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 312 hours, 33 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T21:09:30Z",
+  "error": "no job_id: The same snapshot had been made 313 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T21:42:32Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://youtu.be/LZs-vw3F3vU": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 309 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T21:09:42Z",
+  "error": "no job_id: The same snapshot had been made 309 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T21:42:44Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://youtu.be/PCSZ23SYVFU": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 312 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T21:09:53Z",
+  "error": "no job_id: The same snapshot had been made 313 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T21:42:56Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://youtu.be/R7Wks5qqua4": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 312 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T21:10:04Z",
+  "error": "no job_id: The same snapshot had been made 313 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T21:43:08Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://youtu.be/TLE1pihXt5Y": {
   "capture": "",
