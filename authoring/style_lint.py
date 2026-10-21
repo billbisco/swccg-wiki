@@ -14,6 +14,12 @@ Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
            Skipped: wiki.swccg.com, swccg.com/images and the archive links themselves.
            Exempt: the Main Page (its body links are navigation to live resources, not
            citations; Chief, 2026-10-20). Its URLs are still queued for Wayback.
+           Talk pages (Chief, 2026-10-20): a URL passes if a Preserved copy of it appears anywhere
+           on the page, including a Wayback capture of swccg.com/snapshots/forum/tNNNNN.html for a
+           forum.starwarsccg.org viewtopic.php?t=NNNNN link.
+Talk pages (Chief, 2026-10-20): signed comments by other accounts are their authors' words. The
+  banned-word, hedge and long-sentence checks skip any comment whose signature is not the bot's own
+  (Comlink Cursor); the bot's comments, unsigned text and the other checks still apply.
   EMAIL    personal email addresses (decipher.com addresses and lines marked "email-ok" pass).
   REF      a <ref> with no URL and no source text.
   HEADING  a == Sources == section on a page that is not a deck, event, card or set-table page. Deck/event pages
@@ -159,14 +165,31 @@ def cited_units(text):
         if URL_RX.search(line):
             yield "line", line
 
-def archive_flags(text):
+# Talk pages (Chief, 2026-10-20): a Preserved copy anywhere on the page counts, and a capture of the
+# swccg.com forum snapshot (forum/tNNNNN.html, or the older flat forum-tNNNNN.html) covers that thread.
+FORUM_THREAD_RX = re.compile(r"^forum\.starwarsccg\.org/viewtopic\.php\?(?:[^#]*&)?t=(\d+)(?:[&#]|$)", re.I)
+FORUM_SNAPSHOT_RX = re.compile(r"^swccg\.com/snapshots/forum[/-]t(\d+)\.html$", re.I)
+
+def archive_keys(url):
+    """Keys under which a cited URL counts as archived: its normalised URL, plus its forum thread."""
+    n = norm_url(url)
+    keys = {n}
+    m = FORUM_THREAD_RX.match(n) or FORUM_SNAPSHOT_RX.match(n)
+    if m: keys.add(f"forum-thread:{m.group(1)}")
+    return keys
+
+def archive_flags(text, talk=False):
     archived = {norm_url(m.group(1)) for m in WAYBACK_RX.finditer(text)}
+    if talk:
+        archived = set().union(*(archive_keys(m.group(1)) for m in WAYBACK_RX.finditer(text)))
     out, seen = [], set()
     for kind, unit in cited_units(text):
         unit_has_copy = bool(ARCHIVE_LINK_RX.search(unit))
         for raw in URL_RX.findall(unit):
             url = clean_url(raw)
             if SKIP_URL_RX.match(url) or url in seen:
+                continue
+            if talk and (unit_has_copy or archive_keys(url) & archived):
                 continue
             if kind == "ref":
                 if unit_has_copy: continue
@@ -339,6 +362,46 @@ def mask_speech(text):
         return m.group(0) if label in EDITORIAL_LABELS else " "
     return SPEECH_RX.sub(blank, text)
 
+# Talk pages (Chief, 2026-10-20): other editors' signed comments are their own words, so the banned-word,
+# hedge and long-sentence checks skip them. A comment is the block of lines that ends with a signature
+# line ([[User:X|...]] followed by a "HH:MM, D Month YYYY (UTC)" timestamp) and starts after the previous
+# signature line or level-2 (== ==) heading; sub-headings (=== ===) inside it belong to the comment.
+# A block counts as the bot's own when any signer on its signature line is Comlink Cursor, or when it
+# is signed with an unexpanded ~~~~ (a draft the bot is about to save).
+TALK_TITLE_RX = re.compile(r"^\s*(?:(?:User|SWCCG[ _]Wiki|Project|File|Image|MediaWiki|Template|Help|Category)[ _])?talk\s*:", re.I)
+BOT_ACCOUNTS = {"comlink cursor"}
+SIG_USER_RX = re.compile(r"\[\[\s*User\s*:\s*([^|\]]+)", re.I)
+SIG_TIME_RX = re.compile(r"\d{1,2}:\d{2},\s*\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s*\(UTC\)")
+LEVEL2_RX = re.compile(r"^==[^=].*?[^=]==\s*$")
+
+def is_talk_page(title):
+    return bool(title and TALK_TITLE_RX.match(title))
+
+def signers(line):
+    """Accounts signing this line (a User link before a timestamp), '~~~~' for an unexpanded signature."""
+    out = set()
+    if "~~~~" in line: out.add("~~~~")
+    for m in SIG_USER_RX.finditer(line):
+        if SIG_TIME_RX.search(line, m.end()):
+            out.add(re.sub(r"[\s_]+", " ", m.group(1)).strip().lower())
+    return out
+
+def mask_foreign_comments(text):
+    """Blank signed comments whose signers are all accounts other than the bot (line count kept)."""
+    lines = text.split("\n")
+    start = 0
+    for i, line in enumerate(lines):
+        if LEVEL2_RX.match(line):
+            start = i + 1
+            continue
+        who = signers(line)
+        if not who: continue
+        if not (who & (BOT_ACCOUNTS | {"~~~~"})):
+            for j in range(start, i + 1):
+                lines[j] = ""
+        start = i + 1
+    return "\n".join(lines)
+
 def lint(text, title=None, cats=None):
     flags = []
     for h in own_headings(text):
@@ -357,6 +420,8 @@ def lint(text, title=None, cats=None):
             if re.search(rf"\b{wd}\b", plain, re.I): flags.append(f"CAPTION  describes image ('{wd}'): {plain[:90]}")
     b = body(text)
     own = mask_speech(text) if is_transcript_page(title, text, cats) else text   # transcripts: skip speech
+    talk = is_talk_page(title)
+    if talk: own = mask_foreign_comments(own)                                   # Talk: skip others' comments
     prose = re.sub(r"^=+.*?=+\s*$", "", body(own), flags=re.M)
     scan = unquote(re.sub(r"^=+.*?=+\s*$", "", body(mask_names(own, title)), flags=re.M))
     for wd in BANNED:
@@ -372,7 +437,7 @@ def lint(text, title=None, cats=None):
         n = len(s.split())
         if n > MAX_SENT: flags.append(f"LONG     {n} words: {s[:100]}…")
     flags += service_flags(text, title)
-    if not archive_exempt(title): flags += archive_flags(text)
+    if not archive_exempt(title): flags += archive_flags(text, talk=talk)
     flags += email_flags(text)
     flags += ref_flags(text)
     return flags, words(b)

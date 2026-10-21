@@ -372,3 +372,75 @@ class TranscriptSpeechSkipped(unittest.TestCase):
                      "Starting card [[We'll Handle This / Duel Of The Fates|We'll Handle This]].",
                      "Combo [[We Shall Double Our Efforts!]] was not in the deck."):
             self.assertEqual([f for f in L.lint(line)[0] if f.startswith("BANNED")], [], line)
+
+
+class TalkPageComments(unittest.TestCase):
+    """Chief, 2026-10-20: on Talk pages other accounts' signed comments are not linted for voice, and a
+    Preserved copy anywhere on the page (incl. the forum thread's swccg.com snapshot) satisfies ARCHIVE."""
+    CLAUDE = "[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 18:05, 15 October 2026 (UTC)"
+    BOT = "[[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 00:21, 21 October 2026 (UTC)"
+    FORUM = "[https://forum.starwarsccg.org/viewtopic.php?t=85240 thread]"
+    SNAP = "[https://web.archive.org/web/20261012164154/https://swccg.com/snapshots/forum/t85240.html Internet Archive]"
+
+    def voice(self, text, title):
+        return [f for f in L.lint(text, title)[0] if f.split()[0] in ("BANNED", "LONG")]
+
+    def test_talk_title_detection(self):
+        for t in ("Talk:Geoff Bowman", "User talk:Comlink Cursor", "SWCCG Wiki talk:Style guide", "Template_talk:Card"):
+            self.assertTrue(L.is_talk_page(t), t)
+        for t in ("Geoff Bowman", "Small talk: a deck", None):
+            self.assertFalse(L.is_talk_page(t), t)
+
+    def test_other_users_comment_not_flagged(self):
+        page = ("== Style pass ==\n=== Possibly faulty data ===\n"
+                "* The starting card was inferred from the list.\n" + self.CLAUDE + "\n")
+        self.assertEqual(self.voice(page, "Talk:Some deck"), [])
+
+    def test_bot_comment_still_flagged(self):
+        page = "== Build notes ==\n* The starting card was inferred from the list.\n" + self.BOT + "\n"
+        self.assertEqual(kinds(self.voice(page, "Talk:Some deck")), ["BANNED"])
+        draft = "== Build notes ==\n* The starting card was inferred from the list. ~~~~\n"
+        self.assertEqual(kinds(self.voice(draft, "Talk:Some deck")), ["BANNED"])
+
+    def test_indented_reply_is_its_own_comment(self):
+        page = ("== Q ==\nIt was probably 1998. " + self.CLAUDE + "\n"
+                ":Inferred from the box. " + self.BOT + "\n"
+                ":Possibly. " + self.CLAUDE.replace("18:05", "19:00") + "\n")
+        flags = self.voice(page, "Talk:Some set")
+        self.assertEqual(len(flags), 1)
+        self.assertIn("'inferred'", flags[0])
+
+    def test_unsigned_text_still_flagged(self):
+        page = "== Q ==\nThis was inferred.\n\n== R ==\nOk. " + self.CLAUDE + "\n"
+        self.assertEqual(kinds(self.voice(page, "Talk:Some set")), ["BANNED"])
+
+    def test_same_text_on_article_still_flagged(self):
+        page = "* The starting card was inferred from the list.\n" + self.CLAUDE + "\n"
+        self.assertEqual(kinds(self.voice(page, "Some deck")), ["BANNED"])
+
+    def test_forum_link_with_snapshot_copy_elsewhere_passes_on_talk(self):
+        page = "== TD ==\nHe was TD of Event #4 (" + self.FORUM + ").\n\n" + "* Preserved copy: " + self.SNAP + "\n"
+        self.assertEqual(L.archive_flags(page, talk=True), [])
+        self.assertEqual([f for f in L.lint(page, "Talk:Geoff Bowman")[0] if f.startswith("ARCHIVE")], [])
+        # older flat snapshot name counts too
+        flat = page.replace("snapshots/forum/t85240.html", "snapshots/forum-t85240.html")
+        self.assertEqual(L.archive_flags(flat, talk=True), [])
+
+    def test_same_link_on_article_still_fails(self):
+        page = "He was TD of Event #4 (" + self.FORUM + ").\n\n" + "* Preserved copy: " + self.SNAP + "\n"
+        flags = [f for f in L.lint(page, "Geoff Bowman")[0] if f.startswith("ARCHIVE")]
+        self.assertEqual(len(flags), 1)
+        self.assertIn("viewtopic.php?t=85240", flags[0])
+        self.assertEqual(len(L.archive_flags(page)), 1)
+
+    def test_other_thread_snapshot_does_not_count(self):
+        page = "== TD ==\nSee " + self.FORUM + ".\n* " + self.SNAP.replace("t85240", "t85241") + "\n"
+        self.assertEqual(len(L.archive_flags(page, talk=True)), 1)
+
+    def test_live_talk_fixtures_pass(self):
+        for name, title in (("Talk_2026_San_Diego_Super_Open.r116646.wiki", "Talk:2026 San Diego Super Open"),
+                            ("Talk_Geoff_Bowman.r116647.wiki", "Talk:Geoff Bowman")):
+            text = fx(name)
+            self.assertEqual(L.lint(text, title)[0], [], name)
+            # as an article, the restored comments' wording and the bare forum links would still fail
+            self.assertTrue(L.lint(text, "Some article")[0], name)
