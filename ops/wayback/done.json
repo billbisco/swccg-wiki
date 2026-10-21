@@ -42636,9 +42636,9 @@
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ls-aitc.html": {
   "capture": "https://web.archive.org/web/20261021104306/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ls-aitc.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T15:03:24Z",
+  "last": "2026-10-21T15:33:42Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-timo-dusel-ds-thrawn.html": {
   "capture": "",
@@ -47957,10 +47957,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:59:26Z",
+   "at": "2026-10-21T15:43:11Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-2170.html": {
   "capture": "https://web.archive.org/web/20261020231245/https://swccg.com/snapshots/scomp/card-2170.html",
@@ -47995,10 +47995,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T14:59:32Z",
+   "at": "2026-10-21T15:43:17Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-2314.html": {
   "capture": "https://web.archive.org/web/20261020234853/https://swccg.com/snapshots/scomp/card-2314.html",
@@ -49784,9 +49784,15 @@
  },
  "https://www.youtube.com/watch?v=-pqN6QbPAaA": {
   "capture": "https://web.archive.org/web/20261021134941/https://www.youtube.com/watch?v=-pqN6QbPAaA",
-  "last": "2026-10-21T14:01:11Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-08610fc1b2a5cbfc3e762803c942f76c8ead22c3",
+  "last": "2026-10-21T15:43:03Z",
+  "status": "ok",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T15:43:03Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=-uXSofF_cPs": {
   "capture": "",
@@ -49810,10 +49816,10 @@
  },
  "https://www.youtube.com/watch?v=00lP1TCpIjw": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 288 hours, 10 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:47:59Z",
+  "error": "no job_id: The same snapshot had been made 289 hours, 56 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:35:34Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://www.youtube.com/watch?v=03DG4ufCkUA": {
   "capture": "https://web.archive.org/web/20261021032338/https://www.youtube.com/watch?v=03DG4ufCkUA",
@@ -49899,10 +49905,10 @@
  },
  "https://www.youtube.com/watch?v=10NJHt-PIes": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 289 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T14:08:36Z",
+  "error": "no job_id: The same snapshot had been made 291 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:36:45Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://www.youtube.com/watch?v=17136JxJF6g": {
   "capture": "https://web.archive.org/web/20261015180702/https://www.youtube.com/watch?v=17136JxJF6g",
@@ -50039,10 +50045,10 @@
  },
  "https://www.youtube.com/watch?v=2X55QynCUmw": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 289 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T14:16:58Z",
+  "error": "no job_id: The same snapshot had been made 290 hours, 39 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:37:55Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=2ZWAShdoiO0": {
   "capture": "https://web.archive.org/web/20261015180730/https://www.youtube.com/watch?v=2ZWAShdoiO0",
@@ -50215,6 +50221,18 @@
   "status": "pending",
   "tries": 1
  },
+ "https://www.youtube.com/watch?v=4R2D_oXX0Lo": {
+  "capture": "https://web.archive.org/web/20261021153807/https://www.youtube.com/watch?v=4R2D_oXX0Lo",
+  "job_id": "spn2-7ad12e023f478367e6bd8e7bc30a9e9c23eb4125",
+  "last": "2026-10-21T15:43:09Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T15:43:09Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
+ },
  "https://www.youtube.com/watch?v=4Wci5TkoXNg": {
   "capture": "https://web.archive.org/web/20261021141857/https://www.youtube.com/watch?v=4Wci5TkoXNg",
   "job_id": "spn2-a6d7637d41c7d7c777e41d0465c89ef02f6554f4",
@@ -50276,6 +50294,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://www.youtube.com/watch?v=5K5m0Yywu_Q": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 264 hours, 47 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:39:18Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://www.youtube.com/watch?v=5L-y94NwGU4": {
   "capture": "https://web.archive.org/web/20261015181519/https://www.youtube.com/watch?v=5L-y94NwGU4",
   "job_id": "spn2-9d7c5663f2b7affc3467e1928d654bdba7b9f15a",
@@ -50304,10 +50329,10 @@
  },
  "https://www.youtube.com/watch?v=5hTwJWgW5uQ": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 578 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T14:20:16Z",
+  "error": "no job_id: The same snapshot had been made 579 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:40:28Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=5o0SVf3CmRI": {
   "capture": "https://web.archive.org/web/20261015181529/https://www.youtube.com/watch?v=5o0SVf3CmRI",
@@ -50318,10 +50343,10 @@
  },
  "https://www.youtube.com/watch?v=5q_ufwHceDM": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 281 hours, 29 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T14:21:28Z",
+  "error": "no job_id: The same snapshot had been made 282 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:41:39Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=6LHhfLOBXrI": {
   "capture": "https://web.archive.org/web/20261015183218/https://www.youtube.com/watch?v=6LHhfLOBXrI",
@@ -50332,10 +50357,10 @@
  },
  "https://www.youtube.com/watch?v=6McrLG_z4QY": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 291 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-21T14:22:39Z",
+  "error": "no job_id: The same snapshot had been made 292 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T15:42:50Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=6UHFTkIe8aY": {
   "capture": "https://web.archive.org/web/20261016030130/https://www.youtube.com/watch?v=6UHFTkIe8aY",
