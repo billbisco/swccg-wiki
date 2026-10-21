@@ -166,7 +166,9 @@ def norm_url(u):
     u = re.sub(r"^(?:https?:)?//", "", u, flags=re.I)
     u = re.sub(r"^www\.", "", u, flags=re.I)
     host, _, rest = u.partition("/")
-    return (host.lower().split(":", 1)[0] + ("/" + rest if rest else "")).rstrip("/")
+    host = host.lower().split(":", 1)[0]
+    if host == "x.com": host = "twitter.com"   # same site: a twitter.com capture covers an x.com link (Chief, 2026-10-21)
+    return (host + ("/" + rest if rest else "")).rstrip("/")
 
 def cited_units(text):
     """(kind, text) units: each <ref> body, then each remaining line that carries a URL."""
