@@ -30,3 +30,10 @@ Banned words skip names (Chief, 2026-10-20): `[[link text]]`, `[url link titles]
 Transcript pages skip quoted speech (Chief, 2026-10-20): a page whose title ends in `(transcript)` (or a `/Transcript` subpage), or that is in Category:Transcripts, is a transcript. Each speaker turn there (a line opening with a bold label such as `'''[00:10] Henry Dunn:'''` or `'''Interviewer:'''`) is left out of the banned-word and sentence-length checks. The page's own prose (lead, transcription note, section intros) and editorial labels such as `'''Note:'''` are still checked, and ARCHIVE still applies.
 
 Tests: `python3 -m unittest discover -s authoring/tests` (fixtures are saved revisions of live pages).
+
+## Snapshots (`make_snapshot.py`)
+`python3 authoring/make_snapshot.py page.html --url LIVE_URL -o out.html [--flaresolverr http://localhost:8191/v1]` builds a self-contained HTML snapshot for Wayback.
+With `--flaresolverr`, each run now uses its **own** FlareSolverr session, named `snap-<pid>-<UTC timestamp>` by default or set with `--fs-session NAME`. That session is destroyed when the run ends, even if the run fails.
+Before this change every run shared one hard-coded `snap` session, which parallel jobs reused and which stayed open afterwards. Callers that pass nothing still work unchanged.
+`--keep-fs-session` leaves a named session open for reuse. The script then won't close it, so you must call `sessions.destroy` yourself when done.
+From Python, `Fetcher(..., fs_session=..., keep_fs_session=...)` is also a context manager (`with Fetcher(...) as f:`) that destroys the session on exit.
