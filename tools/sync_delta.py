@@ -13,22 +13,72 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from dump_live import dump_from_tsv, write_index, _merge_index  # noqa: E402
+from dump_live import INDEX, dump_from_tsv, load_tsv, write_index, _merge_index  # noqa: E402
+
+_SECRET_RES = [
+    re.compile(r"(?i)(authorization:\s*(?:bearer|basic|token)\s+)\S+"),
+    re.compile(r"(?i)(extraheader=)[^'\"\s]+(?:\s+[^'\"\s]+)*"),
+    re.compile(r"()\bgh[pousr]_[A-Za-z0-9]{10,}"),
+    re.compile(r"()\bgithub_pat_[A-Za-z0-9_]{10,}"),
+    re.compile(r"(https?://)[^/@\s]+@"),
+]
+
+
+def redact(text: str) -> str:
+    """Strip auth headers and token-looking strings from text."""
+    for rx in _SECRET_RES:
+        text = rx.sub(lambda m: m.group(1) + "[REDACTED]" + ("@" if m.group(0).endswith("@") else ""), text)
+    return text
+
+
+class GitError(RuntimeError):
+    pass
+
+
+def _run(cmd: list[str], env: dict | None = None, check: bool = True) -> subprocess.CompletedProcess:
+    """Run git; on failure raise GitError with redacted command/stderr only."""
+    proc = subprocess.run(cmd, cwd=str(ROOT), env=env, capture_output=True, text=True)
+    if proc.stdout:
+        sys.stdout.write(redact(proc.stdout))
+    if check and proc.returncode != 0:
+        safe_cmd = redact(" ".join(cmd))
+        raise GitError(
+            f"git failed (exit {proc.returncode}): {safe_cmd}\n{redact(proc.stderr or '').strip()}"
+        )
+    return proc
 
 
 def git(args: list[str], **kw) -> subprocess.CompletedProcess:
-    return subprocess.run(
-        ["git", *args],
-        cwd=str(ROOT),
-        check=kw.pop("check", True),
-        **kw,
-    )
+    return _run(["git", *args], check=kw.pop("check", True))
+
+
+def canonical_tsv(tsv: Path) -> Path:
+    """Prefer the path INDEX.tsv already records for a title over the TSV's path,
+    so hand-written apply TSVs can't create duplicate copies of a page."""
+    known: dict[str, str] = {}
+    if INDEX.exists():
+        for line in INDEX.read_text(encoding="utf-8").splitlines():
+            if "\t" in line:
+                t, rel = line.split("\t", 1)
+                known[t] = rel
+    rows = []
+    for title, rel in load_tsv(tsv):
+        if title in known and known[title] != rel:
+            print(f"path for {title!r}: using INDEX {known[title]} (TSV said {rel})")
+            rel = known[title]
+        rows.append(f"{title}\t{rel}\n")
+    fd, out = tempfile.mkstemp(suffix=".tsv")
+    with os.fdopen(fd, "w", encoding="utf-8") as fh:
+        fh.writelines(rows)
+    return Path(out)
 
 
 def push() -> None:
@@ -45,7 +95,7 @@ def push() -> None:
             "origin",
             "HEAD",
         ]
-    subprocess.check_call(cmd, cwd=str(ROOT), env=env)
+    _run(cmd, env=env)
 
 
 def main() -> int:
@@ -62,7 +112,7 @@ def main() -> int:
         print(f"missing TSV {tsv}", file=sys.stderr)
         return 1
     written: list[tuple[str, str]] = []
-    missing = dump_from_tsv(tsv, {}, written)
+    missing = dump_from_tsv(canonical_tsv(tsv), {}, written)
     write_index(_merge_index(written, keep_old=True))
     if missing:
         print("MISSING " + "; ".join(missing), file=sys.stderr)
@@ -77,7 +127,11 @@ def main() -> int:
     git(["commit", "-m", args.message])
     print(f"committed {len(written)} titles")
     if args.push:
-        push()
+        try:
+            push()
+        except GitError as exc:
+            print(redact(str(exc)), file=sys.stderr)
+            return 3
         print("pushed")
     return 0
 
