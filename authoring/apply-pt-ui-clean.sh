@@ -47,6 +47,53 @@ EOFPURGE
 
 python3 - <<'PY'
 import urllib.request
+# --- wiki.swccg.com wikitext via api.php (anonymous index.php?action=raw is rate-limited: 429) ---
+import io as _io, json as _json, time as _time, urllib.error as _ue, urllib.parse as _up, urllib.request as _ur
+_WIKI_API = "https://wiki.swccg.com/api.php"
+_WIKI_UA = "SWCCGWikiTools/1.0 (https://wiki.swccg.com/wiki/User:Comlink_Cursor; wikitext reader)"
+_wiki_last = [0.0]
+def _wiki_api_get(params, timeout=90, tries=7):
+    url = _WIKI_API + "?" + _up.urlencode(params); delay = 2.0
+    for attempt in range(tries):
+        w = 0.35 - (_time.monotonic() - _wiki_last[0])
+        if w > 0: _time.sleep(w)
+        _wiki_last[0] = _time.monotonic()
+        try:
+            with _ur.urlopen(_ur.Request(url, headers={"User-Agent": _WIKI_UA}), timeout=timeout) as r:
+                return _json.loads(r.read().decode("utf-8"))
+        except _ue.HTTPError as e:
+            if e.code in (429, 503) and attempt < tries - 1:
+                ra = (e.headers.get("Retry-After") or "").strip()
+                _time.sleep(float(ra) if ra.isdigit() else delay); delay = min(delay * 2, 60.0); continue
+            raise
+def wiki_raw_many(titles):
+    """{title as given: current wikitext, or None if the page is missing/invalid}; 50 titles per request."""
+    titles = list(dict.fromkeys(titles)); out = {}
+    for i in range(0, len(titles), 50):
+        pending = titles[i:i + 50]
+        while pending:
+            q = _wiki_api_get({"action": "query", "prop": "revisions", "rvprop": "content", "rvslots": "main",
+                               "titles": "|".join(pending), "format": "json", "formatversion": "2"}).get("query") or {}
+            norm = {n["from"]: n["to"] for n in q.get("normalized", [])}
+            pages = {p.get("title"): p for p in q.get("pages", [])}
+            retry = []
+            for t in pending:
+                p = pages.get(norm.get(t, t))
+                if p is None or p.get("missing") or p.get("invalid"): out[t] = None
+                elif p.get("revisions"): out[t] = p["revisions"][0]["slots"]["main"].get("content", "")
+                elif len(pending) > 1: retry.append(t)  # response truncated by size limit: ask again
+                else: out[t] = None
+            if retry and len(retry) == len(pending):  # no progress: one title per request
+                for t in retry: out.update(wiki_raw_many([t]))
+                retry = []
+            pending = retry
+    return out
+def wiki_raw(title):
+    """Same result as index.php?title=T&action=raw: text, or urllib HTTPError 404 for a missing page."""
+    t = wiki_raw_many([title])[title]
+    if t is None: raise _ue.HTTPError(_WIKI_API, 404, "Not Found", {}, _io.BytesIO(b""))
+    return t
+# --- end api.php helper ---
 checks = {
  "https://wiki.swccg.com/wiki/Projective_Telepathy_%28Original%29": [
    "A player who just initiated",
@@ -79,8 +126,7 @@ for u, needles in checks.items():
 
 # raw checks for game_text_note gone
 for title in ["Projective_Telepathy_(Original)", "Projective_Telepathy_(Errata)"]:
-  ru = f"https://wiki.swccg.com/wiki/{title}?action=raw"
-  raw = urllib.request.urlopen(urllib.request.Request(ru, headers={"Cache-Control":"no-cache"}), timeout=45).read().decode("utf-8","replace")
+  raw = wiki_raw(title)
   print("RAW", title, "game_text_note", "game_text_note" in raw, "len", len(raw))
 print("DONE")
 PY

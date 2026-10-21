@@ -94,10 +94,9 @@ def api(params: dict) -> dict:
 
 
 def raw(title: str) -> str:
-    q = urllib.parse.urlencode({"title": title, "action": "raw"})
-    req = urllib.request.Request("https://wiki.swccg.com/index.php?" + q, headers=UA)
-    with urllib.request.urlopen(req, timeout=60) as r:
-        return r.read().decode("utf-8")
+    # api.php, not index.php?action=raw (rate-limited for anonymous readers); 404 HTTPError if missing
+    from wiki_api_fetch import fetch_raw
+    return fetch_raw(title)
 
 
 def html(title: str) -> str:

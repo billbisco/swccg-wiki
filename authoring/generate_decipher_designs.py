@@ -13,6 +13,7 @@ from pathlib import Path
 
 from decipher_notes import inject_strategy, parse_article_notes
 from generate_decipher_worlds import CATS, PAGES, TITLES, slug_file, write_page
+from wiki_api_fetch import api_get, fetch_raw_many
 from gemp_importable import (
     ARCHETYPE_ABBR,
     FORMAT_ABBR,
@@ -1868,7 +1869,6 @@ def write_tsv(path: Path) -> None:
 
 def fetch_live_wikitext(titles: list[str]) -> dict[str, str]:
     """Pull current dest wikitext so notes inject keeps the live 60."""
-    api = "https://wiki.swccg.com/api.php"
     out: dict[str, str] = {}
     for i in range(0, len(titles), 40):
         batch = titles[i : i + 40]
@@ -1882,9 +1882,7 @@ def fetch_live_wikitext(titles: list[str]) -> dict[str, str]:
             "maxage": "0",
             "smaxage": "0",
         }
-        url = api + "?" + urllib.parse.urlencode(params)
-        with urllib.request.urlopen(url, timeout=90) as r:
-            data = json.loads(r.read().decode("utf-8"))
+        data = api_get(params)  # polite User-Agent, backs off on 429
         for page in (data.get("query") or {}).get("pages", {}).values():
             title = page.get("title") or ""
             revs = page.get("revisions") or []
@@ -1896,20 +1894,20 @@ def fetch_live_wikitext(titles: list[str]) -> dict[str, str]:
                 out[title] = text
         print("LIVE", i + len(batch), "/", len(titles), "got", len(out))
     missing = [t for t in titles if t not in out]
-    for title in missing:
-        raw_url = (
-            "https://wiki.swccg.com/index.php?title="
-            + urllib.parse.quote(title.replace(" ", "_"))
-            + "&action=raw"
-        )
-        try:
-            req = urllib.request.Request(
-                raw_url, headers={"User-Agent": "swccg-wiki-notes/1.0"}
-            )
-            with urllib.request.urlopen(req, timeout=90) as r:
-                text = r.read().decode("utf-8", errors="replace")
-        except Exception as e:
+    # Second pass for titles the batch did not return, through api.php (index.php?action=raw is
+    # rate-limited for anonymous readers); one request per 50 titles instead of one per title.
+    try:
+        retry = fetch_raw_many(missing) if missing else {}
+    except Exception as e:
+        retry = {}
+        for title in missing:
             print("RAW_FAIL", title, e)
+    for title in missing:
+        if title not in retry:
+            continue
+        text = retry[title]
+        if text is None:
+            print("RAW_FAIL", title, "HTTP Error 404: Not Found")
             continue
         if text.strip() and "<html" not in text[:80].lower():
             out[title] = text
