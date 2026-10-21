@@ -41,7 +41,7 @@ def api_get(params: dict, timeout: float = 90, tries: int = 7) -> dict:
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 return json.loads(r.read().decode("utf-8"))
         except urllib.error.HTTPError as e:
-            if e.code in (429, 503) and attempt < tries - 1:
+            if e.code in (429, 502, 503, 504) and attempt < tries - 1:
                 ra = (e.headers.get("Retry-After") or "").strip()
                 time.sleep(float(ra) if ra.isdigit() else delay)
                 delay = min(delay * 2, 60.0)
