@@ -16,7 +16,8 @@ Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
            citations; Chief, 2026-10-20). Its URLs are still queued for Wayback.
            Talk pages (Chief, 2026-10-20): a URL passes if a Preserved copy of it appears anywhere
            on the page, including a Wayback capture of swccg.com/snapshots/forum/tNNNNN.html for a
-           forum.starwarsccg.org viewtopic.php?t=NNNNN link.
+           forum.starwarsccg.org viewtopic.php?t=NNNNN link, and of swccg.com/snapshots/pc/<slug>.html
+           for a www.starwarsccg.org URL whose last path segment is <slug>.
 Talk pages (Chief, 2026-10-20): signed comments by other accounts are their authors' words. The
   banned-word, hedge and long-sentence checks skip any comment whose signature is not the bot's own
   (Comlink Cursor); the bot's comments, unsigned text and the other checks still apply.
@@ -169,6 +170,11 @@ def cited_units(text):
 # swccg.com forum snapshot (forum/tNNNNN.html, or the older flat forum-tNNNNN.html) covers that thread.
 FORUM_THREAD_RX = re.compile(r"^forum\.starwarsccg\.org/viewtopic\.php\?(?:[^#]*&)?t=(\d+)(?:[&#]|$)", re.I)
 FORUM_SNAPSHOT_RX = re.compile(r"^swccg\.com/snapshots/forum[/-]t(\d+)\.html$", re.I)
+# Players Committee posts (archiving.md "Players Committee news"): the snapshot is pc/<post-slug>.html, where
+# <post-slug> is the last path segment of the www.starwarsccg.org URL. Checked against every live-URL +
+# snapshot-capture pair in the wiki backup (pages/, 2026-10-21: 5,282 pairs, no exceptions).
+PC_POST_RX = re.compile(r"^starwarsccg\.org/(?:[^?#]*/)?([^/?#]+)$", re.I)
+PC_SNAPSHOT_RX = re.compile(r"^swccg\.com/snapshots/pc/([^/?#]+)\.html$", re.I)
 
 def archive_keys(url):
     """Keys under which a cited URL counts as archived: its normalised URL, plus its forum thread."""
@@ -176,6 +182,8 @@ def archive_keys(url):
     keys = {n}
     m = FORUM_THREAD_RX.match(n) or FORUM_SNAPSHOT_RX.match(n)
     if m: keys.add(f"forum-thread:{m.group(1)}")
+    m = PC_POST_RX.match(n) or PC_SNAPSHOT_RX.match(n)
+    if m: keys.add(f"pc-post:{m.group(1).lower()}")
     return keys
 
 def archive_flags(text, talk=False):
