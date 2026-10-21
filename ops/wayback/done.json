@@ -30390,6 +30390,13 @@
    "sha256": "bf5159095210fc93c569877f67f29f46f37e3f9d3c518a4d2a40c3524772098c"
   }
  },
+ "https://swccg.com/snapshots/forum/p1404368.html": {
+  "capture": "",
+  "job_id": "spn2-df2809aec85d18aba20dfc4463b5fbf065337a4a",
+  "last": "2026-10-21T11:54:13Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/p1417683.html": {
   "capture": "https://web.archive.org/web/20261021093506/https://swccg.com/snapshots/forum/p1417683.html",
   "job_id": "spn2-f64100a98892f47ab67d7ef158e811f31e7b25f4",
@@ -30742,6 +30749,19 @@
   "last": "2026-10-21T10:15:04Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://swccg.com/snapshots/forum/t82668.html": {
+  "capture": "https://web.archive.org/web/20261013155230/https://swccg.com/snapshots/forum/t82668.html",
+  "last": "2026-10-21T11:54:28Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T11:54:32Z",
+   "capture_id": "https://web.archive.org/web/20261013155230id_/https://swccg.com/snapshots/forum/t82668.html",
+   "method": "text",
+   "text_match": 0.997
+  }
  },
  "https://swccg.com/snapshots/forum/t83197.html": {
   "capture": "https://web.archive.org/web/20261021093521/https://swccg.com/snapshots/forum/t83197.html",
@@ -39384,9 +39404,9 @@
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ds-invasion.html": {
   "capture": "https://web.archive.org/web/20261021071337/https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ds-invasion.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T11:19:20Z",
+  "last": "2026-10-21T11:49:57Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ls-clones.html": {
   "capture": "https://web.archive.org/web/20261021073516/https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ls-clones.html",
@@ -40404,9 +40424,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-endor-regionals-ming-huo-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021082431/https://swccg.com/snapshots/pc/2023-endor-regionals-ming-huo-ds-map.html",
-  "last": "2026-10-21T11:06:15Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-ce0d9af6d484d58f0e444ec354dd25b8838ca390",
+  "last": "2026-10-21T11:59:36Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T11:59:36Z",
+   "bytes": 7121821,
+   "capture_id": "https://web.archive.org/web/20261021082431id_/https://swccg.com/snapshots/pc/2023-endor-regionals-ming-huo-ds-map.html",
+   "method": "sha256",
+   "sha256": "0b769e67802886fe0b43460728541f96346ca80d19a11c723b197e4fa940e168"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-endor-regionals-ming-huo-ls-no-idea.html": {
   "capture": "https://web.archive.org/web/20261021082444/https://swccg.com/snapshots/pc/2023-endor-regionals-ming-huo-ls-no-idea.html",
@@ -40634,9 +40662,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ds-desert-landing-site-ssav.html": {
   "capture": "https://web.archive.org/web/20261021083955/https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ds-desert-landing-site-ssav.html",
-  "last": "2026-10-21T11:06:17Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-0d5df9b2bd1972d5d31772367dfc269933bb516d",
+  "last": "2026-10-21T11:59:51Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T11:59:51Z",
+   "bytes": 7122112,
+   "capture_id": "https://web.archive.org/web/20261021083955id_/https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ds-desert-landing-site-ssav.html",
+   "method": "sha256",
+   "sha256": "b1e856d731bcf4096b72257d88e18368d21c61bc4a8d3bb36c6a17fbfb9e1ee6"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ls-skywalker-saga-anakin.html": {
   "capture": "",
@@ -41080,9 +41116,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-top-8-jonas-hagen-norregaard-ds-sc.html": {
-  "capture": "",
-  "job_id": "spn2-966792057cdde9bbdbddedd6a4db3683b502a6f7",
-  "last": "2026-10-21T09:03:37Z",
+  "capture": "https://web.archive.org/web/20261021090350/https://swccg.com/snapshots/pc/2023-european-championship-top-8-jonas-hagen-norregaard-ds-sc.html",
+  "last": "2026-10-21T11:49:28Z",
   "status": "pending",
   "tries": 1
  },
@@ -41233,8 +41268,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-andrew-davies-ls-qui-gon-communing.html": {
   "capture": "https://web.archive.org/web/20261021093326/https://swccg.com/snapshots/pc/2023-naboo-regionals-andrew-davies-ls-qui-gon-communing.html",
-  "last": "2026-10-21T11:35:04Z",
-  "status": "pending",
+  "last": "2026-10-21T11:49:30Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-angelo-consoli-ds-revenge-of-the-sith-maul.html": {
@@ -41566,9 +41601,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html": {
-  "capture": "",
-  "job_id": "spn2-cd672803a7819abbdd4e09f7c6d588a290a685be",
-  "last": "2026-10-21T09:08:15Z",
+  "capture": "https://web.archive.org/web/20261021090819/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html",
+  "last": "2026-10-21T11:49:35Z",
   "status": "pending",
   "tries": 1
  },
@@ -42033,10 +42067,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-cedric-vanderhaegen-ls-gungans.html": {
   "capture": "https://web.archive.org/web/20261021095438/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-cedric-vanderhaegen-ls-gungans.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T10:53:41Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-344ba7ea43aa476ab740dd9a2379e6c350825621",
+  "last": "2026-10-21T12:00:01Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T12:00:01Z",
+   "bytes": 7121660,
+   "capture_id": "https://web.archive.org/web/20261021095438id_/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-cedric-vanderhaegen-ls-gungans.html",
+   "method": "sha256",
+   "sha256": "71290ed247b04ded1f04f492a9bfd83831b22116100ad388d972fb703a77edd3"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-chris-menzel-ds-bhbm.html": {
   "capture": "",
@@ -42466,9 +42507,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-anthony-howard-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021105923/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-anthony-howard-ds-sycfa.html",
-  "last": "2026-10-21T11:19:11Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-e73fcbe771db720138696365008cd5c1bc8b0f83",
+  "last": "2026-10-21T12:00:24Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T12:00:24Z",
+   "bytes": 7122129,
+   "capture_id": "https://web.archive.org/web/20261021105923id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-anthony-howard-ds-sycfa.html",
+   "method": "sha256",
+   "sha256": "6c89303838addd12336dc415715188f085b8d76ddcfa5f128ba331996ec25ce3"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-anthony-howard-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021112343/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-anthony-howard-ls-qmc.html",
@@ -42618,9 +42667,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021104719/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ds-aobs.html",
-  "last": "2026-10-21T11:06:34Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-60d98fb24af856a5ae30b14096b3ff0e470b9343",
+  "last": "2026-10-21T12:00:12Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T12:00:12Z",
+   "bytes": 7121896,
+   "capture_id": "https://web.archive.org/web/20261021104719id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ds-aobs.html",
+   "method": "sha256",
+   "sha256": "c10907446039b521ca7b75f463549c685e3f0a5d1b6b5052d6260cb5b6497c43"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ls-qmc.html": {
   "capture": "",
@@ -42659,8 +42716,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-greg-shaw-ds-ropsv-7s.html": {
   "capture": "https://web.archive.org/web/20261021112419/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-greg-shaw-ds-ropsv-7s.html",
-  "last": "2026-10-21T11:31:33Z",
-  "status": "pending",
+  "last": "2026-10-21T11:49:43Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-greg-shaw-ls-no-idea.html": {
@@ -42682,6 +42739,19 @@
   "capture": "",
   "job_id": "spn2-bda183ee4514621b750949be9dc43797d8fcf19b",
   "last": "2026-10-21T11:41:39Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jeff-lavigne-ls-funeral-pyre.html": {
+  "capture": "",
+  "job_id": "spn2-34c5542bf01f8079ec88c45528fa4954f220e407",
+  "last": "2026-10-21T11:53:46Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-joe-olson-ds-thrawn.html": {
+  "capture": "https://web.archive.org/web/20261021115235/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-joe-olson-ds-thrawn.html",
+  "last": "2026-10-21T12:00:52Z",
   "status": "pending",
   "tries": 1
  },
@@ -42710,6 +42780,12 @@
   "capture": "",
   "job_id": "spn2-be1b4dd71b5bf4b206742e85edbe4ac43125587b",
   "last": "2026-10-21T11:40:43Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-thornton-ls-wys.html": {
+  "capture": "https://web.archive.org/web/20261021115221/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-thornton-ls-wys.html",
+  "last": "2026-10-21T12:00:50Z",
   "status": "pending",
   "tries": 1
  },
@@ -42802,11 +42878,26 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-thomas-santosuosso-ds-sycfa.html": {
+  "capture": "",
+  "job_id": "spn2-aa39775daea29463adba6cb52c87d2ed2dcde276",
+  "last": "2026-10-21T11:54:01Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-anthony-howard-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021110046/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-anthony-howard-ds-sycfa.html",
-  "last": "2026-10-21T11:19:13Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-fdf27559ed8030a9a9c079cdf25aa088219f61d2",
+  "last": "2026-10-21T12:00:37Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T12:00:37Z",
+   "bytes": 7122118,
+   "capture_id": "https://web.archive.org/web/20261021110046id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-anthony-howard-ds-sycfa.html",
+   "method": "sha256",
+   "sha256": "2bba2040e75a72cf0690a186dcee473d5c6c8787790d6d5e056092fe33731d2b"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-anthony-howard-ls-qmc.html": {
   "capture": "",
@@ -43018,14 +43109,21 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-mike-kessling-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021112743/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-mike-kessling-ls-old-allies.html",
-  "last": "2026-10-21T11:31:44Z",
-  "status": "pending",
+  "last": "2026-10-21T11:49:50Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-nate-davis-ds-hunt-down-v.html": {
   "capture": "",
   "job_id": "spn2-d39796c924b8c1677a91411fc6d0f31231fa1b7c",
   "last": "2026-10-21T11:44:25Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-nate-davis-ls-diplo.html": {
+  "capture": "",
+  "job_id": "spn2-e9db3bbaf4e3af99bcb92a6dae84d6ca4c431228",
+  "last": "2026-10-21T11:53:18Z",
   "status": "pending",
   "tries": 1
  },
@@ -43049,6 +43147,20 @@
   "last": "2026-10-21T11:28:21Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-ryan-sersen-ds-cct.html": {
+  "capture": "https://web.archive.org/web/20261021115208/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-ryan-sersen-ds-cct.html",
+  "job_id": "spn2-c4f081973917817cd88efd4baf55159a541cf85a",
+  "last": "2026-10-21T12:00:49Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T12:00:49Z",
+   "bytes": 7122093,
+   "capture_id": "https://web.archive.org/web/20261021115208id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-ryan-sersen-ds-cct.html",
+   "method": "sha256",
+   "sha256": "dde32125f93fb23ebe9f9349aa413b212cef553447799dbd7d4cdb644ae9fbd4"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-ryan-sersen-ls-yavin-4-base-operations.html": {
   "capture": "",
@@ -43095,6 +43207,87 @@
   "capture": "",
   "job_id": "spn2-a51a144560edc2d70c150b71755c6b7a8ad5b8e0",
   "last": "2026-10-21T11:13:35Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-conor-britain-ds-ssav-walkers.html": {
+  "capture": "",
+  "job_id": "spn2-e994149410aff279afa8ca61a55e340adc96390b",
+  "last": "2026-10-21T11:55:33Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-conor-britain-ls-communing-obi-wan.html": {
+  "capture": "",
+  "job_id": "spn2-f716a70bba3d423414e18d189063d1d5a051fe4d",
+  "last": "2026-10-21T11:55:47Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-lee-edwards-ds-dls-ssav.html": {
+  "capture": "https://web.archive.org/web/20261021115640/https://swccg.com/snapshots/pc/2023-scarif-regionals-lee-edwards-ds-dls-ssav.html",
+  "last": "2026-10-21T12:01:03Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-lee-edwards-ls-communing-obi-wan.html": {
+  "capture": "",
+  "job_id": "spn2-106730a1411afbe64afe2d3f30b22a8e5a513d79",
+  "last": "2026-10-21T11:56:13Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-matt-thornton-ds-hunt-down.html": {
+  "capture": "https://web.archive.org/web/20261021115630/https://swccg.com/snapshots/pc/2023-scarif-regionals-matt-thornton-ds-hunt-down.html",
+  "last": "2026-10-21T12:01:06Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-rudy-rojas-ds-my-kind-of-scum.html": {
+  "capture": "",
+  "job_id": "spn2-656afff3b7978dff6fe0b30d7f116cc4053a66f5",
+  "last": "2026-10-21T11:57:13Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-rudy-rojas-ls-no-idea.html": {
+  "capture": "",
+  "job_id": "spn2-db372439b85a223dd79d2a59bcf366fa84052307",
+  "last": "2026-10-21T11:57:25Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-scarif-regionals-ryan-jellison-ds-imperial-entanglements.html": {
+  "capture": "",
+  "job_id": "spn2-4526241be539ebd1e80812d8dbac5357b064076e",
+  "last": "2026-10-21T11:54:45Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-tatooine-regionals-adam-bott-ds-watto.html": {
+  "capture": "",
+  "job_id": "spn2-d2d3713f8e4e2e428827e9014c727849bdf375a6",
+  "last": "2026-10-21T11:57:39Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-tatooine-regionals-jerry-heine-ds-desert-landing-site-ssav.html": {
+  "capture": "https://web.archive.org/web/20261021115856/https://swccg.com/snapshots/pc/2023-tatooine-regionals-jerry-heine-ds-desert-landing-site-ssav.html",
+  "last": "2026-10-21T12:01:13Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-tatooine-regionals-thomas-santosuosso-ds-tto.html": {
+  "capture": "",
+  "job_id": "spn2-e5aad92de5d52435aee765c9e9d1798eef84a6b2",
+  "last": "2026-10-21T11:58:24Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-tatooine-regionals-thomas-santosuosso-ls-communing-obi-wan.html": {
+  "capture": "",
+  "job_id": "spn2-39faa7af0b512c884c9860b0aea5179c055208df",
+  "last": "2026-10-21T11:58:39Z",
   "status": "pending",
   "tries": 1
  },
@@ -45393,6 +45586,13 @@
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-10-21T00:20:21Z",
   "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/san-diego-super-open-day-1-jeff-lavigne-ds-aobs.html": {
+  "capture": "",
+  "job_id": "spn2-e3afbf1d416b0af088a350d5481757f377bc8e87",
+  "last": "2026-10-21T11:53:32Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/swccg-returns-to-live-major-events-olson-wins-us-nationals.html": {
