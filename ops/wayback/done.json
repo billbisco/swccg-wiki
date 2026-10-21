@@ -30242,10 +30242,10 @@
  },
  "https://swccg.com/snapshots/forum/t81726.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 184 hours, 27 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T08:18:34Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T08:59:12Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/forum/t83759.html": {
   "capture": "",
@@ -39115,9 +39115,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-brian-fred-ds-invasion.html": {
   "capture": "https://web.archive.org/web/20261021073830/https://swccg.com/snapshots/pc/2023-corellia-regionals-brian-fred-ds-invasion.html",
-  "last": "2026-10-21T08:16:39Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T08:59:22Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-brian-fred-ls-whap.html": {
   "capture": "https://web.archive.org/web/20261021074824/https://swccg.com/snapshots/pc/2023-corellia-regionals-brian-fred-ls-whap.html",
@@ -39205,15 +39206,31 @@
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-greg-shaw-ls-communing-obi-wan.html": {
   "capture": "https://web.archive.org/web/20261021075135/https://swccg.com/snapshots/pc/2023-corellia-regionals-greg-shaw-ls-communing-obi-wan.html",
-  "last": "2026-10-21T08:16:41Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-b8e8f1bff6d23b5a1cb1218b4fb4f7a082fdebbb",
+  "last": "2026-10-21T09:08:57Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T09:08:57Z",
+   "bytes": 7122154,
+   "capture_id": "https://web.archive.org/web/20261021075135id_/https://swccg.com/snapshots/pc/2023-corellia-regionals-greg-shaw-ls-communing-obi-wan.html",
+   "method": "sha256",
+   "sha256": "1112d225f944178d5e7d3ce48171ca9736e93aa7a1849e5a5fe4e043ca35beff"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-hayes-hunter-ds-desert-landing-site-ssav.html": {
   "capture": "https://web.archive.org/web/20261021075340/https://swccg.com/snapshots/pc/2023-corellia-regionals-hayes-hunter-ds-desert-landing-site-ssav.html",
-  "last": "2026-10-21T08:16:42Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-d488f89809e05db8c7f27d3478ffd5c8ed62685c",
+  "last": "2026-10-21T09:09:05Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T09:09:05Z",
+   "bytes": 7121875,
+   "capture_id": "https://web.archive.org/web/20261021075340id_/https://swccg.com/snapshots/pc/2023-corellia-regionals-hayes-hunter-ds-desert-landing-site-ssav.html",
+   "method": "sha256",
+   "sha256": "b3a4d1f2bd91d9a9342efeaf3c9fa81bef2ff7db36344761e26e653e71d09ba0"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-hayes-hunter-ls-communing-obi-wan.html": {
   "capture": "",
@@ -39279,9 +39296,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021075418/https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ds-bhbm.html",
-  "last": "2026-10-21T08:16:44Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-de46ca665a9d85e37972bce0ac896f5b6b51e647",
+  "last": "2026-10-21T09:09:13Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T09:09:13Z",
+   "bytes": 7121888,
+   "capture_id": "https://web.archive.org/web/20261021075418id_/https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ds-bhbm.html",
+   "method": "sha256",
+   "sha256": "3d705a9b6b334a60e4cddb52b52fb244140cb2006498767bf57f351e0422e912"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021075343/https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ls-hitco.html",
@@ -39319,9 +39344,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-bill-kafer-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021075602/https://swccg.com/snapshots/pc/2023-coruscant-regionals-bill-kafer-ls-hitco.html",
-  "last": "2026-10-21T08:16:55Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-2e7bf166cb36c8ea6e753395ca1bf9fa21f9c0f2",
+  "last": "2026-10-21T09:09:20Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T09:09:20Z",
+   "bytes": 7121150,
+   "capture_id": "https://web.archive.org/web/20261021075602id_/https://swccg.com/snapshots/pc/2023-coruscant-regionals-bill-kafer-ls-hitco.html",
+   "method": "sha256",
+   "sha256": "b48081bdcb73e9b71ed683cbd6b25be01ec20564dd00c68145a396f4debcfb9c"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-chris-goglen-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261021075518/https://swccg.com/snapshots/pc/2023-coruscant-regionals-chris-goglen-ds-walkers.html",
@@ -39345,9 +39378,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-chris-kelly-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021075724/https://swccg.com/snapshots/pc/2023-coruscant-regionals-chris-kelly-ls-hitco.html",
-  "last": "2026-10-21T08:16:58Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-b1ae8c834d2bfb29246712a84696ce8280d0588f",
+  "last": "2026-10-21T09:01:18Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ds-bhbm.html": {
   "capture": "",
@@ -39372,9 +39406,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-jared-napolitano-ls-watch-your-step.html": {
   "capture": "https://web.archive.org/web/20261021075611/https://swccg.com/snapshots/pc/2023-coruscant-regionals-jared-napolitano-ls-watch-your-step.html",
-  "last": "2026-10-21T08:17:00Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-5ea269c89e1d901b7b77391f2cf8d6765709d287",
+  "last": "2026-10-21T09:01:07Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-scott-lingrell-ds-aobs.html": {
   "capture": "",
@@ -39405,9 +39440,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-dagobah-regionals-jeremy-dipaolo-ds-isb-operations.html": {
   "capture": "https://web.archive.org/web/20261021074939/https://swccg.com/snapshots/pc/2023-dagobah-regionals-jeremy-dipaolo-ds-isb-operations.html",
-  "last": "2026-10-21T08:17:01Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-7e408cf648a5bcc4f79467cf2e49e3609f5caad1",
+  "last": "2026-10-21T09:08:42Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T09:08:42Z",
+   "bytes": 7121797,
+   "capture_id": "https://web.archive.org/web/20261021074939id_/https://swccg.com/snapshots/pc/2023-dagobah-regionals-jeremy-dipaolo-ds-isb-operations.html",
+   "method": "sha256",
+   "sha256": "6fa1bb2e013eac75c4ee0c0e7bcd5ecab28f065ebf9cceb0cd478ea16956946c"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-dagobah-regionals-jeremy-dipaolo-ls-watch-your-step.html": {
   "capture": "https://web.archive.org/web/20261021080403/https://swccg.com/snapshots/pc/2023-dagobah-regionals-jeremy-dipaolo-ls-watch-your-step.html",
@@ -39466,9 +39509,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-dagobah-regionals-thomas-santosuosso-ls-communing-obi-wan.html": {
   "capture": "https://web.archive.org/web/20261021075130/https://swccg.com/snapshots/pc/2023-dagobah-regionals-thomas-santosuosso-ls-communing-obi-wan.html",
-  "last": "2026-10-21T08:17:03Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-403a3ec6bb9ad7fd6de4682fe6f3652551b14e9a",
+  "last": "2026-10-21T09:08:49Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T09:08:49Z",
+   "bytes": 7122199,
+   "capture_id": "https://web.archive.org/web/20261021075130id_/https://swccg.com/snapshots/pc/2023-dagobah-regionals-thomas-santosuosso-ls-communing-obi-wan.html",
+   "method": "sha256",
+   "sha256": "144a33274aa981a54d1a704b3580c8fa461692ec117deb91e828579eebd207d1"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-endor-regionals-aaron-frede-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261021084626/https://swccg.com/snapshots/pc/2023-endor-regionals-aaron-frede-ds-cct.html",
@@ -39499,8 +39550,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-endor-regionals-derek-jackson-ls-clones.html": {
   "capture": "https://web.archive.org/web/20261021081129/https://swccg.com/snapshots/pc/2023-endor-regionals-derek-jackson-ls-clones.html",
-  "last": "2026-10-21T08:44:54Z",
-  "status": "pending",
+  "last": "2026-10-21T08:58:57Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-endor-regionals-joe-olson-ds-ralltiir-operations-v.html": {
@@ -39706,9 +39757,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-eric-spijksma-ls-clones.html": {
-  "capture": "",
-  "job_id": "spn2-ff1a3e52d62474b01d117a6d72d545c1d97c3161",
-  "last": "2026-10-21T08:48:21Z",
+  "capture": "https://web.archive.org/web/20261021084824/https://swccg.com/snapshots/pc/2023-european-championship-eric-spijksma-ls-clones.html",
+  "last": "2026-10-21T08:59:00Z",
   "status": "pending",
   "tries": 1
  },
@@ -39727,9 +39777,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-floris-de-vries-ds-rots-vader.html": {
-  "capture": "",
-  "job_id": "spn2-5c077bc3ce0d478f61cccf5a76973564cb56793a",
-  "last": "2026-10-21T08:38:27Z",
+  "capture": "https://web.archive.org/web/20261021083831/https://swccg.com/snapshots/pc/2023-european-championship-floris-de-vries-ds-rots-vader.html",
+  "last": "2026-10-21T08:59:02Z",
   "status": "pending",
   "tries": 1
  },
@@ -39749,8 +39798,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-joe-olson-ds-dls-ssav.html": {
   "capture": "https://web.archive.org/web/20261021083706/https://swccg.com/snapshots/pc/2023-european-championship-joe-olson-ds-dls-ssav.html",
-  "last": "2026-10-21T08:42:10Z",
-  "status": "pending",
+  "last": "2026-10-21T08:59:03Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-joe-olson-ls-communing-obi-wan.html": {
@@ -39764,6 +39813,13 @@
   "capture": "",
   "job_id": "spn2-a15858b4f4c056da08adffada7c9d1219f1fb25d",
   "last": "2026-10-21T08:49:37Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-john-moorley-ls-saga-anakin.html": {
+  "capture": "",
+  "job_id": "spn2-04d7d876be210b376bde7090b1bc746d0a3f597b",
+  "last": "2026-10-21T09:02:22Z",
   "status": "pending",
   "tries": 1
  },
@@ -39960,6 +40016,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-european-championship-peter-jacobson-ls-tatooine-cpv.html": {
+  "capture": "",
+  "job_id": "spn2-137d3ec05130fd9409a1484e8d093f453247bde5",
+  "last": "2026-10-21T09:02:33Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-european-championship-quirin-furgut-ds-desert-landing-site-ssav.html": {
   "capture": "",
   "job_id": "spn2-dbd1f39b260bbc969d23508d2c0f430eb5322342",
@@ -39980,6 +40043,34 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ls-hitco.html": {
+  "capture": "",
+  "job_id": "spn2-81a86e4094aea44cd02b44e90fd6fdad9d610c8a",
+  "last": "2026-10-21T09:02:12Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-tommy-santosusso-ds-endor-operations.html": {
+  "capture": "",
+  "job_id": "spn2-4b24bf2fd529df3888c71b09a9e64ad743957fb8",
+  "last": "2026-10-21T09:01:29Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-tommy-santosusso-ls-communing-obi-wan.html": {
+  "capture": "",
+  "job_id": "spn2-f5c90290b6aa08dd8584fd47ff4f16cad9dd727d",
+  "last": "2026-10-21T09:05:45Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-top-8-angelo-consoli-ds-rots-maul.html": {
+  "capture": "",
+  "job_id": "spn2-bd0462f74a0def4ee72649d7956bb55688586c00",
+  "last": "2026-10-21T09:04:42Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-european-championship-top-8-cedrik-vanderhaegen-ds-hunt-down.html": {
   "capture": "https://web.archive.org/web/20261021085358/https://swccg.com/snapshots/pc/2023-european-championship-top-8-cedrik-vanderhaegen-ds-hunt-down.html",
   "job_id": "spn2-e67ef23a1f3a27d64fad3371d2f01b9031bd8f4e",
@@ -39987,9 +40078,58 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-european-championship-top-8-cedrik-vanderhaegen-ls-whap.html": {
+  "capture": "",
+  "job_id": "spn2-bfef14f101556f8d7121fe27a34d3d9c3c1fc5e7",
+  "last": "2026-10-21T09:03:16Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-european-championship-top-8-emil-wallin-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261021085418/https://swccg.com/snapshots/pc/2023-european-championship-top-8-emil-wallin-ds-shadow-collective.html",
   "last": "2026-10-21T08:55:29Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-top-8-emil-wallin-ls-old-allies.html": {
+  "capture": "",
+  "job_id": "spn2-69e3576a891cc58e5b50a1f76be777a785af73c7",
+  "last": "2026-10-21T09:03:26Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-top-8-jonas-hagen-norregaard-ds-sc.html": {
+  "capture": "",
+  "job_id": "spn2-966792057cdde9bbdbddedd6a4db3683b502a6f7",
+  "last": "2026-10-21T09:03:37Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-top-8-justin-branch-ds-walkers.html": {
+  "capture": "",
+  "job_id": "spn2-f45dead6a164da5e7746b3b0fe214c6cc1447da1",
+  "last": "2026-10-21T09:04:20Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-top-8-justin-branch-ls-skywalker-saga-anakin.html": {
+  "capture": "",
+  "job_id": "spn2-268dfba4ad00bc564fcddea38f86f5590c2d44a1",
+  "last": "2026-10-21T09:04:31Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-top-8-koen-meijssen-ds-aobs.html": {
+  "capture": "",
+  "job_id": "spn2-74915070a0aefbf8a9edf140079a88a40ddf81b0",
+  "last": "2026-10-21T09:05:23Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-european-championship-top-8-koen-meijssen-ls-y4o.html": {
+  "capture": "",
+  "job_id": "spn2-9b7b8c9f0c62d216e7cebecf949225dac0135160",
+  "last": "2026-10-21T09:05:34Z",
   "status": "pending",
   "tries": 1
  },
@@ -40035,8 +40175,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-european-championships-stephan-de-vos-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021084019/https://swccg.com/snapshots/pc/2023-european-championships-stephan-de-vos-ds-aobs.html",
-  "last": "2026-10-21T08:41:32Z",
-  "status": "pending",
+  "last": "2026-10-21T08:59:07Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championships-stephan-de-vos-ls-whap.html": {
@@ -40049,6 +40189,66 @@
   "capture": "https://web.archive.org/web/20261013171746/https://swccg.com/snapshots/pc/2023-gempc7-semi-finals-quirin-furgut-ls-there-is-good-in-him.html",
   "last": "2026-10-13T17:35:30Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ls-zero-hour.html": {
+  "capture": "",
+  "job_id": "spn2-5a2388a7d22857f504266fa71927a34bee388536",
+  "last": "2026-10-21T09:06:27Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-karl-koenig-ls-hitco.html": {
+  "capture": "",
+  "job_id": "spn2-93d122b47d456f42e2d81d9bb55e3b46dc7bea87",
+  "last": "2026-10-21T09:07:41Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ls-tigih.html": {
+  "capture": "https://web.archive.org/web/20261021090747/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ls-tigih.html",
+  "last": "2026-10-21T09:09:43Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-matt-scott-ds-rots-maul.html": {
+  "capture": "https://web.archive.org/web/20261021090641/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-matt-scott-ds-rots-maul.html",
+  "last": "2026-10-21T09:09:41Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-matt-scott-ls-hitco.html": {
+  "capture": "",
+  "job_id": "spn2-0fb07d5d9f10e76715a47266a7d06747bcde10f5",
+  "last": "2026-10-21T09:06:48Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-steve-squirlock-ds-isb-operations.html": {
+  "capture": "",
+  "job_id": "spn2-81ac9447915314ba71d21f7610c65fc6a70b12d8",
+  "last": "2026-10-21T09:07:52Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-steve-squirlock-ls-skywalker-saga-luke.html": {
+  "capture": "",
+  "job_id": "spn2-10f449102eea32cf4b272033b3c9e8074d514711",
+  "last": "2026-10-21T09:08:05Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html": {
+  "capture": "",
+  "job_id": "spn2-cd672803a7819abbdd4e09f7c6d588a290a685be",
+  "last": "2026-10-21T09:08:15Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ls-zero-hour.html": {
+  "capture": "https://web.archive.org/web/20261021090846/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ls-zero-hour.html",
+  "last": "2026-10-21T09:09:51Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-finals-justin-desai-ds-walkers-ssav.html": {
