@@ -15030,9 +15030,16 @@
  "http://www.decktech.net/starwarsccg/deck/18322": {
   "capture": "https://web.archive.org/web/20261020225632/https://www.decktech.net/starwarsccg/deck/18322/",
   "job_id": "spn2-518a3dccd47f577c61b2aea524c145fae7dcc96d",
-  "last": "2026-10-20T23:50:03Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-10-21T01:37:02Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T01:37:02Z",
+   "bytes": 17284,
+   "capture_id": "https://web.archive.org/web/20261020225632id_/https://www.decktech.net/starwarsccg/deck/18322/",
+   "method": "sha256",
+   "sha256": "5888685381ba720316a0d485561107f749ad34ed9df72268d7c7a421b7bc4c77"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18324": {
   "capture": "https://web.archive.org/web/20261017202449/https://www.decktech.net/starwarsccg/deck/18324/",
@@ -15077,16 +15084,22 @@
   }
  },
  "http://www.decktech.net/starwarsccg/deck/18342": {
-  "capture": "https://web.archive.org/web/20261017203251/https://www.decktech.net/starwarsccg/deck/18342/",
+  "capture": "https://web.archive.org/web/20261020225529/https://www.decktech.net/starwarsccg/deck/18342/",
   "job_id": "spn2-543bca7bf22d1db1830d529043d46ef4f9b59a44",
-  "last": "2026-10-20T22:55:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T01:37:05Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T01:37:05Z",
+   "bytes": 13852,
+   "capture_id": "https://web.archive.org/web/20261020225529id_/https://www.decktech.net/starwarsccg/deck/18342/",
+   "method": "sha256",
+   "sha256": "cd34ecc5d352afbb2a70bb956d7b0b6f1b5320abe6a505b09943d87097ca36ee"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18351": {
-  "capture": "https://web.archive.org/web/20261017202259/https://www.decktech.net/starwarsccg/deck/18351/",
-  "job_id": "spn2-b5d7776ad5dcb8b20fc501ec7718acbbaa0b4bfa",
-  "last": "2026-10-20T23:15:23Z",
+  "capture": "https://web.archive.org/web/20261020231526/https://www.decktech.net/starwarsccg/deck/18351/",
+  "last": "2026-10-21T01:37:07Z",
   "status": "pending",
   "tries": 1
  },
@@ -28514,16 +28527,16 @@
  "https://challonge.com/18vokbxb.svg": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:00:46Z",
+  "last": "2026-10-21T01:37:45Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://challonge.com/18vokbxb/module": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:00:36Z",
+  "last": "2026-10-21T01:37:35Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://challonge.com/51m1q7zu/standings": {
   "capture": "",
@@ -29205,9 +29218,9 @@
  "https://res.starwarsccg.org/legacyblocks/": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:02:33Z",
+  "last": "2026-10-21T01:38:18Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock1.pdf": {
   "capture": "https://web.archive.org/web/20261020181626/https://res.starwarsccg.org/legacyblocks/VirtualBlock1.pdf",
@@ -29452,10 +29465,10 @@
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualCards18.pdf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 293 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T01:02:44Z",
+  "error": "no job_id: The same snapshot had been made 293 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T01:38:29Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualCards3.pdf": {
   "capture": "https://web.archive.org/web/20261008193702/https://res.starwarsccg.org/legacyblocks/VirtualCards3.pdf",
@@ -30191,11 +30204,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-court.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:56:34Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021013843/https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-court.html",
+  "last": "2026-10-21T01:47:33Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-oa.html": {
   "capture": "",
@@ -30232,8 +30244,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-qmc.html": {
   "capture": "https://web.archive.org/web/20261021011606/https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-qmc.html",
-  "last": "2026-10-21T01:24:47Z",
-  "status": "pending",
+  "last": "2026-10-21T01:37:13Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-brian-fred-hb-sandwhirl.html": {
@@ -30325,8 +30337,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-trunzo-cct.html": {
   "capture": "https://web.archive.org/web/20261021012048/https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-trunzo-cct.html",
-  "last": "2026-10-21T01:25:06Z",
-  "status": "pending",
+  "last": "2026-10-21T01:37:16Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-trunzo-trm.html": {
@@ -30366,8 +30378,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-andy-wexstten-eops.html": {
   "capture": "https://web.archive.org/web/20261021012134/https://swccg.com/snapshots/pc/2017-worlds-day-2-andy-wexstten-eops.html",
-  "last": "2026-10-21T01:24:21Z",
-  "status": "pending",
+  "last": "2026-10-21T01:37:17Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-andy-wexstten-oa.html": {
@@ -30388,6 +30400,13 @@
   "capture": "",
   "job_id": "spn2-1d22b02e4b045f8c8cd332177264ceee3d4cf9f1",
   "last": "2026-10-21T01:20:34Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-brandon-nguyen-ds.html": {
+  "capture": "",
+  "job_id": "spn2-5be7c468b1ed05e248ecdf89b2abb4b2aa35cd40",
+  "last": "2026-10-21T01:39:12Z",
   "status": "pending",
   "tries": 1
  },
@@ -30522,8 +30541,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-westergard-ls.html": {
   "capture": "https://web.archive.org/web/20261021011726/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-westergard-ls.html",
-  "last": "2026-10-21T01:24:56Z",
-  "status": "pending",
+  "last": "2026-10-21T01:37:20Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ds.html": {
@@ -30542,8 +30561,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ds.html": {
   "capture": "https://web.archive.org/web/20261021011633/https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ds.html",
-  "last": "2026-10-21T01:24:53Z",
-  "status": "pending",
+  "last": "2026-10-21T01:37:22Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ls.html": {
@@ -30569,8 +30588,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-dennis-reinhardt-ls.html": {
   "capture": "https://web.archive.org/web/20261021012207/https://swccg.com/snapshots/pc/2017-worlds-day-2-dennis-reinhardt-ls.html",
-  "last": "2026-10-21T01:25:12Z",
-  "status": "pending",
+  "last": "2026-10-21T01:37:23Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ds.html": {
@@ -30582,10 +30601,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ls.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:07:35Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-d4ef46e75b661233abd0a0a3acdc4ab75f31ad00",
+  "last": "2026-10-21T01:38:51Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ds.html": {
   "capture": "",
@@ -30623,11 +30642,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-greg-shaw-ds.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:07:45Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021013959/https://swccg.com/snapshots/pc/2017-worlds-day-2-greg-shaw-ds.html",
+  "last": "2026-10-21T01:48:22Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-greg-shaw-ls.html": {
   "capture": "",
@@ -30648,6 +30666,34 @@
   "job_id": "spn2-8a1d4f1b0c89f323f40b64575b4c14709b483d3f",
   "last": "2026-10-21T01:22:26Z",
   "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ds.html": {
+  "capture": "",
+  "job_id": "spn2-92e160ff568e03ceb9f66af4b7b30cfbc6e955f6",
+  "last": "2026-10-21T01:40:27Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-aobs.html": {
+  "capture": "",
+  "job_id": "spn2-86c054d3590708099ac3b8d582dcbb1d0b81e35c",
+  "last": "2026-10-21T01:45:25Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ds.html": {
+  "capture": "",
+  "job_id": "spn2-b0f17de1981ec5d55e64f9631676e6215aa71c4a",
+  "last": "2026-10-21T01:42:11Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T01:42:22Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-olson-ds.html": {
@@ -30689,6 +30735,148 @@
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-10-21T01:32:25Z",
   "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-lenny-rubin-ls.html": {
+  "capture": "",
+  "job_id": "spn2-15a6fa065696c5182faec34bf47e69dbae46e4de",
+  "last": "2026-10-21T01:43:27Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-mark-walseth-eops.html": {
+  "capture": "",
+  "job_id": "spn2-c93a4f851eb372adcf264e6a786a386fd5ed7e50",
+  "last": "2026-10-21T01:47:10Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-mark-walseth-senate.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T01:47:20Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-matt-scott-ds.html": {
+  "capture": "https://web.archive.org/web/20261021014136/https://swccg.com/snapshots/pc/2017-worlds-day-2-matt-scott-ds.html",
+  "last": "2026-10-21T01:47:45Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-kessling-ds.html": {
+  "capture": "",
+  "job_id": "spn2-ed38bb7564682d6dac69876fe566cb9d5ed2d668",
+  "last": "2026-10-21T01:41:08Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-kessling-ls.html": {
+  "capture": "",
+  "job_id": "spn2-a313b50d9bd2c31078fb37c5d092aa8aadcca5f1",
+  "last": "2026-10-21T01:41:19Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-court.html": {
+  "capture": "",
+  "job_id": "spn2-11ca9935ae534415dd3ccf6eeafca9de6b338885",
+  "last": "2026-10-21T01:46:06Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-diplo.html": {
+  "capture": "",
+  "job_id": "spn2-264ef6e9a5a5acd011bcb5959155eb3722f0d707",
+  "last": "2026-10-21T01:46:17Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-mitch-nieland-ds.html": {
+  "capture": "",
+  "job_id": "spn2-0037d6a7112c278d318109c8c9c7afd4890cedff",
+  "last": "2026-10-21T01:44:41Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-mitch-nieland-ls.html": {
+  "capture": "",
+  "job_id": "spn2-482cbda754255968105cab68191f4c3ffe2ef590",
+  "last": "2026-10-21T01:44:52Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html": {
+  "capture": "",
+  "job_id": "spn2-59f82bd5230d68a2b7db9fba10a9d3b927abe3c5",
+  "last": "2026-10-21T01:39:23Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ds.html": {
+  "capture": "",
+  "job_id": "spn2-cb825ca266ec7f61265f96a9df749a25172f3b72",
+  "last": "2026-10-21T01:40:05Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ls.html": {
+  "capture": "https://web.archive.org/web/20261021014113/https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ls.html",
+  "last": "2026-10-21T01:47:40Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-sam-olson-ds.html": {
+  "capture": "",
+  "job_id": "spn2-90a9ce8b4d7ee673f8d33357dece9696b8201efd",
+  "last": "2026-10-21T01:43:38Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-sam-olson-ls.html": {
+  "capture": "https://web.archive.org/web/20261021014352/https://swccg.com/snapshots/pc/2017-worlds-day-2-sam-olson-ls.html",
+  "last": "2026-10-21T01:48:37Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-tatooine-crv.html": {
+  "capture": "https://web.archive.org/web/20261021014632/https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-tatooine-crv.html",
+  "last": "2026-10-21T01:48:46Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ds.html": {
+  "capture": "",
+  "job_id": "spn2-75eaaa31eb84ae0dc38be20830132380c4204c81",
+  "last": "2026-10-21T01:45:02Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ls.html": {
+  "capture": "",
+  "job_id": "spn2-612911275055a43aed9421121dfe1dca79da7de7",
+  "last": "2026-10-21T01:45:13Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-harpster-ds.html": {
+  "capture": "",
+  "job_id": "spn2-ef16dc5e7c5aac7678744a5dadab41827422dcaa",
+  "last": "2026-10-21T01:42:32Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-harpster-ls.html": {
+  "capture": "",
+  "job_id": "spn2-e468604ac6963b85772cd30ea764359d7af7bfda",
+  "last": "2026-10-21T01:42:43Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-skilton-ls.html": {
+  "capture": "https://web.archive.org/web/20261021014434/https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-skilton-ls.html",
+  "last": "2026-10-21T01:47:54Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-european-match-play-championships.html": {
@@ -34490,10 +34678,9 @@
  },
  "https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events.html": {
   "capture": "https://web.archive.org/web/20261020232054/https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T01:00:56Z",
-  "status": "retry",
-  "tries": 3
+  "last": "2026-10-21T01:47:31Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2023-04-us-nationals-minneapolis-minnesota-april-1-2.html": {
   "capture": "https://web.archive.org/web/20261014140307/https://swccg.com/snapshots/pc/2023-04-us-nationals-minneapolis-minnesota-april-1-2.html",
@@ -37172,9 +37359,10 @@
  },
  "https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html": {
   "capture": "https://web.archive.org/web/20261020232518/https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html",
-  "last": "2026-10-21T00:46:41Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T01:38:08Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/remembering-devon-hubner-1978-2024-bf.html": {
   "capture": "",
