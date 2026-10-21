@@ -29151,6 +29151,13 @@
   "status": "retry",
   "tries": 1
  },
+ "https://melee.gg/Profile/Index/Mantron": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:40:13Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://melee.gg/Profile/Index/allstarz97": {
   "capture": "",
   "error": "error:no-request",
@@ -29781,6 +29788,13 @@
   "status": "failed",
   "tries": 6
  },
+ "https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:40:23Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://stevetotheizz0.github.io/decktech_archives/16248/": {
   "capture": "https://web.archive.org/web/20261020234725/https://www.stephenskilton.com/decktech_archives/16248/",
   "last": "2026-10-21T00:14:05Z",
@@ -29800,6 +29814,13 @@
   "last": "2026-10-21T00:14:53Z",
   "status": "retry",
   "tries": 2
+ },
+ "https://swccg.com": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:40:33Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/bgg/bgg-thread-2902121.html": {
   "capture": "https://web.archive.org/web/20261016162150/https://swccg.com/snapshots/bgg/bgg-thread-2902121.html",
@@ -30194,11 +30215,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-bhbm.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021003905/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-bhbm.html",
   "job_id": "spn2-bed7d9ff4f001cd963cf22d8bb3ac6d747790c11",
-  "last": "2026-10-21T00:38:54Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T02:39:29Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:39:29Z",
+   "bytes": 7120683,
+   "capture_id": "https://web.archive.org/web/20261021003905id_/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-bhbm.html",
+   "method": "sha256",
+   "sha256": "8cf200e639247760992b4305f0a425cb06f173e9709232ace5c5facf9e9df0aa"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html": {
   "capture": "",
@@ -30228,17 +30256,24 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021004148/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html",
   "job_id": "spn2-d34047aba4bcc4aaee7d4a9f40eb11fe01452b92",
-  "last": "2026-10-21T00:40:41Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T02:39:36Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:39:36Z",
+   "bytes": 7120833,
+   "capture_id": "https://web.archive.org/web/20261021004148id_/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html",
+   "method": "sha256",
+   "sha256": "2dc0ad0716d7aa778a468a3f273c6cea5776c76946b5fc95c0f440736c7e6286"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-oa.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021004056/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-oa.html",
   "job_id": "spn2-276f1a260205b418bb78398eb5fe7c14706d7b77",
-  "last": "2026-10-21T00:40:52Z",
-  "status": "pending",
+  "last": "2026-10-21T02:39:41Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-jimmy-faelens-invasion.html": {
@@ -31436,8 +31471,8 @@
  },
  "https://swccg.com/snapshots/pc/2018-euros-kent-l-hoth-crv.html": {
   "capture": "https://web.archive.org/web/20261021022434/https://swccg.com/snapshots/pc/2018-euros-kent-l-hoth-crv.html",
-  "last": "2026-10-21T02:28:50Z",
-  "status": "pending",
+  "last": "2026-10-21T02:39:59Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-hd.html": {
@@ -31491,8 +31526,8 @@
  },
  "https://swccg.com/snapshots/pc/2018-worlds-casey-anis-trm.html": {
   "capture": "https://web.archive.org/web/20261021022803/https://swccg.com/snapshots/pc/2018-worlds-casey-anis-trm.html",
-  "last": "2026-10-21T02:28:57Z",
-  "status": "pending",
+  "last": "2026-10-21T02:40:01Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-casper-jorgenson-whap.html": {
@@ -31525,8 +31560,8 @@
  },
  "https://swccg.com/snapshots/pc/2018-worlds-greg-shaw-aobs.html": {
   "capture": "https://web.archive.org/web/20261021022734/https://swccg.com/snapshots/pc/2018-worlds-greg-shaw-aobs.html",
-  "last": "2026-10-21T02:29:01Z",
-  "status": "pending",
+  "last": "2026-10-21T02:40:02Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-jarad-konsker-map.html": {
@@ -34543,8 +34578,7 @@
  },
  "https://swccg.com/snapshots/pc/2022-06-2022-regional-championship-events-bf.html": {
   "capture": "https://web.archive.org/web/20261020232529/https://swccg.com/snapshots/pc/2022-06-2022-regional-championship-events-bf.html",
-  "job_id": "spn2-e06b2a4f7d83d569e78798825bdbb39e50b4f30c",
-  "last": "2026-10-21T01:53:50Z",
+  "last": "2026-10-21T02:40:04Z",
   "status": "pending",
   "tries": 4
  },
@@ -38042,8 +38076,8 @@
  },
  "https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html": {
   "capture": "https://web.archive.org/web/20261020232518/https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html",
-  "last": "2026-10-21T02:28:33Z",
-  "status": "pending",
+  "last": "2026-10-21T02:40:08Z",
+  "status": "retry",
   "tries": 4
  },
  "https://swccg.com/snapshots/pc/remembering-devon-hubner-1978-2024-bf.html": {
@@ -39613,6 +39647,12 @@
   "status": "ok",
   "tries": 1
  },
+ "https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG": {
+  "capture": "https://web.archive.org/web/20261021024045/https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG",
+  "last": "2026-10-21T02:49:56Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://wiki.lotrtcgpc.net/wiki/Player%27s_Council": {
   "capture": "https://web.archive.org/web/20261020161346/https://wiki.lotrtcgpc.net/wiki/Player%27s_Council",
   "job_id": "spn2-f026cadd2a266eb9ea0017dd3f3a2addbfb94514",
@@ -39663,9 +39703,100 @@
   "status": "failed",
   "tries": 6
  },
+ "https://www.facebook.com/photo/?fbid=10230980413511313&set=a.10230980334389335": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 269 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
+  "last": "2026-10-21T02:40:57Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10230980415791370&set=a.10230980334389335": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:41:07Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10230980420711493&set=a.10230980334389335": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:41:17Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10230980424991600&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008181932/https://www.facebook.com/photo/?fbid=10230980424991600&set=a.10230980334389335",
+  "last": "2026-10-21T02:41:31Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10230980430951749&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008181313/https://www.facebook.com/photo/?fbid=10230980430951749&set=a.10230980334389335",
+  "last": "2026-10-21T02:41:44Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10230980938044426&set=a.10230980334389335": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:41:54Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10231012025261587&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008181725/https://www.facebook.com/photo/?fbid=10231012025261587&set=a.10230980334389335",
+  "last": "2026-10-21T02:42:06Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10231012572875277&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008181149/https://www.facebook.com/photo/?fbid=10231012572875277&set=a.10230980334389335",
+  "last": "2026-10-21T02:42:18Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10239148005456007&set=a.10230980334389335": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:42:28Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10241711409299501&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008182400/https://www.facebook.com/photo/?fbid=10241711409299501&set=a.10230980334389335",
+  "last": "2026-10-21T02:42:40Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.facebook.com/photo/?fbid=10241711410099521&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008181025/https://www.facebook.com/photo/?fbid=10241711410099521&set=a.10230980334389335",
+  "last": "2026-10-21T02:42:51Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
  "https://www.fanthatracks.com/interviews/guest-interview-mark-tuttle/": {
   "capture": "https://web.archive.org/web/20261008195155/https://www.fanthatracks.com/interviews/guest-interview-mark-tuttle/",
   "last": "2026-10-15T16:58:21Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.geocities.ws/plarathas/": {
+  "capture": "https://web.archive.org/web/20261008210620/https://www.geocities.ws/plarathas/",
+  "last": "2026-10-21T02:43:03Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.geocities.ws/plarathas/playerdbase.html": {
+  "capture": "https://web.archive.org/web/20261009060550/https://www.geocities.ws/plarathas/playerdbase.html",
+  "last": "2026-10-21T02:43:14Z",
   "note": "already archived within 30d",
   "status": "ok",
   "tries": 1
@@ -39677,6 +39808,26 @@
   "status": "ok",
   "tries": 1
  },
+ "https://www.kendallcast.ninja/2020/10/the-chris-kelly-interview.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:43:25Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html": {
+  "capture": "https://web.archive.org/web/20261014155506/https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html",
+  "last": "2026-10-21T02:43:37Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:43:40Z",
+   "capture_id": "https://web.archive.org/web/20261014155506id_/https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html",
+   "method": "text",
+   "text_match": 0.996
+  }
+ },
  "https://www.kendallcast.ninja/2020/11/the-jerry-darcy-interview.html": {
   "capture": "https://web.archive.org/web/20261014155434/https://www.kendallcast.ninja/2020/11/the-jerry-darcy-interview.html",
   "last": "2026-10-16T02:16:47Z",
@@ -39684,11 +39835,69 @@
   "status": "ok",
   "tries": 1
  },
+ "https://www.kendallcast.ninja/2020/11/the-matt-sokol-interview.html": {
+  "capture": "https://web.archive.org/web/20261016173937/https://www.kendallcast.ninja/2020/11/the-matt-sokol-interview.html",
+  "last": "2026-10-21T02:43:52Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:43:54Z",
+   "capture_id": "https://web.archive.org/web/20261016173937id_/https://www.kendallcast.ninja/2020/11/the-matt-sokol-interview.html",
+   "method": "text",
+   "text_match": 0.995
+  }
+ },
+ "https://www.kendallcast.ninja/2020/12/blog-post.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:44:04Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html": {
+  "capture": "https://web.archive.org/web/20261021024419/https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html",
+  "last": "2026-10-21T02:49:57Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2020/12/the-justin-desai-interview.html": {
+  "capture": "https://web.archive.org/web/20261021024429/https://www.kendallcast.ninja/2020/12/the-justin-desai-interview.html",
+  "job_id": "spn2-004407c0dc719b38f2426f1f3b1d46d8c8848c55",
+  "last": "2026-10-21T02:50:28Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:50:28Z",
+   "capture_id": "https://web.archive.org/web/20261021024429id_/https://www.kendallcast.ninja/2020/12/the-justin-desai-interview.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.kendallcast.ninja/2021/02/the-brian-hunter-interview.html": {
+  "capture": "https://web.archive.org/web/20261014132419/https://www.kendallcast.ninja/2021/02/the-brian-hunter-interview.html",
+  "last": "2026-10-21T02:44:39Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:44:41Z",
+   "capture_id": "https://web.archive.org/web/20261014132419id_/https://www.kendallcast.ninja/2021/02/the-brian-hunter-interview.html",
+   "method": "text",
+   "text_match": 0.995
+  }
+ },
  "https://www.kendallcast.ninja/2021/05/jerry-darcy-on-premiere-new-hope-and.html": {
   "capture": "https://web.archive.org/web/20261008195122/https://www.kendallcast.ninja/2021/05/jerry-darcy-on-premiere-new-hope-and.html",
   "last": "2026-10-15T16:59:11Z",
   "note": "already archived within 30d",
   "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2021/08/the-dillen-interview.html": {
+  "capture": "https://web.archive.org/web/20261021024455/https://www.kendallcast.ninja/2021/08/the-dillen-interview.html",
+  "last": "2026-10-21T02:51:18Z",
+  "status": "pending",
   "tries": 1
  },
  "https://www.kendallcast.ninja/2021/11/jerry-darcy-on-dagobah.html": {
@@ -39698,6 +39907,67 @@
   "status": "ok",
   "tries": 2
  },
+ "https://www.kendallcast.ninja/2022/02/corran-on-horn-2-matt-sperling.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:45:02Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/03/corran-on-horn-3-doug-taylor.html": {
+  "capture": "https://web.archive.org/web/20261015164101/https://www.kendallcast.ninja/2022/03/corran-on-horn-3-doug-taylor.html",
+  "last": "2026-10-21T02:45:14Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/05/corran-on-horn-4-hayes-hunter.html": {
+  "capture": "",
+  "job_id": "spn2-b485f1742677b02a1714d7630dd78f71b4e1798f",
+  "last": "2026-10-21T02:45:25Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/05/corran-on-horn-5-gemp-tom.html": {
+  "capture": "",
+  "job_id": "spn2-a6a27da573704756ac9aeee9e1a00e4eae3d9368",
+  "last": "2026-10-21T02:45:37Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/06/corran-on-horn-6-dan-tartaglione.html": {
+  "capture": "https://web.archive.org/web/20261021024654/https://www.kendallcast.ninja/2022/06/corran-on-horn-6-dan-tartaglione.html",
+  "job_id": "spn2-860f6057661051e08a9026b66ea55e4f7a816aa9",
+  "last": "2026-10-21T02:50:59Z",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html": {
+  "capture": "https://web.archive.org/web/20261021024633/https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html",
+  "last": "2026-10-21T02:50:34Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html": {
+  "capture": "https://web.archive.org/web/20261021024645/https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html",
+  "last": "2026-10-21T02:50:36Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/09/corran-on-horn-11-tom-haid.html": {
+  "capture": "",
+  "job_id": "spn2-c388bfe139b4edd1ab8ca905f092600734f2e25b",
+  "last": "2026-10-21T02:46:51Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/10/corran-on-horn-12-phil-aasen.html": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 144 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T02:47:08Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://www.kendallcast.ninja/2022/10/corran-on-horn-13-jerry-darcy-on.html": {
   "capture": "https://web.archive.org/web/20261009004206/https://www.kendallcast.ninja/2022/10/corran-on-horn-13-jerry-darcy-on.html",
   "last": "2026-10-15T17:30:50Z",
@@ -39705,9 +39975,112 @@
   "status": "ok",
   "tries": 2
  },
+ "https://www.kendallcast.ninja/2022/10/corran-on-horn-14-worlds-2022-special.html": {
+  "capture": "https://web.archive.org/web/20261015015514/https://www.kendallcast.ninja/2022/10/corran-on-horn-14-worlds-2022-special.html",
+  "last": "2026-10-21T02:47:20Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:47:21Z",
+   "capture_id": "https://web.archive.org/web/20261015015514id_/https://www.kendallcast.ninja/2022/10/corran-on-horn-14-worlds-2022-special.html",
+   "method": "text",
+   "text_match": 0.995
+  }
+ },
+ "https://www.kendallcast.ninja/2022/11/corran-on-horm-15-matt-graff.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:47:32Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://www.kendallcast.ninja/2022/11/corran-on-horn-15-chuck-kallenbach.html": {
   "capture": "https://web.archive.org/web/20261015183650/https://www.kendallcast.ninja/2022/11/corran-on-horn-15-chuck-kallenbach.html",
   "last": "2026-10-16T02:17:01Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:47:42Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2022/12/corran-on-horn-18-sam-tashima.html": {
+  "capture": "",
+  "job_id": "spn2-122b3693a6d563094ae928620b02ec74de3697b6",
+  "last": "2026-10-21T02:47:53Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2023/02/corran-on-horn-19-heisenberg.html": {
+  "capture": "https://web.archive.org/web/20261015063514/https://www.kendallcast.ninja/2023/02/corran-on-horn-19-heisenberg.html",
+  "last": "2026-10-21T02:48:05Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2023/02/corran-on-horn-20-sd-super-open.html": {
+  "capture": "https://web.archive.org/web/20261015063514/https://www.kendallcast.ninja/2023/02/corran-on-horn-20-sd-super-open.html",
+  "last": "2026-10-21T02:48:17Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2023/03/corran-on-horn-21-scott-church.html": {
+  "capture": "https://web.archive.org/web/20261015063514/https://www.kendallcast.ninja/2023/03/corran-on-horn-21-scott-church.html",
+  "last": "2026-10-21T02:48:32Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T02:48:36Z",
+   "capture_id": "https://web.archive.org/web/20261015063514id_/https://www.kendallcast.ninja/2023/03/corran-on-horn-21-scott-church.html",
+   "method": "text",
+   "text_match": 0.995
+  }
+ },
+ "https://www.kendallcast.ninja/2023/04/corran-on-horn-22-brandon-schele.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:48:46Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2023/06/corran-on-horn-24-drew-coffeepass.html": {
+  "capture": "https://web.archive.org/web/20261015063513/https://www.kendallcast.ninja/2023/06/corran-on-horn-24-drew-coffeepass.html",
+  "last": "2026-10-21T02:48:57Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2023/07/corran-on-horn-25-mht.html": {
+  "capture": "https://web.archive.org/web/20261015063513/https://www.kendallcast.ninja/2023/07/corran-on-horn-25-mht.html",
+  "last": "2026-10-21T02:49:10Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2023/08/corran-on-horn-26-nate-meeker.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T02:49:20Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2023/11/corran-on-horn-28-ideatrack.html": {
+  "capture": "https://web.archive.org/web/20261014231643/https://www.kendallcast.ninja/2023/11/corran-on-horn-28-ideatrack.html",
+  "last": "2026-10-21T02:49:32Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://www.kendallcast.ninja/2023/12/corran-on-horn-29-kevin-reitzel.html": {
+  "capture": "https://web.archive.org/web/20261015063508/https://www.kendallcast.ninja/2023/12/corran-on-horn-29-kevin-reitzel.html",
+  "last": "2026-10-21T02:49:45Z",
   "note": "already archived within 30d",
   "status": "ok",
   "tries": 1
