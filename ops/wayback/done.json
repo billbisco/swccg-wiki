@@ -51022,11 +51022,18 @@
   "tries": 1
  },
  "https://www.youtube.com/watch?v=AYEWzeVAD48": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021163736/https://www.youtube.com/watch?v=AYEWzeVAD48",
   "job_id": "spn2-a0d98019e8d3ac0aea114968950083d68c30668f",
-  "last": "2026-10-21T16:37:36Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T20:26:48Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T20:26:48Z",
+   "capture_id": "https://web.archive.org/web/20261021163736id_/https://www.youtube.com/watch?v=AYEWzeVAD48",
+   "method": "text",
+   "reason": "page text matches 13% (< 85%)",
+   "text_match": 0.132
+  }
  },
  "https://www.youtube.com/watch?v=AZpPb5Qu-uo": {
   "capture": "https://web.archive.org/web/20261015182030/https://www.youtube.com/watch?v=AZpPb5Qu-uo",
@@ -51124,11 +51131,18 @@
   }
  },
  "https://www.youtube.com/watch?v=BONRSU97clE": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021163842/https://www.youtube.com/watch?v=BONRSU97clE",
   "job_id": "spn2-6ebe33ab05fed8aebbc84ba51064d8625daf3438",
-  "last": "2026-10-21T16:38:42Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T20:26:52Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T20:27:53Z",
+   "capture_id": "https://web.archive.org/web/20261021163842id_/https://www.youtube.com/watch?v=BONRSU97clE",
+   "method": "text",
+   "reason": "page text matches 15% (< 85%)",
+   "text_match": 0.147
+  }
  },
  "https://www.youtube.com/watch?v=BTf2c32VjUs": {
   "capture": "https://web.archive.org/web/20261008130906/https://www.youtube.com/watch?v=BTf2c32VjUs",
@@ -52221,9 +52235,9 @@
  "https://www.youtube.com/watch?v=MM1-1nfZSb0": {
   "capture": "https://web.archive.org/web/20261021165721/https://www.youtube.com/watch?v=MM1-1nfZSb0",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T19:50:31Z",
+  "last": "2026-10-21T20:26:59Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/watch?v=MUV_1puL44M": {
   "capture": "https://web.archive.org/web/20261015184044/https://www.youtube.com/watch?v=MUV_1puL44M",
@@ -52464,9 +52478,9 @@
  "https://www.youtube.com/watch?v=Ogaox1LpbtE": {
   "capture": "https://web.archive.org/web/20261021171922/https://www.youtube.com/watch?v=Ogaox1LpbtE",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T19:50:41Z",
+  "last": "2026-10-21T20:27:09Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/watch?v=Oje37f4njNg": {
   "capture": "",
@@ -53019,9 +53033,9 @@
  "https://www.youtube.com/watch?v=T1O9ux-aHhw": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T19:50:51Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-21T20:27:19Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://www.youtube.com/watch?v=T2BX1ZK-F-s": {
   "capture": "https://web.archive.org/web/20261021172420/https://www.youtube.com/watch?v=T2BX1ZK-F-s",
@@ -53326,9 +53340,9 @@
  "https://www.youtube.com/watch?v=VEb-K9NTxL8": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T19:51:01Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-21T20:27:29Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://www.youtube.com/watch?v=VF46vgI362k": {
   "capture": "https://web.archive.org/web/20261021173237/https://www.youtube.com/watch?v=VF46vgI362k",
@@ -53470,10 +53484,10 @@
  },
  "https://www.youtube.com/watch?v=W-ktDatiJnM": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 310 hours, 40 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T19:51:13Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T20:27:39Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://www.youtube.com/watch?v=WSY3frHvPd0": {
   "capture": "https://web.archive.org/web/20260927195434/https://www.youtube.com/watch?v=WSY3frHvPd0",
