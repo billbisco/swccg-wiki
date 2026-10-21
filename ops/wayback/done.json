@@ -1,17 +1,24 @@
 {
  "http://blessed-souls.mine.sk/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 287 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T12:59:16Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 288 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T13:33:11Z",
+  "status": "failed",
+  "tries": 6
  },
  "http://creativecommons.org/licenses/by-sa/3.0/": {
   "capture": "https://web.archive.org/web/20261019102646/https://creativecommons.org/licenses/by-sa/3.0/",
   "last": "2026-10-21T03:38:01Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T13:37:13Z",
+   "bytes": 35431,
+   "capture_id": "https://web.archive.org/web/20261019102646id_/https://creativecommons.org/licenses/by-sa/3.0/",
+   "method": "sha256",
+   "sha256": "9a17cd36de36b242cbe4234773116f2036f86a8ce4459af8b37fd120482ca931"
+  }
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D2.pdf": {
   "capture": "",
@@ -28946,10 +28953,10 @@
  },
  "http://www.swccgpc.com/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 299 hours, 41 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T12:59:31Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 300 hours, 15 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:33:25Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://arctic-shift.photon-reddit.com/api/comments/search?link_id=hx9o77&limit=100": {
   "capture": "https://web.archive.org/web/20261014163933/https://arctic-shift.photon-reddit.com/api/comments/search?link_id=hx9o77&limit=100",
@@ -29008,10 +29015,10 @@
  },
  "https://challonge.com/kapftrvm": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 305 hours, 13 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T12:59:46Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 305 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:33:39Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://childcancerfund.org/": {
   "capture": "https://web.archive.org/web/20261021023424/https://childcancerfund.org/",
@@ -29602,10 +29609,10 @@
  },
  "https://melee.gg/Profile/Index/dillen": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 105 hours, 56 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:00:15Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 106 hours, 29 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:33:52Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://melee.gg/Profile/Index/jademasters": {
   "capture": "",
@@ -30695,8 +30702,14 @@
   "capture": "https://web.archive.org/web/20261013154950/https://swccg.com/snapshots/forum/t80665.html",
   "last": "2026-10-21T04:17:28Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:35:41Z",
+   "capture_id": "https://web.archive.org/web/20261013154950id_/https://swccg.com/snapshots/forum/t80665.html",
+   "method": "text",
+   "text_match": 0.998
+  }
  },
  "https://swccg.com/snapshots/forum/t80756.html": {
   "capture": "https://web.archive.org/web/20261021062013/https://swccg.com/snapshots/forum/t80756.html",
@@ -30795,10 +30808,10 @@
  },
  "https://swccg.com/snapshots/forum/t83395.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 189 hours, 5 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-21T12:59:02Z",
+  "error": "no job_id: The same snapshot had been made 189 hours, 39 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T13:32:58Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/forum/t83759.html": {
   "capture": "",
@@ -31355,8 +31368,15 @@
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-shawn-dickson-coruscant-crv.html": {
   "capture": "https://web.archive.org/web/20261021011520/https://swccg.com/snapshots/pc/2017-tmw-day-1-shawn-dickson-coruscant-crv.html",
   "last": "2026-10-21T03:55:53Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:36:41Z",
+   "bytes": 7120913,
+   "capture_id": "https://web.archive.org/web/20261021011520id_/https://swccg.com/snapshots/pc/2017-tmw-day-1-shawn-dickson-coruscant-crv.html",
+   "method": "sha256",
+   "sha256": "f169be93ac0e6ec643adbf5d2a9dfb63bc42f74cd6e67378be3a0a1b41364eda"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-senate.html": {
   "capture": "https://web.archive.org/web/20261021010747/https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-senate.html",
@@ -31461,8 +31481,15 @@
   "capture": "https://web.archive.org/web/20261021004911/https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-kessling-bhbm.html",
   "job_id": "spn2-21a16cbe25e113935d7f1613370e6467778a941d",
   "last": "2026-10-21T04:09:45Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:35:53Z",
+   "bytes": 7120936,
+   "capture_id": "https://web.archive.org/web/20261021004911id_/https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-kessling-bhbm.html",
+   "method": "sha256",
+   "sha256": "4a7dea6b20f5c1c61693add8bf1b705b40ab53a4bf37104f752f5644247cdffa"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-kessling-oa.html": {
   "capture": "https://web.archive.org/web/20261021004923/https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-kessling-oa.html",
@@ -31514,8 +31541,15 @@
   "capture": "https://web.archive.org/web/20261021011722/https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-schellberg-ls.html",
   "job_id": "spn2-12a87420c09d8c8400053e89308bfd9b3ee6d717",
   "last": "2026-10-21T04:45:16Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:35:03Z",
+   "bytes": 7120888,
+   "capture_id": "https://web.archive.org/web/20261021011722id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-schellberg-ls.html",
+   "method": "sha256",
+   "sha256": "66f228d04d520437b95d6e398147941447ac97f125496e6723272a98ca7d2094"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-trunzo-cct.html": {
   "capture": "https://web.archive.org/web/20261021012048/https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-trunzo-cct.html",
@@ -32581,8 +32615,15 @@
   "capture": "https://web.archive.org/web/20261021045952/https://swccg.com/snapshots/pc/2018-worlds-day-3-jonny-chu-tdigwatt.html",
   "job_id": "spn2-6400d88ca422f97276152f976ceb27975cc9bc15",
   "last": "2026-10-21T05:09:12Z",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T13:34:52Z",
+   "bytes": 7120928,
+   "capture_id": "https://web.archive.org/web/20261021045952id_/https://swccg.com/snapshots/pc/2018-worlds-day-3-jonny-chu-tdigwatt.html",
+   "method": "sha256",
+   "sha256": "1fa932bc646850eb0220c2e71a9cebc3189fa03f31cdbd6d48585a9e75f16ff2"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html": {
   "capture": "https://web.archive.org/web/20261021034750/https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html",
@@ -32685,8 +32726,15 @@
   "capture": "https://web.archive.org/web/20261021035648/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html",
   "job_id": "spn2-a6941e7560d57c638e0c7f4acc55bb69d27204c4",
   "last": "2026-10-21T04:06:22Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:36:26Z",
+   "bytes": 7120748,
+   "capture_id": "https://web.archive.org/web/20261021035648id_/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html",
+   "method": "sha256",
+   "sha256": "dff3d2559c8b407217cafdca18f3e1e10f697b900d9638f87ae2f046087d6403"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-reid-smith-hitco.html": {
   "capture": "",
@@ -32853,8 +32901,15 @@
   "capture": "https://web.archive.org/web/20261021035219/https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ls-trm.html",
   "job_id": "spn2-81f3ee979a5802b9156c865bd8439b1840762109",
   "last": "2026-10-21T03:53:53Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:36:55Z",
+   "bytes": 7121566,
+   "capture_id": "https://web.archive.org/web/20261021035219id_/https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ls-trm.html",
+   "method": "sha256",
+   "sha256": "42caf947697de43e2ef7f85a5ab119aa4b6de15e908235f60b2fe9433bdb97a0"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-david-destefanis-ds-invasion.html": {
   "capture": "https://web.archive.org/web/20261021081722/https://swccg.com/snapshots/pc/2019-worlds-day-2-david-destefanis-ds-invasion.html",
@@ -36183,8 +36238,15 @@
   "capture": "https://web.archive.org/web/20261021041337/https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ls-old-allies-bf.html",
   "job_id": "spn2-70a9fc47bba93e1c36c73f819bd8d9b6e70ccd5b",
   "last": "2026-10-21T04:24:07Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:35:32Z",
+   "bytes": 7121000,
+   "capture_id": "https://web.archive.org/web/20261021041337id_/https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ls-old-allies-bf.html",
+   "method": "sha256",
+   "sha256": "2aed0d4754f969bc0462747a8276b5cfc77cedfc422162a203b310e30ecb182d"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261016154054/https://swccg.com/snapshots/pc/2022-coruscant-regionals-andy-talaga-ls-old-allies.html",
@@ -36295,8 +36357,15 @@
   "capture": "https://web.archive.org/web/20261021040251/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend-bf.html",
   "job_id": "spn2-cc5fa6ac7b2e0dadabcfcd4f948535335122301a",
   "last": "2026-10-21T04:06:47Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:36:14Z",
+   "bytes": 7120877,
+   "capture_id": "https://web.archive.org/web/20261021040251id_/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend-bf.html",
+   "method": "sha256",
+   "sha256": "e3b371c73f77bf36e8c2db1e3296694210e9ce0d5c52c82bccb341a39f114056"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261016154919/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend.html",
@@ -36323,8 +36392,15 @@
   "capture": "https://web.archive.org/web/20261021040416/https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea-bf.html",
   "job_id": "spn2-a7642bf86bfe688ec552dd1f4ff1724c4d0cb84d",
   "last": "2026-10-21T04:07:39Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:36:04Z",
+   "bytes": 7121134,
+   "capture_id": "https://web.archive.org/web/20261021040416id_/https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea-bf.html",
+   "method": "sha256",
+   "sha256": "cd00abd12e31b8d40b4e91110880e9800669388e0042bf1392b7542feadf393d"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea.html": {
   "capture": "https://web.archive.org/web/20261016154941/https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea.html",
@@ -36546,8 +36622,15 @@
   "capture": "https://web.archive.org/web/20261021042818/https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ls-legend-bf.html",
   "job_id": "spn2-ddf8807a8113d6c61ae31615c4faf70728872e86",
   "last": "2026-10-21T04:28:58Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:35:22Z",
+   "bytes": 7121862,
+   "capture_id": "https://web.archive.org/web/20261021042818id_/https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ls-legend-bf.html",
+   "method": "sha256",
+   "sha256": "dbe411272f62de4076fa743f1b70966bfee1e1e64103cb22a25c551d2656fb4e"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261016155418/https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ls-legend.html",
@@ -37483,8 +37566,15 @@
   "capture": "https://web.archive.org/web/20261021043545/https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ls-legend.html",
   "job_id": "spn2-bfc1b02d2bf342dc830e9c3d59b3741390b231ca",
   "last": "2026-10-21T04:41:56Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T13:35:13Z",
+   "bytes": 7121070,
+   "capture_id": "https://web.archive.org/web/20261021043545id_/https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ls-legend.html",
+   "method": "sha256",
+   "sha256": "63244fd1bdbdb5d453dd31cfc6c78d08a315d61067a03854c8011e3f2441c8d8"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-martin-den-boef-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021060438/https://swccg.com/snapshots/pc/2022-european-championship-martin-den-boef-ds-bhbm.html",
@@ -41552,8 +41642,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261021092015/https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ds-thrawn.html",
-  "last": "2026-10-21T13:20:00Z",
-  "status": "pending",
+  "last": "2026-10-21T13:32:01Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ls-anakin-saga.html": {
@@ -42196,10 +42286,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-eric-spijksma-ds-revenge-of-the-sith-maul.html": {
   "capture": "https://web.archive.org/web/20261021095248/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-eric-spijksma-ds-revenge-of-the-sith-maul.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T12:56:35Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-656f028344f57f30f269df9942dea34ec39c1930",
+  "last": "2026-10-21T13:34:18Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T13:34:18Z",
+   "bytes": 7122052,
+   "capture_id": "https://web.archive.org/web/20261021095248id_/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-eric-spijksma-ds-revenge-of-the-sith-maul.html",
+   "method": "sha256",
+   "sha256": "da52567628b2d1fc60bfa130cab8172138107fa3c2fd964f8a87e3e07ccab0db"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-eric-spijksma-ls-sywalker-saga-anakin.html": {
   "capture": "https://web.archive.org/web/20261021100912/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-eric-spijksma-ls-sywalker-saga-anakin.html",
@@ -42823,9 +42920,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ls-zero-hour.html": {
-  "capture": "",
-  "job_id": "spn2-81c18cef923f37ea6dbf91d51c50b7a110905d10",
-  "last": "2026-10-21T11:26:26Z",
+  "capture": "https://web.archive.org/web/20261021112712/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ls-zero-hour.html",
+  "last": "2026-10-21T13:32:10Z",
   "status": "pending",
   "tries": 1
  },
@@ -43027,8 +43123,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-nate-davis-ds-hunt-down-v.html": {
   "capture": "https://web.archive.org/web/20261021114416/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-nate-davis-ds-hunt-down-v.html",
-  "last": "2026-10-21T13:20:13Z",
-  "status": "pending",
+  "last": "2026-10-21T13:32:12Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-nate-davis-ls-skywalker-saga-anakin.html": {
@@ -43110,8 +43206,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-thomas-santosuosso-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021115410/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-thomas-santosuosso-ds-sycfa.html",
-  "last": "2026-10-21T13:20:15Z",
-  "status": "pending",
+  "last": "2026-10-21T13:32:14Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-anthony-howard-ds-sycfa.html": {
@@ -43172,8 +43268,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brett-bailey-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261021111131/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brett-bailey-ls-diplo.html",
-  "last": "2026-10-21T13:20:17Z",
-  "status": "pending",
+  "last": "2026-10-21T13:32:15Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ds-rots-dooku.html": {
@@ -43346,8 +43442,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-keith-brown-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021114208/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-keith-brown-ds-map.html",
-  "last": "2026-10-21T13:20:20Z",
-  "status": "pending",
+  "last": "2026-10-21T13:32:18Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-keith-brown-ls-old-allies.html": {
@@ -43436,9 +43532,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-phil-aasen-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021112607/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-phil-aasen-ls-qmc.html",
-  "last": "2026-10-21T12:44:08Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-c8a3b11d1ca471e71fb56c8249dcfdc1703a7842",
+  "last": "2026-10-21T13:34:45Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T13:34:45Z",
+   "bytes": 7121045,
+   "capture_id": "https://web.archive.org/web/20261021112607id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-phil-aasen-ls-qmc.html",
+   "method": "sha256",
+   "sha256": "0dcf00e859e5b98cd34832647b7c95229566083b4e43d3acfaee8a2dd79d31a6"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-ryan-jellison-ls-whap.html": {
   "capture": "https://web.archive.org/web/20261021112825/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-ryan-jellison-ls-whap.html",
@@ -47492,7 +47596,12 @@
   "capture": "https://web.archive.org/web/20261020223120/https://swccg.com/snapshots/scomp/card-158.html",
   "last": "2026-10-21T03:39:10Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T13:37:05Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/scomp/card-2123.html": {
   "capture": "https://web.archive.org/web/20261020222913/https://swccg.com/snapshots/scomp/card-2123.html",
