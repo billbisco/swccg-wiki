@@ -521,3 +521,37 @@ class ArticleSnapshotRoute(unittest.TestCase):
         self.assertEqual(len(self.arch(page)), 1)
         res = "See [https://res.starwarsccg.org/2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026/ x].\n* [" + self.PSNAP + " IA]\n"
         self.assertEqual(len(self.arch(res)), 1)   # only www.starwarsccg.org posts map to pc/ snapshots
+
+
+class IndexPagesSkipLong(unittest.TestCase):
+    """People, People/<letter> and [[Category:Indexes]] pages skip the sentence-length check."""
+
+    NAMES = " · ".join(f"[[Player {i}]]" for i in range(80))
+    PROSE = "Word " * 60 + "ends here."
+
+    def long_flags(self, text, title, cats=None):
+        return [f for f in L.lint(text, title, cats)[0] if f.startswith("LONG")]
+
+    def test_people_fixture_passes(self):
+        text = fx("People.r108468.wiki")
+        self.assertEqual(self.long_flags(text, "People"), [])
+        self.assertTrue(self.long_flags(text, "Someone"))  # same text under another title still flags
+
+    def test_people_letter_titles(self):
+        for t in ("People", "People/W", "People/A", "people/b"):
+            self.assertTrue(L.is_index_page(t, ""), t)
+        self.assertFalse(L.is_index_page("People/Westergard", ""))
+        self.assertFalse(L.is_index_page("People of Tatooine", ""))
+
+    def test_category_indexes_in_wikitext(self):
+        text = self.NAMES + "\n\n[[Category:Indexes]]\n"
+        self.assertEqual(self.long_flags(text, "Card index"), [])
+        self.assertTrue(self.long_flags(self.NAMES, "Card index"))
+
+    def test_category_indexes_from_live_categories(self):
+        self.assertEqual(self.long_flags(self.PROSE, "Card index", {"Category:Indexes"}), [])
+        self.assertTrue(self.long_flags(self.PROSE, "Card index", {"Category:Players"}))
+
+    def test_other_checks_still_run_on_index_pages(self):
+        text = "Contact x@example.com for the list.\n\n[[Category:Indexes]]\n"
+        self.assertIn("EMAIL", kinds(L.lint(text, "People")[0]))

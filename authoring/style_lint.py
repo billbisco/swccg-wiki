@@ -96,6 +96,15 @@ def unquote(t):
 def is_list_page(title, text):
     return bool(title and "/" in title) or body(text).lstrip().lower().startswith("this page lists")
 
+# Index pages are long runs of linked names, not prose (Chief, 2026-10-20): no sentence-length check
+# on People, People/<letter>, or any page in [[Category:Indexes]].
+INDEX_TITLE_RX = re.compile(r"^people(?:/[a-z0-9#])?$")
+
+def is_index_page(title, text, cats=None):
+    if INDEX_TITLE_RX.match(norm_title(title)): return True
+    names = page_categories(text) | {norm_title(re.sub(r"^\s*category\s*:", "", c, flags=re.I)) for c in (cats or ())}
+    return "indexes" in names
+
 # Deck and event pages keep a == Sources == list (decklist URL + Preserved copy); no other page does.
 SOURCES_CATEGORIES = {"decklists", "dark side decks", "light side decks", "gemp importable decklists",
                       "tournaments", "championships", "world championships", "events", "retro league"}
@@ -444,6 +453,7 @@ def lint(text, title=None, cats=None):
     sents = [x for para in paras for x in re.split(r"(?<=[.!?])[\"”’']?\s+(?=[A-Z\"“'])", " ".join(para.split()))]
     for s in sents:
         if is_list_page(title, text): break          # transcripts and lists: no sentence-length check
+        if is_index_page(title, text, cats): break   # People indexes and [[Category:Indexes]] pages
         if s.count(",") >= 6: continue                # name lists (credits, playtesters)
         n = len(s.split())
         if n > MAX_SENT: flags.append(f"LONG     {n} words: {s[:100]}…")
