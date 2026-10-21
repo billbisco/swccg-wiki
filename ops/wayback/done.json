@@ -29038,13 +29038,14 @@
   "capture": "https://web.archive.org/web/20261021003532/https://challonge.com/18vokbxb",
   "last": "2026-10-21T01:01:20Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-10-21T15:30:05Z",
-   "error": "capture HTTP 403"
+   "at": "2026-10-21T16:16:00Z",
+   "error": "capture HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://challonge.com/18vokbxb.svg": {
   "capture": "",
@@ -42636,9 +42637,9 @@
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ls-aitc.html": {
   "capture": "https://web.archive.org/web/20261021104306/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ls-aitc.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T15:33:42Z",
+  "last": "2026-10-21T16:09:02Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-timo-dusel-ds-thrawn.html": {
   "capture": "",
@@ -43089,10 +43090,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ds-rots-maul.html": {
-  "capture": "https://web.archive.org/web/20261021112701/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ds-rots-maul.html",
-  "last": "2026-10-21T15:24:58Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021161022/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ds-rots-maul.html",
+  "job_id": "spn2-2bfe64ac87ca9c658d82a9c55f6703102b3852aa",
+  "last": "2026-10-21T16:15:34Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T16:15:34Z",
+   "bytes": 7122063,
+   "capture_id": "https://web.archive.org/web/20261021161022id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ds-rots-maul.html",
+   "method": "sha256",
+   "sha256": "bf245e118035e2e47eb1c3dabab878e6c8c659d6166a24eb78ed2d8c7d972766"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261021112712/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ls-zero-hour.html",
@@ -43559,9 +43568,9 @@
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-dennis-reinhardt-ds-rots-maul.html": {
   "capture": "https://web.archive.org/web/20261021105716/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-dennis-reinhardt-ds-rots-maul.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T15:25:10Z",
+  "last": "2026-10-21T16:09:13Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-dennis-reinhardt-ls-funeral-pyre-ltwwv.html": {
   "capture": "",
@@ -46718,13 +46727,14 @@
   "capture": "https://web.archive.org/web/20261020195703/https://swccg.com/snapshots/pc/decipher-swccg-squadron-members.html",
   "job_id": "spn2-e2bf873540fa86438bd73853ed101d2b8756e4e9",
   "last": "2026-10-20T23:17:42Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T15:30:31Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T16:16:12Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/home.html": {
   "capture": "https://web.archive.org/web/20261020234753/https://swccg.com/snapshots/pc/home.html",
@@ -47860,13 +47870,14 @@
   "capture": "https://web.archive.org/web/20261020223307/https://swccg.com/snapshots/scomp/card-138.html",
   "job_id": "spn2-627545a2674205646a6e19c20016e12917a31ec9",
   "last": "2026-10-21T01:23:57Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 4,
   "verify": {
-   "at": "2026-10-21T15:29:54Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T16:15:55Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/scomp/card-1399.html": {
   "capture": "https://web.archive.org/web/20261021000549/https://swccg.com/snapshots/scomp/card-1399.html",
@@ -47954,13 +47965,14 @@
   "capture": "https://web.archive.org/web/20261020222830/https://swccg.com/snapshots/scomp/card-2124.html",
   "job_id": "spn2-759429443357850126465983a01bad4b9627f795",
   "last": "2026-10-20T22:36:26Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T15:43:11Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T16:16:24Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/scomp/card-2170.html": {
   "capture": "https://web.archive.org/web/20261020231245/https://swccg.com/snapshots/scomp/card-2170.html",
@@ -47992,13 +48004,14 @@
   "capture": "https://web.archive.org/web/20261020222724/https://swccg.com/snapshots/scomp/card-2313.html",
   "job_id": "spn2-6b2943b2ff254852eb5dd556a02155d11bb96ff7",
   "last": "2026-10-20T22:36:21Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T15:43:17Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T16:16:30Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/scomp/card-2314.html": {
   "capture": "https://web.archive.org/web/20261020234853/https://swccg.com/snapshots/scomp/card-2314.html",
@@ -48161,13 +48174,14 @@
   "capture": "https://web.archive.org/web/20261020223059/https://swccg.com/snapshots/scomp/card-463.html",
   "job_id": "spn2-66ab8c2f279e14d921f2a20f921dfc10b61ddd66",
   "last": "2026-10-21T00:02:56Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T15:30:24Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T16:16:06Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/scomp/card-464.html": {
   "capture": "https://web.archive.org/web/20261020223016/https://swccg.com/snapshots/scomp/card-464.html",
@@ -48293,13 +48307,14 @@
   "capture": "https://web.archive.org/web/20261020223513/https://swccg.com/snapshots/scomp/card-94.html",
   "job_id": "spn2-fd5f5209ec51a5d8a5d1ce62a7d0f8bce4367ce0",
   "last": "2026-10-20T22:36:50Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T15:30:42Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-21T16:16:19Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/scomp/card-95.html": {
   "capture": "https://web.archive.org/web/20261020223440/https://swccg.com/snapshots/scomp/card-95.html",
@@ -49639,24 +49654,24 @@
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YSYv6Dzhaem9Vt_IGBvO5gf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 305 hours, 17 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T15:26:51Z",
+  "error": "no job_id: The same snapshot had been made 306 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
+  "last": "2026-10-21T16:10:34Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YT2GfXh-UzVT0r4VU30gAXP": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 303 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T15:28:02Z",
+  "error": "no job_id: The same snapshot had been made 304 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-21T16:11:45Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YTCrWDXcWybAWlrzF3kph1q": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 302 hours, 15 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T15:29:13Z",
+  "error": "no job_id: The same snapshot had been made 302 hours, 59 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T16:12:56Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YTcAIe2G5fmIGbmz-M8bYNs": {
   "capture": "",
@@ -49789,10 +49804,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-21T15:43:03Z",
+   "at": "2026-10-21T16:15:49Z",
    "error": "source HTTP 429"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://www.youtube.com/watch?v=-uXSofF_cPs": {
   "capture": "",
@@ -49816,10 +49831,10 @@
  },
  "https://www.youtube.com/watch?v=00lP1TCpIjw": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 289 hours, 56 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T15:35:34Z",
+  "error": "no job_id: The same snapshot had been made 290 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T16:14:07Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/watch?v=03DG4ufCkUA": {
   "capture": "https://web.archive.org/web/20261021032338/https://www.youtube.com/watch?v=03DG4ufCkUA",
@@ -49905,10 +49920,10 @@
  },
  "https://www.youtube.com/watch?v=10NJHt-PIes": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 291 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T15:36:45Z",
+  "error": "no job_id: The same snapshot had been made 291 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T16:15:18Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/watch?v=17136JxJF6g": {
   "capture": "https://web.archive.org/web/20261015180702/https://www.youtube.com/watch?v=17136JxJF6g",
@@ -50228,10 +50243,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T15:43:09Z",
+   "at": "2026-10-21T16:15:43Z",
    "error": "source HTTP 429"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://www.youtube.com/watch?v=4Wci5TkoXNg": {
   "capture": "https://web.archive.org/web/20261021141857/https://www.youtube.com/watch?v=4Wci5TkoXNg",
@@ -50654,7 +50669,12 @@
   "job_id": "spn2-f6a2eaad73866a796e022e67f6f703549fac571d",
   "last": "2026-10-21T16:03:49Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T16:15:37Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=8ovfe4Bkgc0": {
   "capture": "https://web.archive.org/web/20261021160144/https://www.youtube.com/watch?v=8ovfe4Bkgc0",
