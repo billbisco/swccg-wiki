@@ -187,6 +187,11 @@ FORUM_SNAPSHOT_RX = re.compile(r"^swccg\.com/snapshots/forum[/-]t(\d+)\.html$", 
 # snapshot-capture pair in the wiki backup (pages/, 2026-10-21: 5,282 pairs, no exceptions).
 PC_POST_RX = re.compile(r"^starwarsccg\.org/(?:[^?#]*/)?([^/?#]+)$", re.I)
 PC_SNAPSHOT_RX = re.compile(r"^swccg\.com/snapshots/pc/([^/?#]+)\.html$", re.I)
+# The bare host (http(s)://(www.)starwarsccg.org, with or without the trailing slash) has no slug. Its snapshot
+# is pc/home.html ("snapshot-of: https://www.starwarsccg.org/"), Wayback 20261020234753, which deleted it from the
+# VPS after verification (snapshots/DELETED-after-wayback.log). Chief, 2026-10-20.
+PC_HOME_HOST = "starwarsccg.org"
+PC_HOME_SLUG = "home"
 
 def archive_keys(url):
     """Keys under which a cited URL counts as archived: its normalised URL, plus its forum thread."""
@@ -196,6 +201,7 @@ def archive_keys(url):
     if m: keys.add(f"forum-thread:{m.group(1)}")
     m = PC_POST_RX.match(n) or PC_SNAPSHOT_RX.match(n)
     if m: keys.add(f"pc-post:{m.group(1).lower()}")
+    if n == PC_HOME_HOST: keys.add(f"pc-post:{PC_HOME_SLUG}")
     return keys
 
 def archive_flags(text, talk=False):

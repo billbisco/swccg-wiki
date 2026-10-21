@@ -522,6 +522,30 @@ class ArticleSnapshotRoute(unittest.TestCase):
         res = "See [https://res.starwarsccg.org/2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026/ x].\n* [" + self.PSNAP + " IA]\n"
         self.assertEqual(len(self.arch(res)), 1)   # only www.starwarsccg.org posts map to pc/ snapshots
 
+    HOME = "https://web.archive.org/web/20261020234753/https://swccg.com/snapshots/pc/home.html"
+
+    def test_pc_bare_host_matches_home_snapshot(self):
+        for host in ("https://www.starwarsccg.org/", "https://www.starwarsccg.org", "http://www.starwarsccg.org/",
+                     "https://starwarsccg.org/", "http://starwarsccg.org"):
+            page = "Run by the [" + host + " Players Committee].\n\n== External links ==\n* [" + host + " PC site]\n* [" + self.HOME + " IA]\n"
+            self.assertEqual(self.arch(page), [], host)
+            talk = "* Site: [" + host + " PC]. --Someone\n\n:Copy: [" + self.HOME + " IA]. --[[User:Comlink Cursor|Comlink Cursor]]\n"
+            self.assertEqual(self.arch(talk, "Talk:Players Committee"), [], host)
+
+    def test_pc_bare_host_non_match(self):
+        host = "https://www.starwarsccg.org/"
+        # a capture of some other pc/ snapshot does not cover the home page
+        page = "See the [" + host + " PC site].\n\n* [" + self.PSNAP + " IA]\n"
+        flags = self.arch(page)
+        self.assertEqual(len(flags), 1)
+        self.assertIn("starwarsccg.org", flags[0])
+        # and the home capture does not cover a post with a real slug
+        page = "See [" + self.PC + " results].\n\n* [" + self.HOME + " IA]\n"
+        self.assertEqual(len(self.arch(page)), 1)
+        # a non-root path on the host is a slug, not the home page
+        page = "See [https://www.starwarsccg.org/tournaments/ tournaments].\n\n* [" + self.HOME + " IA]\n"
+        self.assertEqual(len(self.arch(page)), 1)
+
 
 class IndexPagesSkipLong(unittest.TestCase):
     """People, People/<letter> and [[Category:Indexes]] pages skip the sentence-length check."""
