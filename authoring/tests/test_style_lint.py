@@ -444,3 +444,34 @@ class TalkPageComments(unittest.TestCase):
             self.assertEqual(L.lint(text, title)[0], [], name)
             # as an article, the restored comments' wording and the bare forum links would still fail
             self.assertTrue(L.lint(text, "Some article")[0], name)
+
+
+class TalkPagePcSnapshots(unittest.TestCase):
+    """Chief, 2026-10-20: on Talk pages a capture of swccg.com/snapshots/pc/<slug>.html covers the Players
+    Committee post whose URL ends in /<slug>/ (archiving.md naming)."""
+    PC = "[https://www.starwarsccg.org/2022-04-pc20-tournament/ PC20 Tournament]"
+    SNAP = "[https://web.archive.org/web/20261021001000/https://swccg.com/snapshots/pc/2022-04-pc20-tournament.html Internet Archive]"
+
+    def page(self, snap):
+        return "== Sources ==\nThe event page is " + self.PC + ".\n\n:Preserved copy: " + snap + "\n"
+
+    def test_pc_snapshot_matches_on_talk(self):
+        self.assertEqual(L.archive_flags(self.page(self.SNAP), talk=True), [])
+        self.assertEqual([f for f in L.lint(self.page(self.SNAP), "Talk:Timo Dusel")[0] if f.startswith("ARCHIVE")], [])
+        nested = self.page(self.SNAP).replace("org/2022-04-pc20-tournament/", "org/community/2022-04-pc20-tournament/")
+        self.assertEqual(L.archive_flags(nested, talk=True), [])   # slug is the last path segment
+
+    def test_other_slug_does_not_match(self):
+        other = self.SNAP.replace("2022-04-pc20-tournament.html", "2022-09-european-championship.html")
+        flags = L.archive_flags(self.page(other), talk=True)
+        self.assertEqual(len(flags), 1)
+        self.assertIn("2022-04-pc20-tournament", flags[0])
+        forum = self.SNAP.replace("pc/2022-04-pc20-tournament.html", "forum/t2022.html")
+        self.assertEqual(len(L.archive_flags(self.page(forum), talk=True)), 1)
+        res = self.page(self.SNAP).replace("www.starwarsccg.org/", "res.starwarsccg.org/")   # other host
+        self.assertEqual(len(L.archive_flags(res, talk=True)), 1)
+
+    def test_article_pages_unchanged(self):
+        text = self.page(self.SNAP).replace("== Sources ==\n", "")
+        self.assertEqual(len(L.archive_flags(text)), 1)
+        self.assertEqual(len([f for f in L.lint(text, "Timo Dusel")[0] if f.startswith("ARCHIVE")]), 1)
