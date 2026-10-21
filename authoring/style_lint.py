@@ -315,6 +315,30 @@ def mask_names(t, title=None):
             t = re.sub(rf"(?<![\w'])(?:{re.escape(ph)})(?![\w'])", " ", t)
     return t
 
+# Transcript pages (Chief, 2026-10-20): quoted speech is the speaker's words, not the editor's voice.
+# A page is a transcript when its title ends in "(transcript)" (or a "/Transcript" subpage) or it is in
+# Category:Transcripts; on such pages each speaker turn ('''[00:10] Henry Dunn:''' ... or '''Interviewer:''' ...)
+# is skipped by the banned-word and sentence-length checks. The page's own prose is still checked.
+TRANSCRIPT_TITLE_RX = re.compile(r"\(\s*transcripts?\s*\)\s*$|/\s*transcripts?\s*$", re.I)
+TRANSCRIPT_CATEGORIES = {"transcripts", "interview transcripts"}
+SPEECH_RX = re.compile(r"^[*:#]*[ \t]*'''[ \t]*(?:\[\d{1,2}(?::\d{2}){1,2}\][ \t]*)?[^'\n:\[\]]{1,60}:[ \t]*'''.*$", re.M)
+
+def is_transcript_page(title, text, cats=None):
+    if title and TRANSCRIPT_TITLE_RX.search(title.strip()):
+        return True
+    have = page_categories(text) | {re.sub(r"^Category:", "", c, flags=re.I).strip().lower() for c in (cats or ())}
+    return bool(have & TRANSCRIPT_CATEGORIES)
+
+EDITORIAL_LABELS = {"note", "notes", "editor's note", "editors' note", "source", "sources", "summary", "context", "transcription"}
+
+def mask_speech(text):
+    """Blank each speaker turn (a line opening with a bold 'Speaker:' label, optionally timestamped).
+    Editorial labels ('''Note:''', '''Source:''' ...) are the editor's voice and stay in."""
+    def blank(m):
+        label = re.sub(r"^[*:#\s]*'''\s*(?:\[[\d:]+\]\s*)?", "", m.group(0)).split(":", 1)[0].strip().lower()
+        return m.group(0) if label in EDITORIAL_LABELS else " "
+    return SPEECH_RX.sub(blank, text)
+
 def lint(text, title=None, cats=None):
     flags = []
     for h in own_headings(text):
@@ -332,8 +356,9 @@ def lint(text, title=None, cats=None):
         for wd in CAPTION_WORDS:
             if re.search(rf"\b{wd}\b", plain, re.I): flags.append(f"CAPTION  describes image ('{wd}'): {plain[:90]}")
     b = body(text)
-    prose = re.sub(r"^=+.*?=+\s*$", "", b, flags=re.M)
-    scan = unquote(re.sub(r"^=+.*?=+\s*$", "", body(mask_names(text, title)), flags=re.M))
+    own = mask_speech(text) if is_transcript_page(title, text, cats) else text   # transcripts: skip speech
+    prose = re.sub(r"^=+.*?=+\s*$", "", body(own), flags=re.M)
+    scan = unquote(re.sub(r"^=+.*?=+\s*$", "", body(mask_names(own, title)), flags=re.M))
     for wd in BANNED:
         if wd.strip() in ("this page", "we") and is_list_page(title, text): continue
         for m in re.finditer(rf"\b{re.escape(wd.strip())}\b", scan, re.I):
