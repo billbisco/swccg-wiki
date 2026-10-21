@@ -29570,16 +29570,18 @@
  },
  "https://melee.gg/Profile/Index/AdamCFC": {
   "capture": "",
+  "error": "error:no-request",
   "job_id": "spn2-3f717c8bc9ec8f971499012da5ef461cd332c727",
-  "last": "2026-10-21T12:24:23Z",
-  "status": "pending",
+  "last": "2026-10-21T12:30:56Z",
+  "status": "retry",
   "tries": 4
  },
  "https://melee.gg/Profile/Index/Eweuge": {
   "capture": "",
+  "error": "error:no-request",
   "job_id": "spn2-6292fc57c9f3f52173853b9e35f7b659b502767b",
-  "last": "2026-10-21T12:24:37Z",
-  "status": "pending",
+  "last": "2026-10-21T12:30:57Z",
+  "status": "retry",
   "tries": 3
  },
  "https://melee.gg/Profile/Index/Mantron": {
@@ -29592,9 +29594,10 @@
  },
  "https://melee.gg/Profile/Index/allstarz97": {
   "capture": "",
+  "error": "error:no-request",
   "job_id": "spn2-798c5f932ae0ca86e6e3241a51297b497809391d",
-  "last": "2026-10-21T12:25:03Z",
-  "status": "pending",
+  "last": "2026-10-21T12:31:00Z",
+  "status": "retry",
   "tries": 4
  },
  "https://melee.gg/Profile/Index/dillen": {
@@ -29606,16 +29609,18 @@
  },
  "https://melee.gg/Profile/Index/jademasters": {
   "capture": "",
+  "error": "error:no-request",
   "job_id": "spn2-10acce8fa7183ea64be627dcc325f3b83f708813",
-  "last": "2026-10-21T12:25:30Z",
-  "status": "pending",
+  "last": "2026-10-21T12:31:01Z",
+  "status": "retry",
   "tries": 4
  },
  "https://melee.gg/Profile/Index/redv": {
   "capture": "",
+  "error": "error:no-request",
   "job_id": "spn2-48117b1b10c19b611f50fcb2ba0a1a7368c438bc",
-  "last": "2026-10-21T12:25:44Z",
-  "status": "pending",
+  "last": "2026-10-21T12:31:03Z",
+  "status": "retry",
   "tries": 3
  },
  "https://pente.org/help/helpWindow.jsp?file=playGameRules": {
@@ -39416,9 +39421,9 @@
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ds-invasion.html": {
   "capture": "https://web.archive.org/web/20261021071337/https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ds-invasion.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T11:49:57Z",
+  "last": "2026-10-21T12:33:21Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ls-clones.html": {
   "capture": "https://web.archive.org/web/20261021073516/https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ls-clones.html",
@@ -40757,9 +40762,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-jon-benkert-holtet-ds-rots-dooku.html": {
-  "capture": "",
-  "job_id": "spn2-760ecc1272a89a222f4241a8e72c952ed5e1e359",
-  "last": "2026-10-21T08:38:06Z",
+  "capture": "https://web.archive.org/web/20261021083854/https://swccg.com/snapshots/pc/2023-european-championship-jon-benkert-holtet-ds-rots-dooku.html",
+  "last": "2026-10-21T12:32:01Z",
   "status": "pending",
   "tries": 1
  },
@@ -41043,9 +41047,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ls-hitco.html": {
-  "capture": "",
-  "job_id": "spn2-81a86e4094aea44cd02b44e90fd6fdad9d610c8a",
-  "last": "2026-10-21T09:02:12Z",
+  "capture": "https://web.archive.org/web/20261021090223/https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ls-hitco.html",
+  "last": "2026-10-21T12:32:04Z",
   "status": "pending",
   "tries": 1
  },
@@ -41287,9 +41290,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-andrew-davies-ls-qui-gon-communing.html": {
   "capture": "https://web.archive.org/web/20261021093326/https://swccg.com/snapshots/pc/2023-naboo-regionals-andrew-davies-ls-qui-gon-communing.html",
-  "last": "2026-10-21T11:49:30Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-7dac993223b328137a16255ee0cc3dc3161b818e",
+  "last": "2026-10-21T12:40:07Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-21T12:40:07Z",
+   "bytes": 7122130,
+   "capture_id": "https://web.archive.org/web/20261021093326id_/https://swccg.com/snapshots/pc/2023-naboo-regionals-andrew-davies-ls-qui-gon-communing.html",
+   "method": "sha256",
+   "sha256": "1924668d86282182a6abc351438482c2c511c01a578b32cdb3a04b60c1c2598a"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-angelo-consoli-ds-revenge-of-the-sith-maul.html": {
   "capture": "https://web.archive.org/web/20261021091807/https://swccg.com/snapshots/pc/2023-naboo-regionals-angelo-consoli-ds-revenge-of-the-sith-maul.html",
@@ -41614,8 +41625,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-steve-squirlock-ls-skywalker-saga-luke.html": {
   "capture": "https://web.archive.org/web/20261021090844/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-steve-squirlock-ls-skywalker-saga-luke.html",
-  "last": "2026-10-21T12:18:06Z",
-  "status": "pending",
+  "last": "2026-10-21T12:32:11Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html": {
@@ -42266,8 +42277,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-quirin-furgut-ls-communing-qui-gon.html": {
   "capture": "https://web.archive.org/web/20261021104307/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-quirin-furgut-ls-communing-qui-gon.html",
-  "last": "2026-10-21T12:18:11Z",
-  "status": "pending",
+  "last": "2026-10-21T12:32:14Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-stephan-de-vos-ds-eops.html": {
@@ -42748,9 +42759,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-greg-shaw-ds-ropsv-7s.html": {
   "capture": "https://web.archive.org/web/20261021112419/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-greg-shaw-ds-ropsv-7s.html",
-  "last": "2026-10-21T11:49:43Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T12:33:46Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-greg-shaw-ls-no-idea.html": {
   "capture": "",
@@ -43197,9 +43209,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-mike-kessling-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021112743/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-mike-kessling-ls-old-allies.html",
-  "last": "2026-10-21T11:49:50Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-5aa3769d946850245a94a5953b3be9d67029f623",
+  "last": "2026-10-21T12:40:25Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T12:40:25Z",
+   "bytes": 7121979,
+   "capture_id": "https://web.archive.org/web/20261021112743id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-mike-kessling-ls-old-allies.html",
+   "method": "sha256",
+   "sha256": "d2bc0c86b6f6b6b239ff4a0468728e417f7344a78f60ca3aed6cdf366f55088e"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-nate-davis-ds-hunt-down-v.html": {
   "capture": "https://web.archive.org/web/20261021114532/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-nate-davis-ds-hunt-down-v.html",
@@ -43217,28 +43237,25 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-nate-davis-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261021115321/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-nate-davis-ls-diplo.html",
-  "last": "2026-10-21T12:19:04Z",
-  "status": "pending",
+  "last": "2026-10-21T12:32:24Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-phil-aasen-ds-aobs.html": {
-  "capture": "",
-  "job_id": "spn2-e8ee08ff64a3548f5c810d9df3e6f761ea63ce03",
-  "last": "2026-10-21T11:25:16Z",
+  "capture": "https://web.archive.org/web/20261021112520/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-phil-aasen-ds-aobs.html",
+  "last": "2026-10-21T12:32:26Z",
   "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-phil-aasen-ls-qmc.html": {
-  "capture": "",
-  "job_id": "spn2-c8a3b11d1ca471e71fb56c8249dcfdc1703a7842",
-  "last": "2026-10-21T11:25:49Z",
+  "capture": "https://web.archive.org/web/20261021112607/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-phil-aasen-ls-qmc.html",
+  "last": "2026-10-21T12:32:28Z",
   "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-ryan-jellison-ls-whap.html": {
-  "capture": "",
-  "job_id": "spn2-97ce080cc19b542915c05ff0b0deea6974ebbf41",
-  "last": "2026-10-21T11:28:21Z",
+  "capture": "https://web.archive.org/web/20261021112825/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-ryan-jellison-ls-whap.html",
+  "last": "2026-10-21T12:32:30Z",
   "status": "pending",
   "tries": 1
  },
@@ -43285,23 +43302,36 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ds-endor-operations.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021111349/https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ds-endor-operations.html",
   "job_id": "spn2-b76085e0d1786ab413da914c4ed69b78fde0e721",
-  "last": "2026-10-21T11:13:46Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T12:32:50Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T12:32:50Z",
+   "bytes": 7121840,
+   "capture_id": "https://web.archive.org/web/20261021111349id_/https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ds-endor-operations.html",
+   "method": "sha256",
+   "sha256": "ec7a5b0220c14164aec274f8ce6674ccc00265fe38a38c0306d5e762a686cf1c"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ls-communing-obi-wan.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261021112353/https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ls-communing-obi-wan.html",
   "job_id": "spn2-df8ee16d74e439cdc2d8f4922c1dfd8208e2f955",
-  "last": "2026-10-21T11:23:49Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T12:33:08Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T12:33:08Z",
+   "bytes": 7122093,
+   "capture_id": "https://web.archive.org/web/20261021112353id_/https://swccg.com/snapshots/pc/2023-scarif-regionals-cal-aldred-ls-communing-obi-wan.html",
+   "method": "sha256",
+   "sha256": "716e1c4e4093ed4b99f5690e1d168e8014d0bd4f7f32d362407bf16f534c74b7"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-scarif-regionals-chris-schoenthal-ds-rots-vader.html": {
-  "capture": "",
-  "job_id": "spn2-8569644b7a745d391695046002f83ec7c230092e",
-  "last": "2026-10-21T11:13:24Z",
+  "capture": "https://web.archive.org/web/20261021111328/https://swccg.com/snapshots/pc/2023-scarif-regionals-chris-schoenthal-ds-rots-vader.html",
+  "last": "2026-10-21T12:33:09Z",
   "status": "pending",
   "tries": 1
  },
@@ -43444,14 +43474,14 @@
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-mark-billings-ls-agents-in-the-court.html": {
   "capture": "https://web.archive.org/web/20261021121043/https://swccg.com/snapshots/pc/2023-tatooine-regionals-mark-billings-ls-agents-in-the-court.html",
-  "last": "2026-10-21T12:15:20Z",
-  "status": "pending",
+  "last": "2026-10-21T12:33:12Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-paul-coggins-ds-rots-maul.html": {
   "capture": "https://web.archive.org/web/20261021120914/https://swccg.com/snapshots/pc/2023-tatooine-regionals-paul-coggins-ds-rots-maul.html",
-  "last": "2026-10-21T12:15:15Z",
-  "status": "pending",
+  "last": "2026-10-21T12:33:14Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-tatooine-regionals-paul-coggins-ls-clones.html": {
@@ -43603,8 +43633,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-toola-regionals-jonas-hagen-noerregaard-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261021121347/https://swccg.com/snapshots/pc/2023-toola-regionals-jonas-hagen-noerregaard-ds-thrawn.html",
-  "last": "2026-10-21T12:15:27Z",
-  "status": "pending",
+  "last": "2026-10-21T12:33:16Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-toola-regionals-jonas-hagen-noerregaard-ls-whap.html": {
@@ -43613,6 +43643,20 @@
   "last": "2026-10-21T12:12:50Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-toola-regionals-jonas-lenskjaer-ds-ropsv.html": {
+  "capture": "https://web.archive.org/web/20261021123420/https://swccg.com/snapshots/pc/2023-toola-regionals-jonas-lenskjaer-ds-ropsv.html",
+  "job_id": "spn2-378c97c9871ffe591797900a9ebec11f301a2078",
+  "last": "2026-10-21T12:40:39Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T12:40:39Z",
+   "bytes": 7120890,
+   "capture_id": "https://web.archive.org/web/20261021123420id_/https://swccg.com/snapshots/pc/2023-toola-regionals-jonas-lenskjaer-ds-ropsv.html",
+   "method": "sha256",
+   "sha256": "2384032b043d61f9a75d91f4ea3ecff580d25a915e86fe902ab9209e8f25fb75"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-toola-regionals-jonas-lenskjaer-ls-whap.html": {
   "capture": "https://web.archive.org/web/20261021122207/https://swccg.com/snapshots/pc/2023-toola-regionals-jonas-lenskjaer-ls-whap.html",
@@ -43675,6 +43719,20 @@
   "last": "2026-10-21T12:29:22Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-yavin-4-regionals-casey-anis-ds-hunt-down.html": {
+  "capture": "https://web.archive.org/web/20261021123434/https://swccg.com/snapshots/pc/2023-yavin-4-regionals-casey-anis-ds-hunt-down.html",
+  "job_id": "spn2-11c9fbf9aa09d20d98a8f5c07c6b5d93f03f2264",
+  "last": "2026-10-21T12:40:53Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T12:40:53Z",
+   "bytes": 7121046,
+   "capture_id": "https://web.archive.org/web/20261021123434id_/https://swccg.com/snapshots/pc/2023-yavin-4-regionals-casey-anis-ds-hunt-down.html",
+   "method": "sha256",
+   "sha256": "dc648683f7c43fe4cf0121d229d95317788aed63839e3358ac73dce84a0ebc84"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-yavin-4-regionals-casey-anis-ls-endor-anakins-funeral-pyre.html": {
   "capture": "",
@@ -47786,10 +47844,10 @@
  },
  "https://www.kendallcast.ninja/2020/10/the-chris-kelly-interview.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:14:47Z",
+  "error": "no job_id: The same snapshot had been made 164 hours, 42 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T12:36:26Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html": {
   "capture": "https://web.archive.org/web/20261014155506/https://www.kendallcast.ninja/2020/11/the-bastian-winkelhaus-interview.html",
@@ -47832,11 +47890,10 @@
   "tries": 2
  },
  "https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html": {
-  "capture": "https://web.archive.org/web/20261021024419/https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:33:26Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021123645/https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html",
+  "last": "2026-10-21T12:40:55Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://www.kendallcast.ninja/2020/12/the-justin-desai-interview.html": {
   "capture": "https://web.archive.org/web/20261021024429/https://www.kendallcast.ninja/2020/12/the-justin-desai-interview.html",
@@ -47892,10 +47949,10 @@
   "tries": 2
  },
  "https://www.kendallcast.ninja/2022/02/corran-on-horn-2-matt-sperling.html": {
-  "capture": "https://web.archive.org/web/20261021031512/https://www.kendallcast.ninja/2022/02/corran-on-horn-2-matt-sperling.html",
-  "last": "2026-10-21T03:33:11Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021123658/https://www.kendallcast.ninja/2022/02/corran-on-horn-2-matt-sperling.html",
+  "last": "2026-10-21T12:40:56Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://www.kendallcast.ninja/2022/03/corran-on-horn-3-doug-taylor.html": {
   "capture": "https://web.archive.org/web/20261015164101/https://www.kendallcast.ninja/2022/03/corran-on-horn-3-doug-taylor.html",
@@ -47932,24 +47989,22 @@
   }
  },
  "https://www.kendallcast.ninja/2022/08/corran-on-horn-7-nationals-special.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:33:47Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021123713/https://www.kendallcast.ninja/2022/08/corran-on-horn-7-nationals-special.html",
+  "last": "2026-10-21T12:41:18Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html": {
-  "capture": "https://web.archive.org/web/20261021024633/https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html",
-  "last": "2026-10-21T03:56:18Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021123727/https://www.kendallcast.ninja/2022/08/corran-on-horn-8-andy-davies.html",
+  "last": "2026-10-21T12:41:39Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html": {
-  "capture": "https://web.archive.org/web/20261021024645/https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:34:07Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021123838/https://www.kendallcast.ninja/2022/09/corran-on-horn-10-raphael-asselin.html",
+  "last": "2026-10-21T12:41:21Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://www.kendallcast.ninja/2022/09/corran-on-horn-11-tom-haid.html": {
   "capture": "",
@@ -48006,10 +48061,10 @@
   "tries": 1
  },
  "https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html": {
-  "capture": "https://web.archive.org/web/20261021031934/https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html",
-  "last": "2026-10-21T03:42:31Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021123831/https://www.kendallcast.ninja/2022/11/corran-on-horn-16-drew-scott.html",
+  "last": "2026-10-21T12:41:40Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://www.kendallcast.ninja/2022/12/corran-on-horn-18-sam-tashima.html": {
   "capture": "",
@@ -48157,10 +48212,10 @@
  },
  "https://www.kendallcast.ninja/2024/08/corran-on-horn-34-with-cliff-and-norm-2.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:34:29Z",
+  "error": "no job_id: The same snapshot had been made 158 hours, 25 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T12:38:44Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://www.kendallcast.ninja/2025/01/corran-on-horn-35-and-36-andrew-moss.html": {
   "capture": "https://web.archive.org/web/20261014221305/https://www.kendallcast.ninja/2025/01/corran-on-horn-35-and-36-andrew-moss.html",
@@ -48216,10 +48271,10 @@
  },
  "https://www.kendallcast.ninja/2025/08/corran-on-horn-39-matt-manning.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:56:43Z",
+  "error": "no job_id: The same snapshot had been made 167 hours, 21 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T12:38:59Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.kendallcast.ninja/2025/09/anthony-batmouse-howard-sheriff-of-gemp.html": {
   "capture": "https://web.archive.org/web/20261014131724/https://www.kendallcast.ninja/2025/09/anthony-batmouse-howard-sheriff-of-gemp.html",
@@ -48236,10 +48291,10 @@
  },
  "https://www.kendallcast.ninja/2025/10/2025-star-wars-ccg-world-championship.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T02:58:59Z",
+  "error": "no job_id: The same snapshot had been made 167 hours, 21 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T12:39:15Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.kendallcast.ninja/2026/08/star-wars-ccg-nationals-audio-diaries.html": {
   "capture": "https://web.archive.org/web/20261014131655/https://www.kendallcast.ninja/2026/08/star-wars-ccg-nationals-audio-diaries.html",
@@ -48331,10 +48386,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/reports/1999-11-16-day-one-world-championshipsd110/": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:02:22Z",
+  "error": "no job_id: The same snapshot had been made 290 hours, 53 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T12:39:29Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-01-09-world-championships-by-martin-akessond163/": {
   "capture": "https://web.archive.org/web/20261009094534/https://www.stephenskilton.com/decktech_archives/reports/2000-01-09-world-championships-by-martin-akessond163/",
@@ -48551,10 +48606,10 @@
  },
  "https://www.youtube.com/playlist?list=PLI7PBER0cHZw": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 291 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T03:02:45Z",
+  "error": "no job_id: The same snapshot had been made 301 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T12:39:43Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQ7P-amyYKPKPRsHqvWVGoT": {
   "capture": "",
