@@ -11845,8 +11845,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/16248": {
   "capture": "https://web.archive.org/web/20261020233524/https://www.decktech.net/starwarsccg/deck/16248/",
-  "last": "2026-10-20T23:43:35Z",
-  "status": "pending",
+  "last": "2026-10-20T23:59:52Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/16249": {
@@ -14364,8 +14364,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18081": {
   "capture": "https://web.archive.org/web/20261020234236/https://www.decktech.net/starwarsccg/deck/18081/",
-  "last": "2026-10-20T23:44:44Z",
-  "status": "pending",
+  "last": "2026-10-20T23:59:54Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18082": {
@@ -14419,8 +14419,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18092": {
   "capture": "https://web.archive.org/web/20261020234121/https://www.decktech.net/starwarsccg/deck/18092/",
-  "last": "2026-10-20T23:46:30Z",
-  "status": "pending",
+  "last": "2026-10-20T23:59:55Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18099": {
@@ -14453,8 +14453,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18109": {
   "capture": "https://web.archive.org/web/20261020234029/https://www.decktech.net/starwarsccg/deck/18109/",
-  "last": "2026-10-20T23:43:55Z",
-  "status": "pending",
+  "last": "2026-10-20T23:59:57Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18111": {
@@ -14487,8 +14487,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18115": {
   "capture": "https://web.archive.org/web/20261020234018/https://www.decktech.net/starwarsccg/deck/18115/",
-  "last": "2026-10-20T23:44:34Z",
-  "status": "pending",
+  "last": "2026-10-20T23:59:58Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18116": {
@@ -14589,8 +14589,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18160": {
   "capture": "https://web.archive.org/web/20261020233920/https://www.decktech.net/starwarsccg/deck/18160/",
-  "last": "2026-10-20T23:43:49Z",
-  "status": "pending",
+  "last": "2026-10-21T00:00:00Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18163": {
@@ -15166,9 +15166,16 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18473": {
   "capture": "https://web.archive.org/web/20261020224350/https://www.decktech.net/starwarsccg/deck/18473/",
-  "last": "2026-10-20T23:43:43Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-10-21T00:00:04Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T00:01:17Z",
+   "bytes": 15887,
+   "capture_id": "https://web.archive.org/web/20261020224350id_/https://www.decktech.net/starwarsccg/deck/18473/",
+   "method": "sha256",
+   "sha256": "6bcdc69f28e4f12c55bfbf0367658fffd83af2e4d00815ee26582e71656750d2"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18474": {
   "capture": "https://web.archive.org/web/20261017144133/https://www.decktech.net/starwarsccg/deck/18474/",
@@ -15205,11 +15212,18 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18505": {
-  "capture": "https://web.archive.org/web/20261017144458/https://www.decktech.net/starwarsccg/deck/18505/",
+  "capture": "https://web.archive.org/web/20261020224404/https://www.decktech.net/starwarsccg/deck/18505/",
   "job_id": "spn2-2105ebdb32a8f69dad5e21c3b9b117d90db04507",
-  "last": "2026-10-20T22:43:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-21T00:00:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T00:01:11Z",
+   "bytes": 13561,
+   "capture_id": "https://web.archive.org/web/20261020224404id_/https://www.decktech.net/starwarsccg/deck/18505/",
+   "method": "sha256",
+   "sha256": "78b1f7f80304dd8b40bc4d535d50615751b2a668e6abbef76021d30eb9070fc1"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18506": {
   "capture": "https://web.archive.org/web/20261020222120/https://www.decktech.net/starwarsccg/deck/18506/",
@@ -29460,6 +29474,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/forum/f1592.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T00:00:29Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/p1366567.html": {
   "capture": "https://web.archive.org/web/20261014113924/https://swccg.com/snapshots/forum/p1366567.html",
   "job_id": "spn2-6c82565d696539682a3d001dd2d4cb9de34513f6",
@@ -29515,6 +29536,13 @@
    "sha256": "b0b112a887df4815c4b9f5ca03bdb0a3b221761bd87f4edc00015484dd500764"
   }
  },
+ "https://swccg.com/snapshots/forum/t37391.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T00:00:40Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t61620.html": {
   "capture": "https://web.archive.org/web/20261012180720/https://swccg.com/snapshots/forum/t61620.html",
   "last": "2026-10-12T18:44:53Z",
@@ -29553,6 +29581,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/forum/t80947-start20.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T00:00:50Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t81218.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
@@ -29589,9 +29624,9 @@
  "https://swccg.com/snapshots/forum/t85193.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T23:19:58Z",
+  "last": "2026-10-21T00:01:00Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t86534.html": {
   "capture": "",
@@ -33404,8 +33439,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-11-outrider-cup-iii.html": {
   "capture": "https://web.archive.org/web/20261020232116/https://swccg.com/snapshots/pc/2023-11-outrider-cup-iii.html",
-  "last": "2026-10-20T23:46:45Z",
-  "status": "pending",
+  "last": "2026-10-21T00:00:08Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-gempc7-semi-finals-quirin-furgut-ls-there-is-good-in-him.html": {
@@ -33860,8 +33895,8 @@
  },
  "https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024.html": {
   "capture": "https://web.archive.org/web/20261020233546/https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024.html",
-  "last": "2026-10-20T23:44:20Z",
-  "status": "pending",
+  "last": "2026-10-21T00:00:09Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-10-online-championship-series-ocs-playoffs-oct-nov-2024.html": {
@@ -35997,8 +36032,8 @@
  },
  "https://swccg.com/snapshots/pc/team-europe-wins-the-2021-outrider-cup.html": {
   "capture": "https://web.archive.org/web/20261020232436/https://swccg.com/snapshots/pc/team-europe-wins-the-2021-outrider-cup.html",
-  "last": "2026-10-20T23:46:53Z",
-  "status": "pending",
+  "last": "2026-10-21T00:00:13Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/the-beautiful-and-thematic-virtual-set-19-has-arrived.html": {
@@ -37193,6 +37228,13 @@
   "last": "2026-10-20T21:48:39Z",
   "status": "retry",
   "tries": 2
+ },
+ "https://swccg.com/snapshots/youtube/playlist-PLQSFYZX0M9YTcAIe2G5fmIGbmz-M8bYNs.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-21T00:00:19Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://theboosterpack.buzzsprout.com/1692574/episodes/10935514-booster-pack-throwback-27-decipher-s-star-trek-ccg-with-designer-tom-braunlich": {
   "capture": "https://web.archive.org/web/20261016020503/https://theboosterpack.buzzsprout.com/1692574/episodes/10935514-booster-pack-throwback-27-decipher-s-star-trek-ccg-with-designer-tom-braunlich",
