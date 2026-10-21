@@ -29079,8 +29079,14 @@
   "capture": "https://web.archive.org/web/20261008194744/https://docs.google.com/document/d/17TqWsm6AtmGREZlerTsMWjy5K9qfaamf/edit",
   "last": "2026-10-21T02:33:59Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:12:09Z",
+   "capture_id": "https://web.archive.org/web/20261008194744id_/https://docs.google.com/document/d/17TqWsm6AtmGREZlerTsMWjy5K9qfaamf/edit",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://en.wikipedia.org/wiki/Decipher,_Inc.": {
   "capture": "https://web.archive.org/web/20261013234544/https://en.wikipedia.org/wiki/Decipher,_Inc.",
@@ -30326,8 +30332,15 @@
   "capture": "https://web.archive.org/web/20261021031424/https://swccg.com/",
   "job_id": "spn2-1d1d3c95175d91f3d2b522cf4e3cde9f15131d27",
   "last": "2026-10-21T03:16:22Z",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:09:58Z",
+   "bytes": 3581,
+   "capture_id": "https://web.archive.org/web/20261021031424id_/https://swccg.com/",
+   "method": "sha256",
+   "sha256": "9f409f4ba7b8e2238eafec30b93b4db2e4c6930d15fa8e0974d6e98bcfd0c68a"
+  }
  },
  "https://swccg.com/snapshots/bgg/bgg-thread-2902121.html": {
   "capture": "https://web.archive.org/web/20261016162150/https://swccg.com/snapshots/bgg/bgg-thread-2902121.html",
@@ -30810,10 +30823,10 @@
  },
  "https://swccg.com/snapshots/forum/t83395.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 189 hours, 39 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:32:58Z",
+  "error": "no job_id: The same snapshot had been made 190 hours, 13 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T14:07:24Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/forum/t83759.html": {
   "capture": "",
@@ -31068,7 +31081,12 @@
   "job_id": "spn2-276f1a260205b418bb78398eb5fe7c14706d7b77",
   "last": "2026-10-21T02:39:41Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:12:03Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-jimmy-faelens-invasion.html": {
   "capture": "https://web.archive.org/web/20261021003918/https://swccg.com/snapshots/pc/2017-ec-day-2-jimmy-faelens-invasion.html",
@@ -31305,8 +31323,15 @@
   "capture": "https://web.archive.org/web/20261021005534/https://swccg.com/snapshots/pc/2017-tmw-day-1-matt-scott-eops.html",
   "job_id": "spn2-b97baab42ea8eb2692d250ac5dd9efb3c7e20535",
   "last": "2026-10-21T03:12:39Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:02Z",
+   "bytes": 7120833,
+   "capture_id": "https://web.archive.org/web/20261021005534id_/https://swccg.com/snapshots/pc/2017-tmw-day-1-matt-scott-eops.html",
+   "method": "sha256",
+   "sha256": "3bc1d2318d2e079d1172ac7bab77b49e27b05991acb02747738d8033c43cce3b"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-matt-scott-hb-sandwhirl.html": {
   "capture": "https://web.archive.org/web/20261021010723/https://swccg.com/snapshots/pc/2017-tmw-day-1-matt-scott-hb-sandwhirl.html",
@@ -41658,10 +41683,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ds-thrawn.html": {
-  "capture": "https://web.archive.org/web/20261021092015/https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ds-thrawn.html",
-  "last": "2026-10-21T13:32:01Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021140851/https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ds-thrawn.html",
+  "job_id": "spn2-70409a7c2d70aa476d5b083fc93ddb48fc6cb59f",
+  "last": "2026-10-21T14:09:44Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:09:44Z",
+   "bytes": 7121155,
+   "capture_id": "https://web.archive.org/web/20261021140851id_/https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ds-thrawn.html",
+   "method": "sha256",
+   "sha256": "121a5fe67d1f5afaaf92fb1f7757c60914b46ac99ffc3392769680d78ba46217"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ls-anakin-saga.html": {
   "capture": "",
@@ -42514,9 +42547,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ls-aitc.html": {
-  "capture": "",
-  "job_id": "spn2-59c50322e8f9d43730e9db1b578e8532b7b97e38",
-  "last": "2026-10-21T10:43:03Z",
+  "capture": "https://web.archive.org/web/20261021104306/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ls-aitc.html",
+  "last": "2026-10-21T14:05:49Z",
   "status": "pending",
   "tries": 1
  },
@@ -43254,9 +43286,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-thomas-santosuosso-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021115410/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-thomas-santosuosso-ds-sycfa.html",
-  "last": "2026-10-21T13:32:14Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-aa39775daea29463adba6cb52c87d2ed2dcde276",
+  "last": "2026-10-21T14:09:22Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:09:22Z",
+   "bytes": 7122269,
+   "capture_id": "https://web.archive.org/web/20261021115410id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-thomas-santosuosso-ds-sycfa.html",
+   "method": "sha256",
+   "sha256": "9ea3e3738121a6d6a02c8eeed1d32becc0b00c049a0a0c5d5f821b5bf3a97f6e"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-anthony-howard-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021110046/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-anthony-howard-ds-sycfa.html",
@@ -43316,9 +43356,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brett-bailey-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261021111131/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brett-bailey-ls-diplo.html",
-  "last": "2026-10-21T13:32:15Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-0e402a9801335963d85bd3793d68e9e058b299ef",
+  "last": "2026-10-21T14:08:56Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:08:56Z",
+   "bytes": 7121941,
+   "capture_id": "https://web.archive.org/web/20261021111131id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brett-bailey-ls-diplo.html",
+   "method": "sha256",
+   "sha256": "67d91447876de4f82b1b493571142cb12e9844d78e38e0c5e17625fe7b29c2dc"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ds-rots-dooku.html": {
   "capture": "",
@@ -43378,8 +43426,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021104730/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html",
-  "last": "2026-10-21T13:53:09Z",
-  "status": "pending",
+  "last": "2026-10-21T14:05:56Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ls-qmc.html": {
@@ -43488,9 +43536,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-keith-brown-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021114208/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-keith-brown-ds-map.html",
-  "last": "2026-10-21T13:32:18Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-5df1243bb20920bb2be435edc58398f573240cef",
+  "last": "2026-10-21T14:09:05Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:09:05Z",
+   "bytes": 7121824,
+   "capture_id": "https://web.archive.org/web/20261021114208id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-keith-brown-ds-map.html",
+   "method": "sha256",
+   "sha256": "6b67028aa63d8f7a21bc7bbecc4d6c01acbde15b71c7e3e7c81c23507b367f56"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-keith-brown-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021114234/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-keith-brown-ls-old-allies.html",
@@ -44315,13 +44371,23 @@
   "capture": "https://web.archive.org/web/20261020232208/https://swccg.com/snapshots/pc/2024-10-online-championship-series-ocs-playoffs-oct-nov-2024.html",
   "last": "2026-10-21T03:12:52Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:10:07Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-12-champions-league-dec-2024-feb-2025.html": {
   "capture": "https://web.archive.org/web/20261020232259/https://swccg.com/snapshots/pc/2024-12-champions-league-dec-2024-feb-2025.html",
   "last": "2026-10-21T03:12:52Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:10:17Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-champions-league-finals-matthew-harrison-trainor-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261013171825/https://swccg.com/snapshots/pc/2024-champions-league-finals-matthew-harrison-trainor-ds-cct.html",
@@ -45027,19 +45093,34 @@
   "capture": "https://web.archive.org/web/20261020232324/https://swccg.com/snapshots/pc/2025-04-retro-gemp-match-play-championship-premiere-to-dsii-may-to-july-2025.html",
   "last": "2026-10-21T03:12:52Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:10:26Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-05-9th-annual-gempc-may-to-july-2025.html": {
   "capture": "https://web.archive.org/web/20261020233558/https://swccg.com/snapshots/pc/2025-05-9th-annual-gempc-may-to-july-2025.html",
   "last": "2026-10-21T03:12:52Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:10:35Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-06-online-retro-event-for-charity-premiere-to-virtual-set-3.html": {
   "capture": "https://web.archive.org/web/20261020232311/https://swccg.com/snapshots/pc/2025-06-online-retro-event-for-charity-premiere-to-virtual-set-3.html",
   "last": "2026-10-21T03:12:52Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:10:43Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-08-european-championship-bochum-germany-sept-20-21-2025.html": {
   "capture": "https://web.archive.org/web/20261014140950/https://swccg.com/snapshots/pc/2025-08-european-championship-bochum-germany-sept-20-21-2025.html",
@@ -45454,7 +45535,12 @@
   "capture": "https://web.archive.org/web/20261020233611/https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026.html",
   "last": "2026-10-21T03:12:52Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:10:56Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-10-european-championship-bochum-germany-sept-19-20-2026.html": {
   "capture": "https://web.archive.org/web/20261020232414/https://swccg.com/snapshots/pc/2026-10-european-championship-bochum-germany-sept-19-20-2026.html",
@@ -47566,10 +47652,10 @@
   "status": "ok",
   "tries": 4,
   "verify": {
-   "at": "2026-10-21T02:29:22Z",
+   "at": "2026-10-21T14:12:14Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-121.html": {
   "capture": "https://web.archive.org/web/20261020224043/https://swccg.com/snapshots/scomp/card-121.html",
@@ -47675,10 +47761,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-21T13:37:05Z",
+   "at": "2026-10-21T14:09:48Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/scomp/card-2123.html": {
   "capture": "https://web.archive.org/web/20261020222913/https://swccg.com/snapshots/scomp/card-2123.html",
@@ -48279,15 +48365,29 @@
   "capture": "https://web.archive.org/web/20261008181932/https://www.facebook.com/photo/?fbid=10230980424991600&set=a.10230980334389335",
   "last": "2026-10-21T02:41:31Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:55Z",
+   "capture_id": "https://web.archive.org/web/20261008181932id_/https://www.facebook.com/photo/?fbid=10230980424991600&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10230980430951749&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008181313/https://www.facebook.com/photo/?fbid=10230980430951749&set=a.10230980334389335",
   "last": "2026-10-21T02:41:44Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:49Z",
+   "capture_id": "https://web.archive.org/web/20261008181313id_/https://www.facebook.com/photo/?fbid=10230980430951749&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10230980938044426&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008181517/https://www.facebook.com/photo/?fbid=10230980938044426&set=a.10230980334389335",
@@ -48307,15 +48407,29 @@
   "capture": "https://web.archive.org/web/20261008181725/https://www.facebook.com/photo/?fbid=10231012025261587&set=a.10230980334389335",
   "last": "2026-10-21T02:42:06Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:43Z",
+   "capture_id": "https://web.archive.org/web/20261008181725id_/https://www.facebook.com/photo/?fbid=10231012025261587&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10231012572875277&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008181149/https://www.facebook.com/photo/?fbid=10231012572875277&set=a.10230980334389335",
   "last": "2026-10-21T02:42:18Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:37Z",
+   "capture_id": "https://web.archive.org/web/20261008181149id_/https://www.facebook.com/photo/?fbid=10231012572875277&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10239148005456007&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008181056/https://www.facebook.com/photo/?fbid=10239148005456007&set=a.10230980334389335",
@@ -48335,15 +48449,29 @@
   "capture": "https://web.archive.org/web/20261008182400/https://www.facebook.com/photo/?fbid=10241711409299501&set=a.10230980334389335",
   "last": "2026-10-21T02:42:40Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:31Z",
+   "capture_id": "https://web.archive.org/web/20261008182400id_/https://www.facebook.com/photo/?fbid=10241711409299501&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10241711410099521&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008181025/https://www.facebook.com/photo/?fbid=10241711410099521&set=a.10230980334389335",
   "last": "2026-10-21T02:42:51Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:25Z",
+   "capture_id": "https://web.archive.org/web/20261008181025id_/https://www.facebook.com/photo/?fbid=10241711410099521&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.fanthatracks.com/interviews/guest-interview-mark-tuttle/": {
   "capture": "https://web.archive.org/web/20261008195155/https://www.fanthatracks.com/interviews/guest-interview-mark-tuttle/",
@@ -48356,15 +48484,27 @@
   "capture": "https://web.archive.org/web/20261008210620/https://www.geocities.ws/plarathas/",
   "last": "2026-10-21T02:43:03Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:18Z",
+   "capture_id": "https://web.archive.org/web/20261008210620id_/https://www.geocities.ws/plarathas/",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://www.geocities.ws/plarathas/playerdbase.html": {
   "capture": "https://web.archive.org/web/20261009060550/https://www.geocities.ws/plarathas/playerdbase.html",
   "last": "2026-10-21T02:43:14Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:12Z",
+   "capture_id": "https://web.archive.org/web/20261009060550id_/https://www.geocities.ws/plarathas/playerdbase.html",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://www.heartofthecards.com/layout/MLP_CCG_Rulebook_compressed_HotC.pdf": {
   "capture": "https://web.archive.org/web/20261016020614/https://www.heartofthecards.com/layout/MLP_CCG_Rulebook_compressed_HotC.pdf",
@@ -48422,8 +48562,14 @@
   "capture": "https://web.archive.org/web/20261021031502/https://www.kendallcast.ninja/2020/12/blog-post.html",
   "job_id": "spn2-cc3625ee765bb91e19c4bf6cd7b2fb4792c68a55",
   "last": "2026-10-21T03:16:42Z",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-21T14:09:53Z",
+   "capture_id": "https://web.archive.org/web/20261021031502id_/https://www.kendallcast.ninja/2020/12/blog-post.html",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html": {
   "capture": "https://web.archive.org/web/20261021123645/https://www.kendallcast.ninja/2020/12/the-james-paul-booker-interview.html",
@@ -48500,8 +48646,14 @@
   "capture": "https://web.archive.org/web/20261015164101/https://www.kendallcast.ninja/2022/03/corran-on-horn-3-doug-taylor.html",
   "last": "2026-10-21T02:45:14Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-21T14:11:07Z",
+   "capture_id": "https://web.archive.org/web/20261015164101id_/https://www.kendallcast.ninja/2022/03/corran-on-horn-3-doug-taylor.html",
+   "method": "text",
+   "text_match": 0.995
+  }
  },
  "https://www.kendallcast.ninja/2022/05/corran-on-horn-4-hayes-hunter.html": {
   "capture": "",
@@ -49225,10 +49377,10 @@
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQ_9BL8VcsfvHD371AW5aWM": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 299 hours, 19 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-21T13:26:02Z",
+  "error": "no job_id: The same snapshot had been made 300 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
+  "last": "2026-10-21T14:08:06Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YQyN9rdxO76-KtAPoVIbhCA": {
   "capture": "",
@@ -49239,10 +49391,10 @@
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YR-JV379jsT7S5GYTvy_hkk": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 302 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-21T13:26:17Z",
+  "error": "no job_id: The same snapshot had been made 302 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T14:08:19Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRDizhlUKOtAE2RXQamMzwr": {
   "capture": "",
@@ -49534,10 +49686,10 @@
  },
  "https://www.youtube.com/watch?v=10NJHt-PIes": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T03:23:27Z",
+  "error": "no job_id: The same snapshot had been made 289 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-21T14:08:36Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=17136JxJF6g": {
   "capture": "https://web.archive.org/web/20261015180702/https://www.youtube.com/watch?v=17136JxJF6g",
