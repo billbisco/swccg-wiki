@@ -426,12 +426,13 @@ class TalkPageComments(unittest.TestCase):
         flat = page.replace("snapshots/forum/t85240.html", "snapshots/forum-t85240.html")
         self.assertEqual(L.archive_flags(flat, talk=True), [])
 
-    def test_same_link_on_article_still_fails(self):
-        page = "He was TD of Event #4 (" + self.FORUM + ").\n\n" + "* Preserved copy: " + self.SNAP + "\n"
+    def test_article_ref_still_needs_its_own_copy(self):
+        # Chief 2026-10-20 (later): articles accept the snapshot capture anywhere for body/list links
+        # (ArticleSnapshotRoute), but a <ref> still needs its Preserved copy inside the same ref.
+        page = "He was TD of Event #4.<ref>" + self.FORUM + "</ref>\n\n* Preserved copy: " + self.SNAP + "\n"
         flags = [f for f in L.lint(page, "Geoff Bowman")[0] if f.startswith("ARCHIVE")]
         self.assertEqual(len(flags), 1)
-        self.assertIn("viewtopic.php?t=85240", flags[0])
-        self.assertEqual(len(L.archive_flags(page)), 1)
+        self.assertIn("<ref> cites https://forum.starwarsccg.org/viewtopic.php?t=85240", flags[0])
 
     def test_other_thread_snapshot_does_not_count(self):
         page = "== TD ==\nSee " + self.FORUM + ".\n* " + self.SNAP.replace("t85240", "t85241") + "\n"
@@ -442,8 +443,10 @@ class TalkPageComments(unittest.TestCase):
                             ("Talk_Geoff_Bowman.r116647.wiki", "Talk:Geoff Bowman")):
             text = fx(name)
             self.assertEqual(L.lint(text, title)[0], [], name)
-            # as an article, the restored comments' wording and the bare forum links would still fail
-            self.assertTrue(L.lint(text, "Some article")[0], name)
+        # as an article, the restored comment's wording would still fail (the Geoff Bowman forum links now
+        # pass on articles too, via their snapshot captures: ArticleSnapshotRoute)
+        self.assertEqual(kinds(L.lint(fx("Talk_2026_San_Diego_Super_Open.r116646.wiki"), "Some article")[0]), ["BANNED"])
+        self.assertEqual(L.lint(fx("Talk_Geoff_Bowman.r116647.wiki"), "Some article")[0], [])
 
 
 class TalkPagePcSnapshots(unittest.TestCase):
@@ -471,7 +474,50 @@ class TalkPagePcSnapshots(unittest.TestCase):
         res = self.page(self.SNAP).replace("www.starwarsccg.org/", "res.starwarsccg.org/")   # other host
         self.assertEqual(len(L.archive_flags(res, talk=True)), 1)
 
-    def test_article_pages_unchanged(self):
-        text = self.page(self.SNAP).replace("== Sources ==\n", "")
+    def test_article_without_any_copy_still_fails(self):
+        text = "The event page is " + self.PC + ".\n"
         self.assertEqual(len(L.archive_flags(text)), 1)
         self.assertEqual(len([f for f in L.lint(text, "Timo Dusel")[0] if f.startswith("ARCHIVE")]), 1)
+
+
+class ArticleSnapshotRoute(unittest.TestCase):
+    """Chief, 2026-10-20: on articles too, a Wayback capture of the swccg.com forum/pc snapshot satisfies
+    ARCHIVE for the forum thread / PC post it preserves, wherever the link sits (body, See also,
+    External links); refs keep the same-ref rule, where any Preserved copy inside the ref counts."""
+    FORUM = "https://forum.starwarsccg.org/viewtopic.php?t=86618"
+    FSNAP = "https://web.archive.org/web/20261021001248/https://swccg.com/snapshots/forum/t86618.html"
+    PC = "https://www.starwarsccg.org/2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026/"
+    PSNAP = ("https://web.archive.org/web/20261021000913/https://swccg.com/snapshots/pc/"
+             "2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026.html")
+
+    def arch(self, text, title="2026 San Diego Super Open"):
+        return [f for f in L.lint(text, title)[0] if f.startswith("ARCHIVE")]
+
+    def test_forum_match_in_body_and_see_also(self):
+        page = ("Decks are in the [" + self.FORUM + " decklist thread].<ref>[" + self.FORUM + " t86618]. Preserved copy: ["
+                + self.FSNAP + " Internet Archive]</ref>\n\n== See also ==\n* [" + self.FORUM + " GEMP decks]\n\n"
+                "== References ==\n<references />\n")
+        self.assertEqual(self.arch(page), [])
+        flat = page.replace("snapshots/forum/t86618.html", "snapshots/forum-t86618.html")
+        self.assertEqual(self.arch(flat), [])
+
+    def test_pc_match_in_external_links(self):
+        page = ("Results.<ref>[" + self.PC + " PC results]. Preserved copy: [" + self.PSNAP + " Internet Archive]</ref>\n\n"
+                "== External links ==\n* [" + self.PC + " PC results page]\n")
+        self.assertEqual(self.arch(page), [])
+
+    def test_forum_non_match(self):
+        other = self.FSNAP.replace("t86618", "t86617")
+        page = "Decks: [" + self.FORUM + " thread].\n\n* Copy: [" + other + " Internet Archive]\n"
+        flags = self.arch(page)
+        self.assertEqual(len(flags), 1)
+        self.assertIn("t=86618", flags[0])
+        post = "Decks: [https://forum.starwarsccg.org/viewtopic.php?p=86618 post].\n\n* Copy: [" + self.FSNAP + " IA]\n"
+        self.assertEqual(len(self.arch(post)), 1)   # p= is a post id, not the thread
+
+    def test_pc_non_match(self):
+        other = self.PSNAP.replace("2026-04-san-diego", "2025-01-las-vegas")
+        page = "See [" + self.PC + " results].\n\n* Copy: [" + other + " Internet Archive]\n"
+        self.assertEqual(len(self.arch(page)), 1)
+        res = "See [https://res.starwarsccg.org/2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026/ x].\n* [" + self.PSNAP + " IA]\n"
+        self.assertEqual(len(self.arch(res)), 1)   # only www.starwarsccg.org posts map to pc/ snapshots

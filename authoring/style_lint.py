@@ -10,7 +10,10 @@ Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
   ARCHIVE  every external URL cited on the page (<ref>, list items, body, External links) needs a
            Preserved copy: a web.archive.org/web/<14 digits>/<url> or archive.org/details link.
            A URL inside a <ref> needs the copy inside that same <ref>; a URL anywhere else passes
-           if its own line has a copy or the same URL has a Wayback copy anywhere on the page.
+           if its own line has a copy or the same URL has a Wayback copy anywhere on the page. A Wayback
+           capture of swccg.com/snapshots/forum/tNNNNN.html (or forum-tNNNNN.html) counts as a copy of
+           forum.starwarsccg.org viewtopic.php?t=NNNNN, and one of swccg.com/snapshots/pc/<slug>.html as a
+           copy of the www.starwarsccg.org URL ending in /<slug>/ (Chief, 2026-10-20).
            Skipped: wiki.swccg.com, swccg.com/images and the archive links themselves.
            Exempt: the Main Page (its body links are navigation to live resources, not
            citations; Chief, 2026-10-20). Its URLs are still queued for Wayback.
@@ -187,9 +190,9 @@ def archive_keys(url):
     return keys
 
 def archive_flags(text, talk=False):
-    archived = {norm_url(m.group(1)) for m in WAYBACK_RX.finditer(text)}
-    if talk:
-        archived = set().union(*(archive_keys(m.group(1)) for m in WAYBACK_RX.finditer(text)))
+    # A capture of the swccg.com snapshot counts like a direct capture of the forum thread / PC post it
+    # preserves, on articles and Talk pages alike (Chief, 2026-10-20).
+    archived = set().union(*(archive_keys(m.group(1)) for m in WAYBACK_RX.finditer(text)))
     out, seen = [], set()
     for kind, unit in cited_units(text):
         unit_has_copy = bool(ARCHIVE_LINK_RX.search(unit))
@@ -203,7 +206,7 @@ def archive_flags(text, talk=False):
                 if unit_has_copy: continue
                 msg = f"ARCHIVE  <ref> cites {url} with no Preserved copy (Wayback/archive.org) in the same <ref>"
             else:
-                if unit_has_copy or norm_url(url) in archived: continue
+                if unit_has_copy or archive_keys(url) & archived: continue
                 msg = f"ARCHIVE  {url} has no Preserved copy (Wayback/archive.org) on the page"
             seen.add(url); out.append(msg)
     return out
