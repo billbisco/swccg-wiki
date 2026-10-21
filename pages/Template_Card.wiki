@@ -7,6 +7,8 @@ Optional '''anagram''' — one sentence that the printed title is an anagram of 
 
 Optional '''easter_egg''' — the hidden joke or extra image on this printing, cited. Renders as '''Easter egg''' immediately before See Also. Omit when none. Link [[Easter eggs]] from See also. Worked: [[Death Star: Trench]].
 
+'''sources''' — the card-data sources this page transcribes (card list, slip, PDF), one bullet each with its Preserved copy. Renders under a '''Sources''' heading only when filled. Do not repeat a source that is already a <code><nowiki><ref></nowiki></code> for a specific claim unless it is the source for the whole card. '''has_refs''' — set when the page has <code><nowiki><ref></nowiki></code> notes; renders '''References'''. '''see_also''' renders '''See Also''' only when filled.
+
 Optional '''image2''' — second portrait under '''image''' (same 280px width). Used for Objective 0/7 faces; omit on single-face cards.
 
 Optional '''image2_layout''' — how to place '''image2''' when set:
@@ -163,11 +165,11 @@ Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px =
 <h2>Easter egg</h2>
 {{{easter_egg}}}}}
 
-== See Also ==
-{{{see_also|}}}
-
-== Sources ==
-{{{sources}}}{{#if:{{{has_refs|}}}|<nowiki />
+{{#if:{{{see_also|}}}|<nowiki />
+<h2>See Also</h2>
+{{{see_also}}}}}{{#if:{{{sources|}}}|<nowiki />
+<h2>Sources</h2>
+{{{sources}}}}}{{#if:{{{has_refs|}}}|<nowiki />
 <h2>References</h2>
 <references />}}
 </div>
