@@ -1,0 +1,18 @@
+== Card table fill (October 2026) ==
+
+'''Build notes.''' The Destiny and Game text cells of the card tables were filled from each linked card page's <nowiki>{{Card}}</nowiki> fields (<code>destiny=</code>, <code>game_text=</code>), following redirects. Objective rows take the 0-side or 7-side text that matches the row. Only blank cells were filled. Script: <code>vset-fill/fill.py</code> (Datacard Grok); rerun it after card pages change.
+
+'''Missing data.''' These rows stay blank:
+* [[Crossfire (V) (Dark)]] (destiny, game_text)
+
+'''Marginal cuts.''' Style-guide fixes to the existing text (old, then new):
+* <nowiki>== Sources ==</nowiki> → <nowiki>== External links ==</nowiki>
+* <nowiki>On 16 September 2009 the Players Committee announced completion of Virtual Set 6: Reflections IV together with a realignment of the existing virtual sets (Virtual Sets 1–18) into thematic Virtual Blocks (contemporaneous secondary sources also summarize this as August 2009).<ref</nowiki> → <nowiki>On 16 September 2009 the Players Committee announced completion of Virtual Set 6: Reflections IV. The same announcement realigned the existing virtual sets (Virtual Sets 1–18) into thematic Virtual Blocks.<ref</nowiki>
+* <nowiki>&mdash; secondary encyclopedia note that existing sets were reorganized (often summarized as August 2009; primary PC announce is 16 Sep 2009)</nowiki> → <nowiki>&mdash; summary of the 2009 reorganization of the existing sets</nowiki>
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 14:42, 20 October 2026 (UTC)
+* 20 October 2026: the Crossfire (V) row are now filled. Their card pages got destiny, game text and the other missing fields from swccg-card-json ([https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/LightLegacy.json LightLegacy.json] / [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/DarkLegacy.json DarkLegacy.json], commit d4e661e). [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 15:11, 20 October 2026 (UTC)
+
+== Set infobox, printed slips, table standard (2026-10-22) ==
+Converted to [[Template:Set infobox]] (portrait [[File:Set-VB3-logo.jpg]], symbol [[File:VB3-set-symbol.png]] from a 32x zoom of VirtualBlock3.pdf, code VB3 · GEMP set 601). Tables match [[Virtual Block 1]]: <code># | Slip | Image | Card | Type | Game text</code>. Slip crops are 300 DPI from [https://res.starwarsccg.org/legacyblocks/VirtualBlock3.pdf VirtualBlock3.pdf] (official text 7 December 2009; opened Preserved copy [https://web.archive.org/web/20261020174313/https://res.starwarsccg.org/legacyblocks/VirtualBlock3.pdf 20261020174313], sha256 d2171f17e0e6714e48d160d447f45f1231059fa350ba0249c86b85647f9b0391). Overlay slips keep the original-card title on the black bar. Captain Verrack (V) 67 and Medium Transport (V) 114 print on the sheet with no Holotable GIF, so those rows stay off the card list. Sheet 16 is Nizuk Bek (V); the wiki title is [[Nizuc Bek (V)]]. [[Taking Them With Us (V)]] was recropped from the sheet grid.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 20:11, 22 October 2026 (UTC)
