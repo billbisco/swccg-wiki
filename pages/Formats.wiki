@@ -1,43 +1,68 @@
 '''Formats''' are the organized-play card pools and event types used for ''Star Wars'' CCG tournaments and casual games. Decipher-era play used printed cards under Decipher rules. After Decipher ended the game, the [[Players Committee]] added virtual cards and labeled constructed environments (notably '''Standard''' after the 2014 Virtual Card Reset, and '''Legacy''' for the pre-reset virtual pool).
 
-Full format definitions, banned lists and event procedures are on [https://www.starwarsccg.org/ starwarsccg.org] and in the PDFs linked below.<ref name="pc-tr">[https://www.starwarsccg.org/resources/tournament-resources/ Tournament resources], starwarsccg.org</ref><ref name="pc-rules">[https://www.starwarsccg.org/rules/ Rules], starwarsccg.org</ref>
+Full format definitions, banned lists and event procedures are on [https://www.starwarsccg.org/ starwarsccg.org]<ref name="pc-home">[https://www.starwarsccg.org/ Star Wars Players Committee], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261020234753/https://swccg.com/snapshots/pc/home.html Internet Archive].</ref> and in the PDFs linked below.<ref name="pc-tr">[https://www.starwarsccg.org/resources/tournament-resources/ Tournament resources], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021115728/https://swccg.com/snapshots/pc/tournament-resources.html Internet Archive].</ref><ref name="pc-rules">[https://www.starwarsccg.org/rules/ Rules], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021120438/https://swccg.com/snapshots/pc/rules.html Internet Archive].</ref>
+
+Every format on the [[GEMP]] format list has its own page on this wiki. The sections below group them by family, with one line on each. The [[#GEMP environments|GEMP environments]] table at the end gives every GEMP name and code.<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
 
 == Constructed (Players Committee) ==
 
-Constructed events use pre-built decks. The Players Committee ''Alternate Format Tournament Guide'' (revised September 2015) describes two primary constructed pools:<ref name="afg">[https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Star Wars CCG Alternate Format Tournament Guide] (revised 09/2015), Players Committee</ref>
+Constructed events use pre-built decks. The Players Committee ''Alternate Format Tournament Guide'' (revised September 2015) describes two primary constructed pools:<ref name="afg">[https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Star Wars CCG Alternate Format Tournament Guide] (revised 09/2015), Players Committee. Preserved copy: [https://web.archive.org/web/20261008195355/https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Internet Archive].</ref>
 
 * '''Standard''' - Decipher cards plus the post-2014 "reset" / current Virtual Set cards (slanted-ring virtual set icon). Described there as the usual championship-circuit constructed environment, including Worlds.<ref name="afg" />
 * '''[[Legacy Open|Legacy]]''' - Decipher cards plus Legacy Virtual Cards from before the Fall 2014 reset (black-diamond virtual block icon). The [[2014 World Championship]] was the last championship circuit to use that pool.<ref name="afg" />
 
-Some later PC articles and events also say '''Open''' for constructed decks that include Virtual Cards and Shields.<ref name="wend-open">[https://www.starwarsccg.org/wends-world-thematic-deck-match-ups-series-1/ Wend's World - Thematic Deck Match-ups Series (#1)], starwarsccg.org</ref>
+Some later PC articles and events also say '''Open''' for constructed decks that include Virtual Cards and Shields.<ref name="wend-open">[https://www.starwarsccg.org/wends-world-thematic-deck-match-ups-series-1/ Wend's World - Thematic Deck Match-ups Series (#1)], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021115933/https://swccg.com/snapshots/pc/wends-world-thematic-deck-match-ups-series-1.html Internet Archive].</ref>
 
 Deck size and "outside the deck" cards (for example Defensive Shields under a Starting Effect) follow the tournament document in force for the event. See the Tournament Guide and [[Players Committee Advanced Rulebook]].
 
 Virtual set hubs on this wiki: [[:Category:Current Virtual sets|Current Virtual sets]] (Standard-era) and [[:Category:Virtual Legacy sets|Virtual Legacy sets]] (pre-reset).
 
-== Limited / sealed and draft ==
+== Open family ==
+The full current virtual pool and its GEMP variants.<ref name="gemp" />
+* [[Open]] &mdash; current virtual constructed environment (Decipher cards plus current Virtual Sets and Shields). Used for the [[2026 Tenth Annual GEMPC]].
+* [[Open (40 cards)]] &mdash; the Open pool with 40-card decks.
+* [[Open (45 cards)]] &mdash; the Open pool with 45-card decks.
+* [[Open (100 cards)]] &mdash; the Open pool with 100-card decks and a 90-minute default timer; the Players Committee's 100 Card Deck Format.
+* [[Open (no shields)]] &mdash; the Open pool without Defensive Shields.
+* [[Open (no shields / no v-cards)]] &mdash; Decipher cards only, without Defensive Shields.
+* [[Open (no Episode VII)]] &mdash; the Open pool without Episode VII icon cards.
 
-Sealed and booster-draft events use unopened product (or a fixed cube pool) instead of a full constructed library. The guide lists product-specific sealed and draft variants: Premiere Sealed, Official Tournament Sealed Deck sealed/draft, Enhanced Premiere Pack Overdrive, Death Star II sealed/draft, Reflections booster draft and Secret Squirrel. It also defines '''Watto's Cube''', a fixed ~450-card draft pool.<ref name="afg" /> The Players Committee maintains the official cube list.<ref name="pc-cube">[https://www.starwarsccg.org/cube/ Watto's Chance Cube], starwarsccg.org</ref>
+== Classic family ==
+Classic formats ban cards with the Episode I or Maintenance icon.<ref name="gemp" /><ref name="afg" />
+* [[Classic]] &mdash; Decipher and current virtual cards, without Defensive Shield, Episode I or Maintenance icon cards.
+* [[Classic (no v-cards)]] &mdash; Classic with Decipher cards only. Forum threads call it "Classic No-V".
+* [[Classic (no v-cards) (Modified)]] &mdash; Classic (no v-cards) with 14 Defensive Shields allowed. Used in the [[Retro League]].
+* [[Episode I Closed Environment]] &mdash; the opposite closed environment: only cards with the Episode I icon.<ref name="afg" />
 
+Closed-environment and themed constructed variants, such as Classic, [[Episode I Closed Environment]], Battle of Endor Environment, team events and The Bith Shuffle, are defined in the Alternate Format Tournament Guide.<ref name="afg" />
+
+== Legacy Virtual constructed (2009–2014) ==
+After the 2009 Block reorganization, championship constructed used the pre-reset Virtual Block pool. The full pool is [[Legacy Open]]; the [[2014 World Championship]] was the last circuit event in that pool.
+* [[Legacy Open]] (<code>legacy</code>) &mdash; Decipher cards plus pre-reset Virtual Block cards. Used for the [[2014 World Championship]].
 
 == Decipher-era constructed pools ==
 
 Decipher Worlds used the printed sets legal at the time, from [[Premiere]] through the newest expansion. [[Decipher deck designs]] used the same rule for the publication month:
 
-* [[Premiere]] — May–June 1996 Deck Designs
+* [[Premiere (format)|Premiere]] — May–June 1996 Deck Designs
 * [[Premiere - A New Hope]] — [[1996 Decipher World Championship]]; July–November 1996 Deck Designs
 * [[Premiere - Hoth]] — early 1997 Deck Designs (through April)
 * [[Premiere - Dagobah]] — mid 1997 Deck Designs; [[1997 Kiffex Regionals]]; [[1997 Sullust Regionals]]
 * [[Premiere - Cloud City]] — [[1997 Decipher World Championship]]
+** [[Premiere - Cloud City (Modified)]] — the same pool with a ban list, used in the [[Retro League]]
 * [[Premiere - Jabba's Palace]] — 1998 Deck Designs (through October)
 * [[Premiere - Special Edition]] — [[1998 Decipher World Championship]]
 * [[Premiere - Endor]] — [[1999 Decipher World Championship]]
 * [[Premiere - Death Star II]] — [[2000 Decipher World Championship]]; also [[2021 Retro Event (Premiere to Death Star II)]] and later GEMP Retro / Premiere-to-DSII events
+** Also used for the [[2026 Retro GEMP Match Play Championship (Premiere to DSII)]]
+* [[Premiere - Jabba's Palace Sealed Deck]] — Premiere through the [[Jabba's Palace Sealed Deck]] product (GEMP name '''Premiere - JPSD''')
 * [[Premiere - Tatooine]] — [[2001 Brugge Belgian Open]]
 * [[Premiere - Coruscant]] — printed Decipher through [[Coruscant (expansion)|Coruscant]]
 * [[Premiere - Reflections II]] — [[2021 Worlds Throwback Event]] (Premiere through Reflections II)
+** [[Premiere - Reflections II (Modified)]] — the same pool with a ban list
 * [[Premiere - Reflections III]] — [[2001 Decipher World Championship]]
 * [[Premiere - Theed Palace]] — [[2022 Decipher Cards Only Retro Event]] (GEMP environment name '''Decipher Cards Only''')
+** [[Decipher Cards Only (Modified)]] — the same pool with a ban list
 * [[Episode I Closed Environment]] — Decipher's Episode I-icon-only constructed format (2001–2002; also called Type II); [[DecipherCon 2002]] Episode I ONLY event
 
 Later Players Committee events also use [[Open]], [[Legacy Open]], [[Jawa Format]], [[Premiere - Theed Palace]] (Decipher Cards Only), [[Premiere - Original VS1]] (March 2002), [[Premiere - Original VS2]] (June 2002), [[Premiere - Original VS3]] (2002), [[Premiere - Original VS13]] (2007), [[Premiere - Original VS16]] (2008), and (for the 2025 charity event) [[Premiere to Virtual Set 3]].
@@ -52,35 +77,168 @@ From March 2002 until the September 2009 Block reorganization, championship cons
 * [[Premiere - Original VS13]] (redirect [[POVS13]]) — printed Decipher through [[Theed Palace]] plus original Virtual Sets 1–13, including [[Virtual Set: Defensive Shields|Defensive Shields]]. Used for the [[2007 World Championship]].
 * [[Premiere - Original VS16]] (redirect [[POVS16]]) — printed Decipher through [[Theed Palace]] plus original Virtual Sets 1–16, including [[Virtual Set: Defensive Shields|Defensive Shields]]. Used for the [[2008 World Championship]].
 
-This pool is not [[Premiere to Virtual Set 3]] (2025 current-virtual retro) and not the GEMP environment named '''Premiere - Virtual Set 3'''.
+This pool is not [[Premiere to Virtual Set 3]] (2025 current-virtual retro) and not the GEMP environment named '''[[Premiere - Virtual Set 3]]'''.
 
-== Legacy Virtual constructed (2009–2014) ==
-
-After the 2009 Block reorganization, championship constructed used the pre-reset Virtual Block pool. The full pool is [[Legacy Open]]; the [[2014 World Championship]] was the last circuit event in that pool.
-
-== GEMP environments ==
-
-[https://play.swccg.com/ play.swccg.com] (this wiki's GEMP table) and the Players Committee GEMP table expose named constructed '''environments''' that limit the legal set pool. Names below are taken from the GEMP format list (<code>swccgFormats.json</code>) and from published PC event pages. Historical original-virtual cutoffs use the Premiere - Original VS{N} titles above.
-
-* [[Premiere - Hoth]] (<code>premiere_hoth</code>) &mdash; Decipher sets from [[Premiere]] through [[Hoth Limited|Hoth]]. Used for early 1997 Deck Designs.
-* [[Premiere - Dagobah]] (<code>premiere_dagobah</code>) &mdash; Decipher sets from [[Premiere]] through [[Dagobah Limited|Dagobah]]. Used for the [[1997 Kiffex Regionals]] and [[1997 Sullust Regionals]].
-* [[Premiere - Jabba's Palace]] (<code>premiere_jp</code>) &mdash; Decipher sets from [[Premiere]] through [[Jabba's Palace]]. Used for 1998 Deck Designs.
-* [[Premiere - Tatooine]] (<code>premiere_tatooine</code>) &mdash; Decipher sets from [[Premiere]] through [[Tatooine (expansion)|Tatooine]]. Used for the [[2001 Brugge Belgian Open]].
-* [[Premiere - Death Star II]] (<code>premiere_ds2</code>) &mdash; Decipher sets from [[Premiere]] through [[Death Star II (expansion)|Death Star II]] (GEMP set ids 1&ndash;9 and matching premium/reflections ids as configured on the table). Used for the [[2021 Retro Event (Premiere to Death Star II)]] and the [[2026 Retro GEMP Match Play Championship (Premiere to DSII)]].
-* [[Premiere - Reflections II]] &mdash; printed Decipher sets from [[Premiere]] through [[Reflections II]]. Used for the [[2021 Worlds Throwback Event]].
-* [[Open]] &mdash; current virtual constructed environment (Decipher cards plus current Virtual Sets and Shields). Used for the [[2026 Tenth Annual GEMPC]].
-* [[Legacy Open]] (<code>legacy</code>) &mdash; Decipher cards plus pre-reset Virtual Block cards. Used for the [[2014 World Championship]].
-* [[Premiere - Theed Palace]] (<code>open_no_virtual</code>, GEMP name '''Decipher Cards Only''') &mdash; Decipher sets from [[Premiere]] through [[Theed Palace]]. Used for the [[2022 Decipher Cards Only Retro Event]].
-* Premiere - Virtual Set 3 (<code>premiere_set3</code>) &mdash; Decipher cards plus '''current''' Virtual Sets through Virtual Set 3. Distinct from [[Premiere - Original VS3]] (2002 original slips) and from [[Premiere to Virtual Set 3]] (the 2025 charity event that uses this current-virtual pool).
-* [[Anything Goes]] — intended default Casual and AI environment on this instance (constructed collection, all sets, 40–60 cards). Further work is listed on [[GEMP planned features]].
-
-Other GEMP environment names exist on the table.
+=== Current-virtual retro pools ===
+* [[Premiere - Virtual Set 3]] (<code>premiere_set3</code>) &mdash; Decipher cards plus '''current''' Virtual Sets through Virtual Set 3. Distinct from [[Premiere - Original VS3]] (2002 original slips) and from [[Premiere to Virtual Set 3]] (the 2025 charity event that uses this current-virtual pool).
+* [[Premiere to Virtual Set 3]] &mdash; the pool of the [[2025 Online Retro Event for Charity]].
 
 == Other labeled formats ==
 
-The Players Committee maintains additional constructed and casual formats under the '''SWCCG Formats''' menu on [https://www.starwarsccg.org/ starwarsccg.org]. Dedicated wiki pages include [[Jawa Format]] ([https://www.starwarsccg.org/jawa/ PC page]) and [[Scavenger Format]] ([https://www.starwarsccg.org/scavenger/ PC page]). [https://www.starwarsccg.org/utinni/ Utinni!] and [https://www.starwarsccg.org/cube/ Watto's Chance Cube] have PC pages. Full definitions, banned lists and version notes are on those PC pages. Other menu entries include 100 Card Deck Format and Limited Resources.
+The Players Committee maintains additional constructed and casual formats under the '''SWCCG Formats''' menu on [https://www.starwarsccg.org/ starwarsccg.org].<ref name="pc-home" /> Full definitions, banned lists and version notes are on the PC pages cited on each format page.
+* [[Jawa Format]] &mdash; a format that removes the top of the power curve with a ban list.<ref name="pc-jawa">[https://www.starwarsccg.org/jawa/ Jawa Format], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021120146/https://swccg.com/snapshots/pc/jawa.html Internet Archive].</ref>
+* [[Scavenger Format]] &mdash; Decipher cards of common rarities only.<ref name="pc-scav">[https://www.starwarsccg.org/scavenger/ Scavenger Format], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021120256/https://swccg.com/snapshots/pc/scavenger.html Internet Archive].</ref>
+* [[Ewok Format]] &mdash; ''Premiere - Death Star II (Ewok)'', the Premiere&ndash;Death Star II pool with a long ban list, created for the 2026 Retro Ewok Championship.
+* [[Utinni! (Jawas Only)]] &mdash; characters are restricted to Jawas.<ref name="pc-utinni">[https://www.starwarsccg.org/utinni/ Utinni!], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021115114/https://swccg.com/snapshots/pc/utinni.html Internet Archive].</ref>
+* [[Limited Resources Format]] &mdash; Decipher cards with the most abusive removed and some virtual cards added.
+* [[Open (100 cards)]] &mdash; the 100 Card Deck Format.
 
-Closed-environment and themed constructed variants, such as Classic, [[Episode I Closed Environment]], Battle of Endor Environment, team events and The Bith Shuffle, are defined in the Alternate Format Tournament Guide.<ref name="afg" />
+== Limited / sealed and draft ==
+
+Sealed and booster-draft events use unopened product (or a fixed cube pool) instead of a full constructed library. The guide lists product-specific sealed and draft variants: Premiere Sealed, Official Tournament Sealed Deck sealed/draft, Enhanced Premiere Pack Overdrive, Death Star II sealed/draft, Reflections booster draft and Secret Squirrel. It also defines '''Watto's Cube''', a fixed ~450-card draft pool.<ref name="afg" /> The Players Committee maintains the official cube list.<ref name="pc-cube">[https://www.starwarsccg.org/cube/ Watto's Chance Cube], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021115326/https://swccg.com/snapshots/pc/cube.html Internet Archive].</ref>
+
+GEMP limited formats all use 40-card decks.<ref name="gemp" />
+* Cube and draft:
+** [[Cube]]
+** [[Watto's Cube with objective packs Cube]]
+** [[Watto's Cube with fixed pack Cube]]
+** [[Premiere - Death Star II Draft]]
+** [[Premiere - Virtual Set 13 Draft]]
+** [[Premiere - Virtual Set 25 Draft]]
+** [[Cube v7 + Objectives Draft]]
+* Sealed:
+** [[Sealed]]
+** [[Jabba's Palace Sealed]]
+** [[Premiere - A New Hope Sealed]]
+** [[Endor - Death Star II Sealed]]
+** [[Reflections Sealed]]
+** [[Episode I Sealed]]
+** [[All Of The Jedi Sealed]]
+** [[Novelty - Space Sealed]]
+* GEMP products: [[GEMP sealed league products]] lists what each GEMP sealed league issues. [[GEMP draft and cube products]] lists the GEMP draft pools and how picks work.
+
+== Casual and testing (GEMP) ==
+* [[Anything Goes]] — intended default Casual and AI environment on this instance (constructed collection, all sets, 40–60 cards). Further work is listed on [[GEMP planned features]].
+* [[Playtesting]] &mdash; the Open pool plus the Playtesting set.
+* [[Dream Cards]] &mdash; the Open pool plus the Dream Cards set.
+
+== GEMP environments ==
+
+[https://play.swccg.com/ play.swccg.com]<ref name="play">[https://play.swccg.com/ play.swccg.com], GEMP. Preserved copy: [https://web.archive.org/web/20261009095947/https://play.swccg.com/ Internet Archive].</ref> (this wiki's GEMP table) and the Players Committee GEMP table expose named constructed '''environments''' that limit the legal set pool. Names below are taken from the GEMP format list (<code>swccgFormats.json</code>) and from published PC event pages. Historical original-virtual cutoffs use the Premiere - Original VS{N} titles above. The list has 51 formats.<ref name="gemp" />
+
+{| class="wikitable sortable"
+! GEMP name !! Code !! Wiki page
+|-
+| Anything Goes || <code>anything_goes</code> || [[Anything Goes]]
+|-
+| Open || <code>open</code> || [[Open]]
+|-
+| Open (40 cards) || <code>open40card</code> || [[Open (40 cards)]]
+|-
+| Open (45 cards) || <code>open_45_card</code> || [[Open (45 cards)]]
+|-
+| Open (100 cards) || <code>open_100_card</code> || [[Open (100 cards)]]
+|-
+| Open (no shields) || <code>open_no_shields</code> || [[Open (no shields)]]
+|-
+| Open (no shields / no v-cards) || <code>open_no_shields_no_virtual</code> || [[Open (no shields / no v-cards)]]
+|-
+| Open (no Episode VII) || <code>open_no_episodevii</code> || [[Open (no Episode VII)]]
+|-
+| Classic || <code>classic</code> || [[Classic]]
+|-
+| Classic (no v-cards) || <code>classic_no_virtual</code> || [[Classic (no v-cards)]]
+|-
+| Classic (no v-cards) (Modified) || <code>classic_no_virtual_m</code> || [[Classic (no v-cards) (Modified)]]
+|-
+| Jawa || <code>jawa</code> || [[Jawa Format]]
+|-
+| Ewok || <code>ewok</code> || [[Ewok Format]]
+|-
+| Legacy || <code>legacy</code> || [[Legacy Open]]
+|-
+| Playtesting || <code>playtesting</code> || [[Playtesting]]
+|-
+| Premiere - Virtual Set 3 || <code>premiere_set3</code> || [[Premiere - Virtual Set 3]]
+|-
+| Decipher Cards Only || <code>open_no_virtual</code> || [[Premiere - Theed Palace]]
+|-
+| Decipher Cards Only (Modified) || <code>open_no_virtual_m</code> || [[Decipher Cards Only (Modified)]]
+|-
+| Premiere - Tatooine || <code>premiere_tatooine</code> || [[Premiere - Tatooine]]
+|-
+| Premiere - Reflections II || <code>premiere_ref2</code> || [[Premiere - Reflections II]]
+|-
+| Premiere - Reflections II (Modified) || <code>premiere_ref2_m</code> || [[Premiere - Reflections II (Modified)]]
+|-
+| Premiere - JPSD || <code>premiere_jpsd</code> || [[Premiere - Jabba's Palace Sealed Deck]]
+|-
+| Premiere - Death Star II || <code>premiere_ds2</code> || [[Premiere - Death Star II]]
+|-
+| Premiere - Endor || <code>premiere_endor</code> || [[Premiere - Endor]]
+|-
+| Premiere - Special Edition || <code>premiere_se</code> || [[Premiere - Special Edition]]
+|-
+| Premiere - Jabba's Palace || <code>premiere_jp</code> || [[Premiere - Jabba's Palace]]
+|-
+| Premiere - Cloud City || <code>premiere_cc</code> || [[Premiere - Cloud City]]
+|-
+| Premiere - Cloud City (Modified) || <code>premiere_cc_m</code> || [[Premiere - Cloud City (Modified)]]
+|-
+| Premiere - Dagobah || <code>premiere_dagobah</code> || [[Premiere - Dagobah]]
+|-
+| Premiere - Hoth || <code>premiere_hoth</code> || [[Premiere - Hoth]]
+|-
+| Premiere - A New Hope || <code>premiere_anh</code> || [[Premiere - A New Hope]]
+|-
+| Premiere || <code>premiere</code> || [[Premiere (format)]]
+|-
+| Limited Resources || <code>limited_resources</code> || [[Limited Resources Format]]
+|-
+| Scavenger || <code>scavenger_premiere_ds2</code> || [[Scavenger Format]]
+|-
+| Utinni! (Jawas Only) || <code>utinni</code> || [[Utinni! (Jawas Only)]]
+|-
+| Cube || <code>cube</code> || [[Cube]]
+|-
+| Jabba's Palace Sealed || <code>jp_sealed</code> || [[Jabba's Palace Sealed]]
+|-
+| Sealed || <code>sealed</code> || [[Sealed]]
+|-
+| Premiere - A New Hope Sealed || <code>premiere_anh_sealed</code> || [[Premiere - A New Hope Sealed]]
+|-
+| Endor - Death Star II Sealed || <code>endor_dsII_sealed</code> || [[Endor - Death Star II Sealed]]
+|-
+| Reflections Sealed || <code>reflections_sealed</code> || [[Reflections Sealed]]
+|-
+| Episode I Sealed || <code>episode_i_sealed</code> || [[Episode I Sealed]]
+|-
+| All Of The Jedi Sealed || <code>all_of_the_jedi_sealed</code> || [[All Of The Jedi Sealed]]
+|-
+| Novelty - Space Sealed || <code>novelty_sealed</code> || [[Novelty - Space Sealed]]
+|-
+| Watto's Cube with objective packs Cube || <code>wattos_cube_with_objective</code> || [[Watto's Cube with objective packs Cube]]
+|-
+| Watto's Cube with fixed pack Cube || <code>wattos_cube_with_fixed</code> || [[Watto's Cube with fixed pack Cube]]
+|-
+| Premiere - Death Star II Draft || <code>basic_premds2_draft</code> || [[Premiere - Death Star II Draft]]
+|-
+| Premiere - Virtual Set 13 Draft || <code>basic_premv13_draft</code> || [[Premiere - Virtual Set 13 Draft]]
+|-
+| Premiere - Virtual Set 25 Draft || <code>holocron_premv25_draft</code> || [[Premiere - Virtual Set 25 Draft]]
+|-
+| Cube v7 + Objectives Draft || <code>c7obj_draft</code> || [[Cube v7 + Objectives Draft]]
+|-
+| Dream Cards || <code>dream_cards</code> || [[Dream Cards]]
+|}
+
+=== Differences from the Players Committee GEMP ===
+The format list on play.swccg.com (billbisco/swccg-gemp, commit 16168b26) has 51 formats. The Players Committee format list (PlayersCommittee/gemp-swccg-public, commit 5e26dd19) has 37.<ref name="gemp" /><ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref> The differences are:
+* Formats only on play.swccg.com: [[Anything Goes]], [[Ewok Format|Ewok]], [[Premiere - A New Hope Sealed]], [[Endor - Death Star II Sealed]], [[Reflections Sealed]], [[Episode I Sealed]], [[All Of The Jedi Sealed]], [[Novelty - Space Sealed]], [[Watto's Cube with objective packs Cube]], [[Watto's Cube with fixed pack Cube]], [[Premiere - Death Star II Draft]], [[Premiere - Virtual Set 13 Draft]], [[Premiere - Virtual Set 25 Draft]] and [[Cube v7 + Objectives Draft]].<ref name="gemp" /><ref name="pc-gemp" />
+* [[Cube]]: 40 cards on play.swccg.com and 45 cards in the Players Committee code.<ref name="gemp" /><ref name="pc-gemp" />
+* [[Jabba's Palace Sealed]] (<code>jp_sealed</code>): named "Jabba's Palace Sealed" on play.swccg.com and "JP Sealed" in the Players Committee code.<ref name="gemp" /><ref name="pc-gemp" />
+* [[Legacy Open|Legacy]]: play.swccg.com adds 18 set numbers from 1200 to 1292 and the <code>loreHeroicRule</code> setting.<ref name="gemp" /><ref name="pc-gemp" />
+Differences in sealed league products and draft files are listed at [[GEMP sealed league products#Differences from the Players Committee GEMP|GEMP sealed league products]] and [[GEMP draft and cube products#Differences from the Players Committee GEMP|GEMP draft and cube products]].
 
 == Rules documents ==
 
@@ -93,6 +251,8 @@ Closed-environment and themed constructed variants, such as Classic, [[Episode I
 == See also ==
 
 * [[Players Committee rule changes]]
+* [[GEMP sealed league products]]
+* [[GEMP draft and cube products]]
 
 * [[How to play]]
 * [[Players Committee]]
@@ -103,7 +263,7 @@ Closed-environment and themed constructed variants, such as Classic, [[Episode I
 * [[Premiere - Original VS13]] — 2007 original-virtual constructed pool
 * [[Premiere - Original VS16]] — 2008 original-virtual constructed pool
 * [[Virtual Sets (2002-2009)]] &mdash; pre-reorg Virtual Sets vs later Blocks / current Virtual
-* [[GEMP]] / [https://play.swccg.com/ play.swccg.com] - browser play
+* [[GEMP]] - browser play
 * [[GEMP planned features]] - Anything Goes follow-ups, True Sabacc, later tournament types
 * [[:Category:Sets|Category:Sets]] - set index
 * [[Main Page]]

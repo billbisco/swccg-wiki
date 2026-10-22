@@ -1,13 +1,14 @@
-{{Hatnote|This page documents a constructed card pool. Official tournament documents remain authoritative.}}
-'''Classic (no v-cards)''' is a constructed format on [[GEMP]] (code <code>classic_no_virtual</code>) using only Decipher-printed cards: set ids 1&ndash;14 and premium ids 101&ndash;112, with no virtual cards. Cards with the Defensive Shield, Episode I or Maintenance icon are banned.<ref name="gemp" /> Forum threads call it "Classic No-V".<ref name="t85240" />
+'''Classic (no v-cards)''' is a constructed format on [[GEMP]] (code <code>classic_no_virtual</code>) using only Decipher-printed cards: set ids 1&ndash;14 and premium ids 101&ndash;112, with no virtual cards. Cards with the Defensive Shield, Episode I or Maintenance icon are banned.<ref name="gemp" /> Forum threads call it "Classic No-V".<ref name="t85240" /> It is the Decipher-cards-only version of [[Classic]].<ref name="gemp" />
+
+== Deck size ==
+{| class="wikitable"
+! Default deck size on [[GEMP]]
+| 60 cards
+|}
+The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp" /><ref name="lib-ec48dc19" />
 
 == Classic (no v-cards) (Modified) ==
-GEMP also has '''Classic (no v-cards) (Modified)''' (code <code>classic_no_virtual_m</code>). It has the same pool but allows 14 Defensive Shields: ''A Close Race'', ''A Tragedy Has Occurred'', ''An Unusual Amount Of Fear'', ''Another Pathetic Lifeform'', ''Don't Do That Again'', ''Only Jedi Carry That Weapon'', ''Planetary Defenses'', ''Allegations Of Corruption'', ''Fanfare'', ''Fear Is My Ally'', ''Weapon Of A Sith'', ''We'll Let Fate-a Decide, Huh?'', ''Wipe Them Out, All Of Them'' and ''You've Never Won A Race?''.<ref name="gemp" /> It was used in the Retro League:
-{| class="wikitable"
-! Event !! Dates !! Winner
-|-
-| [[2026 Retro League]] Event 4 || 27 September – 8 November 2026<ref name="t86346" /> || 
-|}
+GEMP also has '''[[Classic (no v-cards) (Modified)]]''' (code <code>classic_no_virtual_m</code>), with the same pool and 14 Defensive Shields allowed.<ref name="gemp" />
 
 == Retro League ==
 {| class="wikitable"
@@ -18,14 +19,16 @@ GEMP also has '''Classic (no v-cards) (Modified)''' (code <code>classic_no_virtu
 
 == See also ==
 * [[Formats]]
+* [[Classic]]
+* [[Classic (no v-cards) (Modified)]]
 * [[Decipher Cards Only (Modified)]]
 * [[Retro League]]
 
 == References ==
 <references>
-<ref name="gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public), GitHub. Card names from the GEMP card files in the same repository.</ref>
+<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
 <ref name="t85240">[https://forum.starwarsccg.org/viewtopic.php?t=85240 Event #4 - 2025 Retro GEMP League - Classic No-V Constructed], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012164154/https://swccg.com/snapshots/forum/t85240.html Internet Archive].</ref>
-<ref name="t86346">[https://forum.starwarsccg.org/viewtopic.php?t=86346 2026 SWCCG Online Retro League (& Cumulative Standings)], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012164534/https://swccg.com/snapshots/forum/t86346.html Internet Archive].</ref>
+<ref name="lib-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
 </references>
 
 [[Category:Formats]]

@@ -1,5 +1,11 @@
-{{Hatnote|This page documents a constructed card pool. Official tournament documents remain authoritative.}}
 '''Decipher Cards Only (Modified)''' is a constructed format on [[GEMP]] (code <code>open_no_virtual_m</code>). Its pool is every Decipher-printed card, set ids 1&ndash;14 and premium ids 101&ndash;112, like GEMP's [[Decipher Cards Only]] (<code>open_no_virtual</code>). Unlike [[Classic (no v-cards)]], it has no icon bans.<ref name="gemp" />
+
+== Deck size ==
+{| class="wikitable"
+! Default deck size on [[GEMP]]
+| 60 cards
+|}
+The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp-ec48dc19" /><ref name="lib-ec48dc19" />
 
 == Ban list ==
 GEMP bans five cards:<ref name="gemp" />
@@ -20,8 +26,10 @@ GEMP bans five cards:<ref name="gemp" />
 
 == References ==
 <references>
-<ref name="gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public), GitHub. Card names from the GEMP card files in the same repository.</ref>
+<ref name="gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive]. Card names from the GEMP card files in the same repository.</ref>
 <ref name="t85241">[https://forum.starwarsccg.org/viewtopic.php?t=85241 Event #5 - 2025 Retro GEMP League - Decipher Cards Only (modified) Constructed], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012164233/https://swccg.com/snapshots/forum/t85241.html Internet Archive].</ref>
+<ref name="gemp-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
+<ref name="lib-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
 </references>
 
 [[Category:Formats]]

@@ -1,15 +1,24 @@
 {{Hatnote|For the Character affiliation, see [[Scavenger]].}}
 [[File:Scavenger Format tuskens scavenging.png|thumb|right|260px|Scavenger Format graphic. Players Committee.]]
-'''Scavenger Format''' is a Players Committee constructed format using only Decipher cards of common rarities.<ref name="pc-scav">[https://www.starwarsccg.org/scavenger/ Scavenger Format], starwarsccg.org.</ref> On [[GEMP]] the environment is named Scavenger (code <code>scavenger_premiere_ds2</code>), covering printed sets from [[Premiere]] through [[Death Star II (expansion)|Death Star II]]. Banned rarities are Ultra Rare (UR), Rare (R), Rare (R1), Rare (R2), Exclusive Rare (XR), Premium (PM), and Preview (PV).<ref name="pc-scav" /><ref name="gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public), GitHub.</ref>
+'''Scavenger Format''' is a Players Committee constructed format using only Decipher cards of common rarities.<ref name="pc-scav">[https://www.starwarsccg.org/scavenger/ Scavenger Format], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021120256/https://swccg.com/snapshots/pc/scavenger.html Internet Archive].</ref> On [[GEMP]] the environment is named Scavenger (code <code>scavenger_premiere_ds2</code>), covering printed sets from [[Premiere]] through [[Death Star II (expansion)|Death Star II]]. Banned rarities are Ultra Rare (UR), Rare (R), Rare (R1), Rare (R2), Exclusive Rare (XR), Premium (PM), and Preview (PV).<ref name="pc-scav" /><ref name="gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
 
 The [[2025 Scavenger Superbowl Showcase]] and [[2026 Scrapyard Scrum]] are published Scavenger Format events on GEMP. [[PDS2 interviews]] covered the format with [[Mike Shumaker]] (22 April 2025) and [[Micah Fleetwood]] (26 April 2025).
+
+== Deck size ==
+{| class="wikitable"
+! Default deck size on [[GEMP]]
+| 60 cards
+|}
+The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref><ref name="lib-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
 
 == See also ==
 
 * [[Formats]]
 * [[Jawa Format]]
 * [[GEMP]]
-* [https://www.starwarsccg.org/scavenger/ Scavenger Format] at starwarsccg.org
+
+== External links ==
+* [https://www.starwarsccg.org/scavenger/ Scavenger Format], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021120256/https://swccg.com/snapshots/pc/scavenger.html Internet Archive]
 
 == References ==
 <references />
