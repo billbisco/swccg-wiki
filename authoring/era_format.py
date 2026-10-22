@@ -11,7 +11,8 @@ from pathlib import Path
 import regen_gemp_from_wiki as R
 
 DECKS = Path(__file__).resolve().parent / "decktech-decks"
-TAT_RELEASE = "2001-05-30"  # 16248 (27 May 2001): Tatooine due out "Wednesday" = 30 May
+TAT_RELEASE = "2001-05-30"
+REF3_RELEASE = "2001-10-31"  # Reflections III: first Defensive Shields  # 16248 (27 May 2001): Tatooine due out "Wednesday" = 30 May
 _set = {}
 
 def card_set(title):
@@ -30,6 +31,16 @@ def main(argv):
     for pid in [a for a in argv if a.isdigit()]:
         p = DECKS / f"{pid}.json"
         raw = p.read_text(encoding="utf-8"); d = json.loads(raw)
+        # Defensive Shields start with Reflections III (31 Oct 2001): before that, a shield-typed row is the older
+        # Effect of the same title (Secret Plans, Wise Advice, Oppressive Enforcement, ...). Claude 2026-10-22.
+        if d["date"] < REF3_RELEASE and any(r[2] == "DEFENSIVE_SHIELD" for r in d["cards"]):
+            fixed = [r[1] for r in d["cards"] if r[2] == "DEFENSIVE_SHIELD"]
+            print(pid, d["date"], "shield rows -> EFFECT:", ", ".join(fixed))
+            if apply:
+                for r in d["cards"]:
+                    if r[2] == "DEFENSIVE_SHIELD":
+                        r[2] = "EFFECT"
+                p.write_text(json.dumps(d, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         # the drafter's default is "Premiere - Original VS1" (a 2002 pool); pre-Tatooine posts are re-dated here too
         if d.get("format") not in ("Premiere - Tatooine", "Premiere - Original VS1") or d["date"] >= TAT_RELEASE:
             continue
