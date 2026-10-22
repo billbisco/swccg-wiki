@@ -33087,10 +33087,10 @@
  },
  "https://garbagerollers.com/2024/02/02/community-spotlight-ktod-feb-2nd-2024/": {
   "capture": "",
-  "error": "no job_id: Cannot resolve host garbagerollers.com. If the site is online, it may be blocking access from our service.",
-  "last": "2026-10-22T20:42:46Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T21:13:14Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$rv3f35y1eafz1uha": {
   "capture": "https://web.archive.org/web/20261022173349/https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$rv3f35y1eafz1uha",
@@ -33136,9 +33136,9 @@
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/ecec878b/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set210/dark/Card210_042.java": {
   "capture": "",
   "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
-  "last": "2026-10-22T20:42:57Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-22T21:13:25Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/db-scripts/sample_decks.sql": {
   "capture": "https://web.archive.org/web/20261022173338/https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/db-scripts/sample_decks.sql",
@@ -33156,9 +33156,9 @@
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/packagedProduct/VirtualAlternateImageBoosterPack.java": {
   "capture": "",
   "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
-  "last": "2026-10-22T20:43:08Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-22T21:13:36Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/resources/swccgFormats.json": {
   "capture": "",
@@ -36899,46 +36899,66 @@
   "tries": 2
  },
  "https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 336 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:16:46Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20251219072012/https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck",
+  "last": "2026-10-22T21:13:47Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T21:13:49Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://starwars.fandom.com/wiki/Premiere_Introductory_Two-Player_Game": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 317 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:16:58Z",
+  "error": "no job_id: The same snapshot had been made 318 hours, 48 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:14:00Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://starwars.fandom.com/wiki/Premiere_Limited": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 336 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:17:10Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20260603213012/https://starwars.fandom.com/wiki/Premiere_Limited",
+  "last": "2026-10-22T21:14:12Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T21:14:17Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://starwars.fandom.com/wiki/Rebel_Leader": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 336 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:17:22Z",
+  "error": "no job_id: The same snapshot had been made 337 hours, 17 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:14:29Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://starwars.fandom.com/wiki/Second_Anthology": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T20:22:47Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20250626013106/https://starwars.fandom.com/wiki/Second_Anthology",
+  "last": "2026-10-22T21:14:41Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T21:14:43Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://starwars.fandom.com/wiki/Special_Edition_Limited": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 336 hours, 43 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:23:00Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20260412082002/https://starwars.fandom.com/wiki/Special_Edition_Limited",
+  "last": "2026-10-22T21:14:56Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T21:14:58Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game": {
   "capture": "https://web.archive.org/web/20260907062502/https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game",
@@ -53352,6 +53372,20 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2024-european-championship-wrap-up-casper-takes-the-crown.html": {
+  "capture": "https://web.archive.org/web/20261022211513/https://swccg.com/snapshots/pc/2024-european-championship-wrap-up-casper-takes-the-crown.html",
+  "job_id": "spn2-650f6304799bbdba17ea3ab237926d0018822853",
+  "last": "2026-10-22T21:18:47Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:18:47Z",
+   "bytes": 99791,
+   "capture_id": "https://web.archive.org/web/20261022211513id_/https://swccg.com/snapshots/pc/2024-european-championship-wrap-up-casper-takes-the-crown.html",
+   "method": "sha256",
+   "sha256": "433d24f84e46053e0000ee07c9a77adff3bf21daa8875aaf1e30ec15edd751c2"
+  }
+ },
  "https://swccg.com/snapshots/pc/2024-gempc-finals-matthew-harrison-trainor-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261013163651/https://swccg.com/snapshots/pc/2024-gempc-finals-matthew-harrison-trainor-ds-thrawn.html",
   "last": "2026-10-13T18:27:14Z",
@@ -55801,6 +55835,20 @@
    "sha256": "e58bd0ffa21f39fda3f1713c3a4d6b5d332fccc2b4676cee680639b32445eb3a"
   }
  },
+ "https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame.html": {
+  "capture": "https://web.archive.org/web/20261022211618/https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame.html",
+  "job_id": "spn2-b7056fe7e2b4fea0e565a135bb9679d1ac07d61c",
+  "last": "2026-10-22T21:19:05Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:19:05Z",
+   "bytes": 16754879,
+   "capture_id": "https://web.archive.org/web/20261022211618id_/https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame.html",
+   "method": "sha256",
+   "sha256": "7751f5462edfd6fdb795bad86f1a4c577a976f6bc3f24eaa45dfe8478f952d48"
+  }
+ },
  "https://swccg.com/snapshots/pc/egp-2023-wrap-up-hayes-hunter-on-a-roll-takes-title-bf.html": {
   "capture": "https://web.archive.org/web/20261022033740/https://swccg.com/snapshots/pc/egp-2023-wrap-up-hayes-hunter-on-a-roll-takes-title-bf.html",
   "job_id": "spn2-5739af72a60cbcaa7d2135fbf0fe60a442464593",
@@ -55967,6 +56015,14 @@
    "method": "sha256",
    "sha256": "69cf4325f857324c2c88b57f91a1a0c8dc7a08d0debe31b7e30d53995c4c8dbe"
   }
+ },
+ "https://swccg.com/snapshots/pc/jonny-chu-ktod-capture-2022-retro-event-title.html": {
+  "capture": "",
+  "error": "error:not-found",
+  "job_id": "spn2-7bc87a97e45d9f01ae0dc6644b3a5f60f7a3bcbf",
+  "last": "2026-10-22T21:19:07Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/major-event-winners.html": {
   "capture": "https://web.archive.org/web/20261020230923/https://swccg.com/snapshots/pc/major-event-winners.html",
@@ -56305,6 +56361,20 @@
    "capture_id": "https://web.archive.org/web/20261022040547id_/https://swccg.com/snapshots/pc/timo-dusel-wins-the-2023-online-retro-event-for-charity-bf.html",
    "method": "sha256",
    "sha256": "2eca0c4e067586bf77cad64b1ff788fb0e8e6c9510d0b28e7fb08c186ae03680"
+  }
+ },
+ "https://swccg.com/snapshots/pc/timo-dusel-wins-the-2023-online-retro-event-for-charity.html": {
+  "capture": "https://web.archive.org/web/20261022211617/https://swccg.com/snapshots/pc/timo-dusel-wins-the-2023-online-retro-event-for-charity.html",
+  "job_id": "spn2-57b71332980e29c10b20bd176b11416cfc75e650",
+  "last": "2026-10-22T21:19:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:19:12Z",
+   "bytes": 2974390,
+   "capture_id": "https://web.archive.org/web/20261022211617id_/https://swccg.com/snapshots/pc/timo-dusel-wins-the-2023-online-retro-event-for-charity.html",
+   "method": "sha256",
+   "sha256": "eed0568959af31120ffb0ebea6c3e2c65c8a65634fbf77e595488b5c5282e546"
   }
  },
  "https://swccg.com/snapshots/pc/tournament-decklists-bf.html": {
@@ -58057,6 +58127,109 @@
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-10-21T00:00:19Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0": {
+  "capture": "https://web.archive.org/web/20260929063927/https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0",
+  "last": "2026-10-22T21:16:25Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:16:27Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/10/isb-2000-world-champion-1.0": {
+  "capture": "https://web.archive.org/web/20260929064612/https://swccgdb.com/decklist/view/10/isb-2000-world-champion-1.0",
+  "last": "2026-10-22T21:16:40Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:16:42Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/12/dagobah-a-manipulator-2nd-at-worlds-1997-1.0": {
+  "capture": "https://web.archive.org/web/20260929064640/https://swccgdb.com/decklist/view/12/dagobah-a-manipulator-2nd-at-worlds-1997-1.0",
+  "last": "2026-10-22T21:16:55Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:16:56Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/13/dagobah-miner-s-guild-2nd-at-worlds-1997-1.0": {
+  "capture": "https://web.archive.org/web/20260929064708/https://swccgdb.com/decklist/view/13/dagobah-miner-s-guild-2nd-at-worlds-1997-1.0",
+  "last": "2026-10-22T21:17:07Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:17:09Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/14/operatives-speeders-2nd-at-worlds-1999-1.0": {
+  "capture": "https://web.archive.org/web/20260929064737/https://swccgdb.com/decklist/view/14/operatives-speeders-2nd-at-worlds-1999-1.0",
+  "last": "2026-10-22T21:17:22Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:17:24Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/15/hunt-down-2nd-at-worlds-1999-1.0": {
+  "capture": "https://web.archive.org/web/20260929064909/https://swccgdb.com/decklist/view/15/hunt-down-2nd-at-worlds-1999-1.0",
+  "last": "2026-10-22T21:17:39Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:17:40Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/2/1996-world-champion-dark-1.0": {
+  "capture": "https://web.archive.org/web/20260929063955/https://swccgdb.com/decklist/view/2/1996-world-champion-dark-1.0",
+  "last": "2026-10-22T21:17:54Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:17:56Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/3/mains-toys-1997-world-champion-1.0": {
+  "capture": "https://web.archive.org/web/20260929064024/https://swccgdb.com/decklist/view/3/mains-toys-1997-world-champion-1.0",
+  "last": "2026-10-22T21:18:07Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:18:10Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/4/dagobah-turtle-1997-world-champion-1.0": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 301 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:18:27Z",
   "status": "retry",
   "tries": 1
  },
