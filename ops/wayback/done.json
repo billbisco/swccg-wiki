@@ -31017,9 +31017,11 @@
  },
  "https://swccg.com/snapshots/pc/2012-decklists.html": {
   "capture": "https://web.archive.org/web/20261021002644/https://swccg.com/snapshots/pc/2012-decklists.html",
-  "last": "2026-10-21T00:46:30Z",
+  "error": "error:not-found",
+  "job_id": "spn2-acf78d5ea3022ea009e84baff633b88936f0148f",
+  "last": "2026-10-22T01:42:20Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2015-match-play-championship.html": {
   "capture": "https://web.archive.org/web/20261013163223/https://swccg.com/snapshots/pc/2015-match-play-championship.html",
@@ -31047,6 +31049,13 @@
    "text_match": 0.995
   }
  },
+ "https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-ie.html": {
+  "capture": "",
+  "job_id": "spn2-d41cba935844d9f41f979b811f2b613b97fd1f1f",
+  "last": "2026-10-22T01:38:27Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-wys.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
@@ -31056,16 +31065,17 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-bastian-winkelhaus-diplo.html": {
   "capture": "https://web.archive.org/web/20261021003742/https://swccg.com/snapshots/pc/2017-ec-day-2-bastian-winkelhaus-diplo.html",
-  "last": "2026-10-21T01:00:16Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-4d859f9c0cb1be767e5459d4e84d81e9d0052d70",
+  "last": "2026-10-22T01:39:19Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-bastian-winkelhaus-eops.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:37:28Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-563f06a59acc8337c4cecd75944bbb968974d910",
+  "last": "2026-10-22T01:39:08Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-casper-hb.html": {
   "capture": "https://web.archive.org/web/20261021003828/https://swccg.com/snapshots/pc/2017-ec-day-2-casper-hb.html",
@@ -31102,24 +31112,32 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-trm.html": {
-  "capture": "https://web.archive.org/web/20261021003804/https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-trm.html",
-  "last": "2026-10-21T01:00:17Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022013933/https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-trm.html",
+  "job_id": "spn2-d2a3bc15d3a5b23384fa9ef875fde55c3ee12a0a",
+  "last": "2026-10-22T01:43:25Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T01:43:25Z",
+   "bytes": 7120901,
+   "capture_id": "https://web.archive.org/web/20261022013933id_/https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-trm.html",
+   "method": "sha256",
+   "sha256": "b939a36b3cd18ba11c3283739f4524529ae2bffcbb5e874cc0a01281ed551c80"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-destefanis-ebo.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:38:43Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-1c9f081f41b8d0cb43d3ec192abcc4b11ce8e8eb",
+  "last": "2026-10-22T01:40:22Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-destefanis-tdigwatt.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:38:33Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022014051/https://swccg.com/snapshots/pc/2017-ec-day-2-david-destefanis-tdigwatt.html",
+  "job_id": "spn2-b89613a6a9d94d8e2137249b31ae4d2f0956b944",
+  "last": "2026-10-22T01:43:30Z",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021003905/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-bhbm.html",
@@ -31136,11 +31154,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:39:04Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022014036/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html",
+  "last": "2026-10-22T01:43:33Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-isb.html": {
   "capture": "https://web.archive.org/web/20261021004106/https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-isb.html",
@@ -31158,9 +31175,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html": {
   "capture": "https://web.archive.org/web/20261021004117/https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html",
-  "last": "2026-10-21T02:31:47Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-de5ee83b62ab37887620f28a6aeb94b4a4010b8c",
+  "last": "2026-10-22T01:41:36Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html": {
   "capture": "https://web.archive.org/web/20261021004148/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html",
@@ -31258,11 +31276,18 @@
    "sha256": "21ded06dba303d2b596d0ece10005d84a4e5c17bb3975ae344f482e4a504435e"
   }
  },
+ "https://swccg.com/snapshots/pc/2017-ec-day-2-patrik-csapi-ie.html": {
+  "capture": "https://web.archive.org/web/20261022014118/https://swccg.com/snapshots/pc/2017-ec-day-2-patrik-csapi-ie.html",
+  "last": "2026-10-22T01:42:41Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-patrik-csapi-wys.html": {
   "capture": "https://web.archive.org/web/20261021004032/https://swccg.com/snapshots/pc/2017-ec-day-2-patrik-csapi-wys.html",
-  "last": "2026-10-21T02:18:07Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-867f8c8c1871cc128c3549d4ec8a60b26e890abe",
+  "last": "2026-10-22T01:41:25Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-mpc-vikram-bali-day-1-ds-hd.html": {
   "capture": "https://web.archive.org/web/20261021005423/https://swccg.com/snapshots/pc/2017-mpc-vikram-bali-day-1-ds-hd.html",
@@ -32378,9 +32403,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-aobs.html": {
   "capture": "https://web.archive.org/web/20261022003817/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-aobs.html",
-  "last": "2026-10-22T00:55:13Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T01:34:11Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-trm.html": {
   "capture": "https://web.archive.org/web/20261021015745/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-trm.html",
@@ -32482,9 +32508,17 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ls.html": {
   "capture": "https://web.archive.org/web/20261022004103/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ls.html",
-  "last": "2026-10-22T00:55:16Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-9c0c0a4c8988fe56524fd28f2559d6b549efe143",
+  "last": "2026-10-22T01:42:02Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T01:42:02Z",
+   "bytes": 7120526,
+   "capture_id": "https://web.archive.org/web/20261022004103id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ls.html",
+   "method": "sha256",
+   "sha256": "a1c28d02eb0a8de99b0c36a523d77930a9516571234db315c4d33f0976790165"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-john-veasey-isb.html": {
   "capture": "https://web.archive.org/web/20261021015930/https://swccg.com/snapshots/pc/2017-worlds-day-2-john-veasey-isb.html",
@@ -32936,9 +32970,17 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ds.html": {
   "capture": "https://web.archive.org/web/20261022004137/https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ds.html",
-  "last": "2026-10-22T00:55:22Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-77b1a14c28335446d1f02c33dfc9187352a450dc",
+  "last": "2026-10-22T01:42:12Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T01:42:12Z",
+   "bytes": 7120895,
+   "capture_id": "https://web.archive.org/web/20261022004137id_/https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ds.html",
+   "method": "sha256",
+   "sha256": "8ca233fd6b87615cf8c765c65374b23ab049096752613e0c2b9b7b7fbc681ff8"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ls.html": {
   "capture": "https://web.archive.org/web/20261021021327/https://swccg.com/snapshots/pc/2017-worlds-day-3-joe-olson-ls.html",
@@ -33047,9 +33089,10 @@
  },
  "https://swccg.com/snapshots/pc/2018-euros-kent-l-hoth-crv.html": {
   "capture": "https://web.archive.org/web/20261021022434/https://swccg.com/snapshots/pc/2018-euros-kent-l-hoth-crv.html",
-  "last": "2026-10-21T02:39:59Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T01:34:43Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-hd.html": {
   "capture": "https://web.archive.org/web/20261022010831/https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-hd.html",
@@ -33250,6 +33293,20 @@
    "capture_id": "https://web.archive.org/web/20261021041316id_/https://swccg.com/snapshots/pc/2018-worlds-joe-giannetti-trm.html",
    "method": "sha256",
    "sha256": "31f7de5f99cc846ed699b033ad4874a10335cde24a0dd8760796f9a8f2e94bc4"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2018-worlds-joe-olson-trm.html": {
+  "capture": "https://web.archive.org/web/20261022013529/https://swccg.com/snapshots/pc/2018-worlds-joe-olson-trm.html",
+  "job_id": "spn2-9b9e5a464cdca32b23db7b2720b7c103179b3b6b",
+  "last": "2026-10-22T01:42:19Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T01:42:19Z",
+   "bytes": 7120747,
+   "capture_id": "https://web.archive.org/web/20261022013529id_/https://swccg.com/snapshots/pc/2018-worlds-joe-olson-trm.html",
+   "method": "sha256",
+   "sha256": "fa901e7afd64eacc18317f7118cfd50119b669c02a9eb42856c30cb1b2cb5431"
   }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-johnny-chu-tdigwatt.html": {
@@ -45766,9 +45823,9 @@
  "https://swccg.com/snapshots/pc/2025-10-online-championship-series-ocs-playoffs-oct-to-nov-2025.html": {
   "capture": "https://web.archive.org/web/20261020232401/https://swccg.com/snapshots/pc/2025-10-online-championship-series-ocs-playoffs-oct-to-nov-2025.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T01:01:48Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-22T01:33:29Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-wrap-up-joe-olson-starts-the-year-off-strong.html": {
   "capture": "https://web.archive.org/web/20261016105758/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-wrap-up-joe-olson-starts-the-year-off-strong.html",
@@ -46142,9 +46199,9 @@
   "capture": "https://web.archive.org/web/20261020232333/https://swccg.com/snapshots/pc/2026-02-outrider-cup-iv.html",
   "error": "error:not-found",
   "job_id": "spn2-25a0f3e49d0456d76dc5dda0c29932a678b6b0e1",
-  "last": "2026-10-22T01:01:09Z",
+  "last": "2026-10-22T01:41:51Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026.html": {
   "capture": "",
@@ -46980,9 +47037,9 @@
   "capture": "https://web.archive.org/web/20261020234816/https://swccg.com/snapshots/pc/about-us.html",
   "error": "error:not-found",
   "job_id": "spn2-93d9e6d6ef66064454e75989c1a5c7a27da73cce",
-  "last": "2026-10-22T01:01:11Z",
+  "last": "2026-10-22T01:41:54Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/about.html": {
   "capture": "https://web.archive.org/web/20261021000500/https://swccg.com/snapshots/pc/about.html",
@@ -47257,10 +47314,11 @@
  },
  "https://swccg.com/snapshots/pc/jokerking-wins-batmouses-5th-gempc.html": {
   "capture": "https://web.archive.org/web/20261020233716/https://swccg.com/snapshots/pc/jokerking-wins-batmouses-5th-gempc.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T01:01:59Z",
+  "error": "error:not-found",
+  "job_id": "spn2-c3579712872b799b0dce5237d214b4fa2554c1be",
+  "last": "2026-10-22T01:41:53Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/major-event-winners.html": {
   "capture": "https://web.archive.org/web/20261020230923/https://swccg.com/snapshots/pc/major-event-winners.html",
@@ -47397,9 +47455,11 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-2nd-place-ds-jake-nelson-sycfa-brangus.html": {
   "capture": "https://web.archive.org/web/20261021002749/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-2nd-place-ds-jake-nelson-sycfa-brangus.html",
-  "last": "2026-10-21T00:46:42Z",
+  "error": "error:not-found",
+  "job_id": "spn2-f11993c4a98acfa6af5000fd4ac7000694a52662",
+  "last": "2026-10-22T01:42:22Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-2nd-place-ls-jake-nelson-lsc-racing.html": {
   "capture": "",
@@ -47469,9 +47529,10 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-chris-menzel-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261021003608/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-chris-menzel-ls-trm.html",
-  "last": "2026-10-21T01:00:26Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-cf9ed202a61ee84c88d58068f16f0ef84f0345f1",
+  "last": "2026-10-22T01:36:51Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-john-anderson-ds-hdadtj.html": {
   "capture": "https://web.archive.org/web/20261021003437/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-john-anderson-ds-hdadtj.html",
@@ -47501,10 +47562,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ls-qmc.html": {
-  "capture": "https://web.archive.org/web/20261021003618/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ls-qmc.html",
-  "last": "2026-10-21T01:00:29Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022013848/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ls-qmc.html",
+  "last": "2026-10-22T01:43:13Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ds-court.html": {
   "capture": "https://web.archive.org/web/20261021003421/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ds-court.html",
@@ -47520,24 +47581,32 @@
   }
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ls-ebo-x-wings.html": {
-  "capture": "https://web.archive.org/web/20261021003432/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ls-ebo-x-wings.html",
-  "last": "2026-10-21T01:00:30Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022013651/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ls-ebo-x-wings.html",
+  "job_id": "spn2-fd9bc0f231fe4006800f21d329b6c43ab1c4f000",
+  "last": "2026-10-22T01:43:05Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T01:43:05Z",
+   "bytes": 7121035,
+   "capture_id": "https://web.archive.org/web/20261022013651id_/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ls-ebo-x-wings.html",
+   "method": "sha256",
+   "sha256": "dec798a30bd32d54bcc845150b0bee548a0b147d16372555f6b54040fc4920ca"
+  }
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mitch-nieland-ds-lsc-racing.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:35:43Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-bda77ae90edb7b73892ba92c5112f6f759ec9550",
+  "last": "2026-10-22T01:37:13Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mitch-nieland-ls-wys-podracing.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:35:53Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-a15acd5407933a9e81aef514a63b1c483c43844c",
+  "last": "2026-10-22T01:37:24Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ds-hdadtj.html": {
   "capture": "https://web.archive.org/web/20261021003722/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ds-hdadtj.html",
@@ -47554,16 +47623,16 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ls-wys-raiders.html": {
   "capture": "https://web.archive.org/web/20261021003641/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ls-wys-raiders.html",
-  "last": "2026-10-21T03:19:05Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-2cc464f6bb2e249d7dc5c221c4fccd9993336fd5",
+  "last": "2026-10-22T01:38:16Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:34:38Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022013644/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html",
+  "last": "2026-10-22T01:43:07Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ls-ebo-attack-run.html": {
   "capture": "https://web.archive.org/web/20261021003541/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ls-ebo-attack-run.html",
@@ -47580,10 +47649,10 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-sean-miller-ds-lsc-podracing.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:35:22Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ad881ea3384d6e20ae1ac2a0e3896536570f833b",
+  "last": "2026-10-22T01:37:02Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-sean-miller-ls-tigih-podracing.html": {
   "capture": "https://web.archive.org/web/20261021003622/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-sean-miller-ls-tigih-podracing.html",
@@ -57946,24 +58015,24 @@
  },
  "https://youtu.be/wdT3-tS-So8": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 313 hours, 10 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T00:57:10Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T01:32:57Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://youtu.be/xR72a7lhST8": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 316 hours, 21 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T00:57:21Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T01:33:07Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://youtu.be/z6UspCGLxGw": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 314 hours, 44 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T00:57:33Z",
+  "error": "no job_id: The same snapshot had been made 315 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T01:33:19Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://youtube.com/playlist?list=PLtAFd-JMBC2Gi3jJ7nLGqYl0zTS1qgQE1": {
   "capture": "",
