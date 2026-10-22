@@ -36405,9 +36405,9 @@
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png": {
   "capture": "https://web.archive.org/web/20261022193920/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T22:09:11Z",
+  "last": "2026-10-22T22:42:25Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerGroupShot.png": {
   "capture": "",
@@ -36531,9 +36531,9 @@
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/outrider_copy.jpg": {
   "capture": "https://web.archive.org/web/20261022194823/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/outrider_copy.jpg",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T21:39:27Z",
+  "last": "2026-10-22T22:42:36Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/2025_vegas_major_copy.jpg": {
   "capture": "https://web.archive.org/web/20261022194833/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/2025_vegas_major_copy.jpg",
@@ -36670,10 +36670,10 @@
  },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1994/vp941113/11120101.htm": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 337 hours, 54 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T22:10:54Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T22:42:46Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1995/vp951211/12090048.htm": {
   "capture": "",
@@ -36704,10 +36704,10 @@
  },
  "https://starshipexcelsior.com/othersites/stccg1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Tourn/tournamentguide0699.pdf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 338 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-22T22:11:05Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T22:42:56Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://starshipexcelsior.com/othersites/stccg1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Worlds2001.htm": {
   "capture": "",
@@ -36913,13 +36913,14 @@
   "capture": "https://web.archive.org/web/20251206152955/https://starwars.fandom.com/wiki/Michonne_Bourriague",
   "last": "2026-10-22T21:40:49Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-10-22T22:11:17Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-22T22:43:38Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck": {
   "capture": "https://web.archive.org/web/20251219072012/https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck",
