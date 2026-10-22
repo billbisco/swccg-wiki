@@ -1,10 +1,17 @@
 {
  "http://archives.theonering.net/events/logs/201001.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 326 hours, 9 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-22T13:55:40Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261008234547/http://archives.theonering.net/events/logs/201001.html",
+  "last": "2026-10-22T14:31:41Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T14:31:43Z",
+   "bytes": 66474,
+   "capture_id": "https://web.archive.org/web/20261008234547id_/http://archives.theonering.net/events/logs/201001.html",
+   "method": "sha256",
+   "sha256": "973853a0ddfa24a83deffc476a8edc1dbe68d32d8db13ad4caf044053da8026c"
+  }
  },
  "http://blessed-souls.mine.sk/": {
   "capture": "",
@@ -28,11 +35,149 @@
   }
  },
  "http://decipher.com/deciphercon/2000/photos/pictures/20001004193512.jpg": {
+  "capture": "https://web.archive.org/web/20020608130357/http://decipher.com:80/deciphercon/2000/photos/pictures/20001004193512.jpg",
+  "last": "2026-10-22T14:31:55Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T14:31:56Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001006115046.jpg": {
+  "capture": "https://web.archive.org/web/20020311085705/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006115046.jpg",
+  "last": "2026-10-22T14:32:08Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:32:09Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001006115141.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 303 hours, 37 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T13:55:51Z",
+  "error": "no job_id: The same snapshot had been made 304 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T14:32:23Z",
   "status": "retry",
   "tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001006133217.jpg": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 304 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T14:32:34Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001006133313.jpg": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 304 hours, 17 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T14:32:45Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001006184854.jpg": {
+  "capture": "https://web.archive.org/web/20020608131616/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006184854.jpg",
+  "last": "2026-10-22T14:32:57Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:33:00Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001007134526.jpg": {
+  "capture": "https://web.archive.org/web/20020608133159/http://decipher.com:80/deciphercon/2000/photos/pictures/20001007134526.jpg",
+  "last": "2026-10-22T14:33:12Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:33:14Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001007181759.jpg": {
+  "capture": "https://web.archive.org/web/20060713155158/http://decipher.com:80/deciphercon/2000/photos/pictures/20001007181759.jpg",
+  "last": "2026-10-22T14:33:26Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:33:27Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001007182132.jpg": {
+  "capture": "https://web.archive.org/web/20020608134115/http://decipher.com:80/deciphercon/2000/photos/pictures/20001007182132.jpg",
+  "last": "2026-10-22T14:33:48Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:33:52Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001008134358.jpg": {
+  "capture": "https://web.archive.org/web/20050117025134/http://www2.decipher.com:80/deciphercon/2000/photos/pictures/20001008134358.jpg",
+  "last": "2026-10-22T14:34:04Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:34:06Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001008162121.jpg": {
+  "capture": "https://web.archive.org/web/20020330051044/http://decipher.com:80/deciphercon/2000/photos/pictures/20001008162121.jpg",
+  "last": "2026-10-22T14:34:17Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:34:19Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
+ },
+ "http://haven.theonering.net/events/logs/decipher001.html": {
+  "capture": "https://web.archive.org/web/20261008211059/http://haven.theonering.net/events/logs/decipher001.html",
+  "last": "2026-10-22T14:34:31Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:34:34Z",
+   "bytes": 23505,
+   "capture_id": "https://web.archive.org/web/20261008211059id_/http://haven.theonering.net/events/logs/decipher001.html",
+   "method": "sha256",
+   "sha256": "8d924093266a1b118e76bd98e05ce38b5a4aa3bb34b95cdfa8ffad35cc81b2d6"
+  }
+ },
+ "http://karcianki.pl/files/sw/Icon%20Guide.pdf": {
+  "capture": "https://web.archive.org/web/20261008195537/http://karcianki.pl/files/sw/Icon%20Guide.pdf",
+  "last": "2026-10-22T14:34:52Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:34:54Z",
+   "bytes": 324731,
+   "capture_id": "https://web.archive.org/web/20261008195537id_/http://karcianki.pl/files/sw/Icon%20Guide.pdf",
+   "method": "sha256",
+   "sha256": "536c93e9c42796a6c0d51bb9f378212bda9bc2ca7cbe62d1e8fc55c8472badff"
+  }
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D2.pdf": {
   "capture": "",
@@ -145,6 +290,54 @@
    "method": "sha256",
    "sha256": "5a157de74ee7b35221787435241ec274859a698c38bf2e464f297429aae43f07"
   }
+ },
+ "http://theswca.com/index.php?action=disp_item&item_id=11259": {
+  "capture": "https://web.archive.org/web/20130621105841/http://theswca.com/index.php?action=disp_item&item_id=11259",
+  "last": "2026-10-22T14:35:06Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:35:08Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "http://theswca.com/index.php?action=disp_item&item_id=11260": {
+  "capture": "https://web.archive.org/web/20220715090828/http://theswca.com/index.php?action=disp_item&item_id=11260",
+  "last": "2026-10-22T14:35:19Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:35:22Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "http://theswca.com/index.php?action=disp_item&item_id=90774": {
+  "capture": "",
+  "error": "error:no-request",
+  "job_id": "spn2-5dcbb0e6da48dcb04584bf2768f63c0fe86bc12b",
+  "last": "2026-10-22T14:38:54Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://theswca.com/index.php?action=disp_item&item_id=91371": {
+  "capture": "",
+  "error": "error:no-request",
+  "job_id": "spn2-b8483218cba974e45080fd7a541551eeeb5c02b1",
+  "last": "2026-10-22T14:38:56Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "http://theswca.com/index.php?action=disp_items_by&items_by=owner_credit&id=24&page=51": {
+  "capture": "",
+  "error": "error:no-request",
+  "job_id": "spn2-1fb42edc71863b7b276cf1aa609fc4d4114f1409",
+  "last": "2026-10-22T14:38:57Z",
+  "status": "retry",
+  "tries": 1
  },
  "http://www.angelfire.com/scifi2/thx113806107": {
   "capture": "",
@@ -32304,6 +32497,72 @@
   "status": "failed",
   "tries": 6
  },
+ "http://www.theforce.net/ccg/flashback/article.asp": {
+  "capture": "https://web.archive.org/web/20261010072858/http://www.theforce.net/ccg/flashback/article.asp",
+  "last": "2026-10-22T14:36:08Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:36:11Z",
+   "capture_id": "https://web.archive.org/web/20261010072858id_/http://www.theforce.net/ccg/flashback/article.asp",
+   "method": "text",
+   "text_match": 0.993
+  }
+ },
+ "http://www.theforce.net/ccg/story/Decipher_Update_DecipherCon_2000_75291.asp": {
+  "capture": "https://web.archive.org/web/20261009010023/http://www.theforce.net/ccg/story/Decipher_Update_DecipherCon_2000_75291.asp",
+  "last": "2026-10-22T14:36:22Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:36:25Z",
+   "capture_id": "https://web.archive.org/web/20261009010023id_/http://www.theforce.net/ccg/story/Decipher_Update_DecipherCon_2000_75291.asp",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "http://www.theforce.net/ccg/sw/spoilers/specialedition.pdf": {
+  "capture": "https://web.archive.org/web/20261009003031/http://www.theforce.net/ccg/sw/spoilers/specialedition.pdf",
+  "last": "2026-10-22T14:36:37Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:36:41Z",
+   "bytes": 336910,
+   "capture_id": "https://web.archive.org/web/20261009003031id_/http://www.theforce.net/ccg/sw/spoilers/specialedition.pdf",
+   "method": "sha256",
+   "sha256": "919842a15a936bdb12285d96cdf679800c94e804a31e5bf1efe0e27ed5608089"
+  }
+ },
+ "http://www.theforce.net/episode1/story/Michonne_Bourriague_talks_Aurra_Sing_74600.asp": {
+  "capture": "https://web.archive.org/web/20261008202726/http://www.theforce.net/episode1/story/Michonne_Bourriague_talks_Aurra_Sing_74600.asp",
+  "last": "2026-10-22T14:36:54Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:36:56Z",
+   "capture_id": "https://web.archive.org/web/20261008202726id_/http://www.theforce.net/episode1/story/Michonne_Bourriague_talks_Aurra_Sing_74600.asp",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "http://www.theforce.net/videogames/story/Shannon_Baksa_is_Mara_Jade_78191.asp": {
+  "capture": "https://web.archive.org/web/20261010072906/http://www.theforce.net/videogames/story/Shannon_Baksa_is_Mara_Jade_78191.asp",
+  "last": "2026-10-22T14:37:08Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:37:10Z",
+   "capture_id": "https://web.archive.org/web/20261010072906id_/http://www.theforce.net/videogames/story/Shannon_Baksa_is_Mara_Jade_78191.asp",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
  "https://arctic-shift.photon-reddit.com/api/comments/search?link_id=hx9o77&limit=100": {
   "capture": "https://web.archive.org/web/20261014163933/https://arctic-shift.photon-reddit.com/api/comments/search?link_id=hx9o77&limit=100",
   "job_id": "spn2-2e0add911380a80580b022c41ea513bfe5e787dd",
@@ -32317,6 +32576,71 @@
   "last": "2026-10-14T16:42:31Z",
   "status": "ok",
   "tries": 1
+ },
+ "https://avatars.githubusercontent.com/u/25210454?v=4": {
+  "capture": "https://web.archive.org/web/20261008195545/https://avatars.githubusercontent.com/u/25210454?v=4",
+  "last": "2026-10-22T14:37:21Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:37:23Z",
+   "bytes": 28365,
+   "capture_id": "https://web.archive.org/web/20261008195545id_/https://avatars.githubusercontent.com/u/25210454?v=4",
+   "method": "sha256",
+   "sha256": "55aeb7d4fe8620ca62b0ce1f48c61666203dd1288b502f7ac9ba72f6ead60706"
+  }
+ },
+ "https://blog.categoryonegames.com/resetting-star-wars-ccg/": {
+  "capture": "https://web.archive.org/web/20261008233334/https://blog.categoryonegames.com/resetting-star-wars-ccg/",
+  "last": "2026-10-22T14:37:36Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:37:40Z",
+   "capture_id": "https://web.archive.org/web/20261008233334id_/https://blog.categoryonegames.com/resetting-star-wars-ccg/",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://blog.categoryonegames.com/star-wars-virtual-set-8-3-luuke/": {
+  "capture": "https://web.archive.org/web/20261008194515/https://blog.categoryonegames.com/star-wars-virtual-set-8-3-luuke/",
+  "last": "2026-10-22T14:37:54Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:37:57Z",
+   "capture_id": "https://web.archive.org/web/20261008194515id_/https://blog.categoryonegames.com/star-wars-virtual-set-8-3-luuke/",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://blog.categoryonegames.com/star-wars-virtual-sets/": {
+  "capture": "https://web.archive.org/web/20261008193022/https://blog.categoryonegames.com/star-wars-virtual-sets/",
+  "last": "2026-10-22T14:38:11Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:38:15Z",
+   "capture_id": "https://web.archive.org/web/20261008193022id_/https://blog.categoryonegames.com/star-wars-virtual-sets/",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://boardgamegeek.com/boardgame/1270/star-wars-customizable-card-game": {
+  "capture": "https://web.archive.org/web/20261012210452/https://boardgamegeek.com/boardgame/1270/star-wars-customizable-card-game",
+  "last": "2026-10-22T14:38:26Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:38:27Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set": {
   "capture": "https://web.archive.org/web/20261014165918/https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set",
@@ -34935,15 +35259,31 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/OutriderCupLogo2021.jpg": {
   "capture": "https://web.archive.org/web/20261022131741/https://res.starwarsccg.org/wp/wp-content/uploads/2022/OutriderCupLogo2021.jpg",
-  "last": "2026-10-22T13:31:43Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T14:29:56Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/PC20Logo.jpg": {
   "capture": "https://web.archive.org/web/20261022131742/https://res.starwarsccg.org/wp/wp-content/uploads/2022/PC20Logo.jpg",
-  "last": "2026-10-22T13:36:40Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T14:30:06Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCGSuperSaturday2022.jpg": {
+  "capture": "https://web.archive.org/web/20261022143018/https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCGSuperSaturday2022.jpg",
+  "job_id": "spn2-3fe76d498c24d7a670e74d103d8c558455fa2943",
+  "last": "2026-10-22T14:38:41Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:38:41Z",
+   "bytes": 243882,
+   "capture_id": "https://web.archive.org/web/20261022143018id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCGSuperSaturday2022.jpg",
+   "method": "sha256",
+   "sha256": "69ebae6d6a351dad30ff6af40277df9b49673fbfba571986eabd6791f2654783"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCG_2022_AdvancedRulebook.pdf": {
   "capture": "https://web.archive.org/web/20261009165106/https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCG_2022_AdvancedRulebook.pdf",
@@ -34989,9 +35329,10 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/championsleaguebanner.jpg": {
   "capture": "https://web.archive.org/web/20261022131912/https://res.starwarsccg.org/wp/wp-content/uploads/2022/championsleaguebanner.jpg",
-  "last": "2026-10-22T13:31:44Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T14:30:27Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/championsleaguelogo.png": {
   "capture": "",
@@ -35049,6 +35390,20 @@
    "sha256": "d60a14ec1738fc416f169f0637ee3719d278e5b167af4fac17a06aac0956c540"
   }
  },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2022/outriderAI.png": {
+  "capture": "https://web.archive.org/web/20261022143038/https://res.starwarsccg.org/wp/wp-content/uploads/2022/outriderAI.png",
+  "job_id": "spn2-cde052bfa10b29a95a73fc74133bbb57cb592128",
+  "last": "2026-10-22T14:38:47Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:38:47Z",
+   "bytes": 288233,
+   "capture_id": "https://web.archive.org/web/20261022143038id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/outriderAI.png",
+   "method": "sha256",
+   "sha256": "005719c096bf3d36a4620f2157ca6ae353494334af103326872f91fff51a8117"
+  }
+ },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/retroArtwork.jpg": {
   "capture": "https://web.archive.org/web/20261022135125/https://res.starwarsccg.org/wp/wp-content/uploads/2022/retroArtwork.jpg",
   "job_id": "spn2-08a901604e42f196106251a49beba09f31b778fc",
@@ -35089,6 +35444,20 @@
    "capture_id": "https://web.archive.org/web/20261022135147id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Cali.jpg",
    "method": "sha256",
    "sha256": "9d2df0bcc489e7bd44a7a19d9c9215b340a1b5621249dcb5cb9bde6ec3d7059d"
+  }
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Denver.jpg": {
+  "capture": "https://web.archive.org/web/20261022143049/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Denver.jpg",
+  "job_id": "spn2-7e05cb464a60c81184795ac609fe7c7279feffcd",
+  "last": "2026-10-22T14:38:52Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T14:38:52Z",
+   "bytes": 464091,
+   "capture_id": "https://web.archive.org/web/20261022143049id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Denver.jpg",
+   "method": "sha256",
+   "sha256": "7a7b8473b73f1fa45ff52cc0bf81f01f1f6f8070d203a8a6727f6fc9a3b2bcbc"
   }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/LAAngels.jpg": {
@@ -35221,11 +35590,18 @@
   }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/Nationals-2014-day-2.pdf": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 329 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T13:54:33Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261008203752/https://res.starwarsccg.org/wp/wp-content/uploads/Nationals-2014-day-2.pdf",
+  "last": "2026-10-22T14:31:00Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T14:31:03Z",
+   "bytes": 2808397,
+   "capture_id": "https://web.archive.org/web/20261008203752id_/https://res.starwarsccg.org/wp/wp-content/uploads/Nationals-2014-day-2.pdf",
+   "method": "sha256",
+   "sha256": "05483e53988362e192d402a64040b7c8342ce46e9e7b9cf56b5cd8acc4af0a27"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/Star-Wars-CCG-Tournament-Guide-2.2.pdf": {
   "capture": "",
@@ -35256,11 +35632,18 @@
   "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/decklist-form-bw.pdf": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 329 hours, 52 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T13:55:06Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261008200247/https://res.starwarsccg.org/wp/wp-content/uploads/decklist-form-bw.pdf",
+  "last": "2026-10-22T14:31:18Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T14:31:25Z",
+   "bytes": 784024,
+   "capture_id": "https://web.archive.org/web/20261008200247id_/https://res.starwarsccg.org/wp/wp-content/uploads/decklist-form-bw.pdf",
+   "method": "sha256",
+   "sha256": "dd72cc10db46a9e199671572bde0b05b307ec340f367fe99f77b04bf77d40540"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/em-hof-e1455416876528.jpg": {
   "capture": "https://web.archive.org/web/20261022135517/https://res.starwarsccg.org/wp/wp-content/uploads/em-hof-e1455416876528.jpg",
