@@ -67,24 +67,34 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-22T17:11:45Z",
+   "at": "2026-10-22T17:49:21Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 2
+ },
+ "http://decipher.com/deciphercon/2000/photos/pictures/20001006133217.jpg": {
+  "capture": "https://web.archive.org/web/20020614152851/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006133217.jpg",
+  "last": "2026-10-22T17:46:17Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T17:46:19Z",
    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
   },
   "verify_tries": 1
  },
- "http://decipher.com/deciphercon/2000/photos/pictures/20001006133217.jpg": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 306 hours, 56 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:12:05Z",
-  "status": "retry",
-  "tries": 2
- },
  "http://decipher.com/deciphercon/2000/photos/pictures/20001006133313.jpg": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 306 hours, 56 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:12:29Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20020608130739/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006133313.jpg",
+  "last": "2026-10-22T17:46:32Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T17:46:34Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+  },
+  "verify_tries": 1
  },
  "http://decipher.com/deciphercon/2000/photos/pictures/20001006184854.jpg": {
   "capture": "https://web.archive.org/web/20020608131616/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006184854.jpg",
@@ -334,25 +344,25 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-5dcbb0e6da48dcb04584bf2768f63c0fe86bc12b",
-  "last": "2026-10-22T17:16:09Z",
+  "last": "2026-10-22T17:49:10Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://theswca.com/index.php?action=disp_item&item_id=91371": {
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-b8483218cba974e45080fd7a541551eeeb5c02b1",
-  "last": "2026-10-22T17:16:11Z",
+  "last": "2026-10-22T17:49:12Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://theswca.com/index.php?action=disp_items_by&items_by=owner_credit&id=24&page=51": {
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-1fb42edc71863b7b276cf1aa609fc4d4114f1409",
-  "last": "2026-10-22T17:16:13Z",
+  "last": "2026-10-22T17:49:16Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://www.angelfire.com/scifi2/thx113806107": {
   "capture": "",
@@ -32660,10 +32670,10 @@
  },
  "https://boardgamegeek.com/filepage/33565/star-wars-ccg-complete-card-list-42": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 310 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:13:25Z",
+  "error": "no job_id: The same snapshot had been made 311 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T17:47:18Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set": {
   "capture": "https://web.archive.org/web/20261014165918/https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set",
@@ -32675,9 +32685,9 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-3cc2c52e555a75ba0b0f5ed9fc51171a91430aef",
-  "last": "2026-10-22T17:16:15Z",
+  "last": "2026-10-22T17:49:18Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://cardguide.fandom.com/wiki/Premiere_Limited_(Star_Wars_CCG)_(ES)": {
   "capture": "",
@@ -32688,24 +32698,24 @@
  },
  "https://cardguide.fandom.com/wiki/Star_Wars_CCG": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 333 hours, 44 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:14:21Z",
+  "error": "no job_id: The same snapshot had been made 334 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T17:47:56Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://cardguide.fandom.com/wiki/Tatooine_(expansion)": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 333 hours, 27 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:14:33Z",
+  "error": "no job_id: The same snapshot had been made 334 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
+  "last": "2026-10-22T17:48:08Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://cdn4.volusion.store/zybxa-zvknq/v/vspfiles/photos/11914-2T.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 327 hours, 41 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:14:45Z",
+  "error": "no job_id: The same snapshot had been made 328 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T17:48:20Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://cf.geekdo-images.com/Mh0cyNMXYaFTLRM7-10Bew__original/img/kNn9wib-SefMetams7wcni3WOIg=/0x0/filters:format(jpeg)/pic6968734.jpg": {
   "capture": "https://web.archive.org/web/20261014164729/https://cf.geekdo-images.com/Mh0cyNMXYaFTLRM7-10Bew__original/img/kNn9wib-SefMetams7wcni3WOIg=/0x0/filters:format(jpeg)/pic6968734.jpg",
@@ -32850,17 +32860,17 @@
  },
  "https://docs.google.com/presentation/d/1XNDNwSry9So9nAPCjeLSJANSofNl2G6EY7Hy2lpJmGY/edit": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 333 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:15:09Z",
+  "error": "no job_id: The same snapshot had been made 333 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T17:48:41Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://drive.google.com/drive/folders/15RQtNOwsJHPpc8Iw8A4Q4ofOryln5eXv": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 297 hours, 47 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:15:21Z",
+  "error": "no job_id: The same snapshot had been made 298 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T17:48:58Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://drive.google.com/drive/folders/1MgdLgCSaNFWN46hCrVhFNDv4fzrJ0jKe": {
   "capture": "",
@@ -35737,9 +35747,9 @@
  "https://res.starwarsccg.org/wp/wp-content/uploads/2024/Devon.png": {
   "capture": "https://web.archive.org/web/20261022135301/https://res.starwarsccg.org/wp/wp-content/uploads/2024/Devon.png",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T17:04:08Z",
+  "last": "2026-10-22T17:45:34Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2024/GEMPC8Banner.jpg": {
   "capture": "",
