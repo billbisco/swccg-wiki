@@ -36683,9 +36683,10 @@
  },
  "https://star-wars.pl/News/10466,Preview_Fifth_Anthology.html": {
   "capture": "https://web.archive.org/web/20261022195259/https://star-wars.pl/News/10466,Preview_Fifth_Anthology.html",
-  "last": "2026-10-22T20:09:58Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T21:04:17Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://star-wars.pl/Tekst/1963,Star_Wars_CCG_Virtual_Sets.html": {
   "capture": "",
@@ -36697,9 +36698,9 @@
  "https://starshipexcelsior.com/othersites/stccg1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Tourn/tournamentguide0699.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T20:22:37Z",
+  "last": "2026-10-22T21:04:27Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://starshipexcelsior.com/othersites/stccg1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Worlds2001.htm": {
   "capture": "",
@@ -36719,20 +36720,21 @@
   "capture": "https://web.archive.org/web/20260609070431/https://starwars.fandom.com/wiki/A_New_Hope_Limited",
   "last": "2026-10-22T19:53:01Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T20:23:11Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-22T21:05:22Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://starwars.fandom.com/wiki/A_New_Hope_Unlimited": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 336 hours, 43 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:28:42Z",
+  "error": "no job_id: The same snapshot had been made 337 hours, 19 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:04:38Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://starwars.fandom.com/wiki/Cloud_City_Limited": {
   "capture": "https://web.archive.org/web/20260929034118/https://starwars.fandom.com/wiki/Cloud_City_Limited",
@@ -36816,10 +36818,10 @@
  },
  "https://starwars.fandom.com/wiki/File:Decipher.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 334 hours, 54 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:15:16Z",
+  "error": "no job_id: The same snapshot had been made 335 hours, 44 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:04:50Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://starwars.fandom.com/wiki/First_Anthology": {
   "capture": "https://web.archive.org/web/20230304002322/https://starwars.fandom.com/wiki/First_Anthology",
@@ -36891,10 +36893,10 @@
  },
  "https://starwars.fandom.com/wiki/Michonne_Bourriague": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 335 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:16:35Z",
+  "error": "no job_id: The same snapshot had been made 336 hours, 37 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:05:01Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck": {
   "capture": "",
@@ -36958,10 +36960,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T20:28:59Z",
+   "at": "2026-10-22T21:05:14Z",
    "error": "source HTTP 403"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://starwars.fandom.com/wiki/Theed_Palace_Limited": {
   "capture": "https://web.archive.org/web/20260609052158/https://starwars.fandom.com/wiki/Theed_Palace_Limited",
