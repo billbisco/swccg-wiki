@@ -15,6 +15,10 @@ unverified (capture loads but does not match, or the source could not be fetched
 | ok (capture loads, not verified yet; the worker verifies these each run, newest first) |
 retry (save or check failed; retried later, up to MAX_TRIES) | failed (gave up after MAX_TRIES).
 
+Verified https://swccg.com/snapshots/… URLs: after verify, delete the staging file under
+/opt/swccg-res/snapshots/ (Bill 2026-10-14; auto-delete wired 2026-10-22). Each run also
+prunes leftover verified snapshot files. Wiki File: pages and archive.org items stay.
+
 Bots: push the URL to queue.txt, then read done.json. Cite the capture once status is "verified".
 No Wayback access from the bot's own machine is needed.
 
@@ -58,6 +62,15 @@ BACKOFF_MAX = 600
 RETRY_AFTER = timedelta(minutes=30)
 CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
 BANNED_HOSTS = {"forum.starwarsccg.org", "www.starwarsccg.org", "starwarsccg.org"}
+SNAPSHOT_HOSTS = {"swccg.com", "www.swccg.com"}
+
+
+def snapshot_root() -> Path:
+    return Path(os.environ.get("SWCCG_SNAPSHOT_ROOT", "/opt/swccg-res/snapshots"))
+
+
+def snapshot_log() -> Path:
+    return Path(os.environ.get("SWCCG_SNAPSHOT_LOG", str(snapshot_root() / "DELETED-after-wayback.log")))
 
 
 class NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -373,6 +386,77 @@ def write_done(repo: Path, done: dict) -> None:
     p.write_text(json.dumps(done, indent=1, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def snapshot_relpath(url: str) -> str | None:
+    """Relative path under /opt/swccg-res/snapshots for a swccg.com snapshot URL, or None."""
+    try:
+        p = urllib.parse.urlsplit(url.strip())
+    except ValueError:
+        return None
+    if (p.hostname or "").lower() not in SNAPSHOT_HOSTS:
+        return None
+    parts = [x for x in p.path.split("/") if x]
+    if len(parts) < 2 or parts[0] != "snapshots" or ".." in parts:
+        return None
+    rel = "/".join(parts[1:])
+    return rel or None
+
+
+def snapshot_file(url: str, root: Path | None = None) -> Path | None:
+    rel = snapshot_relpath(url)
+    if not rel:
+        return None
+    base = (root or snapshot_root()).resolve()
+    dest = (base / rel).resolve()
+    try:
+        dest.relative_to(base)
+    except ValueError:
+        return None
+    if dest == base:
+        return None
+    return dest
+
+
+def capture_timestamp(capture: str) -> str:
+    m = re.search(r"/web/(\d{14})", capture or "")
+    return m.group(1) if m else ""
+
+
+def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
+                             log_path: Path | None = None) -> bool:
+    """Delete the staging file once done.json marks this snapshot URL verified. Returns True if removed."""
+    if e.get("status") != "verified":
+        return False
+    fp = snapshot_file(url, root)
+    if fp is None or not fp.is_file() or fp.name == "DELETED-after-wayback.log":
+        return False
+    rel = snapshot_relpath(url)
+    method = (e.get("verify") or {}).get("method") or "checked"
+    ts = capture_timestamp(e.get("capture") or "")
+    size = fp.stat().st_size
+    fp.unlink()
+    line = f"{iso(now())}\tdelete\t{rel}\t{ts}\tverified ({method}) by wayback_worker\n"
+    log = log_path or snapshot_log()
+    try:
+        log.parent.mkdir(parents=True, exist_ok=True)
+        with log.open("a", encoding="utf-8") as fh:
+            fh.write(line)
+    except OSError as ex:
+        print("DELETE-LOG-ERR", rel, ex, flush=True)
+    print("DELETED", rel, size, ts, flush=True)
+    return True
+
+
+def prune_verified_snapshots(done: dict, root: Path | None = None,
+                             log_path: Path | None = None) -> int:
+    n = 0
+    for url, e in done.items():
+        if isinstance(e, dict) and delete_verified_snapshot(url, e, root, log_path):
+            n += 1
+    if n:
+        print("pruned", n, "verified snapshots", flush=True)
+    return n
+
+
 def confirm(url: str, e: dict) -> bool:
     """Resolve a pending entry. Returns True if it changed."""
     if e.get("job_id") and AUTH:
@@ -502,6 +586,9 @@ def run(repo: Path, minutes: float) -> None:
             break
         time.sleep(VERIFY_GAP_S)
 
+    # 5. drop staging files whose Wayback capture already matched (Bill 2026-10-14)
+    prune_verified_snapshots(done)
+
     if not changed:
         print("nothing to do")
         return
@@ -510,6 +597,7 @@ def run(repo: Path, minutes: float) -> None:
         _, fresh = load(repo)
         fresh.update(changed)
         write_done(repo, fresh)
+        prune_verified_snapshots(fresh)
         return [DONE]
 
     write_done(repo, done)

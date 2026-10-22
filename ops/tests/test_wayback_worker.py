@@ -1,6 +1,7 @@
 """Tests for the capture verification in ops/wayback_worker.py. Run: python3 -m unittest discover -s ops/tests"""
 import hashlib
 import json
+import os
 import sys
 import tempfile
 import unittest
@@ -198,6 +199,81 @@ class CaptureSideErrors(unittest.TestCase):
             W.verify_entry("https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf", e, get)
         self.assertEqual(e["status"], "ok")
         self.assertNotIn("verify_tries", e)
+
+
+class SnapshotDelete(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name) / "snapshots"
+        self.root.mkdir()
+        self.log = self.root / "DELETED-after-wayback.log"
+        (self.root / "pc").mkdir()
+        self.fp = self.root / "pc" / "wrap.html"
+        self.fp.write_bytes(b"<html>ok</html>")
+        self.url = "https://swccg.com/snapshots/pc/wrap.html"
+        self.e = {
+            "capture": "https://web.archive.org/web/20261022114128/" + self.url,
+            "status": "verified",
+            "verify": {"method": "sha256"},
+        }
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_relpath_accepts_swccg_snapshot(self):
+        self.assertEqual(W.snapshot_relpath(self.url), "pc/wrap.html")
+        self.assertEqual(W.snapshot_relpath("https://www.swccg.com/snapshots/forum/t1.html"), "forum/t1.html")
+
+    def test_relpath_rejects_other_hosts_and_traversal(self):
+        self.assertIsNone(W.snapshot_relpath("https://www.decktech.net/starwarsccg/deck/14504"))
+        self.assertIsNone(W.snapshot_relpath("https://swccg.com/preserved/x.html"))
+        self.assertIsNone(W.snapshot_relpath("https://swccg.com/snapshots/../etc/passwd"))
+        self.assertIsNone(W.snapshot_relpath("https://swccg.com/snapshots/"))
+
+    def test_verified_snapshot_is_deleted_and_logged(self):
+        self.assertTrue(W.delete_verified_snapshot(self.url, self.e, self.root, self.log))
+        self.assertFalse(self.fp.exists())
+        log = self.log.read_text(encoding="utf-8")
+        self.assertIn("\tdelete\tpc/wrap.html\t20261022114128\tverified (sha256) by wayback_worker", log)
+
+    def test_unverified_or_ok_is_kept(self):
+        self.e["status"] = "ok"
+        self.assertFalse(W.delete_verified_snapshot(self.url, self.e, self.root, self.log))
+        self.assertTrue(self.fp.exists())
+        self.e["status"] = "unverified"
+        self.assertFalse(W.delete_verified_snapshot(self.url, self.e, self.root, self.log))
+        self.assertTrue(self.fp.exists())
+
+    def test_missing_file_is_not_an_error(self):
+        self.fp.unlink()
+        self.assertFalse(W.delete_verified_snapshot(self.url, self.e, self.root, self.log))
+
+    def test_run_prunes_already_verified_without_a_done_json_push(self):
+        saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "AUTH", "GAP_S")}
+        sleep = W.time.sleep
+        W.time.sleep = lambda s: None
+        repo = Path(self.tmp.name) / "repo"
+        (repo / "ops/wayback").mkdir(parents=True)
+        (repo / W.QUEUE).write_text(self.url + "\n")
+        (repo / W.DONE).write_text(json.dumps({self.url: self.e}))
+        pushed = []
+        W.reset_to_origin = lambda repo: None
+        W.commit_and_push = lambda repo, paths, msg, redo: pushed.append(msg) or True
+        W.AUTH = "LOW test:test"
+        W.GAP_S = 0
+        os.environ["SWCCG_SNAPSHOT_ROOT"] = str(self.root)
+        os.environ["SWCCG_SNAPSHOT_LOG"] = str(self.log)
+        try:
+            W.run(repo, minutes=1)
+        finally:
+            for k, v in saved.items():
+                setattr(W, k, v)
+            W.time.sleep = sleep
+            os.environ.pop("SWCCG_SNAPSHOT_ROOT", None)
+            os.environ.pop("SWCCG_SNAPSHOT_LOG", None)
+        self.assertFalse(self.fp.exists())
+        self.assertEqual(pushed, [])
+        self.assertIn("pc/wrap.html", self.log.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":
