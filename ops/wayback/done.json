@@ -32897,8 +32897,15 @@
   "capture": "https://web.archive.org/web/20260928143501/https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ",
   "last": "2026-10-22T19:09:38Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "unverified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-22T19:25:11Z",
+   "capture_id": "https://web.archive.org/web/20260928143501id_/https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ",
+   "method": "text",
+   "reason": "page text matches 72% (< 85%)",
+   "text_match": 0.717
+  }
  },
  "https://drive.google.com/file/d/15SPjO_q5-O6E4T8BH8FPAxiC2dYOLD3S/view": {
   "capture": "",
@@ -33133,24 +33140,24 @@
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/packagedProduct/VirtualAlternateImageBoosterPack.java": {
   "capture": "",
-  "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
-  "last": "2026-10-22T18:22:31Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T19:24:13Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/resources/swccgFormats.json": {
   "capture": "",
   "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
-  "last": "2026-10-22T18:22:42Z",
+  "last": "2026-10-22T19:24:24Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/commits/master/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set210/dark/Card210_042.java": {
   "capture": "",
   "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
-  "last": "2026-10-22T18:22:54Z",
+  "last": "2026-10-22T19:24:34Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://github.com/PlayersCouncil/gemp-lotr": {
   "capture": "https://web.archive.org/web/20261020161311/https://github.com/PlayersCouncil/gemp-lotr",
@@ -33489,10 +33496,10 @@
  },
  "https://groups.google.com/g/rec.arts.sf.starwars.collecting/c/mVSQQWI1He4": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 299 hours, 5 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-22T18:34:47Z",
+  "error": "no job_id: The same snapshot had been made 299 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T19:24:46Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://i.ebayimg.com/images/g/FAoAAeSwCFxqxW06/s-l1600.jpg": {
   "capture": "https://web.archive.org/web/20261014165114/https://i.ebayimg.com/images/g/FAoAAeSwCFxqxW06/s-l1600.jpg",
@@ -33524,13 +33531,15 @@
   "capture": "https://web.archive.org/web/20261010024926/https://i.postimg.cc/76fn9qPj/2026-Retro-GEMPC-Logo.png",
   "last": "2026-10-22T18:34:58Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T18:37:30Z",
-   "error": "source HTTP 504"
-  },
-  "verify_tries": 1
+   "at": "2026-10-22T19:27:17Z",
+   "bytes": 275443,
+   "capture_id": "https://web.archive.org/web/20261010024926id_/https://i.postimg.cc/76fn9qPj/2026-Retro-GEMPC-Logo.png",
+   "method": "sha256",
+   "sha256": "f622fba474c65494fbea03b6edacfa83e4e87874b1d391fea23d1d3969223ce2"
+  }
  },
  "https://i.ytimg.com/vi/-RA6URmq97U/maxresdefault.jpg": {
   "capture": "https://web.archive.org/web/20261022183746/https://i.ytimg.com/vi/-RA6URmq97U/maxresdefault.jpg",
@@ -33614,6 +33623,13 @@
   "job_id": "spn2-7d916f14a3da309c3a6a15a3635fadd506e1b7eb",
   "last": "2026-10-16T02:11:27Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://icv2.com/articles/games/view/20728/ffg-acquires-star-wars-games-license": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 335 hours, 40 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T19:24:58Z",
+  "status": "retry",
   "tries": 1
  },
  "https://icv2.com/articles/games/view/983/wizards-coast-gets-star-wars-ccg": {
