@@ -32895,24 +32895,24 @@
  },
  "https://drive.google.com/drive/folders/1OsAFQQAhOgUKmKFgFoW1xXGBi-HAJXqJ": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 298 hours, 26 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T17:54:23Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T18:33:15Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://drive.google.com/file/d/15SPjO_q5-O6E4T8BH8FPAxiC2dYOLD3S/view": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T17:59:55Z",
+  "last": "2026-10-22T18:33:25Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://drive.google.com/file/d/171BmSpPfWKtT3KklmCC38lG0Sk8Ozi8q/view": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T18:00:05Z",
+  "last": "2026-10-22T18:33:35Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://en.wikipedia.org/wiki/Decipher,_Inc.": {
   "capture": "https://web.archive.org/web/20261013234544/https://en.wikipedia.org/wiki/Decipher,_Inc.",
@@ -32922,11 +32922,11 @@
   "tries": 1
  },
  "https://en.wikipedia.org/wiki/File:WARS_trading_card_game_back.png": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 330 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T18:00:16Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261008234817/https://en.wikipedia.org/wiki/File:WARS_trading_card_game_back.png",
+  "last": "2026-10-22T18:33:48Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://en.wikipedia.org/wiki/Jedi_Knights_Trading_Card_Game": {
   "capture": "https://web.archive.org/web/20261014164931/https://en.wikipedia.org/wiki/Jedi_Knights_Trading_Card_Game",
@@ -32936,11 +32936,17 @@
   "tries": 1
  },
  "https://en.wikipedia.org/wiki/MegaCon": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 482 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-22T18:00:28Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261002155232/https://en.wikipedia.org/wiki/MegaCon",
+  "last": "2026-10-22T18:34:00Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T18:34:02Z",
+   "capture_id": "https://web.archive.org/web/20261002155232id_/https://en.wikipedia.org/wiki/MegaCon",
+   "method": "text",
+   "text_match": 0.999
+  }
  },
  "https://en.wikipedia.org/wiki/Pente": {
   "capture": "https://web.archive.org/web/20261008223533/https://en.wikipedia.org/wiki/Pente",
@@ -32957,11 +32963,17 @@
   "tries": 1
  },
  "https://en.wikipedia.org/wiki/Star_Wars_Customizable_Card_Game": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 149 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T18:00:39Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261016121021/https://en.wikipedia.org/wiki/Star_Wars_Customizable_Card_Game",
+  "last": "2026-10-22T18:34:15Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T18:34:18Z",
+   "capture_id": "https://web.archive.org/web/20261016121021id_/https://en.wikipedia.org/wiki/Star_Wars_Customizable_Card_Game",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://en.wikipedia.org/wiki/Tom_Braunlich": {
   "capture": "https://web.archive.org/web/20261008195124/https://en.wikipedia.org/wiki/Tom_Braunlich",
@@ -33386,11 +33398,17 @@
   }
  },
  "https://github.com/swccgpc/swccg-card-json": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 319 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-22T17:34:21Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261009103048/https://github.com/swccgpc/swccg-card-json",
+  "last": "2026-10-22T18:34:31Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T18:34:34Z",
+   "capture_id": "https://web.archive.org/web/20261009103048id_/https://github.com/swccgpc/swccg-card-json",
+   "method": "text",
+   "text_match": 0.995
+  }
  },
  "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Dark.json": {
   "capture": "https://web.archive.org/web/20261020174147/https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Dark.json",
@@ -33465,10 +33483,10 @@
  },
  "https://groups.google.com/g/rec.arts.sf.starwars.collecting/c/mVSQQWI1He4": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 298 hours, 5 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-22T17:34:34Z",
+  "error": "no job_id: The same snapshot had been made 299 hours, 5 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-22T18:34:47Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://i.ebayimg.com/images/g/FAoAAeSwCFxqxW06/s-l1600.jpg": {
   "capture": "https://web.archive.org/web/20261014165114/https://i.ebayimg.com/images/g/FAoAAeSwCFxqxW06/s-l1600.jpg",
@@ -33495,6 +33513,81 @@
   "last": "2026-10-14T17:16:16Z",
   "status": "ok",
   "tries": 1
+ },
+ "https://i.postimg.cc/76fn9qPj/2026-Retro-GEMPC-Logo.png": {
+  "capture": "https://web.archive.org/web/20261010024926/https://i.postimg.cc/76fn9qPj/2026-Retro-GEMPC-Logo.png",
+  "last": "2026-10-22T18:34:58Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T18:37:30Z",
+   "error": "source HTTP 504"
+  },
+  "verify_tries": 1
+ },
+ "https://i.ytimg.com/vi/-RA6URmq97U/maxresdefault.jpg": {
+  "capture": "https://web.archive.org/web/20261022183746/https://i.ytimg.com/vi/-RA6URmq97U/maxresdefault.jpg",
+  "job_id": "spn2-90aa76a88036d2d59eddc119adab6bb7b0f8c983",
+  "last": "2026-10-22T18:41:55Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T18:41:55Z",
+   "bytes": 82800,
+   "capture_id": "https://web.archive.org/web/20261022183746id_/https://i.ytimg.com/vi/-RA6URmq97U/maxresdefault.jpg",
+   "method": "sha256",
+   "sha256": "09da0728aeb4714ed2d4a1b8da37631d54b0c01a3ca683447c43dfe8608ed252"
+  }
+ },
+ "https://i.ytimg.com/vi/6jO2dTROIHs/maxresdefault.jpg": {
+  "capture": "https://web.archive.org/web/20261022183758/https://i.ytimg.com/vi/6jO2dTROIHs/maxresdefault.jpg",
+  "job_id": "spn2-f0d297b1b1a39fd12996ef828f16d0784a6b5910",
+  "last": "2026-10-22T18:42:12Z",
+  "status": "ok",
+  "tries": 1
+ },
+ "https://i.ytimg.com/vi/swSmLNAG62A/maxresdefault.jpg": {
+  "capture": "https://web.archive.org/web/20261022183810/https://i.ytimg.com/vi/swSmLNAG62A/maxresdefault.jpg",
+  "job_id": "spn2-cd6d5e0fc31e4680b396b08ce1718b82819744fa",
+  "last": "2026-10-22T18:42:54Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T18:42:54Z",
+   "bytes": 87598,
+   "capture_id": "https://web.archive.org/web/20261022183810id_/https://i.ytimg.com/vi/swSmLNAG62A/maxresdefault.jpg",
+   "method": "sha256",
+   "sha256": "0976ff41b36b7268028d282a6e3a1dc9aee4a2114c1aba564eacc20e483355cd"
+  }
+ },
+ "https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg": {
+  "capture": "https://web.archive.org/web/20261022183821/https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg",
+  "job_id": "spn2-544f9c7505c9e136a6301c02575625a0044d1178",
+  "last": "2026-10-22T18:43:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T18:43:07Z",
+   "bytes": 92146,
+   "capture_id": "https://web.archive.org/web/20261022183821id_/https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg",
+   "method": "sha256",
+   "sha256": "8cbe34bce7bac0f53359c0856d5bee287f4be4bec949d6b02aeee666cfbd2458"
+  }
+ },
+ "https://i.ytimg.com/vi/xHGFzJHIlcI/maxresdefault.jpg": {
+  "capture": "https://web.archive.org/web/20261022183832/https://i.ytimg.com/vi/xHGFzJHIlcI/maxresdefault.jpg",
+  "job_id": "spn2-e3912af231d91fc6355269ac01ea2ba9ef24ad2f",
+  "last": "2026-10-22T18:43:29Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T18:43:29Z",
+   "bytes": 90730,
+   "capture_id": "https://web.archive.org/web/20261022183832id_/https://i.ytimg.com/vi/xHGFzJHIlcI/maxresdefault.jpg",
+   "method": "sha256",
+   "sha256": "4e1f9b1a4236638ddfdd2b1cfe45e080cfa31aace50b2e349cc2e92bf11f05cb"
+  }
  },
  "https://icv2.com/articles/columns/view/45201/business-3x3-dean-irwin-recently-enterplay": {
   "capture": "https://web.archive.org/web/20261016020514/https://icv2.com/articles/columns/view/45201/business-3x3-dean-irwin-recently-enterplay",
@@ -33531,6 +33624,20 @@
   "status": "ok",
   "tries": 1
  },
+ "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer": {
+  "capture": "https://web.archive.org/web/20261005174630/https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+  "last": "2026-10-22T18:39:14Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T18:39:18Z",
+   "bytes": 13975,
+   "capture_id": "https://web.archive.org/web/20261005174630id_/https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+   "method": "sha256",
+   "sha256": "4972489518970a01e5a456bf21e0a32f2e488e7c7827d268cfd0bf4059d22ee0"
+  }
+ },
  "https://ipfs.ssi.eecc.de/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/SWCCG.html": {
   "capture": "https://web.archive.org/web/20261008194513/https://ipfs.ssi.eecc.de/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/SWCCG.html",
   "last": "2026-10-20T23:10:07Z",
@@ -33543,6 +33650,26 @@
    "reason": "could not fetch after 3 tries"
   },
   "verify_tries": 3
+ },
+ "https://labsk.net/index.php?topic=95165.msg973702": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 313 hours ago. You can make new capture of this URL after 720 hours.",
+  "last": "2026-10-22T18:39:29Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://labsk.net/juegos-redisenados/star-wars-ccg-redisenado/?action=printpage": {
+  "capture": "https://web.archive.org/web/20261009173835/https://labsk.net/juegos-redisenados/star-wars-ccg-redisenado/?action=printpage",
+  "last": "2026-10-22T18:39:42Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T18:39:43Z",
+   "capture_id": "https://web.archive.org/web/20261009173835id_/https://labsk.net/juegos-redisenados/star-wars-ccg-redisenado/?action=printpage",
+   "method": "text",
+   "text_match": 0.999
+  }
  },
  "https://lotrtcgpc.net/about.html": {
   "capture": "https://web.archive.org/web/20261020161232/https://lotrtcgpc.net/about.html",
@@ -33557,6 +33684,13 @@
    "method": "sha256",
    "sha256": "eae643034c133d68bd0706360dcd8f07b2da8898a1d4a0de1003714009ecb318"
   }
+ },
+ "https://media.swccgstore.com/2018/09/03/the-voice-of-the-force-interview-with-swccg-documentary-directors/": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 317 hours, 41 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T18:40:21Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://melee.gg/Profile/Index/AdamCFC": {
   "capture": "",
