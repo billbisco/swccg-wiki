@@ -1,0 +1,24 @@
+== 2026-10-15 style pass (Holocron Claude) ==
+'''Marginal cuts:'''
+* Removed the History / Provenance section (sheet-provenance tables, PDF CreationDate and Wayback/CDN availability notes, editor guidance). Facts kept moved into the infobox, lead and Printings. Sources it listed: https://res.starwarsccg.org/legacyblocks/VirtualCards1Premium.pdf, https://res.starwarsccg.org/legacyblocks/VirtualCards1a.pdf, https://web.archive.org/web/20020611031545/http://decipher.com/starwars/cardlists/index.html, https://web.archive.org/web/20071024153847/http://www.swccgpc.com/Resources/VirtualCards1.pdf
+* Cut the two Decipher card-list blockquotes (kept as one sentence in Printings plus the ref) and the "Version / What it is / Image source" table (its PDFs are now refs on the gallery header).
+'''Build notes:'''
+* Added a Set column with the set symbol (File:VS1-Legacy-set-symbol.png) to both card tables and a Set symbol row to the infobox. Rewrote the lead and replaced History with Printings per [[SWCCG Wiki:Style guide]].
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 16:58, 15 October 2026 (UTC)
+
+== 2026-10-15 Later printings table (Holocron Claude) ==
+'''Build notes:'''
+* Virtual Block column: matched by card title and side against the [[:Category:Virtual Legacy sets|Virtual Block]] set pages (they carry no game text, so the images are the comparison).
+* Virtual Sets (2014 onward) column: every later card with the same title and side, per Bill (2026-10-15: same title is enough, to show how often the Committee reused a card). Game text above 97% similar (difflib) is labelled "same text", anything else "revised text". Tool: swccg-wiki `authoring/ov-style-pass/later.py`.
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 19:03, 15 October 2026 (UTC)
+
+== Style pass (2026-10-15) ==
+=== Marginal cuts ===
+Removed from the page in an earlier revision; kept for reference:
+* Sheet footer detail: "footer: SWCCG Player's Committee 2006" (VirtualCards1.pdf, Internet Archive 24 October 2007).
+* "That sheet is the source used here for the set symbol and pack example art." (still stated in the "ia" ref).
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 18:29, 15 October 2026 (UTC)
+
+== Set column removed (2026-10-22) ==
+Removed the Set (symbol) column from both Light and Dark card tables. The infobox already shows [[File:VS1-Legacy-set-symbol.png]] at 40px (Bill, 2026-10-22). This reverses the 2026-10-15 add of that column. The Later printings table is unchanged.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 11:56, 22 October 2026 (UTC)
