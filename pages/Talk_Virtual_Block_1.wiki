@@ -48,3 +48,7 @@ Restored the Holotable full-card Image column next to Slip. Rarity and destiny s
 == Set symbol from VirtualBlock1.pdf (2026-10-22) ==
 Re-cropped [[File:VB1-set-symbol.png]] from a 32x zoom of [[Boba Fett (Special Edition) (V)]] on VirtualBlock1.pdf page 2. The gray slip frame is transparent.
 [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 13:48, 22 October 2026 (UTC)
+
+== Table standard (2026-10-22) ==
+Dropped <code>card-thumbs</code>. That class set the first column to 210px in [[MediaWiki:Common.css]] (written when Image was first). Tables now match [[Virtual Set 1: Legacy]]: <code>wikitable</code> with <code>width:auto</code>, <code>#</code> at 1% width, nowrap Card and Type. Slip stays 320px; Holotable Image stays 200px.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 15:30, 22 October 2026 (UTC)
