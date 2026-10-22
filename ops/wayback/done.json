@@ -56048,11 +56048,10 @@
  },
  "https://swccg.com/snapshots/pc/jonny-chu-ktod-capture-2022-retro-event-title.html": {
   "capture": "",
-  "error": "error:not-found",
-  "job_id": "spn2-7bc87a97e45d9f01ae0dc6644b3a5f60f7a3bcbf",
-  "last": "2026-10-22T22:32:08Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T23:09:28Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/major-event-winners.html": {
   "capture": "https://web.archive.org/web/20261020230923/https://swccg.com/snapshots/pc/major-event-winners.html",
@@ -58305,13 +58304,14 @@
   "capture": "https://web.archive.org/web/20260929064107/https://swccgdb.com/decklist/view/5/operatives-1998-world-champion-1.0",
   "last": "2026-10-22T21:49:00Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:37:05Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T23:16:13Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/6/operatives-1998-world-champion-1.0": {
   "capture": "https://web.archive.org/web/20260929064221/https://swccgdb.com/decklist/view/6/operatives-1998-world-champion-1.0",
@@ -59849,11 +59849,10 @@
  },
  "https://www.starwars-universe.com/collectionnables-serie-53-tatooine-ccg.html": {
   "capture": "",
-  "error": "error:bad-gateway",
-  "job_id": "spn2-257101ff4078ed42605f16ac0dbac8002aa1d593",
-  "last": "2026-10-22T22:32:10Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T23:09:38Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/16248/": {
   "capture": "https://web.archive.org/web/20261020233420/https://www.stephenskilton.com/decktech_archives/16248/",
@@ -59927,10 +59926,10 @@
  },
  "https://www.swccgstore.com/Star-Wars-CCG-Asteroid-Sanctuary-p/11914.htm": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 332 hours, 53 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T22:27:26Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T23:09:49Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.theforce.net/ccg/story/Star_Wars_CCG_Explodes_at_DecipherCon_2002_65230.asp": {
   "capture": "https://web.archive.org/web/20261022222745/https://www.theforce.net/ccg/story/Star_Wars_CCG_Explodes_at_DecipherCon_2002_65230.asp",
@@ -59946,11 +59945,17 @@
   }
  },
  "https://www.theforce.net/ccg/story/World_Championship_Results_announced_64778.asp": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 148 hours, 17 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T22:27:50Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261016180959/https://www.theforce.net/ccg/story/World_Championship_Results_announced_64778.asp",
+  "last": "2026-10-22T23:10:02Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T23:16:07Z",
+   "capture_id": "https://web.archive.org/web/20261016180959id_/https://www.theforce.net/ccg/story/World_Championship_Results_announced_64778.asp",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://www.theonering.net/torwp/2002/02/14/26785-decipher-talks-lotr/": {
   "capture": "https://web.archive.org/web/20261015183623/https://www.theonering.net/torwp/2002/02/14/26785-decipher-talks-lotr/",
@@ -59977,16 +59982,16 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-4c57c8962fbf3ead2b9d61fc3596fa09b6c2f265",
-  "last": "2026-10-22T22:32:16Z",
+  "last": "2026-10-22T23:16:02Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.trekcc.org/1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Tourn/tournamentguide0699.pdf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 338 hours, 25 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T22:28:18Z",
+  "error": "no job_id: The same snapshot had been made 339 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-22T23:10:28Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.twitch.tv/nrabbit": {
   "capture": "https://web.archive.org/web/20261022222921/https://www.twitch.tv/nrabbit",
