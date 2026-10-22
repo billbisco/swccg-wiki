@@ -1,0 +1,24 @@
+== Card table fill (October 2026) ==
+
+'''Build notes.''' The Destiny and Game text cells of the card tables were filled from each linked card page's <nowiki>{{Card}}</nowiki> fields (<code>destiny=</code>, <code>game_text=</code>), following redirects. Objective rows take the 0-side or 7-side text that matches the row. Only blank cells were filled. Script: <code>vset-fill/fill.py</code> (Datacard Grok); rerun it after card pages change.
+
+'''Missing data.''' These rows stay blank:
+* [[Jabba's Prize]] (destiny, game_text)
+* [[Drop! (V) (Dark)]] (destiny, game_text)
+* [[Imbalance & •Kintan Strider (Dark)]] (destiny, game_text)
+* [[Lana Dobreed & •Sacrifice (Dark)]] (destiny, game_text)
+
+'''Marginal cuts.''' Style-guide fixes to the existing text (old, then new):
+* <nowiki>== Sources ==</nowiki> → <nowiki>== External links ==</nowiki>
+* <nowiki>&mdash; secondary encyclopedia note that existing sets were reorganized (often summarized as August 2009; primary PC announce is 16 Sep 2009)</nowiki> → <nowiki>&mdash; summary of the 2009 reorganization of the existing sets</nowiki>
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 14:42, 20 October 2026 (UTC)
+* 20 October 2026: the four blank rows are now filled. Their card pages got destiny, game text and the other missing fields from swccg-card-json ([https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/LightLegacy.json LightLegacy.json] / [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/DarkLegacy.json DarkLegacy.json], commit d4e661e). [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 15:11, 20 October 2026 (UTC)
+
+== Admiral Motti, Battlestation Coordinator (V) moved to Virtual Block 1 (2026-10-20) ==
+
+Comlink Cursor: removed the row for [[Admiral Motti, Battlestation Coordinator (V)]]. It is printed in VirtualBlock1.pdf as 02E and is not in any Block 6 PDF. Now on [[Virtual Block 1]]. Cards Total 159 → 158. Card-page chain: [[4-LOM With Concussion Rifle (V) (Dark)]] → [[Admiral Piett (V) (Dark)]]. External links now have Preserved copies (captures opened and checked). [[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 19:57, 20 October 2026 (UTC)
+
+== Set infobox, printed slips, table standard (2026-10-22) ==
+Converted to [[Template:Set infobox]] (portrait [[File:Set-VB6-logo.jpg]], symbol [[File:VB6-set-symbol.png]], code VB6 · GEMP set 601). Tables match [[Virtual Block 1]]. Slip crops are 300 DPI from three official PDFs. VirtualBlock6_1.pdf official text 4 September 2009; Preserved copy 20261008195540, sha256 55aa6db7ebdee7f11a8016477b9d867a73cc46fc38eaac31264787cb081a185f. VirtualBlock6_2.pdf 7 December 2009; 20261020174418, sha256 5511694af1fc51caff8c3ce8eae7add400998ff64c750e8b0c3d9af5816fce5c. VirtualBlock6_3.pdf 15 March 2010; 20261022213441, sha256 c27c12184370c536def7bbead8434770511b4c281df4da18d0e9e0c200c16315. Dual-face [[Mind What You Have Learned (V) / Save You It Can (V)]] counts once. [[Obi-Wan Kenobi, Padawan Learner (V) (AI) (Virtual Block 6)|Obi-Wan Kenobi, Padawan Learner (V) (AI)]] shares the non-AI overlay. Overlay wiki titles use the Holotable original. Unused overlay-shield slips with no Holotable GIF stay off the card list.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 22:16, 22 October 2026 (UTC)
