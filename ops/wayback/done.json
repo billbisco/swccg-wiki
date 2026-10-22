@@ -26714,9 +26714,9 @@
  "http://www.decktech.net/starwarsccg/deck/5326": {
   "capture": "https://web.archive.org/web/20261022111956/https://www.decktech.net/starwarsccg/deck/5326/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:21:51Z",
+  "last": "2026-10-22T12:53:12Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://www.decktech.net/starwarsccg/deck/5329": {
   "capture": "https://web.archive.org/web/20261018183437/https://www.decktech.net/starwarsccg/deck/5329/",
@@ -32532,9 +32532,9 @@
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set203/light/Card203_013.java": {
   "capture": "https://web.archive.org/web/20261022112057/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set203/light/Card203_013.java",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:12:27Z",
+  "last": "2026-10-22T12:53:22Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set209/light/Card209_015.java": {
   "capture": "https://web.archive.org/web/20261020173813/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set209/light/Card209_015.java",
@@ -33183,58 +33183,100 @@
  "https://res.starwarsccg.org/cardlists/Set10Type.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:17:36Z",
+  "last": "2026-10-22T12:53:33Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://res.starwarsccg.org/cardlists/Set11Type.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 328 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T12:17:48Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T12:53:43Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://res.starwarsccg.org/cardlists/Set12Type.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 328 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T12:17:59Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261008200304/https://res.starwarsccg.org/cardlists/Set12Type.html",
+  "last": "2026-10-22T12:53:55Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T12:53:56Z",
+   "bytes": 21041,
+   "capture_id": "https://web.archive.org/web/20261008200304id_/https://res.starwarsccg.org/cardlists/Set12Type.html",
+   "method": "sha256",
+   "sha256": "87f82beabeef9d344cb820c33baccaae19703a7e024c8ec87f3390bff6c1ce17"
+  }
  },
  "https://res.starwarsccg.org/cardlists/Set13Type.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 328 hours, 17 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T12:18:10Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261008200024/https://res.starwarsccg.org/cardlists/Set13Type.html",
+  "last": "2026-10-22T12:54:08Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T12:54:10Z",
+   "bytes": 48809,
+   "capture_id": "https://web.archive.org/web/20261008200024id_/https://res.starwarsccg.org/cardlists/Set13Type.html",
+   "method": "sha256",
+   "sha256": "328242f54b586f2be1ea7e131ea3080e0df65acf15554405d0e6ba367c440fa5"
+  }
  },
  "https://res.starwarsccg.org/cardlists/Set14Type.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:22:01Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261008194437/https://res.starwarsccg.org/cardlists/Set14Type.html",
+  "last": "2026-10-22T12:54:22Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T12:54:24Z",
+   "bytes": 31183,
+   "capture_id": "https://web.archive.org/web/20261008194437id_/https://res.starwarsccg.org/cardlists/Set14Type.html",
+   "method": "sha256",
+   "sha256": "a38ca277e2acfa09ac7a36c3ae5839b8350b9167941c31b3b6fc70164ab1eb41"
+  }
  },
  "https://res.starwarsccg.org/cardlists/Set15Type.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:22:11Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261008195313/https://res.starwarsccg.org/cardlists/Set15Type.html",
+  "last": "2026-10-22T12:54:36Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T12:54:37Z",
+   "bytes": 31312,
+   "capture_id": "https://web.archive.org/web/20261008195313id_/https://res.starwarsccg.org/cardlists/Set15Type.html",
+   "method": "sha256",
+   "sha256": "f18b994fdd284a76e4a0e50228c5298e76e3ab1156bd6216e77632cc5da8d174"
+  }
  },
  "https://res.starwarsccg.org/cardlists/Set16Type.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:22:21Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261008200443/https://res.starwarsccg.org/cardlists/Set16Type.html",
+  "last": "2026-10-22T12:54:49Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T12:54:51Z",
+   "bytes": 45326,
+   "capture_id": "https://web.archive.org/web/20261008200443id_/https://res.starwarsccg.org/cardlists/Set16Type.html",
+   "method": "sha256",
+   "sha256": "4b64e40a85d56f5fa649030e0ef28383e3590177635ebd096235477f8e445520"
+  }
  },
  "https://res.starwarsccg.org/cardlists/Set17Type.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 328 hours ago. You can make new capture of this URL after 720 hours.",
-  "last": "2026-10-22T12:22:32Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261008202231/https://res.starwarsccg.org/cardlists/Set17Type.html",
+  "last": "2026-10-22T12:55:02Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T12:55:05Z",
+   "bytes": 44225,
+   "capture_id": "https://web.archive.org/web/20261008202231id_/https://res.starwarsccg.org/cardlists/Set17Type.html",
+   "method": "sha256",
+   "sha256": "47690c4259f27e30c4f0afc456c304d6367962edd3bab0e2b4b8218e39ebcf20"
+  }
  },
  "https://res.starwarsccg.org/cardlists/Set18Type.html": {
   "capture": "",
@@ -33871,16 +33913,30 @@
    "sha256": "853c192062b3dd3e27c64b1288f675ec0a9fa2bec323f915ea14d0578a3158f6"
   }
  },
+ "https://res.starwarsccg.org/cards/Virtual27-Light/large/beckettsstolenathauler.gif": {
+  "capture": "https://web.archive.org/web/20261022125650/https://res.starwarsccg.org/cards/Virtual27-Light/large/beckettsstolenathauler.gif",
+  "job_id": "spn2-26a1abee43c6223651199c8b341d10151dfd9e16",
+  "last": "2026-10-22T13:01:53Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T13:01:53Z",
+   "bytes": 409571,
+   "capture_id": "https://web.archive.org/web/20261022125650id_/https://res.starwarsccg.org/cards/Virtual27-Light/large/beckettsstolenathauler.gif",
+   "method": "sha256",
+   "sha256": "8fe3f9b58725020429918a5e8630933b6706f40b558aa353cb2e6a0d5bce569b"
+  }
+ },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/doordonotwiseadvice.gif": {
   "capture": "https://web.archive.org/web/20261022123115/https://res.starwarsccg.org/cards/Virtual27-Light/large/doordonotwiseadvice.gif",
-  "last": "2026-10-22T12:35:21Z",
-  "status": "pending",
+  "last": "2026-10-22T12:51:33Z",
+  "status": "retry",
   "tries": 1
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/groguinrazorcrest.gif": {
   "capture": "https://web.archive.org/web/20261022123126/https://res.starwarsccg.org/cards/Virtual27-Light/large/groguinrazorcrest.gif",
-  "last": "2026-10-22T12:35:50Z",
-  "status": "pending",
+  "last": "2026-10-22T12:51:34Z",
+  "status": "retry",
   "tries": 1
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/luthenrael.gif": {
@@ -33895,6 +33951,20 @@
    "capture_id": "https://web.archive.org/web/20261022123137id_/https://res.starwarsccg.org/cards/Virtual27-Light/large/luthenrael.gif",
    "method": "sha256",
    "sha256": "f68c1d7adbd349ce162d1ca77db2090200f411f76b3e7c242d3aad914dc44b98"
+  }
+ },
+ "https://res.starwarsccg.org/cards/Virtual27-Light/large/quigonjinn.gif": {
+  "capture": "https://web.archive.org/web/20261022125829/https://res.starwarsccg.org/cards/Virtual27-Light/large/quigonjinn.gif",
+  "job_id": "spn2-e21d8a78f1398c25f9b3b80a007123c99c817da8",
+  "last": "2026-10-22T13:01:59Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T13:01:59Z",
+   "bytes": 416660,
+   "capture_id": "https://web.archive.org/web/20261022125829id_/https://res.starwarsccg.org/cards/Virtual27-Light/large/quigonjinn.gif",
+   "method": "sha256",
+   "sha256": "154595c2cc1ea897b8e553cf81a730c5b71ff7e86166322fd6d6ab196e690038"
   }
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/quigonjinn_ai.gif": {
@@ -33939,6 +34009,20 @@
    "sha256": "03b7dccf7d7daa098783dd403470116336396ebe726500db7f5c50b9ae1b74e9"
   }
  },
+ "https://res.starwarsccg.org/cards/Virtual27-Light/large/theforcewillbewithyoualways.gif": {
+  "capture": "https://web.archive.org/web/20261022125712/https://res.starwarsccg.org/cards/Virtual27-Light/large/theforcewillbewithyoualways.gif",
+  "job_id": "spn2-1d94f769a0fdd3a72a22bb79de9f476335a7883a",
+  "last": "2026-10-22T13:02:04Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T13:02:04Z",
+   "bytes": 365511,
+   "capture_id": "https://web.archive.org/web/20261022125712id_/https://res.starwarsccg.org/cards/Virtual27-Light/large/theforcewillbewithyoualways.gif",
+   "method": "sha256",
+   "sha256": "698b8383cb610e7fa92921c7a9305a10c2bf5a7a10a58a71baeb7e9e14910c9e"
+  }
+ },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/thegreatestofallthejedi.gif": {
   "capture": "https://web.archive.org/web/20261022123324/https://res.starwarsccg.org/cards/Virtual27-Light/large/thegreatestofallthejedi.gif",
   "job_id": "spn2-6b928ef247dd968e3c1679aed98a6840ca56d56b",
@@ -33976,8 +34060,8 @@
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/yaddle.gif": {
   "capture": "https://web.archive.org/web/20261022123403/https://res.starwarsccg.org/cards/Virtual27-Light/large/yaddle.gif",
-  "last": "2026-10-22T12:35:58Z",
-  "status": "pending",
+  "last": "2026-10-22T12:51:35Z",
+  "status": "retry",
   "tries": 1
  },
  "https://res.starwarsccg.org/legacyblocks/": {
@@ -34256,12 +34340,82 @@
   "status": "retry",
   "tries": 1
  },
+ "https://res.starwarsccg.org/legacyblocks/VirtualCards16.pdf": {
+  "capture": "https://web.archive.org/web/20261008195540/https://res.starwarsccg.org/legacyblocks/VirtualCards16.pdf",
+  "last": "2026-10-22T12:57:25Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:57:30Z",
+   "bytes": 10286031,
+   "capture_id": "https://web.archive.org/web/20261008195540id_/https://res.starwarsccg.org/legacyblocks/VirtualCards16.pdf",
+   "method": "sha256",
+   "sha256": "3f4c364927477dc04dfba880dc25af1158515478dfe94a5c2d8d03ed019afb23"
+  }
+ },
+ "https://res.starwarsccg.org/legacyblocks/VirtualCards17.pdf": {
+  "capture": "https://web.archive.org/web/20261020214437/https://res.starwarsccg.org/legacyblocks/VirtualCards17.pdf",
+  "last": "2026-10-22T12:57:41Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:57:45Z",
+   "bytes": 8138837,
+   "capture_id": "https://web.archive.org/web/20261020214437id_/https://res.starwarsccg.org/legacyblocks/VirtualCards17.pdf",
+   "method": "sha256",
+   "sha256": "8c410c4c2720ac58808fbfb2df2355bf3f563daaef1a2385690b1fe45bc3464a"
+  }
+ },
  "https://res.starwarsccg.org/legacyblocks/VirtualCards18.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-10-21T02:19:47Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://res.starwarsccg.org/legacyblocks/VirtualCards1Premium.pdf": {
+  "capture": "https://web.archive.org/web/20261008193754/https://res.starwarsccg.org/legacyblocks/VirtualCards1Premium.pdf",
+  "last": "2026-10-22T12:57:56Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:57:59Z",
+   "bytes": 361922,
+   "capture_id": "https://web.archive.org/web/20261008193754id_/https://res.starwarsccg.org/legacyblocks/VirtualCards1Premium.pdf",
+   "method": "sha256",
+   "sha256": "233bb5bcb8fedf14baaa6a65645e488ec2d1dad34dbefd22570edd6324bf1aeb"
+  }
+ },
+ "https://res.starwarsccg.org/legacyblocks/VirtualCards1a.pdf": {
+  "capture": "https://web.archive.org/web/20261008193759/https://res.starwarsccg.org/legacyblocks/VirtualCards1a.pdf",
+  "last": "2026-10-22T12:58:13Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:58:15Z",
+   "bytes": 74602,
+   "capture_id": "https://web.archive.org/web/20261008193759id_/https://res.starwarsccg.org/legacyblocks/VirtualCards1a.pdf",
+   "method": "sha256",
+   "sha256": "ea7b627372d85a3540debe7b30574a9b01228f9d89734f91be5a4c72d8fc6841"
+  }
+ },
+ "https://res.starwarsccg.org/legacyblocks/VirtualCards2.pdf": {
+  "capture": "https://web.archive.org/web/20261008192928/https://res.starwarsccg.org/legacyblocks/VirtualCards2.pdf",
+  "last": "2026-10-22T12:58:28Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:58:31Z",
+   "bytes": 281046,
+   "capture_id": "https://web.archive.org/web/20261008192928id_/https://res.starwarsccg.org/legacyblocks/VirtualCards2.pdf",
+   "method": "sha256",
+   "sha256": "fbebae9dbd61e389092a1e900ba1715859bd7dbf0d9330005098480540081728"
+  }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualCards3.pdf": {
   "capture": "https://web.archive.org/web/20261008193702/https://res.starwarsccg.org/legacyblocks/VirtualCards3.pdf",
@@ -34275,6 +34429,34 @@
    "capture_id": "https://web.archive.org/web/20261008193702id_/https://res.starwarsccg.org/legacyblocks/VirtualCards3.pdf",
    "method": "sha256",
    "sha256": "c48f688160e5109f301f7968f89d96362927748ff0ac74604cd48f4a09045079"
+  }
+ },
+ "https://res.starwarsccg.org/legacyblocks/VirtualCards4.pdf": {
+  "capture": "https://web.archive.org/web/20261008195348/https://res.starwarsccg.org/legacyblocks/VirtualCards4.pdf",
+  "last": "2026-10-22T12:58:49Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:58:51Z",
+   "bytes": 365250,
+   "capture_id": "https://web.archive.org/web/20261008195348id_/https://res.starwarsccg.org/legacyblocks/VirtualCards4.pdf",
+   "method": "sha256",
+   "sha256": "3a994e56d9a9520b2f5202b97501c0557034b4b9fd3878cc7a9cfe34f318b87e"
+  }
+ },
+ "https://res.starwarsccg.org/legacyblocks/VirtualCards9.pdf": {
+  "capture": "https://web.archive.org/web/20261008195543/https://res.starwarsccg.org/legacyblocks/VirtualCards9.pdf",
+  "last": "2026-10-22T12:59:06Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:59:09Z",
+   "bytes": 1299353,
+   "capture_id": "https://web.archive.org/web/20261008195543id_/https://res.starwarsccg.org/legacyblocks/VirtualCards9.pdf",
+   "method": "sha256",
+   "sha256": "99d34bf499cdbe46ea69f6b662455193221bd8027deb2da247e71f42b73e22d3"
   }
  },
  "https://res.starwarsccg.org/orgchart/orgchart.pdf": {
@@ -34298,6 +34480,69 @@
    "sha256": "c98d5d31f51068d98d78f633061ee3a9f78479ebf057151d27495734348869d8"
   }
  },
+ "https://res.starwarsccg.org/rules/SWCCG_2023_AdvancedRulebook.pdf": {
+  "capture": "https://web.archive.org/web/20261008192915/https://res.starwarsccg.org/rules/SWCCG_2023_AdvancedRulebook.pdf",
+  "last": "2026-10-22T12:59:21Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:59:23Z",
+   "bytes": 3406262,
+   "capture_id": "https://web.archive.org/web/20261008192915id_/https://res.starwarsccg.org/rules/SWCCG_2023_AdvancedRulebook.pdf",
+   "method": "sha256",
+   "sha256": "0a6387698f1a7a23aef8765612c419e66d8edce0d3e5ede89c040d0f7dabdebd"
+  }
+ },
+ "https://res.starwarsccg.org/virtual/Official_Alternate_Images_2026.pdf": {
+  "capture": "https://web.archive.org/web/20261022125934/https://res.starwarsccg.org/virtual/Official_Alternate_Images_2026.pdf",
+  "job_id": "spn2-4913e6275d2c51b7b6823f934c380434894556a5",
+  "last": "2026-10-22T13:02:13Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T13:02:13Z",
+   "bytes": 34050594,
+   "capture_id": "https://web.archive.org/web/20261022125934id_/https://res.starwarsccg.org/virtual/Official_Alternate_Images_2026.pdf",
+   "method": "sha256",
+   "sha256": "d0f4d897893226ef8a6c72618b0b5b3a45d4f3463b0f955fdea0f7d24799489e"
+  }
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2014-Alderaan-Regionals.pdf": {
+  "capture": "https://web.archive.org/web/20261008202715/https://res.starwarsccg.org/wp/wp-content/uploads/2014-Alderaan-Regionals.pdf",
+  "last": "2026-10-22T12:59:46Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:59:54Z",
+   "bytes": 12729318,
+   "capture_id": "https://web.archive.org/web/20261008202715id_/https://res.starwarsccg.org/wp/wp-content/uploads/2014-Alderaan-Regionals.pdf",
+   "method": "sha256",
+   "sha256": "27712340adb8132eff320ff3c1ae989120fcb6b33ecbca48028452c905cdafc1"
+  }
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2014-TMW-Day-1.pdf": {
+  "capture": "https://web.archive.org/web/20261008202846/https://res.starwarsccg.org/wp/wp-content/uploads/2014-TMW-Day-1.pdf",
+  "last": "2026-10-22T13:00:08Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T13:00:11Z",
+   "bytes": 6643790,
+   "capture_id": "https://web.archive.org/web/20261008202846id_/https://res.starwarsccg.org/wp/wp-content/uploads/2014-TMW-Day-1.pdf",
+   "method": "sha256",
+   "sha256": "a7ddbfb2e944eebae8b2cf1a309ec769fc315a1f6bace7cf7828d95f06d89cf2"
+  }
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2014-TMW-Day-2.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 327 hours, 41 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T13:00:22Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2014MPC_Holotable.zip": {
   "capture": "https://web.archive.org/web/20261008205656/https://res.starwarsccg.org/wp/wp-content/uploads/2014MPC_Holotable.zip",
   "last": "2026-10-20T22:12:18Z",
@@ -34310,6 +34555,68 @@
    "capture_id": "https://web.archive.org/web/20261008205656id_/https://res.starwarsccg.org/wp/wp-content/uploads/2014MPC_Holotable.zip",
    "method": "sha256",
    "sha256": "3cce1eb5227bb03b6036148854f37a37271e3c2ba88a0280e20d9e4e731eed1d"
+  }
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2019/04/logo.jpg": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 235 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T13:00:33Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/hayes-bfred-egp2020-2.jpg": {
+  "capture": "https://web.archive.org/web/20261022130145/https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/hayes-bfred-egp2020-2.jpg",
+  "job_id": "spn2-9bc0a08117975838e07eb7607ef078dfffbe3f32",
+  "last": "2026-10-22T13:02:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T13:02:17Z",
+   "bytes": 78350,
+   "capture_id": "https://web.archive.org/web/20261022130145id_/https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/hayes-bfred-egp2020-2.jpg",
+   "method": "sha256",
+   "sha256": "4010ffdb913f7f6d40cad02a91b7563e2108eed6b685339dc86ee27a3194cf03"
+  }
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/hayes-bfred-egp2020.jpg": {
+  "capture": "https://web.archive.org/web/20261022130055/https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/hayes-bfred-egp2020.jpg",
+  "job_id": "spn2-4cff774ab3c13888b666251797fc7f7fc0534eea",
+  "last": "2026-10-22T13:02:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T13:02:44Z",
+   "bytes": 244796,
+   "capture_id": "https://web.archive.org/web/20261022130055id_/https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/hayes-bfred-egp2020.jpg",
+   "method": "sha256",
+   "sha256": "1aff7f45bba2673e6168224f85180cb2843cbd4ab123b1f3400c003540edc21a"
+  }
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/jellisons-egp2020-team-tournament.jpg": {
+  "capture": "",
+  "job_id": "spn2-43e57dddfecdf9218fcd393180a8ac014c442191",
+  "last": "2026-10-22T13:01:06Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2021/04/MPC%202021%20Banner%202.jpg": {
+  "capture": "https://web.archive.org/web/20261022130121/https://res.starwarsccg.org/wp/wp-content/uploads/2021/04/MPC%202021%20Banner%202.jpg",
+  "last": "2026-10-22T13:02:21Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/DenverLogo.jpg": {
+  "capture": "https://web.archive.org/web/20261022130132/https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/DenverLogo.jpg",
+  "job_id": "spn2-855035032588b9eaafa11c50559a22118874e2ee",
+  "last": "2026-10-22T13:03:09Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T13:03:09Z",
+   "bytes": 1203805,
+   "capture_id": "https://web.archive.org/web/20261022130132id_/https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/DenverLogo.jpg",
+   "method": "sha256",
+   "sha256": "c7007c31e8becfc7d71ce4930499b0a051aefef9c6dae82311399019e4347f68"
   }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/MPC-2014-Day-1-Main-Event.pdf": {
