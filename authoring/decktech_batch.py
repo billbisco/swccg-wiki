@@ -424,7 +424,7 @@ def register_wayback(d: dict) -> None:
     found = dict(wb.get(str(d["id"]), {}))
     if WB_DONE.exists():  # VPS queue results (status ok = capture confirmed)
         e = json.loads(WB_DONE.read_text(encoding="utf-8")).get(live_url(d["id"]))
-        if e and e.get("status") == "ok":
+        if e and e.get("status") in ("ok", "verified"):  # verified = capture checked by sha256
             found.setdefault("live", e["capture"])
     for kind, url in {**found, **d.get("wayback", {})}.items():
         gd.WAYBACK[(kind, d["id"])] = url
