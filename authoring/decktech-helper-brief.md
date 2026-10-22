@@ -65,3 +65,4 @@ For each id: the `finish` output line, total qty, side, player + page status, an
 - Plain "Boba Fett" is a disambiguation page: use "Boba Fett (Special Edition)" or "Boba Fett (Cloud City)" when the post says which (SE / CC); otherwise leave it and report it.
 - `player_intro` on existing pages may use the full 14510 form (handle + objective link + month); that's fine.
 - Byline with initials only (`M "ISBOPS" C`, "R. Smith"): `player_page: "none"`, report it.
+- GEMP-only titles with no wiki page: "Tarkin" → Grand Moff Tarkin; "Han" (Jedi Pack) → Han (Jedi Pack).
