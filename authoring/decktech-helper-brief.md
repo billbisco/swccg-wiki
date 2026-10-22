@@ -66,3 +66,4 @@ For each id: the `finish` output line, total qty, side, player + page status, an
 - `player_intro` on existing pages may use the full 14510 form (handle + objective link + month); that's fine.
 - Byline with initials only (`M "ISBOPS" C`, "R. Smith"): `player_page: "none"`, report it.
 - GEMP-only titles with no wiki page: "Tarkin" → Grand Moff Tarkin; "Han" (Jedi Pack) → Han (Jedi Pack).
+- Bare "Luke"/"Leia"/"Vader" in 2001 lists: Luke Skywalker / Leia Organa / Darth Vader (the GEMP titles "Luke", "Leia", "Vader" have no wiki pages).
