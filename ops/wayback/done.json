@@ -30478,6 +30478,13 @@
   "status": "retry",
   "tries": 1
  },
+ "https://swccg.com/snapshots/forum/f669.html": {
+  "capture": "",
+  "job_id": "spn2-2862e3bdb6991cd1b1c22e9e886c7aba034a78cb",
+  "last": "2026-10-22T02:06:39Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/p1366567.html": {
   "capture": "https://web.archive.org/web/20261014113924/https://swccg.com/snapshots/forum/p1366567.html",
   "job_id": "spn2-6c82565d696539682a3d001dd2d4cb9de34513f6",
@@ -30644,6 +30651,13 @@
    "sha256": "60f4224ac72055300b307504f0ff1d7a4ef005edc08d0a12681a109e8d88ea3a"
   }
  },
+ "https://swccg.com/snapshots/forum/t52931.html": {
+  "capture": "",
+  "job_id": "spn2-04972a86f148f365742ceb979ebd1ef20e8206a5",
+  "last": "2026-10-22T02:09:35Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t54863.html": {
   "capture": "https://web.archive.org/web/20261021002720/https://swccg.com/snapshots/forum/t54863.html",
   "job_id": "spn2-8e2a493a5a4d4d19b92ca3d99c8d74f4d9d7077f",
@@ -30660,9 +30674,10 @@
  },
  "https://swccg.com/snapshots/forum/t56104.html": {
   "capture": "https://web.archive.org/web/20261021000635/https://swccg.com/snapshots/forum/t56104.html",
-  "last": "2026-10-21T00:23:54Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-6bbd49c0bbe4fdbad75a9ca34f8524847a1b5e4e",
+  "last": "2026-10-22T02:06:28Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t61620.html": {
   "capture": "https://web.archive.org/web/20261012180720/https://swccg.com/snapshots/forum/t61620.html",
@@ -31010,17 +31025,17 @@
   "capture": "https://web.archive.org/web/20261021002511/https://swccg.com/snapshots/pc/2010-decklists.html",
   "error": "error:not-found",
   "job_id": "spn2-f83cda2fde1765d44a105387c4a1507ec6dd0a4c",
-  "last": "2026-10-22T01:25:55Z",
+  "last": "2026-10-22T02:10:56Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2011-decklists.html": {
   "capture": "https://web.archive.org/web/20261021002534/https://swccg.com/snapshots/pc/2011-decklists.html",
   "error": "error:not-found",
   "job_id": "spn2-a957b6234fa1fc204c197b7de8f998647045ae02",
-  "last": "2026-10-22T01:27:34Z",
+  "last": "2026-10-22T02:10:57Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2012-decklists.html": {
   "capture": "https://web.archive.org/web/20261021002644/https://swccg.com/snapshots/pc/2012-decklists.html",
@@ -31043,6 +31058,19 @@
    "text_match": 0.994
   }
  },
+ "https://swccg.com/snapshots/pc/2015-world-championships.html": {
+  "capture": "https://web.archive.org/web/20261013125658/https://swccg.com/snapshots/pc/2015-world-championships.html",
+  "last": "2026-10-22T02:10:03Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:10:07Z",
+   "capture_id": "https://web.archive.org/web/20261013125658id_/https://swccg.com/snapshots/pc/2015-world-championships.html",
+   "method": "text",
+   "text_match": 0.995
+  }
+ },
  "https://swccg.com/snapshots/pc/2016-match-play-championship.html": {
   "capture": "https://web.archive.org/web/20261013163128/https://swccg.com/snapshots/pc/2016-match-play-championship.html",
   "last": "2026-10-21T02:06:47Z",
@@ -31052,6 +31080,19 @@
   "verify": {
    "at": "2026-10-21T02:06:49Z",
    "capture_id": "https://web.archive.org/web/20261013163128id_/https://swccg.com/snapshots/pc/2016-match-play-championship.html",
+   "method": "text",
+   "text_match": 0.995
+  }
+ },
+ "https://swccg.com/snapshots/pc/2016-world-championships.html": {
+  "capture": "https://web.archive.org/web/20261013125623/https://swccg.com/snapshots/pc/2016-world-championships.html",
+  "last": "2026-10-22T02:10:33Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:10:36Z",
+   "capture_id": "https://web.archive.org/web/20261013125623id_/https://swccg.com/snapshots/pc/2016-world-championships.html",
    "method": "text",
    "text_match": 0.995
   }
@@ -31169,9 +31210,16 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-destefanis-ebo.html": {
   "capture": "https://web.archive.org/web/20261022014025/https://swccg.com/snapshots/pc/2017-ec-day-2-david-destefanis-ebo.html",
-  "last": "2026-10-22T01:45:36Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-10-22T02:00:10Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T02:00:12Z",
+   "bytes": 7120794,
+   "capture_id": "https://web.archive.org/web/20261022014025id_/https://swccg.com/snapshots/pc/2017-ec-day-2-david-destefanis-ebo.html",
+   "method": "sha256",
+   "sha256": "ef19d22c3535d3b03e256974b01beba74e69051a0f255b6adda4ccd4cd33c5d7"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-destefanis-tdigwatt.html": {
   "capture": "https://web.archive.org/web/20261022014051/https://swccg.com/snapshots/pc/2017-ec-day-2-david-destefanis-tdigwatt.html",
@@ -31196,9 +31244,16 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html": {
   "capture": "https://web.archive.org/web/20261022014036/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html",
-  "last": "2026-10-22T01:43:33Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-10-22T02:00:17Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T02:00:19Z",
+   "bytes": 7120892,
+   "capture_id": "https://web.archive.org/web/20261022014036id_/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html",
+   "method": "sha256",
+   "sha256": "7b170fb835b0217a6a38f61efd36ff9e3c8dd5ae218ec0ff7a48e1c7447f78ac"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-isb.html": {
   "capture": "https://web.archive.org/web/20261021004106/https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-isb.html",
@@ -31216,9 +31271,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html": {
   "capture": "https://web.archive.org/web/20261021004117/https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html",
+  "error": "error:not-found",
   "job_id": "spn2-de5ee83b62ab37887620f28a6aeb94b4a4010b8c",
-  "last": "2026-10-22T01:41:36Z",
-  "status": "pending",
+  "last": "2026-10-22T02:00:21Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html": {
@@ -31291,18 +31347,46 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-john-morley-wys.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:41:35Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022020356/https://swccg.com/snapshots/pc/2017-ec-day-2-john-morley-wys.html",
+  "job_id": "spn2-ab9fc7d1d4a80c2f9d030cc87437b57d2b4a2b56",
+  "last": "2026-10-22T02:11:03Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T02:11:03Z",
+   "bytes": 7120879,
+   "capture_id": "https://web.archive.org/web/20261022020356id_/https://swccg.com/snapshots/pc/2017-ec-day-2-john-morley-wys.html",
+   "method": "sha256",
+   "sha256": "e6d3744f12d4bef5a7ad01873a77868b6247dc5ba37e03b7a507bd57268af32d"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-jon-holtet-cct-scum.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261022015142/https://swccg.com/snapshots/pc/2017-ec-day-2-jon-holtet-cct-scum.html",
   "job_id": "spn2-fb57d4eba678906ebbd0cf31356398a970f0bfd5",
-  "last": "2026-10-22T01:51:39Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T02:00:27Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:00:27Z",
+   "bytes": 7120926,
+   "capture_id": "https://web.archive.org/web/20261022015142id_/https://swccg.com/snapshots/pc/2017-ec-day-2-jon-holtet-cct-scum.html",
+   "method": "sha256",
+   "sha256": "0405ad5bff52a5f71e191b18d4a724574e9502a236f5195c79287edd304f220b"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2017-ec-day-2-jon-holtet-qmc.html": {
+  "capture": "https://web.archive.org/web/20261022020340/https://swccg.com/snapshots/pc/2017-ec-day-2-jon-holtet-qmc.html",
+  "job_id": "spn2-1e594f808d46b2399f6d685f5004e77f5bab0c09",
+  "last": "2026-10-22T02:11:15Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:11:15Z",
+   "bytes": 7120869,
+   "capture_id": "https://web.archive.org/web/20261022020340id_/https://swccg.com/snapshots/pc/2017-ec-day-2-jon-holtet-qmc.html",
+   "method": "sha256",
+   "sha256": "9dfe99ab75a07e9638e61e7e2bd6750d203dbb2167dfca12a6c980c0513f92fc"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-jonas-hagen-aobs.html": {
   "capture": "https://web.archive.org/web/20261021004045/https://swccg.com/snapshots/pc/2017-ec-day-2-jonas-hagen-aobs.html",
@@ -31360,8 +31444,8 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-patrik-csapi-ie.html": {
   "capture": "https://web.archive.org/web/20261022014118/https://swccg.com/snapshots/pc/2017-ec-day-2-patrik-csapi-ie.html",
-  "last": "2026-10-22T01:42:41Z",
-  "status": "pending",
+  "last": "2026-10-22T02:00:31Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-patrik-csapi-wys.html": {
@@ -31397,6 +31481,20 @@
   "last": "2026-10-22T01:58:41Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-ec-day-2-ziemowit-skwara-ie.html": {
+  "capture": "https://web.archive.org/web/20261022020344/https://swccg.com/snapshots/pc/2017-ec-day-2-ziemowit-skwara-ie.html",
+  "job_id": "spn2-8cf1059448bf194131b3bdbf3253ffa382a9df96",
+  "last": "2026-10-22T02:11:22Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:11:22Z",
+   "bytes": 7120919,
+   "capture_id": "https://web.archive.org/web/20261022020344id_/https://swccg.com/snapshots/pc/2017-ec-day-2-ziemowit-skwara-ie.html",
+   "method": "sha256",
+   "sha256": "59cdf05fb8854f62a5987b2a1362003200f0848d035977a1b2fc1640c9ca1e13"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-ziemowit-skwara-oa.html": {
   "capture": "https://web.archive.org/web/20261022015419/https://swccg.com/snapshots/pc/2017-ec-day-2-ziemowit-skwara-oa.html",
@@ -31454,10 +31552,36 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2017-mpc-charlie-arlandson-day-1-ds-isb.html": {
+  "capture": "https://web.archive.org/web/20261022020425/https://swccg.com/snapshots/pc/2017-mpc-charlie-arlandson-day-1-ds-isb.html",
+  "last": "2026-10-22T02:11:24Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-mpc-chris-terwilliger-day-1-ls-whap.html": {
+  "capture": "https://web.archive.org/web/20261022020528/https://swccg.com/snapshots/pc/2017-mpc-chris-terwilliger-day-1-ls-whap.html",
+  "job_id": "spn2-2ad01a877400d745a10bf2fccd32a3c304fad403",
+  "last": "2026-10-22T02:12:05Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:12:05Z",
+   "bytes": 7120984,
+   "capture_id": "https://web.archive.org/web/20261022020528id_/https://swccg.com/snapshots/pc/2017-mpc-chris-terwilliger-day-1-ls-whap.html",
+   "method": "sha256",
+   "sha256": "ce2bdab2e3b83013008eb3c5e0138873a1cf70d2ca19a3a1d8eb45b976da3a96"
+  }
+ },
  "https://swccg.com/snapshots/pc/2017-mpc-chris-terwilliger-ds-cotvg-first-order.html": {
   "capture": "",
   "job_id": "spn2-3e69939bdca32363eea402530083430feae6927c",
   "last": "2026-10-22T01:55:30Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-mpc-steve-baroni-day-1-ls-profit.html": {
+  "capture": "https://web.archive.org/web/20261022020532/https://swccg.com/snapshots/pc/2017-mpc-steve-baroni-day-1-ls-profit.html",
+  "last": "2026-10-22T02:12:06Z",
   "status": "pending",
   "tries": 1
  },
@@ -31952,6 +32076,39 @@
    "capture_id": "https://web.archive.org/web/20261021235009id_/https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-richards-oa.html",
    "method": "sha256",
    "sha256": "252545ae3b17b872bcbbad1ba4996667096dafe22995b412d43890fc4f8968e0"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2017-tmw-day-2-steve-baroni-wys.html": {
+  "capture": "",
+  "job_id": "spn2-f762d40a9cee2812950057b8dba50d343f06debe",
+  "last": "2026-10-22T02:05:25Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-tmw-day-2-tom-haid-isb.html": {
+  "capture": "",
+  "job_id": "spn2-afacf246c2cdc0a220afbe137755195515bf0e9a",
+  "last": "2026-10-22T02:05:35Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-tmw-day-2-tom-haid-qmc.html": {
+  "capture": "https://web.archive.org/web/20261022020551/https://swccg.com/snapshots/pc/2017-tmw-day-2-tom-haid-qmc.html",
+  "last": "2026-10-22T02:11:30Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2017-world-championships.html": {
+  "capture": "https://web.archive.org/web/20261013155910/https://swccg.com/snapshots/pc/2017-world-championships.html",
+  "last": "2026-10-22T02:09:47Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:09:50Z",
+   "capture_id": "https://web.archive.org/web/20261013155910id_/https://swccg.com/snapshots/pc/2017-world-championships.html",
+   "method": "text",
+   "text_match": 0.995
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-adam-schellberg-ds.html": {
@@ -33226,8 +33383,8 @@
  },
  "https://swccg.com/snapshots/pc/2018-euros-gyorgy-bill-ebo.html": {
   "capture": "https://web.archive.org/web/20261022010750/https://swccg.com/snapshots/pc/2018-euros-gyorgy-bill-ebo.html",
-  "last": "2026-10-22T01:45:49Z",
-  "status": "pending",
+  "last": "2026-10-22T02:00:45Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-euros-gyorgy-bill-tto.html": {
@@ -33267,9 +33424,17 @@
  },
  "https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-hd.html": {
   "capture": "https://web.archive.org/web/20261022010831/https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-hd.html",
-  "last": "2026-10-22T01:27:56Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-0a01b238153533f7d7a6ca02592d4947338960f3",
+  "last": "2026-10-22T02:10:54Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T02:10:54Z",
+   "bytes": 7120853,
+   "capture_id": "https://web.archive.org/web/20261022010831id_/https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-hd.html",
+   "method": "sha256",
+   "sha256": "216b43aa9d7a5fdd72e266d39c9976d50858c40669c11b9cb5e29309b8d182d1"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-ls-mains.html": {
   "capture": "https://web.archive.org/web/20261021022558/https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-ls-mains.html",
@@ -33283,6 +33448,19 @@
    "capture_id": "https://web.archive.org/web/20261021022558id_/https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-ls-mains.html",
    "method": "sha256",
    "sha256": "d8f0a72831a15cc5f333a42ece5c646a0d743c924e4214997b002f7c375eb84d"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2018-world-championships.html": {
+  "capture": "https://web.archive.org/web/20261013160139/https://swccg.com/snapshots/pc/2018-world-championships.html",
+  "last": "2026-10-22T02:10:18Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:10:21Z",
+   "capture_id": "https://web.archive.org/web/20261013160139id_/https://swccg.com/snapshots/pc/2018-world-championships.html",
+   "method": "text",
+   "text_match": 0.995
   }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-angelo-consoli-aobs.html": {
@@ -33717,6 +33895,19 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2019-north-american-continentals.html": {
+  "capture": "https://web.archive.org/web/20261013160247/https://swccg.com/snapshots/pc/2019-north-american-continentals.html",
+  "last": "2026-10-22T02:09:03Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:09:09Z",
+   "capture_id": "https://web.archive.org/web/20261013160247id_/https://swccg.com/snapshots/pc/2019-north-american-continentals.html",
+   "method": "text",
+   "text_match": 0.995
+  }
+ },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ds-map.html": {
   "capture": "",
   "job_id": "spn2-5c739454313f2091367bdb54a6ced2fb2bdb7255",
@@ -33816,11 +34007,17 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-worlds.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:07:21Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261013160304/https://swccg.com/snapshots/pc/2019-worlds.html",
+  "last": "2026-10-22T02:08:27Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T02:08:29Z",
+   "capture_id": "https://web.archive.org/web/20261013160304id_/https://swccg.com/snapshots/pc/2019-worlds.html",
+   "method": "text",
+   "text_match": 0.995
+  }
  },
  "https://swccg.com/snapshots/pc/2020-day-1-wayne-cullen-ds-asm.html": {
   "capture": "https://web.archive.org/web/20261021051408/https://swccg.com/snapshots/pc/2020-day-1-wayne-cullen-ds-asm.html",
@@ -33891,6 +34088,19 @@
   "last": "2026-10-21T04:32:22Z",
   "status": "pending",
   "tries": 2
+ },
+ "https://swccg.com/snapshots/pc/2020-texas-mini-worlds.html": {
+  "capture": "https://web.archive.org/web/20261013160326/https://swccg.com/snapshots/pc/2020-texas-mini-worlds.html",
+  "last": "2026-10-22T02:09:21Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T02:09:23Z",
+   "capture_id": "https://web.archive.org/web/20261013160326id_/https://swccg.com/snapshots/pc/2020-texas-mini-worlds.html",
+   "method": "text",
+   "text_match": 0.997
+  }
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-1-aaron-kingery-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261016110525/https://swccg.com/snapshots/pc/2020-worlds-day-1-aaron-kingery-ds-shadow-collective.html",
@@ -36898,10 +37108,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-06-2022-regional-championship-events.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:06:30Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-d766b7ae2d387ce177423684cdcc484c4b1c930f",
+  "last": "2026-10-22T02:07:12Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-09-european-championship.html": {
   "capture": "https://web.archive.org/web/20261021234636/https://swccg.com/snapshots/pc/2022-09-european-championship.html",
@@ -40083,11 +40293,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events-bf.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:06:40Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022020803/https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events-bf.html",
+  "last": "2026-10-22T02:11:36Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events.html": {
   "capture": "https://web.archive.org/web/20261020232054/https://swccg.com/snapshots/pc/2023-03-2023-regional-championship-events.html",
@@ -40111,11 +40320,10 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13-bf.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:07:31Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261022020922/https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13-bf.html",
+  "last": "2026-10-22T02:12:15Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13.html": {
   "capture": "https://web.archive.org/web/20261020232540/https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13.html",
@@ -45201,9 +45409,11 @@
  },
  "https://swccg.com/snapshots/pc/2024-02-regional-championships-bf.html": {
   "capture": "https://web.archive.org/web/20261021000758/https://swccg.com/snapshots/pc/2024-02-regional-championships-bf.html",
-  "last": "2026-10-21T00:23:57Z",
+  "error": "error:not-found",
+  "job_id": "spn2-276a07b153dba1cc3de438b23510ddc200ae781a",
+  "last": "2026-10-22T02:11:37Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-02-regional-championships.html": {
   "capture": "https://web.archive.org/web/20261020232127/https://swccg.com/snapshots/pc/2024-02-regional-championships.html",
@@ -45981,6 +46191,13 @@
   },
   "verify_tries": 3
  },
+ "https://swccg.com/snapshots/pc/2025-05-9th-annual-gempc-may-to-july-2025-bf.html": {
+  "capture": "",
+  "job_id": "spn2-47d47e9eac4e36f322c70479862643bcbe682e24",
+  "last": "2026-10-22T02:08:51Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2025-05-9th-annual-gempc-may-to-july-2025.html": {
   "capture": "https://web.archive.org/web/20261020233558/https://swccg.com/snapshots/pc/2025-05-9th-annual-gempc-may-to-july-2025.html",
   "last": "2026-10-21T03:12:52Z",
@@ -46411,10 +46628,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026-bf.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:07:11Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-543aec22cbe856f57dadbdf18868fe107feea7f4",
+  "last": "2026-10-22T02:08:15Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026.html": {
   "capture": "https://web.archive.org/web/20261020233611/https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026.html",
@@ -47248,11 +47465,17 @@
   }
  },
  "https://swccg.com/snapshots/pc/awards.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T00:06:20Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261013125358/https://swccg.com/snapshots/pc/awards.html",
+  "last": "2026-10-22T02:06:52Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T02:07:01Z",
+   "capture_id": "https://web.archive.org/web/20261013125358id_/https://swccg.com/snapshots/pc/awards.html",
+   "method": "text",
+   "text_match": 0.999
+  }
  },
  "https://swccg.com/snapshots/pc/champions-league-finals-joe-olson-ds-ropsv.html": {
   "capture": "https://web.archive.org/web/20261016110055/https://swccg.com/snapshots/pc/champions-league-finals-joe-olson-ds-ropsv.html",
@@ -47762,8 +47985,8 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261022013848/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ls-qmc.html",
-  "last": "2026-10-22T01:43:13Z",
-  "status": "pending",
+  "last": "2026-10-22T02:01:56Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ds-court.html": {
@@ -47829,8 +48052,8 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html": {
   "capture": "https://web.archive.org/web/20261022013644/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html",
-  "last": "2026-10-22T01:43:07Z",
-  "status": "pending",
+  "last": "2026-10-22T02:01:57Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ls-ebo-attack-run.html": {
@@ -58208,9 +58431,9 @@
  "https://youtu.be/peWq9HiAdbM": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T01:29:58Z",
+  "last": "2026-10-22T02:02:05Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://youtu.be/wdT3-tS-So8": {
   "capture": "",
