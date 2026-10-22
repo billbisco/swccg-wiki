@@ -33642,10 +33642,10 @@
  },
  "https://icv2.com/articles/games/view/20728/ffg-acquires-star-wars-games-license": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 335 hours, 40 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T19:24:58Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T20:11:53Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://icv2.com/articles/games/view/983/wizards-coast-gets-star-wars-ccg": {
   "capture": "https://web.archive.org/web/20261008201620/https://icv2.com/articles/games/view/983/wizards-coast-gets-star-wars-ccg",
@@ -33697,10 +33697,10 @@
  },
  "https://labsk.net/index.php?topic=95165.msg973702": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 313 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T19:33:49Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T20:12:04Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://labsk.net/juegos-redisenados/star-wars-ccg-redisenado/?action=printpage": {
   "capture": "https://web.archive.org/web/20261009173835/https://labsk.net/juegos-redisenados/star-wars-ccg-redisenado/?action=printpage",
@@ -33809,10 +33809,10 @@
  },
  "https://memory-alpha.fandom.com/wiki/File:Decipher_logo.png": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 334 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T19:34:29Z",
+  "error": "no job_id: The same snapshot had been made 334 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:12:16Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://open.spotify.com/show/49hIqjRmHqMkfategXWt1I": {
   "capture": "https://web.archive.org/web/20261022193443/https://open.spotify.com/show/49hIqjRmHqMkfategXWt1I",
@@ -33843,11 +33843,18 @@
   }
  },
  "https://pbs.twimg.com/media/EmyZUSHWMAM8TJS?format=jpg&name=orig": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 310 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T19:35:11Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261009212250/https://pbs.twimg.com/media/EmyZUSHWMAM8TJS?format=jpg&name=orig",
+  "last": "2026-10-22T20:12:32Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T20:12:34Z",
+   "bytes": 57384,
+   "capture_id": "https://web.archive.org/web/20261009212250id_/https://pbs.twimg.com/media/EmyZUSHWMAM8TJS?format=jpg&name=orig",
+   "method": "sha256",
+   "sha256": "b42190c38fbd9825192a7b43ae7a4ec41bde1479daf1ced178f125e2230facbe"
+  }
  },
  "https://pente.org/help/helpWindow.jsp?file=playGameRules": {
   "capture": "https://web.archive.org/web/20261016020533/https://www.pente.org/help/helpWindow.jsp?file=playGameRules",
@@ -36447,6 +36454,20 @@
    "sha256": "0d0eae76b20c9e96e7be97c8e1df801411c83329aa7bb57615f1b783670281fd"
   }
  },
+ "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/SSS-Group.jpg": {
+  "capture": "https://web.archive.org/web/20261022201246/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/SSS-Group.jpg",
+  "job_id": "spn2-ca21e15f7f57e6da0bc38f42f5b57bf44b6d9e7e",
+  "last": "2026-10-22T20:17:37Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:17:37Z",
+   "bytes": 850817,
+   "capture_id": "https://web.archive.org/web/20261022201246id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/SSS-Group.jpg",
+   "method": "sha256",
+   "sha256": "442b4ae4af8f8fcf8b8bd1bc6b9d6334b5bb8568ad7f8bdd396d86cc71a23b63"
+  }
+ },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse+group.png": {
   "capture": "https://web.archive.org/web/20261022194807/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse+group.png",
   "job_id": "spn2-fadb01aa1247e1df7bdce02ecb98c945b4322bfd",
@@ -36463,8 +36484,8 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse_event_banner.jpg": {
   "capture": "https://web.archive.org/web/20261022194730/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse_event_banner.jpg",
-  "last": "2026-10-22T19:54:36Z",
-  "status": "pending",
+  "last": "2026-10-22T20:09:54Z",
+  "status": "retry",
   "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/img_9100.jpg": {
@@ -36481,10 +36502,24 @@
    "sha256": "90857cdbb4bf5335a5f006fcc00933e361f57716c0fe8337c6d528a4689a1880"
   }
  },
+ "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/kevin+hof2.jpg": {
+  "capture": "https://web.archive.org/web/20261022201339/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/kevin+hof2.jpg",
+  "job_id": "spn2-7127f90c102b33d20fbe774a0bfdd7c428ea6d0a",
+  "last": "2026-10-22T20:17:41Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:17:41Z",
+   "bytes": 243872,
+   "capture_id": "https://web.archive.org/web/20261022201339id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/kevin+hof2.jpg",
+   "method": "sha256",
+   "sha256": "4bd4e2966616f65587292dc174c96eced5a19daadec42d68f1ea4319633b9a62"
+  }
+ },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/outrider_copy.jpg": {
   "capture": "https://web.archive.org/web/20261022194823/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/outrider_copy.jpg",
-  "last": "2026-10-22T19:54:04Z",
-  "status": "pending",
+  "last": "2026-10-22T20:09:56Z",
+  "status": "retry",
   "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/2025_vegas_major_copy.jpg": {
@@ -36507,6 +36542,20 @@
   "last": "2026-10-22T19:48:44Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/CBUS+Matt.jpg": {
+  "capture": "https://web.archive.org/web/20261022201308/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/CBUS+Matt.jpg",
+  "job_id": "spn2-13cd6ad1525af3d0ea92e96f1ea0979b4ed622c4",
+  "last": "2026-10-22T20:17:46Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:17:46Z",
+   "bytes": 156212,
+   "capture_id": "https://web.archive.org/web/20261022201308id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/CBUS+Matt.jpg",
+   "method": "sha256",
+   "sha256": "4321097d4dd8e4f74db50cf5bd37260f076808980e1ad8a441a565682de9b67a"
+  }
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/Joe+%26+Sam.jpg": {
   "capture": "",
@@ -36557,6 +36606,20 @@
   "status": "failed",
   "tries": 6
  },
+ "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsGroup.jpg": {
+  "capture": "https://web.archive.org/web/20261022201322/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsGroup.jpg",
+  "job_id": "spn2-94144185653d5454c929b8dcacaacd970460bf09",
+  "last": "2026-10-22T20:17:54Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:17:54Z",
+   "bytes": 716550,
+   "capture_id": "https://web.archive.org/web/20261022201322id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsGroup.jpg",
+   "method": "sha256",
+   "sha256": "747dcfda656362dc355c705c6894fb04eabbb863526354aad2a37556306cb80e"
+  }
+ },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsTop8.jpg": {
   "capture": "",
   "job_id": "spn2-96bcf93ee2211a3dbe5b1b979ab0fd48d2fed6b1",
@@ -36592,6 +36655,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1994/vp941113/11120101.htm": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 335 hours, 57 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:13:34Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1995/vp951211/12090048.htm": {
   "capture": "",
   "error": "no job_id: The same snapshot had been made 137 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
@@ -36601,8 +36671,8 @@
  },
  "https://star-wars.pl/News/10466,Preview_Fifth_Anthology.html": {
   "capture": "https://web.archive.org/web/20261022195259/https://star-wars.pl/News/10466,Preview_Fifth_Anthology.html",
-  "last": "2026-10-22T19:54:17Z",
-  "status": "pending",
+  "last": "2026-10-22T20:09:58Z",
+  "status": "retry",
   "tries": 1
  },
  "https://star-wars.pl/Tekst/1963,Star_Wars_CCG_Virtual_Sets.html": {
@@ -36652,6 +36722,30 @@
   "status": "retry",
   "tries": 1
  },
+ "https://starwars.fandom.com/wiki/Cloud_City_Limited": {
+  "capture": "https://web.archive.org/web/20260929034118/https://starwars.fandom.com/wiki/Cloud_City_Limited",
+  "last": "2026-10-22T20:13:47Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:13:48Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Dagobah_Limited": {
+  "capture": "https://web.archive.org/web/20251215072447/https://starwars.fandom.com/wiki/Dagobah_Limited",
+  "last": "2026-10-22T20:14:00Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:14:01Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
  "https://starwars.fandom.com/wiki/Dagobah_Revised_Unlimited": {
   "capture": "",
   "error": "error:no-request",
@@ -36660,6 +36754,85 @@
   "status": "failed",
   "tries": 6
  },
+ "https://starwars.fandom.com/wiki/Decipher": {
+  "capture": "https://web.archive.org/web/20260531145905/https://starwars.fandom.com/wiki/Decipher",
+  "last": "2026-10-22T20:14:13Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:14:14Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Endor_Limited": {
+  "capture": "https://web.archive.org/web/20260721160829/https://starwars.fandom.com/wiki/Endor_Limited",
+  "last": "2026-10-22T20:14:26Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:14:32Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Enhanced_Cloud_City": {
+  "capture": "https://web.archive.org/web/20241228180303/https://starwars.fandom.com/wiki/Enhanced_Cloud_City",
+  "last": "2026-10-22T20:14:47Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:14:50Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Enhanced_Jabba%27s_Palace": {
+  "capture": "https://web.archive.org/web/20251023030409/https://starwars.fandom.com/wiki/Enhanced_Jabba%27s_Palace",
+  "last": "2026-10-22T20:15:01Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:15:04Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/File:Decipher.jpg": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 334 hours, 54 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:15:16Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://starwars.fandom.com/wiki/First_Anthology": {
+  "capture": "https://web.archive.org/web/20230304002322/https://starwars.fandom.com/wiki/First_Anthology",
+  "last": "2026-10-22T20:15:28Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:15:29Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Hoth_Limited": {
+  "capture": "https://web.archive.org/web/20260202034147/https://starwars.fandom.com/wiki/Hoth_Limited",
+  "last": "2026-10-22T20:15:42Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:15:44Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
  "https://starwars.fandom.com/wiki/Hoth_Revised_Unlimited": {
   "capture": "",
   "error": "error:no-request",
@@ -36667,6 +36840,77 @@
   "last": "2026-10-14T19:38:10Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://starwars.fandom.com/wiki/Jabba%27s_Palace_Limited": {
+  "capture": "https://web.archive.org/web/20260907062507/https://starwars.fandom.com/wiki/Jabba%27s_Palace_Limited",
+  "last": "2026-10-22T20:15:55Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:15:56Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Jabba%27s_Palace_Sealed_Deck": {
+  "capture": "https://web.archive.org/web/20251125184412/https://starwars.fandom.com/wiki/Jabba%27s_Palace_Sealed_Deck",
+  "last": "2026-10-22T20:16:08Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:16:10Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Jedi_Pack": {
+  "capture": "https://web.archive.org/web/20260115123447/https://starwars.fandom.com/wiki/Jedi_Pack",
+  "last": "2026-10-22T20:16:21Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:16:23Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Michonne_Bourriague": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 335 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:16:35Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 336 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:16:46Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Premiere_Introductory_Two-Player_Game": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 317 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:16:58Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Premiere_Limited": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 336 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:17:10Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Rebel_Leader": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 336 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:17:22Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game": {
   "capture": "https://web.archive.org/web/20260907062502/https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game",
