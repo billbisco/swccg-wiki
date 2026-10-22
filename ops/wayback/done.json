@@ -106,10 +106,10 @@
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2011/Worlds/2011+World_team.pdf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 326 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T12:46:37Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T13:33:23Z",
+  "status": "failed",
+  "tries": 6
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf": {
   "capture": "https://web.archive.org/web/20261008202947/http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf",
@@ -33225,16 +33225,16 @@
  "https://res.starwarsccg.org/cardlists/Set10Type.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:53:33Z",
+  "last": "2026-10-22T13:33:34Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://res.starwarsccg.org/cardlists/Set11Type.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:53:43Z",
+  "last": "2026-10-22T13:33:44Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://res.starwarsccg.org/cardlists/Set12Type.html": {
   "capture": "https://web.archive.org/web/20261008200304/https://res.starwarsccg.org/cardlists/Set12Type.html",
@@ -33896,9 +33896,10 @@
  },
  "https://res.starwarsccg.org/cards/Virtual27-Dark/large/thegalaxytornapart.gif": {
   "capture": "https://web.archive.org/web/20261022115826/https://res.starwarsccg.org/cards/Virtual27-Dark/large/thegalaxytornapart.gif",
-  "last": "2026-10-22T12:10:31Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T13:33:54Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://res.starwarsccg.org/cards/Virtual27-Dark/large/utapaupaucity.gif": {
   "capture": "https://web.archive.org/web/20261022115837/https://res.starwarsccg.org/cards/Virtual27-Dark/large/utapaupaucity.gif",
@@ -34797,8 +34798,8 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/BespinReg.jpg": {
   "capture": "https://web.archive.org/web/20261022131724/https://res.starwarsccg.org/wp/wp-content/uploads/2022/BespinReg.jpg",
-  "last": "2026-10-22T13:20:35Z",
-  "status": "pending",
+  "last": "2026-10-22T13:31:42Z",
+  "status": "retry",
   "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/CoruscantDSrare.jpg": {
@@ -34831,8 +34832,8 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/OutriderCupLogo2021.jpg": {
   "capture": "https://web.archive.org/web/20261022131741/https://res.starwarsccg.org/wp/wp-content/uploads/2022/OutriderCupLogo2021.jpg",
-  "last": "2026-10-22T13:21:11Z",
-  "status": "pending",
+  "last": "2026-10-22T13:31:43Z",
+  "status": "retry",
   "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/PC20Logo.jpg": {
@@ -34885,8 +34886,8 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/championsleaguebanner.jpg": {
   "capture": "https://web.archive.org/web/20261022131912/https://res.starwarsccg.org/wp/wp-content/uploads/2022/championsleaguebanner.jpg",
-  "last": "2026-10-22T13:20:41Z",
-  "status": "pending",
+  "last": "2026-10-22T13:31:44Z",
+  "status": "retry",
   "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/championsleaguelogo.png": {
