@@ -5,17 +5,17 @@
  "use_published_title": true,
  "byline": "James \"eby\" Eby",
  "player": "James Eby",
- "player_page": "new",
- "player_intro": "posted a [[Light]] list on DeckTech.",
+ "player_page": "existing",
+ "player_intro": "(DeckTech handle '''eby''') posted a [[Light]] Asteroid Sanctuary list on DeckTech in January 2001.",
  "side": "Light",
  "format": "Premiere - Original VS1",
  "kind": "general",
  "event": null,
  "finish": null,
  "starting": {
-  "card": null,
-  "interrupt": null,
-  "effect": null
+  "card": "Roche",
+  "interrupt": "The Signal",
+  "effect": "Rebel Fleet"
  },
  "description": "uses swarming x-wings and Asteroid Sanctuary to outrace your opponent, you know win the game.",
  "cards": [
@@ -23,202 +23,206 @@
    1,
    "Roche",
    "LOCATION",
-   "posted: Roche (exact)"
-  ],
-  [
-   1,
-   "?? The Signal(not a typo)",
-   "STARTING",
-   "posted: The Signal(not a typo) (?)"
-  ],
-  [
-   1,
-   "?? Rebel Fleet(not a typo)",
-   "STARTING",
-   "posted: Rebel Fleet(not a typo) (?)"
-  ],
-  [
-   1,
-   "Home One",
-   "STARSHIP",
-   "posted: Home One (exact)"
-  ],
-  [
-   1,
-   "Liberty",
-   "STARSHIP",
-   "posted: Liberty (exact)"
-  ],
-  [
-   1,
-   "Defiance",
-   "STARSHIP",
-   "posted: Defiance (exact)"
-  ],
-  [
-   1,
-   "Red Leader In Red 1",
-   "STARSHIP",
-   "posted: Red Leader in Red One (nickname)"
-  ],
-  [
-   1,
-   "Gold Leader In Gold 1",
-   "STARSHIP",
-   "posted: Gold Leader in Gold One (nickname)"
-  ],
-  [
-   1,
-   "?? 12X-Wing",
-   "STARSHIP",
-   "posted: 12X-Wing (?)"
-  ],
-  [
-   1,
-   "Do, Or Do Not & •Wise Advice",
-   "EFFECT",
-   "posted: Wise Advice/Do or do Not (nickname)"
-  ],
-  [
-   1,
-   "Rebel Fleet",
-   "EFFECT",
-   "posted: Rebel Fleet (exact)"
-  ],
-  [
-   1,
-   "Incom Corporation",
-   "EFFECT",
-   "posted: Incom Corporation (exact)"
-  ],
-  [
-   1,
-   "Order To Engage",
-   "EFFECT",
-   "posted: Order to Engage (exact)"
-  ],
-  [
-   1,
-   "Asteroid Sanctuary",
-   "EFFECT",
-   "posted: 3Asteroid Sanctuary (fuzzy)"
-  ],
-  [
-   1,
-   "A Few Maneuvers",
-   "INTERRUPT",
-   "posted: A Few Maneuvers (exact)"
-  ],
-  [
-   1,
-   "Out Of Commission & Transmission Terminated",
-   "INTERRUPT",
-   "posted: Out of Commision/Transmission Terminated (nickname)"
-  ],
-  [
-   1,
-   "Rapid Fire",
-   "INTERRUPT",
-   "posted: Rapid Fire (exact)"
-  ],
-  [
-   1,
-   "Star Destroyer!",
-   "INTERRUPT",
-   "posted: Star Destroyer (nickname)"
-  ],
-  [
-   1,
-   "Yoda Stew & You Do Have Your Moments",
-   "INTERRUPT",
-   "posted: 2Yoda Stew/You Do Have Your Moments (fuzzy)"
-  ],
-  [
-   1,
-   "Slight Weapons Malfunction",
-   "INTERRUPT",
-   "posted: 2Slight Weapons Malfunction (fuzzy)"
-  ],
-  [
-   1,
-   "All Wings Report In",
-   "INTERRUPT",
-   "posted: 2All Wings Report In (fuzzy)"
+   "posted: Roche"
   ],
   [
    1,
    "The Signal",
    "INTERRUPT",
-   "posted: 2The SIgnal (fuzzy)"
+   "posted: The Signal(not a typo)"
   ],
   [
    1,
+   "Rebel Fleet",
+   "EFFECT",
+   "posted: Rebel Fleet(not a typo)"
+  ],
+  [
+   1,
+   "Home One",
+   "STARSHIP",
+   "posted: Home One"
+  ],
+  [
+   1,
+   "Liberty",
+   "STARSHIP",
+   "posted: Liberty"
+  ],
+  [
+   1,
+   "Defiance",
+   "STARSHIP",
+   "posted: Defiance"
+  ],
+  [
+   1,
+   "Red Leader In Red 1",
+   "STARSHIP",
+   "posted: Red Leader in Red One"
+  ],
+  [
+   1,
+   "Gold Leader In Gold 1",
+   "STARSHIP",
+   "posted: Gold Leader in Gold One"
+  ],
+  [
+   12,
+   "X-wing",
+   "STARSHIP",
+   "posted: 12X-Wing"
+  ],
+  [
+   1,
+   "Do, Or Do Not & Wise Advice",
+   "EFFECT",
+   "posted: Wise Advice/Do or do Not"
+  ],
+  [
+   1,
+   "Rebel Fleet",
+   "EFFECT",
+   "posted: Rebel Fleet"
+  ],
+  [
+   1,
+   "Incom Corporation",
+   "EFFECT",
+   "posted: Incom Corporation"
+  ],
+  [
+   1,
+   "Order To Engage",
+   "EFFECT",
+   "posted: Order to Engage"
+  ],
+  [
+   3,
+   "Asteroid Sanctuary",
+   "EFFECT",
+   "posted: 3Asteroid Sanctuary"
+  ],
+  [
+   1,
+   "A Few Maneuvers",
+   "INTERRUPT",
+   "posted: A Few Maneuvers"
+  ],
+  [
+   1,
+   "Out Of Commission & Transmission Terminated",
+   "INTERRUPT",
+   "posted: Out of Commision/Transmission Terminated"
+  ],
+  [
+   1,
+   "Rapid Fire",
+   "INTERRUPT",
+   "posted: Rapid Fire"
+  ],
+  [
+   1,
+   "Star Destroyer!",
+   "INTERRUPT",
+   "posted: Star Destroyer"
+  ],
+  [
+   2,
+   "Yoda Stew & You Do Have Your Moments",
+   "INTERRUPT",
+   "posted: 2Yoda Stew/You Do Have Your Moments"
+  ],
+  [
+   2,
+   "Slight Weapons Malfunction",
+   "INTERRUPT",
+   "posted: 2Slight Weapons Malfunction"
+  ],
+  [
+   2,
+   "All Wings Report In",
+   "INTERRUPT",
+   "posted: 2All Wings Report In"
+  ],
+  [
+   2,
+   "The Signal",
+   "INTERRUPT",
+   "posted: 2The SIgnal"
+  ],
+  [
+   2,
    "Organized Attack",
    "INTERRUPT",
-   "posted: 2Organized Attack (fuzzy)"
+   "posted: 2Organized Attack"
   ],
   [
    1,
    "Landing Claw",
    "DEVICE",
-   "posted: Landing Claw (exact)"
+   "posted: Landing Claw"
   ],
   [
-   1,
+   2,
    "X-wing Laser Cannon",
    "WEAPON",
-   "posted: 2X-Wing Laser Cannon (fuzzy)"
+   "posted: 2X-Wing Laser Cannon"
   ],
   [
    1,
    "Lando With Vibro-Ax",
    "CHARACTER",
-   "posted: Lando with Vibro-Ax (exact)"
+   "posted: Lando with Vibro-Ax"
   ],
   [
-   1,
-   "Lando With Blaster Pistol",
+   2,
+   "Leia With Blaster Rifle",
    "CHARACTER",
-   "posted: 2Leia with Blaster Pistol (fuzzy)"
+   "posted: 2Leia with Blaster Pistol"
   ],
   [
-   1,
+   2,
    "Han With Heavy Blaster Pistol",
    "CHARACTER",
-   "posted: 2Han with Heavy Blaster Pistol (fuzzy)"
+   "posted: 2Han with Heavy Blaster Pistol"
   ],
   [
-   1,
+   2,
    "Master Luke",
    "CHARACTER",
-   "posted: 2Master Luke (fuzzy)"
+   "posted: 2Master Luke"
   ],
   [
-   1,
+   3,
    "Big One",
    "LOCATION",
-   "posted: 3Big One (fuzzy)"
+   "posted: 3Big One"
   ],
   [
-   1,
+   5,
    "Asteroid Field",
    "LOCATION",
-   "posted: 5Asteroid Feild (fuzzy)"
+   "posted: 5Asteroid Feild"
   ],
   [
    1,
    "Rendezvous Point",
    "LOCATION",
-   "posted: Rendezvous Point (exact)"
+   "posted: Rendezvous Point"
   ],
   [
    1,
    "Hoth: Echo Docking Bay",
    "LOCATION",
-   "posted: HothEcho Docking Bay (nickname)"
+   "posted: HothEcho Docking Bay"
   ]
  ],
  "shields": [],
- "shields_note": null,
- "notes": []
+ "shields_note": "The post names no Defensive Shields.",
+ "notes": [
+  "Qty 61 as published: the 'Starting(OLD SCHOOL)' section lists Roche, 'The Signal(not a typo)' and 'Rebel Fleet(not a typo)', and the lists below name Rebel Fleet and 2 The Signal again; all rows are kept as posted (the post has no section counts). No Objective; Roche is the starting location.",
+  "Posted '2Leia with Blaster Pistol' dested Leia With Blaster Rifle (no Leia With Blaster Pistol existed; the EPP Leia sits beside EPP Han in the list).",
+  "Posted '12X-Wing' dested X-wing (Premiere); 'Star Destroyer' dested the Light interrupt Star Destroyer!; 'Red Leader in Red One' / 'Gold Leader in Gold One' dested Red Leader In Red 1 / Gold Leader In Gold 1; 'Wise Advice/Do or do Not' dested Do, Or Do Not & Wise Advice; '5Asteroid Feild' dested Asteroid Field; 'Big One' is the Dagobah system; 'HothEcho Docking Bay' dested the Light Hoth: Echo Docking Bay."
+ ]
 }
