@@ -36404,8 +36404,8 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png": {
   "capture": "https://web.archive.org/web/20261022193920/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png",
-  "last": "2026-10-22T21:20:35Z",
-  "status": "pending",
+  "last": "2026-10-22T21:34:27Z",
+  "status": "retry",
   "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerGroupShot.png": {
@@ -36495,9 +36495,9 @@
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse_event_banner.jpg": {
   "capture": "https://web.archive.org/web/20261022194730/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse_event_banner.jpg",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T21:00:21Z",
+  "last": "2026-10-22T21:39:17Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/img_9100.jpg": {
   "capture": "https://web.archive.org/web/20261022194741/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/img_9100.jpg",
@@ -36530,9 +36530,9 @@
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/outrider_copy.jpg": {
   "capture": "https://web.archive.org/web/20261022194823/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/outrider_copy.jpg",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T21:00:32Z",
+  "last": "2026-10-22T21:39:27Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/2025_vegas_major_copy.jpg": {
   "capture": "https://web.archive.org/web/20261022194833/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/2025_vegas_major_copy.jpg",
@@ -36669,10 +36669,10 @@
  },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1994/vp941113/11120101.htm": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 336 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T20:51:41Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T21:39:37Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://scholar.lib.vt.edu/VA-news/VA-Pilot/issues/1995/vp951211/12090048.htm": {
   "capture": "",
@@ -36683,10 +36683,16 @@
  },
  "https://star-wars.pl/News/10466,Preview_Fifth_Anthology.html": {
   "capture": "https://web.archive.org/web/20261022195259/https://star-wars.pl/News/10466,Preview_Fifth_Anthology.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T21:04:17Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-9e18a0acfe295e7223db2c13cb59c7dc5cf0bb8a",
+  "last": "2026-10-22T21:44:44Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T21:44:44Z",
+   "capture_id": "https://web.archive.org/web/20261022195259id_/https://star-wars.pl/News/10466,Preview_Fifth_Anthology.html",
+   "method": "text",
+   "text_match": 0.984
+  }
  },
  "https://star-wars.pl/Tekst/1963,Star_Wars_CCG_Virtual_Sets.html": {
   "capture": "",
@@ -36697,10 +36703,10 @@
  },
  "https://starshipexcelsior.com/othersites/stccg1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Tourn/tournamentguide0699.pdf": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T21:04:27Z",
+  "error": "no job_id: The same snapshot had been made 337 hours, 37 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:40:04Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://starshipexcelsior.com/othersites/stccg1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Worlds2001.htm": {
   "capture": "",
@@ -36731,10 +36737,10 @@
  },
  "https://starwars.fandom.com/wiki/A_New_Hope_Unlimited": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 337 hours, 19 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T21:04:38Z",
+  "error": "no job_id: The same snapshot had been made 337 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:40:16Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://starwars.fandom.com/wiki/Cloud_City_Limited": {
   "capture": "https://web.archive.org/web/20260929034118/https://starwars.fandom.com/wiki/Cloud_City_Limited",
@@ -36824,10 +36830,10 @@
  },
  "https://starwars.fandom.com/wiki/File:Decipher.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 335 hours, 44 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T21:04:50Z",
+  "error": "no job_id: The same snapshot had been made 336 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T21:40:38Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://starwars.fandom.com/wiki/First_Anthology": {
   "capture": "https://web.archive.org/web/20230304002322/https://starwars.fandom.com/wiki/First_Anthology",
@@ -36903,11 +36909,16 @@
   "verify_tries": 3
  },
  "https://starwars.fandom.com/wiki/Michonne_Bourriague": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 336 hours, 37 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T21:05:01Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20251206152955/https://starwars.fandom.com/wiki/Michonne_Bourriague",
+  "last": "2026-10-22T21:40:49Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T21:40:50Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck": {
   "capture": "https://web.archive.org/web/20251219072012/https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck",
@@ -56060,9 +56071,17 @@
  },
  "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-batmouses-6th-gempc.html": {
   "capture": "https://web.archive.org/web/20261022203437/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-batmouses-6th-gempc.html",
-  "last": "2026-10-22T20:48:42Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-45af47f43316d013186c62b67747105a1482ee29",
+  "last": "2026-10-22T21:44:51Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T21:44:51Z",
+   "bytes": 7686736,
+   "capture_id": "https://web.archive.org/web/20261022203437id_/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-batmouses-6th-gempc.html",
+   "method": "sha256",
+   "sha256": "8688be5a68a76bbc3aba3282d209c9c84db4a1cc6dceda7e301f32b06879bf58"
+  }
  },
  "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-inaugural-champions-league-bf.html": {
   "capture": "https://web.archive.org/web/20261022032443/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-inaugural-champions-league-bf.html",
@@ -56246,9 +56265,17 @@
  },
  "https://swccg.com/snapshots/pc/ryan-jellison-wins-the-2021-2022-jawa-cup.html": {
   "capture": "https://web.archive.org/web/20261022203605/https://swccg.com/snapshots/pc/ryan-jellison-wins-the-2021-2022-jawa-cup.html",
-  "last": "2026-10-22T20:48:44Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-7e538dd6538d3f65a8bf6d57e4dc1ac230556540",
+  "last": "2026-10-22T21:44:59Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T21:44:59Z",
+   "bytes": 9796220,
+   "capture_id": "https://web.archive.org/web/20261022203605id_/https://swccg.com/snapshots/pc/ryan-jellison-wins-the-2021-2022-jawa-cup.html",
+   "method": "sha256",
+   "sha256": "d36c15b29084c55f37a61db520671d562aa9b76dd9b5fc6126591fef7430b2f2"
+  }
  },
  "https://swccg.com/snapshots/pc/san-diego-super-open-day-1-jeff-lavigne-ds-aobs.html": {
   "capture": "",
@@ -56361,6 +56388,20 @@
   "last": "2026-10-22T03:23:37Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/the-first-swccginpublic-push-was-a-rousing-success.html": {
+  "capture": "https://web.archive.org/web/20261022214128/https://swccg.com/snapshots/pc/the-first-swccginpublic-push-was-a-rousing-success.html",
+  "job_id": "spn2-a42190f68eccc33cf0e5c6f01226cc95a0d416cb",
+  "last": "2026-10-22T21:45:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:45:12Z",
+   "bytes": 16044170,
+   "capture_id": "https://web.archive.org/web/20261022214128id_/https://swccg.com/snapshots/pc/the-first-swccginpublic-push-was-a-rousing-success.html",
+   "method": "sha256",
+   "sha256": "713e9c35eb3616d39411e9ddce4822dad09d3f21b2967414985105b9eaa7143c"
+  }
  },
  "https://swccg.com/snapshots/pc/timo-dusel-wins-the-2023-online-retro-event-for-charity-bf.html": {
   "capture": "https://web.archive.org/web/20261022040547/https://swccg.com/snapshots/pc/timo-dusel-wins-the-2023-online-retro-event-for-charity-bf.html",
@@ -58246,6 +58287,67 @@
   "status": "retry",
   "tries": 1
  },
+ "https://swccgdb.com/decklist/view/6/operatives-1998-world-champion-1.0": {
+  "capture": "https://web.archive.org/web/20260929064221/https://swccgdb.com/decklist/view/6/operatives-1998-world-champion-1.0",
+  "last": "2026-10-22T21:42:08Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:42:10Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/7/isb-1999-world-champion-1.0": {
+  "capture": "https://web.archive.org/web/20260929064327/https://swccgdb.com/decklist/view/7/isb-1999-world-champion-1.0",
+  "last": "2026-10-22T21:42:22Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:42:23Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/8/hidden-base-1999-world-champion-1.0": {
+  "capture": "https://web.archive.org/web/20260929064355/https://swccgdb.com/decklist/view/8/hidden-base-1999-world-champion-1.0",
+  "last": "2026-10-22T21:42:35Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:42:38Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://swccgdb.com/decklist/view/9/hidden-base-2000-world-champion-1.0": {
+  "capture": "https://web.archive.org/web/20260929064504/https://swccgdb.com/decklist/view/9/hidden-base-2000-world-champion-1.0",
+  "last": "2026-10-22T21:42:51Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:42:53Z",
+   "error": "source HTTP 500"
+  },
+  "verify_tries": 1
+ },
+ "https://theboosterpack.buzzsprout.com/": {
+  "capture": "https://web.archive.org/web/20261016040251/https://theboosterpack.buzzsprout.com/",
+  "last": "2026-10-22T21:43:06Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:43:08Z",
+   "capture_id": "https://web.archive.org/web/20261016040251id_/https://theboosterpack.buzzsprout.com/",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
  "https://theboosterpack.buzzsprout.com/1692574/episodes/10935514-booster-pack-throwback-27-decipher-s-star-trek-ccg-with-designer-tom-braunlich": {
   "capture": "https://web.archive.org/web/20261016020503/https://theboosterpack.buzzsprout.com/1692574/episodes/10935514-booster-pack-throwback-27-decipher-s-star-trek-ccg-with-designer-tom-braunlich",
   "job_id": "spn2-b3eaf60d008261329c66ade692144eeb18b7166f",
@@ -58258,6 +58360,78 @@
   "last": "2026-10-16T02:04:49Z",
   "note": "already archived within 30d",
   "status": "ok",
+  "tries": 1
+ },
+ "https://theforce.net/ccg/story/Lucasfilm_terminates_Deciphers_Star_Wars_License_69604.asp": {
+  "capture": "https://web.archive.org/web/20261010072854/https://theforce.net/ccg/story/Lucasfilm_terminates_Deciphers_Star_Wars_License_69604.asp",
+  "last": "2026-10-22T21:43:20Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:43:22Z",
+   "capture_id": "https://web.archive.org/web/20261010072854id_/https://theforce.net/ccg/story/Lucasfilm_terminates_Deciphers_Star_Wars_License_69604.asp",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://theforce.net/ccg/story/Players_Committee_Announces_the_First_Virtual_Card_Set_68946.asp": {
+  "capture": "https://web.archive.org/web/20261020214905/https://theforce.net/ccg/story/Players_Committee_Announces_the_First_Virtual_Card_Set_68946.asp",
+  "last": "2026-10-22T21:43:34Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:43:36Z",
+   "capture_id": "https://web.archive.org/web/20261020214905id_/https://theforce.net/ccg/story/Players_Committee_Announces_the_First_Virtual_Card_Set_68946.asp",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://theforce.net/ccg/story/TCG_Championship_Results_65574.asp": {
+  "capture": "https://web.archive.org/web/20261022214351/https://theforce.net/ccg/story/TCG_Championship_Results_65574.asp",
+  "job_id": "spn2-67ddcc8c313f6b30af60a3e1e767b11310dbd3a5",
+  "last": "2026-10-22T21:45:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:45:17Z",
+   "capture_id": "https://web.archive.org/web/20261022214351id_/https://theforce.net/ccg/story/TCG_Championship_Results_65574.asp",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://thewaltdisneycompany.com/news/disney-acquire-lucasfilm/": {
+  "capture": "https://web.archive.org/web/20261008194445/https://thewaltdisneycompany.com/news/disney-acquire-lucasfilm/",
+  "last": "2026-10-22T21:44:01Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:44:04Z",
+   "capture_id": "https://web.archive.org/web/20261008194445id_/https://thewaltdisneycompany.com/news/disney-acquire-lucasfilm/",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/b/b1/Sample_Pente_Game_.jpg": {
+  "capture": "https://web.archive.org/web/20261022214417/https://upload.wikimedia.org/wikipedia/commons/b/b1/Sample_Pente_Game_.jpg",
+  "job_id": "spn2-f1f9b966d94527ea2a4056aaf5f1dcf64c0e17ab",
+  "last": "2026-10-22T21:45:20Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:45:20Z",
+   "bytes": 122482,
+   "capture_id": "https://web.archive.org/web/20261022214417id_/https://upload.wikimedia.org/wikipedia/commons/b/b1/Sample_Pente_Game_.jpg",
+   "method": "sha256",
+   "sha256": "ef492f3a4f33c8fc80fc56ca5dc4f784c566860b1d0dc1e644c6cd06a2250eb5"
+  }
+ },
+ "https://upload.wikimedia.org/wikipedia/commons/b/b9/Magicgathering1.jpg": {
+  "capture": "https://web.archive.org/web/20261022214432/https://upload.wikimedia.org/wikipedia/commons/b/b9/Magicgathering1.jpg",
+  "last": "2026-10-22T21:45:22Z",
+  "status": "pending",
   "tries": 1
  },
  "https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG": {
