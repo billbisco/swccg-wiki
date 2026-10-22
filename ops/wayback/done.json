@@ -30750,6 +30750,13 @@
    "sha256": "ccb2b6921dc6cb0fc40808761c19b76390546c2e376160de486360598db6e466"
   }
  },
+ "https://swccg.com/snapshots/forum/t55902.html": {
+  "capture": "",
+  "job_id": "spn2-d5d86532ec2fe67c9ed7c48e50da8ca4afe14113",
+  "last": "2026-10-22T03:23:48Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t56104.html": {
   "capture": "https://web.archive.org/web/20261021000635/https://swccg.com/snapshots/forum/t56104.html",
   "error": "error:not-found",
@@ -31101,11 +31108,17 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2007-decklists.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 203 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T02:34:38Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261013152327/https://swccg.com/snapshots/pc/2007-decklists.html",
+  "last": "2026-10-22T03:20:06Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:20:09Z",
+   "capture_id": "https://web.archive.org/web/20261013152327id_/https://swccg.com/snapshots/pc/2007-decklists.html",
+   "method": "text",
+   "text_match": 0.991
+  }
  },
  "https://swccg.com/snapshots/pc/2009-decklists.html": {
   "capture": "https://web.archive.org/web/20261021002558/https://swccg.com/snapshots/pc/2009-decklists.html",
@@ -31124,16 +31137,17 @@
  "https://swccg.com/snapshots/pc/2010-decklists.html": {
   "capture": "https://web.archive.org/web/20261021002511/https://swccg.com/snapshots/pc/2010-decklists.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T02:44:20Z",
+  "last": "2026-10-22T03:17:15Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2011-decklists.html": {
   "capture": "https://web.archive.org/web/20261021002534/https://swccg.com/snapshots/pc/2011-decklists.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T02:44:30Z",
+  "error": "error:not-found",
+  "job_id": "spn2-a957b6234fa1fc204c197b7de8f998647045ae02",
+  "last": "2026-10-22T03:25:02Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2012-decklists.html": {
   "capture": "https://web.archive.org/web/20261021002644/https://swccg.com/snapshots/pc/2012-decklists.html",
@@ -31164,18 +31178,30 @@
   }
  },
  "https://swccg.com/snapshots/pc/2015-san-diego-grand-prix.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 204 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T02:34:16Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261013141141/https://swccg.com/snapshots/pc/2015-san-diego-grand-prix.html",
+  "last": "2026-10-22T03:19:36Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:19:38Z",
+   "capture_id": "https://web.archive.org/web/20261013141141id_/https://swccg.com/snapshots/pc/2015-san-diego-grand-prix.html",
+   "method": "text",
+   "text_match": 0.993
+  }
  },
  "https://swccg.com/snapshots/pc/2015-texas-mini-worlds.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 204 hours, 25 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T02:38:33Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261013141318/https://swccg.com/snapshots/pc/2015-texas-mini-worlds.html",
+  "last": "2026-10-22T03:20:20Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:20:23Z",
+   "capture_id": "https://web.archive.org/web/20261013141318id_/https://swccg.com/snapshots/pc/2015-texas-mini-worlds.html",
+   "method": "text",
+   "text_match": 0.992
+  }
  },
  "https://swccg.com/snapshots/pc/2015-world-championships.html": {
   "capture": "https://web.archive.org/web/20261013125658/https://swccg.com/snapshots/pc/2015-world-championships.html",
@@ -31219,10 +31245,10 @@
  },
  "https://swccg.com/snapshots/pc/2016-texas-mini-worlds.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 204 hours, 26 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T02:38:55Z",
+  "error": "no job_id: The same snapshot had been made 205 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-22T03:20:34Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2016-world-championships.html": {
   "capture": "https://web.archive.org/web/20261013125623/https://swccg.com/snapshots/pc/2016-world-championships.html",
@@ -31420,9 +31446,9 @@
   "capture": "https://web.archive.org/web/20261021004117/https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html",
   "error": "error:not-found",
   "job_id": "spn2-de5ee83b62ab37887620f28a6aeb94b4a4010b8c",
-  "last": "2026-10-22T02:39:34Z",
+  "last": "2026-10-22T03:25:12Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html": {
   "capture": "https://web.archive.org/web/20261021004148/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html",
@@ -31860,10 +31886,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-texas-mini-worlds.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 202 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T02:39:06Z",
+  "error": "no job_id: The same snapshot had been made 203 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T03:20:45Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-brian-fred-eops.html": {
   "capture": "https://web.archive.org/web/20261022002117/https://swccg.com/snapshots/pc/2017-tmw-day-1-brian-fred-eops.html",
@@ -32389,9 +32415,17 @@
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-tom-haid-qmc.html": {
   "capture": "https://web.archive.org/web/20261022020551/https://swccg.com/snapshots/pc/2017-tmw-day-2-tom-haid-qmc.html",
-  "last": "2026-10-22T02:29:04Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-afe7d99feed169e87d1c7e3e9c3f1ca0861a09d5",
+  "last": "2026-10-22T03:25:19Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:25:19Z",
+   "bytes": 7120954,
+   "capture_id": "https://web.archive.org/web/20261022020551id_/https://swccg.com/snapshots/pc/2017-tmw-day-2-tom-haid-qmc.html",
+   "method": "sha256",
+   "sha256": "c192d37e6fb792df7a2e0d5c8ba68a1afc55d58acdac5d26c607e5cb991dea34"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-world-championships.html": {
   "capture": "https://web.archive.org/web/20261013155910/https://swccg.com/snapshots/pc/2017-world-championships.html",
@@ -33579,9 +33613,8 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-vikram-bali-ds.html": {
-  "capture": "",
-  "job_id": "spn2-059a485443404d0d9ffa9a17fbb9f21c4d0fa943",
-  "last": "2026-10-22T01:04:37Z",
+  "capture": "https://web.archive.org/web/20261022010456/https://swccg.com/snapshots/pc/2017-worlds-day-2-vikram-bali-ds.html",
+  "last": "2026-10-22T03:14:38Z",
   "status": "pending",
   "tries": 2
  },
@@ -33670,11 +33703,17 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-endor-grand-prix.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 202 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T02:34:27Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261013155923/https://swccg.com/snapshots/pc/2018-endor-grand-prix.html",
+  "last": "2026-10-22T03:19:50Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:19:54Z",
+   "capture_id": "https://web.archive.org/web/20261013155923id_/https://swccg.com/snapshots/pc/2018-endor-grand-prix.html",
+   "method": "text",
+   "text_match": 0.994
+  }
  },
  "https://swccg.com/snapshots/pc/2018-european-championships.html": {
   "capture": "https://web.archive.org/web/20261013160106/https://swccg.com/snapshots/pc/2018-european-championships.html",
@@ -36427,6 +36466,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2021-online-championship-series-wrap-mht-victorious-bf.html": {
+  "capture": "",
+  "job_id": "spn2-5f3617929676f92c5c63a9742610fc881819d853",
+  "last": "2026-10-22T03:22:45Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2021-regional-championships.html": {
   "capture": "https://web.archive.org/web/20261013160401/https://swccg.com/snapshots/pc/2021-regional-championships.html",
   "error": "no job_id: The same snapshot had been made 176 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
@@ -36447,11 +36493,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2021-us-nationals.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 202 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T02:32:22Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261013160957/https://swccg.com/snapshots/pc/2021-us-nationals.html",
+  "last": "2026-10-22T03:19:13Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:19:14Z",
+   "capture_id": "https://web.archive.org/web/20261013160957id_/https://swccg.com/snapshots/pc/2021-us-nationals.html",
+   "method": "text",
+   "reason": "page text matches 6% (< 85%)",
+   "text_match": 0.056
+  }
  },
  "https://swccg.com/snapshots/pc/2021-world-championship-wrap-olson-wins-again.html": {
   "capture": "https://web.archive.org/web/20261016153810/https://swccg.com/snapshots/pc/2021-world-championship-wrap-olson-wins-again.html",
@@ -39464,6 +39517,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc-bf.html": {
+  "capture": "",
+  "job_id": "spn2-8fbc3c7571a92f4e9465548b419b98fba5121a62",
+  "last": "2026-10-22T03:24:29Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc.html": {
   "capture": "https://web.archive.org/web/20261020232116/https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc.html",
   "job_id": "spn2-5939b3eeb2ccdd3b1f0edb735a307137709048f3",
@@ -40254,9 +40314,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-swccg-world-championship.html": {
   "capture": "https://web.archive.org/web/20261022022231/https://swccg.com/snapshots/pc/2022-swccg-world-championship.html",
-  "last": "2026-10-22T02:42:57Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-4fad49a81aab3da1ba6ad300b3cbf0fca37205e1",
+  "last": "2026-10-22T03:25:26Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:25:26Z",
+   "bytes": 7133944,
+   "capture_id": "https://web.archive.org/web/20261022022231id_/https://swccg.com/snapshots/pc/2022-swccg-world-championship.html",
+   "method": "sha256",
+   "sha256": "be9b67466b84ea0543babe859ad8c90f9b83c01c21fe8cd8cde4e1bc449b382b"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-tatooine-regionals-adam-bott-ds-cct.html": {
   "capture": "",
@@ -40580,6 +40648,12 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats-bf.html": {
+  "capture": "https://web.archive.org/web/20261022032146/https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats-bf.html",
+  "last": "2026-10-22T03:26:06Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-world-championship-top-8-joe-olson-ds-ropsv.html": {
   "capture": "",
   "job_id": "spn2-f710fe9b0b0258044355cc5909eb7ebcc086e38e",
@@ -40832,6 +40906,12 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-06-annual-online-retro-event-premiere-special-edition-april-june-2023-bf.html": {
+  "capture": "https://web.archive.org/web/20261022032133/https://swccg.com/snapshots/pc/2023-06-annual-online-retro-event-premiere-special-edition-april-june-2023-bf.html",
+  "last": "2026-10-22T03:26:09Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-06-annual-online-retro-event-premiere-special-edition-april-june-2023.html": {
   "capture": "https://web.archive.org/web/20261020232105/https://swccg.com/snapshots/pc/2023-06-annual-online-retro-event-premiere-special-edition-april-june-2023.html",
   "job_id": "spn2-1dcac11fbeec58d33a876266c3d87bb1f2d8461d",
@@ -40874,8 +40954,8 @@
  },
  "https://swccg.com/snapshots/pc/2023-1-champions-league-knockout-round.html": {
   "capture": "https://web.archive.org/web/20261022025137/https://swccg.com/snapshots/pc/2023-1-champions-league-knockout-round.html",
-  "last": "2026-10-22T02:58:46Z",
-  "status": "pending",
+  "last": "2026-10-22T03:15:16Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-11-outrider-cup-iii-bf.html": {
@@ -45997,15 +46077,15 @@
  },
  "https://swccg.com/snapshots/pc/2024-03-jawa-cup-top-8-feb-13-25-on-gemp.html": {
   "capture": "https://web.archive.org/web/20261022025044/https://swccg.com/snapshots/pc/2024-03-jawa-cup-top-8-feb-13-25-on-gemp.html",
-  "last": "2026-10-22T02:59:18Z",
-  "status": "pending",
+  "last": "2026-10-22T03:15:47Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-04-eclipse-major-indianapolis-indiana-apr-5-7.html": {
   "capture": "https://web.archive.org/web/20261022022348/https://swccg.com/snapshots/pc/2024-04-eclipse-major-indianapolis-indiana-apr-5-7.html",
-  "last": "2026-10-22T02:43:38Z",
-  "status": "retry",
-  "tries": 1
+  "last": "2026-10-22T03:25:35Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-06-european-championships-copenhagen-denmark-may-17th-2024.html": {
   "capture": "",
@@ -46030,9 +46110,17 @@
  },
  "https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024-bf.html": {
   "capture": "https://web.archive.org/web/20261022022256/https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024-bf.html",
-  "last": "2026-10-22T02:43:39Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ee56e238fbfb0a74dab483e316430482946e4247",
+  "last": "2026-10-22T03:25:33Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:25:33Z",
+   "bytes": 7135380,
+   "capture_id": "https://web.archive.org/web/20261022022256id_/https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024-bf.html",
+   "method": "sha256",
+   "sha256": "35ba49ee2eb1bc3f3f4c0a0792a8ac4cc194a088be41d83d7f51fa944ecd28f2"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024.html": {
   "capture": "https://web.archive.org/web/20261020233546/https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024.html",
@@ -47335,11 +47423,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026-bf.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261022020855/https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026-bf.html",
   "job_id": "spn2-543aec22cbe856f57dadbdf18868fe107feea7f4",
-  "last": "2026-10-22T02:08:15Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-10-22T03:15:56Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:15:56Z",
+   "bytes": 7134675,
+   "capture_id": "https://web.archive.org/web/20261022020855id_/https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026-bf.html",
+   "method": "sha256",
+   "sha256": "f9312b0d2a31353b8ab6b3179260111a7dffb081df77376847b389271edf4420"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026.html": {
   "capture": "https://web.archive.org/web/20261020233611/https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026.html",
@@ -48170,12 +48265,26 @@
    "text_match": 0.995
   }
  },
- "https://swccg.com/snapshots/pc/8th-annual-gempc-feb-may-2024.html": {
+ "https://swccg.com/snapshots/pc/2026-us-nationals-wrap-up-win-for-hayes-hunter.html": {
   "capture": "",
-  "job_id": "spn2-be166b3061d0486ffa02045ff3968b187b9e30d3",
-  "last": "2026-10-22T02:51:44Z",
-  "status": "pending",
+  "error": "no job_id: The same snapshot had been made 225 hours, 19 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T03:20:56Z",
+  "status": "retry",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/8th-annual-gempc-feb-may-2024.html": {
+  "capture": "https://web.archive.org/web/20261022025148/https://swccg.com/snapshots/pc/8th-annual-gempc-feb-may-2024.html",
+  "job_id": "spn2-be166b3061d0486ffa02045ff3968b187b9e30d3",
+  "last": "2026-10-22T03:16:04Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T03:16:04Z",
+   "bytes": 7124352,
+   "capture_id": "https://web.archive.org/web/20261022025148id_/https://swccg.com/snapshots/pc/8th-annual-gempc-feb-may-2024.html",
+   "method": "sha256",
+   "sha256": "0cd7bb95ac17eaa1a2e54b2a500eb2d56bf9fd832b3c1ce21bb7fe77db6f1c35"
+  }
  },
  "https://swccg.com/snapshots/pc/about-us.html": {
   "capture": "https://web.archive.org/web/20261020234816/https://swccg.com/snapshots/pc/about-us.html",
@@ -48408,11 +48517,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/collecting.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261022023930/https://swccg.com/snapshots/pc/collecting.html",
   "job_id": "spn2-adf36bf1ff5c4278b7899e8fb71dbe3db22666e0",
-  "last": "2026-10-22T02:38:44Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T03:16:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T03:16:12Z",
+   "bytes": 7176238,
+   "capture_id": "https://web.archive.org/web/20261022023930id_/https://swccg.com/snapshots/pc/collecting.html",
+   "method": "sha256",
+   "sha256": "f169262572a8e4a4f9ed3bf41605942fad4af64693c9b73c7ac3d2c3abbc7a66"
+  }
  },
  "https://swccg.com/snapshots/pc/community-awards.html": {
   "capture": "https://web.archive.org/web/20261016161923/https://swccg.com/snapshots/pc/community-awards.html",
@@ -48420,6 +48536,13 @@
   "last": "2026-10-16T17:09:59Z",
   "status": "ok",
   "tries": 2
+ },
+ "https://swccg.com/snapshots/pc/contact.html": {
+  "capture": "",
+  "job_id": "spn2-e0c286ea3197ff13ac37b0053de1280cfa1c0e78",
+  "last": "2026-10-22T03:22:12Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/decipher-swccg-squadron-members.html": {
   "capture": "https://web.archive.org/web/20261020195703/https://swccg.com/snapshots/pc/decipher-swccg-squadron-members.html",
@@ -48448,11 +48571,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/inaugural-beezer-bowl-a-major-success-bf.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261022024816/https://swccg.com/snapshots/pc/inaugural-beezer-bowl-a-major-success-bf.html",
   "job_id": "spn2-f316e52586045a0ab00fa2c20d17de81518f98e8",
-  "last": "2026-10-22T02:48:12Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T03:16:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T03:16:44Z",
+   "bytes": 22798828,
+   "capture_id": "https://web.archive.org/web/20261022024816id_/https://swccg.com/snapshots/pc/inaugural-beezer-bowl-a-major-success-bf.html",
+   "method": "sha256",
+   "sha256": "250c64b97ba054b6db7db9f05cc69a838ab5b2ce73de5009f8d5a6024a774101"
+  }
  },
  "https://swccg.com/snapshots/pc/inaugural-beezer-bowl-a-major-success.html": {
   "capture": "https://web.archive.org/web/20261016105859/https://swccg.com/snapshots/pc/inaugural-beezer-bowl-a-major-success.html",
@@ -48461,12 +48591,26 @@
   "status": "ok",
   "tries": 1
  },
- "https://swccg.com/snapshots/pc/jawa.html": {
+ "https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major-bf.html": {
   "capture": "",
-  "job_id": "spn2-5e4401a5fa273ba8ef36b12df0bb837e23fdc9f2",
-  "last": "2026-10-22T01:19:56Z",
+  "job_id": "spn2-26a274ef2ff6208445b3e7a3aea97677aed0026e",
+  "last": "2026-10-22T03:21:19Z",
   "status": "pending",
-  "tries": 2
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/jawa.html": {
+  "capture": "https://web.archive.org/web/20261022011959/https://swccg.com/snapshots/pc/jawa.html",
+  "job_id": "spn2-5e4401a5fa273ba8ef36b12df0bb837e23fdc9f2",
+  "last": "2026-10-22T03:16:51Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T03:16:51Z",
+   "bytes": 7166049,
+   "capture_id": "https://web.archive.org/web/20261022011959id_/https://swccg.com/snapshots/pc/jawa.html",
+   "method": "sha256",
+   "sha256": "b62d4446bc045cdbd7253d059d21d4fd01bbf14682ac85241a559d834db20a97"
+  }
  },
  "https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html": {
   "capture": "https://web.archive.org/web/20261021040051/https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html",
@@ -48474,6 +48618,12 @@
   "last": "2026-10-21T05:01:03Z",
   "status": "pending",
   "tries": 2
+ },
+ "https://swccg.com/snapshots/pc/jokerking-wins-batmouses-5th-gempc-bf.html": {
+  "capture": "https://web.archive.org/web/20261022032305/https://swccg.com/snapshots/pc/jokerking-wins-batmouses-5th-gempc-bf.html",
+  "last": "2026-10-22T03:26:11Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/jokerking-wins-batmouses-5th-gempc.html": {
   "capture": "https://web.archive.org/web/20261020233716/https://swccg.com/snapshots/pc/jokerking-wins-batmouses-5th-gempc.html",
@@ -48503,12 +48653,38 @@
    "sha256": "3ca444112ebf45c3c95ab8fa9aa9b13459790eba74510f399c6074a9d9772b11"
   }
  },
- "https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa-bf.html": {
-  "capture": "",
-  "job_id": "spn2-27fe9e0f26315b0e64305f36790498eabf9121ba",
-  "last": "2026-10-22T02:35:37Z",
+ "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-inaugural-champions-league-bf.html": {
+  "capture": "https://web.archive.org/web/20261022032443/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-inaugural-champions-league-bf.html",
+  "last": "2026-10-22T03:26:19Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-second-career-gemp-match-play-championship-bf.html": {
+  "capture": "https://web.archive.org/web/20261022032547/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-second-career-gemp-match-play-championship-bf.html",
+  "last": "2026-10-22T03:26:21Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/outrider-cup-ii.html": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 205 hours, 9 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-22T03:22:34Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa-bf.html": {
+  "capture": "https://web.archive.org/web/20261022023540/https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa-bf.html",
+  "job_id": "spn2-27fe9e0f26315b0e64305f36790498eabf9121ba",
+  "last": "2026-10-22T03:16:59Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T03:16:59Z",
+   "bytes": 7387339,
+   "capture_id": "https://web.archive.org/web/20261022023540id_/https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa-bf.html",
+   "method": "sha256",
+   "sha256": "3d128c01dd75e2057f3447e3b4ffcfcdef5b1dedcbbe09eb3f49020c60174b03"
+  }
  },
  "https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html": {
   "capture": "https://web.archive.org/web/20261021234712/https://swccg.com/snapshots/pc/outrider-cup-iii-wrap-up-victory-for-team-usa.html",
@@ -48593,6 +48769,20 @@
    "sha256": "93f6cd2f9311919b76fb0093da4b424701af88c6be19f60c983f58da9dcfc65e"
   }
  },
+ "https://swccg.com/snapshots/pc/the-first-swccginpublic-push-was-a-rousing-success-bf.html": {
+  "capture": "",
+  "job_id": "spn2-bb56dc8c879f76a446aece38841f9db44151d7a4",
+  "last": "2026-10-22T03:23:37Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/tournament-decklists-bf.html": {
+  "capture": "",
+  "job_id": "spn2-b398b819aab58019e7ffefab163f80e4a6b0de98",
+  "last": "2026-10-22T03:23:26Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/tournament-decklists.html": {
   "capture": "https://web.archive.org/web/20261020044435/https://swccg.com/snapshots/pc/tournament-decklists.html",
   "last": "2026-10-20T22:12:03Z",
@@ -48608,9 +48798,8 @@
   }
  },
  "https://swccg.com/snapshots/pc/tournaments.html": {
-  "capture": "",
-  "job_id": "spn2-93c845e323018337d055e109d68ca7aee84af235",
-  "last": "2026-10-22T01:20:07Z",
+  "capture": "https://web.archive.org/web/20261022012010/https://swccg.com/snapshots/pc/tournaments.html",
+  "last": "2026-10-22T03:17:02Z",
   "status": "pending",
   "tries": 2
  },
@@ -48640,9 +48829,9 @@
   "capture": "https://web.archive.org/web/20261021002749/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-2nd-place-ds-jake-nelson-sycfa-brangus.html",
   "error": "error:not-found",
   "job_id": "spn2-f11993c4a98acfa6af5000fd4ac7000694a52662",
-  "last": "2026-10-22T02:39:32Z",
+  "last": "2026-10-22T03:25:03Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-2nd-place-ls-jake-nelson-lsc-racing.html": {
   "capture": "",
@@ -48708,9 +48897,17 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-brian-bolletta-ls-bespin-careful-planning-v.html": {
   "capture": "https://web.archive.org/web/20261022012342/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-brian-bolletta-ls-bespin-careful-planning-v.html",
-  "last": "2026-10-22T02:44:00Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-b1b421b44c5758e02e744bb8740b9ac1c032fa5e",
+  "last": "2026-10-22T03:25:10Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-22T03:25:10Z",
+   "bytes": 7121620,
+   "capture_id": "https://web.archive.org/web/20261022012342id_/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-brian-bolletta-ls-bespin-careful-planning-v.html",
+   "method": "sha256",
+   "sha256": "61d5f11b20ac48c83c0c00b21388007ca76d8bad6896228e7b310a3c0db6fcf0"
+  }
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-chris-menzel-ds-senate.html": {
   "capture": "https://web.archive.org/web/20261021003554/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-chris-menzel-ds-senate.html",
@@ -48862,8 +49059,8 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-sean-miller-ds-lsc-podracing.html": {
   "capture": "https://web.archive.org/web/20261022013811/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-sean-miller-ds-lsc-podracing.html",
-  "last": "2026-10-22T02:59:37Z",
-  "status": "pending",
+  "last": "2026-10-22T03:17:07Z",
+  "status": "ok",
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-sean-miller-ls-tigih-podracing.html": {
