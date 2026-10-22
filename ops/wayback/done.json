@@ -32690,9 +32690,9 @@
  "https://cardguide.fandom.com/wiki/Premiere_Limited_(Star_Wars_CCG)_(ES)": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T19:32:44Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-22T20:05:11Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://cardguide.fandom.com/wiki/Star_Wars_CCG": {
   "capture": "https://web.archive.org/web/20260214102400/https://cardguide.fandom.com/wiki/Star_Wars_CCG",
@@ -32701,17 +32701,22 @@
   "status": "ok",
   "tries": 5,
   "verify": {
-   "at": "2026-10-22T19:32:59Z",
+   "at": "2026-10-22T20:06:40Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 2
+ },
+ "https://cardguide.fandom.com/wiki/Tatooine_(expansion)": {
+  "capture": "https://web.archive.org/web/20250209142421/https://cardguide.fandom.com/wiki/Tatooine_(expansion)",
+  "last": "2026-10-22T20:05:23Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 6,
+  "verify": {
+   "at": "2026-10-22T20:05:25Z",
    "error": "source HTTP 403"
   },
   "verify_tries": 1
- },
- "https://cardguide.fandom.com/wiki/Tatooine_(expansion)": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T19:33:09Z",
-  "status": "retry",
-  "tries": 5
  },
  "https://cdn4.volusion.store/zybxa-zvknq/v/vspfiles/photos/11914-2T.jpg": {
   "capture": "https://web.archive.org/web/20261009013333/https://cdn4.volusion.store/zybxa-zvknq/v/vspfiles/photos/11914-2T.jpg",
@@ -32870,10 +32875,10 @@
  },
  "https://docs.google.com/presentation/d/1XNDNwSry9So9nAPCjeLSJANSofNl2G6EY7Hy2lpJmGY/edit": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 335 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T19:33:21Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 336 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-22T20:05:37Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://drive.google.com/drive/folders/15RQtNOwsJHPpc8Iw8A4Q4ofOryln5eXv": {
   "capture": "https://web.archive.org/web/20240906210602/https://drive.google.com/drive/folders/15RQtNOwsJHPpc8Iw8A4Q4ofOryln5eXv",
@@ -33150,24 +33155,24 @@
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/packagedProduct/VirtualAlternateImageBoosterPack.java": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T19:24:13Z",
+  "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
+  "last": "2026-10-22T20:05:49Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/resources/swccgFormats.json": {
   "capture": "",
   "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
-  "last": "2026-10-22T19:24:24Z",
+  "last": "2026-10-22T20:06:00Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/commits/master/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set210/dark/Card210_042.java": {
   "capture": "",
   "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
-  "last": "2026-10-22T19:24:34Z",
+  "last": "2026-10-22T20:06:11Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://github.com/PlayersCouncil/gemp-lotr": {
   "capture": "https://web.archive.org/web/20261020161311/https://github.com/PlayersCouncil/gemp-lotr",
@@ -33506,10 +33511,10 @@
  },
  "https://groups.google.com/g/rec.arts.sf.starwars.collecting/c/mVSQQWI1He4": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 299 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T19:24:46Z",
+  "error": "no job_id: The same snapshot had been made 300 hours, 37 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:06:23Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://i.ebayimg.com/images/g/FAoAAeSwCFxqxW06/s-l1600.jpg": {
   "capture": "https://web.archive.org/web/20261014165114/https://i.ebayimg.com/images/g/FAoAAeSwCFxqxW06/s-l1600.jpg",
@@ -33797,10 +33802,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T19:34:17Z",
+   "at": "2026-10-22T20:06:34Z",
    "error": "source HTTP 403"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://memory-alpha.fandom.com/wiki/File:Decipher_logo.png": {
   "capture": "",
