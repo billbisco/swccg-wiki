@@ -32681,11 +32681,10 @@
  },
  "https://boards.theforce.net/threads/first-impression-of-sw-tcg.6383903/": {
   "capture": "",
-  "error": "error:no-request",
-  "job_id": "spn2-3cc2c52e555a75ba0b0f5ed9fc51171a91430aef",
-  "last": "2026-10-22T19:53:33Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T20:28:07Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://cardguide.fandom.com/wiki/Premiere_Limited_(Star_Wars_CCG)_(ES)": {
   "capture": "",
@@ -36296,15 +36295,17 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2022/usnationals2022logoFull.png": {
   "capture": "https://web.archive.org/web/20261022193703/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2022/usnationals2022logoFull.png",
-  "last": "2026-10-22T19:56:47Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T20:28:17Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/ECTop2.jpg": {
   "capture": "https://web.archive.org/web/20261022193715/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/ECTop2.jpg",
-  "last": "2026-10-22T19:56:48Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T20:28:27Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/EGP+Cast+%26+Crew.jpg": {
   "capture": "https://web.archive.org/web/20261022193727/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/EGP+Cast+%26+Crew.jpg",
@@ -36717,10 +36718,10 @@
  },
  "https://starwars.fandom.com/wiki/A_New_Hope_Unlimited": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 336 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-22T19:53:15Z",
+  "error": "no job_id: The same snapshot had been made 336 hours, 43 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T20:28:42Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://starwars.fandom.com/wiki/Cloud_City_Limited": {
   "capture": "https://web.archive.org/web/20260929034118/https://starwars.fandom.com/wiki/Cloud_City_Limited",
@@ -36938,6 +36939,42 @@
    "reason": "could not fetch after 3 tries"
   },
   "verify_tries": 3
+ },
+ "https://starwars.fandom.com/wiki/Tatooine_Limited": {
+  "capture": "https://web.archive.org/web/20260721114636/https://starwars.fandom.com/wiki/Tatooine_Limited",
+  "last": "2026-10-22T20:28:58Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:28:59Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Theed_Palace_Limited": {
+  "capture": "https://web.archive.org/web/20260609052158/https://starwars.fandom.com/wiki/Theed_Palace_Limited",
+  "last": "2026-10-22T20:29:11Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:29:13Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
+ },
+ "https://starwars.fandom.com/wiki/Third_Anthology": {
+  "capture": "https://web.archive.org/web/20251211060737/https://starwars.fandom.com/wiki/Third_Anthology",
+  "last": "2026-10-22T20:29:27Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:29:28Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://stevetotheizz0.github.io/decktech_archives/16248/": {
   "capture": "https://web.archive.org/web/20261020234725/https://www.stephenskilton.com/decktech_archives/16248/",
@@ -43220,6 +43257,20 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2021-online-championship-series-wrap-mht-victorious.html": {
+  "capture": "https://web.archive.org/web/20261022202942/https://swccg.com/snapshots/pc/2021-online-championship-series-wrap-mht-victorious.html",
+  "job_id": "spn2-dec2a962be9d724b2b1a1ac9da2b83a5cbfe4451",
+  "last": "2026-10-22T20:36:26Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:36:26Z",
+   "bytes": 2657455,
+   "capture_id": "https://web.archive.org/web/20261022202942id_/https://swccg.com/snapshots/pc/2021-online-championship-series-wrap-mht-victorious.html",
+   "method": "sha256",
+   "sha256": "d8f05dc412ded67ec8913814f59847358d803643b6b3148f3534019be2cf0519"
+  }
+ },
  "https://swccg.com/snapshots/pc/2021-regional-championships.html": {
   "capture": "https://web.archive.org/web/20261013160401/https://swccg.com/snapshots/pc/2021-regional-championships.html",
   "error": "no job_id: The same snapshot had been made 176 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
@@ -47460,6 +47511,20 @@
    "sha256": "9160a9c4fa00eaf7337ae2d44e7f331400f824ac9e85775037f72a613b651c88"
   }
  },
+ "https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats.html": {
+  "capture": "https://web.archive.org/web/20261022202953/https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats.html",
+  "job_id": "spn2-79c3c52f62517c59398c6d0df65fcf6a8b5495aa",
+  "last": "2026-10-22T20:36:30Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:36:30Z",
+   "bytes": 103171,
+   "capture_id": "https://web.archive.org/web/20261022202953id_/https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats.html",
+   "method": "sha256",
+   "sha256": "f7ee8a68ba6c0d19eedc8a19d9034261b1ac055ba515d7b470aed2669585153b"
+  }
+ },
  "https://swccg.com/snapshots/pc/2022-world-championship-top-8-joe-olson-ds-ropsv.html": {
   "capture": "",
   "job_id": "spn2-f710fe9b0b0258044355cc5909eb7ebcc086e38e",
@@ -49921,6 +49986,20 @@
   "status": "failed",
   "tries": 6
  },
+ "https://swccg.com/snapshots/pc/2023-european-championship-wrap-up-congrats-to-cedrik.html": {
+  "capture": "https://web.archive.org/web/20261022203048/https://swccg.com/snapshots/pc/2023-european-championship-wrap-up-congrats-to-cedrik.html",
+  "job_id": "spn2-374c8291b3ad319074ff81b3138694412883277a",
+  "last": "2026-10-22T20:36:34Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:36:34Z",
+   "bytes": 100492,
+   "capture_id": "https://web.archive.org/web/20261022203048id_/https://swccg.com/snapshots/pc/2023-european-championship-wrap-up-congrats-to-cedrik.html",
+   "method": "sha256",
+   "sha256": "f497eaa6926e97519fe3509ef357ee50e41287406234f7a04835305e3f62ea26"
+  }
+ },
  "https://swccg.com/snapshots/pc/2023-european-championships-martin-den-boef-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261021085326/https://swccg.com/snapshots/pc/2023-european-championships-martin-den-boef-ds-thrawn.html",
   "job_id": "spn2-dc0dd2817996287387bada2595b5b66b9373ac30",
@@ -50797,6 +50876,20 @@
   "last": "2026-10-22T03:54:22Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-ocs-wrap-desai-wins-incredible-fourth-title.html": {
+  "capture": "https://web.archive.org/web/20261022203015/https://swccg.com/snapshots/pc/2023-ocs-wrap-desai-wins-incredible-fourth-title.html",
+  "job_id": "spn2-f8e44635c9797020060b2d1dbed014dcc5ec1822",
+  "last": "2026-10-22T20:36:41Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:36:41Z",
+   "bytes": 5135824,
+   "capture_id": "https://web.archive.org/web/20261022203015id_/https://swccg.com/snapshots/pc/2023-ocs-wrap-desai-wins-incredible-fourth-title.html",
+   "method": "sha256",
+   "sha256": "1746315aa0d905ca97f39719e1545c117d0c4f8b3ef9cb39fc05215396664a76"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ds-tto.html": {
   "capture": "https://web.archive.org/web/20261022035528/https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ds-tto.html",
@@ -52911,6 +53004,20 @@
    "sha256": "f399c3d0e11b6812cde68acc410294803b90ee2fc091eacc51ed504406633d91"
   }
  },
+ "https://swccg.com/snapshots/pc/2023-us-nationals-wrap-hayes-hunter-brings-home-the-trophy.html": {
+  "capture": "https://web.archive.org/web/20261022203026/https://swccg.com/snapshots/pc/2023-us-nationals-wrap-hayes-hunter-brings-home-the-trophy.html",
+  "job_id": "spn2-782339bdae4e5395bab81c58a721b88777098b92",
+  "last": "2026-10-22T20:36:45Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:36:45Z",
+   "bytes": 102864,
+   "capture_id": "https://web.archive.org/web/20261022203026id_/https://swccg.com/snapshots/pc/2023-us-nationals-wrap-hayes-hunter-brings-home-the-trophy.html",
+   "method": "sha256",
+   "sha256": "27fa289986efe8ea51548bca34c3c68774bec0bc0ab6fc69ffcf993f9c49b5d2"
+  }
+ },
  "https://swccg.com/snapshots/pc/2023-world-championship-wrap-up-hayes-hunter-secures-his-first-crown-bf.html": {
   "capture": "",
   "job_id": "spn2-c15134bad87436c6fc625d391620c88303977711",
@@ -54391,6 +54498,20 @@
    "sha256": "c2855b682d00f3f6fdf6e1a2ab87fcd5978b36e371783afc2e78aded17c251ad"
   }
  },
+ "https://swccg.com/snapshots/pc/2025-us-nationals-wrap-up-matt-scott-takes-it-down.html": {
+  "capture": "https://web.archive.org/web/20261022203147/https://swccg.com/snapshots/pc/2025-us-nationals-wrap-up-matt-scott-takes-it-down.html",
+  "job_id": "spn2-39c05b7ded7e9ddb271549a118fdc23719ae68a7",
+  "last": "2026-10-22T20:36:48Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:36:48Z",
+   "bytes": 101339,
+   "capture_id": "https://web.archive.org/web/20261022203147id_/https://swccg.com/snapshots/pc/2025-us-nationals-wrap-up-matt-scott-takes-it-down.html",
+   "method": "sha256",
+   "sha256": "fc3f463c5d7ccc59b3164ce313b78f47c62da0d01d98a53b6d1442239f4dc227"
+  }
+ },
  "https://swccg.com/snapshots/pc/2026-01-boston-winter-classic-boston-massachusetts-jan-10-to-11-2026.html": {
   "capture": "https://web.archive.org/web/20261022023733/https://swccg.com/snapshots/pc/2026-01-boston-winter-classic-boston-massachusetts-jan-10-to-11-2026.html",
   "job_id": "spn2-ea06867fe8c4c2acb541dd69864cfa177822c72c",
@@ -55605,6 +55726,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/conor-britain-captures-the-third-biennial-jawa-cup-crown.html": {
+  "capture": "",
+  "job_id": "spn2-bf6ea1ca919a973dc5a252346888a33892caeb75",
+  "last": "2026-10-22T20:31:17Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/contact.html": {
   "capture": "",
   "job_id": "spn2-e0c286ea3197ff13ac37b0053de1280cfa1c0e78",
@@ -55639,6 +55767,13 @@
    "sha256": "ad692c1a19f7542bbba21453c1e24767a7c4267c50ffd74a4c9f055231d941eb"
   }
  },
+ "https://swccg.com/snapshots/pc/desai-captures-2022-online-championship-series-title-unifies-the-belts.html": {
+  "capture": "",
+  "job_id": "spn2-db6082e6610c6bdc45069d76212f3804cc80c51d",
+  "last": "2026-10-22T20:31:31Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame-bf.html": {
   "capture": "https://web.archive.org/web/20261022033553/https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame-bf.html",
   "job_id": "spn2-5e72736982e0903622079680715005f5ab6b41a0",
@@ -55667,6 +55802,13 @@
    "sha256": "9e9b673524cc9ba9562a4d305b5c3109a073e292c9f63d00fa2fcfd0606be1b0"
   }
  },
+ "https://swccg.com/snapshots/pc/egp-2023-wrap-up-hayes-hunter-on-a-roll-takes-title.html": {
+  "capture": "",
+  "job_id": "spn2-880f87685ce7138bf9af9dfa379e92e14d6a8ce0",
+  "last": "2026-10-22T20:32:13Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/gemp-announcements-request-for-applications-for-new-team.html": {
   "capture": "",
   "job_id": "spn2-211edd92bd80de482228b5761044ecb3099051d4",
@@ -55687,6 +55829,13 @@
    "method": "sha256",
    "sha256": "3f93fb2b3d51e03aa90030af7bfaf2e183ab7eab9b70ac72674a3a265efa81b2"
   }
+ },
+ "https://swccg.com/snapshots/pc/gemp-tom-captures-7th-gemp-match-play-championship-title.html": {
+  "capture": "",
+  "job_id": "spn2-f47d2b41edfd7cac906b5b133f7bffaa97cbbca3",
+  "last": "2026-10-22T20:33:03Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/home.html": {
   "capture": "https://web.archive.org/web/20261020234753/https://swccg.com/snapshots/pc/home.html",
@@ -55729,6 +55878,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html": {
+  "capture": "",
+  "job_id": "spn2-bf66df42fa4b538db3c97a1d95552168614519cc",
+  "last": "2026-10-22T20:33:18Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/jawa.html": {
   "capture": "https://web.archive.org/web/20261022011959/https://swccg.com/snapshots/pc/jawa.html",
   "job_id": "spn2-5e4401a5fa273ba8ef36b12df0bb837e23fdc9f2",
@@ -55747,6 +55903,13 @@
   "capture": "",
   "job_id": "spn2-de09e25406230e00ced58b2ad74aecc52665fb2e",
   "last": "2026-10-22T03:53:30Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/joe-olson-wins-the-2021-match-play-championship.html": {
+  "capture": "",
+  "job_id": "spn2-d25c912bc99699f4bbd0f0c188e8f08712656675",
+  "last": "2026-10-22T20:33:34Z",
   "status": "pending",
   "tries": 1
  },
@@ -55813,6 +55976,12 @@
    "sha256": "3ca444112ebf45c3c95ab8fa9aa9b13459790eba74510f399c6074a9d9772b11"
   }
  },
+ "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-batmouses-6th-gempc.html": {
+  "capture": "https://web.archive.org/web/20261022203437/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-batmouses-6th-gempc.html",
+  "last": "2026-10-22T20:37:28Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-inaugural-champions-league-bf.html": {
   "capture": "https://web.archive.org/web/20261022032443/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-inaugural-champions-league-bf.html",
   "job_id": "spn2-820126e17d95d45114c5532df0a8a74be7c32da5",
@@ -55827,6 +55996,13 @@
    "sha256": "3fbb55643014190665550aa64e4ffd4f2ffd67c2f4b4371d340d7eb569aea574"
   }
  },
+ "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-inaugural-champions-league.html": {
+  "capture": "",
+  "job_id": "spn2-ae44651d1503fc48ee686237a20218f0bec871eb",
+  "last": "2026-10-22T20:34:47Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-second-career-gemp-match-play-championship-bf.html": {
   "capture": "https://web.archive.org/web/20261022032547/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-second-career-gemp-match-play-championship-bf.html",
   "job_id": "spn2-2e55a0c30621beb32ed5d9c2718e05187b480e6d",
@@ -55839,6 +56015,26 @@
    "capture_id": "https://web.archive.org/web/20261022032547id_/https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-second-career-gemp-match-play-championship-bf.html",
    "method": "sha256",
    "sha256": "24436ea746aff397e372eaada4995a0a37e714636d0785e83113e42c13725dae"
+  }
+ },
+ "https://swccg.com/snapshots/pc/matthew-harrison-trainor-wins-second-career-gemp-match-play-championship.html": {
+  "capture": "",
+  "job_id": "spn2-3aea67f9170dab753f317921ad11b651560fddf1",
+  "last": "2026-10-22T20:34:58Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/nac-2024-wrap-up-brian-fred-is-victorious.html": {
+  "capture": "https://web.archive.org/web/20261016175713/https://swccg.com/snapshots/pc/nac-2024-wrap-up-brian-fred-is-victorious.html",
+  "last": "2026-10-22T20:35:14Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T20:35:19Z",
+   "capture_id": "https://web.archive.org/web/20261016175713id_/https://swccg.com/snapshots/pc/nac-2024-wrap-up-brian-fred-is-victorious.html",
+   "method": "text",
+   "text_match": 0.996
   }
  },
  "https://swccg.com/snapshots/pc/new-marketing-advocate-introduction.html": {
@@ -55903,6 +56099,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/pc20-anniversary-tournament-wrap-strother-victorious.html": {
+  "capture": "https://web.archive.org/web/20261022203611/https://swccg.com/snapshots/pc/pc20-anniversary-tournament-wrap-strother-victorious.html",
+  "job_id": "spn2-dab29224d67759b8a8b4b71e25dca0b864716e3d",
+  "last": "2026-10-22T20:37:33Z",
+  "status": "ok",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/remembering-devon-hubner-1978-2024-bf.html": {
   "capture": "https://web.archive.org/web/20261022011949/https://swccg.com/snapshots/pc/remembering-devon-hubner-1978-2024-bf.html",
   "job_id": "spn2-c38ae35b87efbbeeb0012b3a760dc0da9e912c7a",
@@ -55916,6 +56119,13 @@
    "method": "sha256",
    "sha256": "b57c2733f4a02d5ee27b21c3c5a84924688478f43bae7ef79de389925b08f841"
   }
+ },
+ "https://swccg.com/snapshots/pc/remembering-devon-hubner-1978-2024.html": {
+  "capture": "",
+  "job_id": "spn2-f16a59b6101ea24e6e038a071de36c96e302357e",
+  "last": "2026-10-22T20:35:45Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/rules.html": {
   "capture": "https://web.archive.org/web/20261022033355/https://swccg.com/snapshots/pc/rules.html",
@@ -55944,6 +56154,12 @@
    "method": "sha256",
    "sha256": "1410f165a74b8f55eb88d2e54abf177e2727b4764e2d0df4b868456eb108053c"
   }
+ },
+ "https://swccg.com/snapshots/pc/ryan-jellison-wins-the-2021-2022-jawa-cup.html": {
+  "capture": "https://web.archive.org/web/20261022203605/https://swccg.com/snapshots/pc/ryan-jellison-wins-the-2021-2022-jawa-cup.html",
+  "last": "2026-10-22T20:37:03Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/san-diego-super-open-day-1-jeff-lavigne-ds-aobs.html": {
   "capture": "",
@@ -55979,6 +56195,13 @@
    "method": "sha256",
    "sha256": "d7b3ec363dfc103beae8696b289c6668bacee797c5abd4bce9ee463ab753d970"
   }
+ },
+ "https://swccg.com/snapshots/pc/sss-wrap-up-jeff-lavigne-takes-the-title.html": {
+  "capture": "",
+  "job_id": "spn2-769f77da9a8bcfb598756ae7500e0e840c7429d4",
+  "last": "2026-10-22T20:36:12Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/swccg-returns-to-live-major-events-olson-wins-us-nationals.html": {
   "capture": "https://web.archive.org/web/20261021002449/https://swccg.com/snapshots/pc/swccg-returns-to-live-major-events-olson-wins-us-nationals.html",
