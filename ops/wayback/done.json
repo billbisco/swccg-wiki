@@ -36934,10 +36934,10 @@
  },
  "https://starwars.fandom.com/wiki/Premiere_Introductory_Two-Player_Game": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 318 hours, 48 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T21:14:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T21:48:23Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://starwars.fandom.com/wiki/Premiere_Limited": {
   "capture": "https://web.archive.org/web/20260603213012/https://starwars.fandom.com/wiki/Premiere_Limited",
@@ -36953,10 +36953,10 @@
  },
  "https://starwars.fandom.com/wiki/Rebel_Leader": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 337 hours, 17 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T21:14:29Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T21:48:34Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://starwars.fandom.com/wiki/Second_Anthology": {
   "capture": "https://web.archive.org/web/20250626013106/https://starwars.fandom.com/wiki/Second_Anthology",
@@ -58282,9 +58282,16 @@
  },
  "https://swccgdb.com/decklist/view/4/dagobah-turtle-1997-world-champion-1.0": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 301 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T21:18:27Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T21:48:44Z",
   "status": "retry",
+  "tries": 2
+ },
+ "https://swccgdb.com/decklist/view/5/operatives-1998-world-champion-1.0": {
+  "capture": "https://web.archive.org/web/20260929064107/https://swccgdb.com/decklist/view/5/operatives-1998-world-champion-1.0",
+  "last": "2026-10-22T21:49:00Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccgdb.com/decklist/view/6/operatives-1998-world-champion-1.0": {
@@ -58434,12 +58441,116 @@
   "status": "pending",
   "tries": 1
  },
+ "https://upload.wikimedia.org/wikipedia/commons/c/c3/Chess_board_opening_staunton.jpg": {
+  "capture": "https://web.archive.org/web/20261022214914/https://upload.wikimedia.org/wikipedia/commons/c/c3/Chess_board_opening_staunton.jpg",
+  "job_id": "spn2-39e4ddd6a289f4b3b055303cae28c00d6eee52a4",
+  "last": "2026-10-22T21:57:21Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:57:21Z",
+   "bytes": 3007007,
+   "capture_id": "https://web.archive.org/web/20261022214914id_/https://upload.wikimedia.org/wikipedia/commons/c/c3/Chess_board_opening_staunton.jpg",
+   "method": "sha256",
+   "sha256": "8ee44b3d00617acfff63734ae05338368bb07ca21b463603d4b8dcc358ba7145"
+  }
+ },
  "https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG": {
   "capture": "https://web.archive.org/web/20261021024045/https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG",
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-10-21T17:02:00Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://upload.wikimedia.org/wikipedia/en/5/52/Star_Trek_Customizable_Card_Game_cardback.jpg": {
+  "capture": "https://web.archive.org/web/20261022214925/https://upload.wikimedia.org/wikipedia/en/5/52/Star_Trek_Customizable_Card_Game_cardback.jpg",
+  "job_id": "spn2-d155bd188bbd0aa9c73007253e333e2d1a693c21",
+  "last": "2026-10-22T21:57:26Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:57:26Z",
+   "bytes": 94478,
+   "capture_id": "https://web.archive.org/web/20261022214925id_/https://upload.wikimedia.org/wikipedia/en/5/52/Star_Trek_Customizable_Card_Game_cardback.jpg",
+   "method": "sha256",
+   "sha256": "3ecef8e390520cbeafa1a79928b48c818c888488faa4385e3943d9d6df955a0e"
+  }
+ },
+ "https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-1996-dark-side-champion.html": {
+  "capture": "https://web.archive.org/web/20261008234418/https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-1996-dark-side-champion.html",
+  "last": "2026-10-22T21:49:36Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:49:38Z",
+   "capture_id": "https://web.archive.org/web/20261008234418id_/https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-1996-dark-side-champion.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-champion-decklists-from.html": {
+  "capture": "https://web.archive.org/web/20261008234418/https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-champion-decklists-from.html",
+  "last": "2026-10-22T21:49:50Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:49:51Z",
+   "capture_id": "https://web.archive.org/web/20261008234418id_/https://vermsgameblog.blogspot.com/2013/04/star-wars-ccg-champion-decklists-from.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://vkit.starwarsccg.org/": {
+  "capture": "https://web.archive.org/web/20261012170506/https://vkit.starwarsccg.org/",
+  "last": "2026-10-22T21:50:04Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:50:08Z",
+   "bytes": 7906,
+   "capture_id": "https://web.archive.org/web/20261012170506id_/https://vkit.starwarsccg.org/",
+   "method": "sha256",
+   "sha256": "dc8539063b0b5a106c545547c1c90dc0f993e54f8405be4c1b9a9fe5a4e2e6ab"
+  }
+ },
+ "https://wiki.lotrtcgpc.net/wiki/Decipher": {
+  "capture": "https://web.archive.org/web/20261008212029/https://wiki.lotrtcgpc.net/wiki/Decipher",
+  "last": "2026-10-22T21:50:24Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:50:26Z",
+   "error": "source HTTP 502"
+  },
+  "verify_tries": 1
+ },
+ "https://wiki.lotrtcgpc.net/wiki/File:RFD-logo.jpg": {
+  "capture": "https://web.archive.org/web/20261008212029/https://wiki.lotrtcgpc.net/wiki/File:RFD-logo.jpg",
+  "last": "2026-10-22T21:50:41Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:50:43Z",
+   "error": "source HTTP 502"
+  },
+  "verify_tries": 1
+ },
+ "https://wiki.lotrtcgpc.net/wiki/File:decipher_old_logo.jpg": {
+  "capture": "https://web.archive.org/web/20261008212028/https://wiki.lotrtcgpc.net/wiki/File:decipher_old_logo.jpg",
+  "last": "2026-10-22T21:50:57Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:50:58Z",
+   "error": "source HTTP 502"
+  },
+  "verify_tries": 1
  },
  "https://wiki.lotrtcgpc.net/wiki/Player%27s_Council": {
   "capture": "https://web.archive.org/web/20261020161346/https://wiki.lotrtcgpc.net/wiki/Player%27s_Council",
@@ -58476,6 +58587,79 @@
    "sha256": "988461ab5fedcb805a8d9192903bb0e07e4fca2afae6fdfa01f090220cfdb7de"
   }
  },
+ "https://www.cardgamecollector.com/images/wars-tcg/WARS-TCG-Incursion-Rulebook.pdf": {
+  "capture": "https://web.archive.org/web/20261008234817/https://www.cardgamecollector.com/images/wars-tcg/WARS-TCG-Incursion-Rulebook.pdf",
+  "last": "2026-10-22T21:51:10Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:51:13Z",
+   "bytes": 562635,
+   "capture_id": "https://web.archive.org/web/20261008234817id_/https://www.cardgamecollector.com/images/wars-tcg/WARS-TCG-Incursion-Rulebook.pdf",
+   "method": "sha256",
+   "sha256": "71373c1390e273c720104458d1e2c13e02adfcaf6649950c9e1e6a9315fd9ac0"
+  }
+ },
+ "https://www.cardgamecollector.com/images/wars-tcg/WARS-TCG-Nowhere-To-Hide-Rulebook.pdf": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 334 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-10-22T21:51:29Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://www.categoryonegames.com/buylist/star_wars_ccg-reflections_gold/398": {
+  "capture": "https://web.archive.org/web/20261008194755/https://www.categoryonegames.com/buylist/star_wars_ccg-reflections_gold/398",
+  "last": "2026-10-22T21:51:41Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:51:46Z",
+   "capture_id": "https://web.archive.org/web/20261008194755id_/https://www.categoryonegames.com/buylist/star_wars_ccg-reflections_gold/398",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.categoryonegames.com/catalog/star_wars_ccg-misc_sw_items/mara_jade__corran_horn__talon_karde_oversized/48055": {
+  "capture": "https://web.archive.org/web/20261009182650/https://www.categoryonegames.com/catalog/star_wars_ccg-misc_sw_items/mara_jade__corran_horn__talon_karde_oversized/48055",
+  "last": "2026-10-22T21:51:58Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:52:01Z",
+   "capture_id": "https://web.archive.org/web/20261009182650id_/https://www.categoryonegames.com/catalog/star_wars_ccg-misc_sw_items/mara_jade__corran_horn__talon_karde_oversized/48055",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.categoryonegames.com/catalog/star_wars_ccg-misc_sw_items/mara_jade_oversized_signed_by_shannon_baksa_in_san_diego/97531": {
+  "capture": "https://web.archive.org/web/20261009182650/https://www.categoryonegames.com/catalog/star_wars_ccg-misc_sw_items/mara_jade_oversized_signed_by_shannon_baksa_in_san_diego/97531",
+  "last": "2026-10-22T21:52:14Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:52:17Z",
+   "capture_id": "https://web.archive.org/web/20261009182650id_/https://www.categoryonegames.com/catalog/star_wars_ccg-misc_sw_items/mara_jade_oversized_signed_by_shannon_baksa_in_san_diego/97531",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.categoryonegames.com/catalog/star_wars_ccg-swccg_coruscant/mace_windu/54775": {
+  "capture": "https://web.archive.org/web/20261009184032/https://www.categoryonegames.com/catalog/star_wars_ccg-swccg_coruscant/mace_windu/54775",
+  "last": "2026-10-22T21:52:28Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:52:31Z",
+   "capture_id": "https://web.archive.org/web/20261009184032id_/https://www.categoryonegames.com/catalog/star_wars_ccg-swccg_coruscant/mace_windu/54775",
+   "method": "text",
+   "text_match": 0.998
+  }
+ },
  "https://www.chessdom.com/2022-jerry-spann-memorial-oklahoma-open-state-championship-concluded-in-tulsa/": {
   "capture": "https://web.archive.org/web/20261016030444/https://www.chessdom.com/2022-jerry-spann-memorial-oklahoma-open-state-championship-concluded-in-tulsa/",
   "job_id": "spn2-662bc24e9b0f6c929486419383f62a415ebc5887",
@@ -58497,6 +58681,90 @@
   "last": "2026-10-14T19:38:08Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://www.facebook.com/groups/3672073839586069/": {
+  "capture": "https://web.archive.org/web/20261022215325/https://www.facebook.com/groups/3672073839586069/",
+  "job_id": "spn2-d540b8ec0e521675cb23ee5445b4cb20a902d71c",
+  "last": "2026-10-22T21:57:49Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:57:49Z",
+   "capture_id": "https://web.archive.org/web/20261022215325id_/https://www.facebook.com/groups/3672073839586069/",
+   "method": "text",
+   "reason": "page text matches 3% (< 85%)",
+   "text_match": 0.035
+  }
+ },
+ "https://www.facebook.com/groups/3672073839586069/about": {
+  "capture": "https://web.archive.org/web/20261022215256/https://www.facebook.com/groups/3672073839586069/about",
+  "job_id": "spn2-57fe2ffb2bf7a5c6017ea345c1aa927b9cdd5706",
+  "last": "2026-10-22T21:57:53Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:57:53Z",
+   "capture_id": "https://web.archive.org/web/20261022215256id_/https://www.facebook.com/groups/3672073839586069/about",
+   "method": "text",
+   "reason": "page text matches 3% (< 85%)",
+   "text_match": 0.035
+  }
+ },
+ "https://www.facebook.com/kevin.reitzel/posts/deciphercon-2000-25-years-ago-screen-shots-from-the-youtube-video-deciphercon-20/10237436825557579/": {
+  "capture": "https://web.archive.org/web/20261008202514/https://www.facebook.com/kevin.reitzel/posts/deciphercon-2000-25-years-ago-screen-shots-from-the-youtube-video-deciphercon-20/10237436825557579/",
+  "last": "2026-10-22T21:53:05Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:53:07Z",
+   "capture_id": "https://web.archive.org/web/20261008202514id_/https://www.facebook.com/kevin.reitzel/posts/deciphercon-2000-25-years-ago-screen-shots-from-the-youtube-video-deciphercon-20/10237436825557579/",
+   "method": "text",
+   "reason": "page text matches 0% (< 85%)",
+   "text_match": 0.0
+  }
+ },
+ "https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/": {
+  "capture": "https://web.archive.org/web/20261008202519/https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/",
+  "last": "2026-10-22T21:53:20Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:53:22Z",
+   "capture_id": "https://web.archive.org/web/20261008202519id_/https://www.facebook.com/kevin.reitzel/posts/its-been-30-years-my-star-wars-ccg-1996-championship-deck-lists-that-i-used-at-t/10241711434940142/",
+   "method": "text",
+   "reason": "page text matches 0% (< 85%)",
+   "text_match": 0.0
+  }
+ },
+ "https://www.facebook.com/media/set/?vanity=kevin.reitzel&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008202522/https://www.facebook.com/media/set/?vanity=kevin.reitzel&set=a.10230980334389335",
+  "last": "2026-10-22T21:53:33Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:53:35Z",
+   "capture_id": "https://web.archive.org/web/20261008202522id_/https://www.facebook.com/media/set/?vanity=kevin.reitzel&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 0% (< 85%)",
+   "text_match": 0.0
+  }
+ },
+ "https://www.facebook.com/photo/?fbid=10230980401391010&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008182007/https://www.facebook.com/photo/?fbid=10230980401391010&set=a.10230980334389335",
+  "last": "2026-10-22T21:53:50Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:53:51Z",
+   "capture_id": "https://web.archive.org/web/20261008182007id_/https://www.facebook.com/photo/?fbid=10230980401391010&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
  },
  "https://www.facebook.com/photo/?fbid=10230980413511313&set=a.10230980334389335": {
   "capture": "https://web.archive.org/web/20261008182533/https://www.facebook.com/photo/?fbid=10230980413511313&set=a.10230980334389335",
@@ -58521,6 +58789,20 @@
   "verify": {
    "at": "2026-10-21T03:13:56Z",
    "capture_id": "https://web.archive.org/web/20261008180926id_/https://www.facebook.com/photo/?fbid=10230980415791370&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
+ },
+ "https://www.facebook.com/photo/?fbid=10230980417231406&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008181822/https://www.facebook.com/photo/?fbid=10230980417231406&set=a.10230980334389335",
+  "last": "2026-10-22T21:54:03Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:54:05Z",
+   "capture_id": "https://web.archive.org/web/20261008181822id_/https://www.facebook.com/photo/?fbid=10230980417231406&set=a.10230980334389335",
    "method": "text",
    "reason": "page text matches 1% (< 85%)",
    "text_match": 0.013
@@ -58652,6 +58934,34 @@
    "text_match": 0.013
   }
  },
+ "https://www.facebook.com/photo/?fbid=10243215878510291&set=a.10230980334389335": {
+  "capture": "https://web.archive.org/web/20261008125927/https://www.facebook.com/photo/?fbid=10243215878510291&set=a.10230980334389335",
+  "last": "2026-10-22T21:54:17Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:54:19Z",
+   "capture_id": "https://web.archive.org/web/20261008125927id_/https://www.facebook.com/photo/?fbid=10243215878510291&set=a.10230980334389335",
+   "method": "text",
+   "reason": "page text matches 1% (< 85%)",
+   "text_match": 0.013
+  }
+ },
+ "https://www.facebook.com/starwarsccg/posts/chuck-kallenbach-former-designer-of-star-wars-ccg-has-passed-awaychuck-was-a-des/885436517128015/": {
+  "capture": "https://web.archive.org/web/20261008234544/https://www.facebook.com/starwarsccg/posts/chuck-kallenbach-former-designer-of-star-wars-ccg-has-passed-awaychuck-was-a-des/885436517128015/",
+  "last": "2026-10-22T21:54:31Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:54:34Z",
+   "capture_id": "https://web.archive.org/web/20261008234544id_/https://www.facebook.com/starwarsccg/posts/chuck-kallenbach-former-designer-of-star-wars-ccg-has-passed-awaychuck-was-a-des/885436517128015/",
+   "method": "text",
+   "reason": "page text matches 0% (< 85%)",
+   "text_match": 0.0
+  }
+ },
  "https://www.fanthatracks.com/interviews/guest-interview-mark-tuttle/": {
   "capture": "https://web.archive.org/web/20261008195155/https://www.fanthatracks.com/interviews/guest-interview-mark-tuttle/",
   "last": "2026-10-15T16:58:21Z",
@@ -58672,6 +58982,110 @@
    "text_match": 1.0
   }
  },
+ "https://www.geocities.ws/plarathas/SMs.html": {
+  "capture": "https://web.archive.org/web/20261009142705/https://www.geocities.ws/plarathas/SMs.html",
+  "last": "2026-10-22T21:54:45Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:54:46Z",
+   "capture_id": "https://web.archive.org/web/20261009142705id_/https://www.geocities.ws/plarathas/SMs.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.geocities.ws/plarathas/anagrams.html": {
+  "capture": "https://web.archive.org/web/20261012174750/https://www.geocities.ws/plarathas/anagrams.html",
+  "last": "2026-10-22T21:54:58Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:54:59Z",
+   "capture_id": "https://web.archive.org/web/20261012174750id_/https://www.geocities.ws/plarathas/anagrams.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.geocities.ws/plarathas/decks.html": {
+  "capture": "https://web.archive.org/web/20261013084053/https://www.geocities.ws/plarathas/decks.html",
+  "last": "2026-10-22T21:55:10Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:55:11Z",
+   "capture_id": "https://web.archive.org/web/20261013084053id_/https://www.geocities.ws/plarathas/decks.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.geocities.ws/plarathas/decks/jedi1.html": {
+  "capture": "https://web.archive.org/web/20261009134049/https://www.geocities.ws/plarathas/decks/jedi1.html",
+  "last": "2026-10-22T21:55:26Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:55:30Z",
+   "capture_id": "https://web.archive.org/web/20261009134049id_/https://www.geocities.ws/plarathas/decks/jedi1.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.geocities.ws/plarathas/decks/light1.html": {
+  "capture": "https://web.archive.org/web/20261011220935/https://www.geocities.ws/plarathas/decks/light1.html",
+  "last": "2026-10-22T21:55:42Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:55:43Z",
+   "capture_id": "https://web.archive.org/web/20261011220935id_/https://www.geocities.ws/plarathas/decks/light1.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.geocities.ws/plarathas/decks/light2.html": {
+  "capture": "https://web.archive.org/web/20261012160409/https://www.geocities.ws/plarathas/decks/light2.html",
+  "last": "2026-10-22T21:55:55Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:55:56Z",
+   "capture_id": "https://web.archive.org/web/20261012160409id_/https://www.geocities.ws/plarathas/decks/light2.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.geocities.ws/plarathas/decks/light3.html": {
+  "capture": "https://web.archive.org/web/20261009133010/https://www.geocities.ws/plarathas/decks/light3.html",
+  "last": "2026-10-22T21:56:09Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:56:09Z",
+   "capture_id": "https://web.archive.org/web/20261009133010id_/https://www.geocities.ws/plarathas/decks/light3.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.geocities.ws/plarathas/index-2.html": {
+  "capture": "https://web.archive.org/web/20261010055453/https://www.geocities.ws/plarathas/index-2.html",
+  "last": "2026-10-22T21:56:21Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:56:22Z",
+   "capture_id": "https://web.archive.org/web/20261010055453id_/https://www.geocities.ws/plarathas/index-2.html",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
  "https://www.geocities.ws/plarathas/playerdbase.html": {
   "capture": "https://web.archive.org/web/20261009060550/https://www.geocities.ws/plarathas/playerdbase.html",
   "last": "2026-10-21T02:43:14Z",
@@ -58685,12 +59099,51 @@
    "text_match": 1.0
   }
  },
+ "https://www.gofundme.com/f/nq22y-star-wars-ccg-documentary": {
+  "capture": "https://web.archive.org/web/20261009133751/https://www.gofundme.com/f/nq22y-star-wars-ccg-documentary",
+  "last": "2026-10-22T21:56:35Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:56:37Z",
+   "capture_id": "https://web.archive.org/web/20261009133751id_/https://www.gofundme.com/f/nq22y-star-wars-ccg-documentary",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://www.gofundme.com/f/star-wars-ccg-documentary": {
+  "capture": "https://web.archive.org/web/20190918182435/https://www.gofundme.com/f/star-wars-ccg-documentary",
+  "last": "2026-10-22T21:56:49Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:56:51Z",
+   "capture_id": "https://web.archive.org/web/20190918182435id_/https://www.gofundme.com/f/star-wars-ccg-documentary",
+   "method": "text",
+   "reason": "page text matches 71% (< 85%)",
+   "text_match": 0.713
+  }
+ },
  "https://www.heartofthecards.com/layout/MLP_CCG_Rulebook_compressed_HotC.pdf": {
   "capture": "https://web.archive.org/web/20261016020614/https://www.heartofthecards.com/layout/MLP_CCG_Rulebook_compressed_HotC.pdf",
   "job_id": "spn2-9e83bd00a882c22c6322bf0e5d6a0c2c1bd8adc0",
   "last": "2026-10-16T02:20:03Z",
   "status": "ok",
   "tries": 1
+ },
+ "https://www.imdb.com/name/nm7363756/": {
+  "capture": "https://web.archive.org/web/20261010073753/https://www.imdb.com/name/nm7363756/",
+  "last": "2026-10-22T21:57:03Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T21:57:04Z",
+   "error": "capture HTTP 202"
+  },
+  "verify_tries": 1
  },
  "https://www.kendallcast.ninja/2020/10/the-chris-kelly-interview.html": {
   "capture": "https://web.archive.org/web/20261014155408/https://www.kendallcast.ninja/2020/10/the-chris-kelly-interview.html",
