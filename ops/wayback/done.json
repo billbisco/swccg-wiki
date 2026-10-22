@@ -22,10 +22,10 @@
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D2.pdf": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:12:37Z",
+  "error": "no job_id: The same snapshot had been made 328 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T12:46:25Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D3.pdf": {
   "capture": "https://web.archive.org/web/20261021032447/http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D3.pdf",
@@ -106,10 +106,10 @@
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2011/Worlds/2011+World_team.pdf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 326 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T12:12:49Z",
+  "error": "no job_id: The same snapshot had been made 326 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T12:46:37Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf": {
   "capture": "https://web.archive.org/web/20261008202947/http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf",
@@ -25714,9 +25714,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/4327": {
   "capture": "https://web.archive.org/web/20261022112026/https://www.decktech.net/starwarsccg/deck/4327/",
-  "last": "2026-10-22T12:14:38Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-cdfe963af30c02b9161859260f386e7431cc1b0a",
+  "last": "2026-10-22T12:49:56Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T12:49:56Z",
+   "bytes": 14424,
+   "capture_id": "https://web.archive.org/web/20261022112026id_/https://www.decktech.net/starwarsccg/deck/4327/",
+   "method": "sha256",
+   "sha256": "12c76011d8f5ce03b65adabeb8037b133e87788def8afaa3780e16406adb1b23"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/4331": {
   "capture": "https://web.archive.org/web/20261022112827/https://www.decktech.net/starwarsccg/deck/4331/",
@@ -26629,9 +26637,9 @@
  "http://www.decktech.net/starwarsccg/deck/5224": {
   "capture": "https://web.archive.org/web/20261022111930/https://www.decktech.net/starwarsccg/deck/5224/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:03:27Z",
+  "last": "2026-10-22T12:45:33Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://www.decktech.net/starwarsccg/deck/5235": {
   "capture": "https://web.archive.org/web/20261018185424/https://www.decktech.net/starwarsccg/deck/5235/",
@@ -29044,10 +29052,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/7532": {
   "capture": "https://web.archive.org/web/20261022111816/https://www.decktech.net/starwarsccg/deck/7532/",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:12:17Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-9d7611e3356934575a4af6eab60e25eb56951b27",
+  "last": "2026-10-22T12:49:52Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T12:49:52Z",
+   "bytes": 19416,
+   "capture_id": "https://web.archive.org/web/20261022111816id_/https://www.decktech.net/starwarsccg/deck/7532/",
+   "method": "sha256",
+   "sha256": "17cddc29e430725a2b5bc56178ece542dc46135dfe75613529dade0329599ef9"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/7544": {
   "capture": "https://web.archive.org/web/20261018161419/https://www.decktech.net/starwarsccg/deck/7544/",
@@ -30757,9 +30772,9 @@
  "http://www.decktech.net/starwarsccg/deck/8959": {
   "capture": "https://web.archive.org/web/20261022111724/https://www.decktech.net/starwarsccg/deck/8959/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:12:07Z",
+  "last": "2026-10-22T12:45:12Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://www.decktech.net/starwarsccg/deck/8960": {
   "capture": "https://web.archive.org/web/20261018143209/https://www.decktech.net/starwarsccg/deck/8960/",
