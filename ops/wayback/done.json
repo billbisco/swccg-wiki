@@ -33819,9 +33819,9 @@
  "https://memory-alpha.fandom.com/wiki/File:Decipher_logo.png": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T22:01:06Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-22T22:35:45Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://open.spotify.com/show/49hIqjRmHqMkfategXWt1I": {
   "capture": "https://web.archive.org/web/20261022193443/https://open.spotify.com/show/49hIqjRmHqMkfategXWt1I",
@@ -36306,16 +36306,16 @@
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2022/usnationals2022logoFull.png": {
   "capture": "https://web.archive.org/web/20261022193703/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2022/usnationals2022logoFull.png",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T22:01:16Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-22T22:35:55Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/ECTop2.jpg": {
   "capture": "https://web.archive.org/web/20261022193715/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/ECTop2.jpg",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T22:01:27Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-22T22:36:05Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/EGP+Cast+%26+Crew.jpg": {
   "capture": "https://web.archive.org/web/20261022193727/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/EGP+Cast+%26+Crew.jpg",
@@ -36446,10 +36446,10 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/Joe+%26+Emil.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 245 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-22T22:01:38Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T22:36:16Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/NAC_Crew.jpg": {
   "capture": "https://web.archive.org/web/20261022194637/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/NAC_Crew.jpg",
@@ -36925,13 +36925,14 @@
   "capture": "https://web.archive.org/web/20251219072012/https://starwars.fandom.com/wiki/Official_Tournament_Sealed_Deck",
   "last": "2026-10-22T21:13:47Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-22T22:02:57Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-22T22:38:19Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://starwars.fandom.com/wiki/Premiere_Introductory_Two-Player_Game": {
   "capture": "",
@@ -36944,13 +36945,14 @@
   "capture": "https://web.archive.org/web/20260603213012/https://starwars.fandom.com/wiki/Premiere_Limited",
   "last": "2026-10-22T21:14:12Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-22T22:02:51Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-22T22:38:13Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://starwars.fandom.com/wiki/Rebel_Leader": {
   "capture": "",
@@ -36963,25 +36965,27 @@
   "capture": "https://web.archive.org/web/20250626013106/https://starwars.fandom.com/wiki/Second_Anthology",
   "last": "2026-10-22T21:14:41Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-22T22:02:46Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-22T22:38:08Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://starwars.fandom.com/wiki/Special_Edition_Limited": {
   "capture": "https://web.archive.org/web/20260412082002/https://starwars.fandom.com/wiki/Special_Edition_Limited",
   "last": "2026-10-22T21:14:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-22T22:02:41Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-22T22:38:03Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game": {
   "capture": "https://web.archive.org/web/20260907062502/https://starwars.fandom.com/wiki/Star_Wars_Customizable_Card_Game",
@@ -58190,97 +58194,105 @@
   "capture": "https://web.archive.org/web/20260929063927/https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0",
   "last": "2026-10-22T21:16:25Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:02:35Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T22:37:57Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/10/isb-2000-world-champion-1.0": {
   "capture": "https://web.archive.org/web/20260929064612/https://swccgdb.com/decklist/view/10/isb-2000-world-champion-1.0",
   "last": "2026-10-22T21:16:40Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:02:29Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T22:37:51Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/12/dagobah-a-manipulator-2nd-at-worlds-1997-1.0": {
   "capture": "https://web.archive.org/web/20260929064640/https://swccgdb.com/decklist/view/12/dagobah-a-manipulator-2nd-at-worlds-1997-1.0",
   "last": "2026-10-22T21:16:55Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:02:24Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T22:37:46Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/13/dagobah-miner-s-guild-2nd-at-worlds-1997-1.0": {
   "capture": "https://web.archive.org/web/20260929064708/https://swccgdb.com/decklist/view/13/dagobah-miner-s-guild-2nd-at-worlds-1997-1.0",
   "last": "2026-10-22T21:17:07Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:02:18Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T22:37:41Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/14/operatives-speeders-2nd-at-worlds-1999-1.0": {
   "capture": "https://web.archive.org/web/20260929064737/https://swccgdb.com/decklist/view/14/operatives-speeders-2nd-at-worlds-1999-1.0",
   "last": "2026-10-22T21:17:22Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:02:13Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T22:37:34Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/15/hunt-down-2nd-at-worlds-1999-1.0": {
   "capture": "https://web.archive.org/web/20260929064909/https://swccgdb.com/decklist/view/15/hunt-down-2nd-at-worlds-1999-1.0",
   "last": "2026-10-22T21:17:39Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:02:07Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T22:37:22Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/2/1996-world-champion-dark-1.0": {
   "capture": "https://web.archive.org/web/20260929063955/https://swccgdb.com/decklist/view/2/1996-world-champion-dark-1.0",
   "last": "2026-10-22T21:17:54Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:02:02Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T22:37:16Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/3/mains-toys-1997-world-champion-1.0": {
   "capture": "https://web.archive.org/web/20260929064024/https://swccgdb.com/decklist/view/3/mains-toys-1997-world-champion-1.0",
   "last": "2026-10-22T21:18:07Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:01:56Z",
-   "error": "source HTTP 500"
+   "at": "2026-10-22T22:37:10Z",
+   "error": "source HTTP 500",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccgdb.com/decklist/view/4/dagobah-turtle-1997-world-champion-1.0": {
   "capture": "",
@@ -58296,10 +58308,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-22T22:01:49Z",
+   "at": "2026-10-22T22:37:05Z",
    "error": "source HTTP 500"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccgdb.com/decklist/view/6/operatives-1998-world-champion-1.0": {
   "capture": "https://web.archive.org/web/20260929064221/https://swccgdb.com/decklist/view/6/operatives-1998-world-champion-1.0",
