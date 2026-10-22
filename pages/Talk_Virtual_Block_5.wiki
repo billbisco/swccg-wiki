@@ -1,0 +1,18 @@
+== Card table fill (October 2026) ==
+
+'''Build notes.''' The Destiny and Game text cells of the card tables were filled from each linked card page's <nowiki>{{Card}}</nowiki> fields (<code>destiny=</code>, <code>game_text=</code>), following redirects. Objective rows take the 0-side or 7-side text that matches the row. Only blank cells were filled. Script: <code>vset-fill/fill.py</code> (Datacard Grok); rerun it after card pages change.
+
+'''Missing data.''' These rows stay blank:
+* [[We'll Handle This (V) / Duel Of The Fates (V)]] (game_text)
+
+'''Marginal cuts.''' Style-guide fixes to the existing text (old, then new):
+* <nowiki>== Sources ==</nowiki> → <nowiki>== External links ==</nowiki>
+* <nowiki>On 16 September 2009 the Players Committee announced completion of Virtual Set 6: Reflections IV together with a realignment of the existing virtual sets (Virtual Sets 1–18) into thematic Virtual Blocks (contemporaneous secondary sources also summarize this as August 2009).<ref</nowiki> → <nowiki>On 16 September 2009 the Players Committee announced completion of Virtual Set 6: Reflections IV. The same announcement realigned the existing virtual sets (Virtual Sets 1–18) into thematic Virtual Blocks.<ref</nowiki>
+* <nowiki>&mdash; secondary encyclopedia note that existing sets were reorganized (often summarized as August 2009; primary PC announce is 16 Sep 2009)</nowiki> → <nowiki>&mdash; summary of the 2009 reorganization of the existing sets</nowiki>
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 14:42, 20 October 2026 (UTC)
+* 20 October 2026: the 0-side row of [[We'll Handle This (V) / Duel Of The Fates (V)]] is now filled from its card page. The first fill missed it because the apostrophe in the side title broke the script's side match (now fixed). [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 15:11, 20 October 2026 (UTC)
+
+== Set infobox, printed slips, table standard (2026-10-22) ==
+Converted to [[Template:Set infobox]] (portrait [[File:Set-VB5-logo.jpg]], symbol [[File:VB5-set-symbol.png]], code VB5 · GEMP set 601). Tables match [[Virtual Block 1]]. Slip crops are 300 DPI from VirtualBlock5.pdf (official text 7 December 2009; Preserved copy 20261020175310, sha256 72b9c7ae6c7c3bdbdba6157887f3448a0ea472c58955fdbaed0d26f2b854b557). Dual-face objectives each count once. AI variants share the non-AI overlay.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 21:25, 22 October 2026 (UTC)
