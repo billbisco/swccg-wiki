@@ -22,10 +22,10 @@
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D2.pdf": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T22:02:22Z",
+  "error": "no job_id: The same snapshot had been made 326 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T11:22:24Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2009/Worlds/2009+Worlds+D3.pdf": {
   "capture": "",
@@ -2598,11 +2598,10 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/11497": {
-  "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "capture": "https://web.archive.org/web/20261022111629/https://www.decktech.net/starwarsccg/deck/11497/",
+  "last": "2026-10-22T11:23:08Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/11501": {
   "capture": "https://web.archive.org/web/20261018100921/https://www.decktech.net/starwarsccg/deck/11501/",
@@ -5313,11 +5312,18 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/13046": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261022110638/https://www.decktech.net/starwarsccg/deck/13046/",
   "job_id": "spn2-10dfa1ca952a97bcf3fcfa6a0cdc3690ca990ca6",
-  "last": "2026-10-22T11:06:35Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T11:12:02Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T11:12:02Z",
+   "bytes": 17518,
+   "capture_id": "https://web.archive.org/web/20261022110638id_/https://www.decktech.net/starwarsccg/deck/13046/",
+   "method": "sha256",
+   "sha256": "1fb7de50e468885489dd03cfafe61d7ab8d80d695baa6f1d4f18fc43531beeb2"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/13048": {
   "capture": "https://web.archive.org/web/20261018071552/https://www.decktech.net/starwarsccg/deck/13048/",
@@ -5368,11 +5374,18 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/13069": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261022110725/https://www.decktech.net/starwarsccg/deck/13069/",
   "job_id": "spn2-83ff140961fb0221ae2f6d71215fa426ec756e5b",
-  "last": "2026-10-22T11:06:24Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T11:12:06Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T11:12:06Z",
+   "bytes": 19063,
+   "capture_id": "https://web.archive.org/web/20261022110725id_/https://www.decktech.net/starwarsccg/deck/13069/",
+   "method": "sha256",
+   "sha256": "8d0d32c93470e1bc1271c5afb424d02cb02308d440332b25df32170a04c847b6"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/13074": {
   "capture": "https://web.archive.org/web/20261018070822/https://www.decktech.net/starwarsccg/deck/13074/",
@@ -5539,11 +5552,18 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/13123": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261022110615/https://www.decktech.net/starwarsccg/deck/13123/",
   "job_id": "spn2-75d22c7cb453d1fd70de8b671fc9c2b492e9d5f2",
-  "last": "2026-10-22T11:06:12Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T11:12:10Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T11:12:10Z",
+   "bytes": 18637,
+   "capture_id": "https://web.archive.org/web/20261022110615id_/https://www.decktech.net/starwarsccg/deck/13123/",
+   "method": "sha256",
+   "sha256": "39d38558823ab9efecf835a1728d82112ea085ebaaf4be7e96f9b36a0cf30502"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/13127": {
   "capture": "https://web.archive.org/web/20261018070153/https://www.decktech.net/starwarsccg/deck/13127/",
@@ -5567,11 +5587,11 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/13133": {
-  "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "capture": "https://web.archive.org/web/20261022111738/https://www.decktech.net/starwarsccg/deck/13133/",
+  "job_id": "spn2-87e9b5cd523544ab132af57de970c9f3ae8a33b3",
+  "last": "2026-10-22T11:23:06Z",
+  "status": "ok",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/13134": {
   "capture": "https://web.archive.org/web/20261018070033/https://www.decktech.net/starwarsccg/deck/13134/",
@@ -5602,11 +5622,18 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/13144": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261022110534/https://www.decktech.net/starwarsccg/deck/13144/",
   "job_id": "spn2-b379568836fa51610521ae7da6a2a1c245a4439d",
-  "last": "2026-10-22T11:05:31Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T11:12:14Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T11:12:14Z",
+   "bytes": 19051,
+   "capture_id": "https://web.archive.org/web/20261022110534id_/https://www.decktech.net/starwarsccg/deck/13144/",
+   "method": "sha256",
+   "sha256": "9102a552d746c658f5856a6d5ed26f0f631d1aab007911cbc36c8d5292754b7a"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/13149": {
   "capture": "https://web.archive.org/web/20261018063614/https://www.decktech.net/starwarsccg/deck/13149/",
@@ -7888,11 +7915,18 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/14259": {
-  "capture": "https://web.archive.org/web/20261018040344/https://www.decktech.net/starwarsccg/deck/14259/",
+  "capture": "https://web.archive.org/web/20261022110523/https://www.decktech.net/starwarsccg/deck/14259/",
   "job_id": "spn2-d541c01962a62f5d635dc67efee2213d351a4193",
-  "last": "2026-10-22T11:05:20Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T11:12:19Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T11:12:19Z",
+   "bytes": 15866,
+   "capture_id": "https://web.archive.org/web/20261022110523id_/https://www.decktech.net/starwarsccg/deck/14259/",
+   "method": "sha256",
+   "sha256": "5c81dc6ba002047c9f4624207e4b4bf3d9fd2463a9e815134b674d59adc579ea"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/14268": {
   "capture": "https://web.archive.org/web/20261018040339/https://www.decktech.net/starwarsccg/deck/14268/",
@@ -8439,12 +8473,11 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/14529": {
-  "capture": "https://web.archive.org/web/20261018032739/https://www.decktech.net/starwarsccg/deck/14529/",
-  "error": "requeued: recorded capture 404s and is not in the CDX index",
+  "capture": "https://web.archive.org/web/20261022111607/https://www.decktech.net/starwarsccg/deck/14529/",
   "job_id": "spn2-6d54061506b9a14428e8e833f63359f61a367b6d",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "last": "2026-10-22T11:23:03Z",
+  "status": "ok",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/14532": {
   "capture": "https://web.archive.org/web/20261018033511/https://www.decktech.net/starwarsccg/deck/14532/",
@@ -8494,11 +8527,18 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/14555": {
-  "capture": "https://web.archive.org/web/20261018032557/https://www.decktech.net/starwarsccg/deck/14555/",
+  "capture": "https://web.archive.org/web/20261022110424/https://www.decktech.net/starwarsccg/deck/14555/",
   "job_id": "spn2-0d7209a2da30c540f9c0664e5c71881c5d55bb53",
-  "last": "2026-10-22T11:04:15Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T11:12:22Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T11:12:22Z",
+   "bytes": 15222,
+   "capture_id": "https://web.archive.org/web/20261022110424id_/https://www.decktech.net/starwarsccg/deck/14555/",
+   "method": "sha256",
+   "sha256": "0020344124cf47a0d40b23451ee936519113592095e890f2842748498d0fabd4"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/14559": {
   "capture": "https://web.archive.org/web/20261018032556/https://www.decktech.net/starwarsccg/deck/14559/",
@@ -8550,17 +8590,31 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/14581": {
-  "capture": "https://web.archive.org/web/20261018031605/https://www.decktech.net/starwarsccg/deck/14581/",
+  "capture": "https://web.archive.org/web/20261022110327/https://www.decktech.net/starwarsccg/deck/14581/",
   "job_id": "spn2-4eb3992d98ddb4b67cca9c4935e8954502f47cd5",
-  "last": "2026-10-22T11:03:23Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T11:12:26Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T11:12:26Z",
+   "bytes": 17585,
+   "capture_id": "https://web.archive.org/web/20261022110327id_/https://www.decktech.net/starwarsccg/deck/14581/",
+   "method": "sha256",
+   "sha256": "0e671cc9e07d413807dd13b32edd88d1f1f1690f643983be10b14b8deeccbb09"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/14582": {
   "capture": "https://web.archive.org/web/20261022105614/https://www.decktech.net/starwarsccg/deck/14582/",
-  "last": "2026-10-22T10:57:31Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-22T11:12:28Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T11:12:29Z",
+   "bytes": 20947,
+   "capture_id": "https://web.archive.org/web/20261022105614id_/https://www.decktech.net/starwarsccg/deck/14582/",
+   "method": "sha256",
+   "sha256": "a249031b1cc00179412919178391b5b21f5b04585ed5752b03cafedb17f280de"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/14584": {
   "capture": "https://web.archive.org/web/20261022110315/https://www.decktech.net/starwarsccg/deck/14584/",
@@ -8632,8 +8686,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/14612": {
   "capture": "https://web.archive.org/web/20261022105558/https://www.decktech.net/starwarsccg/deck/14612/",
-  "last": "2026-10-22T10:56:58Z",
-  "status": "pending",
+  "last": "2026-10-22T11:12:31Z",
+  "status": "ok",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/14615": {
@@ -8672,8 +8726,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/14651": {
   "capture": "https://web.archive.org/web/20261022105417/https://www.decktech.net/starwarsccg/deck/14651/",
-  "last": "2026-10-22T10:57:24Z",
-  "status": "pending",
+  "last": "2026-10-22T11:12:33Z",
+  "status": "ok",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/14654": {
@@ -8801,8 +8855,8 @@
  },
  "http://www.decktech.net/starwarsccg/deck/14703": {
   "capture": "https://web.archive.org/web/20261022105241/https://www.decktech.net/starwarsccg/deck/14703/",
-  "last": "2026-10-22T10:56:50Z",
-  "status": "pending",
+  "last": "2026-10-22T11:12:35Z",
+  "status": "ok",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/14704": {
@@ -9485,9 +9539,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/14974": {
   "capture": "https://web.archive.org/web/20261022100652/https://www.decktech.net/starwarsccg/deck/14974/",
-  "last": "2026-10-22T10:24:48Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ce0d5a2b1e4967e874486d87e2d072a609d58eb3",
+  "last": "2026-10-22T11:23:01Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T11:23:01Z",
+   "bytes": 14444,
+   "capture_id": "https://web.archive.org/web/20261022100652id_/https://www.decktech.net/starwarsccg/deck/14974/",
+   "method": "sha256",
+   "sha256": "593d388b0a1d6efb789f5cc1daaf4b81f58788fd71c1143908c57fc7b892814d"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/14976": {
   "capture": "https://web.archive.org/web/20261018023152/https://www.decktech.net/starwarsccg/deck/14976/",
@@ -9532,9 +9594,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/14990": {
   "capture": "https://web.archive.org/web/20261022101726/https://www.decktech.net/starwarsccg/deck/14990/",
-  "last": "2026-10-22T10:38:14Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-8bf58a122e413a8687d37eef03d35d805ffc07c7",
+  "last": "2026-10-22T11:22:56Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T11:22:56Z",
+   "bytes": 17054,
+   "capture_id": "https://web.archive.org/web/20261022101726id_/https://www.decktech.net/starwarsccg/deck/14990/",
+   "method": "sha256",
+   "sha256": "7dbb92b2934c0facbf18e6d45cf9affb56ea8a225a83a5400f65b3148c75096b"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/14994": {
   "capture": "https://web.archive.org/web/20261022100546/https://www.decktech.net/starwarsccg/deck/14994/",
@@ -9699,9 +9769,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/15035": {
   "capture": "https://web.archive.org/web/20261022101744/https://www.decktech.net/starwarsccg/deck/15035/",
-  "last": "2026-10-22T10:38:16Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-75353f5c4d6dfe120f6ff78aa11b2f7487415a96",
+  "last": "2026-10-22T11:22:53Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-22T11:22:53Z",
+   "bytes": 19576,
+   "capture_id": "https://web.archive.org/web/20261022101744id_/https://www.decktech.net/starwarsccg/deck/15035/",
+   "method": "sha256",
+   "sha256": "ed04e3227ef75e9d97e388f6a6dc5536038189810884b323af8d8a7602918041"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/15037": {
   "capture": "https://web.archive.org/web/20261022095428/https://www.decktech.net/starwarsccg/deck/15037/",
@@ -10048,10 +10126,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/15156": {
   "capture": "https://web.archive.org/web/20261022094909/https://www.decktech.net/starwarsccg/deck/15156/",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T10:41:53Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-c0c4b773105826af89dba9a62fdc0e312953c019",
+  "last": "2026-10-22T11:22:49Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T11:22:49Z",
+   "bytes": 18492,
+   "capture_id": "https://web.archive.org/web/20261022094909id_/https://www.decktech.net/starwarsccg/deck/15156/",
+   "method": "sha256",
+   "sha256": "8073305f3c451286fd68b7e67f01d817f98f10b7eaa27422caaaf85305bb38ae"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/15167": {
   "capture": "https://web.archive.org/web/20261022100118/https://www.decktech.net/starwarsccg/deck/15167/",
@@ -10069,10 +10154,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/15169": {
   "capture": "https://web.archive.org/web/20261022094930/https://www.decktech.net/starwarsccg/deck/15169/",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T10:41:42Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-307084eeb88add87894414d80046dbb435e86bbc",
+  "last": "2026-10-22T11:22:45Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T11:22:45Z",
+   "bytes": 23748,
+   "capture_id": "https://web.archive.org/web/20261022094930id_/https://www.decktech.net/starwarsccg/deck/15169/",
+   "method": "sha256",
+   "sha256": "e582de67794dd39eb7a5785b89d8085232a4593b825e891bc6ae12b351e52d8a"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/15172": {
   "capture": "https://web.archive.org/web/20261022094817/https://www.decktech.net/starwarsccg/deck/15172/",
@@ -10257,10 +10349,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/15217": {
   "capture": "https://web.archive.org/web/20261022093224/https://www.decktech.net/starwarsccg/deck/15217/",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T10:41:32Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-a8a77767e8a90cf83cb32b2b008b4877ef493047",
+  "last": "2026-10-22T11:22:41Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-22T11:22:41Z",
+   "bytes": 15605,
+   "capture_id": "https://web.archive.org/web/20261022093224id_/https://www.decktech.net/starwarsccg/deck/15217/",
+   "method": "sha256",
+   "sha256": "46b5b5a76da664292800fdc1e99a648d3805902f2ec08f9170509213eabb02ae"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/15218": {
   "capture": "https://web.archive.org/web/20261022094724/https://www.decktech.net/starwarsccg/deck/15218/",
@@ -11414,9 +11513,9 @@
  "http://www.decktech.net/starwarsccg/deck/15545": {
   "capture": "https://web.archive.org/web/20261022083437/https://www.decktech.net/starwarsccg/deck/15545/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T10:41:22Z",
+  "last": "2026-10-22T11:14:17Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "http://www.decktech.net/starwarsccg/deck/15549": {
   "capture": "https://web.archive.org/web/20261022083510/https://www.decktech.net/starwarsccg/deck/15549/",
@@ -25352,10 +25451,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/4327": {
   "capture": "https://web.archive.org/web/20261018193915/https://www.decktech.net/starwarsccg/deck/4327/",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-cdfe963af30c02b9161859260f386e7431cc1b0a",
+  "last": "2026-10-22T11:20:23Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/4331": {
   "capture": "https://web.archive.org/web/20261018193854/https://www.decktech.net/starwarsccg/deck/4331/",
@@ -26211,10 +26310,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/5191": {
   "capture": "https://web.archive.org/web/20261018184550/https://www.decktech.net/starwarsccg/deck/5191/",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-d46bc48db94a05d7d537d9a58cc16a217e38b1fb",
+  "last": "2026-10-22T11:19:38Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/5196": {
   "capture": "https://web.archive.org/web/20261018184535/https://www.decktech.net/starwarsccg/deck/5196/",
@@ -26259,11 +26358,10 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/5224": {
-  "capture": "https://web.archive.org/web/20261018184439/https://www.decktech.net/starwarsccg/deck/5224/",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "capture": "https://web.archive.org/web/20261022111930/https://www.decktech.net/starwarsccg/deck/5224/",
+  "last": "2026-10-22T11:23:18Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/5235": {
   "capture": "https://web.archive.org/web/20261018185424/https://www.decktech.net/starwarsccg/deck/5235/",
@@ -26337,10 +26435,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/5326": {
   "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-a8e11eab223bf20a30035c2f2b32210cb0f63779",
+  "last": "2026-10-22T11:19:16Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/5329": {
   "capture": "https://web.archive.org/web/20261018183437/https://www.decktech.net/starwarsccg/deck/5329/",
@@ -28342,10 +28440,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/7297": {
   "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-e043b8709d5dd767d7af0f7a4b8d7c895167c31e",
+  "last": "2026-10-22T11:18:35Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/7298": {
   "capture": "https://web.archive.org/web/20261018163640/https://www.decktech.net/starwarsccg/deck/7298/",
@@ -28586,10 +28684,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/7481": {
   "capture": "https://web.archive.org/web/20261018162427/https://www.decktech.net/starwarsccg/deck/7481/",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-2c2d0e9477968a3c5ac4f0f9d0b23de37d6fda3d",
+  "last": "2026-10-22T11:18:24Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/7483": {
   "capture": "https://web.archive.org/web/20261018162324/https://www.decktech.net/starwarsccg/deck/7483/",
@@ -28668,11 +28766,10 @@
   }
  },
  "http://www.decktech.net/starwarsccg/deck/7532": {
-  "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "capture": "https://web.archive.org/web/20261022111816/https://www.decktech.net/starwarsccg/deck/7532/",
+  "last": "2026-10-22T11:23:46Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/7544": {
   "capture": "https://web.archive.org/web/20261018161419/https://www.decktech.net/starwarsccg/deck/7544/",
@@ -29794,10 +29891,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/8579": {
   "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-0c616fd45697a2f834fe29f94058222e308743e9",
+  "last": "2026-10-22T11:17:32Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/8583": {
   "capture": "https://web.archive.org/web/20261018151211/https://www.decktech.net/starwarsccg/deck/8583/",
@@ -30373,11 +30470,10 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/8959": {
-  "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "capture": "https://web.archive.org/web/20261022111724/https://www.decktech.net/starwarsccg/deck/8959/",
+  "last": "2026-10-22T11:23:43Z",
+  "status": "pending",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/8960": {
   "capture": "https://web.archive.org/web/20261018143209/https://www.decktech.net/starwarsccg/deck/8960/",
@@ -30628,11 +30724,11 @@
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/9169": {
-  "capture": "https://web.archive.org/web/20261018141623/https://www.decktech.net/starwarsccg/deck/9169/",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "capture": "https://web.archive.org/web/20261022111826/https://www.decktech.net/starwarsccg/deck/9169/",
+  "job_id": "spn2-99079fb803fbec0cfefb834fbe84130778117421",
+  "last": "2026-10-22T11:23:41Z",
+  "status": "ok",
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/9180": {
   "capture": "https://web.archive.org/web/20261018141604/https://www.decktech.net/starwarsccg/deck/9180/",
@@ -32126,11 +32222,10 @@
   }
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set203/light/Card203_013.java": {
-  "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "capture": "https://web.archive.org/web/20261022112057/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set203/light/Card203_013.java",
+  "last": "2026-10-22T11:23:53Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set209/light/Card209_015.java": {
   "capture": "https://web.archive.org/web/20261020173813/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set209/light/Card209_015.java",
@@ -32173,10 +32268,10 @@
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set220/dark/Card220_002.java": {
   "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-6e1dbf5d75e660bba142a7f35736b4db77248786",
+  "last": "2026-10-22T11:20:45Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set220/light/Card220_010.java": {
   "capture": "https://web.archive.org/web/20261020173916/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set220/light/Card220_010.java",
@@ -32262,10 +32357,10 @@
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/dark/Card225_003.java": {
   "capture": "",
-  "error": "requeued after VPS block lifted: <urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-870f530c9b3072035b9f03f1d24bcdd305daff2e",
+  "last": "2026-10-22T11:21:26Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/light/Card225_051.java": {
   "capture": "https://web.archive.org/web/20261020174137/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/light/Card225_051.java",
@@ -32527,10 +32622,10 @@
  },
  "https://play.swccg.com/": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T21:35:01Z",
+  "error": "no job_id: The same snapshot had been made 313 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T11:21:49Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://pod.link/1553640008": {
   "capture": "",
@@ -33125,10 +33220,10 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/Star-Wars-CCG-Tournament-Guide-2.2.pdf": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T21:35:11Z",
+  "error": "no job_id: The same snapshot had been made 328 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T11:22:01Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/mapchart_map_world_20250320.jpg": {
   "capture": "https://web.archive.org/web/20261009105730/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/mapchart_map_world_20250320.jpg",
@@ -33160,10 +33255,10 @@
  },
  "https://star-wars.pl/Tekst/1963,Star_Wars_CCG_Virtual_Sets.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T22:02:01Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 327 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T11:21:38Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://starwars-union.de/decipher-starwars-ccg-update/": {
   "capture": "https://web.archive.org/web/20261014182704/https://starwars-union.de/decipher-starwars-ccg-update/",
@@ -40672,10 +40767,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-bespin-regionals-will-scinocca-ls-combat.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-20T22:02:11Z",
+  "error": "no job_id: The same snapshot had been made 210 hours, 54 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-22T11:22:12Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2022-bothawui-regional-roby-boysen-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261016153841/https://swccg.com/snapshots/pc/2022-bothawui-regional-roby-boysen-ds-endor-operations.html",
