@@ -32920,16 +32920,16 @@
  "https://drive.google.com/file/d/15SPjO_q5-O6E4T8BH8FPAxiC2dYOLD3S/view": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T19:19:28Z",
+  "last": "2026-10-22T19:58:35Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://drive.google.com/file/d/171BmSpPfWKtT3KklmCC38lG0Sk8Ozi8q/view": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T19:19:38Z",
+  "last": "2026-10-22T19:58:46Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://en.wikipedia.org/wiki/Decipher,_Inc.": {
   "capture": "https://web.archive.org/web/20261013234544/https://en.wikipedia.org/wiki/Decipher,_Inc.",
@@ -33082,10 +33082,10 @@
  },
  "https://garbagerollers.com/2024/02/02/community-spotlight-ktod-feb-2nd-2024/": {
   "capture": "",
-  "error": "no job_id: Cannot resolve host garbagerollers.com. If the site is online, it may be blocking access from our service.",
-  "last": "2026-10-22T19:19:49Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-22T19:58:56Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$rv3f35y1eafz1uha": {
   "capture": "https://web.archive.org/web/20261022173349/https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$rv3f35y1eafz1uha",
@@ -33131,9 +33131,9 @@
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/ecec878b/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set210/dark/Card210_042.java": {
   "capture": "",
   "error": "no job_id: This host has been already captured 10,000 times today. Please try again tomorrow. Please email us at \"info@a",
-  "last": "2026-10-22T19:20:03Z",
+  "last": "2026-10-22T19:59:07Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/db-scripts/sample_decks.sql": {
   "capture": "https://web.archive.org/web/20261022173338/https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/db-scripts/sample_decks.sql",
@@ -36243,9 +36243,9 @@
  "https://res.starwarsccg.org/wp/wp-content/uploads/em-hof-e1455416876528.jpg": {
   "capture": "https://web.archive.org/web/20261022135517/https://res.starwarsccg.org/wp/wp-content/uploads/em-hof-e1455416876528.jpg",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T19:19:18Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-22T19:58:25Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/sl-hof.jpg": {
   "capture": "",
@@ -36272,19 +36272,26 @@
   "capture": "https://web.archive.org/web/20261022193652/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/7D1448FD-0CE9-40F9-ACE1-1A2C9ECC1641.jpeg",
   "job_id": "spn2-c33586d853645e715f5592a5d91930efdc08624f",
   "last": "2026-10-22T19:40:46Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T19:59:44Z",
+   "bytes": 3487563,
+   "capture_id": "https://web.archive.org/web/20261022193652id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/7D1448FD-0CE9-40F9-ACE1-1A2C9ECC1641.jpeg",
+   "method": "sha256",
+   "sha256": "7a79f56911f8e91c1364750fa0b4056bd065ea28bc9c6c76ccb0ac6a683f93d7"
+  }
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2022/usnationals2022logoFull.png": {
   "capture": "https://web.archive.org/web/20261022193703/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2022/usnationals2022logoFull.png",
-  "last": "2026-10-22T19:40:48Z",
-  "status": "pending",
+  "last": "2026-10-22T19:56:47Z",
+  "status": "retry",
   "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/ECTop2.jpg": {
   "capture": "https://web.archive.org/web/20261022193715/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/ECTop2.jpg",
-  "last": "2026-10-22T19:40:21Z",
-  "status": "pending",
+  "last": "2026-10-22T19:56:48Z",
+  "status": "retry",
   "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/EGP+Cast+%26+Crew.jpg": {
@@ -36362,8 +36369,15 @@
   "capture": "https://web.archive.org/web/20261022193908/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerBowlLogo.png",
   "job_id": "spn2-a6d3e482b2bb188d009b723a58868932fecfea76",
   "last": "2026-10-22T19:41:28Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T19:59:36Z",
+   "bytes": 715137,
+   "capture_id": "https://web.archive.org/web/20261022193908id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerBowlLogo.png",
+   "method": "sha256",
+   "sha256": "386d2156e45028e826dd04d3ac1bb4acff9765a55b1c2cad6b22e7c311d924af"
+  }
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png": {
   "capture": "",
@@ -36432,8 +36446,15 @@
   "capture": "https://web.archive.org/web/20261022194807/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse+group.png",
   "job_id": "spn2-fadb01aa1247e1df7bdce02ecb98c945b4322bfd",
   "last": "2026-10-22T19:53:59Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T19:59:29Z",
+   "bytes": 5407591,
+   "capture_id": "https://web.archive.org/web/20261022194807id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse+group.png",
+   "method": "sha256",
+   "sha256": "d7c3c303c1b44fa0b969fd507668ca0e0330508cff87855917210383133d8951"
+  }
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse_event_banner.jpg": {
   "capture": "https://web.archive.org/web/20261022194730/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse_event_banner.jpg",
@@ -36514,8 +36535,15 @@
   "capture": "https://web.archive.org/web/20261022194949/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/morristown_finals.png",
   "job_id": "spn2-5b8508da08c8a4ffd3632a810e846be11c441a15",
   "last": "2026-10-22T19:54:56Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T19:59:20Z",
+   "bytes": 539145,
+   "capture_id": "https://web.archive.org/web/20261022194949id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/morristown_finals.png",
+   "method": "sha256",
+   "sha256": "1e438d5e1f6e968c8023b5b4588b4fd1af4d6a52f38c0504a34a382669ced9ae"
+  }
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/region_map_us_v1.jpg": {
   "capture": "",
