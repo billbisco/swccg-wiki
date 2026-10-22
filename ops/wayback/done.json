@@ -8668,9 +8668,9 @@
  "http://www.decktech.net/starwarsccg/deck/14575": {
   "capture": "https://web.archive.org/web/20261018031641/https://www.decktech.net/starwarsccg/deck/14575/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:03:17Z",
+  "last": "2026-10-22T12:40:30Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://www.decktech.net/starwarsccg/deck/14577": {
   "capture": "https://web.archive.org/web/20261018031642/https://www.decktech.net/starwarsccg/deck/14577/",
@@ -9347,9 +9347,9 @@
  "http://www.decktech.net/starwarsccg/deck/14861": {
   "capture": "https://web.archive.org/web/20261022103109/https://www.decktech.net/starwarsccg/deck/14861/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:08:18Z",
+  "last": "2026-10-22T12:40:20Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "http://www.decktech.net/starwarsccg/deck/14863": {
   "capture": "https://web.archive.org/web/20261022102046/https://www.decktech.net/starwarsccg/deck/14863/",
@@ -9630,9 +9630,9 @@
  "http://www.decktech.net/starwarsccg/deck/14957": {
   "capture": "https://web.archive.org/web/20261022103015/https://www.decktech.net/starwarsccg/deck/14957/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:08:08Z",
+  "last": "2026-10-22T12:40:10Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "http://www.decktech.net/starwarsccg/deck/14959": {
   "capture": "https://web.archive.org/web/20261022100752/https://www.decktech.net/starwarsccg/deck/14959/",
@@ -9691,9 +9691,9 @@
  "http://www.decktech.net/starwarsccg/deck/14973": {
   "capture": "https://web.archive.org/web/20261022101833/https://www.decktech.net/starwarsccg/deck/14973/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:07:57Z",
+  "last": "2026-10-22T12:39:59Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "http://www.decktech.net/starwarsccg/deck/14974": {
   "capture": "https://web.archive.org/web/20261022100652/https://www.decktech.net/starwarsccg/deck/14974/",
@@ -10250,9 +10250,9 @@
  "http://www.decktech.net/starwarsccg/deck/15129": {
   "capture": "https://web.archive.org/web/20261022094933/https://www.decktech.net/starwarsccg/deck/15129/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T12:03:07Z",
+  "last": "2026-10-22T12:39:49Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "http://www.decktech.net/starwarsccg/deck/15139": {
   "capture": "https://web.archive.org/web/20261018021514/https://www.decktech.net/starwarsccg/deck/15139/",
@@ -33928,8 +33928,15 @@
   "capture": "https://web.archive.org/web/20261022123324/https://res.starwarsccg.org/cards/Virtual27-Light/large/thegreatestofallthejedi.gif",
   "job_id": "spn2-6b928ef247dd968e3c1679aed98a6840ca56d56b",
   "last": "2026-10-22T12:36:38Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:40:43Z",
+   "bytes": 413337,
+   "capture_id": "https://web.archive.org/web/20261022123324id_/https://res.starwarsccg.org/cards/Virtual27-Light/large/thegreatestofallthejedi.gif",
+   "method": "sha256",
+   "sha256": "eadebdd7f95204cd52866328a6284abde5e1788b88b24c71baf6c52710ffe75b"
+  }
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/themandaloriangrogu.gif": {
   "capture": "",
@@ -33942,8 +33949,15 @@
   "capture": "https://web.archive.org/web/20261022123350/https://res.starwarsccg.org/cards/Virtual27-Light/large/watchthatcrossfireboys.gif",
   "job_id": "spn2-591f3e79689177d40f55f9667347fa15b07c9eb6",
   "last": "2026-10-22T12:35:32Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-22T12:40:50Z",
+   "bytes": 385878,
+   "capture_id": "https://web.archive.org/web/20261022123350id_/https://res.starwarsccg.org/cards/Virtual27-Light/large/watchthatcrossfireboys.gif",
+   "method": "sha256",
+   "sha256": "4b12a5851b38f067ccd13ec77df46b49365779641baaa11eb2be66a8142d5c5c"
+  }
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/yaddle.gif": {
   "capture": "https://web.archive.org/web/20261022123403/https://res.starwarsccg.org/cards/Virtual27-Light/large/yaddle.gif",
