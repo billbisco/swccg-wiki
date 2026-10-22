@@ -459,7 +459,8 @@ def deck_page(d: dict) -> str:
     wc = lambda name: gd.wiki_card(name, side_u)  # noqa: E731
     intro = f"'''{t}''' is the [[{d['side']}]] constructed list {plink(d)} posted on DeckTech"
     if d.get("kind") == "tournament":
-        intro += f" after finishing {d['finish']} at [[{d['event']}]]"
+        intro += (f" after finishing {d['finish']} at [[{d['event']}]]" if d.get("finish")
+                  else f" after playing it at [[{d['event']}]]")
     intro += "."
     if d.get("player_note"):
         intro += " " + d["player_note"]
@@ -611,7 +612,7 @@ def hub_row(d: dict) -> tuple[str, str]:
         start = re.sub(r" \((?:Dark|Light)\)(?: \([^()]+\))?$", "", start.split(" / ", 1)[0]) or start  # front side, no page suffix
         dark = f"[[{t}|{start}]]" if d["side"] == "Dark" else "—"
         light = f"[[{t}|{start}]]" if d["side"] == "Light" else "—"
-        return "tournament", (f"| {short_date(d['date'])} || [[{d['format']}]] || [[{d['event']}]] || {d['finish']} || "
+        return "tournament", (f"| {short_date(d['date'])} || [[{d['format']}]] || [[{d['event']}]] || {d['finish'] or '—'} || "
                               f"{plink(d)} || {dark} || {light}")
     shown = f"[[{t}|{d['published_title']}]]" if d.get("use_published_title") else f"[[{t}]]"
     fmt = d.get("hub_format") or d["format"]  # hub cell can name the event's format (FreedomCon 2001 = Reflections III)
@@ -622,6 +623,31 @@ def _row_date(row: str) -> tuple:
     m = re.match(r"\|\s*(\d+)/(\d+)/(\d+)", row)
     return (int(m.group(3)), int(m.group(1)), int(m.group(2))) if m else (99, 99, 99)
 
+
+
+def keep_live_rows(built: str, live: str) -> str:
+    """Keep table rows that are on the live page but unknown to this build (rows another editor added, e.g. Datacard
+    Grok's 2026-10-22 decks with no data file here). Each goes right after the nearest live row before it that the
+    build kept (2026-10-22, batch 54)."""
+    out = built.splitlines()
+    have = set(out)
+    lines = live.splitlines()
+    for i, row in enumerate(lines):
+        if not (row.startswith("| ") and "||" in row) or row in have:
+            continue
+        links = re.findall(r"\[\[([^\]|]+)", row)
+        deck = next((t for t in links if t not in ("Light", "Dark") and not t.startswith("Premiere") and t != links[-1]), None)
+        if deck and (f"[[{deck}|" in built or f"[[{deck}]]" in built):
+            continue  # the build already has this deck's row (maybe with changed cells)
+        j = i - 1
+        while j >= 0 and not (lines[j].startswith("| ") and lines[j] in have):
+            j -= 1
+        if j < 0:
+            continue
+        k = out.index(lines[j])
+        out[k + 1:k + 1] = ["|-", row]
+        have.add(row)
+    return "\n".join(out) + ("\n" if built.endswith("\n") else "")
 
 def insert_hub_rows(hub: str, decks: list[dict]) -> str:
     """Add rows oldest-first. Same-day rows: new (older-id) posts go before existing ones,
@@ -812,7 +838,7 @@ def cmd_build(batch: str, ids: list[str]) -> None:
     for d in every.values():
         register_wayback(d)
     all_decks = list(every.values())
-    emit("DeckTech decks", insert_hub_rows(gd.decktech_decks(), all_decks))
+    emit("DeckTech decks", keep_live_rows(insert_hub_rows(gd.decktech_decks(), all_decks), live_text("DeckTech decks") or ""))
     for fmt in sorted({d["format"] for d in all_decks}):
         live = live_text(fmt) or ""
         if fmt not in FORMAT_BUILDERS and "=== Printed Decipher cards only ===" not in live:
