@@ -58,3 +58,10 @@ For each id: the `finish` output line, total qty, side, player + page status, an
 - A list reworked months after the event ("V2.0", "rebuilt since") stays general with a player_note quoting the result.
 - Wrong-side generic sites/systems (bare "Tatooine: Docking Bay 94" on a Dark list) are fixed afterwards by fix_card_pages.py — fine to leave the bare title the helper returns.
 - Before you start, check each id is not already live: `python3 -c "import decktech_batch as b; print(b.live_text('<Player> <Title>'))"`. If a live page already cites this post id, don't finish it; report "already live".
+
+## 2026-10-22 (evening) additions
+- `finish()` now keeps the posted name for rows you pass as `types={"Name": "UNKNOWN"}` — no need to patch them afterwards. (Copy of the helper: `authoring/dt_finish_helper.py`.)
+- "Grabber"/"Grabbler" in early-2001 lists: UNKNOWN (Allegations Of Corruption is a Coruscant card, Aug 2001).
+- Plain "Boba Fett" is a disambiguation page: use "Boba Fett (Special Edition)" or "Boba Fett (Cloud City)" when the post says which (SE / CC); otherwise leave it and report it.
+- `player_intro` on existing pages may use the full 14510 form (handle + objective link + month); that's fine.
+- Byline with initials only (`M "ISBOPS" C`, "R. Smith"): `player_page: "none"`, report it.
