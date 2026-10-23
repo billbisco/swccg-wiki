@@ -18,7 +18,7 @@ finish(ID, [(qty, "Exact Card Title", "posted text"), ...], **fields)
 It overwrites `decktech-decks/ID.json`, prints `ID qty N not-exact [...]`. Every card must come back exact (the not-exact list must be empty, except cards you deliberately mark UNKNOWN).
 
 Fields (see finished examples `decktech-decks/22243.json`, `22048.json`, `21986.json`, `22119.json`):
-- `player`: real name "First Last" (title-case). `byline`: the post's author string as posted. `player_page`: "existing" if the page exists, else "new". If the name the user posts under is a film/celebrity/character name (e.g. 'Silent "Silent Bob" Bob'), that is still his name: `player` = that name, normal person page (Bill 2026-10-22). Only an obvious one-off joke byline gets `player_page: "none"` — report it so I can decide.
+- `player`: real name "First Last" (title-case). `byline`: the post's author string as posted. `player_page`: "existing" if the page exists, else "new". If the name the user posts under is a film/celebrity/character name (e.g. 'Silent "Silent Bob" Bob'), that is still his name: `player` = that name, normal person page (Bill 2026-10-22). Every deck gets a player page (Bill 2026-10-22: "we have to have player pages"). A joke/prank byline is credited by the DeckTech handle (`player` = handle, page "new"/"existing"); report it. `player_page: "none"` only when the post carries no name or handle at all.
 - `side`: "Dark" or "Light" (trust the cards over the DeckTech tag).
 - `player_intro`: e.g. `"(DeckTech handle '''tk424''') posted a [[Light]] [[Objective Title|Short]] list on DeckTech in March 2002."` (only for new pages; for existing pages `"posted a [[Dark]] list on DeckTech."`).
 - `starting`: {"card": objective (or starting location/card) or null, "interrupt": e.g. "Prepared Defenses"/"Podrace Prep" or null, "effect": e.g. "Fear Is My Ally"/"An Unusual Amount Of Fear" or null}. Heading For The Medical Frigate and Prepared Defenses are Interrupts → `starting.interrupt`. When several Effects start, leave `starting.effect` null}. Use exact titles.
@@ -64,6 +64,6 @@ For each id: the `finish` output line, total qty, side, player + page status, an
 - "Grabber"/"Grabbler" in early-2001 lists: UNKNOWN (Allegations Of Corruption is a Coruscant card, Aug 2001).
 - Plain "Boba Fett" is a disambiguation page: use "Boba Fett (Special Edition)" or "Boba Fett (Cloud City)" when the post says which (SE / CC); otherwise use "Boba Fett (Cloud City)" (Bill 2026-10-22: most likely the CC card, and GEMP already maps plain Boba Fett to Cloud City 5_91).
 - `player_intro` on existing pages may use the full 14510 form (handle + objective link + month); that's fine.
-- Byline with initials only (`M "ISBOPS" C`, "R. Smith"): `player_page: "none"`, report it.
+- Byline with initials only (`M "ISBOPS" C`, "R. Smith"): `player` = the initials as posted ("M C", "R. Smith"), normal player page (Bill 2026-10-22).
 - GEMP-only titles with no wiki page: "Tarkin" → Grand Moff Tarkin; "Han" (Jedi Pack) → Han (Jedi Pack).
 - Bare "Luke"/"Leia"/"Vader" in 2001 lists: Luke Skywalker / Leia Organa / Darth Vader (the GEMP titles "Luke", "Leia", "Vader" have no wiki pages).
