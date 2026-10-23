@@ -65,5 +65,5 @@ For each id: the `finish` output line, total qty, side, player + page status, an
 - Plain "Boba Fett" is a disambiguation page: use "Boba Fett (Special Edition)" or "Boba Fett (Cloud City)" when the post says which (SE / CC); otherwise use "Boba Fett (Cloud City)" (Bill 2026-10-22: most likely the CC card, and GEMP already maps plain Boba Fett to Cloud City 5_91).
 - `player_intro` on existing pages may use the full 14510 form (handle + objective link + month); that's fine.
 - Byline with initials only (`M "ISBOPS" C`, "R. Smith"): `player` = the initials as posted ("M C", "R. Smith"), normal player page (Bill 2026-10-22).
-- GEMP-only titles with no wiki page: "Tarkin" → Grand Moff Tarkin; "Han" (Jedi Pack) → Han (Jedi Pack).
+- GEMP-only titles with no wiki page: "Tarkin" → Grand Moff Tarkin; "Han" (Jedi Pack) → Han (Jedi Pack); "Threepio" (Endor) → Threepio (Endor).
 - Bare "Luke"/"Leia"/"Vader" in 2001 lists: Luke Skywalker / Leia Organa / Darth Vader (the GEMP titles "Luke", "Leia", "Vader" have no wiki pages).
