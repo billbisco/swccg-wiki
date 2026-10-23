@@ -22728,6 +22728,13 @@
   "status": "ok",
   "tries": 1
  },
+ "http://www.decktech.net/starwarsccg/deck/22420": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 302 hours ago. You can make new capture of this URL after 720 hours.",
+  "last": "2026-10-23T04:08:59Z",
+  "status": "retry",
+  "tries": 1
+ },
  "http://www.decktech.net/starwarsccg/deck/2243": {
   "capture": "https://web.archive.org/web/20261018213318/https://www.decktech.net/starwarsccg/deck/2243/",
   "job_id": "spn2-b4071126460408ee84de2624617941d2c15b4bc1",
@@ -22746,6 +22753,13 @@
   "capture": "https://web.archive.org/web/20261018213319/https://www.decktech.net/starwarsccg/deck/2257/",
   "last": "2026-10-18T21:51:35Z",
   "status": "ok",
+  "tries": 1
+ },
+ "http://www.decktech.net/starwarsccg/deck/22596": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 301 hours, 53 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-23T04:09:11Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/2269": {
@@ -32511,6 +32525,13 @@
   "job_id": "spn2-ae42e8dd1356fe8ea3c1c69da7e79e1db32e7296",
   "last": "2026-10-18T13:12:09Z",
   "status": "ok",
+  "tries": 1
+ },
+ "http://www.decktech.net/starwarsccg/decks/": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 304 hours, 43 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-23T04:09:22Z",
+  "status": "retry",
   "tries": 1
  },
  "http://www.swccgpc.com/": {
@@ -62027,8 +62048,8 @@
  },
  "https://www.youtube.com/watch?v=AXdIdJwnjgc&t=1679s": {
   "capture": "https://web.archive.org/web/20261023013149/https://www.youtube.com/watch?v=AXdIdJwnjgc&t=1679s",
-  "last": "2026-10-23T03:49:01Z",
-  "status": "pending",
+  "last": "2026-10-23T04:02:15Z",
+  "status": "retry",
   "tries": 1
  },
  "https://www.youtube.com/watch?v=AXdIdJwnjgc&t=1705s": {
@@ -64215,9 +64236,10 @@
  },
  "https://www.youtube.com/watch?v=PRRkRBHlo-o&t=2367s": {
   "capture": "https://web.archive.org/web/20261023023427/https://www.youtube.com/watch?v=PRRkRBHlo-o&t=2367s",
-  "last": "2026-10-23T02:51:44Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-23T04:02:38Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=PRRkRBHlo-o&t=2694s": {
   "capture": "https://web.archive.org/web/20261023030024/https://www.youtube.com/watch?v=PRRkRBHlo-o&t=2694s",
@@ -64775,9 +64797,10 @@
  },
  "https://www.youtube.com/watch?v=Sy6shVUsnq0": {
   "capture": "https://web.archive.org/web/20261023023750/https://www.youtube.com/watch?v=Sy6shVUsnq0",
-  "last": "2026-10-23T02:51:53Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-23T04:02:48Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=SyetseQx1l8": {
   "capture": "https://web.archive.org/web/20261021172329/https://www.youtube.com/watch?v=SyetseQx1l8",
@@ -65270,9 +65293,10 @@
  },
  "https://www.youtube.com/watch?v=W5GILhmPvd0": {
   "capture": "https://web.archive.org/web/20261023030127/https://www.youtube.com/watch?v=W5GILhmPvd0",
-  "last": "2026-10-23T03:26:01Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-23T04:02:58Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.youtube.com/watch?v=WDPMPmQLUsM": {
   "capture": "https://web.archive.org/web/20261016160323/https://www.youtube.com/watch?v=WDPMPmQLUsM",
@@ -65886,15 +65910,31 @@
  },
  "https://www.youtube.com/watch?v=aq_dwh8Ojys&t=1181s": {
   "capture": "https://web.archive.org/web/20261023030338/https://www.youtube.com/watch?v=aq_dwh8Ojys&t=1181s",
-  "last": "2026-10-23T03:26:03Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-a4bc775add57478aaf7c5bc1be263535952b14a4",
+  "last": "2026-10-23T04:09:37Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-23T04:09:37Z",
+   "capture_id": "https://web.archive.org/web/20261023030338id_/https://www.youtube.com/watch?v=aq_dwh8Ojys&t=1181s",
+   "method": "text",
+   "reason": "page text matches 15% (< 85%)",
+   "text_match": 0.152
+  }
  },
  "https://www.youtube.com/watch?v=aq_dwh8Ojys&t=1523s": {
   "capture": "https://web.archive.org/web/20261023030434/https://www.youtube.com/watch?v=aq_dwh8Ojys&t=1523s",
-  "last": "2026-10-23T03:26:04Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-35915f86359fb23f140505fc821ad00bde8f9a08",
+  "last": "2026-10-23T04:09:45Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-23T04:09:45Z",
+   "capture_id": "https://web.archive.org/web/20261023030434id_/https://www.youtube.com/watch?v=aq_dwh8Ojys&t=1523s",
+   "method": "text",
+   "reason": "page text matches 15% (< 85%)",
+   "text_match": 0.152
+  }
  },
  "https://www.youtube.com/watch?v=aq_dwh8Ojys&t=1614s": {
   "capture": "",
@@ -66243,9 +66283,17 @@
  },
  "https://www.youtube.com/watch?v=d0MwVG4YEbw": {
   "capture": "https://web.archive.org/web/20261023030630/https://www.youtube.com/watch?v=d0MwVG4YEbw",
-  "last": "2026-10-23T03:26:06Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-f2358806d219f9449e41afea72d7368535743804",
+  "last": "2026-10-23T04:09:50Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-23T04:09:50Z",
+   "capture_id": "https://web.archive.org/web/20261023030630id_/https://www.youtube.com/watch?v=d0MwVG4YEbw",
+   "method": "text",
+   "reason": "page text matches 15% (< 85%)",
+   "text_match": 0.152
+  }
  },
  "https://www.youtube.com/watch?v=d2UqXz4sM1U": {
   "capture": "https://web.archive.org/web/20261021181348/https://www.youtube.com/watch?v=d2UqXz4sM1U",
@@ -67477,6 +67525,20 @@
   "status": "ok",
   "tries": 1
  },
+ "https://www.youtube.com/watch?v=lmnqre87HWo&t=1320s": {
+  "capture": "https://web.archive.org/web/20261023040438/https://www.youtube.com/watch?v=lmnqre87HWo&t=1320s",
+  "job_id": "spn2-e21b9c1acb3bc3c0fd4c9d7ad4821a2a3964197c",
+  "last": "2026-10-23T04:09:56Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-23T04:09:56Z",
+   "capture_id": "https://web.archive.org/web/20261023040438id_/https://www.youtube.com/watch?v=lmnqre87HWo&t=1320s",
+   "method": "text",
+   "reason": "page text matches 14% (< 85%)",
+   "text_match": 0.135
+  }
+ },
  "https://www.youtube.com/watch?v=lmnqre87HWo&t=1595s": {
   "capture": "",
   "job_id": "spn2-41edf499b19fdfc479d506061c325530f6dec4f0",
@@ -67511,6 +67573,20 @@
   "last": "2026-10-15T17:52:47Z",
   "status": "ok",
   "tries": 1
+ },
+ "https://www.youtube.com/watch?v=m-mTCWuHPqw&t=1005s": {
+  "capture": "https://web.archive.org/web/20261023040517/https://www.youtube.com/watch?v=m-mTCWuHPqw&t=1005s",
+  "job_id": "spn2-caece4168f43053105c098ea5e5b1b54c01f75b2",
+  "last": "2026-10-23T04:10:01Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-23T04:10:01Z",
+   "capture_id": "https://web.archive.org/web/20261023040517id_/https://www.youtube.com/watch?v=m-mTCWuHPqw&t=1005s",
+   "method": "text",
+   "reason": "page text matches 16% (< 85%)",
+   "text_match": 0.161
+  }
  },
  "https://www.youtube.com/watch?v=m-mTCWuHPqw&t=1268s": {
   "capture": "",
@@ -67993,6 +68069,13 @@
   "status": "ok",
   "tries": 1
  },
+ "https://www.youtube.com/watch?v=pPKQUdun0y4": {
+  "capture": "https://web.archive.org/web/20261023040554/https://www.youtube.com/watch?v=pPKQUdun0y4",
+  "job_id": "spn2-96b3f97e56e2a23b57b62eedf1d0468117232502",
+  "last": "2026-10-23T04:10:04Z",
+  "status": "ok",
+  "tries": 1
+ },
  "https://www.youtube.com/watch?v=pPlliVVe6wI": {
   "capture": "",
   "job_id": "spn2-dff994f4f9d53e0c1bc80c141670629f9fe2fda0",
@@ -68159,6 +68242,34 @@
   "status": "ok",
   "tries": 1
  },
+ "https://www.youtube.com/watch?v=q_wPilA_ofA&t=1948s": {
+  "capture": "https://web.archive.org/web/20261023040629/https://www.youtube.com/watch?v=q_wPilA_ofA&t=1948s",
+  "job_id": "spn2-dbb10436f377656238ef4a656bfacc8734bd6675",
+  "last": "2026-10-23T04:11:04Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-23T04:11:04Z",
+   "capture_id": "https://web.archive.org/web/20261023040629id_/https://www.youtube.com/watch?v=q_wPilA_ofA&t=1948s",
+   "method": "text",
+   "reason": "page text matches 13% (< 85%)",
+   "text_match": 0.132
+  }
+ },
+ "https://www.youtube.com/watch?v=qlSnt8gbb5M": {
+  "capture": "https://web.archive.org/web/20261023040640/https://www.youtube.com/watch?v=qlSnt8gbb5M",
+  "job_id": "spn2-a1fa6c915862ba577704a6e953c502d3d8b5e211",
+  "last": "2026-10-23T04:11:09Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-23T04:11:09Z",
+   "capture_id": "https://web.archive.org/web/20261023040640id_/https://www.youtube.com/watch?v=qlSnt8gbb5M",
+   "method": "text",
+   "reason": "page text matches 15% (< 85%)",
+   "text_match": 0.152
+  }
+ },
  "https://www.youtube.com/watch?v=qmPnV44NzZM": {
   "capture": "https://web.archive.org/web/20261021192701/https://www.youtube.com/watch?v=qmPnV44NzZM",
   "last": "2026-10-21T19:50:08Z",
@@ -68192,6 +68303,12 @@
    "reason": "page text matches 16% (< 85%)",
    "text_match": 0.156
   }
+ },
+ "https://www.youtube.com/watch?v=r-a7GWvahzM": {
+  "capture": "https://web.archive.org/web/20261023040647/https://www.youtube.com/watch?v=r-a7GWvahzM",
+  "last": "2026-10-23T04:11:10Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.youtube.com/watch?v=r0CosmrFtAE": {
   "capture": "",
@@ -68415,6 +68532,20 @@
   "status": "failed",
   "tries": 6
  },
+ "https://www.youtube.com/watch?v=sSnHqjVg07U": {
+  "capture": "https://web.archive.org/web/20261023040716/https://www.youtube.com/watch?v=sSnHqjVg07U",
+  "job_id": "spn2-4761041d629128a46712ebd8a7a59c5cb3d12e59",
+  "last": "2026-10-23T04:11:34Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-23T04:11:34Z",
+   "capture_id": "https://web.archive.org/web/20261023040716id_/https://www.youtube.com/watch?v=sSnHqjVg07U",
+   "method": "text",
+   "reason": "page text matches 14% (< 85%)",
+   "text_match": 0.135
+  }
+ },
  "https://www.youtube.com/watch?v=sfbmHOj4g-4": {
   "capture": "",
   "error": "no job_id: This host has been already captured 250 times today by your user account. Please try again tomorrow. Please e",
@@ -68448,6 +68579,18 @@
   "job_id": "spn2-b9fe5d8280a638c4c8beb4d6f20d075f4c82b15a",
   "last": "2026-10-15T20:40:04Z",
   "status": "ok",
+  "tries": 1
+ },
+ "https://www.youtube.com/watch?v=swSmLNAG62A&t=1180s": {
+  "capture": "https://web.archive.org/web/20261023040716/https://www.youtube.com/watch?v=swSmLNAG62A&t=1180s",
+  "last": "2026-10-23T04:10:37Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.youtube.com/watch?v=swSmLNAG62A&t=1350s": {
+  "capture": "https://web.archive.org/web/20261023040742/https://www.youtube.com/watch?v=swSmLNAG62A&t=1350s",
+  "last": "2026-10-23T04:10:39Z",
+  "status": "pending",
   "tries": 1
  },
  "https://www.youtube.com/watch?v=sx4tcmeXR3I": {
@@ -68512,6 +68655,12 @@
    "reason": "page text matches 15% (< 85%)",
    "text_match": 0.147
   }
+ },
+ "https://www.youtube.com/watch?v=tPpIMpa2reM": {
+  "capture": "https://web.archive.org/web/20261023040808/https://www.youtube.com/watch?v=tPpIMpa2reM",
+  "last": "2026-10-23T04:10:41Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.youtube.com/watch?v=tXCYIP2hx9g": {
   "capture": "",
@@ -68888,6 +69037,12 @@
   "status": "ok",
   "tries": 1
  },
+ "https://www.youtube.com/watch?v=wLDOKCPbAr4": {
+  "capture": "https://web.archive.org/web/20261023040818/https://www.youtube.com/watch?v=wLDOKCPbAr4",
+  "last": "2026-10-23T04:10:14Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://www.youtube.com/watch?v=wNzYubdp9xU": {
   "capture": "https://web.archive.org/web/20261016001039/https://www.youtube.com/watch?v=wNzYubdp9xU",
   "job_id": "spn2-fbd1a4c5c93af3638687636863e87bbb6fd51476",
@@ -68985,6 +69140,12 @@
   "last": "2026-10-15T23:42:11Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://www.youtube.com/watch?v=x8ORbOv59nI": {
+  "capture": "https://web.archive.org/web/20261023040839/https://www.youtube.com/watch?v=x8ORbOv59nI",
+  "last": "2026-10-23T04:11:53Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.youtube.com/watch?v=xEBlWpFqlZo": {
   "capture": "",
@@ -69133,6 +69294,20 @@
    "text_match": 0.147
   }
  },
+ "https://www.youtube.com/watch?v=yEkfwUTRbjs": {
+  "capture": "https://web.archive.org/web/20261023040853/https://www.youtube.com/watch?v=yEkfwUTRbjs",
+  "job_id": "spn2-5d408949bcd34fd46a93889de9d44aaf3e9c2d43",
+  "last": "2026-10-23T04:12:14Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-23T04:12:14Z",
+   "capture_id": "https://web.archive.org/web/20261023040853id_/https://www.youtube.com/watch?v=yEkfwUTRbjs",
+   "method": "text",
+   "reason": "page text matches 16% (< 85%)",
+   "text_match": 0.156
+  }
+ },
  "https://www.youtube.com/watch?v=yLv7rVf-CL8": {
   "capture": "https://web.archive.org/web/20261021194410/https://www.youtube.com/watch?v=yLv7rVf-CL8",
   "job_id": "spn2-19d89045e3b92aa0452df2c06b123a7c6794215c",
@@ -69265,6 +69440,13 @@
    "text_match": 0.119
   }
  },
+ "https://www.youtube.com/watch?v=zdFvi2dUGFU": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 176 hours, 56 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-23T04:08:36Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://www.youtube.com/watch?v=zd_7eGxZmX4": {
   "capture": "",
   "error": "no job_id: This host has been already captured 250 times today by your user account. Please try again tomorrow. Please e",
@@ -69337,9 +69519,9 @@
  "https://x.com/eltwigg/status/1327604566830043142": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-23T03:26:10Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-23T04:02:28Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://x.com/eltwigg/status/1352496974591889409": {
   "capture": "",
@@ -69473,6 +69655,13 @@
   "last": "2026-10-21T23:12:47Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://youtu.be/G_RCjcBxt-0": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 343 hours, 37 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-23T04:08:47Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://youtu.be/JIElEdC5hvE": {
   "capture": "",
