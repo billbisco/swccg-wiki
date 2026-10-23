@@ -106,7 +106,9 @@ class RunLoop(unittest.TestCase):
 
     def setUp(self):
         self.saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "spn2_submit", "spn2_status",
-                                                  "capture_ok", "fetch", "AUTH", "GAP_S")}
+                                                  "capture_ok", "fetch", "AUTH", "GAP_S",
+                                                  "wiki_snapshot_wayback_paths")}
+        W.wiki_snapshot_wayback_paths = lambda: set()
         self.sleep = W.time.sleep
         W.time.sleep = lambda s: None
         self.tmp = tempfile.TemporaryDirectory()
@@ -201,6 +203,31 @@ class CaptureSideErrors(unittest.TestCase):
         self.assertNotIn("verify_tries", e)
 
 
+class WikiCiteIndex(unittest.TestCase):
+    def test_parses_snapshot_wayback_exturlusage(self):
+        calls = []
+
+        def get_json(q):
+            calls.append(q)
+            if len(calls) == 1:
+                return {
+                    "query": {"exturlusage": [
+                        {"title": "2021 Outrider Cup",
+                         "url": "https://web.archive.org/web/20261013141331/https://swccg.com/snapshots/pc/outrider-cup-ii.html"},
+                        {"title": "Other", "url": "https://web.archive.org/web/20261001000000/https://www.decktech.net/x"},
+                    ]},
+                    "continue": {"eucontinue": "1"},
+                }
+            return {"query": {"exturlusage": [
+                {"title": "Forum",
+                 "url": "https://web.archive.org/web/20261011184745id_/https://www.swccg.com/snapshots/forum/t86781.html"},
+            ]}}
+
+        paths = W.wiki_snapshot_wayback_paths(get_json)
+        self.assertEqual(paths, {"pc/outrider-cup-ii.html", "forum/t86781.html"})
+        self.assertEqual(len(calls), 2)
+
+
 class SnapshotDelete(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -231,10 +258,19 @@ class SnapshotDelete(unittest.TestCase):
         self.assertIsNone(W.snapshot_relpath("https://swccg.com/snapshots/"))
 
     def test_verified_snapshot_is_deleted_and_logged(self):
-        self.assertTrue(W.delete_verified_snapshot(self.url, self.e, self.root, self.log))
+        self.assertTrue(W.delete_verified_snapshot(
+            self.url, self.e, self.root, self.log, cited_paths={"pc/wrap.html"}
+        ))
         self.assertFalse(self.fp.exists())
         log = self.log.read_text(encoding="utf-8")
-        self.assertIn("\tdelete\tpc/wrap.html\t20261022114128\tverified (sha256) by wayback_worker", log)
+        self.assertIn("\tdelete\tpc/wrap.html\t20261022114128\tverified (sha256) cited-on-wiki by wayback_worker", log)
+
+    def test_verified_uncited_is_kept(self):
+        self.assertFalse(W.delete_verified_snapshot(
+            self.url, self.e, self.root, self.log, cited_paths=set()
+        ))
+        self.assertTrue(self.fp.exists())
+        self.assertFalse(self.log.exists())
 
     def test_unverified_or_ok_is_kept(self):
         self.e["status"] = "ok"
@@ -249,7 +285,8 @@ class SnapshotDelete(unittest.TestCase):
         self.assertFalse(W.delete_verified_snapshot(self.url, self.e, self.root, self.log))
 
     def test_run_prunes_already_verified_without_a_done_json_push(self):
-        saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "AUTH", "GAP_S")}
+        saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "AUTH", "GAP_S",
+                                            "wiki_snapshot_wayback_paths")}
         sleep = W.time.sleep
         W.time.sleep = lambda s: None
         repo = Path(self.tmp.name) / "repo"
@@ -259,6 +296,7 @@ class SnapshotDelete(unittest.TestCase):
         pushed = []
         W.reset_to_origin = lambda repo: None
         W.commit_and_push = lambda repo, paths, msg, redo: pushed.append(msg) or True
+        W.wiki_snapshot_wayback_paths = lambda: {"pc/wrap.html"}
         W.AUTH = "LOW test:test"
         W.GAP_S = 0
         os.environ["SWCCG_SNAPSHOT_ROOT"] = str(self.root)
@@ -274,6 +312,32 @@ class SnapshotDelete(unittest.TestCase):
         self.assertFalse(self.fp.exists())
         self.assertEqual(pushed, [])
         self.assertIn("pc/wrap.html", self.log.read_text(encoding="utf-8"))
+
+    def test_run_keeps_verified_if_wiki_has_no_wayback_cite(self):
+        saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "AUTH", "GAP_S",
+                                            "wiki_snapshot_wayback_paths")}
+        sleep = W.time.sleep
+        W.time.sleep = lambda s: None
+        repo = Path(self.tmp.name) / "repo"
+        (repo / "ops/wayback").mkdir(parents=True)
+        (repo / W.QUEUE).write_text(self.url + "\n")
+        (repo / W.DONE).write_text(json.dumps({self.url: self.e}))
+        W.reset_to_origin = lambda repo: None
+        W.commit_and_push = lambda repo, paths, msg, redo: True
+        W.wiki_snapshot_wayback_paths = lambda: set()
+        W.AUTH = "LOW test:test"
+        W.GAP_S = 0
+        os.environ["SWCCG_SNAPSHOT_ROOT"] = str(self.root)
+        os.environ["SWCCG_SNAPSHOT_LOG"] = str(self.log)
+        try:
+            W.run(repo, minutes=1)
+        finally:
+            for k, v in saved.items():
+                setattr(W, k, v)
+            W.time.sleep = sleep
+            os.environ.pop("SWCCG_SNAPSHOT_ROOT", None)
+            os.environ.pop("SWCCG_SNAPSHOT_LOG", None)
+        self.assertTrue(self.fp.exists())
 
 
 if __name__ == "__main__":

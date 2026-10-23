@@ -16,8 +16,9 @@ unverified (capture loads but does not match, or the source could not be fetched
 retry (save or check failed; retried later, up to MAX_TRIES) | failed (gave up after MAX_TRIES).
 
 Verified https://swccg.com/snapshots/… URLs: after verify, delete the staging file under
-/opt/swccg-res/snapshots/ (Bill 2026-10-14; auto-delete wired 2026-10-22). Each run also
-prunes leftover verified snapshot files. Wiki File: pages and archive.org items stay.
+/opt/swccg-res/snapshots/ only when a main-namespace wiki article already cites a Wayback
+URL of that exact snapshot path (Bill 2026-10-22 cite-before-delete; 2026-10-13 prune rule).
+Wiki File: pages and archive.org items stay. Uncited verified files stay on disk.
 
 Bots: push the URL to queue.txt, then read done.json. Cite the capture once status is "verified".
 No Wayback access from the bot's own machine is needed.
@@ -63,6 +64,11 @@ RETRY_AFTER = timedelta(minutes=30)
 CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
 BANNED_HOSTS = {"forum.starwarsccg.org", "www.starwarsccg.org", "starwarsccg.org"}
 SNAPSHOT_HOSTS = {"swccg.com", "www.swccg.com"}
+WIKI_API = "https://wiki.swccg.com/api.php"
+WB_SNAPSHOT = re.compile(
+    r"^https?://web\.archive\.org/web/\d{14}[a-z_]*/(?:https?://)?(?:www\.)?swccg\.com/snapshots/(.+)$",
+    re.I,
+)
 
 
 def snapshot_root() -> Path:
@@ -421,20 +427,68 @@ def capture_timestamp(capture: str) -> str:
     return m.group(1) if m else ""
 
 
+def wiki_api(params: dict) -> dict:
+    req = urllib.request.Request(
+        WIKI_API + "?" + urllib.parse.urlencode(params),
+        headers={"User-Agent": UA},
+    )
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return json.loads(resp.read().decode("utf-8", "replace"))
+
+
+def wiki_snapshot_wayback_paths(get_json=None) -> set[str]:
+    """Relative snapshot paths that a main-namespace article cites via a Wayback URL."""
+    get_json = get_json or wiki_api
+    out: set[str] = set()
+    cont: dict = {}
+    pages = 0
+    while True:
+        q = {
+            "action": "query", "list": "exturlusage",
+            "euquery": "web.archive.org/web/",
+            "euprotocol": "https",
+            "eulimit": "500",
+            "euprop": "title|url",
+            "eunamespace": "0",
+            "format": "json", "formatversion": "2",
+        }
+        q.update(cont)
+        d = get_json(q)
+        for e in d.get("query", {}).get("exturlusage", []):
+            m = WB_SNAPSHOT.match(e.get("url") or "")
+            if not m:
+                continue
+            p = urllib.parse.unquote(m.group(1).split("#")[0].split("?")[0])
+            if p:
+                out.add(p)
+        pages += 1
+        if "continue" not in d or pages >= 40:
+            break
+        cont = d["continue"]
+    print("wiki wayback snapshot cites", len(out), flush=True)
+    return out
+
+
 def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
-                             log_path: Path | None = None) -> bool:
-    """Delete the staging file once done.json marks this snapshot URL verified. Returns True if removed."""
+                             log_path: Path | None = None,
+                             cited_paths: set[str] | None = None) -> bool:
+    """Delete the staging file when verified AND a wiki article cites a Wayback URL of that path."""
     if e.get("status") != "verified":
+        return False
+    rel = snapshot_relpath(url)
+    if not rel:
+        return False
+    if not cited_paths or rel not in cited_paths:
+        print("KEEP-UNCITED", rel, flush=True)
         return False
     fp = snapshot_file(url, root)
     if fp is None or not fp.is_file() or fp.name == "DELETED-after-wayback.log":
         return False
-    rel = snapshot_relpath(url)
     method = (e.get("verify") or {}).get("method") or "checked"
     ts = capture_timestamp(e.get("capture") or "")
     size = fp.stat().st_size
     fp.unlink()
-    line = f"{iso(now())}\tdelete\t{rel}\t{ts}\tverified ({method}) by wayback_worker\n"
+    line = f"{iso(now())}\tdelete\t{rel}\t{ts}\tverified ({method}) cited-on-wiki by wayback_worker\n"
     log = log_path or snapshot_log()
     try:
         log.parent.mkdir(parents=True, exist_ok=True)
@@ -447,10 +501,19 @@ def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
 
 
 def prune_verified_snapshots(done: dict, root: Path | None = None,
-                             log_path: Path | None = None) -> int:
+                             log_path: Path | None = None,
+                             cited_paths: set[str] | None = None) -> int:
+    if cited_paths is None:
+        try:
+            cited_paths = wiki_snapshot_wayback_paths()
+        except Exception as ex:  # noqa: BLE001
+            print("WIKI-CITE-ERR skip deletes", ex, flush=True)
+            return 0
     n = 0
     for url, e in done.items():
-        if isinstance(e, dict) and delete_verified_snapshot(url, e, root, log_path):
+        if isinstance(e, dict) and delete_verified_snapshot(
+            url, e, root, log_path, cited_paths=cited_paths
+        ):
             n += 1
     if n:
         print("pruned", n, "verified snapshots", flush=True)
