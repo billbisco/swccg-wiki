@@ -56050,9 +56050,9 @@
  "https://swccg.com/snapshots/pc/jonny-chu-ktod-capture-2022-retro-event-title.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T23:41:05Z",
+  "last": "2026-10-23T00:13:02Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/major-event-winners.html": {
   "capture": "https://web.archive.org/web/20261020230923/https://swccg.com/snapshots/pc/major-event-winners.html",
@@ -59825,9 +59825,9 @@
  "https://www.reddit.com/r/starwarsccgalters/comments/n6q9cd/600_dpi_templates_im_proud_of_getting_these/": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T23:41:15Z",
+  "last": "2026-10-23T00:13:12Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.reddit.com/user/Bardez": {
   "capture": "https://web.archive.org/web/20261008200808/https://www.reddit.com/user/Bardez",
@@ -59843,18 +59843,24 @@
   "verify_tries": 3
  },
  "https://www.sec.gov/Archives/edgar/data/1001039/000119312512441509/d429302d8k.htm": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T23:41:25Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261008194444/https://www.sec.gov/Archives/edgar/data/1001039/000119312512441509/d429302d8k.htm",
+  "last": "2026-10-23T00:13:24Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-23T00:21:43Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://www.starwars-universe.com/collectionnables-serie-53-tatooine-ccg.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T23:41:35Z",
+  "error": "error:bad-gateway",
+  "job_id": "spn2-257101ff4078ed42605f16ac0dbac8002aa1d593",
+  "last": "2026-10-23T00:21:40Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://www.stephenskilton.com/decktech_archives/16248/": {
   "capture": "https://web.archive.org/web/20261020233420/https://www.stephenskilton.com/decktech_archives/16248/",
@@ -59927,11 +59933,17 @@
   }
  },
  "https://www.swccgstore.com/Star-Wars-CCG-Asteroid-Sanctuary-p/11914.htm": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T23:41:46Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261009013333/https://www.swccgstore.com/Star-Wars-CCG-Asteroid-Sanctuary-p/11914.htm",
+  "last": "2026-10-23T00:13:47Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-23T00:13:49Z",
+   "capture_id": "https://web.archive.org/web/20261009013333id_/https://www.swccgstore.com/Star-Wars-CCG-Asteroid-Sanctuary-p/11914.htm",
+   "method": "text",
+   "text_match": 0.97
+  }
  },
  "https://www.theforce.net/ccg/story/Star_Wars_CCG_Explodes_at_DecipherCon_2002_65230.asp": {
   "capture": "https://web.archive.org/web/20261022222745/https://www.theforce.net/ccg/story/Star_Wars_CCG_Explodes_at_DecipherCon_2002_65230.asp",
