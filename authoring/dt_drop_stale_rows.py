@@ -1,6 +1,6 @@
 """Drop table rows that still show a deck under an old format after era_format relabels it (2026-10-22).
 
-  python3 dt_drop_stale_rows.py TSV [PKGDIR]
+  python3 dt_drop_stale_rows.py TSV PKGDIR|- ID...
 
 A rebuilt player page / catalog keeps the live row (old format) and adds the new one; this removes the row whose
 format cell differs from the deck's current format, on every page listed in TSV (and its copy in PKGDIR)."""
@@ -8,11 +8,13 @@ import json, re, sys
 from pathlib import Path
 import decktech_batch as db
 
+# Only the decks in this build: their format was just settled by era_format. Other deck files may be unfinished
+# drafts or skipped reposts that share a live title (their drafted format would wrongly drop live rows).
+tsv, pkg, ids = sys.argv[1], (None if sys.argv[2] == "-" else sys.argv[2]), sys.argv[3:]
 fmt = {}
-for f in db.DECKS.glob("*.json"):
-    d = json.loads(f.read_text(encoding="utf-8"))
+for i in ids:
+    d = db.load_deck(i)
     fmt[db.dest_title(d)] = d.get("format")
-tsv, pkg = sys.argv[1], (sys.argv[2] if len(sys.argv) > 2 else None)
 total = 0
 for line in Path(tsv).read_text(encoding="utf-8").splitlines():
     if not line.strip():
