@@ -1,0 +1,8 @@
+--- /opt/swccg-wiki/LocalSettings.php
++++ /opt/swccg-wiki/LocalSettings.php
+@@
+ require_once "$IP/flaggedrevs-settings.php";
+ require_once "$IP/extra-settings.php";
++# Unified login + account security (GempAuth, email-to-edit, OATHAuth, anti-spam, real IPs).
++# Must come after extra-settings.php (it overrides createaccount there).
++require_once "$IP/login-security.php";
