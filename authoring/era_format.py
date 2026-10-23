@@ -14,6 +14,10 @@ DECKS = Path(__file__).resolve().parent / "decktech-decks"
 TAT_RELEASE = "2001-05-30"
 REF3_RELEASE = "2001-10-31"  # Reflections III: first Defensive Shields  # 16248 (27 May 2001): Tatooine due out "Wednesday" = 30 May
 _set = {}
+# (release of the later set, format before it, card-set prefix of the later set), newest first
+ERAS = [("2001-01-10", "Premiere - Death Star II", "Reflections II"),
+        ("2000-07-19", "Premiere - Endor", "Death Star II"),
+        ("1999-06-01", "Premiere - Special Edition", "Endor")]
 
 def card_set(title):
     if title in _set:
@@ -42,7 +46,7 @@ def main(argv):
                         r[2] = "EFFECT"
                 p.write_text(json.dumps(d, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
         # the drafter's default is "Premiere - Original VS1" (a 2002 pool); pre-Tatooine posts are re-dated here too
-        if d.get("format") not in ("Premiere - Tatooine", "Premiere - Original VS1") or d["date"] >= TAT_RELEASE:
+        if d.get("format") not in ("Premiere - Tatooine", "Premiere - Original VS1", "Premiere - Reflections II", "Premiere - Death Star II", "Premiere - Endor") or d["date"] >= TAT_RELEASE:
             continue
         tat = [r[1] for r in d["cards"] if r[2] != "UNKNOWN" and card_set(r[1]).startswith("Tatooine")]
         if tat:
@@ -52,11 +56,22 @@ def main(argv):
                 ind = 1 if raw.startswith('{\n "') else 2
                 p.write_text(json.dumps(d, ensure_ascii=False, indent=ind) + "\n", encoding="utf-8")
             continue
-        print(pid, d["date"], "-> Premiere - Reflections II")
-        if apply:
-            d["format"] = "Premiere - Reflections II"
+        fmt = "Premiere - Reflections II"
+        # Earlier pools by post date (Bill 2026-10-22): Reflections II came out 10 Jan 2001, Death Star II 19 Jul 2000.
+        # A list holding a card from the next set (pre-release lists) moves up to that set's format.
+        for rel, prev, nxt in ERAS:
+            if d["date"] >= rel:
+                break
+            late = [r[1] for r in d["cards"] if r[2] != "UNKNOWN" and card_set(r[1]).startswith(nxt)]
+            if late:
+                break
+            fmt = prev
+        print(pid, d["date"], "->", fmt)
+        if apply and d["format"] != fmt:
+            d["format"] = fmt
             ind = 1 if raw.startswith('{\n "') else 2
             p.write_text(json.dumps(d, ensure_ascii=False, indent=ind) + "\n", encoding="utf-8")
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
