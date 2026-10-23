@@ -793,6 +793,17 @@ FORMAT_BUILDERS = {"Premiere - Original VS1": "povs1_page", "Premiere - Original
 
 def cmd_build(batch: str, ids: list[str]) -> None:
     decks = [load_deck(p) for p in ids]
+    # Two posts must never share a page title (12863/12865 and 12650/12494 did, 2026-10-22): one would overwrite the other.
+    skipped = set(json.loads((ROOT / "decktech-skipped.json").read_text(encoding="utf-8")))
+    owner: dict[str, str] = {}
+    for f in sorted(DECKS.glob("*.json")):
+        o = json.loads(f.read_text(encoding="utf-8"))
+        if str(o["id"]) in skipped or str(o["id"]).startswith("gpn"):
+            continue
+        t = dest_title(o)
+        if t in owner:
+            raise SystemExit(f"title clash: {owner[t]} and {o['id']} both build [[{t}]]; set dest_title on one")
+        owner[t] = str(o["id"])
     for d in decks:
         register_wayback(d)
         if not gd.WAYBACK.get(("live", d["id"])) and not gd.WAYBACK.get(("skilton", d["id"])):

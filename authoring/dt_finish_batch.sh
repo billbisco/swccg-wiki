@@ -8,6 +8,7 @@ python3 fix_card_pages.py --apply $IDS > $L.fix.log; grep "^MANUAL" $L.fix.log |
 python3 dt_validate.py $IDS > $L.val.log; grep -B1 "^   - " $L.val.log | grep -v "NO WIKI PAGE and not a\|^--" || true
 python3 decktech_batch.py build $B $IDS > $L.build.log 2>&1 || { tail -5 $L.build.log; exit 1; }
 tail -1 $L.build.log
+python3 dt_drop_stale_rows.py y-$B.tsv
 D=/tmp/claude-0/${B}pkg; rm -rf $D; mkdir -p $D/pages
 date -u -r $L.build.log +%Y-%m-%dT%H:%M:%SZ > $D/since.txt
 cp y-$B.tsv wiki_api_apply.py $D/
