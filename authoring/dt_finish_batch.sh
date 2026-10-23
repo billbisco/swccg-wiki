@@ -3,6 +3,7 @@
 #   bash dt_finish_batch.sh <batch> ID...      -> /mnt/user-data/outputs/<batch>-apply.tar (+ logs in /tmp/claude-0/<batch>.*)
 set -e
 B=$1; shift; IDS="$@"; L=/tmp/claude-0/$B
+python3 dt_player_check.py $IDS
 python3 era_format.py --apply $IDS > $L.era.log
 python3 fix_card_pages.py --apply $IDS > $L.fix.log; grep "^MANUAL" $L.fix.log || true
 python3 dt_validate.py $IDS > $L.val.log; grep -B1 "^   - " $L.val.log | grep -v "NO WIKI PAGE and not a\|^--" || true
