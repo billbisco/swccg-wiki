@@ -1,0 +1,28 @@
+== Style pass (2026-10-15) ==
+=== Possibly faulty data ===
+* Legacy section said "Full-pool championships dest as [[Legacy Open]]" and "A tighter Block cutoff dests as '''Premiere - Virtual Block {N}''' when a source names that cutoff." "dest as" looks garbled (probably "are titled"); rewritten as "The full pool is [[Legacy Open]]". The Premiere - Virtual Block {N} naming convention was cut (wiki naming rule, not a fact).
+=== Marginal cuts ===
+* Cut editor guidance from the body: "This page is a short index. It does not replace official tournament documents."; "This wiki does not equate "Open" with "Standard"; use the event's own wording and linked docs."; "add stub pages here only when a PC or GEMP source names them for a documented event"; "this wiki does not copy them here"; "add wiki one-liners only after citing those pages".
+* Sources list removed. Alternate Format Tournament Guide was already ref "afg"; Tournament resources and Rules (starwarsccg.org) are now refs on the starwarsccg.org sentence; Watto's Chance Cube is a ref on the cube sentence. Jawa Format and Utinni! remain as inline links in "Other labeled formats".
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 17:23, 15 October 2026 (UTC)
+
+== Hub rework (21 October 2026) ==
+Reorganized this hub so that every format on the GEMP format list has its own page and a one-line entry here. Sources: GEMP <code>swccgFormats.json</code> at billbisco/swccg-gemp commit ec48dc19ee12c82d3b0a89aa15a944e7976f82cc (51 formats), plus the PC format pages and forum threads cited on each page.
+* New family sections: Open family, Classic family (Classic, Classic (no v-cards), Classic (no v-cards) (Modified)), Legacy, Decipher-era pools (now with the Modified pools and Premiere - JPSD), Original Virtual, current-virtual retro pools, other labeled formats (Jawa, Scavenger, Ewok, Utinni!, Limited Resources, 100 Card), limited (cube, draft, sealed), and casual/testing.
+* The GEMP environments section is now a table of all 51 GEMP names, codes and wiki pages.
+* Existing sourced text was kept and moved into the matching section. Every ref now has a Preserved copy (swccg.com snapshots captured by the Internet Archive).
+* The play.swccg.com format list (<code>/hall/formats/html</code>) needs a login, so it was not read directly. The deployed checkout on the GEMP server is at the same commit and its <code>swccgFormats.json</code> has the same sha256 as the repository file.
+* Before this edit the wiki had a page for 21 of the 51 GEMP formats, plus Classic (no v-cards) (Modified) as a section. After it, all 51 have a page.
+* Redirects added: Classic No V, Classic No V Modified, Premiere - Death Star II (Ewok), PDS2E, 100 Card Deck Format, Utinni! Format, Limited Resources (format), Premiere - JPSD, Watto's Cube. A copy was saved by mistake at Open (no shields _ no v-cards) and was a redirect to [[Open (no shields / no v-cards)]]. It was deleted on 21 October 2026, and the save script now sends titles exactly as written.
+[[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 12:25, 21 October 2026 (UTC)
+
+== Build notes (October 2026) ==
+
+Added a Differences from the Players Committee GEMP section, built by comparing <code>swccgFormats.json</code> at billbisco/swccg-gemp commit ec48dc19 with PlayersCommittee/gemp-swccg-public commit 5e26dd19. The only other difference, a comment on the Open entry, is left out. Commit 12cbfa1d (pull request 234) added the per-type sealed and draft formats. Commit 53f5b8e3 (pull request 256) set Cube to 40. Pull requests 267, 272 and 273 changed Legacy. Added links to [[GEMP sealed league products]] and [[GEMP draft and cube products]]. [[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 13:38, 21 October 2026 (UTC)
+
+== GEMP GitHub commit pins ==
+Updated billbisco/swccg-gemp blob URLs from pre-rewrite commit SHAs to the rewritten history. Old snapshot Preserved copies kept; new GitHub URLs saved on the Wayback Machine. [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 04:26, 22 October 2026 (UTC)
+
+== Era map (2026-10-23) ==
+Proposal A: four era hubs ([[Decipher era]], [[Virtual Original]], [[Virtual Legacy]], [[Virtual Modern]]), full-pool format [[Premiere - Original VS17]], and Template:Eras. 2003&ndash;2006 Worlds Format cells left blank until a numbered original-VS cutoff is sourced.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 19:42, 23 October 2026 (UTC)
