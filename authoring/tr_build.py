@@ -444,7 +444,11 @@ def main() -> None:
             tbl = W.person_results_table(cur)
             if f"[[{ev}]]" in tbl or f"[[{ev}|" in tbl:
                 continue
-            emit(n, W.add_result_rows(cur, [(f"[[{ev}", W.row_from_hub(emitted.get(ev) or hubs[ev], ev, row))], n))
+            r = W.row_from_hub(emitted.get(ev) or hubs[ev], ev, row)
+            if not r:
+                log.append(f"{n}: {ev} row has no citable source on the event page; not added")
+                continue
+            emit(n, W.add_result_rows(cur, [(f"[[{ev}", r)], n))
     log += W.LOG
     (pk / "log.txt").write_text("\n".join(log) + "\n", encoding="utf-8")
     print("\n".join("LOG " + x for x in log))

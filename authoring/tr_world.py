@@ -125,10 +125,17 @@ def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> st
         LOG.append(f"{who}: Tournament Results table has no header row; rows NOT added: {[r for _, r in rows]}")
         return text
     head, rws = pieces[:h + 1], pieces[h + 1:]
-    ncol = head[-1].count("!!") + 1
-    if ncol != 6 or "Event" not in head[-1]:
-        LOG.append(f"{who}: Tournament Results header is not Date/Event/Format/Finish/Dark/Light; rows NOT added: {[r for _, r in rows]}")
+    hl = next(l for l in head[-1].split("\n") if l.lstrip().startswith("!"))
+    cols = [re.sub(r".*\|", "", c).strip().lower() for c in hl.lstrip().lstrip("!").split("!!")]
+    std = ["date", "event", "format", "finish", "dark", "light"]
+    if "event" not in cols:
+        LOG.append(f"{who}: Tournament Results header has no Event column; rows NOT added: {[r for _, r in rows]}")
         return text
+    if cols != std:  # map our Date/Event/Format/Finish/Dark/Light row onto this page's own columns
+        def remap(row):
+            v = dict(zip(std, [c.strip() for c in row.lstrip()[1:].split("||")]))
+            return "| " + " || ".join(v.get(c, "") for c in cols)
+        rows = [(m, remap(r)) for m, r in rows]
     for marker, row in rows:
         if marker and marker in table:
             i = next((i for i, r in enumerate(rws) if marker in r), None)
@@ -138,7 +145,7 @@ def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> st
                 nw = [c.strip() for c in row.lstrip()[1:].split("||")]
                 rn = re.search(r'<ref name="([^"]+)"', row)
                 short = f'<ref name="{rn.group(1)}" />' if rn else ""
-                if len(old) == 6 and len(nw) == 6:
+                if len(old) == 6 and len(nw) == 6 and cols == std:
                     for j, lab in ((4, "Dark"), (5, "Light")):
                         if old[j].strip() in ("", "—") and nw[j]:
                             old[j] = f" {nw[j]}{short} "
@@ -157,7 +164,7 @@ def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> st
                 break
         rws.insert(pos, row)
     new = "\n|-\n".join(head + rws)
-    return text[:t0] + new + text[t1:]
+    return dedupe_refs(text[:t0] + new + text[t1:])
 
 
 def person_text(name: str, ds_entries: list[tuple[dict, dict]], cur: str | None, fmt_of) -> str:
@@ -348,26 +355,48 @@ def list_insert(L: str, e: dict) -> str:
     return L[:t0] + "\n|-\n".join(parts) + L[t1:]
 
 
-def hub_people(text: str) -> list[tuple[str, list[str]]]:
-    """(person, cells) for each results row whose player cell links a person."""
+def hub_people(text: str) -> list:
+    """(person, cells) for each results row whose player cell links a person; cells[-1] is a dict of
+    {column name: cell} built from the table header."""
     span = results_table_span(text)
     if not span:
         return []
+    tbl = text[span[0]:span[1]]
+    hdr = next((l for l in tbl.split("\n") if l.startswith("!")), "")
+    cols = [re.sub(r".*\|", "", c).strip().lower() for c in hdr.lstrip("!").split("!!")]
     out = []
-    for r in text[span[0]:span[1]].split("\n|-\n"):
-        if not r.lstrip().startswith("|") or r.lstrip().startswith("|+"):
+    for r in tbl.split("\n|-\n"):
+        r = r.strip()
+        if not r.startswith("|") or r.startswith("|+") or r.startswith("{|"):
             continue
-        cells = [c.strip() for c in r.lstrip()[1:].split("||")]
-        if len(cells) < 2:
+        cells = [c.strip() for c in r[1:].split("||")]
+        pi = next((i for i, c in enumerate(cols) if c in ("player", "name")), 1)
+        if len(cells) <= pi:
             continue
-        m = re.match(r"\[\[([^\]|#]+)", cells[1])
+        m = re.match(r"(?:'+)?\[\[([^\]|#]+)", cells[pi])
         if m and not re.match(r"\d{4} ", m.group(1)):
-            out.append((m.group(1).strip(), cells))
+            out.append((m.group(1).strip(), cells + [dict(zip(cols, cells))]))
     return out
 
 
-def row_from_hub(hub: str, ev: str, cells: list[str]) -> str:
-    """A person-page Tournament Results row built from an event page's results row, reusing its refs."""
+def section_ref(hub: str, span_start: int) -> str:
+    """First reference defined in the results section, for rows with no ref of their own."""
+    h = hub.rfind("\n==", 0, span_start)
+    e = hub.find("\n== ", span_start)
+    sec = hub[h:e if e > 0 else len(hub)]
+    m = re.search(r'<ref name="([^"]+)"', sec)
+    if not m:
+        return ""
+    full = re.search(r'<ref name="' + re.escape(m.group(1)) + r'">.*?</ref>', hub, re.S)
+    return full.group(0) if full else ""
+
+
+def row_from_hub(hub: str, ev: str, cells: list) -> str:
+    """A person-page Tournament Results row built from an event page's results row, reusing its refs.
+    Columns are mapped by the hub's header names; returns '' when no source can be cited."""
+    col = cells[-1] if cells and isinstance(cells[-1], dict) else {}
+    plain = [c for c in cells if isinstance(c, str)]
+
     def defs(cell):
         out = ""
         for name in re.findall(r'<ref name="([^"]+)"', cell):
@@ -377,11 +406,20 @@ def row_from_hub(hub: str, ev: str, cells: list[str]) -> str:
     date = re.search(r"^\* '''Dates?:'''\s*(.+)$", hub, re.M)
     date = re.sub(r"<ref.*", "", date.group(1)).strip() if date else ""
     fmt = hub_format(hub)
-    finish = re.sub(r"<ref.*?(?:/>|</ref>)", "", cells[0]).strip()
-    refs = defs(cells[0] + cells[1])
-    dark = cells[2] if len(cells) > 3 else ""
-    light = cells[3] if len(cells) > 3 else ""
-    dark, light = ("" if x.strip() == "—" else x for x in (dark, light))
+    fin = next((v for k, v in col.items() if k in ("finish", "place", "rank", "#", "position")), plain[0] if not col else "")
+    finish = re.sub(r"<ref.*?(?:/>|</ref>)", "", fin).strip()
+    refs = defs(" ".join(plain))
+    if not refs:
+        span = results_table_span(hub)
+        refs = section_ref(hub, span[0]) if span else ""
+    if not refs:  # the event page's first source (its lead citation)
+        m = re.search(r'<ref name="[^"]+">.*?</ref>', hub, re.S)
+        refs = m.group(0) if m else ""
+    if not refs:
+        return ""
+    dark = col.get("dark", "")
+    light = col.get("light", "")
+    dark, light = ("" if re.sub(r"<ref.*", "", x).strip() in ("—", "") else x for x in (dark, light))
     fl = f"[[{fmt}]]" if fmt else ""
     return f"| {date} || [[{ev}]] || {fl} || {finish}{refs} || {dark} || {light}"
 
@@ -397,3 +435,15 @@ def person_results_table(text: str) -> str:
     if t0 < 0 or (nxt and t0 > m.end() + nxt.start()):
         return ""
     return text[t0:text.find("\n|}", t0)]
+
+
+def dedupe_refs(text: str) -> str:
+    """Keep the first full definition of each named ref; later identical definitions become <ref name="x" />."""
+    seen = set()
+
+    def rep(m):
+        if m.group(1) in seen:
+            return f'<ref name="{m.group(1)}" />'
+        seen.add(m.group(1))
+        return m.group(0)
+    return re.sub(r'<ref name="([^"]+)">.*?</ref>', rep, text, flags=re.S)
