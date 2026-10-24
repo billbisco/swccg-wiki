@@ -257,22 +257,6 @@
   "note": ""
  },
  {
-  "title": "Jabba's Palace Sealed Deck",
-  "type": "sealed",
-  "family": "decipher-special",
-  "pool": "one Jabba's Palace Sealed Deck box per player",
-  "years": "2000 –",
-  "decipher": true,
-  "pc": true,
-  "code": "jp_sealed",
-  "gemp_pc": "JP Sealed",
-  "gemp_ours": "Jabba's Palace Sealed",
-  "also": [
-   "Jabba's Palace Sealed (GEMP)"
-  ],
-  "note": ""
- },
- {
   "title": "Premiere - Original VS1",
   "type": "constructed",
   "family": "pc-championship",
@@ -601,14 +585,17 @@
   "title": "Classic (no v-cards) (Modified)",
   "type": "constructed",
   "family": "pc-alternate",
-  "pool": "Classic (no v-cards) with 14 Defensive Shields allowed",
-  "years": "",
+  "pool": "Decipher cards without Episode I or Maintenance icon cards, with all Reflections III Defensive Shields and their two Starting Effects",
+  "years": "2025 –",
   "decipher": false,
   "pc": true,
   "code": "classic_no_virtual_m",
   "gemp_pc": "Classic (no v-cards) (Modified)",
   "gemp_ours": "Classic (no v-cards) (Modified)",
-  "also": [],
+  "also": [
+   "Classic No V (Modified)",
+   "CNVM"
+  ],
   "note": ""
  },
  {
@@ -616,13 +603,16 @@
   "type": "constructed",
   "family": "pc-alternate",
   "pool": "Premiere through Cloud City with a ban list",
-  "years": "",
+  "years": "2024 –",
   "decipher": false,
   "pc": true,
   "code": "premiere_cc_m",
   "gemp_pc": "Premiere - Cloud City (Modified)",
   "gemp_ours": "Premiere - Cloud City (Modified)",
-  "also": [],
+  "also": [
+   "P-Cloud City (modified)",
+   "PCCM"
+  ],
   "note": ""
  },
  {
@@ -630,13 +620,15 @@
   "type": "constructed",
   "family": "pc-alternate",
   "pool": "Premiere through Reflections II with a ban list",
-  "years": "",
+  "years": "2023 – 2024",
   "decipher": false,
   "pc": true,
   "code": "premiere_ref2_m",
   "gemp_pc": "Premiere - Reflections II (Modified)",
   "gemp_ours": "Premiere - Reflections II (Modified)",
-  "also": [],
+  "also": [
+   "P-Reflections II (w/ WYS and AOBS banned)"
+  ],
   "note": ""
  },
  {
@@ -644,7 +636,7 @@
   "type": "constructed",
   "family": "pc-alternate",
   "pool": "every Decipher card with a ban list",
-  "years": "",
+  "years": "2025",
   "decipher": false,
   "pc": true,
   "code": "open_no_virtual_m",
@@ -672,7 +664,7 @@
   "type": "constructed",
   "family": "pc-alternate",
   "pool": "a ban list that removes the top of the power curve",
-  "years": "",
+  "years": "2019 –",
   "decipher": false,
   "pc": true,
   "code": "jawa",
@@ -741,7 +733,7 @@
   "title": "Cube",
   "type": "cube",
   "family": "pc-alternate",
-  "pool": "Watto's Chance Cube pool, 40-card decks",
+  "pool": "Watto's Chance Cube pool (45-card decks on the PC; 40 on play.swccg.com)",
   "years": "",
   "decipher": false,
   "pc": true,
@@ -800,14 +792,17 @@
   "type": "constructed",
   "family": "gemp",
   "pool": "Premiere – Death Star II with a long ban list (PC forum: Premiere - Death Star II (Ewok))",
-  "years": "",
+  "years": "2026 –",
   "decipher": false,
   "pc": false,
   "code": "ewok",
   "gemp_pc": null,
   "gemp_ours": "Ewok",
-  "also": [],
-  "note": ""
+  "also": [
+   "Premiere - Death Star II (Ewok)",
+   "PDS2E"
+  ],
+  "note": "created by Bill Bisco for the 2026 Retro Ewok Championship (forum t86581)"
  },
  {
   "title": "Premiere - A New Hope Sealed",
@@ -890,7 +885,9 @@
   "code": "novelty_sealed",
   "gemp_pc": null,
   "gemp_ours": "Novelty - Space Sealed",
-  "also": [],
+  "also": [
+   "Space Sealed (Players Committee GEMP league type)"
+  ],
   "note": ""
  },
  {
@@ -989,6 +986,425 @@
   "gemp_pc": null,
   "gemp_ours": null,
   "also": [],
+  "note": ""
+ },
+ {
+  "title": "Sealed Deck",
+  "type": "sealed",
+  "family": "decipher-special",
+  "pool": "one unopened Premiere starter deck per player (later any starter plus named packs); 40-card decks",
+  "years": "1996 – 2002; 2015 (AFG)",
+  "decipher": true,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Decipher Sealed Deck Tournament Format (1999)",
+   "Premiere Sealed (Players Committee)"
+  ],
+  "note": "Decipher's sanctioned tournament type; non-sanctioned in 1996; PC AFG 2015 as Premiere Sealed"
+ },
+ {
+  "title": "Enhanced Format Sealed Deck",
+  "type": "sealed",
+  "family": "decipher-special",
+  "pool": "one Official Tournament Sealed Deck per player; 40-card decks",
+  "years": "1998 – 2015 (AFG)",
+  "decipher": true,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "OTSD Sealed (Players Committee)"
+  ],
+  "note": "Decipher 1998; PC AFG 2015 as OTSD Sealed"
+ },
+ {
+  "title": "OTSD Booster Draft",
+  "type": "draft",
+  "family": "decipher-special",
+  "pool": "one Official Tournament Sealed Deck per player; boosters drafted, 18 premiums kept; 40-card decks",
+  "years": "1999 – 2015 (AFG)",
+  "decipher": true,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "OTSD Booster Draft Format (Decipher, 2001)"
+  ],
+  "note": "Decipher rules page by Sept 1999 (republished 2001–2002); PC AFG 2015"
+ },
+ {
+  "title": "EPP Overdrive",
+  "type": "sealed",
+  "family": "decipher-special",
+  "pool": "one Enhanced Premiere pack per player; 30-card decks; 15-minute games",
+  "years": "1999 – 2015 (AFG)",
+  "decipher": true,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "EPP Overdrive Sealed Deck Format (Decipher, 2001)"
+  ],
+  "note": "Decipher page by Oct 1999 (republished 2001–2002); PC AFG 2015"
+ },
+ {
+  "title": "Endor Draft",
+  "type": "draft",
+  "family": "decipher-special",
+  "pool": "6 Endor packs per player; 40-card decks",
+  "years": "1999 – 2015 (AFG)",
+  "decipher": true,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Endor Draft Tournament (Decipher)"
+  ],
+  "note": "Endor Rules Supplement, June 1999; reprinted in PC AFG 2015"
+ },
+ {
+  "title": "Death Star II Booster Draft",
+  "type": "draft",
+  "family": "decipher-special",
+  "pool": "3 Endor and 3 Death Star II boosters per player; 40-card decks (Decipher)",
+  "years": "2000 – 2002; 2015 (AFG)",
+  "decipher": true,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Death Star II Closed Environment Booster Draft",
+   "Death Star II Sealed Booster Draft",
+   "Death Star II/Endor Draft",
+   "Endor/Death Star II Booster Draft Format (Decipher, first name)"
+  ],
+  "note": ""
+ },
+ {
+  "title": "Death Star II Sealed-Deck Starter Format",
+  "type": "sealed",
+  "family": "decipher-special",
+  "pool": "one Death Star II pre-constructed starter deck (60 cards) per player",
+  "years": "2000 –; 2015 (AFG)",
+  "decipher": true,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Endor/Death Star II Sealed-Deck Starter Format (Decipher, first name)",
+   "Death Star II Sealed (Players Committee)"
+  ],
+  "note": "Decipher Death Star II Closed Environment, 2000; PC AFG 2015 as Death Star II Sealed"
+ },
+ {
+  "title": "Reflections Booster Draft",
+  "type": "draft",
+  "family": "decipher-special",
+  "pool": "3 Reflections boosters and an Enhanced Premiere pack (Decipher, 2000); 4 Reflections, Reflections II or Reflections III boosters plus six battleground locations (Players Committee)",
+  "years": "2000 – 2015 (AFG)",
+  "decipher": true,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Reflections Sealed Booster Draft (DecipherCon 2000)",
+   "Reflections II Booster Draft Format (Decipher, 2001)",
+   "Reflections II Booster Draft (Players Committee)",
+   "Reflections III Booster Draft (Players Committee)"
+  ],
+  "note": "DecipherCon 2000 events; Decipher linked a Reflections II Booster Draft Format in 2001–2002 (page not preserved); PC AFG 2015"
+ },
+ {
+  "title": "JPOTSD Booster Draft",
+  "type": "draft",
+  "family": "pc-alternate",
+  "pool": "one Jabba's Palace Sealed Deck per player; boosters drafted, premiums kept",
+  "years": "2015 (AFG)",
+  "decipher": false,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [],
+  "note": "ability-1 rule from Decipher's JPSD rule of 10 Nov 2000"
+ },
+ {
+  "title": "Secret Squirrel",
+  "type": "sealed",
+  "family": "pc-alternate",
+  "pool": "one Jabba's Palace Sealed Deck per player, played as opened",
+  "years": "2002 – 2015",
+  "decipher": false,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [],
+  "note": "DecipherCon 2002 events; PC AFG 2015"
+ },
+ {
+  "title": "Booster Draft",
+  "type": "draft",
+  "family": "pc-alternate",
+  "pool": "set by each draft format",
+  "years": "1999 –",
+  "decipher": false,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [],
+  "note": "AFG generic booster draft rules"
+ },
+ {
+  "title": "Team Tournament Formats",
+  "type": "constructed",
+  "family": "pc-alternate",
+  "pool": "not set; two-player teams, one Dark and one Light deck",
+  "years": "2015 (AFG)",
+  "decipher": false,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [],
+  "note": ""
+ },
+ {
+  "title": "The Bith Shuffle (format)",
+  "type": "constructed",
+  "family": "pc-alternate",
+  "pool": "the decks played in the main event, reassigned at random",
+  "years": "2015 (AFG)",
+  "decipher": false,
+  "pc": true,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "The Bith Shuffle"
+  ],
+  "note": ""
+ },
+ {
+  "title": "Constructed Deck",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "every released card; one Light Side and one Dark Side 60-card deck",
+  "years": "1996 – 2002",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "The Decipher System (1996)",
+   "Swiss (1998)",
+   "Decipher Swiss format (1999)",
+   "Standard Constructed Deck (2001)"
+  ],
+  "note": "Decipher's sanctioned tournament type; the period pools are the decipher-pool formats"
+ },
+ {
+  "title": "Junior Constructed Deck",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "the constructed pool; players 14 and younger; 40-card decks (1999 rules)",
+  "years": "1998 – 2001",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Junior Swiss (1998)",
+   "Decipher Junior Tournament Format (1999)"
+  ],
+  "note": "Decipher's sanctioned tournament type"
+ },
+ {
+  "title": "Jabba's Palace Sealed Deck (format)",
+  "type": "sealed",
+  "family": "decipher-special",
+  "pool": "one Jabba's Palace Sealed Deck box per player; 40-card decks; JPSD ability rule",
+  "years": "2000 –",
+  "decipher": true,
+  "pc": true,
+  "code": "jp_sealed",
+  "gemp_pc": "JP Sealed",
+  "gemp_ours": "Jabba's Palace Sealed",
+  "also": [
+   "JPSD",
+   "Jabba's Palace Sealed (GEMP)",
+   "JP Sealed (Players Committee GEMP)"
+  ],
+  "note": "replaces the registry entry titled \"Jabba's Palace Sealed Deck\" (that title is the product page); absorbs the GEMP page [[Jabba's Palace Sealed]], which becomes a redirect"
+ },
+ {
+  "title": "Japanese Sealed Deck",
+  "type": "sealed",
+  "family": "decipher-special",
+  "pool": "Japanese Premiere starter, 1 Premiere and 3 A New Hope Japanese boosters (2000)",
+  "years": "1999 – 2000",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Japanese Sealed"
+  ],
+  "note": ""
+ },
+ {
+  "title": "Easy Come, Easy Go Sealed Deck",
+  "type": "sealed",
+  "family": "decipher-special",
+  "pool": "3 Premiere Unlimited boosters, 2 Jabba's Palace boosters, 1 Enhanced Premiere pack; lost cards destroyed",
+  "years": "2000",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [],
+  "note": ""
+ },
+ {
+  "title": "Highlander",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "the constructed pool, one copy of each card title or persona",
+  "years": "2000",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Highlander Constructed"
+  ],
+  "note": ""
+ },
+ {
+  "title": "Kibitzing",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "the constructed pool; advice allowed during games",
+  "years": "2000",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Kibitzing Constructed"
+  ],
+  "note": ""
+ },
+ {
+  "title": "Race for Alderaan Constructed",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "the constructed pool; deck built around a Third Anthology objective; modified win unless the objective flips",
+  "years": "2000",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Race for Alderaan"
+  ],
+  "note": ""
+ },
+ {
+  "title": "Turning of a Skywalker Constructed",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "the constructed pool; deck built around a Death Star II objective; modified win unless the objective flips",
+  "years": "2000",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Turning of a Skywalker"
+  ],
+  "note": ""
+ },
+ {
+  "title": "Team Event Format",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "the host event's pool; teams of 3–4 scored on their three best places",
+  "years": "1999 – 2000",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "DecipherCon Team Challenge",
+   "DecipherCon Constructed Team Event"
+  ],
+  "note": "team scoring over a constructed or sealed-deck event"
+ },
+ {
+  "title": "Iron Man",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "the constructed pool; four decks each played once; lost cards destroyed",
+  "years": "1999",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "Iron-Man Events"
+  ],
+  "note": ""
+ },
+ {
+  "title": "No Such Thing As Luck",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "the constructed pool; every second game with the opponent's deck",
+  "years": "1999",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [],
+  "note": ""
+ },
+ {
+  "title": "The Gauntlet: Dual Formats",
+  "type": "constructed",
+  "family": "decipher-special",
+  "pool": "4 constructed games, then a 3-game OTSD sealed final for the top 8",
+  "years": "1999",
+  "decipher": true,
+  "pc": false,
+  "code": null,
+  "gemp_pc": null,
+  "gemp_ours": null,
+  "also": [
+   "The Gauntlet Dual Format"
+  ],
   "note": ""
  }
 ]

@@ -32,6 +32,9 @@ def texts(titles):
     return out
 
 
+ASSIGNED = {x["event"]: x["format"] for x in json.load(open(HERE / "drafts" / "event_formats.json")) if x.get("format")}
+
+
 def hub_format(t):
     m = re.search(r"^\* '''(?:Format|Environment):'''([^\n]*)", t or "", re.M)
     if not m:
@@ -60,7 +63,7 @@ for row in L.split("\n|-\n"):
         fixed5 += 1
     if m:
         ev = m.group(1).strip()
-        f = hub_format(EV["hubs"].get(ev))
+        f = hub_format(EV["hubs"].get(ev)) or ASSIGNED.get(ev)
         cur = re.match(r"\[\[([^\]|]+)", cells[4]) if len(cells) > 4 else None
         if f and len(cells) > 4 and not cells[4].strip():
             cells[4] = f"[[{f}]]"
@@ -219,8 +222,10 @@ def main():
     if L_new != L:
         emit("List of SWCCG tournaments", L_new)
     F = texts([r["title"] for r in R])
+    D = HERE / "drafts"
     for r in R:
-        t = F.get(r["title"])
+        dfile = D / (r["title"].replace(" ", "_") + ".wiki")
+        t = dfile.read_text(encoding="utf-8") if dfile.exists() else F.get(r["title"])
         if t is None:
             print("MISSING page", r["title"])
             continue
@@ -235,6 +240,15 @@ def main():
             new = t[:k].rstrip("\n") + "\n\n" + sec + t[k:]
         if new != t:
             emit(r["title"], new)
+    # the product page "Jabba's Palace Sealed Deck" carried the format's Tournaments block before the format got its own page
+    prod = texts(["Jabba's Palace Sealed Deck"]).get("Jabba's Palace Sealed Deck", "")
+    if START in prod:
+        a = prod.find("== Tournaments ==\n" + START); b = prod.find(END) + len(END) + 1
+        emit("Jabba's Palace Sealed Deck", prod[:a].rstrip("\n") + "\n\n" + prod[b:].lstrip("\n"))
+    for line in open(D / "redirects.tsv", encoding="utf-8"):
+        if "\t" in line:
+            a, b = line.rstrip("\n").split("\t")
+            emit(a, f"#REDIRECT [[{b}]]\n")
     (pk / f"y-{batch}.tsv").write_text("\n".join(rows) + "\n", encoding="utf-8")
     shutil.copy(HERE.parent / "wiki_api_apply.py", pk)
     (pk / "since.txt").write_text(dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ") + "\n")

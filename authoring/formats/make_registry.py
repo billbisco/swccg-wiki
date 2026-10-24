@@ -37,7 +37,6 @@ R += [
     F("Death Star II Closed Environment", "closed", "decipher-special", "Endor and Death Star II cards plus the Death Star II Starter Deck reprints", "2000", decipher=True, pc=True, also=["Battle of Endor Environment (Players Committee)"]),
     F("Episode I Closed Environment", "closed", "decipher-special", "only cards with the Episode I icon", "2001 – 2002", decipher=True, pc=True, also=["Type II (players)", "Episode I Only Environment"]),
     F("First Anthology Sealed", "sealed", "decipher-special", "one First Anthology box per player", "1997", decipher=True),
-    F("Jabba's Palace Sealed Deck", "sealed", "decipher-special", "one Jabba's Palace Sealed Deck box per player", "2000 –", decipher=True, pc=True, code="jp_sealed", gemp_pc="JP Sealed", gemp_ours="Jabba's Palace Sealed", also=["Jabba's Palace Sealed (GEMP)"]),
 ]
 # --- Players Committee championship constructed
 for n, d in [(1, "9 March 2002"), (2, "1 June 2002"), (3, "20 September 2002"), (4, "5 February 2003"), (5, "June 2003"), (6, "12 January 2004"),
@@ -60,12 +59,12 @@ R += [
     F("Premiere - Reflections II (Modified)", "constructed", "pc-alternate", "Premiere through Reflections II with a ban list", "", pc=True, code="premiere_ref2_m", gemp_pc="Premiere - Reflections II (Modified)", gemp_ours="Premiere - Reflections II (Modified)"),
     F("Decipher Cards Only (Modified)", "constructed", "pc-alternate", "every Decipher card with a ban list", "", pc=True, code="open_no_virtual_m", gemp_pc="Decipher Cards Only (Modified)", gemp_ours="Decipher Cards Only (Modified)"),
     F("Premiere - Virtual Set 3", "constructed", "pc-alternate", "every Decipher card plus current Virtual Sets 0–3", "", pc=True, code="premiere_set3", gemp_pc="Premiere - Virtual Set 3", gemp_ours="Premiere - Virtual Set 3"),
-    F("Jawa Format", "constructed", "pc-alternate", "a ban list that removes the top of the power curve", "", pc=True, code="jawa", gemp_pc="Jawa", gemp_ours="Jawa"),
+    F("Jawa Format", "constructed", "pc-alternate", "a ban list that removes the top of the power curve", "2019 –", pc=True, code="jawa", gemp_pc="Jawa", gemp_ours="Jawa"),
     F("Scavenger Format", "constructed", "pc-alternate", "Decipher cards of common rarities only (Premiere – Death Star II)", "", pc=True, code="scavenger_premiere_ds2", gemp_pc="Scavenger", gemp_ours="Scavenger"),
     F("Utinni! (Jawas Only)", "constructed", "pc-alternate", "characters restricted to Jawas", "", pc=True, code="utinni", gemp_pc="Utinni! (Jawas Only)", gemp_ours="Utinni! (Jawas Only)"),
     F("Limited Resources Format", "constructed", "pc-alternate", "Decipher cards minus the most abusive, plus some virtual cards", "", pc=True, code="limited_resources", gemp_pc="Limited Resources", gemp_ours="Limited Resources"),
     F("Sealed", "sealed", "pc-alternate", "GEMP sealed league product, 40-card decks", "", pc=True, code="sealed", gemp_pc="Sealed", gemp_ours="Sealed"),
-    F("Cube", "cube", "pc-alternate", "Watto's Chance Cube pool, 40-card decks", "", pc=True, code="cube", gemp_pc="Cube", gemp_ours="Cube", also=["Watto's Chance Cube"]),
+    F("Cube", "cube", "pc-alternate", "Watto's Chance Cube pool (45-card decks on the PC; 40 on play.swccg.com)", "", pc=True, code="cube", gemp_pc="Cube", gemp_ours="Cube", also=["Watto's Chance Cube"]),
     F("Playtesting", "casual", "gemp", "the Open pool plus the Playtesting set", "", pc=True, code="playtesting", gemp_pc="Playtesting", gemp_ours="Playtesting"),
     F("Dream Cards", "casual", "gemp", "the Open pool plus the Dream Cards set", "", pc=True, code="dream_cards", gemp_pc="Dream Cards", gemp_ours="Dream Cards"),
 ]
@@ -89,5 +88,18 @@ for t, ty, pool, code, gname in [
     R.append(F(t, ty, "gemp", pool, "", code=code, gemp_ours=gname))
 # --- pools this wiki named for a single event
 R.append(F("Premiere to Virtual Set 3", "constructed", "wiki", "Decipher cards plus Virtual Sets through Virtual Set 3, as used by the 2025 Online Retro Event for Charity", "2025", pc=True))
+# drafted pages (formats/drafts/registry_final.jsonl) and field corrections (registry_suggestions.jsonl)
+D = Path(__file__).with_name("drafts")
+have = {r["title"] for r in R}
+for l in open(D / "registry_final.jsonl", encoding="utf-8"):
+    x = json.loads(l)
+    if x["title"] not in have:
+        R.append(F(x["title"], x["type"], x["family"], x["pool"], x.get("years", ""), x.get("decipher", False), x.get("pc", False),
+                   x.get("code"), x.get("gemp_pc"), x.get("gemp_ours"), x.get("also", []), x.get("note", "")))
+by = {r["title"]: r for r in R}
+for l in open(D / "registry_suggestions.jsonl", encoding="utf-8"):
+    x = json.loads(l)
+    if x["title"] in by:
+        by[x["title"]].update({k: v for k, v in x.items() if k != "title"})
 Path(__file__).with_name("registry.json").write_text(json.dumps(R, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 print(len(R), "formats")
