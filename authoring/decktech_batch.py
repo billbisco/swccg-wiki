@@ -488,7 +488,10 @@ def deck_page(d: dict) -> str:
     if d.get("shields"):
         sh = "\n".join(f"* {q}x {shield_link(n, d['side']) or wc(n)}" for q, n, _ in rows_of(d, "shields"))
         shields = f"\n== Defensive Shields ==\n\nThese cards were posted as Defensive Shields outside the 60. They do not count toward the 60.\n\n{sh}\n"
-    note = f"\n{d['shields_note']}\n" if d.get("shields_note") else ""
+    fmt = d.get("format") or ""
+    shield_era = fmt.startswith(("Premiere - Reflections III", "Premiere - Theed", "Premiere - Original"))
+    # Bill 2026-10-24: no shields note at all where Defensive Shields didn't exist or weren't legal
+    note = f"\n{d['shields_note']}\n" if d.get("shields_note") and (shield_era or d.get("shields")) else ""
     see = ([] if d.get("player_page") == "none" else [f"* {plink(d)}"]) + ([f"* [[{d['event']}]]"] if d.get("event") else []) + [
         "* [[DeckTech decks]]", "* [[Decklists]]", f"* [[{d['format']}]]"]
     return f"""{intro}{gd.post_ref(f"dt-{pid}", pid, lbl, byline)}
