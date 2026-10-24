@@ -73,21 +73,23 @@ def participants(d: dict) -> dict[str, list[dict]]:
             x["author"] = True
             x["finish"] = e.get("author_finish") or (f"{e['author_record']} record" if e.get("author_record") else "")
             for k in e.get("decks") or []:
-                desc = f"[[{k['deck_page']}|{k['description']}]]" if k.get("deck_page") else k.get("description")
+                desc = f"[[{k['deck_page']}|{k['description']}]]" if k.get("deck_page") else T.dlink(k.get("description"), k.get("objective"))
                 if k.get("side") in ("Dark", "Light") and desc and desc not in x[k["side"].lower()]:
                     x[k["side"].lower()].append(desc)
             for g in e.get("games") or []:
                 if g.get("author_side") in ("Dark", "Light") and g.get("author_deck") and not e.get("decks"):
-                    if g["author_deck"] not in x[g["author_side"].lower()]:
-                        x[g["author_side"].lower()].append(g["author_deck"])
+                    dd = T.dlink(g["author_deck"], g.get("author_objective"))
+                    if dd not in x[g["author_side"].lower()]:
+                        x[g["author_side"].lower()].append(dd)
         for g in e.get("games") or []:
             n = g.get("opponent")
             if not full_name(n) or n == who:
                 continue
             x = entry(n, i, e)
             side = g.get("opponent_side") or other_side(g.get("author_side"))
-            if side and g.get("opponent_deck") and g["opponent_deck"] not in x[side.lower()]:
-                x[side.lower()].append(g["opponent_deck"])
+            dd = T.dlink(g.get("opponent_deck"), g.get("opponent_objective"))
+            if side and dd and dd not in x[side.lower()]:
+                x[side.lower()].append(dd)
         for r in e.get("other_results") or []:
             if full_name(r.get("player")) and r["player"] != who:
                 entry(r["player"], i, e)["finish"] = r.get("finish") or ""
@@ -171,6 +173,12 @@ def person_text(name: str, ds_entries: list[tuple[dict, dict]], cur: str | None,
     rows = [(f"[[{x['e']['event']}" if named(x["e"]) else f"{T.event_long(x['e'])} || {ev_link(x['e'])}",
              result_row(d, x, fmt_of(x["e"]))) for d, x in ds_entries]
     authored = [d for d, x in ds_entries if x["author"]]
+    if cur:  # an event that has since been named replaces its old description row / bullet
+        for d, x in ds_entries:
+            desc = x["e"].get("event_desc")
+            if named(x["e"]) and desc:
+                cur = re.sub(r"\n\|-\n\|[^\n]*\|\| " + re.escape(desc) + r" \|\|[^\n]*", "", cur)
+                cur = re.sub(r"^(\* \[\[" + re.escape(T.page_title(d)) + r"\]\] — )" + re.escape(desc), r"\g<1>[[" + x["e"]["event"].replace("\\", "") + "]]", cur, flags=re.M)
     if cur is None:
         d, x = ds_entries[0]
         if x["author"]:
@@ -303,6 +311,8 @@ def new_hub(e: dict, d: dict) -> str:
     when = T.event_long(e)
     site = e.get("event_site")
     typ = (e.get("event_type") or "tournament").lower() if e.get("event_type") not in ("DPC", "Grand Slam") else e["event_type"]
+    if typ in ("local", "local tournament", "store"):
+        typ = "local tournament"
     lead = f"'''{e['event']}''' was a Star Wars CCG {typ}" + (f" held in {site}" if site else "") + (f" on {when}" if re.match(r"\d", when or "") else (f" in {when}" if when else "")) + "."
     if e.get("event_winner"):
         lead += f" [[{e['event_winner']}]] won it." if full_name(e["event_winner"]) else f" {e['event_winner']} won it."

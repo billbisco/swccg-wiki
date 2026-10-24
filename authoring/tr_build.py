@@ -108,6 +108,15 @@ def cell(s) -> str:
     return "—" if s in (None, "") else str(s).replace("|", "&#124;")
 
 
+def dlink(desc, obj):
+    """A deck description, linked to its Objective's Decipher page when the data names one (Bill 2026-10-24)."""
+    if obj and desc:
+        return f"[[{obj}|{desc}]]"
+    if obj:
+        return f"[[{obj}|{obj.split(' / ')[0]}]]"
+    return desc
+
+
 def games_block(g: list, head: str | None) -> list[str]:
     if not g:
         return []
@@ -117,9 +126,9 @@ def games_block(g: list, head: str | None) -> list[str]:
         "! Round !! Opponent !! Author's deck !! Opponent's deck !! Result !! Margin"]
     for x in g:
         opp = f"[[{x['opponent']}]]" if x.get("opponent_page") else cell(x.get("opponent"))
-        ad = " ".join(v for v in (f"[[{x['author_side']}]]" if x.get("author_side") else "", x.get("author_deck") or "") if v)
+        ad = " ".join(v for v in (f"[[{x['author_side']}]]" if x.get("author_side") else "", dlink(x.get("author_deck"), x.get("author_objective")) or "") if v)
         res = cell(x.get("result")) + (f" ({x['note']})" if x.get("note") else "")
-        out += ["|-", f"| {cell(x.get('round'))} || {opp} || {cell(ad)} || {cell(x.get('opponent_deck'))} || {res} || {cell(x.get('margin'))}"]
+        out += ["|-", f"| {cell(x.get('round'))} || {opp} || {cell(ad)} || {cell(dlink(x.get('opponent_deck'), x.get('opponent_objective')))} || {res} || {cell(x.get('margin'))}"]
     return out + ["|}", ""]
 
 
@@ -148,7 +157,7 @@ def article(d: dict) -> str:
         if d.get(k):
             info.append(f"* '''{lab}:''' {d[k]}")
     for x in d.get("decks") or []:
-        deck = f"[[{x['deck_page']}|{x['description']}]]" if x.get("deck_page") else x.get("description") or "—"
+        deck = f"[[{x['deck_page']}|{x['description']}]]" if x.get("deck_page") else dlink(x.get("description"), x.get("objective")) or "—"
         info.append(f"* '''{x['side']} deck:''' {deck}" if x.get("side") else f"* '''Deck:''' {deck}")
     out = [lead, "", "== Report info ==", *info, ""]
     out += games_block(d.get("games") or [], "== Games ==")
@@ -439,8 +448,14 @@ def main() -> None:
                 log.append(f"{ev}: [[{n}]] has no page")
                 continue
             if cur.lstrip().upper().startswith("#REDIRECT"):
-                log.append(f"{ev}: [[{n}]] is a redirect; fix the hub link")
-                continue
+                tgt = re.match(r"#REDIRECT\s*\[\[([^\]|#]+)", cur.strip(), re.I).group(1).strip()
+                hub = (emitted.get(ev) or hubs[ev]).replace(f"[[{n}]]", f"[[{tgt}]]").replace(f"[[{n}|", f"[[{tgt}|")
+                hubs[ev] = hub
+                emit(ev, hub)
+                log.append(f"{ev}: [[{n}]] was a redirect; now links [[{tgt}]]")
+                n, cur = tgt, emitted.get(tgt) or live(tgt)
+                if cur is None:
+                    continue
             tbl = W.person_results_table(cur)
             if f"[[{ev}]]" in tbl or f"[[{ev}|" in tbl:
                 continue
