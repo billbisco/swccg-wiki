@@ -197,6 +197,13 @@ def hub_add_participants(text: str, d: dict, e: dict, log: list) -> str:
         if n in seen or f"[[{n}]]" in table or f"[[{n}|" in table:
             continue
         seen.add(n)
+        m = re.search(rf"\|\| {re.escape(n)}(?=[ <\n(]|$)", table)
+        if m:  # listed as plain text: link it now that the person has a page
+            new_table = table[:m.start()] + f"|| [[{n}]]" + table[m.end():]
+            text = text[:t0] + new_table + text[t1:]
+            t1 += len(new_table) - len(table)
+            table = new_table
+            continue
         cells = [f or "", f"[[{n}]]<ref name=\"tr-{d['id']}\" />"] + (["—"] * (ncol - 2))
         add.append("| " + " || ".join(cells))
     if not add:
