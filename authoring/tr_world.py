@@ -144,8 +144,11 @@ def person_text(name: str, ds_entries: list[tuple[dict, dict]], cur: str | None,
             lead = f"'''{name}'''{h} is a Star Wars CCG player who wrote a tournament report for {T.SOURCES[d['source']][1]}."
         else:
             played = " and ".join(x["dark"] + x["light"])
-            lead = (f"'''{name}''' is a Star Wars CCG player who played at {ev_link(x['e'])}"
-                    + (f" in {T.event_long(x['e'])}" if x['e'].get('event_date') else "")
+            when = T.event_long(x["e"])
+            verb = (f"finished {x['finish']} at" if re.match(r"\d+(st|nd|rd|th)|top|finalist", x["finish"] or "", re.I)
+                    else "played at")
+            lead = (f"'''{name}''' is a Star Wars CCG player who {verb} {ev_link(x['e'])}"
+                    + (((" on " if re.match(r"\d", when) else " in ") + when) if when else "")
                     + (f" with {played}" if played else "")
                     + f", according to {T.person(d) or d['byline']}'s tournament report.{T.ref(d)}")
         years = sorted({(x["e"].get("event_date") or T.iso(d["date"]))[:4] for d, x in ds_entries})
@@ -235,6 +238,13 @@ def ensure_ref(text: str, d: dict) -> str:
     return text
 
 
+def event_bullet(d: dict, e: dict) -> str:
+    who = T.person(d)
+    bits = [f"by [[{who}]]" if who else f"by {d['byline']}"]
+    bits += [v for v in (e.get("author_finish"), e.get("author_record")) if v]
+    return f"* [[{T.page_title(d)}]] — " + ", ".join(bits)
+
+
 def new_hub(e: dict, d: dict) -> str:
     rows = []
     who = T.person(d)
@@ -266,7 +276,7 @@ def new_hub(e: dict, d: dict) -> str:
     return (lead + "\n\n" + "\n".join(x for x in info if x) + "\n\n== Results ==\n\n"
             f"Results below come from {who or d['byline']}'s tournament report.\n\n"
             '{| class="wikitable"\n! Finish !! Player\n' + tab + "\n|}\n\n== Tournament reports ==\n\nPlayers' own reports from this event.\n\n"
-            + T.report_bullet(d, True) + "\n\n== See also ==\n\n" + "\n".join(see) + "\n\n== References ==\n<references />\n\n"
+            + event_bullet(d, e) + "\n\n== See also ==\n\n" + "\n".join(see) + "\n\n== References ==\n<references />\n\n"
             "[[Category:Tournaments]]\n" + (f"[[Category:{year}]]\n" if year else ""))
 
 
@@ -276,6 +286,8 @@ def list_insert(L: str, e: dict) -> str:
     y = (e.get("event_date") or "")[:4]
     tag = (e.get("event_date") or "")[:7]
     sec = re.search(rf"^== {y} ==\s*$", L, re.M)
+    if not sec and y and int(y) <= 2001:
+        sec = re.search(r"^== Decipher-era regionals and opens ==\s*$", L, re.M)
     if not sec:
         raise SystemExit(f"List has no == {y} == section for {e['event']}")
     t0 = L.find("{|", sec.end())
@@ -291,8 +303,10 @@ def list_insert(L: str, e: dict) -> str:
         c = p.split("||")
         if len(c) < 3:
             continue
-        pk = date_key(c[2]) or (c[0].strip("| ").strip() + "-99")
-        if pk and pk < k:
+        pk = date_key(c[2])
+        if not pk or pk.endswith("-00-00"):
+            continue  # year-only rows don't fix a position
+        if pk < k:
             pos = i
             break
     parts.insert(pos, row)

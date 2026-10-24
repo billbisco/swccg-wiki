@@ -382,7 +382,7 @@ def main() -> None:
                 new_events.append(e)
             else:
                 cur = W.hub_add_participants(cur, d, e, log)
-                cur = add_section(cur, "Tournament reports", [report_bullet(d, True)],
+                cur = add_section(cur, "Tournament reports", [W.event_bullet(d, e)],
                                   "Players' own reports from this event.")
             if e.get("parent"):
                 par = hubs.get(e["parent"]) or live(e["parent"])

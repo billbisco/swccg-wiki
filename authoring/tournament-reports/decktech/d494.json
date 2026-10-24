@@ -27,6 +27,7 @@
    "opponent": "Chris Terwilliger",
    "opponent_page": true,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Ralltiir Operations",
    "opponent_deck": "Throne Room mains",
    "result": "Loss",
@@ -38,6 +39,7 @@
    "opponent": "Matt Sokol",
    "opponent_page": true,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "Throne Room",
    "opponent_deck": "Non-dueling Hunt Down",
    "result": "Loss",
@@ -49,6 +51,7 @@
    "opponent": "Chris Beaulieu",
    "opponent_page": false,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Ralltiir Operations",
    "opponent_deck": "Hidden Base with asteroids",
    "result": "Win",
@@ -57,20 +60,22 @@
   },
   {
    "round": "4",
-   "opponent": "Dan Mailoux",
-   "opponent_page": false,
+   "opponent": "Dan Mailloux",
+   "opponent_page": true,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "Throne Room",
    "opponent_deck": "Ralltiir Operations",
    "result": "Win",
    "margin": "+28",
-   "note": null
+   "note": "report spells 'Dan Mailoux'"
   },
   {
    "round": "5",
    "opponent": "Jason Jordan",
    "opponent_page": false,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "Throne Room",
    "opponent_deck": "ECC objective (Carbonite Chamber)",
    "result": "Win",
@@ -82,6 +87,7 @@
    "opponent": "Kris Earle",
    "opponent_page": true,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Ralltiir Operations",
    "opponent_deck": "Profit",
    "result": "Win",
@@ -109,9 +115,29 @@
   "Running totals are internally inconsistent: game 1 'Full Loss by 17' but total 0 (−19); game 3 win by 18 takes −44 to −28 (should be −26). Stated margins sum to +48; the final line printed is 8 (+44), used for author_points.",
   "Opponent ratings in report: Terwilliger 2100, Sokol 2092, Beaulieu 1624, Mailoux 1559, Jordan 1391, Earle 1713.",
   "Kris Earle linked: existing page is a Tewksbury, Massachusetts Squadron Member and 2000 Kashyyyk Regionals TD.",
-  "'Dan Mailoux' not linked: a 'Dan Mailloux' page exists (Trandosite deck author) but identity is not clear.",
+  "'Dan Mailoux' mapped to the existing Dan Mailloux page (Trandosite deck author) under the small-world rule (Bill 2026-10-24); obvious misspelling.",
   "Event type and site from the report title ('Milford Mass Grand Slam'); body calls it 'The Massachusetts Grand Slam'.",
-  "Author says he will not post the decks; no matching deck pages (his April 2000 DeckTech LS is a Hidden Base deck)."
+  "Author says he will not post the decks; no matching deck pages (his April 2000 DeckTech LS is a Hidden Base deck).",
+  "Chris Beaulieu and Jason Jordan have no pages (checked).",
+  "hub_updates: hub gives 'April 2000' and no field size; report gives 8 April 2000 and 40 players. The site conflict is a discrepancy entry, not a hub update."
  ],
- "multi_event": false
+ "multi_event": false,
+ "hub_updates": [
+  {
+   "event": "2000 Boston Grand Slam",
+   "field": "players",
+   "value": "40"
+  },
+  {
+   "event": "2000 Boston Grand Slam",
+   "field": "date",
+   "value": "2000-04-08"
+  }
+ ],
+ "discrepancies": [
+  {
+   "event": "2000 Boston Grand Slam",
+   "text": "Paul Maholick's report places this Grand Slam in Milford, Massachusetts, on 8 April 2000 (40 players); Decipher's Grand Slam 2000 list and the hub name it Boston. It is the only Massachusetts Grand Slam of April 2000, so the report is filed under the Boston hub."
+  }
+ ]
 }
