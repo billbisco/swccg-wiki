@@ -227,6 +227,34 @@ class WikiCiteIndex(unittest.TestCase):
         self.assertEqual(paths, {"pc/outrider-cup-ii.html", "forum/t86781.html"})
         self.assertEqual(len(calls), 2)
 
+    def test_parses_el_to_path(self):
+        self.assertEqual(
+            W.snapshot_rel_from_el_to_path(
+                "/web/20261011191428/https://swccg.com/snapshots/pc/outrider-cup-ii.html"
+            ),
+            "pc/outrider-cup-ii.html",
+        )
+        self.assertEqual(
+            W.snapshot_rel_from_el_to_path(
+                "/web/20261011184745id_/https://www.swccg.com/snapshots/forum/t86781.html"
+            ),
+            "forum/t86781.html",
+        )
+        self.assertEqual(
+            W.snapshot_rel_from_el_to_path(
+                "https://web.archive.org/web/20261013141331/https://swccg.com/snapshots/pc/outrider-cup-ii.html"
+            ),
+            "pc/outrider-cup-ii.html",
+        )
+        self.assertIsNone(
+            W.snapshot_rel_from_el_to_path("/web/20261011191428/https://www.decktech.net/x")
+        )
+        self.assertIsNone(
+            W.snapshot_rel_from_el_to_path(
+                "/web/20261011191428/https://swccg.com/snapshots/../etc/passwd"
+            )
+        )
+
 
 class SnapshotDelete(unittest.TestCase):
     def setUp(self):
@@ -282,7 +310,7 @@ class SnapshotDelete(unittest.TestCase):
 
     def test_missing_file_is_not_an_error(self):
         self.fp.unlink()
-        self.assertFalse(W.delete_verified_snapshot(self.url, self.e, self.root, self.log))
+        self.assertFalse(W.delete_verified_snapshot(self.url, self.e, self.root, self.log, cited_paths=set()))
 
     def test_run_prunes_already_verified_without_a_done_json_push(self):
         saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "AUTH", "GAP_S",

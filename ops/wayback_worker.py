@@ -18,7 +18,10 @@ retry (save or check failed; retried later, up to MAX_TRIES) | failed (gave up a
 Verified https://swccg.com/snapshots/… URLs: after verify, delete the staging file under
 /opt/swccg-res/snapshots/ only when a main-namespace wiki article already cites a Wayback
 URL of that exact snapshot path (Bill 2026-10-22 cite-before-delete; 2026-10-13 prune rule).
-Wiki File: pages and archive.org items stay. Uncited verified files stay on disk.
+The cite index is the wiki DB externallinks table (ns0, Wayback host, snapshot path). Do
+not use truncated exturlusage of all web.archive.org/web/ links — that list fills with
+DeckTech/YouTube and misses snapshot cites. Wiki File: pages and archive.org items stay.
+Uncited verified files stay on disk. KEEP-UNCITED logs only when the staging file still exists.
 
 Bots: push the URL to queue.txt, then read done.json. Cite the capture once status is "verified".
 No Wayback access from the bot's own machine is needed.
@@ -39,6 +42,7 @@ import hashlib
 import html
 import json
 import re
+import subprocess
 import zlib
 import os
 import sys
@@ -65,10 +69,25 @@ CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
 BANNED_HOSTS = {"forum.starwarsccg.org", "www.starwarsccg.org", "starwarsccg.org"}
 SNAPSHOT_HOSTS = {"swccg.com", "www.swccg.com"}
 WIKI_API = "https://wiki.swccg.com/api.php"
+WIKI_DB_CONTAINER = os.environ.get("SWCCG_WIKI_DB_CONTAINER", "swccg_wiki_db")
 WB_SNAPSHOT = re.compile(
     r"^https?://web\.archive\.org/web/\d{14}[a-z_]*/(?:https?://)?(?:www\.)?swccg\.com/snapshots/(.+)$",
     re.I,
 )
+# MediaWiki 1.43 externallinks.el_to_path for a Wayback snapshot cite:
+# /web/20261011191428/https://swccg.com/snapshots/pc/foo.html
+WB_SNAPSHOT_IN_PATH = re.compile(
+    r"(?:https?://)?(?:www\.)?swccg\.com/snapshots/(.+)$",
+    re.I,
+)
+WIKI_CITE_SQL = """
+SELECT DISTINCT el_to_path
+FROM externallinks e
+JOIN page p ON p.page_id = e.el_from
+WHERE p.page_namespace = 0
+  AND e.el_to_domain_index LIKE '%archive.web%'
+  AND e.el_to_path LIKE '%swccg.com/snapshots/%'
+"""
 
 
 def snapshot_root() -> Path:
@@ -436,9 +455,54 @@ def wiki_api(params: dict) -> dict:
         return json.loads(resp.read().decode("utf-8", "replace"))
 
 
-def wiki_snapshot_wayback_paths(get_json=None) -> set[str]:
-    """Relative snapshot paths that a main-namespace article cites via a Wayback URL."""
-    get_json = get_json or wiki_api
+def snapshot_rel_from_el_to_path(path: str) -> str | None:
+    """Parse snapshot rel from externallinks.el_to_path or a full Wayback URL."""
+    m = WB_SNAPSHOT.match(path or "")
+    if m:
+        rel = urllib.parse.unquote(m.group(1).split("#")[0].split("?")[0])
+        return rel or None
+    m = WB_SNAPSHOT_IN_PATH.search(path or "")
+    if not m:
+        return None
+    rel = urllib.parse.unquote(m.group(1).split("#")[0].split("?")[0])
+    if not rel or ".." in rel.split("/"):
+        return None
+    return rel
+
+
+def wiki_snapshot_wayback_paths_from_db() -> set[str] | None:
+    """All ns0 Wayback snapshot paths from MediaWiki externallinks (no 20k API cap)."""
+    try:
+        proc = subprocess.run(
+            [
+                "docker", "exec", "-i", WIKI_DB_CONTAINER,
+                "sh", "-c",
+                'export MYSQL_PWD="$MYSQL_PASSWORD"; mysql -N -u"$MYSQL_USER" "$MYSQL_DATABASE"',
+            ],
+            input=WIKI_CITE_SQL.encode("utf-8"),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=120,
+            check=False,
+        )
+    except (OSError, subprocess.SubprocessError) as ex:
+        print("WIKI-CITE-DB-ERR", type(ex).__name__, str(ex)[:80], flush=True)
+        return None
+    if proc.returncode != 0:
+        err = (proc.stderr or b"").decode("utf-8", "replace").strip().splitlines()
+        tail = err[-1][:120] if err else f"rc={proc.returncode}"
+        print("WIKI-CITE-DB-ERR", tail, flush=True)
+        return None
+    out: set[str] = set()
+    for line in proc.stdout.decode("utf-8", "replace").splitlines():
+        rel = snapshot_rel_from_el_to_path(line.strip())
+        if rel:
+            out.add(rel)
+    return out
+
+
+def wiki_snapshot_wayback_paths_from_api(get_json) -> set[str]:
+    """exturlusage of web.archive.org/web/ — truncated (~20k rows). Fallback only."""
     out: set[str] = set()
     cont: dict = {}
     pages = 0
@@ -455,17 +519,27 @@ def wiki_snapshot_wayback_paths(get_json=None) -> set[str]:
         q.update(cont)
         d = get_json(q)
         for e in d.get("query", {}).get("exturlusage", []):
-            m = WB_SNAPSHOT.match(e.get("url") or "")
-            if not m:
-                continue
-            p = urllib.parse.unquote(m.group(1).split("#")[0].split("?")[0])
-            if p:
-                out.add(p)
+            rel = snapshot_rel_from_el_to_path(e.get("url") or "")
+            if rel:
+                out.add(rel)
         pages += 1
         if "continue" not in d or pages >= 40:
             break
         cont = d["continue"]
-    print("wiki wayback snapshot cites", len(out), flush=True)
+    return out
+
+
+def wiki_snapshot_wayback_paths(get_json=None) -> set[str]:
+    """Relative snapshot paths that a main-namespace article cites via a Wayback URL."""
+    if get_json is None:
+        db = wiki_snapshot_wayback_paths_from_db()
+        if db is not None:
+            print("wiki wayback snapshot cites", len(db), "via db", flush=True)
+            return db
+        print("wiki wayback snapshot cites db-miss, falling back to exturlusage", flush=True)
+        get_json = wiki_api
+    out = wiki_snapshot_wayback_paths_from_api(get_json)
+    print("wiki wayback snapshot cites", len(out), "via api", flush=True)
     return out
 
 
@@ -478,11 +552,11 @@ def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
     rel = snapshot_relpath(url)
     if not rel:
         return False
-    if not cited_paths or rel not in cited_paths:
-        print("KEEP-UNCITED", rel, flush=True)
-        return False
     fp = snapshot_file(url, root)
     if fp is None or not fp.is_file() or fp.name == "DELETED-after-wayback.log":
+        return False
+    if not cited_paths or rel not in cited_paths:
+        print("KEEP-UNCITED", rel, flush=True)
         return False
     method = (e.get("verify") or {}).get("method") or "checked"
     ts = capture_timestamp(e.get("capture") or "")
