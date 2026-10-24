@@ -1,0 +1,44 @@
+'''Premiere - Death Star II Draft''' is a draft format on [[GEMP]] using cards from [[Premiere]] through [[Death Star II (expansion)|Death Star II]]. The Players Committee Cube page calls it "GEMP - Basic Prem-DS2 Draft" and describes it as a basic draft with no objectives or add-on cards.<ref name="pc-cube" /> GEMP's draft list points this type to <code>/draft/basic_premds2_draft.json</code>.<ref name="gemp" /><ref name="drafts" />
+
+* '''Type:''' booster draft (GEMP cube draft)
+* '''Defined by:''' Players Committee Cube page; GEMP draft file
+* '''Card pool:''' Premiere through Death Star II cards; 13 fixed cards and 54 picks per side
+* '''In use:''' unknown
+* '''GEMP:''' ''Premiere - Death Star II Draft'' (<code>basic_premds2_draft</code>) on play.swccg.com; on the Players Committee GEMP the same draft file is played under the [[Cube]] format<ref name="pc-ds2" />
+
+== Card pool ==
+For each side a player gets 13 fixed cards and drafts 54 cards from a list of 360.<ref name="ds2" /><ref name="pc-cube" />
+* '''Dark Side fixed cards:''' ''Combat Response'', ''Imperial Arrest Order'', ''Mobilization Points'', ''Prepared Defenses'', ''Bespin'', ''Cloud City: East Platform (Docking Bay)'', ''Corulag'', ''Endor'', ''Endor: Landing Platform (Docking Bay)'', ''Hoth'', ''Hoth: Echo Docking Bay'', ''Tatooine'', ''Tatooine: Docking Bay 94''.<ref name="ds2" /><ref name="pc-cube" /><ref name="cardjson" />
+* '''Light Side fixed cards:''' ''Insurrection'', ''Squadron Assignments'', ''Staging Areas'', ''Heading For The Medical Frigate'', ''Bespin'', ''Clak'dor VII'', ''Cloud City: Platform 327 (Docking Bay)'', ''Endor'', ''Endor: Landing Platform (Docking Bay)'', ''Tatooine'', ''Tatooine: Docking Bay 94'', ''Yavin 4'', ''Yavin 4: Docking Bay''.<ref name="ds2" /><ref name="pc-cube" /><ref name="cardjson" />
+The Cube page lists every draftable card. Players build decks from the 67 cards per side.<ref name="pc-cube" />
+
+=== How picks work ===
+GEMP shuffles each side's pick list and offers a shrinking "pack": 9 cards, then 8, down to 1, then 9 again, six times over 54 picks. A card already in the player's pool is not offered again, and a picked card brings any add-on cards listed for it.<ref name="dcb" /><ref name="ds2" />
+
+=== Deck rules ===
+On play.swccg.com the format sets a deck size of 40 cards and is not a game hall format.<ref name="gemp" /><ref name="lib" /> The Players Committee code's draft file names its <code>cube</code> format instead, which sets 45 cards.<ref name="pc-ds2" /><ref name="pc-gemp" /> The format's set list is the same as [[Open]]; the drafted pool limits what a player can use.<ref name="gemp" />
+
+== History ==
+The draft is one of the cubes on the Players Committee Cube page, which links older cubes, versions 1 to 7, from 2014 to 2020.<ref name="pc-cube" /> The Players Committee GEMP code has the same draft file under its Cube format; play.swccg.com gave it its own format.<ref name="pc-ds2" /><ref name="ds2" /><ref name="gemp" /> No source gives who built this cube or when, and no event result is recorded.
+
+== See also ==
+* [[Formats]]
+* [[Cube]]
+* [[GEMP draft and cube products]]
+* [[Premiere - Death Star II]]
+
+== References ==
+<references>
+<ref name="pc-cube">[https://www.starwarsccg.org/cube/ Cube], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021115326/https://swccg.com/snapshots/pc/cube.html Internet Archive].</ref>
+<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
+<ref name="drafts">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgDrafts.json swccgDrafts.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021115023/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgDrafts.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041458/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgDrafts.json Internet Archive].</ref>
+<ref name="pc-ds2">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/draft/basic_premds2_draft.json basic_premds2_draft.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021125853/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/basic_premds2_draft.json.html Internet Archive].</ref>
+<ref name="ds2">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/draft/basic_premds2_draft.json basic_premds2_draft.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021125102/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/basic_premds2_draft.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022042031/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/draft/basic_premds2_draft.json Internet Archive].</ref>
+<ref name="cardjson">Card names from [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Dark.json Dark.json] (Preserved copy: [https://web.archive.org/web/20261020201748/https://swccg.com/snapshots/github/swccgpc/swccg-card-json/d4e661ec/Dark.json.html Internet Archive]) and [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json Light.json] (Preserved copy: [https://web.archive.org/web/20261020202049/https://swccg.com/snapshots/github/swccgpc/swccg-card-json/d4e661ec/Light.json.html Internet Archive]), swccgpc/swccg-card-json, GitHub, matched by GEMP card id.</ref>
+<ref name="dcb">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/draft2/builder/DraftChoiceBuilder.java DraftChoiceBuilder.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021124147/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/DraftChoiceBuilder.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041806/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/draft2/builder/DraftChoiceBuilder.java Internet Archive].</ref>
+<ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+<ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
+</references>
+
+[[Category:Formats]]
+[[Category:GEMP]]
