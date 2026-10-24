@@ -58434,6 +58434,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/scomp/black-2-v.html": {
+  "capture": "https://web.archive.org/web/20261024090849/https://swccg.com/snapshots/scomp/black-2-v.html",
+  "job_id": "spn2-5574fa0969d0a352813de42cd8d04ba3e2304205",
+  "last": "2026-10-24T09:13:33Z",
+  "status": "ok",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/black-2.html": {
   "capture": "",
   "job_id": "spn2-18291582d807d56195ec7437285342775aee9ad2",
@@ -58530,6 +58537,20 @@
    "capture_id": "https://web.archive.org/web/20261024024829id_/https://swccg.com/snapshots/scomp/blaster-rack.html",
    "method": "sha256",
    "sha256": "636434b021d96c1720841dfc429da8a75f723c68e383b324fb0c88aaec175ddc"
+  }
+ },
+ "https://swccg.com/snapshots/scomp/blaster.html": {
+  "capture": "https://web.archive.org/web/20261024091122/https://swccg.com/snapshots/scomp/blaster.html",
+  "job_id": "spn2-049bd46ebd37c5e1d614bbd68d2cd0c2cd1926b3",
+  "last": "2026-10-24T09:14:55Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T09:14:55Z",
+   "bytes": 228277,
+   "capture_id": "https://web.archive.org/web/20261024091122id_/https://swccg.com/snapshots/scomp/blaster.html",
+   "method": "sha256",
+   "sha256": "3307dac2a850f9b7dada608f05d51ab5977305e4de529f07e3d802105c7cc85a"
   }
  },
  "https://swccg.com/snapshots/scomp/blizzard-1-v.html": {
@@ -58632,10 +58653,17 @@
  },
  "https://swccg.com/snapshots/scomp/boba-fett.html": {
   "capture": "https://web.archive.org/web/20261024070136/https://swccg.com/snapshots/scomp/boba-fett.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T08:33:19Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-5129a9932779aa8144960916c606a3b06a60d17d",
+  "last": "2026-10-24T09:12:45Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-24T09:12:45Z",
+   "bytes": 175796,
+   "capture_id": "https://web.archive.org/web/20261024070136id_/https://swccg.com/snapshots/scomp/boba-fett.html",
+   "method": "sha256",
+   "sha256": "e203a1b8cdfcf3de4a0075f574128158a75b5321380d9e626566cfc83a150d3a"
+  }
  },
  "https://swccg.com/snapshots/scomp/boba.html": {
   "capture": "",
@@ -58825,6 +58853,13 @@
    "method": "sha256",
    "sha256": "c31a6ac42639d2176a80b85aac137b6092432b8201a03804f41e1040b7ba05b4"
   }
+ },
+ "https://swccg.com/snapshots/scomp/cal-kestis.html": {
+  "capture": "",
+  "job_id": "spn2-d70ee6a00b9a8166e9178229edb956f6563b22ba",
+  "last": "2026-10-24T09:12:12Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/caller.html": {
   "capture": "",
@@ -59821,8 +59856,8 @@
  },
  "https://swccg.com/snapshots/scomp/chewie-v.html": {
   "capture": "https://web.archive.org/web/20261024084350/https://swccg.com/snapshots/scomp/chewie-v.html",
-  "last": "2026-10-24T08:47:06Z",
-  "status": "pending",
+  "last": "2026-10-24T09:04:02Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/chewie-with-blaster-rifle-v.html": {
@@ -59923,6 +59958,13 @@
   "status": "pending",
   "tries": 2
  },
+ "https://swccg.com/snapshots/scomp/chirrut-imwe-ai.html": {
+  "capture": "",
+  "job_id": "spn2-6c9188bcd192708116bc799d0784911e923fdea7",
+  "last": "2026-10-24T09:12:23Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/chirrut-imwe.html": {
   "capture": "",
   "job_id": "spn2-477022a73f96a002717b4e32e05674705888c197",
@@ -59974,8 +60016,8 @@
  },
  "https://swccg.com/snapshots/scomp/clak-dor-vii.html": {
   "capture": "https://web.archive.org/web/20261024084247/https://swccg.com/snapshots/scomp/clak-dor-vii.html",
-  "last": "2026-10-24T08:47:03Z",
-  "status": "pending",
+  "last": "2026-10-24T09:04:04Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/cliegg-lars.html": {
@@ -60113,8 +60155,8 @@
  },
  "https://swccg.com/snapshots/scomp/cloud-city-port-town-district.html": {
   "capture": "https://web.archive.org/web/20261024084328/https://swccg.com/snapshots/scomp/cloud-city-port-town-district.html",
-  "last": "2026-10-24T08:46:29Z",
-  "status": "pending",
+  "last": "2026-10-24T09:04:06Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/cloud-city-upper-plaza-corridor.html": {
@@ -60126,8 +60168,8 @@
  },
  "https://swccg.com/snapshots/scomp/coarse-and-rough-and-irritating.html": {
   "capture": "https://web.archive.org/web/20261024084144/https://swccg.com/snapshots/scomp/coarse-and-rough-and-irritating.html",
-  "last": "2026-10-24T08:46:24Z",
-  "status": "pending",
+  "last": "2026-10-24T09:04:07Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/cold-feet.html": {
@@ -60382,6 +60424,13 @@
    "sha256": "a06895447d9e824cf8635a30b608bf356dcad87266167e6a9f34c4a090ece3d1"
   }
  },
+ "https://swccg.com/snapshots/scomp/concentrate-all-fire.html": {
+  "capture": "",
+  "job_id": "spn2-c1ed0061abac94d119a4a88781a780bf02dedfb4",
+  "last": "2026-10-24T09:08:36Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/concussion-grenade.html": {
   "capture": "https://web.archive.org/web/20261023230923/https://swccg.com/snapshots/scomp/concussion-grenade.html",
   "job_id": "spn2-fa72f6f40a5f137bc412595b576bc576a2fa0710",
@@ -60418,8 +60467,8 @@
  },
  "https://swccg.com/snapshots/scomp/corellian-corvette.html": {
   "capture": "https://web.archive.org/web/20261024084432/https://swccg.com/snapshots/scomp/corellian-corvette.html",
-  "last": "2026-10-24T08:47:08Z",
-  "status": "pending",
+  "last": "2026-10-24T09:04:10Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/corellian-slip.html": {
@@ -60578,9 +60627,9 @@
  "https://swccg.com/snapshots/scomp/coruscant-the-works-ai.html": {
   "capture": "https://web.archive.org/web/20261024035131/https://swccg.com/snapshots/scomp/coruscant-the-works-ai.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T08:32:39Z",
+  "last": "2026-10-24T09:05:36Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/coruscant-v.html": {
   "capture": "https://web.archive.org/web/20261024085746/https://swccg.com/snapshots/scomp/coruscant-v.html",
@@ -60623,6 +60672,13 @@
    "sha256": "64ccc22046b5c46f0551b150603d26f6dbbbaa861b5bbd12e6ddece32c8f9416"
   }
  },
+ "https://swccg.com/snapshots/scomp/critical-error-revealed-v.html": {
+  "capture": "",
+  "job_id": "spn2-01565d4b0727560bacd84f72d222080dfa5cc6c5",
+  "last": "2026-10-24T09:12:01Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/crush-the-rebellion-v.html": {
   "capture": "https://web.archive.org/web/20261024011240/https://swccg.com/snapshots/scomp/crush-the-rebellion-v.html",
   "job_id": "spn2-4286295a7246ca444841ab641150baeb21e4fb7d",
@@ -60639,9 +60695,17 @@
  },
  "https://swccg.com/snapshots/scomp/ct-5385-tup.html": {
   "capture": "https://web.archive.org/web/20261024080431/https://swccg.com/snapshots/scomp/ct-5385-tup.html",
-  "last": "2026-10-24T08:29:41Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-e5d9c91833d366ab7a2ba2bf9ac086304b7547ce",
+  "last": "2026-10-24T09:12:50Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T09:12:50Z",
+   "bytes": 750379,
+   "capture_id": "https://web.archive.org/web/20261024080431id_/https://swccg.com/snapshots/scomp/ct-5385-tup.html",
+   "method": "sha256",
+   "sha256": "78bd84cd17a49937d24372164a3d78a0b7106661e3a58277201fc299831f04e8"
+  }
  },
  "https://swccg.com/snapshots/scomp/ct-5555-fives.html": {
   "capture": "",
@@ -60827,9 +60891,10 @@
  },
  "https://swccg.com/snapshots/scomp/darksaber.html": {
   "capture": "https://web.archive.org/web/20261024080717/https://swccg.com/snapshots/scomp/darksaber.html",
-  "last": "2026-10-24T08:29:44Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-37719b0ce427d8b53cf8ff22c0abe55209fdf1db",
+  "last": "2026-10-24T09:12:57Z",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/daroe-v-ai.html": {
   "capture": "https://web.archive.org/web/20261024002336/https://swccg.com/snapshots/scomp/daroe-v-ai.html",
@@ -61117,6 +61182,13 @@
    "sha256": "3c610233bde32845a4152a5fecca82b0d5ccb82447303527a253fe27a91cc66b"
   }
  },
+ "https://swccg.com/snapshots/scomp/death-star-ii-reactor-core.html": {
+  "capture": "",
+  "job_id": "spn2-fb60ca0ae0927d99d32adaaaaa5ff230314e9bda",
+  "last": "2026-10-24T09:09:17Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/death-star-trooper.html": {
   "capture": "",
   "job_id": "spn2-0bfe4041db8fc5cac93fc982b70c24a1c5ba9fd5",
@@ -61233,6 +61305,12 @@
   "capture": "",
   "job_id": "spn2-6f3addd87f9aca262c9841e7daacb9f7508772cf",
   "last": "2026-10-24T06:46:32Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/dengar-v.html": {
+  "capture": "https://web.archive.org/web/20261024090818/https://swccg.com/snapshots/scomp/dengar-v.html",
+  "last": "2026-10-24T09:13:35Z",
   "status": "pending",
   "tries": 1
  },
@@ -61394,6 +61472,13 @@
   "capture": "",
   "job_id": "spn2-3fa2d0214ed2a00839f6b3de6fa3e9bb588022e5",
   "last": "2026-10-23T23:43:14Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/director-orson-krennic-ai.html": {
+  "capture": "",
+  "job_id": "spn2-b7f305a80b026f4042129bb11e714eca2705b25f",
+  "last": "2026-10-24T09:08:25Z",
   "status": "pending",
   "tries": 1
  },
@@ -62070,8 +62155,8 @@
  },
  "https://swccg.com/snapshots/scomp/establish-secret-base-v.html": {
   "capture": "https://web.archive.org/web/20261024084443/https://swccg.com/snapshots/scomp/establish-secret-base-v.html",
-  "last": "2026-10-24T08:47:04Z",
-  "status": "pending",
+  "last": "2026-10-24T09:04:20Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/establish-secret-base.html": {
@@ -62390,8 +62475,8 @@
  },
  "https://swccg.com/snapshots/scomp/fear.html": {
   "capture": "https://web.archive.org/web/20261024084516/https://swccg.com/snapshots/scomp/fear.html",
-  "last": "2026-10-24T08:46:06Z",
-  "status": "pending",
+  "last": "2026-10-24T09:04:23Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/field-promotion.html": {
@@ -62442,6 +62527,20 @@
   "last": "2026-10-23T23:51:16Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/finn-resistance-hero.html": {
+  "capture": "https://web.archive.org/web/20261024091009/https://swccg.com/snapshots/scomp/finn-resistance-hero.html",
+  "job_id": "spn2-2c907fce798db1c6e60a5c7dce3d39fb2864f3ed",
+  "last": "2026-10-24T09:14:51Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T09:14:51Z",
+   "bytes": 852673,
+   "capture_id": "https://web.archive.org/web/20261024091009id_/https://swccg.com/snapshots/scomp/finn-resistance-hero.html",
+   "method": "sha256",
+   "sha256": "b721462c703138ebc50777fa46c240db12590922f97bc41af5977c91db0ac1d0"
+  }
  },
  "https://swccg.com/snapshots/scomp/firefight.html": {
   "capture": "https://web.archive.org/web/20261024053705/https://swccg.com/snapshots/scomp/firefight.html",
@@ -62946,6 +63045,12 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/scomp/gold-leader-in-gold-1.html": {
+  "capture": "https://web.archive.org/web/20261024091111/https://swccg.com/snapshots/scomp/gold-leader-in-gold-1.html",
+  "last": "2026-10-24T09:13:06Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/gold-squadron-1.html": {
   "capture": "https://web.archive.org/web/20261023225633/https://swccg.com/snapshots/scomp/gold-squadron-1.html",
   "job_id": "spn2-1e924795fc7b807300e311d91f3e78799f7ab683",
@@ -63061,9 +63166,9 @@
  "https://swccg.com/snapshots/scomp/greedo-v.html": {
   "capture": "https://web.archive.org/web/20261024064548/https://swccg.com/snapshots/scomp/greedo-v.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T08:32:49Z",
+  "last": "2026-10-24T09:05:46Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/green-leader-in-green-squadron-1-ai.html": {
   "capture": "https://web.archive.org/web/20261024015324/https://swccg.com/snapshots/scomp/green-leader-in-green-squadron-1-ai.html",
@@ -63634,9 +63739,17 @@
  },
  "https://swccg.com/snapshots/scomp/i-know.html": {
   "capture": "https://web.archive.org/web/20261024080636/https://swccg.com/snapshots/scomp/i-know.html",
-  "last": "2026-10-24T08:30:02Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-d8ccc023f958ddecb997f6f104610b8ac45e42a9",
+  "last": "2026-10-24T09:12:54Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T09:12:54Z",
+   "bytes": 401542,
+   "capture_id": "https://web.archive.org/web/20261024080636id_/https://swccg.com/snapshots/scomp/i-know.html",
+   "method": "sha256",
+   "sha256": "7d454292c9b77f453d6b5ae46c0b3942c1fdd689c634dd8c751c9b907cfb7fcc"
+  }
  },
  "https://swccg.com/snapshots/scomp/i-ll-take-the-leader.html": {
   "capture": "https://web.archive.org/web/20261024012216/https://swccg.com/snapshots/scomp/i-ll-take-the-leader.html",
@@ -63728,6 +63841,12 @@
    "method": "sha256",
    "sha256": "e6a8928c46dac68ad22d87d72eacac9ddc530a4309f9e9757b76d6a2d2708aa3"
   }
+ },
+ "https://swccg.com/snapshots/scomp/if-the-trace-was-correct.html": {
+  "capture": "https://web.archive.org/web/20261024091153/https://swccg.com/snapshots/scomp/if-the-trace-was-correct.html",
+  "last": "2026-10-24T09:15:10Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/ig-88-s-pulse-cannon-v.html": {
   "capture": "",
@@ -63841,6 +63960,20 @@
    "sha256": "27469560a70672d8bb6f0f6bc3c6b3546dc8bd012123435449fe0fac08e8054f"
   }
  },
+ "https://swccg.com/snapshots/scomp/imperial-decree-v.html": {
+  "capture": "https://web.archive.org/web/20261024091142/https://swccg.com/snapshots/scomp/imperial-decree-v.html",
+  "job_id": "spn2-b57745e5d9b137aa239c3e5009529a73194d2468",
+  "last": "2026-10-24T09:15:09Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T09:15:09Z",
+   "bytes": 164504,
+   "capture_id": "https://web.archive.org/web/20261024091142id_/https://swccg.com/snapshots/scomp/imperial-decree-v.html",
+   "method": "sha256",
+   "sha256": "427be15c52c5157478242d0a836078caba6035b0ea0e982277d8a690cb7e002d"
+  }
+ },
  "https://swccg.com/snapshots/scomp/imperial-enforcement.html": {
   "capture": "",
   "job_id": "spn2-9ecc8843b2c87d31099f22e564e50699e9b987e9",
@@ -63892,8 +64025,8 @@
  },
  "https://swccg.com/snapshots/scomp/impressive-most-impressive-v.html": {
   "capture": "https://web.archive.org/web/20261024084453/https://swccg.com/snapshots/scomp/impressive-most-impressive-v.html",
-  "last": "2026-10-24T08:47:11Z",
-  "status": "pending",
+  "last": "2026-10-24T09:04:36Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/in-range.html": {
@@ -63921,6 +64054,13 @@
   "capture": "",
   "job_id": "spn2-7f51ece0c8194a755719864fc077653c476a7574",
   "last": "2026-10-24T07:05:25Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/infantry-battle-droid.html": {
+  "capture": "",
+  "job_id": "spn2-514339c1e770731571a33f6dcf42499299665eac",
+  "last": "2026-10-24T09:09:28Z",
   "status": "pending",
   "tries": 1
  },
@@ -64247,9 +64387,8 @@
   }
  },
  "https://swccg.com/snapshots/scomp/jar-jar-s-electropole.html": {
-  "capture": "",
-  "job_id": "spn2-b02bdc2b8720883763788651d61f6d5d582ef31a",
-  "last": "2026-10-24T05:26:01Z",
+  "capture": "https://web.archive.org/web/20261024052605/https://swccg.com/snapshots/scomp/jar-jar-s-electropole.html",
+  "last": "2026-10-24T09:04:40Z",
   "status": "pending",
   "tries": 1
  },
@@ -64423,9 +64562,9 @@
  "https://swccg.com/snapshots/scomp/kalit.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T08:32:59Z",
+  "last": "2026-10-24T09:05:56Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/kamino-clone-birthing-center.html": {
   "capture": "https://web.archive.org/web/20261023224336/https://swccg.com/snapshots/scomp/kamino-clone-birthing-center.html",
@@ -64443,10 +64582,17 @@
  },
  "https://swccg.com/snapshots/scomp/karie-neth.html": {
   "capture": "https://web.archive.org/web/20261024072923/https://swccg.com/snapshots/scomp/karie-neth.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T08:33:09Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-eb53e7ff18102cd99da4905109eba87ef02159ef",
+  "last": "2026-10-24T09:12:41Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-24T09:12:41Z",
+   "bytes": 280339,
+   "capture_id": "https://web.archive.org/web/20261024072923id_/https://swccg.com/snapshots/scomp/karie-neth.html",
+   "method": "sha256",
+   "sha256": "99eff3a3bcc376f0a2aecc6e5747660bdb3004d5a5bda896c62867deb7f6df5b"
+  }
  },
  "https://swccg.com/snapshots/scomp/kebyc.html": {
   "capture": "https://web.archive.org/web/20261024081829/https://swccg.com/snapshots/scomp/kebyc.html",
@@ -64567,6 +64713,20 @@
    "sha256": "eed3d616290185038fd56c32dff4009d29309f29d75def326f874179dafb7cc6"
   }
  },
+ "https://swccg.com/snapshots/scomp/labria.html": {
+  "capture": "https://web.archive.org/web/20261024091151/https://swccg.com/snapshots/scomp/labria.html",
+  "job_id": "spn2-27bd6a8090351536c83b5925b529e9f545054159",
+  "last": "2026-10-24T09:14:59Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T09:14:59Z",
+   "bytes": 138929,
+   "capture_id": "https://web.archive.org/web/20261024091151id_/https://swccg.com/snapshots/scomp/labria.html",
+   "method": "sha256",
+   "sha256": "7e77e99f367880c4535907d3895573319810896d90e85022e921d3c9af6f8bdc"
+  }
+ },
  "https://swccg.com/snapshots/scomp/lak-sivrak.html": {
   "capture": "",
   "job_id": "spn2-5bc5b1d27802f6a34c83288bff16cc6a9b682b5a",
@@ -64580,6 +64740,20 @@
   "last": "2026-10-24T06:32:26Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/lando-calrissian-vader-s-broker.html": {
+  "capture": "https://web.archive.org/web/20261024091129/https://swccg.com/snapshots/scomp/lando-calrissian-vader-s-broker.html",
+  "job_id": "spn2-5d0d0d32fd9a9990b6eecaa44041f0eafcc51d96",
+  "last": "2026-10-24T09:15:04Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T09:15:04Z",
+   "bytes": 658619,
+   "capture_id": "https://web.archive.org/web/20261024091129id_/https://swccg.com/snapshots/scomp/lando-calrissian-vader-s-broker.html",
+   "method": "sha256",
+   "sha256": "201f36ab23f25a757f6bfb7881816994a09b8baa05ecc7758c04fb7bb0dcbd03"
+  }
  },
  "https://swccg.com/snapshots/scomp/lando-calrissian.html": {
   "capture": "",
