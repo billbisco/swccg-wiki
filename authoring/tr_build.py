@@ -108,6 +108,21 @@ def cell(s) -> str:
     return "—" if s in (None, "") else str(s).replace("|", "&#124;")
 
 
+def games_block(g: list, head: str | None) -> list[str]:
+    if not g:
+        return []
+    out = ([head, ""] if head else []) + [
+        "Games as the author describes them; margins are as stated in the report.", "",
+        '{| class="wikitable"', "|-",
+        "! Round !! Opponent !! Author's deck !! Opponent's deck !! Result !! Margin"]
+    for x in g:
+        opp = f"[[{x['opponent']}]]" if x.get("opponent_page") else cell(x.get("opponent"))
+        ad = " ".join(v for v in (f"[[{x['author_side']}]]" if x.get("author_side") else "", x.get("author_deck") or "") if v)
+        res = cell(x.get("result")) + (f" ({x['note']})" if x.get("note") else "")
+        out += ["|-", f"| {cell(x.get('round'))} || {opp} || {cell(ad)} || {cell(x.get('opponent_deck'))} || {res} || {cell(x.get('margin'))}"]
+    return out + ["|}", ""]
+
+
 def article(d: dict) -> str:
     who = person(d)
     whol = f"[[{who}]]" if who else d["byline"]
@@ -136,22 +151,28 @@ def article(d: dict) -> str:
         deck = f"[[{x['deck_page']}|{x['description']}]]" if x.get("deck_page") else x.get("description") or "—"
         info.append(f"* '''{x['side']} deck:''' {deck}" if x.get("side") else f"* '''Deck:''' {deck}")
     out = [lead, "", "== Report info ==", *info, ""]
-    g = d.get("games") or []
-    if g:
-        out += ["== Games ==", "",
-                "Games as the author describes them; margins are as stated in the report.", "",
-                '{| class="wikitable"', "|-",
-                "! Round !! Opponent !! Author's deck !! Opponent's deck !! Result !! Margin"]
-        for x in g:
-            opp = f"[[{x['opponent']}]]" if x.get("opponent_page") else cell(x.get("opponent"))
-            ad = " ".join(v for v in (f"[[{x['author_side']}]]" if x.get("author_side") else "", x.get("author_deck") or "") if v)
-            res = cell(x.get("result")) + (f" ({x['note']})" if x.get("note") else "")
-            out += ["|-", f"| {cell(x.get('round'))} || {opp} || {cell(ad)} || {cell(x.get('opponent_deck'))} || {res} || {cell(x.get('margin'))}"]
-        out += ["|}", ""]
+    out += games_block(d.get("games") or [], "== Games ==")
     o = d.get("other_results") or []
     if o:
         out += ["== Other results named in the report ==", ""]
         out += [f"* {x['finish']}: " + (f"[[{x['player']}]]" if x.get("player_page") else x["player"]) for x in o]
+        out += [""]
+    for se in d.get("side_events") or []:
+        name = f"[[{se['event']}]]" if se.get("event") and se.get("event_status") != "unnamed" else (se.get("event_desc") or "Side event")
+        out += [f"== Side event: {se.get('event') or se.get('event_desc') or 'other event'} ==", ""]
+        line = f"The report also covers {name}"
+        if se.get("event_date"):
+            line += f" ({event_long(se)})"
+        line += "."
+        if se.get("summary"):
+            line += " " + se["summary"]
+        out += [line, ""]
+        out += games_block(se.get("games") or [], None)
+    ds_ = d.get("discrepancies") or []
+    if ds_:
+        out += ["== Discrepancies ==", "",
+                "Where this report disagrees with other sources, the wiki keeps the other record and notes the difference here.", ""]
+        out += [f"* {x['text']}" + (f" (see [[{x['event']}]])" if x.get("event") else "") for x in ds_]
         out += [""]
     out += ["== Original report ==", "",
             f"'''{d['posted_title']}'''",
@@ -338,26 +359,76 @@ def main() -> None:
         raise SystemExit(f"duplicate report titles: {titles}")
     for d in ds:
         emit(page_title(d), article(d))
-    by_person: dict[str, list[dict]] = {}
+    import tr_world as W
+    log: list[str] = []
+    cache: dict[str, str | None] = {}
+
+    def live(t: str):
+        if t not in cache:
+            cache[t] = b.live_text(t)
+        return cache[t]
+
+    # events: new hubs, existing hub updates
+    hubs: dict[str, str] = {}
+    new_events = []
     for d in ds:
-        if person(d):
-            by_person.setdefault(person(d), []).append(d)
-    for name, xs in by_person.items():
-        cur = b.live_text(name)
+        for e in W.events(d):
+            if not W.named(e):
+                continue
+            ev = e["event"]
+            cur = hubs.get(ev) or live(ev)
+            if cur is None:
+                cur = W.new_hub(e, d)
+                new_events.append(e)
+            else:
+                cur = W.hub_add_participants(cur, d, e, log)
+                cur = add_section(cur, "Tournament reports", [report_bullet(d, True)],
+                                  "Players' own reports from this event.")
+            if e.get("parent"):
+                par = hubs.get(e["parent"]) or live(e["parent"])
+                if par is not None:
+                    hubs[e["parent"]] = add_section(par, "Side events", [f"* [[{ev}]] — " + (e.get("event_type") or "side event") + (f", {W.T.event_long(e)}" if e.get("event_date") else "")])
+            hubs[ev] = W.ensure_ref(cur, d)
+        for u in d.get("hub_updates") or []:
+            if u.get("event") in hubs or live(u.get("event") or ""):
+                hubs[u["event"]] = W.ensure_ref(W.hub_updates(hubs.get(u["event"]) or live(u["event"]), d, [u], log), d)
+        for x in d.get("discrepancies") or []:
+            if x.get("event") and (x["event"] in hubs or live(x["event"])):
+                hubs[x["event"]] = W.ensure_ref(W.hub_discrepancies(hubs.get(x["event"]) or live(x["event"]), d, [x]), d)
+    for ev, txt in hubs.items():
+        emit(ev, txt)
+    if new_events:
+        L = live("List of SWCCG tournaments")
+        for e in new_events:
+            if not e.get("event_date"):
+                log.append(f"{e['event']}: no date, not added to the List")
+                continue
+            L = W.list_insert(L, e)
+        emit("List of SWCCG tournaments", L)
+
+    def fmt_of(e):
+        if e.get("event_format"):
+            return e["event_format"]
+        return W.hub_format(hubs.get(e.get("event") or "") or (live(e["event"]) if W.named(e) else None))
+
+    # people
+    people: dict[str, list] = {}
+    for d in ds:
+        for n, xs in W.participants(d).items():
+            people.setdefault(n, []).extend((d, x) for x in xs)
+    for n, entries in people.items():
+        cur = live(n)
         if cur and cur.lstrip().upper().startswith("#REDIRECT"):
-            raise SystemExit(f"{name} is a redirect; set author_link")
-        emit(name, new_person(name, xs) if cur is None else
-             add_section(cur, "Tournament reports", [report_bullet(x) for x in xs]))
-    by_event: dict[str, list[dict]] = {}
-    for d in ds:
-        if d.get("event") and d.get("event_status") == "existing":
-            by_event.setdefault(d["event"], []).append(d)
-    for ev, xs in by_event.items():
-        cur = b.live_text(ev)
-        if cur is None:
-            raise SystemExit(f"event {ev} marked existing but missing")
-        emit(ev, add_section(cur, "Tournament reports", [report_bullet(x, True) for x in xs],
-                             "Players' own reports from this event."))
+            m = re.match(r"#REDIRECT\s*\[\[([^\]|#]+)", cur.strip(), re.I)
+            log.append(f"{n} redirects to {m.group(1) if m else '?'}; used the target")
+            n = m.group(1).strip()
+            cur = live(n)
+        txt = W.person_text(n, entries, cur, fmt_of)
+        for d, _x in entries:
+            txt = W.ensure_ref(txt, d)
+        emit(n, txt)
+    (pk / "log.txt").write_text("\n".join(log) + "\n", encoding="utf-8")
+    print("\n".join("LOG " + x for x in log))
     every = all_finished()
     keys_now = {d["_key"] for d in every}
     every += [d for d in ds if d["_key"] not in keys_now]

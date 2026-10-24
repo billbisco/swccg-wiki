@@ -22,10 +22,18 @@ Working dir: `/home/claude/swccg-wiki/authoring`. Python 3. Live page check: `py
 - `other_results`: placings for OTHER players that the report states (`[{"player": "Jason Stewart", "finish": "1st", "player_page": true|false}]`). Only what the report says.
 - `summary`: one or two neutral sentences of fact: who, where, finish, record ("Kurycki finished 2nd of 14 with Imperial Occupation and a Revolution deck, going 5–1 and losing only to Jason Stewart.").
 - `notes`: short factual list of judgment calls (event identification, uncertain names, mismatches with the hub, a deck list included, etc.).
-- `multi_event`: true if the report covers more than one tournament (e.g. a whole Grand Slam weekend with sealed + constructed). Then set `event` to the main constructed event and list the others in `notes`; I'll decide.
+- `multi_event`: true if the report covers more than one tournament; put the others in `side_events` (below).
+
+## Every named player, every event (Bill 2026-10-24)
+- **Small-world rule:** a named person is the same person as the wiki page of that name. Obvious misspellings of an existing page's name ("Dan Mailoux" / [[Dan Mailloux]], "Akessson") map to that page; note it. Use the page title as `opponent` / `player` and set `opponent_page` / `player_page` true.
+- **Every player with a full name gets an article.** Give every opponent's full name whenever the report gives one (first name only → keep it, it gets no page). For each game also give `opponent_side` ("Dark"/"Light", the side opposite the author's) so the opponent's page can show what they played.
+- **Every tournament gets a page.** Mentioned tournaments with no hub get `event_status: "new"` plus `event_format`, and end up on [[List of SWCCG tournaments]]. `event_format`: the GEMP format name the List uses for other events in the same month and region (e.g. "Premiere - Endor", "Premiere - Reflections II"); a sealed event uses the sealed format name the List uses. Also give `event_winner` if the report says who won.
+- **Side events:** another tournament covered in the same report (a sealed event at Worlds, a Saturday-night open) goes in `side_events`: a list of objects with the same keys as the main event (`event`, `event_status`, `event_date`, `event_site`, `event_type`, `event_format`, `event_winner`, `players`, `author_finish`, `author_record`, `games`, `other_results`, `summary`), plus `parent`: the main event's hub title. Name it in house style, e.g. "1999 Decipher World Championship ECC Sealed".
+- **New facts for existing hubs:** `hub_updates`: `[{"event": "<hub>", "field": "players"|"date"|"site", "value": "66"}]` for facts the live hub doesn't state yet.
+- **Discrepancies:** `discrepancies`: `[{"event": "<hub>", "text": "Lush describes six Swiss rounds, but the hub and Brian Hunter's page say Hunter went 5–0."}]`. They are shown in the report article and on the hub.
 
 ## Discrepancies
-If the report conflicts with what the live hub says (winner, date, place, player count), keep both: the hub/Decipher record stays the reference, and you add a note `DISCREPANCY: report says X, hub says Y` (Bill 2026-10-24: trust Decipher's records over a player's post until there is more evidence, and note the discrepancy).
+If the report conflicts with what the live hub says (winner, date, place, player count), keep both: the hub/Decipher record stays the reference, and you add a `discrepancies` entry (Bill 2026-10-24: trust Decipher's records over a player's post until there is more evidence, and note the discrepancy).
 
 ## Report back (your final message)
 For each id: title, author (+page status), event (+status), event date, author finish/record, number of games, decks, other results, and every judgment call / discrepancy. Compact.

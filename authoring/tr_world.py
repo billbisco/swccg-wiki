@@ -1,0 +1,299 @@
+"""People, event hubs and the tournament list for tournament-report batches (Claude 2026-10-24).
+
+Bill 2026-10-24: every tournament a report mentions gets a page and a row on [[List of SWCCG tournaments]];
+every named player gets an article with what they played (small-world rule); reports' new facts update
+existing event tables. Used by tr_build.py.
+"""
+import datetime as dt
+import re
+
+import decktech_batch as b
+import tr_build as T
+
+MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August",
+                                      "September", "October", "November", "December"], 1)}
+
+
+def date_key(s: str) -> str:
+    """Sort key YYYY-MM-DD from '31 July 1999', 'July 1999', '21–22 November 1998', '1999', '2000-04-29'."""
+    s = re.sub(r"<ref.*", "", s or "")
+    if re.match(r"\d{4}-\d\d", s):
+        return s[:10]
+    y = re.findall(r"\b(19\d\d|20\d\d)\b", s)
+    if not y:
+        return ""
+    mo = [MONTHS[m] for m in re.findall("|".join(MONTHS), s)]
+    d = re.findall(r"\b(\d{1,2})(?:[–-]\d{1,2})?\s+(?:" + "|".join(MONTHS) + ")", s)
+    return f"{y[-1]}-{(mo[-1] if mo else 0):02d}-{int(d[-1]) if d else 0:02d}"
+
+
+def full_name(n: str | None) -> bool:
+    return bool(n) and " " in n.strip() and not re.search(r"[?()]|surname|unknown|not given", n, re.I)
+
+
+def events(d: dict) -> list[dict]:
+    keys = ("event", "event_status", "event_desc", "event_date", "event_site", "event_type", "event_format",
+            "event_winner", "players", "author_finish", "author_record", "author_points", "games", "other_results",
+            "summary")
+    main = {k: d.get(k) for k in keys}
+    main["decks"] = d.get("decks") or []
+    main["parent"] = None
+    return [main] + [dict(se, decks=se.get("decks") or [], parent=se.get("parent") or d.get("event"))
+                     for se in d.get("side_events") or []]
+
+
+def named(e: dict) -> bool:
+    return bool(e.get("event")) and e.get("event_status") != "unnamed"
+
+
+def ev_link(e: dict) -> str:
+    return f"[[{e['event']}]]" if named(e) else (e.get("event_desc") or "a tournament")
+
+
+def hub_format(text: str | None) -> str | None:
+    m = re.search(r"'''Format:'''\s*\[\[([^\]|]+)", text or "")
+    return m.group(1) if m else None
+
+
+def other_side(s: str | None) -> str | None:
+    return {"Dark": "Light", "Light": "Dark"}.get(s or "")
+
+
+def participants(d: dict) -> dict[str, list[dict]]:
+    """name -> entries {e, finish, dark:set, light:set, author:bool}."""
+    out: dict[str, dict[int, dict]] = {}
+
+    def entry(name, i, e):
+        return out.setdefault(name, {}).setdefault(i, {"e": e, "finish": "", "dark": [], "light": [], "author": False})
+
+    who = T.person(d)
+    for i, e in enumerate(events(d)):
+        if who:
+            x = entry(who, i, e)
+            x["author"] = True
+            x["finish"] = e.get("author_finish") or (f"{e['author_record']} record" if e.get("author_record") else "")
+            for k in e.get("decks") or []:
+                desc = f"[[{k['deck_page']}|{k['description']}]]" if k.get("deck_page") else k.get("description")
+                if k.get("side") in ("Dark", "Light") and desc and desc not in x[k["side"].lower()]:
+                    x[k["side"].lower()].append(desc)
+            for g in e.get("games") or []:
+                if g.get("author_side") in ("Dark", "Light") and g.get("author_deck") and not e.get("decks"):
+                    if g["author_deck"] not in x[g["author_side"].lower()]:
+                        x[g["author_side"].lower()].append(g["author_deck"])
+        for g in e.get("games") or []:
+            n = g.get("opponent")
+            if not full_name(n) or n == who:
+                continue
+            x = entry(n, i, e)
+            side = g.get("opponent_side") or other_side(g.get("author_side"))
+            if side and g.get("opponent_deck") and g["opponent_deck"] not in x[side.lower()]:
+                x[side.lower()].append(g["opponent_deck"])
+        for r in e.get("other_results") or []:
+            if full_name(r.get("player")) and r["player"] != who:
+                entry(r["player"], i, e)["finish"] = r.get("finish") or ""
+    return {n: list(v.values()) for n, v in out.items()}
+
+
+def result_row(d: dict, x: dict, fmt: str | None) -> str:
+    e = x["e"]
+    ref = T.ref(d)
+    return (f"| {T.event_long(e) or ''} || {ev_link(e)} || {f'[[{fmt}]]' if fmt else ''} || {x['finish']}{ref} || "
+            f"{', '.join(x['dark'])} || {', '.join(x['light'])}")
+
+
+RESULTS_HEAD = '{| class="wikitable"\n|-\n! Date !! Event !! Format !! Finish !! Dark !! Light'
+
+
+def add_result_rows(text: str, rows: list[tuple[str, str]]) -> str:
+    """rows = [(event_marker, row)]; skip events already in the table; newest first."""
+    m = re.search(r"^== Tournament [Rr]esults ==\s*$", text, re.M)
+    if not m:
+        first = re.search(r"^==[^=]", text, re.M)
+        k = first.start() if first else len(text)
+        text = text[:k] + "== Tournament Results ==\n\n" + RESULTS_HEAD + "\n|}\n\n" + text[k:]
+        m = re.search(r"^== Tournament [Rr]esults ==\s*$", text, re.M)
+    t0 = text.find("{|", m.end())
+    t1 = text.find("\n|}", t0)
+    table = text[t0:t1]
+    body = table.split("\n|-\n")
+    head, rws = body[0], body[1:]
+    if head.count("!!") != 5 and "! Date" not in head:
+        return text  # unknown table shape: leave for a hand edit
+    for marker, row in rows:
+        if marker and marker in table:
+            continue
+        k = date_key(row.split("||")[0].lstrip("| "))
+        pos = len(rws)
+        for i, r in enumerate(rws):
+            if date_key(r.split("||")[0].lstrip("| ")) < k:
+                pos = i
+                break
+        rws.insert(pos, row)
+    new = "\n|-\n".join([head] + rws)
+    return text[:t0] + new + text[t1:]
+
+
+def person_text(name: str, ds_entries: list[tuple[dict, dict]], cur: str | None, fmt_of) -> str:
+    rows = [(f"[[{x['e']['event']}" if named(x["e"]) else "", result_row(d, x, fmt_of(x["e"]))) for d, x in ds_entries]
+    authored = [d for d, x in ds_entries if x["author"]]
+    if cur is None:
+        d, x = ds_entries[0]
+        if x["author"]:
+            handle = re.search(r'"([^"]+)"', d["byline"])
+            h = f" (DeckTech handle '''{handle.group(1)}''')" if handle and handle.group(1) != name else ""
+            lead = f"'''{name}'''{h} is a Star Wars CCG player who wrote a tournament report for {T.SOURCES[d['source']][1]}."
+        else:
+            played = " and ".join(x["dark"] + x["light"])
+            lead = (f"'''{name}''' is a Star Wars CCG player who played at {ev_link(x['e'])}"
+                    + (f" in {T.event_long(x['e'])}" if x['e'].get('event_date') else "")
+                    + (f" with {played}" if played else "")
+                    + f", according to {T.person(d) or d['byline']}'s tournament report.{T.ref(d)}")
+        years = sorted({(x["e"].get("event_date") or T.iso(d["date"]))[:4] for d, x in ds_entries})
+        cur = (lead + "\n\n" + RESULTS_HEAD + "\n|}\n\n== See also ==\n\n* [[List of SWCCG tournaments]]\n* [[Tournament reports]]\n\n"
+               "{{#if:1|<nowiki />\n<h2>References</h2>\n<references />}}\n\n[[Category:People]]\n[[Category:Players]]\n"
+               + "\n".join(f"[[Category:{y}]]" for y in years) + "\n")
+        cur = cur.replace(RESULTS_HEAD, "== Tournament Results ==\n\n" + RESULTS_HEAD, 1)
+    cur = add_result_rows(cur, rows)
+    if authored:
+        cur = T.add_section(cur, "Tournament reports", [T.report_bullet(d) for d in authored])
+    return cur
+
+
+def results_table_span(text: str):
+    for h in ("== Results ==", "== Final standings ==", "== Standings ==", "== Published lists =="):
+        k = text.find(h)
+        if k >= 0:
+            t0 = text.find("{|", k)
+            nxt = text.find("\n== ", k + 5)
+            if t0 >= 0 and (nxt < 0 or t0 < nxt):
+                return t0, text.find("\n|}", t0)
+    return None
+
+
+def hub_add_participants(text: str, d: dict, e: dict, log: list) -> str:
+    span = results_table_span(text)
+    if not span:
+        log.append(f"{e['event']}: no results table; participants not added")
+        return text
+    t0, t1 = span
+    table = text[t0:t1]
+    hdr = next((l for l in table.split("\n") if l.startswith("!")), "")
+    ncol = hdr.count("!!") + 1
+    who = T.person(d)
+    ppl = []
+    if who:
+        ppl.append((who, e.get("author_finish") or (f"{e['author_record']} record" if e.get("author_record") else "")))
+    for r in e.get("other_results") or []:
+        if full_name(r.get("player")):
+            ppl.append((r["player"], r.get("finish") or ""))
+    for g in e.get("games") or []:
+        if full_name(g.get("opponent")):
+            ppl.append((g["opponent"], ""))
+    seen, add = set(), []
+    for n, f in ppl:
+        if n in seen or f"[[{n}]]" in table or f"[[{n}|" in table:
+            continue
+        seen.add(n)
+        cells = [f or "", f"[[{n}]]<ref name=\"tr-{d['id']}\" />"] + (["—"] * (ncol - 2))
+        add.append("| " + " || ".join(cells))
+    if not add:
+        return text
+    if f'<ref name="tr-{d["id"]}">' not in text:
+        add[0] = add[0].replace(f'<ref name="tr-{d["id"]}" />', T.ref(d), 1)
+    return text[:t1] + "".join("\n|-\n" + a for a in add) + text[t1:]
+
+
+def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
+    lab = {"players": "Players", "date": "Date", "site": "Site"}
+    for u in ups:
+        f = lab.get(u.get("field"))
+        if not f:
+            continue
+        if re.search(rf"^\* '''{f}s?:'''", text, re.M):
+            log.append(f"{u['event']}: has {f} already; report says {u['value']}")
+            continue
+        m = list(re.finditer(r"^\* '''[^']+:'''.*$", text, re.M))
+        line = f"* '''{f}:''' {u['value']}<ref name=\"tr-{d['id']}\" />"
+        if m:
+            text = text[:m[-1].end()] + "\n" + line + text[m[-1].end():]
+        else:
+            log.append(f"{u['event']}: no infobox bullets; {f} {u['value']} not added")
+    return text
+
+
+def hub_discrepancies(text: str, d: dict, items: list) -> str:
+    bl = [f"* {x['text']}<ref name=\"tr-{d['id']}\" />" for x in items]
+    return T.add_section(text, "Discrepancies", bl,
+                         "Where a source disagrees with the record on this page, the page keeps the record and notes the difference here.")
+
+
+def ensure_ref(text: str, d: dict) -> str:
+    """The first use of tr-<id> on a page must carry the full ref."""
+    short = f'<ref name="tr-{d["id"]}" />'
+    if short in text and f'<ref name="tr-{d["id"]}">' not in text:
+        text = text.replace(short, T.ref(d), 1)
+    return text
+
+
+def new_hub(e: dict, d: dict) -> str:
+    rows = []
+    who = T.person(d)
+    if who:
+        rows.append((e.get("author_finish") or (f"{e['author_record']} record" if e.get("author_record") else ""), f"[[{who}]]"))
+    for r in e.get("other_results") or []:
+        rows.append((r.get("finish") or "", f"[[{r['player']}]]" if full_name(r.get("player")) else r.get("player")))
+    for g in e.get("games") or []:
+        if full_name(g.get("opponent")) and all(g["opponent"] not in p for _, p in rows):
+            rows.append(("", f"[[{g['opponent']}]]"))
+    order = lambda f: (0, int(re.match(r"\d+", f).group())) if re.match(r"\d+(st|nd|rd|th)", f or "") else (1, 0)
+    rows.sort(key=lambda r: order(r[0]))
+    tab = "\n".join(f"|-\n| {f} || {p}<ref name=\"tr-{d['id']}\" />" for f, p in rows)
+    when = T.event_long(e)
+    site = e.get("event_site")
+    typ = (e.get("event_type") or "tournament").lower() if e.get("event_type") not in ("DPC", "Grand Slam") else e["event_type"]
+    lead = f"'''{e['event']}''' was a Star Wars CCG {typ}" + (f" held in {site}" if site else "") + (f" on {when}" if re.match(r"\d", when or "") else (f" in {when}" if when else "")) + "."
+    if e.get("event_winner"):
+        lead += f" [[{e['event_winner']}]] won it." if full_name(e["event_winner"]) else f" {e['event_winner']} won it."
+    lead += f" It is known from {who or d['byline']}'s tournament report.{T.ref(d)}"
+    if e.get("parent"):
+        lead += f" It was played alongside the [[{e['parent']}]]."
+    info = [f"* '''Date:''' {when}" if when else None, f"* '''Site:''' {site}" if site else None,
+            f"* '''Format:''' [[{e['event_format']}]]" if e.get("event_format") else None,
+            f"* '''Players:''' {e['players']}" if e.get("players") else None,
+            f"* '''Winner:''' " + (f"[[{e['event_winner']}]]" if full_name(e.get("event_winner")) else (e.get("event_winner") or ""))]
+    year = (e.get("event_date") or "")[:4]
+    see = ([f"* [[{e['parent']}]]"] if e.get("parent") else []) + ["* [[List of SWCCG tournaments]]", "* [[Tournament reports]]"]
+    return (lead + "\n\n" + "\n".join(x for x in info if x) + "\n\n== Results ==\n\n"
+            f"Results below come from {who or d['byline']}'s tournament report.\n\n"
+            '{| class="wikitable"\n! Finish !! Player\n' + tab + "\n|}\n\n== Tournament reports ==\n\nPlayers' own reports from this event.\n\n"
+            + T.report_bullet(d, True) + "\n\n== See also ==\n\n" + "\n".join(see) + "\n\n== References ==\n<references />\n\n"
+            "[[Category:Tournaments]]\n" + (f"[[Category:{year}]]\n" if year else ""))
+
+
+def list_insert(L: str, e: dict) -> str:
+    if f"[[{e['event']}]]" in L or f"[[{e['event']}|" in L:
+        return L
+    y = (e.get("event_date") or "")[:4]
+    tag = (e.get("event_date") or "")[:7]
+    sec = re.search(rf"^== {y} ==\s*$", L, re.M)
+    if not sec:
+        raise SystemExit(f"List has no == {y} == section for {e['event']}")
+    t0 = L.find("{|", sec.end())
+    t1 = L.find("\n|}", t0)
+    tbl = L[t0:t1]
+    parts = tbl.split("\n|-\n")
+    win = (f"[[{e['event_winner']}]]" if full_name(e.get("event_winner")) else (e.get("event_winner") or ""))
+    row = (f"| {tag} || [[{e['event']}]] || {T.event_long(e)} || {e.get('event_site') or ''} || "
+           f"{'[[' + e['event_format'] + ']]' if e.get('event_format') else ''} || {win}")
+    k = (e.get("event_date") or "") + "-99"
+    pos = len(parts)
+    for i, p in enumerate(parts[1:], 1):
+        c = p.split("||")
+        if len(c) < 3:
+            continue
+        pk = date_key(c[2]) or (c[0].strip("| ").strip() + "-99")
+        if pk and pk < k:
+            pos = i
+            break
+    parts.insert(pos, row)
+    return L[:t0] + "\n|-\n".join(parts) + L[t1:]
