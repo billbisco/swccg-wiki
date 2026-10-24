@@ -60709,8 +60709,8 @@
  },
  "https://swccg.com/snapshots/scomp/colonel-cracken.html": {
   "capture": "https://web.archive.org/web/20261024102110/https://swccg.com/snapshots/scomp/colonel-cracken.html",
-  "last": "2026-10-24T13:35:29Z",
-  "status": "pending",
+  "last": "2026-10-24T13:46:03Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/colonel-dyer.html": {
@@ -61778,8 +61778,8 @@
  },
  "https://swccg.com/snapshots/scomp/darth-vader-emperor-s-enforcer.html": {
   "capture": "https://web.archive.org/web/20261024111418/https://swccg.com/snapshots/scomp/darth-vader-emperor-s-enforcer.html",
-  "last": "2026-10-24T13:35:43Z",
-  "status": "pending",
+  "last": "2026-10-24T13:46:15Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/darth-vader-s-lightsaber-v.html": {
@@ -62153,9 +62153,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/dengar-in-punishing-one.html": {
-  "capture": "",
-  "job_id": "spn2-f7d502828a796931439a1f9d990672d9f1997b22",
-  "last": "2026-10-24T10:05:35Z",
+  "capture": "https://web.archive.org/web/20261024100657/https://swccg.com/snapshots/scomp/dengar-in-punishing-one.html",
+  "last": "2026-10-24T13:46:30Z",
   "status": "pending",
   "tries": 1
  },
@@ -62705,11 +62704,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/echo-base-sensors.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024104615/https://swccg.com/snapshots/scomp/echo-base-sensors.html",
   "job_id": "spn2-9d57b3d6fbc010a7415604429e17c3d65907d033",
-  "last": "2026-10-24T10:46:11Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T13:47:10Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T13:47:10Z",
+   "bytes": 363078,
+   "capture_id": "https://web.archive.org/web/20261024104615id_/https://swccg.com/snapshots/scomp/echo-base-sensors.html",
+   "method": "sha256",
+   "sha256": "c56681a228555e6af46311b8cb373ec50b2ece93103fda9dabc53576df6392f2"
+  }
  },
  "https://swccg.com/snapshots/scomp/echo-base-trooper-officer.html": {
   "capture": "https://web.archive.org/web/20261023231227/https://swccg.com/snapshots/scomp/echo-base-trooper-officer.html",
@@ -62797,9 +62803,10 @@
  },
  "https://swccg.com/snapshots/scomp/electro-rangefinder.html": {
   "capture": "",
+  "error": "timeouterror",
   "job_id": "spn2-2f9d0bc992815f75c6c8b8498804387ec426c90b",
-  "last": "2026-10-24T11:43:31Z",
-  "status": "pending",
+  "last": "2026-10-24T13:47:13Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/eli-vanto-in-dreadnaught.html": {
@@ -62831,9 +62838,8 @@
   }
  },
  "https://swccg.com/snapshots/scomp/emperor-palpatine-foreseer.html": {
-  "capture": "",
-  "job_id": "spn2-43b47810ebc151084219975c3ce0306495660789",
-  "last": "2026-10-24T11:13:11Z",
+  "capture": "https://web.archive.org/web/20261024111315/https://swccg.com/snapshots/scomp/emperor-palpatine-foreseer.html",
+  "last": "2026-10-24T13:47:16Z",
   "status": "pending",
   "tries": 1
  },
@@ -63953,9 +63959,8 @@
   }
  },
  "https://swccg.com/snapshots/scomp/gailid.html": {
-  "capture": "",
-  "job_id": "spn2-b840d90a3b83e85fde23f42c5e0650804afd4ea4",
-  "last": "2026-10-24T10:18:28Z",
+  "capture": "https://web.archive.org/web/20261024101831/https://swccg.com/snapshots/scomp/gailid.html",
+  "last": "2026-10-24T13:48:05Z",
   "status": "pending",
   "tries": 1
  },
