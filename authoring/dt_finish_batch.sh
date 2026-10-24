@@ -10,6 +10,7 @@ python3 dt_validate.py $IDS > $L.val.log; grep -B1 "^   - " $L.val.log | grep -v
 python3 decktech_batch.py build $B $IDS > $L.build.log 2>&1 || { tail -5 $L.build.log; exit 1; }
 tail -1 $L.build.log
 python3 dt_drop_stale_rows.py y-$B.tsv - $IDS
+python3 -c "import sys,collections;c=collections.defaultdict(set);[c[l.split(chr(9))[1].strip().lower()].add(l.split(chr(9))[1].strip()) for l in open(sys.argv[1],encoding='utf-8') if chr(9) in l];b=[v for v in c.values() if len(v)>1];b and sys.exit('case-colliding page files (Windows apply would merge them): %s' % b)" y-$B.tsv
 D=/tmp/claude-0/${B}pkg; rm -rf $D; mkdir -p $D/pages
 date -u -r $L.build.log +%Y-%m-%dT%H:%M:%SZ > $D/since.txt
 cp y-$B.tsv wiki_api_apply.py $D/

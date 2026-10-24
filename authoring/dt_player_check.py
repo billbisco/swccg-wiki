@@ -11,6 +11,11 @@ for i in [a for a in sys.argv[1:] if a.isdigit()]:
     d = json.loads(p.read_text(encoding="utf-8"))
     if d.get("player_page") == "none":
         continue
+    if d["player"][:1].islower():  # MediaWiki capitalises the first letter; a lower-case byline would make a second page (6981 "brad eier", 2026-10-24)
+        d["player"] = " ".join(w[:1].upper() + w[1:] for w in d["player"].split()); cased = True
+        print(f"{i}: player title-cased to {d['player']}")
+    else:
+        cased = False
     name = d.get("player_link") or d["player"]
     if name not in cache:
         cache[name] = db.live_text(name)
@@ -25,5 +30,5 @@ for i in [a for a in sys.argv[1:] if a.isdigit()]:
     elif t is None and d["player_page"] == "existing":
         d["player_page"], ch = "new", True
         print(i, name, "existing -> new")
-    if ch:
+    if ch or cased:
         p.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
