@@ -67,3 +67,4 @@ For each id: the `finish` output line, total qty, side, player + page status, an
 - Byline with initials only (`M "ISBOPS" C`, "R. Smith"): `player` = the initials as posted ("M C", "R. Smith"), normal player page (Bill 2026-10-22).
 - GEMP-only titles with no wiki page: "Tarkin" → Grand Moff Tarkin; "Han" (Jedi Pack) → Han (Jedi Pack); "Threepio" (Endor) → Threepio (Endor); "Artoo" (Jabba's Palace) → Artoo (Jabba's Palace).
 - Bare "Luke"/"Leia"/"Vader" in 2001 lists: Luke Skywalker / Leia Organa / Darth Vader (the GEMP titles "Luke", "Leia", "Vader" have no wiki pages).
+- **Post vs Decipher record (Bill 2026-10-24):** if a post names an event that conflicts with Decipher's own records on the wiki (e.g. a Grand Slam won in "Canberra" that Decipher lists as Brisbane), it is still a tournament deck: file it under the Decipher-recorded event and summarize the discrepancy in `player_note` (report it so I can note it on the hub too).
