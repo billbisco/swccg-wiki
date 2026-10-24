@@ -4,8 +4,8 @@
  "published_title": "EV-9D9 Madness",
  "use_published_title": true,
  "byline": "Jonathan \"jonnychu\" Chu",
- "player": "Jonathan Chu",
- "player_page": "new",
+ "player": "Jonny Chu",
+ "player_page": "existing",
  "player_intro": "posted a [[Dark]] list on DeckTech.",
  "side": "Dark",
  "format": "Premiere - Original VS1",
@@ -13,176 +13,187 @@
  "event": null,
  "finish": null,
  "starting": {
-  "card": null,
-  "interrupt": null,
+  "card": "Tatooine",
+  "interrupt": "Combat Readiness",
   "effect": null
  },
  "description": "This deck sets up a massive drain by turn four and wrecks several popular light decks, including Yavin 4 mains",
  "cards": [
   [
-   3,
-   "?? Start Tatooine, Combat Readiness for Tatooine Jabba's Palace",
-   "?",
-   "posted: Start Tatooine, Combat Readiness for Tatooine Jabba's Palace (?)"
+   1,
+   "Tatooine",
+   "LOCATION",
+   "posted: Start Tatooine, Combat Readiness for Tatooine Jabba's Palace (3)"
+  ],
+  [
+   1,
+   "Combat Readiness",
+   "INTERRUPT",
+   "posted: Start Tatooine, Combat Readiness for Tatooine Jabba's Palace (3)"
   ],
   [
    1,
    "Tatooine: Jabba's Palace",
    "LOCATION",
-   "posted: Tatooine Jabba's Palace (nickname)"
+   "posted: Tatooine Jabba's Palace"
   ],
   [
    1,
    "Jabba's Palace: Audience Chamber",
    "LOCATION",
-   "posted: JP Audience Chamber (nickname)"
+   "posted: JP Audience Chamber"
   ],
   [
    1,
    "Jabba's Palace: Droid Workshop",
    "LOCATION",
-   "posted: JP Droid Workshop (nickname)"
+   "posted: JP Droid Workshop"
   ],
   [
    5,
    "EV-9D9",
    "CHARACTER",
-   "posted: EV-9D9 (exact)"
+   "posted: EV-9D9 x5"
   ],
   [
    4,
    "R1-G4 (Arone-Geefour)",
    "CHARACTER",
-   "posted: R1-G4 (nickname)"
+   "posted: R1-G4 x4"
   ],
   [
    2,
    "R4-M9 (Arfour-Emmnine)",
    "CHARACTER",
-   "posted: R4-M9 (nickname)"
+   "posted: R4-M9 x2"
   ],
   [
    2,
    "WED15-I662 'Treadwell' Droid",
    "CHARACTER",
-   "posted: WED15-I662 'Treadwell' Droid (exact)"
+   "posted: WED15-I662 'Treadwell' Droid x2"
   ],
   [
    1,
    "E-3PO",
    "CHARACTER",
-   "posted: E-3P0 (nickname)"
+   "posted: E-3P0"
   ],
   [
    5,
    "EG-6 (Eegee-Six)",
    "CHARACTER",
-   "posted: EG-6 (nickname)"
+   "posted: EG-6 x5"
   ],
   [
    1,
    "Jabba The Hutt",
    "CHARACTER",
-   "posted: Jabba the Hutt (exact)"
+   "posted: Jabba the Hutt"
   ],
   [
    2,
    "Mosep",
    "CHARACTER",
-   "posted: Mosep (exact)"
+   "posted: Mosep x2"
   ],
   [
    2,
    "IG-88",
    "CHARACTER",
-   "posted: IG-88 (exact)"
+   "posted: IG-88 x2"
   ],
   [
    1,
-   "?? 4-LOM (normal)",
+   "4-LOM",
    "CHARACTER",
-   "posted: 4-LOM (normal) (?)"
+   "posted: 4-LOM (normal)"
   ],
   [
    1,
    "Zuckuss In Mist Hunter",
    "STARSHIP",
-   "posted: Zuckuss in Mist Hunter (exact)"
+   "posted: Zuckuss in Mist Hunter"
   ],
   [
    1,
    "Bossk In Hound's Tooth",
    "STARSHIP",
-   "posted: Bossk in Hound's Tooth (exact)"
+   "posted: Bossk in Hound's Tooth"
   ],
   [
    1,
    "Boba Fett In Slave I",
    "STARSHIP",
-   "posted: Boba Fett in Slave 1 (nickname)"
+   "posted: Boba Fett in Slave 1"
   ],
   [
    6,
    "None Shall Pass",
    "INTERRUPT",
-   "posted: None Shall Pass (exact)"
+   "posted: None Shall Pass x6"
   ],
   [
    4,
    "Sense",
    "INTERRUPT",
-   "posted: Sense (exact)"
+   "posted: Sense x4"
   ],
   [
    4,
    "Alter",
    "INTERRUPT",
-   "posted: Alter (exact)"
+   "posted: Alter x4"
   ],
   [
    2,
    "Control",
    "INTERRUPT",
-   "posted: Control (exact)"
+   "posted: Control x2"
   ],
   [
    2,
    "Hutt Smooch",
    "INTERRUPT",
-   "posted: Hutt Smooch (exact)"
+   "posted: Hutt Smooch x2"
   ],
   [
    3,
    "Elis Helrot",
    "INTERRUPT",
-   "posted: Elis Helrot (exact)"
+   "posted: Elis Helrot x3"
   ],
   [
    2,
    "Imperial Barrier",
    "INTERRUPT",
-   "posted: Imperial Barrier (exact)"
+   "posted: Imperial Barrier x2"
   ],
   [
    1,
    "No Bargain",
    "EFFECT",
-   "posted: No Bargain (exact)"
+   "posted: No Bargain"
   ],
   [
    1,
    "Tatooine Occupation",
    "EFFECT",
-   "posted: Tatooine Occupation (exact)"
+   "posted: Tatooine Occupation"
   ],
   [
    1,
    "Broken Concentration",
    "EFFECT",
-   "posted: Broken Concentration (exact)"
+   "posted: Broken Concentration"
   ]
  ],
  "shields": [],
- "shields_note": null,
- "notes": []
+ "shields_note": "The post names no Defensive Shields.",
+ "notes": [
+  "Qty 59 as published: the starting line names Tatooine and Combat Readiness (the Endor Interrupt's STARTING function pulls Tatooine: Jabba's Palace, the third starting card, listed under Locations); the Interrupts header says 22 but 23 are listed.",
+  "Byline 'Jonathan \"jonnychu\" Chu': credited to the existing page Jonny Chu (Jonathan Chu redirects there).",
+  "EV-9D9 x5 is dested as posted (a unique character; the post lists five).",
+  "Posted 'R1-G4', 'R4-M9', 'EG-6', 'E-3P0' dested R1-G4 (Arone-Geefour), R4-M9 (Arfour-Emmnine), EG-6 (Eegee-Six), E-3PO; '4-LOM (normal)' and 'IG-88' the plain Dagobah cards."
+ ]
 }
