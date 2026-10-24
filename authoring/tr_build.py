@@ -349,10 +349,14 @@ def main() -> None:
     (pk / "pages").mkdir(parents=True)
     rows = []
 
+    emitted: dict[str, str] = {}
+
     def emit(title: str, text: str) -> None:
         fn = "pages/" + title.replace(" ", "_").replace("/", "%2F") + ".wiki"
         (pk / fn).write_text(text, encoding="utf-8")
-        rows.append(f"{title}\t{fn}")
+        emitted[title] = text
+        if f"{title}\t{fn}" not in rows:
+            rows.append(f"{title}\t{fn}")
 
     titles = [page_title(d) for d in ds]
     if len(set(t.lower() for t in titles)) != len(titles):
@@ -427,6 +431,21 @@ def main() -> None:
         for d, _x in entries:
             txt = W.ensure_ref(txt, d)
         emit(n, txt)
+    # both ways (Bill 2026-10-24): every person linked in a touched event's results lists that event on their page
+    for ev in list(hubs):
+        for n, row in W.hub_people(emitted.get(ev) or hubs[ev]):
+            cur = emitted.get(n) or live(n)
+            if cur is None:
+                log.append(f"{ev}: [[{n}]] has no page")
+                continue
+            if cur.lstrip().upper().startswith("#REDIRECT"):
+                log.append(f"{ev}: [[{n}]] is a redirect; fix the hub link")
+                continue
+            tbl = W.person_results_table(cur)
+            if f"[[{ev}]]" in tbl or f"[[{ev}|" in tbl:
+                continue
+            emit(n, W.add_result_rows(cur, [(f"[[{ev}", W.row_from_hub(emitted.get(ev) or hubs[ev], ev, row))], n))
+    log += W.LOG
     (pk / "log.txt").write_text("\n".join(log) + "\n", encoding="utf-8")
     print("\n".join("LOG " + x for x in log))
     every = all_finished()

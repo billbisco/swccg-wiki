@@ -104,8 +104,12 @@ def result_row(d: dict, x: dict, fmt: str | None) -> str:
 RESULTS_HEAD = '{| class="wikitable"\n|-\n! Date !! Event !! Format !! Finish !! Dark !! Light'
 
 
-def add_result_rows(text: str, rows: list[tuple[str, str]]) -> str:
-    """rows = [(event_marker, row)]; skip events already in the table; newest first."""
+LOG: list[str] = []
+
+
+def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> str:
+    """rows = [(event_marker, row)]; skip events already in the table; newest first.
+    Every skipped or impossible row is logged: a silent miss left player pages empty (Bill 2026-10-24)."""
     m = re.search(r"^== Tournament [Rr]esults ==\s*$", text, re.M)
     if not m:
         first = re.search(r"^==[^=]", text, re.M)
@@ -115,12 +119,35 @@ def add_result_rows(text: str, rows: list[tuple[str, str]]) -> str:
     t0 = text.find("{|", m.end())
     t1 = text.find("\n|}", t0)
     table = text[t0:t1]
-    body = table.split("\n|-\n")
-    head, rws = body[0], body[1:]
-    if head.count("!!") != 5 and "! Date" not in head:
-        return text  # unknown table shape: leave for a hand edit
+    pieces = table.split("\n|-\n")
+    h = next((i for i, p in enumerate(pieces) if p.lstrip().startswith("!") or "\n!" in p), None)
+    if h is None:
+        LOG.append(f"{who}: Tournament Results table has no header row; rows NOT added: {[r for _, r in rows]}")
+        return text
+    head, rws = pieces[:h + 1], pieces[h + 1:]
+    ncol = head[-1].count("!!") + 1
+    if ncol != 6 or "Event" not in head[-1]:
+        LOG.append(f"{who}: Tournament Results header is not Date/Event/Format/Finish/Dark/Light; rows NOT added: {[r for _, r in rows]}")
+        return text
     for marker, row in rows:
         if marker and marker in table:
+            i = next((i for i, r in enumerate(rws) if marker in r), None)
+            filled = []
+            if i is not None:
+                old = [c for c in rws[i].lstrip()[1:].split("||")]
+                nw = [c.strip() for c in row.lstrip()[1:].split("||")]
+                rn = re.search(r'<ref name="([^"]+)"', row)
+                short = f'<ref name="{rn.group(1)}" />' if rn else ""
+                if len(old) == 6 and len(nw) == 6:
+                    for j, lab in ((4, "Dark"), (5, "Light")):
+                        if old[j].strip() in ("", "—") and nw[j]:
+                            old[j] = f" {nw[j]}{short} "
+                            filled.append(lab)
+                    if old[3].strip() in ("",) and re.sub(r"<ref.*", "", nw[3]).strip():
+                        old[3] = f" {nw[3]} "
+                        filled.append("Finish")
+                    rws[i] = "|" + "||".join(old)
+            LOG.append(f"{who}: already has a row for {marker}]]" + (f"; filled {', '.join(filled)} from the report" if filled else "; nothing new"))
             continue
         k = date_key(row.split("||")[0].lstrip("| "))
         pos = len(rws)
@@ -129,12 +156,13 @@ def add_result_rows(text: str, rows: list[tuple[str, str]]) -> str:
                 pos = i
                 break
         rws.insert(pos, row)
-    new = "\n|-\n".join([head] + rws)
+    new = "\n|-\n".join(head + rws)
     return text[:t0] + new + text[t1:]
 
 
 def person_text(name: str, ds_entries: list[tuple[dict, dict]], cur: str | None, fmt_of) -> str:
-    rows = [(f"[[{x['e']['event']}" if named(x["e"]) else "", result_row(d, x, fmt_of(x["e"]))) for d, x in ds_entries]
+    rows = [(f"[[{x['e']['event']}" if named(x["e"]) else f"{T.event_long(x['e'])} || {ev_link(x['e'])}",
+             result_row(d, x, fmt_of(x["e"]))) for d, x in ds_entries]
     authored = [d for d, x in ds_entries if x["author"]]
     if cur is None:
         d, x = ds_entries[0]
@@ -156,7 +184,7 @@ def person_text(name: str, ds_entries: list[tuple[dict, dict]], cur: str | None,
                "{{#if:1|<nowiki />\n<h2>References</h2>\n<references />}}\n\n[[Category:People]]\n[[Category:Players]]\n"
                + "\n".join(f"[[Category:{y}]]" for y in years) + "\n")
         cur = cur.replace(RESULTS_HEAD, "== Tournament Results ==\n\n" + RESULTS_HEAD, 1)
-    cur = add_result_rows(cur, rows)
+    cur = add_result_rows(cur, rows, name)
     if authored:
         cur = T.add_section(cur, "Tournament reports", [T.report_bullet(d) for d in authored])
     return cur
@@ -318,3 +346,54 @@ def list_insert(L: str, e: dict) -> str:
             break
     parts.insert(pos, row)
     return L[:t0] + "\n|-\n".join(parts) + L[t1:]
+
+
+def hub_people(text: str) -> list[tuple[str, list[str]]]:
+    """(person, cells) for each results row whose player cell links a person."""
+    span = results_table_span(text)
+    if not span:
+        return []
+    out = []
+    for r in text[span[0]:span[1]].split("\n|-\n"):
+        if not r.lstrip().startswith("|") or r.lstrip().startswith("|+"):
+            continue
+        cells = [c.strip() for c in r.lstrip()[1:].split("||")]
+        if len(cells) < 2:
+            continue
+        m = re.match(r"\[\[([^\]|#]+)", cells[1])
+        if m and not re.match(r"\d{4} ", m.group(1)):
+            out.append((m.group(1).strip(), cells))
+    return out
+
+
+def row_from_hub(hub: str, ev: str, cells: list[str]) -> str:
+    """A person-page Tournament Results row built from an event page's results row, reusing its refs."""
+    def defs(cell):
+        out = ""
+        for name in re.findall(r'<ref name="([^"]+)"', cell):
+            full = re.search(r'<ref name="' + re.escape(name) + r'">.*?</ref>', hub, re.S)
+            out += full.group(0) if full else f'<ref name="{name}" />'
+        return out
+    date = re.search(r"^\* '''Dates?:'''\s*(.+)$", hub, re.M)
+    date = re.sub(r"<ref.*", "", date.group(1)).strip() if date else ""
+    fmt = hub_format(hub)
+    finish = re.sub(r"<ref.*?(?:/>|</ref>)", "", cells[0]).strip()
+    refs = defs(cells[0] + cells[1])
+    dark = cells[2] if len(cells) > 3 else ""
+    light = cells[3] if len(cells) > 3 else ""
+    dark, light = ("" if x.strip() == "—" else x for x in (dark, light))
+    fl = f"[[{fmt}]]" if fmt else ""
+    return f"| {date} || [[{ev}]] || {fl} || {finish}{refs} || {dark} || {light}"
+
+
+def person_results_table(text: str) -> str:
+    """The person's Tournament Results table text ('' if none). A link elsewhere on the page (See also, a
+    Tournament reports bullet) does not count as listing the event (Bill 2026-10-24 miss: Andy McClure)."""
+    m = re.search(r"^== Tournament [Rr]esults ==\s*$", text, re.M)
+    if not m:
+        return ""
+    t0 = text.find("{|", m.end())
+    nxt = re.search(r"^==[^=]", text[m.end():], re.M)
+    if t0 < 0 or (nxt and t0 > m.end() + nxt.start()):
+        return ""
+    return text[t0:text.find("\n|}", t0)]
