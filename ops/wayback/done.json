@@ -58080,8 +58080,8 @@
  },
  "https://swccg.com/snapshots/scomp/babu-frik.html": {
   "capture": "https://web.archive.org/web/20261024054208/https://swccg.com/snapshots/scomp/babu-frik.html",
-  "last": "2026-10-24T06:40:00Z",
-  "status": "pending",
+  "last": "2026-10-24T06:51:45Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/bail-organa.html": {
@@ -58232,8 +58232,8 @@
  },
  "https://swccg.com/snapshots/scomp/beedo.html": {
   "capture": "https://web.archive.org/web/20261024063224/https://swccg.com/snapshots/scomp/beedo.html",
-  "last": "2026-10-24T06:34:50Z",
-  "status": "pending",
+  "last": "2026-10-24T06:51:46Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/begin-landing-your-troops-fighters-straight-ahead.html": {
@@ -58252,8 +58252,8 @@
  },
  "https://swccg.com/snapshots/scomp/begin-landing-your-troops.html": {
   "capture": "https://web.archive.org/web/20261024062904/https://swccg.com/snapshots/scomp/begin-landing-your-troops.html",
-  "last": "2026-10-24T06:34:40Z",
-  "status": "pending",
+  "last": "2026-10-24T06:51:47Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/beldon-s-eye-all-my-urchins.html": {
@@ -59241,8 +59241,8 @@
  },
  "https://swccg.com/snapshots/scomp/card-32.html": {
   "capture": "https://web.archive.org/web/20261024062831/https://swccg.com/snapshots/scomp/card-32.html",
-  "last": "2026-10-24T06:34:36Z",
-  "status": "pending",
+  "last": "2026-10-24T06:51:54Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/card-37.html": {
@@ -59516,8 +59516,8 @@
  },
  "https://swccg.com/snapshots/scomp/charming-to-the-last.html": {
   "capture": "https://web.archive.org/web/20261024063114/https://swccg.com/snapshots/scomp/charming-to-the-last.html",
-  "last": "2026-10-24T06:34:46Z",
-  "status": "pending",
+  "last": "2026-10-24T06:51:56Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/chewbacca-of-kashyyyk.html": {
@@ -60327,6 +60327,13 @@
   "job_id": "spn2-dda3dee72498307010c7033a28d4cac7e465c575",
   "last": "2026-10-24T03:49:46Z",
   "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/dark-dissension.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T06:53:46Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/dark-hours.html": {
@@ -61467,9 +61474,10 @@
  },
  "https://swccg.com/snapshots/scomp/ewok-bow.html": {
   "capture": "https://web.archive.org/web/20261024054120/https://swccg.com/snapshots/scomp/ewok-bow.html",
-  "last": "2026-10-24T06:00:05Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T06:53:26Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/ewok-glider.html": {
   "capture": "https://web.archive.org/web/20261024040510/https://swccg.com/snapshots/scomp/ewok-glider.html",
@@ -61758,8 +61766,8 @@
  },
  "https://swccg.com/snapshots/scomp/first-order-at-m6.html": {
   "capture": "https://web.archive.org/web/20261024063016/https://swccg.com/snapshots/scomp/first-order-at-m6.html",
-  "last": "2026-10-24T06:34:07Z",
-  "status": "pending",
+  "last": "2026-10-24T06:52:11Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/first-order-special-forces-tie.html": {
@@ -61785,9 +61793,10 @@
  },
  "https://swccg.com/snapshots/scomp/flagship.html": {
   "capture": "https://web.archive.org/web/20261024055339/https://swccg.com/snapshots/scomp/flagship.html",
-  "last": "2026-10-24T06:07:39Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T06:53:36Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/fleet-admiral-gial-ackbar.html": {
   "capture": "https://web.archive.org/web/20261024031530/https://swccg.com/snapshots/scomp/fleet-admiral-gial-ackbar.html",
@@ -62099,8 +62108,15 @@
   "capture": "https://web.archive.org/web/20261024061224/https://swccg.com/snapshots/scomp/goo-nee-tay.html",
   "job_id": "spn2-9e074d5387a4bbba23122352f0df5cef0012689e",
   "last": "2026-10-24T06:16:52Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T06:54:08Z",
+   "bytes": 300341,
+   "capture_id": "https://web.archive.org/web/20261024061224id_/https://swccg.com/snapshots/scomp/goo-nee-tay.html",
+   "method": "sha256",
+   "sha256": "6114a024657acc34a4ffadcc6705cdab59d8eb1a9cfd133d4d99a5240764da49"
+  }
  },
  "https://swccg.com/snapshots/scomp/gran.html": {
   "capture": "",
@@ -62287,9 +62303,9 @@
  "https://swccg.com/snapshots/scomp/he-is-the-chosen-one-he-will-bring-balance.html": {
   "capture": "https://web.archive.org/web/20261024045833/https://swccg.com/snapshots/scomp/he-is-the-chosen-one-he-will-bring-balance.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T06:01:52Z",
+  "last": "2026-10-24T06:53:16Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/he-s-all-yours-bounty-hunter-v.html": {
   "capture": "https://web.archive.org/web/20261023234208/https://swccg.com/snapshots/scomp/he-s-all-yours-bounty-hunter-v.html",
@@ -63143,6 +63159,13 @@
    "method": "sha256",
    "sha256": "490452b6ffeb6ea9b05b6d7038a34d90fabf8c6e6c786c8442355df47f720f6d"
   }
+ },
+ "https://swccg.com/snapshots/scomp/kalit.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T06:53:57Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/kamino-clone-birthing-center.html": {
   "capture": "https://web.archive.org/web/20261023224336/https://swccg.com/snapshots/scomp/kamino-clone-birthing-center.html",
