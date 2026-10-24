@@ -124,7 +124,7 @@ old_rules = re.search(r"== Rules documents ==\n(.*?)\n(?===)", cur, re.S).group(
 old_see = re.search(r"== See also ==\n(.*?)\n\{\{Eras\}\}", cur, re.S).group(1).strip()
 pools = [r for r in R if r["family"] == "decipher-pool"]
 
-page = f"""'''Formats''' are the card pools and deck rules that Star Wars CCG games and tournaments are played under. This page lists every format the wiki documents, where each one comes from, and how many recorded tournaments used it. Each format has its own page with its card pool, history and tournaments.
+page = f"""'''Formats''' are the card pools and deck rules that Star Wars CCG games and tournaments are played under. This page lists every format the wiki documents, where each one comes from, and how many recorded tournaments used it. Each format has its own page with its card pool, history and tournaments. What "format" and "constructed" meant to Decipher and the Players Committee over the years is told in [[History of Star Wars CCG formats]].
 
 == How to read this page ==
 
@@ -145,7 +145,7 @@ Sort by any column. ''Decipher'' and ''PC'' mark who defined or ran the format; 
 
 == Decipher era (1995–2002) ==
 
-Era hub: [[Decipher era]]. Decipher's sanctioned constructed play used every printed set legal on the event day, so the pool grew with each expansion; its events were described as ''Constructed'' or ''Sealed Deck'' rather than by a named format.
+Era hub: [[Decipher era]]. Decipher's sanctioned constructed play used every printed set legal on the event day, so the pool grew with each expansion; its events were described as ''Constructed Deck'' or ''Sealed Deck'' rather than by a named card pool, and "Open" meant an event anyone could enter (see [[History of Star Wars CCG formats]]).
 
 === Constructed card pools ===
 
