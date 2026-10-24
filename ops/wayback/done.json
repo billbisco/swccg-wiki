@@ -59196,9 +59196,17 @@
  },
  "https://swccg.com/snapshots/scomp/binders.html": {
   "capture": "https://web.archive.org/web/20261024224144/https://swccg.com/snapshots/scomp/binders.html",
-  "last": "2026-10-24T23:02:35Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ba429d31ff69b133e721cd7b019c0aa61859ee88",
+  "last": "2026-10-24T23:40:33Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T23:40:33Z",
+   "bytes": 611957,
+   "capture_id": "https://web.archive.org/web/20261024224144id_/https://swccg.com/snapshots/scomp/binders.html",
+   "method": "sha256",
+   "sha256": "a9e1ff81006075ed2f49e8efd49c915d425a874a91feb0d5396a2d7b11c3fb63"
+  }
  },
  "https://swccg.com/snapshots/scomp/bionic-hand.html": {
   "capture": "",
@@ -64481,8 +64489,8 @@
  },
  "https://swccg.com/snapshots/scomp/dice-ibegon-v.html": {
   "capture": "https://web.archive.org/web/20261024231108/https://swccg.com/snapshots/scomp/dice-ibegon-v.html",
-  "last": "2026-10-24T23:12:48Z",
-  "status": "pending",
+  "last": "2026-10-24T23:32:20Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/dice-ibegon.html": {
@@ -65388,9 +65396,10 @@
  },
  "https://swccg.com/snapshots/scomp/electropole.html": {
   "capture": "https://web.archive.org/web/20261024212738/https://swccg.com/snapshots/scomp/electropole.html",
-  "last": "2026-10-24T22:51:13Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T23:38:30Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/eli-vanto-in-dreadnaught.html": {
   "capture": "https://web.archive.org/web/20261024040440/https://swccg.com/snapshots/scomp/eli-vanto-in-dreadnaught.html",
@@ -65408,9 +65417,9 @@
  },
  "https://swccg.com/snapshots/scomp/elis-helrot.html": {
   "capture": "https://web.archive.org/web/20261024224252/https://swccg.com/snapshots/scomp/elis-helrot.html",
-  "last": "2026-10-24T23:03:05Z",
-  "status": "retry",
-  "tries": 1
+  "last": "2026-10-24T23:40:36Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/elis-in-hinthra.html": {
   "capture": "https://web.archive.org/web/20261024070425/https://swccg.com/snapshots/scomp/elis-in-hinthra.html",
@@ -66825,10 +66834,17 @@
  },
  "https://swccg.com/snapshots/scomp/force-field.html": {
   "capture": "https://web.archive.org/web/20261024202232/https://swccg.com/snapshots/scomp/force-field.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T23:04:31Z",
-  "status": "retry",
-  "tries": 4
+  "job_id": "spn2-d8f2c0a8851403565704ed3172683bd50c963cee",
+  "last": "2026-10-24T23:39:49Z",
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-10-24T23:39:49Z",
+   "bytes": 275460,
+   "capture_id": "https://web.archive.org/web/20261024202232id_/https://swccg.com/snapshots/scomp/force-field.html",
+   "method": "sha256",
+   "sha256": "01acaee459539ccfe0c1efb9c1fe299ab249eba724fe7ba579b4e61eeb3785db"
+  }
  },
  "https://swccg.com/snapshots/scomp/force-freeze.html": {
   "capture": "https://web.archive.org/web/20261024201825/https://swccg.com/snapshots/scomp/force-freeze.html",
@@ -67224,8 +67240,8 @@
  },
  "https://swccg.com/snapshots/scomp/general-grievous-ai.html": {
   "capture": "https://web.archive.org/web/20261024194012/https://swccg.com/snapshots/scomp/general-grievous-ai.html",
-  "last": "2026-10-24T23:17:27Z",
-  "status": "pending",
+  "last": "2026-10-24T23:32:34Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/general-grievous.html": {
@@ -67467,11 +67483,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/ghost.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024215234/https://swccg.com/snapshots/scomp/ghost.html",
   "job_id": "spn2-1586ca751317f394abb58ed9fb12a9f100419440",
-  "last": "2026-10-24T21:52:31Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T23:32:39Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T23:32:39Z",
+   "bytes": 731639,
+   "capture_id": "https://web.archive.org/web/20261024215234id_/https://swccg.com/snapshots/scomp/ghost.html",
+   "method": "sha256",
+   "sha256": "d451d8e06ec0779ca10dc29087be08c6b20549b58e59c8a2770011268b9f2249"
+  }
  },
  "https://swccg.com/snapshots/scomp/gift-of-the-mentor.html": {
   "capture": "https://web.archive.org/web/20261024220627/https://swccg.com/snapshots/scomp/gift-of-the-mentor.html",
@@ -67524,9 +67547,17 @@
  },
  "https://swccg.com/snapshots/scomp/gold-5.html": {
   "capture": "https://web.archive.org/web/20261024224315/https://swccg.com/snapshots/scomp/gold-5.html",
-  "last": "2026-10-24T23:03:16Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-fb3741195400968a3c5f7bf90f94359f461bb58b",
+  "last": "2026-10-24T23:40:55Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T23:40:55Z",
+   "bytes": 754304,
+   "capture_id": "https://web.archive.org/web/20261024224315id_/https://swccg.com/snapshots/scomp/gold-5.html",
+   "method": "sha256",
+   "sha256": "db6f361a085ac5b4302664dde3e82789c8203ba9b58b103de80d30c73d3a65fb"
+  }
  },
  "https://swccg.com/snapshots/scomp/gold-6.html": {
   "capture": "",
@@ -67593,9 +67624,16 @@
  },
  "https://swccg.com/snapshots/scomp/graak.html": {
   "capture": "https://web.archive.org/web/20261024230952/https://swccg.com/snapshots/scomp/graak.html",
-  "last": "2026-10-24T23:12:41Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T23:32:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T23:32:46Z",
+   "bytes": 314617,
+   "capture_id": "https://web.archive.org/web/20261024230952id_/https://swccg.com/snapshots/scomp/graak.html",
+   "method": "sha256",
+   "sha256": "c550903928c3840a6e0bc554833dba7af4162b07c81cb41a8dc9bcc6d4856191"
+  }
  },
  "https://swccg.com/snapshots/scomp/gragra.html": {
   "capture": "https://web.archive.org/web/20261024224038/https://swccg.com/snapshots/scomp/gragra.html",
@@ -67605,10 +67643,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/grakchawwaa.html": {
-  "capture": "https://web.archive.org/web/20261024192406/https://swccg.com/snapshots/scomp/grakchawwaa.html",
-  "last": "2026-10-24T22:51:27Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261024233807/https://swccg.com/snapshots/scomp/grakchawwaa.html",
+  "job_id": "spn2-700c4c3aed2682d1513f52a5ec7ba11cd4c21dfd",
+  "last": "2026-10-24T23:39:45Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T23:39:45Z",
+   "bytes": 778983,
+   "capture_id": "https://web.archive.org/web/20261024233807id_/https://swccg.com/snapshots/scomp/grakchawwaa.html",
+   "method": "sha256",
+   "sha256": "2f89ebe6b2026776383262158b20cf02bd04a031ef9b8a9711ece0b3aea45a1b"
+  }
  },
  "https://swccg.com/snapshots/scomp/gran.html": {
   "capture": "",
@@ -68074,8 +68120,8 @@
  },
  "https://swccg.com/snapshots/scomp/han-seeker.html": {
   "capture": "https://web.archive.org/web/20261024212819/https://swccg.com/snapshots/scomp/han-seeker.html",
-  "last": "2026-10-24T23:17:40Z",
-  "status": "pending",
+  "last": "2026-10-24T23:32:51Z",
+  "status": "retry",
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/han-solo-v.html": {
@@ -68583,18 +68629,32 @@
   }
  },
  "https://swccg.com/snapshots/scomp/hoth-echo-command-center-war-room.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024215036/https://swccg.com/snapshots/scomp/hoth-echo-command-center-war-room.html",
   "job_id": "spn2-ea7975876441279c04608f7302db5d1affe65378",
-  "last": "2026-10-24T21:50:33Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T23:34:29Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T23:34:29Z",
+   "bytes": 248523,
+   "capture_id": "https://web.archive.org/web/20261024215036id_/https://swccg.com/snapshots/scomp/hoth-echo-command-center-war-room.html",
+   "method": "sha256",
+   "sha256": "1ba3febf26ae0ad45831c0a3118f001cabd9152c1d9be076064d1f8c4bc27acb"
+  }
  },
  "https://swccg.com/snapshots/scomp/hoth-echo-corridor.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024224122/https://swccg.com/snapshots/scomp/hoth-echo-corridor.html",
   "job_id": "spn2-696254c47b0149a45d73c32cb496ffc16bf254d2",
-  "last": "2026-10-24T22:41:19Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T23:34:34Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T23:34:34Z",
+   "bytes": 164574,
+   "capture_id": "https://web.archive.org/web/20261024224122id_/https://swccg.com/snapshots/scomp/hoth-echo-corridor.html",
+   "method": "sha256",
+   "sha256": "2b101d98a231f2e90df2722dbd64a64b2e7a92cce5e2a17f721da3ebedf45145"
+  }
  },
  "https://swccg.com/snapshots/scomp/hoth-echo-docking-bay.html": {
   "capture": "https://web.archive.org/web/20261024013814/https://swccg.com/snapshots/scomp/hoth-echo-docking-bay.html",
@@ -68618,11 +68678,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/hoth-ice-plains-5th-marker-v-ai.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024201008/https://swccg.com/snapshots/scomp/hoth-ice-plains-5th-marker-v-ai.html",
   "job_id": "spn2-0e7b17c75df950a782d64858efdcf85eb02dd941",
-  "last": "2026-10-24T20:09:19Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T23:34:42Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T23:34:42Z",
+   "bytes": 608536,
+   "capture_id": "https://web.archive.org/web/20261024201008id_/https://swccg.com/snapshots/scomp/hoth-ice-plains-5th-marker-v-ai.html",
+   "method": "sha256",
+   "sha256": "f3397e824c005fadb40a739e8f96124406ff0d4d299323ede792350eca102f5d"
+  }
  },
  "https://swccg.com/snapshots/scomp/hoth-ice-plains-5th-marker-v.html": {
   "capture": "https://web.archive.org/web/20261024211524/https://swccg.com/snapshots/scomp/hoth-ice-plains-5th-marker-v.html",
@@ -68653,11 +68720,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/hoth-mountains-6th-marker.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024200912/https://swccg.com/snapshots/scomp/hoth-mountains-6th-marker.html",
   "job_id": "spn2-6e48dde7f2b6dd05eb87145db9c31242643ea054",
-  "last": "2026-10-24T20:09:08Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T23:34:48Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T23:34:48Z",
+   "bytes": 338240,
+   "capture_id": "https://web.archive.org/web/20261024200912id_/https://swccg.com/snapshots/scomp/hoth-mountains-6th-marker.html",
+   "method": "sha256",
+   "sha256": "5e0f0d527b52dbc72f66302f529b52906015227152876ea1f767bdb18e93a21f"
+  }
  },
  "https://swccg.com/snapshots/scomp/hoth-north-ridge-4th-marker-v.html": {
   "capture": "",
@@ -68667,9 +68741,8 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/hoth-snow-trench-2nd-marker-v.html": {
-  "capture": "",
-  "job_id": "spn2-84fd8a5f5bdb8e3f1046997486ef0707aa7226ba",
-  "last": "2026-10-24T22:05:31Z",
+  "capture": "https://web.archive.org/web/20261024220534/https://swccg.com/snapshots/scomp/hoth-snow-trench-2nd-marker-v.html",
+  "last": "2026-10-24T23:34:50Z",
   "status": "pending",
   "tries": 1
  },
@@ -68899,9 +68972,10 @@
  },
  "https://swccg.com/snapshots/scomp/i-can-t-believe-he-s-gone.html": {
   "capture": "https://web.archive.org/web/20261024203626/https://swccg.com/snapshots/scomp/i-can-t-believe-he-s-gone.html",
-  "last": "2026-10-24T23:03:27Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T23:38:20Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/i-can-t-shake-him-v.html": {
   "capture": "https://web.archive.org/web/20261023230845/https://swccg.com/snapshots/scomp/i-can-t-shake-him-v.html",
@@ -69463,9 +69537,10 @@
  },
  "https://swccg.com/snapshots/scomp/imperial-barrier.html": {
   "capture": "https://web.archive.org/web/20261024222820/https://swccg.com/snapshots/scomp/imperial-barrier.html",
-  "last": "2026-10-24T22:51:42Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T23:38:51Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/imperial-class-star-destroyer.html": {
   "capture": "",
@@ -70069,11 +70144,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/it-s-true-all-of-it.html": {
-  "capture": "https://web.archive.org/web/20261024163750/https://swccg.com/snapshots/scomp/it-s-true-all-of-it.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T22:52:44Z",
-  "status": "retry",
-  "tries": 5
+  "capture": "https://web.archive.org/web/20261024233740/https://swccg.com/snapshots/scomp/it-s-true-all-of-it.html",
+  "job_id": "spn2-229ae9d68634175faed4308d0e1454551420c284",
+  "last": "2026-10-24T23:39:37Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-10-24T23:39:37Z",
+   "bytes": 715921,
+   "capture_id": "https://web.archive.org/web/20261024233740id_/https://swccg.com/snapshots/scomp/it-s-true-all-of-it.html",
+   "method": "sha256",
+   "sha256": "fc37792efa9f7f202b11c1db6b2e8471108013013c0c24dfc38878a9ca385e93"
+  }
  },
  "https://swccg.com/snapshots/scomp/ithorian.html": {
   "capture": "https://web.archive.org/web/20261024005114/https://swccg.com/snapshots/scomp/ithorian.html",
@@ -70091,9 +70173,9 @@
  },
  "https://swccg.com/snapshots/scomp/jabba-desilijic-tiure.html": {
   "capture": "https://web.archive.org/web/20261024213104/https://swccg.com/snapshots/scomp/jabba-desilijic-tiure.html",
-  "last": "2026-10-24T22:51:45Z",
-  "status": "retry",
-  "tries": 2
+  "last": "2026-10-24T23:40:10Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/jabba-s-influence.html": {
   "capture": "https://web.archive.org/web/20261024074848/https://swccg.com/snapshots/scomp/jabba-s-influence.html",
@@ -70320,10 +70402,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/jakku-niima-outpost-shipyard.html": {
-  "capture": "https://web.archive.org/web/20261024190222/https://swccg.com/snapshots/scomp/jakku-niima-outpost-shipyard.html",
-  "last": "2026-10-24T22:51:48Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261024233751/https://swccg.com/snapshots/scomp/jakku-niima-outpost-shipyard.html",
+  "job_id": "spn2-bdf70875069c303d19da338179890b44810c205f",
+  "last": "2026-10-24T23:39:40Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T23:39:40Z",
+   "bytes": 164636,
+   "capture_id": "https://web.archive.org/web/20261024233751id_/https://swccg.com/snapshots/scomp/jakku-niima-outpost-shipyard.html",
+   "method": "sha256",
+   "sha256": "81b6ebc66e65189bb9e928dbe501bae282d3558e3028fe2adbd3dbcb48edb68b"
+  }
  },
  "https://swccg.com/snapshots/scomp/jakku-ravager-crash-site.html": {
   "capture": "https://web.archive.org/web/20261024094833/https://swccg.com/snapshots/scomp/jakku-ravager-crash-site.html",
@@ -70997,8 +71087,8 @@
  },
  "https://swccg.com/snapshots/scomp/ket-maliss.html": {
   "capture": "https://web.archive.org/web/20261024230935/https://swccg.com/snapshots/scomp/ket-maliss.html",
-  "last": "2026-10-24T23:12:37Z",
-  "status": "pending",
+  "last": "2026-10-24T23:35:02Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/ketwol.html": {
@@ -71297,8 +71387,8 @@
  },
  "https://swccg.com/snapshots/scomp/lana-dobreed.html": {
   "capture": "https://web.archive.org/web/20261024230730/https://swccg.com/snapshots/scomp/lana-dobreed.html",
-  "last": "2026-10-24T23:12:31Z",
-  "status": "pending",
+  "last": "2026-10-24T23:35:05Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/landing-claw.html": {
