@@ -18,6 +18,8 @@
  "event_date": "2002-07-14",
  "event_site": "Houston, Texas",
  "event_type": "DPC",
+ "event_format": "Premiere - Original VS2",
+ "event_winner": "Brian Hunter",
  "players": null,
  "author_finish": null,
  "author_record": "3–3",
@@ -28,6 +30,7 @@
    "opponent": "Keith Cervantes",
    "opponent_page": true,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Dark Senate mains",
    "opponent_deck": "Quiet Mining Colony",
    "result": "Win",
@@ -39,6 +42,7 @@
    "opponent": "Zane Thorp",
    "opponent_page": true,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "WYS Raiders",
    "opponent_deck": "My Kind Of Scum",
    "result": "Win",
@@ -47,20 +51,22 @@
   },
   {
    "round": "3",
-   "opponent": "Rob Rau",
-   "opponent_page": false,
+   "opponent": "Robert Rau",
+   "opponent_page": true,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "WYS Raiders",
    "opponent_deck": "Imperial Square start",
    "result": "Win",
    "margin": "+19",
-   "note": "opponent rated 1628; from Louisiana"
+   "note": "opponent rated 1628; from Louisiana; report: Rob Rau"
   },
   {
    "round": "4",
    "opponent": "Thomas McGee",
    "opponent_page": false,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Dark Senate mains",
    "opponent_deck": "WYS Raiders",
    "result": "Loss",
@@ -72,6 +78,7 @@
    "opponent": "Chris McClure",
    "opponent_page": false,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "WYS Raiders",
    "opponent_deck": "My Lord, Is That Legal?",
    "result": "Loss",
@@ -83,6 +90,7 @@
    "opponent": "Mike Richards",
    "opponent_page": true,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Dark Senate mains",
    "opponent_deck": "WYS Raiders",
    "result": "Loss",
@@ -129,18 +137,28 @@
    "player_page": false
   }
  ],
- "summary": "Jacob Taylor went 3–3 (6 (−9)) at the 2002 Houston DPC with Dark Senate mains and WYS Raiders, beating Keith Cervantes, Zane Thorp and Rob Rau and losing to Thomas McGee, Chris McClure and Mike Richards.",
+ "summary": "Jacob Taylor went 3–3 (6 (−9)) at the 2002 Houston DPC with Dark Senate mains and WYS Raiders, beating Keith Cervantes, Zane Thorp and Robert Rau and losing to Thomas McGee, Chris McClure and Mike Richards.",
  "notes": [
   "Report's top-4: Brian Hunter's Dark Deal beat Chris McClure's Light Senate racing; Justin Warren's Hunt Down beat Thomas McGee's WYS Raiders; Hunter won both final games (G1 Warren HDADTJ vs Hunter WYS Raiders; G2 Warren WYS Raiders vs Hunter Dark Deal). Consistent with hub (Hunter 1st, Warren 2nd). Hub's Hunter row has no decks; report gives Dark Deal and WYS Raiders.",
   "Author says \"two of my three losses were by two of the finalists\" (McGee and McClure, i.e. the semifinalists).",
   "Props list \"Thomas McKinney ... my hardest-thinking game of the day\" — probably Thomas McGee (game 4); not changed.",
   "Mike Richards: report spells Michael Richards / \"Michael Richard's\"; [[Mike Richards]] is a Texas player with 2001 Texas State decks, treated as the same person.",
-  "Rob Rau: [[Robert Rau]] exists (2000 Worlds Day 1) but identity not verified; opponent_page false.",
   "Played at Strike Zone, Houston (not the Scarsdale store); TD Alan Denny. Players count not stated. Finish not stated; 3–3 cost him five rating points.",
   "Matt Lush played this DPC too (props: paid cash to everyone who beat him; got timed wins against him); [[Matt Lush]] page has no 2002 Houston row.",
   "Carl Thompson won the \"under 1700\" contest.",
   "Hub already cites this report (dpc-houston-tr) on the David Burnett line; [[Jacob Taylor]] page has no 2002 Houston DPC row. Brian Hunter page has the Houston row (1st).",
-  "Report calls Hunter \"the only three-time DPC winner that I know of\"."
+  "Report calls Hunter \"the only three-time DPC winner that I know of\".",
+  "Rob Rau mapped to [[Robert Rau]] per the small-world rule (page: 2000 Worlds Day 1); report spells Rob Rau.",
+  "2026-10-24 brief: opponent_side added. Thomas McGee and Chris McClure have no pages (also no \"Tom McGee\"/\"McKinney\" page); Thomas McGee is also in Matt Lush's Vegas report (d3660) as Tom McGee. Venue (Strike Zone) added to hub_updates; no player count stated; no discrepancies with the hub."
  ],
- "multi_event": false
+ "multi_event": false,
+ "hub_updates": [
+  {
+   "event": "2002 Houston DPC",
+   "field": "site",
+   "value": "Strike Zone, Houston, Texas"
+  }
+ ],
+ "discrepancies": [],
+ "side_events": []
 }

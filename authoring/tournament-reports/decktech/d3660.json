@@ -18,6 +18,8 @@
  "event_date": "2002-05-12",
  "event_site": "Las Vegas, Nevada",
  "event_type": "DPC",
+ "event_format": "Premiere - Original VS1",
+ "event_winner": "Brian Hunter",
  "players": null,
  "author_finish": null,
  "author_record": "3–3",
@@ -28,6 +30,7 @@
    "opponent": "David Hansen",
    "opponent_page": false,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "Senate",
    "opponent_deck": "YMSYL",
    "result": "Win",
@@ -39,6 +42,7 @@
    "opponent": "Brian Hunter",
    "opponent_page": true,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Hunt Down",
    "opponent_deck": "Senate",
    "result": "Loss",
@@ -50,6 +54,7 @@
    "opponent": "Joel Massie",
    "opponent_page": false,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "Senate",
    "opponent_deck": "Hunt Down",
    "result": "Loss",
@@ -61,6 +66,7 @@
    "opponent": "Steve Marshall",
    "opponent_page": true,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Hunt Down",
    "opponent_deck": "Hidden Base",
    "result": "Win",
@@ -72,6 +78,7 @@
    "opponent": "Marinko Pavic",
    "opponent_page": false,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "Senate",
    "opponent_deck": "Watto",
    "result": "Loss",
@@ -83,6 +90,7 @@
    "opponent": "John Baril",
    "opponent_page": false,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Hunt Down",
    "opponent_deck": "\"This deck SUCKS\" (Harvest)",
    "result": "Win",
@@ -114,10 +122,25 @@
   "Date: report places the tourney the day after Saturday 11 May (Army sports day), i.e. Sunday; matches hub 12 May 2002.",
   "Play began at Kool Kollectables; after game 1 the store kicked them out and the event moved to a friend's log-cabin house arranged by Tim Guzman.",
   "Saturday night on arrival Lush watched \"the final\" of another event (Gabe playing) outside the store; not covered, so multi_event false.",
-  "DISCREPANCY (possible): report says six Swiss rounds were played before the final, hub and [[Brian Hunter]] page say Hunter won 5–0 (from his deck post); could be a bye or a final-inclusive count.",
+  "report says six Swiss rounds were played before the final, hub and [[Brian Hunter]] page say Hunter won 5–0 (from his deck post); could be a bye or a final-inclusive count.",
   "Report: Hunter won \"TWO Vegas DPC's\" — consistent with [[2001 Vegas DPC]] winner Brian Hunter.",
   "Hub already cites this report (dpc-vegas-tr). [[Matt Lush]] page has no 2002 Vegas DPC row.",
-  "Game differential +12 overall; no final points line stated."
+  "Game differential +12 overall; no final points line stated.",
+  "2026-10-24 brief: opponent_side added; all six opponents full names (David Hansen, Joel Massie, Marinko Pavic, John Baril: no pages, no near-spelling). Saturday-night final outside Kool Kollectables (Gabe vs an unnamed opponent) has no event name, games or result, so no side_events. Six-rounds vs Hunter 5–0 recorded in discrepancies; venue/move recorded in hub_updates (hub gives only the city)."
  ],
- "multi_event": false
+ "multi_event": false,
+ "hub_updates": [
+  {
+   "event": "2002 Vegas DPC",
+   "field": "site",
+   "value": "Kool Kollectables, Las Vegas, Nevada (moved after round 1 to a player's house)"
+  }
+ ],
+ "discrepancies": [
+  {
+   "event": "2002 Vegas DPC",
+   "text": "Lush describes six Swiss rounds, but the hub and Brian Hunter's page say Hunter went 5–0."
+  }
+ ],
+ "side_events": []
 }

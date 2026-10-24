@@ -11,13 +11,15 @@
  "title": "New York State Championships 5-19-01",
  "withhold_title": false,
  "author": "Josh Paterniti",
- "author_page": "new",
+ "author_page": "existing",
  "author_link": null,
  "event": "2001 New York State Championship",
- "event_status": "new",
+ "event_status": "existing",
  "event_date": "2001-05-19",
  "event_site": "Altered States (store), New York",
  "event_type": "State Championship",
+ "event_format": "Premiere - Reflections II",
+ "event_winner": null,
  "players": null,
  "author_finish": null,
  "author_record": "5–1",
@@ -28,6 +30,7 @@
    "opponent": "Gerald Moravanski",
    "opponent_page": false,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "WYS Palace Raiders",
    "opponent_deck": "\"pile\" (Endor, Combat Readiness)",
    "result": "Win",
@@ -39,6 +42,7 @@
    "opponent": "Jon Schultz",
    "opponent_page": false,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Agents (AOBS)",
    "opponent_deck": "MWYHL mains",
    "result": "Win",
@@ -50,6 +54,7 @@
    "opponent": "Jason Foss",
    "opponent_page": true,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Agents (AOBS)",
    "opponent_deck": "Hidden Base mains",
    "result": "Win",
@@ -59,19 +64,21 @@
   {
    "round": "4",
    "opponent": "Brad Kippel",
-   "opponent_page": false,
+   "opponent_page": true,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "WYS Palace Raiders",
    "opponent_deck": "Agents",
    "result": "Loss",
    "margin": "FL 26",
-   "note": "report spells Kippel and Kipple"
+   "note": "report spells Kippel and Kipple; mapped to [[Brad Kippel]] (small-world rule)"
   },
   {
    "round": "5",
    "opponent": "Jonathan Yost",
    "opponent_page": false,
    "author_side": "Dark",
+   "opponent_side": "Light",
    "author_deck": "Agents (AOBS)",
    "opponent_deck": "Old School EBO",
    "result": "Win",
@@ -83,6 +90,7 @@
    "opponent": "Tom Colarocco",
    "opponent_page": false,
    "author_side": "Light",
+   "opponent_side": "Dark",
    "author_deck": "WYS Palace Raiders",
    "opponent_deck": "ISB space",
    "result": "Win",
@@ -112,18 +120,35 @@
    "player": "Pete",
    "finish": "Finalist",
    "player_page": false
+  },
+  {
+   "player": "Matt Sokol",
+   "finish": "",
+   "player_page": true
+  },
+  {
+   "player": "Chris Terwilliger",
+   "finish": "",
+   "player_page": true
   }
  ],
  "summary": "Josh Paterniti went 5–1 (10 (+76)) at the 2001 New York State Championship at Altered States with Watch Your Step Palace Raiders and Agents Of Black Sun, losing only to Brad Kippel and missing the final by one differential.",
  "notes": [
-  "No hub found for a 2001 New York State championship; proposed \"2001 New York State Championship\" (house style). Report title says \"Championships\".",
   "Site: Altered States store; no city given. The author calls himself a Syracuse player and mentions Mattydale (Syracuse area); site left as stated.",
   "Finish not stated: he tied Pete on wins and missed the final by 1 differential (likely 3rd after the Swiss). Final was Brian Twigg (Brian Terwilliger) vs \"Pete\"/\"Big Pete\" (surname not given); the report does not say who won. Brian Terwilliger's page calls him a two-time New York State Champion.",
   "Margins derived from the running totals (FW 2 (+32), 4 (+38), 6 (+64), FL 6 (+38), 8 (+75), 10 (+76)).",
-  "Brad Kippel: a [[Brad Kippel]] page exists (modern Texas player, 2020 TMW); identity with the 2001 New York opponent not verified, so opponent_page false.",
   "Jason Foss: [[Jason Foss]] (DeckTech \"jade\") posted several Hidden Base mains lists in late 2000; treated as the same person.",
   "Jon Schultz, Jonathan Yost, Tom Colarocco, Gerald Moravanski have no wiki pages.",
-  "Standings before round 6: Brian Twigg 1st, Tom Colarocco 2nd (both undefeated), Brad Kippel 3rd, Paterniti 4th."
+  "Standings before round 6: Brian Twigg 1st, Tom Colarocco 2nd (both undefeated), Brad Kippel 3rd, Paterniti 4th.",
+  "Hub [[2001 New York State Championship]] is now live (19 May 2001, Altered States, Premiere - Reflections II, winner unknown): event_status existing; [[Josh Paterniti]] page now exists. Report title says \"Championships\".",
+  "Brad Kippel (report also spells Kipple) mapped to [[Brad Kippel]] per the small-world rule (the page covers his modern GEMP results).",
+  "Event winner not stated: final was Brian Twigg (Brian Terwilliger) vs \"Pete\"/\"Big Pete\" (surname not given, no page); event_winner null.",
+  "Slops: Matt Sokol and Chris Twigg (Chris Terwilliger) finished lower than Paterniti; added to other_results without a place.",
+  "Gerald Moravanski kept as written (report adds \"?\"); full name given, so it gets a page; no existing page or near-spelling found.",
+  "No hub_updates (no player count; no city for Altered States) and no discrepancies."
  ],
- "multi_event": false
+ "multi_event": false,
+ "hub_updates": [],
+ "discrepancies": [],
+ "side_events": []
 }
