@@ -5,15 +5,15 @@
  "use_published_title": true,
  "byline": "Mike \"Iceman\" Fitzgerald",
  "player": "Mike Fitzgerald",
- "player_page": "new",
- "player_intro": "posted a [[Light]] list on DeckTech.",
+ "player_page": "existing",
+ "player_intro": "(DeckTech handle '''Iceman''') posted a [[Light]] list on DeckTech in September 1999.",
  "side": "Light",
  "format": "Premiere - Original VS1",
  "kind": "general",
  "event": null,
  "finish": null,
  "starting": {
-  "card": null,
+  "card": "Tatooine: Obi-Wan's Hut",
   "interrupt": null,
   "effect": null
  },
@@ -23,208 +23,231 @@
    1,
    "Tatooine: Obi-Wan's Hut",
    "LOCATION",
-   "posted: Tatooine  Obi's Hut (nickname)"
+   "posted: Tatooine  Obi's Hut"
   ],
   [
    1,
-   "?? Careful Planning - Toschi Station , JP",
-   "STARTING",
-   "posted: Careful Planning - Toschi Station , JP (?)"
+   "Careful Planning",
+   "INTERRUPT",
+   "posted: Careful Planning"
   ],
   [
    1,
-   "?? Signal - Goo Nee Tay , Scrambled T.",
-   "STARTING",
-   "posted: Signal - Goo Nee Tay , Scrambled T. (?)"
-  ],
-  [
-   1,
-   "?? Remaining Locs  ( 2 )",
-   "STARTING",
-   "posted: Remaining Locs  ( 2 ) (?)"
-  ],
-  [
-   1,
-   "Rendezvous Point",
+   "Tatooine: Tosche Station",
    "LOCATION",
-   "posted: Rendezvous Point (exact)"
+   "posted: Toschi Station"
   ],
   [
    1,
-   "Dagobah: Yoda's Hut",
+   "Tatooine: Jabba's Palace",
    "LOCATION",
-   "posted: Yoda's Hut (nickname)"
-  ],
-  [
-   3,
-   "Obi-Wan Kenobi",
-   "CHARACTER",
-   "posted: Obi-Wan Kenobi (exact)"
-  ],
-  [
-   3,
-   "Luke With Lightsaber",
-   "CHARACTER",
-   "posted: EPP Luke (nickname)"
-  ],
-  [
-   2,
-   "Han With Heavy Blaster Pistol",
-   "CHARACTER",
-   "posted: EPP Han (nickname)"
-  ],
-  [
-   1,
-   "Tawss Khaa",
-   "CHARACTER",
-   "posted: Tawss Khaa (exact)"
-  ],
-  [
-   2,
-   "Bothan Spy",
-   "CHARACTER",
-   "posted: Bothan Spy (exact)"
-  ],
-  [
-   1,
-   "Harc Seff",
-   "CHARACTER",
-   "posted: Harc Seff (exact)"
-  ],
-  [
-   1,
-   "Wedge Antilles",
-   "CHARACTER",
-   "posted: Wedge Antilles (exact)"
-  ],
-  [
-   1,
-   "Obi-Wan's Lightsaber",
-   "WEAPON",
-   "posted: Obi's Stick (nickname)"
-  ],
-  [
-   2,
-   "Millennium Falcon",
-   "STARSHIP",
-   "posted: Falcon (nickname)"
-  ],
-  [
-   1,
-   "Mantellian Savrip",
-   "EFFECT",
-   "posted: Mantellian Savrip (exact)"
-  ],
-  [
-   1,
-   "Draw Their Fire",
-   "EFFECT",
-   "posted: Draw Their Fire (exact)"
-  ],
-  [
-   1,
-   "Order To Engage",
-   "EFFECT",
-   "posted: Order to Engage (exact)"
-  ],
-  [
-   2,
-   "Frozen Assets",
-   "EFFECT",
-   "posted: Frozen Assets (exact)"
-  ],
-  [
-   1,
-   "Battle Plan",
-   "EFFECT",
-   "posted: Battle Plan (exact)"
-  ],
-  [
-   1,
-   "Traffic Control",
-   "EFFECT",
-   "posted: Traffic Control (exact)"
+   "posted: JP"
   ],
   [
    1,
    "The Signal",
    "INTERRUPT",
-   "posted: The Signal (exact)"
+   "posted: Signal"
+  ],
+  [
+   1,
+   "Goo Nee Tay",
+   "EFFECT",
+   "posted: Goo Nee Tay"
+  ],
+  [
+   1,
+   "Scrambled Transmission",
+   "EFFECT",
+   "posted: Scrambled T."
+  ],
+  [
+   1,
+   "Rendezvous Point",
+   "LOCATION",
+   "posted: Rendezvous Point"
+  ],
+  [
+   1,
+   "Dagobah: Yoda's Hut",
+   "LOCATION",
+   "posted: Yoda's Hut"
+  ],
+  [
+   3,
+   "Obi-Wan Kenobi",
+   "CHARACTER",
+   "posted: Obi-Wan Kenobi"
+  ],
+  [
+   3,
+   "Luke With Lightsaber",
+   "CHARACTER",
+   "posted: EPP Luke"
+  ],
+  [
+   2,
+   "Han With Heavy Blaster Pistol",
+   "CHARACTER",
+   "posted: EPP Han"
+  ],
+  [
+   1,
+   "Tawss Khaa",
+   "CHARACTER",
+   "posted: Tawss Khaa"
+  ],
+  [
+   2,
+   "Bothan Spy",
+   "CHARACTER",
+   "posted: Bothan Spy"
+  ],
+  [
+   1,
+   "Harc Seff",
+   "CHARACTER",
+   "posted: Harc Seff"
+  ],
+  [
+   1,
+   "Wedge Antilles",
+   "CHARACTER",
+   "posted: Wedge Antilles"
+  ],
+  [
+   1,
+   "Obi-Wan's Lightsaber",
+   "WEAPON",
+   "posted: Obi's Stick"
+  ],
+  [
+   2,
+   "Millennium Falcon",
+   "STARSHIP",
+   "posted: Falcon"
+  ],
+  [
+   1,
+   "Mantellian Savrip",
+   "EFFECT",
+   "posted: Mantellian Savrip"
+  ],
+  [
+   1,
+   "Draw Their Fire",
+   "EFFECT",
+   "posted: Draw Their Fire"
+  ],
+  [
+   1,
+   "Order To Engage",
+   "EFFECT",
+   "posted: Order to Engage"
+  ],
+  [
+   2,
+   "Frozen Assets",
+   "EFFECT",
+   "posted: Frozen Assets"
+  ],
+  [
+   1,
+   "Battle Plan",
+   "EFFECT",
+   "posted: Battle Plan"
+  ],
+  [
+   1,
+   "Traffic Control",
+   "EFFECT",
+   "posted: Traffic Control"
+  ],
+  [
+   1,
+   "The Signal",
+   "INTERRUPT",
+   "posted: The Signal"
   ],
   [
    1,
    "Swing-And-A-Miss",
    "INTERRUPT",
-   "posted: Swing-and-a-Miss (exact)"
+   "posted: Swing-and-a-Miss"
   ],
   [
    1,
    "Smoke Screen",
    "INTERRUPT",
-   "posted: Smoke Screen (exact)"
+   "posted: Smoke Screen"
   ],
   [
    6,
    "Sense",
    "INTERRUPT",
-   "posted: Sense (exact)"
+   "posted: Sense"
   ],
   [
    4,
    "Alter",
    "INTERRUPT",
-   "posted: Alter (exact)"
+   "posted: Alter"
   ],
   [
    1,
    "Courage Of A Skywalker",
    "INTERRUPT",
-   "posted: Courage of a Skywalker (exact)"
+   "posted: Courage of a Skywalker"
   ],
   [
    2,
    "Glancing Blow",
    "INTERRUPT",
-   "posted: Glancing Blow (exact)"
+   "posted: Glancing Blow"
   ],
   [
    2,
    "Nabrun Leids",
    "INTERRUPT",
-   "posted: Nabrun Leids (exact)"
+   "posted: Nabrun Leids"
   ],
   [
    2,
    "Sorry About The Mess",
    "INTERRUPT",
-   "posted: Sorry About the Mess (exact)"
+   "posted: Sorry About the Mess"
   ],
   [
    2,
    "It's A Hit!",
    "INTERRUPT",
-   "posted: It's A Hit (nickname)"
+   "posted: It's A Hit"
   ],
   [
    2,
    "Don't Forget The Droids",
    "INTERRUPT",
-   "posted: Don't Forget The Droids (exact)"
+   "posted: Don't Forget The Droids"
   ],
   [
    2,
    "Grimtaash",
    "INTERRUPT",
-   "posted: Grimtaash (exact)"
+   "posted: Grimtaash"
   ],
   [
    2,
    "Shocking Information",
    "INTERRUPT",
-   "posted: Shocking Information (exact)"
+   "posted: Shocking Information"
   ]
  ],
  "shields": [],
- "shields_note": null,
- "notes": []
+ "shields_note": "The post names no Defensive Shields.",
+ "notes": [
+  "Total 60 as published. The 'Start (7)' section is written as 'Tatooine Obi's Hut', 'Careful Planning - Toschi Station , JP' and 'Signal - Goo Nee Tay , Scrambled T.': seven cards (Obi-Wan's Hut; Careful Planning fetching Tosche Station and Jabba's Palace; The Signal fetching Goo Nee Tay or Scrambled Transmission), counted toward the 60. A second The Signal is in Interrupts. Two starting Interrupts are named, so starting.interrupt is left empty.",
+  "Posted 'Toschi Station' dested Tatooine: Tosche Station; 'JP' Tatooine: Jabba's Palace; 'Scrambled T.' Scrambled Transmission; 'EPP Luke'/'EPP Han' Luke With Lightsaber / Han With Heavy Blaster Pistol; 'Obi's Stick' Obi-Wan's Lightsaber; 'Falcon' Millennium Falcon; 'It's A Hit' It's A Hit!.",
+  "'Remaining Locs ( 2 )' is a section header, not a card.",
+  "An earlier No Shelter list by the same player is live as [[Mike Fitzgerald No Shelter]] (Trandosite); this v2.0 list differs."
+ ]
 }
