@@ -57864,6 +57864,12 @@
    "sha256": "116ae82b59fad697a2cf76824ae91cfeb2e6a8ec5f4017ce61d9222812f63813"
   }
  },
+ "https://swccg.com/snapshots/scomp/as-good-as-gone.html": {
+  "capture": "https://web.archive.org/web/20261024032823/https://swccg.com/snapshots/scomp/as-good-as-gone.html",
+  "last": "2026-10-24T03:29:55Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/asajj-ventress-lightsabers.html": {
   "capture": "https://web.archive.org/web/20261023224220/https://swccg.com/snapshots/scomp/asajj-ventress-lightsabers.html",
   "job_id": "spn2-f8890a3c869ea10281055aaeee765e2e75ee1d46",
@@ -58005,6 +58011,13 @@
   "capture": "",
   "job_id": "spn2-c39f6d0247ddfaf111120d4b91d6d468993a7fbd",
   "last": "2026-10-24T02:47:22Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/battle-plan.html": {
+  "capture": "",
+  "job_id": "spn2-815ddc7d96e4f5ad5ad8f93babba37dd4d589b66",
+  "last": "2026-10-24T03:28:30Z",
   "status": "pending",
   "tries": 1
  },
@@ -58171,9 +58184,10 @@
  },
  "https://swccg.com/snapshots/scomp/blockade-flagship-docking-bay.html": {
   "capture": "https://web.archive.org/web/20261024021637/https://swccg.com/snapshots/scomp/blockade-flagship-docking-bay.html",
-  "last": "2026-10-24T02:40:33Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T03:25:51Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/blockade-flagship.html": {
   "capture": "https://web.archive.org/web/20261024020221/https://swccg.com/snapshots/scomp/blockade-flagship.html",
@@ -59432,6 +59446,20 @@
    "sha256": "21a58ef6e507fd20d6cba721bbdc519188ecb82a99289d44462ad23a0c73997c"
   }
  },
+ "https://swccg.com/snapshots/scomp/conquest-v.html": {
+  "capture": "https://web.archive.org/web/20261024032812/https://swccg.com/snapshots/scomp/conquest-v.html",
+  "job_id": "spn2-884a3f2dd16e34a864e1387327ef18724268f190",
+  "last": "2026-10-24T03:30:49Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T03:30:49Z",
+   "bytes": 164613,
+   "capture_id": "https://web.archive.org/web/20261024032812id_/https://swccg.com/snapshots/scomp/conquest-v.html",
+   "method": "sha256",
+   "sha256": "f96a9dae167c6f3eb83df803cf32df8bdd26ab6af284df9b2afad3e983769c2f"
+  }
+ },
  "https://swccg.com/snapshots/scomp/corellian-slip.html": {
   "capture": "",
   "job_id": "spn2-2635817249881e79f27f013f01e75d1050bb2ed4",
@@ -59454,11 +59482,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/corporal-kensaric.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024031535/https://swccg.com/snapshots/scomp/corporal-kensaric.html",
   "job_id": "spn2-9aef979a858cb7f8ae2f985ac88a84a41b8976bd",
-  "last": "2026-10-24T03:15:22Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T03:24:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T03:24:00Z",
+   "bytes": 292344,
+   "capture_id": "https://web.archive.org/web/20261024031535id_/https://swccg.com/snapshots/scomp/corporal-kensaric.html",
+   "method": "sha256",
+   "sha256": "254eaea864a15c1328d00fd6df07f1323239c5f183fc1c4a17499d17c3e30c43"
+  }
  },
  "https://swccg.com/snapshots/scomp/corporal-midge.html": {
   "capture": "",
@@ -59468,18 +59503,32 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/corporal-oberk-v.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024024737/https://swccg.com/snapshots/scomp/corporal-oberk-v.html",
   "job_id": "spn2-59c73c00c58fd53a0c1f47efa63a43ca87005a62",
-  "last": "2026-10-24T02:47:33Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T03:24:04Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T03:24:04Z",
+   "bytes": 800506,
+   "capture_id": "https://web.archive.org/web/20261024024737id_/https://swccg.com/snapshots/scomp/corporal-oberk-v.html",
+   "method": "sha256",
+   "sha256": "6c92dd349a1d3955b4a5ca0ea50a26193ecc77ae69e38aa6bd191f0a4a77315d"
+  }
  },
  "https://swccg.com/snapshots/scomp/corporal-vandolay-v.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024003646/https://swccg.com/snapshots/scomp/corporal-vandolay-v.html",
   "job_id": "spn2-a65f2103f8ec4a36addcedda9b4b570fa4805cde",
-  "last": "2026-10-24T00:35:34Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T03:24:08Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T03:24:08Z",
+   "bytes": 723715,
+   "capture_id": "https://web.archive.org/web/20261024003646id_/https://swccg.com/snapshots/scomp/corporal-vandolay-v.html",
+   "method": "sha256",
+   "sha256": "5883ca617f25a680fa678b7143583916047e7bc843233861905f4ff45de47360"
+  }
  },
  "https://swccg.com/snapshots/scomp/corrosive-damage.html": {
   "capture": "",
@@ -59489,25 +59538,46 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/corulag-operative.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024011416/https://swccg.com/snapshots/scomp/corulag-operative.html",
   "job_id": "spn2-3d97dc6853cacc00129b90e6e220d495531dbaa8",
-  "last": "2026-10-24T01:13:29Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T03:24:13Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T03:24:13Z",
+   "bytes": 381314,
+   "capture_id": "https://web.archive.org/web/20261024011416id_/https://swccg.com/snapshots/scomp/corulag-operative.html",
+   "method": "sha256",
+   "sha256": "3423ff68d249f8e8cc10c8a28d5379f1e2a804a07b4b5f23cb20ae8ebffb8e35"
+  }
  },
  "https://swccg.com/snapshots/scomp/coruscant-galactic-senate.html": {
   "capture": "https://web.archive.org/web/20261024000837/https://swccg.com/snapshots/scomp/coruscant-galactic-senate.html",
   "job_id": "spn2-894dc506a6541a738d6844049dc03c1652e0a664",
-  "last": "2026-10-24T01:09:13Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-10-24T03:24:17Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T03:24:17Z",
+   "bytes": 164611,
+   "capture_id": "https://web.archive.org/web/20261024000837id_/https://swccg.com/snapshots/scomp/coruscant-galactic-senate.html",
+   "method": "sha256",
+   "sha256": "31adb5ac887d59c6b8ee04f10f7ce8948ce3795d3122f8597cb192da6b313a74"
+  }
  },
  "https://swccg.com/snapshots/scomp/coruscant-night-club.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261024012319/https://swccg.com/snapshots/scomp/coruscant-night-club.html",
   "job_id": "spn2-0c991f5ef07918e3d95e8b1141a90afd82877c2b",
-  "last": "2026-10-24T01:23:16Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-24T03:24:21Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T03:24:21Z",
+   "bytes": 164592,
+   "capture_id": "https://web.archive.org/web/20261024012319id_/https://swccg.com/snapshots/scomp/coruscant-night-club.html",
+   "method": "sha256",
+   "sha256": "77ee2f6a7be48f37da2dbd2e4e8b96bdf057bcefd578867ceac4ed501c926ce2"
+  }
  },
  "https://swccg.com/snapshots/scomp/coruscant-private-platform-docking-bay.html": {
   "capture": "https://web.archive.org/web/20261024015221/https://swccg.com/snapshots/scomp/coruscant-private-platform-docking-bay.html",
@@ -59525,9 +59595,10 @@
  },
  "https://swccg.com/snapshots/scomp/credits-will-do-fine-v.html": {
   "capture": "https://web.archive.org/web/20261024020439/https://swccg.com/snapshots/scomp/credits-will-do-fine-v.html",
-  "last": "2026-10-24T02:27:11Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T03:26:01Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/credits-will-do-fine.html": {
   "capture": "https://web.archive.org/web/20261024015033/https://swccg.com/snapshots/scomp/credits-will-do-fine.html",
@@ -59561,6 +59632,12 @@
   "capture": "",
   "job_id": "spn2-f5a2771487fbbba08187be98f85a927a0ef294e6",
   "last": "2026-10-24T01:25:48Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/cyborg-construct.html": {
+  "capture": "https://web.archive.org/web/20261024032950/https://swccg.com/snapshots/scomp/cyborg-construct.html",
+  "last": "2026-10-24T03:30:52Z",
   "status": "pending",
   "tries": 1
  },
@@ -59803,15 +59880,16 @@
  },
  "https://swccg.com/snapshots/scomp/death-star.html": {
   "capture": "https://web.archive.org/web/20261024023448/https://swccg.com/snapshots/scomp/death-star.html",
-  "last": "2026-10-24T02:54:03Z",
-  "status": "retry",
-  "tries": 1
+  "last": "2026-10-24T03:30:20Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/deep-hatred.html": {
   "capture": "https://web.archive.org/web/20261024021928/https://swccg.com/snapshots/scomp/deep-hatred.html",
-  "last": "2026-10-24T02:40:43Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T03:26:22Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/deflector-shield-generators-v.html": {
   "capture": "",
@@ -59857,9 +59935,17 @@
  },
  "https://swccg.com/snapshots/scomp/desperate-counter.html": {
   "capture": "https://web.archive.org/web/20261024023544/https://swccg.com/snapshots/scomp/desperate-counter.html",
-  "last": "2026-10-24T02:54:05Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-640183d7b0467633e60daf02c358be1b6ec82f3d",
+  "last": "2026-10-24T03:30:45Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T03:30:45Z",
+   "bytes": 361824,
+   "capture_id": "https://web.archive.org/web/20261024023544id_/https://swccg.com/snapshots/scomp/desperate-counter.html",
+   "method": "sha256",
+   "sha256": "6e7eecdc0e016cc66e3b678d37c7cd700b144e835413773f02976a69bdb15f12"
+  }
  },
  "https://swccg.com/snapshots/scomp/desperate-reach.html": {
   "capture": "https://web.archive.org/web/20261023234334/https://swccg.com/snapshots/scomp/desperate-reach.html",
@@ -59988,8 +60074,8 @@
  },
  "https://swccg.com/snapshots/scomp/double-crossing-no-good-swindler.html": {
   "capture": "https://web.archive.org/web/20261024025914/https://swccg.com/snapshots/scomp/double-crossing-no-good-swindler.html",
-  "last": "2026-10-24T03:03:48Z",
-  "status": "pending",
+  "last": "2026-10-24T03:24:25Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/dr-evazan-ponda-baba.html": {
@@ -60147,9 +60233,17 @@
  },
  "https://swccg.com/snapshots/scomp/endor-anakin-s-funeral-pyre.html": {
   "capture": "https://web.archive.org/web/20261024023422/https://swccg.com/snapshots/scomp/endor-anakin-s-funeral-pyre.html",
-  "last": "2026-10-24T02:54:08Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-96af60f57245518fce1b7abfbac2b8070bc4901b",
+  "last": "2026-10-24T03:30:18Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T03:30:18Z",
+   "bytes": 164642,
+   "capture_id": "https://web.archive.org/web/20261024023422id_/https://swccg.com/snapshots/scomp/endor-anakin-s-funeral-pyre.html",
+   "method": "sha256",
+   "sha256": "49247001b0951fb3151e0f2cfab5c02a8df74aa0d00cf3a22b7313d0ab41f3d6"
+  }
  },
  "https://swccg.com/snapshots/scomp/endor-ancient-forest.html": {
   "capture": "",
@@ -60306,9 +60400,10 @@
  },
  "https://swccg.com/snapshots/scomp/evil-is-everywhere.html": {
   "capture": "https://web.archive.org/web/20261024023215/https://swccg.com/snapshots/scomp/evil-is-everywhere.html",
-  "last": "2026-10-24T02:54:10Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-425e136be521eac7b96cb816638714e4c9dab7e2",
+  "last": "2026-10-24T03:29:49Z",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/ewok-sentry.html": {
   "capture": "https://web.archive.org/web/20261024012810/https://swccg.com/snapshots/scomp/ewok-sentry.html",
@@ -60552,6 +60647,13 @@
   "status": "retry",
   "tries": 2
  },
+ "https://swccg.com/snapshots/scomp/fozec.html": {
+  "capture": "",
+  "job_id": "spn2-15115dbfc99638c10e59768193d6680d3cfb09ea",
+  "last": "2026-10-24T03:29:24Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/free-ride-endor-celebration-v.html": {
   "capture": "",
   "job_id": "spn2-0e3aea7c32afeb3a73e69384376eabd826ce7ec7",
@@ -60568,9 +60670,17 @@
  },
  "https://swccg.com/snapshots/scomp/full-throttle.html": {
   "capture": "https://web.archive.org/web/20261024021845/https://swccg.com/snapshots/scomp/full-throttle.html",
-  "last": "2026-10-24T02:40:51Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ed0e8a02a48632daa0d163686447e82b5bb65aac",
+  "last": "2026-10-24T03:29:41Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-24T03:29:41Z",
+   "bytes": 710779,
+   "capture_id": "https://web.archive.org/web/20261024021845id_/https://swccg.com/snapshots/scomp/full-throttle.html",
+   "method": "sha256",
+   "sha256": "0d90287a898e1b66bde96634595adc18bd5f8c82e3e8ab53b25d6d60868d9e70"
+  }
  },
  "https://swccg.com/snapshots/scomp/fx-10-effex-ten.html": {
   "capture": "https://web.archive.org/web/20261024013826/https://swccg.com/snapshots/scomp/fx-10-effex-ten.html",
@@ -60605,6 +60715,20 @@
    "capture_id": "https://web.archive.org/web/20261023235503id_/https://swccg.com/snapshots/scomp/general-carlist-rieekan-v.html",
    "method": "sha256",
    "sha256": "88dec1302898f7656cc7a041625ed684ca75b63fbfb4892166e8e8e7ecbf9684"
+  }
+ },
+ "https://swccg.com/snapshots/scomp/general-crix-madine-v.html": {
+  "capture": "https://web.archive.org/web/20261024032647/https://swccg.com/snapshots/scomp/general-crix-madine-v.html",
+  "job_id": "spn2-7f706e666cbd3c3288eaa350b4f174f8821ef87b",
+  "last": "2026-10-24T03:29:45Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-24T03:29:45Z",
+   "bytes": 730244,
+   "capture_id": "https://web.archive.org/web/20261024032647id_/https://swccg.com/snapshots/scomp/general-crix-madine-v.html",
+   "method": "sha256",
+   "sha256": "ec76eb354d030cce7b20987523186885e067c2c8026a45536581964996faa04e"
   }
  },
  "https://swccg.com/snapshots/scomp/general-hux-ai.html": {
@@ -60719,8 +60843,8 @@
  },
  "https://swccg.com/snapshots/scomp/grounded-starfighter.html": {
   "capture": "https://web.archive.org/web/20261024025832/https://swccg.com/snapshots/scomp/grounded-starfighter.html",
-  "last": "2026-10-24T03:03:19Z",
-  "status": "pending",
+  "last": "2026-10-24T03:24:31Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/grugnak.html": {
@@ -60795,9 +60919,17 @@
  },
  "https://swccg.com/snapshots/scomp/he-s-all-yours-bounty-hunter-v.html": {
   "capture": "https://web.archive.org/web/20261023234208/https://swccg.com/snapshots/scomp/he-s-all-yours-bounty-hunter-v.html",
-  "last": "2026-10-24T02:54:18Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-597f4a2f061b67c4026349814e099d500a9c536b",
+  "last": "2026-10-24T03:29:37Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-24T03:29:37Z",
+   "bytes": 558621,
+   "capture_id": "https://web.archive.org/web/20261023234208id_/https://swccg.com/snapshots/scomp/he-s-all-yours-bounty-hunter-v.html",
+   "method": "sha256",
+   "sha256": "e29d9a059015d462c7523f5658a8249490df02926178a2a1f731684da86bb98c"
+  }
  },
  "https://swccg.com/snapshots/scomp/hear-me-baby-hold-together-v.html": {
   "capture": "https://web.archive.org/web/20261024012645/https://swccg.com/snapshots/scomp/hear-me-baby-hold-together-v.html",
@@ -61274,9 +61406,9 @@
  "https://swccg.com/snapshots/scomp/jakku-rey-s-encampment.html": {
   "capture": "https://web.archive.org/web/20261023231404/https://swccg.com/snapshots/scomp/jakku-rey-s-encampment.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-24T02:41:54Z",
+  "last": "2026-10-24T03:25:30Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/jakku-tuanul-village-ai.html": {
   "capture": "",
@@ -61511,9 +61643,10 @@
  },
  "https://swccg.com/snapshots/scomp/leia-with-blaster-rifle.html": {
   "capture": "https://web.archive.org/web/20261024022042/https://swccg.com/snapshots/scomp/leia-with-blaster-rifle.html",
-  "last": "2026-10-24T02:41:01Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-24T03:26:33Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/leslomy-tacema-v.html": {
   "capture": "",
