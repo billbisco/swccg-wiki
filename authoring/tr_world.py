@@ -324,6 +324,15 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
             m0 = re.search(r"^\* '''Winner:'''\s*(Unknown|—|)\s*$", text, re.M)
             val = str(u["value"])
             link = f"[[{val}]]" if full_name(val) else val
+            unk = re.search(r"^\| 1st \|\| Unknown\.?\s*([^\n]*)$", text, re.M)
+            if unk and full_name(val):  # a results row "1st || Unknown. <why>" takes the report's winner (Claude 2026-10-25)
+                text = re.sub(rf"\n\|-\n\| 1st \|\| \[\[{re.escape(val)}\]\]<ref name=\"tr-{d['id']}\"[^\n]*", "", text, count=1)
+                unk = re.search(r"^\| 1st \|\| Unknown\.?\s*([^\n]*)$", text, re.M)
+                why = unk.group(1).strip().rstrip(".")
+                why = why[0].lower() + why[1:] if why else ""
+                text = (text[:unk.start()] + f"| 1st || {link}<ref name=\"tr-{d['id']}\" /> (from {T.person(d) or d['byline']}'s report"
+                        + (f"; {why})" if why else ")") + text[unk.end():])
+                log.append(f"{u['event']}: results row 'Unknown' 1st set to {val} from the report")
             if m0:
                 text = text[:m0.start()] + f"* '''Winner:''' {link}<ref name=\"tr-{d['id']}\" />" + text[m0.end():]
                 text = text.replace(" The winner is unknown.", f" {link} won it.", 1)
