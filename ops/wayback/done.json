@@ -39591,9 +39591,9 @@
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ds.html?copy=2": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T00:39:22Z",
+  "last": "2026-10-25T01:27:27Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ls.html": {
   "capture": "https://web.archive.org/web/20261022002242/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ls.html",
@@ -39730,10 +39730,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-gogolen-ds.html?copy=2": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T00:39:32Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-76ec2c311bf9947751feffe802f78dbcc49b9454",
+  "last": "2026-10-25T01:27:39Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-gogolen-ls.html": {
   "capture": "",
@@ -39911,10 +39911,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ds.html?copy=2": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T00:52:31Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ac6ebd1018155f02b282a29c9ea7a0cf06b4269d",
+  "last": "2026-10-25T01:27:51Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ls.html": {
   "capture": "https://web.archive.org/web/20261021013034/https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ls.html",
@@ -39978,8 +39978,15 @@
   "capture": "https://web.archive.org/web/20261025004212/https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ds.html?copy=2",
   "job_id": "spn2-135bedfecf30de1497e6a36ad0c6c1670ac2a1e0",
   "last": "2026-10-25T00:48:16Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:37:02Z",
+   "bytes": 7120810,
+   "capture_id": "https://web.archive.org/web/20261025004212id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ds.html?copy=2",
+   "method": "sha256",
+   "sha256": "9ae1767d9a28e8114141da3e2fbcd054a16e6db0319c57859258094e4f3bbbf6"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ls.html": {
   "capture": "https://web.archive.org/web/20261022003506/https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ls.html",
@@ -40048,10 +40055,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-eops.html?copy=2": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T00:52:42Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-2da02e792f5ce6b256f99b24369aba64132fdec0",
+  "last": "2026-10-25T01:28:01Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-greg-shaw-ds.html": {
   "capture": "https://web.archive.org/web/20261022002236/https://swccg.com/snapshots/pc/2017-worlds-day-2-greg-shaw-ds.html",
@@ -41777,6 +41784,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2019-nac-day-1-andrew-moss-ds-ie.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-8f7e0232ce03e448847983abe137f25d4df66ffc",
+  "last": "2026-10-25T01:28:12Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-bryan-mischke-ds-map.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -41831,9 +41845,16 @@
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010852/https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html?copy=2",
-  "last": "2026-10-25T01:14:28Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:27:24Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:27:26Z",
+   "bytes": 7121427,
+   "capture_id": "https://web.archive.org/web/20261025010852id_/https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html?copy=2",
+   "method": "sha256",
+   "sha256": "d0fc3f87908739eea9d9e80cfc1c1d3153c510f616f2f44b500eb2af63942284"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html": {
   "capture": "",
@@ -41841,6 +41862,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-2c1306179c3d409d29fcf839496819cca6baffaa",
+  "last": "2026-10-25T01:28:23Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ds-map.html": {
@@ -41875,9 +41903,16 @@
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010837/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2",
-  "last": "2026-10-25T01:15:13Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:27:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:27:20Z",
+   "bytes": 7121523,
+   "capture_id": "https://web.archive.org/web/20261025010837id_/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2",
+   "method": "sha256",
+   "sha256": "eefc6e22449f201cdb7e8de60420831d336af6080609bca195900ae60ed89a7e"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ds-hunt-down-racing.html": {
   "capture": "",
@@ -41889,9 +41924,16 @@
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ds-hunt-down-racing.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010959/https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ds-hunt-down-racing.html?copy=2",
-  "last": "2026-10-25T01:15:15Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:27:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:27:14Z",
+   "bytes": 7797545,
+   "capture_id": "https://web.archive.org/web/20261025010959id_/https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ds-hunt-down-racing.html?copy=2",
+   "method": "sha256",
+   "sha256": "b7ef2b7db771bdf4f3b0d077fe3777e96dfdff4624a7b1d2f79c820d32efde53"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ls-trm.html": {
   "capture": "",
@@ -41926,9 +41968,16 @@
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ls-combat-7s.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010942/https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ls-combat-7s.html?copy=2",
-  "last": "2026-10-25T01:15:18Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:27:06Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:27:08Z",
+   "bytes": 7121683,
+   "capture_id": "https://web.archive.org/web/20261025010942id_/https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ls-combat-7s.html?copy=2",
+   "method": "sha256",
+   "sha256": "6dc16db19546f6e3941f5141602f448e24032be079a4cec0f5b6f239ed35f6fc"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-north-american-continentals.html": {
   "capture": "https://web.archive.org/web/20261013160247/https://swccg.com/snapshots/pc/2019-north-american-continentals.html",
@@ -42037,9 +42086,16 @@
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-kyle-krueger-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011100/https://swccg.com/snapshots/pc/2019-worlds-day-2-kyle-krueger-ls-trm.html?copy=2",
-  "last": "2026-10-25T01:15:21Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:26:59Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:27:02Z",
+   "bytes": 7121633,
+   "capture_id": "https://web.archive.org/web/20261025011100id_/https://swccg.com/snapshots/pc/2019-worlds-day-2-kyle-krueger-ls-trm.html?copy=2",
+   "method": "sha256",
+   "sha256": "739ca5490898f61bfcab093dfd97d303882ca336b546d3321a8b2a5ec9796ee8"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-moritz-karge-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021060233/https://swccg.com/snapshots/pc/2019-worlds-day-2-moritz-karge-ds-map.html",
@@ -42065,9 +42121,16 @@
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-bryan-mischke-ds-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011016/https://swccg.com/snapshots/pc/2019-worlds-day-3-bryan-mischke-ds-map.html?copy=2",
-  "last": "2026-10-25T01:15:23Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:26:53Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:26:55Z",
+   "bytes": 7121482,
+   "capture_id": "https://web.archive.org/web/20261025011016id_/https://swccg.com/snapshots/pc/2019-worlds-day-3-bryan-mischke-ds-map.html?copy=2",
+   "method": "sha256",
+   "sha256": "f843b93b25669074ef4aedf643f590fd2d57c354e4f73eb7cf5d267ed4b56319"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html": {
   "capture": "",
@@ -42079,9 +42142,16 @@
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011027/https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2",
-  "last": "2026-10-25T01:15:24Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:26:47Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:26:49Z",
+   "bytes": 7121538,
+   "capture_id": "https://web.archive.org/web/20261025011027id_/https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2",
+   "method": "sha256",
+   "sha256": "cc3e1247681c39cc50590f39e58c4c51a0824dce3a1c71b60b27f3bebb585aef"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-worlds.html": {
   "capture": "https://web.archive.org/web/20261013160304/https://swccg.com/snapshots/pc/2019-worlds.html",
@@ -42131,6 +42201,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-kelly-ls-hitco.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-a137201188d8080c0610e787299e06e16f6f7218",
+  "last": "2026-10-25T01:29:04Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-menzel-ds-hunt-down.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -42156,9 +42233,16 @@
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011225/https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html?copy=2",
-  "last": "2026-10-25T01:15:27Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:26:40Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:26:43Z",
+   "bytes": 7121574,
+   "capture_id": "https://web.archive.org/web/20261025011225id_/https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html?copy=2",
+   "method": "sha256",
+   "sha256": "e803dddf095ac22c3ddbc572d0ba595cae6a9b130f0b7b2e1838af29945beaa5"
+  }
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-carulli-ls-profit.html": {
   "capture": "https://web.archive.org/web/20261021044830/https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-carulli-ls-profit.html",
@@ -46879,6 +46963,13 @@
   "status": "failed",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-kevin-jaap-ls-zero-hour.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-63d2db25a6fcba97ae0bbcf8dfe7c63244df01f3",
+  "last": "2026-10-25T01:29:15Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ds-ropsv.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -46889,9 +46980,16 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ds-ropsv.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011216/https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ds-ropsv.html?copy=2",
-  "last": "2026-10-25T01:15:30Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:26:34Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:26:36Z",
+   "bytes": 7121913,
+   "capture_id": "https://web.archive.org/web/20261025011216id_/https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ds-ropsv.html?copy=2",
+   "method": "sha256",
+   "sha256": "fb6904253286efcdb69f53823f77125eead6d5b501dd76cdcab27231d0f918b8"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ls-zero-hour.html": {
   "capture": "",
@@ -46973,6 +47071,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-miguel-tarin-vegas-ds-sc.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-e29edffe01c6e5b09caa4173fc57cd1259d43793",
+  "last": "2026-10-25T01:29:26Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-miguel-tarin-vegas-ls-yoda-communing.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -47027,9 +47132,16 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ds-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011342/https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ds-map.html?copy=2",
-  "last": "2026-10-25T01:15:36Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T01:26:28Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:26:30Z",
+   "bytes": 7121049,
+   "capture_id": "https://web.archive.org/web/20261025011342id_/https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ds-map.html?copy=2",
+   "method": "sha256",
+   "sha256": "22a779027db1511d0e1c9d716723b4c0d342148ca96768ab191f2f6db558e00f"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ls-qmc.html": {
   "capture": "",
@@ -47047,6 +47159,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-peter-jacobson-ds-bhbm.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-62b0a18624941b085d87ae29c88cea48df256456",
+  "last": "2026-10-25T01:30:08Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-peter-jacobson-ls-aitc.html": {
   "capture": "https://web.archive.org/web/20261021050611/https://swccg.com/snapshots/pc/2022-european-championship-peter-jacobson-ls-aitc.html",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -47055,12 +47174,26 @@
   "status": "failed",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-peter-jacobson-ls-aitc.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-0e4a4f875c99dfc1ac4139e57fcbb2ef27d16ae1",
+  "last": "2026-10-25T01:30:18Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-peter-soetens-ds-cct.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-peter-soetens-ds-cct.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-02684b8353dcd1fc40b346ad8b1d79d350a88c84",
+  "last": "2026-10-25T01:30:29Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-peter-soetens-ls-qmc.html": {
@@ -47079,6 +47212,13 @@
   "status": "failed",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ds-rots-dooku.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-a7234c55d0af233262cfabd42c85e8745c7c4fcc",
+  "last": "2026-10-25T01:31:10Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ls-communing-yoda.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -47087,12 +47227,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ls-communing-yoda.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-c552afc7dcde4751f632c504c0bb580043f00644",
+  "last": "2026-10-25T01:31:21Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-rasmus-juul-ds-aobs.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-rasmus-juul-ds-aobs.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-e71d8dddaf3414f85723e51ce8f44dda38c7bd4b",
+  "last": "2026-10-25T01:31:32Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-rasmus-juul-ls-steady-steady.html": {
@@ -47109,6 +47263,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-robert-smolarek-ds-revenge-of-the-sith-dooku.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-6d92ab108663f1904b28123a3b0f95f7feae57b6",
+  "last": "2026-10-25T01:32:14Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-robert-smolarek-ls-communing-obi-wan.html": {
@@ -47133,12 +47294,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ds-bhbm.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-8f87d928d649fde62e0e2da7ebe9f8c1e2d3231b",
+  "last": "2026-10-25T01:32:25Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ls-funeral-pyre.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ls-funeral-pyre.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-e0ed6058dcb17b6223e21ff69a76343eece17932",
+  "last": "2026-10-25T01:32:35Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-timo-dusel-ds-ropsv.html": {
@@ -47171,6 +47346,13 @@
   "status": "failed",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ds-mustafar-crv.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-b38a40afbef963766b5fbf7dcbc615eae987444e",
+  "last": "2026-10-25T01:33:17Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -47179,12 +47361,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-b22e513bfac36c2ca6276969bc7eac6c21f5c2d3",
+  "last": "2026-10-25T01:33:28Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-bastian-winkelhaus-ds-ropsv.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-bastian-winkelhaus-ds-ropsv.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-34e639aeeb8ba7718fbdc0f7710f5651f26857a0",
+  "last": "2026-10-25T01:33:38Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-bastian-winkelhaus-ls-legend.html": {
@@ -47203,6 +47399,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-brian-fred-ds-cct.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-422e0c5bd733ef98680cd40d42db1a8c2b018cb2",
+  "last": "2026-10-25T01:34:20Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-brian-fred-ls-yoda-communing.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -47211,12 +47414,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-brian-fred-ls-yoda-communing.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-891d84b2548cfce18454850ca33c8f0056509780",
+  "last": "2026-10-25T01:34:31Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-e98653c610a656888ba39741b5c0a330b0a82179",
+  "last": "2026-10-25T01:34:41Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ls-zero-hour.html": {
@@ -47235,6 +47452,13 @@
   "status": "failed",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ds-sc.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-5e4df186e8a06c5701ec734bb2b62ffb0b6cc8f8",
+  "last": "2026-10-25T01:35:23Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ls-oa.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -47243,6 +47467,13 @@
   "status": "failed",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ls-oa.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-350f9296101c6be981ace8b1fc67a163e4dcdf5a",
+  "last": "2026-10-25T01:35:34Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261021043658/https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ds-walkers.html",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -47250,6 +47481,13 @@
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
   "tries": 2
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ds-walkers.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-12abb03fe5293b5609adcc7dbea4e8a2b2d8daf1",
+  "last": "2026-10-25T01:35:44Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261021051531/https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ls-yoda-communing.html",
@@ -47281,6 +47519,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ls-oa.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-62f1bdbe3f88958b1f180e61c983c25f9c693b59",
+  "last": "2026-10-25T01:36:26Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261021043740/https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ds-cct.html",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -47288,6 +47533,13 @@
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
   "tries": 2
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ds-cct.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-f52c5982f799f79b7a42708ebce7717bbfd30a10",
+  "last": "2026-10-25T01:36:37Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261021051613/https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ls-zero-hour.html",
@@ -47365,6 +47617,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2022-european-championships-jonas-hagen-ds-walkers.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-91a829d880b99ed0f28b20ff18da2678e7c4854c",
+  "last": "2026-10-25T01:36:47Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-gempc-batmouses-6th-gempc-bf.html": {
@@ -59519,8 +59778,15 @@
   "capture": "https://web.archive.org/web/20261024232529/https://swccg.com/snapshots/scomp/artoo-i-have-a-bad-feeling-about-this.html",
   "job_id": "spn2-92f3c19d94b4da948368d2534df9289f624e3c7f",
   "last": "2026-10-25T00:20:49Z",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-25T01:37:19Z",
+   "bytes": 284583,
+   "capture_id": "https://web.archive.org/web/20261024232529id_/https://swccg.com/snapshots/scomp/artoo-i-have-a-bad-feeling-about-this.html",
+   "method": "sha256",
+   "sha256": "11907233cdec63c0b408b8bb8d51bde19652ff9a10b471ea93734e1b77b45d2e"
+  }
  },
  "https://swccg.com/snapshots/scomp/artoo-v.html": {
   "capture": "https://web.archive.org/web/20261024210140/https://swccg.com/snapshots/scomp/artoo-v.html",
@@ -65411,8 +65677,15 @@
   "capture": "https://web.archive.org/web/20261025000343/https://swccg.com/snapshots/scomp/death-star-trench.html",
   "job_id": "spn2-9d4d151d200940509cb2c81b3bdd1c977a92616b",
   "last": "2026-10-25T00:07:16Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:37:25Z",
+   "bytes": 308462,
+   "capture_id": "https://web.archive.org/web/20261025000343id_/https://swccg.com/snapshots/scomp/death-star-trench.html",
+   "method": "sha256",
+   "sha256": "08ea12f645c7ce883b45bfddfa5c09c60fc5cd7bbdcd3543208b0540d3144081"
+  }
  },
  "https://swccg.com/snapshots/scomp/death-star-trooper.html": {
   "capture": "",
@@ -72571,8 +72844,15 @@
   "capture": "https://web.archive.org/web/20261025003229/https://swccg.com/snapshots/scomp/keeping-the-empire-out-forever.html",
   "job_id": "spn2-eef3e357471b8a6674aeebdc28cd36dae9f23545",
   "last": "2026-10-25T00:34:09Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:37:07Z",
+   "bytes": 297465,
+   "capture_id": "https://web.archive.org/web/20261025003229id_/https://swccg.com/snapshots/scomp/keeping-the-empire-out-forever.html",
+   "method": "sha256",
+   "sha256": "3c535425c27e4f3a30f105715b8cd926ea96d50bfe0a00ee365acfafecd20fab"
+  }
  },
  "https://swccg.com/snapshots/scomp/keir-santage.html": {
   "capture": "https://web.archive.org/web/20261024203115/https://swccg.com/snapshots/scomp/keir-santage.html",
@@ -72648,8 +72928,15 @@
   "capture": "https://web.archive.org/web/20261025003317/https://swccg.com/snapshots/scomp/kessel-v.html",
   "job_id": "spn2-63cae02a7ac465f59925da73eae712caefd99f7c",
   "last": "2026-10-25T00:33:49Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T01:37:14Z",
+   "bytes": 609601,
+   "capture_id": "https://web.archive.org/web/20261025003317id_/https://swccg.com/snapshots/scomp/kessel-v.html",
+   "method": "sha256",
+   "sha256": "56218b902533820a6453b1a45101b84626959da4d5165872ef09e528b1a121cb"
+  }
  },
  "https://swccg.com/snapshots/scomp/kessel.html": {
   "capture": "",
