@@ -22,3 +22,13 @@ def edit(title, fn):
 edit("2000 UK National Championship", lambda t: t.replace("* '''Date:''' 2000-04-02<ref", "* '''Date:''' 2 April 2000<ref", 1))
 edit("List of SWCCG tournaments", lambda t: t.replace("| 2000 || [[2000 UK National Championship]] || 2000 || United Kingdom ||",
                                                      "| 2000-04 || [[2000 UK National Championship]] || 2 April 2000 || Warwick, England ||", 1))
+
+
+def ramapo(t):
+    import tr_build as T
+    if '<ref name="tr-d698">' in t:
+        return t
+    return t.replace('<ref name="tr-d698" />', T.ref(T.load("decktech/d698")), 1)
+
+
+edit("RamapoCon II", ramapo)

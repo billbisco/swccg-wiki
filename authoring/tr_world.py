@@ -114,6 +114,14 @@ RESULTS_HEAD = '{| class="wikitable"\n|-\n! Date !! Event !! Format !! Finish !!
 LOG: list[str] = []
 
 
+def has_marker(marker: str, s: str) -> bool:
+    """'[[Event' must match the whole title: '[[RamapoCon II' is not in '[[RamapoCon II Team Championship]]'
+    (Claude 2026-10-25: the prefix match skipped rows)."""
+    if marker.startswith("[[") and not marker.endswith("]]"):
+        return marker + "]]" in s or marker + "|" in s
+    return marker in s
+
+
 def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> str:
     """rows = [(event_marker, row)]; skip events already in the table; newest first.
     Every skipped or impossible row is logged: a silent miss left player pages empty (Bill 2026-10-24)."""
@@ -158,8 +166,8 @@ def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> st
             return "| " + " || ".join(v.get(c, "") for c in cols)
         rows = [(m, remap(r)) for m, r in rows]
     for marker, row in rows:
-        if marker and marker in table:
-            i = next((i for i, r in enumerate(rws) if marker in r), None)
+        if marker and has_marker(marker, table):
+            i = next((i for i, r in enumerate(rws) if has_marker(marker, r)), None)
             filled = []
             if i is not None:
                 old = [c for c in rws[i].lstrip()[1:].split("||")]
@@ -563,6 +571,16 @@ def prune_named(text: str) -> str:
         if p and (f"[[{p.group(1)}]]" in rest or f"[[{p.group(1)}|" in rest):
             continue
         keep.append(line)
+    removed = "\n".join(l for l in sec.split("\n") if l not in keep)
     if not any(l.startswith("* ") for l in keep):
-        return text[:m.start()] + text[k:].lstrip("\n")
-    return text[:m.end()] + "\n".join(keep) + text[k:]
+        out = text[:m.start()] + text[k:].lstrip("\n")
+    else:
+        out = text[:m.end()] + "\n".join(keep) + text[k:]
+    # a pruned bullet may have held a ref's only definition: move it to the first short use (Claude 2026-10-25)
+    for rm in re.finditer(r'<ref name="([^"]+)">.*?</ref>', removed, re.S):
+        name = rm.group(1)
+        if f'<ref name="{name}">' not in out:
+            short = f'<ref name="{name}" />'
+            if short in out:
+                out = out.replace(short, rm.group(0), 1)
+    return out
