@@ -39605,9 +39605,9 @@
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ds.html?copy=2": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T02:42:47Z",
+  "last": "2026-10-25T03:19:47Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ls.html": {
   "capture": "https://web.archive.org/web/20261022002242/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ls.html",
@@ -48422,9 +48422,9 @@
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ls-legend.html?copy=2": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T02:42:57Z",
+  "last": "2026-10-25T03:19:58Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021061647/https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html",
@@ -53383,6 +53383,13 @@
   "status": "failed",
   "tries": 2
  },
+ "https://swccg.com/snapshots/pc/2023-naboo-regionals-enno-haede-ds-watto.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-ecd80b8a6d7b904ca4ebe0843871c7f1f1963452",
+  "last": "2026-10-25T03:20:12Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-enno-haede-ls-echo-base-operations.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -53803,6 +53810,13 @@
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
   "tries": 2
+ },
+ "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-steve-squirlock-ls-skywalker-saga-luke.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-79774924049998757ec9cd5efd28c285f8a6dce9",
+  "last": "2026-10-25T03:20:23Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021090819/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html",
@@ -54392,6 +54406,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-emil-wallin-ds-walkers.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-41ba3295cc2f566615f12c6e7f8736cec2393ad7",
+  "last": "2026-10-25T03:20:34Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-eric-spijksma-ds-revenge-of-the-sith-maul.html": {
   "capture": "https://web.archive.org/web/20261021095248/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-eric-spijksma-ds-revenge-of-the-sith-maul.html",
   "job_id": "spn2-656f028344f57f30f269df9942dea34ec39c1930",
@@ -54638,6 +54659,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-stephan-de-vos-ls-whap.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-ffa2e1b42ae23a500eff81eac053c5ba344ea17f",
+  "last": "2026-10-25T03:21:16Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ds-thrawn.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -54743,11 +54771,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-angelo-consoli-ls-diplo.html?copy=2": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025031528/https://swccg.com/snapshots/pc/2023-ryloth-regionals-angelo-consoli-ls-diplo.html?copy=2",
   "job_id": "spn2-ca16192e51d3a5ef656d973aaa95e73832da106a",
-  "last": "2026-10-25T03:14:21Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T03:19:46Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:29:35Z",
+   "bytes": 7121829,
+   "capture_id": "https://web.archive.org/web/20261025031528id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-angelo-consoli-ls-diplo.html?copy=2",
+   "method": "sha256",
+   "sha256": "b25a32046fd688ccffd8e52b2466aee84673701e99372b00cff6b6e1b59932e6"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-cedrik-vanderhaegen-ds-maul-rots.html": {
   "capture": "https://web.archive.org/web/20261021101023/https://swccg.com/snapshots/pc/2023-ryloth-regionals-cedrik-vanderhaegen-ds-maul-rots.html",
@@ -54841,6 +54876,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-ryloth-regionals-grady-hutchins-ds-shadow-collective.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-fd12d44e0bf1751aaef1be9ad097e7de0ec4856c",
+  "last": "2026-10-25T03:21:26Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-grady-hutchins-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261021110733/https://swccg.com/snapshots/pc/2023-ryloth-regionals-grady-hutchins-ls-yoda-communing.html",
   "job_id": "spn2-9fc49b5f10a1cc8fa54f151290642413bcf5dfc5",
@@ -54864,11 +54906,18 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025031507/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2",
   "job_id": "spn2-429928b3f28fca67f77ae717d7e19393673deb7a",
-  "last": "2026-10-25T03:15:04Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T03:19:41Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:19:41Z",
+   "bytes": 7121804,
+   "capture_id": "https://web.archive.org/web/20261025031507id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2",
+   "method": "sha256",
+   "sha256": "2abe948deadc25a4b76ba807c0bdf7c86377eb01b21f31a5d2b6319bf0e7b063"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ls-yavin-4-operations.html": {
   "capture": "https://web.archive.org/web/20261021100930/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ls-yavin-4-operations.html",
@@ -54907,11 +54956,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ls-skywalker-saga-anakin.html?copy=2": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025031520/https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ls-skywalker-saga-anakin.html?copy=2",
   "job_id": "spn2-3ded3610a4b6242083c92c4dded79c08bd02ec73",
-  "last": "2026-10-25T03:15:17Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T03:19:33Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:19:33Z",
+   "bytes": 7121792,
+   "capture_id": "https://web.archive.org/web/20261025031520id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ls-skywalker-saga-anakin.html?copy=2",
+   "method": "sha256",
+   "sha256": "7976f365b5192d4602a910fd561df8d62755906d6386d0d830992ec271e80335"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ds-bhbm.html": {
   "capture": "",
@@ -54922,11 +54978,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ds-bhbm.html?copy=2": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025031628/https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ds-bhbm.html?copy=2",
   "job_id": "spn2-e928b5f1ecb44049ec2645866eb75798d29ef948",
-  "last": "2026-10-25T03:15:28Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T03:19:27Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:19:27Z",
+   "bytes": 7121899,
+   "capture_id": "https://web.archive.org/web/20261025031628id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ds-bhbm.html?copy=2",
+   "method": "sha256",
+   "sha256": "e1f2b80ba620ef3239709ee4df0e11123788452a600ebdd6193a313a4847cd53"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ls-yoda-communing.html": {
   "capture": "",
@@ -54934,6 +54997,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ls-yoda-communing.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-f26c161fc63bd00a1ffaccc0b8fe81c8dbfa99cb",
+  "last": "2026-10-25T03:21:38Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ds-aobs.html": {
@@ -54945,11 +55015,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ds-aobs.html?copy=2": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025031612/https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ds-aobs.html?copy=2",
   "job_id": "spn2-1fcaee6f63142c3e6cc4b91f7d334de7847b57c9",
-  "last": "2026-10-25T03:16:09Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T03:19:20Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:19:20Z",
+   "bytes": 7121745,
+   "capture_id": "https://web.archive.org/web/20261025031612id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ds-aobs.html?copy=2",
+   "method": "sha256",
+   "sha256": "9f0351e05e8bf72a76425caf44fff723e109f2ad082b7bf761f4ea670635a4a0"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ls-qmc.html": {
   "capture": "",
@@ -54960,11 +55037,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ls-qmc.html?copy=2": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025031703/https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ls-qmc.html?copy=2",
   "job_id": "spn2-194d99bcf02d0eb602c3ba241fb286459f1ab3ed",
-  "last": "2026-10-25T03:16:20Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T03:19:13Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:19:13Z",
+   "bytes": 7121941,
+   "capture_id": "https://web.archive.org/web/20261025031703id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ls-qmc.html?copy=2",
+   "method": "sha256",
+   "sha256": "b78c20fb13f3cf493dcadbac406786f6b91667cafc5982a21a4e7fc896bc413c"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261021104420/https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ds-walkers.html",
@@ -54989,11 +55073,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ls-diplo.html?copy=2": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025031634/https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ls-diplo.html?copy=2",
   "job_id": "spn2-5469014840cf4fc75c9a09a672b2f77429a391d4",
-  "last": "2026-10-25T03:16:30Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T03:19:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:19:07Z",
+   "bytes": 7121816,
+   "capture_id": "https://web.archive.org/web/20261025031634id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ls-diplo.html?copy=2",
+   "method": "sha256",
+   "sha256": "705fc0a5c92dab29030a8e2f954d021473e5593ce39291d5b444b3c27ca78126"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-anthony-howard-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021105923/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-anthony-howard-ds-sycfa.html",
@@ -55067,12 +55158,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brett-bailey-ls-diplo.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-717e6d154abd58fd23efd982ac0b613452a28615",
+  "last": "2026-10-25T03:22:19Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brian-fred-ds-verge.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brian-fred-ds-verge.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-863b68ba9de0c01a899979788351432887512668",
+  "last": "2026-10-25T03:22:30Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-brian-fred-ls-zero-hour.html": {
@@ -55139,6 +55244,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-casey-anis-ls-communing-yoda.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-ada7eaf922134128976057f0eb476f89c730fac5",
+  "last": "2026-10-25T03:22:41Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-chris-wirfs-ds-cct.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
@@ -55183,6 +55295,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-conor-britain-ls-rescue-the-princessv.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-997fc562106a9d1ff504b98982e98c11b1be2965",
+  "last": "2026-10-25T03:23:22Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021104719/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ds-aobs.html",
   "job_id": "spn2-60d98fb24af856a5ae30b14096b3ff0e470b9343",
@@ -55203,6 +55322,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ls-qmc.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-2b50759d1885c160a0d5397d20c0aff915e7531f",
+  "last": "2026-10-25T03:23:33Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-dennis-reinhardt-ds-rots-maul.html": {
@@ -55239,6 +55365,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-drew-lichtenstein-ds-bhbm.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-8c824976bc305806bb27bc6e5153fdfa8d05a8c1",
+  "last": "2026-10-25T03:23:44Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-drew-lichtenstein-ls-skywalker-saga-anakin.html": {
@@ -55285,12 +55418,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jacy-smith-ds-cct.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-ede87fd946ce1ddf2f2b1e45c06b85593a8aa80e",
+  "last": "2026-10-25T03:24:25Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jacy-smith-ls-skywalker-saga-anakin.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jacy-smith-ls-skywalker-saga-anakin.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-b57fbcd1564704f778adbe37d26b6b002b6ec829",
+  "last": "2026-10-25T03:24:36Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jeff-lavigne-ls-funeral-pyre.html": {
@@ -55327,6 +55474,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-joe-olson-ls-skywalker-saga-luke.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-b6df50193b28f51ab563d41f0ddcabc9c822d2a0",
+  "last": "2026-10-25T03:24:47Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-keith-brown-ds-map.html": {
@@ -55415,12 +55569,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-mike-kessling-ds-i-want-that-map.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-1f35d3e751d10438cfe9728d166cfa573ed014d5",
+  "last": "2026-10-25T03:25:29Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-mike-kessling-ls-old-allies.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-mike-kessling-ls-old-allies.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-f3489eebcd704bfaebb8daa9bb6d2e90aad761e7",
+  "last": "2026-10-25T03:25:39Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-mike-turner-ds-cct.html": {
@@ -55431,12 +55599,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-mike-turner-ds-cct.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-b60bd92f0fdc43a67145be829bbb11f3c2e119f6",
+  "last": "2026-10-25T03:25:50Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-mike-turner-ls-no-idea.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-mike-turner-ls-no-idea.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-92c8d0552d70defe14a3c0d0d36224e56bd26494",
+  "last": "2026-10-25T03:26:01Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-nate-davis-ds-hunt-down-v.html": {
@@ -55503,12 +55685,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-ryan-jellison-ds-endor-ops.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-0a84c2ea682795dfbfd6da31778813990c32c5b2",
+  "last": "2026-10-25T03:26:12Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-ryan-jellison-ls-hidden-base.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-ryan-jellison-ls-hidden-base.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-209982196e3fb43bf4e43d916ede1b03ce8e5a3f",
+  "last": "2026-10-25T03:26:23Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-ryan-sersen-ds-aobs.html": {
@@ -55583,6 +55779,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-blake-silkwood-ds-hunt-down-v.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-fc471d7fd17cd1c70b738aace01ef3b4af02dccb",
+  "last": "2026-10-25T03:27:05Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-blake-silkwood-ls-yavin-4-base-operations.html": {
   "capture": "https://web.archive.org/web/20261021111235/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-blake-silkwood-ls-yavin-4-base-operations.html",
   "job_id": "spn2-d7a1d5e6c35cc385fc4629efd03f7256bd9ce75d",
@@ -55633,12 +55836,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ds-rots-dooku.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-898534597918fbbd41cd2b6752b6859378bfedf8",
+  "last": "2026-10-25T03:27:16Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-cfed7a3287d60ee287ead1ccfa0549843b5f4b76",
+  "last": "2026-10-25T03:27:26Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-cal-aldred-ds-thrawn.html": {
@@ -55685,6 +55902,13 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-conor-britain-ls-rescue-the-princessv.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-034647ee6c695ed4ed6e645012bf1637aa5eab80",
+  "last": "2026-10-25T03:28:08Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021104730/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
@@ -55698,6 +55922,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ls-qmc.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-3d1aceb48328468b44e99ff3371c362717d914da",
+  "last": "2026-10-25T03:28:19Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-dennis-reinhardt-ds-rots-maul.html": {
@@ -55720,6 +55951,13 @@
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-dennis-reinhardt-ls-funeral-pyre-ltwwv.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-6c6e3fa587e7a361b85ffec43f208393a125656b",
+  "last": "2026-10-25T03:28:30Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-drew-lichtenstein-ds-cct.html": {
@@ -55752,12 +55990,26 @@
   "status": "failed",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ds-thrawn.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-9ffb754689c2742da975e1af7389a34325dd3114",
+  "last": "2026-10-25T03:29:12Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ls-no-idea.html": {
   "capture": "",
   "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
   "last": "2026-10-25T00:36:01Z",
   "note": "Datacard Grok poke 2026-10-24",
   "status": "failed",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ls-no-idea.html?copy=2": {
+  "capture": "",
+  "job_id": "spn2-e268cd1bbfe9a9b7a4f534a453458c7d194d9e4c",
+  "last": "2026-10-25T03:29:22Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-jacy-smith-ds-cct.html": {
@@ -63855,8 +64107,15 @@
   "capture": "https://web.archive.org/web/20261024091215/https://swccg.com/snapshots/scomp/cal-kestis.html",
   "job_id": "spn2-d70ee6a00b9a8166e9178229edb956f6563b22ba",
   "last": "2026-10-24T13:08:52Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:29:57Z",
+   "bytes": 720036,
+   "capture_id": "https://web.archive.org/web/20261024091215id_/https://swccg.com/snapshots/scomp/cal-kestis.html",
+   "method": "sha256",
+   "sha256": "b4d27cdaeb7bd5c8c7b2e98d23c73a950d36a82f6166d26118a0bc02e3d3e11f"
+  }
  },
  "https://swccg.com/snapshots/scomp/caller.html": {
   "capture": "",
@@ -67586,8 +67845,15 @@
   "capture": "https://web.archive.org/web/20261024102121/https://swccg.com/snapshots/scomp/deactivated-hyperdrive.html",
   "job_id": "spn2-568c842171afcb322d1627b60ca9f74bf5b1bd22",
   "last": "2026-10-24T13:09:27Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:29:51Z",
+   "bytes": 456492,
+   "capture_id": "https://web.archive.org/web/20261024102121id_/https://swccg.com/snapshots/scomp/deactivated-hyperdrive.html",
+   "method": "sha256",
+   "sha256": "aa0e9e3e1e7da13552149783c42961843f823f1c8eb74f4d3952ee6f8ae94029"
+  }
  },
  "https://swccg.com/snapshots/scomp/dead-ewok.html": {
   "capture": "",
@@ -67803,8 +68069,15 @@
   "capture": "https://web.archive.org/web/20261024090921/https://swccg.com/snapshots/scomp/death-star-ii-reactor-core.html",
   "job_id": "spn2-fb60ca0ae0927d99d32adaaaaa5ff230314e9bda",
   "last": "2026-10-24T13:09:34Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:29:46Z",
+   "bytes": 267607,
+   "capture_id": "https://web.archive.org/web/20261024090921id_/https://swccg.com/snapshots/scomp/death-star-ii-reactor-core.html",
+   "method": "sha256",
+   "sha256": "409a994aed1b0a94ae21bffeced9d717f48399570e9b271ab494a0ac7230771c"
+  }
  },
  "https://swccg.com/snapshots/scomp/death-star-ii-throne-room.html": {
   "capture": "https://web.archive.org/web/20261024174433/https://swccg.com/snapshots/scomp/death-star-ii-throne-room.html",
@@ -67852,8 +68125,15 @@
   "capture": "https://web.archive.org/web/20261024095247/https://swccg.com/snapshots/scomp/death-star-tractor-beam.html",
   "job_id": "spn2-3a9c08f39e8906f201d1ff062f140ce7c24da704",
   "last": "2026-10-24T13:09:40Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T03:29:40Z",
+   "bytes": 717044,
+   "capture_id": "https://web.archive.org/web/20261024095247id_/https://swccg.com/snapshots/scomp/death-star-tractor-beam.html",
+   "method": "sha256",
+   "sha256": "3c29485723c3c2594d3abe6840751f6b87efb33b9b180f5959610bd039f73749"
+  }
  },
  "https://swccg.com/snapshots/scomp/death-star-trash-compactor-v.html": {
   "capture": "https://web.archive.org/web/20261024171536/https://swccg.com/snapshots/scomp/death-star-trash-compactor-v.html",
