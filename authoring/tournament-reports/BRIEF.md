@@ -62,3 +62,4 @@ For each id: title, author (+page status), event (+status), event date, author f
 - Several events in one city and month: every one gets its day in the name, including the first one already built (tell me so I can rename it).
 - Two reports with the same author and title (a weekly "Mirkwood Deadbody Style"): set `page_title` to "<Author> <Title> (<day month year>)" on each.
 - A report that tells a sexual or degrading story about a real, named person, or is mostly abuse aimed at named people: don't fill it; tell me (I hold it for Bill).
+- An unnamed opponent is `null` (put the report's words, e.g. "some guy", in the game note), never a name string; lowercase phrases are not names. (Batch 16 created a "Some guy" page by mistake.)

@@ -33,6 +33,8 @@ def full_name(n: str | None) -> bool:
     if not n or " " not in n.strip() or re.search(r"[?()/@#$%*&,]| and |surname|unknown|not given|unnamed", n, re.I):
         return False
     parts = n.split()
+    if not (parts[0][:1].isupper() and parts[-1][:1].isupper()):  # "some guy" is not a name (Claude 2026-10-25)
+        return False
     return not any(re.fullmatch(r"[A-Za-z]\.?", p) or p.endswith(".") and len(p) <= 3 for p in parts[1:])
 
 
