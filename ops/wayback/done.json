@@ -48422,9 +48422,9 @@
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ls-legend.html?copy=2": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T04:34:17Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-25T05:11:29Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021061647/https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html",
@@ -62312,6 +62312,13 @@
    "sha256": "ca6504b78aa8019edb170c276913ddd9bd6bfe840dc664aff4b1431515fb063b"
   }
  },
+ "https://swccg.com/snapshots/scomp/antilles-maneuver.html": {
+  "capture": "",
+  "job_id": "spn2-37b4fadf4987adf9a15f2e13ae853edb4642860a",
+  "last": "2026-10-25T05:21:15Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/any-methods-necessary.html": {
   "capture": "",
   "job_id": "spn2-5b142af3bd8cc9be2e72e235b181de586fcd11f6",
@@ -62775,6 +62782,13 @@
   "capture": "",
   "job_id": "spn2-b06ec81cbe185424d0d8143d8154ecf9e542fefb",
   "last": "2026-10-25T04:29:24Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/azure-angel-ai.html": {
+  "capture": "",
+  "job_id": "spn2-cbc3aa41acf9e243650a7c60bc5b86fd130d86f6",
+  "last": "2026-10-25T05:21:26Z",
   "status": "pending",
   "tries": 1
  },
@@ -63379,6 +63393,13 @@
    "sha256": "5f54fdf5c859bbc1ec97aeb9e180f2baaf0ac140ad81c215dc25fd5e8627bdca"
   }
  },
+ "https://swccg.com/snapshots/scomp/besieged.html": {
+  "capture": "",
+  "job_id": "spn2-0d64d6ef7aa077888cd13b79dc83c86f258e5856",
+  "last": "2026-10-25T05:19:09Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/beskar-deflection.html": {
   "capture": "https://web.archive.org/web/20261024222635/https://swccg.com/snapshots/scomp/beskar-deflection.html",
   "job_id": "spn2-519f8f6e3e072ada75dce5cc5c9f7f3bb41726cf",
@@ -63509,8 +63530,15 @@
   "capture": "https://web.archive.org/web/20261024070133/https://swccg.com/snapshots/scomp/binder.html",
   "job_id": "spn2-4e802506be6459139b3724c42be089efc217740a",
   "last": "2026-10-24T07:07:03Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:21:56Z",
+   "bytes": 275405,
+   "capture_id": "https://web.archive.org/web/20261024070133id_/https://swccg.com/snapshots/scomp/binder.html",
+   "method": "sha256",
+   "sha256": "a2b77a8ab0443d07b33b4c5744df279175933def68a8fd68aa5667a09cc29967"
+  }
  },
  "https://swccg.com/snapshots/scomp/binders.html": {
   "capture": "https://web.archive.org/web/20261024224144/https://swccg.com/snapshots/scomp/binders.html",
@@ -63651,6 +63679,13 @@
    "method": "sha256",
    "sha256": "0757157594a15bdd4f1e7b11259288cbcdffdbe32e5a571d11ff3488adfa1f1b"
   }
+ },
+ "https://swccg.com/snapshots/scomp/blast-door-controls-v.html": {
+  "capture": "",
+  "job_id": "spn2-36d35a19612ad0fd6530de2e68431ce54a251d8d",
+  "last": "2026-10-25T05:14:41Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/blast-door-controls.html": {
   "capture": "https://web.archive.org/web/20261024012655/https://swccg.com/snapshots/scomp/blast-door-controls.html",
@@ -64057,6 +64092,13 @@
    "method": "sha256",
    "sha256": "1b16da851aea3817520af499932f83fb1dbce9f66ab59452b7ba6939f5f3a51e"
   }
+ },
+ "https://swccg.com/snapshots/scomp/boba-fett-in-slave-i-v.html": {
+  "capture": "",
+  "job_id": "spn2-8f97c76732589fc9e82a3ad3b60ae6292800cc80",
+  "last": "2026-10-25T05:17:01Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/boba-fett-in-slave-i.html": {
   "capture": "",
@@ -64490,6 +64532,13 @@
    "sha256": "189c6d1d955d50dc4bfe173c1f365f87a0eac20ad9d8a2bf12812e72e61bfadb"
   }
  },
+ "https://swccg.com/snapshots/scomp/bravo-fighter.html": {
+  "capture": "",
+  "job_id": "spn2-8e078ab023928c4dd3ea85c2a58b43ff973f42e7",
+  "last": "2026-10-25T05:12:21Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/breached-defenses.html": {
   "capture": "",
   "job_id": "spn2-79d4224e0c06c939d93dcabf4c59c58f4b4c9041",
@@ -64608,6 +64657,13 @@
    "method": "sha256",
    "sha256": "7fc733f005ea05c58716ff9b62502bcb73bbb0365324031f823a4f4718cb47dc"
   }
+ },
+ "https://swccg.com/snapshots/scomp/cad-bane.html": {
+  "capture": "",
+  "job_id": "spn2-14f4968168f1d79a7de089245f3b867551b7869e",
+  "last": "2026-10-25T05:18:05Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/cal-alder-v.html": {
   "capture": "https://web.archive.org/web/20261024023433/https://swccg.com/snapshots/scomp/cal-alder-v.html",
@@ -64922,6 +64978,13 @@
   "job_id": "spn2-dc94059094252478ebcd35afde2bd1c9a28bc262",
   "last": "2026-10-24T07:05:36Z",
   "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/captain-rex-501st-legion-ai.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T05:11:59Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/captain-rex-501st-legion.html": {
@@ -66196,6 +66259,13 @@
   "status": "pending",
   "tries": 2
  },
+ "https://swccg.com/snapshots/scomp/christophsis.html": {
+  "capture": "",
+  "job_id": "spn2-04b073840f5d3d87e5906ea6e2a09dc49b31375f",
+  "last": "2026-10-25T05:15:26Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/city-in-the-clouds-you-truly-belong-here-with-us.html": {
   "capture": "https://web.archive.org/web/20261024002448/https://swccg.com/snapshots/scomp/city-in-the-clouds-you-truly-belong-here-with-us.html",
   "job_id": "spn2-56e5763a40200d5eb428e819a79eda620be9ad7b",
@@ -66679,6 +66749,13 @@
    "sha256": "03039ff79412165af91e507c871d5c2223a898c42cbaaef3e61004c6989ab305"
   }
  },
+ "https://swccg.com/snapshots/scomp/colonel-davod-jon.html": {
+  "capture": "",
+  "job_id": "spn2-d5ca49f897ed1583e4ba2eec929d59500bc35f3f",
+  "last": "2026-10-25T05:17:12Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/colonel-dyer.html": {
   "capture": "https://web.archive.org/web/20261024101904/https://swccg.com/snapshots/scomp/colonel-dyer.html",
   "job_id": "spn2-ddbb5bfab708deac5782053940fd7f9fca9b074e",
@@ -66930,6 +67007,13 @@
    "method": "sha256",
    "sha256": "5d8e880ec251925312751b3cd8734034e80ade88909d0f15d3aab5ab33d7d0a1"
   }
+ },
+ "https://swccg.com/snapshots/scomp/commander-igar.html": {
+  "capture": "",
+  "job_id": "spn2-b1c43c142ab4c100d17cc3fb02f39321685e1473",
+  "last": "2026-10-25T05:20:34Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/commander-luke-skywalker-v.html": {
   "capture": "",
@@ -67585,9 +67669,9 @@
  "https://swccg.com/snapshots/scomp/corran-horn.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T04:34:48Z",
+  "last": "2026-10-25T05:11:49Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/corrosive-damage.html": {
   "capture": "",
@@ -67659,6 +67743,13 @@
    "sha256": "31adb5ac887d59c6b8ee04f10f7ce8948ce3795d3122f8597cb192da6b313a74"
   }
  },
+ "https://swccg.com/snapshots/scomp/coruscant-guard-v.html": {
+  "capture": "",
+  "job_id": "spn2-c816a58d3307b8563df5ceb6b47676654af3d554",
+  "last": "2026-10-25T05:15:36Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/coruscant-guard.html": {
   "capture": "https://web.archive.org/web/20261024222727/https://swccg.com/snapshots/scomp/coruscant-guard.html",
   "job_id": "spn2-bd7086bc01de37bcc87dce89a421eaba2abf97d5",
@@ -67698,8 +67789,15 @@
   "capture": "https://web.archive.org/web/20261024071648/https://swccg.com/snapshots/scomp/coruscant-jedi-council-chamber.html",
   "job_id": "spn2-02f225168c0d0799506eac8702abf1b4d1e3118b",
   "last": "2026-10-24T07:20:44Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:21:50Z",
+   "bytes": 308031,
+   "capture_id": "https://web.archive.org/web/20261024071648id_/https://swccg.com/snapshots/scomp/coruscant-jedi-council-chamber.html",
+   "method": "sha256",
+   "sha256": "c4c1c91931623defcd5dbe3c9df28bf9478162e9e137cdd5a4546d7ad0f09980"
+  }
  },
  "https://swccg.com/snapshots/scomp/coruscant-jedi-temple-alt.html": {
   "capture": "https://web.archive.org/web/20261024200557/https://swccg.com/snapshots/scomp/coruscant-jedi-temple-alt.html",
@@ -67800,11 +67898,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/coruscant-v-ai.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025050729/https://swccg.com/snapshots/scomp/coruscant-v-ai.html",
   "job_id": "spn2-8671981c7c496c537a62cd1a9c7c8cfaaf40ef64",
-  "last": "2026-10-25T05:07:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T05:11:28Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:21:38Z",
+   "bytes": 642222,
+   "capture_id": "https://web.archive.org/web/20261025050729id_/https://swccg.com/snapshots/scomp/coruscant-v-ai.html",
+   "method": "sha256",
+   "sha256": "a2b986c2f10aa6557fe32732ca35ffe8c806fe75aff947d562c44250de250a03"
+  }
  },
  "https://swccg.com/snapshots/scomp/coruscant-v.html": {
   "capture": "https://web.archive.org/web/20261024085746/https://swccg.com/snapshots/scomp/coruscant-v.html",
@@ -68261,11 +68366,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/dannik-jerriko.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025050821/https://swccg.com/snapshots/scomp/dannik-jerriko.html",
   "job_id": "spn2-5ec0e3fbf129df45b8fefc18d1ab54c1dd64443b",
-  "last": "2026-10-25T05:08:12Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T05:11:11Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:11:11Z",
+   "bytes": 277579,
+   "capture_id": "https://web.archive.org/web/20261025050821id_/https://swccg.com/snapshots/scomp/dannik-jerriko.html",
+   "method": "sha256",
+   "sha256": "f8e21c9759953f784cce46e97295b4c1438f2201a53dd7109b879dfab81908bf"
+  }
  },
  "https://swccg.com/snapshots/scomp/dantooine-base-operations-more-dangerous-than-you-realize.html": {
   "capture": "https://web.archive.org/web/20261024165207/https://swccg.com/snapshots/scomp/dantooine-base-operations-more-dangerous-than-you-realize.html",
@@ -68693,6 +68805,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/scomp/darth-tyranus-holo-ai.html": {
+  "capture": "",
+  "job_id": "spn2-5a3ad9fcd8068b598a2cec675f3aed1023177cb8",
+  "last": "2026-10-25T05:15:47Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/darth-tyranus.html": {
   "capture": "https://web.archive.org/web/20261024234730/https://swccg.com/snapshots/scomp/darth-tyranus.html",
   "job_id": "spn2-8d276e096eea08775d633f441e85bebfe737a168",
@@ -68893,6 +69012,13 @@
   "capture": "",
   "job_id": "spn2-b4cc62d7d1ce41d7d1477a403f4e2961352f7a7f",
   "last": "2026-10-24T23:09:27Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/deactivate-the-shield-generator.html": {
+  "capture": "",
+  "job_id": "spn2-a46a2246c62b4406f2bd3f22d27d9820ead37f88",
+  "last": "2026-10-25T05:20:12Z",
   "status": "pending",
   "tries": 1
  },
@@ -69967,6 +70093,13 @@
    "sha256": "3a9d863d4145a4b2898b8a31837de45e2588e86055bc526ca3cb221ae3265c01"
   }
  },
+ "https://swccg.com/snapshots/scomp/do-or-do-not-wise-advice-v.html": {
+  "capture": "",
+  "job_id": "spn2-b9f6a07b47e657d6c417efc3d9379d24af98cdd3",
+  "last": "2026-10-25T05:16:51Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/do-or-do-not-wise-advice.html": {
   "capture": "",
   "job_id": "spn2-8e8758cf1a90249eae0a6a979c206d3d96c6f365",
@@ -70519,6 +70652,13 @@
    "sha256": "a7dda262e9f96b9ee3aaaafe4209a578f441065a6931dedf2728d1e08eaa7dda"
   }
  },
+ "https://swccg.com/snapshots/scomp/dune-walker.html": {
+  "capture": "",
+  "job_id": "spn2-2dcbc8e6da523e7c14d4d7dcd779cfc638a9196d",
+  "last": "2026-10-25T05:13:27Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/dutch.html": {
   "capture": "",
   "job_id": "spn2-7e403dd362c581c1ee230ea1df21e383275c80d9",
@@ -70728,6 +70868,13 @@
    "sha256": "bf624b59bfce9bdca0a76867f6ed1f72981943cc67b8a5a75145e18fe356b7b0"
   }
  },
+ "https://swccg.com/snapshots/scomp/egregious-pilot-error.html": {
+  "capture": "",
+  "job_id": "spn2-07e5389947de6e1ad8ecdc46d45726361cc30f26",
+  "last": "2026-10-25T05:16:40Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/eighth-brother.html": {
   "capture": "https://web.archive.org/web/20261024022018/https://swccg.com/snapshots/scomp/eighth-brother.html",
   "job_id": "spn2-355f7fb4b3b755f82573cbc626826fdb02ae0244",
@@ -70797,6 +70944,13 @@
    "method": "sha256",
    "sha256": "db5796989a3d5e1884d4e850c0354c0be586b62182daf90b1ca58494ee03aa03"
   }
+ },
+ "https://swccg.com/snapshots/scomp/electro-rangefinder-v.html": {
+  "capture": "",
+  "job_id": "spn2-9fae6f1713e88b7523ea785c2554c4eb57f9633d",
+  "last": "2026-10-25T05:18:27Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/electro-rangefinder.html": {
   "capture": "https://web.archive.org/web/20261024161931/https://swccg.com/snapshots/scomp/electro-rangefinder.html",
@@ -71466,9 +71620,9 @@
  "https://swccg.com/snapshots/scomp/establish-control-v.html": {
   "capture": "https://web.archive.org/web/20261024235207/https://swccg.com/snapshots/scomp/establish-control-v.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T04:34:38Z",
+  "last": "2026-10-25T05:11:39Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/establish-control.html": {
   "capture": "",
@@ -71980,6 +72134,13 @@
   "status": "pending",
   "tries": 2
  },
+ "https://swccg.com/snapshots/scomp/fanfare-v.html": {
+  "capture": "",
+  "job_id": "spn2-372da05d1124aa47f64f2cd4fa575c0971feb1b7",
+  "last": "2026-10-25T05:16:29Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/far-more-frightening-than-death.html": {
   "capture": "https://web.archive.org/web/20261024200816/https://swccg.com/snapshots/scomp/far-more-frightening-than-death.html",
   "job_id": "spn2-ddcc54e9f20d1487816a05bff3a08204a3c9189e",
@@ -72482,6 +72643,13 @@
    "method": "sha256",
    "sha256": "982ff35471fc1811108abd1dcb602563ba713eecd31ba3a0db7d490aeda0b04c"
   }
+ },
+ "https://swccg.com/snapshots/scomp/for-luck.html": {
+  "capture": "",
+  "job_id": "spn2-95859fffd413c46c04103dddf6a9b77ebba50531",
+  "last": "2026-10-25T05:14:19Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/for-the-republic.html": {
   "capture": "",
@@ -73222,8 +73390,15 @@
   "capture": "https://web.archive.org/web/20261024061520/https://swccg.com/snapshots/scomp/ghhhk.html",
   "job_id": "spn2-86ead3d4c03a3643e7fda54d646e340d802a3bf1",
   "last": "2026-10-24T07:21:13Z",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-25T05:21:44Z",
+   "bytes": 164529,
+   "capture_id": "https://web.archive.org/web/20261024061520id_/https://swccg.com/snapshots/scomp/ghhhk.html",
+   "method": "sha256",
+   "sha256": "018bee0f24ac8b8388248bf7fdbdae0cbda4452fb6078448b4ecbf20ea8e6762"
+  }
  },
  "https://swccg.com/snapshots/scomp/ghoel.html": {
   "capture": "https://web.archive.org/web/20261024225258/https://swccg.com/snapshots/scomp/ghoel.html",
@@ -73862,11 +74037,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/guri.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025050804/https://swccg.com/snapshots/scomp/guri.html",
   "job_id": "spn2-388a961f3afad59dc6710b31d39469e87edb44fe",
-  "last": "2026-10-25T05:08:00Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T05:11:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:11:17Z",
+   "bytes": 248327,
+   "capture_id": "https://web.archive.org/web/20261025050804id_/https://swccg.com/snapshots/scomp/guri.html",
+   "method": "sha256",
+   "sha256": "8df56d72a540be9442a2ff60602bf977ffab6543a4b38e10538ee3e0f6b66aa5"
+  }
  },
  "https://swccg.com/snapshots/scomp/h-nemthe.html": {
   "capture": "",
@@ -73918,11 +74100,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/han-s-dice-v.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025050753/https://swccg.com/snapshots/scomp/han-s-dice-v.html",
   "job_id": "spn2-6c67158c44e3f8575b43f45cff6fec74cc3a62f2",
-  "last": "2026-10-25T05:07:49Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T05:11:21Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:11:21Z",
+   "bytes": 830467,
+   "capture_id": "https://web.archive.org/web/20261025050753id_/https://swccg.com/snapshots/scomp/han-s-dice-v.html",
+   "method": "sha256",
+   "sha256": "8522e4dcc9ecc16b9a4c71d1a3dee882f9273b025f189f395480245c3dc8fbbb"
+  }
  },
  "https://swccg.com/snapshots/scomp/han-s-heavy-blaster-pistol.html": {
   "capture": "",
@@ -74336,6 +74525,13 @@
    "method": "sha256",
    "sha256": "96e7ae8ca53193b090e3cd67e258de04f31d9fe21e79e7bdde12a40cc4f66655"
   }
+ },
+ "https://swccg.com/snapshots/scomp/hindsight-readable.html": {
+  "capture": "",
+  "job_id": "spn2-624be7a3b02573b7aa20e81f158aef264c75fcb7",
+  "last": "2026-10-25T05:20:23Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/his-name-is-anakin.html": {
   "capture": "https://web.archive.org/web/20261024094035/https://swccg.com/snapshots/scomp/his-name-is-anakin.html",
@@ -74756,6 +74952,27 @@
    "method": "sha256",
    "sha256": "718ffb18d69d08ed5e18e96b21d26b39b5d8d45bc750348e19b65eb3314abbf3"
   }
+ },
+ "https://swccg.com/snapshots/scomp/human-shield.html": {
+  "capture": "",
+  "job_id": "spn2-46f8ac02dcb174166b497237d3002fd6cd5cb9b9",
+  "last": "2026-10-25T05:18:16Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/hunt-down-and-destroy-the-jedi-their-fire-has-gone-out-of-the-universe-v.html": {
+  "capture": "",
+  "job_id": "spn2-342493cdbbcd140a6838338a2835530e652b1c1f",
+  "last": "2026-10-25T05:13:16Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/scomp/hunt-down-and-destroy-the-jedi-their-fire-has-gone-out-of-the-universe.html": {
+  "capture": "",
+  "job_id": "spn2-b03225b05df1af6a503e10e255cafee2a52fd58a",
+  "last": "2026-10-25T05:14:30Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/hunt-for-the-droid-general-he-s-a-coward.html": {
   "capture": "",
@@ -75740,6 +75957,13 @@
    "sha256": "1d1cc69ccb820e71c708aac312281bc9548620f377d1657c3fa5d1fe5f3994f6"
   }
  },
+ "https://swccg.com/snapshots/scomp/imperial-gunner.html": {
+  "capture": "",
+  "job_id": "spn2-24326d45abe3fe80dbb1bf0f96848e27ca517e0c",
+  "last": "2026-10-25T05:12:10Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/imperial-holotable.html": {
   "capture": "https://web.archive.org/web/20261024014951/https://swccg.com/snapshots/scomp/imperial-holotable.html",
   "job_id": "spn2-5bb86afc7175b7a6d41615435fe708a4016b9ee7",
@@ -75902,11 +76126,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/inconsequential-barriers.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025050742/https://swccg.com/snapshots/scomp/inconsequential-barriers.html",
   "job_id": "spn2-549ca1837ef676ba159f7402316f9b5665bae771",
-  "last": "2026-10-25T05:07:38Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T05:11:25Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:11:25Z",
+   "bytes": 287481,
+   "capture_id": "https://web.archive.org/web/20261025050742id_/https://swccg.com/snapshots/scomp/inconsequential-barriers.html",
+   "method": "sha256",
+   "sha256": "d8b605e8c7c88191a2d1342d6b5ab98f54a890967df46f4e1f8827c9dfa9d79b"
+  }
  },
  "https://swccg.com/snapshots/scomp/inconsequential-losses.html": {
   "capture": "",
@@ -76265,6 +76496,13 @@
    "sha256": "7762ef71ef1d93f7d65fca60deb6fcb133ce41284e80552d7cc2d948b65bffcc"
   }
  },
+ "https://swccg.com/snapshots/scomp/it-o-eyetee-oh.html": {
+  "capture": "",
+  "job_id": "spn2-412c52cc61c2f756c261f1c4d94936d887f4ee20",
+  "last": "2026-10-25T05:19:20Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/it-s-a-hit.html": {
   "capture": "https://web.archive.org/web/20261024015055/https://swccg.com/snapshots/scomp/it-s-a-hit.html",
   "job_id": "spn2-9bf288da987d2305839e46b8b43a78ef157a806c",
@@ -76434,11 +76672,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/jabba-s-palace-entrance-cavern.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025050908/https://swccg.com/snapshots/scomp/jabba-s-palace-entrance-cavern.html",
   "job_id": "spn2-e1602ff0e3ea2a6952b213cb7e584312b10ad678",
-  "last": "2026-10-25T05:09:04Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T05:11:02Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:11:02Z",
+   "bytes": 248480,
+   "capture_id": "https://web.archive.org/web/20261025050908id_/https://swccg.com/snapshots/scomp/jabba-s-palace-entrance-cavern.html",
+   "method": "sha256",
+   "sha256": "f7585030d9be0539c72ef73eab67ae426ec1258906b5c261de19ca7df3ef5c00"
+  }
  },
  "https://swccg.com/snapshots/scomp/jabba-s-palace-rancor-pit.html": {
   "capture": "https://web.archive.org/web/20261024062753/https://swccg.com/snapshots/scomp/jabba-s-palace-rancor-pit.html",
@@ -76916,6 +77161,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/scomp/jedi-levitation.html": {
+  "capture": "",
+  "job_id": "spn2-2927496eed899b26f9c3e630ef154e50e6c4dfe9",
+  "last": "2026-10-25T05:17:24Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/jedi-lightsaber-v.html": {
   "capture": "https://web.archive.org/web/20261024181727/https://swccg.com/snapshots/scomp/jedi-lightsaber-v.html",
   "job_id": "spn2-f7e6fe612f0299270f894c85c3c6ae8ccd4c9b07",
@@ -77007,6 +77259,13 @@
    "sha256": "2863b469d825ed450c7cb7b2fc5783a452b432a9d4c293d9a25b107250ffc01e"
   }
  },
+ "https://swccg.com/snapshots/scomp/jerus-jannick.html": {
+  "capture": "",
+  "job_id": "spn2-a41675db026b9b3ce6d35d9bc5111e0c34f34afa",
+  "last": "2026-10-25T05:19:30Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/jess.html": {
   "capture": "https://web.archive.org/web/20261024192000/https://swccg.com/snapshots/scomp/jess.html",
   "job_id": "spn2-601f2be59799858d9b0ce2a47fff50bb8e38b288",
@@ -77048,6 +77307,13 @@
    "sha256": "ec6667ddd887427c8f9f1061ab5848032b913b6dae95db7df510a98fe7c53d93"
   }
  },
+ "https://swccg.com/snapshots/scomp/js-1975.html": {
+  "capture": "",
+  "job_id": "spn2-b0a01c55538daa21826ba9ac3a4cd84804e113c7",
+  "last": "2026-10-25T05:13:38Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/scomp/judicator.html": {
   "capture": "https://web.archive.org/web/20261024232337/https://swccg.com/snapshots/scomp/judicator.html",
   "job_id": "spn2-aad6b6c96e42e37846b44785a3b48604ce5a5226",
@@ -77063,11 +77329,18 @@
   }
  },
  "https://swccg.com/snapshots/scomp/juri-juice.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025050826/https://swccg.com/snapshots/scomp/juri-juice.html",
   "job_id": "spn2-9332d825c5a46ae76b8561f53803b42e7ad934cc",
-  "last": "2026-10-25T05:08:23Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T05:11:06Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T05:11:06Z",
+   "bytes": 164485,
+   "capture_id": "https://web.archive.org/web/20261025050826id_/https://swccg.com/snapshots/scomp/juri-juice.html",
+   "method": "sha256",
+   "sha256": "eb5d3e22be0c724da93518a08b34bfcba836baff99d4abcf414d5ff6e8742d03"
+  }
  },
  "https://swccg.com/snapshots/scomp/jyn-erso-ai.html": {
   "capture": "",
@@ -77152,6 +77425,13 @@
    "method": "sha256",
    "sha256": "30ace6b40e3077a8223a4a1c2e2e9f97622e29a7d76325236cc1a7587ac4866b"
   }
+ },
+ "https://swccg.com/snapshots/scomp/kal-falnl-c-ndros.html": {
+  "capture": "",
+  "job_id": "spn2-5f587cd37983dfffd51305f1bcc4ea37b03d7edf",
+  "last": "2026-10-25T05:12:35Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/kalit-s-sandcrawler.html": {
   "capture": "https://web.archive.org/web/20261023234133/https://swccg.com/snapshots/scomp/kalit-s-sandcrawler.html",
