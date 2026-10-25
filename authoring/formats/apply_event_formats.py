@@ -12,6 +12,11 @@ for x in json.load(open(Path(__file__).with_name('drafts')/'event_formats.json')
     line=f"* '''Format:''' [[{f}]] (from the card pool legal on the event date)" if x['basis'].startswith('date') else f"* '''Format:''' [[{f}]]"
     if re.search(r"^\* '''(?:Format|Environment):'''\s*$", t, re.M):
         t=re.sub(r"^\* '''(?:Format|Environment):'''\s*$", line, t, count=1, flags=re.M)
+    elif re.search(r"^== (Format|Details|Event|Info)[^=]*==\s*$", t, re.M):  # bullets live in a Format/Details section
+        sec=re.search(r"^== (Format|Details|Event|Info)[^=]*==\s*$", t, re.M)
+        tl=re.search(r"^\* '''Type:'''[^\n]*$", t[sec.end():], re.M)
+        k=sec.end()+tl.end() if tl else sec.end()
+        t=t[:k]+("\n"+line if tl else "\n\n"+line)+t[k:]
     else:
         m=list(re.finditer(r"^\* '''[^']+:'''.*$", t.split('\n==')[0], re.M))
         if m: t=t[:m[-1].end()]+"\n"+line+t[m[-1].end():]
