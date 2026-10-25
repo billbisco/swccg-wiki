@@ -5,6 +5,7 @@ import os
 import sys
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -366,6 +367,137 @@ class SnapshotDelete(unittest.TestCase):
             os.environ.pop("SWCCG_SNAPSHOT_ROOT", None)
             os.environ.pop("SWCCG_SNAPSHOT_LOG", None)
         self.assertTrue(self.fp.exists())
+
+
+class PendingConfirm(unittest.TestCase):
+    """Cap stalled pending polls; stop the walk when Wayback is down."""
+
+    def test_skips_old_pending_and_caps_newest(self):
+        from datetime import datetime, timedelta, timezone
+
+        now_t = datetime(2026, 10, 25, 1, 0, 0, tzinfo=timezone.utc)
+        done = {
+            "https://old/1": {"status": "pending", "last": "2026-10-21T00:00:00Z", "job_id": "old"},
+            "https://ok/1": {"status": "ok", "last": "2026-10-25T00:55:00Z"},
+            "https://new/c": {"status": "pending", "last": "2026-10-25T00:10:00Z", "job_id": "c"},
+            "https://new/a": {"status": "pending", "last": "2026-10-25T00:50:00Z", "job_id": "a"},
+            "https://new/b": {"status": "pending", "last": "2026-10-25T00:40:00Z", "job_id": "b"},
+            "https://new/nodate": {"status": "pending", "job_id": "x"},
+        }
+        got = W.pending_confirm_urls(done, now_t=now_t, max_age=timedelta(hours=2), cap=2)
+        self.assertEqual(got, ["https://new/a", "https://new/b"])
+
+    def test_archive_unreachable_detects_connection_refused(self):
+        ex = urllib.error.URLError(ConnectionRefusedError(111, "Connection refused"))
+        self.assertTrue(W.archive_unreachable(ex))
+        self.assertFalse(W.archive_unreachable(RuntimeError("no job_id: not-found")))
+
+    def test_confirm_raises_status_retry_on_connection_refused(self):
+        saved = {k: getattr(W, k) for k in ("AUTH", "spn2_status")}
+        W.AUTH = "LOW test:test"
+        W.spn2_status = lambda job: (_ for _ in ()).throw(
+            urllib.error.URLError(ConnectionRefusedError(111, "Connection refused"))
+        )
+        try:
+            with self.assertRaises(W.StatusRetry):
+                W.confirm("https://swccg.com/snapshots/pc/x.html", {
+                    "status": "pending", "job_id": "spn2-x", "last": "2026-10-25T00:50:00Z", "tries": 1,
+                })
+        finally:
+            for k, v in saved.items():
+                setattr(W, k, v)
+
+    def test_run_does_not_poll_stale_pending(self):
+        saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "spn2_submit", "spn2_status",
+                                            "capture_ok", "fetch", "AUTH", "GAP_S",
+                                            "wiki_snapshot_wayback_paths")}
+        sleep = W.time.sleep
+        W.time.sleep = lambda s: None
+        tmp = tempfile.TemporaryDirectory()
+        repo = Path(tmp.name)
+        (repo / "ops/wayback").mkdir(parents=True)
+        src = "https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf"
+        stale = "https://example.org/stale"
+        (repo / W.QUEUE).write_text(src + "\n")
+        (repo / W.DONE).write_text(json.dumps({
+            stale: {"capture": "", "status": "pending", "tries": 1,
+                    "last": "2026-10-21T00:00:00Z", "job_id": "spn2-stale"},
+        }))
+        polled = []
+        W.reset_to_origin = lambda repo: None
+        W.commit_and_push = lambda repo, paths, msg, redo: True
+        W.wiki_snapshot_wayback_paths = lambda: set()
+        W.AUTH = "LOW test:test"
+        W.GAP_S = 0
+        W.spn2_submit = lambda url: {"job_id": "spn2-new"}
+        def status(job):
+            polled.append(job)
+            if job == "spn2-stale":
+                raise AssertionError("polled stale pending job_id")
+            return {"status": "success", "timestamp": "20261020193000", "original_url": src}
+        W.spn2_status = status
+        W.capture_ok = lambda cap: True
+        new_cap = "https://web.archive.org/web/20261020193000/" + src
+        W.fetch = fake_get({W.id_url(new_cap): resp(PDF), src: resp(PDF)})
+        try:
+            W.run(repo, minutes=5)
+        finally:
+            for k, v in saved.items():
+                setattr(W, k, v)
+            W.time.sleep = sleep
+            tmp.cleanup()
+        self.assertNotIn("spn2-stale", polled)
+        self.assertIn("spn2-new", polled)
+
+    def test_run_stops_pending_walk_on_status_retry_and_still_submits(self):
+        from datetime import datetime, timezone
+
+        saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "spn2_submit", "spn2_status",
+                                            "capture_ok", "fetch", "AUTH", "GAP_S", "now",
+                                            "wiki_snapshot_wayback_paths")}
+        sleep = W.time.sleep
+        W.time.sleep = lambda s: None
+        tmp = tempfile.TemporaryDirectory()
+        repo = Path(tmp.name)
+        (repo / "ops/wayback").mkdir(parents=True)
+        src = "https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf"
+        y1 = "https://example.org/y1"
+        y2 = "https://example.org/y2"
+        (repo / W.QUEUE).write_text(src + "\n")
+        (repo / W.DONE).write_text(json.dumps({
+            y1: {"capture": "", "status": "pending", "tries": 1,
+                 "last": "2026-10-25T00:50:00Z", "job_id": "spn2-y1"},
+            y2: {"capture": "", "status": "pending", "tries": 1,
+                 "last": "2026-10-25T00:40:00Z", "job_id": "spn2-y2"},
+        }))
+        polled = []
+        submitted = []
+        W.now = lambda: datetime(2026, 10, 25, 1, 0, 0, tzinfo=timezone.utc)
+        W.reset_to_origin = lambda repo: None
+        W.commit_and_push = lambda repo, paths, msg, redo: True
+        W.wiki_snapshot_wayback_paths = lambda: set()
+        W.AUTH = "LOW test:test"
+        W.GAP_S = 0
+        def submit(url):
+            submitted.append(url)
+            return {"job_id": "spn2-new"}
+        W.spn2_submit = submit
+        def status(job):
+            polled.append(job)
+            raise urllib.error.URLError(ConnectionRefusedError(111, "Connection refused"))
+        W.spn2_status = status
+        W.capture_ok = lambda cap: True
+        new_cap = "https://web.archive.org/web/20261020193000/" + src
+        W.fetch = fake_get({W.id_url(new_cap): resp(PDF), src: resp(PDF)})
+        try:
+            W.run(repo, minutes=5)
+        finally:
+            for k, v in saved.items():
+                setattr(W, k, v)
+            W.time.sleep = sleep
+            tmp.cleanup()
+        self.assertEqual(polled, ["spn2-y1"])
+        self.assertEqual(submitted, [src])
 
 
 if __name__ == "__main__":

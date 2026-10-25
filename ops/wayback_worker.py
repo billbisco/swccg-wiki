@@ -15,6 +15,13 @@ unverified (capture loads but does not match, or the source could not be fetched
 | ok (capture loads, not verified yet; the worker verifies these each run, newest first) |
 retry (save or check failed; retried later, up to MAX_TRIES) | failed (gave up after MAX_TRIES).
 
+Each run confirms only the newest PENDING_CONFIRM_CAP pending jobs whose last
+activity is within PENDING_CONFIRM_MAX_AGE (default 40 jobs / 2 hours). Older
+pending rows stay pending and are not polled. Connection refused / 429 / 5xx
+during confirm stops that walk (and this-run job polling) so the run can still
+submit new URLs instead of hammering web.archive.org. Stalled jobs are poked
+with ?copy=2, not by polling a dead job_id forever.
+
 Verified https://swccg.com/snapshots/… URLs: after verify, delete the staging file under
 /opt/swccg-res/snapshots/ only when a main-namespace wiki article already cites a Wayback
 URL of that exact snapshot path (Bill 2026-10-22 cite-before-delete; 2026-10-13 prune rule).
@@ -66,6 +73,8 @@ BACKOFF_START = 30    # seconds; doubles on each 429/5xx, capped
 BACKOFF_MAX = 600
 RETRY_AFTER = timedelta(minutes=30)
 CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
+PENDING_CONFIRM_MAX_AGE = timedelta(hours=2)  # skip stalled pending job_ids
+PENDING_CONFIRM_CAP = 40                      # max status polls per run (newest first)
 BANNED_HOSTS = {"forum.starwarsccg.org", "www.starwarsccg.org", "starwarsccg.org"}
 SNAPSHOT_HOSTS = {"swccg.com", "www.swccg.com"}
 WIKI_API = "https://wiki.swccg.com/api.php"
@@ -249,6 +258,70 @@ class VerifyRetry(Exception):
     def __init__(self, msg: str, side: str = "source"):
         super().__init__(msg)
         self.side = side
+
+
+class StatusRetry(Exception):
+    """Transient: web.archive.org refused or timed out during pending confirm. Stop polling
+    pending jobs for this run so new submits still get a turn."""
+
+
+def archive_unreachable(ex: BaseException) -> bool:
+    """True when archive.org itself is down, refusing, or throttling this client."""
+    if isinstance(ex, (Throttled, StatusRetry)):
+        return True
+    if isinstance(ex, urllib.error.HTTPError):
+        return ex.code == 429 or ex.code >= 500
+    if isinstance(ex, urllib.error.URLError):
+        return True
+    if isinstance(ex, (TimeoutError, ConnectionError)):
+        return True
+    msg = str(ex).lower()
+    return any(
+        n in msg
+        for n in (
+            "111",
+            "connection refused",
+            "timed out",
+            "timeout",
+            "temporarily unavailable",
+            "network is unreachable",
+            "name or service not known",
+            "failed to resolve",
+        )
+    )
+
+
+def pending_age(e: dict, now_t: datetime | None = None) -> timedelta | None:
+    last = e.get("last")
+    if not last:
+        return None
+    try:
+        return (now_t or now()) - parse(last)
+    except (TypeError, ValueError):
+        return None
+
+
+def pending_confirm_urls(
+    done: dict,
+    *,
+    now_t: datetime | None = None,
+    max_age: timedelta | None = None,
+    cap: int | None = None,
+) -> list[str]:
+    """Newest pending jobs still young enough to be live SPN2 work."""
+    max_age = PENDING_CONFIRM_MAX_AGE if max_age is None else max_age
+    cap = PENDING_CONFIRM_CAP if cap is None else cap
+    now_t = now_t or now()
+    rows: list[tuple[str, str]] = []
+    for url, e in done.items():
+        if not isinstance(e, dict) or e.get("status") != "pending":
+            continue
+        age = pending_age(e, now_t)
+        if age is None or age > max_age:
+            continue
+        rows.append((str(e.get("last") or ""), url))
+    rows.sort(reverse=True)
+    return [u for _, u in rows[:cap]]
 
 
 def id_url(capture: str) -> str:
@@ -595,12 +668,20 @@ def prune_verified_snapshots(done: dict, root: Path | None = None,
 
 
 def confirm(url: str, e: dict) -> bool:
-    """Resolve a pending entry. Returns True if it changed."""
+    """Resolve a pending entry. Returns True if it changed.
+
+    Raises StatusRetry when web.archive.org is unreachable so the caller can
+    stop the pending walk for this run.
+    """
     if e.get("job_id") and AUTH:
         try:
             st = spn2_status(e["job_id"])
+        except StatusRetry:
+            raise
         except Exception as ex:  # noqa: BLE001
             print("STATUS-ERR", url, str(ex)[:80], flush=True)
+            if archive_unreachable(ex):
+                raise StatusRetry(str(ex)[:80]) from ex
             return False
         s = st.get("status")
         if s == "pending":
@@ -636,13 +717,25 @@ def run(repo: Path, minutes: float) -> None:
     backoff = BACKOFF_START
     print("auth:", "SPN2 authenticated" if AUTH else "anonymous", flush=True)
 
-    # 1. confirm earlier captures
-    for url, e in list(done.items()):
+    # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
+    ia_up = True
+    confirm_urls = pending_confirm_urls(done)
+    print(
+        f"pending-confirm {len(confirm_urls)} cap={PENDING_CONFIRM_CAP} "
+        f"max_age_s={int(PENDING_CONFIRM_MAX_AGE.total_seconds())}",
+        flush=True,
+    )
+    for url in confirm_urls:
         if time.monotonic() > deadline - 60:
             break
-        if e.get("status") == "pending" and confirm(url, e):
-            changed[url] = e
-            time.sleep(1)
+        try:
+            if confirm(url, done[url]):
+                changed[url] = done[url]
+                time.sleep(1)
+        except StatusRetry as ex:
+            ia_up = False
+            print("archive.org not answering; pending confirm stops for this run", ex, flush=True)
+            break
 
     # 2. save what is new or due a retry
     submitted: list[str] = []
@@ -695,13 +788,21 @@ def run(repo: Path, minutes: float) -> None:
         time.sleep(GAP_S)
 
     # 3. poll this run's jobs until done or out of time
-    while submitted and time.monotonic() < deadline:
+    while ia_up and submitted and time.monotonic() < deadline:
+        stop_poll = False
         for url in list(submitted):
-            if confirm(url, done[url]):
-                changed[url] = done[url]
+            try:
+                if confirm(url, done[url]):
+                    changed[url] = done[url]
+            except StatusRetry as ex:
+                print("archive.org not answering; this-run poll stops", ex, flush=True)
+                stop_poll = True
+                break
             if done[url]["status"] != "pending" or "job_id" not in done[url]:
                 submitted.remove(url)
             time.sleep(1)
+        if stop_poll:
+            break
         if submitted:
             time.sleep(15)
 

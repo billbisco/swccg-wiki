@@ -7,7 +7,7 @@ Settings → Deploy keys). Logs: `journalctl -u swccg-wayback` / `journalctl -u 
 
 | Job | Timer | What it does |
 | --- | --- | --- |
-| `wayback_worker.py` | systemd timer, one run at a time | Saves URLs from `wayback/queue.txt` to archive.org one at a time, confirms captures, then **verifies** each capture against its source (fetches the `id_` URL; sha256 for files, page text for HTML) and records `status: verified` + `capture` in `wayback/done.json`. For verified `https://swccg.com/snapshots/…` URLs it **deletes** the staging file only when a main-namespace wiki article already cites a Wayback URL of that snapshot path (log: `DELETED-after-wayback.log`). |
+| `wayback_worker.py` | systemd timer, one run at a time | Saves URLs from `wayback/queue.txt` to archive.org one at a time, confirms captures, then **verifies** each capture against its source (fetches the `id_` URL; sha256 for files, page text for HTML) and records `status: verified` + `capture` in `wayback/done.json`. Pending confirm polls at most 40 jobs whose `last` is within 2 hours (newest first) and stops that walk on connection refused / 429 so new submits still run. For verified `https://swccg.com/snapshots/…` URLs it **deletes** the staging file only when a main-namespace wiki article already cites a Wayback URL of that snapshot path (log: `DELETED-after-wayback.log`). |
 | `nightly_backup.py` | 07:15 UTC daily | Backs up every page edited/created/moved and every file uploaded since the last run (anyone's edits) to `swccg-wiki` `pages/` and `swccg-wiki-files` `files/`. Never deletes old copies. |
 
 Setup/repair: `ops/install-vps.sh` (idempotent; run as root on the VPS).
