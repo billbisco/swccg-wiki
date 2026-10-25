@@ -504,6 +504,11 @@ def main() -> None:
         for d, _x in entries:
             txt = W.ensure_ref(txt, d)
         emit(n, txt)
+    # an author who did not play (a director's report) still gets linked: flag a missing page (Claude 2026-10-25, Patrick Hines)
+    for d in ds:
+        a = d.get("author_link") or d.get("author")
+        if d.get("author_page") in ("new", "existing") and a and a not in emitted and live(a) is None:
+            log.append(f"{a}: author has no page and none was built (author_played false?); write one by hand")
     # both ways (Bill 2026-10-24): every person linked in a touched event's results lists that event on their page
     for ev in list(hubs):
         for n, row in W.hub_people(emitted.get(ev) or hubs[ev]):
