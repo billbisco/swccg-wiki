@@ -50,3 +50,6 @@ For each id: title, author (+page status), event (+status), event date, author f
 - Names: a person known only by first name plus an initial ("Kevin W.") gets no page; write it as the report has it.
 - Before inventing an event name, search the List for the same date and city; for repeated convention events use one hub per session, `<year> <Convention> <Decipher's event name> (<day> <Month>)`.
 - Opponents: give `opponent_side`, and use the person page's exact title (check redirects: "Michael Kessling" → "Mike Kessling").
+- Don't infer: no places from list order, no full names or winners taken from another report, no objective guessed from a vague deck name ("Speeder Ops", "Lightside OPS"). Keep the report's own words and put the inference in `notes`.
+- Handles, team names and censored names get a parenthesis so they get no person page: "Bobbo Feet (DeckTech handle)", "Charlie's Angels (team: [[A]], [[B]])", "Rich Glass@#$% (surname censored in the archive)".
+- Objective sets for reference: ISB Operations, Hunt Down And Destroy The Jedi, Hidden Base, Ralltiir Operations, Local Uprising, Imperial Occupation are Special Edition (1998); Quiet Mining Colony and This Deal Is Getting Worse All The Time are Enhanced Cloud City (Dec 1999); Court Of The Vile Gangster is Enhanced Jabba's Palace (Jan 2000). Check the objective page's `set=` when unsure.
