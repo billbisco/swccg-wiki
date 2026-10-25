@@ -16,3 +16,17 @@ Built 2026-10-15 (Claude). For stubs whose only source is the Players Committee'
 5. `make_scans.py final/scans.tsv <pdf dir> final/media` — 130 dpi grayscale, multi-page stacked, upside-down scans
    turned (logo-corner darkness, else tesseract OSD).
 6. `../pc-posts/gemp_build.py` on verified decks only, with `GEMP_TAKEN`.
+
+## 2026-10-25 — second pass: numbered lists → grouped lists (all 123 done)
+
+The 123 decks that went live as "numbered lines, not every card verified" were re-checked against the scans by 20
+helpers (`REVIEW-BRIEF.md`; reviewed JSONs in `reviewed-2026-10-25/`), then rebuilt as grouped lists:
+- `render_grouped.py <reviewed_dir> <final_dir>` fetches each live page and replaces only the Decklist section (plus
+  the Starting Card CardLink). Card pages are resolved **side-aware** by `resolve_wiki.py` (DeckTech lesson: the old
+  numbered pages linked `Endor (expansion)`, Light `Endor: Bunker` in Dark decks, etc.). (V) only where a (V) page
+  exists; Episode I printings via `"ep1": true`; shields must land on a Defensive Shield page of that side (2015–16
+  "Yavin Sentry", "Weapons Display"… are the (V) shields, Ultimatum/Ounee Ta the Reflections III shields).
+- Not identified lines print as written under **Not identified** (134 lines; 30 are Light "Goldenrod" /
+  "Jabba's Prize" shields, which have no Light Defensive Shield page on the wiki).
+- GEMP files: `../pc-posts/gemp_build.py` (113 files; 10 decks skipped because a main-deck card is not in GEMP,
+  e.g. Obi-Wan In Radiant VII). All 113 import cleanly (gemp_import_test.py --formats Open).
