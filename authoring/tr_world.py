@@ -132,6 +132,16 @@ def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> st
     table = text[t0:t1]
     pieces = table.split("\n|-\n")
     h = next((i for i, p in enumerate(pieces) if p.lstrip().startswith("!") or "\n!" in p), None)
+    if h is None and len(pieces) > 1 and pieces[1].lstrip().startswith("|") and pieces[1].count("||") == 5:
+        # a headerless six-column results table (Date/Event/Format/Finish/Dark/Light): give it the standard header
+        hdr = "! Date !! Event !! Format !! Finish !! Dark !! Light"
+        new_table = pieces[0] + "\n|-\n" + hdr + "\n|-\n" + "\n|-\n".join(pieces[1:])
+        text = text[:t0] + new_table + text[t1:]
+        t1 = t0 + len(new_table)
+        table = new_table
+        pieces = table.split("\n|-\n")
+        h = 1
+        LOG.append(f"{who}: headerless results table given the standard header")
     if h is None:
         LOG.append(f"{who}: Tournament Results table has no header row; rows NOT added: {[r for _, r in rows]}")
         return text
@@ -343,7 +353,8 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
                 log.append(f"{u['event']}: has {f} already ({cur}); report says {val}")
             continue
         m = list(re.finditer(r"^\* '''[^']+:'''.*$", text, re.M))
-        line = f"* '''{f}:''' {u['value']}<ref name=\"tr-{d['id']}\" />"
+        v = T.long_date(str(u["value"])) if re.fullmatch(r"\d{4}-\d\d-\d\d", str(u["value"])) else u["value"]
+        line = f"* '''{f}:''' {v}<ref name=\"tr-{d['id']}\" />"
         if m:
             text = text[:m[-1].end()] + "\n" + line + text[m[-1].end():]
         else:
