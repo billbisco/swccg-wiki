@@ -432,10 +432,19 @@ def main() -> None:
         L = emitted.get("List of SWCCG tournaments") or live("List of SWCCG tournaments")
         for ev, old, new in ups:
             L2 = re.sub(rf"(\|\| \[\[{re.escape(ev)}\]\] \|\| ){re.escape(old)}( \|\|)", rf"\g<1>{new}\2", L)
-            if L2 == L:
-                log.append(f"{ev}: List row date '{old}' not found")
+            if L2 == L:  # the List row has its own wording: replace its date cell (Claude 2026-10-25)
+                L2 = re.sub(rf"(\|\| \[\[{re.escape(ev)}\]\] \|\| )[^|\n]*?( \|\|)", rf"\g<1>{new}\2", L, count=1)
+                log.append(f"{ev}: List row date set to '{new}'" if L2 != L else f"{ev}: List row date '{old}' not found")
             L = L2
         emit("List of SWCCG tournaments", L)
+    sites = [(u["event"], u["value"]) for d in ds for u in d.get("hub_updates") or [] if u.get("field") == "site"]
+    if sites:  # an empty Site cell on the List is filled from a report's hub update (Claude 2026-10-25)
+        L = emitted.get("List of SWCCG tournaments") or live("List of SWCCG tournaments")
+        L2 = L
+        for ev, site in sites:
+            L2 = re.sub(rf"^(\| [^\n]*?\|\| \[\[{re.escape(ev)}\]\] \|\|[^|\n]*\|\| )( \|\|)", lambda m: m.group(1) + site + m.group(2), L2, count=1, flags=re.M)
+        if L2 != L:
+            emit("List of SWCCG tournaments", L2)
     if new_events:
         L = emitted.get("List of SWCCG tournaments") or live("List of SWCCG tournaments")
         for e in new_events:
@@ -444,6 +453,8 @@ def main() -> None:
                 continue
             L = W.list_insert(L, e)
         emit("List of SWCCG tournaments", L)
+    if "List of SWCCG tournaments" in emitted:
+        emit("List of SWCCG tournaments", W.list_sort(emitted["List of SWCCG tournaments"]))
 
     def fmt_of(e):
         if e.get("event_format"):

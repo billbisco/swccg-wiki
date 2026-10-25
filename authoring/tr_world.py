@@ -329,8 +329,10 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
                 text = re.sub(rf"\n\|-\n\| 1st \|\| \[\[{re.escape(val)}\]\]<ref name=\"tr-{d['id']}\"[^\n]*", "", text, count=1)
                 unk = re.search(r"^\| 1st \|\| Unknown\.?\s*([^\n]*)$", text, re.M)
                 why = unk.group(1).strip().rstrip(".")
-                why = why[0].lower() + why[1:] if why else ""
-                text = (text[:unk.start()] + f"| 1st || {link}<ref name=\"tr-{d['id']}\" /> (from {T.person(d) or d['byline']}'s report"
+                why = re.sub(r"\.(<ref[^>]*/>)$", r"\1", why)
+                who = T.person(d)
+                who = f"[[{who}]]" if who and full_name(who) else (who or d['byline'])
+                text = (text[:unk.start()] + f"| 1st || {link}<ref name=\"tr-{d['id']}\" /> (from {who}'s report"
                         + (f"; {why})" if why else ")") + text[unk.end():])
                 log.append(f"{u['event']}: results row 'Unknown' 1st set to {val} from the report")
             if m0:
@@ -362,6 +364,12 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
             if (f == "Date" and vague and re.fullmatch(r"\d{1,2} \w+ \d{4}", val) and val.endswith(vague.group(3))
                     and (not vague.group(2) or vague.group(2) in val)):
                 text = text[:m0.start(1)] + f" {val}{ref}" + text[m0.end(1):]
+                log.append(f"{u['event']}: Date {cur!r} -> {val!r} from the report")
+            elif (f == "Date" and (rng := re.fullmatch(r"(\d{1,2})[–-](\d{1,2}) (\w+ \d{4})", cur))
+                    and (vd := re.fullmatch(r"(\d{1,2}) (\w+ \d{4})", val)) and vd.group(2) == rng.group(3)
+                    and int(rng.group(1)) <= int(vd.group(1)) <= int(rng.group(2))):
+                # a convention's date range is narrowed to the event's day (Claude 2026-10-25)
+                text = text[:m0.start(1)] + f" {val}{ref} (the convention ran {cur})" + text[m0.end(1):]
                 log.append(f"{u['event']}: Date {cur!r} -> {val!r} from the report")
             elif f == "Site" and val.split(",")[0].split()[0].lower() not in cur.lower():
                 text = text[:m0.end(1)] + f"; {val}{ref}" + text[m0.end(1):]
@@ -469,6 +477,31 @@ def list_insert(L: str, e: dict) -> str:
             break
     parts.insert(pos, row)
     return L[:t0] + "\n|-\n".join(parts) + L[t1:]
+
+
+def list_sort(L: str) -> str:
+    """Sort the Decipher-era table newest first by month tag, then by date within the month (stable; a row
+    whose date doesn't fall in its tag's month, or a year-only tag, goes last in its month/year) (Claude 2026-10-25)."""
+    sec = re.search(r"^== Decipher-era regionals and opens ==\s*$", L, re.M)
+    if not sec:
+        return L
+    t0 = L.find("{|", sec.end())
+    t1 = L.find("\n|}", t0)
+    parts = L[t0:t1].split("\n|-\n")
+
+    def key(p):
+        c = p.split("||")
+        tag = c[0].strip("| \n")
+        if not re.fullmatch(r"\d{4}(-\d\d)?", tag) or len(c) < 3:
+            return None
+        tag = tag if len(tag) == 7 else tag + "-00"
+        dk = date_key(c[2])
+        return (tag, dk if dk.startswith(tag) else tag + "-00")
+    ks = [key(p) for p in parts[1:]]
+    if None in ks:
+        return L
+    rows = [p for _, p in sorted(zip(ks, parts[1:]), key=lambda x: x[0], reverse=True)]
+    return L[:t0] + "\n|-\n".join([parts[0]] + rows) + L[t1:]
 
 
 def hub_people(text: str) -> list:
