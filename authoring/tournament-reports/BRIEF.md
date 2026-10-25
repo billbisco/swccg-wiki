@@ -53,3 +53,10 @@ For each id: title, author (+page status), event (+status), event date, author f
 - Don't infer: no places from list order, no full names or winners taken from another report, no objective guessed from a vague deck name ("Speeder Ops", "Lightside OPS"). Keep the report's own words and put the inference in `notes`.
 - Handles, team names and censored names get a parenthesis so they get no person page: "Bobbo Feet (DeckTech handle)", "Charlie's Angels (team: [[A]], [[B]])", "Rich Glass@#$% (surname censored in the archive)".
 - Objective sets for reference: ISB Operations, Hunt Down And Destroy The Jedi, Hidden Base, Ralltiir Operations, Local Uprising, Imperial Occupation are Special Edition (1998); Quiet Mining Colony and This Deal Is Getting Worse All The Time are Enhanced Cloud City (Dec 1999); Court Of The Vile Gangster is Enhanced Jabba's Palace (Jan 2000). Check the objective page's `set=` when unsure.
+
+## Added 2026-10-25 (batches 10–11)
+- A place the report gives as "X or Y" ("4th, Kevin Wan or Alan Sagan") is recorded for neither player; put it in notes. A range the report states ("4th–6th") or a hedge on one player ("4th (I think)") is kept as written.
+- A team ("Team Albany") is never `player_page` true.
+- An author who did not play a side event: `author_played: false` on that side event.
+- Before filling, check `tournament-reports/built.txt`: a key listed there is already published; only update it to match the live wiki.
+- Several events in one city and month: every one gets its day in the name, including the first one already built (tell me so I can rename it).

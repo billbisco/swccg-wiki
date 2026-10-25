@@ -231,9 +231,27 @@ def report_bullet(d: dict, for_hub: bool = False) -> str:
     return f"* [[{page_title(d)}]] — " + ", ".join(bits)
 
 
+def dedupe_bullets(text: str, head: str) -> str:
+    """Drop repeated identical bullet lines in == head == (an author's report was once listed per event; Claude 2026-10-25)."""
+    m = re.search(rf"^== {re.escape(head)} ==\s*$", text, re.M)
+    if not m:
+        return text
+    n = re.search(r"^==[^=]", text[m.end():], re.M)
+    k = m.end() + n.start() if n else len(text)
+    seen, out = set(), []
+    for line in text[m.end():k].split("\n"):
+        if line.startswith("* "):
+            if line in seen:
+                continue
+            seen.add(line)
+        out.append(line)
+    return text[:m.end()] + "\n".join(out) + text[k:]
+
+
 def add_section(text: str, head: str, bullets: list[str], intro: str = "") -> str:
     """Add bullets to == head == (create it before See also / Sources / References / categories)."""
-    bullets = [x for x in bullets if x.split(" — ")[0] not in text]
+    bullets = [x for x in dict.fromkeys(bullets) if x.split(" — ")[0] not in text]  # each bullet once (Claude 2026-10-25)
+    text = dedupe_bullets(text, head)
     if not bullets:
         return text
     add = "\n".join(bullets)

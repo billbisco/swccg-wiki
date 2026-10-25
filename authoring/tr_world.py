@@ -339,7 +339,7 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
                 text = text[:m0.start()] + f"* '''Winner:''' {link}<ref name=\"tr-{d['id']}\" />" + text[m0.end():]
                 text = text.replace(" The winner is unknown.", f" {link} won it.", 1)
                 log.append(f"{u['event']}: Winner set to {val} from the report")
-            elif not re.search(r"^\* '''Winner:'''", text, re.M) and f"[[{val}]]" not in text and f"[[{val}|" not in text:
+            elif not re.search(r"^\* '''Winner:'''", text, re.M):
                 m1 = list(re.finditer(r"^\* '''[^']+:'''.*$", text.split("\n==")[0], re.M))
                 if m1:
                     text = text[:m1[-1].end()] + f"\n* '''Winner:''' {link}<ref name=\"tr-{d['id']}\" />" + text[m1[-1].end():]
@@ -411,7 +411,7 @@ def event_bullet(d: dict, e: dict) -> str:
 def new_hub(e: dict, d: dict) -> str:
     rows = []
     who = T.person(d)
-    if who:
+    if who and e.get("author_played") is not False:  # an author who didn't play this event isn't a result (Claude 2026-10-25)
         rows.append((e.get("author_finish") or (f"{e['author_record']} record" if e.get("author_record") else ""), f"[[{who}]]"))
     for r in e.get("other_results") or []:
         rows.append((r.get("finish") or "", f"[[{r['player']}]]" if full_name(r.get("player")) else r.get("player")))
@@ -426,7 +426,7 @@ def new_hub(e: dict, d: dict) -> str:
     typ = (e.get("event_type") or "tournament").lower() if e.get("event_type") not in ("DPC", "Grand Slam") else e["event_type"]
     if typ in ("local", "local tournament", "store"):
         typ = "local tournament"
-    lead = f"'''{e['event']}''' was a Star Wars CCG {typ}" + (f" held in {site}" if site else "") + (f" on {when}" if re.match(r"\d", when or "") else (f" in {when}" if when else "")) + "."
+    lead = f"'''{e['event']}''' was a Star Wars CCG {typ}" + (f" held {'at' if re.search(r'Con\b|Games|Comics|Cards|Center|Centre|Hotel|Motel|Inn\b|University|Hobb|Store|Shop|Outpost|Pub|Club|Hall|Library|Church|Kards', site.split(',')[0]) else 'in'} {site}" if site else "") + (f" on {when}" if re.match(r"\d", when or "") else (f" in {when}" if when else "")) + "."
     if e.get("event_winner"):
         lead += f" [[{e['event_winner']}]] won it." if full_name(e["event_winner"]) else f" {e['event_winner']} won it."
     lead += f" It is known from {who or d['byline']}'s tournament report.{T.ref(d)}"
