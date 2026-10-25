@@ -28,7 +28,12 @@ def date_key(s: str) -> str:
 
 
 def full_name(n: str | None) -> bool:
-    return bool(n) and " " in n.strip() and not re.search(r"[?()]|surname|unknown|not given", n, re.I)
+    """A full name gets a person page. Initials or abbreviated surnames ("Kevin W.", "Jeroen v. Beers",
+    "v/d Meer") are not full names (Claude 2026-10-25)."""
+    if not n or " " not in n.strip() or re.search(r"[?()/]|surname|unknown|not given|unnamed", n, re.I):
+        return False
+    parts = n.split()
+    return not any(re.fullmatch(r"[A-Za-z]\.?", p) or p.endswith(".") and len(p) <= 3 for p in parts[1:])
 
 
 def events(d: dict) -> list[dict]:
