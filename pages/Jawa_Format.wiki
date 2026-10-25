@@ -1,19 +1,74 @@
 {{Hatnote|This page is the constructed format, not the [[Jawa]] card.}}
-'''Jawa Format''' is a Players Committee constructed format. Its current definition, banned list and version notes are published on the Players Committee site.<ref name="pc-jawa">[https://www.starwarsccg.org/jawa/ Jawa Format], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021120146/https://swccg.com/snapshots/pc/jawa.html Internet Archive].</ref>
+'''Jawa Format''' is a Players Committee constructed format "where the top of the power curve is eliminated": a short ban list removes the cards behind the decks that are most popular and successful at recent major events. Its current definition, banned list and version notes are published on the Players Committee site.<ref name="pc-jawa">[https://www.starwarsccg.org/jawa/ Jawa Format], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021120146/https://swccg.com/snapshots/pc/jawa.html Internet Archive].</ref> The first version was made in late 2019.<ref name="pc-jawa" />
+
+* '''Type:''' constructed
+* '''Defined by:''' Players Committee (2019); ban lists by the Jawa Council
+* '''Card pool:''' the Open pool minus a ban list that changes with each version
+* '''In use:''' 2019 &ndash;
+* '''GEMP:''' ''Jawa'' (<code>jawa</code>) on both the Players Committee GEMP and play.swccg.com
 
 The [[2026 Jawa Cup]] is the published Jawa Format championship on GEMP.
 
-== Deck size ==
+== Card pool ==
+Generally, the decks and cards at the top of the power curve are decided by popularity and performance at recent major events.<ref name="pc-jawa" /> The ban list is revised in numbered versions. Version 17.0 (24 August 2026) bans:<ref name="pc-jawa" />
+* Dark Side: Court Of The Vile Gangster, My Kind Of Scum, Revenge Of The Sith, This Deal Is Getting Worse All The Time (V)
+* Light Side: The Force Is Strong In My Family, The Galaxy May Need A Legend, Watch Your Step
+
+On GEMP the format uses the same set list as Open and bans seven cards.<ref name="gemp-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref><ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref> The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp-ec48dc19" /><ref name="lib-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+
+== History ==
+The first version of the Jawa Format was made in late 2019, based on the most common objectives at the [[2019 World Championship]] in Bochum, Germany.<ref name="pc-jawa" /> Version 1.0 banned Ralltiir Operations (V), Agents Of Black Sun, Court Of The Vile Gangster and I Want That Map for the Dark Side, and Old Allies, Yavin 4: Massassi Throne Room, Like My Father Before Me, Diplomatic Mission To Alderaan, The Galaxy May Need A Legend and They Have No Idea We're Coming for the Light Side.<ref name="pc-jawa" /><ref name="pc-jawa-2020">[https://www.starwarsccg.org/jawa-format-banned-list-updated/ Jawa Format Banned List Updated!], Players Committee (19 December 2020). Preserved copy: [https://web.archive.org/web/20210125020218/https://www.starwarsccg.org/jawa-format-banned-list-updated/ Internet Archive].</ref>
+
+The list was refreshed in May 2020 after the virtual card tweaks of December 2019 and March 2020. In December 2020 the Jawa Council (corran, Wokling and TacoBill) issued a third list after the 2020 World Championship. The Players Committee described the format as Gemp-enabled: the Deck Builder can filter to allowed cards, and there are games and leagues for it.<ref name="pc-jawa-2020" /> The same article named the first two events: the Jawa Cup (November 2019 &ndash; February 2020), six games of Swiss and a top-8 match play cut, won by jayjaydee; and the Boonta Eve Jawa Brawl (May &ndash; June 2020), a 12-game, 45-day event in the style of the Online Championship Series, won by TwelveAnd0.<ref name="pc-jawa-2020" />
+
+On 11 May 2021, after the 2021 Match Play Championship, the Jawa Council issued version 4.0, an eight-card list that it called the fourth iteration of "this alternative format that lops off the most popular (and often most powerful) deck types". It came with a "Sandcrawler Summer" of events: Jawa Camp, a one-day six-game Beta Brawl league on Memorial Day weekend, and the Second Annual Boonta Eve Jawa Brawl, a 12-game league from 15 June to 31 July 2021.<ref name="pc-jawa-2021">[https://www.starwarsccg.org/jawa-format-4-0-now-live/ Jawa Format 4.0 now live!], Players Committee (11 May 2021). Preserved copy: [https://web.archive.org/web/20210511134527/https://www.starwarsccg.org/jawa-format-4-0-now-live/ Internet Archive].</ref>
+
+Later versions listed on the Players Committee page:<ref name="pc-jawa" />
 {| class="wikitable"
-! Default deck size on [[GEMP]]
-| 60 cards
+! Version !! Date
+|-
+| 5.0, 6.0 || 2022
+|-
+| 7.0 || October 2022
+|-
+| 8.0 || March 2023
+|-
+| 9.0 || 7 April 2023
+|-
+| 10.0 || 5 September 2023
+|-
+| 11.0 || 15 November 2023
+|-
+| 12.0 || 8 March 2024
+|-
+| 13.0 || 29 September 2024
+|-
+| 14.0 || 3 May 2025
+|-
+| 15.0 || 20 October 2025
+|-
+| 16.0 || 9 December 2025
+|-
+| 17.0 || 24 August 2026
 |}
-The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref><ref name="lib-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+1 tournament on [[List of SWCCG tournaments]] used this format, newest first.
+
+{| class="wikitable sortable"
+|-
+! Tag !! Event !! Dates !! Site !! Winner
+|-
+| 2026-03 || [[2026 Jawa Cup]] || December 2025 – March 2026 || GEMP || [[Justin Miyashiro]]
+|}
+<!-- format-tournaments:end -->
 
 == See also ==
-
 * [[Formats]]
 * [[2026 Jawa Cup]]
+* [[Utinni! (Jawas Only)]]
+* [[Open]]
 
 == External links ==
 * [https://www.starwarsccg.org/jawa/ Jawa Format], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021120146/https://swccg.com/snapshots/pc/jawa.html Internet Archive]

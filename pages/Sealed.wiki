@@ -1,14 +1,22 @@
-'''Sealed''' is a sealed format on [[GEMP]] (code <code>sealed</code>) with a deck size of 40 cards. Its format definition uses the same set list as [[Open]] and marks it as not a game hall format.<ref name="gemp" /><ref name="sets" /><ref name="lib" /> GEMP's sealed league type ''Hoth-Dagobah-Cloud City Sealed'' uses this format.<ref name="sealedtype" />
+'''Sealed''' is the generic sealed deck format on [[GEMP]]: decks of 40 cards built from the product a sealed league gives each player. On the Players Committee GEMP most sealed league types are played under it.<ref name="gemp" /><ref name="pc-slt" />
 
-== Deck size ==
-{| class="wikitable"
-! Default deck size on [[GEMP]]
-| 40 cards
-|}
-The GEMP format definition sets a deck size of 40 cards.<ref name="gemp" /><ref name="lib" />
+* '''Type:''' sealed deck (GEMP sealed league)
+* '''Defined by:''' Players Committee GEMP
+* '''Card pool:''' the product a sealed league issues, 40-card decks
+* '''In use:''' unknown
+* '''GEMP:''' ''Sealed'' (<code>sealed</code>) on both the Players Committee GEMP and play.swccg.com
 
-== GEMP sealed formats ==
-GEMP has these sealed formats. All use 40-card decks:<ref name="gemp" />
+== Card pool ==
+The format definition uses the same set list as [[Open]] and a deck size of 40 cards, and marks the format as not a game hall format.<ref name="gemp" /><ref name="sets" /><ref name="lib" /> What a player can use is the product the league issues: a league has two series, a player who joins gets the product of every series that has started, and every player gets each later series' product when it starts.<ref name="nsld" /><ref name="slp" />
+
+=== Special rule ===
+The GEMP format definitions list this special rule:<ref name="gemp" /><ref name="hall" />
+* Once per game, a player may ▼ a unique battleground not already on table.
+
+=== League types that use it ===
+In the Players Committee GEMP code, seven of the ten sealed league types play under this format: Premiere-A New Hope Sealed, Hoth-Dagobah-Cloud City Sealed, Endor-Death Star II Sealed, Reflections Sealed, Episode I Sealed, All of the Jedi Sealed and Space Sealed. Jabba's Palace Sealed has its own format, and the two Watto's Cube leagues use [[Cube]].<ref name="pc-slt" />
+
+On play.swccg.com each of those league types has its own format with the same name, and only ''Hoth-Dagobah-Cloud City Sealed'' still uses this one; its product file defines no product list for it.<ref name="slt" /><ref name="slp" /> GEMP's sealed formats are:<ref name="gemp" />
 * [[Jabba's Palace Sealed]] (<code>jp_sealed</code>)
 * [[Premiere - A New Hope Sealed]] (<code>premiere_anh_sealed</code>)
 * [[Endor - Death Star II Sealed]] (<code>endor_dsII_sealed</code>)
@@ -17,23 +25,35 @@ GEMP has these sealed formats. All use 40-card decks:<ref name="gemp" />
 * [[All Of The Jedi Sealed]] (<code>all_of_the_jedi_sealed</code>)
 * [[Novelty - Space Sealed]] (<code>novelty_sealed</code>)
 
-== Special rules ==
-The GEMP format definitions list these special rules:<ref name="gemp" /><ref name="hall" />
-* Once per game, may ▼ a unique battleground not already on table.
+== History ==
+The Players Committee's ''Alternate Format Tournament Guide'' (revised September 2015) gives the paper rules: product stays unopened until players are paired and assigned a side of the Force; in a sealed event each player gives the other side's cards to the opponent, and in a booster draft players pass packs and pick one card at a time. Game time is one minute per card in the deck, so 40 minutes for 40-card decks. The guide lists ten sealed variants, from Premiere Sealed to Secret Squirrel.<ref name="afg" />
+
+The format is in the Players Committee GEMP code and in play.swccg.com with the same definition.<ref name="gemp" /><ref name="pc-gemp" /> No source gives when GEMP added sealed leagues or who designed the league products, and no league result is recorded.
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+No tournament on [[List of SWCCG tournaments]] is recorded in this format yet. Events are added here when their page gives this format.
+<!-- format-tournaments:end -->
 
 == See also ==
 * [[Formats]]
 * [[Official Tournament Sealed Deck]]
+* [[Jabba's Palace Sealed Deck]]
 * [[Cube]]
 * [[GEMP sealed league products]]
 
 == References ==
 <references>
 <ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
+<ref name="pc-slt">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueType.java SealedLeagueType.java], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021125714/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/SealedLeagueType.java.html Internet Archive].</ref>
 <ref name="sets">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/ExpansionSet.java ExpansionSet.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114750/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/ExpansionSet.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041132/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/ExpansionSet.java Internet Archive].</ref>
 <ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
-<ref name="sealedtype">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueType.java SealedLeagueType.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114842/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SealedLeagueType.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041239/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueType.java Internet Archive].</ref>
+<ref name="nsld">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/NewSealedLeagueData.java NewSealedLeagueData.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021124352/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/NewSealedLeagueData.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022042314/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/NewSealedLeagueData.java Internet Archive].</ref>
+<ref name="slp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueProduct.java SealedLeagueProduct.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021124632/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SealedLeagueProduct.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022042347/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueProduct.java Internet Archive].</ref>
 <ref name="hall">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-async/src/main/java/com/gempukku/swccgo/async/handler/HallRequestHandler.java HallRequestHandler.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114606/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/HallRequestHandler.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041057/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-async/src/main/java/com/gempukku/swccgo/async/handler/HallRequestHandler.java Internet Archive].</ref>
+<ref name="slt">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueType.java SealedLeagueType.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114842/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SealedLeagueType.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041239/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueType.java Internet Archive].</ref>
+<ref name="afg">[https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Star Wars CCG Alternate Format Tournament Guide] (revised 09/2015), Players Committee. Preserved copy: [https://web.archive.org/web/20261008195355/https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Internet Archive].</ref>
+<ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
 </references>
 
 [[Category:Formats]]

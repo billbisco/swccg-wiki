@@ -1,28 +1,43 @@
-'''Premiere - Cloud City (Modified)''' is a constructed format on [[GEMP]] (code <code>premiere_cc_m</code>). Its card pool is the same as [[Premiere - Cloud City]], Decipher set ids 1&ndash;5 and premium ids 101&ndash;105, with a ban list.<ref name="gemp" />
+'''Premiere - Cloud City (Modified)''' is a retro constructed format: the [[Premiere - Cloud City]] card pool with a ban list, used each year since 2024 for Event 2 of the [[Retro League]]. The league's announcement says it "transports you back to 1997", to the last era of cards from ''A New Hope'' and ''The Empire Strikes Back'' only and before starting interrupts, but with a series of cards banned, mostly from [[Dagobah]], that lead to a negative player experience.<ref name="pc-gemp" /><ref name="t85238" />
 
-== Deck size ==
-{| class="wikitable"
-! Default deck size on [[GEMP]]
-| 60 cards
-|}
-The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp-ec48dc19" /><ref name="lib-ec48dc19" />
+* '''Type:''' constructed
+* '''Defined by:''' Players Committee [[Retro League]] (2024)
+* '''Card pool:''' Premiere through Cloud City, with a ban list
+* '''In use:''' 2024 &ndash;
+* '''Also called:''' P-Cloud City (modified), Premiere to Cloud City (modified), PCCM<ref name="t85238" /><ref name="t86593" />
+* '''[[GEMP]]:''' ''Premiere - Cloud City (Modified)'' (<code>premiere_cc_m</code>) on both the Players Committee GEMP and play.swccg.com
 
-== Ban list ==
-GEMP bans these cards:<ref name="gemp" />
+== Card pool ==
+Its card pool is the same as [[Premiere - Cloud City]], Decipher set ids 1&ndash;5 and premium ids 101&ndash;105, with a ban list.<ref name="pc-gemp" /> The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp" /><ref name="lib" />
+
+=== Ban list ===
+GEMP bans these cards:<ref name="pc-gemp" /><ref name="cardjson" />
 * Light Side: ''Never Tell Me The Odds'', ''Asteroid Sanctuary'', ''Anger, Fear, Aggression'', ''Clouds''
 * Dark Side: ''3,720 To 1'', ''A Dangerous Time'', ''Defensive Fire'', ''Clouds'', ''Scanning Crew''
-The 2024 Retro League used the first seven.<ref name="t84002" /> ''Clouds'' (Dark) and ''Scanning Crew'' were added for 2025,<ref name="t85234" /> and the list was unchanged in 2026.<ref name="t86593" />
+The 2024 Retro League used the first seven.<ref name="t84002" /> ''Clouds'' (Dark) and ''Scanning Crew'' were added for 2025,<ref name="t85234" /><ref name="t85238" /> and the list was unchanged in 2026.<ref name="t86593" />
 
-== Retro League ==
-{| class="wikitable"
-! Event !! Dates !! Winner
+== History ==
+The format joined the Retro League in 2024 as Event 2.<ref name="t84002" /> It has been used for:
+* [[2024 Retro League Event 2]], 24 March &ndash; 8 May 2024, won by [[Paul Todd Feldman]].<ref name="t83974" />
+* [[2025 Retro League Event 2]], 16 March &ndash; 27 April 2025, won by [[Paul Todd Feldman]].<ref name="t85238" />
+* [[2026 Retro League Event 2]], 29 March &ndash; 10 May 2026, won by [[Joe Horbey]].<ref name="t86593" /><ref name="email20260518" />
+For 2025, Retro League player [[Andy Talaga]] wrote a metagame guide to the format, attached to the event thread.<ref name="t85238" />
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+3 tournaments on [[List of SWCCG tournaments]] used this format, newest first.
+
+{| class="wikitable sortable"
 |-
-| [[2026 Retro League]] Event 2 || 29 March – 10 May 2026 || 
+! Tag !! Event !! Dates !! Site !! Winner
 |-
-| [[2025 Retro League]] Event 2 || 16 March – 27 April 2025 || [[Paul Todd Feldman]]<ref name="t85238" />
+| 2026-05 || [[2026 Retro League Event 2]] || 29 March – 10 May 2026 || GEMP || [[Joe Horbey]]
 |-
-| [[2024 Retro League]] Event 2 || 24 March – 8 May 2024 || [[Paul Todd Feldman]]<ref name="t83974" />
+| 2025-04 || [[2025 Retro League Event 2]] || 16 March – 27 April 2025 || GEMP || [[Paul Todd Feldman]]
+|-
+| 2024-05 || [[2024 Retro League Event 2]] || 24 March – 8 May 2024 || GEMP || [[Paul Todd Feldman]]
 |}
+<!-- format-tournaments:end -->
 
 == See also ==
 * [[Formats]]
@@ -31,14 +46,16 @@ The 2024 Retro League used the first seven.<ref name="t84002" /> ''Clouds'' (Dar
 
 == References ==
 <references>
-<ref name="gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive]. Card names from the GEMP card files in the same repository.</ref>
-<ref name="t84002">[https://forum.starwarsccg.org/viewtopic.php?t=84002 2024 SWCCG Online Retro League], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012162609/https://swccg.com/snapshots/forum/t84002.html Internet Archive].</ref>
-<ref name="t83974">[https://forum.starwarsccg.org/viewtopic.php?t=83974 PRIZE SUPPORT: 2024 Retro League], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012162437/https://swccg.com/snapshots/forum/t83974.html Internet Archive].</ref>
-<ref name="t85234">[https://forum.starwarsccg.org/viewtopic.php?t=85234 2025 SWCCG Online Retro League (& Cumulative Standings)], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012163701/https://swccg.com/snapshots/forum/t85234.html Internet Archive].</ref>
+<ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
 <ref name="t85238">[https://forum.starwarsccg.org/viewtopic.php?t=85238 Event #2 - 2025 Retro GEMP League - P-Cloud City (modified) Constructed], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012164035/https://swccg.com/snapshots/forum/t85238.html Internet Archive].</ref>
 <ref name="t86593">[https://forum.starwarsccg.org/viewtopic.php?t=86593 Event #2 - 2026 Retro GEMP League - P-Cloud City (modified)], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012164651/https://swccg.com/snapshots/forum/t86593.html Internet Archive].</ref>
-<ref name="gemp-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
-<ref name="lib-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
+<ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+<ref name="cardjson">Card names from [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Dark.json Dark.json] (Preserved copy: [https://web.archive.org/web/20261020201748/https://swccg.com/snapshots/github/swccgpc/swccg-card-json/d4e661ec/Dark.json.html Internet Archive]) and [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json Light.json] (Preserved copy: [https://web.archive.org/web/20261020202049/https://swccg.com/snapshots/github/swccgpc/swccg-card-json/d4e661ec/Light.json.html Internet Archive]), swccgpc/swccg-card-json, GitHub, matched by GEMP card id.</ref>
+<ref name="t84002">[https://forum.starwarsccg.org/viewtopic.php?t=84002 2024 SWCCG Online Retro League], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012162609/https://swccg.com/snapshots/forum/t84002.html Internet Archive].</ref>
+<ref name="t85234">[https://forum.starwarsccg.org/viewtopic.php?t=85234 2025 SWCCG Online Retro League (& Cumulative Standings)], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012163701/https://swccg.com/snapshots/forum/t85234.html Internet Archive].</ref>
+<ref name="t83974">[https://forum.starwarsccg.org/viewtopic.php?t=83974 PRIZE SUPPORT: 2024 Retro League], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012162437/https://swccg.com/snapshots/forum/t83974.html Internet Archive].</ref>
+<ref name="email20260518">Email from Stephen Sanders to Retro League participants, 18 May 2026 (provided by Bill). Preserved copy: [https://web.archive.org/web/20261012230154/https://swccg.com/snapshots/email/2026-05-18-sanders-retro-league-e2.pdf Internet Archive].</ref>
 </references>
 
 [[Category:Formats]]

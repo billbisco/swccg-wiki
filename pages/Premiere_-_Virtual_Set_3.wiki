@@ -1,16 +1,25 @@
-'''Premiere - Virtual Set 3''' is a constructed format on [[GEMP]] (code <code>premiere_set3</code>). Its card pool is Decipher-printed set ids 1&ndash;14 ([[Premiere]] through [[Theed Palace]]) and premium ids 101&ndash;112, plus current Virtual Sets 0&ndash;3 (ids 200&ndash;203) and the Virtual Premium Set (id 301).<ref name="gemp" /><ref name="sets" />
+'''Premiere - Virtual Set 3''' is a constructed format on [[GEMP]]: every Decipher card plus the current Virtual Sets 0&ndash;3, with 12 Defensive Shields from later Virtual Sets.<ref name="gemp" /><ref name="sets" /><ref name="cardjson" />
 
-== Deck size ==
-{| class="wikitable"
-! Default deck size on [[GEMP]]
-| 60 cards
-|}
-The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp" /><ref name="lib-ec48dc19" />
+* '''Type:''' constructed
+* '''Defined by:''' Players Committee GEMP
+* '''Card pool:''' every Decipher card plus current Virtual Sets 0&ndash;3 and the Virtual Premium Set, and 12 later virtual Defensive Shields
+* '''In use:''' unknown
+* '''GEMP:''' ''Premiere - Virtual Set 3'' (<code>premiere_set3</code>) on both the Players Committee GEMP and play.swccg.com
 
-== Additional valid cards ==
-GEMP also allows 12 cards from later sets:<ref name="gemp" /><ref name="cardjson" /> A Close Race (V), A Useless Gesture, Come Here You Big Coward (V), Crossfire (Endor) (V), Drop! (V), Failure At The Cave (V), Only Jedi Carry That Weapon (V), There Is Another, Thrown Back (V), We'll Let Fate-a Decide, Huh? (V), Yavin Sentry, You've Never Won A Race? (V).
+== Card pool ==
+The format allows Decipher set ids 1&ndash;14 ([[Premiere]] through [[Theed Palace]]) and premium ids 101&ndash;112, plus current Virtual Sets 0&ndash;3 (ids 200&ndash;203) and the Virtual Premium Set (id 301).<ref name="gemp" /><ref name="sets" /> The definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp" /><ref name="lib" />
+
+GEMP also allows 12 cards from later sets, all of them Defensive Shields:<ref name="gemp" /><ref name="cardjson" /> A Close Race (V), A Useless Gesture, Come Here You Big Coward (V), Crossfire (Endor) (V), Drop! (V), Failure At The Cave (V), Only Jedi Carry That Weapon (V), There Is Another, Thrown Back (V), We'll Let Fate-a Decide, Huh? (V), Yavin Sentry, You've Never Won A Race? (V).
 
 It is not [[Premiere - Original VS3]], the 2002 pool of original Virtual Sets 1&ndash;3.
+
+== History ==
+The format is in the Players Committee GEMP code and in play.swccg.com with the same definition.<ref name="gemp" /><ref name="pc-gemp" /> The Players Committee's [[2025 Online Retro Event for Charity]] used a pool it called "Premiere to Virtual Set 3", printed Decipher cards plus Virtual Sets through Virtual Set 3, on GEMP.<ref name="pc-charity25" /> The sources on this wiki do not say which GEMP format that event used; see [[Premiere to Virtual Set 3]].
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+No tournament on [[List of SWCCG tournaments]] is recorded in this format yet. Events are added here when their page gives this format.
+<!-- format-tournaments:end -->
 
 == See also ==
 * [[Formats]]
@@ -23,7 +32,9 @@ It is not [[Premiere - Original VS3]], the 2002 pool of original Virtual Sets 1&
 <ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
 <ref name="sets">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/ExpansionSet.java ExpansionSet.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114750/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/ExpansionSet.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041132/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/ExpansionSet.java Internet Archive].</ref>
 <ref name="cardjson">Card names from [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Dark.json Dark.json] (Preserved copy: [https://web.archive.org/web/20261020201748/https://swccg.com/snapshots/github/swccgpc/swccg-card-json/d4e661ec/Dark.json.html Internet Archive]) and [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json Light.json] (Preserved copy: [https://web.archive.org/web/20261020202049/https://swccg.com/snapshots/github/swccgpc/swccg-card-json/d4e661ec/Light.json.html Internet Archive]), swccgpc/swccg-card-json, GitHub, matched by GEMP card id.</ref>
-<ref name="lib-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+<ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+<ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
+<ref name="pc-charity25">[https://www.starwarsccg.org/2025-06-online-retro-event-for-charity-premiere-to-virtual-set-3/ 2025-06 Online Retro Event for Charity – Premiere to Virtual Set 3], starwarsccg.org</ref>
 </references>
 
 [[Category:Formats]]

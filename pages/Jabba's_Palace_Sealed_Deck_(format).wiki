@@ -1,0 +1,61 @@
+{{Hatnote|For the product, see [[Jabba's Palace Sealed Deck]].}}
+'''Jabba's Palace Sealed Deck''' is a Star Wars CCG sealed-deck format in which each player opens one [[Jabba's Palace Sealed Deck]] box. [[Decipher]] first ran it at [[DecipherCon 2000]] in October 2000, before the product reached stores, and gave it its own ability rule in November 2000.<ref name="dcon-sw-events">[http://www.decipher.com/deciphercon/2000/events/starwarsccg.html Star Wars Customizable Card Game events], DecipherCon 2000, Decipher. Preserved copy: [https://web.archive.org/web/20010126213800/http://www.decipher.com/deciphercon/2000/events/starwarsccg.html Internet Archive].</ref><ref name="fkl2">[http://www.decipher.com/deciphercon/2000/reports/fkl2.html Mighty Jabba Sails Across the Atlantic], Francis K. Lalumiere, DecipherCon 2000, Decipher. Preserved copy: [https://web.archive.org/web/20010107221700/http://www.decipher.com/deciphercon/2000/reports/fkl2.html Internet Archive].</ref><ref name="jpsdrule">[http://www.decipher.com/starwars/tournaments/resources/jpsdruleschange.html New Official Rule for Jabba's Palace Sealed Deck Environment], Decipher. Preserved copy: [https://web.archive.org/web/20010124153500/http://www.decipher.com/starwars/tournaments/resources/jpsdruleschange.html Internet Archive].</ref>
+
+* '''Type:''' sealed deck
+* '''Defined by:''' Decipher (2000)
+* '''Card pool:''' one Jabba's Palace Sealed Deck box per player (20 premium cards and six Jabba's Palace packs); 40-card decks
+* '''In use:''' 2000 –
+* '''Also called:''' JPSD (Decipher);<ref name="jpsdrule" /> Jabba's Palace Sealed Deck Format (Decipher, 2001);<ref name="res-sw">[http://tournaments.decipher.com/resources-sw.asp Star Wars Customizable Card Game Tournament Resources], Decipher. Preserved copy: [https://web.archive.org/web/20011116144130/http://tournaments.decipher.com/resources-sw.asp Internet Archive].</ref> Jabba's Palace Sealed (play.swccg.com); JP Sealed (Players Committee GEMP)<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref><ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
+* '''GEMP:''' "Jabba's Palace Sealed" on play.swccg.com and "JP Sealed" on the Players Committee server, both <code>jp_sealed</code><ref name="gemp" /><ref name="pc-gemp" />
+
+== Card pool ==
+"Each player will receive one Jabba's Palace Sealed Deck box to wage a battle on Tatooine."<ref name="dcon-sw-events" /> At the first event the box held "twenty exclusive premium cards and six Jabba's Palace expansion packs", players built 40-card decks, and games had a 40-minute limit.<ref name="fkl2" /> The Light Side premiums were ten cards, among them the objective [[Agents In The Court / No Love For The Empire]] and [[Lando With Vibro-Ax]].<ref name="jpsd-ls">[http://www.decipher.com/starwars/cardlists/jabbaspalacesealeddeck/light/index.html Jabba's Palace Sealed Deck Light Side Card List], Decipher. Preserved copy: [https://web.archive.org/web/20001017142720/http://www.decipher.com/starwars/cardlists/jabbaspalacesealeddeck/light/index.html Internet Archive].</ref>
+
+=== Ability rule ===
+On 10 November 2000 Decipher added a rule for this format only:<ref name="jpsdrule" />
+: "Any character of ability 1 who has an unmodified (printed on the card) deploy number of 3 or greater is considered, for all purposes, to be of ability 2. (This rule applies to both Dark Side and Light Side characters)"
+Decipher called it "an officially sanctioned tournament rule for the JPSD Sealed Deck tournament environment", meant "to balance gameplay within the JPSD environment". It "does not apply to tournaments using Standard Constructed Deck rules, or to any other Closed Environment or Sealed Deck environment." Tournament directors were to use it from the weekend of 10 November 2000.<ref name="jpsdrule" /> Decipher's 2001 tournament resources linked the same notice as the "Jabba's Palace Sealed Deck Format".<ref name="res-sw" />
+
+=== GEMP ===
+Both GEMP servers define <code>jp_sealed</code> with a 40-card deck size and a <code>jpSealedRule</code> setting.<ref name="gemp" /><ref name="pc-gemp" /> On play.swccg.com the format, named ''Jabba's Palace Sealed'', uses the same set list as [[Open]] and is marked as not a game hall format.<ref name="gemp" /><ref name="sets">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/ExpansionSet.java ExpansionSet.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114750/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/ExpansionSet.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041132/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/ExpansionSet.java Internet Archive].</ref><ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref> GEMP's sealed league type ''Jabba's Palace Sealed'' uses this format.<ref name="sealedtype">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueType.java SealedLeagueType.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114842/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SealedLeagueType.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041239/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/league/SealedLeagueType.java Internet Archive].</ref> The GEMP format definitions list these special rules:<ref name="gemp" /><ref name="hall">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-async/src/main/java/com/gempukku/swccgo/async/handler/HallRequestHandler.java HallRequestHandler.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114606/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/HallRequestHandler.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041057/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-async/src/main/java/com/gempukku/swccgo/async/handler/HallRequestHandler.java Internet Archive].</ref>
+* Once per game, may ▼ a unique battleground not already on table.
+* Any character of ability 1 who has a printed deploy number of 3 or greater is considered, for all purposes, to be ability 2.
+
+== History ==
+DecipherCon 2000 scheduled five Jabba's Palace Sealed Deck events, all sanctioned, four games, entry $20: Thursday 5 October at noon (#SW211) and 9 p.m. (#SW214), Friday 6 October at 6 p.m. (#SW223), and Saturday 7 October at 10 a.m. (#SW231) and 6 p.m. (#SW234). "Here's your chance to play with these cards weeks before your friend's back home will get a chance to play with them."<ref name="dcon-sw-events" /><ref name="dcon00-sched">[http://www2.decipher.com/tournaments/deciphercon2000/swccgevents.pdf DecipherCon Master Tournament Schedule for Decipher Games], DecipherCon 2000, Decipher. Preserved copy: [https://web.archive.org/web/20030413152501/http://www2.decipher.com/tournaments/deciphercon2000/swccgevents.pdf Internet Archive].</ref>
+
+Francis K. Lalumiere reported the first event, on the morning of 5 October 2000: 24 players in a side hall while Day 1 of the World Championship ran in the main hall. The Light Side dominated; [[Koen Meijssen]] (8, +69) beat [[Martin Akesson]] (6, +17) by 3 Force in the final confrontation. Jeff Weitkamp (Gold 40) was tournament director.<ref name="fkl2" />
+
+The Players Committee's Alternate Format Tournament Guide has a draft version, "JPOTSD Booster Draft": one Jabba's Palace Official Tournament Sealed Deck per player, the same ability rule, the premium packs opened as in sealed play and only the booster packs drafted. Its "Secret Squirrel" format also uses this product.<ref name="afg">[https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Star Wars CCG Alternate Format Tournament Guide] (revised 09/2015), Players Committee. Preserved copy: [https://web.archive.org/web/20261008195355/https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Internet Archive].</ref>
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+3 tournaments on [[List of SWCCG tournaments]] used this format, newest first.
+
+{| class="wikitable sortable"
+|-
+! Tag !! Event !! Dates !! Site !! Winner
+|-
+| 2000-10 || [[2000 DecipherCon Jabba's Palace Sealed Deck (7 October)]] || 7 October 2000 || Kissimmee, Florida || 
+|-
+| 2000-10 || [[2000 DecipherCon Jabba's Palace Sealed Deck (6 October)]] || 6 October 2000 || Kissimmee, Florida || 
+|-
+| 2000-10 || [[2000 DecipherCon Jabba's Palace Sealed Deck (5 October)]] || 5 October 2000 || Kissimmee, Florida || [[Koen Meijssen]]
+|}
+<!-- format-tournaments:end -->
+
+== See also ==
+* [[Formats]]
+* [[Jabba's Palace Sealed Deck]] (product)
+* [[Enhanced Format Sealed Deck]]
+* [[Premiere - Jabba's Palace Sealed Deck]] (the constructed pool after this product)
+* [[Sealed Deck]]
+* [[Sealed]]
+* [[Cube]]
+* [[GEMP sealed league products]]
+
+== References ==
+<references />
+
+[[Category:Formats]]
+[[Category:GEMP]]
