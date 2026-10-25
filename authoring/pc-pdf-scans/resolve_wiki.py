@@ -11,7 +11,12 @@ def _q(**k):
                    headers={"User-Agent": "HolocronClaude-pdfres"}), timeout=90))
         except Exception:
             time.sleep(3)
-def save(): json.dump(_c, open(CACHE, "w"))
+_last = [0.0]
+def save(force=False):
+    if not force and time.time() - _last[0] < 30: return
+    _last[0] = time.time()
+    tmp = CACHE + ".tmp%d" % os.getpid(); json.dump(_c, open(tmp, "w")); os.replace(tmp, CACHE)
+import atexit; atexit.register(lambda: save(True))
 def fetch(titles):
     need = [t for t in titles if t not in _c["pages"]]
     for i in range(0, len(need), 50):
