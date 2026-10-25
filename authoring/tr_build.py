@@ -419,8 +419,18 @@ def main() -> None:
     for ev, txt in hubs.items():
         hubs[ev] = txt = W.prune_named(txt)
         emit(ev, txt)
+    # a hub date made precise from a report is copied to its List row (Claude 2026-10-25)
+    ups = [m.groups() for m in (re.match(r"(.+): Date '(.+)' -> '(.+)' from the report$", x) for x in log) if m]
+    if ups:
+        L = emitted.get("List of SWCCG tournaments") or live("List of SWCCG tournaments")
+        for ev, old, new in ups:
+            L2 = re.sub(rf"(\|\| \[\[{re.escape(ev)}\]\] \|\| ){re.escape(old)}( \|\|)", rf"\g<1>{new}\2", L)
+            if L2 == L:
+                log.append(f"{ev}: List row date '{old}' not found")
+            L = L2
+        emit("List of SWCCG tournaments", L)
     if new_events:
-        L = live("List of SWCCG tournaments")
+        L = emitted.get("List of SWCCG tournaments") or live("List of SWCCG tournaments")
         for e in new_events:
             if not e.get("event_date"):
                 log.append(f"{e['event']}: no date, not added to the List")

@@ -316,6 +316,8 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
         if m0:
             cur = re.sub(r"<ref[^>]*/>|<ref.*?</ref>", "", m0.group(1)).strip()
             val = str(u["value"])
+            if re.fullmatch(r"\d{4}-\d\d-\d\d", val):
+                val = T.long_date(val)
             ref = f"<ref name=\"tr-{d['id']}\" />"
             # a vaguer existing value is made precise; a site is added when the hub doesn't name it (Claude 2026-10-25)
             if (f == "Date" and re.fullmatch(r"(\w+ )?\d{4}", cur) and cur.split()[-1] in val and val != cur
