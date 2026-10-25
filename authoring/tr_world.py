@@ -124,6 +124,10 @@ def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> st
         text = text[:k] + "== Tournament Results ==\n\n" + RESULTS_HEAD + "\n|}\n\n" + text[k:]
         m = re.search(r"^== Tournament [Rr]esults ==\s*$", text, re.M)
     t0 = text.find("{|", m.end())
+    nxt = re.search(r"^==[^=]", text[m.end():], re.M)
+    if t0 < 0 or (nxt and t0 > m.end() + nxt.start()):  # section holds only bullets: add a results table (Claude 2026-10-25)
+        text = text[:m.end()] + "\n\n" + RESULTS_HEAD + "\n|}" + text[m.end():]
+        t0 = text.find("{|", m.end())
     t1 = text.find("\n|}", t0)
     table = text[t0:t1]
     pieces = table.split("\n|-\n")
@@ -306,8 +310,15 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
                 text = text[:m0.start()] + f"* '''Winner:''' {link}<ref name=\"tr-{d['id']}\" />" + text[m0.end():]
                 text = text.replace(" The winner is unknown.", f" {link} won it.", 1)
                 log.append(f"{u['event']}: Winner set to {val} from the report")
+            elif not re.search(r"^\* '''Winner:'''", text, re.M) and f"[[{val}]]" not in text and f"[[{val}|" not in text:
+                m1 = list(re.finditer(r"^\* '''[^']+:'''.*$", text.split("\n==")[0], re.M))
+                if m1:
+                    text = text[:m1[-1].end()] + f"\n* '''Winner:''' {link}<ref name=\"tr-{d['id']}\" />" + text[m1[-1].end():]
+                    log.append(f"{u['event']}: Winner line added ({val}) from the report")
+                else:
+                    log.append(f"{u['event']}: no infobox bullets; winner {val} not added")
             else:
-                log.append(f"{u['event']}: has a Winner already; report says {val}")
+                log.append(f"{u['event']}: winner already given on the page; report says {val}")
             continue
         f = lab.get(u.get("field"))
         if not f:
@@ -320,8 +331,9 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
                 val = T.long_date(val)
             ref = f"<ref name=\"tr-{d['id']}\" />"
             # a vaguer existing value is made precise; a site is added when the hub doesn't name it (Claude 2026-10-25)
-            if (f == "Date" and re.fullmatch(r"(\w+ )?\d{4}", cur) and cur.split()[-1] in val and val != cur
-                    and (len(cur.split()) == 1 or cur.split()[0] in val)):
+            vague = re.fullmatch(r"((\w+) )?(\d{4})( \(before [^)]*\))?", cur)
+            if (f == "Date" and vague and re.fullmatch(r"\d{1,2} \w+ \d{4}", val) and val.endswith(vague.group(3))
+                    and (not vague.group(2) or vague.group(2) in val)):
                 text = text[:m0.start(1)] + f" {val}{ref}" + text[m0.end(1):]
                 log.append(f"{u['event']}: Date {cur!r} -> {val!r} from the report")
             elif f == "Site" and val.split(",")[0].split()[0].lower() not in cur.lower():

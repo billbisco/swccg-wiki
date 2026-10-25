@@ -421,6 +421,13 @@ def main() -> None:
         emit(ev, txt)
     # a hub date made precise from a report is copied to its List row (Claude 2026-10-25)
     ups = [m.groups() for m in (re.match(r"(.+): Date '(.+)' -> '(.+)' from the report$", x) for x in log) if m]
+    wins = [(u["event"], u["value"]) for d in ds for u in d.get("hub_updates") or [] if u.get("field") == "winner"]
+    if wins:  # an unknown winner on the List is filled from a report's hub update (Claude 2026-10-25)
+        L = emitted.get("List of SWCCG tournaments") or live("List of SWCCG tournaments")
+        for ev, who in wins:
+            link = f"[[{who}]]" if W.full_name(who) else who
+            L = re.sub(rf"^(\| [^\n]*\|\| \[\[{re.escape(ev)}\]\] \|\|[^\n]*\|\| )(—|Unknown|)\s*$", rf"\g<1>{link}", L, flags=re.M)
+        emit("List of SWCCG tournaments", L)
     if ups:
         L = emitted.get("List of SWCCG tournaments") or live("List of SWCCG tournaments")
         for ev, old, new in ups:
