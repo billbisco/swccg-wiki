@@ -1,0 +1,25 @@
+'''Infobox proposal B''' sandbox. Live [[Template:Card]] is unchanged. Tests use [[Template:Card/sandbox]].
+
+The box splits into '''Identity''' (GEMP ID, PC alias, slip, GEMP title, era, text state, lineage) and '''Face''' (stats). Empty rarity and dest-key <code>pc|vbN|…</code> ids are gone.
+
+{| class="wikitable"
+! Era !! Type !! Test infobox !! Live card
+|-
+| Decipher || Character || [[SWCCG Wiki:Card infobox test B/Luke Skywalker]] || [[Luke Skywalker]]
+|-
+| Decipher || Location || [[SWCCG Wiki:Card infobox test B/Tatooine: Lars' Moisture Farm]] || [[Tatooine: Lars' Moisture Farm]]
+|-
+| Original Virtual || Starship || [[SWCCG Wiki:Card infobox test B/Red 5 (V) (Virtual Set 3: Revolution)]] || [[Red 5 (V) (Virtual Set 3: Revolution)]]
+|-
+| Original Virtual || Interrupt || [[SWCCG Wiki:Card infobox test B/Attack Pattern Delta (V) (Virtual Set 4: Battle Of Hoth)]] || [[Attack Pattern Delta (V) (Virtual Set 4: Battle Of Hoth)]]
+|-
+| Virtual Legacy || Effect || [[SWCCG Wiki:Card infobox test B/Weather Vane (V) (Dark)]] || [[Weather Vane (V) (Dark)]]
+|-
+| Virtual Legacy || Objective || [[SWCCG Wiki:Card infobox test B/Hunt Down And Destroy The Jedi (V) / Their Fire Has Gone Out Of The Universe (V)]] || [[Hunt Down And Destroy The Jedi (V) / Their Fire Has Gone Out Of The Universe (V)]]
+|-
+| Current Virtual || Effect || [[SWCCG Wiki:Card infobox test B/Weather Vane (V)]] || [[Weather Vane (V)]]
+|-
+| Current Virtual || Character || [[SWCCG Wiki:Card infobox test B/Luke Skywalker (V)]] || [[Luke Skywalker (V)]]
+|}
+
+Open a test and its live card in two tabs. Weather Vane leftover is the GEMP-id sample: live stores <code>pc|vb2|Dark|weathervane.gif</code>; the test shows <code>1220_51</code>. Hunt Down shows PC alias <code>601_87</code> beside GEMP <code>1240_58</code> and printed slip 57. OVS Red 5 and Attack Pattern Delta omit the blank rarity row.
