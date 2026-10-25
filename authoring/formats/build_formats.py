@@ -39,6 +39,9 @@ def hub_format(t):
     m = re.search(r"^\* '''(?:Format|Environment):'''([^\n]*)", t or "", re.M)
     if not m:
         return None
+    plain = re.sub(r"<ref.*?(</ref>|/>)", "", m.group(1))
+    if re.search(r"\bor\b|various|probably|\band\b", plain, re.I):  # ambiguous or several formats: no single format
+        return None
     for x in re.findall(r"\[\[([^\]|]+)", m.group(1)):
         if x.strip() in BY:
             return x.strip()
