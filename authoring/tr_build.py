@@ -105,7 +105,11 @@ def nowiki(s: str) -> str:
 
 
 def cell(s) -> str:
-    return "—" if s in (None, "") else str(s).replace("|", "&#124;")
+    """A table cell: escape | except inside [[links]] (Claude 2026-10-25: piped links were escaped and broke)."""
+    if s in (None, ""):
+        return "—"
+    parts = re.split(r"(\[\[[^\]]*\]\])", str(s))
+    return "".join(p if p.startswith("[[") else p.replace("|", "&#124;") for p in parts)
 
 
 def dlink(desc, obj):
@@ -259,12 +263,16 @@ def new_person(name: str, ds: list[dict]) -> str:
             "[[Category:People]]\n" + "\n".join(f"[[Category:{y}]]" for y in years) + "\n")
 
 
+BUILT = R / "built.txt"  # keys already published; catalogs list only these plus the current batch (Claude 2026-10-25)
+
+
 def all_finished() -> list[dict]:
+    built = set(BUILT.read_text().split()) if BUILT.exists() else set()
     out = []
     for src in SOURCES:
         for f in sorted((R / src).glob("*.json")):
             d = load(f"{src}/{f.stem}")
-            if finished(d) and not d.get("skip"):
+            if finished(d) and not d.get("skip") and f"{src}/{f.stem}" in built:
                 out.append(d)
     return out
 
@@ -409,6 +417,7 @@ def main() -> None:
             if x.get("event") and (x["event"] in hubs or live(x["event"])):
                 hubs[x["event"]] = W.ensure_ref(W.hub_discrepancies(hubs.get(x["event"]) or live(x["event"]), d, [x]), d)
     for ev, txt in hubs.items():
+        hubs[ev] = txt = W.prune_named(txt)
         emit(ev, txt)
     if new_events:
         L = live("List of SWCCG tournaments")
@@ -482,6 +491,8 @@ def main() -> None:
     shutil.copy(A / "wiki_api_apply.py", pk)
     (pk / "since.txt").write_text(dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ") + "\n")
     print("\n".join(r.split("\t")[0] for r in rows))
+    built = set(BUILT.read_text().split()) if BUILT.exists() else set()
+    BUILT.write_text("\n".join(sorted(built | set(keys))) + "\n")
     subprocess.run(["tar", "cf", f"/mnt/user-data/outputs/{batch}-apply.tar", "-C", str(pk), "."], check=True)
     print(f"{len(rows)} pages -> /mnt/user-data/outputs/{batch}-apply.tar")
 

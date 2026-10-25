@@ -39,11 +39,11 @@ def full_name(n: str | None) -> bool:
 def events(d: dict) -> list[dict]:
     keys = ("event", "event_status", "event_desc", "event_date", "event_site", "event_type", "event_format",
             "event_winner", "players", "author_finish", "author_record", "author_points", "games", "other_results",
-            "summary")
+            "summary", "author_played")
     main = {k: d.get(k) for k in keys}
     main["decks"] = d.get("decks") or []
-    main["parent"] = None
-    return [main] + [dict(se, decks=se.get("decks") or [], parent=se.get("parent") or d.get("event"))
+    main["parent"] = d.get("event_parent")
+    return [main] + [dict(se, decks=se.get("decks") or [], parent=se["parent"] if "parent" in se else d.get("event"))
                      for se in d.get("side_events") or []]
 
 
@@ -73,7 +73,7 @@ def participants(d: dict) -> dict[str, list[dict]]:
 
     who = T.person(d)
     for i, e in enumerate(events(d)):
-        if who:
+        if who and e.get("author_played") is not False:  # e.g. a judge's report (Claude 2026-10-25)
             x = entry(who, i, e)
             x["author"] = True
             x["finish"] = e.get("author_finish") or (f"{e['author_record']} record" if e.get("author_record") else "")
@@ -223,8 +223,23 @@ def results_table_span(text: str):
 
 def hub_add_participants(text: str, d: dict, e: dict, log: list) -> str:
     span = results_table_span(text)
-    if not span:
-        log.append(f"{e['event']}: no results table; participants not added")
+    if not span:  # no single results table: list people the hub doesn't link yet (Claude 2026-10-25)
+        rp = f"[[{T.page_title(d)}]]"
+        who = T.person(d)
+        ppl = ([(who, e.get("author_finish") or "")] if who and e.get("author_played") is not False else [])
+        ppl += [(r["player"], r.get("finish") or "") for r in e.get("other_results") or [] if full_name(r.get("player"))]
+        ppl += [(g["opponent"], "") for g in e.get("games") or [] if full_name(g.get("opponent"))]
+        add, seen = [], set()
+        for n, f in ppl:
+            if n in seen or f"[[{n}]]" in text or f"[[{n}|" in text:
+                continue
+            seen.add(n)
+            add.append(f"* [[{n}]] — {f + ', ' if f else ''}named in {rp}<ref name=\"tr-{d['id']}\" />")
+        if add:
+            if f'<ref name="tr-{d["id"]}">' not in text:
+                add[0] = add[0].replace(f'<ref name="tr-{d["id"]}" />', T.ref(d), 1)
+            text = T.add_section(text, "Players named in tournament reports", add,
+                                 "Players these reports name who are not in the event's results above.")
         return text
     t0, t1 = span
     table = text[t0:t1]
@@ -240,7 +255,7 @@ def hub_add_participants(text: str, d: dict, e: dict, log: list) -> str:
     for g in e.get("games") or []:
         if full_name(g.get("opponent")):
             ppl.append((g["opponent"], ""))
-    seen, add = set(), []
+    seen, add, named_only = set(), [], []
     for n, f in ppl:
         if n in seen or f"[[{n}]]" in table or f"[[{n}|" in table:
             continue
@@ -252,8 +267,27 @@ def hub_add_participants(text: str, d: dict, e: dict, log: list) -> str:
             t1 += len(new_table) - len(table)
             table = new_table
             continue
-        cells = [f or "", f"[[{n}]]<ref name=\"tr-{d['id']}\" />"] + (["—"] * (ncol - 2))
+        if not f and "Results below come from" not in text:
+            if f"[[{n}]]" in text or f"[[{n}|" in text:
+                continue
+            # a sourced standings table: an opponent with no finish goes in a list below it (Claude 2026-10-25)
+            named_only.append(f"* [[{n}]] — named in [[{T.page_title(d)}]]<ref name=\"tr-{d['id']}\" />")
+            continue
+        # map onto the table's own columns by header name (Claude 2026-10-25: a Player-first table got Finish first)
+        heads = [h.strip().lower() for h in re.split(r"!!|\|\|", hdr.lstrip("!").strip())]
+        cells = ["—"] * max(ncol, 2)
+        pi = next((i for i, h in enumerate(heads) if re.search(r"player|name|team", h)), 1)
+        fi = next((i for i, h in enumerate(heads) if re.search(r"finish|place|rank|result|#|pos", h)), 0 if pi != 0 else 1)
+        cells[pi] = f"[[{n}]]<ref name=\"tr-{d['id']}\" />"
+        cells[fi] = f or ""
         add.append("| " + " || ".join(cells))
+    if named_only:
+        if f'<ref name="tr-{d["id"]}">' not in text and not add:
+            named_only[0] = named_only[0].replace(f'<ref name="tr-{d["id"]}" />', T.ref(d), 1)
+        text = T.add_section(text, "Players named in tournament reports", named_only,
+                             "Players these reports name who are not in the event's results above.")
+        t0 = text.find(table)
+        t1 = t0 + len(table)
     if not add:
         return text
     if f'<ref name="tr-{d["id"]}">' not in text:
@@ -264,11 +298,35 @@ def hub_add_participants(text: str, d: dict, e: dict, log: list) -> str:
 def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
     lab = {"players": "Players", "date": "Date", "site": "Site"}
     for u in ups:
+        if u.get("field") == "winner":  # fill an Unknown winner (Claude 2026-10-25)
+            m0 = re.search(r"^\* '''Winner:'''\s*(Unknown|—|)\s*$", text, re.M)
+            val = str(u["value"])
+            link = f"[[{val}]]" if full_name(val) else val
+            if m0:
+                text = text[:m0.start()] + f"* '''Winner:''' {link}<ref name=\"tr-{d['id']}\" />" + text[m0.end():]
+                text = text.replace(" The winner is unknown.", f" {link} won it.", 1)
+                log.append(f"{u['event']}: Winner set to {val} from the report")
+            else:
+                log.append(f"{u['event']}: has a Winner already; report says {val}")
+            continue
         f = lab.get(u.get("field"))
         if not f:
             continue
-        if re.search(rf"^\* '''{f}s?:'''", text, re.M):
-            log.append(f"{u['event']}: has {f} already; report says {u['value']}")
+        m0 = re.search(rf"^\* '''{f}s?:'''(.*)$", text, re.M)
+        if m0:
+            cur = re.sub(r"<ref[^>]*/>|<ref.*?</ref>", "", m0.group(1)).strip()
+            val = str(u["value"])
+            ref = f"<ref name=\"tr-{d['id']}\" />"
+            # a vaguer existing value is made precise; a site is added when the hub doesn't name it (Claude 2026-10-25)
+            if (f == "Date" and re.fullmatch(r"(\w+ )?\d{4}", cur) and cur.split()[-1] in val and val != cur
+                    and (len(cur.split()) == 1 or cur.split()[0] in val)):
+                text = text[:m0.start(1)] + f" {val}{ref}" + text[m0.end(1):]
+                log.append(f"{u['event']}: Date {cur!r} -> {val!r} from the report")
+            elif f == "Site" and val.split(",")[0].split()[0].lower() not in cur.lower():
+                text = text[:m0.end(1)] + f"; {val}{ref}" + text[m0.end(1):]
+                log.append(f"{u['event']}: Site {cur!r} + {val!r} from the report")
+            else:
+                log.append(f"{u['event']}: has {f} already ({cur}); report says {val}")
             continue
         m = list(re.finditer(r"^\* '''[^']+:'''.*$", text, re.M))
         line = f"* '''{f}:''' {u['value']}<ref name=\"tr-{d['id']}\" />"
@@ -327,11 +385,12 @@ def new_hub(e: dict, d: dict) -> str:
     info = [f"* '''Date:''' {when}" if when else None, f"* '''Site:''' {site}" if site else None,
             f"* '''Format:''' [[{e['event_format']}]]" if e.get("event_format") else None,
             f"* '''Players:''' {e['players']}" if e.get("players") else None,
-            f"* '''Winner:''' " + (f"[[{e['event_winner']}]]" if full_name(e.get("event_winner")) else (e.get("event_winner") or ""))]
+            (f"* '''Winner:''' " + (f"[[{e['event_winner']}]]" if full_name(e.get("event_winner")) else e["event_winner"]))
+            if e.get("event_winner") else None]  # no empty Winner line (Claude 2026-10-25)
     year = (e.get("event_date") or "")[:4]
     see = ([f"* [[{e['parent']}]]"] if e.get("parent") else []) + ["* [[List of SWCCG tournaments]]", "* [[Tournament reports]]"]
     return (lead + "\n\n" + "\n".join(x for x in info if x) + "\n\n== Results ==\n\n"
-            f"Results below come from {who or d['byline']}'s tournament report.\n\n"
+            "Results below come from players' tournament reports (each row cites its report).\n\n"
             '{| class="wikitable"\n! Finish !! Player\n' + tab + "\n|}\n\n== Tournament reports ==\n\nPlayers' own reports from this event.\n\n"
             + event_bullet(d, e) + "\n\n== See also ==\n\n" + "\n".join(see) + "\n\n== References ==\n<references />\n\n"
             "[[Category:Tournaments]]\n" + (f"[[Category:{year}]]\n" if year else ""))
@@ -462,3 +521,23 @@ def dedupe_refs(text: str) -> str:
         seen.add(m.group(1))
         return m.group(0)
     return re.sub(r'<ref name="([^"]+)">.*?</ref>', rep, text, flags=re.S)
+
+
+def prune_named(text: str) -> str:
+    """Drop 'Players named in tournament reports' bullets for people the page now lists elsewhere,
+    and the section itself when it is left empty (Claude 2026-10-25)."""
+    m = re.search(r"^== Players named in tournament reports ==\s*$", text, re.M)
+    if not m:
+        return text
+    n = re.search(r"^==[^=]", text[m.end():], re.M)
+    k = m.end() + n.start() if n else len(text)
+    sec, rest = text[m.end():k], text[:m.start()] + text[k:]
+    keep = []
+    for line in sec.split("\n"):
+        p = re.match(r"\* \[\[([^\]|]+)\]\]", line)
+        if p and (f"[[{p.group(1)}]]" in rest or f"[[{p.group(1)}|" in rest):
+            continue
+        keep.append(line)
+    if not any(l.startswith("* ") for l in keep):
+        return text[:m.start()] + text[k:].lstrip("\n")
+    return text[:m.end()] + "\n".join(keep) + text[k:]
