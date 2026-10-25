@@ -37098,10 +37098,10 @@
  },
  "https://stevetotheizz0.github.io/decktech_archives/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 353 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-25T21:54:04Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T22:33:27Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://stevetotheizz0.github.io/decktech_archives/14510/": {
   "capture": "https://web.archive.org/web/20261025194301/https://www.stephenskilton.com/decktech_archives/14510/",
@@ -39424,6 +39424,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://stevetotheizz0.github.io/decktech_archives/15270/": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T22:33:37Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://stevetotheizz0.github.io/decktech_archives/15273/": {
   "capture": "",
   "job_id": "spn2-68ed86da95aa4bdc7eb232a399489f8deacb8012",
@@ -39570,6 +39577,13 @@
    "sha256": "a6bd157b9d15313aa723b40c9b4aedef2b7e4598199d19cb610aba7fa48e3c4c"
   }
  },
+ "https://stevetotheizz0.github.io/decktech_archives/15330/": {
+  "capture": "",
+  "job_id": "spn2-367149bf23add8e752e3dbb63be58f013e69bd76",
+  "last": "2026-10-25T22:33:48Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://stevetotheizz0.github.io/decktech_archives/15339/": {
   "capture": "",
   "job_id": "spn2-f973d814e6c97b09e7576dab0159821cdcce95ed",
@@ -39588,6 +39602,13 @@
   "capture": "",
   "job_id": "spn2-cc609b0a9f76a357d68496bfa4709b1f0a9d5df4",
   "last": "2026-10-25T22:23:35Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15346/": {
+  "capture": "",
+  "job_id": "spn2-21f93bd9657da2a7d0a2f6026ced17597407eafe",
+  "last": "2026-10-25T22:33:59Z",
   "status": "pending",
   "tries": 1
  },
@@ -39612,6 +39633,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://stevetotheizz0.github.io/decktech_archives/15359/": {
+  "capture": "",
+  "job_id": "spn2-c4387454a1214da6bb50fb480666fbe2dcd164d6",
+  "last": "2026-10-25T22:34:10Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://stevetotheizz0.github.io/decktech_archives/15364/": {
   "capture": "",
   "job_id": "spn2-fee65b6f9a395777b01cd792564def613ba4a0c5",
@@ -39630,6 +39658,13 @@
   "capture": "",
   "job_id": "spn2-cc8e5c445681d7ac9f67adb895813eecdcf55b1d",
   "last": "2026-10-25T22:25:43Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15370/": {
+  "capture": "",
+  "job_id": "spn2-8e0d06eb6db3ef4d671eb070d2e3df799247f368",
+  "last": "2026-10-25T22:34:21Z",
   "status": "pending",
   "tries": 1
  },
@@ -39654,6 +39689,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://stevetotheizz0.github.io/decktech_archives/15389/": {
+  "capture": "",
+  "job_id": "spn2-fcdf74abfa5b7fddea54e265178e8fe0c71c5e54",
+  "last": "2026-10-25T22:34:32Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://stevetotheizz0.github.io/decktech_archives/15390/": {
   "capture": "",
   "job_id": "spn2-4ff4124c1558f70a99f439a2347e3f44b3fd5d99",
@@ -39669,51 +39711,260 @@
   "tries": 1
  },
  "https://stevetotheizz0.github.io/decktech_archives/15413/": {
-  "capture": "",
-  "job_id": "spn2-ea77b3bfccdc806c29fa1192afa6390daa46a511",
-  "last": "2026-10-25T22:27:49Z",
+  "capture": "https://web.archive.org/web/20261025222752/https://www.stephenskilton.com/decktech_archives/15413/",
+  "last": "2026-10-25T22:33:05Z",
   "status": "pending",
   "tries": 1
  },
  "https://stevetotheizz0.github.io/decktech_archives/15416/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025222803/https://www.stephenskilton.com/decktech_archives/15416/",
   "job_id": "spn2-82d5449cd41bcf33e87f9aa69669967c1cce39bd",
-  "last": "2026-10-25T22:28:00Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T22:33:03Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T22:33:03Z",
+   "bytes": 18463,
+   "capture_id": "https://web.archive.org/web/20261025222803id_/https://www.stephenskilton.com/decktech_archives/15416/",
+   "method": "sha256",
+   "sha256": "d5c223e0c1baa7bdf3942d4f2ddf0d2d8a72a16b6c03abf8a77b73a0aed37cc1"
+  }
  },
  "https://stevetotheizz0.github.io/decktech_archives/15417/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025222814/https://www.stephenskilton.com/decktech_archives/15417/",
   "job_id": "spn2-5b95719971706a37010a15e8a74ab06c69ccd039",
-  "last": "2026-10-25T22:28:11Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T22:33:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T22:33:00Z",
+   "bytes": 18567,
+   "capture_id": "https://web.archive.org/web/20261025222814id_/https://www.stephenskilton.com/decktech_archives/15417/",
+   "method": "sha256",
+   "sha256": "b464ece6d4114a57bf34bddcc7615ddc9c3bee8ef27aa73369f94e7ed2474c65"
+  }
  },
  "https://stevetotheizz0.github.io/decktech_archives/15421/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025222825/https://www.stephenskilton.com/decktech_archives/15421/",
   "job_id": "spn2-fda6d2cc45708dc71b33067d5b037c2ebf53943f",
-  "last": "2026-10-25T22:28:22Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T22:32:55Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T22:32:55Z",
+   "bytes": 16322,
+   "capture_id": "https://web.archive.org/web/20261025222825id_/https://www.stephenskilton.com/decktech_archives/15421/",
+   "method": "sha256",
+   "sha256": "6af731d66803d272f702c348cfec99ac6d5ebccb304c0c9c5ee379ac855ebbbc"
+  }
  },
  "https://stevetotheizz0.github.io/decktech_archives/15427/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025222956/https://www.stephenskilton.com/decktech_archives/15427/",
   "job_id": "spn2-d8940a5a5a1011f2f7c32198c281d23c6fe8da86",
-  "last": "2026-10-25T22:29:03Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T22:32:50Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T22:32:50Z",
+   "bytes": 11830,
+   "capture_id": "https://web.archive.org/web/20261025222956id_/https://www.stephenskilton.com/decktech_archives/15427/",
+   "method": "sha256",
+   "sha256": "00ee8e2b9c9bd69edc57964f71931d0692975681ff8730d1ab77b8b5f04a0aa6"
+  }
  },
  "https://stevetotheizz0.github.io/decktech_archives/15428/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025222917/https://www.stephenskilton.com/decktech_archives/15428/",
   "job_id": "spn2-3283dac7a265278b5cb3dfeac014330b751c98f8",
-  "last": "2026-10-25T22:29:14Z",
+  "last": "2026-10-25T22:32:46Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T22:32:46Z",
+   "bytes": 12821,
+   "capture_id": "https://web.archive.org/web/20261025222917id_/https://www.stephenskilton.com/decktech_archives/15428/",
+   "method": "sha256",
+   "sha256": "ad4b23e72f63da2a326956a136adee87925ab751d1f29d503511c005f6345194"
+  }
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15434/": {
+  "capture": "https://web.archive.org/web/20261025222928/https://www.stephenskilton.com/decktech_archives/15434/",
+  "job_id": "spn2-8ec027b7794198cf17a3059d151d7fa601f84f78",
+  "last": "2026-10-25T22:32:43Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T22:32:43Z",
+   "bytes": 17621,
+   "capture_id": "https://web.archive.org/web/20261025222928id_/https://www.stephenskilton.com/decktech_archives/15434/",
+   "method": "sha256",
+   "sha256": "27632fa2f6d9b848ce360c69830063240f8e2ee34e1ed86e4caee29c85e97ea0"
+  }
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15435/": {
+  "capture": "",
+  "job_id": "spn2-d4ea33910a0243e1b46bd908652c5acf61ec0733",
+  "last": "2026-10-25T22:35:13Z",
   "status": "pending",
   "tries": 1
  },
- "https://stevetotheizz0.github.io/decktech_archives/15434/": {
+ "https://stevetotheizz0.github.io/decktech_archives/15436/": {
   "capture": "",
-  "job_id": "spn2-8ec027b7794198cf17a3059d151d7fa601f84f78",
-  "last": "2026-10-25T22:29:26Z",
+  "job_id": "spn2-c62ee37a749a2dcdaf7f969c58cafebed162ab99",
+  "last": "2026-10-25T22:35:24Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15437/": {
+  "capture": "",
+  "job_id": "spn2-37d9aef0d152d7cb97f392ad58f31fd55e266d4a",
+  "last": "2026-10-25T22:35:35Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15444/": {
+  "capture": "",
+  "job_id": "spn2-e480ad37226f1cc5433e094ee745c69a502b5385",
+  "last": "2026-10-25T22:36:17Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15445/": {
+  "capture": "",
+  "job_id": "spn2-287638e8fcf4e4027e57fc0eaa75ef6e6f702116",
+  "last": "2026-10-25T22:36:28Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15450/": {
+  "capture": "",
+  "job_id": "spn2-538b04c3988f76a41df633723a2eb09e04693c55",
+  "last": "2026-10-25T22:36:38Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15459/": {
+  "capture": "",
+  "job_id": "spn2-a114c504ecbfb61e987300a36be1c303f382b83e",
+  "last": "2026-10-25T22:37:20Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15461/": {
+  "capture": "",
+  "job_id": "spn2-b70e744bb390e8ab4495f46dbc0fe8268926a940",
+  "last": "2026-10-25T22:37:31Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15468/": {
+  "capture": "",
+  "job_id": "spn2-1095eb44d1e514f552184365312287f3d4c7943e",
+  "last": "2026-10-25T22:37:42Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15471/": {
+  "capture": "",
+  "job_id": "spn2-e17ff236fb762446799fdb7c710155beb414f8e6",
+  "last": "2026-10-25T22:38:24Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15472/": {
+  "capture": "",
+  "job_id": "spn2-4dbda8f9ae0c308b07a190a526ac6c039b3b2daf",
+  "last": "2026-10-25T22:38:35Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15476/": {
+  "capture": "",
+  "job_id": "spn2-b548b10ebe3fcaaeb6605f3b1dbca4ab6f6bac6d",
+  "last": "2026-10-25T22:38:45Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15480/": {
+  "capture": "",
+  "job_id": "spn2-692c701e31a24f5a140254842989c48200f4a913",
+  "last": "2026-10-25T22:39:28Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15482/": {
+  "capture": "",
+  "job_id": "spn2-9ca2177f67196d9a00d615a2b750f670019d8913",
+  "last": "2026-10-25T22:39:38Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15484/": {
+  "capture": "",
+  "job_id": "spn2-3152622418d7dd837a7d5ccd426c0a682f9de570",
+  "last": "2026-10-25T22:39:49Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15485/": {
+  "capture": "",
+  "job_id": "spn2-f0cebb16cc21cd41b4d02bb74557922c972dd235",
+  "last": "2026-10-25T22:40:00Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15489/": {
+  "capture": "",
+  "job_id": "spn2-29ce52bd0cf8c9359a8b71495910053ae7bc3060",
+  "last": "2026-10-25T22:40:11Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15493/": {
+  "capture": "",
+  "job_id": "spn2-9821dc346802da4a824c309882faff9b41aeb10c",
+  "last": "2026-10-25T22:40:22Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15498/": {
+  "capture": "",
+  "job_id": "spn2-d8b34f87b3b57791e2724f2df5bcaedd2bfbe7e3",
+  "last": "2026-10-25T22:41:03Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15501/": {
+  "capture": "",
+  "job_id": "spn2-4085bd2b4e194c84e1defbfda3a8c7d60776399a",
+  "last": "2026-10-25T22:41:14Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15517/": {
+  "capture": "",
+  "job_id": "spn2-4f6ae8fc0182ef291a242c9fe78b69221a49dd2e",
+  "last": "2026-10-25T22:41:25Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15520/": {
+  "capture": "",
+  "job_id": "spn2-efb7620dfa941dc28660ba06110f8be7c597f101",
+  "last": "2026-10-25T22:42:06Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15521/": {
+  "capture": "",
+  "job_id": "spn2-ec3a946c758f97becde465948a06f3e572da1793",
+  "last": "2026-10-25T22:42:17Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://stevetotheizz0.github.io/decktech_archives/15523/": {
+  "capture": "",
+  "job_id": "spn2-2594defe94cae6b7f6de416edbb4f3a0fc7ec173",
+  "last": "2026-10-25T22:42:29Z",
   "status": "pending",
   "tries": 1
  },
@@ -107051,10 +107302,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-10-12-twigg-at-d-con-2kd1331/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 396 hours, 5 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-25T21:51:11Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T22:33:07Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-10-13-coruscant-operative-reportingd1337/": {
   "capture": "https://web.archive.org/web/20261025192145/https://www.stephenskilton.com/decktech_archives/reports/2000-10-13-coruscant-operative-reportingd1337/",
@@ -107414,10 +107665,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2002-05-15-vegas-baby-lush-at-the-vegas-dpcd3660/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 387 hours, 36 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-25T21:51:22Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T22:33:17Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2002-07-16-houston-texas-07-14-02-dpc-houstond3841/": {
   "capture": "https://web.archive.org/web/20261009144852/https://www.stephenskilton.com/decktech_archives/reports/2002-07-16-houston-texas-07-14-02-dpc-houstond3841/",
