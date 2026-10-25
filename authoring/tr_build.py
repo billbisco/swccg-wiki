@@ -421,6 +421,12 @@ def main() -> None:
                 new_events.append(e)
             else:
                 cur = W.hub_add_participants(cur, d, e, log)
+                if ev in {x["event"] for x in new_events} and e.get("event_winner") and not re.search(r"^\* '''Winner:'''", cur, re.M):
+                    # a hub created earlier in this batch takes the winner a later report names (Claude 2026-10-25)
+                    cur = W.hub_updates(cur, d, [{"event": ev, "field": "winner", "value": e["event_winner"]}], log)
+                    for x in new_events:
+                        if x["event"] == ev and not x.get("event_winner"):
+                            x["event_winner"] = e["event_winner"]  # so its List row gets the winner too
                 cur = add_section(cur, "Tournament reports", [W.event_bullet(d, e)],
                                   "Players' own reports from this event.")
             if e.get("parent"):
@@ -460,7 +466,7 @@ def main() -> None:
         L = emitted.get("List of SWCCG tournaments") or live("List of SWCCG tournaments")
         L2 = L
         for ev, site in sites:
-            L2 = re.sub(rf"^(\| [^\n]*?\|\| \[\[{re.escape(ev)}\]\] \|\|[^|\n]*\|\| )( \|\|)", lambda m: m.group(1) + site + m.group(2), L2, count=1, flags=re.M)
+            L2 = re.sub(rf"^(\| [^\n]*?\|\| \[\[{re.escape(ev)}\]\] \|\|[^|\n]*\|\| )(?:—)?( \|\|)", lambda m: m.group(1) + site + m.group(2), L2, count=1, flags=re.M)
         if L2 != L:
             emit("List of SWCCG tournaments", L2)
     if new_events:

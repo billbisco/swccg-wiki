@@ -383,6 +383,9 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
                 # a convention's date range is narrowed to the event's day (Claude 2026-10-25)
                 text = text[:m0.start(1)] + f" {val}{ref} (the convention ran {cur})" + text[m0.end(1):]
                 log.append(f"{u['event']}: Date {cur!r} -> {val!r} from the report")
+            elif f == "Site" and cur.strip() in ("—", "-", "", "Unknown"):  # an empty site is replaced (Claude 2026-10-25)
+                text = text[:m0.start(1)] + f" {val}{ref}" + text[m0.end(1):]
+                log.append(f"{u['event']}: Site {cur!r} -> {val!r} from the report")
             elif f == "Site" and val.split(",")[0].split()[0].lower() not in cur.lower():
                 text = text[:m0.end(1)] + f"; {val}{ref}" + text[m0.end(1):]
                 log.append(f"{u['event']}: Site {cur!r} + {val!r} from the report")
@@ -438,7 +441,7 @@ def new_hub(e: dict, d: dict) -> str:
     typ = (e.get("event_type") or "tournament").lower() if e.get("event_type") not in ("DPC", "Grand Slam") else e["event_type"]
     if typ in ("local", "local tournament", "store"):
         typ = "local tournament"
-    lead = f"'''{e['event']}''' was a Star Wars CCG {typ}" + (f" held {'at' if re.search(r'Con\b|Games|Comics|Cards|Center|Centre|Hotel|Motel|Inn\b|University|Hobb|Store|Shop|Outpost|Pub|Club|Hall|Library|Church|Kards', site.split(',')[0]) else 'in'} {site}" if site else "") + (f" on {when}" if re.match(r"\d", when or "") else (f" in {when}" if when else "")) + "."
+    lead = f"'''{e['event']}''' was a Star Wars CCG {typ}" + (f" held {'at' if re.search(r'Con\b|Games|Comics|Cards|Center|Centre|Hotel|Motel|Inn\b|University|Hobb|Store|Shop|Outpost|Pub|Club|Hall|Library|Church|Kards|Gamer', site.split(',')[0]) else 'in'} {site}" if site else "") + (f" on {when}" if re.match(r"\d", when or "") else (f" in {when}" if when else "")) + "."
     if e.get("event_winner"):
         lead += f" [[{e['event_winner']}]] won it." if full_name(e["event_winner"]) else f" {e['event_winner']} won it."
     lead += f" It is known from {who or d['byline']}'s tournament report.{T.ref(d)}"
