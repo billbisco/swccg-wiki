@@ -1,6 +1,8 @@
-'''Infobox proposal B''' sandbox. Live [[Template:Card]] is unchanged. Tests use [[Template:Card/sandbox]].
+'''Infobox proposal B''' sandbox, pass 2. Live [[Template:Card]] is unchanged. Tests use [[Template:Card/sandbox]].
 
-The box splits into '''Identity''' (GEMP ID, PC alias, slip, GEMP title, era, text state, lineage) and '''Face''' (stats). Empty rarity and dest-key <code>pc|vbN|…</code> ids are gone.
+The box splits into '''Identity''' (GEMP ID, PC alias, slip, era, Versions, predecessor, successor) and '''Face''' (stats). Title carries uniqueness dots. Force Icons are separate from Icons. Text state and GEMP title are omitted.
+
+'''Versions''' lists every version of the same card, oldest era first, regular then [[Alternate Image]] within an era. '''Predecessor''' / '''Successor''' walk that list: regular → same-era AI → next era's regular. AI is a same-era art variant.
 
 {| class="wikitable"
 ! Era !! Type !! Test infobox !! Live card
@@ -8,6 +10,10 @@ The box splits into '''Identity''' (GEMP ID, PC alias, slip, GEMP title, era, te
 | Decipher || Character || [[SWCCG Wiki:Card infobox test B/Luke Skywalker]] || [[Luke Skywalker]]
 |-
 | Decipher || Location || [[SWCCG Wiki:Card infobox test B/Tatooine: Lars' Moisture Farm]] || [[Tatooine: Lars' Moisture Farm]]
+|-
+| Decipher || Character (regular) || [[SWCCG Wiki:Card infobox test B/Aurra Sing]] || [[Aurra Sing]]
+|-
+| Decipher || Character (AI) || [[SWCCG Wiki:Card infobox test B/Aurra Sing (AI)]] || [[Aurra Sing (AI)]]
 |-
 | Original Virtual || Starship || [[SWCCG Wiki:Card infobox test B/Red 5 (V) (Virtual Set 3: Revolution)]] || [[Red 5 (V) (Virtual Set 3: Revolution)]]
 |-
@@ -17,9 +23,15 @@ The box splits into '''Identity''' (GEMP ID, PC alias, slip, GEMP title, era, te
 |-
 | Virtual Legacy || Objective || [[SWCCG Wiki:Card infobox test B/Hunt Down And Destroy The Jedi (V) / Their Fire Has Gone Out Of The Universe (V)]] || [[Hunt Down And Destroy The Jedi (V) / Their Fire Has Gone Out Of The Universe (V)]]
 |-
+| Virtual Legacy || Character (AI of a (V); Decipher also had AI) || [[SWCCG Wiki:Card infobox test B/Watto (V) (AI)]] || [[Watto (V) (AI)]]
+|-
+| Virtual Legacy || Character (PC AI; Decipher had no AI) || [[SWCCG Wiki:Card infobox test B/Kyle Katarn (AI)]] || [[Kyle Katarn (AI)]]
+|-
 | Current Virtual || Effect || [[SWCCG Wiki:Card infobox test B/Weather Vane (V)]] || [[Weather Vane (V)]]
 |-
 | Current Virtual || Character || [[SWCCG Wiki:Card infobox test B/Luke Skywalker (V)]] || [[Luke Skywalker (V)]]
 |}
 
-Open a test and its live card in two tabs. Weather Vane leftover is the GEMP-id sample: live stores <code>pc|vb2|Dark|weathervane.gif</code>; the test shows <code>1220_51</code>. Hunt Down shows PC alias <code>601_87</code> beside GEMP <code>1240_58</code> and printed slip 57. OVS Red 5 and Attack Pattern Delta omit the blank rarity row.
+Open a test and its live card in two tabs.
+
+Pass 2 from pass 1: Title includes uniqueness dots. Printings relabeled Versions. Text state dropped. GEMP title dropped. Dark/Light Force Icons split from Icons. Luke Skywalker (V) Versions include Original Virtual, Virtual Legacy, current, and ALT. Four Alternate Image tests added.
