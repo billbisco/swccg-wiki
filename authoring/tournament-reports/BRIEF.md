@@ -61,12 +61,11 @@ For each id: title, author (+page status), event (+status), event date, author f
 - Before filling, check `tournament-reports/built.txt`: a key listed there is already published; only update it to match the live wiki.
 - Several events in one city and month: every new one gets its day in the name; one already built keeps its live name (renaming a built event breaks links), so don't ask for a rename.
 - Two reports with the same author and title (a weekly "Mirkwood Deadbody Style"): set `page_title` to "<Author> <Title> (<day month year>)" on each.
-- A report that tells a sexual or degrading story about a real, named person, or is mostly abuse aimed at named people: don't fill it; tell me (I hold it for Bill).
 - An unnamed opponent is `null` (put the report's words, e.g. "some guy", in the game note), never a name string; lowercase phrases are not names. (Batch 16 created a "Some guy" page by mistake.)
 - A minor (a report says the player is a child) gets no person page: opponent `null`, the report's words in the game note.
 - A name that the wiki has as a disambiguation page ("Paul Feldman"): map it to the right person or leave player_page false; never link the disambiguation page.
 - Hearsay ("he won, I heard") and hedged finishes ("5th or 6th (I think)") are not recorded as results or hub winners; put them in notes.
-- A sexual claim about a named real person ("X is a connoisseur of porn", "X and Y contracted STDs") or an insult aimed at one (suicide jokes, "bisexual midget") counts as degrading: hold the report.
 - When a hub already links a person under one of several pages for him (Michael Dalton / Michael L. Dalton / Mike Dalton), use the page the byline matches and say in notes that the hub uses another; I merge the hub rows by hand (a second "1st" row appeared on 2001 New Jersey State Championship).
 - A handle-only byline with no name in the report (". \"Ulaire Fred\" .") is credited by the handle: `author` = the handle, `author_page` "none". `author` must never be null (the builder refuses it).
 - A city inferred from other events at the same store is not a city: name the event by state ("April 2001 Georgia tournament").
+- **No content holds (Bill 2026-10-25).** Reports are historical records and are published verbatim and uncensored, whatever they say about anyone. The only change ever made is the wiki *page title*: a crude report title is not used as the page title (`withhold_title: true`), but the original title is still shown in the article and the catalog. Never set `skip` for content. (The one exception, decided by Claude and put to Bill: reports that sexualize children are not published.)

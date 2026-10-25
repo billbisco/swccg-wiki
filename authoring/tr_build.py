@@ -143,13 +143,12 @@ def article(d: dict) -> str:
     lead = (f"'''{page_title(d)}''' is the tournament report {whol} posted on {src} on {long_date(d['date'])} "
             f"about {event_text(d)}.{ref(d)}")
     if d.get("withhold_title"):
-        lead += " The report's own title is not used as the page title; it appears in the original report below."
+        lead += f" It was posted as ''{d['title']}''; that title is not used as the page title."  # original titles go through (Bill 2026-10-25)
     if d.get("summary"):
         lead += " " + d["summary"]
     info = [f"* '''Author:''' {whol}" + (f" (byline: {d['byline']})" if who and d['byline'] != who else "")]
     info.append(f"* '''Published:''' {long_date(d['date'])} ({src})")
-    if not d.get("withhold_title"):
-        info.append(f"* '''Report title:''' ''{d['title']}''")
+    info.append(f"* '''Report title:''' ''{d['title']}''")
     info.append(f"* '''Event:''' {event_text(d)}")
     if d.get("event_date"):
         info.append(f"* '''Event date:''' {event_long(d)}")
@@ -300,7 +299,7 @@ def catalog_decktech(ds: list[dict], current: str) -> str:
     for d in sorted(ds, key=lambda x: (iso(x["date"]), x["id"])):
         who = person(d)
         rows.append(f"|-\n| data-sort-value=\"{iso(d['date'])}\" | {long_date(d['date'])} || {event_text(d)} || "
-                    f"[[{page_title(d)}|{'(title withheld)' if d.get('withhold_title') else d['title']}]] || "
+                    f"[[{page_title(d)}|{d['title']}]] || "
                     f"{'[[' + who + ']]' if who else d['byline']} || {cell(d.get('author_finish'))}")
     table = ('{| class="wikitable sortable"\n|-\n! Posted !! Event !! Report !! Author !! Finish\n'
              + "\n".join(rows) + "\n|}")
