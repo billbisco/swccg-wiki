@@ -226,9 +226,13 @@ def main():
         emit("List of SWCCG tournaments", L_new)
     F = texts([r["title"] for r in R])
     D = HERE / "drafts"
+    PENDING = set((D / "pending.txt").read_text(encoding="utf-8").split("\n")) - {""} if (D / "pending.txt").exists() else set()
     for r in R:
         dfile = D / (r["title"].replace(" ", "_") + ".wiki")
-        t = dfile.read_text(encoding="utf-8") if dfile.exists() else F.get(r["title"])
+        # live text is the base; a draft is used only for a new page or one listed in drafts/pending.txt
+        # (Claude 2026-10-25: stale drafts reverted live fixes)
+        use_draft = dfile.exists() and (r["title"] not in F or r["title"] in PENDING)
+        t = dfile.read_text(encoding="utf-8") if use_draft else F.get(r["title"])
         if t is None:
             print("MISSING page", r["title"])
             continue
