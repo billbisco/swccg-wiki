@@ -71,7 +71,7 @@ R += [
 # --- formats only on play.swccg.com
 for t, ty, pool, code, gname in [
     ("Anything Goes", "casual", "every set, 40–60 cards (default casual and AI format)", "anything_goes", "Anything Goes"),
-    ("Ewok Format", "constructed", "Premiere – Death Star II with a long ban list (PC forum: Premiere - Death Star II (Ewok))", "ewok", "Ewok"),
+    ("Ewok", "constructed", "Premiere – Death Star II with a long ban list (PC forum: Premiere - Death Star II (Ewok))", "ewok", "Ewok"),
     ("Premiere - A New Hope Sealed", "sealed", "Premiere and A New Hope product", "premiere_anh_sealed", "Premiere - A New Hope Sealed"),
     ("Endor - Death Star II Sealed", "sealed", "Endor and Death Star II product", "endor_dsII_sealed", "Endor - Death Star II Sealed"),
     ("Reflections Sealed", "sealed", "Reflections product", "reflections_sealed", "Reflections Sealed"),
