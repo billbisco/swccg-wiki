@@ -1,0 +1,53 @@
+'''Classic (no v-cards) (Modified)''' is a retro constructed format: [[Classic (no v-cards)]], Decipher cards without Episode I or Maintenance icon cards, with the [[Reflections III]] Defensive Shields and their two Starting Effects allowed. It was first played at the [[2025 Retro Invitational Player's Ball]], where it was called "Classic No V (Modified)".<ref name="pc-gemp" /><ref name="pb-announce" />
+
+* '''Type:''' constructed
+* '''Defined by:''' [[2025 Retro Invitational Player's Ball]] (organizer [[Andy Talaga]], 2025); GEMP definition in the Players Committee code
+* '''Card pool:''' every Decipher card except Episode I and Maintenance icon cards, with all Reflections III Defensive Shields and their Starting Effects
+* '''In use:''' 2025 &ndash;
+* '''Also called:''' Classic No V (Modified), CNVM<ref name="pb-announce" /><ref name="pb-video" />
+* '''[[GEMP]]:''' ''Classic (no v-cards) (Modified)'' (<code>classic_no_virtual_m</code>) on both the Players Committee GEMP and play.swccg.com
+
+== Card pool ==
+The pool is every Decipher-printed card, set ids 1&ndash;14 and premium ids 101&ndash;112. Cards with the Episode I or Maintenance icon are banned. Unlike [[Classic (no v-cards)]], the definition does not ban the Defensive Shield icon.<ref name="pc-gemp" /> The definition also lists 14 Reflections III cards that are legal even though they carry the Episode I icon: twelve Defensive Shields and the two Starting Effects ''An Unusual Amount Of Fear'' (Light Side) and ''Fear Is My Ally'' (Dark Side).<ref name="pc-gemp" /><ref name="cardjson" /> A card on that list skips the format's other checks.<ref name="dsf" /> The twelve shields are ''A Close Race'', ''A Tragedy Has Occurred'', ''Another Pathetic Lifeform'', ''Don't Do That Again'', ''Only Jedi Carry That Weapon'', ''Planetary Defenses'', ''Allegations Of Corruption'', ''Fanfare'', ''Weapon Of A Sith'', ''[[We'll Let Fate-a Decide, Huh?]]'', ''Wipe Them Out, All Of Them'' and ''You've Never Won A Race?''.<ref name="pc-gemp" /><ref name="cardjson" /> Every other Reflections III Defensive Shield has no Episode I icon and is legal without being listed.<ref name="pc-gemp" /><ref name="cardjson" />
+
+The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp" /><ref name="lib" />
+
+The [[2025 Retro Invitational Player's Ball]] defined the environment as no virtual cards, plus the Reflections III Defensive Shields and their Starting Effects, with no other cards banned.<ref name="pb-announce" />
+
+== History ==
+The format was first used at the [[2025 Retro Invitational Player's Ball]], a 16-player invitational organized by [[Andy Talaga]] on GEMP from 2 November to 20 December 2025, which [[Timo Dusel]] won.<ref name="pb-announce" /><ref name="pb-video" /> The [[2026 Retro League]] made it Event 4, 27 September &ndash; 8 November 2026.<ref name="t86346" />
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+1 tournament on [[List of SWCCG tournaments]] used this format, newest first.
+
+{| class="wikitable sortable"
+|-
+! Tag !! Event !! Dates !! Site !! Winner
+|-
+| 2025-11 || [[2025 Retro Invitational Player's Ball]] || 2 November – 20 December 2025 || GEMP || [[Timo Dusel]]
+|}
+<!-- format-tournaments:end -->
+
+== See also ==
+* [[Formats]]
+* [[Classic]]
+* [[Classic (no v-cards)]]
+* [[2025 Retro Invitational Player's Ball]]
+* [[Retro League]]
+
+== References ==
+<references>
+<ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
+<ref name="pb-announce">[https://forum.starwarsccg.org/viewtopic.php?t=86095 2025 Retro Invitational Player's Ball], andytalaga1, forum.starwarsccg.org (21 October 2025). Preserved copy: [https://web.archive.org/web/20261012152206/https://swccg.com/snapshots/forum/t86095.html Internet Archive]</ref>
+<ref name="pb-video">[https://www.youtube.com/watch?v=hbi3fs0mvrI SWCCG CNVM: 2025 Invitational Deck Techs and Game Analysis from the Event Winner], BillBisco2, YouTube (1 February 2026). Preserved copy: [https://web.archive.org/web/20261012142507/https://www.youtube.com/watch?v=hbi3fs0mvrI Internet Archive]</ref>
+<ref name="cardjson">Card names from [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Dark.json Dark.json] (Preserved copy: [https://web.archive.org/web/20261020201748/https://swccg.com/snapshots/github/swccgpc/swccg-card-json/d4e661ec/Dark.json.html Internet Archive]) and [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json Light.json] (Preserved copy: [https://web.archive.org/web/20261020202049/https://swccg.com/snapshots/github/swccgpc/swccg-card-json/d4e661ec/Light.json.html Internet Archive]), swccgpc/swccg-card-json, GitHub, matched by GEMP card id.</ref>
+<ref name="dsf">[https://github.com/billbisco/swccg-gemp/blob/c97690ec35ff140229551b0c64b42e6957577d3e/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/DefaultSwccgFormat.java DefaultSwccgFormat.java], GEMP source code (billbisco/swccg-gemp, commit c97690ec), GitHub. Preserved copy: [https://web.archive.org/web/20261025011214/https://raw.githubusercontent.com/billbisco/swccg-gemp/c97690ec35ff140229551b0c64b42e6957577d3e/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/DefaultSwccgFormat.java Internet Archive].</ref>
+<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
+<ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+<ref name="t86346">[https://forum.starwarsccg.org/viewtopic.php?t=86346 2026 SWCCG Online Retro League (& Cumulative Standings)], forum.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261012164534/https://swccg.com/snapshots/forum/t86346.html Internet Archive].</ref>
+</references>
+
+[[Category:Formats]]
+[[Category:GEMP]]
+[[Category:Retro League]]

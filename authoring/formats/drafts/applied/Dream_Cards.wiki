@@ -1,0 +1,38 @@
+'''Dream Cards''' is a [[GEMP]] format that adds GEMP's Dream Cards set to the [[Open]] card pool. It is not offered as a game hall format.<ref name="gemp" /><ref name="sets" /><ref name="lib" />
+
+* '''Type:''' casual
+* '''Defined by:''' Players Committee GEMP
+* '''Card pool:''' the Open pool plus the Dream Cards set (GEMP set id 401)
+* '''In use:''' unknown
+* '''GEMP:''' ''Dream Cards'' (<code>dream_cards</code>) on both the Players Committee GEMP and play.swccg.com
+
+== Card pool ==
+The format allows Decipher set ids 1&ndash;14 ([[Premiere]] through [[Theed Palace]]), premium ids 101&ndash;112, current Virtual Sets 0&ndash;27 (ids 200&ndash;227) and the Virtual Premium Set (id 301), plus the Dream Cards set (id 401).<ref name="gemp" /><ref name="sets" /> The definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp" /><ref name="lib" />
+
+The public GEMP code sets the size of the Dream Cards set to 0 cards, so the format's pool is in practice the same as Open.<ref name="cardcounts" />
+
+== History ==
+The format is in the Players Committee GEMP code and in play.swccg.com with the same definition.<ref name="gemp" /><ref name="pc-gemp" /> No source says what the Dream Cards set was meant to hold, when the format was added, or who uses it. No tournament is known to have used it.
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+No tournament on [[List of SWCCG tournaments]] is recorded in this format yet. Events are added here when their page gives this format.
+<!-- format-tournaments:end -->
+
+== See also ==
+* [[Formats]]
+* [[Open]]
+* [[Playtesting]]
+* [[GEMP]]
+
+== References ==
+<references>
+<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
+<ref name="sets">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/ExpansionSet.java ExpansionSet.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114750/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/ExpansionSet.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041132/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/ExpansionSet.java Internet Archive].</ref>
+<ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+<ref name="cardcounts">[https://github.com/billbisco/swccg-gemp/blob/c97690ec35ff140229551b0c64b42e6957577d3e/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/CardCounts.java CardCounts.java], GEMP source code (billbisco/swccg-gemp, commit c97690ec), GitHub. Preserved copy: [https://web.archive.org/web/20261025011040/https://raw.githubusercontent.com/billbisco/swccg-gemp/c97690ec35ff140229551b0c64b42e6957577d3e/src/gemp-swccg-common/src/main/java/com/gempukku/swccgo/common/CardCounts.java Internet Archive].</ref>
+<ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
+</references>
+
+[[Category:Formats]]
+[[Category:GEMP]]
