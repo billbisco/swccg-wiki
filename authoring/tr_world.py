@@ -341,6 +341,18 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
                 log.append(f"{u['event']}: Winner set to {val} from the report")
             elif not re.search(r"^\* '''Winner:'''", text, re.M):
                 m1 = list(re.finditer(r"^\* '''[^']+:'''.*$", text.split("\n==")[0], re.M))
+                if not m1:  # infobox bullets under a "== Format ==" heading (Grand Slam 2000 hubs; Claude 2026-10-25)
+                    d0 = re.search(r"^\* '''Date:'''.*$", text, re.M)
+                    if d0:
+                        st = text.rfind("\n", 0, d0.start()) + 1
+                        while True:  # walk back to the first bullet of the block
+                            pv = text.rfind("\n", 0, st - 1) + 1
+                            if st > 0 and text[pv:st].startswith("* '''"):
+                                st = pv
+                            else:
+                                break
+                        blk = re.match(r"(?:\* '''[^']+:'''.*(?:\n|$))+", text[st:])
+                        m1 = list(re.finditer(r"^\* '''[^']+:'''.*$", text[:st + len(blk.group(0).rstrip("\n"))], re.M))
                 if m1:
                     text = text[:m1[-1].end()] + f"\n* '''Winner:''' {link}<ref name=\"tr-{d['id']}\" />" + text[m1[-1].end():]
                     log.append(f"{u['event']}: Winner line added ({val}) from the report")
