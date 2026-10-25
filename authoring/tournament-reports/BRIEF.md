@@ -41,3 +41,12 @@ If the report conflicts with what the live hub says (winner, date, place, player
 
 ## Report back (your final message)
 For each id: title, author (+page status), event (+status), event date, author finish/record, number of games, decks, other results, and every judgment call / discrepancy. Compact.
+
+## Added 2026-10-25 (from batches 2–3)
+- `author_played: false` when the author didn't play the main event (judge, staff, spectator); put their decks on the side events they did play.
+- `event_parent`: the parent page of the main event when the report is mainly about a side event (e.g. "DecipherCon 2000").
+- A side event's `parent` may be null (an earlier event the report mentions is not a side event).
+- `hub_updates` may use `field: "winner"` (fills an Unknown winner), besides players / date / site.
+- Names: a person known only by first name plus an initial ("Kevin W.") gets no page; write it as the report has it.
+- Before inventing an event name, search the List for the same date and city; for repeated convention events use one hub per session, `<year> <Convention> <Decipher's event name> (<day> <Month>)`.
+- Opponents: give `opponent_side`, and use the person page's exact title (check redirects: "Michael Kessling" → "Mike Kessling").
