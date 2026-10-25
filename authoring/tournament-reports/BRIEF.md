@@ -62,7 +62,7 @@ For each id: title, author (+page status), event (+status), event date, author f
 - Several events in one city and month: every new one gets its day in the name; one already built keeps its live name (renaming a built event breaks links), so don't ask for a rename.
 - Two reports with the same author and title (a weekly "Mirkwood Deadbody Style"): set `page_title` to "<Author> <Title> (<day month year>)" on each.
 - An unnamed opponent is `null` (put the report's words, e.g. "some guy", in the game note), never a name string; lowercase phrases are not names. (Batch 16 created a "Some guy" page by mistake.)
-- A minor (a report says the player is a child) gets no person page: opponent `null`, the report's words in the game note.
+- Players who were minors are players like anyone else (Bill 2026-10-25: minors played SWCCG with their parents' permission and are adults now). Name and link them as usual; age remarks stay in the verbatim text only. The one exception is unchanged: reports that sexualize children are not published.
 - A name that the wiki has as a disambiguation page ("Paul Feldman"): map it to the right person or leave player_page false; never link the disambiguation page.
 - Hearsay ("he won, I heard") and hedged finishes ("5th or 6th (I think)") are not recorded as results or hub winners; put them in notes.
 - When a hub already links a person under one of several pages for him (Michael Dalton / Michael L. Dalton / Mike Dalton), use the page the byline matches and say in notes that the hub uses another; I merge the hub rows by hand (a second "1st" row appeared on 2001 New Jersey State Championship).
