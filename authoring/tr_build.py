@@ -34,6 +34,9 @@ def load(key: str) -> dict:
     src, rid = key.split("/")
     d = json.loads((R / src / f"{rid}.json").read_text(encoding="utf-8"))
     d["_key"] = key
+    if d.get("title_display"):  # a posted title not shown on the wiki (Bill 2026-10-25: e.g. a private address)
+        d["title"] = d["title_display"]
+        d["posted_title"] = d["title_display"]
     return d
 
 
@@ -186,13 +189,23 @@ def article(d: dict) -> str:
                 "Where this report disagrees with other sources, the wiki keeps the other record and notes the difference here.", ""]
         out += [f"* {x['text']}" + (f" (see [[{x['event']}]])" if x.get("event") else "") for x in ds_]
         out += [""]
+    body = d["body"]
+    for r in d.get("redactions") or []:  # passages not reproduced (Bill 2026-10-25); each marked in place
+        if r["text"] not in body:
+            raise SystemExit(f"{d['_key']}: redaction text not found: {r['text'][:60]!r}")
+        body = body.replace(r["text"], f"[… removed: {r['label']} …]")
+    if d.get("redactions") or d.get("title_display"):
+        out += ["== Note on this copy ==", "",
+                "Parts of this report are not reproduced on this wiki: " + d["redaction_note"].rstrip(".") + ". "
+                "Each removed passage is marked in the text below. Everything else is verbatim; the full original is in the "
+                "DeckTech archive (see Sources).", ""]
     out += ["== Original report ==", "",
             f"'''{d['posted_title']}'''",
             f"* '''Author:''' {d['byline']}",
             f"* '''Published:''' {d['date']}",
             "",
             '<div style="white-space:pre-wrap; font-family:inherit"><nowiki>',
-            nowiki(d["body"]),
+            nowiki(body),
             "</nowiki></div>", ""]
     see = ["[[Tournament reports]]", f"[[{SOURCES[d['source']][0]}]]"]
     if who:
