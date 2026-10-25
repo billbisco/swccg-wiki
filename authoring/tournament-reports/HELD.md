@@ -1,3 +1,11 @@
+# Held reports — RELEASED 2026-10-25
+
+Bill (2026-10-25): no content holds. All held reports were published in batch 29 except these, put to Bill
+(sexual remarks about minors, or a private address as the title): d2664, d3118, d3560, d2262, d1853, d3555,
+d3177, d3044, d2380, d1899, d3516. d3852 stays skipped (song parody, not a report).
+
+The list below is the original hold list, kept for the record.
+
 # DeckTech tournament reports held for Bill
 
 147 reports are not published because they make sexual claims about, or aim degrading insults at, real named or identifiable people (rule in tournament-reports/BRIEF.md). Each data file has `skip: true` and this reason; to release one, set `skip` false (re-fill it if the file was left unfilled) and rebuild it. Never publish d2664 or d3118 (sexual remarks about minors).
