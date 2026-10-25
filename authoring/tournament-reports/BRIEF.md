@@ -67,3 +67,6 @@ For each id: title, author (+page status), event (+status), event date, author f
 - A name that the wiki has as a disambiguation page ("Paul Feldman"): map it to the right person or leave player_page false; never link the disambiguation page.
 - Hearsay ("he won, I heard") and hedged finishes ("5th or 6th (I think)") are not recorded as results or hub winners; put them in notes.
 - A sexual claim about a named real person ("X is a connoisseur of porn", "X and Y contracted STDs") or an insult aimed at one (suicide jokes, "bisexual midget") counts as degrading: hold the report.
+- When a hub already links a person under one of several pages for him (Michael Dalton / Michael L. Dalton / Mike Dalton), use the page the byline matches and say in notes that the hub uses another; I merge the hub rows by hand (a second "1st" row appeared on 2001 New Jersey State Championship).
+- A handle-only byline with no name in the report (". \"Ulaire Fred\" .") is credited by the handle: `author` = the handle, `author_page` "none". `author` must never be null (the builder refuses it).
+- A city inferred from other events at the same store is not a city: name the event by state ("April 2001 Georgia tournament").
