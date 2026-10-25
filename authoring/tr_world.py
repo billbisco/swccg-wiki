@@ -30,7 +30,7 @@ def date_key(s: str) -> str:
 def full_name(n: str | None) -> bool:
     """A full name gets a person page. Initials or abbreviated surnames ("Kevin W.", "Jeroen v. Beers",
     "v/d Meer") are not full names (Claude 2026-10-25)."""
-    if not n or " " not in n.strip() or re.search(r"[?()/@#$%*]|surname|unknown|not given|unnamed", n, re.I):
+    if not n or " " not in n.strip() or re.search(r"[?()/@#$%*&,]| and |surname|unknown|not given|unnamed", n, re.I):
         return False
     parts = n.split()
     return not any(re.fullmatch(r"[A-Za-z]\.?", p) or p.endswith(".") and len(p) <= 3 for p in parts[1:])
@@ -373,7 +373,7 @@ def hub_updates(text: str, d: dict, ups: list, log: list) -> str:
             ref = f"<ref name=\"tr-{d['id']}\" />"
             # a vaguer existing value is made precise; a site is added when the hub doesn't name it (Claude 2026-10-25)
             vague = re.fullmatch(r"((\w+) )?(\d{4})( \(before [^)]*\))?", cur)
-            if (f == "Date" and vague and re.fullmatch(r"\d{1,2} \w+ \d{4}", val) and val.endswith(vague.group(3))
+            if (f == "Date" and vague and re.fullmatch(r"\d{1,2}(?:–\d{1,2})? \w+ \d{4}", val) and val.endswith(vague.group(3))
                     and (not vague.group(2) or vague.group(2) in val)):
                 text = text[:m0.start(1)] + f" {val}{ref}" + text[m0.end(1):]
                 log.append(f"{u['event']}: Date {cur!r} -> {val!r} from the report")
