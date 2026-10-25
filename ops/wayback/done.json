@@ -103290,10 +103290,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/23021/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 380 hours, 53 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-25T18:44:28Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T19:27:02Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/23033/": {
   "capture": "https://web.archive.org/web/20261009222059/https://www.stephenskilton.com/decktech_archives/23033/",
@@ -103395,10 +103395,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/23152/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 383 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-10-25T18:46:22Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T19:27:12Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/23182/": {
   "capture": "https://web.archive.org/web/20261009192931/https://www.stephenskilton.com/decktech_archives/23182/",
@@ -103570,10 +103570,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/23561/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 385 hours, 23 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-25T18:52:06Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T19:27:22Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/23567/": {
   "capture": "https://web.archive.org/web/20261009172201/https://www.stephenskilton.com/decktech_archives/23567/",
@@ -103675,10 +103675,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/23820/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 385 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-25T18:53:55Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T19:27:32Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/23830/": {
   "capture": "https://web.archive.org/web/20261009163327/https://www.stephenskilton.com/decktech_archives/23830/",
@@ -103808,10 +103808,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/23994/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 332 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-25T18:55:58Z",
+  "error": "no job_id: The same snapshot had been made 333 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-25T19:27:43Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/24003/": {
   "capture": "",
@@ -104352,18 +104352,32 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-10-14-deciphercon-by-bastian-winkelhausd1340/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025192209/https://www.stephenskilton.com/decktech_archives/reports/2000-10-14-deciphercon-by-bastian-winkelhausd1340/",
   "job_id": "spn2-097fca63e0d9fd8a8d29202f325d0763d4caf2c3",
-  "last": "2026-10-25T19:22:06Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T19:27:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T19:27:55Z",
+   "bytes": 68821,
+   "capture_id": "https://web.archive.org/web/20261025192209id_/https://www.stephenskilton.com/decktech_archives/reports/2000-10-14-deciphercon-by-bastian-winkelhausd1340/",
+   "method": "sha256",
+   "sha256": "4dec29ab6572ea50d9204acb61f6fb2c78eba06ff3aad19c9d1b5e933b6c68d2"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-10-14-hayess-dcon-game-reportd1341/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025192219/https://www.stephenskilton.com/decktech_archives/reports/2000-10-14-hayess-dcon-game-reportd1341/",
   "job_id": "spn2-4f2abdbdd7aa87b9d3df96be6ee1368917712c68",
-  "last": "2026-10-25T19:22:17Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T19:26:58Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T19:26:58Z",
+   "bytes": 51680,
+   "capture_id": "https://web.archive.org/web/20261025192219id_/https://www.stephenskilton.com/decktech_archives/reports/2000-10-14-hayess-dcon-game-reportd1341/",
+   "method": "sha256",
+   "sha256": "e25c0926dc871a4c8bb2337b0251aa07d00b2b10b6246b132948426cfbd7df5a"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-10-14-mr-hickey-goes-to-floridad1343/": {
   "capture": "https://web.archive.org/web/20261009010025/https://www.stephenskilton.com/decktech_archives/reports/2000-10-14-mr-hickey-goes-to-floridad1343/",
@@ -104380,46 +104394,88 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-10-15-15-drunk-men-at-dennys-worldsd1346/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025192243/https://www.stephenskilton.com/decktech_archives/reports/2000-10-15-15-drunk-men-at-dennys-worldsd1346/",
   "job_id": "spn2-f7a430e184c6fe2ed03741d8c64450cf3edcb578",
-  "last": "2026-10-25T19:22:40Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T19:26:54Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T19:26:54Z",
+   "bytes": 62404,
+   "capture_id": "https://web.archive.org/web/20261025192243id_/https://www.stephenskilton.com/decktech_archives/reports/2000-10-15-15-drunk-men-at-dennys-worldsd1346/",
+   "method": "sha256",
+   "sha256": "844a0ff36302541239807ad6f5e13803260bbdf6040aed93e8a2f36429ec8604"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-10-16-father-william-goes-to-d-con-pt1d1352/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025192325/https://www.stephenskilton.com/decktech_archives/reports/2000-10-16-father-william-goes-to-d-con-pt1d1352/",
   "job_id": "spn2-b2ad504900d5da5f7e2dc442db42082bf11c321b",
-  "last": "2026-10-25T19:23:22Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T19:26:51Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T19:26:51Z",
+   "bytes": 47099,
+   "capture_id": "https://web.archive.org/web/20261025192325id_/https://www.stephenskilton.com/decktech_archives/reports/2000-10-16-father-william-goes-to-d-con-pt1d1352/",
+   "method": "sha256",
+   "sha256": "a4099b2d61db02c388c2d73cb67173471ec0fc04869347fe1a2acd7f4f08def3"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-10-31-deciphercon-p-e-n-i-sd1409/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025192338/https://www.stephenskilton.com/decktech_archives/reports/2000-10-31-deciphercon-p-e-n-i-sd1409/",
   "job_id": "spn2-524e2b61b1a102325a9f823348ebcfed01764078",
-  "last": "2026-10-25T19:23:33Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T19:26:47Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T19:26:47Z",
+   "bytes": 73056,
+   "capture_id": "https://web.archive.org/web/20261025192338id_/https://www.stephenskilton.com/decktech_archives/reports/2000-10-31-deciphercon-p-e-n-i-sd1409/",
+   "method": "sha256",
+   "sha256": "9b7e8389028f8e7826ab13282b02569d22a8d62e7800a4aae56e4134455f23b7"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2001-07-29-atlanta-dpc-the-waffle-babyd2725/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025192347/https://www.stephenskilton.com/decktech_archives/reports/2001-07-29-atlanta-dpc-the-waffle-babyd2725/",
   "job_id": "spn2-8538e5f7862551285ed8286f6a4c7b633ab442ab",
-  "last": "2026-10-25T19:23:44Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T19:26:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T19:26:44Z",
+   "bytes": 92126,
+   "capture_id": "https://web.archive.org/web/20261025192347id_/https://www.stephenskilton.com/decktech_archives/reports/2001-07-29-atlanta-dpc-the-waffle-babyd2725/",
+   "method": "sha256",
+   "sha256": "83f0b4c3a32fb9e0d26c34bee3153cb3013436221290629c5c7141b5d49b8274"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2001-08-06-geoff-goes-to-gen-con-part-2d2791/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025192437/https://www.stephenskilton.com/decktech_archives/reports/2001-08-06-geoff-goes-to-gen-con-part-2d2791/",
   "job_id": "spn2-987d4470e1a539e448313f06e3320c0feae08be1",
-  "last": "2026-10-25T19:24:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T19:26:40Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T19:26:40Z",
+   "bytes": 29960,
+   "capture_id": "https://web.archive.org/web/20261025192437id_/https://www.stephenskilton.com/decktech_archives/reports/2001-08-06-geoff-goes-to-gen-con-part-2d2791/",
+   "method": "sha256",
+   "sha256": "8429e664c8b87ad1b07fc20a5502674f6dd20a52dfb94a1c2d28e49413da1945"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2001-08-06-kohman-does-gen-con-and-likes-itd2792/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025192439/https://www.stephenskilton.com/decktech_archives/reports/2001-08-06-kohman-does-gen-con-and-likes-itd2792/",
   "job_id": "spn2-c8281ff765ec468fa5f4a1f4c91f612d6200f478",
-  "last": "2026-10-25T19:24:37Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T19:26:36Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T19:26:36Z",
+   "bytes": 41993,
+   "capture_id": "https://web.archive.org/web/20261025192439id_/https://www.stephenskilton.com/decktech_archives/reports/2001-08-06-kohman-does-gen-con-and-likes-itd2792/",
+   "method": "sha256",
+   "sha256": "c954eb9a6bb7d0f2b82dfbf6bb9ed2b950073382c5e21e420a6890cf11650eae"
+  }
  },
  "https://www.swccgstore.com/Star-Wars-CCG-Asteroid-Sanctuary-p/11914.htm": {
   "capture": "https://web.archive.org/web/20261009013333/https://www.swccgstore.com/Star-Wars-CCG-Asteroid-Sanctuary-p/11914.htm",
