@@ -37,6 +37,10 @@ def load(key: str) -> dict:
     if d.get("title_display"):  # a posted title not shown on the wiki (Bill 2026-10-25: e.g. a private address)
         d["title"] = d["title_display"]
         d["posted_title"] = d["title_display"]
+    if d.get("hide_url"):  # the archive slug itself is private (e.g. a street address): link the archive index instead
+        d["url"] = d["url"].split("/reports/")[0] + "/reports/"
+        d["mirror"] = d["mirror"].split("/reports/")[0] + "/reports/"
+        d["posted_title"] = f"{d['title_display']} (DeckTech report {d['id']}; listed in the archive index)"
     return d
 
 
@@ -145,13 +149,15 @@ def article(d: dict) -> str:
     src = SOURCES[d["source"]][1]
     lead = (f"'''{page_title(d)}''' is the tournament report {whol} posted on {src} on {long_date(d['date'])} "
             f"about {event_text(d)}.{ref(d)}")
-    if d.get("withhold_title"):
+    if d.get("title_display"):
+        lead += " Its posted title is not shown on this wiki (see the note on this copy)."
+    elif d.get("withhold_title"):
         lead += f" It was posted as ''{d['title']}''; that title is not used as the page title."  # original titles go through (Bill 2026-10-25)
     if d.get("summary"):
         lead += " " + d["summary"]
     info = [f"* '''Author:''' {whol}" + (f" (byline: {d['byline']})" if who and d['byline'] != who else "")]
     info.append(f"* '''Published:''' {long_date(d['date'])} ({src})")
-    info.append(f"* '''Report title:''' ''{d['title']}''")
+    info.append(f"* '''Report title:''' ''{d['title']}''" + (" (neutral title; the posted title is not shown)" if d.get("title_display") else ""))
     info.append(f"* '''Event:''' {event_text(d)}")
     if d.get("event_date"):
         info.append(f"* '''Event date:''' {event_long(d)}")
@@ -321,7 +327,9 @@ def catalog_decktech(ds: list[dict], current: str) -> str:
             "under [https://www.stephenskilton.com/decktech_archives/tournament_reports/ Tournament Reports] "
             "(mirror: [https://stevetotheizz0.github.io/decktech_archives/tournament_reports/ GitHub Pages]). "
             "The archive keeps each report's text, author and date, but its titles are URL slugs, so the titles here "
-            "are rebuilt from them. Each report on this wiki has its own article, part of [[Tournament reports]].")
+            "are rebuilt from them. Each report on this wiki has its own article, part of [[Tournament reports]]. "
+            "Archive posts without an article of their own (reposts, empty entries, posts about other games or not about play) "
+            "are listed at [[DeckTech posts without report articles]], with links to the archive.")
     tail = current[current.find("\n== See also =="):] if "\n== See also ==" in current else ""
     tail = tail.replace("* [[Decklists]] · [[DeckTech]] · [[DeckTech decks]]",
                         "* [[Tournament reports]] · [[DeckTech]] · [[DeckTech decks]] · [[Decklists]]")
@@ -352,6 +360,7 @@ TR_HUB = """'''Tournament reports''' are players' own accounts of Star Wars CCG 
 * '''Report info''' gives the author, publication, event, date, finish and record; '''Games''' lists each game the author describes; '''Original report''' is the report as published.
 * The author's person page gets a '''Tournament reports''' section, and the event's page lists the reports written about it.
 * Results taken only from a report are marked as such. When a report disagrees with Decipher's records (for example on the city of an event), the wiki follows Decipher's record and notes the discrepancy.
+* A few reports have short passages removed (sexual remarks about minors, a private address). Each removal is marked in the text and explained in a ''Note on this copy''; the archive link leads to the original.
 * Every report article is in [[:Category:Tournament reports]] and in a category for its source.
 
 == Sources ==

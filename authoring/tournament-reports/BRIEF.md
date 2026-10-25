@@ -69,3 +69,9 @@ For each id: title, author (+page status), event (+status), event date, author f
 - A handle-only byline with no name in the report (". \"Ulaire Fred\" .") is credited by the handle: `author` = the handle, `author_page` "none". `author` must never be null (the builder refuses it).
 - A city inferred from other events at the same store is not a city: name the event by state ("April 2001 Georgia tournament").
 - **No content holds (Bill 2026-10-25).** Reports are historical records and are published verbatim and uncensored, whatever they say about anyone. The only change ever made is the wiki *page title*: a crude report title is not used as the page title (`withhold_title: true`), but the original title is still shown in the article and the catalog. Never set `skip` for content. (The one exception, decided by Claude and put to Bill: reports that sexualize children are not published.)
+
+## Redactions and loose tournaments (Bill 2026-10-25)
+
+- Reports are published verbatim. The only passages left out are sexual remarks about minors and private addresses: list them in `redactions` [{text (exact body substring), label}] with a general `redaction_note`; the builder marks each cut in place and adds a "Note on this copy". A private posted title gets `title_display` + `withhold_title`; a private archive slug gets `hide_url` (links go to the archive index).
+- "Tournament" is used loosely: casual sessions, points nights, house games and follow-up notes all get articles tied to an event (a note attaches to the event of the report it follows).
+- Posts with no article (reposts, failed postings, empty entries, other games, non-play posts) are listed at [[DeckTech posts without report articles]] with archive links.
