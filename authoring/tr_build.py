@@ -80,7 +80,7 @@ def page_title(d: dict) -> str:
     elif d.get("withhold_title"):
         t = f"{d['author']} {d['event'] or (d.get('event_date') or '')[:4] + ' tournament'} report"
     else:
-        t = f"{d['author']} {d['title']}"
+        t = d['title'] if d['title'].lower().startswith(d['author'].lower() + " ") else f"{d['author']} {d['title']}"  # no doubled name (Claude 2026-10-25)
     t = re.sub(r"\s+", " ", t).strip() + " (tournament report)"
     bad = FORBID & set(t)
     if bad:
