@@ -60,3 +60,5 @@ For each id: title, author (+page status), event (+status), event date, author f
 - An author who did not play a side event: `author_played: false` on that side event.
 - Before filling, check `tournament-reports/built.txt`: a key listed there is already published; only update it to match the live wiki.
 - Several events in one city and month: every one gets its day in the name, including the first one already built (tell me so I can rename it).
+- Two reports with the same author and title (a weekly "Mirkwood Deadbody Style"): set `page_title` to "<Author> <Title> (<day month year>)" on each.
+- A report that tells a sexual or degrading story about a real, named person, or is mostly abuse aimed at named people: don't fill it; tell me (I hold it for Bill).
