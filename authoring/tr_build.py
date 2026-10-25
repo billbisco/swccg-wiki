@@ -497,6 +497,9 @@ def main() -> None:
             log.append(f"{n} redirects to {m.group(1) if m else '?'}; used the target")
             n = m.group(1).strip()
             cur = live(n)
+        if cur and re.search(r"\[\[Category:Disambiguation\]\]|\{\{[Dd]isambig", cur):
+            log.append(f"{n} is a disambiguation page: rows NOT added (map the report's name to the right person)")
+            continue
         txt = W.person_text(n, entries, cur, fmt_of)
         for d, _x in entries:
             txt = W.ensure_ref(txt, d)

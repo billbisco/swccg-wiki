@@ -131,7 +131,7 @@ def add_result_rows(text: str, rows: list[tuple[str, str]], who: str = "") -> st
     if not m:
         first = re.search(r"^==[^=]", text, re.M)
         k = first.start() if first else len(text)
-        text = text[:k] + "== Tournament Results ==\n\n" + RESULTS_HEAD + "\n|}\n\n" + text[k:]
+        text = text[:k].rstrip("\n") + "\n\n== Tournament Results ==\n\n" + RESULTS_HEAD + "\n|}\n\n" + text[k:]
         m = re.search(r"^== Tournament [Rr]esults ==\s*$", text, re.M)
     t0 = text.find("{|", m.end())
     nxt = re.search(r"^==[^=]", text[m.end():], re.M)
