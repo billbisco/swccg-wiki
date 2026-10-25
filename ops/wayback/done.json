@@ -38153,10 +38153,10 @@
  },
  "https://swccg.com/snapshots/forum/t86180.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-23T22:04:34Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-a1812bd1aeced879205bc1de41a57f665e82beee",
+  "last": "2026-10-25T12:16:36Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://swccg.com/snapshots/forum/t86297.html": {
   "capture": "https://web.archive.org/web/20261017125346/https://swccg.com/snapshots/forum/t86297.html",
@@ -57987,6 +57987,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2024-bespin-regionals-larry-nava-ds-thrawn.html": {
+  "capture": "",
+  "job_id": "spn2-51bbfd27d9c3f76f03aaa108e5c95483df376b3c",
+  "last": "2026-10-25T12:12:38Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2024-bespin-regionals-mark-walseth-ds-isb.html": {
   "capture": "",
   "job_id": "spn2-2dac2be41286bebe169e1130895cf73abda3efb9",
@@ -58448,11 +58455,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-mike-kessling-ls-whap.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025120828/https://swccg.com/snapshots/pc/2024-corellia-regionals-mike-kessling-ls-whap.html",
   "job_id": "spn2-7cfed849b81fa6417be08bf9ba03ca6f1a6a7b5b",
-  "last": "2026-10-25T12:08:24Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T12:11:08Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T12:11:08Z",
+   "bytes": 7121994,
+   "capture_id": "https://web.archive.org/web/20261025120828id_/https://swccg.com/snapshots/pc/2024-corellia-regionals-mike-kessling-ls-whap.html",
+   "method": "sha256",
+   "sha256": "29091e7abee83c7390c2eb798a4b499ab7c1ac05c593c36a7d21024adb1d72b4"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-nick-swedal-ds-hunt-down-v.html": {
   "capture": "",
@@ -58964,6 +58978,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2024-european-championship-patrik-csapi-ls-diplo.html": {
+  "capture": "",
+  "job_id": "spn2-2bb825f5f79cd79710774901e5bd630f9847533e",
+  "last": "2026-10-25T12:16:25Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2024-european-championship-quirin-furgut-ds-aobs.html": {
   "capture": "",
   "job_id": "spn2-6c8daa4489dc73688c8624bb3a545e79b9af2eaa",
@@ -59158,6 +59179,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2024-ithor-regionals-eric-spijksma-ds-hoth-crv.html": {
+  "capture": "",
+  "job_id": "spn2-425649c152f505433d6feafd00f67a87ae21f175",
+  "last": "2026-10-25T12:12:27Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-eric-spijksma-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261025081423/https://swccg.com/snapshots/pc/2024-ithor-regionals-eric-spijksma-ls-qmc.html",
   "job_id": "spn2-b4f21282e7441f6272dd16c86fdd0ac065dfed68",
@@ -59259,6 +59287,13 @@
   "capture": "",
   "job_id": "spn2-e1ab1c3fa31626920d2e8026fdf7aca9a517d660",
   "last": "2026-10-25T10:32:18Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2024-ithor-regionals-thomas-santosuosso-ds-thrawn.html": {
+  "capture": "",
+  "job_id": "spn2-f697eac5a439fb1d3b2c49035292818dd0b66de1",
+  "last": "2026-10-25T12:14:15Z",
   "status": "pending",
   "tries": 1
  },
@@ -59395,6 +59430,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2024-naboo-regionals-cedrik-vanderhaegen-ls-whap.html": {
+  "capture": "",
+  "job_id": "spn2-2a2da668cbfa3355e2ff1f7d50de94f33e06aa81",
+  "last": "2026-10-25T12:15:09Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2024-naboo-regionals-emil-wallin-ds-mkos.html": {
   "capture": "",
   "job_id": "spn2-c4bbe1597331b0cf30a8f47678fb0422764e6d50",
@@ -59434,6 +59476,13 @@
   "capture": "",
   "job_id": "spn2-994e62577d04107ee1ba0d31e14f181732378d83",
   "last": "2026-10-25T07:31:29Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2024-naboo-regionals-kevin-jaap-ds-rots-maul.html": {
+  "capture": "",
+  "job_id": "spn2-3203064d4f8979dfff0f167e789eb964a4cfa139",
+  "last": "2026-10-25T12:15:30Z",
   "status": "pending",
   "tries": 1
  },
@@ -60396,11 +60445,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-ryloth-regionals-martin-den-boef-ls-hitco.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025120802/https://swccg.com/snapshots/pc/2024-ryloth-regionals-martin-den-boef-ls-hitco.html",
   "job_id": "spn2-ecb2dc2709ea6611072ee8e2dfcafdb78267e72d",
-  "last": "2026-10-25T12:07:32Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T12:11:24Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T12:11:24Z",
+   "bytes": 7121108,
+   "capture_id": "https://web.archive.org/web/20261025120802id_/https://swccg.com/snapshots/pc/2024-ryloth-regionals-martin-den-boef-ls-hitco.html",
+   "method": "sha256",
+   "sha256": "edc58cbcd066211fdce69544d7e517f4be9537165223b4a8e18ec489be919921"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-ryloth-regionals-quirin-furgut-ds-ralltiir-operations.html": {
   "capture": "",
@@ -60528,6 +60584,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2024-tatooine-regionals-brett-bailey-ls-zero-hour.html": {
+  "capture": "",
+  "job_id": "spn2-aa68c1a4726de4d8875e2a83b10d35005c8ad48c",
+  "last": "2026-10-25T12:13:12Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2024-tatooine-regionals-jerry-heine-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261025091927/https://swccg.com/snapshots/pc/2024-tatooine-regionals-jerry-heine-ds-endor-operations.html",
   "job_id": "spn2-05f117296c51998133c0c6512a8f861a38820ae8",
@@ -60573,9 +60636,9 @@
  "https://swccg.com/snapshots/pc/2024-tatooine-regionals-justin-miyashiro-ds-court.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T11:32:59Z",
+  "last": "2026-10-25T12:11:56Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-tatooine-regionals-justin-miyashiro-ls-whap.html": {
   "capture": "https://web.archive.org/web/20261025085430/https://swccg.com/snapshots/pc/2024-tatooine-regionals-justin-miyashiro-ls-whap.html",
@@ -60683,11 +60746,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-angelo-consoli-ls-diplo.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025120817/https://swccg.com/snapshots/pc/2024-toola-regionals-angelo-consoli-ls-diplo.html",
   "job_id": "spn2-a15d244b1fc4f4f30738cd5c478542aa6154db8c",
-  "last": "2026-10-25T12:08:14Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T12:11:16Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T12:11:16Z",
+   "bytes": 7121959,
+   "capture_id": "https://web.archive.org/web/20261025120817id_/https://swccg.com/snapshots/pc/2024-toola-regionals-angelo-consoli-ls-diplo.html",
+   "method": "sha256",
+   "sha256": "fb901065e73f67c3d935e259bcc3bfdb783238c4caa6d071fab0b0613e08e581"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-bjorn-palmqvist-ds-watto.html": {
   "capture": "",
@@ -60756,6 +60826,13 @@
   "capture": "",
   "job_id": "spn2-3427cd63170db387e635f0236307e5278bfd5e9b",
   "last": "2026-10-25T11:48:45Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2024-toola-regionals-jon-benkert-holtet-ds-tatooine-crv.html": {
+  "capture": "",
+  "job_id": "spn2-5de4461f0fa07c51dbf18965e4fd1697ad8a7d5d",
+  "last": "2026-10-25T12:13:01Z",
   "status": "pending",
   "tries": 1
  },
@@ -61646,6 +61723,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2025-european-championship-casper-jorgensen-ls-no-idea.html": {
+  "capture": "",
+  "job_id": "spn2-b5cec1fc8da1ecc9521ccef7a2a6b5d48a455f07",
+  "last": "2026-10-25T12:12:50Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2025-european-championship-cedrik-vanderhaegen-ds-hunt-down-v.html": {
   "capture": "https://web.archive.org/web/20261025080215/https://swccg.com/snapshots/pc/2025-european-championship-cedrik-vanderhaegen-ds-hunt-down-v.html",
   "job_id": "spn2-ef4ea58ebcb34e28a82895a22066f52906704797",
@@ -61703,9 +61787,23 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-eric-spijksma-ds-old-allies.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025120654/https://swccg.com/snapshots/pc/2025-european-championship-eric-spijksma-ds-old-allies.html",
   "job_id": "spn2-6161d9ca4863177b818d4cae265a04652d178bc8",
-  "last": "2026-10-25T12:06:29Z",
+  "last": "2026-10-25T12:11:46Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T12:11:46Z",
+   "bytes": 7122019,
+   "capture_id": "https://web.archive.org/web/20261025120654id_/https://swccg.com/snapshots/pc/2025-european-championship-eric-spijksma-ds-old-allies.html",
+   "method": "sha256",
+   "sha256": "18028d4eb72ac451f80596de489653977d8a82644cbd748db0348c3434b8110b"
+  }
+ },
+ "https://swccg.com/snapshots/pc/2025-european-championship-eric-spijksma-ds-rots-dooku.html": {
+  "capture": "",
+  "job_id": "spn2-7067898d9c900cb97850411cd4befcbfa71aff94",
+  "last": "2026-10-25T12:13:22Z",
   "status": "pending",
   "tries": 1
  },
@@ -61738,11 +61836,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-john-moorley-ls-mwyhlv.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025120731/https://swccg.com/snapshots/pc/2025-european-championship-john-moorley-ls-mwyhlv.html",
   "job_id": "spn2-eeeaae4563fed5ccb499a93a335bcaf4132f7d87",
-  "last": "2026-10-25T12:06:18Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T12:11:54Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T12:11:54Z",
+   "bytes": 7122090,
+   "capture_id": "https://web.archive.org/web/20261025120731id_/https://swccg.com/snapshots/pc/2025-european-championship-john-moorley-ls-mwyhlv.html",
+   "method": "sha256",
+   "sha256": "44a282d3df353d51564e967f1a96afa55822d8136e027573112a47e6b487a79f"
+  }
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-jon-benkert-holtet-ds-coruscant-crv.html": {
   "capture": "",
@@ -61919,11 +62024,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-top-4-emil-wallin-ds-endor-operations.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025120725/https://swccg.com/snapshots/pc/2025-european-championship-top-4-emil-wallin-ds-endor-operations.html",
   "job_id": "spn2-04b9c2a8cab98e7f5a13e9568575ab8bbdb94a61",
-  "last": "2026-10-25T12:07:22Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T12:11:31Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T12:11:31Z",
+   "bytes": 7122225,
+   "capture_id": "https://web.archive.org/web/20261025120725id_/https://swccg.com/snapshots/pc/2025-european-championship-top-4-emil-wallin-ds-endor-operations.html",
+   "method": "sha256",
+   "sha256": "a71c1037b974c1167f69a8747d3a10e2f5de98ada821a03778ec2349f2f0eb47"
+  }
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-top-4-emil-wallin-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261025114111/https://swccg.com/snapshots/pc/2025-european-championship-top-4-emil-wallin-ls-old-allies.html",
@@ -62268,6 +62380,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2025-naboo-regionals-tamas-papp-ls-rescue-the-princess-v.html": {
+  "capture": "",
+  "job_id": "spn2-b723ac02d9d5b45465d540c0811f9c63cdc23448",
+  "last": "2026-10-25T12:14:27Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2025-naboo-regionals-wayne-poppleton-ds-a-stunning-move.html": {
   "capture": "",
   "job_id": "spn2-47d9b0bc1271d0bb56fdd6944758c91dc78f81a2",
@@ -62302,6 +62421,13 @@
    "method": "sha256",
    "sha256": "7be70930c6967ce3584191ce6f039766b5b5cb7445039259db8e457c23264fa0"
   }
+ },
+ "https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-chad-lawrence-ds-endor-operations.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T12:12:16Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-chad-lawrence-ls-skywalker-saga-luke.html": {
   "capture": "",
@@ -62970,6 +63096,13 @@
    "sha256": "426315290f48dd411cc80616b04a114bff0ed869cc3ba105a815cc1aae5bea58"
   }
  },
+ "https://swccg.com/snapshots/pc/2025-world-championship-taylor-gosiaco-ds-asm.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-25T12:12:06Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2025-world-championship-taylor-gosiaco-ls-skywalker-saga-rey.html": {
   "capture": "",
   "job_id": "spn2-d0c0192a3b1787632b9dfa19a716bd854ec56569",
@@ -63292,6 +63425,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2026-bespin-regionals-nick-swedal-ls-no-idea.html": {
+  "capture": "",
+  "job_id": "spn2-b15eb7f0a9d77e0774bdb59686ddb6f92b31e6e5",
+  "last": "2026-10-25T12:14:04Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2026-bespin-regionals-sam-tashima-ds-my-kind-of-scum.html": {
   "capture": "",
   "job_id": "spn2-4745a8912bbb748c9496ae7ce3e08014e3e4e496",
@@ -63494,11 +63634,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-chris-menzel-ds-hunt-down.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025120714/https://swccg.com/snapshots/pc/2026-european-championship-chris-menzel-ds-hunt-down.html",
   "job_id": "spn2-fad98226859e9ffd1677e6202d0447b97fec618d",
-  "last": "2026-10-25T12:07:10Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-25T12:11:39Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-25T12:11:39Z",
+   "bytes": 7121088,
+   "capture_id": "https://web.archive.org/web/20261025120714id_/https://swccg.com/snapshots/pc/2026-european-championship-chris-menzel-ds-hunt-down.html",
+   "method": "sha256",
+   "sha256": "52105f8fcd9bc47dbeda9837abda2e60633f32324a17b47de619fdaed73a566e"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-chris-menzel-ls-senate.html": {
   "capture": "",
@@ -63576,6 +63723,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/snapshots/pc/2026-european-championship-john-moorley-ds-hunt-down.html": {
+  "capture": "",
+  "job_id": "spn2-18b89132a248296c7b8ed50cf592131fd08b7386",
+  "last": "2026-10-25T12:16:14Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/pc/2026-european-championship-john-moorley-ls-profit.html": {
   "capture": "https://web.archive.org/web/20261025074754/https://swccg.com/snapshots/pc/2026-european-championship-john-moorley-ls-profit.html",
   "last": "2026-10-25T07:52:44Z",
@@ -63607,6 +63761,13 @@
   "capture": "",
   "job_id": "spn2-94e31da89f36cdcfdd9d5dd4680a98f9e14f5c90",
   "last": "2026-10-25T10:48:10Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/pc/2026-european-championship-julian-smolarek-ds-tdigwatt.html": {
+  "capture": "",
+  "job_id": "spn2-1028a9f539fcebe23756ce11c777a62e23e00265",
+  "last": "2026-10-25T12:15:19Z",
   "status": "pending",
   "tries": 1
  },
@@ -95372,24 +95533,24 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17365/": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-23T21:48:29Z",
-  "status": "retry",
-  "tries": 5
+  "job_id": "spn2-d13c6850e86c29844dad3181818bf7ffae9bc91f",
+  "last": "2026-10-25T12:17:17Z",
+  "status": "pending",
+  "tries": 6
  },
  "https://www.stephenskilton.com/decktech_archives/17366/": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-23T21:28:34Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-3f4377af0065aa2fcaac8f1a9d14ea4f08401a3d",
+  "last": "2026-10-25T12:17:29Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://www.stephenskilton.com/decktech_archives/17376/": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-23T21:28:44Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-dcab7d03bf2991d6f5090c970a8f75ff21b23510",
+  "last": "2026-10-25T12:17:40Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://www.stephenskilton.com/decktech_archives/17381/": {
   "capture": "",
@@ -95400,9 +95561,23 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17402/": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-23T20:22:08Z",
-  "status": "retry",
+  "job_id": "spn2-a12390a05500b0b55bb3f5379a1799f68b024c5e",
+  "last": "2026-10-25T12:18:24Z",
+  "status": "pending",
+  "tries": 2
+ },
+ "https://www.stephenskilton.com/decktech_archives/17405/": {
+  "capture": "",
+  "job_id": "spn2-5d7271300d1764ffce2fe2a6ace89e4f0e636619",
+  "last": "2026-10-25T12:18:35Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://www.stephenskilton.com/decktech_archives/17417/": {
+  "capture": "",
+  "job_id": "spn2-064dd846395deb9d2582a5bdf762f235423a5adf",
+  "last": "2026-10-25T12:18:46Z",
+  "status": "pending",
   "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17419/": {
@@ -95468,6 +95643,13 @@
    "sha256": "7ad3a8caebe09ddf091ea9721edb21052a4147a7fde9a8cfdc75c621748d153c"
   }
  },
+ "https://www.stephenskilton.com/decktech_archives/17452/": {
+  "capture": "",
+  "job_id": "spn2-76a02daaa9ddd689acb78a42b5a75d43996aa1d5",
+  "last": "2026-10-25T12:19:27Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://www.stephenskilton.com/decktech_archives/17460/": {
   "capture": "https://web.archive.org/web/20261023202510/https://www.stephenskilton.com/decktech_archives/17460/",
   "job_id": "spn2-d6d77d578d9eb6d66dde8af56d9a9073f6ec9d5e",
@@ -95510,11 +95692,19 @@
    "sha256": "d8aff9a0d10747aa920b9a5e92c5baaa9b98e43216003b66a87a60f3eac85d9c"
   }
  },
+ "https://www.stephenskilton.com/decktech_archives/17475/": {
+  "capture": "",
+  "job_id": "spn2-f5f662cc226a95cd357bb364a09922dec5b43d62",
+  "last": "2026-10-25T12:19:38Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://www.stephenskilton.com/decktech_archives/17503/": {
   "capture": "https://web.archive.org/web/20261023202651/https://www.stephenskilton.com/decktech_archives/17503/",
-  "last": "2026-10-23T20:44:43Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-fad492be9c11c04c17c499cc7d62d3ec2bd350b7",
+  "last": "2026-10-25T12:19:48Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/17505/": {
   "capture": "https://web.archive.org/web/20261023202720/https://www.stephenskilton.com/decktech_archives/17505/",
@@ -95536,6 +95726,13 @@
    "sha256": "d02bdc233b7ded58519206950ef5464fa5e9e99fa9cc341bd0d37361005ac5f2"
   }
  },
+ "https://www.stephenskilton.com/decktech_archives/17520/": {
+  "capture": "",
+  "job_id": "spn2-4b5c65d972e5f5a3a9cebfcb7d05bb5eae53de33",
+  "last": "2026-10-25T12:20:30Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://www.stephenskilton.com/decktech_archives/17528/": {
   "capture": "https://web.archive.org/web/20261023202817/https://www.stephenskilton.com/decktech_archives/17528/",
   "job_id": "spn2-1459991c4aff83486496dc098536db060e2ad657",
@@ -95552,21 +95749,31 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17535/": {
   "capture": "https://web.archive.org/web/20261023202728/https://www.stephenskilton.com/decktech_archives/17535/",
-  "last": "2026-10-23T20:44:46Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-9adc440d8fd4cdcc2e69c90be67804c9d648a441",
+  "last": "2026-10-25T12:20:41Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/17538/": {
   "capture": "https://web.archive.org/web/20261023202747/https://www.stephenskilton.com/decktech_archives/17538/",
-  "last": "2026-10-23T20:44:47Z",
-  "status": "retry",
+  "job_id": "spn2-1db501e53a0ca367683a5e91b824526987f7271c",
+  "last": "2026-10-25T12:20:51Z",
+  "status": "pending",
+  "tries": 2
+ },
+ "https://www.stephenskilton.com/decktech_archives/17544/": {
+  "capture": "",
+  "job_id": "spn2-59dea17309fa858135f83e603a70677374bf6c4e",
+  "last": "2026-10-25T12:21:02Z",
+  "status": "pending",
   "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17546/": {
   "capture": "https://web.archive.org/web/20261023202832/https://www.stephenskilton.com/decktech_archives/17546/",
-  "last": "2026-10-23T20:44:48Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-44b2c36393b18ab0d3ddb495b67983d75c6d1927",
+  "last": "2026-10-25T12:21:13Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/17559/": {
   "capture": "https://web.archive.org/web/20261023202933/https://www.stephenskilton.com/decktech_archives/17559/",
@@ -95584,9 +95791,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17564/": {
   "capture": "https://web.archive.org/web/20261023202946/https://www.stephenskilton.com/decktech_archives/17564/",
-  "last": "2026-10-23T20:44:49Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-0d20f14c0074cf549633299edc440bfb4131ffc3",
+  "last": "2026-10-25T12:21:24Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/17571/": {
   "capture": "https://web.archive.org/web/20261023202908/https://www.stephenskilton.com/decktech_archives/17571/",
