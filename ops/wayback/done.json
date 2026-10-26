@@ -50453,17 +50453,17 @@
  },
  "https://stevetotheizz0.github.io/decktech_archives/24025/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 403 hours, 42 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:59:08Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T11:31:41Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://stevetotheizz0.github.io/decktech_archives/24026/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 403 hours, 21 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:59:20Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T11:31:51Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://stevetotheizz0.github.io/decktech_archives/24089/": {
   "capture": "",
@@ -50552,23 +50552,23 @@
  "https://stevetotheizz0.github.io/decktech_archives/24905/": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T10:47:39Z",
+  "last": "2026-10-26T11:32:01Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://stevetotheizz0.github.io/decktech_archives/24965/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 371 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:47:50Z",
+  "error": "no job_id: The same snapshot had been made 372 hours, 36 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T11:32:13Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://stevetotheizz0.github.io/decktech_archives/25015/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 398 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:48:02Z",
+  "error": "no job_id: The same snapshot had been made 399 hours, 36 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T11:32:24Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://stevetotheizz0.github.io/decktech_archives/25033/": {
   "capture": "",
@@ -61130,11 +61130,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ds-map.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026111017/https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ds-map.html",
   "job_id": "spn2-032e01e3e05c562ae9a8c5a57991ead809f41a50",
-  "last": "2026-10-26T11:10:14Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T11:31:40Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T11:32:37Z",
+   "bytes": 7122731,
+   "capture_id": "https://web.archive.org/web/20261026111017id_/https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ds-map.html",
+   "method": "sha256",
+   "sha256": "b155b4b335428ac93c8386f940a53bc3484d9c563a995d89a23b92ad9fbe770d"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ls-qmc-bf.html": {
   "capture": "https://web.archive.org/web/20261021052843/https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ls-qmc-bf.html",
@@ -61151,11 +61158,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ls-qmc.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026111028/https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ls-qmc.html",
   "job_id": "spn2-e084bd5f68fdabeca7969febba5f5df154858177",
-  "last": "2026-10-26T11:10:25Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T11:31:34Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T11:31:34Z",
+   "bytes": 7122703,
+   "capture_id": "https://web.archive.org/web/20261026111028id_/https://swccg.com/snapshots/pc/2022-endor-regionals-jordan-gosiaco-ls-qmc.html",
+   "method": "sha256",
+   "sha256": "efee1783eecd1e87218b50266f76896a76f875ccc053779c4a90b237be2ee012"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ds-shadow-collective-bf.html": {
   "capture": "https://web.archive.org/web/20261021041845/https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ds-shadow-collective-bf.html",
@@ -61166,11 +61180,18 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ds-shadow-collective.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026111039/https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ds-shadow-collective.html",
   "job_id": "spn2-fd31c7198e45318ebe256445acbe8e2ed8307e39",
-  "last": "2026-10-26T11:10:36Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T11:31:26Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T11:31:26Z",
+   "bytes": 7120927,
+   "capture_id": "https://web.archive.org/web/20261026111039id_/https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ds-shadow-collective.html",
+   "method": "sha256",
+   "sha256": "c922471ada5992ee72fe92f62fe2ed434a43fcc2542a8f25f79376b0dbb804f6"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ls-old-allies-bf.html": {
   "capture": "https://web.archive.org/web/20261021042757/https://swccg.com/snapshots/pc/2022-endor-regionals-kyle-krueger-ls-old-allies-bf.html",
@@ -61200,11 +61221,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-spencer-gosiaco-ds-asm.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026111125/https://swccg.com/snapshots/pc/2022-endor-regionals-spencer-gosiaco-ds-asm.html",
   "job_id": "spn2-517a634a2e2836fcd1086ac6d9d5b5b0a21bd41c",
-  "last": "2026-10-26T11:11:17Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T11:31:19Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T11:31:19Z",
+   "bytes": 7121130,
+   "capture_id": "https://web.archive.org/web/20261026111125id_/https://swccg.com/snapshots/pc/2022-endor-regionals-spencer-gosiaco-ds-asm.html",
+   "method": "sha256",
+   "sha256": "83aa3f5b43bbeaba65875cf09d415395340f6ef62b42c512217b917db73e50e5"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-spencer-gosiaco-ls-legend-bf.html": {
   "capture": "https://web.archive.org/web/20261021051509/https://swccg.com/snapshots/pc/2022-endor-regionals-spencer-gosiaco-ls-legend-bf.html",
@@ -61221,11 +61249,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-spencer-gosiaco-ls-legend.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026111132/https://swccg.com/snapshots/pc/2022-endor-regionals-spencer-gosiaco-ls-legend.html",
   "job_id": "spn2-ff26e29fdc523553e9bf8da06d9ae48a2cb84027",
-  "last": "2026-10-26T11:11:28Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T11:31:10Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T11:31:10Z",
+   "bytes": 7122843,
+   "capture_id": "https://web.archive.org/web/20261026111132id_/https://swccg.com/snapshots/pc/2022-endor-regionals-spencer-gosiaco-ls-legend.html",
+   "method": "sha256",
+   "sha256": "335c007388b563078f69026a4cd669843571e3bde3ec31fa137dd629126a02c9"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-Stephan-de-vos-ds-coruscant-crv-bf.html": {
   "capture": "https://web.archive.org/web/20261021044132/https://swccg.com/snapshots/pc/2022-european-championship-Stephan-de-vos-ds-coruscant-crv-bf.html",
