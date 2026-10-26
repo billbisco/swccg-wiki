@@ -389,6 +389,7 @@ class StrictCheck(unittest.TestCase):
     ORIG = "https://swccg.com/snapshots/pc/bochum.html"
     CAP = f"https://web.archive.org/web/{TS}/{ORIG}"
     ID = f"https://web.archive.org/web/{TS}id_/{ORIG}"
+    OLD = f"https://web.archive.org/web/20250101000000/{ORIG}"
 
     def cdx(self, rows):
         return lambda original, ts: rows
@@ -439,7 +440,7 @@ class StrictCheck(unittest.TestCase):
         W.strict_check, W.VERIFY_GAP_S = (lambda c: (True, "replay-only: not in CDX")), 0
         W.DeleteBudget.left = 5
         try:
-            ok, why = REAL_DELETE_CHECK(self.ORIG, {"capture": self.CAP})
+            ok, why = REAL_DELETE_CHECK(self.ORIG, {"capture": self.OLD})
         finally:
             W.strict_check, W.VERIFY_GAP_S = saved, gap
         self.assertFalse(ok)
@@ -477,7 +478,7 @@ class StrictCheck(unittest.TestCase):
         (root / "pc").mkdir(parents=True)
         fp = root / "pc/bochum.html"
         fp.write_text("x")
-        e = {"capture": self.CAP, "status": "verified", "verify": {"method": "sha256"}}
+        e = {"capture": self.OLD, "status": "verified", "verify": {"method": "sha256"}}
         saved, gap = W.strict_check, W.VERIFY_GAP_S
         W.strict_check, W.VERIFY_GAP_S = (lambda c: (False, "capture HTTP 404")), 0
         W.DEMOTED.clear()
@@ -488,8 +489,9 @@ class StrictCheck(unittest.TestCase):
         finally:
             W.strict_check, W.VERIFY_GAP_S = saved, gap
         self.assertTrue(fp.exists())
-        self.assertEqual(e["status"], "unverified")  # file under a temp root, not the real one
-        self.assertEqual(e["dead_capture"], self.CAP)
+        self.assertEqual(e["status"], "retry")  # staging file still there: re-save it
+        self.assertTrue(e["recapture"])
+        self.assertEqual(e["dead_capture"], self.OLD)
         self.assertIn(self.ORIG, W.DEMOTED)
 
     def test_delete_waits_for_young_capture(self):

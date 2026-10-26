@@ -784,7 +784,7 @@ def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
         print("KEEP-UNCHECKED", rel, why, flush=True)
         if not why.startswith(("retry:", "capture younger", "delete re-check budget")):
             # the stored "verified" was wrong: demote so the URL is looked at / recaptured
-            demote(url, e, why)
+            demote(url, e, why, root)
             DEMOTED[url] = e
         return False
     method = (e.get("verify") or {}).get("method") or "checked"
@@ -806,13 +806,13 @@ def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
 DEMOTED: dict[str, dict] = {}
 
 
-def demote(url: str, e: dict, why: str) -> None:
+def demote(url: str, e: dict, why: str, root: Path | None = None) -> None:
     """A stored 'verified' capture failed strict_check. swccg.com snapshots whose staging file still
     exists are re-saved (status retry, fresh tries); anything else becomes unverified."""
     e["dead_capture"] = e.get("capture", "")
     e["verify"] = {"at": iso(now()), "method": "strict", "reason": why[:120]}
     e["last"] = iso(now())
-    fp = snapshot_file(url)
+    fp = snapshot_file(url, root)
     if fp is not None and fp.is_file():
         e.update(status="retry", tries=0, recapture=True)
         e["last"] = iso(now() - RETRY_AFTER)
