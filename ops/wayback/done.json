@@ -54847,9 +54847,9 @@
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-kessling-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005317/https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-kessling-ds.html?copy=2",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:18:51Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-26T22:51:17Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-kessling-ls.html": {
   "capture": "",
@@ -56169,9 +56169,9 @@
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ds-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010826/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ds-map.html?copy=2",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:19:02Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-26T22:51:27Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html": {
   "capture": "",
@@ -63465,9 +63465,9 @@
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-jeroen-wauters-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025014825/https://swccg.com/snapshots/pc/2022-naboo-regionals-jeroen-wauters-ds-bhbm.html?copy=2",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:19:12Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-26T22:51:37Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-jeroen-wauters-ls-jcc-mains.html": {
   "capture": "https://web.archive.org/web/20261021054559/https://swccg.com/snapshots/pc/2022-naboo-regionals-jeroen-wauters-ls-jcc-mains.html",
@@ -65218,9 +65218,9 @@
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-nick-abbondanzo-ds-aobs.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021216/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-nick-abbondanzo-ds-aobs.html?copy=2",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:19:22Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-26T22:51:47Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-nick-abbondanzo-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021070024/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-nick-abbondanzo-ls-qmc.html",
@@ -66186,9 +66186,9 @@
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ls-skywalker-saga-luke.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025022647/https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ls-skywalker-saga-luke.html?copy=2",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:19:32Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-26T22:51:57Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-mark-walseth-ds-rots-dooku.html": {
   "capture": "",
@@ -91892,11 +91892,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/endor-commando-team.html": {
-  "capture": "https://web.archive.org/web/20261024180029/https://swccg.com/snapshots/scomp/endor-commando-team.html",
+  "capture": "https://web.archive.org/web/20261026224818/https://swccg.com/snapshots/scomp/endor-commando-team.html",
   "job_id": "spn2-16cae97f81164732d94df3a143057c95f7562a84",
-  "last": "2026-10-26T22:47:17Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T22:51:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T22:51:12Z",
+   "bytes": 781903,
+   "capture_id": "https://web.archive.org/web/20261026224818id_/https://swccg.com/snapshots/scomp/endor-commando-team.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9645bc24056a9d0bc66fec05356a78de3f9665ac4f0de3b8626f1db74b20f2bc"
+  }
  },
  "https://swccg.com/snapshots/scomp/endor-dark-forest.html": {
   "capture": "",
@@ -94049,10 +94057,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/ghoel.html": {
-  "capture": "https://web.archive.org/web/20261024225258/https://swccg.com/snapshots/scomp/ghoel.html",
+  "capture": "https://web.archive.org/web/20261026224727/https://swccg.com/snapshots/scomp/ghoel.html",
   "job_id": "spn2-fc6fc824c15951506d096a85d66fa0697b356457",
-  "last": "2026-10-26T22:46:36Z",
-  "status": "pending",
+  "last": "2026-10-26T22:51:15Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/ghost.html": {
@@ -99485,11 +99493,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/lieutenant-naytaan.html": {
-  "capture": "https://web.archive.org/web/20261024180028/https://swccg.com/snapshots/scomp/lieutenant-naytaan.html",
+  "capture": "https://web.archive.org/web/20261026224830/https://swccg.com/snapshots/scomp/lieutenant-naytaan.html",
   "job_id": "spn2-1c210e9c4bb178c31ad9e1561236fea5f0d64c2f",
-  "last": "2026-10-26T22:47:28Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T22:51:06Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T22:51:06Z",
+   "bytes": 396455,
+   "capture_id": "https://web.archive.org/web/20261026224830id_/https://swccg.com/snapshots/scomp/lieutenant-naytaan.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1c469d875363736c7c0fc39365278f1d21ed6d6fe0e4383b70ec9e2b75c626ba"
+  }
  },
  "https://swccg.com/snapshots/scomp/lin-v8k-elleyein-veeatekay.html": {
   "capture": "",
