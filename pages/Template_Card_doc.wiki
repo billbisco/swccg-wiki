@@ -1,0 +1,125 @@
+This is the documentation for [[Template:Card]], the card-page template.
+
+One page = one printing. Do '''not''' put empty errata sections on a card that was never errata'd.
+
+
+Optional '''publisher''' — who released this printing (<code>[[Decipher]]</code>, <code>[[Players Committee]]</code>, or a named person). Inherit from the set infobox. Renders after Set when filled.
+
+Optional '''era''' — championship era hub: <code>[[Decipher era]]</code>, <code>[[Virtual Original]]</code>, <code>[[Virtual Legacy]]</code>, or <code>[[Virtual Modern]]</code>. Renders after Publisher when filled.
+
+'''GEMP ID''' — GEMP blueprint id as <code>set_card</code> (for example <code>1220_51</code>). Pass '''gemp_id''' or the older '''card_uid''' (alias). Shown in monospace. Dest keys such as <code>pc|vbN|...</code> belong in authoring JSON, not here.
+
+Optional '''pc_alias''' — Players Committee GEMP alias (<code>601_x</code> / <code>501_x</code>) when it differs from the GEMP ID.
+
+Optional '''slip''' — printed slip number on the virtual sheet (for example <code>51E</code>). Data, not the id.
+
+'''Versions''' — lineage of printings, prefixes Virtual-first (Decipher, Virtual Original, Virtual Legacy, Virtual Modern). Pass '''versions''' or the older '''printings''' (alias). Mark the current printing with bold '''this page''' plus the GEMP id in <code><nowiki><code></nowiki></code>.
+
+
+Optional '''likeness''' — person whose face is on the card: a photographic model Decipher (or the Players Committee) cast, or the film portrayer of that character. Wiki-link the person page. Worked: [[Mara Jade, The Emperor's Hand]] → [[Shannon Baksa]]; [[Aurra Sing]] / [[Aurra Sing (AI)]] → [[Michonne Bourriague]]. Omit when the art is illustration, a starship/weapon, or a later virtual photograph that is not that person.
+
+Optional '''anagram''' — one sentence that the printed title is an anagram of a named person. Renders as '''Anagram'''. Adds [[:Category:Anagrams]]. Omit when none. Link [[Anagrams]] from See also. Worked: [[Nabrun Leids]] → [[Tom Braunlich]].
+
+Optional '''joke''' — a joke in this printing's title, lore or game text, cited (or approved by Bill, with the approval on the card's Talk page). Renders as '''Joke''' directly after '''Anagram'''. Adds [[:Category:Jokes]]. Omit when none. Link [[Jokes]] from See also. Worked: [[Swing-And-A-Miss]].
+
+Optional '''easter_egg''' — the hidden picture, icon, likeness or other visual detail on this printing, cited. Renders as '''Easter egg''' immediately before See Also. Adds [[:Category:Easter eggs]]. Omit when none. Link [[Easter eggs]] from See also. Worked: [[Death Star: Trench]].
+
+'''sources''' — the card-data sources this page transcribes (card list, slip, PDF), one bullet each with its Preserved copy. Renders under a '''Sources''' heading only when filled. Do not repeat a source that is already a <code><nowiki><ref></nowiki></code> for a specific claim unless it is the source for the whole card. '''has_refs''' — set when the page has <code><nowiki><ref></nowiki></code> notes; renders '''References'''. '''see_also''' renders '''See Also''' only when filled.
+
+Optional '''image2''' — second portrait under '''image''' (same 280px width). Used for Objective 0/7 faces; omit on single-face cards.
+
+Optional '''image2_layout''' — how to place '''image2''' when set:
+* omit or '''stack''' — force stacked vertically (0 on top, 7 below); default when unset
+* '''right''' — force side-by-side always (0 left, 7 right); classes '''card-portraits-row''' + '''card-rail-dual'''
+* '''responsive''' — preferred Objective mode: wide viewport = side-by-side (0 left, 7 right); narrow viewport (max-width '''720px''') = stacked. Same row/dual markup plus '''card-rail-responsive''' / '''card-portraits-responsive''' so CSS media query can adapt.
+
+<pre>
+{{Card
+|title=2X-3KPR (Tooex)
+|card_uid=1_1
+|gemp_id=1_1
+|publisher=[[Decipher]]
+|era=[[Decipher era]]
+|image=Premiere-L-2x3kpr.gif
+|image2=
+|image2_layout=
+|side=Light
+|type=Character
+|subtype=Droid
+|model=Security
+|set=Premiere Limited
+|rarity=U1
+|rarity_link=Rarity#Uncommon
+|uniqueness=Unrestricted
+|destiny=3
+|power=0
+|ability=0
+|influence=
+|deploy=2
+|forfeit=2
+|landspeed=1
+|icons=[[Droid]]
+|lore=
+|anagram=
+|joke=
+|easter_egg=
+|game_text=
+|game_text_note=
+|versions=
+|likeness=
+|notes=
+|see_also=
+|sources=
+|prev=
+|next=Beru Lars
+|version_label=printed
+|set_band=Decipher
+}}
+</pre>
+
+Example Objective both faces stacked (0 on top, 7 below):
+
+<pre>
+{{Card
+|title=Set Your Course For Alderaan / The Ultimate Power In The Universe
+|card_uid=111_6
+|image=TA-D-setyourcourseforalderaan.gif
+|image2=TA-D-theultimatepowerintheuniverse.gif
+|side=Dark
+|type=Objective
+|set=Third Anthology
+|...
+}}
+</pre>
+
+Example Objective side-by-side forced (0 left, 7 right):
+
+<pre>
+{{Card
+|title=Set Your Course For Alderaan / The Ultimate Power In The Universe
+|card_uid=111_6
+|image=TA-D-setyourcourseforalderaan.gif
+|image2=TA-D-theultimatepowerintheuniverse.gif
+|image2_layout=right
+|side=Dark
+|type=Objective
+|set=Third Anthology
+|...
+}}
+</pre>
+
+Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px = stacked:
+
+<pre>
+{{Card
+|title=Set Your Course For Alderaan / The Ultimate Power In The Universe
+|card_uid=111_6
+|image=TA-D-setyourcourseforalderaan.gif
+|image2=TA-D-theultimatepowerintheuniverse.gif
+|image2_layout=responsive
+|side=Dark
+|type=Objective
+|set=Third Anthology
+|...
+}}
+</pre>
