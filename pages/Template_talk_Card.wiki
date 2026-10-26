@@ -8,3 +8,24 @@ Optional <code>|easter_egg=</code> renders <code>== Easter egg ==</code> after A
 == |easter_egg= placement (2026-10-16) ==
 Bill: Easter egg goes at the bottom immediately before See Also (after Underlying card for / last gameplay section). Moved the render there. Test cards: [[Death Star: Trench]], [[Gravel Storm]], [[Defel]], [[Furry Fury]], [[M-HYD 'Binary' Droid]].
 [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 23:51, 16 October 2026 (UTC)
+
+== Dest 26 October 2026 ==
+=== Build notes ===
+* Split the Destiny/Power/Ability <code>#if</code> chain onto separate rows so style_lint LONG no longer fires on one 35-word line.
+* Optional Publisher and Era after Set. GEMP ID row aliases <code>gemp_id</code>/<code>card_uid</code> as monospace. Versions aliases <code>versions</code>/<code>printings</code>. Optional PC alias and Slip.
+* Existing cards keep rendering: unset Publisher/Era/PC alias/Slip omit; <code>card_uid</code> and <code>printings</code> still fill GEMP ID and Versions.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 03:35, 26 October 2026 (UTC)
+
+== Dest 26 October 2026 (Version row) ==
+=== Build notes ===
+* Dropped the Version row (<code>version_label</code>, default printed). Players Committee printings are Virtual Original / Virtual Legacy / Virtual Modern on Era and Versions. Unused <code>version_label</code> on card pages is ignored.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 15:42, 26 October 2026 (UTC)
+
+== Dest 26 October 2026 ==
+=== Build notes ===
+* Premiere Luke errata is Decipher Glossary Version 2.0, not Players Committee Appendix A.
+* Canonical errata article [[Luke Skywalker (Errata)]] uid <code>1_19d</code>. [[Luke Skywalker (PC Errata)]] redirects there.
+* Versions Option C: full family, era prefixes only. Printed <code>1_19o</code>, errata <code>1_19d</code>, OVS <code>1101_5</code>, Block 1 <code>1210_105</code>, Modern <code>200_20</code>, ALT <code>200_20^</code>.
+* GEMP playable <code>1_19</code> and [[Card:1_19]] land on the errata article.
+* Versions Option C locked: family navigator, era prefixes only. Worked [[Luke Skywalker]].
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 17:12, 26 October 2026 (UTC)
