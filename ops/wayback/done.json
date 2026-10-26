@@ -33285,7 +33285,12 @@
   "last": "2026-10-22T18:12:00Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-26T18:04:32Z",
+   "error": "capture HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://forum.starwarsccg.org/viewtopic.php?p=1300861": {
   "capture": "",
@@ -119526,6 +119531,12 @@
    "method": "sha256",
    "sha256": "f46c8c7c2c09362f6f016f8dd7907e945fc65af3004d4d35af8ef1635c2403b3"
   }
+ },
+ "https://www.stephenskilton.com/decktech_archives/7228/": {
+  "capture": "https://web.archive.org/web/20261026174724/https://www.stephenskilton.com/decktech_archives/7228/",
+  "last": "2026-10-26T18:02:58Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/reports/1999-10-06-az-gamer-phoenix-10-2-99d66/": {
   "capture": "https://web.archive.org/web/20261026030122/https://www.stephenskilton.com/decktech_archives/reports/1999-10-06-az-gamer-phoenix-10-2-99d66/",
