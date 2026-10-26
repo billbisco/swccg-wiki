@@ -11,6 +11,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import wayback_worker as W  # noqa: E402
 
+REAL_STRICT, REAL_DELETE_CHECK = W.strict_check, W.delete_check
+W.strict_check = lambda capture: (True, "ok")  # network check; exercised in StrictCheck below
+
 CAP = "https://web.archive.org/web/20261020174512/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf"
 PDF = b"%PDF-1.4 fake pdf bytes " * 100
 PAGE = (b"<!DOCTYPE html><html><head><title>Ultimate Power Rules Questions</title><script>var x=1;</script></head>"
@@ -259,6 +262,9 @@ class WikiCiteIndex(unittest.TestCase):
 
 class SnapshotDelete(unittest.TestCase):
     def setUp(self):
+        self._dc = W.delete_check
+        W.delete_check = lambda url, e: (True, "ok")
+        self.addCleanup(setattr, W, "delete_check", self._dc)
         self.tmp = tempfile.TemporaryDirectory()
         self.root = Path(self.tmp.name) / "snapshots"
         self.root.mkdir()
@@ -367,6 +373,118 @@ class SnapshotDelete(unittest.TestCase):
             os.environ.pop("SWCCG_SNAPSHOT_ROOT", None)
             os.environ.pop("SWCCG_SNAPSHOT_LOG", None)
         self.assertTrue(self.fp.exists())
+
+
+def raw(table):
+    def get(url):
+        if url not in table:
+            raise AssertionError(f"unexpected fetch {url}")
+        return table[url]
+    return get
+
+
+class StrictCheck(unittest.TestCase):
+    """2026-10-26: done.json said verified for captures that 404; the file was then deleted."""
+    TS = "20261020232414"
+    ORIG = "https://swccg.com/snapshots/pc/bochum.html"
+    CAP = f"https://web.archive.org/web/{TS}/{ORIG}"
+    ID = f"https://web.archive.org/web/{TS}id_/{ORIG}"
+
+    def cdx(self, rows):
+        return lambda original, ts: rows
+
+    def test_good_capture(self):
+        ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (200, {}, b"<html>ok</html>")}),
+                              cdx=self.cdx([[self.TS, "200", "text/html"]]))
+        self.assertTrue(ok, why)
+
+    def test_404_not_archived(self):
+        body = b"<p>Hrm.</p><p>The Wayback Machine has not archived that URL.</p>"
+        ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (404, {}, body)}), cdx=self.cdx([]))
+        self.assertFalse(ok)
+        self.assertIn("404", why)
+
+    def test_200_error_page(self):
+        body = b"<title>Wayback Machine</title> Wayback Machine doesn't have that page archived."
+        ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (200, {}, body)}),
+                              cdx=self.cdx([[self.TS, "200", "text/html"]]))
+        self.assertFalse(ok)
+        self.assertIn("error page", why)
+
+    def test_redirect_to_other_timestamp_fails(self):
+        loc = f"https://web.archive.org/web/20261013152327id_/{self.ORIG}"
+        ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (302, {"Location": loc}, b"")}),
+                              cdx=self.cdx([]))
+        self.assertFalse(ok)
+        self.assertIn("another capture", why)
+
+    def test_redirect_off_archive_fails(self):
+        ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (302, {"Location": "https://example.com/x"}, b"")}),
+                              cdx=self.cdx([]))
+        self.assertFalse(ok)
+
+    def test_redirect_same_capture_then_404(self):
+        loc = f"https://web.archive.org/web/{self.TS}id_/http://swccg.com/snapshots/pc/bochum.html"
+        ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (302, {"Location": loc}, b""), loc: (404, {}, b"")}),
+                              cdx=self.cdx([[self.TS, "200", "text/html"]]))
+        self.assertFalse(ok)
+
+    def test_replay_200_but_not_in_cdx_fails(self):
+        ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (200, {}, b"<html>cached</html>")}), cdx=self.cdx([]))
+        self.assertFalse(ok)
+        self.assertIn("CDX", why)
+
+    def test_cdx_status_404_fails(self):
+        ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (200, {}, b"<html>x</html>")}),
+                              cdx=self.cdx([[self.TS, "404", "text/html"]]))
+        self.assertFalse(ok)
+        self.assertIn("statuscode 404", why)
+
+    def test_cdx_revisit_ok(self):
+        ok, _ = REAL_STRICT(self.CAP, get=raw({self.ID: (200, {}, b"<html>x</html>")}),
+                            cdx=self.cdx([[self.TS, "-", "warc/revisit"]]))
+        self.assertTrue(ok)
+
+    def test_throttle_is_retry(self):
+        with self.assertRaises(W.VerifyRetry):
+            REAL_STRICT(self.CAP, get=raw({self.ID: (429, {}, b"")}), cdx=self.cdx([]))
+
+    def test_verify_marks_strict_failure_unverified(self):
+        saved = W.strict_check
+        W.strict_check = lambda c: (False, "capture HTTP 404")
+        try:
+            status, info = W.verify(self.ORIG, self.CAP, get=raw({}))
+        finally:
+            W.strict_check = saved
+        self.assertEqual(status, "unverified")
+        self.assertIn("404", info["reason"])
+
+    def test_delete_refuses_dead_capture_and_demotes(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name) / "snapshots"
+        (root / "pc").mkdir(parents=True)
+        fp = root / "pc/bochum.html"
+        fp.write_text("x")
+        e = {"capture": self.CAP, "status": "verified", "verify": {"method": "sha256"}}
+        saved, gap = W.strict_check, W.VERIFY_GAP_S
+        W.strict_check, W.VERIFY_GAP_S = (lambda c: (False, "capture HTTP 404")), 0
+        W.DEMOTED.clear()
+        W.DeleteBudget.left = 5
+        try:
+            self.assertFalse(W.delete_verified_snapshot(self.ORIG, e, root, Path(tmp.name) / "log",
+                                                        cited_paths={"pc/bochum.html"}))
+        finally:
+            W.strict_check, W.VERIFY_GAP_S = saved, gap
+        self.assertTrue(fp.exists())
+        self.assertEqual(e["status"], "unverified")
+        self.assertIn(self.ORIG, W.DEMOTED)
+
+    def test_delete_waits_for_young_capture(self):
+        cap = "https://web.archive.org/web/" + W.now().strftime("%Y%m%d%H%M%S") + "/" + self.ORIG
+        ok, why = REAL_DELETE_CHECK(self.ORIG, {"capture": cap})
+        self.assertFalse(ok)
+        self.assertIn("younger", why)
 
 
 class PendingConfirm(unittest.TestCase):

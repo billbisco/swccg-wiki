@@ -247,6 +247,119 @@ MAX_BODY = 20 * 1024 * 1024  # bytes kept in memory for HTML comparison (files a
 MAX_FETCH = 300 * 1024 * 1024
 BACKLOG_SECONDS = 150        # time per run spent verifying older "ok" entries
 VERIFY_GAP_S = 4             # pause between backlog verifications (archive.org refuses bursts)
+# Strict capture check (2026-10-26 false-verify fix). A capture counts only when (a) its id_ URL
+# answers a real HTTP 200 at the SAME 14-digit timestamp (redirects followed only inside
+# web.archive.org for the same original URL), (b) the body is not a Wayback error page, and
+# (c) the CDX index lists that exact timestamp with statuscode 2xx (or a warc/revisit).
+# Right after Save Page Now, replay can serve a capture from a temporary cache that never reaches
+# the index; it 404s days later. So the CDX check is required, verification of a capture younger
+# than INDEX_GRACE without a CDX row waits, and a snapshot file is deleted only after the strict
+# check passes again at delete time on a capture at least DELETE_MIN_AGE old.
+CDX_API = "https://web.archive.org/cdx/search/cdx"
+INDEX_GRACE = timedelta(hours=48)      # how long a new capture may be missing from CDX
+DELETE_MIN_AGE = timedelta(hours=24)   # capture age before its staging file may be deleted
+DELETE_CHECKS_PER_RUN = 25             # strict re-checks before deletes, per run
+WAYBACK_ERROR_RX = re.compile(
+    rb"Hrm\.|Wayback Machine doesn(?:'|&#39;|&#x27;|\xe2\x80\x99)t have that page|"
+    rb"has not archived that URL|This URL has been excluded from the Wayback Machine|"
+    rb"Got an HTTP \d{3} response at crawl time|<title>\s*Wayback Machine\s*</title>", re.I)
+
+
+def capture_parts(capture: str) -> tuple[str, str]:
+    m = re.match(r"https?://web\.archive\.org/web/(\d{14})(?:[a-z]{2}_)?/(.+)$", (capture or "").split("#")[0])
+    if not m:
+        raise ValueError(f"not a Wayback capture URL: {capture[:100]}")
+    return m.group(1), m.group(2)
+
+
+def _norm_original(u: str) -> str:
+    u = urllib.parse.unquote(u.strip())
+    u = re.sub(r"^(?:https?:)?//", "", u if re.match(r"^(?:https?:)?//", u) else "//" + u, flags=re.I)
+    host, _, rest = u.partition("/")
+    host = host.lower().removeprefix("www.").split(":")[0]
+    return host + "/" + rest.rstrip("/")
+
+
+def same_original(a: str, b: str) -> bool:
+    return _norm_original(a) == _norm_original(b)
+
+
+def capture_age(capture: str, now_t: datetime | None = None) -> timedelta | None:
+    try:
+        ts, _ = capture_parts(capture)
+        t = datetime.strptime(ts, "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+    return (now_t or now()) - t
+
+
+def _raw_get(url: str, limit: int = 1 << 16) -> tuple[int, dict, bytes]:
+    """One GET without following redirects; returns (status, headers, first `limit` bytes)."""
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
+    try:
+        resp = OPENER.open(req, timeout=120)
+    except urllib.error.HTTPError as e:
+        body = b""
+        try:
+            body = e.read(limit) or b""
+        except Exception:  # noqa: BLE001
+            pass
+        return e.code, dict(e.headers or {}), body
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+        raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}", side="capture") from e
+    with resp:
+        return resp.status, dict(resp.headers), resp.read(limit)
+
+
+def cdx_rows(original: str, ts: str) -> list[list[str]]:
+    q = CDX_API + "?" + urllib.parse.urlencode({"url": original, "from": ts, "to": ts, "output": "json",
+                                                "fl": "timestamp,statuscode,mimetype", "limit": "20"})
+    status, _, body = _raw_get(q, limit=1 << 20)
+    if status == 429 or status >= 500:
+        raise VerifyRetry(f"CDX HTTP {status}", side="capture")
+    if status != 200:
+        raise VerifyRetry(f"CDX HTTP {status}", side="capture")
+    try:
+        rows = json.loads(body.decode("utf-8", "replace") or "[]")
+    except ValueError as ex:
+        raise VerifyRetry("CDX answer is not JSON", side="capture") from ex
+    return rows[1:] if rows and rows[0] and rows[0][0] == "timestamp" else rows
+
+
+def strict_check(capture: str, get=None, cdx=None) -> tuple[bool, str]:
+    """(True, "ok") only for a capture that really exists; else (False, reason).
+    Raises VerifyRetry(side="capture") when archive.org throttles or is down (try later)."""
+    get, cdx = get or _raw_get, cdx or cdx_rows
+    ts, original = capture_parts(capture)
+    url = f"https://web.archive.org/web/{ts}id_/{original}"
+    for _hop in range(6):
+        status, headers, body = get(url)
+        if status == 429 or status >= 500:
+            raise VerifyRetry(f"capture HTTP {status}", side="capture")
+        if status in (301, 302, 303, 307, 308):
+            loc = urllib.parse.urljoin(url, headers.get("Location") or headers.get("location") or "")
+            m = re.match(r"https://web\.archive\.org/web/(\d{14})(?:[a-z]{2}_)?/(.+)$", loc)
+            if not m or not same_original(m.group(2), original):
+                return False, f"redirects off the capture: {loc[:100]}"
+            if m.group(1) != ts:
+                return False, f"redirects to another capture {m.group(1)} (no capture at {ts})"
+            url = loc
+            continue
+        if status != 200:
+            return False, f"capture HTTP {status}"
+        if WAYBACK_ERROR_RX.search(body[:1 << 16]):
+            return False, "capture is a Wayback error page"
+        break
+    else:
+        return False, "too many redirects"
+    rows = [r for r in cdx(original, ts) if r and r[0] == ts]
+    if not rows:
+        return False, f"timestamp {ts} not in the CDX index"
+    for r in rows:
+        code = r[1] if len(r) > 1 else ""
+        if code.startswith("2") or (code == "-" and len(r) > 2 and "revisit" in r[2]):
+            return True, "ok"
+    return False, f"CDX statuscode {rows[0][1] if len(rows[0]) > 1 else '?'} at {ts}"
 CLOUDFLARE_RX = re.compile(r"<title>\s*(?:Just a moment\.\.\.|Attention Required! \| Cloudflare)|cf-chl-|challenge-platform", re.I)
 
 
@@ -407,6 +520,13 @@ def verify(url: str, capture: str, get=None) -> tuple[str, dict]:
     """Compare a capture with its live source. Returns ("verified" | "unverified", details).
     Raises VerifyRetry when either side could not be fetched (try again later)."""
     get = get or fetch
+    good, why = strict_check(capture)
+    if not good:
+        age = capture_age(capture)
+        if "not in the CDX index" in why and age is not None and age < INDEX_GRACE:
+            raise VerifyRetry(why, side="index")  # new capture: wait for the index, no try used
+        return "unverified", {"at": iso(now()), "capture_id": id_url(capture), "method": "strict",
+                              "reason": why}
     try:
         cap = get(id_url(capture))
     except VerifyRetry as ex:
@@ -444,6 +564,9 @@ def verify_entry(url: str, e: dict, get=None) -> bool:
         print("VERIFY-ERR", url, str(ex)[:80], flush=True)
         if ex.side == "capture":  # archive.org trouble: leave the entry alone, try next run
             raise
+        if ex.side == "index":  # capture not indexed yet: wait RETRY_AFTER, no try used
+            e["verify"] = {"at": iso(now()), "error": str(ex)[:120]}
+            return True
         n = e.get("verify_tries", 0) + 1
         e["verify_tries"] = n
         e["verify"] = {"at": iso(now()), "error": str(ex)[:120]}
@@ -616,10 +739,34 @@ def wiki_snapshot_wayback_paths(get_json=None) -> set[str]:
     return out
 
 
+class DeleteBudget:
+    """Strict re-checks allowed before deletes in one run (archive.org refuses bursts)."""
+    left = DELETE_CHECKS_PER_RUN
+
+
+def delete_check(url: str, e: dict) -> tuple[bool, str]:
+    """Re-check a verified capture right before its staging file is deleted (2026-10-26)."""
+    cap = e.get("capture") or ""
+    age = capture_age(cap)
+    if age is None or age < DELETE_MIN_AGE:
+        return False, "capture younger than DELETE_MIN_AGE"
+    if DeleteBudget.left <= 0:
+        return False, "delete re-check budget used up this run"
+    DeleteBudget.left -= 1
+    try:
+        ok, why = strict_check(cap)
+    except VerifyRetry as ex:
+        return False, f"retry: {ex}"
+    finally:
+        time.sleep(VERIFY_GAP_S)
+    return ok, why
+
+
 def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
                              log_path: Path | None = None,
                              cited_paths: set[str] | None = None) -> bool:
-    """Delete the staging file when verified AND a wiki article cites a Wayback URL of that path."""
+    """Delete the staging file when verified AND a wiki article cites a Wayback URL of that path
+    AND the capture passes strict_check again now (never on the stored 'verified' alone)."""
     if e.get("status") != "verified":
         return False
     rel = snapshot_relpath(url)
@@ -630,6 +777,16 @@ def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
         return False
     if not cited_paths or rel not in cited_paths:
         print("KEEP-UNCITED", rel, flush=True)
+        return False
+    good, why = delete_check(url, e)
+    if not good:
+        print("KEEP-UNCHECKED", rel, why, flush=True)
+        if not why.startswith(("retry:", "capture younger", "delete re-check budget")):
+            # the stored "verified" was wrong: demote so the URL is looked at / recaptured
+            e["status"] = "unverified"
+            e["verify"] = {**(e.get("verify") or {}), "at": iso(now()), "method": "strict", "reason": why}
+            e["last"] = iso(now())
+            DEMOTED[url] = e
         return False
     method = (e.get("verify") or {}).get("method") or "checked"
     ts = capture_timestamp(e.get("capture") or "")
@@ -645,6 +802,9 @@ def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
         print("DELETE-LOG-ERR", rel, ex, flush=True)
     print("DELETED", rel, size, ts, flush=True)
     return True
+
+
+DEMOTED: dict[str, dict] = {}
 
 
 def prune_verified_snapshots(done: dict, root: Path | None = None,
@@ -824,8 +984,12 @@ def run(repo: Path, minutes: float) -> None:
             break
         time.sleep(VERIFY_GAP_S)
 
-    # 5. drop staging files whose Wayback capture already matched (Bill 2026-10-14)
+    # 5. drop staging files whose Wayback capture already matched (Bill 2026-10-14), after a
+    #    fresh strict check; entries that fail it are demoted to unverified and pushed
+    DEMOTED.clear()
+    DeleteBudget.left = DELETE_CHECKS_PER_RUN
     prune_verified_snapshots(done)
+    changed.update(DEMOTED)
 
     if not changed:
         print("nothing to do")
@@ -835,7 +999,6 @@ def run(repo: Path, minutes: float) -> None:
         _, fresh = load(repo)
         fresh.update(changed)
         write_done(repo, fresh)
-        prune_verified_snapshots(fresh)
         return [DONE]
 
     write_done(repo, done)
