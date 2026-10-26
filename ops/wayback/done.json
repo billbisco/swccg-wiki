@@ -83685,9 +83685,9 @@
  "https://swccg.com/snapshots/scomp/bargaining-table.html": {
   "capture": "https://web.archive.org/web/20261024100714/https://swccg.com/snapshots/scomp/bargaining-table.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:56:29Z",
+  "last": "2026-10-26T23:27:51Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/baron-soontir-fel-v.html": {
   "capture": "https://web.archive.org/web/20261024061313/https://swccg.com/snapshots/scomp/baron-soontir-fel-v.html",
@@ -85635,9 +85635,9 @@
  "https://swccg.com/snapshots/scomp/captain-phasma.html": {
   "capture": "https://web.archive.org/web/20261024094929/https://swccg.com/snapshots/scomp/captain-phasma.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:56:08Z",
+  "last": "2026-10-26T23:27:41Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/captain-piett.html": {
   "capture": "",
@@ -87325,9 +87325,9 @@
  "https://swccg.com/snapshots/scomp/cloud-city-security-tower.html": {
   "capture": "https://web.archive.org/web/20261024102029/https://swccg.com/snapshots/scomp/cloud-city-security-tower.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:56:39Z",
+  "last": "2026-10-26T23:28:02Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/cloud-city-technician.html": {
   "capture": "",
@@ -91254,9 +91254,9 @@
  "https://swccg.com/snapshots/scomp/echo-base-sensors.html": {
   "capture": "https://web.archive.org/web/20261024104615/https://swccg.com/snapshots/scomp/echo-base-sensors.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T22:56:49Z",
+  "last": "2026-10-26T23:28:12Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/echo-base-trooper-officer.html": {
   "capture": "https://web.archive.org/web/20261023231227/https://swccg.com/snapshots/scomp/echo-base-trooper-officer.html",
@@ -94365,10 +94365,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/green-squadron-3.html": {
-  "capture": "https://web.archive.org/web/20261024200606/https://swccg.com/snapshots/scomp/green-squadron-3.html",
+  "capture": "https://web.archive.org/web/20261026231913/https://swccg.com/snapshots/scomp/green-squadron-3.html",
   "job_id": "spn2-cc22214c66d3257b0c9afa1f2c43a649fe3bbb3c",
-  "last": "2026-10-26T23:19:07Z",
-  "status": "pending",
+  "last": "2026-10-26T23:27:38Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/green-squadron-a-wing.html": {
@@ -96779,17 +96779,10 @@
  },
  "https://swccg.com/snapshots/scomp/informant.html": {
   "capture": "https://web.archive.org/web/20261024170626/https://swccg.com/snapshots/scomp/informant.html",
-  "dead_capture": "https://web.archive.org/web/20261024170626/https://swccg.com/snapshots/scomp/informant.html",
-  "job_id": "spn2-d17b71f6da113c3a5e457c334d3865787e6cc505",
-  "last": "2026-10-26T19:31:40Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T23:28:22Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:02:40Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/information-exchange-v.html": {
   "capture": "https://web.archive.org/web/20261024033619/https://swccg.com/snapshots/scomp/information-exchange-v.html",
@@ -98194,11 +98187,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/kelnacca.html": {
-  "capture": "https://web.archive.org/web/20261024200852/https://swccg.com/snapshots/scomp/kelnacca.html",
+  "capture": "https://web.archive.org/web/20261026231922/https://swccg.com/snapshots/scomp/kelnacca.html",
   "job_id": "spn2-49649708263326e8bdaf1433caa18771cee831aa",
-  "last": "2026-10-26T23:19:18Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T23:27:34Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T23:27:34Z",
+   "bytes": 759166,
+   "capture_id": "https://web.archive.org/web/20261026231922id_/https://swccg.com/snapshots/scomp/kelnacca.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c74df4eaa7fb10ab00358f47079cfcb4a661e227118942dcc6f2a5bc953de604"
+  }
  },
  "https://swccg.com/snapshots/scomp/kessel-operative.html": {
   "capture": "",
@@ -98801,9 +98802,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/larma-d-acy.html": {
-  "capture": "https://web.archive.org/web/20261024200556/https://swccg.com/snapshots/scomp/larma-d-acy.html",
-  "job_id": "spn2-b33ca481240463c901c2df1ab21f986746d8c253",
-  "last": "2026-10-26T23:18:26Z",
+  "capture": "https://web.archive.org/web/20261026231927/https://swccg.com/snapshots/scomp/larma-d-acy.html",
+  "last": "2026-10-26T23:27:40Z",
   "status": "pending",
   "tries": 1
  },
