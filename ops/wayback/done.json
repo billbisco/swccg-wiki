@@ -50689,38 +50689,38 @@
  },
  "https://stevetotheizz0.github.io/decktech_archives/25033/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 405 hours, 57 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T11:35:10Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T12:05:20Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://stevetotheizz0.github.io/decktech_archives/26173/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 406 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T11:35:21Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T12:05:31Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://stevetotheizz0.github.io/decktech_archives/26204/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 408 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T11:35:36Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T12:05:41Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://stevetotheizz0.github.io/decktech_archives/26273/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 405 hours, 54 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T11:35:47Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T12:05:51Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://stevetotheizz0.github.io/decktech_archives/26297/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 267 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T11:35:59Z",
+  "error": "no job_id: The same snapshot had been made 267 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T12:06:03Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://stevetotheizz0.github.io/decktech_archives/26368/": {
   "capture": "",
@@ -61970,32 +61970,60 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-jeroen-wauters-ds-bhbm.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026114615/https://swccg.com/snapshots/pc/2022-european-championship-jeroen-wauters-ds-bhbm.html",
   "job_id": "spn2-c588e023a46a6f07a924757a241aed28ffa311b7",
-  "last": "2026-10-26T11:46:08Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T12:05:19Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T12:05:19Z",
+   "bytes": 7121158,
+   "capture_id": "https://web.archive.org/web/20261026114615id_/https://swccg.com/snapshots/pc/2022-european-championship-jeroen-wauters-ds-bhbm.html",
+   "method": "sha256",
+   "sha256": "d32237faee2dc5150f09391580ec1b11552344df2e1edfe76e6b4c9c7aa2554b"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-jeroen-wauters-ls-zero-hour.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026114742/https://swccg.com/snapshots/pc/2022-european-championship-jeroen-wauters-ls-zero-hour.html",
   "job_id": "spn2-d8bc491f9d7077db23c5d8210d4c734210d40e3d",
-  "last": "2026-10-26T11:46:20Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T12:05:13Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T12:05:13Z",
+   "bytes": 7121097,
+   "capture_id": "https://web.archive.org/web/20261026114742id_/https://swccg.com/snapshots/pc/2022-european-championship-jeroen-wauters-ls-zero-hour.html",
+   "method": "sha256",
+   "sha256": "15c6921350404a1e59a83220e981e9459cda324652021597444450071729ddc8"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-john-moorley-ds-verge.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026114635/https://swccg.com/snapshots/pc/2022-european-championship-john-moorley-ds-verge.html",
   "job_id": "spn2-bd8d5593a9698f7019673a96b9bb8c67a6bddcaa",
-  "last": "2026-10-26T11:46:31Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T12:05:05Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T12:05:05Z",
+   "bytes": 7120985,
+   "capture_id": "https://web.archive.org/web/20261026114635id_/https://swccg.com/snapshots/pc/2022-european-championship-john-moorley-ds-verge.html",
+   "method": "sha256",
+   "sha256": "c1130ded3b585c429bd7e70bf623559ae84a41d20ad8f782ac4e54c37b86128e"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-jon-holtet-ds-ropsv.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026114720/https://swccg.com/snapshots/pc/2022-european-championship-jon-holtet-ds-ropsv.html",
   "job_id": "spn2-2c429bf7c974b421e861e11502975571db9052f6",
-  "last": "2026-10-26T11:47:13Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T12:04:57Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T12:04:57Z",
+   "bytes": 7121872,
+   "capture_id": "https://web.archive.org/web/20261026114720id_/https://swccg.com/snapshots/pc/2022-european-championship-jon-holtet-ds-ropsv.html",
+   "method": "sha256",
+   "sha256": "930635e1eccbe12f2d04234ecfb1c254421d50d9039469841e4d0818c964473a"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-jon-holtet-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261026114730/https://swccg.com/snapshots/pc/2022-european-championship-jon-holtet-ls-old-allies.html",
