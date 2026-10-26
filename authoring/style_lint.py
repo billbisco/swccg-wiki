@@ -290,11 +290,44 @@ def is_person_page(text):
     if re.search(r"^[^\n.]{0,80}? is (?:the (?:forum |GEMP |online )?handle of|an? (?:[\w-]+ ){0,4}(?:feature|article|card|interview|poll)\b)", lead): return False
     return bool(re.search(r"\[\[Category:(?:Players|People|Decipher Squadron Members|Decipherians|Tournament Directors)\s*(?:\||\]\])", text, re.I)) or "== Tournament Results ==" in text or "== Squadron listing ==" in text
 
+# A role noun attached directly to a wikilink to someone else describes that person, not the page's
+# subject (Chief, 2026-10-25): 'Super Volunteer ("Super Vol") [[Kim Burns]]' and '[[X]], a volunteer'.
+# Only role nouns, only directly attached, only links to another person's page (not the page title,
+# no namespace, no digits).
+ROLE_NOUN = (r"(?:volunteer|tournament director|TD|judge|organi[sz]er|host|advocate|Squadron Member|"
+             r"Decipher staff(?:er)?|developer|coder|programmer|slicer)s?")
+ROLE_BEFORE_LINK_RX = re.compile(r"\b(?:[A-Z][\w-]* )?(?i:" + ROLE_NOUN + r")(?:\s*\(\s*\"[^\"\n]*\"\s*\))?\s*$")
+ROLE_AFTER_LINK_RX = re.compile(r"^,\s+(?:an?|the)\s+(?:[\w'-]+\s+){0,3}?" + ROLE_NOUN + r"\b", re.I)
+WIKILINK_RX = re.compile(r"\[\[([^\[\]|#]+)(?:#[^\[\]|]*)?(?:\|[^\[\]]*)?\]\]")
+
+def strip_attached_roles(text, title):
+    """Blank role nouns attached to a wikilink to another page (see ROLE_NOUN above)."""
+    if not title: return text
+    own = norm_title(title)
+    cuts = []
+    for lm in WIKILINK_RX.finditer(text):
+        # another person: not the subject, not a namespaced page, no digits (events, sets, years)
+        if norm_title(lm.group(1)) == own or ":" in lm.group(1) or re.search(r"\d", lm.group(1)): continue
+        line_start = text.rfind("\n", 0, lm.start()) + 1
+        bm = ROLE_BEFORE_LINK_RX.search(text, line_start, lm.start())
+        if bm: cuts.append((bm.start(), bm.end()))
+        line_end = text.find("\n", lm.end()); line_end = len(text) if line_end < 0 else line_end
+        am = ROLE_AFTER_LINK_RX.match(text[lm.end():line_end])
+        if am: cuts.append((lm.end(), lm.end() + am.end()))
+    merged = []
+    for a, b in sorted(cuts):
+        if merged and a <= merged[-1][1]: merged[-1][1] = max(merged[-1][1], b)
+        else: merged.append([a, b])
+    for a, b in reversed(merged):
+        text = text[:a] + " " + text[b:]
+    return text
+
 def service_flags(text, title=None):
     if not is_person_page(text): return []
     m = re.search(r"^==\s*Service\s*==\s*$(.*?)(?=^==[^=]|\Z)", text, re.M | re.S)
     svc = body(m.group(1)) + " " + (m.group(1) if m else "") if m else ""
     rest = text if not m else text[:m.start()] + text[m.end():]
+    rest = strip_attached_roles(rest, title)
     # prose only: drop tables and the Squadron listing / Tournament Results sections
     prose = body(re.sub(r"^==\s*(?:Tournament Results|Retro League|Squadron listing)\s*==.*?(?=^==[^=]|\Z)", "", rest, flags=re.M | re.S | re.I))
     prose = unquote(re.sub(r"^=+.*?=+\s*$", "", prose, flags=re.M))

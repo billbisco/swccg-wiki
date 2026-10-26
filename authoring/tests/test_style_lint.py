@@ -588,3 +588,37 @@ class IndexPagesSkipLong(unittest.TestCase):
     def test_other_checks_still_run_on_index_pages(self):
         text = "Contact x@example.com for the list.\n\n[[Category:Indexes]]\n"
         self.assertIn("EMAIL", kinds(L.lint(text, "People")[0]))
+
+
+class ServiceAttachedRole(unittest.TestCase):
+    """SERVICE ignores a role noun attached to a wikilink to another person (Chief, 2026-10-25)."""
+
+    PERSON = "\n\n[[Category:People]]\n"
+
+    def flags(self, lead, title="Richard Handley"):
+        return L.service_flags(lead + self.PERSON, title)
+
+    def test_role_before_link_with_quoted_short_form(self):
+        lead = ("'''Richard Handley''' wrote for ''[[Star Wars Insider]]''. At [[DecipherCon 1999]] "
+                "[[Evan Lorentz]] and Super Volunteer (\"Super Vol\") [[Kim Burns]] briefed him.")
+        self.assertEqual(self.flags(lead), [])
+
+    def test_link_then_appositive_role(self):
+        lead = "'''Richard Handley''' met [[Kim Burns]], a DecipherCon volunteer, at [[DecipherCon 1999]]."
+        self.assertEqual(self.flags(lead), [])
+
+    def test_subject_as_volunteer_still_flags(self):
+        lead = "'''Richard Handley''' was a volunteer at [[DecipherCon 1999]] alongside [[Kim Burns]]."
+        self.assertEqual(kinds(self.flags(lead)), ["SERVICE"])
+
+    def test_role_attached_to_self_link_still_flags(self):
+        lead = "Super Volunteer [[Richard Handley]] worked the [[DecipherCon 1999]] hall."
+        self.assertEqual(kinds(self.flags(lead)), ["SERVICE"])
+
+    def test_role_attached_to_event_link_still_flags(self):
+        lead = "'''Richard Handley''' was a volunteer [[DecipherCon 1999]] helper."
+        self.assertEqual(kinds(self.flags(lead)), ["SERVICE"])
+
+    def test_role_elsewhere_in_sentence_still_flags(self):
+        lead = "'''Richard Handley''' met [[Kim Burns]] and later became a volunteer himself."
+        self.assertEqual(kinds(self.flags(lead)), ["SERVICE"])
