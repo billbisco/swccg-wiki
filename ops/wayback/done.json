@@ -50537,38 +50537,38 @@
  },
  "https://stevetotheizz0.github.io/decktech_archives/24783/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 403 hours, 38 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:04:37Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:47:19Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/24807/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 403 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:07:53Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:47:29Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/24905/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 404 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-26T10:10:01Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:47:39Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/24965/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 371 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:10:16Z",
+  "error": "no job_id: The same snapshot had been made 371 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T10:47:50Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/25015/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 398 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:10:27Z",
+  "error": "no job_id: The same snapshot had been made 398 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T10:48:02Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/25033/": {
   "capture": "",
@@ -60627,39 +60627,74 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-phil-aasen-ds-sc.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103316/https://swccg.com/snapshots/pc/2022-endor-grand-prix-phil-aasen-ds-sc.html",
   "job_id": "spn2-4baceb83f9c113dd6911bdfa28b017328d0d2767",
-  "last": "2026-10-26T10:33:13Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:47:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:47:17Z",
+   "bytes": 7121584,
+   "capture_id": "https://web.archive.org/web/20261026103316id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-phil-aasen-ds-sc.html",
+   "method": "sha256",
+   "sha256": "aacc2980456954f8191c80ea50a1eb4f983165ea7c0c8a3f1e19608f5a821665"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-phil-aasen-ls-pyre.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103424/https://swccg.com/snapshots/pc/2022-endor-grand-prix-phil-aasen-ls-pyre.html",
   "job_id": "spn2-e4fae749ebdf3a4821f55cafa5a9cc666dbb28f7",
-  "last": "2026-10-26T10:33:23Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:47:10Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:47:10Z",
+   "bytes": 7121666,
+   "capture_id": "https://web.archive.org/web/20261026103424id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-phil-aasen-ls-pyre.html",
+   "method": "sha256",
+   "sha256": "45c0dc46928d850b89bc0ef568bc1a4c39a4bce1d16174ace537856a72b0eaa2"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-ryan-sersen-ds-sc.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103338/https://swccg.com/snapshots/pc/2022-endor-grand-prix-ryan-sersen-ds-sc.html",
   "job_id": "spn2-60d47153baf8400503fc005865cbe7e70565fafc",
-  "last": "2026-10-26T10:33:34Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:47:03Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:47:03Z",
+   "bytes": 7123600,
+   "capture_id": "https://web.archive.org/web/20261026103338id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-ryan-sersen-ds-sc.html",
+   "method": "sha256",
+   "sha256": "3bf552c31241899346c1ba30e87d24ba710ddcbfbec49d8560f5e873ebebcafc"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-sam-tashima-ds-i-want-that-map.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103515/https://swccg.com/snapshots/pc/2022-endor-grand-prix-sam-tashima-ds-i-want-that-map.html",
   "job_id": "spn2-e5b5fc8ef3171e3b00b7ada5038aee42ec45a385",
-  "last": "2026-10-26T10:34:16Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:46:56Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:46:56Z",
+   "bytes": 7123555,
+   "capture_id": "https://web.archive.org/web/20261026103515id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-sam-tashima-ds-i-want-that-map.html",
+   "method": "sha256",
+   "sha256": "c21d1edc106700cb5d545bd0d1c57111264bbd0ad259a3f4d22b30c478f50ca8"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-sam-tashima-ls-qmc.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103528/https://swccg.com/snapshots/pc/2022-endor-grand-prix-sam-tashima-ls-qmc.html",
   "job_id": "spn2-dfbdc2c9ffb3ccd97a8a6c992b143924257ab3cc",
-  "last": "2026-10-26T10:34:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:46:46Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:46:46Z",
+   "bytes": 7073536,
+   "capture_id": "https://web.archive.org/web/20261026103528id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-sam-tashima-ls-qmc.html",
+   "method": "sha256",
+   "sha256": "f68ff84c57aea4699b0b20c5b37329df64d74263ac987f8da1c30f469e504c84"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-steve-brentson-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261026103441/https://swccg.com/snapshots/pc/2022-endor-grand-prix-steve-brentson-ds-cct.html",
