@@ -252,7 +252,8 @@ VERIFY_GAP_S = 4             # pause between backlog verifications (archive.org 
 # web.archive.org for the same original URL), (b) the body is not a Wayback error page, and
 # (c) the CDX index lists that exact timestamp with statuscode 2xx (or a warc/revisit).
 # Right after Save Page Now, replay can serve a capture from a temporary cache that never reaches
-# the index; it 404s days later. In Oct 2026 the CDX index also lagged by 6+ days. So:
+# the index; it 404s days later (seen on captures from 2026-10-20..22). Exact-URL CDX queries
+# list new captures within minutes (prefix/matchType queries can miss recent rows). So:
 #   ("ok")           replay 200 at the exact timestamp AND CDX lists it 2xx: durable
 #   ("replay-only")  replay 200 at the exact timestamp, CDX has no row yet: may be cited
 #                    (verify.index = "pending"), re-checked by the worker, never deleted on
@@ -261,7 +262,7 @@ VERIFY_GAP_S = 4             # pause between backlog verifications (archive.org 
 CDX_API = "https://web.archive.org/cdx/search/cdx"
 RECHECK_AFTER = timedelta(hours=24)    # re-check verified "replay-only" captures this often
 RECHECKS_PER_RUN = 10
-DELETE_MIN_AGE = timedelta(hours=24)   # capture age before its staging file may be deleted
+DELETE_MIN_AGE = timedelta(days=7)     # capture age before its staging file may be deleted
 DELETE_CHECKS_PER_RUN = 25             # strict re-checks before deletes, per run
 WAYBACK_ERROR_RX = re.compile(
     rb"Hrm\.|Wayback Machine doesn(?:'|&#39;|&#x27;|\xe2\x80\x99)t have that page|"
