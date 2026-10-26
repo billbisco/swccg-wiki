@@ -808,16 +808,18 @@ DEMOTED: dict[str, dict] = {}
 
 def demote(url: str, e: dict, why: str, root: Path | None = None) -> None:
     """A stored 'verified' capture failed strict_check. swccg.com snapshots whose staging file still
-    exists are re-saved (status retry, fresh tries); anything else becomes unverified."""
+    exists, and ordinary live URLs (not PC/forum hosts), are re-saved (status retry, fresh tries);
+    a snapshot whose file is gone, or a banned host, becomes unverified."""
     e["dead_capture"] = e.get("capture", "")
     e["verify"] = {"at": iso(now()), "method": "strict", "reason": why[:120]}
     e["last"] = iso(now())
     fp = snapshot_file(url, root)
-    if fp is not None and fp.is_file():
+    live_ok = fp is None and not banned(url)  # an ordinary live URL (never PC/forum): re-save it
+    if (fp is not None and fp.is_file()) or live_ok:
         e.update(status="retry", tries=0, recapture=True)
         e["last"] = iso(now() - RETRY_AFTER)
     else:
-        e["status"] = "unverified"
+        e["status"] = "unverified"  # staging file gone or banned host: needs a person/bot
     print("DEMOTED", e["status"], url, why[:80], flush=True)
 
 
