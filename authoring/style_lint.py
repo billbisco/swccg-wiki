@@ -31,7 +31,8 @@ Talk pages (Chief, 2026-10-20): signed comments by other accounts are their auth
   (Comlink Cursor); the bot's comments, unsigned text and the other checks still apply.
   EMAIL    personal email addresses (decipher.com addresses and lines marked "email-ok" pass).
   REF      a <ref> with no URL and no source text.
-  HEADING  a == Sources == section on a page that is not a deck, event, card, set-table or tournament-report page.
+  HEADING  a == Sources == section on a page that is not a deck, event, card, set-table or tournament-report page
+           and carries no <!-- whole-source --> marker (a page that transcribes one source whole).
            Deck/event pages are detected by category: Decklists, Dark Side decks, Light Side decks, GEMP
            importable decklists, Tournaments, Championships, World Championships, Events,
            Retro League, Tournament reports (in the wikitext, plus the live page's categories when linting by title).
@@ -157,9 +158,19 @@ CARD_CATEGORIES = {"cards"}
 def is_set_category(c):
     return c == "sets" or c.endswith(" sets")
 
+# Bill, 2026-10-20 (via Chief 2026-10-26): any page that transcribes one source whole may keep a Sources
+# list. When no category says so (e.g. a magazine article transcribed section by section), the page
+# carries an explicit marker comment, <!-- whole-source -->, the same way "email-ok" marks a line.
+WHOLE_SOURCE_RX = re.compile(r"<!--\s*whole-source\s*-->", re.I)
+
+def is_whole_source(text):
+    return bool(WHOLE_SOURCE_RX.search(text or ""))
+
 def allows_sources(text, cats=None):
     have = page_categories(text) | {re.sub(r"^Category:", "", c, flags=re.I).strip().lower() for c in (cats or ())}
     if have & (SOURCES_CATEGORIES | CARD_CATEGORIES) or any(is_set_category(c) for c in have):
+        return True
+    if is_whole_source(text):
         return True
     return bool(CARD_TEMPLATE_RX.search(re.sub(r"<!--.*?-->", " ", text, flags=re.S)))
 

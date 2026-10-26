@@ -311,6 +311,40 @@ class SourcesOnCardAndSetPages(unittest.TestCase):
             self.assertIn("HEADING", kinds(L.lint("Text." + self.SRC + f"[[Category:{cat}]]")[0]), cat)
 
 
+class SourcesOnWholeSourcePages(unittest.TestCase):
+    """Bill, 2026-10-20 (via Chief 2026-10-26): a page that transcribes one source whole may keep a
+    Sources list. With no fitting category, an explicit <!-- whole-source --> marker says so."""
+    SRC = f"\n== Sources ==\n* [https://example.com/a Article]. Preserved copy: [{WB}https://example.com/a IA]\n"
+    CATS = "[[Category:History]]\n[[Category:People]]\n"
+
+    def test_marker_allows_sources(self):
+        for marker in ("<!-- whole-source -->", "<!--whole-source-->", "<!--  Whole-Source  -->"):
+            text = marker + "\nAn article, transcribed." + self.SRC + self.CATS
+            self.assertEqual(L.lint(text, "Some Article")[0], [], marker)
+
+    def test_marker_anywhere_on_the_page(self):
+        text = "An article." + self.SRC + self.CATS + "<!-- whole-source -->\n"
+        self.assertNotIn("HEADING", kinds(L.lint(text)[0]))
+
+    def test_without_marker_still_flagged(self):
+        self.assertIn("HEADING", kinds(L.lint("An article." + self.SRC + self.CATS)[0]))
+
+    def test_lookalikes_do_not_count(self):
+        for t in ("whole-source", "The whole-source rule.", "<!-- not whole-source yet -->",
+                  "<!-- whole-sources -->", "<!-- whole-source page -->"):
+            self.assertIn("HEADING", kinds(L.lint(t + "\nAn article." + self.SRC + self.CATS)[0]), t)
+
+    def test_marker_does_not_waive_other_checks(self):
+        text = ("<!-- whole-source -->\nAn article." + "\n== Sources ==\n* [https://example.com/a Article]\n"
+                + self.CATS)
+        self.assertEqual(kinds(L.lint(text)[0]), ["ARCHIVE"])
+
+    def test_is_whole_source(self):
+        self.assertTrue(L.is_whole_source("x <!-- whole-source --> y"))
+        self.assertFalse(L.is_whole_source("x whole-source y"))
+        self.assertFalse(L.is_whole_source(None))
+
+
 class BannedWordsSkipDeckTitle(unittest.TestCase):
     """Chief, 2026-10-20: a deck page's bold name and decklist titles are names, not the editor's voice."""
     TITLE = "2007 Worlds Day 1 Adam Howland LS We'll Handle This"
