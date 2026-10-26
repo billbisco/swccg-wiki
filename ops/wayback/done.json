@@ -64,13 +64,14 @@
   "capture": "https://web.archive.org/web/20020617073702/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006115141.jpg",
   "last": "2026-10-22T17:11:42Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-22T17:49:21Z",
-   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+   "at": "2026-10-26T18:08:05Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "http://decipher.com/deciphercon/2000/photos/pictures/20001006133217.jpg": {
   "capture": "https://web.archive.org/web/20020614152851/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006133217.jpg",
@@ -79,10 +80,10 @@
   "status": "ok",
   "tries": 3,
   "verify": {
-   "at": "2026-10-22T17:46:19Z",
+   "at": "2026-10-26T18:07:49Z",
    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://decipher.com/deciphercon/2000/photos/pictures/20001006133313.jpg": {
   "capture": "https://web.archive.org/web/20020608130739/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006133313.jpg",
@@ -91,10 +92,10 @@
   "status": "ok",
   "tries": 3,
   "verify": {
-   "at": "2026-10-22T17:46:34Z",
+   "at": "2026-10-26T18:07:37Z",
    "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "http://decipher.com/deciphercon/2000/photos/pictures/20001006184854.jpg": {
   "capture": "https://web.archive.org/web/20020608131616/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006184854.jpg",
@@ -33275,10 +33276,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-22T18:11:48Z",
+   "at": "2026-10-26T18:06:24Z",
    "error": "source HTTP 403"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://files.lotrtcgpc.net/archives/decipher_wayback/2004_decipher_backup.zip#cardlists/cloudcity/light/images/cloudcitychasmwalkway.gif": {
   "capture": "https://web.archive.org/web/20261010021411/https://files.lotrtcgpc.net/archives/decipher_wayback/2004_decipher_backup.zip",
@@ -119643,6 +119644,13 @@
    "method": "title",
    "title": "az-states-who-gets-mized-worse-than - SWCCG Decktech Archives"
   }
+ },
+ "https://www.stephenskilton.com/decktech_archives/reports/2000-04-17-mountain-view-ca-4-15-00d545/": {
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 379 hours, 57 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T18:06:07Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-05-13-lv-grand-slam-a-week-laterd736/": {
   "capture": "https://web.archive.org/web/20261026030857/https://www.stephenskilton.com/decktech_archives/reports/2000-05-13-lv-grand-slam-a-week-laterd736/",
