@@ -165,8 +165,8 @@ def _json(req: urllib.request.Request) -> dict:
         raise
 
 
-def spn2_submit(url: str) -> dict:
-    data = urllib.parse.urlencode({"url": url, "if_not_archived_within": "30d"}).encode()
+def spn2_submit(url: str, force: bool = False) -> dict:
+    data = urllib.parse.urlencode({"url": url, "if_not_archived_within": "1m" if force else "30d"}).encode()
     req = urllib.request.Request("https://web.archive.org/save", data=data, method="POST", headers={
         "User-Agent": UA, "Accept": "application/json", "Authorization": AUTH,
         "Content-Type": "application/x-www-form-urlencoded"})
@@ -252,11 +252,15 @@ VERIFY_GAP_S = 4             # pause between backlog verifications (archive.org 
 # web.archive.org for the same original URL), (b) the body is not a Wayback error page, and
 # (c) the CDX index lists that exact timestamp with statuscode 2xx (or a warc/revisit).
 # Right after Save Page Now, replay can serve a capture from a temporary cache that never reaches
-# the index; it 404s days later. So the CDX check is required, verification of a capture younger
-# than INDEX_GRACE without a CDX row waits, and a snapshot file is deleted only after the strict
-# check passes again at delete time on a capture at least DELETE_MIN_AGE old.
+# the index; it 404s days later. In Oct 2026 the CDX index also lagged by 6+ days. So:
+#   ("ok")           replay 200 at the exact timestamp AND CDX lists it 2xx: durable
+#   ("replay-only")  replay 200 at the exact timestamp, CDX has no row yet: may be cited
+#                    (verify.index = "pending"), re-checked by the worker, never deleted on
+#   False            anything else (404, error page, other capture, CDX 4xx/5xx)
+# A snapshot file is deleted only on "ok", re-checked at delete time, capture >= DELETE_MIN_AGE.
 CDX_API = "https://web.archive.org/cdx/search/cdx"
-INDEX_GRACE = timedelta(hours=48)      # how long a new capture may be missing from CDX
+RECHECK_AFTER = timedelta(hours=24)    # re-check verified "replay-only" captures this often
+RECHECKS_PER_RUN = 10
 DELETE_MIN_AGE = timedelta(hours=24)   # capture age before its staging file may be deleted
 DELETE_CHECKS_PER_RUN = 25             # strict re-checks before deletes, per run
 WAYBACK_ERROR_RX = re.compile(
@@ -354,7 +358,7 @@ def strict_check(capture: str, get=None, cdx=None) -> tuple[bool, str]:
         return False, "too many redirects"
     rows = [r for r in cdx(original, ts) if r and r[0] == ts]
     if not rows:
-        return False, f"timestamp {ts} not in the CDX index"
+        return True, f"replay-only: timestamp {ts} not in the CDX index yet"
     for r in rows:
         code = r[1] if len(r) > 1 else ""
         if code.startswith("2") or (code == "-" and len(r) > 2 and "revisit" in r[2]):
@@ -522,9 +526,6 @@ def verify(url: str, capture: str, get=None) -> tuple[str, dict]:
     get = get or fetch
     good, why = strict_check(capture)
     if not good:
-        age = capture_age(capture)
-        if "not in the CDX index" in why and age is not None and age < INDEX_GRACE:
-            raise VerifyRetry(why, side="index")  # new capture: wait for the index, no try used
         return "unverified", {"at": iso(now()), "capture_id": id_url(capture), "method": "strict",
                               "reason": why}
     try:
@@ -537,7 +538,7 @@ def verify(url: str, capture: str, get=None) -> tuple[str, dict]:
     src = get(url)
     if src["status"] != 200:
         raise VerifyRetry(f"source HTTP {src['status']}")
-    info = {"at": iso(now()), "capture_id": id_url(capture)}
+    info = {"at": iso(now()), "capture_id": id_url(capture), "index": "cdx" if why == "ok" else "pending"}
     if cap["sha256"] == src["sha256"]:
         return "verified", {**info, "method": "sha256", "sha256": src["sha256"], "bytes": src["size"]}
     if not (is_html(src) and is_html(cap)):
@@ -564,9 +565,6 @@ def verify_entry(url: str, e: dict, get=None) -> bool:
         print("VERIFY-ERR", url, str(ex)[:80], flush=True)
         if ex.side == "capture":  # archive.org trouble: leave the entry alone, try next run
             raise
-        if ex.side == "index":  # capture not indexed yet: wait RETRY_AFTER, no try used
-            e["verify"] = {"at": iso(now()), "error": str(ex)[:120]}
-            return True
         n = e.get("verify_tries", 0) + 1
         e["verify_tries"] = n
         e["verify"] = {"at": iso(now()), "error": str(ex)[:120]}
@@ -759,6 +757,8 @@ def delete_check(url: str, e: dict) -> tuple[bool, str]:
         return False, f"retry: {ex}"
     finally:
         time.sleep(VERIFY_GAP_S)
+    if ok and why != "ok":
+        return False, "retry: " + why  # replay works but not indexed yet: keep the file
     return ok, why
 
 
@@ -783,9 +783,7 @@ def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
         print("KEEP-UNCHECKED", rel, why, flush=True)
         if not why.startswith(("retry:", "capture younger", "delete re-check budget")):
             # the stored "verified" was wrong: demote so the URL is looked at / recaptured
-            e["status"] = "unverified"
-            e["verify"] = {**(e.get("verify") or {}), "at": iso(now()), "method": "strict", "reason": why}
-            e["last"] = iso(now())
+            demote(url, e, why)
             DEMOTED[url] = e
         return False
     method = (e.get("verify") or {}).get("method") or "checked"
@@ -805,6 +803,55 @@ def delete_verified_snapshot(url: str, e: dict, root: Path | None = None,
 
 
 DEMOTED: dict[str, dict] = {}
+
+
+def demote(url: str, e: dict, why: str) -> None:
+    """A stored 'verified' capture failed strict_check. swccg.com snapshots whose staging file still
+    exists are re-saved (status retry, fresh tries); anything else becomes unverified."""
+    e["dead_capture"] = e.get("capture", "")
+    e["verify"] = {"at": iso(now()), "method": "strict", "reason": why[:120]}
+    e["last"] = iso(now())
+    fp = snapshot_file(url)
+    if fp is not None and fp.is_file():
+        e.update(status="retry", tries=0, recapture=True)
+        e["last"] = iso(now() - RETRY_AFTER)
+    else:
+        e["status"] = "unverified"
+    print("DEMOTED", e["status"], url, why[:80], flush=True)
+
+
+def recheck_replay_only(done: dict, changed: dict, deadline: float) -> None:
+    """Re-check verified captures that were not in CDX yet (index pending) once a day."""
+    rows = []
+    for url, e in done.items():
+        if not isinstance(e, dict):
+            continue
+        v = e.get("verify") or {}
+        if e.get("status") == "verified" and v.get("index") == "pending":
+            last = v.get("rechecked") or v.get("at")
+            try:
+                if last and now() - parse(last) < RECHECK_AFTER:
+                    continue
+            except ValueError:
+                pass
+            rows.append(url)
+    for url in rows[:RECHECKS_PER_RUN]:
+        if time.monotonic() > deadline:
+            break
+        e = done[url]
+        try:
+            ok, why = strict_check(e["capture"])
+        except VerifyRetry:
+            print("archive.org not answering; replay-only recheck stops", flush=True)
+            break
+        if ok:
+            e["verify"]["rechecked"] = iso(now())
+            if why == "ok":
+                e["verify"]["index"] = "cdx"
+        else:
+            demote(url, e, why)
+        changed[url] = e
+        time.sleep(VERIFY_GAP_S)
 
 
 def prune_verified_snapshots(done: dict, root: Path | None = None,
@@ -911,7 +958,7 @@ def run(repo: Path, minutes: float) -> None:
         tries = (e or {}).get("tries", 0) + 1
         try:
             if AUTH:
-                j = spn2_submit(url)
+                j = spn2_submit(url, force=True) if (e or {}).get("recapture") else spn2_submit(url)
                 if j.get("recent"):
                     e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
                          "note": "already archived within 30d"}
@@ -983,6 +1030,9 @@ def run(repo: Path, minutes: float) -> None:
             print("archive.org not answering; backlog stops for this run", flush=True)
             break
         time.sleep(VERIFY_GAP_S)
+
+    # 4b. re-check verified captures that CDX did not list yet
+    recheck_replay_only(done, changed, min(deadline - 45, time.monotonic() + 60))
 
     # 5. drop staging files whose Wayback capture already matched (Bill 2026-10-14), after a
     #    fresh strict check; entries that fail it are demoted to unverified and pushed

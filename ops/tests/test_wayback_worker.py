@@ -429,10 +429,21 @@ class StrictCheck(unittest.TestCase):
                               cdx=self.cdx([[self.TS, "200", "text/html"]]))
         self.assertFalse(ok)
 
-    def test_replay_200_but_not_in_cdx_fails(self):
+    def test_replay_200_but_not_in_cdx_is_replay_only(self):
         ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (200, {}, b"<html>cached</html>")}), cdx=self.cdx([]))
+        self.assertTrue(ok)
+        self.assertTrue(why.startswith("replay-only"))
+
+    def test_delete_refuses_replay_only(self):
+        saved, gap = W.strict_check, W.VERIFY_GAP_S
+        W.strict_check, W.VERIFY_GAP_S = (lambda c: (True, "replay-only: not in CDX")), 0
+        W.DeleteBudget.left = 5
+        try:
+            ok, why = REAL_DELETE_CHECK(self.ORIG, {"capture": self.CAP})
+        finally:
+            W.strict_check, W.VERIFY_GAP_S = saved, gap
         self.assertFalse(ok)
-        self.assertIn("CDX", why)
+        self.assertTrue(why.startswith("retry:"))
 
     def test_cdx_status_404_fails(self):
         ok, why = REAL_STRICT(self.CAP, get=raw({self.ID: (200, {}, b"<html>x</html>")}),
@@ -477,7 +488,8 @@ class StrictCheck(unittest.TestCase):
         finally:
             W.strict_check, W.VERIFY_GAP_S = saved, gap
         self.assertTrue(fp.exists())
-        self.assertEqual(e["status"], "unverified")
+        self.assertEqual(e["status"], "unverified")  # file under a temp root, not the real one
+        self.assertEqual(e["dead_capture"], self.CAP)
         self.assertIn(self.ORIG, W.DEMOTED)
 
     def test_delete_waits_for_young_capture(self):
