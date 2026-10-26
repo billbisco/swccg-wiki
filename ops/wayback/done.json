@@ -50502,38 +50502,38 @@
  },
  "https://stevetotheizz0.github.io/decktech_archives/24467/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 403 hours, 9 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-10-26T10:01:57Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:43:24Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/24511/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 403 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:03:51Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:43:34Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/24516/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 309 hours, 59 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:04:02Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:43:45Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/24668/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 403 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:04:14Z",
+  "error": "no job_id: The same snapshot had been made 404 hours, 10 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T10:43:58Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/24688/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 403 hours, 19 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:04:25Z",
+  "error": "no job_id: The same snapshot had been made 403 hours, 59 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T10:44:10Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/24783/": {
   "capture": "",
@@ -60662,18 +60662,24 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-steve-brentson-ds-cct.html": {
-  "capture": "",
-  "job_id": "spn2-c130774bfe6912b71c3331c919a9cb8ef73944d3",
-  "last": "2026-10-26T10:34:37Z",
+  "capture": "https://web.archive.org/web/20261026103441/https://swccg.com/snapshots/pc/2022-endor-grand-prix-steve-brentson-ds-cct.html",
+  "last": "2026-10-26T10:43:23Z",
   "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-steve-harpster-ls-tigih.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103522/https://swccg.com/snapshots/pc/2022-endor-grand-prix-steve-harpster-ls-tigih.html",
   "job_id": "spn2-9fc0f4fae5561cfc7e3fcef7c9735de1595e9e42",
-  "last": "2026-10-26T10:35:19Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:43:21Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:43:21Z",
+   "bytes": 7121985,
+   "capture_id": "https://web.archive.org/web/20261026103522id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-steve-harpster-ls-tigih.html",
+   "method": "sha256",
+   "sha256": "abcecb64870063205d34e268d8f9e07c4677a501316ff543eead1126ee3ca39c"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix.html": {
   "capture": "https://web.archive.org/web/20261022023357/https://swccg.com/snapshots/pc/2022-endor-grand-prix.html",
@@ -60698,11 +60704,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ds-isb.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103533/https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ds-isb.html",
   "job_id": "spn2-00fb6825e277277961e482813752530a05280403",
-  "last": "2026-10-26T10:35:30Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:43:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:43:12Z",
+   "bytes": 7003420,
+   "capture_id": "https://web.archive.org/web/20261026103533id_/https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ds-isb.html",
+   "method": "sha256",
+   "sha256": "a5942acec64be681b786eef9710b877345665917685b72bd0904334b51790f0d"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ls-communing-yoda-bf.html": {
   "capture": "",
@@ -60713,11 +60726,18 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ls-communing-yoda.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103544/https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ls-communing-yoda.html",
   "job_id": "spn2-19871ff6e7f326408a437fcd992ae9d091dbe563",
-  "last": "2026-10-26T10:35:40Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:43:06Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:43:06Z",
+   "bytes": 7121203,
+   "capture_id": "https://web.archive.org/web/20261026103544id_/https://swccg.com/snapshots/pc/2022-endor-regionals-aaron-frede-ls-communing-yoda.html",
+   "method": "sha256",
+   "sha256": "046c1385efe4ab656d1fbd554fdb8e8268be4ae0f7deedf53071239247f51171"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-benji-jones-ds-hunt-down-v-bf.html": {
   "capture": "",
