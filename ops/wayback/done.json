@@ -50383,38 +50383,38 @@
  },
  "https://stevetotheizz0.github.io/decktech_archives/23859/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 401 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:17:42Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:51:09Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://stevetotheizz0.github.io/decktech_archives/23914/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 401 hours, 48 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:17:53Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:51:19Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://stevetotheizz0.github.io/decktech_archives/23958/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 402 hours, 33 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:18:04Z",
-  "status": "retry",
-  "tries": 5
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T10:51:29Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://stevetotheizz0.github.io/decktech_archives/23962/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 402 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:21:01Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 402 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T10:51:42Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://stevetotheizz0.github.io/decktech_archives/23975/": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 339 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-26T10:21:12Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 339 hours, 59 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-10-26T10:51:55Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://stevetotheizz0.github.io/decktech_archives/23976/": {
   "capture": "",
@@ -50726,9 +50726,16 @@
  },
  "https://stevetotheizz0.github.io/decktech_archives/reports/2001-09-01-european-championships-paris-last-weekd2911/": {
   "capture": "https://web.archive.org/web/20261026103017/https://www.stephenskilton.com/decktech_archives/reports/2001-09-01-european-championships-paris-last-weekd2911/",
-  "last": "2026-10-26T10:38:20Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:50:39Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:50:41Z",
+   "bytes": 46537,
+   "capture_id": "https://web.archive.org/web/20261026103017id_/https://www.stephenskilton.com/decktech_archives/reports/2001-09-01-european-championships-paris-last-weekd2911/",
+   "method": "sha256",
+   "sha256": "013ba8626d87b3442c4c500ecd6a075483e8945fc2dfac57590fbf64ee0aa0b5"
+  }
  },
  "https://stevetotheizz0.github.io/decktech_archives/reports/2001-09-04-denver-dpc-10-01-2001d2929/": {
   "capture": "",
@@ -60599,32 +60606,52 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-michael-turner-ls-yoda-communing.html": {
-  "capture": "",
-  "job_id": "spn2-a44e460066758edce18eead637ec36cd91a99491",
-  "last": "2026-10-26T10:31:58Z",
+  "capture": "https://web.archive.org/web/20261026103202/https://swccg.com/snapshots/pc/2022-endor-grand-prix-michael-turner-ls-yoda-communing.html",
+  "last": "2026-10-26T10:51:07Z",
   "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-mike-kessling-ds-sc.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103215/https://swccg.com/snapshots/pc/2022-endor-grand-prix-mike-kessling-ds-sc.html",
   "job_id": "spn2-e967a11d12937535b11df073341c329e3993eeb6",
-  "last": "2026-10-26T10:32:10Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:51:06Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:51:06Z",
+   "bytes": 7123451,
+   "capture_id": "https://web.archive.org/web/20261026103215id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-mike-kessling-ds-sc.html",
+   "method": "sha256",
+   "sha256": "cac8b239c27e089d77353cb64db9870f83935e6a52d5317c74686c250f1073b5"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-mike-kessling-ls-yoda-communing.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103224/https://swccg.com/snapshots/pc/2022-endor-grand-prix-mike-kessling-ls-yoda-communing.html",
   "job_id": "spn2-fb2b2d994a7db9abecc4763d9ee665ed368ef530",
-  "last": "2026-10-26T10:32:21Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:50:57Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:50:57Z",
+   "bytes": 7123399,
+   "capture_id": "https://web.archive.org/web/20261026103224id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-mike-kessling-ls-yoda-communing.html",
+   "method": "sha256",
+   "sha256": "628b7633a5cdca95c0fa411fc223d6b7d31e6ecfc6ca6181e7a167f7af12b3d4"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-nate-davis-ds-bhbm.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261026103320/https://swccg.com/snapshots/pc/2022-endor-grand-prix-nate-davis-ds-bhbm.html",
   "job_id": "spn2-e628f90b73e49de5bfbcb564aaf64277684bbaaf",
-  "last": "2026-10-26T10:32:31Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:50:50Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:50:50Z",
+   "bytes": 7123440,
+   "capture_id": "https://web.archive.org/web/20261026103320id_/https://swccg.com/snapshots/pc/2022-endor-grand-prix-nate-davis-ds-bhbm.html",
+   "method": "sha256",
+   "sha256": "c8a018ebfdd2d0eed55f9af4ca248da919b2a31837348f2e81b5665879679b3d"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-phil-aasen-ds-sc.html": {
   "capture": "https://web.archive.org/web/20261026103316/https://swccg.com/snapshots/pc/2022-endor-grand-prix-phil-aasen-ds-sc.html",
@@ -60792,9 +60819,16 @@
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-benji-jones-ls-communing-obi-wan.html": {
   "capture": "https://web.archive.org/web/20261026103625/https://swccg.com/snapshots/pc/2022-endor-regionals-benji-jones-ls-communing-obi-wan.html",
-  "last": "2026-10-26T10:40:04Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T10:50:35Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T10:50:37Z",
+   "bytes": 7121269,
+   "capture_id": "https://web.archive.org/web/20261026103625id_/https://swccg.com/snapshots/pc/2022-endor-regionals-benji-jones-ls-communing-obi-wan.html",
+   "method": "sha256",
+   "sha256": "b6dc9c6ee9feea1c9432fe99e9f5e48fc419acc158aa5b422e6c52102312c749"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-endor-regionals-chris-wirfs-ds-sycfa-bf.html": {
   "capture": "",
