@@ -48,7 +48,35 @@ server, see `staging/STAGING.md`): `update.php --quick` from 1.43.9 data on the 
    `python3 /opt/swccg-wiki/verify-admin-login.py` → `LOGIN_OK`; open Main Page, a card page, Special:Version; edit + review one page as a bot.
 6. Bump `$wgCacheEpoch` in `extra-settings.php` if CSS looks stale; `apachectl graceful`.
 
+## After EVERY image or extension update (caching phase 1, deployed 2026-10-21)
+
+Since 2026-10-21 the wiki runs self-built images (`swccg/mediawiki:1.43.9-php8.3.36-live-cache1` live,
+`swccg/mediawiki:1.43.11-php8.3.36-cache1` staging; build context `/root/php2shell-build-20261021/cache1/`,
+`ARG BASE=<previous image>`) and nginx serves static files from copies on the host. After any image,
+MediaWiki point release or extension change (including a FlaggedRevs `git pull`), in the same window:
+
+1. Rebuild the image on top of the new base so `zz-caching.ini` (APCu 128M, opcache 256/20000/16) is kept:
+   `docker build --build-arg BASE=<new base image> -t <new tag>-cache1 /root/php2shell-build-20261021/cache1`
+2. Localisation cache (CDB files in the `wiki_cache` volume, `$wgCacheDirectory=/var/www/cache/l10n`):
+   `docker exec -u www-data swccg_wiki php maintenance/run.php rebuildLocalisationCache --force`
+   (≈50 s, 526 languages; staging: same with `swccg_wiki_staging`).
+3. Static copy used by nginx for `/skins/`, `/resources/`, `/extensions/` (CSS/JS/images/fonts):
+   `bash /root/wiki-caching-20261021/scripts/refresh-static-live.sh`
+   (staging: `refresh-static-staging.sh`). Missing files fall back to Apache, but stale ones are served for 30 days.
+4. Check the read-only image mounts nginx serves `/images/` from (they must show `ro` and point at the volume data):
+   `systemctl is-active srv-wikistatic-live-images.mount` and `findmnt /srv/wikistatic/live/images`
+   (staging: `srv-wikistatic-staging-w-images.mount`, `srv-wikistatic-staging-w-staging\x2dthumbs.mount`).
+   If the images volume was recreated or moved, re-enable: `systemctl restart srv-wikistatic-live-images.mount`.
+5. Verify: `curl -sI https://wiki.swccg.com/images/<any file>` → `Cache-Control: max-age=86400`, `X-Content-Type-Options: nosniff`,
+   `X-Wiki-Static: nginx`; `curl -sI https://wiki.swccg.com/skins/Vector/resources/skins.vector.styles.legacy/images/bullet-icon.svg`
+   → `X-Wiki-Static: nginx`; an article twice logged out → `X-Cache-Status: MISS` then `HIT`.
+6. Optional: if pages look stale for logged-out readers, the nginx microcache expires on its own after 2 minutes, and the
+   MediaWiki file cache (`/var/www/cache/html`) is invalidated by `$wgCacheEpoch` bumps; to clear it at once:
+   `docker exec swccg_wiki sh -c 'rm -rf /var/www/cache/html/*'`.
+
+Full details and rollback scripts: `/root/wiki-caching-20261021/LIVE-PLAN.md`, `/root/wiki-caching-20261021/live/rollback-live-*.sh`.
+
 ## Rollback
 
-`image: mediawiki:1.43.9` and `up -d wiki`. 1.43.x point releases have no schema changes, so the DB needs no
+`image: <previous tag>` and `up -d wiki` (then steps 2–4 above for the previous image). 1.43.x point releases have no schema changes, so the DB needs no
 restore; restore the dump only if `update.php` reported errors.
