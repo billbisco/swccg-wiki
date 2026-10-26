@@ -51471,17 +51471,10 @@
  },
  "https://swccg.com/snapshots/forum/p1440976.html": {
   "capture": "https://web.archive.org/web/20261025070932/https://swccg.com/snapshots/forum/p1440976.html",
-  "dead_capture": "https://web.archive.org/web/20261025070932/https://swccg.com/snapshots/forum/p1440976.html",
   "job_id": "spn2-e0d1a44163a0e4973ff728302c4334a1ed68647e",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:06:16Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/p1445659.html": {
   "capture": "",
@@ -51997,17 +51990,10 @@
  },
  "https://swccg.com/snapshots/forum/t82693.html": {
   "capture": "https://web.archive.org/web/20261025071013/https://swccg.com/snapshots/forum/t82693.html",
-  "dead_capture": "https://web.archive.org/web/20261025071013/https://swccg.com/snapshots/forum/t82693.html",
   "job_id": "spn2-3a449e0fa5118e3cbac69306d06a45f160f664e3",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:06:27Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/t83197.html": {
   "capture": "https://web.archive.org/web/20261021093521/https://swccg.com/snapshots/forum/t83197.html",
@@ -52309,17 +52295,10 @@
  },
  "https://swccg.com/snapshots/forum/t86770.html": {
   "capture": "https://web.archive.org/web/20261025070805/https://swccg.com/snapshots/forum/t86770.html",
-  "dead_capture": "https://web.archive.org/web/20261025070805/https://swccg.com/snapshots/forum/t86770.html",
   "job_id": "spn2-1b397f4eed6681c2c859f3105c48ea173f9c6ab0",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:06:05Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/t86780.html": {
   "capture": "https://web.archive.org/web/20261011191330/https://swccg.com/snapshots/forum/t86780.html",
@@ -54207,8 +54186,16 @@
   "capture": "https://web.archive.org/web/20261026194119/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ds.html?copy=2",
   "job_id": "spn2-e581295fe80ecbbe28adc37a7a9e45c708c4a071",
   "last": "2026-10-26T19:51:14Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T20:06:56Z",
+   "bytes": 7120827,
+   "capture_id": "https://web.archive.org/web/20261026194119id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ds.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "30c75a821fa85b288c6d0bfa46c4c8a5373a0c8cf5a806de866765bca46f8b35"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ls.html": {
   "capture": "https://web.archive.org/web/20261022002322/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ls.html",
@@ -66137,17 +66124,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ls-skywalker-saga-luke.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025022647/https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ls-skywalker-saga-luke.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025022647/https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ls-skywalker-saga-luke.html?copy=2",
-  "job_id": "spn2-d8ada3ad5b73cead7f77ca00c3c41d1f4888f798",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T19:56:12Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-mark-walseth-ds-rots-dooku.html": {
   "capture": "",
@@ -66780,9 +66760,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-kendall-halman-ls-tigih.html?copy=2": {
-  "capture": "https://web.archive.org/web/20261025023807/https://swccg.com/snapshots/pc/2023-corellia-regionals-kendall-halman-ls-tigih.html?copy=2",
-  "job_id": "spn2-736cf631e666ada748107f8ea4765c4456f00cba",
-  "last": "2026-10-26T19:48:36Z",
+  "capture": "https://web.archive.org/web/20261026194839/https://swccg.com/snapshots/pc/2023-corellia-regionals-kendall-halman-ls-tigih.html?copy=2",
+  "last": "2026-10-26T19:56:10Z",
   "status": "pending",
   "tries": 1
  },
@@ -66873,17 +66852,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-amar-banger-ls-y4o.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025023829/https://swccg.com/snapshots/pc/2023-coruscant-regionals-amar-banger-ls-y4o.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025023829/https://swccg.com/snapshots/pc/2023-coruscant-regionals-amar-banger-ls-y4o.html?copy=2",
-  "job_id": "spn2-99d59a49ae42965f56c8ccc7d995d60cdf992d36",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-26T19:56:22Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-bill-kafer-ds-rots-vader.html": {
   "capture": "https://web.archive.org/web/20261021080348/https://swccg.com/snapshots/pc/2023-coruscant-regionals-bill-kafer-ds-rots-vader.html",
@@ -66973,11 +66945,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-chris-kelly-ls-hitco.html?copy=2": {
-  "capture": "https://web.archive.org/web/20261025023922/https://swccg.com/snapshots/pc/2023-coruscant-regionals-chris-kelly-ls-hitco.html?copy=2",
+  "capture": "https://web.archive.org/web/20261026195013/https://swccg.com/snapshots/pc/2023-coruscant-regionals-chris-kelly-ls-hitco.html?copy=2",
   "job_id": "spn2-74eb1ce790209c77f1f25c41dc791c1f7d5261ea",
-  "last": "2026-10-26T19:49:17Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-26T19:56:09Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T19:56:09Z",
+   "bytes": 7121102,
+   "capture_id": "https://web.archive.org/web/20261026195013id_/https://swccg.com/snapshots/pc/2023-coruscant-regionals-chris-kelly-ls-hitco.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "cb884fc7a56545edbb2f2da5476e971447ecb5a1e24a83c92c96a3332a79a549"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ds-bhbm.html": {
   "capture": "",
@@ -67914,8 +67894,16 @@
   "capture": "https://web.archive.org/web/20261026195028/https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ls-saga-anakin.html?copy=2",
   "job_id": "spn2-bb143f16d911ec8f8552794e61f0ceead9985e40",
   "last": "2026-10-26T19:53:22Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-26T20:06:44Z",
+   "bytes": 7121987,
+   "capture_id": "https://web.archive.org/web/20261026195028id_/https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ls-saga-anakin.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3c06f1286c241e9ada009aec7fba64b8aa3a3fe5bb9b9c727a1380a19a4202d5"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-koen-meijssen-ds-isb-operations.html": {
   "capture": "https://web.archive.org/web/20261021083645/https://swccg.com/snapshots/pc/2023-european-championship-koen-meijssen-ds-isb-operations.html",
@@ -67993,17 +67981,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-mike-kessling-ds-isb-operations.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025025108/https://swccg.com/snapshots/pc/2023-european-championship-mike-kessling-ds-isb-operations.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025025108/https://swccg.com/snapshots/pc/2023-european-championship-mike-kessling-ds-isb-operations.html?copy=2",
   "job_id": "spn2-5ad84e940f1dee3bf4f6ef2f68b5c516bd79672f",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:56:32Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-mike-kessling-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261021125718/https://swccg.com/snapshots/pc/2023-european-championship-mike-kessling-ls-communing-yoda.html",
@@ -68167,17 +68148,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ds-hunt-down.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025025313/https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ds-hunt-down.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025025313/https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ds-hunt-down.html?copy=2",
   "job_id": "spn2-289cc39301d080343b32ede37908ccbc6bd972f0",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:56:44Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021132104/https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ls-hitco.html",
@@ -68822,17 +68796,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-kevin-jaap-ls-old-allies.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030258/https://swccg.com/snapshots/pc/2023-naboo-regionals-kevin-jaap-ls-old-allies.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025030258/https://swccg.com/snapshots/pc/2023-naboo-regionals-kevin-jaap-ls-old-allies.html?copy=2",
   "job_id": "spn2-db97d7fa61ec1b14c90a8483ccbc32832178ba2b",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:56:55Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021092144/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html",
@@ -68844,17 +68811,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030422/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025030422/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html?copy=2",
   "job_id": "spn2-c6ba2aeccf7b28c5c38ad0cf71d2ccf19a6b744b",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:57:05Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ls-echo-base-operations.html": {
   "capture": "https://web.archive.org/web/20261021095114/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ls-echo-base-operations.html",
@@ -68893,17 +68853,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ls-anakin-saga.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030431/https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ls-anakin-saga.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025030431/https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ls-anakin-saga.html?copy=2",
   "job_id": "spn2-6bd6b3540488bca186f5b46b1419e8e20be2ce4a",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:57:16Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-quirin-furgut-ds-desert-landing-site-ssav.html": {
   "capture": "",
@@ -68915,17 +68868,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-quirin-furgut-ds-desert-landing-site-ssav.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030341/https://swccg.com/snapshots/pc/2023-naboo-regionals-quirin-furgut-ds-desert-landing-site-ssav.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025030341/https://swccg.com/snapshots/pc/2023-naboo-regionals-quirin-furgut-ds-desert-landing-site-ssav.html?copy=2",
   "job_id": "spn2-b8df03282f4ba943f4892038f77a734f10f776aa",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:57:27Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-quirin-furgut-ls-obi-wan-communing.html": {
   "capture": "https://web.archive.org/web/20261021091756/https://swccg.com/snapshots/pc/2023-naboo-regionals-quirin-furgut-ls-obi-wan-communing.html",
@@ -69030,17 +68976,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030456/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ds-bhbm.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025030456/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ds-bhbm.html?copy=2",
   "job_id": "spn2-8ac98ce80e2f3c656a93bfe71bbf0737f4e79d59",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:58:08Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ls-tigih.html": {
   "capture": "https://web.archive.org/web/20261021090747/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ls-tigih.html",
@@ -69079,17 +69018,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-matt-scott-ls-hitco.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030429/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-matt-scott-ls-hitco.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025030429/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-matt-scott-ls-hitco.html?copy=2",
   "job_id": "spn2-b7686a54c09749aad62b93419f8314ebec571fd8",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:58:19Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-steve-squirlock-ds-isb-operations.html": {
   "capture": "",
@@ -70288,17 +70220,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025031628/https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ds-bhbm.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025031628/https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ds-bhbm.html?copy=2",
   "job_id": "spn2-e928b5f1ecb44049ec2645866eb75798d29ef948",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:58:30Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-matthijs-van-leeuwen-ls-yoda-communing.html": {
   "capture": "",
@@ -71180,17 +71105,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ds-rots-dooku.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025032813/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ds-rots-dooku.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025032813/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ds-rots-dooku.html?copy=2",
   "job_id": "spn2-898534597918fbbd41cd2b6752b6859378bfedf8",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:59:12Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html": {
   "capture": "",
@@ -71202,17 +71120,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025032813/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025032813/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html?copy=2",
   "job_id": "spn2-cfed7a3287d60ee287ead1ccfa0549843b5f4b76",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:59:22Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-cal-aldred-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261021110833/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-cal-aldred-ds-thrawn.html",
@@ -71266,17 +71177,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-conor-britain-ls-rescue-the-princessv.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025032907/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-conor-britain-ls-rescue-the-princessv.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025032907/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-conor-britain-ls-rescue-the-princessv.html?copy=2",
   "job_id": "spn2-034647ee6c695ed4ed6e645012bf1637aa5eab80",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T19:59:34Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261021104730/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html",
@@ -71382,17 +71286,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ds-thrawn.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025032916/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ds-thrawn.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025032916/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ds-thrawn.html?copy=2",
   "job_id": "spn2-9ffb754689c2742da975e1af7389a34325dd3114",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:00:16Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ls-no-idea.html": {
   "capture": "",
@@ -71404,17 +71301,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ls-no-idea.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025033033/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ls-no-idea.html?copy=2",
-  "dead_capture": "https://web.archive.org/web/20261025033033/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-greg-shaw-ls-no-idea.html?copy=2",
   "job_id": "spn2-e268cd1bbfe9a9b7a4f534a453458c7d194d9e4c",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:00:26Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-jacy-smith-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261021112243/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-jacy-smith-ds-cct.html",
@@ -82534,17 +82424,10 @@
  },
  "https://swccg.com/snapshots/scomp/accelerate-v.html": {
   "capture": "https://web.archive.org/web/20261023222231/https://swccg.com/snapshots/scomp/accelerate-v.html",
-  "dead_capture": "https://web.archive.org/web/20261023222231/https://swccg.com/snapshots/scomp/accelerate-v.html",
   "job_id": "spn2-cdb4ed555b1a842eef7a5550c7cb68d5540a8dae",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:00:37Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/accelerate.html": {
   "capture": "",
@@ -82745,17 +82628,10 @@
  },
  "https://swccg.com/snapshots/scomp/ahch-to-jedi-village.html": {
   "capture": "https://web.archive.org/web/20261024055557/https://swccg.com/snapshots/scomp/ahch-to-jedi-village.html",
-  "dead_capture": "https://web.archive.org/web/20261024055557/https://swccg.com/snapshots/scomp/ahch-to-jedi-village.html",
   "job_id": "spn2-0e3dc0626b17c0d5d4d0a64f67fe52aa93131a07",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:02:23Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/ahch-to-saddle.html": {
   "capture": "https://web.archive.org/web/20261024024457/https://swccg.com/snapshots/scomp/ahch-to-saddle.html",
@@ -82850,17 +82726,10 @@
  },
  "https://swccg.com/snapshots/scomp/alderaan.html": {
   "capture": "https://web.archive.org/web/20261025001722/https://swccg.com/snapshots/scomp/alderaan.html",
-  "dead_capture": "https://web.archive.org/web/20261025001722/https://swccg.com/snapshots/scomp/alderaan.html",
   "job_id": "spn2-4e897f936755e3248a5151bc52d16d7f110e6a0f",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:04:40Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/alert-my-star-destroyer.html": {
   "capture": "",
@@ -82911,17 +82780,10 @@
  },
  "https://swccg.com/snapshots/scomp/all-too-easy.html": {
   "capture": "https://web.archive.org/web/20261025040618/https://swccg.com/snapshots/scomp/all-too-easy.html",
-  "dead_capture": "https://web.archive.org/web/20261025040618/https://swccg.com/snapshots/scomp/all-too-easy.html",
   "job_id": "spn2-2b1fd8d394ee0be8f7607fd06fbe8a6733d17f73",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:05:13Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/all-wings-report-in-darklighter-spin.html": {
   "capture": "https://web.archive.org/web/20261024023123/https://swccg.com/snapshots/scomp/all-wings-report-in-darklighter-spin.html",
@@ -82946,17 +82808,10 @@
  },
  "https://swccg.com/snapshots/scomp/allegations-of-corruption.html": {
   "capture": "https://web.archive.org/web/20261024011406/https://swccg.com/snapshots/scomp/allegations-of-corruption.html",
-  "dead_capture": "https://web.archive.org/web/20261024011406/https://swccg.com/snapshots/scomp/allegations-of-corruption.html",
   "job_id": "spn2-6c072e06d1d8a5ae174e6a13cffefee5a6e42f68",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:01:31Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/alpha-1.html": {
   "capture": "",
@@ -82981,17 +82836,10 @@
  },
  "https://swccg.com/snapshots/scomp/alter-coruscant-v.html": {
   "capture": "https://web.archive.org/web/20261024104626/https://swccg.com/snapshots/scomp/alter-coruscant-v.html",
-  "dead_capture": "https://web.archive.org/web/20261024104626/https://swccg.com/snapshots/scomp/alter-coruscant-v.html",
   "job_id": "spn2-a00dd6f84ae1409d31bd0b45af4f6b3522d24c17",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:03:37Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/alter-friendly-fire.html": {
   "capture": "",
@@ -83058,17 +82906,10 @@
  },
  "https://swccg.com/snapshots/scomp/an-inkling-of-its-destructive-potential.html": {
   "capture": "https://web.archive.org/web/20261024004833/https://swccg.com/snapshots/scomp/an-inkling-of-its-destructive-potential.html",
-  "dead_capture": "https://web.archive.org/web/20261024004833/https://swccg.com/snapshots/scomp/an-inkling-of-its-destructive-potential.html",
   "job_id": "spn2-d19eabfc365f7bbcd08b593f234d8a7fb0e9247e",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:01:20Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/anakin-s-lightsaber-v-ai.html": {
   "capture": "https://web.archive.org/web/20261024212843/https://swccg.com/snapshots/scomp/anakin-s-lightsaber-v-ai.html",
@@ -83253,17 +83094,10 @@
  },
  "https://swccg.com/snapshots/scomp/aquaris.html": {
   "capture": "https://web.archive.org/web/20261025043037/https://swccg.com/snapshots/scomp/aquaris.html",
-  "dead_capture": "https://web.archive.org/web/20261025043037/https://swccg.com/snapshots/scomp/aquaris.html",
   "job_id": "spn2-8c876efa6dbba694f6a93f5cc1e61c751870e28b",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:05:24Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/aratech-corporation.html": {
   "capture": "",
@@ -83323,17 +83157,10 @@
  },
  "https://swccg.com/snapshots/scomp/arica-v.html": {
   "capture": "https://web.archive.org/web/20261024080611/https://swccg.com/snapshots/scomp/arica-v.html",
-  "dead_capture": "https://web.archive.org/web/20261024080611/https://swccg.com/snapshots/scomp/arica-v.html",
   "job_id": "spn2-e7b5f4048759dc2c81bd799364d1a6e6768eb17b",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:02:34Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/armament-dismantled.html": {
   "capture": "https://web.archive.org/web/20261024011011/https://swccg.com/snapshots/scomp/armament-dismantled.html",
@@ -83577,17 +83404,10 @@
  },
  "https://swccg.com/snapshots/scomp/attack-run.html": {
   "capture": "https://web.archive.org/web/20261024234732/https://swccg.com/snapshots/scomp/attack-run.html",
-  "dead_capture": "https://web.archive.org/web/20261024234732/https://swccg.com/snapshots/scomp/attack-run.html",
   "job_id": "spn2-7e84d8f4a4c5c8d8365b0c21d699fd50a28728e0",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:04:51Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/aurra-sing-ai.html": {
   "capture": "https://web.archive.org/web/20261024085248/https://swccg.com/snapshots/scomp/aurra-sing-ai.html",
@@ -83640,17 +83460,10 @@
  },
  "https://swccg.com/snapshots/scomp/aurra-sing-with-blaster-rifle.html": {
   "capture": "https://web.archive.org/web/20261025035538/https://swccg.com/snapshots/scomp/aurra-sing-with-blaster-rifle.html",
-  "dead_capture": "https://web.archive.org/web/20261025035538/https://swccg.com/snapshots/scomp/aurra-sing-with-blaster-rifle.html",
   "job_id": "spn2-607b4fa5abb248ed69622fc199c95979afe06a24",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:05:02Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/aurra-sing.html": {
   "capture": "https://web.archive.org/web/20261024202037/https://swccg.com/snapshots/scomp/aurra-sing.html",
@@ -83794,17 +83607,10 @@
  },
  "https://swccg.com/snapshots/scomp/b2-battle-droid-ai.html": {
   "capture": "https://web.archive.org/web/20261024163308/https://swccg.com/snapshots/scomp/b2-battle-droid-ai.html",
-  "dead_capture": "https://web.archive.org/web/20261024163308/https://swccg.com/snapshots/scomp/b2-battle-droid-ai.html",
   "job_id": "spn2-0cad9919716d03a9e420757580461776b3604f07",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:03:48Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/b2-battle-droid.html": {
   "capture": "https://web.archive.org/web/20261025061638/https://swccg.com/snapshots/scomp/b2-battle-droid.html",
@@ -83934,17 +83740,10 @@
  },
  "https://swccg.com/snapshots/scomp/bantha-fodder.html": {
   "capture": "https://web.archive.org/web/20261024143130/https://swccg.com/snapshots/scomp/bantha-fodder.html",
-  "dead_capture": "https://web.archive.org/web/20261024143130/https://swccg.com/snapshots/scomp/bantha-fodder.html",
   "job_id": "spn2-db14f99397b6dcc575301ae37c8f6271d6d40a67",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:03:27Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/bantha-herd.html": {
   "capture": "https://web.archive.org/web/20261025035351/https://swccg.com/snapshots/scomp/bantha-herd.html",
@@ -84011,17 +83810,10 @@
  },
  "https://swccg.com/snapshots/scomp/barquin-d-an.html": {
   "capture": "https://web.archive.org/web/20261024212622/https://swccg.com/snapshots/scomp/barquin-d-an.html",
-  "dead_capture": "https://web.archive.org/web/20261024212622/https://swccg.com/snapshots/scomp/barquin-d-an.html",
   "job_id": "spn2-35ea297db32021936ab80dc2b60a2afe1d0e69c6",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:04:29Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/baseless-accusations.html": {
   "capture": "",
@@ -84136,17 +83928,10 @@
  },
  "https://swccg.com/snapshots/scomp/battle-order.html": {
   "capture": "https://web.archive.org/web/20261024024824/https://swccg.com/snapshots/scomp/battle-order.html",
-  "dead_capture": "https://web.archive.org/web/20261024024824/https://swccg.com/snapshots/scomp/battle-order.html",
   "job_id": "spn2-c39f6d0247ddfaf111120d4b91d6d468993a7fbd",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:01:42Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/battle-plan-draw-their-fire.html": {
   "capture": "",
@@ -84198,17 +83983,10 @@
  },
  "https://swccg.com/snapshots/scomp/bb-8-beebee-ate-ai.html": {
   "capture": "https://web.archive.org/web/20261024082129/https://swccg.com/snapshots/scomp/bb-8-beebee-ate-ai.html",
-  "dead_capture": "https://web.archive.org/web/20261024082129/https://swccg.com/snapshots/scomp/bb-8-beebee-ate-ai.html",
   "job_id": "spn2-cb1b8d9e9c29d18297acd0aa058c8e137748d50d",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-26T20:02:45Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/bb-8-beebee-ate.html": {
   "capture": "https://web.archive.org/web/20261024234844/https://swccg.com/snapshots/scomp/bb-8-beebee-ate.html",
