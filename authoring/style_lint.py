@@ -29,10 +29,10 @@ Talk pages (Chief, 2026-10-20): signed comments by other accounts are their auth
   (Comlink Cursor); the bot's comments, unsigned text and the other checks still apply.
   EMAIL    personal email addresses (decipher.com addresses and lines marked "email-ok" pass).
   REF      a <ref> with no URL and no source text.
-  HEADING  a == Sources == section on a page that is not a deck, event, card or set-table page. Deck/event pages
-           are detected by category: Decklists, Dark Side decks, Light Side decks, GEMP
+  HEADING  a == Sources == section on a page that is not a deck, event, card, set-table or tournament-report page.
+           Deck/event pages are detected by category: Decklists, Dark Side decks, Light Side decks, GEMP
            importable decklists, Tournaments, Championships, World Championships, Events,
-           Retro League (in the wikitext, plus the live page's categories when linting by title).
+           Retro League, Tournament reports (in the wikitext, plus the live page's categories when linting by title).
            Card pages ({{Card}} or Category:Cards) and set-table pages (Category:Sets or any
            "... sets" category) may also keep Sources (Bill, 2026-10-20).
            Only a heading written in the page's own wikitext fails. A heading a template generates
@@ -71,6 +71,10 @@ def captions(t):
 
 def body(t):
     t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
+    # Verbatim text (Bill, 2026-10-20, via Chief 2026-10-26): quoted report text and interview quotes
+    # sit in <blockquote> or a <nowiki> block and are the source's own words, not the page's prose.
+    t = re.sub(r"<blockquote[^>]*>.*?</blockquote>", " ", t, flags=re.S | re.I)
+    t = re.sub(r"<nowiki>.*?</nowiki>", " ", t, flags=re.S | re.I)
     t = re.sub(r"<ref[^>/]*/>", " ", t)
     t = re.sub(r"<ref[^>]*>.*?</ref>", " ", t, flags=re.S)
     t = re.sub(r"<references[^>]*>.*?</references>|<references\s*/>", " ", t, flags=re.S)
@@ -100,7 +104,9 @@ def is_list_page(title, text):
 
 # Deck and event pages keep a == Sources == list (decklist URL + Preserved copy); no other page does.
 SOURCES_CATEGORIES = {"decklists", "dark side decks", "light side decks", "gemp importable decklists",
-                      "tournaments", "championships", "world championships", "events", "retro league"}
+                      "tournaments", "championships", "world championships", "events", "retro league",
+                      # pages that transcribe one source whole (Bill, 2026-10-20, via Chief 2026-10-26)
+                      "tournament reports"}
 
 def page_categories(text):
     return {re.sub(r"[\s_]+", " ", c).strip().lower()
