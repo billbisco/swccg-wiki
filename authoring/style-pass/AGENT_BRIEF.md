@@ -12,12 +12,12 @@ Read the page. Decide whether it needs changes under the style guide. Typical fi
 - Remove process/meta text from the body ("note", "research", "this pass", "not found", "unverified", "we", "this page/article", "see talk", hedges such as "reportedly", "probably", "likely", "seems", "appears to", "soft", "secondary"). State sourced facts plainly. If a statement only makes sense as a hedge or open question, move it to the Talk note.
 - Remove Gaps / Open questions / Research / Notes sections (move their content to the Talk note).
 - `== Sources ==`: "One reference list". On event, tournament and deck pages a Sources section is allowed — leave it. Elsewhere, if every Sources item is already cited in a `<ref>`, delete the section. If an item is not cited, convert it into a `<ref>` on the sentence it supports (use a named ref if reused); if it supports nothing specific, move it to the Talk note under Marginal cuts. Never lose a source silently.
-- Split sentences over 30 words. Cut throat-clearing, repetition, and facts repeated in both a table and prose.
+- Clarity and full understanding come first; a sentence or quote may be as long as clarity needs (Bill, 2026-10-26). Cut throat-clearing, repetition, and facts repeated in both a table and prose.
 - Captions: identify the subject and credit the photographer only; no description of what the image shows; 12 words max.
 - Don't narrate source disagreements in prose ("X gives A, while Y gives B"): state the best-supported value, cite both sources, and put the discrepancy in the Talk note under Possibly faulty data.
 - Person pages: service mentioned in prose (TD, judge, organizer, host, PC/Decipher role, GEMP dev) needs a cited row in a `== Service ==` table (format in the guide). Results tables: a missing place is a blank cell, not "—". The lead opens with the best sourced result.
 - End directly — no summary paragraph or caveats at the end.
-- **Exception (Bill, 2026-10-15): on player/person pages (Category Players or People, or pages with a Tournament Results table), do NOT touch the `== Sources ==` list or the "—" place cells.** A separate scripted pass will handle those later. Fix only the prose (lead, meta text, hedges, long sentences, captions, Service rows).
+- **Exception (Bill, 2026-10-15): on player/person pages (Category Players or People, or pages with a Tournament Results table), do NOT touch the `== Sources ==` list or the "—" place cells.** A separate scripted pass will handle those later. Fix only the prose (lead, meta text, hedges, captions, Service rows).
 
 ## Hard limits
 - Never invent or infer facts. No new research is required; you may only reorganize, tighten, and move text. Every fact you keep keeps its citation. Do not remove `<ref>` definitions that other refs reuse (`<ref name="x" />`) — a dangling named ref is a Cite error.

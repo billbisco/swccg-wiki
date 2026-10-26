@@ -354,18 +354,17 @@ class TranscriptSpeechSkipped(unittest.TestCase):
     def test_fixture_speech_not_flagged(self):
         text = fx("2007_World_Championship_interviews_transcript.r92965.wiki")
         flags, _ = L.lint(text, self.TITLE)
-        speech = [f for f in flags if f.split()[0] in ("BANNED", "LONG") and "Dunn:" not in f]
-        # only the editor's own lead and transcription note remain (fixture is the pre-cleanup revision)
-        self.assertEqual(sorted(kinds(speech)), ["BANNED", "LONG"])
+        speech = [f for f in flags if f.split()[0] == "BANNED" and "Dunn:" not in f]
+        # only the editor's own transcription note remains (fixture is the pre-cleanup revision)
+        self.assertEqual(sorted(kinds(speech)), ["BANNED"])
         self.assertTrue(any("marked [unclear]" in f for f in speech))
-        self.assertTrue(any(f.startswith("LONG     31 words: The 2007 World Championship interviews") for f in speech))
         self.assertTrue(any("watch?v=LpWqJgmgh2Q" in f for f in flags))   # ARCHIVE still applies
 
     def test_speech_skipped_on_transcript_page(self):
         page = "Intro line.\n\n" + self.SPEECH + "\n'''Interviewer:''' We think this one probably ran long, " + "word " * 30 + "end.\n"
-        self.assertEqual([f for f in L.lint(page, self.TITLE)[0] if f.split()[0] in ("BANNED", "LONG")], [])
+        self.assertEqual([f for f in L.lint(page, self.TITLE)[0] if f.split()[0] == "BANNED"], [])
         self.assertEqual([f for f in L.lint(page + "[[Category:Transcripts]]", "Some interview")[0]
-                          if f.split()[0] in ("BANNED", "LONG")], [])
+                          if f.split()[0] == "BANNED"], [])
 
     def test_own_prose_still_flagged(self):
         page = "We probably filmed these.\n\n" + self.SPEECH + "\n"
@@ -392,7 +391,7 @@ class TalkPageComments(unittest.TestCase):
     SNAP = "[https://web.archive.org/web/20261012164154/https://swccg.com/snapshots/forum/t85240.html Internet Archive]"
 
     def voice(self, text, title):
-        return [f for f in L.lint(text, title)[0] if f.split()[0] in ("BANNED", "LONG")]
+        return [f for f in L.lint(text, title)[0] if f.split()[0] == "BANNED"]
 
     def test_talk_title_detection(self):
         for t in ("Talk:Geoff Bowman", "User talk:Comlink Cursor", "SWCCG Wiki talk:Style guide", "Template_talk:Card"):
@@ -556,36 +555,22 @@ class ArticleSnapshotRoute(unittest.TestCase):
         self.assertEqual(len(self.arch(page)), 1)
 
 
-class IndexPagesSkipLong(unittest.TestCase):
-    """People, People/<letter> and [[Category:Indexes]] pages skip the sentence-length check."""
+class NoSentenceLengthLimit(unittest.TestCase):
+    """Bill, 2026-10-26: no sentence- or quote-length limit; clarity comes first."""
 
-    NAMES = " · ".join(f"[[Player {i}]]" for i in range(80))
-    PROSE = "Word " * 60 + "ends here."
+    def test_long_sentence_not_flagged(self):
+        text = "Kendrick Summers " + "worked the event and " * 20 + "went home.\n"
+        self.assertEqual(L.lint(text, "Someone")[0], [])
 
-    def long_flags(self, text, title, cats=None):
-        return [f for f in L.lint(text, title, cats)[0] if f.startswith("LONG")]
+    def test_long_quote_not_flagged(self):
+        text = 'Caption: "' + "The shredderator blends a daiquiri and " * 10 + 'Ay Caramba!"\n'
+        self.assertEqual(L.lint(text, "File:Someone.jpg")[0], [])
 
-    def test_people_fixture_passes(self):
-        text = fx("People.r108468.wiki")
-        self.assertEqual(self.long_flags(text, "People"), [])
-        self.assertTrue(self.long_flags(text, "Someone"))  # same text under another title still flags
+    def test_people_fixture_has_no_length_flags(self):
+        flags = L.lint(fx("People.r108468.wiki"), "Someone")[0]
+        self.assertFalse([f for f in flags if f.startswith("LONG")])
 
-    def test_people_letter_titles(self):
-        for t in ("People", "People/W", "People/A", "people/b"):
-            self.assertTrue(L.is_index_page(t, ""), t)
-        self.assertFalse(L.is_index_page("People/Westergard", ""))
-        self.assertFalse(L.is_index_page("People of Tatooine", ""))
-
-    def test_category_indexes_in_wikitext(self):
-        text = self.NAMES + "\n\n[[Category:Indexes]]\n"
-        self.assertEqual(self.long_flags(text, "Card index"), [])
-        self.assertTrue(self.long_flags(self.NAMES, "Card index"))
-
-    def test_category_indexes_from_live_categories(self):
-        self.assertEqual(self.long_flags(self.PROSE, "Card index", {"Category:Indexes"}), [])
-        self.assertTrue(self.long_flags(self.PROSE, "Card index", {"Category:Players"}))
-
-    def test_other_checks_still_run_on_index_pages(self):
+    def test_other_checks_still_run(self):
         text = "Contact x@example.com for the list.\n\n[[Category:Indexes]]\n"
         self.assertIn("EMAIL", kinds(L.lint(text, "People")[0]))
 

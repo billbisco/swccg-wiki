@@ -15,7 +15,7 @@ for b in batches:
         big=len(new)>150000 or len(old)>150000
         fl,n=SL.lint(new,it['title']) if not big else ([],0); n0=SL.lint(old,it['title'])[1] if not big else 0
         fl=[x for x in fl if "'Sources'" not in x]
-        bad=[x for x in fl if not x.startswith('LONG') and not re.search(r"'we'|'we'll'",x)]
+        bad=[x for x in fl if not re.search(r"'we'|'we'll'",x)]
         rep.append(f"{it['title']}: words {n0}->{n} flags {len(fl)} dangling {sorted(dang)}")
         if dang: continue
         talk=open(f'out/{f}.talk').read() if os.path.exists(f'out/{f}.talk') else None
