@@ -8,6 +8,8 @@ Exit 1 if any flag is raised.
 
 No sentence- or quote-length limit (Bill, 2026-10-26): "If we need more words, do more words."
 Clarity and full understanding come first; long sentences and quotes are fine when needed.
+Verbatim text inside <blockquote>...</blockquote> (multi-line, nested) or <nowiki> is the source's own words:
+the banned-word check, the WORDS count and the SERVICE prose check skip it; ARCHIVE, EMAIL, REF and HEADING still run.
 
 Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
   ARCHIVE  every external URL cited on the page (<ref>, list items, body, External links) needs a
@@ -69,11 +71,29 @@ def captions(t):
             if "|" in line: out.append(line.split("|", 1)[1])
     return out
 
+BLOCKQUOTE_TAG = re.compile(r"<(/?)blockquote\b[^>]*>", re.I)
+
+def strip_blockquotes(t):
+    """Blank out each outermost <blockquote>...</blockquote>, nested ones included and across lines.
+    An opening tag with no matching close is left alone, so a broken tag never hides the rest of the page."""
+    out, depth, start, last = [], 0, 0, 0
+    for m in BLOCKQUOTE_TAG.finditer(t):
+        if not m.group(1):
+            if depth == 0: start = m.start()
+            depth += 1
+        elif depth:
+            depth -= 1
+            if depth == 0:
+                out.append(t[last:start] + " ")
+                last = m.end()
+    out.append(t[last:])
+    return "".join(out)
+
 def body(t):
     t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
     # Verbatim text (Bill, 2026-10-20, via Chief 2026-10-26): quoted report text and interview quotes
     # sit in <blockquote> or a <nowiki> block and are the source's own words, not the page's prose.
-    t = re.sub(r"<blockquote[^>]*>.*?</blockquote>", " ", t, flags=re.S | re.I)
+    t = strip_blockquotes(t)
     t = re.sub(r"<nowiki>.*?</nowiki>", " ", t, flags=re.S | re.I)
     t = re.sub(r"<ref[^>/]*/>", " ", t)
     t = re.sub(r"<ref[^>]*>.*?</ref>", " ", t, flags=re.S)

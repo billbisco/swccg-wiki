@@ -607,3 +607,36 @@ class ServiceAttachedRole(unittest.TestCase):
     def test_role_elsewhere_in_sentence_still_flags(self):
         lead = "'''Richard Handley''' met [[Kim Burns]] and later became a volunteer himself."
         self.assertEqual(kinds(self.flags(lead)), ["SERVICE"])
+
+
+class BlockquoteSkipsBannedWords(unittest.TestCase):
+    """Verbatim text in <blockquote> is the source's words: BANNED skips it; EMAIL and ARCHIVE still run."""
+
+    def banned(self, text):
+        return [f for f in L.lint(text)[0] if f.startswith("BANNED")]
+
+    def test_banned_word_inside_blockquote_not_flagged(self):
+        self.assertEqual(self.banned("Intro line.\n<blockquote>\nWe played a few games.\n\nThere seems a few good cards.\n</blockquote>\nEnd."), [])
+
+    def test_banned_word_outside_blockquote_flagged(self):
+        self.assertEqual(len(self.banned("<blockquote>He won.</blockquote>\nWe think he won.")), 1)
+
+    def test_nested_blockquote(self):
+        t = "<blockquote>A <blockquote>we said</blockquote> and we said again</blockquote> after."
+        self.assertEqual(self.banned(t), [])
+        self.assertEqual(len(self.banned(t + " We added this.")), 1)
+
+    def test_unclosed_blockquote_hides_nothing(self):
+        self.assertEqual(len(self.banned("<blockquote>We started a quote but never closed it.")), 1)
+
+    def test_attributes_and_case(self):
+        self.assertEqual(self.banned('<BlockQuote class="q">we played</BLOCKQUOTE>'), [])
+
+    def test_email_still_fires_inside_blockquote(self):
+        flags = L.lint("<blockquote>Write to someone123@aol.com for lists.</blockquote>")[0]
+        self.assertIn("EMAIL", kinds(flags))
+
+    def test_archive_still_fires_inside_blockquote(self):
+        flags = L.lint("Fact.<ref><blockquote>[https://example.com/a Title]</blockquote></ref>\n"
+                       "<blockquote>See https://example.com/b for more.</blockquote>")[0]
+        self.assertEqual(kinds(flags).count("ARCHIVE"), 2)
