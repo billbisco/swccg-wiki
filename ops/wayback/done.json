@@ -83928,9 +83928,8 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/b-wing-bomber.html": {
-  "capture": "https://web.archive.org/web/20261025053830/https://swccg.com/snapshots/scomp/b-wing-bomber.html",
-  "job_id": "spn2-da5fbf6d43a664950ff865694ec0577967d6c8d2",
-  "last": "2026-10-27T00:16:28Z",
+  "capture": "https://web.archive.org/web/20261027001721/https://swccg.com/snapshots/scomp/b-wing-bomber.html",
+  "last": "2026-10-27T00:23:16Z",
   "status": "pending",
   "tries": 1
  },
@@ -84286,17 +84285,10 @@
  },
  "https://swccg.com/snapshots/scomp/bb-8-beebee-ate.html": {
   "capture": "https://web.archive.org/web/20261024234844/https://swccg.com/snapshots/scomp/bb-8-beebee-ate.html",
-  "dead_capture": "https://web.archive.org/web/20261024234844/https://swccg.com/snapshots/scomp/bb-8-beebee-ate.html",
-  "job_id": "spn2-5a9864cbd0c1fdfd0774a0d0904abb0eaec4a59c",
-  "last": "2026-10-26T19:31:40Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T00:23:58Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:02:40Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/bb-8-in-black-squadron-1-ai.html": {
   "capture": "https://web.archive.org/web/20261024210119/https://swccg.com/snapshots/scomp/bb-8-in-black-squadron-1-ai.html",
@@ -85780,10 +85772,10 @@
  },
  "https://swccg.com/snapshots/scomp/captain-cassian-andor.html": {
   "capture": "https://web.archive.org/web/20261024111326/https://swccg.com/snapshots/scomp/captain-cassian-andor.html",
-  "error": "<urlopen error timed out>",
-  "last": "2026-10-26T23:47:03Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T00:23:27Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/captain-daultay-dofine.html": {
   "capture": "",
@@ -87398,11 +87390,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/cloud-city-beldon-s-corridor.html": {
-  "capture": "https://web.archive.org/web/20261025055052/https://swccg.com/snapshots/scomp/cloud-city-beldon-s-corridor.html",
+  "capture": "https://web.archive.org/web/20261027001813/https://swccg.com/snapshots/scomp/cloud-city-beldon-s-corridor.html",
   "job_id": "spn2-b5686189552b88f8946c6731a4438d8d3dc0b358",
-  "last": "2026-10-27T00:17:21Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T00:23:10Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T00:23:10Z",
+   "bytes": 673713,
+   "capture_id": "https://web.archive.org/web/20261027001813id_/https://swccg.com/snapshots/scomp/cloud-city-beldon-s-corridor.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9671c5e6df042f712120a28e873a9740c1b49eb52cec9273c94370e982996129"
+  }
  },
  "https://swccg.com/snapshots/scomp/cloud-city-blaster.html": {
   "capture": "",
@@ -87497,10 +87497,10 @@
  },
  "https://swccg.com/snapshots/scomp/cloud-city-downtown-plaza.html": {
   "capture": "https://web.archive.org/web/20261024211218/https://swccg.com/snapshots/scomp/cloud-city-downtown-plaza.html",
-  "error": "HTTP Error 404: NOT FOUND",
-  "last": "2026-10-26T23:35:12Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T00:23:48Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/cloud-city-east-platform-docking-bay.html": {
   "capture": "https://web.archive.org/web/20261023224325/https://swccg.com/snapshots/scomp/cloud-city-east-platform-docking-bay.html",
@@ -88551,9 +88551,9 @@
  "https://swccg.com/snapshots/scomp/corporal-rushing-v.html": {
   "capture": "https://web.archive.org/web/20261024192022/https://swccg.com/snapshots/scomp/corporal-rushing-v.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T23:30:19Z",
+  "last": "2026-10-27T00:23:37Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/corporal-rushing.html": {
   "capture": "https://web.archive.org/web/20261024111013/https://swccg.com/snapshots/scomp/corporal-rushing.html",
@@ -89750,11 +89750,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/darth-vader-v.html": {
-  "capture": "https://web.archive.org/web/20261025055118/https://swccg.com/snapshots/scomp/darth-vader-v.html",
+  "capture": "https://web.archive.org/web/20261027001845/https://swccg.com/snapshots/scomp/darth-vader-v.html",
   "job_id": "spn2-6c2faf10c3a3528a0cef33af2783cae35c73679d",
-  "last": "2026-10-27T00:17:31Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T00:23:04Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T00:23:04Z",
+   "bytes": 681600,
+   "capture_id": "https://web.archive.org/web/20261027001845id_/https://swccg.com/snapshots/scomp/darth-vader-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bafad75e690193cc7067e11089ceb6f84b286f7eba627f6f6d0f654c49192f87"
+  }
  },
  "https://swccg.com/snapshots/scomp/darth-vader-with-lightsaber.html": {
   "capture": "https://web.archive.org/web/20261024164826/https://swccg.com/snapshots/scomp/darth-vader-with-lightsaber.html",
@@ -91921,11 +91929,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/endor-dense-forest.html": {
-  "capture": "https://web.archive.org/web/20261025053912/https://swccg.com/snapshots/scomp/endor-dense-forest.html",
+  "capture": "https://web.archive.org/web/20261027001643/https://swccg.com/snapshots/scomp/endor-dense-forest.html",
   "job_id": "spn2-95ed017d83db23f5530d9fa92b0719c71468dda9",
-  "last": "2026-10-27T00:16:39Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T00:23:14Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T00:24:13Z",
+   "bytes": 164576,
+   "capture_id": "https://web.archive.org/web/20261027001643id_/https://swccg.com/snapshots/scomp/endor-dense-forest.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1b3b886f6b1c3bbe228879f0b3e5637addac77a81dab43e55bad99c53514bbcd"
+  }
  },
  "https://swccg.com/snapshots/scomp/endor-ewok-village-v.html": {
   "capture": "",
@@ -95492,9 +95508,9 @@
  "https://swccg.com/snapshots/scomp/how-liberty-dies.html": {
   "capture": "https://web.archive.org/web/20261024164713/https://swccg.com/snapshots/scomp/how-liberty-dies.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-26T23:44:41Z",
+  "last": "2026-10-27T00:23:17Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/human-shield.html": {
   "capture": "https://web.archive.org/web/20261025051847/https://swccg.com/snapshots/scomp/human-shield.html",
