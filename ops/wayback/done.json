@@ -44792,9 +44792,10 @@
  },
  "https://stevetotheizz0.github.io/decktech_archives/20347/": {
   "capture": "https://web.archive.org/web/20261027152130/https://www.stephenskilton.com/decktech_archives/20347/",
-  "last": "2026-10-27T16:40:27Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T17:12:12Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://stevetotheizz0.github.io/decktech_archives/20358/": {
   "capture": "",
@@ -60629,25 +60630,41 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-world-championship-brandon-baity-ds-sycfa.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261027170744/https://swccg.com/snapshots/pc/2022-world-championship-brandon-baity-ds-sycfa.html",
   "job_id": "spn2-46192f0084f746adbf79d7c40cdc8adae36a6d31",
-  "last": "2026-10-27T17:07:05Z",
-  "status": "pending",
+  "last": "2026-10-27T17:12:11Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-world-championship-brandon-baity-ls-legend.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261027170807/https://swccg.com/snapshots/pc/2022-world-championship-brandon-baity-ls-legend.html",
   "job_id": "spn2-0063a0642c6ea400992f7a91ab7bb472acbe8413",
-  "last": "2026-10-27T17:07:16Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T17:12:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T17:12:00Z",
+   "bytes": 7123758,
+   "capture_id": "https://web.archive.org/web/20261027170807id_/https://swccg.com/snapshots/pc/2022-world-championship-brandon-baity-ls-legend.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e92733edf39c08427d044d691bc9e1c446607cba8d0c1bb2bf1f5e4dfea41ec1"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-world-championship-brian-fred-ds-cct.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261027170750/https://swccg.com/snapshots/pc/2022-world-championship-brian-fred-ds-cct.html",
   "job_id": "spn2-df1e7803fa4c0ee81a7d82b146a1007235ae056f",
-  "last": "2026-10-27T17:07:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T17:11:49Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T17:11:49Z",
+   "bytes": 7123686,
+   "capture_id": "https://web.archive.org/web/20261027170750id_/https://swccg.com/snapshots/pc/2022-world-championship-brian-fred-ds-cct.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "54c80cc0b0eeee57cd59c0edb7a9532bdab707deebd30cb51b616d53283ba34c"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-world-championship-brian-fred-ls-yoda-communing.html": {
   "capture": "",
