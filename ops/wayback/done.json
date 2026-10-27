@@ -51938,8 +51938,16 @@
   "capture": "https://web.archive.org/web/20261027013001/https://swccg.com/snapshots/forum/t80594.html",
   "job_id": "spn2-debbdc8f0f7bf3e5228ab44c532f914b54df1300",
   "last": "2026-10-27T01:33:04Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T01:46:06Z",
+   "bytes": 1481339,
+   "capture_id": "https://web.archive.org/web/20261027013001id_/https://swccg.com/snapshots/forum/t80594.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "eac19f300e81a75e14864dd4a7dec66f24283bf139aec0e749840f35e1578f63"
+  }
  },
  "https://swccg.com/snapshots/forum/t80665.html": {
   "capture": "https://web.archive.org/web/20261013154950/https://swccg.com/snapshots/forum/t80665.html",
@@ -51955,11 +51963,19 @@
   }
  },
  "https://swccg.com/snapshots/forum/t80756.html": {
-  "capture": "https://web.archive.org/web/20261021062013/https://swccg.com/snapshots/forum/t80756.html",
+  "capture": "https://web.archive.org/web/20261027012919/https://swccg.com/snapshots/forum/t80756.html",
   "job_id": "spn2-aeb16521ad403287e1e12bff1ea2e14d5ef99059",
-  "last": "2026-10-27T01:29:15Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T01:35:43Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T01:35:43Z",
+   "bytes": 1559015,
+   "capture_id": "https://web.archive.org/web/20261027012919id_/https://swccg.com/snapshots/forum/t80756.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3908164973b73e24c74378f2a21c3d130b181a2ccdbc8ee954b11b1600c87975"
+  }
  },
  "https://swccg.com/snapshots/forum/t80902.html": {
   "capture": "https://web.archive.org/web/20261021041720/https://swccg.com/snapshots/forum/t80902.html",
@@ -62680,17 +62696,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261021045224/https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ls-communing-yoda.html",
-  "dead_capture": "https://web.archive.org/web/20261021045224/https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ls-communing-yoda.html",
   "job_id": "spn2-9a645dae83675a3d11672fa65e4b50e145e52c72",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:40:28Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ds-map.html": {
   "capture": "",
@@ -63305,17 +63314,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-eric-hunter-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021103843/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-eric-hunter-ls-qmc.html",
-  "dead_capture": "https://web.archive.org/web/20261021103843/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-eric-hunter-ls-qmc.html",
   "job_id": "spn2-2525f11629727aa67f354bc62814b9411b6b2c98",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:40:39Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-jared-greenwald-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021051742/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-jared-greenwald-ds-map.html",
@@ -63846,17 +63848,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ds-watto.html": {
   "capture": "https://web.archive.org/web/20261021054830/https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ds-watto.html",
-  "dead_capture": "https://web.archive.org/web/20261021054830/https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ds-watto.html",
   "job_id": "spn2-8c5e0586690a1b93a74711485fc7c9ca891870e3",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:41:00Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-kevin-jaap-ls-legend.html": {
   "capture": "",
@@ -63875,17 +63870,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021061647/https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html",
-  "dead_capture": "https://web.archive.org/web/20261021061647/https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ds-bhbm.html",
   "job_id": "spn2-1213b09af52a5f5a51cf5bfd4d2ac67a6005d6f9",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:40:50Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-koen-meijssen-ls-old-allies.html": {
   "capture": "",
@@ -64193,17 +64181,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-west-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261021061828/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-west-ds-thrawn.html",
-  "dead_capture": "https://web.archive.org/web/20261021061828/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-west-ds-thrawn.html",
   "job_id": "spn2-a8bbcbe09781caffcdbdb9d6efe1fa988d6959d9",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:41:22Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-brian-west-ls-zero-hour.html": {
   "capture": "",
@@ -64244,17 +64225,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ds-rops-v.html": {
   "capture": "https://web.archive.org/web/20261021055014/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ds-rops-v.html",
-  "dead_capture": "https://web.archive.org/web/20261021055014/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ds-rops-v.html",
   "job_id": "spn2-6b83570b3f2ac867227165b5ba6542d5cb4e41c4",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:41:11Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ls-communing-qui-gon.html": {
   "capture": "https://web.archive.org/web/20261021055025/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-matt-scott-ls-communing-qui-gon.html",
@@ -64566,31 +64540,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-tatooine-regionals-jerry-heine-ls-endor-funeral-pyre.html": {
   "capture": "https://web.archive.org/web/20261021064226/https://swccg.com/snapshots/pc/2022-tatooine-regionals-jerry-heine-ls-endor-funeral-pyre.html",
-  "dead_capture": "https://web.archive.org/web/20261021064226/https://swccg.com/snapshots/pc/2022-tatooine-regionals-jerry-heine-ls-endor-funeral-pyre.html",
   "job_id": "spn2-b64eb76c35d07ba2573a6e243ab4e238f5ce08ff",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:43:16Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-tatooine-regionals-justin-miyashiro-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021062913/https://swccg.com/snapshots/pc/2022-tatooine-regionals-justin-miyashiro-ds-sycfa.html",
-  "dead_capture": "https://web.archive.org/web/20261021062913/https://swccg.com/snapshots/pc/2022-tatooine-regionals-justin-miyashiro-ds-sycfa.html",
   "job_id": "spn2-031bf9d3307b6667f92151b21b5269f5b359b13f",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:42:24Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-tatooine-regionals-justin-miyashiro-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261021064215/https://swccg.com/snapshots/pc/2022-tatooine-regionals-justin-miyashiro-ls-legend.html",
@@ -64608,17 +64568,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-tatooine-regionals-mark-billings-ds-ropsv.html": {
   "capture": "https://web.archive.org/web/20261021063128/https://swccg.com/snapshots/pc/2022-tatooine-regionals-mark-billings-ds-ropsv.html",
-  "dead_capture": "https://web.archive.org/web/20261021063128/https://swccg.com/snapshots/pc/2022-tatooine-regionals-mark-billings-ds-ropsv.html",
   "job_id": "spn2-2f6878ae409df36b9ecca12a364c1b8b094d597f",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:43:27Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-tatooine-regionals-mark-billings-ls-hidden-base.html": {
   "capture": "https://web.archive.org/web/20261021063133/https://swccg.com/snapshots/pc/2022-tatooine-regionals-mark-billings-ls-hidden-base.html",
@@ -64650,17 +64603,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-tatooine-regionals-paul-coggins-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261021062937/https://swccg.com/snapshots/pc/2022-tatooine-regionals-paul-coggins-ls-yoda-communing.html",
-  "dead_capture": "https://web.archive.org/web/20261021062937/https://swccg.com/snapshots/pc/2022-tatooine-regionals-paul-coggins-ls-yoda-communing.html",
   "job_id": "spn2-3ada12a59e3f5c903aaff4fca4792fb3108fff96",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:43:05Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ds-watto.html": {
   "capture": "https://web.archive.org/web/20261021061953/https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ds-watto.html",
@@ -64678,31 +64624,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ls-endor-cpv.html": {
   "capture": "https://web.archive.org/web/20261021062936/https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ls-endor-cpv.html",
-  "dead_capture": "https://web.archive.org/web/20261021062936/https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ls-endor-cpv.html",
   "job_id": "spn2-111f919a78d46b82d81c44bec8290417e145da79",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:42:14Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ds-rots-dooku.html": {
   "capture": "https://web.archive.org/web/20261021062058/https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ds-rots-dooku.html",
-  "dead_capture": "https://web.archive.org/web/20261021062058/https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ds-rots-dooku.html",
   "job_id": "spn2-4deb1a40107e485d020f1277ea30a2b017378331",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:42:03Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ls-obi-wan-communing.html": {
   "capture": "https://web.archive.org/web/20261021062836/https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ls-obi-wan-communing.html",
@@ -64720,31 +64652,17 @@
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-emil-wallin-ds-a-stunning-move.html": {
   "capture": "https://web.archive.org/web/20261021063223/https://swccg.com/snapshots/pc/2022-toola-regionals-emil-wallin-ds-a-stunning-move.html",
-  "dead_capture": "https://web.archive.org/web/20261021063223/https://swccg.com/snapshots/pc/2022-toola-regionals-emil-wallin-ds-a-stunning-move.html",
   "job_id": "spn2-ed6b5fd7e889d9d4ac97bc6076fdcfc1e2c5873f",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:44:09Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-emil-wallin-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021063334/https://swccg.com/snapshots/pc/2022-toola-regionals-emil-wallin-ls-old-allies.html",
-  "dead_capture": "https://web.archive.org/web/20261021063334/https://swccg.com/snapshots/pc/2022-toola-regionals-emil-wallin-ls-old-allies.html",
   "job_id": "spn2-981aa6bb93e69bd3daa4fe92883bd38d16f96592",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:44:19Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-jon-holtet-ds-coruscant-ssav-blasters.html": {
   "capture": "",
@@ -64770,17 +64688,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-jon-holtet-ls-skywalker-saga.html": {
   "capture": "https://web.archive.org/web/20261021070828/https://swccg.com/snapshots/pc/2022-toola-regionals-jon-holtet-ls-skywalker-saga.html",
-  "dead_capture": "https://web.archive.org/web/20261021070828/https://swccg.com/snapshots/pc/2022-toola-regionals-jon-holtet-ls-skywalker-saga.html",
   "job_id": "spn2-0240ef403fc0d6cafe0b649954dfc8f224d81745",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:44:30Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-jonas-hagen-norregaard-ds-aobs.html": {
   "capture": "",
@@ -65247,19 +65158,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-world-championship-top-8-joe-olson-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261021072154/https://swccg.com/snapshots/pc/2022-world-championship-top-8-joe-olson-ls-yoda-communing.html",
-  "dead_capture": "https://web.archive.org/web/20261021072154/https://swccg.com/snapshots/pc/2022-world-championship-top-8-joe-olson-ls-yoda-communing.html",
   "job_id": "spn2-a860fcf83959422890a1f5325c3ed58029017156",
-  "last": "2026-10-27T00:24:47Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T00:29:47Z",
-  "resnapshot_of": "https://www.starwarsccg.org/2022-world-championship-top-8-joe-olson-ls-yoda-communing/",
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T00:55:47Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "last": "2026-10-27T01:45:22Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-world-championship-wrap-desai-wins-third-title.html": {
   "capture": "https://web.archive.org/web/20261016160855/https://swccg.com/snapshots/pc/2022-world-championship-wrap-desai-wins-third-title.html",
@@ -65315,17 +65217,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-casey-johnson-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021070849/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-casey-johnson-ls-hitco.html",
-  "dead_capture": "https://web.archive.org/web/20261021070849/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-casey-johnson-ls-hitco.html",
   "job_id": "spn2-2111dfac6f44cc546b80336c023c43074d1eccab",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:45:11Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-dan-tartaglione-ds-ropsv.html": {
   "capture": "",
@@ -66309,17 +66204,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-garrett-larson-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021070931/https://swccg.com/snapshots/pc/2023-bespin-regionals-garrett-larson-ls-hitco.html",
-  "dead_capture": "https://web.archive.org/web/20261021070931/https://swccg.com/snapshots/pc/2023-bespin-regionals-garrett-larson-ls-hitco.html",
   "job_id": "spn2-304d1d48c82f6ab1689a55967626445657b16c36",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "last": "2026-10-27T01:45:33Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-jake-nelson-ds-senate.html": {
   "capture": "",
@@ -75650,10 +75538,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-tatooine-regionals-joe-olson-ds-rots-maul.html": {
   "capture": "https://web.archive.org/web/20261025080248/https://swccg.com/snapshots/pc/2024-tatooine-regionals-joe-olson-ds-rots-maul.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T01:02:03Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-f1181fb53c51cf4bc39bf64489dda047e6c9770c",
+  "last": "2026-10-27T01:39:26Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-tatooine-regionals-joe-olson-ls-luke-saga.html": {
   "capture": "",
@@ -77103,10 +76991,10 @@
  },
  "https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-joe-olson-ls-skywalker-saga-luke.html": {
   "capture": "https://web.archive.org/web/20261025093248/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-joe-olson-ls-skywalker-saga-luke.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T01:02:35Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-fbb35cef905413171e3dd78ab9d6d18a0428622e",
+  "last": "2026-10-27T01:39:36Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-karl-koenig-ds-eops.html": {
   "capture": "",
@@ -78254,17 +78142,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-bespin-regionals-carson-stockman-ds-map.html": {
   "capture": "https://web.archive.org/web/20261025115527/https://swccg.com/snapshots/pc/2026-bespin-regionals-carson-stockman-ds-map.html",
-  "dead_capture": "https://web.archive.org/web/20261025115527/https://swccg.com/snapshots/pc/2026-bespin-regionals-carson-stockman-ds-map.html",
   "job_id": "spn2-e7273f0cb26c0504a9cf40dab7bc5c0f8e66342f",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T01:39:47Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-bespin-regionals-carson-stockman-ls-skywalker-saga-luke.html": {
   "capture": "",
@@ -82156,19 +82037,10 @@
  },
  "https://swccg.com/snapshots/scomp/2x-3kpr-tooex.html": {
   "capture": "https://web.archive.org/web/20261023223223/https://swccg.com/snapshots/scomp/2x-3kpr-tooex.html",
-  "dead_capture": "https://web.archive.org/web/20261023223223/https://swccg.com/snapshots/scomp/2x-3kpr-tooex.html",
-  "job_id": "spn2-5574839a2c776722fa5395959d0089b695435062",
-  "last": "2026-10-27T00:55:06Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T01:10:29Z",
-  "resnapshot_of": "https://scomp.starwarsccg.org/?s=2X-3KPR%20%28Tooex%29",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T01:35:45Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T01:26:06Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/3-720-to-1.html": {
   "capture": "",
@@ -82200,19 +82072,10 @@
  },
  "https://swccg.com/snapshots/scomp/4-lom-with-concussion-rifle-v-ai.html": {
   "capture": "https://web.archive.org/web/20261023223228/https://swccg.com/snapshots/scomp/4-lom-with-concussion-rifle-v-ai.html",
-  "dead_capture": "https://web.archive.org/web/20261023223228/https://swccg.com/snapshots/scomp/4-lom-with-concussion-rifle-v-ai.html",
   "job_id": "spn2-9484b3b4674809ee59eec3949c69d8ba37915f47",
-  "last": "2026-10-27T00:55:06Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T01:12:13Z",
-  "resnapshot_of": "https://scomp.starwarsccg.org/?s=4-LOM%20With%20Concussion%20Rifle%20%28V%29%20%28AI%29",
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T01:26:06Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "last": "2026-10-27T01:36:06Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/4-lom-with-concussion-rifle.html": {
   "capture": "https://web.archive.org/web/20261023221816/https://swccg.com/snapshots/scomp/4-lom-with-concussion-rifle.html",
@@ -82264,19 +82127,10 @@
  },
  "https://swccg.com/snapshots/scomp/a-dark-time-for-the-rebellion.html": {
   "capture": "https://web.archive.org/web/20261023223324/https://swccg.com/snapshots/scomp/a-dark-time-for-the-rebellion.html",
-  "dead_capture": "https://web.archive.org/web/20261023223324/https://swccg.com/snapshots/scomp/a-dark-time-for-the-rebellion.html",
   "job_id": "spn2-8d2ca6d074e76b607bb77208c6377de553ee083a",
-  "last": "2026-10-27T00:55:06Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T01:15:31Z",
-  "resnapshot_of": "https://scomp.starwarsccg.org/?s=A%20Dark%20Time%20For%20The%20Rebellion",
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T01:26:06Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "last": "2026-10-27T01:36:27Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/a-day-long-remembered-v.html": {
   "capture": "https://web.archive.org/web/20261023221652/https://swccg.com/snapshots/scomp/a-day-long-remembered-v.html",
@@ -82523,19 +82377,10 @@
  },
  "https://swccg.com/snapshots/scomp/aayla-secura-holo-ai.html": {
   "capture": "https://web.archive.org/web/20261023223213/https://swccg.com/snapshots/scomp/aayla-secura-holo-ai.html",
-  "dead_capture": "https://web.archive.org/web/20261023223213/https://swccg.com/snapshots/scomp/aayla-secura-holo-ai.html",
-  "job_id": "spn2-5b23857aba2696f6e661e2bc24444611ea17d3d7",
-  "last": "2026-10-27T00:55:06Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T01:23:43Z",
-  "resnapshot_of": "https://scomp.starwarsccg.org/?s=Aayla%20Secura%20%28Holo%20AI%29",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T01:35:55Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T01:26:06Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/abyss.html": {
   "capture": "",
@@ -82545,11 +82390,19 @@
   "tries": 6
  },
  "https://swccg.com/snapshots/scomp/abyssin-ornament-wounded-wookiee.html": {
-  "capture": "https://web.archive.org/web/20261024003122/https://swccg.com/snapshots/scomp/abyssin-ornament-wounded-wookiee.html",
+  "capture": "https://web.archive.org/web/20261027013320/https://swccg.com/snapshots/scomp/abyssin-ornament-wounded-wookiee.html",
   "job_id": "spn2-52454268f639154e9fb864b2fac8abaadeb15832",
-  "last": "2026-10-27T01:33:16Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T01:35:37Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T01:35:37Z",
+   "bytes": 411125,
+   "capture_id": "https://web.archive.org/web/20261027013320id_/https://swccg.com/snapshots/scomp/abyssin-ornament-wounded-wookiee.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "16435cb8b750b2ec2660a53449bab68895042c122c151473b41d13f00dc6673b"
+  }
  },
  "https://swccg.com/snapshots/scomp/accelerate-v.html": {
   "capture": "https://web.archive.org/web/20261023222231/https://swccg.com/snapshots/scomp/accelerate-v.html",
@@ -82602,19 +82455,10 @@
  },
  "https://swccg.com/snapshots/scomp/admiral-motti-v.html": {
   "capture": "https://web.archive.org/web/20261023223340/https://swccg.com/snapshots/scomp/admiral-motti-v.html",
-  "dead_capture": "https://web.archive.org/web/20261023223340/https://swccg.com/snapshots/scomp/admiral-motti-v.html",
-  "job_id": "spn2-598f9b7e9a9386dec9886307e812357069fa8e83",
-  "last": "2026-10-27T00:55:06Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T01:25:23Z",
-  "resnapshot_of": "https://scomp.starwarsccg.org/?s=Admiral%20Motti%20%28V%29",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T01:36:16Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T01:26:06Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/admiral-piett.html": {
   "capture": "https://web.archive.org/web/20261023222121/https://swccg.com/snapshots/scomp/admiral-piett.html",
@@ -83518,10 +83362,10 @@
  },
  "https://swccg.com/snapshots/scomp/azure-angel-ai.html": {
   "capture": "https://web.archive.org/web/20261025052129/https://swccg.com/snapshots/scomp/azure-angel-ai.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T00:59:45Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-cbc3aa41acf9e243650a7c60bc5b86fd130d86f6",
+  "last": "2026-10-27T01:38:22Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/azure-angel.html": {
   "capture": "https://web.archive.org/web/20261024095441/https://swccg.com/snapshots/scomp/azure-angel.html",
@@ -83602,10 +83446,10 @@
  },
  "https://swccg.com/snapshots/scomp/bacta-tank.html": {
   "capture": "https://web.archive.org/web/20261025053933/https://swccg.com/snapshots/scomp/bacta-tank.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T00:59:55Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-a117cc3f3c31ca32c3500bde3c51f124e49e4d7d",
+  "last": "2026-10-27T01:38:32Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/bad-feeling-have-i.html": {
   "capture": "",
@@ -83895,10 +83739,10 @@
  },
  "https://swccg.com/snapshots/scomp/bb-8-beebee-ate.html": {
   "capture": "https://web.archive.org/web/20261024234844/https://swccg.com/snapshots/scomp/bb-8-beebee-ate.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T00:57:36Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-5a9864cbd0c1fdfd0774a0d0904abb0eaec4a59c",
+  "last": "2026-10-27T01:37:30Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/bb-8-in-black-squadron-1-ai.html": {
   "capture": "https://web.archive.org/web/20261024210119/https://swccg.com/snapshots/scomp/bb-8-in-black-squadron-1-ai.html",
@@ -85375,10 +85219,10 @@
  },
  "https://swccg.com/snapshots/scomp/captain-cassian-andor.html": {
   "capture": "https://web.archive.org/web/20261024111326/https://swccg.com/snapshots/scomp/captain-cassian-andor.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T00:57:05Z",
-  "status": "retry",
-  "tries": 5
+  "job_id": "spn2-8aedf4caf9ecd3ec5be01239db99d39a91c0035a",
+  "last": "2026-10-27T01:36:37Z",
+  "status": "pending",
+  "tries": 6
  },
  "https://swccg.com/snapshots/scomp/captain-daultay-dofine.html": {
   "capture": "",
@@ -87093,10 +86937,10 @@
  },
  "https://swccg.com/snapshots/scomp/cloud-city-downtown-plaza.html": {
   "capture": "https://web.archive.org/web/20261024211218/https://swccg.com/snapshots/scomp/cloud-city-downtown-plaza.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T00:57:25Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-abe47cf4f29e513f83eb41df8eca4f829ab7eaf0",
+  "last": "2026-10-27T01:37:19Z",
+  "status": "pending",
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/cloud-city-east-platform-docking-bay.html": {
   "capture": "https://web.archive.org/web/20261023224325/https://swccg.com/snapshots/scomp/cloud-city-east-platform-docking-bay.html",
@@ -93059,10 +92903,10 @@
  },
  "https://swccg.com/snapshots/scomp/gall.html": {
   "capture": "https://web.archive.org/web/20261025055129/https://swccg.com/snapshots/scomp/gall.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T01:00:05Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-216c7b272eb167cb447f3de0b89a424a45030a30",
+  "last": "2026-10-27T01:38:43Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/gamall-wironicc.html": {
   "capture": "",
@@ -97920,10 +97764,10 @@
  },
  "https://swccg.com/snapshots/scomp/krennic-death-star-commandant.html": {
   "capture": "https://web.archive.org/web/20261025045428/https://swccg.com/snapshots/scomp/krennic-death-star-commandant.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T00:59:25Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-618378a65ad75e92876672c4f44ce2b472dad8ae",
+  "last": "2026-10-27T01:37:40Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/kuat-drive-yards-v.html": {
   "capture": "",
