@@ -7,13 +7,15 @@ Optional '''publisher''' — who released this printing (<code>[[Decipher]]</cod
 
 Optional '''era''' — championship era hub: <code>[[Decipher era]]</code>, <code>[[Virtual Original]]</code>, <code>[[Virtual Legacy]]</code>, or <code>[[Virtual Modern]]</code>. Renders after Publisher when filled.
 
-'''GEMP ID''' — GEMP blueprint id as <code>set_card</code> (for example <code>1220_51</code>). Pass '''gemp_id''' or the older '''card_uid''' (alias). Shown in monospace. Dest keys such as <code>pc|vbN|...</code> belong in authoring JSON, not here.
+'''GEMP ID''' — the id GEMP actually loads, as <code>set_card</code> (for example <code>1220_51</code>, <code>1_19</code>). Bare on the current playable article, <code>o</code> on the first-published face, <code>d</code> only as a middle layer when print, Decipher errata, and PC errata are three distinct texts. Pass '''gemp_id''' or the older '''card_uid''' (alias). Shown in monospace. Dest keys such as <code>pc|vbN|...</code> belong in authoring JSON, not here.
 
 Optional '''pc_alias''' — Players Committee GEMP alias (<code>601_x</code> / <code>501_x</code>) when it differs from the GEMP ID.
 
 Optional '''slip''' — printed slip number on the virtual sheet (for example <code>51E</code>). Data, not the id.
 
-'''Versions''' — lineage of printings, prefixes Virtual-first (Decipher, Virtual Original, Virtual Legacy, Virtual Modern). Pass '''versions''' or the older '''printings''' (alias). Mark the current printing with bold '''this page''' plus the GEMP id in <code><nowiki><code></nowiki></code>.
+'''Versions''' — family navigator (Option C, 26 October 2026; errata prefix 26 October 2026). Closed prefixes, oldest first: Decipher, Decipher (AI), Decipher Errata, PC Errata, Virtual Original, Virtual Legacy, Virtual Legacy (AI), Virtual Modern, Virtual Modern (ALT). Unmarked Decipher is the printed face. Decipher Errata is a later Decipher rewrite. PC Errata only when the Players Committee rewrote past Decipher. Full lineage both directions. Omit when this printing is the only one. Host twins that share one GEMP id use one line plus a hatnote. Pass '''versions''' or the older '''printings''' (alias). Mark the current printing with bold '''this page''' plus the GEMP id in <code><nowiki><code></nowiki></code>. Worked: [[Luke Skywalker]].
+
+Do not pass '''version_label'''. The old Version row (printed / virtual) is dropped. Era and Versions already mark Players Committee printings as Virtual Original, Virtual Legacy, or Virtual Modern.
 
 
 Optional '''likeness''' — person whose face is on the card: a photographic model Decipher (or the Players Committee) cast, or the film portrayer of that character. Wiki-link the person page. Worked: [[Mara Jade, The Emperor's Hand]] → [[Shannon Baksa]]; [[Aurra Sing]] / [[Aurra Sing (AI)]] → [[Michonne Bourriague]]. Omit when the art is illustration, a starship/weapon, or a later virtual photograph that is not that person.
@@ -72,7 +74,6 @@ Optional '''image2_layout''' — how to place '''image2''' when set:
 |sources=
 |prev=
 |next=Beru Lars
-|version_label=printed
 |set_band=Decipher
 }}
 </pre>
