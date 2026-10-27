@@ -76299,9 +76299,9 @@
  "https://swccg.com/snapshots/scomp/admiral-raddus.html": {
   "capture": "https://web.archive.org/web/20261023221724/https://swccg.com/snapshots/scomp/admiral-raddus.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T10:45:01Z",
+  "last": "2026-10-27T11:16:17Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/admiral-trench-holo-ai.html": {
   "capture": "https://web.archive.org/web/20261023233600/https://swccg.com/snapshots/scomp/admiral-trench-holo-ai.html",
@@ -76341,16 +76341,16 @@
  "https://swccg.com/snapshots/scomp/advantage.html": {
   "capture": "https://web.archive.org/web/20261023222238/https://swccg.com/snapshots/scomp/advantage.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T10:45:22Z",
+  "last": "2026-10-27T11:16:37Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/aemon-gremm-with-percussive-cannon.html": {
   "capture": "https://web.archive.org/web/20261023221735/https://swccg.com/snapshots/scomp/aemon-gremm-with-percussive-cannon.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T10:45:11Z",
+  "last": "2026-10-27T11:16:27Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/after-her.html": {
   "capture": "https://web.archive.org/web/20261023223324/https://swccg.com/snapshots/scomp/after-her.html",
@@ -83927,19 +83927,10 @@
  },
  "https://swccg.com/snapshots/scomp/domain-of-evil.html": {
   "capture": "https://web.archive.org/web/20261024013929/https://swccg.com/snapshots/scomp/domain-of-evil.html",
-  "dead_capture": "https://web.archive.org/web/20261024013929/https://swccg.com/snapshots/scomp/domain-of-evil.html",
-  "job_id": "spn2-1e6666813d2e8d87a056ad3704db2365266a6ad3",
-  "last": "2026-10-27T10:09:34Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T02:10:31Z",
-  "resnapshot_of": "https://scomp.starwarsccg.org/?s=Domain%20Of%20Evil",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T11:16:58Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T10:40:34Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/dominator.html": {
   "capture": "",
@@ -84813,9 +84804,9 @@
  "https://swccg.com/snapshots/scomp/encampment.html": {
   "capture": "https://web.archive.org/web/20261023223233/https://swccg.com/snapshots/scomp/encampment.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T10:45:32Z",
+  "last": "2026-10-27T11:16:47Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/end-of-a-reign.html": {
   "capture": "https://web.archive.org/web/20261024234741/https://swccg.com/snapshots/scomp/end-of-a-reign.html",
@@ -92218,11 +92209,18 @@
   "tries": 1
  },
  "https://theforce.net/ccg/story/TCG_Championship_Results_65574.asp": {
-  "capture": "https://web.archive.org/web/20261022214351/https://theforce.net/ccg/story/TCG_Championship_Results_65574.asp",
+  "capture": "https://web.archive.org/web/20261027111218/https://theforce.net/ccg/story/TCG_Championship_Results_65574.asp",
   "job_id": "spn2-67ddcc8c313f6b30af60a3e1e767b11310dbd3a5",
-  "last": "2026-10-27T11:12:15Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T11:16:16Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T11:17:14Z",
+   "capture_id": "https://web.archive.org/web/20261027111218id_/https://theforce.net/ccg/story/TCG_Championship_Results_65574.asp",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://thewaltdisneycompany.com/news/disney-acquire-lucasfilm/": {
   "capture": "https://web.archive.org/web/20261008194445/https://thewaltdisneycompany.com/news/disney-acquire-lucasfilm/",
@@ -93683,11 +93681,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/14512/": {
-  "capture": "https://web.archive.org/web/20261023044455/https://www.stephenskilton.com/decktech_archives/14512/",
+  "capture": "https://web.archive.org/web/20261027111228/https://www.stephenskilton.com/decktech_archives/14512/",
   "job_id": "spn2-c86ef2cd5a9c0fa5075efcb04cf375a0fbe9f4f3",
-  "last": "2026-10-27T11:12:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T11:16:13Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T11:16:13Z",
+   "bytes": 11664,
+   "capture_id": "https://web.archive.org/web/20261027111228id_/https://www.stephenskilton.com/decktech_archives/14512/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3a26c7c7f2a5edf8ecfceb4f4adcb9d393636f2c72e6fbc7d8297a7233a01fdf"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/14519/": {
   "capture": "https://web.archive.org/web/20261027104007/https://www.stephenskilton.com/decktech_archives/14519/",
@@ -93840,11 +93846,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/14561/": {
-  "capture": "https://web.archive.org/web/20261023045432/https://www.stephenskilton.com/decktech_archives/14561/",
+  "capture": "https://web.archive.org/web/20261027111329/https://www.stephenskilton.com/decktech_archives/14561/",
   "job_id": "spn2-4aa233d762a9188df57f9a4b67350ffb910b2c6e",
-  "last": "2026-10-27T11:13:07Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T11:16:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T11:16:07Z",
+   "bytes": 9688,
+   "capture_id": "https://web.archive.org/web/20261027111329id_/https://www.stephenskilton.com/decktech_archives/14561/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a8761c66197cab9cf1efc9678dbf7055eb51d3ce4e5003388a09b88a57ca5547"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/14571/": {
   "capture": "",
@@ -93868,11 +93882,19 @@
   "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/14577/": {
-  "capture": "https://web.archive.org/web/20261023045617/https://www.stephenskilton.com/decktech_archives/14577/",
+  "capture": "https://web.archive.org/web/20261027111353/https://www.stephenskilton.com/decktech_archives/14577/",
   "job_id": "spn2-7a5e14041898da33d8f08a8a49a965636bf65a19",
-  "last": "2026-10-27T11:13:18Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T11:16:03Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T11:16:03Z",
+   "bytes": 13813,
+   "capture_id": "https://web.archive.org/web/20261027111353id_/https://www.stephenskilton.com/decktech_archives/14577/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9fac2b7b1e95051ca008fa1003cdbc96cbf5775298064e13ccfd438e6ade5358"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/14581/": {
   "capture": "https://web.archive.org/web/20261023050828/https://www.stephenskilton.com/decktech_archives/14581/",
