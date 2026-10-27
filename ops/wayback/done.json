@@ -19157,11 +19157,19 @@
   }
  },
  "http://www.decktech.net/starwarsccg/deck/18663": {
-  "capture": "https://web.archive.org/web/20261020224247/https://www.decktech.net/starwarsccg/deck/18663/",
+  "capture": "https://web.archive.org/web/20261027050140/https://www.decktech.net/starwarsccg/deck/18663/",
   "job_id": "spn2-a9e58da80730218146b1ad0172925fdadede4502",
-  "last": "2026-10-27T05:01:29Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T05:08:54Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T05:08:54Z",
+   "bytes": 19978,
+   "capture_id": "https://web.archive.org/web/20261027050140id_/https://www.decktech.net/starwarsccg/deck/18663/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bf7aabfaa8eb0becadea466f3b1627c2580ce3ec65ffee9c670838600b610062"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18668": {
   "capture": "https://web.archive.org/web/20261017142657/https://www.decktech.net/starwarsccg/deck/18668/",
@@ -51603,34 +51611,17 @@
  },
  "https://swccg.com/snapshots/forum/t55887.html": {
   "capture": "https://web.archive.org/web/20261022025229/https://swccg.com/snapshots/forum/t55887.html",
-  "dead_capture": "https://web.archive.org/web/20261022025229/https://swccg.com/snapshots/forum/t55887.html",
-  "job_id": "spn2-568420ed900fddc8987c31f304e1436462c4ccba",
-  "last": "2026-10-26T23:24:08Z",
-  "recapture": true,
-  "resnapshot": "2026-10-26T21:45:40Z",
-  "resnapshot_of": "https://forum.starwarsccg.org/viewtopic.php?t=55887",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:09:38Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T23:55:08Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/t55897.html": {
   "capture": "https://web.archive.org/web/20261022033406/https://swccg.com/snapshots/forum/t55897.html",
-  "dead_capture": "https://web.archive.org/web/20261022033406/https://swccg.com/snapshots/forum/t55897.html",
-  "last": "2026-10-26T23:24:08Z",
-  "recapture": true,
-  "resnapshot": "2026-10-26T21:47:14Z",
-  "resnapshot_of": "https://forum.starwarsccg.org/viewtopic.php?t=55897",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:09:48Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T23:55:08Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/t55902.html": {
   "capture": "https://web.archive.org/web/20261022032443/https://swccg.com/snapshots/forum/t55902.html",
@@ -67877,10 +67868,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ds-tto.html": {
-  "capture": "https://web.archive.org/web/20261022035528/https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ds-tto.html",
+  "capture": "https://web.archive.org/web/20261027045941/https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ds-tto.html",
   "job_id": "spn2-40cb4f0e2844c635e87b183c71b58aa5ca958bf3",
-  "last": "2026-10-27T04:59:37Z",
-  "status": "pending",
+  "last": "2026-10-27T05:09:17Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ls-diplo.html": {
@@ -68922,9 +68913,9 @@
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-thornton-ls-wys.html": {
   "capture": "https://web.archive.org/web/20261021115221/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-thornton-ls-wys.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T04:38:49Z",
+  "last": "2026-10-27T05:09:18Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-wadden-ds-ropsv.html": {
   "capture": "https://web.archive.org/web/20261021114350/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-wadden-ds-ropsv.html",
@@ -70235,19 +70226,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-06-european-championships-copenhagen-denmark-may-17th-2024.html": {
   "capture": "https://web.archive.org/web/20261022024724/https://swccg.com/snapshots/pc/2024-06-european-championships-copenhagen-denmark-may-17th-2024.html",
-  "dead_capture": "https://web.archive.org/web/20261022024724/https://swccg.com/snapshots/pc/2024-06-european-championships-copenhagen-denmark-may-17th-2024.html",
-  "job_id": "spn2-a8e52d369ec7dffb5a05f2afbd9a494c4ccdd2f9",
-  "last": "2026-10-27T00:24:47Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T00:44:22Z",
-  "resnapshot_of": "https://www.starwarsccg.org/2024-06-european-championships-copenhagen-denmark-may-17th-2024/",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:09:28Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T00:55:47Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-07-online-retro-event-for-charity-classic-no-v-bf.html": {
   "capture": "https://web.archive.org/web/20261022033251/https://swccg.com/snapshots/pc/2024-07-online-retro-event-for-charity-classic-no-v-bf.html",
@@ -77433,11 +77415,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-will-tarbox-ls-hidden-base.html": {
-  "capture": "https://web.archive.org/web/20261020234903/https://swccg.com/snapshots/pc/2026-retro-gempc-will-tarbox-ls-hidden-base.html",
+  "capture": "https://web.archive.org/web/20261027050250/https://swccg.com/snapshots/pc/2026-retro-gempc-will-tarbox-ls-hidden-base.html",
   "job_id": "spn2-e013c16d8651292e0d5f6bedc6ef9dfd3d46b465",
-  "last": "2026-10-27T05:00:19Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T05:09:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T05:09:12Z",
+   "bytes": 7120405,
+   "capture_id": "https://web.archive.org/web/20261027050250id_/https://swccg.com/snapshots/pc/2026-retro-gempc-will-tarbox-ls-hidden-base.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "caaf8663186a57b53ad9299c368b147cbe3fb9366b1f744d9863ca1df9c6da20"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-zachary-behm-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261016110026/https://swccg.com/snapshots/pc/2026-retro-gempc-zachary-behm-ds-ralltiir-operations.html",
@@ -77725,19 +77715,10 @@
  },
  "https://swccg.com/snapshots/pc/call-for-applications-dd-team-and-player-card-dev-team.html": {
   "capture": "https://web.archive.org/web/20261022035159/https://swccg.com/snapshots/pc/call-for-applications-dd-team-and-player-card-dev-team.html",
-  "dead_capture": "https://web.archive.org/web/20261022035159/https://swccg.com/snapshots/pc/call-for-applications-dd-team-and-player-card-dev-team.html",
-  "job_id": "spn2-064486d1eda05d4f32a47eb69fbc5768fa2f57d1",
-  "last": "2026-10-27T00:24:47Z",
-  "recapture": true,
-  "resnapshot": "2026-10-27T00:50:20Z",
-  "resnapshot_of": "https://www.starwarsccg.org/call-for-applications-dd-team-and-player-card-dev-team/",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:09:59Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T00:55:47Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/champions-league-finals-joe-olson-ds-ropsv.html": {
   "capture": "https://web.archive.org/web/20261016110055/https://swccg.com/snapshots/pc/champions-league-finals-joe-olson-ds-ropsv.html",
@@ -77768,11 +77749,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/champions-league-finals-matthew-harrison-trainor-ls-hitco.html": {
-  "capture": "https://web.archive.org/web/20261020043555/https://swccg.com/snapshots/pc/champions-league-finals-matthew-harrison-trainor-ls-hitco.html",
+  "capture": "https://web.archive.org/web/20261027050044/https://swccg.com/snapshots/pc/champions-league-finals-matthew-harrison-trainor-ls-hitco.html",
   "job_id": "spn2-0419f27cfcd777cb96d1c9926107ef69e1da212d",
-  "last": "2026-10-27T05:00:40Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T05:09:03Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T05:09:03Z",
+   "bytes": 7120921,
+   "capture_id": "https://web.archive.org/web/20261027050044id_/https://swccg.com/snapshots/pc/champions-league-finals-matthew-harrison-trainor-ls-hitco.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2d5f0f28f4bbf477ef06d6bf511d9c057c5a54cd4e6ced97be746329ff45bed0"
+  }
  },
  "https://swccg.com/snapshots/pc/champions-league-quarterfinals-brian-fred-ds-tdigwatt.html": {
   "capture": "https://web.archive.org/web/20261016110215/https://swccg.com/snapshots/pc/champions-league-quarterfinals-brian-fred-ds-tdigwatt.html",
