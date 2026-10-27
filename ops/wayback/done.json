@@ -76347,9 +76347,9 @@
  "https://swccg.com/snapshots/scomp/admiral-raddus.html": {
   "capture": "https://web.archive.org/web/20261023221724/https://swccg.com/snapshots/scomp/admiral-raddus.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T12:51:52Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-27T13:30:52Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/scomp/admiral-trench-holo-ai.html": {
   "capture": "https://web.archive.org/web/20261023233600/https://swccg.com/snapshots/scomp/admiral-trench-holo-ai.html",
@@ -97287,10 +97287,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/15973/": {
   "capture": "https://web.archive.org/web/20261023100349/https://www.stephenskilton.com/decktech_archives/15973/",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T12:55:15Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-2c9edfa2aca20472c4b829c1f619a41101c8cc08",
+  "last": "2026-10-27T13:31:02Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/15974/": {
   "capture": "https://web.archive.org/web/20261023101422/https://www.stephenskilton.com/decktech_archives/15974/",
@@ -97336,10 +97336,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/16010/": {
   "capture": "https://web.archive.org/web/20261023100609/https://www.stephenskilton.com/decktech_archives/16010/",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T12:55:25Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-6e20a00e488450b11be514d037f47b154db8db7e",
+  "last": "2026-10-27T13:31:13Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://www.stephenskilton.com/decktech_archives/16015/": {
   "capture": "",
@@ -98322,17 +98322,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/16698/": {
   "capture": "https://web.archive.org/web/20261023114713/https://www.stephenskilton.com/decktech_archives/16698/",
-  "dead_capture": "https://web.archive.org/web/20261023114713/https://www.stephenskilton.com/decktech_archives/16698/",
-  "job_id": "spn2-76e89dd5fb66b925279cb17855297d3069b8398b",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T13:31:23Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/16699/": {
   "capture": "https://web.archive.org/web/20261023113712/https://www.stephenskilton.com/decktech_archives/16699/",
@@ -98526,17 +98519,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/16874/": {
   "capture": "https://web.archive.org/web/20261023114933/https://www.stephenskilton.com/decktech_archives/16874/",
-  "dead_capture": "https://web.archive.org/web/20261023114933/https://www.stephenskilton.com/decktech_archives/16874/",
-  "job_id": "spn2-40397560e4dd6318ce4d654b9f293587c22ed102",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T13:31:33Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/16877/": {
   "capture": "https://web.archive.org/web/20261023130140/https://www.stephenskilton.com/decktech_archives/16877/",
@@ -98617,17 +98603,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/16948/": {
   "capture": "https://web.archive.org/web/20261023115139/https://www.stephenskilton.com/decktech_archives/16948/",
-  "dead_capture": "https://web.archive.org/web/20261023115139/https://www.stephenskilton.com/decktech_archives/16948/",
   "job_id": "spn2-5c953e947608c4078b82c70f3beb1206ced93f63",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:31:44Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/16953/": {
   "capture": "https://web.archive.org/web/20261023120226/https://www.stephenskilton.com/decktech_archives/16953/",
@@ -98888,11 +98867,19 @@
   "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17095/": {
-  "capture": "https://web.archive.org/web/20261023123335/https://www.stephenskilton.com/decktech_archives/17095/",
+  "capture": "https://web.archive.org/web/20261027132828/https://www.stephenskilton.com/decktech_archives/17095/",
   "job_id": "spn2-4d17c442d55acba9f5492fb5c369ce4be6ff83a8",
-  "last": "2026-10-27T13:27:32Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T13:30:50Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T13:41:11Z",
+   "bytes": 11832,
+   "capture_id": "https://web.archive.org/web/20261027132828id_/https://www.stephenskilton.com/decktech_archives/17095/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "244b58fda4ee3bfa6a610c2f6df78f6f05006236600eb822b64a54d18c9f4a2a"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/17096/": {
   "capture": "",
@@ -98916,11 +98903,19 @@
   "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17104/": {
-  "capture": "https://web.archive.org/web/20261023124244/https://www.stephenskilton.com/decktech_archives/17104/",
+  "capture": "https://web.archive.org/web/20261027132746/https://www.stephenskilton.com/decktech_archives/17104/",
   "job_id": "spn2-a5e13a2ec798dcdbce334bebe2311f0ec914a4d4",
-  "last": "2026-10-27T13:27:44Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T13:30:47Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T13:30:47Z",
+   "bytes": 13774,
+   "capture_id": "https://web.archive.org/web/20261027132746id_/https://www.stephenskilton.com/decktech_archives/17104/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5cc41ab628f032b9995b227c7580b91d826a6bb3f051d0356930bdac695f32be"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/17112/": {
   "capture": "https://web.archive.org/web/20261023121833/https://www.stephenskilton.com/decktech_archives/17112/",
@@ -98938,17 +98933,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17126/": {
   "capture": "https://web.archive.org/web/20261023121845/https://www.stephenskilton.com/decktech_archives/17126/",
-  "dead_capture": "https://web.archive.org/web/20261023121845/https://www.stephenskilton.com/decktech_archives/17126/",
   "job_id": "spn2-22dcc409f0508fcacd2a04f7166e954702cd88d7",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:32:26Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17128/": {
   "capture": "https://web.archive.org/web/20261023121949/https://www.stephenskilton.com/decktech_archives/17128/",
@@ -99014,11 +99002,19 @@
   "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17154/": {
-  "capture": "https://web.archive.org/web/20261023122037/https://www.stephenskilton.com/decktech_archives/17154/",
+  "capture": "https://web.archive.org/web/20261027132859/https://www.stephenskilton.com/decktech_archives/17154/",
   "job_id": "spn2-6a1dc37af7cf18caddddf09747dd7d9378647106",
-  "last": "2026-10-27T13:28:56Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T13:30:42Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T13:30:42Z",
+   "bytes": 12367,
+   "capture_id": "https://web.archive.org/web/20261027132859id_/https://www.stephenskilton.com/decktech_archives/17154/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "025ce86763cc0820eb9b5d49b08c6eadc27de15eaae7977f2280f3722faf43e7"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/17160/": {
   "capture": "https://web.archive.org/web/20261023123429/https://www.stephenskilton.com/decktech_archives/17160/",
@@ -99036,17 +99032,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17196/": {
   "capture": "https://web.archive.org/web/20261023124306/https://www.stephenskilton.com/decktech_archives/17196/",
-  "dead_capture": "https://web.archive.org/web/20261023124306/https://www.stephenskilton.com/decktech_archives/17196/",
   "job_id": "spn2-11718930b21bced310c6b1b93129353281dd1b09",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:32:37Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17208/": {
   "capture": "https://web.archive.org/web/20261023124317/https://www.stephenskilton.com/decktech_archives/17208/",
@@ -99064,17 +99053,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17230/": {
   "capture": "https://web.archive.org/web/20261023124328/https://www.stephenskilton.com/decktech_archives/17230/",
-  "dead_capture": "https://web.archive.org/web/20261023124328/https://www.stephenskilton.com/decktech_archives/17230/",
   "job_id": "spn2-b6a8154a3cd147493cbe166e4ce2ef979e624b74",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:32:47Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17291/": {
   "capture": "https://web.archive.org/web/20261023125707/https://www.stephenskilton.com/decktech_archives/17291/",
@@ -99267,17 +99249,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17427/": {
   "capture": "https://web.archive.org/web/20261023202353/https://www.stephenskilton.com/decktech_archives/17427/",
-  "dead_capture": "https://web.archive.org/web/20261023202353/https://www.stephenskilton.com/decktech_archives/17427/",
   "job_id": "spn2-c2b78c2593abc52d024fe27022721af051ba41e2",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:33:29Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17429/": {
   "capture": "https://web.archive.org/web/20261023202404/https://www.stephenskilton.com/decktech_archives/17429/",
@@ -99295,31 +99270,17 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17437/": {
   "capture": "https://web.archive.org/web/20261023202416/https://www.stephenskilton.com/decktech_archives/17437/",
-  "dead_capture": "https://web.archive.org/web/20261023202416/https://www.stephenskilton.com/decktech_archives/17437/",
   "job_id": "spn2-bee4e099997a5915876aedbc1008b8794518205c",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:33:40Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17444/": {
   "capture": "https://web.archive.org/web/20261023202427/https://www.stephenskilton.com/decktech_archives/17444/",
-  "dead_capture": "https://web.archive.org/web/20261023202427/https://www.stephenskilton.com/decktech_archives/17444/",
   "job_id": "spn2-32415f23d08a4de27bf98f4303bd8e5828cf81be",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:33:51Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17452/": {
   "capture": "",
@@ -99330,17 +99291,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17460/": {
   "capture": "https://web.archive.org/web/20261023202510/https://www.stephenskilton.com/decktech_archives/17460/",
-  "dead_capture": "https://web.archive.org/web/20261023202510/https://www.stephenskilton.com/decktech_archives/17460/",
   "job_id": "spn2-d6d77d578d9eb6d66dde8af56d9a9073f6ec9d5e",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:34:01Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17464/": {
   "capture": "https://web.archive.org/web/20261023202521/https://www.stephenskilton.com/decktech_archives/17464/",
@@ -99358,17 +99312,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17472/": {
   "capture": "https://web.archive.org/web/20261023202532/https://www.stephenskilton.com/decktech_archives/17472/",
-  "dead_capture": "https://web.archive.org/web/20261023202532/https://www.stephenskilton.com/decktech_archives/17472/",
   "job_id": "spn2-1d1f121e250a29c721d75dfddf1d743dd33e0fd2",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:34:12Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17475/": {
   "capture": "",
@@ -99400,17 +99347,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17512/": {
   "capture": "https://web.archive.org/web/20261023202635/https://www.stephenskilton.com/decktech_archives/17512/",
-  "dead_capture": "https://web.archive.org/web/20261023202635/https://www.stephenskilton.com/decktech_archives/17512/",
   "job_id": "spn2-c69e732cb229e7bc9d372ea82999a140fd2def9c",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:34:23Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17520/": {
   "capture": "https://web.archive.org/web/20261025122033/https://www.stephenskilton.com/decktech_archives/17520/",
@@ -99498,17 +99438,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17559/": {
   "capture": "https://web.archive.org/web/20261023202933/https://www.stephenskilton.com/decktech_archives/17559/",
-  "dead_capture": "https://web.archive.org/web/20261023202933/https://www.stephenskilton.com/decktech_archives/17559/",
   "job_id": "spn2-f0b7bc66e3c015df0ffeefeca2656f24ac398b37",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:35:04Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17564/": {
   "capture": "https://web.archive.org/web/20261025122155/https://www.stephenskilton.com/decktech_archives/17564/",
@@ -99728,17 +99661,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17745/": {
   "capture": "https://web.archive.org/web/20261025123226/https://www.stephenskilton.com/decktech_archives/17745/",
-  "dead_capture": "https://web.archive.org/web/20261025123226/https://www.stephenskilton.com/decktech_archives/17745/",
   "job_id": "spn2-363a5610f3e79dc0d2bea0cff2203532698727b0",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:35:15Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17747/": {
   "capture": "https://web.archive.org/web/20261025123236/https://www.stephenskilton.com/decktech_archives/17747/",
@@ -99763,17 +99689,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17774/": {
   "capture": "https://web.archive.org/web/20261025123319/https://www.stephenskilton.com/decktech_archives/17774/",
-  "dead_capture": "https://web.archive.org/web/20261025123319/https://www.stephenskilton.com/decktech_archives/17774/",
   "job_id": "spn2-3657746bafe4c3c0e3580cd2ce3c2d2100a11035",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:35:25Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17778/": {
   "capture": "https://web.archive.org/web/20261025123434/https://www.stephenskilton.com/decktech_archives/17778/",
@@ -99966,17 +99885,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17908/": {
   "capture": "https://web.archive.org/web/20261025124430/https://www.stephenskilton.com/decktech_archives/17908/",
-  "dead_capture": "https://web.archive.org/web/20261025124430/https://www.stephenskilton.com/decktech_archives/17908/",
   "job_id": "spn2-a8915927dc5f007aa7f60978f57d0eb636683fc9",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:36:07Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17910/": {
   "capture": "",
@@ -100015,17 +99927,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/17937/": {
   "capture": "https://web.archive.org/web/20261025124533/https://www.stephenskilton.com/decktech_archives/17937/",
-  "dead_capture": "https://web.archive.org/web/20261025124533/https://www.stephenskilton.com/decktech_archives/17937/",
   "job_id": "spn2-7dae1ea342a74a4dcf86bc147d9dc85f47149956",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:36:17Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/17940/": {
   "capture": "",
@@ -100287,17 +100192,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18045/": {
   "capture": "https://web.archive.org/web/20261025125925/https://www.stephenskilton.com/decktech_archives/18045/",
-  "dead_capture": "https://web.archive.org/web/20261025125925/https://www.stephenskilton.com/decktech_archives/18045/",
   "job_id": "spn2-a212e0208e8a15df2ecd8d210a3342f6d3223ce3",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:36:28Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18051/": {
   "capture": "",
@@ -100322,17 +100220,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18056/": {
   "capture": "https://web.archive.org/web/20261025130101/https://www.stephenskilton.com/decktech_archives/18056/",
-  "dead_capture": "https://web.archive.org/web/20261025130101/https://www.stephenskilton.com/decktech_archives/18056/",
   "job_id": "spn2-3d5bcf74ac29cf36eee78eaa8d78ca855e8d65fd",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:37:12Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18061/": {
   "capture": "",
@@ -100560,17 +100451,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18126/": {
   "capture": "https://web.archive.org/web/20261025131228/https://www.stephenskilton.com/decktech_archives/18126/",
-  "dead_capture": "https://web.archive.org/web/20261025131228/https://www.stephenskilton.com/decktech_archives/18126/",
   "job_id": "spn2-db3f00d3a91f59d0876dd29a0899d4f32dcc709c",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:37:22Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18131/": {
   "capture": "",
@@ -100713,17 +100597,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18214/": {
   "capture": "https://web.archive.org/web/20261025132426/https://www.stephenskilton.com/decktech_archives/18214/",
-  "dead_capture": "https://web.archive.org/web/20261025132426/https://www.stephenskilton.com/decktech_archives/18214/",
   "job_id": "spn2-4733e1251e8211472aa495f9a7ce76afa670bb1c",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:37:33Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18223/": {
   "capture": "",
@@ -101062,17 +100939,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18450/": {
   "capture": "https://web.archive.org/web/20261025133952/https://www.stephenskilton.com/decktech_archives/18450/",
-  "dead_capture": "https://web.archive.org/web/20261025133952/https://www.stephenskilton.com/decktech_archives/18450/",
   "job_id": "spn2-7346ca5dae78a8ffecda88b3a2ce50fdfe320806",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:38:16Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18453/": {
   "capture": "https://web.archive.org/web/20261025133908/https://www.stephenskilton.com/decktech_archives/18453/",
@@ -101229,17 +101099,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18542/": {
   "capture": "https://web.archive.org/web/20261025135111/https://www.stephenskilton.com/decktech_archives/18542/",
-  "dead_capture": "https://web.archive.org/web/20261025135111/https://www.stephenskilton.com/decktech_archives/18542/",
   "job_id": "spn2-cae79e85ce8cd5fd2b4fc57117c96c2aa6f11fb7",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:38:26Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18544/": {
   "capture": "https://web.archive.org/web/20261025135128/https://www.stephenskilton.com/decktech_archives/18544/",
@@ -101467,17 +101330,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18697/": {
   "capture": "https://web.archive.org/web/20261025140324/https://www.stephenskilton.com/decktech_archives/18697/",
-  "dead_capture": "https://web.archive.org/web/20261025140324/https://www.stephenskilton.com/decktech_archives/18697/",
   "job_id": "spn2-ecb760a13870a323722be6a9f9216cc35e773cca",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:38:37Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18706/": {
   "capture": "https://web.archive.org/web/20261025140510/https://www.stephenskilton.com/decktech_archives/18706/",
@@ -101502,17 +101358,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18725/": {
   "capture": "https://web.archive.org/web/20261025140418/https://www.stephenskilton.com/decktech_archives/18725/",
-  "dead_capture": "https://web.archive.org/web/20261025140418/https://www.stephenskilton.com/decktech_archives/18725/",
   "job_id": "spn2-2c9e368344022134bf0788a9cb21734bfe0e62fa",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:39:19Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18726/": {
   "capture": "https://web.archive.org/web/20261025140430/https://www.stephenskilton.com/decktech_archives/18726/",
@@ -101551,17 +101400,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18733/": {
   "capture": "https://web.archive.org/web/20261025140523/https://www.stephenskilton.com/decktech_archives/18733/",
-  "dead_capture": "https://web.archive.org/web/20261025140523/https://www.stephenskilton.com/decktech_archives/18733/",
   "job_id": "spn2-05d75af7ce9761a457a535e454b913ad5564722c",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:39:31Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18736/": {
   "capture": "",
@@ -101780,17 +101622,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18867/": {
   "capture": "https://web.archive.org/web/20261025141819/https://www.stephenskilton.com/decktech_archives/18867/",
-  "dead_capture": "https://web.archive.org/web/20261025141819/https://www.stephenskilton.com/decktech_archives/18867/",
   "job_id": "spn2-f43a58028e937efba2c811ed0bf84422294d7baf",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:39:42Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18878/": {
   "capture": "https://web.archive.org/web/20261025141834/https://www.stephenskilton.com/decktech_archives/18878/",
@@ -101892,17 +101727,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/18976/": {
   "capture": "https://web.archive.org/web/20261025142542/https://www.stephenskilton.com/decktech_archives/18976/",
-  "dead_capture": "https://web.archive.org/web/20261025142542/https://www.stephenskilton.com/decktech_archives/18976/",
   "job_id": "spn2-771ae6a2fa30d056ab583d40649328114d13dc1b",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:40:23Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/18989/": {
   "capture": "https://web.archive.org/web/20261025142553/https://www.stephenskilton.com/decktech_archives/18989/",
@@ -101948,17 +101776,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/19001/": {
   "capture": "https://web.archive.org/web/20261025142627/https://www.stephenskilton.com/decktech_archives/19001/",
-  "dead_capture": "https://web.archive.org/web/20261025142627/https://www.stephenskilton.com/decktech_archives/19001/",
   "job_id": "spn2-33ed3a6b0a5e95e2ea90d417111cd607c9906f4d",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:40:34Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/19003/": {
   "capture": "https://web.archive.org/web/20261025144508/https://www.stephenskilton.com/decktech_archives/19003/",
@@ -101990,17 +101811,10 @@
  },
  "https://www.stephenskilton.com/decktech_archives/19015/": {
   "capture": "https://web.archive.org/web/20261025142721/https://www.stephenskilton.com/decktech_archives/19015/",
-  "dead_capture": "https://web.archive.org/web/20261025142721/https://www.stephenskilton.com/decktech_archives/19015/",
   "job_id": "spn2-bc7d2aac8a4db8ac45844310c5cf06daa4898c68",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T13:40:45Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.stephenskilton.com/decktech_archives/19016/": {
   "capture": "https://web.archive.org/web/20261025142733/https://www.stephenskilton.com/decktech_archives/19016/",
