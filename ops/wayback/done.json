@@ -10318,10 +10318,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/15242": {
   "capture": "https://web.archive.org/web/20261022093131/https://www.decktech.net/starwarsccg/deck/15242/",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T09:37:08Z",
-  "status": "retry",
-  "tries": 3
+  "job_id": "spn2-519fa7307e009e79a124dfdebafba91022731cc5",
+  "last": "2026-10-27T10:18:07Z",
+  "status": "pending",
+  "tries": 4
  },
  "http://www.decktech.net/starwarsccg/deck/15247": {
   "capture": "https://web.archive.org/web/20261022093121/https://www.decktech.net/starwarsccg/deck/15247/",
@@ -11819,9 +11819,9 @@
  "http://www.decktech.net/starwarsccg/deck/15680": {
   "capture": "https://web.archive.org/web/20261022080337/https://www.decktech.net/starwarsccg/deck/15680/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T09:36:47Z",
+  "last": "2026-10-27T10:17:56Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "http://www.decktech.net/starwarsccg/deck/15681": {
   "capture": "https://web.archive.org/web/20261022074239/https://www.decktech.net/starwarsccg/deck/15681/",
@@ -12450,9 +12450,9 @@
  "http://www.decktech.net/starwarsccg/deck/16063": {
   "capture": "https://web.archive.org/web/20261022071615/https://www.decktech.net/starwarsccg/deck/16063/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T09:36:36Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-27T10:17:46Z",
+  "status": "failed",
+  "tries": 6
  },
  "http://www.decktech.net/starwarsccg/deck/16064": {
   "capture": "https://web.archive.org/web/20261022071555/https://www.decktech.net/starwarsccg/deck/16064/",
@@ -12506,9 +12506,9 @@
  "http://www.decktech.net/starwarsccg/deck/16095": {
   "capture": "https://web.archive.org/web/20261022071434/https://www.decktech.net/starwarsccg/deck/16095/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T09:36:26Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-27T10:17:36Z",
+  "status": "failed",
+  "tries": 6
  },
  "http://www.decktech.net/starwarsccg/deck/16098": {
   "capture": "https://web.archive.org/web/20261018000053/https://www.decktech.net/starwarsccg/deck/16098/",
@@ -12656,9 +12656,9 @@
  "http://www.decktech.net/starwarsccg/deck/16209": {
   "capture": "https://web.archive.org/web/20261022064901/https://www.decktech.net/starwarsccg/deck/16209/",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T09:36:16Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-10-27T10:17:26Z",
+  "status": "failed",
+  "tries": 6
  },
  "http://www.decktech.net/starwarsccg/deck/16219": {
   "capture": "https://web.archive.org/web/20261022064828/https://www.decktech.net/starwarsccg/deck/16219/",
@@ -30268,17 +30268,10 @@
  },
  "https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG": {
   "capture": "https://web.archive.org/web/20261022171457/https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG",
-  "dead_capture": "https://web.archive.org/web/20261022171457/https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG",
   "job_id": "spn2-3c249f51c1c92cf60202d665d2556b604be933bc",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:22:41Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://creativecommons.org/licenses/by-sa/2.0/": {
   "capture": "https://web.archive.org/web/20261019175915/https://creativecommons.org/licenses/by-sa/2.0/",
@@ -30588,17 +30581,10 @@
  },
  "https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$sgskm4upgt0rmy7m": {
   "capture": "https://web.archive.org/web/20261022173311/https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$sgskm4upgt0rmy7m",
-  "dead_capture": "https://web.archive.org/web/20261022173311/https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$sgskm4upgt0rmy7m",
   "job_id": "spn2-b213dd3af87bf10e0cfb65cc95934d6d286b2286",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:23:23Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://github.com/PlayersCommittee": {
   "capture": "https://web.archive.org/web/20261008195545/https://github.com/PlayersCommittee",
@@ -30616,17 +30602,10 @@
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/db-scripts/sample_decks.sql": {
   "capture": "https://web.archive.org/web/20261022173338/https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/db-scripts/sample_decks.sql",
-  "dead_capture": "https://web.archive.org/web/20261022173338/https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/db-scripts/sample_decks.sql",
   "job_id": "spn2-7f459218de5fbafc81d65c8bd1e1f9de83c303ca",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:23:33Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/master/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/packagedProduct/VirtualAlternateImageBoosterPack.java": {
   "capture": "",
@@ -31019,17 +30998,10 @@
  },
  "https://i.ytimg.com/vi/6jO2dTROIHs/maxresdefault.jpg": {
   "capture": "https://web.archive.org/web/20261022183758/https://i.ytimg.com/vi/6jO2dTROIHs/maxresdefault.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022183758/https://i.ytimg.com/vi/6jO2dTROIHs/maxresdefault.jpg",
   "job_id": "spn2-f0d297b1b1a39fd12996ef828f16d0784a6b5910",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:23:44Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://i.ytimg.com/vi/swSmLNAG62A/maxresdefault.jpg": {
   "capture": "https://web.archive.org/web/20261022183810/https://i.ytimg.com/vi/swSmLNAG62A/maxresdefault.jpg",
@@ -31047,31 +31019,17 @@
  },
  "https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg": {
   "capture": "https://web.archive.org/web/20261022183821/https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022183821/https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg",
   "job_id": "spn2-544f9c7505c9e136a6301c02575625a0044d1178",
-  "last": "2026-10-26T23:23:52Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T23:54:52Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:24:26Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://i.ytimg.com/vi/xHGFzJHIlcI/maxresdefault.jpg": {
   "capture": "https://web.archive.org/web/20261022183832/https://i.ytimg.com/vi/xHGFzJHIlcI/maxresdefault.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022183832/https://i.ytimg.com/vi/xHGFzJHIlcI/maxresdefault.jpg",
   "job_id": "spn2-e3912af231d91fc6355269ac01ea2ba9ef24ad2f",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:24:36Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://icv2.com/articles/columns/view/45201/business-3x3-dean-irwin-recently-enterplay": {
   "capture": "https://web.archive.org/web/20261016020514/https://icv2.com/articles/columns/view/45201/business-3x3-dean-irwin-recently-enterplay",
@@ -31409,17 +31367,10 @@
  },
  "https://ponyhead.com/img/cards/cn119.jpg": {
   "capture": "https://web.archive.org/web/20261022193557/https://ponyhead.com/img/cards/cn119.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022193557/https://ponyhead.com/img/cards/cn119.jpg",
   "job_id": "spn2-fb362ed6c21f2359adbd341747148b637b72c90b",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:24:47Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://ponyhead.com/img/cards/pr121.jpg": {
   "capture": "https://web.archive.org/web/20261022193610/https://ponyhead.com/img/cards/pr121.jpg",
@@ -32275,17 +32226,10 @@
  },
  "https://res.starwarsccg.org/cards/Virtual27-Dark/large/swarmingvulturedroid.gif": {
   "capture": "https://web.archive.org/web/20261022115815/https://res.starwarsccg.org/cards/Virtual27-Dark/large/swarmingvulturedroid.gif",
-  "dead_capture": "https://web.archive.org/web/20261022115815/https://res.starwarsccg.org/cards/Virtual27-Dark/large/swarmingvulturedroid.gif",
   "job_id": "spn2-a7a4e7de2537fdb978550e5eecb009d994b68f8d",
-  "last": "2026-10-26T23:23:52Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T23:54:52Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:19:11Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/cards/Virtual27-Dark/large/thegalaxytornapart.gif": {
   "capture": "https://web.archive.org/web/20261022115826/https://res.starwarsccg.org/cards/Virtual27-Dark/large/thegalaxytornapart.gif",
@@ -32331,17 +32275,10 @@
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/beckettsstolenathauler.gif": {
   "capture": "https://web.archive.org/web/20261022125650/https://res.starwarsccg.org/cards/Virtual27-Light/large/beckettsstolenathauler.gif",
-  "dead_capture": "https://web.archive.org/web/20261022125650/https://res.starwarsccg.org/cards/Virtual27-Light/large/beckettsstolenathauler.gif",
   "job_id": "spn2-26a1abee43c6223651199c8b341d10151dfd9e16",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:19:22Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/doordonotwiseadvice.gif": {
   "capture": "https://web.archive.org/web/20261022123115/https://res.starwarsccg.org/cards/Virtual27-Light/large/doordonotwiseadvice.gif",
@@ -32394,17 +32331,10 @@
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/sacrificeforsomethingbiggerfront.gif": {
   "capture": "https://web.archive.org/web/20261022123331/https://res.starwarsccg.org/cards/Virtual27-Light/large/sacrificeforsomethingbiggerfront.gif",
-  "dead_capture": "https://web.archive.org/web/20261022123331/https://res.starwarsccg.org/cards/Virtual27-Light/large/sacrificeforsomethingbiggerfront.gif",
   "job_id": "spn2-6678ca115ecb875c417126bd887b871918765af2",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:19:33Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/cards/Virtual27-Light/large/theforcewillbewithyoualways.gif": {
   "capture": "https://web.archive.org/web/20261022125712/https://res.starwarsccg.org/cards/Virtual27-Light/large/theforcewillbewithyoualways.gif",
@@ -32506,17 +32436,10 @@
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock6_2.pdf": {
   "capture": "https://web.archive.org/web/20261020174418/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_2.pdf",
-  "dead_capture": "https://web.archive.org/web/20261020174418/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_2.pdf",
   "job_id": "spn2-2485d1f949be427bf1af29a9f798985f6fc39bcc",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:18:18Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf": {
   "capture": "https://web.archive.org/web/20261020174429/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf",
@@ -32905,17 +32828,10 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/DenverLogo.jpg": {
   "capture": "https://web.archive.org/web/20261022130132/https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/DenverLogo.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022130132/https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/DenverLogo.jpg",
   "job_id": "spn2-855035032588b9eaafa11c50559a22118874e2ee",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:20:14Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/nationalsGameRoom.jpg": {
   "capture": "https://web.archive.org/web/20261022131354/https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/nationalsGameRoom.jpg",
@@ -32974,11 +32890,19 @@
   }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/TeamRosemount.jpg": {
-  "capture": "https://web.archive.org/web/20261022131614/https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/TeamRosemount.jpg",
+  "capture": "https://web.archive.org/web/20261027101252/https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/TeamRosemount.jpg",
   "job_id": "spn2-ebd44ea15c44de05824a787c53a0aa9bb8fb16b0",
-  "last": "2026-10-27T10:12:52Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T10:17:25Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T10:27:42Z",
+   "bytes": 388066,
+   "capture_id": "https://web.archive.org/web/20261027101252id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/TeamRosemount.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5dfa2dd72242b9580cfad8b4a8398b587ac3bfbac459a37812266fb1bb20f15c"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/Top8finishersUSNATS.jpg": {
   "capture": "https://web.archive.org/web/20261022131622/https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/Top8finishersUSNATS.jpg",
@@ -32995,25 +32919,49 @@
   }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/teamTournamentWinners.jpg": {
-  "capture": "https://web.archive.org/web/20261022131615/https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/teamTournamentWinners.jpg",
+  "capture": "https://web.archive.org/web/20261027101303/https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/teamTournamentWinners.jpg",
   "job_id": "spn2-105da3eaa9470916120e5e671b20376943564a48",
-  "last": "2026-10-27T10:13:03Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T10:17:21Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T10:17:21Z",
+   "bytes": 1200120,
+   "capture_id": "https://web.archive.org/web/20261027101303id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/teamTournamentWinners.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "95bd5bcf7faca501aed59c427f0d323ed6c633442342831a5c6cd86de6d22bc7"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/23SDSOBanner.png": {
-  "capture": "https://web.archive.org/web/20261022134925/https://res.starwarsccg.org/wp/wp-content/uploads/2022/23SDSOBanner.png",
+  "capture": "https://web.archive.org/web/20261027101314/https://res.starwarsccg.org/wp/wp-content/uploads/2022/23SDSOBanner.png",
   "job_id": "spn2-d351b5f20471fb37c7c488561d2386c52f05f47e",
-  "last": "2026-10-27T10:13:13Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T10:17:15Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T10:17:15Z",
+   "bytes": 2843436,
+   "capture_id": "https://web.archive.org/web/20261027101314id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/23SDSOBanner.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "91859fc3e2b46575ece945b229a102256f9e91fcbbdb0c759ffef8a0fc4a11c1"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/7thGEMPClogo.jpg": {
-  "capture": "https://web.archive.org/web/20261022131631/https://res.starwarsccg.org/wp/wp-content/uploads/2022/7thGEMPClogo.jpg",
+  "capture": "https://web.archive.org/web/20261027101324/https://res.starwarsccg.org/wp/wp-content/uploads/2022/7thGEMPClogo.jpg",
   "job_id": "spn2-c1686ad883b53ed245586bf9a4dd7ade9a392ad1",
-  "last": "2026-10-27T10:13:24Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T10:17:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T10:17:07Z",
+   "bytes": 55456,
+   "capture_id": "https://web.archive.org/web/20261027101324id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/7thGEMPClogo.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bbcb126e4af428eeea00c165964a2609660caaee70fb7e5885d98abf919e1bfa"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/BespinReg.jpg": {
   "capture": "https://web.archive.org/web/20261022131724/https://res.starwarsccg.org/wp/wp-content/uploads/2022/BespinReg.jpg",
@@ -33024,31 +32972,17 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/CoruscantDSrare.jpg": {
   "capture": "https://web.archive.org/web/20261022131707/https://res.starwarsccg.org/wp/wp-content/uploads/2022/CoruscantDSrare.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022131707/https://res.starwarsccg.org/wp/wp-content/uploads/2022/CoruscantDSrare.jpg",
   "job_id": "spn2-f7c2bae268e56e1a06edfdfb7e7f201b20a909f9",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:20:25Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/OCS-preview-article/OCSBanner2022.png": {
   "capture": "https://web.archive.org/web/20261022135023/https://res.starwarsccg.org/wp/wp-content/uploads/2022/OCS-preview-article/OCSBanner2022.png",
-  "dead_capture": "https://web.archive.org/web/20261022135023/https://res.starwarsccg.org/wp/wp-content/uploads/2022/OCS-preview-article/OCSBanner2022.png",
   "job_id": "spn2-221adb6ad3e18f4e303f3276e0a5fd0d45dc9555",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:20:36Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/OCSBanner2023.png": {
   "capture": "https://web.archive.org/web/20261022131721/https://res.starwarsccg.org/wp/wp-content/uploads/2022/OCSBanner2023.png",
@@ -33080,17 +33014,10 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCGSuperSaturday2022.jpg": {
   "capture": "https://web.archive.org/web/20261022143018/https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCGSuperSaturday2022.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022143018/https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCGSuperSaturday2022.jpg",
   "job_id": "spn2-3fe76d498c24d7a670e74d103d8c558455fa2943",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:21:17Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCG_2022_AdvancedRulebook.pdf": {
   "capture": "https://web.archive.org/web/20261009165106/https://res.starwarsccg.org/wp/wp-content/uploads/2022/SWCCG_2022_AdvancedRulebook.pdf",
@@ -33157,31 +33084,17 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/euros2022logo.png": {
   "capture": "https://web.archive.org/web/20261022135017/https://res.starwarsccg.org/wp/wp-content/uploads/2022/euros2022logo.png",
-  "dead_capture": "https://web.archive.org/web/20261022135017/https://res.starwarsccg.org/wp/wp-content/uploads/2022/euros2022logo.png",
   "job_id": "spn2-b598a9c86e7fbb1741d8ae12068d8dbe6ee7213a",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:21:28Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/finalconfrontation.jpg": {
   "capture": "https://web.archive.org/web/20261022135028/https://res.starwarsccg.org/wp/wp-content/uploads/2022/finalconfrontation.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022135028/https://res.starwarsccg.org/wp/wp-content/uploads/2022/finalconfrontation.jpg",
   "job_id": "spn2-9d46cbe908c415ee4052c78daee150c1a17732a7",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:21:38Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/mpc2022groupoicture.jpg": {
   "capture": "https://web.archive.org/web/20261022135039/https://res.starwarsccg.org/wp/wp-content/uploads/2022/mpc2022groupoicture.jpg",
@@ -33241,17 +33154,10 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Cali.jpg": {
   "capture": "https://web.archive.org/web/20261022135147/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Cali.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022135147/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Cali.jpg",
   "job_id": "spn2-9c3e036747b0d2fa446dacdd135e4fc83fd4fdf0",
-  "last": "2026-10-26T20:01:40Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:40Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:22:19Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Denver.jpg": {
   "capture": "https://web.archive.org/web/20261022143049/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Denver.jpg",
@@ -33423,17 +33329,10 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/Walseth.jpg": {
   "capture": "https://web.archive.org/web/20261022135444/https://res.starwarsccg.org/wp/wp-content/uploads/Walseth.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022135444/https://res.starwarsccg.org/wp/wp-content/uploads/Walseth.jpg",
   "job_id": "spn2-7dda3f69729c82a3cac2e1346f948700d2cb5759",
-  "last": "2026-10-26T20:01:40Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:40Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:22:30Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/cm-hof-e1455416642765.jpg": {
   "capture": "",
@@ -33486,17 +33385,10 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/7D1448FD-0CE9-40F9-ACE1-1A2C9ECC1641.jpeg": {
   "capture": "https://web.archive.org/web/20261022193652/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/7D1448FD-0CE9-40F9-ACE1-1A2C9ECC1641.jpeg",
-  "dead_capture": "https://web.archive.org/web/20261022193652/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/7D1448FD-0CE9-40F9-ACE1-1A2C9ECC1641.jpeg",
   "job_id": "spn2-c33586d853645e715f5592a5d91930efdc08624f",
-  "last": "2026-10-26T20:01:40Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:40Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:25:29Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2022/usnationals2022logoFull.png": {
   "capture": "https://web.archive.org/web/20261022193703/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2022/usnationals2022logoFull.png",
@@ -33514,17 +33406,10 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/EGP+Cast+%26+Crew.jpg": {
   "capture": "https://web.archive.org/web/20261022193727/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/EGP+Cast+%26+Crew.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022193727/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/EGP+Cast+%26+Crew.jpg",
   "job_id": "spn2-585c11940364d3fcfbed39c788a1444357d51e6c",
-  "last": "2026-10-26T20:01:40Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:40Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:25:40Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/NationalsLogo23.jpg": {
   "capture": "https://web.archive.org/web/20261022194551/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/NationalsLogo23.jpg",
@@ -33571,31 +33456,17 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/us_nats_group_photo.jpg": {
   "capture": "https://web.archive.org/web/20261022193852/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/us_nats_group_photo.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022193852/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2023/us_nats_group_photo.jpg",
   "job_id": "spn2-5c970a80c13abf3ddcefe13c8189817463cd9b71",
-  "last": "2026-10-26T20:01:40Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:40Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:25:51Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerBowlLogo.png": {
   "capture": "https://web.archive.org/web/20261022193908/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerBowlLogo.png",
-  "dead_capture": "https://web.archive.org/web/20261022193908/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerBowlLogo.png",
   "job_id": "spn2-a6d3e482b2bb188d009b723a58868932fecfea76",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:26:01Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png": {
   "capture": "https://web.archive.org/web/20261022193920/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png",
@@ -33613,31 +33484,17 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/EC+group.jpeg": {
   "capture": "https://web.archive.org/web/20261022194604/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/EC+group.jpeg",
-  "dead_capture": "https://web.archive.org/web/20261022194604/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/EC+group.jpeg",
   "job_id": "spn2-9e859a6893e0d802c432e4fb963c0b4a14d6ec71",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:26:12Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/Indy+Top+8.jpg": {
   "capture": "https://web.archive.org/web/20261022194615/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/Indy+Top+8.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022194615/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/Indy+Top+8.jpg",
   "job_id": "spn2-0d7fc66e0e5afa9fe050963b30ef8b6e9e2f8bc0",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:26:23Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/Joe+%26+Emil.jpg": {
   "capture": "",
@@ -33676,17 +33533,10 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse+group.png": {
   "capture": "https://web.archive.org/web/20261022194807/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse+group.png",
-  "dead_capture": "https://web.archive.org/web/20261022194807/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse+group.png",
   "job_id": "spn2-fadb01aa1247e1df7bdce02ecb98c945b4322bfd",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:27:06Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse_event_banner.jpg": {
   "capture": "https://web.archive.org/web/20261022194730/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/eclipse_event_banner.jpg",
@@ -33711,17 +33561,10 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/kevin+hof2.jpg": {
   "capture": "https://web.archive.org/web/20261022201339/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/kevin+hof2.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022201339/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/kevin+hof2.jpg",
   "job_id": "spn2-7127f90c102b33d20fbe774a0bfdd7c428ea6d0a",
-  "last": "2026-10-26T20:01:40Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:40Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:27:17Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/outrider_copy.jpg": {
   "capture": "https://web.archive.org/web/20261022194823/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/outrider_copy.jpg",
@@ -33732,17 +33575,10 @@
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/2025_vegas_major_copy.jpg": {
   "capture": "https://web.archive.org/web/20261022194833/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/2025_vegas_major_copy.jpg",
-  "dead_capture": "https://web.archive.org/web/20261022194833/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/2025_vegas_major_copy.jpg",
   "job_id": "spn2-09e25c45e9417f5af275ae4e2288d141eca13a4b",
-  "last": "2026-10-26T20:51:12Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T21:22:12Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:27:28Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2025/CBUS+Group.jpg": {
   "capture": "",
@@ -56647,17 +56483,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ls-no-idea.html": {
   "capture": "https://web.archive.org/web/20261020203622/https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ls-no-idea.html",
-  "dead_capture": "https://web.archive.org/web/20261020203622/https://swccg.com/snapshots/pc/2022-endor-grand-prix-gosse-zeilstra-ls-no-idea.html",
   "job_id": "spn2-81e6f6babdd08233cdadf8d4e85a4490e78538f4",
-  "last": "2026-10-26T19:06:27Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "last": "2026-10-27T10:18:29Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-hayes-hunter-ds-sc.html": {
   "capture": "https://web.archive.org/web/20261020202719/https://swccg.com/snapshots/pc/2022-endor-grand-prix-hayes-hunter-ds-sc.html",
