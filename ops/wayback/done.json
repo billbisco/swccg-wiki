@@ -67700,17 +67700,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-justin-branch-ls-skywalker-saga-anakin.html": {
   "capture": "https://web.archive.org/web/20261021084544/https://swccg.com/snapshots/pc/2023-european-championship-justin-branch-ls-skywalker-saga-anakin.html",
-  "dead_capture": "https://web.archive.org/web/20261021084544/https://swccg.com/snapshots/pc/2023-european-championship-justin-branch-ls-skywalker-saga-anakin.html",
-  "job_id": "spn2-3ea8354e30789b7b37b01e7b48206ae451dae721",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T02:31:13Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261021084830/https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ds-endor-operations.html",
@@ -68376,11 +68369,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-emil-wallin-ls-old-allies.html": {
-  "capture": "https://web.archive.org/web/20261021091651/https://swccg.com/snapshots/pc/2023-naboo-regionals-emil-wallin-ls-old-allies.html",
+  "capture": "https://web.archive.org/web/20261027022650/https://swccg.com/snapshots/pc/2023-naboo-regionals-emil-wallin-ls-old-allies.html",
   "job_id": "spn2-80b80100831201b4c705e13aa130312ebd48e7f4",
-  "last": "2026-10-27T02:26:47Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T02:30:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T02:30:17Z",
+   "bytes": 7121880,
+   "capture_id": "https://web.archive.org/web/20261027022650id_/https://swccg.com/snapshots/pc/2023-naboo-regionals-emil-wallin-ls-old-allies.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "cfd25e5260926d52fe244a638d395517897bc77f2c840338124f3d6642483880"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-enno-haede-ds-watto.html": {
   "capture": "https://web.archive.org/web/20261021093505/https://swccg.com/snapshots/pc/2023-naboo-regionals-enno-haede-ds-watto.html",
@@ -68779,18 +68780,26 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html": {
-  "capture": "https://web.archive.org/web/20261021090819/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html",
+  "capture": "https://web.archive.org/web/20261027022629/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ds-bhbm.html",
   "job_id": "spn2-cd672803a7819abbdd4e09f7c6d588a290a685be",
-  "last": "2026-10-27T02:26:25Z",
-  "status": "pending",
+  "last": "2026-10-27T02:30:31Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ls-zero-hour.html": {
-  "capture": "https://web.archive.org/web/20261021090846/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ls-zero-hour.html",
+  "capture": "https://web.archive.org/web/20261027022639/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ls-zero-hour.html",
   "job_id": "spn2-ddc57a92b3656a519737b5301e42732aea3e85ad",
-  "last": "2026-10-27T02:26:36Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T02:30:25Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T02:30:25Z",
+   "bytes": 7121977,
+   "capture_id": "https://web.archive.org/web/20261027022639id_/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-travis-morris-ls-zero-hour.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d49063f8a1821c45ca7b1013251251429016fe109e22eb360f1b646e77eead51"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-finals-justin-desai-ds-walkers-ssav.html": {
   "capture": "https://web.archive.org/web/20261016150724/https://swccg.com/snapshots/pc/2023-ocs-playoff-finals-justin-desai-ds-walkers-ssav.html",
@@ -83038,9 +83047,9 @@
  "https://swccg.com/snapshots/scomp/bantha-herd.html": {
   "capture": "https://web.archive.org/web/20261025035351/https://swccg.com/snapshots/scomp/bantha-herd.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T01:49:58Z",
+  "last": "2026-10-27T02:30:52Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/bantha.html": {
   "capture": "",
@@ -83352,9 +83361,9 @@
  "https://swccg.com/snapshots/scomp/beilert-valance.html": {
   "capture": "https://web.archive.org/web/20261024102018/https://swccg.com/snapshots/scomp/beilert-valance.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T01:49:38Z",
+  "last": "2026-10-27T02:30:32Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/beldon-s-eye-all-my-urchins.html": {
   "capture": "https://web.archive.org/web/20261024020822/https://swccg.com/snapshots/scomp/beldon-s-eye-all-my-urchins.html",
@@ -85935,9 +85944,9 @@
  "https://swccg.com/snapshots/scomp/chewbacca-defender-of-kashyyyk.html": {
   "capture": "https://web.archive.org/web/20261025040551/https://swccg.com/snapshots/scomp/chewbacca-defender-of-kashyyyk.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T01:50:08Z",
+  "last": "2026-10-27T02:31:02Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/chewbacca-of-kashyyyk-v.html": {
   "capture": "https://web.archive.org/web/20261025064324/https://swccg.com/snapshots/scomp/chewbacca-of-kashyyyk-v.html",
@@ -87477,9 +87486,9 @@
  "https://swccg.com/snapshots/scomp/corporal-rushing-v.html": {
   "capture": "https://web.archive.org/web/20261024192022/https://swccg.com/snapshots/scomp/corporal-rushing-v.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-27T01:49:48Z",
+  "last": "2026-10-27T02:30:42Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/corporal-rushing.html": {
   "capture": "https://web.archive.org/web/20261024111013/https://swccg.com/snapshots/scomp/corporal-rushing.html",
