@@ -18908,16 +18908,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18506": {
   "capture": "https://web.archive.org/web/20261020222120/https://www.decktech.net/starwarsccg/deck/18506/",
-  "dead_capture": "https://web.archive.org/web/20261020222120/https://www.decktech.net/starwarsccg/deck/18506/",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:12:55Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18507": {
   "capture": "https://web.archive.org/web/20261017143932/https://www.decktech.net/starwarsccg/deck/18507/",
@@ -18990,16 +18984,10 @@
  },
  "http://www.decktech.net/starwarsccg/deck/18581": {
   "capture": "https://web.archive.org/web/20261020222029/https://www.decktech.net/starwarsccg/deck/18581/",
-  "dead_capture": "https://web.archive.org/web/20261020222029/https://www.decktech.net/starwarsccg/deck/18581/",
-  "last": "2026-10-26T20:01:10Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:12:45Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T20:32:10Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404 (not archived)"
-  }
+  "tries": 1
  },
  "http://www.decktech.net/starwarsccg/deck/18583": {
   "capture": "https://web.archive.org/web/20261017143701/https://www.decktech.net/starwarsccg/deck/18583/",
@@ -51659,11 +51647,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/t73630.html": {
-  "capture": "https://web.archive.org/web/20261022035241/https://swccg.com/snapshots/forum/t73630.html",
+  "capture": "https://web.archive.org/web/20261027045926/https://swccg.com/snapshots/forum/t73630.html",
   "job_id": "spn2-190ff25313328da528725ba1c27075c3b75dceb1",
-  "last": "2026-10-27T04:59:16Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T05:12:11Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T05:12:11Z",
+   "bytes": 1900916,
+   "capture_id": "https://web.archive.org/web/20261027045926id_/https://swccg.com/snapshots/forum/t73630.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bd268428a6c461dbdff706ff866d114bab6d695eee7e3ec33f680c1c9dec42bc"
+  }
  },
  "https://swccg.com/snapshots/forum/t74065.html": {
   "capture": "https://web.archive.org/web/20261021050035/https://swccg.com/snapshots/forum/t74065.html",
@@ -51695,19 +51691,10 @@
  },
  "https://swccg.com/snapshots/forum/t74436.html": {
   "capture": "https://web.archive.org/web/20261022035230/https://swccg.com/snapshots/forum/t74436.html",
-  "dead_capture": "https://web.archive.org/web/20261022035230/https://swccg.com/snapshots/forum/t74436.html",
-  "job_id": "spn2-072999db2243cbf5d044b57737d68719b9af2a12",
-  "last": "2026-10-26T23:24:08Z",
-  "recapture": true,
-  "resnapshot": "2026-10-26T21:58:33Z",
-  "resnapshot_of": "https://forum.starwarsccg.org/viewtopic.php?t=74436",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:12:14Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T23:55:08Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/t75427-start20.html": {
   "capture": "https://web.archive.org/web/20261016161936/https://swccg.com/snapshots/forum/t75427-start20.html",
@@ -63138,11 +63125,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-online-championship-series-registration-opens.html": {
-  "capture": "https://web.archive.org/web/20261022095952/https://swccg.com/snapshots/pc/2022-online-championship-series-registration-opens.html",
+  "capture": "https://web.archive.org/web/20261027045930/https://swccg.com/snapshots/pc/2022-online-championship-series-registration-opens.html",
   "job_id": "spn2-49eadc9a9cb70a1d6399821d2182338e2612d716",
-  "last": "2026-10-27T04:59:27Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-27T05:12:05Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T05:12:05Z",
+   "bytes": 8862681,
+   "capture_id": "https://web.archive.org/web/20261027045930id_/https://swccg.com/snapshots/pc/2022-online-championship-series-registration-opens.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "00749db9cc157432edf16f07bb2e628adf66ae2cd6973c7b793bf264702afb0b"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-retro-event-dco-top-4-casey-anis-ds-senate.html": {
   "capture": "https://web.archive.org/web/20261013152238/https://swccg.com/snapshots/pc/2022-retro-event-dco-top-4-casey-anis-ds-senate.html",
@@ -67876,16 +67871,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261022035448/https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ls-diplo.html",
-  "dead_capture": "https://web.archive.org/web/20261022035448/https://swccg.com/snapshots/pc/2023-outrider-cup-brian-fred-ls-diplo.html",
-  "last": "2026-10-26T19:18:34Z",
-  "recapture": true,
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:12:24Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-26T19:37:27Z",
-   "method": "strict",
-   "reason": "strict check 2026-10-26: capture HTTP 404; staging file restored from a near-identical box copy (1-2 bytes); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-angelo-consoli-ds-revenge-of-the-sith-dooku.html": {
   "capture": "https://web.archive.org/web/20261021095405/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-angelo-consoli-ds-revenge-of-the-sith-dooku.html",
@@ -78475,9 +78464,8 @@
   }
  },
  "https://swccg.com/snapshots/pc/new-marketing-advocate-introduction.html": {
-  "capture": "https://web.archive.org/web/20261022040440/https://swccg.com/snapshots/pc/new-marketing-advocate-introduction.html",
-  "job_id": "spn2-b1a74b335770d38227b8ce63cc29835f983ee531",
-  "last": "2026-10-27T04:58:35Z",
+  "capture": "https://web.archive.org/web/20261027045838/https://swccg.com/snapshots/pc/new-marketing-advocate-introduction.html",
+  "last": "2026-10-27T05:12:13Z",
   "status": "pending",
   "tries": 1
  },
@@ -78792,19 +78780,10 @@
  },
  "https://swccg.com/snapshots/pc/tournament-decklists.html": {
   "capture": "https://web.archive.org/web/20261020044435/https://swccg.com/snapshots/pc/tournament-decklists.html",
-  "dead_capture": "https://web.archive.org/web/20261020044435/https://swccg.com/snapshots/pc/tournament-decklists.html",
-  "last": "2026-10-27T00:55:06Z",
-  "note": "already archived within 30d",
-  "recapture": true,
-  "resnapshot": "2026-10-27T01:07:52Z",
-  "resnapshot_of": "https://www.starwarsccg.org/resources/tournament-decklists/",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-10-27T05:12:35Z",
   "status": "retry",
-  "tries": 0,
-  "verify": {
-   "at": "2026-10-27T01:26:06Z",
-   "method": "strict",
-   "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
-  }
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/tournament-files.html": {
   "capture": "",
