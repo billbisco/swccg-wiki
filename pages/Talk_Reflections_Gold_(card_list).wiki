@@ -33,7 +33,7 @@ Read all 310 current enhanced images: 106 contain lore, and 204 contain no lore.
 |-
 | [[:File:RG-GEMP-We-Don-t-Want-To-Cause-Any-Trouble.png|We Don't Want To Cause Any Trouble]] || <nowiki>heros</nowiki> || <nowiki>heroes</nowiki> || Pending
 |-
-| [[:File:RG-GEMP-Gweeta.png|Gweeta]] || <nowiki>a moments notice</nowiki> || <nowiki>a momentâ€™s notice</nowiki> || Pending
+| [[:File:RG-GEMP-Gweeta.png|Gweeta]] || <nowiki>a moments notice</nowiki> || <nowiki>a moment’s notice</nowiki> || Pending
 |-
 | [[:File:RG-GEMP-Security-Activators.png|Security Activators]] || <nowiki>the worse enemy</nowiki> || <nowiki>the worst enemy</nowiki> || Pending
 |-
@@ -45,7 +45,7 @@ Read all 310 current enhanced images: 106 contain lore, and 204 contain no lore.
 |-
 | [[:File:RG-GEMP-One-Arm-s-Frozen-Lunch.png|One Arm's Frozen Lunch]] || <nowiki>For desert</nowiki> || <nowiki>For dessert</nowiki> || Pending
 |-
-| [[:File:RG-GEMP-Visage-Of-A-Viceroy.png|Visage Of A Viceroy]] || <nowiki>whats</nowiki> || <nowiki>whatâ€™s</nowiki> || Pending
+| [[:File:RG-GEMP-Visage-Of-A-Viceroy.png|Visage Of A Viceroy]] || <nowiki>whats</nowiki> || <nowiki>what’s</nowiki> || Pending
 |-
 | [[:File:RG-GEMP-Worry.png|Worry]] || <nowiki>one the most</nowiki> || <nowiki>one of the most</nowiki> || Pending
 |-
@@ -74,3 +74,193 @@ Read all 310 current enhanced images: 106 contain lore, and 204 contain no lore.
 * [[:File:RG-GEMP-Begin-Retreat.png]] contains “know when the time had come”. This wording has been preserved for Bill to review.
 
 These are lore corrections only, not a complete audit of titles or game text. --[[User:Memory Core ChatGPT|Memory Core ChatGPT]] ([[User talk:Memory Core ChatGPT|talk]]) 15:24, 28 October 2026 (UTC)
+
+== Transcription repair and printing audit ==
+Rechecked all 106 lore entries against the enhanced images. Fixed text-encoding damage in 17 lore cells. The earlier visual check used the correct draft, but a later file read without explicit UTF-8 corrupted apostrophes before publication. Saved text is now compared with the reviewed Unicode strings.
+
+Checked all 127 populated game-text cells and 128 populated destiny cells against their own enhanced images. Corrected 48 game-text cells, including five that should be blank; six destiny cells; four Effect subtypes; and the displayed zero Credits for [[Anakin Skywalker (Reflections Gold)]]. Added links to all 17 existing Reflections Gold pilot articles using their exact image2 matches. Removed the introductory instruction to borrow data from same-name Decipher printings. The earlier table was mixing printings, not recording this set consistently.
+
+{| class="wikitable"
+! Card image !! Corrected fields
+|-
+| [[:File:RG-GEMP-Anakin-Skywalker.png|Anakin Skywalker]] || Lore encoding, Card link, Credits
+|-
+| [[:File:RG-GEMP-Chewbacca.png|Chewbacca]] || Game text
+|-
+| [[:File:RG-GEMP-Drem-Redins.png|Drem Redins]] || Lore encoding, Card link
+|-
+| [[:File:RG-GEMP-Ewok-Tribesman.png|Ewok Tribesman]] || Game text
+|-
+| [[:File:RG-GEMP-Goldenrod.png|Goldenrod]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Old-Ben-Kenobi.png|Old Ben Kenobi]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Owen.png|Owen]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Senator-Organa.png|Senator Organa]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Solo.png|Solo]] || Lore encoding, Game text
+|-
+| [[:File:RG-GEMP-Tiinn.png|Tiinn]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Young-Skywalker.png|Young Skywalker]] || Lore encoding, Game text, Destiny
+|-
+| [[:File:RG-GEMP-Gungan-Celebration-Trumpet.png|Gungan Celebration Trumpet]] || Card link
+|-
+| [[:File:RG-GEMP-A-Gift.png|A Gift]] || Game text, Card link, Type
+|-
+| [[:File:RG-GEMP-Ackbar-s-Assault-Plan.png|Ackbar's Assault Plan]] || Card link
+|-
+| [[:File:RG-GEMP-Brisky-Morning-Munchen.png|Brisky Morning Munchen]] || Game text
+|-
+| [[:File:RG-GEMP-Crack-Shot-Quick-Draw.png|Crack Shot & Quick Draw]] || Card link
+|-
+| [[:File:RG-GEMP-Crash-Site-Memorial.png|Crash Site Memorial]] || Game text
+|-
+| [[:File:RG-GEMP-Gungan-Energy-Shield.png|Gungan Energy Shield]] || Destiny
+|-
+| [[:File:RG-GEMP-Hiding-In-The-Garbage.png|Hiding In The Garbage]] || Game text
+|-
+| [[:File:RG-GEMP-I-Hope-She-s-All-Right.png|I Hope She's All Right]] || Game text
+|-
+| [[:File:RG-GEMP-Launching-The-Assault.png|Launching The Assault]] || Game text
+|-
+| [[:File:RG-GEMP-Traffic-Control.png|Traffic Control]] || Game text
+|-
+| [[:File:RG-GEMP-A-Few-Maneuvers.png|A Few Maneuvers]] || Game text
+|-
+| [[:File:RG-GEMP-All-Wings-Report-In.png|All Wings Report In]] || Game text
+|-
+| [[:File:RG-GEMP-Armed-And-Dangerous-Ambush.png|Armed And Dangerous & Ambush]] || Card link
+|-
+| [[:File:RG-GEMP-Clash-Of-Sabers.png|Clash Of Sabers]] || Game text
+|-
+| [[:File:RG-GEMP-Clinging-To-The-Very-Edge.png|Clinging To The Very Edge]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Entering-The-Arena.png|Entering The Arena]] || Destiny
+|-
+| [[:File:RG-GEMP-Fly-Casual.png|Fly Casual]] || Game text
+|-
+| [[:File:RG-GEMP-Hyper-Escape.png|Hyper Escape]] || Game text
+|-
+| [[:File:RG-GEMP-I-Used-To-Live-Here-You-Know.png|I Used To Live Here, You Know?]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Narrow-Escape.png|Narrow Escape]] || Game text
+|-
+| [[:File:RG-GEMP-Off-The-Edge.png|Off The Edge]] || Game text
+|-
+| [[:File:RG-GEMP-Quite-A-Mercenary.png|Quite A Mercenary]] || Game text
+|-
+| [[:File:RG-GEMP-Rebel-Leadership.png|Rebel Leadership]] || Game text
+|-
+| [[:File:RG-GEMP-Recoil-In-Fear.png|Recoil In Fear]] || Game text
+|-
+| [[:File:RG-GEMP-Sorry-About-The-Mess.png|Sorry About The Mess]] || Game text
+|-
+| [[:File:RG-GEMP-Under-Attack.png|Under Attack]] || Game text
+|-
+| [[:File:RG-GEMP-Walker-Sighting.png|Walker Sighting]] || Game text
+|-
+| [[:File:RG-GEMP-We-Can-Still-Outmaneuver-Them.png|We Can Still Outmaneuver Them]] || Game text
+|-
+| [[:File:RG-GEMP-Naboo-Ceremonial-Chamber.png|Naboo: Ceremonial Chamber]] || Card link
+|-
+| [[:File:RG-GEMP-Boba-Fett.png|Boba Fett]] || Lore encoding, Game text, Card link
+|-
+| [[:File:RG-GEMP-Coilen.png|Coilen]] || Card link
+|-
+| [[:File:RG-GEMP-Griff-Mirtong.png|Griff Mirtong]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Gweeta.png|Gweeta]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Lord-Vader-Lord-Of-The-Sith.png|Lord Vader, Lord Of The Sith]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Security-Activators.png|Security Activators]] || Card link
+|-
+| [[:File:RG-GEMP-Alert-My-Star-Destroyer.png|Alert My Star Destroyer!]] || Destiny, Type
+|-
+| [[:File:RG-GEMP-Blast-Door-Controls-Reactor-Terminal.png|Blast Door Controls & Reactor Terminal]] || Card link
+|-
+| [[:File:RG-GEMP-Crossfire.png|Crossfire]] || Game text, Destiny
+|-
+| [[:File:RG-GEMP-Emperor-s-Power-Overseeing-It-Personally.png|Emperor's Power & Overseeing It Personally]] || Card link
+|-
+| [[:File:RG-GEMP-Flagship-Operations.png|Flagship Operations]] || Game text
+|-
+| [[:File:RG-GEMP-I-Will-Find-Them-Quickly-Master.png|I Will Find Them Quickly Master]] || Game text
+|-
+| [[:File:RG-GEMP-Presence-Of-The-Force-Dark-Waters.png|Presence Of The Force & Dark Waters]] || Game text
+|-
+| [[:File:RG-GEMP-Responsibility-Of-Command.png|Responsibility Of Command]] || Game text, Type
+|-
+| [[:File:RG-GEMP-Sarlacc-Tentacles.png|Sarlacc Tentacles]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Search-And-Destroy.png|Search And Destroy]] || Game text
+|-
+| [[:File:RG-GEMP-Security-Precautions.png|Security Precautions]] || Game text
+|-
+| [[:File:RG-GEMP-Visage-Of-A-Viceroy.png|Visage Of A Viceroy]] || Lore encoding
+|-
+| [[:File:RG-GEMP-Weapon-Malfunction.png|Weapon Malfunction]] || Type
+|-
+| [[:File:RG-GEMP-Well-Earned-Command.png|Well-Earned Command]] || Game text
+|-
+| [[:File:RG-GEMP-Blow-Parried.png|Blow Parried]] || Game text
+|-
+| [[:File:RG-GEMP-Counter-Surprise-Assault.png|Counter Surprise Assault]] || Card link
+|-
+| [[:File:RG-GEMP-Dark-Maneuvers.png|Dark Maneuvers]] || Game text
+|-
+| [[:File:RG-GEMP-Dioxis-They-re-Still-Coming-Through.png|Dioxis & They're Still Coming Through!]] || Card link
+|-
+| [[:File:RG-GEMP-Force-Lightning.png|Force Lightning]] || Game text
+|-
+| [[:File:RG-GEMP-Hit-Racer.png|Hit Racer]] || Game text
+|-
+| [[:File:RG-GEMP-Imperial-Command-It-s-An-Older-Code.png|Imperial Command]] || Game text
+|-
+| [[:File:RG-GEMP-Jabba-s-Through-With-You.png|Jabba's Through With You]] || Game text
+|-
+| [[:File:RG-GEMP-Local-Trouble.png|Local Trouble]] || Game text
+|-
+| [[:File:RG-GEMP-None-Shall-Pass.png|None Shall Pass]] || Destiny
+|-
+| [[:File:RG-GEMP-Sniper.png|Sniper]] || Game text
+|-
+| [[:File:RG-GEMP-Tactical-Support.png|Tactical Support]] || Game text
+|-
+| [[:File:RG-GEMP-Trap-Door.png|Trap Door]] || Game text
+|-
+| [[:File:RG-GEMP-Uncertain-Is-The-Future.png|Uncertain Is The Future]] || Game text
+|-
+| [[:File:RG-GEMP-Unexpected-Interruption.png|Unexpected Interruption]] || Game text
+|-
+| [[:File:RG-GEMP-We-Have-A-Prisoner.png|We Have A Prisoner]] || Game text
+|-
+| [[:File:RG-GEMP-You-Are-Beaten.png|You Are Beaten]] || Game text
+|-
+| [[:File:RG-GEMP-Star-Destroyer-Executor.png|Star Destroyer Executor]] || Card link
+|-
+| [[:File:RG-GEMP-Blizzard-Scout-4.png|Blizzard Scout 4]] || Card link
+|}
+
+=== Additional image spelling backlog ===
+The earlier lore log missed one normalization: [[:File:RG-GEMP-Looking-To-The-Future.png|Looking To The Future]] prints "beind"; the wiki reads "behind". The image still needs repair.
+
+{| class="wikitable"
+! Card image !! Printed !! Wiki spelling
+|-
+| [[:File:RG-GEMP-Clash-Of-Sabers.png]] || <nowiki>Presense</nowiki> || <nowiki>Presence</nowiki>
+|-
+| [[:File:RG-GEMP-Blaster-Deflection.png]] || <nowiki>Cancel and attempt</nowiki> || <nowiki>Cancel an attempt</nowiki>
+|-
+| [[:File:RG-GEMP-Traffic-Control-Crash-Site-Memorial.png]] || <nowiki>from you 'memorial'</nowiki> || <nowiki>from your 'memorial'</nowiki>
+|-
+| [[:File:RG-GEMP-Quick-Reflexes-All-Wrapped-Up.png]] || <nowiki>We Have A Prisone</nowiki> || <nowiki>We Have A Prisoner</nowiki>
+|}
+
+Other printed wording is preserved for a separate decision:
+* [[:File:RG-GEMP-Responsibility-Of-Command.png|Responsibility Of Command]]: "a battle of a Force drain".
+* [[:File:RG-GEMP-Fly-Casual.png|Fly Casual]]: "presence of Force icons".
+* [[:File:RG-GEMP-You-Are-Beaten.png|You Are Beaten]]: "Use 1 Force take".
+Previously empty cells remain empty. This audit corrected existing transcriptions rather than filling all metadata. --[[User:Memory Core ChatGPT|Memory Core ChatGPT]] ([[User talk:Memory Core ChatGPT|talk]]) 15:59, 28 October 2026 (UTC)
