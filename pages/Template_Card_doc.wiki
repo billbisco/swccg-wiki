@@ -13,13 +13,13 @@ Optional '''era''' — championship era hub: <code>[[Decipher era]]</code>, <cod
 
 Optional '''rarity''' and '''uniqueness''' — omit either field when a surviving source does not establish it; no blank row is shown.
 
-Optional '''credits''' — the printed number of credits on a card. Omit when unknown or not yet transcribed; enter <code>0</code> only when a source confirms there are no credits. Renders in the Info table.
+Optional '''credits''' — the number of gold credit circles printed at the bottom of the card. Count the circles from the card image. Omit when unknown or not yet transcribed; enter <code>0</code> when the card image confirms there are none. Renders in the Info table.
 
 Optional '''pc_alias''' — Players Committee GEMP alias (<code>601_x</code> / <code>501_x</code>) when it differs from the GEMP ID.
 
 Optional '''slip''' — printed slip number on the virtual sheet (for example <code>51E</code>). Data, not the id.
 
-'''Versions''' — family navigator (Option C, 26 October 2026; errata prefix 26 October 2026). Closed prefixes, oldest first: Decipher, Decipher (AI), Decipher Errata, PC Errata, Virtual Original, Virtual Legacy, Virtual Legacy (AI), Virtual Modern, Virtual Modern (ALT). Unmarked Decipher is the printed face. Decipher Errata is a later Decipher rewrite. PC Errata only when the Players Committee rewrote past Decipher. Full lineage both directions. Omit when this printing is the only one. Host twins that share one GEMP id use one line plus a hatnote. Pass '''versions''' or the older '''printings''' (alias). Mark the current printing with bold '''this page''' plus the GEMP id in <code><nowiki><code></nowiki></code>. Worked: [[Luke Skywalker]].
+'''Versions''' — family navigator (Option C, 26 October 2026; errata prefix 26 October 2026). Closed prefixes, oldest first: Decipher, Decipher (AI), Decipher Errata, PC Errata, Virtual Original, Virtual Legacy, Virtual Legacy (AI), Virtual Modern, Virtual Modern (ALT). Unmarked Decipher is the printed face. Decipher Errata is a later Decipher rewrite. PC Errata only when the Players Committee rewrote past Decipher. Full lineage both directions. Omit when this printing is the only one. Host twins that share one GEMP id use one line plus a hatnote. Pass '''versions''' or the older '''printings''' (alias). Bold the current-printing label and place its GEMP ID in <code><nowiki><code></nowiki></code>. Worked: [[Luke Skywalker]].
 
 Do not pass '''version_label'''. The old Version row (printed / virtual) is dropped. Era and Versions already mark Players Committee printings as Virtual Original, Virtual Legacy, or Virtual Modern.
 
@@ -34,7 +34,7 @@ Optional '''joke''' — a joke in this printing's title, lore or game text, cite
 
 Optional '''easter_egg''' — the hidden picture, icon, likeness or other visual detail on this printing, cited. Renders as '''Easter egg''' immediately before See Also. Adds [[:Category:Easter eggs]]. Omit when none. Link [[Easter eggs]] from See also. Worked: [[Death Star: Trench]].
 
-'''sources''' — the card-data sources this page transcribes (card list, slip, PDF), one bullet each with its Preserved copy. Renders under a '''Sources''' heading only when filled. Do not repeat a source that is already a <code><nowiki><ref></nowiki></code> for a specific claim unless it is the source for the whole card. '''has_refs''' — set when the page has <code><nowiki><ref></nowiki></code> notes; renders '''References'''. '''see_also''' renders '''See Also''' only when filled.
+'''sources''' — card-data sources supplied here (card list, slip, PDF). Give each source its own bullet with a Preserved copy. The template renders a '''Sources''' heading only when filled. Do not repeat a source already cited with <code><nowiki><ref></nowiki></code> for one claim. List it here again only when it supplies the entire card entry. '''has_refs''' — set when the page has <code><nowiki><ref></nowiki></code> notes; renders '''References'''. '''see_also''' renders '''See Also''' only when filled.
 
 Optional '''image2''' — second portrait under '''image''' (same 280px width). Used for Objective 0/7 faces; omit on single-face cards.
 
