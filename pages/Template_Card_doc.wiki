@@ -5,15 +5,15 @@ One page = one printing. Do '''not''' put empty errata sections on a card that w
 Optional '''card_status''' — a short status label for a printing that needs context outside the standard Decipher / Players Committee bands (for example, a cancelled design's community remaster). The label appears above the card template. Use only a sourced status; omit it for ordinary printings.
 
 
-Optional '''publisher''' — who released this printing (<code>[[Decipher]]</code>, <code>[[Players Committee]]</code>, or a named person). Inherit from the set infobox. Renders after Set when filled.
+Optional '''publisher''' — publisher credited by the set article (<code>[[Decipher]]</code>, <code>[[Players Committee]]</code>, or a named person). Inherit from the set infobox. For a cancelled set, use its documented planned publisher; this does not imply that the cards were released. Renders after Set when filled.
 
 Optional '''era''' — championship era hub: <code>[[Decipher era]]</code>, <code>[[Virtual Original]]</code>, <code>[[Virtual Legacy]]</code>, or <code>[[Virtual Modern]]</code>. Renders after Publisher when filled.
 
 '''GEMP ID''' — the id GEMP actually loads, as <code>set_card</code> (for example <code>1220_51</code>, <code>1_19</code>). Bare on the current playable article, <code>o</code> on the first-published face, <code>d</code> only as a middle layer when print, Decipher errata, and PC errata are three distinct texts. Pass '''gemp_id''' or the older '''card_uid''' (alias). Shown in monospace. Dest keys such as <code>pc|vbN|...</code> belong in authoring JSON, not here.
 
-Optional '''rarity''' and '''uniqueness''' — omit either field when a surviving source does not establish it; no blank row is shown.
+Optional '''rarity''' and '''uniqueness''' — omit either field when the source does not establish it; no blank row is shown. Read uniqueness from the printed title marker: one bullet is Unique, no marker is Unrestricted, and multiple bullets use the corresponding Limited or Restricted value. For a combo, inspect the marker on both halves. If the title area is cropped or unreadable, omit uniqueness.
 
-Optional '''credits''' — the number of gold credit circles printed at the bottom of the card. Count the circles from the card image. Omit when unknown or not yet transcribed; enter <code>0</code> when the card image confirms there are none. Renders in the Info table.
+Optional '''credits''' — count only the gold coin circles in the card’s bottom credit area, following the card’s orientation. The single gold badge beside the lore panel is not a credit. Omit when unknown or not yet transcribed; enter <code>0</code> when the card image confirms there are no credit coins. Renders in the Info table.
 
 Optional '''pc_alias''' — Players Committee GEMP alias (<code>601_x</code> / <code>501_x</code>) when it differs from the GEMP ID.
 
