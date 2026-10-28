@@ -13,7 +13,7 @@ Optional '''era''' — championship era hub: <code>[[Decipher era]]</code>, <cod
 
 Optional '''rarity''' and '''uniqueness''' — omit either field when the source does not establish it; no blank row is shown. Read uniqueness from the printed title marker: one bullet is Unique, no marker is Unrestricted, and multiple bullets use the corresponding Limited or Restricted value. For a combo, inspect the marker on both halves. If the title area is cropped or unreadable, omit uniqueness.
 
-Optional '''credits''' — count only the gold coin circles in the card’s bottom credit area, following the card’s orientation. The single gold badge beside the lore panel is not a credit. Omit when unknown or not yet transcribed; enter <code>0</code> when the card image confirms there are no credit coins. Renders in the Info table.
+Optional '''credits''' — count only the gold coin circles in the card’s bottom credit area, following the card’s orientation. The single gold badge beside the lore panel is not a credit. Show only positive Credits. Omit the parameter when there are no credit coins or the value is unknown; empty, null and zero values do not render a row. Keep confirmed zero distinct from unknown in the source-data ledger.
 
 Optional '''pc_alias''' — Players Committee GEMP alias (<code>601_x</code> / <code>501_x</code>) when it differs from the GEMP ID.
 
@@ -37,6 +37,8 @@ Optional '''easter_egg''' — the hidden picture, icon, likeness or other visual
 '''sources''' — card-data sources supplied here (card list, slip, PDF). Give each source its own bullet with a Preserved copy. The template renders a '''Sources''' heading only when filled. Do not repeat a source already cited with <code><nowiki><ref></nowiki></code> for one claim. List it here again only when it supplies the entire card entry. '''has_refs''' — set when the page has <code><nowiki><ref></nowiki></code> notes; renders '''References'''. '''see_also''' renders '''See Also''' only when filled.
 
 Optional '''image2''' — second portrait under '''image''' (same 280px width). Used for Objective 0/7 faces; omit on single-face cards.
+
+Optional '''image2_trim''' — display-only trim for excess padding on the second image. A value of <code>20</code> requests a 320px thumbnail and hides 20px on each edge inside a 280px-wide rounded window. Measure each image separately and preserve a normal black border, all text and all symbols. The source File and downloaded image are unchanged. Omit for ordinary images.
 
 Optional '''image2_layout''' — how to place '''image2''' when set:
 * omit or '''stack''' — force stacked vertically (0 on top, 7 below); default when unset

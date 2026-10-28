@@ -1,7 +1,7 @@
 <noinclude>{{Template:Card/doc}}</noinclude><includeonly>__NOTOC__{{#if:{{{card_status|}}}|'''{{{card_status}}}'''|{{#ifeq:{{{set_band|Decipher}}}|Decipher||'''Players Committee / Virtual''' — not a Decipher card.}}}}
 <div class="card-nav">{{#if:{{{prev|}}}|« [[{{{prev}}}]]<nowiki> </nowiki>· }}[[{{Set page|{{{set}}}}}|{{{set}}}]]{{#if:{{{next|}}}|<nowiki> </nowiki>· [[{{{next}}}]] »}}</div>
 <div class="card-rail{{#ifeq:{{{rail|}}}|right|<nowiki> </nowiki>card-rail-right}}{{#ifeq:{{{image2_layout|}}}|right|<nowiki> </nowiki>card-rail-dual}}{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-rail-dual card-rail-responsive}}">
-{{#if:{{#ifeq:{{{image2_layout|}}}|right|1|}}{{#ifeq:{{{image2_layout|}}}|responsive|1|}}|{{#if:{{{image|}}}|<div class="card-portraits-row{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-portraits-responsive}}"><div class="card-portrait">[[File:{{{image}}}|280px]]</div>{{#if:{{{image2|}}}|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}</div>}}|{{#if:{{{image|}}}|<div class="card-portrait">[[File:{{{image}}}|280px]]</div>}}{{#if:{{{image2|}}}|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}}}<table class="wikitable mw-collapsible card-infobox">
+{{#if:{{#ifeq:{{{image2_layout|}}}|right|1|}}{{#ifeq:{{{image2_layout|}}}|responsive|1|}}|{{#if:{{{image|}}}|<div class="card-portraits-row{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-portraits-responsive}}"><div class="card-portrait">[[File:{{{image}}}|280px]]</div>{{#if:{{{image2|}}}|{{#if:{{{image2_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image2_trim}}}}}px;margin:-{{{image2_trim}}}px;">[[File:{{{image2}}}|{{#expr:280+2*{{{image2_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}}}</div>}}|{{#if:{{{image|}}}|<div class="card-portrait">[[File:{{{image}}}|280px]]</div>}}{{#if:{{{image2|}}}|{{#if:{{{image2_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image2_trim}}}}}px;margin:-{{{image2_trim}}}px;">[[File:{{{image2}}}|{{#expr:280+2*{{{image2_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}}}}}<table class="wikitable mw-collapsible card-infobox">
 <caption>Info</caption>
 <tr><th>Title</th><td>{{{title}}}</td></tr>
 <tr><th>Side</th><td>[[{{{side}}}]]</td></tr>
@@ -12,7 +12,7 @@
 {{#if:{{{rarity|}}}|<tr><th>Rarity</th><td>[[{{{rarity_link|Rarity}}}|{{{rarity}}}]]</td></tr>}}
 {{#if:{{{uniqueness|}}}|<tr><th>Uniqueness</th><td>{{{uniqueness}}}</td></tr>}}
 {{#if:{{{destiny|}}}|<tr><th>Destiny</th><td>{{{destiny}}}</td></tr>}}
-{{#if:{{{credits|}}}|<tr><th>Credits</th><td>{{{credits}}}</td></tr>}}
+{{#switch:{{lc:{{{credits|}}}}}|0=|null=|=|#default=<tr><th>Credits</th><td>{{{credits}}}</td></tr>}}
 {{#if:{{{power|}}}|<tr><th>Power</th><td>{{{power}}}</td></tr>}}
 {{#if:{{{ability|}}}|<tr><th>Ability</th><td>{{{ability}}}</td></tr>}}
 {{#if:{{{influence|}}}|<tr><th>Influence</th><td>{{{influence}}}</td></tr>}}
