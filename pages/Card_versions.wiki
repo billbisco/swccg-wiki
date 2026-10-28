@@ -7,17 +7,17 @@ Do '''not''' renumber GEMP blueprint ids. The infobox '''GEMP ID''' is the id GE
 
 * '''Family key''' &mdash; bare GEMP id (example: <code>3_1</code> for 2-1B).
 * '''Current playable''' &mdash; '''same bare id''' on the article GEMP loads. Human title is '''Title (Errata)''' when that is Decipher's last word, or '''Title (PC Errata)''' when the Players Committee rewrote past Decipher.
-* '''Print / Original''' &mdash; suffix <code>o</code> (example: <code>1_19o</code>, <code>3_1o</code>). Pages: bare '''Title''' when bare shows print, and/or '''Title (Original)'''.
-* '''Decipher errata as a middle layer''' &mdash; suffix <code>d</code> only when print, Decipher errata, and PC errata are three distinct texts (example: [[Attack Run (Errata)]]). When Decipher errata '''is''' current GEMP text, the Errata article uses the '''bare id''' (worked: [[Luke Skywalker (Errata)]] <code>1_19</code>).
+* '''Print''' &mdash; suffix <code>o</code> when a later errata exists (example: <code>1_19o</code>, <code>2_42o</code>). Page is unmarked '''Title'''. '''Title (Original)''' is a '''redirect''' to that unmarked print article, not a second card page.
+* '''Decipher errata as a middle layer''' &mdash; suffix <code>d</code> only when print, Decipher errata, and PC errata are three distinct texts (example: [[Attack Run (Errata)]] <code>2_42d</code>). When Decipher errata '''is''' current GEMP text, the Errata article uses the '''bare id''' (worked: [[Luke Skywalker (Errata)]] <code>1_19</code>).
 * '''No PC and no Decipher errata''' &mdash; only bare <code>N_M</code>; all eras resolve to it.
 * '''Virtual cards''' &mdash; their own ids (200+ / Set N / 11xx / 12xx). Keep <code>(V)</code> titles. Not an errata of a Decipher card unless a real replacement is sourced.
 
-Do '''not''' use wiki-only <code>-PC</code> / <code>-OR</code> / <code>-DE</code> as playable ids. Human titles stay '''(PC Errata)''' / '''(Original)''' / '''(Errata)'''. Infobox Versions prefixes: Decipher · Decipher Errata · PC Errata · Virtual Original · Virtual Legacy · Virtual Modern. See [[SWCCG Wiki:Style guide#Card infobox Versions (Bill, 2026-10-26)|Style guide]] and [[Template:Card/doc]].
+Do '''not''' use wiki-only <code>-PC</code> / <code>-OR</code> / <code>-DE</code> as playable ids. Human titles stay '''(PC Errata)''' / '''(Errata)'''. Do '''not''' prefix Original on the printed article. Infobox Versions prefixes: Decipher · Decipher Errata · PC Errata · Virtual Original · Virtual Legacy · Virtual Modern. See [[SWCCG Wiki:Style guide#Card infobox Versions (Bill, 2026-10-26)|Style guide]] and [[Template:Card/doc]].
 
-Example (Decipher-only Glossary): [[Luke Skywalker]] / [[Luke Skywalker (Original)]] use <code>1_19o</code>; [[Luke Skywalker (Errata)]] uses bare <code>1_19</code>. Example (PC-only App A): [[2-1B (Too-Onebee)]] and [[2-1B (Too-Onebee) (Original)]] use <code>3_1o</code>; [[2-1B (Too-Onebee) (PC Errata)]] uses bare <code>3_1</code>. Attack Run–style (Decipher + PC) uses print <code>…o</code>, Decipher <code>…d</code>, PC bare.
+Example (Decipher + PC): [[Attack Run]] print <code>2_42o</code>; [[Attack Run (Errata)]] Decipher <code>2_42d</code>; [[Attack Run (PC Errata)]] bare <code>2_42</code>. [[Attack Run (Original)]] redirects to [[Attack Run]]. Example (Decipher-only Glossary): [[Luke Skywalker]] print <code>1_19o</code>; [[Luke Skywalker (Errata)]] bare <code>1_19</code>. [[Luke Skywalker (Original)]] redirects to [[Luke Skywalker]]. Example (PC-only App A): [[2-1B (Too-Onebee)]] print <code>3_1o</code>; [[2-1B (Too-Onebee) (PC Errata)]] bare <code>3_1</code>.
 
 == What you see on a page ==
-A card with no known errata shows '''one''' game-text block. Errata headings appear only when <code>errata_of</code> or <code>errata_cards</code> is filled (or when sibling (Original)/(Errata) pages are linked from printings).
+A card with no known errata shows '''one''' game-text block. Errata headings appear only when <code>errata_of</code> or <code>errata_cards</code> is filled (or when sibling (Errata) pages are linked from Versions).
 
 == See also ==
 * [[Errata]] &middot; [[PC Errata]] &middot; [[Errata on Projective Telepathy]]

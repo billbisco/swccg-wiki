@@ -1,4 +1,4 @@
-<noinclude>{{Template:Card/doc}}</noinclude><includeonly>__NOTOC__{{#ifeq:{{{set_band|Decipher}}}|Decipher||'''Players Committee / Virtual''' — not a Decipher card.}}
+<noinclude>{{Template:Card/doc}}</noinclude><includeonly>__NOTOC__{{#if:{{{card_status|}}}|'''{{{card_status}}}'''|{{#ifeq:{{{set_band|Decipher}}}|Decipher||'''Players Committee / Virtual''' — not a Decipher card.}}}}
 <div class="card-nav">{{#if:{{{prev|}}}|« [[{{{prev}}}]]<nowiki> </nowiki>· }}[[{{Set page|{{{set}}}}}|{{{set}}}]]{{#if:{{{next|}}}|<nowiki> </nowiki>· [[{{{next}}}]] »}}</div>
 <div class="card-rail{{#ifeq:{{{rail|}}}|right|<nowiki> </nowiki>card-rail-right}}{{#ifeq:{{{image2_layout|}}}|right|<nowiki> </nowiki>card-rail-dual}}{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-rail-dual card-rail-responsive}}">
 {{#if:{{#ifeq:{{{image2_layout|}}}|right|1|}}{{#ifeq:{{{image2_layout|}}}|responsive|1|}}|{{#if:{{{image|}}}|<div class="card-portraits-row{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-portraits-responsive}}"><div class="card-portrait">[[File:{{{image}}}|280px]]</div>{{#if:{{{image2|}}}|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}</div>}}|{{#if:{{{image|}}}|<div class="card-portrait">[[File:{{{image}}}|280px]]</div>}}{{#if:{{{image2|}}}|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}}}<table class="wikitable mw-collapsible card-infobox">
@@ -9,9 +9,10 @@
 <tr><th>Set</th><td>[[{{Set page|{{{set}}}}}|{{{set}}}]]</td></tr>
 {{#if:{{{publisher|}}}|<tr><th>Publisher</th><td>{{{publisher}}}</td></tr>}}
 {{#if:{{{era|}}}|<tr><th>Era</th><td>{{{era}}}</td></tr>}}
-<tr><th>Rarity</th><td>[[{{{rarity_link|Rarity}}}|{{{rarity}}}]]</td></tr>
-<tr><th>Uniqueness</th><td>{{{uniqueness}}}</td></tr>
-<tr><th>Destiny</th><td>{{{destiny|}}}</td></tr>
+{{#if:{{{rarity|}}}|<tr><th>Rarity</th><td>[[{{{rarity_link|Rarity}}}|{{{rarity}}}]]</td></tr>}}
+{{#if:{{{uniqueness|}}}|<tr><th>Uniqueness</th><td>{{{uniqueness}}}</td></tr>}}
+{{#if:{{{destiny|}}}|<tr><th>Destiny</th><td>{{{destiny}}}</td></tr>}}
+{{#if:{{{credits|}}}|<tr><th>Credits</th><td>{{{credits}}}</td></tr>}}
 {{#if:{{{power|}}}|<tr><th>Power</th><td>{{{power}}}</td></tr>}}
 {{#if:{{{ability|}}}|<tr><th>Ability</th><td>{{{ability}}}</td></tr>}}
 {{#if:{{{influence|}}}|<tr><th>Influence</th><td>{{{influence}}}</td></tr>}}
@@ -29,20 +30,20 @@
 <tr><th>GEMP ID</th><td><code>{{{gemp_id|{{{card_uid}}}}}}</code></td></tr>
 {{#if:{{{pc_alias|}}}|<tr><th>PC alias</th><td><code>{{{pc_alias}}}</code></td></tr>}}
 {{#if:{{{slip|}}}|<tr><th>Slip</th><td>{{{slip}}}</td></tr>}}
-<tr><th>Versions</th><td>{{{versions|{{{printings}}}}}}</td></tr>
+{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>Versions</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
 {{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}
 </table>
 </div>{{#if:{{{hatnote|}}}|<div class="card-hatnote">''{{{hatnote}}}''</div>}}
 <div class="card-body">
 '''{{{title}}}''' is a [[{{{side}}}]] [[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>([[{{{subtype_link}}}{{!}}{{{subtype}}}]])}} from [[{{Set page|{{{set}}}}}|{{{set}}}]].
 
-== Card Text ==
-{{{game_text|}}}{{#if:{{{game_text_note|}}}|
+{{#if:{{{game_text|}}}|<h2>Card Text</h2>
+{{{game_text}}}{{#if:{{{game_text_note|}}}|
 
-''{{{game_text_note}}}''}}
+''{{{game_text_note}}}''}}}}
 
-== Lore ==
-{{#if:{{{lore|}}}|''{{{lore}}}''}}
+{{#if:{{{lore|}}}|<h2>Lore</h2>
+''{{{lore}}}''}}
 
 {{#if:{{{anagram|}}}|<nowiki />
 <h2>Anagram</h2>
@@ -52,7 +53,9 @@
 <h2>Notes</h2>
 {{{notes}}}}}{{#if:{{{strategy|}}}|<nowiki />
 <h2>Strategy</h2>
-{{{strategy}}}}}{{#if:{{{combos|}}}|<nowiki />
+{{{strategy}}}}}{{#if:{{{reviews|}}}|<nowiki />
+<h2>Reviews</h2>
+{{{reviews}}}}}{{#if:{{{combos|}}}|<nowiki />
 <h2>Combos</h2>
 {{{combos}}}}}{{#if:{{{rulings|}}}|<nowiki />
 <h2>Rulings</h2>

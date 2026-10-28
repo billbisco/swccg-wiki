@@ -591,3 +591,9 @@ table.card-thumbs a {
   max-height: min(520px, 85vh);
   max-width: min(920px, 94vw);
 }
+
+/* Jokes: let row images shrink to fit narrow windows; desktop sizes unchanged */
+body.page-Jokes .mw-parser-output img.mw-file-element {
+  max-width: 100%;
+  height: auto;
+}

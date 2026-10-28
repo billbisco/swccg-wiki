@@ -2,12 +2,18 @@ This is the documentation for [[Template:Card]], the card-page template.
 
 One page = one printing. Do '''not''' put empty errata sections on a card that was never errata'd.
 
+Optional '''card_status''' — a short status label for a printing that needs context outside the standard Decipher / Players Committee bands (for example, a cancelled design's community remaster). The label appears above the card template. Use only a sourced status; omit it for ordinary printings.
+
 
 Optional '''publisher''' — who released this printing (<code>[[Decipher]]</code>, <code>[[Players Committee]]</code>, or a named person). Inherit from the set infobox. Renders after Set when filled.
 
 Optional '''era''' — championship era hub: <code>[[Decipher era]]</code>, <code>[[Virtual Original]]</code>, <code>[[Virtual Legacy]]</code>, or <code>[[Virtual Modern]]</code>. Renders after Publisher when filled.
 
 '''GEMP ID''' — the id GEMP actually loads, as <code>set_card</code> (for example <code>1220_51</code>, <code>1_19</code>). Bare on the current playable article, <code>o</code> on the first-published face, <code>d</code> only as a middle layer when print, Decipher errata, and PC errata are three distinct texts. Pass '''gemp_id''' or the older '''card_uid''' (alias). Shown in monospace. Dest keys such as <code>pc|vbN|...</code> belong in authoring JSON, not here.
+
+Optional '''rarity''' and '''uniqueness''' — omit either field when a surviving source does not establish it; no blank row is shown.
+
+Optional '''credits''' — the printed number of credits on a card. Omit when unknown or not yet transcribed; enter <code>0</code> only when a source confirms there are no credits. Renders in the Info table.
 
 Optional '''pc_alias''' — Players Committee GEMP alias (<code>601_x</code> / <code>501_x</code>) when it differs from the GEMP ID.
 
@@ -19,6 +25,8 @@ Do not pass '''version_label'''. The old Version row (printed / virtual) is drop
 
 
 Optional '''likeness''' — person whose face is on the card: a photographic model Decipher (or the Players Committee) cast, or the film portrayer of that character. Wiki-link the person page. Worked: [[Mara Jade, The Emperor's Hand]] → [[Shannon Baksa]]; [[Aurra Sing]] / [[Aurra Sing (AI)]] → [[Michonne Bourriague]]. Omit when the art is illustration, a starship/weapon, or a later virtual photograph that is not that person.
+
+Optional '''reviews''' — published reviews of this card (fan-site or magazine), one bullet each: reviewer, outlet, date when known, rating if given, a short summary and a brief quote, cited with a <code><nowiki><ref></nowiki></code> carrying the Preserved copy (set '''has_refs'''). Renders as '''Reviews''' after Strategy. Omit when none. Worked: [[Chasm]] (Jeff Hansen, Neglected Card Series).
 
 Optional '''anagram''' — one sentence that the printed title is an anagram of a named person. Renders as '''Anagram'''. Adds [[:Category:Anagrams]]. Omit when none. Link [[Anagrams]] from See also. Worked: [[Nabrun Leids]] → [[Tom Braunlich]].
 
