@@ -41,3 +41,14 @@ Fills existing empty decklist stubs (2015–2017 PC events) from the Players Com
 - `match.py` aliases: jonas-hagen→Nørregaard, gyorgy-bill→Póra, kent-l→Larsen, pete-the-welsh→Rowlands,
   casper-jorgenson→Jørgensen; "Drops" stubs accept any posted stage.
 - `finalize_pc.py` now also resolves front-only objective names on the Starting Card line (and case variants).
+
+## Wave 5 (live PC site via FlareSolverr, 2026-10-29) — LIVE
+
+- 43 empty 2015–2018 stubs whose only source was a per-deck PC post. Posts fetched with FlareSolverr on the gemp
+  server (loopback `127.0.0.1:8191`, reached over SSH) — `/wp/` URLs redirect to a landing page, so fetch without `/wp/`.
+- `wave5/fill.py`: `parse_posts.parse` + `canon.fix` + the era-aware resolver from `../pc-pdf-old/build.py` (modern era:
+  shortest title, Legacy VB/VSh/OVS printings only when nothing else), title-case retry, a few typo fixes (`EXTRA`),
+  unheaded opening lines taken as the starting cards. Inserts `== Decklist ==` before See also and the deck post as the
+  first Source. Unmatched shields print as text under Defensive Shield (Goldenrod, as on earlier pages); other unmatched
+  lines under "Not identified". `report.txt` = card counts and calls. Starting Card red links were swapped for the
+  objective's CardLink (11 pages). Page list: `wave5/changed-pages-2026-10-29.md`.
