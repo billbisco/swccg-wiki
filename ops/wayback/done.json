@@ -90,25 +90,27 @@
   "capture": "https://web.archive.org/web/20020614152851/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006133217.jpg",
   "last": "2026-10-22T17:46:17Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-10-26T18:07:49Z",
-   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+   "at": "2026-10-29T00:01:25Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "http://decipher.com/deciphercon/2000/photos/pictures/20001006133313.jpg": {
   "capture": "https://web.archive.org/web/20020608130739/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006133313.jpg",
   "last": "2026-10-22T17:46:32Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-10-26T18:07:37Z",
-   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi"
+   "at": "2026-10-29T00:01:17Z",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certi",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "http://decipher.com/deciphercon/2000/photos/pictures/20001006184854.jpg": {
   "capture": "https://web.archive.org/web/20020608131616/http://decipher.com:80/deciphercon/2000/photos/pictures/20001006184854.jpg",
@@ -30529,13 +30531,14 @@
   "capture": "https://web.archive.org/web/20261009015411/https://fancons.com/events/info/5400/dragon-con-2003",
   "last": "2026-10-22T18:11:47Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-26T18:06:24Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-29T00:01:07Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://files.lotrtcgpc.net/archives/decipher_wayback/2004_decipher_backup.zip#cardlists/cloudcity/light/images/cloudcitychasmwalkway.gif": {
   "capture": "https://web.archive.org/web/20261010021411/https://files.lotrtcgpc.net/archives/decipher_wayback/2004_decipher_backup.zip",
@@ -30544,10 +30547,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-26T18:04:32Z",
+   "at": "2026-10-29T00:01:01Z",
    "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://forum.starwarsccg.org/viewtopic.php?p=1300861": {
   "capture": "",
