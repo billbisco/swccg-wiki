@@ -1,6 +1,6 @@
 # Old PC deck-sheet PDFs (2007, 2010, 2011) → new wiki decklist pages
 
-Built 2026-10-25 (Claude). **Status: transcribed and built, NOT yet applied to the wiki.**
+Built 2026-10-25, applied 2026-10-29 (Claude). **Status: LIVE** — 2,091 pages (992 created, 1,099 edited incl. File: pages), 31 PDFs, 899 scans; 0 errors, 0 conflicts, no new red links. Page list: `changed-pages-2026-10-29.md`. Uploads over 1.5 MB must go chunked (single uploads are capped at 2 MB).
 
 These events had no wiki pages at all: 2007 MPC D1/D2, Endor/Kashyyyk Regionals, MA/NJ/ND States, Australian
 Championship, US East Nationals D2; 2010 MPC D1/D2, Texas Mini Worlds D1/D2, US West Nationals D1/D2, US East

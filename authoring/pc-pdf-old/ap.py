@@ -50,7 +50,7 @@ if mode == "files":
             print("SKIP", f.name, flush=True); continue
         for attempt in range(3):
             try:
-                r = chunked(f) if f.stat().st_size > 4 * 1024 * 1024 else wk.upload(f, summary)
+                r = chunked(f) if f.stat().st_size > 1500000 else wk.upload(f, summary)
                 print("FILE", f.name, r, flush=True); break
             except Exception as e:
                 time.sleep(3)
