@@ -25,7 +25,7 @@ def norm_type(t):
 def label(t):
     return re.sub(r"( \((?!V\))[^()]*\))+$", "", t.replace("•", ""))
 def cardlink(i):
-    t = i["title"]; lab = label(t)
+    t = i["title"]; lab = i.get("label") or label(t)
     s = "{{CardLink|" + t + "|" + i["image"]
     if lab != t: s += "|label=" + lab
     return s + "}}"
@@ -167,8 +167,17 @@ for f in sorted(glob.glob(str(HERE / "out" / "G*" / "*.json"))):
         tx = (x.get("text") or ""); tl = tx.lower(); c = x.get("card") or ""
         if "eject" in tl and ("atroc" in tl or " ia" in tl or "combo" in tl or "+" in tl or "&" in tl):
             x["card"] = ""          # "Eject! Eject! & Imperial Atrocity": no card page anywhere; print as written
-        elif "cyborg" in tl and "commander" in tl:
-            x["card"] = ""
+        elif "cyborg" in tl and "commander" in tl and d["side"] == "DS":
+            # the 2010-11 Legacy name of the card later printed as Grievous, Hunter Of Jedi (Virtual Block 7)
+            x["card"] = "Grievous, Hunter Of Jedi"; x["label"] = "Cyborg Commander, Hunter Of Jedi"
+        elif re.sub(r"\s*\(v\)\s*$", "", tl).strip() == "blind jedi" and d["side"] == "LS":
+            x["card"] = "Rahm Kota, Blind Jedi"; x["label"] = "Blind Jedi"
+        elif "krayt dragon howl" in tl and "armed" in tl and d["side"] == "LS":
+            x["card"] = "Armed And Dangerous & Krayt Dragon Howl"
+        elif re.match(r"kessel: ?spice mines?\b", tl) and d["side"] == "DS":
+            for site in ("docking bay", "extraction facility", "prison", "administrator's office"):
+                if site in tl.replace("administrators", "administrator's"):
+                    x["card"] = "Kessel: Spice Mines - " + site.title().replace("'S", "'s")
         elif "galen" in tl and "secret" in tl:
             x["card"] = "Galen, Secret Apprentice"
         elif re.sub(r"\s*\(v\)\s*$", "", tl).strip() in ("fallen jedi", "black leader", "blind jedi", "galen's fighter"):
@@ -251,7 +260,8 @@ for d in decks:
             report.append(f"UNRESOLVED {d['title']} line {line.get('n')}: text={line.get('text')!r} card={name!r}")
         else:
             typ = "Defensive Shield" if is_shield and info["type"] == "Defensive Shield" else norm_type(info["type"])
-            key = (typ, info["title"])
+            if line.get("label"): info = dict(info, label=line["label"])
+            key = (typ, info["title"] + ("|" + line["label"] if line.get("label") else ""))
             (shields if typ == "Defensive Shield" else cards).append((name, "(V)" in info["title"]))
         groups.setdefault(key[0], collections.OrderedDict())
         g = groups[key[0]]; g[key[1]] = (g.get(key[1], (0, info))[0] + 1, info)

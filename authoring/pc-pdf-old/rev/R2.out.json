@@ -1,0 +1,177 @@
+[
+ {
+  "source": "out/G17/2010_TMW_D2-p10.json",
+  "fixes": [
+   {
+    "n": 9,
+    "shield": false,
+    "text": "squassin",
+    "card": "Squadron Assignments",
+    "v": false,
+    "why": "'squassin' = 'Squad Assign(ments)' run together; LS effect fits this Hidden Base deck"
+   }
+  ]
+ },
+ {
+  "source": "out/G17/2010_TMW_D2-p11.json",
+  "fixes": [
+   {
+    "n": 10,
+    "shield": true,
+    "text": "Imperial Deat...",
+    "card": "Imperial Detention",
+    "v": false,
+    "why": "shield 10 'Imperial Deat...' cut off at page edge; the only DS Defensive Shield starting 'Imperial De' is Imperial Detention (Imperial Decree is an effect, already line 9)"
+   }
+  ]
+ },
+ {
+  "source": "out/G17/2010_TMW_D2-p2.json",
+  "fixes": [
+   {
+    "n": 30,
+    "shield": false,
+    "text": "Mace the Ace!",
+    "card": "Mace Windu",
+    "v": true,
+    "why": "'Mace the Ace!' with (V) ticked; only Mace with a (V) is Mace Windu (V) (VB5)"
+   },
+   {
+    "n": 33,
+    "shield": false,
+    "text": "Mace the Ace",
+    "card": "Mace Windu",
+    "v": true,
+    "why": "'Mace the Ace' with (V) ticked = Mace Windu (V), second copy"
+   }
+  ]
+ },
+ {
+  "source": "out/G18/2010_Regional_Dagobah-p10.json",
+  "fixes": [
+   {
+    "n": 14,
+    "shield": false,
+    "text": "\"",
+    "card": "Grievous, Hunter Of Jedi",
+    "v": false,
+    "why": "ditto of line 13 'Cyborg Commander' = Grievous, Hunter Of Jedi (VB7, lore 'Commander'); Cyborg Construct is not a DS card. Line 13 should get the same card"
+   }
+  ]
+ },
+ {
+  "source": "out/G18/2010_Regional_Dagobah-p6.json",
+  "fixes": [
+   {
+    "n": 35,
+    "shield": false,
+    "text": "Cyborg Comander",
+    "card": "Grievous, Hunter Of Jedi",
+    "v": false,
+    "why": "'Cyborg Comander' = Grievous, Hunter Of Jedi (VB7); (V) box ticked but no (V) of this card exists. Line 57 (also 'Cyborg Commander') should get the same card"
+   }
+  ]
+ },
+ {
+  "source": "out/G2/2010_MPC_D1-p33.json",
+  "fixes": [
+   {
+    "n": 24,
+    "shield": false,
+    "text": "vader betrayed",
+    "card": "Darth Vader, Betrayer Of The Jedi",
+    "v": false,
+    "why": "'vader betrayed' = Darth Vader, Betrayer Of The Jedi (VB6); (V) ticked but no (V) version of that card exists in 2010"
+   }
+  ]
+ },
+ {
+  "source": "out/G2/2010_MPC_D1-p44.json",
+  "fixes": [
+   {
+    "n": 5,
+    "shield": false,
+    "text": "Luke SITF",
+    "card": "Luke Skywalker, Strong In The Force",
+    "v": false,
+    "why": "'Luke SITF' = Luke Skywalker, Strong In The Force (VB6)"
+   },
+   {
+    "n": 6,
+    "shield": false,
+    "text": "\"",
+    "card": "Luke Skywalker, Strong In The Force",
+    "v": false,
+    "why": "ditto of line 5"
+   },
+   {
+    "n": 7,
+    "shield": false,
+    "text": "\"",
+    "card": "Luke Skywalker, Strong In The Force",
+    "v": false,
+    "why": "ditto of line 5"
+   },
+   {
+    "n": 8,
+    "shield": false,
+    "text": "\"",
+    "card": "Luke Skywalker, Strong In The Force",
+    "v": false,
+    "why": "ditto of line 5"
+   }
+  ]
+ },
+ {
+  "source": "out/G22/2007_MPC_D1-p25.json",
+  "fixes": [
+   {
+    "n": 11,
+    "shield": false,
+    "text": "Tattooine: Jedi Outskirts",
+    "card": "Tatooine: City Outskirts",
+    "v": false,
+    "why": "'Tattooine: Jedi Outskirts': the only Tatooine site with 'Outskirts' is Tatooine: City Outskirts (LS)"
+   }
+  ]
+ },
+ {
+  "source": "out/G24/2007_MPC_D2-p7.json",
+  "fixes": [
+   {
+    "n": 60,
+    "shield": false,
+    "text": "EV's Hebrot",
+    "card": "Elis Helrot",
+    "v": false,
+    "why": "'EV's Hebrot' = Elis Helrot (DS interrupt), misspelled"
+   }
+  ]
+ },
+ {
+  "source": "out/G24/2007_MPC_D2-p8.json",
+  "fixes": [
+   {
+    "n": 6,
+    "shield": true,
+    "text": "Hoj'x",
+    "card": "Houjix",
+    "v": false,
+    "why": "shield list 'Hoj'x' = Houjix (LS interrupt; player listed it in the shields column)"
+   }
+  ]
+ },
+ {
+  "source": "out/G27/2007_Regional_Endor-p1.json",
+  "fixes": [
+   {
+    "n": 10,
+    "shield": true,
+    "text": "Choke",
+    "card": "Choke",
+    "v": false,
+    "why": "shield 10 'Choke': Choke is an LS interrupt (Jabba's Palace) on the wiki"
+   }
+  ]
+ }
+]

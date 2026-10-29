@@ -43,3 +43,10 @@ Then purge, re-run the red-link check on the live pages, and report every change
 
 ## Open items for Bill
 See `issues.md` (left-out sheets, name calls, cards the wiki lacks, unreachable sources).
+
+## Second pass (2026-10-29) — LIVE
+Helpers re-read the scans for the 514 "Not identified" lines (`rev/REV-BRIEF.md`, tasks `rev/R*.json`, answers
+`rev/R*.out.json`, applied to `out/`). 263 lines now resolve; 377 unidentified lines remain (as written). Rebuilt with
+`./make_all.sh`, re-applied only the 170 deck pages whose text changed, plus 18 older pages (2008 Worlds Frafjord DS,
+2012 European Championship) whose card links used post-2014 V0/VS art (`v0fix.py`). 0 conflicts.
+Page list: `changed-pages-2026-10-29-pass2.md`.

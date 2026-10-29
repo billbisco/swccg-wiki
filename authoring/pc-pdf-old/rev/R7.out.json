@@ -1,0 +1,227 @@
+[
+ {
+  "source": "out/G44/2011MPC_MPCDay1-p65.json",
+  "fixes": [
+   {
+    "n": 36,
+    "shield": false,
+    "text": "HCF",
+    "card": "Han, Chewie, And The Falcon",
+    "v": true,
+    "why": "'HCF' with (V) ticked; VB6 (V) exists"
+   },
+   {
+    "n": 37,
+    "shield": false,
+    "text": "\"",
+    "card": "Han, Chewie, And The Falcon",
+    "v": false,
+    "why": "ditto of line 36 HCF (its own (V) box is empty; same card as 36, likely the (V))"
+   }
+  ]
+ },
+ {
+  "source": "out/G44/2011MPC_MPCDay1-p69.json",
+  "fixes": [
+   {
+    "n": 9,
+    "shield": false,
+    "text": "Squassin",
+    "card": "Squadron Assignments",
+    "v": false,
+    "why": "sheet 'SQ Assin' = Squadron Assignments (LS)"
+   },
+   {
+    "n": 31,
+    "shield": false,
+    "text": "Boshek, Brash Smuggler",
+    "card": "BoShek, Brash Smuggler",
+    "v": true,
+    "why": "sheet 'Boshek, Brash Smuggler' (wiki capitalises BoShek)"
+   }
+  ]
+ },
+ {
+  "source": "out/G44/2011MPC_MPCDay1-p73.json",
+  "fixes": [
+   {
+    "n": 29,
+    "shield": false,
+    "text": "ISMH? (rest crossed out)",
+    "card": "Zuckuss In Mist Hunter",
+    "v": false,
+    "why": "crossed-out line replaced by margin note 'ZIMH' (moderate confidence); no (V) of this card"
+   },
+   {
+    "n": 43,
+    "shield": false,
+    "text": "3IMH?",
+    "card": "Zuckuss In Mist Hunter",
+    "v": false,
+    "why": "'ZIMH' among the starships = Zuckuss In Mist Hunter"
+   },
+   {
+    "n": 55,
+    "shield": false,
+    "text": "A Her? (first word crossed out)",
+    "card": "After Her!",
+    "v": true,
+    "why": "crossed-out word then 'A Her' with (V) ticked = After Her! (DS); (V) exists (moderate confidence)"
+   }
+  ]
+ },
+ {
+  "source": "out/G44/2011MPC_MPCDay1-p79.json",
+  "fixes": [
+   {
+    "n": 26,
+    "shield": false,
+    "text": "\"",
+    "card": "Grievous, Hunter Of Jedi",
+    "v": false,
+    "why": "ditto of line 25 'Cyborg Commander, Hunter Of Jedi' = Grievous, Hunter Of Jedi; line 25 should carry the same card"
+   }
+  ]
+ },
+ {
+  "source": "out/G44/2011MPC_MPCDay1-p80.json",
+  "fixes": [
+   {
+    "n": 21,
+    "shield": false,
+    "text": "HCF",
+    "card": "Han, Chewie, And The Falcon",
+    "v": true,
+    "why": "'HCF' = Han, Chewie, And The Falcon"
+   }
+  ]
+ },
+ {
+  "source": "out/G46/2011MPC_MPCDay1-p117.json",
+  "fixes": [
+   {
+    "n": 26,
+    "shield": false,
+    "text": "Black Leader (AI)",
+    "card": "Black Leader (AI)",
+    "v": true,
+    "why": "sheet 'Black Leader (AI)'; the wiki has it only as 'Black Leader (V) (AI) (Virtual Set 17: The Force Unleashed)' and build.py skips (AI) titles in its fallbacks - may need that page linked by hand"
+   }
+  ]
+ },
+ {
+  "source": "out/G46/2011MPC_MPCDay1-p118.json",
+  "fixes": [
+   {
+    "n": 20,
+    "shield": false,
+    "text": "NABOOOOOO",
+    "card": "Naboo",
+    "v": false,
+    "why": "'NABOOOOOO' = Naboo (DS system)"
+   }
+  ]
+ },
+ {
+  "source": "out/G47/2011MPC_MPCDay2-p3.json",
+  "fixes": [
+   {
+    "n": 39,
+    "shield": false,
+    "text": "Zm H",
+    "card": "Zuckuss In Mist Hunter",
+    "v": false,
+    "why": "'Z M H' among the starships = Zuckuss In Mist Hunter"
+   },
+   {
+    "n": 48,
+    "shield": false,
+    "text": "Code Clearance",
+    "card": "Do They Have A Code Clearance?",
+    "v": false,
+    "why": "'Code Clearance' in the card list = Do They Have A Code Clearance? (Effect; the shield copy is S9)"
+   },
+   {
+    "n": 10,
+    "shield": true,
+    "text": "Rafs V",
+    "card": "Fanfare",
+    "v": true,
+    "why": "shield 10 reads '?anfa..' with tick = Fanfare (V) (moderate confidence)"
+   }
+  ]
+ },
+ {
+  "source": "out/G47/2011MPC_MPCDay2-p8.json",
+  "fixes": [
+   {
+    "n": 60,
+    "shield": false,
+    "text": "AFA",
+    "card": "Anger, Fear, Aggression",
+    "v": true,
+    "why": "'AFA' = Anger, Fear, Aggression (LS)"
+   }
+  ]
+ },
+ {
+  "source": "out/G48/2011Reg_2011NationalsDeckLists-p11.json",
+  "fixes": [
+   {
+    "n": 35,
+    "shield": false,
+    "text": "Flops",
+    "card": "Flagship Operations",
+    "v": false,
+    "why": "'Flops' = Flagship Operations (deck name 'Poe Flops')"
+   },
+   {
+    "n": 47,
+    "shield": false,
+    "text": "I'll Take them Myself",
+    "card": "I'll Take Them Myself",
+    "v": false,
+    "why": "sheet 'I'll Take them Myself' (DS Effect, no (V))"
+   }
+  ]
+ },
+ {
+  "source": "out/G48/2011Reg_2011NationalsDeckLists-p9.json",
+  "fixes": [
+   {
+    "n": 29,
+    "shield": false,
+    "text": "\"",
+    "card": "Grievous, Hunter Of Jedi",
+    "v": false,
+    "why": "ditto of line 28 'Cyborg Commander' = Grievous, Hunter Of Jedi; line 28 should carry the same card"
+   }
+  ]
+ },
+ {
+  "source": "out/G49/2011Reg_BelgiumDecks2011-p1.json",
+  "fixes": [
+   {
+    "n": 30,
+    "shield": false,
+    "text": "The Emperor's Reach",
+    "card": "Maarek Stele, The Emperor's Reach",
+    "v": false,
+    "why": "'The Emperor's Reach' = Maarek Stele, The Emperor's Reach (no card titled just that)"
+   }
+  ]
+ },
+ {
+  "source": "out/G47/2011MPC_MPCDay2-p4.json",
+  "fixes": [
+   {
+    "n": 38,
+    "shield": false,
+    "text": "Corran ?ran",
+    "card": "Corran Horn",
+    "v": false,
+    "why": "Day 2 sheet says 'same deck as yesterday'; these line numbers belong to Day 1 p48 (out/G43/2011MPC_MPCDay1-p48.json), where line 38 reads 'Corran Horn' (2nd copy after line 37); same fix is in R6"
+   }
+  ]
+ }
+]
