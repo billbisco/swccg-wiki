@@ -115,8 +115,12 @@ def wiki_for(cid, title, side):
         return c[0] if c else None
     names = R.prefix(title) + [title]
     if " / " not in title:
-        names += [t for t in R._c["prefix"].get(title + " /", [])]
-    rx = re.compile(re.escape(title).replace("&", "&\\s*•?") + r"( / .*)?( \([^()]+\))*$")
+        for k in (title + " /", title + " (V) /"):
+            if "raw:" + k not in R._c["prefix"]:
+                rr = R._q(action="query", list="prefixsearch", pssearch=k, pslimit=40)
+                R._c["prefix"]["raw:" + k] = [x["title"] for x in rr["query"]["prefixsearch"]]
+            names += R._c["prefix"]["raw:" + k]
+    rx = re.compile(re.escape(title).replace("&", "&\\s*•?") + r"( \(V\))?( / .*)?( \([^()]+\))*$")
     cand = [t for t in dict.fromkeys(names) if rx.match(t.replace("•", "")) or rx.match(t)]
     R.fetch(cand)
     ok = [R._c["pages"][t] for t in cand if R._c["pages"].get(t) and R._c["pages"][t]["card"] and not R._c["pages"][t]["dis"]
