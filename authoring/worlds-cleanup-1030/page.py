@@ -5,20 +5,21 @@ PH = {2003:"Jonny Chu 2016 Endor Grand Prix.jpg",2007:"Jonny Chu 2016 Endor Gran
       2015:"Justin Desai 2013 Hall of Fame.jpg",2016:"Tom Haid 2021 World Championship.jpg",2018:"Bastian Winkelhaus 2019 Hall of Fame.jpg"}
 DATES = {2005:"2005 (days not confirmed)", 2020:"5–13 December 2020"}
 PLAY = {1996:"38", 2000:"70 (Day 2)", 2020:"97", 2017:"59", 1998:"56"}
+OVR = {2010:"Dan Kim 2010 World Championship.png",2013:"Justin Desai 2013 World Championship.jpg",2014:"Emil Wallin and Brian Terwilliger 2014 World Championship.jpg",2015:"Justin Desai and Jonny Chu 2015 World Championship.jpg"}
 def era(y): return "Decipher" if y<=2001 else "Players Committee"
 out = []
 for r in rows:
     y = r["year"]
-    img = r["img"] or PH.get(y, "")
+    img = OVR.get(y) or r["img"] or PH.get(y, "")
     cap = ""
     if img and str(y) not in img: cap = "<br/><small>(" + re.sub(r"\.\w+$", "", img).split(" ", 2)[-1] + ")</small>"
-    photo = f"[[File:{img}|80px]]{cap}" if img else "—"
+    photo = f"[[File:{img}|{'140px' if y in OVR else '80px'}]]{cap}" if img else "—"
     dates = DATES.get(y, r["dates"].split(" (")[0].split(";")[0])
     venue = r["venue"].replace(" (as named in the wrap-up)", "")
     players = PLAY.get(y, r["players"]) or "—"
     decks = f"{r['dark']}<br/>{r['light']}" if r["dark"] != "—" or r["light"] != "—" else "—"
     if y == 2006: decks = "—"
-    out.append(f'|-\n| [[{r["hub"]}|{y}]] || {photo} || {r["champ"]} || {r["ru"]} || {venue} || {dates} || {players} || {r["fmt"]} || {decks}')
+    out.append(f'|-\n| [[{r["hub"]}|{y}]] || {venue} || {dates} || {r["fmt"]} || {players} || {r["champ"]} || {r["ru"]} || {decks} || {photo}')
 table = "\n".join(out)
 from collections import Counter
 c = Counter(r["champ"] for r in rows)
@@ -35,7 +36,7 @@ Winning decks are the champion's final-day decks (Dark above Light) where a list
 
 {{| class="wikitable sortable" style="font-size:95%;"
 |-
-! Year !! class="unsortable" | Champion photo !! Champion<ref name="awards">[https://www.starwarsccg.org/community/awards/ Awards and Hall of Fame], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20230817222457/https://www.starwarsccg.org/community/awards/ Internet Archive, 17 August 2023]</ref> !! Runner-up !! Site !! Dates !! Players !! Format !! class="unsortable" | Winning decks
+! Year !! Site !! Dates !! Format !! Players !! Champion<ref name="awards">[https://www.starwarsccg.org/community/awards/ Awards and Hall of Fame], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20230817222457/https://www.starwarsccg.org/community/awards/ Internet Archive, 17 August 2023]</ref> !! Runner-up !! class="unsortable" | Winning decks !! class="unsortable" | Champion photo
 {table}
 |}}
 
