@@ -78543,8 +78543,16 @@
   "capture": "https://web.archive.org/web/20261016142625/https://swccg.com/snapshots/pc/2021-worlds-justin-miyashiro-ls-yoda-communing.html",
   "job_id": "spn2-23e32c53716c8aed18980c44cfaeb3b2fe28b470",
   "last": "2026-10-16T17:03:03Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T19:53:05Z",
+   "bytes": 2683374,
+   "capture_id": "https://web.archive.org/web/20261016142625id_/https://swccg.com/snapshots/pc/2021-worlds-justin-miyashiro-ls-yoda-communing.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "465f5eec1e0cc589bd650436b485c65a684e77039d265eb8e3ae3e66cd57a604"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-kendall-halman-ds-asm.html": {
   "capture": "https://web.archive.org/web/20261016142739/https://swccg.com/snapshots/pc/2021-worlds-kendall-halman-ds-asm.html",
@@ -79747,13 +79755,14 @@
   "capture": "https://web.archive.org/web/20261016154919/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend.html",
   "job_id": "spn2-87c9d993f301d17be7343a9f6bdceae86202ecc9",
   "last": "2026-10-16T17:18:26Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-10-30T19:14:20Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T19:52:47Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-zinn-ds-walkers-bf.html": {
   "capture": "",
@@ -80397,10 +80406,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-30T19:21:06Z",
+   "at": "2026-10-30T19:52:56Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-brandon-baity-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261016160537/https://swccg.com/snapshots/pc/2022-endor-grand-prix-brandon-baity-ds-sycfa.html",
