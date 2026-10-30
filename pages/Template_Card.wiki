@@ -27,7 +27,7 @@
 {{#if:{{{dark_icons|}}}|<tr><th>Dark Side Icons</th><td>{{{dark_icons}}}</td></tr>}}
 {{#if:{{{light_icons|}}}|<tr><th>Light Side Icons</th><td>{{{light_icons}}}</td></tr>}}
 {{#if:{{{icons|}}}|<tr><th>Icons</th><td>{{{icons}}}</td></tr>}}
-<tr><th>GEMP ID</th><td><code>{{{gemp_id|{{{card_uid}}}}}}</code></td></tr>
+{{#if:{{{gemp_id|{{{card_uid|}}}}}}|<tr><th>GEMP ID</th><td><code>{{{gemp_id|{{{card_uid|}}}}}}</code></td></tr>}}
 {{#if:{{{pc_alias|}}}|<tr><th>PC alias</th><td><code>{{{pc_alias}}}</code></td></tr>}}
 {{#if:{{{slip|}}}|<tr><th>Slip</th><td>{{{slip}}}</td></tr>}}
 {{#if:{{{versions|{{{printings|}}}}}}|<tr><th>Versions</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
