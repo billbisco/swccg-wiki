@@ -80312,13 +80312,14 @@
   "capture": "https://web.archive.org/web/20261016154941/https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea.html",
   "job_id": "spn2-69ea91041c0071cb5622ba23eb6ab384320d48ec",
   "last": "2026-10-16T16:46:00Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-30T21:43:55Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T22:19:05Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-matt-wadden-ls-no-idea-bf.html": {
   "capture": "",
@@ -92668,8 +92669,16 @@
   "capture": "https://web.archive.org/web/20261016161850/https://swccg.com/snapshots/pc/2024-07-online-retro-event-for-charity-classic-no-v.html",
   "job_id": "spn2-ea7f7ce0b1eec20634660c02fd3109bda4b42c2a",
   "last": "2026-10-16T16:23:15Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T22:19:19Z",
+   "bytes": 6460062,
+   "capture_id": "https://web.archive.org/web/20261016161850id_/https://swccg.com/snapshots/pc/2024-07-online-retro-event-for-charity-classic-no-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "591c1f15b8eccd84773c10a62423632de93f3b750e656ae00bb53f103bfe50c6"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-08-north-american-continental-championship-new-brunswick-new-jersey-august-9-112024.html": {
   "capture": "https://web.archive.org/web/20261014140710/https://swccg.com/snapshots/pc/2024-08-north-american-continental-championship-new-brunswick-new-jersey-august-9-112024.html",
