@@ -80803,13 +80803,14 @@
   "capture": "https://web.archive.org/web/20261016160154/https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ls-communing-yoda.html",
   "job_id": "spn2-94f9880649b2766202621bb64b1089d090270879",
   "last": "2026-10-16T16:09:34Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T23:22:04Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T23:59:35Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ds-asm-bf.html": {
   "capture": "",
