@@ -80036,7 +80036,12 @@
   "job_id": "spn2-96acd20fab5e2d429a1367cb2a583dc20e019ab1",
   "last": "2026-10-16T15:55:33Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T23:27:21Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-david-center-ls-rescue-the-princess-v-bf.html": {
   "capture": "https://web.archive.org/web/20261021040131/https://swccg.com/snapshots/pc/2022-corellia-regionals-david-center-ls-rescue-the-princess-v-bf.html",
@@ -80572,10 +80577,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T22:56:20Z",
+   "at": "2026-10-30T23:27:12Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-tom-sacharan-ds-map-bf.html": {
   "capture": "",
@@ -81174,13 +81179,14 @@
   "capture": "https://web.archive.org/web/20261016161732/https://swccg.com/snapshots/pc/2022-endor-grand-prix-cal-aldred-ds-sc.html",
   "job_id": "spn2-b5a9bf94247a13f07eb5819744c26d356ce306c2",
   "last": "2026-10-16T16:23:04Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T22:56:12Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T23:27:04Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-cal-aldred-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261016160618/https://swccg.com/snapshots/pc/2022-endor-grand-prix-cal-aldred-ls-yoda-communing.html",
