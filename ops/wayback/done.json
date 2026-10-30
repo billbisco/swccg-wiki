@@ -78081,8 +78081,16 @@
   "capture": "https://web.archive.org/web/20261016135625/https://swccg.com/snapshots/pc/2021-worlds-cal-aldred-ls-hb.html",
   "job_id": "spn2-485e4fe667c0c6c7a1cf1c7695fc16f429c980e9",
   "last": "2026-10-16T16:44:28Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T21:11:14Z",
+   "bytes": 2682909,
+   "capture_id": "https://web.archive.org/web/20261016135625id_/https://swccg.com/snapshots/pc/2021-worlds-cal-aldred-ls-hb.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "46c833ad91b33209f8153c553e8683344136f48436bff154d71fb2076e6e3797"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-casey-anis-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261016135742/https://swccg.com/snapshots/pc/2021-worlds-casey-anis-ds-cct.html",
@@ -80073,7 +80081,12 @@
   "job_id": "spn2-69ea91041c0071cb5622ba23eb6ab384320d48ec",
   "last": "2026-10-16T16:46:00Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-30T21:11:05Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-matt-wadden-ls-no-idea-bf.html": {
   "capture": "",
