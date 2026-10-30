@@ -78901,8 +78901,16 @@
   "capture": "https://web.archive.org/web/20261016145516/https://swccg.com/snapshots/pc/2021-worlds-robbie-hendon-ls-whap.html",
   "job_id": "spn2-068a3aadf16c0ae6e140c6261a1e203b0e9d3128",
   "last": "2026-10-16T17:16:18Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T18:45:09Z",
+   "bytes": 2683389,
+   "capture_id": "https://web.archive.org/web/20261016145516id_/https://swccg.com/snapshots/pc/2021-worlds-robbie-hendon-ls-whap.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "da3a332c126ecd628a8153021a4c41658a45280d6ea5198ddc5471d4fc9a0616"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-ryan-jellison-ds-isb.html": {
   "capture": "https://web.archive.org/web/20261016144616/https://swccg.com/snapshots/pc/2021-worlds-ryan-jellison-ds-isb.html",
@@ -78953,8 +78961,16 @@
   "capture": "https://web.archive.org/web/20261016145538/https://swccg.com/snapshots/pc/2021-worlds-ryan-sersen-ls-y4o.html",
   "job_id": "spn2-f2c6c695ea447f4857d747b7162c24ca2316a239",
   "last": "2026-10-16T17:16:21Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T18:45:02Z",
+   "bytes": 2683403,
+   "capture_id": "https://web.archive.org/web/20261016145538id_/https://swccg.com/snapshots/pc/2021-worlds-ryan-sersen-ls-y4o.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "41db38b25b00f595cf23b947308dbf186a2e0baf146da1e81ecae23486e05bcb"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-sam-tashima-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261016150654/https://swccg.com/snapshots/pc/2021-worlds-sam-tashima-ds-cct.html",
@@ -79805,13 +79821,14 @@
   "capture": "https://web.archive.org/web/20261016155252/https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ds-bhbm.html",
   "job_id": "spn2-ca818f780e98a6c62454c85da0b60c9f3dbac441",
   "last": "2026-10-16T17:33:19Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T18:14:26Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T18:44:48Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ls-communing-yoda-bf.html": {
   "capture": "https://web.archive.org/web/20261021045005/https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ls-communing-yoda-bf.html",
@@ -79865,13 +79882,14 @@
   "capture": "https://web.archive.org/web/20261016155418/https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ls-legend.html",
   "job_id": "spn2-b6a468dfc2059d81c3d3c12a3e7aba39a33bb358",
   "last": "2026-10-16T17:33:25Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T18:14:17Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T18:44:38Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-hayes-hunter-ds-revenge-dooku-bf.html": {
   "capture": "https://web.archive.org/web/20261021060357/https://swccg.com/snapshots/pc/2022-dagobah-regionals-hayes-hunter-ds-revenge-dooku-bf.html",
