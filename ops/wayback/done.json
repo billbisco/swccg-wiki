@@ -78515,15 +78515,31 @@
   "capture": "https://web.archive.org/web/20261016141737/https://swccg.com/snapshots/pc/2021-worlds-justin-carulli-ls-qui-communing.html",
   "job_id": "spn2-bc9d6f5f73cb7221a993cdc946e1ce5abaf15b7c",
   "last": "2026-10-16T17:02:53Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T19:55:55Z",
+   "bytes": 2683376,
+   "capture_id": "https://web.archive.org/web/20261016141737id_/https://swccg.com/snapshots/pc/2021-worlds-justin-carulli-ls-qui-communing.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bc2fd76361e6424d4e58adf5a34431695fdd2a0389068aae5d73846fa1e6b5f1"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-justin-desai-ds-map.html": {
   "capture": "https://web.archive.org/web/20261016142532/https://swccg.com/snapshots/pc/2021-worlds-justin-desai-ds-map.html",
   "job_id": "spn2-fa163a8bc6b1ddb156f9e1bb34925db3ed4850cb",
   "last": "2026-10-16T17:03:00Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T19:55:44Z",
+   "bytes": 2683162,
+   "capture_id": "https://web.archive.org/web/20261016142532id_/https://swccg.com/snapshots/pc/2021-worlds-justin-desai-ds-map.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a346cb9b03d9804b3b823dc0b2947d2577b82aefc98d25ba1d660040bf02da18"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-justin-desai-ls-qui-communing.html": {
   "capture": "https://web.archive.org/web/20261016154609/https://swccg.com/snapshots/pc/2021-worlds-justin-desai-ls-qui-communing.html",
@@ -78578,17 +78594,16 @@
  },
  "https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html": {
   "capture": "https://web.archive.org/web/20261016142717/https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html",
+  "dead_capture": "https://web.archive.org/web/20261016142717/https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html",
   "job_id": "spn2-7d1828f5f97042f2b0fe4abfc523dbfb9cb80b6d",
-  "last": "2026-10-16T17:03:11Z",
-  "status": "verified",
-  "tries": 1,
+  "last": "2026-10-30T19:26:42Z",
+  "recapture": true,
+  "status": "retry",
+  "tries": 0,
   "verify": {
-   "at": "2026-10-30T19:35:01Z",
-   "bytes": 2683168,
-   "capture_id": "https://web.archive.org/web/20261016142717id_/https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html",
-   "index": "cdx",
-   "method": "sha256",
-   "sha256": "c16f0fa7e9934c129c7a4611332ba7d777f3d753f9e6edc10a7a5edf14faaa47"
+   "at": "2026-10-30T19:56:42Z",
+   "method": "strict",
+   "reason": "redirects to another capture 20261014152902 (no capture at 20261016142717)"
   }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ls-qui-communing.html": {
