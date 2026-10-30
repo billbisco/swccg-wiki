@@ -79798,7 +79798,12 @@
   "job_id": "spn2-20505e87b3e95e438fa3b9982cbb4fef591744bc",
   "last": "2026-10-16T18:02:08Z",
   "status": "ok",
-  "tries": 4
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-30T15:46:59Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ds-walkers-bf.html": {
   "capture": "https://web.archive.org/web/20261021041505/https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ds-walkers-bf.html",
@@ -79834,7 +79839,12 @@
   "job_id": "spn2-f028b7644d49d264edc6e7c837f30e5310dbc4be",
   "last": "2026-10-16T18:08:01Z",
   "status": "ok",
-  "tries": 3
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-30T15:46:39Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-mike-kessling-ds-ropsv-bf.html": {
   "capture": "",
@@ -84913,8 +84923,16 @@
   "capture": "https://web.archive.org/web/20261016160855/https://swccg.com/snapshots/pc/2022-world-championship-wrap-desai-wins-third-title.html",
   "job_id": "spn2-cbcd6b51b8fb0566f85bbe1b704c499cc8898c96",
   "last": "2026-10-16T18:04:29Z",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-10-30T15:46:51Z",
+   "bytes": 21447455,
+   "capture_id": "https://web.archive.org/web/20261016160855id_/https://swccg.com/snapshots/pc/2022-world-championship-wrap-desai-wins-third-title.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e8537b466651fdbb1ef64efcd7b7ab0d15bf5c3f0c591271ab1c7cac44ca79c6"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-bill-kafer-ds-ropsv.html": {
   "capture": "",
