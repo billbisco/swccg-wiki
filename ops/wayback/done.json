@@ -71990,8 +71990,16 @@
   "capture": "https://web.archive.org/web/20261016163349/https://swccg.com/snapshots/forum/t80194-start20.html",
   "job_id": "spn2-3b8660a73b12ed8c9fb25752d83e725967f72dc3",
   "last": "2026-10-16T16:34:25Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T21:50:37Z",
+   "bytes": 2199999,
+   "capture_id": "https://web.archive.org/web/20261016163349id_/https://swccg.com/snapshots/forum/t80194-start20.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1f4c7dc68a403f35ddfacaa8c19e9463ef4e73eefc822a2f6e24cee70e2451c3"
+  }
  },
  "https://swccg.com/snapshots/forum/t80194-start40.html": {
   "capture": "https://web.archive.org/web/20261016162037/https://swccg.com/snapshots/forum/t80194-start40.html",
@@ -80170,7 +80178,12 @@
   "job_id": "spn2-73edb92eccb23cd02ae6c33a375f599ad579d9ce",
   "last": "2026-10-16T16:33:18Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-30T21:50:55Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend-bf.html": {
   "capture": "https://web.archive.org/web/20261021040251/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-shaw-ls-legend-bf.html",
@@ -96879,8 +96892,16 @@
   "capture": "https://web.archive.org/web/20261016163351/https://swccg.com/snapshots/pc/2025-morristown-melee-wrap-up-greg-shaw-victorious.html",
   "job_id": "spn2-358549825cf09f3e2090af732bdcb07adfc8e624",
   "last": "2026-10-16T16:34:22Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T21:50:47Z",
+   "bytes": 11275923,
+   "capture_id": "https://web.archive.org/web/20261016163351id_/https://swccg.com/snapshots/pc/2025-morristown-melee-wrap-up-greg-shaw-victorious.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a02939e59b5ecf4dad2c4ef4db5162c1b4c7bffdcc101caaf37d259a034131c5"
+  }
  },
  "https://swccg.com/snapshots/pc/2025-naboo-regionals-andrew-davies-ds-walkers.html": {
   "capture": "",
