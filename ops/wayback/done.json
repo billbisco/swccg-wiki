@@ -79872,7 +79872,12 @@
   "job_id": "spn2-8610d3f244db826f09a023c3fffb66cb54b8a3fa",
   "last": "2026-10-16T18:08:07Z",
   "status": "ok",
-  "tries": 3
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-30T15:44:25Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-aaron-frede-ds-isb.html": {
   "capture": "https://web.archive.org/web/20261016164224/https://swccg.com/snapshots/pc/2022-endor-grand-prix-aaron-frede-ds-isb.html",
@@ -79920,7 +79925,12 @@
   "job_id": "spn2-2a0bed8fc60417950db7f0564f3424ab9aad281a",
   "last": "2026-10-16T18:08:11Z",
   "status": "ok",
-  "tries": 3
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-30T15:44:17Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-brian-fred-ds-on-the-verge-of-greatness.html": {
   "capture": "https://web.archive.org/web/20261016160621/https://swccg.com/snapshots/pc/2022-endor-grand-prix-brian-fred-ds-on-the-verge-of-greatness.html",
@@ -88771,8 +88781,16 @@
   "capture": "https://web.archive.org/web/20261016152627/https://swccg.com/snapshots/pc/2023-ocs-playoff-top-16-sam-tashima-ls-shadow-clones.html",
   "job_id": "spn2-f694f166b06f13b5dd81094007e6fc580128274b",
   "last": "2026-10-16T18:11:01Z",
-  "status": "ok",
-  "tries": 5
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-10-30T15:44:05Z",
+   "bytes": 2683460,
+   "capture_id": "https://web.archive.org/web/20261016152627id_/https://swccg.com/snapshots/pc/2023-ocs-playoff-top-16-sam-tashima-ls-shadow-clones.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "feb94dc37289c69b949b721a0d56bc05785fc65d9a343722d61a0fc637433156"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-top-16-timo-dusel-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261016152725/https://swccg.com/snapshots/pc/2023-ocs-playoff-top-16-timo-dusel-ds-thrawn.html",
