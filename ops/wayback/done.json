@@ -78791,8 +78791,16 @@
   "capture": "https://web.archive.org/web/20261016144131/https://swccg.com/snapshots/pc/2021-worlds-retro-prem-ref-ii-jared-napolitano-ds-mkos.html",
   "job_id": "spn2-6258c4073ee1ba68e00c4bf410f820fc4da150d6",
   "last": "2026-10-16T17:07:03Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T19:21:33Z",
+   "bytes": 2683292,
+   "capture_id": "https://web.archive.org/web/20261016144131id_/https://swccg.com/snapshots/pc/2021-worlds-retro-prem-ref-ii-jared-napolitano-ds-mkos.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "81aa040b7f7d13b9814cf726c9c2a6c40d1bbb4dda4e6668563732c116fdfefb"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-retro-prem-ref-ii-jared-napolitano-ls-wys.html": {
   "capture": "https://web.archive.org/web/20261016144142/https://swccg.com/snapshots/pc/2021-worlds-retro-prem-ref-ii-jared-napolitano-ls-wys.html",
@@ -80306,7 +80314,12 @@
   "job_id": "spn2-701ac86257c379f32ab4e3c138f2e313b71a7669",
   "last": "2026-10-16T17:09:37Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-30T19:21:06Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-brandon-baity-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261016160537/https://swccg.com/snapshots/pc/2022-endor-grand-prix-brandon-baity-ds-sycfa.html",
@@ -89066,8 +89079,16 @@
   "capture": "https://web.archive.org/web/20261016153612/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-timo-dusel-ds-thrawn.html",
   "job_id": "spn2-a0d2b620aa8eeac931450c0f5348d5626a5f1acf",
   "last": "2026-10-16T17:09:29Z",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-30T19:21:17Z",
+   "bytes": 2683651,
+   "capture_id": "https://web.archive.org/web/20261016153612id_/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-timo-dusel-ds-thrawn.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "661ab6ba133f6f1abd993d4bf7dd93a6bc5e6e0bbdddfddb1d0ba59b7afe64dd"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-timo-dusel-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261016151127/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-timo-dusel-ls-communing-yoda.html",
