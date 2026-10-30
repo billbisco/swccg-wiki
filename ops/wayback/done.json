@@ -79615,7 +79615,12 @@
   "job_id": "spn2-5bbbdd7be59779afcfc71f7e2e378c7d01debb0d",
   "last": "2026-10-16T17:33:09Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T17:25:41Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ls-whap-bf.html": {
   "capture": "https://web.archive.org/web/20261021040403/https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ls-whap-bf.html",
@@ -88615,17 +88620,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-chris-wirfs-ds-set-your-course-for-alderaan.html": {
-  "capture": "https://web.archive.org/web/20261016150735/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-chris-wirfs-ds-set-your-course-for-alderaan.html",
-  "dead_capture": "https://web.archive.org/web/20261016150735/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-chris-wirfs-ds-set-your-course-for-alderaan.html",
+  "capture": "https://web.archive.org/web/20261030172505/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-chris-wirfs-ds-set-your-course-for-alderaan.html",
   "job_id": "spn2-b86da300d61354610a384ebf88af030f5bdfeedb",
-  "last": "2026-10-30T16:53:40Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
+  "last": "2026-10-30T17:25:36Z",
+  "status": "verified",
+  "tries": 1,
   "verify": {
-   "at": "2026-10-30T17:23:40Z",
-   "method": "strict",
-   "reason": "redirects to another capture 20261014161003 (no capture at 20261016150735)"
+   "at": "2026-10-30T17:25:36Z",
+   "bytes": 2683592,
+   "capture_id": "https://web.archive.org/web/20261030172505id_/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-chris-wirfs-ds-set-your-course-for-alderaan.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5dabfb3751e529d0c34781c3b5a07f2578a86836068d9df01a6baf1064e048d4"
   }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-chris-wirfs-ls-quiet-mining-colony.html": {
