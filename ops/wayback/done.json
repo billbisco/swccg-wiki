@@ -79327,13 +79327,14 @@
   "capture": "https://web.archive.org/web/20261016154126/https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ds-map.html",
   "job_id": "spn2-95af3cbce41cfacc197cff270411d79df0d1326a",
   "last": "2026-10-16T18:37:34Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 4,
   "verify": {
-   "at": "2026-10-30T16:10:06Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T16:41:45Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ls-family-luke-bf.html": {
   "capture": "",
@@ -88501,8 +88502,16 @@
   "capture": "https://web.archive.org/web/20261016150816/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-drew-lichtenstein-ds-shadow-collective.html",
   "job_id": "spn2-88bb1e6b6559ffc3430662263eff89c542dead5e",
   "last": "2026-10-16T17:44:07Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T16:41:56Z",
+   "bytes": 2683671,
+   "capture_id": "https://web.archive.org/web/20261016150816id_/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-drew-lichtenstein-ds-shadow-collective.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e5f0eab27a6a0f0f8171005cfd615fe855371005a9ca8fc478cad3bb75333c05"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-drew-lichtenstein-ls-watch-your-step.html": {
   "capture": "https://web.archive.org/web/20261016150911/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-drew-lichtenstein-ls-watch-your-step.html",
