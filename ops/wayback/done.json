@@ -78317,8 +78317,16 @@
   "capture": "https://web.archive.org/web/20261016141016/https://swccg.com/snapshots/pc/2021-worlds-erich-hawbaker-ds-mauls-chambers-ssav.html",
   "job_id": "spn2-50fae900272db2e0dbc29c206a99b873234467ec",
   "last": "2026-10-16T17:31:26Z",
-  "status": "ok",
-  "tries": 6
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-10-30T17:30:32Z",
+   "bytes": 2683332,
+   "capture_id": "https://web.archive.org/web/20261016141016id_/https://swccg.com/snapshots/pc/2021-worlds-erich-hawbaker-ds-mauls-chambers-ssav.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ecc726208cf208f0eef8c56117583d34debe16931fea8ba7b489e45e74b2a8c7"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-erich-hawbaker-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261016141120/https://swccg.com/snapshots/pc/2021-worlds-erich-hawbaker-ls-yoda-communing.html",
@@ -79907,7 +79915,12 @@
   "job_id": "spn2-7c0112556af72c3fa9d9b9881e2dad3ab0a76b59",
   "last": "2026-10-16T17:31:51Z",
   "status": "ok",
-  "tries": 3
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-30T17:30:23Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ls-profit-bf.html": {
   "capture": "https://web.archive.org/web/20261021044956/https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ls-profit-bf.html",
@@ -80141,10 +80154,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T16:58:48Z",
+   "at": "2026-10-30T17:30:12Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-dan-tartaglione-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261016163330/https://swccg.com/snapshots/pc/2022-endor-grand-prix-dan-tartaglione-ls-yoda-communing.html",
