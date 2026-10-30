@@ -77831,8 +77831,16 @@
   "capture": "https://web.archive.org/web/20261016132833/https://swccg.com/snapshots/pc/2020-worlds-day-3-chris-kelly-ds-hunt-down-v.html",
   "job_id": "spn2-cc4e3499ca3fc21d34ad24e9ae495e822a1ab8e8",
   "last": "2026-10-16T15:44:59Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T23:36:02Z",
+   "bytes": 2683392,
+   "capture_id": "https://web.archive.org/web/20261016132833id_/https://swccg.com/snapshots/pc/2020-worlds-day-3-chris-kelly-ds-hunt-down-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3202f6284b9c13eba9fd58be4bf9607c10cdff6bfa8e5a303276201901b44905"
+  }
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-3-chris-kelly-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261016132941/https://swccg.com/snapshots/pc/2020-worlds-day-3-chris-kelly-ls-hitco.html",
@@ -80515,13 +80523,14 @@
   "capture": "https://web.archive.org/web/20261016161627/https://swccg.com/snapshots/pc/2022-coruscant-regionals-matt-wadden-ls-no-idea.html",
   "job_id": "spn2-e61b3b0ef97360c8316d69cd95897ed2bdcefe59",
   "last": "2026-10-16T16:21:46Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T23:04:54Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T23:35:55Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-mike-pistone-ds-map-bf.html": {
   "capture": "",
