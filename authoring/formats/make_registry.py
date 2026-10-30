@@ -44,7 +44,7 @@ for n, d in [(1, "9 March 2002"), (2, "1 June 2002"), (3, "20 September 2002"), 
     R.append(F(f"Premiere - Original VS{n}", "constructed", "pc-championship", f"every Decipher card plus original Virtual Sets 1–{n}" if n > 1 else "every Decipher card plus original Virtual Set 1",
                f"from {d}", pc=True, also=[f"POVS{n}"] + (["Original Virtual Open"] if n == 17 else [])))
 R += [
-    F("Legacy Open", "constructed", "pc-championship", "Decipher cards plus the pre-2014 Virtual Block cards", "2009 – 2014", pc=True, code="legacy", gemp_pc="Legacy", gemp_ours="Legacy", also=["Legacy"]),
+    F("Legacy Open", "constructed", "pc-championship", "Decipher cards plus the pre-2014 Virtual Block cards, fixed after the 2014 reset (2009–2014 events used the dated Premiere - Virtual Block pools)", "from 2014 (fixed)", pc=True, code="legacy", gemp_pc="Legacy", gemp_ours="Legacy", also=["Legacy"]),
     F("Open", "constructed", "pc-championship", "Decipher cards plus current Virtual Sets and Defensive Shields", "2014 –", pc=True, code="open", gemp_pc="Open", gemp_ours="Open", also=["Standard (Players Committee, from 2014)"]),
     F("Open (40 cards)", "constructed", "pc-alternate", "the Open pool, 40-card decks", "", pc=True, code="open40card", gemp_pc="Open (40 cards)", gemp_ours="Open (40 cards)"),
     F("Open (45 cards)", "constructed", "pc-alternate", "the Open pool, 45-card decks", "", pc=True, code="open_45_card", gemp_pc="Open (45 cards)", gemp_ours="Open (45 cards)"),

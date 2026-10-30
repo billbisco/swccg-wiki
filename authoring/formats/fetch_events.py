@@ -9,7 +9,10 @@ def texts(titles):
         got={p['title']:p['revisions'][0]['slots']['main']['content'] for p in r['query']['pages'] if 'revisions' in p}
         for t in titles[i:i+50]: out[t]=got.get(red.get(t,t))
     return out
-L=texts(['List of SWCCG tournaments'])['List of SWCCG tournaments']
+# The list is split (Claude 2026-10-30): 2002 on stay on the main page, 1996-2001 have one page per year.
+LT=['List of SWCCG tournaments']+[f'List of SWCCG tournaments in {y}' for y in range(1996,2002)]
+LS={k:v for k,v in texts(LT).items() if v}
+L='\n'.join(LS.values())
 ev=[]
 for m in re.finditer(r'^\| ([^\n]*)$',L,re.M):
     c=[x.strip() for x in m.group(1).split('||')]
@@ -17,5 +20,5 @@ for m in re.finditer(r'^\| ([^\n]*)$',L,re.M):
         k=re.match(r'\[\[([^\]|]+)',c[1])
         if k: ev.append(k.group(1).strip())
 ev=sorted(set(ev)); H=texts(ev)
-json.dump({'list':L,'hubs':H},open('/tmp/claude-0/fmt/events.json','w'))
+json.dump({'list':LS['List of SWCCG tournaments'],'lists':LS,'hubs':H},open('/tmp/claude-0/fmt/events.json','w'))
 print(len(ev),sum(1 for v in H.values() if v))

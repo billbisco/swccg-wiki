@@ -49,34 +49,37 @@ def hub_format(t):
 
 
 # ---------- List of SWCCG tournaments: one row per event, 6 cells, Format filled from the event page ----------
-L = EV["list"]
-rows_out, events = [], []
+LISTS = EV.get("lists") or {"List of SWCCG tournaments": EV["list"]}  # main page + 1996-2001 year pages
+LISTS_NEW = {}
+events = []
 fixed5 = filled = 0
-for row in L.split("\n|-\n"):
-    lines = row.split("\n")
-    i = next((k for k, l in enumerate(lines) if l.startswith("| ") and "||" in l), None)
-    if i is None:
-        rows_out.append(row)
-        continue
-    cells = [c.strip() for c in lines[i][2:].split("||")]
-    orig = list(cells)
-    m = re.match(r"\[\[([^\]|]+)", cells[1]) if len(cells) > 1 else None
-    if m and len(cells) == 5:  # Tag, Event, Dates, Site, Winner: the Format cell is missing
-        cells.insert(4, "")
-        fixed5 += 1
-    if m:
-        ev = m.group(1).strip()
-        f = hub_format(EV["hubs"].get(ev)) or ASSIGNED.get(ev)
-        cur = re.match(r"\[\[([^\]|]+)", cells[4]) if len(cells) > 4 else None
-        if f and len(cells) > 4 and not cells[4].strip():
-            cells[4] = f"[[{f}]]"
-            filled += 1
-        fmt = f or (cur.group(1).strip() if cur and cur.group(1).strip() in BY else None)
-        events.append((ev, fmt, cells))
-        if cells != orig:
-            lines[i] = "| " + " || ".join(cells)
-    rows_out.append("\n".join(lines))
-L_new = "\n|-\n".join(rows_out)
+for LT, L in LISTS.items():
+  rows_out = []
+  for row in L.split("\n|-\n"):
+      lines = row.split("\n")
+      i = next((k for k, l in enumerate(lines) if l.startswith("| ") and "||" in l), None)
+      if i is None:
+          rows_out.append(row)
+          continue
+      cells = [c.strip() for c in lines[i][2:].split("||")]
+      orig = list(cells)
+      m = re.match(r"\[\[([^\]|]+)", cells[1]) if len(cells) > 1 else None
+      if m and len(cells) == 5:  # Tag, Event, Dates, Site, Winner: the Format cell is missing
+          cells.insert(4, "")
+          fixed5 += 1
+      if m:
+          ev = m.group(1).strip()
+          f = hub_format(EV["hubs"].get(ev)) or ASSIGNED.get(ev)
+          cur = re.match(r"\[\[([^\]|]+)", cells[4]) if len(cells) > 4 else None
+          if f and len(cells) > 4 and not cells[4].strip():
+              cells[4] = f"[[{f}]]"
+              filled += 1
+          fmt = f or (cur.group(1).strip() if cur and cur.group(1).strip() in BY else None)
+          events.append((ev, fmt, cells))
+          if cells != orig:
+              lines[i] = "| " + " || ".join(cells)
+      rows_out.append("\n".join(lines))
+  LISTS_NEW[LT] = "\n|-\n".join(rows_out)
 
 # ---------- tournaments per format ----------
 per = {}
@@ -163,7 +166,7 @@ Era hub: [[Decipher era]]. Decipher's sanctioned constructed play used every pri
 
 == Players Committee (2002–) ==
 
-Era hubs: [[Virtual Original]], [[Virtual Legacy]], [[Virtual Modern]].{ref('pc-home')} From March 2002 championship constructed added the Players Committee's Virtual Sets to the Decipher pool. Each original Virtual Set cutoff is its own format; the 2009 reorganization led to [[Legacy Open]], and the 2014 Virtual Card Reset to today's [[Open]] (the PC's ''Standard'').
+Era hubs: [[Virtual Original]], [[Virtual Legacy]], [[Virtual Modern]].{ref('pc-home')} From March 2002 championship constructed added the Players Committee's Virtual Sets to the Decipher pool. Each original Virtual Set cutoff is its own format. From the 2009 reorganization each Virtual Block release is a dated pool ([[Premiere - Virtual Block 6.1]] to [[Premiere - Virtual Block 9.1]]); the 2014 Virtual Card Reset led to today's [[Open]] (the PC's ''Standard''), and the pre-reset Virtual Block pool survives fixed as [[Legacy Open]].
 
 === Championship constructed ===
 
@@ -222,8 +225,9 @@ def main():
         rows.append(f"{t}\t{fn}")
 
     emit("Formats", page)
-    if L_new != L:
-        emit("List of SWCCG tournaments", L_new)
+    for LT, L_new in LISTS_NEW.items():
+        if L_new != LISTS[LT]:
+            emit(LT, L_new)
     F = texts([r["title"] for r in R])
     D = HERE / "drafts"
     PENDING = set((D / "pending.txt").read_text(encoding="utf-8").split("\n")) - {""} if (D / "pending.txt").exists() else set()
