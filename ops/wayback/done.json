@@ -78636,8 +78636,16 @@
   "capture": "https://web.archive.org/web/20261016143023/https://swccg.com/snapshots/pc/2021-worlds-matt-lutz-ds-cct.html",
   "job_id": "spn2-c9c648c2676db003f9994f7388f8c21dda6a3772",
   "last": "2026-10-16T17:05:04Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T19:32:18Z",
+   "bytes": 2683284,
+   "capture_id": "https://web.archive.org/web/20261016143023id_/https://swccg.com/snapshots/pc/2021-worlds-matt-lutz-ds-cct.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "df0fa571f842a2ead9a4882d270916e69e4f335afa535b37e419c12d86756f60"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-matt-lutz-ls-profit.html": {
   "capture": "https://web.archive.org/web/20261016142941/https://swccg.com/snapshots/pc/2021-worlds-matt-lutz-ls-profit.html",
@@ -79603,13 +79611,14 @@
   "capture": "https://web.archive.org/web/20261016154204/https://swccg.com/snapshots/pc/2022-coruscant-regionals-bill-kafer-ls-family-anakin.html",
   "job_id": "spn2-f8919a9965c67f340086f7015fdce6152677743b",
   "last": "2026-10-16T17:26:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T19:00:14Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T19:32:08Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ds-map-bf.html": {
   "capture": "",
