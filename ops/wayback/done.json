@@ -72488,8 +72488,16 @@
  "https://swccg.com/snapshots/linkedin/kevin-reitzel-2435996.pdf": {
   "capture": "https://web.archive.org/web/20261016162113/https://swccg.com/snapshots/linkedin/kevin-reitzel-2435996.pdf",
   "last": "2026-10-16T16:36:33Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T21:44:19Z",
+   "bytes": 192868,
+   "capture_id": "https://web.archive.org/web/20261016162113id_/https://swccg.com/snapshots/linkedin/kevin-reitzel-2435996.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e20e9d6e562c26a9516ff7afff635584a7fb396ecb1a3495f3b2c0f34681ece7"
+  }
  },
  "https://swccg.com/snapshots/pc/100card.html": {
   "capture": "",
@@ -77913,15 +77921,31 @@
  "https://swccg.com/snapshots/pc/2021-worlds-adam-schellberg-ls-qui-communing.html": {
   "capture": "https://web.archive.org/web/20261016133310/https://swccg.com/snapshots/pc/2021-worlds-adam-schellberg-ls-qui-communing.html",
   "last": "2026-10-16T16:39:26Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T21:44:04Z",
+   "bytes": 2683237,
+   "capture_id": "https://web.archive.org/web/20261016133310id_/https://swccg.com/snapshots/pc/2021-worlds-adam-schellberg-ls-qui-communing.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "66db51e6b17255dc900d916dd6bcb81b6cf5710bbd43cb5396ca9fae25c678ff"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-alex-hatoum-ds-map.html": {
   "capture": "https://web.archive.org/web/20261016133230/https://swccg.com/snapshots/pc/2021-worlds-alex-hatoum-ds-map.html",
   "job_id": "spn2-99d5b1263023fde11379e14cadace7b6f0035a81",
   "last": "2026-10-16T16:36:36Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T21:44:12Z",
+   "bytes": 2683245,
+   "capture_id": "https://web.archive.org/web/20261016133230id_/https://swccg.com/snapshots/pc/2021-worlds-alex-hatoum-ds-map.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "756d89f4a5bb2b5de3ba6b11de5a2b9794c69cb7bd475e663550debc329b25ae"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-alex-hatoum-ls-oa.html": {
   "capture": "https://web.archive.org/web/20261016135511/https://swccg.com/snapshots/pc/2021-worlds-alex-hatoum-ls-oa.html",
@@ -78029,8 +78053,14 @@
   "capture": "https://web.archive.org/web/20261030214034/https://swccg.com/snapshots/pc/2021-worlds-bill-kafer-ls-chief-chirpas-hut-ltww.html",
   "job_id": "spn2-c94d5ba90666915a8a0e7d9cce9aca083398853c",
   "last": "2026-10-30T21:40:59Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T21:42:32Z",
+   "capture_id": "https://web.archive.org/web/20261030214034id_/https://swccg.com/snapshots/pc/2021-worlds-bill-kafer-ls-chief-chirpas-hut-ltww.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261016134341 (no capture at 20261030214034)"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-bill-pittman-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261016135532/https://swccg.com/snapshots/pc/2021-worlds-bill-pittman-ds-bhbm.html",
@@ -80163,10 +80193,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-30T21:11:05Z",
+   "at": "2026-10-30T21:43:55Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-matt-wadden-ls-no-idea-bf.html": {
   "capture": "",
@@ -80301,10 +80331,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-30T21:05:55Z",
+   "at": "2026-10-30T21:43:47Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ds-walkers-bf.html": {
   "capture": "https://web.archive.org/web/20261021081735/https://swccg.com/snapshots/pc/2022-coruscant-regionals-wayne-cullen-ds-walkers-bf.html",
@@ -80437,10 +80467,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-30T21:02:49Z",
+   "at": "2026-10-30T21:43:39Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ls-legend-bf.html": {
   "capture": "https://web.archive.org/web/20261021042818/https://swccg.com/snapshots/pc/2022-dagobah-regionals-drew-lichtenstein-ls-legend-bf.html",
