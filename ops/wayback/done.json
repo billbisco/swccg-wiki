@@ -78887,15 +78887,31 @@
   "capture": "https://web.archive.org/web/20261016144523/https://swccg.com/snapshots/pc/2021-worlds-retro-prem-ref-ii-winston-plunkett-ls-wys.html",
   "job_id": "spn2-5db832bb56adac3ff3784d067968ed0bbc93ec06",
   "last": "2026-10-16T17:16:11Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T18:47:32Z",
+   "bytes": 2683350,
+   "capture_id": "https://web.archive.org/web/20261016144523id_/https://swccg.com/snapshots/pc/2021-worlds-retro-prem-ref-ii-winston-plunkett-ls-wys.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4d4484ba88699c139510f7baaf1b3121313ad29f556f686907fee22ca834aa15"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-robbie-hendon-ds-map.html": {
   "capture": "https://web.archive.org/web/20261016144637/https://swccg.com/snapshots/pc/2021-worlds-robbie-hendon-ds-map.html",
   "job_id": "spn2-e7a1aa6a7863aef02455b993f188e7aca253805a",
   "last": "2026-10-16T17:16:15Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T18:47:24Z",
+   "bytes": 2683249,
+   "capture_id": "https://web.archive.org/web/20261016144637id_/https://swccg.com/snapshots/pc/2021-worlds-robbie-hendon-ds-map.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2cdbe6c73519c347f23e848304fc1386d7b2119db85754fe64eb7f2999377012"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-robbie-hendon-ls-whap.html": {
   "capture": "https://web.archive.org/web/20261016145516/https://swccg.com/snapshots/pc/2021-worlds-robbie-hendon-ls-whap.html",
@@ -79809,13 +79825,14 @@
   "capture": "https://web.archive.org/web/20261016155241/https://swccg.com/snapshots/pc/2022-coruscant-regionals-william-bacheler-ls-whap.html",
   "job_id": "spn2-508723e719340a530237cf590e45429e48e7012a",
   "last": "2026-10-16T17:33:14Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T18:16:39Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T18:47:10Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261016155252/https://swccg.com/snapshots/pc/2022-dagobah-regionals-bill-pittman-ds-bhbm.html",
