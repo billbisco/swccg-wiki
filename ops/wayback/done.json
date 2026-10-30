@@ -78508,8 +78508,16 @@
   "capture": "https://web.archive.org/web/20261016141634/https://swccg.com/snapshots/pc/2021-worlds-justin-carulli-ds-aobs.html",
   "job_id": "spn2-46bad951220fe57c95328a5fa9309500bf135c4c",
   "last": "2026-10-16T17:02:51Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T20:00:29Z",
+   "bytes": 2683121,
+   "capture_id": "https://web.archive.org/web/20261016141634id_/https://swccg.com/snapshots/pc/2021-worlds-justin-carulli-ds-aobs.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a86ef71940b8424afb26d9b4ce67a588e875a8d2210e0e148785ce8befbf99b5"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-justin-carulli-ls-qui-communing.html": {
   "capture": "https://web.archive.org/web/20261016141737/https://swccg.com/snapshots/pc/2021-worlds-justin-carulli-ls-qui-communing.html",
@@ -78593,17 +78601,16 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html": {
-  "capture": "https://web.archive.org/web/20261016142717/https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html",
-  "dead_capture": "https://web.archive.org/web/20261016142717/https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html",
+  "capture": "https://web.archive.org/web/20261030195955/https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html",
   "job_id": "spn2-7d1828f5f97042f2b0fe4abfc523dbfb9cb80b6d",
-  "last": "2026-10-30T19:26:42Z",
-  "recapture": true,
-  "status": "retry",
-  "tries": 0,
+  "last": "2026-10-30T20:00:24Z",
+  "status": "unverified",
+  "tries": 1,
   "verify": {
-   "at": "2026-10-30T19:56:42Z",
+   "at": "2026-10-30T20:00:24Z",
+   "capture_id": "https://web.archive.org/web/20261030195955id_/https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ds-map.html",
    "method": "strict",
-   "reason": "redirects to another capture 20261014152902 (no capture at 20261016142717)"
+   "reason": "redirects to another capture 20261016142717 (no capture at 20261030195955)"
   }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-lee-edwards-ls-qui-communing.html": {
