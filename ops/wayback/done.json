@@ -79811,13 +79811,14 @@
   "capture": "https://web.archive.org/web/20261016160250/https://swccg.com/snapshots/pc/2022-dagobah-regionals-joel-pittman-ls-communing-yoda.html",
   "job_id": "spn2-20505e87b3e95e438fa3b9982cbb4fef591744bc",
   "last": "2026-10-16T18:02:08Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 4,
   "verify": {
-   "at": "2026-10-30T16:22:04Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T16:53:14Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ds-walkers-bf.html": {
   "capture": "https://web.archive.org/web/20261021041505/https://swccg.com/snapshots/pc/2022-dagobah-regionals-jonathan-murray-ds-walkers-bf.html",
