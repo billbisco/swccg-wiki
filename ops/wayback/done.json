@@ -78368,8 +78368,16 @@
   "capture": "https://web.archive.org/web/20261016141220/https://swccg.com/snapshots/pc/2021-worlds-greg-shaw-ls-yoda-communing.html",
   "job_id": "spn2-ddf1d629feffaf68737ea31d1ac66104a42621a4",
   "last": "2026-10-16T16:55:10Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T20:25:13Z",
+   "bytes": 2683265,
+   "capture_id": "https://web.archive.org/web/20261016141220id_/https://swccg.com/snapshots/pc/2021-worlds-greg-shaw-ls-yoda-communing.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "18134dcd578dd0e8ce88c9165a11cd435f62c049759d49c80337056ce3598b14"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-hayes-hunter-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261016142529/https://swccg.com/snapshots/pc/2021-worlds-hayes-hunter-ds-bhbm.html",
@@ -80532,13 +80540,14 @@
   "capture": "https://web.archive.org/web/20261016161711/https://swccg.com/snapshots/pc/2022-endor-grand-prix-brad-reinhold-ds-rops-v.html",
   "job_id": "spn2-701ac86257c379f32ab4e3c138f2e313b71a7669",
   "last": "2026-10-16T17:09:37Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-30T19:52:56Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-30T20:25:05Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-brandon-baity-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261016160537/https://swccg.com/snapshots/pc/2022-endor-grand-prix-brandon-baity-ds-sycfa.html",
