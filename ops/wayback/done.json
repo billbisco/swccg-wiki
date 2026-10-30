@@ -77962,8 +77962,16 @@
   "capture": "https://web.archive.org/web/20261016134227/https://swccg.com/snapshots/pc/2021-worlds-anthony-howard-ds-mauls-chambers-ssav.html",
   "job_id": "spn2-25d44afdfba469d8db1b3dc61c227a29f8b3e982",
   "last": "2026-10-16T16:39:29Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T21:35:39Z",
+   "bytes": 2683435,
+   "capture_id": "https://web.archive.org/web/20261016134227id_/https://swccg.com/snapshots/pc/2021-worlds-anthony-howard-ds-mauls-chambers-ssav.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "67de02d30276273cdab06857453d28b320e92950c9dd2473a7524beb93cbf42c"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-anthony-howard-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261016134335/https://swccg.com/snapshots/pc/2021-worlds-anthony-howard-ls-qmc.html",
@@ -78019,17 +78027,16 @@
  },
  "https://swccg.com/snapshots/pc/2021-worlds-bill-kafer-ls-chief-chirpas-hut-ltww.html": {
   "capture": "https://web.archive.org/web/20261016134341/https://swccg.com/snapshots/pc/2021-worlds-bill-kafer-ls-chief-chirpas-hut-ltww.html",
+  "dead_capture": "https://web.archive.org/web/20261016134341/https://swccg.com/snapshots/pc/2021-worlds-bill-kafer-ls-chief-chirpas-hut-ltww.html",
   "job_id": "spn2-c94d5ba90666915a8a0e7d9cce9aca083398853c",
-  "last": "2026-10-16T16:39:43Z",
-  "status": "verified",
-  "tries": 1,
+  "last": "2026-10-30T21:06:40Z",
+  "recapture": true,
+  "status": "retry",
+  "tries": 0,
   "verify": {
-   "at": "2026-10-30T21:25:49Z",
-   "bytes": 2683308,
-   "capture_id": "https://web.archive.org/web/20261016134341id_/https://swccg.com/snapshots/pc/2021-worlds-bill-kafer-ls-chief-chirpas-hut-ltww.html",
-   "index": "cdx",
-   "method": "sha256",
-   "sha256": "2e78cc3c7edb0e5dd0324f41371e53b23fba3502f1b2074817ab58f95bc199be"
+   "at": "2026-10-30T21:36:40Z",
+   "method": "strict",
+   "reason": "redirects to another capture 20261014152641 (no capture at 20261016134341)"
   }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-bill-pittman-ds-bhbm.html": {
