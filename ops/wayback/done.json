@@ -79335,7 +79335,12 @@
   "job_id": "spn2-f8919a9965c67f340086f7015fdce6152677743b",
   "last": "2026-10-16T17:26:47Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-30T18:27:52Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-chris-kelly-ds-map-bf.html": {
   "capture": "",
@@ -79500,10 +79505,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T17:51:38Z",
+   "at": "2026-10-30T18:25:18Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-mike-pistone-ls-communing-yoda-bf.html": {
   "capture": "",
