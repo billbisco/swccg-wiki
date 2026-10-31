@@ -102944,10 +102944,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:51:37Z",
+   "at": "2026-10-31T18:24:12Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-geoff-mikulka-ls-tigih.html": {
   "capture": "https://web.archive.org/web/20261014055703/https://swccg.com/snapshots/pc/2026-retro-gempc-geoff-mikulka-ls-tigih.html",
@@ -102955,10 +102955,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:51:24Z",
+   "at": "2026-10-31T18:24:02Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-ian-monteith-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261014055741/https://swccg.com/snapshots/pc/2026-retro-gempc-ian-monteith-ds-ralltiir-operations.html",
@@ -103040,13 +103040,14 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jeremy-christoffel-ls-ebo.html": {
   "capture": "https://web.archive.org/web/20261014060359/https://swccg.com/snapshots/pc/2026-retro-gempc-jeremy-christoffel-ls-ebo.html",
   "last": "2026-10-14T06:21:23Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:51:15Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T18:23:48Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-joe-horbey-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261014060441/https://swccg.com/snapshots/pc/2026-retro-gempc-joe-horbey-ds-sycfa.html",
