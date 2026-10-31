@@ -77469,8 +77469,16 @@
   "capture": "https://web.archive.org/web/20261016124451/https://swccg.com/snapshots/pc/2020-worlds-day-2-brett-carlson-ls-no-idea.html",
   "job_id": "spn2-05104656e34c3d7874c7c0e0e30866e24a52790c",
   "last": "2026-10-16T14:20:00Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T02:37:52Z",
+   "bytes": 2683398,
+   "capture_id": "https://web.archive.org/web/20261016124451id_/https://swccg.com/snapshots/pc/2020-worlds-day-2-brett-carlson-ls-no-idea.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5b32f30ea3d8d4c9a2957c2e0b61e8f0108356e54687a1875b7de52ba2139c7f"
+  }
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-2-charlie-arlandson-ds-isb.html": {
   "capture": "https://web.archive.org/web/20261016124420/https://swccg.com/snapshots/pc/2020-worlds-day-2-charlie-arlandson-ds-isb.html",
@@ -79224,8 +79232,14 @@
   "capture": "https://web.archive.org/web/20261016141106/https://swccg.com/snapshots/pc/2021-worlds-dennis-reinhardt-ls-chief-chirpas-hut-ltww.html",
   "job_id": "spn2-ce0659b65e980fe10c9be8a6db5698c49317be8e",
   "last": "2026-10-16T14:17:27Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T02:38:04Z",
+   "capture_id": "https://web.archive.org/web/20261016141106id_/https://swccg.com/snapshots/pc/2021-worlds-dennis-reinhardt-ls-chief-chirpas-hut-ltww.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261014151016 (no capture at 20261016141106)"
+  }
  },
  "https://swccg.com/snapshots/pc/2021-worlds-erich-hawbaker-ds-mauls-chambers-ssav.html": {
   "capture": "https://web.archive.org/web/20261016141016/https://swccg.com/snapshots/pc/2021-worlds-erich-hawbaker-ds-mauls-chambers-ssav.html",
