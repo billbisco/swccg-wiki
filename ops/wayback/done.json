@@ -102716,7 +102716,12 @@
   "capture": "https://web.archive.org/web/20261014051100/https://swccg.com/snapshots/pc/2026-retro-gempc-cedric-perugini-ds-hunt-down.html",
   "last": "2026-10-14T05:30:10Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T18:09:36Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-cedric-perugini-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261014051139/https://swccg.com/snapshots/pc/2026-retro-gempc-cedric-perugini-ls-trm.html",
@@ -102966,10 +102971,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:37:21Z",
+   "at": "2026-10-31T18:09:28Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jeremy-christoffel-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261014060316/https://swccg.com/snapshots/pc/2026-retro-gempc-jeremy-christoffel-ds-sycfa.html",
@@ -103042,13 +103047,14 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261014062327/https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ds-ralltiir-operations.html",
   "last": "2026-10-14T06:47:02Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:37:13Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T18:09:19Z",
+   "error": "capture HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261014062406/https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ls-trm.html",
