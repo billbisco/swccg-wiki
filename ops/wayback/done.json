@@ -100739,10 +100739,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-10-31T20:27:24Z",
+   "at": "2026-10-31T21:00:21Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-semi-finals-joe-olson-ls-skywalker-saga-luke.html": {
   "capture": "https://web.archive.org/web/20261014014547/https://swccg.com/snapshots/pc/2025-ocs-playoff-semi-finals-joe-olson-ls-skywalker-saga-luke.html",
@@ -101021,13 +101021,14 @@
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-patrik-csapi-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261014025918/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-patrik-csapi-ls-diplo.html",
   "last": "2026-10-14T03:22:43Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T20:29:40Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T21:00:06Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-ryan-jellison-ds-vaders-castle-ssav.html": {
   "capture": "https://web.archive.org/web/20261014025957/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-ryan-jellison-ds-vaders-castle-ssav.html",
