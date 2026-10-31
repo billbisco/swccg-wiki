@@ -102226,7 +102226,12 @@
   "capture": "https://web.archive.org/web/20261014035219/https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-andrew-moss-ls-there-is-good-in-him.html",
   "last": "2026-10-14T04:13:52Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T19:37:05Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-chris-kelly-ds-i-want-that-map.html": {
   "capture": "https://web.archive.org/web/20261014035401/https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-chris-kelly-ds-i-want-that-map.html",
@@ -102732,24 +102737,26 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-ben-lindtsrom-ds-court.html": {
   "capture": "https://web.archive.org/web/20261014044019/https://swccg.com/snapshots/pc/2026-retro-gempc-ben-lindtsrom-ds-court.html",
   "last": "2026-10-14T05:04:19Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T19:05:23Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T19:36:56Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-bill-bisco-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261014044058/https://swccg.com/snapshots/pc/2026-retro-gempc-bill-bisco-ds-sycfa.html",
   "last": "2026-10-14T05:04:24Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T19:05:14Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T19:36:48Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-bill-bisco-ls-local-uprising.html": {
   "capture": "https://web.archive.org/web/20261014044231/https://swccg.com/snapshots/pc/2026-retro-gempc-bill-bisco-ls-local-uprising.html",
