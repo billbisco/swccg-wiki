@@ -102635,10 +102635,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T18:37:56Z",
+   "at": "2026-10-31T19:19:29Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-andrew-bethell-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261014042230/https://swccg.com/snapshots/pc/2026-retro-gempc-andrew-bethell-ds-ralltiir-operations.html",
@@ -102646,10 +102646,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T18:35:46Z",
+   "at": "2026-10-31T19:19:20Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-andrew-bethell-ls-tigih.html": {
   "capture": "https://web.archive.org/web/20261014042309/https://swccg.com/snapshots/pc/2026-retro-gempc-andrew-bethell-ls-tigih.html",
@@ -102764,13 +102764,14 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-price-ls-rst.html": {
   "capture": "https://web.archive.org/web/20261014044835/https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-price-ls-rst.html",
   "last": "2026-10-14T05:04:49Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T18:47:57Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T19:19:05Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261014050526/https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ds-bhbm.html",
