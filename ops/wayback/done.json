@@ -54146,7 +54146,12 @@
   "capture": "https://web.archive.org/web/20261014165918/https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set",
   "last": "2026-10-14T17:16:14Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:04:04Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://boards.theforce.net/threads/first-impression-of-sw-tcg.6383903/": {
   "capture": "",
@@ -54426,8 +54431,15 @@
   "capture": "https://web.archive.org/web/20261014164931/https://en.wikipedia.org/wiki/Jedi_Knights_Trading_Card_Game",
   "job_id": "spn2-7c89d9bedc6a5e953992aabeaeb52eea2317023d",
   "last": "2026-10-14T16:56:11Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:05:47Z",
+   "capture_id": "https://web.archive.org/web/20261014164931id_/https://en.wikipedia.org/wiki/Jedi_Knights_Trading_Card_Game",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://en.wikipedia.org/wiki/MegaCon": {
   "capture": "https://web.archive.org/web/20261002155232/https://en.wikipedia.org/wiki/MegaCon",
@@ -54515,8 +54527,17 @@
   "capture": "https://web.archive.org/web/20261014164815/https://www.reddit.com/media?url=https%3A%2F%2Fexternal-preview.redd.it%2FpPVmb-EaSGbZ2U0__SDWEB_kUeeWih9hEIc6S5TfZxk.jpg%3Fauto%3Dwebp%26s%3Db2cb2369b7d01c521031e9371a0099627de40aa5",
   "job_id": "spn2-356e49b2e090852b9feb56258938f0081a837abd",
   "last": "2026-10-14T16:56:14Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:05:38Z",
+   "capture_id": "https://web.archive.org/web/20261014164815id_/https://www.reddit.com/media?url=https%3A%2F%2Fexternal-preview.redd.it%2FpPVmb-EaSGbZ2U0__SDWEB_kUeeWih9hEIc6S5TfZxk.jpg%3Fauto%3Dwebp%26s%3Db2cb2369b7d01c521031e9371a0099627de40aa5",
+   "capture_sha256": "167e16625fac4a7f59f4c1541ed814507e73b28685cc28326269fee5d67577d9",
+   "index": "cdx",
+   "method": "sha256",
+   "reason": "file differs from the source",
+   "sha256": "686670fe7751d3b6ed7b19f709b4f7a20ebb1d9157b9e6b097e1d4a0c8a79cce"
+  }
  },
  "https://fancons.com/events/info/5400/dragon-con-2003": {
   "capture": "https://web.archive.org/web/20261009015411/https://fancons.com/events/info/5400/dragon-con-2003",
@@ -54960,21 +54981,43 @@
   "capture": "https://web.archive.org/web/20261014165114/https://i.ebayimg.com/images/g/FAoAAeSwCFxqxW06/s-l1600.jpg",
   "job_id": "spn2-b85bdb8c587e8059bda9c5f8db56459d9adc4f14",
   "last": "2026-10-14T16:56:17Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:05:31Z",
+   "capture_id": "https://web.archive.org/web/20261014165114id_/https://i.ebayimg.com/images/g/FAoAAeSwCFxqxW06/s-l1600.jpg",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://i.ebayimg.com/images/g/XUYAAeSw~6pqxW1B/s-l1600.png": {
   "capture": "https://web.archive.org/web/20261014165134/https://i.ebayimg.com/images/g/XUYAAeSw~6pqxW1B/s-l1600.png",
   "job_id": "spn2-3745a90b7b6bf6f59b9f24c8d433f9aa3be01ada",
   "last": "2026-10-14T16:56:20Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:05:16Z",
+   "bytes": 4686759,
+   "capture_id": "https://web.archive.org/web/20261014165134id_/https://i.ebayimg.com/images/g/XUYAAeSw~6pqxW1B/s-l1600.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ecaf60e586889b6d04e69f4f1f24099a1839b76decc08f87b3687d259fb00841"
+  }
  },
  "https://i.ebayimg.com/images/g/koAAAeSwt~tqxW07/s-l1600.jpg": {
   "capture": "https://web.archive.org/web/20261014165153/https://i.ebayimg.com/images/g/koAAAeSwt~tqxW07/s-l1600.jpg",
   "last": "2026-10-14T17:07:28Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:04:21Z",
+   "bytes": 326694,
+   "capture_id": "https://web.archive.org/web/20261014165153id_/https://i.ebayimg.com/images/g/koAAAeSwt~tqxW07/s-l1600.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "29e3ff15049a5ac9f59384a4f225fdc4b76f8098986e999322e71bea39ec6601"
+  }
  },
  "https://i.ebayimg.com/images/g/wPcAAeSwCbFqxW07/s-l1600.jpg": {
   "capture": "https://web.archive.org/web/20261014165920/https://i.ebayimg.com/images/g/wPcAAeSwCbFqxW07/s-l1600.jpg",
@@ -71997,8 +72040,16 @@
  "https://swccg.com/snapshots/forum/p1375729.html": {
   "capture": "https://web.archive.org/web/20261014163831/https://swccg.com/snapshots/forum/p1375729.html",
   "last": "2026-10-14T16:56:25Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:05:04Z",
+   "bytes": 499110,
+   "capture_id": "https://web.archive.org/web/20261014163831id_/https://swccg.com/snapshots/forum/p1375729.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a9ff1fefec58924b0814b4fe3e5220b3f218985ba9f6492547ef0eb560dd6d59"
+  }
  },
  "https://swccg.com/snapshots/forum/p1399156.html": {
   "capture": "https://web.archive.org/web/20261021062421/https://swccg.com/snapshots/forum/p1399156.html",
@@ -95792,7 +95843,12 @@
   "job_id": "spn2-90f924b23a5f44bb829c3ebf782d68855e82fc41",
   "last": "2026-10-14T17:05:42Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:04:35Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024-bf.html": {
   "capture": "https://web.archive.org/web/20261022022256/https://swccg.com/snapshots/pc/2024-09-world-championships-bochum-germany-19-22-september-2024-bf.html",
@@ -101092,7 +101148,12 @@
   "job_id": "spn2-fb56a5e1ba05ef112f56e187d1be3a1214c53c16",
   "last": "2026-10-14T17:02:21Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T16:04:52Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026-bf.html": {
   "capture": "https://web.archive.org/web/20261022020855/https://swccg.com/snapshots/pc/2026-06-tenth-annual-gempc-may-to-july-2026-bf.html",
