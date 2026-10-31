@@ -103408,10 +103408,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T10:14:14Z",
+   "at": "2026-10-31T10:44:31Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major-bf.html": {
   "capture": "",
@@ -146360,8 +146360,16 @@
   "capture": "https://web.archive.org/web/20261016003115/https://www.youtube.com/watch?v=quSX6QLvvho",
   "job_id": "spn2-2eee6f191f993df56ee7b93f28a04250c2d3468e",
   "last": "2026-10-16T02:46:42Z",
-  "status": "ok",
-  "tries": 6
+  "status": "unverified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-10-31T10:44:43Z",
+   "capture_id": "https://web.archive.org/web/20261016003115id_/https://www.youtube.com/watch?v=quSX6QLvvho",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 12% (< 85%)",
+   "text_match": 0.125
+  }
  },
  "https://www.youtube.com/watch?v=qz7AcV4imII": {
   "capture": "https://web.archive.org/web/20261021192744/https://www.youtube.com/watch?v=qz7AcV4imII",
