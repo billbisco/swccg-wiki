@@ -98500,7 +98500,12 @@
   "capture": "https://web.archive.org/web/20261014004927/https://swccg.com/snapshots/pc/2024-retro-online-championship-series-paul-todd-feldman-ds-bring-him-before-me.html",
   "last": "2026-10-14T01:12:06Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T21:41:58Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-retro-online-championship-series-paul-todd-feldman-ls-mind-what-you-have-learned.html": {
   "capture": "https://web.archive.org/web/20261014005006/https://swccg.com/snapshots/pc/2024-retro-online-championship-series-paul-todd-feldman-ls-mind-what-you-have-learned.html",
@@ -100983,13 +100988,14 @@
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-casey-anis-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261014020811/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-casey-anis-ls-hitco.html",
   "last": "2026-10-14T02:30:54Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T21:10:17Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T21:41:49Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-conor-britain-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261014020934/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-conor-britain-ds-shadow-collective.html",
