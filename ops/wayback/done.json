@@ -100611,7 +100611,12 @@
   "capture": "https://web.archive.org/web/20261014005403/https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-greg-shaw-ls-rebel-strike-team.html",
   "last": "2026-10-14T01:12:29Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T21:32:24Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261014005443/https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ds-first-order-reigns.html",
@@ -101002,24 +101007,26 @@
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jarad-konsker-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261014021315/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jarad-konsker-ds-shadow-collective.html",
   "last": "2026-10-14T02:31:11Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T21:01:59Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T21:32:14Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jarad-konsker-ls-mwyhlv.html": {
   "capture": "https://web.archive.org/web/20261014021453/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jarad-konsker-ls-mwyhlv.html",
   "last": "2026-10-14T02:31:14Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T21:01:49Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T21:32:06Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jeff-lavigne-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261014023147/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jeff-lavigne-ds-first-order-reigns.html",
