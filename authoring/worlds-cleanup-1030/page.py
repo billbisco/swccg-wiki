@@ -3,9 +3,10 @@ rows = json.load(open("rows.json"))
 PH = {2003:"Jonny Chu 2016 Endor Grand Prix.jpg",2007:"Jonny Chu 2016 Endor Grand Prix.jpg",2008:"Kevin Shannon 2013 Hall of Fame.jpg",
       2009:"Brian Hunter FreedomCon 2001.jpg",2012:"Emil Wallin 2015 Hall of Fame.jpg",2014:"Emil Wallin 2015 Hall of Fame.jpg",
       2015:"Justin Desai 2013 Hall of Fame.jpg",2016:"Tom Haid 2021 World Championship.jpg",2018:"Bastian Winkelhaus 2019 Hall of Fame.jpg"}
-DATES = {2005:"2005 (days not confirmed)", 2020:"5–13 December 2020"}
-PLAY = {1996:"38", 2000:"70 (Day 2)", 2020:"97", 2017:"59", 1998:"56"}
+DATES = {2005:"20 August 2005", 2008:"9–12 October 2008", 2020:"5–13 December 2020"}
+PLAY = {2002:"99 (Day 1, two heats); 52 (Day 2)", 1996:"38", 2000:"70 (Day 2)", 2020:"97", 2017:"59", 1998:"56"}
 OVR = {2010:"Dan Kim 2010 World Championship.png",2013:"Justin Desai 2013 World Championship.jpg",2014:"Emil Wallin and Brian Terwilliger 2014 World Championship.jpg",2015:"Justin Desai and Jonny Chu 2015 World Championship.jpg"}
+VEN = {2003:"Hyatt Regency Atlanta and Atlanta Marriott Marquis, Atlanta, Georgia, USA (Dragon*Con 2003)",2004:"Indiana Convention Center, Indianapolis, Indiana, USA (Gen Con Indy 2004)",2008:"Twin City Comics, Columbia Heights (Minneapolis area), Minnesota, USA",2010:"Philadelphia Airport Hilton, Philadelphia, Pennsylvania, USA"}
 def era(y): return "Decipher" if y<=2001 else "Players Committee"
 out = []
 for r in rows:
@@ -15,7 +16,7 @@ for r in rows:
     if img and str(y) not in img: cap = "<br/><small>(" + re.sub(r"\.\w+$", "", img).split(" ", 2)[-1] + ")</small>"
     photo = f"[[File:{img}|{'140px' if y in OVR else '80px'}]]{cap}" if img else "—"
     dates = DATES.get(y, r["dates"].split(" (")[0].split(";")[0])
-    venue = r["venue"].replace(" (as named in the wrap-up)", "")
+    venue = VEN.get(y) or r["venue"].replace(" (as named in the wrap-up)", "")
     players = PLAY.get(y, r["players"]) or "—"
     decks = f"{r['dark']}<br/>{r['light']}" if r["dark"] != "—" or r["light"] != "—" else "—"
     if y == 2006: decks = "—"
