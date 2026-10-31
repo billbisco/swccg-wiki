@@ -102657,10 +102657,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T18:35:27Z",
+   "at": "2026-10-31T19:17:25Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-ben-lindstrom-ls-mbo.html": {
   "capture": "https://web.archive.org/web/20261014043941/https://swccg.com/snapshots/pc/2026-retro-gempc-ben-lindstrom-ls-mbo.html",
@@ -102775,24 +102775,26 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261014050526/https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ds-bhbm.html",
   "last": "2026-10-14T05:29:47Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T18:46:05Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T19:17:16Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ls-mwyhl.html": {
   "capture": "https://web.archive.org/web/20261014050653/https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ls-mwyhl.html",
   "last": "2026-10-14T05:29:50Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T18:45:57Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T19:17:04Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-carter-vencill-ds-imperial-occupation.html": {
   "capture": "https://web.archive.org/web/20261014050730/https://swccg.com/snapshots/pc/2026-retro-gempc-carter-vencill-ds-imperial-occupation.html",
