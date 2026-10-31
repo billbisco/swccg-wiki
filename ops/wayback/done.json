@@ -54816,8 +54816,15 @@
   "capture": "https://web.archive.org/web/20261016021623/https://icv2.com/print/article/4495",
   "job_id": "spn2-d9fb39f099b422be3ebe82d21e5792e7e652dbe4",
   "last": "2026-10-16T02:18:50Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T11:28:39Z",
+   "capture_id": "https://web.archive.org/web/20261016021623id_/https://icv2.com/print/article/4495",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.997
+  }
  },
  "https://icv2.com/print/article/4824": {
   "capture": "https://web.archive.org/web/20261016020701/https://icv2.com/print/article/4824",
@@ -55157,8 +55164,16 @@
   "capture": "https://web.archive.org/web/20261016021613/https://renju.se/rif/pente.htm",
   "job_id": "spn2-6f1e0d9c19fe016293c9e874b4029458e713ffb7",
   "last": "2026-10-16T02:18:31Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T11:28:48Z",
+   "bytes": 6991,
+   "capture_id": "https://web.archive.org/web/20261016021613id_/https://renju.se/rif/pente.htm",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2fee3300b5c43e43cb45e43c8c7a9958930e770ded8ea95501e5d91870f8775f"
+  }
  },
  "https://res.starwarsccg.org/Resources/SWCCG+Collecting+Encyclopedia+2.0.pdf": {
   "capture": "https://web.archive.org/web/20261015165302/https://res.starwarsccg.org/Resources/SWCCG+Collecting+Encyclopedia+2.0.pdf",
@@ -121184,8 +121199,16 @@
   "capture": "https://web.archive.org/web/20261016020344/https://www.chessgames.com/perl/chessplayer?pid=99037",
   "job_id": "spn2-909689a2c74f8d4b03f378db4a7e1b6d9aa329ff",
   "last": "2026-10-16T02:20:01Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T11:28:32Z",
+   "capture_id": "https://web.archive.org/web/20261016020344id_/https://www.chessgames.com/perl/chessplayer?pid=99037",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 75% (< 85%)",
+   "text_match": 0.749
+  }
  },
  "https://www.ebay.com/itm/287632079846": {
   "capture": "",
