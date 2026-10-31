@@ -139759,8 +139759,16 @@
   "capture": "https://web.archive.org/web/20261015182016/https://www.youtube.com/watch?v=8f_SYTrS-Xw",
   "job_id": "spn2-5489edb71f8a74cdd02e9a7dbc1751080ed22763",
   "last": "2026-10-15T19:25:10Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T14:42:48Z",
+   "capture_id": "https://web.archive.org/web/20261015182016id_/https://www.youtube.com/watch?v=8f_SYTrS-Xw",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 15% (< 85%)",
+   "text_match": 0.152
+  }
  },
  "https://www.youtube.com/watch?v=8gtTxTqC5KU": {
   "capture": "https://web.archive.org/web/20261016001622/https://www.youtube.com/watch?v=8gtTxTqC5KU",
