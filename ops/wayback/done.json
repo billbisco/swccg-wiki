@@ -76306,11 +76306,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-reinhold-ds-hunt-down-v.html": {
-  "capture": "https://web.archive.org/web/20261016111506/https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-reinhold-ds-hunt-down-v.html",
+  "capture": "https://web.archive.org/web/20261031101958/https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-reinhold-ds-hunt-down-v.html",
   "job_id": "spn2-89631720ad487fb0e3a2f1018d99c86809ff15f2",
-  "last": "2026-10-31T09:58:55Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-10-31T10:20:33Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T10:20:33Z",
+   "bytes": 2683431,
+   "capture_id": "https://web.archive.org/web/20261031101958id_/https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-reinhold-ds-hunt-down-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0161f15656db0dac456268e50715358af0b5eeb5f81615fa587e5d4231800dbd"
+  }
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-reinhold-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261016111517/https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-reinhold-ls-qmc.html",
@@ -137649,8 +137657,15 @@
   "capture": "https://web.archive.org/web/20241203024546/https://www.theringer.com/2018/5/21/17374528/star-wars-customizable-card-game-player-community",
   "last": "2026-10-16T03:05:06Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-31T10:20:40Z",
+   "capture_id": "https://web.archive.org/web/20241203024546id_/https://www.theringer.com/2018/5/21/17374528/star-wars-customizable-card-game-player-community",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.972
+  }
  },
  "https://www.travelweekly.com/Hotels/Kissimmee-FL/Holiday-Inn-Resort-by-the-Parks-p60120676": {
   "capture": "",
@@ -146662,8 +146677,16 @@
   "capture": "https://web.archive.org/web/20261016030330/https://www.youtube.com/watch?v=thTCFSGqzdw",
   "job_id": "spn2-ca0c0245426eb94c8a7ccbb58e356a4be05043b6",
   "last": "2026-10-16T03:03:47Z",
-  "status": "ok",
-  "tries": 3
+  "status": "unverified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-31T10:20:50Z",
+   "capture_id": "https://web.archive.org/web/20261016030330id_/https://www.youtube.com/watch?v=thTCFSGqzdw",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 16% (< 85%)",
+   "text_match": 0.161
+  }
  },
  "https://www.youtube.com/watch?v=tkOSRJl0vHw": {
   "capture": "https://web.archive.org/web/20261021194134/https://www.youtube.com/watch?v=tkOSRJl0vHw",
