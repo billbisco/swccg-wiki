@@ -80211,13 +80211,14 @@
   "capture": "https://web.archive.org/web/20261016154724/https://swccg.com/snapshots/pc/2022-corellia-regionals-brian-fred-ds-bhbm.html",
   "job_id": "spn2-96acd20fab5e2d429a1367cb2a583dc20e019ab1",
   "last": "2026-10-16T15:55:33Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T00:03:12Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T00:39:17Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-david-center-ls-rescue-the-princess-v-bf.html": {
   "capture": "https://web.archive.org/web/20261021040131/https://swccg.com/snapshots/pc/2022-corellia-regionals-david-center-ls-rescue-the-princess-v-bf.html",
@@ -80283,13 +80284,14 @@
   "capture": "https://web.archive.org/web/20261016154734/https://swccg.com/snapshots/pc/2022-corellia-regionals-kendall-halman-ds-court.html",
   "job_id": "spn2-3527597d03fe8dfa81bf45b48b6d7d8372203da2",
   "last": "2026-10-16T15:55:37Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T00:01:48Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T00:39:04Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-corellia-regionals-stephen-squirlock-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261016153927/https://swccg.com/snapshots/pc/2022-corellia-regionals-stephen-squirlock-ls-legend.html",
@@ -90093,8 +90095,16 @@
   "capture": "https://web.archive.org/web/20261016152050/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-mike-kessling-ds-isb.html",
   "job_id": "spn2-40a4f5291637addef0bb179e8dda021ddbd85520",
   "last": "2026-10-16T15:28:39Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T00:39:41Z",
+   "bytes": 2682636,
+   "capture_id": "https://web.archive.org/web/20261016152050id_/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-mike-kessling-ds-isb.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4a4f4bb67f99f799d2bbc51d32686157f29f0f3854ac3be20dfe0e3ff7d3fbbf"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-mike-kessling-ls-obi-wan-communing.html": {
   "capture": "https://web.archive.org/web/20261016151025/https://swccg.com/snapshots/pc/2023-ocs-playoff-quarterfinals-mike-kessling-ls-obi-wan-communing.html",
@@ -90173,8 +90183,16 @@
   "capture": "https://web.archive.org/web/20261016152136/https://swccg.com/snapshots/pc/2023-ocs-playoff-semi-finals-sam-tashima-ds-shadow-collective.html",
   "job_id": "spn2-f0aabd86ef3fd5169e0c580e5aa1edf375f60994",
   "last": "2026-10-16T15:28:41Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T00:39:32Z",
+   "bytes": 2683534,
+   "capture_id": "https://web.archive.org/web/20261016152136id_/https://swccg.com/snapshots/pc/2023-ocs-playoff-semi-finals-sam-tashima-ds-shadow-collective.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "de1100a5c295a19f0a8ee85ef5fa446e2e31f1b3a714d38a5021bd3a32097a5c"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-semi-finals-sam-tashima-ls-communing-obi-wan.html": {
   "capture": "https://web.archive.org/web/20261016151232/https://swccg.com/snapshots/pc/2023-ocs-playoff-semi-finals-sam-tashima-ls-communing-obi-wan.html",
@@ -90254,8 +90272,16 @@
   "capture": "https://web.archive.org/web/20261016152035/https://swccg.com/snapshots/pc/2023-ocs-playoff-top-16-bill-pittman-ls-skywalker-saga-anakin.html",
   "job_id": "spn2-cc2604abbe575ad43522db53c49e82ea2ee8a8c0",
   "last": "2026-10-16T15:28:44Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T00:39:25Z",
+   "bytes": 2683673,
+   "capture_id": "https://web.archive.org/web/20261016152035id_/https://swccg.com/snapshots/pc/2023-ocs-playoff-top-16-bill-pittman-ls-skywalker-saga-anakin.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "01e70184c927240176debfac92e6f467f4b19c7cffb09158ecdada2196fca6f5"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ocs-playoff-top-16-brad-kippel-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261016152150/https://swccg.com/snapshots/pc/2023-ocs-playoff-top-16-brad-kippel-ds-shadow-collective.html",
