@@ -99735,13 +99735,14 @@
   "capture": "https://web.archive.org/web/20261016105758/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-wrap-up-joe-olson-starts-the-year-off-strong.html",
   "job_id": "spn2-f20ba4c8da2cbc4969397a01a6370f8526ccd16b",
   "last": "2026-10-16T11:08:32Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T10:46:12Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T11:16:41Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-morristown-melee-wrap-up-greg-shaw-victorious.html": {
   "capture": "https://web.archive.org/web/20261016163351/https://swccg.com/snapshots/pc/2025-morristown-melee-wrap-up-greg-shaw-victorious.html",
@@ -141335,8 +141336,16 @@
   "capture": "https://web.archive.org/web/20261016012039/https://www.youtube.com/watch?v=KPiQfKGRw2A",
   "job_id": "spn2-ac4ac67fc22eae0799ed923543338df286ec6f74",
   "last": "2026-10-16T02:27:43Z",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-31T11:17:00Z",
+   "capture_id": "https://web.archive.org/web/20261016012039id_/https://www.youtube.com/watch?v=KPiQfKGRw2A",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 16% (< 85%)",
+   "text_match": 0.156
+  }
  },
  "https://www.youtube.com/watch?v=KXJaProQ27Q": {
   "capture": "https://web.archive.org/web/20261021172928/https://www.youtube.com/watch?v=KXJaProQ27Q",
@@ -142459,8 +142468,16 @@
   "capture": "https://web.archive.org/web/20261016012012/https://www.youtube.com/watch?v=RbOFVw_9Eec",
   "job_id": "spn2-edfb1840ab07a801d4beabc9e2f457abe8d9a1d5",
   "last": "2026-10-16T02:27:35Z",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-31T11:17:08Z",
+   "capture_id": "https://web.archive.org/web/20261016012012id_/https://www.youtube.com/watch?v=RbOFVw_9Eec",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 17% (< 85%)",
+   "text_match": 0.167
+  }
  },
  "https://www.youtube.com/watch?v=RduLHhfGb_w": {
   "capture": "https://web.archive.org/web/20261015185059/https://www.youtube.com/watch?v=RduLHhfGb_w",
@@ -143142,8 +143159,16 @@
   "capture": "https://web.archive.org/web/20261016012325/https://www.youtube.com/watch?v=VbbA0e49M2U",
   "job_id": "spn2-7e2854c6046fa07cb86a92bb34b1bac7d9bc9ecc",
   "last": "2026-10-16T02:27:46Z",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-31T11:16:51Z",
+   "capture_id": "https://web.archive.org/web/20261016012325id_/https://www.youtube.com/watch?v=VbbA0e49M2U",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 15% (< 85%)",
+   "text_match": 0.147
+  }
  },
  "https://www.youtube.com/watch?v=Vnb57W7ZnB8": {
   "capture": "https://web.archive.org/web/20261015185359/https://www.youtube.com/watch?v=Vnb57W7ZnB8",
