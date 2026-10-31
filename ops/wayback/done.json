@@ -139811,8 +139811,16 @@
   "capture": "https://web.archive.org/web/20261016004347/https://www.youtube.com/watch?v=9cFtbAxU9UY",
   "job_id": "spn2-18656a2f2ac21cfcfda42f65c61003a171755f44",
   "last": "2026-10-16T00:52:48Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T12:48:12Z",
+   "capture_id": "https://web.archive.org/web/20261016004347id_/https://www.youtube.com/watch?v=9cFtbAxU9UY",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 12% (< 85%)",
+   "text_match": 0.122
+  }
  },
  "https://www.youtube.com/watch?v=9fhlw8npo9w": {
   "capture": "https://web.archive.org/web/20261020232825/https://www.youtube.com/watch?v=9fhlw8npo9w",
@@ -141617,7 +141625,12 @@
   "job_id": "spn2-76d170823750792fcf7d2b63e7d1a9b229554d7e",
   "last": "2026-10-16T00:42:21Z",
   "status": "ok",
-  "tries": 3
+  "tries": 3,
+  "verify": {
+   "at": "2026-10-31T12:48:23Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=JEG0yQONo84": {
   "capture": "https://web.archive.org/web/20261021165511/https://www.youtube.com/watch?v=JEG0yQONo84",
@@ -143682,8 +143695,16 @@
   "capture": "https://web.archive.org/web/20261016004311/https://www.youtube.com/watch?v=UhHLkZCiqcw",
   "job_id": "spn2-e853e87d60f34c14467184f9ce4b1f4d6d676e48",
   "last": "2026-10-16T00:52:50Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T12:48:02Z",
+   "capture_id": "https://web.archive.org/web/20261016004311id_/https://www.youtube.com/watch?v=UhHLkZCiqcw",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 12% (< 85%)",
+   "text_match": 0.119
+  }
  },
  "https://www.youtube.com/watch?v=UhZv7OpkOwA": {
   "capture": "https://web.archive.org/web/20261011225756/https://www.youtube.com/watch?v=UhZv7OpkOwA",
