@@ -23,9 +23,6 @@ Folder C = /tmp/claude-0/-home-claude/89b0b907-d4b4-53cc-bc54-8fba9b724b03/scrat
 |-
 | colspan="2" style="text-align:center;" | [[File:<champion photo>|280px]]<br/><small>caption</small>
 |-
-! Edition
-| <Nth> (count 1996 as the 1st: 2002 = 7th, 2025 = 30th, 2026 = 31st)
-|-
 ! Organizer
 | [[Decipher]] / [[Players Committee]]
 |-
@@ -51,7 +48,7 @@ Folder C = /tmp/claude-0/-home-claude/89b0b907-d4b4-53cc-bc54-8fba9b724b03/scrat
 | [[<prev year hub>|<prev year>]] · [[<next year hub>|<next year>]]
 |}
 ```
-2. Lead (2–5 sentences): edition, where/when, field size, champion def. runner-up (and winning decks if known), anything notable
+2. Lead (2–5 sentences): which World Championship it was (e.g. "the 31st"; count 1996 as the 1st), where/when, field size, champion def. runner-up (and winning decks if known), anything notable
    (Hall of Fame inductees announced there, back-to-back titles). Keep existing sourced narrative — move it into the right
    sections, never delete sourced facts; you may tighten wording.
 3. `== Results ==` — ONE table in finish order: `! Place !! Player !! Dark !! Light` with BOTH of a player's decks on the
@@ -66,6 +63,8 @@ Folder C = /tmp/claude-0/-home-claude/89b0b907-d4b4-53cc-bc54-8fba9b724b03/scrat
 8. `== Sources ==` bullets (keep all existing ones, add new), then the existing references block
    `{{#if:1|<nowiki />\n<h2>References</h2>\n<references />}}`, then categories: [[Category:Tournaments]]
    [[Category:Championships]] [[Category:World Championships]] [[Category:<year>]].
+
+No "Edition" infobox row (Bill 2026-10-31: confusing; removed from all hubs).
 
 Rules: every fact sourced (inline <ref> or Sources bullet, reuse existing named refs); Bill's correction in worlds_issues.md
 wins over old hub text; where sources disagree, state both briefly with refs. Don't invent places, dates or deck names.
