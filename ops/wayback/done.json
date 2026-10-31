@@ -102848,7 +102848,12 @@
   "capture": "https://web.archive.org/web/20261014060158/https://swccg.com/snapshots/pc/2026-retro-gempc-jeff-anderson-ds-sycfa.html",
   "last": "2026-10-14T06:21:13Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T17:39:18Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jeff-anderson-ls-hidden-base.html": {
   "capture": "https://web.archive.org/web/20261014060236/https://swccg.com/snapshots/pc/2026-retro-gempc-jeff-anderson-ls-hidden-base.html",
@@ -103167,13 +103172,14 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-mike-adamson-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261014071454/https://swccg.com/snapshots/pc/2026-retro-gempc-mike-adamson-ds-bhbm.html",
   "last": "2026-10-14T07:38:44Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:08:29Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T17:39:07Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-mike-adamson-ls-profit.html": {
   "capture": "https://web.archive.org/web/20261014071536/https://swccg.com/snapshots/pc/2026-retro-gempc-mike-adamson-ls-profit.html",
