@@ -100953,7 +100953,12 @@
   "capture": "https://web.archive.org/web/20261014030503/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-timo-dusel-ls-ebo.html",
   "last": "2026-10-14T03:23:02Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T19:48:26Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-tatooine-regionals-adam-bott-ds-watto.html": {
   "capture": "",
@@ -102154,7 +102159,12 @@
   "capture": "https://web.archive.org/web/20261014032411/https://swccg.com/snapshots/pc/2026-jawa-cup-finals-andrew-moss-ls-rebel-strike-team.html",
   "last": "2026-10-14T03:48:14Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T19:48:17Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-jawa-cup-finals-justin-miyashiro-ds-isb-operations.html": {
   "capture": "https://web.archive.org/web/20261014032452/https://swccg.com/snapshots/pc/2026-jawa-cup-finals-justin-miyashiro-ds-isb-operations.html",
@@ -102771,13 +102781,14 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-andrew-bethell-ls-tigih.html": {
   "capture": "https://web.archive.org/web/20261014042309/https://swccg.com/snapshots/pc/2026-retro-gempc-andrew-bethell-ls-tigih.html",
   "last": "2026-10-14T04:39:35Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T19:17:25Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T19:48:06Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-ben-lindstrom-ls-mbo.html": {
   "capture": "https://web.archive.org/web/20261014043941/https://swccg.com/snapshots/pc/2026-retro-gempc-ben-lindstrom-ls-mbo.html",
