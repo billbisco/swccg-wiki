@@ -98545,10 +98545,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T22:01:25Z",
+   "at": "2026-10-31T22:32:31Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-retro-online-championship-series-matt-fendt-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261014003032/https://swccg.com/snapshots/pc/2024-retro-online-championship-series-matt-fendt-ds-ralltiir-operations.html",
@@ -98556,10 +98556,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T22:01:14Z",
+   "at": "2026-10-31T22:32:14Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-retro-online-championship-series-matt-fendt-ls-echo-base-operations.html": {
   "capture": "https://web.archive.org/web/20261014004850/https://swccg.com/snapshots/pc/2024-retro-online-championship-series-matt-fendt-ls-echo-base-operations.html",
@@ -100733,13 +100733,14 @@
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261014005443/https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ds-first-order-reigns.html",
   "last": "2026-10-14T01:12:33Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T22:01:05Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T22:32:06Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ls-watch-your-step.html": {
   "capture": "https://web.archive.org/web/20261014005522/https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ls-watch-your-step.html",
