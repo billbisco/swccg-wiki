@@ -100617,7 +100617,12 @@
   "capture": "https://web.archive.org/web/20261014005443/https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ds-first-order-reigns.html",
   "last": "2026-10-14T01:12:33Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T21:30:45Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ls-watch-your-step.html": {
   "capture": "https://web.archive.org/web/20261014005522/https://swccg.com/snapshots/pc/2025-ocs-playoff-finals-pat-johnson-ls-watch-your-step.html",
@@ -100831,13 +100836,14 @@
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-semi-finals-joe-olson-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261014014506/https://swccg.com/snapshots/pc/2025-ocs-playoff-semi-finals-joe-olson-ds-first-order-reigns.html",
   "last": "2026-10-14T02:56:17Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-31T21:00:21Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T21:30:34Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-semi-finals-joe-olson-ls-skywalker-saga-luke.html": {
   "capture": "https://web.archive.org/web/20261014014547/https://swccg.com/snapshots/pc/2025-ocs-playoff-semi-finals-joe-olson-ls-skywalker-saga-luke.html",
@@ -101018,13 +101024,14 @@
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jeff-lavigne-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261014023147/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jeff-lavigne-ds-first-order-reigns.html",
   "last": "2026-10-14T02:56:20Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T20:58:39Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T21:30:25Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jeff-lavigne-ls-wys.html": {
   "capture": "https://web.archive.org/web/20261014023225/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-jeff-lavigne-ls-wys.html",
