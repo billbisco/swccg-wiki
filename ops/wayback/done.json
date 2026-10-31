@@ -76204,17 +76204,16 @@
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-kippel-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261016114758/https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-kippel-ls-trm.html",
+  "dead_capture": "https://web.archive.org/web/20261016114758/https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-kippel-ls-trm.html",
   "job_id": "spn2-5fe4cf52f224f7676b5f7e7e4ed2d619df54e88b",
-  "last": "2026-10-16T11:57:24Z",
-  "status": "verified",
-  "tries": 2,
+  "last": "2026-10-31T07:59:32Z",
+  "recapture": true,
+  "status": "retry",
+  "tries": 0,
   "verify": {
-   "at": "2026-10-31T08:12:09Z",
-   "bytes": 2683426,
-   "capture_id": "https://web.archive.org/web/20261016114758id_/https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-kippel-ls-trm.html",
-   "index": "cdx",
-   "method": "sha256",
-   "sha256": "f36332801f2d85b886cfa6da51a1fdef9433e171c71ca04c4ce2ca6e80f0dc8c"
+   "at": "2026-10-31T08:29:32Z",
+   "method": "strict",
+   "reason": "redirects to another capture 20261014114440 (no capture at 20261016114758)"
   }
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-1-brad-reinhold-ds-hunt-down-v.html": {
@@ -76396,8 +76395,16 @@
  "https://swccg.com/snapshots/pc/2020-worlds-day-1-chris-peterson-ds-dark-combat.html": {
   "capture": "https://web.archive.org/web/20261016112021/https://swccg.com/snapshots/pc/2020-worlds-day-1-chris-peterson-ds-dark-combat.html",
   "last": "2026-10-16T11:44:03Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T08:29:12Z",
+   "bytes": 2683295,
+   "capture_id": "https://web.archive.org/web/20261016112021id_/https://swccg.com/snapshots/pc/2020-worlds-day-1-chris-peterson-ds-dark-combat.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4675a44f08834ff1e8a75d7a361c1af475b4cb1cdb7e229e7e60fa30f3b816e8"
+  }
  },
  "https://swccg.com/snapshots/pc/2020-worlds-day-1-chris-peterson-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261016112108/https://swccg.com/snapshots/pc/2020-worlds-day-1-chris-peterson-ls-hitco.html",
