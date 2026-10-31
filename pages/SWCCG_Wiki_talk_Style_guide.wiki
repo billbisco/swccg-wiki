@@ -23,3 +23,39 @@ Bill 17 October 2026: if a sourced SWCCG-associated photograph of a person is fo
 == Keep the original with a crop ==
 Bill 23 October 2026: a person-page lead may be a crop of one subject; the uncropped original goes in Photographs on the same page. Worked: [[Michael Mikaelian]].
 [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 12:10, 23 October 2026 (UTC)
+
+== Media dest ==
+Intended Cross-linking checklist bullet (article restamp skipped; live page already trips style_lint): magazine features, print ads and television commercials go on [[Media]] and the [[Magazines]] table, with [[:Category:Media]] and [[:Category:Magazines]] (or [[:Category:Television commercials]]).
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 19:39, 23 October 2026 (UTC)
+== Magazine articles, mentions and ads (Bill, 2026-10-23) ==
+Bill: a SWCCG magazine article is transcribed in full, verbatim. A mention is transcribed for the SWCCG portion plus context, verbatim. Ads and inserts get their own wiki pages. The lead may summarize. Full text is in skill swccg-wiki-editing-style and the local Style guide dump; the live Style guide still has pre-existing lint flags so the section is not restamped this sitting. R-2026-10-23-a magazine dest. [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 20:59, 23 October 2026 (UTC)
+== Build notes ==
+Added worked miss: Photographs extras are gallery thumbs. First dests of Allen Varney and Lester Smith used thumb|left and floated a full-size picture. photograph gallery dest 24 October 2026. [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 02:28, 24 October 2026 (UTC)
+== No sentence-length limit (2026-10-26) ==
+Per Bill (2026-10-26): "I never agreed to a 30 word lint limit. If we need more words, do more words." Removed "sentences over 30 words" from the style lint description and added to Be concise that clarity and full understanding come first, so a sentence or quote may be as long as clarity needs. The LONG check is gone from <code>authoring/style_lint.py</code> (billbisco/swccg-wiki f849e2538).
+[[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 11:53, 26 October 2026 (UTC)
+
+== Card infobox Versions (Bill, 2026-10-26) ==
+Closed prefixes, oldest first: Decipher · Decipher (AI) · Decipher Errata · PC Errata · Virtual Original · Virtual Legacy · Virtual Legacy (AI) · Virtual Modern · Virtual Modern (ALT).
+Unmarked Decipher is the printed face.
+GEMP ID is the id GEMP loads. Bare on the playable article. Letter <code>o</code> on first-published. Letter <code>d</code> only as a middle layer when print, Decipher errata, and PC errata are three distinct texts.
+Worked: [[Luke Skywalker (Errata)]] <code>1_19</code>. Dest remaining families in waves.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 19:58, 26 October 2026 (UTC)
+
+== Dest 27 October 2026 ==
+=== Build notes ===
+* Versions: unmarked Decipher is print. Title (Original) redirects to unmarked print.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 17:43, 27 October 2026 (UTC)
+
+== Every new photo goes in the gallery (Bill, 2026-10-27) ==
+
+Bill 27 October 2026: whenever a new photograph of a person is found, it also goes in the <code>&lt;gallery&gt;</code> under <code>== Photographs ==</code> on their page, in addition to any lead image. A page with no Photographs section gets one in the usual place, keeping the existing layout. Added to [[SWCCG Wiki:Style guide#Photos of people]]. Worked: [[Kendrick Summers]] (1997 Rebel Leaders photo).
+[[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 20:03, 27 October 2026 (UTC)
+
+== Photo sources: any source, Small World Rule (Bill, 2026-10-27) ==
+
+Bill 27 October 2026: a photo of a person may come from any source; the only test is how certain it is that the photo shows the same person. Small World Rule for photos: a distinctive name plus a Decipher or SWCCG link (for example, a Decipher staffer of that name) means the photo is taken as the same person, with the reasoning recorded on the person page's Talk page. This replaces the older source limits in [[SWCCG Wiki:Style guide#Photos of people]]: photos only from SWCCG websites or events (2026-10-12), the public SWCCG Facebook allowance, and requiring the same source to name the person's Decipher work. Kept: no obscene gestures, cite the source with a Preserved copy, credit the photographer when known, and every new photo goes in the Photographs gallery. Also updated: the Photo identification bullet of the small-world standing rule, the Hunt a lead photograph and Add good extras bullets (dropped "SWCCG-associated"), and the Pictures for articles bullet formerly titled Photo sources still apply (now limited to event, place and website pictures).
+[[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 20:14, 27 October 2026 (UTC)
+=== Exact name + Star Wars CCG Facebook group (30 Oct 2026) ===
+Bill: an exact legal-name match already on the wiki who is a member of the Star Wars CCG Facebook group is the same person; dest. Photo difficulty is not a skip. Dest the repeating face in a group. Skip meme/logo/product as the person lead. Worked: [[John Petelle]], [[Roberto Borias]], [[David Shettlesworth]], [[Jindřich Nepevný]]. Rule id R-2026-10-30-c.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 01:58, 31 October 2026 (UTC)
