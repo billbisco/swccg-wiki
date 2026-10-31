@@ -102680,7 +102680,12 @@
   "capture": "https://web.archive.org/web/20261014050526/https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ds-bhbm.html",
   "last": "2026-10-14T05:29:47Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T18:15:29Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ls-mwyhl.html": {
   "capture": "https://web.archive.org/web/20261014050653/https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ls-mwyhl.html",
@@ -102974,10 +102979,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:43:25Z",
+   "at": "2026-10-31T18:15:21Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jeff-anderson-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261014060158/https://swccg.com/snapshots/pc/2026-retro-gempc-jeff-anderson-ds-sycfa.html",
@@ -103061,13 +103066,14 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-john-heft-ls-ebo.html": {
   "capture": "https://web.archive.org/web/20261014062249/https://swccg.com/snapshots/pc/2026-retro-gempc-john-heft-ls-ebo.html",
   "last": "2026-10-14T06:46:58Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:45:04Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T18:15:12Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261014062327/https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ds-ralltiir-operations.html",
