@@ -102991,10 +102991,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T16:51:53Z",
+   "at": "2026-10-31T17:23:08Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-kendall-halman-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261014063004/https://swccg.com/snapshots/pc/2026-retro-gempc-kendall-halman-ls-trm.html",
@@ -103002,10 +103002,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T16:51:41Z",
+   "at": "2026-10-31T17:22:56Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-kevin-bing-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261014063042/https://swccg.com/snapshots/pc/2026-retro-gempc-kevin-bing-ds-ralltiir-operations.html",
@@ -103312,13 +103312,14 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-scott-lingrell-ds-hunt-down.html": {
   "capture": "https://web.archive.org/web/20261014074253/https://swccg.com/snapshots/pc/2026-retro-gempc-scott-lingrell-ds-hunt-down.html",
   "last": "2026-10-14T08:03:44Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T16:51:31Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T17:22:48Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-scott-lingrell-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261014074430/https://swccg.com/snapshots/pc/2026-retro-gempc-scott-lingrell-ls-trm.html",
