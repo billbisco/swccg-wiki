@@ -102842,7 +102842,12 @@
   "capture": "https://web.archive.org/web/20261014060013/https://swccg.com/snapshots/pc/2026-retro-gempc-jarrett-mcbride-ls-trm.html",
   "last": "2026-10-14T06:21:10Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T17:43:25Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jeff-anderson-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261014060158/https://swccg.com/snapshots/pc/2026-retro-gempc-jeff-anderson-ds-sycfa.html",
@@ -103117,24 +103122,26 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-matthew-ford-ls-hidden-base.html": {
   "capture": "https://web.archive.org/web/20261014065353/https://swccg.com/snapshots/pc/2026-retro-gempc-matthew-ford-ls-hidden-base.html",
   "last": "2026-10-14T07:13:33Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:12:25Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T17:43:14Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-matthew-tennyson-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261014065431/https://swccg.com/snapshots/pc/2026-retro-gempc-matthew-tennyson-ds-ralltiir-operations.html",
   "last": "2026-10-14T07:13:36Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:12:15Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T17:43:03Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-matthew-tennyson-ls-tigih.html": {
   "capture": "https://web.archive.org/web/20261014065510/https://swccg.com/snapshots/pc/2026-retro-gempc-matthew-tennyson-ls-tigih.html",
