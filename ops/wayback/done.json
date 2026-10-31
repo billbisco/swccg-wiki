@@ -102533,8 +102533,16 @@
   "capture": "https://web.archive.org/web/20261016105914/https://swccg.com/snapshots/pc/2026-retro-gempc-timo-dusel-ds-ralltiir-operations.html",
   "job_id": "spn2-a48b0b945a993eea6064c04d285ae40bc6f218a2",
   "last": "2026-10-16T11:09:06Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T10:14:03Z",
+   "bytes": 2594089,
+   "capture_id": "https://web.archive.org/web/20261016105914id_/https://swccg.com/snapshots/pc/2026-retro-gempc-timo-dusel-ds-ralltiir-operations.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "98f8be1c8ce809be598349e55eef650de3e22929b455936fa3c196f87a7829e6"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-timo-dusel-ls-hidden-base.html": {
   "capture": "https://web.archive.org/web/20261016105856/https://swccg.com/snapshots/pc/2026-retro-gempc-timo-dusel-ls-hidden-base.html",
@@ -103384,7 +103392,12 @@
   "job_id": "spn2-2fd0be1f6fe4f8d67c093f1eeb0b4e5b81921c3a",
   "last": "2026-10-16T11:09:03Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T10:14:14Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major-bf.html": {
   "capture": "",
