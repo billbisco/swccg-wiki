@@ -102674,7 +102674,12 @@
   "capture": "https://web.archive.org/web/20261014044835/https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-price-ls-rst.html",
   "last": "2026-10-14T05:04:49Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T18:17:37Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261014050526/https://swccg.com/snapshots/pc/2026-retro-gempc-brandon-wargo-ds-bhbm.html",
@@ -102968,10 +102973,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:45:24Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T18:17:30Z",
+   "error": "capture HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jarrett-mcbride-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261014060013/https://swccg.com/snapshots/pc/2026-retro-gempc-jarrett-mcbride-ls-trm.html",
@@ -103055,13 +103060,14 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-john-heft-ds-court.html": {
   "capture": "https://web.archive.org/web/20261014062210/https://swccg.com/snapshots/pc/2026-retro-gempc-john-heft-ds-court.html",
   "last": "2026-10-14T06:46:55Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:45:12Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T18:17:07Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-john-heft-ls-ebo.html": {
   "capture": "https://web.archive.org/web/20261014062249/https://swccg.com/snapshots/pc/2026-retro-gempc-john-heft-ls-ebo.html",
