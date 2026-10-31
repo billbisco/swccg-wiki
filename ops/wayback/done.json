@@ -102787,7 +102787,12 @@
   "capture": "https://web.archive.org/web/20261014053640/https://swccg.com/snapshots/pc/2026-retro-gempc-evan-coupland-ls-hidden-base.html",
   "last": "2026-10-14T05:55:39Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T17:59:24Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-frank-amore-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261014053719/https://swccg.com/snapshots/pc/2026-retro-gempc-frank-amore-ds-sycfa.html",
@@ -103036,24 +103041,26 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-justin-mcbride-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261014062608/https://swccg.com/snapshots/pc/2026-retro-gempc-justin-mcbride-ds-bhbm.html",
   "last": "2026-10-14T06:47:16Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:28:58Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T17:59:16Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-justin-mcbride-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261014062746/https://swccg.com/snapshots/pc/2026-retro-gempc-justin-mcbride-ls-trm.html",
   "last": "2026-10-14T06:47:19Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T17:27:23Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T17:59:06Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-kendall-halman-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261014062923/https://swccg.com/snapshots/pc/2026-retro-gempc-kendall-halman-ds-bhbm.html",
