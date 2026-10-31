@@ -56501,8 +56501,16 @@
   "capture": "https://web.archive.org/web/20261010210152/https://res.starwarsccg.org/orgchart/orgchart.pdf",
   "last": "2026-10-15T18:31:39Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-31T15:13:04Z",
+   "bytes": 610073,
+   "capture_id": "https://web.archive.org/web/20261010210152id_/https://res.starwarsccg.org/orgchart/orgchart.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "14951a8fa80cd133643ed260e4ecf36662d058ed58bcbcac120081e644296f66"
+  }
  },
  "https://res.starwarsccg.org/rules/SWCCG-Beginners-Rulebook-v2.pdf": {
   "capture": "https://web.archive.org/web/20261008193623/https://res.starwarsccg.org/rules/SWCCG-Beginners-Rulebook-v2.pdf",
@@ -142850,8 +142858,16 @@
   "capture": "https://web.archive.org/web/20261011214659/https://www.youtube.com/watch?v=LxYoeR3hjWs",
   "last": "2026-10-15T18:29:10Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-31T15:13:32Z",
+   "capture_id": "https://web.archive.org/web/20261011214659id_/https://www.youtube.com/watch?v=LxYoeR3hjWs",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 16% (< 85%)",
+   "text_match": 0.162
+  }
  },
  "https://www.youtube.com/watch?v=M4Kravau0aM": {
   "capture": "https://web.archive.org/web/20261016004541/https://www.youtube.com/watch?v=M4Kravau0aM",
@@ -147685,8 +147701,16 @@
   "capture": "https://web.archive.org/web/20261015182922/https://www.youtube.com/watch?v=jdqjNe_hwsc",
   "job_id": "spn2-1a6d3f6e478c0fab9b8dbf4ed96c44e786d6f4c5",
   "last": "2026-10-15T18:30:12Z",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-10-31T15:13:16Z",
+   "capture_id": "https://web.archive.org/web/20261015182922id_/https://www.youtube.com/watch?v=jdqjNe_hwsc",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 17% (< 85%)",
+   "text_match": 0.172
+  }
  },
  "https://www.youtube.com/watch?v=jimyOykZNy4": {
   "capture": "https://web.archive.org/web/20261016010021/https://www.youtube.com/watch?v=jimyOykZNy4",
