@@ -54161,13 +54161,14 @@
  "https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set": {
   "capture": "https://web.archive.org/web/20261014165918/https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set",
   "last": "2026-10-14T17:16:14Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T16:35:45Z",
-   "error": "source HTTP 403"
+   "at": "2026-10-31T17:06:14Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://boards.theforce.net/threads/first-impression-of-sw-tcg.6383903/": {
   "capture": "",
@@ -102893,7 +102894,12 @@
   "capture": "https://web.archive.org/web/20261014062327/https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ds-ralltiir-operations.html",
   "last": "2026-10-14T06:47:02Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T17:06:23Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261014062406/https://swccg.com/snapshots/pc/2026-retro-gempc-jonny-chu-ls-trm.html",
