@@ -100647,13 +100647,23 @@
   "capture": "https://web.archive.org/web/20261014011453/https://swccg.com/snapshots/pc/2025-ocs-playoff-quarterfinals-brad-kippel-ls-wys.html",
   "last": "2026-10-14T01:38:38Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T21:23:46Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-quarterfinals-greg-shaw-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261014011529/https://swccg.com/snapshots/pc/2025-ocs-playoff-quarterfinals-greg-shaw-ds-first-order-reigns.html",
   "last": "2026-10-14T01:38:41Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T21:23:38Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-quarterfinals-greg-shaw-ls-skywalker-saga-luke.html": {
   "capture": "https://web.archive.org/web/20261014011614/https://swccg.com/snapshots/pc/2025-ocs-playoff-quarterfinals-greg-shaw-ls-skywalker-saga-luke.html",
@@ -101054,13 +101064,14 @@
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-kyle-krueger-ds-imperial-entanglements.html": {
   "capture": "https://web.archive.org/web/20261014023720/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-kyle-krueger-ds-imperial-entanglements.html",
   "last": "2026-10-14T02:56:39Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T20:53:03Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T21:23:31Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-kyle-krueger-ls-whap.html": {
   "capture": "https://web.archive.org/web/20261014023839/https://swccg.com/snapshots/pc/2025-ocs-playoff-top-16-kyle-krueger-ls-whap.html",
