@@ -80621,13 +80621,14 @@
   "capture": "https://web.archive.org/web/20261016154930/https://swccg.com/snapshots/pc/2022-coruscant-regionals-greg-zinn-ds-walkers.html",
   "job_id": "spn2-7a319f799f9f74d9a19d72ded1a86addc4e2d6fc",
   "last": "2026-10-16T15:56:35Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T23:52:23Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T00:32:36Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea-bf.html": {
   "capture": "https://web.archive.org/web/20261021040416/https://swccg.com/snapshots/pc/2022-coruscant-regionals-jared-napolitano-ls-no-idea-bf.html",
