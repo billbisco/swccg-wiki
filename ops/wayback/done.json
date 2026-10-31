@@ -102287,19 +102287,35 @@
   "capture": "https://web.archive.org/web/20261014041718/https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-sean-luhks-ls-hitco.html",
   "last": "2026-10-14T04:39:09Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T18:56:56Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-william-bacheler-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261014041757/https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-william-bacheler-ds-thrawn.html",
   "last": "2026-10-14T04:39:12Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T18:56:46Z",
+   "capture_id": "https://web.archive.org/web/20261014041757id_/https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-william-bacheler-ds-thrawn.html",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-william-bacheler-ls-watch-your-step.html": {
   "capture": "https://web.archive.org/web/20261014041835/https://swccg.com/snapshots/pc/2026-jawa-cup-top-8-william-bacheler-ls-watch-your-step.html",
   "last": "2026-10-14T04:39:15Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-31T18:56:34Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-naboo-regionals-andrew-davies-ds-rots-vader.html": {
   "capture": "",
@@ -103002,24 +103018,26 @@
  "https://swccg.com/snapshots/pc/2026-retro-gempc-geoff-mikulka-ds-isb-operations.html": {
   "capture": "https://web.archive.org/web/20261014055624/https://swccg.com/snapshots/pc/2026-retro-gempc-geoff-mikulka-ds-isb-operations.html",
   "last": "2026-10-14T06:20:53Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T18:24:12Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T18:56:24Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-geoff-mikulka-ls-tigih.html": {
   "capture": "https://web.archive.org/web/20261014055703/https://swccg.com/snapshots/pc/2026-retro-gempc-geoff-mikulka-ls-tigih.html",
   "last": "2026-10-14T06:20:57Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-31T18:24:02Z",
-   "error": "source HTTP 404"
+   "at": "2026-10-31T18:56:09Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-retro-gempc-ian-monteith-ds-ralltiir-operations.html": {
   "capture": "https://web.archive.org/web/20261014055741/https://swccg.com/snapshots/pc/2026-retro-gempc-ian-monteith-ds-ralltiir-operations.html",
