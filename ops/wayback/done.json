@@ -97940,7 +97940,12 @@
   "capture": "https://web.archive.org/web/20261013195053/https://swccg.com/snapshots/pc/2024-ocs-playoff-finals-brian-fred-ds-mkos.html",
   "last": "2026-10-13T21:04:05Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-01T00:38:25Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2024-ocs-playoff-finals-brian-fred-ls-no-idea.html": {
   "capture": "https://web.archive.org/web/20261013195226/https://swccg.com/snapshots/pc/2024-ocs-playoff-finals-brian-fred-ls-no-idea.html",
@@ -98055,13 +98060,14 @@
  "https://swccg.com/snapshots/pc/2024-ocs-playoff-semifinals-chris-wirfs-ds-senate.html": {
   "capture": "https://web.archive.org/web/20261013222656/https://swccg.com/snapshots/pc/2024-ocs-playoff-semifinals-chris-wirfs-ds-senate.html",
   "last": "2026-10-13T22:45:18Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-01T00:07:21Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-01T00:38:05Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-ocs-playoff-semifinals-chris-wirfs-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261013222742/https://swccg.com/snapshots/pc/2024-ocs-playoff-semifinals-chris-wirfs-ls-zero-hour.html",
@@ -106308,7 +106314,12 @@
   "capture": "https://web.archive.org/web/20261013204257/https://swccg.com/snapshots/prices/star-wars-ccg-a-new-hope-limited-booster-box.html",
   "last": "2026-10-13T21:04:11Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-01T00:38:14Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/prices/star-wars-ccg-a-new-hope-limited-booster-pack.html": {
   "capture": "https://web.archive.org/web/20261013204336/https://swccg.com/snapshots/prices/star-wars-ccg-a-new-hope-limited-booster-pack.html",
