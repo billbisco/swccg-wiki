@@ -71922,7 +71922,12 @@
   "capture": "https://web.archive.org/web/20261013204005/https://swccg.com/snapshots/email/2026-10-11-retro-league-gemp-handles.pdf",
   "last": "2026-10-13T21:03:58Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-01T00:48:11Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/facebook/brandon-baity-swccg-group-chuck-kallenbach-tribute-2025-10-08.html": {
   "capture": "https://web.archive.org/web/20261026115754/https://swccg.com/snapshots/facebook/brandon-baity-swccg-group-chuck-kallenbach-tribute-2025-10-08.html",
@@ -106674,24 +106679,26 @@
  "https://swccg.com/snapshots/prices/swccgstore-ccgsealedpack9.html": {
   "capture": "https://web.archive.org/web/20261013215853/https://swccg.com/snapshots/prices/swccgstore-ccgsealedpack9.html",
   "last": "2026-10-13T22:20:12Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-01T00:17:30Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-01T00:48:02Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/prices/swccgstore-sealed1ant.html": {
   "capture": "https://web.archive.org/web/20261013215933/https://swccg.com/snapshots/prices/swccgstore-sealed1ant.html",
   "last": "2026-10-13T22:20:19Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-01T00:17:22Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-01T00:47:44Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/prices/swccgstore-sealedanhwb.html": {
   "capture": "https://web.archive.org/web/20261013220021/https://swccg.com/snapshots/prices/swccgstore-sealedanhwb.html",
