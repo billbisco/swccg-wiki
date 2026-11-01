@@ -1,6 +1,7 @@
 #!/bin/bash
 # Install / repair the swccg-ops jobs on the wiki VPS. Idempotent. Run as root.
-# Needs: deploy keys in /opt/swccg-ops/keys/{swccg-wiki,swccg-wiki-files} added (write access)
+# Needs: the Hetzner volume mounted at /mnt/HC_Volume_107153504, and
+# deploy keys in /opt/swccg-ops/keys/{swccg-wiki,swccg-wiki-files} added (write access)
 # to the matching GitHub repos, and keys/known_hosts with github.com's ED25519 key.
 set -euo pipefail
 OPS=/opt/swccg-ops
@@ -17,14 +18,18 @@ fi
 git -C "$R/swccg-wiki" remote set-url origin git@github.com:billbisco/swccg-wiki.git
 git -C "$R/swccg-wiki" config core.sshCommand "$(ssh_for swccg-wiki)"
 
-# swccg-wiki-files: ~4 GB on GitHub, so a blobless sparse clone holding only the index files;
-# new files are added with `git add --sparse`.
-if [ ! -d "$R/swccg-wiki-files/.git" ]; then
-  git clone -q --filter=blob:none --sparse https://github.com/billbisco/swccg-wiki-files.git "$R/swccg-wiki-files"
-  git -C "$R/swccg-wiki-files" sparse-checkout set --no-cone /files/INDEX.tsv /files/USAGE.tsv /files/DUPLICATES.tsv /README.md
+# swccg-wiki-files: ~4 GB on GitHub. The nightly backup does NOT keep a long-lived clone of it:
+# ops/swccg-backup-run.sh (installed to /usr/local/sbin) makes a fresh blobless sparse clone on the
+# 100 GB volume before every run and discards the previous one. A long-lived clone on the root disk
+# grew 3-4 GB per night (duplicate promisor packs of the blobs it had pushed) and filled the disk on
+# 2026-11-01. Never put this clone back on /.
+VOL=/mnt/HC_Volume_107153504
+mountpoint -q "$VOL" || { echo "ERROR: $VOL is not mounted"; exit 1; }
+mkdir -p "$VOL/swccg-ops/repos"
+install -m 755 "$R/swccg-wiki/ops/swccg-backup-run.sh" /usr/local/sbin/swccg-backup-run.sh
+if [ -d "$R/swccg-wiki-files/.git" ]; then
+  echo "NOTE: old root-disk clone $R/swccg-wiki-files is no longer used; remove it after checking it holds no local work."
 fi
-git -C "$R/swccg-wiki-files" remote set-url origin git@github.com:billbisco/swccg-wiki-files.git
-git -C "$R/swccg-wiki-files" config core.sshCommand "$(ssh_for swccg-wiki-files)"
 
 cat > /etc/systemd/system/swccg-wayback.service <<EOF
 [Unit]
@@ -56,6 +61,16 @@ Nice=10
 IOSchedulingClass=idle
 TimeoutStartSec=3h
 ExecStart=/usr/bin/python3 $R/swccg-wiki/ops/nightly_backup.py $R/swccg-wiki $R/swccg-wiki-files
+EOF
+# The drop-in replaces the ExecStart above: run through the wrapper, files clone on the volume.
+mkdir -p /etc/systemd/system/swccg-backup.service.d
+cat > /etc/systemd/system/swccg-backup.service.d/10-volume-wrapper.conf <<EOF
+# run via wrapper; files clone on the volume, fresh each run
+[Unit]
+RequiresMountsFor=$VOL
+[Service]
+ExecStart=
+ExecStart=/usr/local/sbin/swccg-backup-run.sh
 EOF
 cat > /etc/systemd/system/swccg-backup.timer <<EOF
 [Unit]
