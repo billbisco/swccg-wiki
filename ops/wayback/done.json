@@ -86535,7 +86535,12 @@
   "capture": "https://web.archive.org/web/20261013170924/https://swccg.com/snapshots/pc/2022-jawa-cup-top-8-bill-kafer-ls-diplo.html",
   "last": "2026-10-13T17:34:51Z",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-01T03:02:21Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-edward-chien-ds-tto.html": {
   "capture": "https://web.archive.org/web/20261021050856/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-edward-chien-ds-tto.html",
@@ -97534,13 +97539,14 @@
  "https://swccg.com/snapshots/pc/2024-gempc-quarterfinals-matthew-harrison-trainor-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261013180936/https://swccg.com/snapshots/pc/2024-gempc-quarterfinals-matthew-harrison-trainor-ls-hitco.html",
   "last": "2026-10-13T19:47:24Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-01T02:30:22Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-01T03:02:11Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-gempc-quarterfinals-nathan-russell-ls-no-idea.html": {
   "capture": "https://web.archive.org/web/20261013181103/https://swccg.com/snapshots/pc/2024-gempc-quarterfinals-nathan-russell-ls-no-idea.html",
@@ -97567,13 +97573,14 @@
  "https://swccg.com/snapshots/pc/2024-gempc-semi-finals-mike-kessling-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261013183110/https://swccg.com/snapshots/pc/2024-gempc-semi-finals-mike-kessling-ls-yoda-communing.html",
   "last": "2026-10-13T19:47:28Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-01T02:30:13Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-01T03:01:55Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-gempc-semi-finals-nathan-russell-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261013183251/https://swccg.com/snapshots/pc/2024-gempc-semi-finals-nathan-russell-ds-thrawn.html",
