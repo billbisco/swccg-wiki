@@ -1570,11 +1570,19 @@
   "tries": 1
  },
  "http://forfeitzero.comicgenesis.com/d/20030527.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T02:31:32Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261102030205/http://forfeitzero.comicgenesis.com/d/20030527.html",
+  "job_id": "spn2-464702c48c347a14e7690e5e1ef21f6ecbe65ebc",
+  "last": "2026-11-02T03:02:35Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-02T03:02:35Z",
+   "bytes": 7193,
+   "capture_id": "https://web.archive.org/web/20261102030205id_/http://forfeitzero.comicgenesis.com/d/20030527.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5104a71085f516d14a73199c5b76089f0456557b5f82134e94d092ac558dcc1b"
+  }
  },
  "http://forfeitzero.comicgenesis.com/d/20030528.html": {
   "capture": "",
@@ -3248,11 +3256,17 @@
   "tries": 1
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r1_c4.gif": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T02:31:22Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261102030256/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r1_c4.gif",
+  "job_id": "spn2-31ef854a018157bbdc59a84d4224abafef2b0888",
+  "last": "2026-11-02T03:03:11Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-02T03:03:11Z",
+   "capture_id": "https://web.archive.org/web/20261102030256id_/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r1_c4.gif",
+   "method": "strict",
+   "reason": "redirects to another capture 20261101202232 (no capture at 20261102030256)"
+  }
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r1_c8.gif": {
   "capture": "",
