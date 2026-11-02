@@ -192,9 +192,10 @@
  },
  "http://forfeitzero.comicgenesis.com": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-02T07:46:31Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "http://forfeitzero.comicgenesis.com/": {
   "capture": "https://web.archive.org/web/20261101201734/http://forfeitzero.comicgenesis.com/",
@@ -1428,9 +1429,10 @@
  },
  "http://forfeitzero.comicgenesis.com/comics/20051102.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-02T07:46:11Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "http://forfeitzero.comicgenesis.com/comics/dead_917.gif": {
   "capture": "https://web.archive.org/web/20261101224532/http://forfeitzero.comicgenesis.com/comics/dead_917.gif",
@@ -2577,9 +2579,10 @@
  },
  "http://forfeitzero.comicgenesis.com/images/Logo2.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-02T07:46:41Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "http://forfeitzero.comicgenesis.com/images/Logo2esp.gif": {
   "capture": "",
@@ -2590,15 +2593,17 @@
  },
  "http://forfeitzero.comicgenesis.com/images/SWCCGPC.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-02T07:46:52Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "http://forfeitzero.comicgenesis.com/images/avatar_ben.jpg": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-02T07:46:21Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "http://forfeitzero.comicgenesis.com/images/boomerangs.gif": {
   "capture": "",
@@ -3123,11 +3128,17 @@
   "tries": 0
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r3_c13.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101203336/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r3_c13.gif",
   "job_id": "spn2-7966726b7310d24bbab8cd8cd5bd103f4c00c166",
-  "last": "2026-11-02T07:42:14Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T07:46:10Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T07:46:10Z",
+   "capture_id": "https://web.archive.org/web/20261101203336id_/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r3_c13.gif",
+   "method": "strict",
+   "reason": "redirects to another capture 20261101202232 (no capture at 20261101203336)"
+  }
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r3_c3.gif": {
   "capture": "https://web.archive.org/web/20261102022726/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r3_c3.gif",
@@ -3163,18 +3174,30 @@
   }
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c1.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101203418/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c1.gif",
   "job_id": "spn2-13652804f1bdc1e4ec63fd38a8b716db2c9b869d",
-  "last": "2026-11-02T07:42:25Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T07:46:05Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T07:46:05Z",
+   "capture_id": "https://web.archive.org/web/20261101203418id_/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c1.gif",
+   "method": "strict",
+   "reason": "redirects to another capture 20150908033525 (no capture at 20261101203418)"
+  }
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c10.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101204254/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c10.gif",
   "job_id": "spn2-b8db1da1a723abd7b7ffdccfe5b04e7063e8abf6",
-  "last": "2026-11-02T07:43:25Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T07:45:57Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T07:45:57Z",
+   "capture_id": "https://web.archive.org/web/20261101204254id_/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c10.gif",
+   "method": "strict",
+   "reason": "redirects to another capture 20261101202232 (no capture at 20261101204254)"
+  }
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c5.gif": {
   "capture": "",
@@ -3183,11 +3206,17 @@
   "tries": 0
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c6.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101203443/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c6.gif",
   "job_id": "spn2-d91d4a839809346f4f57e70414408307463a6871",
-  "last": "2026-11-02T07:43:09Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T07:46:01Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T07:46:01Z",
+   "capture_id": "https://web.archive.org/web/20261101203443id_/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c6.gif",
+   "method": "strict",
+   "reason": "redirects to another capture 20261101202232 (no capture at 20261101203443)"
+  }
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c7.gif": {
   "capture": "https://web.archive.org/web/20261102022748/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r5_c7.gif",
@@ -3203,11 +3232,17 @@
   }
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r6_c1.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101203708/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r6_c1.gif",
   "job_id": "spn2-278dc8e716bbe2ddc976e13d9e1020ab05d28fcc",
-  "last": "2026-11-02T07:43:37Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T07:45:52Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T07:45:52Z",
+   "capture_id": "https://web.archive.org/web/20261101203708id_/http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r6_c1.gif",
+   "method": "strict",
+   "reason": "redirects to another capture 20261101202232 (no capture at 20261101203708)"
+  }
  },
  "http://forfeitzero.comicgenesis.com/images/spacers/fwcharacters_r6_c6.gif": {
   "capture": "",
