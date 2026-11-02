@@ -1601,15 +1601,31 @@
   "capture": "https://web.archive.org/web/20261101212154/http://forfeitzero.comicgenesis.com/comics/20040227.gif",
   "last": "2026-11-02T20:40:00Z",
   "note": "existing capture found via CDX (route A)",
-  "status": "ok",
-  "tries": 0
+  "status": "verified",
+  "tries": 0,
+  "verify": {
+   "at": "2026-11-02T23:42:55Z",
+   "bytes": 41375,
+   "capture_id": "https://web.archive.org/web/20261101212154id_/http://forfeitzero.comicgenesis.com/comics/20040227.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "fd6777d8446b80c234dd51e97134dc447a8e2dc09777d159b6e8cf794235afe5"
+  }
  },
  "http://forfeitzero.comicgenesis.com/comics/20040301.gif": {
   "capture": "https://web.archive.org/web/20261101211527/http://forfeitzero.comicgenesis.com/comics/20040301.gif",
   "last": "2026-11-02T20:40:00Z",
   "note": "existing capture found via CDX (route A)",
-  "status": "ok",
-  "tries": 0
+  "status": "verified",
+  "tries": 0,
+  "verify": {
+   "at": "2026-11-02T23:43:02Z",
+   "bytes": 41498,
+   "capture_id": "https://web.archive.org/web/20261101211527id_/http://forfeitzero.comicgenesis.com/comics/20040301.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "60793494aeb522c9829c9ddee53eb223526359c026b7b1e60a4634480bae720c"
+  }
  },
  "http://forfeitzero.comicgenesis.com/comics/20040303.gif": {
   "capture": "",
@@ -1621,15 +1637,29 @@
   "capture": "https://web.archive.org/web/20261101212319/http://forfeitzero.comicgenesis.com/comics/20040305.gif",
   "last": "2026-11-02T20:40:00Z",
   "note": "existing capture found via CDX (route A)",
-  "status": "ok",
-  "tries": 0
+  "status": "verified",
+  "tries": 0,
+  "verify": {
+   "at": "2026-11-02T23:43:11Z",
+   "bytes": 54767,
+   "capture_id": "https://web.archive.org/web/20261101212319id_/http://forfeitzero.comicgenesis.com/comics/20040305.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "150cd909640ed70f2969e1068fcdd36c710b748e62d033f401f09d96c0903960"
+  }
  },
  "http://forfeitzero.comicgenesis.com/comics/20040308.gif": {
   "capture": "https://web.archive.org/web/20261101212227/http://forfeitzero.comicgenesis.com/comics/20040308.gif",
   "last": "2026-11-02T20:40:00Z",
   "note": "existing capture found via CDX (route A)",
-  "status": "ok",
-  "tries": 0
+  "status": "unverified",
+  "tries": 0,
+  "verify": {
+   "at": "2026-11-02T23:43:18Z",
+   "capture_id": "https://web.archive.org/web/20261101212227id_/http://forfeitzero.comicgenesis.com/comics/20040308.gif",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "http://forfeitzero.comicgenesis.com/comics/20040310.gif": {
   "capture": "",
