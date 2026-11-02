@@ -407,9 +407,9 @@
  "http://forfeitzero.comicgenesis.com/comics/20030626.gif": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T00:36:08Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-11-02T01:11:25Z",
+  "status": "failed",
+  "tries": 6
  },
  "http://forfeitzero.comicgenesis.com/comics/20030711.gif": {
   "capture": "",
@@ -58559,9 +58559,9 @@
  "https://comic.forfeitzero.com/images/20040209.gif": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T00:36:18Z",
+  "last": "2026-11-02T01:11:35Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://comic.forfeitzero.com/images/20040215.gif": {
   "capture": "",
@@ -58573,9 +58573,9 @@
  "https://comic.forfeitzero.com/images/20040218.gif": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T00:36:28Z",
+  "last": "2026-11-02T01:11:45Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://comic.forfeitzero.com/images/20040220.gif": {
   "capture": "",
@@ -58587,9 +58587,9 @@
  "https://comic.forfeitzero.com/images/20040223.gif": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T00:36:38Z",
+  "last": "2026-11-02T01:11:55Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://comic.forfeitzero.com/images/20040225.gif": {
   "capture": "",
@@ -58944,10 +58944,24 @@
    "sha256": "5c3fcf9b46305edd694e931120254f140f9016cd1c04fbd87d98f2ac1d9e296e"
   }
  },
+ "https://comic.forfeitzero.com/images/20050505.gif": {
+  "capture": "",
+  "job_id": "spn2-40685fa68f0fa37cc6e8e7a11b95b645b96f3b0f",
+  "last": "2026-11-02T01:12:17Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://comic.forfeitzero.com/images/20050606.gif": {
   "capture": "",
   "job_id": "spn2-b64f66d4c0daec0023069732fba89d4a7e775cd2",
   "last": "2026-11-02T01:05:32Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://comic.forfeitzero.com/images/20050705.gif": {
+  "capture": "",
+  "job_id": "spn2-6a680ed3b11d160b6189b4ade27f7d8c31b3ce2b",
+  "last": "2026-11-02T01:12:28Z",
   "status": "pending",
   "tries": 1
  },
@@ -58980,25 +58994,49 @@
   "tries": 1
  },
  "https://comic.forfeitzero.com/images/20051018.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261102010827/https://comic.forfeitzero.com/images/20051018.gif",
   "job_id": "spn2-e2da485e2e03a5f959ea0292054789170061df09",
-  "last": "2026-11-02T01:08:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T01:11:23Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T01:11:23Z",
+   "bytes": 35603,
+   "capture_id": "https://web.archive.org/web/20261102010827id_/https://comic.forfeitzero.com/images/20051018.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3afcfceb2afe3f04225cae625653eeb1708954a4ac8d5213f3c66226e16151c8"
+  }
  },
  "https://comic.forfeitzero.com/images/20051102.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261102010909/https://comic.forfeitzero.com/images/20051102.gif",
   "job_id": "spn2-dccba3856d1e768479afc3752311bb8cc85a5483",
-  "last": "2026-11-02T01:09:09Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T01:11:18Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T01:11:18Z",
+   "bytes": 50589,
+   "capture_id": "https://web.archive.org/web/20261102010909id_/https://comic.forfeitzero.com/images/20051102.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bf525016658aeb22618f32083684de157fdd0bebb4097f0aca8815562a6e0ab3"
+  }
  },
  "https://comic.forfeitzero.com/images/dead_917.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261102010931/https://comic.forfeitzero.com/images/dead_917.gif",
   "job_id": "spn2-cdd99f69f152c9240ee4033edec7bfc96e65a2a8",
-  "last": "2026-11-02T01:09:31Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T01:11:04Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T01:11:04Z",
+   "bytes": 30605,
+   "capture_id": "https://web.archive.org/web/20261102010931id_/https://comic.forfeitzero.com/images/dead_917.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bb65c08390abbe78b83d15448bb2cf3dc9ce437cd6219063da5dd63fbe0a8f99"
+  }
  },
  "https://comic.forfeitzero.com/text/20030525.txt": {
   "capture": "https://web.archive.org/web/20261101225740/https://comic.forfeitzero.com/text/20030525.txt",
@@ -60126,6 +60164,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://comic.forfeitzero.com/text/20041207.txt": {
+  "capture": "",
+  "job_id": "spn2-aaf53e15298d8a966c29b985ddaced99591fd773",
+  "last": "2026-11-02T01:12:06Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://comic.forfeitzero.com/text/20041213.txt": {
   "capture": "",
   "job_id": "spn2-9b03c6f83c770b26c1c0461f102ce64af4b23620",
@@ -60233,12 +60278,27 @@
   "status": "pending",
   "tries": 1
  },
- "https://comic.forfeitzero.com/text/20051102.txt": {
+ "https://comic.forfeitzero.com/text/20051018.txt": {
   "capture": "",
-  "job_id": "spn2-0a72ce3d158dc8e3ffeb8bbb12dbeff0193f9d8a",
-  "last": "2026-11-02T01:09:20Z",
+  "job_id": "spn2-75c25736151ff905c0a2d5f34d6df8aee0231ecd",
+  "last": "2026-11-02T01:13:15Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://comic.forfeitzero.com/text/20051102.txt": {
+  "capture": "https://web.archive.org/web/20261102010920/https://comic.forfeitzero.com/text/20051102.txt",
+  "job_id": "spn2-0a72ce3d158dc8e3ffeb8bbb12dbeff0193f9d8a",
+  "last": "2026-11-02T01:11:10Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T01:11:10Z",
+   "bytes": 1939,
+   "capture_id": "https://web.archive.org/web/20261102010920id_/https://comic.forfeitzero.com/text/20051102.txt",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0ec6efba206f87a7552e43ae871061d196096ec7e3888b70cf22ce6bf218b53c"
+  }
  },
  "https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG": {
   "capture": "https://web.archive.org/web/20261022171457/https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG",
