@@ -60881,11 +60881,17 @@
   }
  },
  "https://comic.forfeitzero.com/text/20030915.txt": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T11:26:09Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261102115724/https://comic.forfeitzero.com/text/20030915.txt",
+  "job_id": "spn2-2ab9d403c09cccb69496193c83b76faaef949199",
+  "last": "2026-11-02T11:57:37Z",
+  "status": "unverified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-02T11:57:37Z",
+   "capture_id": "https://web.archive.org/web/20261102115724id_/https://comic.forfeitzero.com/text/20030915.txt",
+   "method": "strict",
+   "reason": "redirects to another capture 20261101232658 (no capture at 20261102115724)"
+  }
  },
  "https://comic.forfeitzero.com/text/20030917.txt": {
   "capture": "https://web.archive.org/web/20261101232616/https://comic.forfeitzero.com/text/20030917.txt",
