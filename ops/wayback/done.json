@@ -327,15 +327,31 @@
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-11-02T20:40:00Z",
   "note": "existing capture found via CDX (route A)",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T20:49:13Z",
+   "bytes": 29105,
+   "capture_id": "https://web.archive.org/web/20261102140446id_/http://forfeitzero.comicgenesis.com/comics/20030525.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "79fa80f1acedcea46fd784b7b042b743e94baf6af5fe88dfa4f1d57da203f432"
+  }
  },
  "http://forfeitzero.comicgenesis.com/comics/20030526.gif": {
   "capture": "https://web.archive.org/web/20261102140832/http://forfeitzero.comicgenesis.com/comics/20030526.gif",
   "last": "2026-11-02T20:40:00Z",
   "note": "existing capture found via CDX (route A)",
-  "status": "ok",
-  "tries": 0
+  "status": "verified",
+  "tries": 0,
+  "verify": {
+   "at": "2026-11-02T20:49:27Z",
+   "bytes": 34674,
+   "capture_id": "https://web.archive.org/web/20261102140832id_/http://forfeitzero.comicgenesis.com/comics/20030526.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5e5d308536aed56b0ff01cc1b4d356fd84dcd813e0511de67803e47d27575243"
+  }
  },
  "http://forfeitzero.comicgenesis.com/comics/20030527.gif": {
   "capture": "https://web.archive.org/web/20261101213921/http://forfeitzero.comicgenesis.com/comics/20030527.gif",
@@ -382,8 +398,16 @@
   "capture": "https://web.archive.org/web/20261102085024/http://forfeitzero.comicgenesis.com/comics/20030530.gif",
   "last": "2026-11-02T20:40:00Z",
   "note": "existing capture found via CDX (route A)",
-  "status": "ok",
-  "tries": 0
+  "status": "verified",
+  "tries": 0,
+  "verify": {
+   "at": "2026-11-02T20:49:38Z",
+   "bytes": 32190,
+   "capture_id": "https://web.archive.org/web/20261102085024id_/http://forfeitzero.comicgenesis.com/comics/20030530.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2ad4468266f4357edcf1f09ece10a1070bd4d187d920239c09f607e2a9ee0a3b"
+  }
  },
  "http://forfeitzero.comicgenesis.com/comics/20030531.gif": {
   "capture": "https://web.archive.org/web/20261101214122/http://forfeitzero.comicgenesis.com/comics/20030531.gif",
