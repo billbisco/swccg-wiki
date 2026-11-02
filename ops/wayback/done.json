@@ -1352,9 +1352,9 @@
  "http://forfeitzero.comicgenesis.com/comics/20040607.gif": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T09:30:45Z",
+  "last": "2026-11-02T10:10:04Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "http://forfeitzero.comicgenesis.com/comics/20040610.gif": {
   "capture": "https://web.archive.org/web/20261101223237/http://forfeitzero.comicgenesis.com/comics/20040610.gif",
@@ -1485,10 +1485,10 @@
  },
  "http://forfeitzero.comicgenesis.com/comics/20041110.gif": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T09:30:55Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-2e05632b3928bfc1ddf25d04ec254d655ab7b704",
+  "last": "2026-11-02T10:10:15Z",
+  "status": "pending",
+  "tries": 2
  },
  "http://forfeitzero.comicgenesis.com/comics/20041201.gif": {
   "capture": "",
@@ -2169,9 +2169,9 @@
  "http://forfeitzero.comicgenesis.com/d/20031110.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T09:28:16Z",
+  "last": "2026-11-02T10:09:44Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "http://forfeitzero.comicgenesis.com/d/20031112.html": {
   "capture": "",
@@ -3080,10 +3080,10 @@
  },
  "http://forfeitzero.comicgenesis.com/images/20030529esp.gif": {
   "capture": "",
-  "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-02T09:32:58Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-d2eb3b4df9a788e858cb2f5cb61e5933e56dc125",
+  "last": "2026-11-02T10:10:28Z",
+  "status": "pending",
+  "tries": 2
  },
  "http://forfeitzero.comicgenesis.com/images/20031210esp.gif": {
   "capture": "https://web.archive.org/web/20261101221324/http://forfeitzero.comicgenesis.com/images/20031210esp.gif",
@@ -3284,9 +3284,9 @@
  "http://forfeitzero.comicgenesis.com/images/mike_zombie.gif": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-02T09:30:35Z",
+  "last": "2026-11-02T10:09:54Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "http://forfeitzero.comicgenesis.com/images/mold.gif": {
   "capture": "",
@@ -58394,9 +58394,10 @@
  },
  "https://comic.forfeitzero.com/images/20030626.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-0e63ed7f55fdc7c08d491de3b7e31c17ea305240",
+  "last": "2026-11-02T10:10:39Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20030711.gif": {
   "capture": "https://web.archive.org/web/20261101230937/https://comic.forfeitzero.com/images/20030711.gif",
@@ -58594,9 +58595,10 @@
  },
  "https://comic.forfeitzero.com/images/20031003.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-65376a7b699d872f5511b2f0e01184901b2c6404",
+  "last": "2026-11-02T10:11:32Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031006.gif": {
   "capture": "",
@@ -58607,23 +58609,40 @@
  },
  "https://comic.forfeitzero.com/images/20031008.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-1ce4574d383dca405c7fd96236764942c07e5a85",
+  "last": "2026-11-02T10:11:43Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031010.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101233535/https://comic.forfeitzero.com/images/20031010.gif",
   "job_id": "spn2-76507db22f0f84e9dc4ca25ff4700a5d6dc911c0",
-  "last": "2026-11-02T10:06:46Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T10:09:42Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T10:09:42Z",
+   "bytes": 42188,
+   "capture_id": "https://web.archive.org/web/20261101233535id_/https://comic.forfeitzero.com/images/20031010.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "aab5fd4bcc6c97d9b1b7eb231115c6a191fdd357eb693cb7ab4f6c9c650e0f02"
+  }
  },
  "https://comic.forfeitzero.com/images/20031013.gif": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101233614/https://comic.forfeitzero.com/images/20031013.gif",
   "job_id": "spn2-cc91927202203649b3beafa2bd10785eb26bf5f1",
-  "last": "2026-11-02T10:07:11Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T10:09:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T10:09:17Z",
+   "bytes": 43112,
+   "capture_id": "https://web.archive.org/web/20261101233614id_/https://comic.forfeitzero.com/images/20031013.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5d853082163b24e5927ca299ba242170d48ed62c198d70d2d24a56f4c9357464"
+  }
  },
  "https://comic.forfeitzero.com/images/20031015.gif": {
   "capture": "",
@@ -58633,9 +58652,10 @@
  },
  "https://comic.forfeitzero.com/images/20031017.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-92ad9202a59c3cc7d12ffe3cf00399515c568b6b",
+  "last": "2026-11-02T10:12:35Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031020.gif": {
   "capture": "https://web.archive.org/web/20261101233806/https://comic.forfeitzero.com/images/20031020.gif",
@@ -58684,69 +58704,80 @@
  },
  "https://comic.forfeitzero.com/images/20031027.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-ef0a620ab53d4852ddabe9e4b6988bec184ea4f2",
+  "last": "2026-11-02T10:13:40Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031029.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-752756eeb4d9a8355902f21ef035030d9621258d",
+  "last": "2026-11-02T10:14:05Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031031.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-42a9876aadfcebd83cde6d725cc0940d259fc566",
+  "last": "2026-11-02T10:14:27Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031103.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-78431d6fdb16ef454f4fa201840f1bacb8229d97",
+  "last": "2026-11-02T10:15:11Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031105.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-be1e5612b9bdea46a87522bc5f99fcfd6c31450e",
+  "last": "2026-11-02T10:15:33Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031107.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-62d879e1cf629fd44d39a93ec1f928a1ae2800b3",
+  "last": "2026-11-02T10:16:17Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031110.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-f7abf95b71ccb3d686c04ac4185005ac3ca4d77f",
+  "last": "2026-11-02T10:16:43Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031112.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-1d6c9756de72298eba7d791a9aac289d7ebee903",
+  "last": "2026-11-02T10:17:30Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031114.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-a7d9fd89b129cf49cbbfedee0ad3938599186d07",
+  "last": "2026-11-02T10:17:44Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031117.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-729e0f9284d0f38cb88d59696b8cbcd7352446cd",
+  "last": "2026-11-02T10:18:09Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031119.gif": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-041d8d3284c5f5f3bac15ead2d861211a7d497ec",
+  "last": "2026-11-02T10:18:22Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/images/20031121.gif": {
   "capture": "",
@@ -60426,9 +60457,10 @@
  },
  "https://comic.forfeitzero.com/text/20030924.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-062192d58ca904b40993428af476e33bd2b0f8fb",
+  "last": "2026-11-02T10:11:21Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20030926.txt": {
   "capture": "",
@@ -60473,30 +60505,48 @@
   "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031010.txt": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101235656/https://comic.forfeitzero.com/text/20031010.txt",
   "job_id": "spn2-efde274347cac10d3ac6b58e123744c7c4d00801",
-  "last": "2026-11-02T10:07:00Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T10:09:32Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T10:09:32Z",
+   "bytes": 1030,
+   "capture_id": "https://web.archive.org/web/20261101235656id_/https://comic.forfeitzero.com/text/20031010.txt",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "32f9c1a33220dd22c436e3c66a2f380efd5f8d3d904ed8ec46d247783fbad69c"
+  }
  },
  "https://comic.forfeitzero.com/text/20031013.txt": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261101233709/https://comic.forfeitzero.com/text/20031013.txt",
   "job_id": "spn2-7c2c5748f58a9872ab5f05640a88e11970bb9291",
-  "last": "2026-11-02T10:07:24Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-02T10:09:08Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-02T10:09:08Z",
+   "bytes": 782,
+   "capture_id": "https://web.archive.org/web/20261101233709id_/https://comic.forfeitzero.com/text/20031013.txt",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "399b041aaae2084834ad97cad64ce2705cde0da4665c7843ba4377bedfd34c44"
+  }
  },
  "https://comic.forfeitzero.com/text/20031015.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-4362b225e508651b8fdc3152da0550cc16b91067",
+  "last": "2026-11-02T10:12:25Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031017.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-49dcd5288390801d39d21f0b202ccabef71d5694",
+  "last": "2026-11-02T10:12:48Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031020.txt": {
   "capture": "",
@@ -60521,21 +60571,24 @@
  },
  "https://comic.forfeitzero.com/text/20031024.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-a83a0dc7e2452ccccb5bd97a37f4acd25d55bef7",
+  "last": "2026-11-02T10:13:29Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031027.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-15c6e4d3a3085c8c142bc09bc3a7ac5bb05a1925",
+  "last": "2026-11-02T10:13:52Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031029.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-1385396cf08b2223d5d5908e0bd1d7b71c5f462a",
+  "last": "2026-11-02T10:14:16Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031031.txt": {
   "capture": "",
@@ -60545,9 +60598,10 @@
  },
  "https://comic.forfeitzero.com/text/20031103.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-747794685fe0d40f1173a4f076f60654d449a9b6",
+  "last": "2026-11-02T10:15:22Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031105.txt": {
   "capture": "",
@@ -60557,9 +60611,10 @@
  },
  "https://comic.forfeitzero.com/text/20031107.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-9f26600d1d1c0cabc75ec32b49360cd5a5b1cd39",
+  "last": "2026-11-02T10:16:31Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031110.txt": {
   "capture": "",
@@ -60584,9 +60639,10 @@
  },
  "https://comic.forfeitzero.com/text/20031114.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-92e591068bbde538eec607f2682ecc45c9283e00",
+  "last": "2026-11-02T10:17:55Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031117.txt": {
   "capture": "https://web.archive.org/web/20261101235809/https://comic.forfeitzero.com/text/20031117.txt",
@@ -60605,9 +60661,10 @@
  },
  "https://comic.forfeitzero.com/text/20031119.txt": {
   "capture": "",
-  "last": "2026-11-01T00:00:00Z",
-  "status": "retry",
-  "tries": 0
+  "job_id": "spn2-4221411afb580287a78012df85208265a3af4de2",
+  "last": "2026-11-02T10:18:36Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://comic.forfeitzero.com/text/20031121.txt": {
   "capture": "https://web.archive.org/web/20261101235002/https://comic.forfeitzero.com/text/20031121.txt",
