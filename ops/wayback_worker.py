@@ -17,7 +17,9 @@ retry (save or check failed; retried later, up to MAX_TRIES) | failed (gave up a
 
 Each run confirms only the newest PENDING_CONFIRM_CAP pending jobs whose last
 activity is within PENDING_CONFIRM_MAX_AGE (default 40 jobs / 2 hours). Older
-pending rows stay pending and are not polled. Connection refused / 429 / 5xx
+pending rows are not polled; after STALE_PENDING_AGE they are resubmitted (SPN2
+answers with the recent capture if the dead job did finish). Entries that failed on a
+transient archive.org error are retried after FAILED_RETRY_AGE. Connection refused / 429 / 5xx
 during confirm stops that walk (and this-run job polling) so the run can still
 submit new URLs instead of hammering web.archive.org. Stalled jobs are poked
 with ?copy=2, not by polling a dead job_id forever.
@@ -75,6 +77,9 @@ RETRY_AFTER = timedelta(minutes=30)
 CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
 PENDING_CONFIRM_MAX_AGE = timedelta(hours=2)  # skip stalled pending job_ids
 PENDING_CONFIRM_CAP = 40                      # max status polls per run (newest first)
+STALE_PENDING_AGE = timedelta(hours=24)       # a pending job this old is dead: resubmit it
+FAILED_RETRY_AGE = timedelta(days=7)          # failed on a transient error, retried once a week
+TRANSIENT_ERRORS = ("stalled spn2", "connection refused", "errno 111", "timed out", "429", "503", "502")
 BANNED_HOSTS = {"forum.starwarsccg.org", "www.starwarsccg.org", "starwarsccg.org"}
 SNAPSHOT_HOSTS = {"swccg.com", "www.swccg.com"}
 WIKI_API = "https://wiki.swccg.com/api.php"
@@ -417,6 +422,21 @@ def pending_age(e: dict, now_t: datetime | None = None) -> timedelta | None:
         return (now_t or now()) - parse(last)
     except (TypeError, ValueError):
         return None
+
+
+def stale(e: dict, now_t: datetime | None = None) -> bool:
+    """A pending job older than STALE_PENDING_AGE is never polled again (see
+    pending_confirm_urls), so resubmit it; a failed entry whose error was transient
+    (archive.org stalled or refused) gets a fresh round of tries after FAILED_RETRY_AGE."""
+    age = pending_age(e, now_t)
+    if age is None:
+        return False
+    if e.get("status") == "pending":
+        return age > STALE_PENDING_AGE
+    if e.get("status") == "failed":
+        err = str(e.get("error") or "").lower()
+        return age > FAILED_RETRY_AGE and any(s in err for s in TRANSIENT_ERRORS)
+    return False
 
 
 def pending_confirm_urls(
@@ -955,9 +975,14 @@ def run(repo: Path, minutes: float) -> None:
         if banned(url):
             continue
         e = done.get(url)
-        if e and (e["status"] in ("ok", "verified", "unverified", "pending", "failed")
-                  or now() - parse(e["last"]) < RETRY_AFTER):
+        is_stale = bool(e) and stale(e)
+        if e and not is_stale and (e["status"] in ("ok", "verified", "unverified", "pending", "failed")
+                                   or now() - parse(e["last"]) < RETRY_AFTER):
             continue
+        if is_stale:
+            print("STALE", e["status"], url, flush=True)
+            if e["status"] == "failed":
+                e = dict(e, tries=0)
         tries = (e or {}).get("tries", 0) + 1
         try:
             if AUTH:

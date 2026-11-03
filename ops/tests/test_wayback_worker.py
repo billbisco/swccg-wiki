@@ -634,3 +634,28 @@ class PendingConfirm(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class StaleEntries(unittest.TestCase):
+    def test_old_pending_is_stale(self):
+        e = {"status": "pending", "last": W.iso(W.now() - W.timedelta(days=3)), "job_id": "spn2-x"}
+        self.assertTrue(W.stale(e))
+
+    def test_fresh_pending_is_not_stale(self):
+        e = {"status": "pending", "last": W.iso(W.now() - W.timedelta(hours=1)), "job_id": "spn2-x"}
+        self.assertFalse(W.stale(e))
+
+    def test_failed_transient_retried_after_a_week(self):
+        e = {"status": "failed", "last": W.iso(W.now() - W.timedelta(days=8)), "tries": 6,
+             "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2"}
+        self.assertTrue(W.stale(e))
+        e["last"] = W.iso(W.now() - W.timedelta(days=2))
+        self.assertFalse(W.stale(e))
+
+    def test_failed_permanent_is_left_alone(self):
+        e = {"status": "failed", "last": W.iso(W.now() - W.timedelta(days=30)), "error": "error:not-found"}
+        self.assertFalse(W.stale(e))
+
+    def test_verified_never_stale(self):
+        e = {"status": "verified", "last": W.iso(W.now() - W.timedelta(days=90))}
+        self.assertFalse(W.stale(e))
