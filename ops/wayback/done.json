@@ -83545,10 +83545,10 @@
  },
  "https://swccg.com/snapshots/forum/t86962.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T16:35:24Z",
+  "error": "no job_id: The same snapshot had been made 249 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:06:12Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/forum/t86979.html": {
   "capture": "https://web.archive.org/web/20261025070950/https://swccg.com/snapshots/forum/t86979.html",
@@ -107344,10 +107344,10 @@
  },
  "https://swccg.com/snapshots/pc/2023-yavin-4-regionals-pat-john-ls-yavin-4-operations.html": {
   "capture": "",
-  "job_id": "spn2-099d43b8caa22831244a19e7f590a9b789d84ac6",
-  "last": "2026-10-25T07:44:19Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:06:47Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-yavin-4-regionals-pat-johnson-ds-a-stunning-move.html": {
   "capture": "",
@@ -111618,10 +111618,10 @@
  },
  "https://swccg.com/snapshots/pc/2025-bespin-regionals-carson-stockman-ls-saga-luke.html": {
   "capture": "",
-  "job_id": "spn2-6f23b6cc9e9e2464cbdcbc85611ea9e70e828033",
-  "last": "2026-10-25T07:54:22Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 10 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:06:35Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-bespin-regionals-charlie-arlandson-ds-isb.html": {
   "capture": "https://web.archive.org/web/20261025083930/https://swccg.com/snapshots/pc/2025-bespin-regionals-charlie-arlandson-ds-isb.html",
@@ -114580,10 +114580,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-nico-kriedl-ls-diplo.html": {
   "capture": "",
-  "job_id": "spn2-32bebb3470e539835601d454d9a15fb6997a30c9",
-  "last": "2026-10-25T07:43:38Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:06:23Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-patrik-csapi-ds-walkers.html": {
   "capture": "",
@@ -119779,8 +119779,16 @@
   "capture": "https://web.archive.org/web/20261027015126/https://swccg.com/snapshots/scomp/anger-fear-aggression-v.html",
   "last": "2026-11-04T16:51:19Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 6
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-04T17:07:01Z",
+   "bytes": 737765,
+   "capture_id": "https://web.archive.org/web/20261027015126id_/https://swccg.com/snapshots/scomp/anger-fear-aggression-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1cb0e35fa642499a9f18b4c115fdb44a50df5e2bc3cee19a5d5cf22b705bcea8"
+  }
  },
  "https://swccg.com/snapshots/scomp/anoat-v.html": {
   "capture": "https://web.archive.org/web/20261025035836/https://swccg.com/snapshots/scomp/anoat-v.html",
@@ -122563,8 +122571,16 @@
   "capture": "https://web.archive.org/web/20261025065514/https://swccg.com/snapshots/scomp/c1-10p-chopper.html",
   "last": "2026-11-04T16:50:42Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-04T17:07:25Z",
+   "bytes": 877683,
+   "capture_id": "https://web.archive.org/web/20261025065514id_/https://swccg.com/snapshots/scomp/c1-10p-chopper.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9fa7a983fa02137de238c082933baca9a7d912f2e7033dca79243be2c5dcc667"
+  }
  },
  "https://swccg.com/snapshots/scomp/cad-bane.html": {
   "capture": "https://web.archive.org/web/20261027001525/https://swccg.com/snapshots/scomp/cad-bane.html",
@@ -130183,8 +130199,16 @@
   "capture": "https://web.archive.org/web/20261027003034/https://swccg.com/snapshots/scomp/elite-squadron-stormtrooper.html",
   "last": "2026-11-04T16:50:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-04T17:07:13Z",
+   "bytes": 271579,
+   "capture_id": "https://web.archive.org/web/20261027003034id_/https://swccg.com/snapshots/scomp/elite-squadron-stormtrooper.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "fee6fe10eb2979d32b236114d65eea2e623ea191fdf93194a29ed869fc59d6fb"
+  }
  },
  "https://swccg.com/snapshots/scomp/ello-asty.html": {
   "capture": "https://web.archive.org/web/20261027002819/https://swccg.com/snapshots/scomp/ello-asty.html",
@@ -131902,10 +131926,10 @@
  },
  "https://swccg.com/snapshots/scomp/fly-casual.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T16:34:51Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 250 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:06:01Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/scomp/fn-2003.html": {
   "capture": "https://web.archive.org/web/20261026224620/https://swccg.com/snapshots/scomp/fn-2003.html",
