@@ -20,6 +20,14 @@ w = Wiki()
 SUM = "PC deck post missing from the wiki (wave 6, Holocron Claude)"
 LSUM = "Link new deck pages from PC deck posts (wave 6, Holocron Claude)"
 log, conflicts = [], []
+done_files = {}
+prev = b / "prev-publish.log"
+if prev.exists():   # resume: GEMP files a crashed run already uploaded (FILE <name> Success...)
+    for l in prev.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"FILE (.+?\.txt) (Success|unchanged)", l)
+        if m: done_files[m.group(1)] = True
+        m = re.match(r"PAGE (.+?) (created|edited|nochange)", l)
+        if m: done_files["PAGE:" + m.group(1)] = True
 
 
 def revs(title):
@@ -42,7 +50,11 @@ for line in (b / "apply.tsv").read_text(encoding="utf-8").splitlines():
     if not line.strip(): continue
     title, rel = line.split("\t")[:2]
     text = (b / rel).read_text(encoding="utf-8"); p = plan.get(title, {})
+    if "PAGE:" + title in done_files:
+        continue
     g = p.get("gemp")
+    if g and (g in done_files or re.sub(r"\.txt$", " 2.txt", g) in done_files):
+        g = None   # uploaded by the earlier run; the page text already points at it
     if g and (b / "gemp" / g).exists() and not dry:
         fn, k = g, 2
         while exists(fn):
