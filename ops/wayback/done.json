@@ -82856,10 +82856,10 @@
  },
  "https://swccg.com/snapshots/forum/t73620.html": {
   "capture": "https://web.archive.org/web/20261021035036/https://swccg.com/snapshots/forum/t73620.html",
-  "job_id": "spn2-58840049147b8352ab0789666c299695be503357",
-  "last": "2026-10-27T01:08:10Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:25:16Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t73630.html": {
   "capture": "https://web.archive.org/web/20261027045926/https://swccg.com/snapshots/forum/t73630.html",
@@ -82878,10 +82878,10 @@
  },
  "https://swccg.com/snapshots/forum/t74065.html": {
   "capture": "https://web.archive.org/web/20261021050035/https://swccg.com/snapshots/forum/t74065.html",
-  "job_id": "spn2-76bfa394ac53bd2759eb6ff2e64b1b942e9ab39c",
-  "last": "2026-10-27T01:07:29Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:24:52Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t74099.html": {
   "capture": "https://web.archive.org/web/20261022024748/https://swccg.com/snapshots/forum/t74099.html",
@@ -82898,11 +82898,11 @@
   }
  },
  "https://swccg.com/snapshots/forum/t74291.html": {
-  "capture": "https://web.archive.org/web/20261021034916/https://swccg.com/snapshots/forum/t74291.html",
-  "job_id": "spn2-906cd773f620bad9729dea987a6a0a0dba963966",
-  "last": "2026-10-27T01:21:33Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027012219/https://swccg.com/snapshots/forum/t74291.html",
+  "last": "2026-11-04T22:25:04Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t74436.html": {
   "capture": "https://web.archive.org/web/20261027054651/https://swccg.com/snapshots/forum/t74436.html",
@@ -83052,11 +83052,19 @@
   }
  },
  "https://swccg.com/snapshots/forum/t8037.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104221504/https://swccg.com/snapshots/forum/t8037.html",
   "job_id": "spn2-706c23490fed18cf1801f71ed3b8f3486a929b5d",
-  "last": "2026-11-04T22:13:59Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T22:18:06Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-04T22:18:06Z",
+   "bytes": 2394052,
+   "capture_id": "https://web.archive.org/web/20261104221504id_/https://swccg.com/snapshots/forum/t8037.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0001c0a88c884d5cc58ed1d414b6e960e5a1aba7bb0c3ad625c9aafd1c26242c"
+  }
  },
  "https://swccg.com/snapshots/forum/t80594.html": {
   "capture": "https://web.archive.org/web/20261027013001/https://swccg.com/snapshots/forum/t80594.html",
@@ -86471,16 +86479,15 @@
  "https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html": {
   "capture": "https://web.archive.org/web/20261021034750/https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-21T08:17:08Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-04T22:23:15Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-day-3-tom-kelly-oa.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021034648/https://swccg.com/snapshots/pc/2018-worlds-day-3-tom-kelly-oa.html",
+  "last": "2026-11-04T22:23:04Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-day-3-tom-kelly-oa.html?copy=2": {
@@ -86598,11 +86605,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-kyle-krueger-hd.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104221545/https://swccg.com/snapshots/pc/2018-worlds-kyle-krueger-hd.html",
   "job_id": "spn2-ee40cd0399b3c40c4099e3f92e6878e3dd382e19",
-  "last": "2026-11-04T22:14:48Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T22:17:58Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-04T22:17:58Z",
+   "bytes": 7120675,
+   "capture_id": "https://web.archive.org/web/20261104221545id_/https://swccg.com/snapshots/pc/2018-worlds-kyle-krueger-hd.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "24d1b395367acec70d593c9f92e829c27d7fb3251a94436e3ee1c284beaf7a7d"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-matt-scott-aobs.html": {
   "capture": "https://web.archive.org/web/20261021044658/https://swccg.com/snapshots/pc/2018-worlds-matt-scott-aobs.html",
@@ -86627,10 +86642,9 @@
  },
  "https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:22:23Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html?copy=2": {
@@ -86641,18 +86655,17 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html": {
-  "capture": "https://web.archive.org/web/20261021035648/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html",
-  "job_id": "spn2-a6941e7560d57c638e0c7f4acc55bb69d27204c4",
-  "last": "2026-10-27T01:07:18Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027010816/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html",
+  "last": "2026-11-04T22:22:34Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-worlds-reid-smith-hitco.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:22:00Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-reid-smith-hitco.html?copy=2": {
@@ -86685,11 +86698,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-scott-lingrell-profit.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021034533/https://swccg.com/snapshots/pc/2018-worlds-scott-lingrell-profit.html",
+  "last": "2026-11-04T22:22:11Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-scott-lingrell-profit.html?copy=2": {
@@ -86722,26 +86734,25 @@
   }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-steve-brentson-wys.html": {
-  "capture": "https://web.archive.org/web/20261021050003/https://swccg.com/snapshots/pc/2018-worlds-steve-brentson-wys.html",
-  "job_id": "spn2-f8db809bf0a24d7b9a049c7b7a4b68390e1df022",
-  "last": "2026-10-27T01:07:08Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027010723/https://swccg.com/snapshots/pc/2018-worlds-steve-brentson-wys.html",
+  "last": "2026-11-04T22:21:49Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-worlds-tom-haid-qmc.html": {
   "capture": "https://web.archive.org/web/20261021034441/https://swccg.com/snapshots/pc/2018-worlds-tom-haid-qmc.html",
-  "job_id": "spn2-a3597e3f92d09f8fa8fcc851f409f29b4c85150a",
-  "last": "2026-10-27T01:21:22Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:21:37Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2018-worlds-trevor-partridge-hd.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261021050024/https://swccg.com/snapshots/pc/2018-worlds-trevor-partridge-hd.html",
+  "last": "2026-11-04T22:22:48Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2018-worlds-trevor-partridge-hd.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010029/https://swccg.com/snapshots/pc/2018-worlds-trevor-partridge-hd.html?copy=2",
@@ -86791,11 +86802,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-andrew-moss-ds-ie.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021034710/https://swccg.com/snapshots/pc/2019-nac-day-1-andrew-moss-ds-ie.html",
+  "last": "2026-11-04T22:23:27Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-andrew-moss-ds-ie.html?copy=2": {
@@ -86806,11 +86816,10 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-bryan-mischke-ds-map.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021034721/https://swccg.com/snapshots/pc/2019-nac-day-1-bryan-mischke-ds-map.html",
+  "last": "2026-11-04T22:23:38Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-bryan-mischke-ds-map.html?copy=2": {
@@ -86829,11 +86838,10 @@
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-danny-lamar-ds-dark-combat.html": {
   "capture": "https://web.archive.org/web/20261021034823/https://swccg.com/snapshots/pc/2019-nac-day-1-danny-lamar-ds-dark-combat.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "last": "2026-11-04T22:23:52Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-danny-lamar-ds-dark-combat.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010836/https://swccg.com/snapshots/pc/2019-nac-day-1-danny-lamar-ds-dark-combat.html?copy=2",
@@ -86850,11 +86858,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021035748/https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html",
+  "last": "2026-11-04T22:24:06Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html?copy=2": {
@@ -86866,10 +86873,9 @@
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "job_id": "spn2-280cc9ffd201c8c038abee5d70348242cc2d95cd",
+  "last": "2026-11-04T22:24:19Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html?copy=2": {
@@ -86881,11 +86887,10 @@
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021034824/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ds-map.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:24:29Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ds-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010826/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ds-map.html?copy=2",
@@ -86895,11 +86900,10 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021034934/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html",
+  "last": "2026-11-04T22:24:41Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2": {
@@ -86916,11 +86920,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ds-hunt-down-racing.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021035032/https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ds-hunt-down-racing.html",
+  "last": "2026-11-04T22:25:56Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ds-hunt-down-racing.html?copy=2": {
@@ -86937,11 +86940,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ls-trm.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021035721/https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ls-trm.html",
+  "last": "2026-11-04T22:25:27Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-mitch-nieland-ls-trm.html?copy=2": {
@@ -86952,11 +86954,10 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ds-map.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021035102/https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ds-map.html",
+  "last": "2026-11-04T22:25:41Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ds-map.html?copy=2": {
@@ -86968,10 +86969,9 @@
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ls-combat-7s.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:26:06Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-nate-louderback-ls-combat-7s.html?copy=2": {
@@ -87008,11 +87008,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ds-map.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021035835/https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ds-map.html",
+  "last": "2026-11-04T22:26:18Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ds-map.html?copy=2": {
@@ -87024,38 +87023,45 @@
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261021035219/https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ls-trm.html",
-  "job_id": "spn2-81f3ee979a5802b9156c865bd8439b1840762109",
-  "last": "2026-10-27T01:08:21Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T22:26:30Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-david-destefanis-ds-invasion.html": {
-  "capture": "https://web.archive.org/web/20261021081722/https://swccg.com/snapshots/pc/2019-worlds-day-2-david-destefanis-ds-invasion.html",
-  "job_id": "spn2-2660eb3592d088803d76172db57974383cd65d60",
-  "last": "2026-10-27T01:08:32Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027010920/https://swccg.com/snapshots/pc/2019-worlds-day-2-david-destefanis-ds-invasion.html",
+  "last": "2026-11-04T22:26:41Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-dennis-reinhardt-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021035147/https://swccg.com/snapshots/pc/2019-worlds-day-2-dennis-reinhardt-ds-map.html",
-  "job_id": "spn2-8bac73c87ede0c186f1b39881f7ecf40a845b064",
-  "last": "2026-10-27T02:04:37Z",
-  "status": "pending",
-  "tries": 2
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:26:52Z",
+  "status": "retry",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-justin-branch-ds-map.html": {
-  "capture": "https://web.archive.org/web/20261021060247/https://swccg.com/snapshots/pc/2019-worlds-day-2-justin-branch-ds-map.html",
-  "job_id": "spn2-048c14ae1d339804187a983f1e1548d9e9345ffa",
-  "last": "2026-10-27T01:09:14Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027010919/https://swccg.com/snapshots/pc/2019-worlds-day-2-justin-branch-ds-map.html",
+  "last": "2026-11-04T22:27:04Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T22:27:09Z",
+   "bytes": 7121536,
+   "capture_id": "https://web.archive.org/web/20261027010919id_/https://swccg.com/snapshots/pc/2019-worlds-day-2-justin-branch-ds-map.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "23aad0ddef6a38dab517d440ce6177b9e57d607f62b770be93cc485380a04aee"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-kyle-krueger-ls-trm.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021035335/https://swccg.com/snapshots/pc/2019-worlds-day-2-kyle-krueger-ls-trm.html",
+  "last": "2026-11-04T22:27:21Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-kyle-krueger-ls-trm.html?copy=2": {
@@ -87066,19 +87072,18 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-moritz-karge-ds-map.html": {
-  "capture": "https://web.archive.org/web/20261021060233/https://swccg.com/snapshots/pc/2019-worlds-day-2-moritz-karge-ds-map.html",
-  "job_id": "spn2-fd11c0e432c0024af84e144a1764f7023194bb63",
-  "last": "2026-10-27T01:09:24Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027010929/https://swccg.com/snapshots/pc/2019-worlds-day-2-moritz-karge-ds-map.html",
+  "last": "2026-11-04T22:27:33Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-bryan-mischke-ds-map.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021043155/https://swccg.com/snapshots/pc/2019-worlds-day-3-bryan-mischke-ds-map.html",
+  "last": "2026-11-04T22:27:45Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-bryan-mischke-ds-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011016/https://swccg.com/snapshots/pc/2019-worlds-day-3-bryan-mischke-ds-map.html?copy=2",
@@ -87095,11 +87100,10 @@
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:27:56Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011027/https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2",
@@ -87148,12 +87152,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-kelly-ls-hitco.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021035825/https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-kelly-ls-hitco.html",
+  "last": "2026-11-04T22:28:09Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-04T22:28:18Z",
+   "bytes": 7121652,
+   "capture_id": "https://web.archive.org/web/20261021035825id_/https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-kelly-ls-hitco.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3d1d01dbf37dd0f3cbb95bff7df69dbddac6928a1e8486d37dc0759740337654"
+  }
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-kelly-ls-hitco.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025012908/https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-kelly-ls-hitco.html?copy=2",
@@ -108264,11 +108275,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-bill-kafer-ls-the-empire-knows-were-here.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:49:23Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025115013/https://swccg.com/snapshots/pc/2024-corellia-regionals-bill-kafer-ls-the-empire-knows-were-here.html",
+  "last": "2026-11-04T22:20:59Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T22:21:03Z",
+   "bytes": 7121441,
+   "capture_id": "https://web.archive.org/web/20261025115013id_/https://swccg.com/snapshots/pc/2024-corellia-regionals-bill-kafer-ls-the-empire-knows-were-here.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "8a1f18149fa5faf26ccad2ad5b413080bebc6eaa9a9325667ba4af340cfc8845"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-brad-eier-ds-rots-maul.html": {
   "capture": "https://web.archive.org/web/20261025110907/https://swccg.com/snapshots/pc/2024-corellia-regionals-brad-eier-ds-rots-maul.html",
@@ -108874,10 +108893,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-endor-regionals-joe-olson-ls-skywalker-saga-luke.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 250 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-11-04T21:46:06Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:20:05Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-endor-regionals-joe-phillips-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261027004742/https://swccg.com/snapshots/pc/2024-endor-regionals-joe-phillips-ds-endor-operations.html",
@@ -109086,10 +109105,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-european-championship-bjorn-palmqvist-ds-watto.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 54 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T21:40:43Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:19:12Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-european-championship-bjorn-palmqvist-ls-hidden-base.html": {
   "capture": "https://web.archive.org/web/20261025104314/https://swccg.com/snapshots/pc/2024-european-championship-bjorn-palmqvist-ls-hidden-base.html",
@@ -111868,11 +111887,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-tatooine-regionals-randy-scott-ls-rey-saga.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:47:02Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025114007/https://swccg.com/snapshots/pc/2024-tatooine-regionals-randy-scott-ls-rey-saga.html",
+  "last": "2026-11-04T22:20:19Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-angelo-consoli-ds-rots-maul.html": {
   "capture": "https://web.archive.org/web/20261025113543/https://swccg.com/snapshots/pc/2024-toola-regionals-angelo-consoli-ds-rots-maul.html",
@@ -112163,11 +112182,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-yavin-4-regionals-joe-horbey-ds-rots-maul.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:45:10Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025113831/https://swccg.com/snapshots/pc/2024-yavin-4-regionals-joe-horbey-ds-rots-maul.html",
+  "last": "2026-11-04T22:19:25Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T22:19:30Z",
+   "bytes": 7121815,
+   "capture_id": "https://web.archive.org/web/20261025113831id_/https://swccg.com/snapshots/pc/2024-yavin-4-regionals-joe-horbey-ds-rots-maul.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "41955836d2b0829c2a80d1e0d322bbb7a73d8df44159ee41b9a8ab3169b43fc7"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-yavin-4-regionals-joe-horbey-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261025092431/https://swccg.com/snapshots/pc/2024-yavin-4-regionals-joe-horbey-ls-hitco.html",
@@ -113323,9 +113350,9 @@
  "https://swccg.com/snapshots/pc/2025-european-championship-jonas-hagen-norregaard-ls-whap.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:40:32Z",
+  "last": "2026-11-04T22:19:02Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-julian-smolarek-ds-walkers.html": {
   "capture": "",
@@ -113469,9 +113496,9 @@
  "https://swccg.com/snapshots/pc/2025-european-championship-patrik-csapi-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261025101024/https://swccg.com/snapshots/pc/2025-european-championship-patrik-csapi-ls-diplo.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:43:43Z",
+  "last": "2026-11-04T22:18:07Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-timo-dusel-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261025080943/https://swccg.com/snapshots/pc/2025-european-championship-timo-dusel-ds-thrawn.html",
@@ -113837,9 +113864,9 @@
  "https://swccg.com/snapshots/pc/2025-naboo-regionals-kevin-jaap-ds-map.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:43:54Z",
+  "last": "2026-11-04T22:18:17Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2025-naboo-regionals-kevin-jaap-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261025095113/https://swccg.com/snapshots/pc/2025-naboo-regionals-kevin-jaap-ls-old-allies.html",
@@ -114060,9 +114087,9 @@
  "https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-karl-koenig-ls-whap.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:48:35Z",
+  "last": "2026-11-04T22:20:46Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-kendall-halman-ds-court.html": {
   "capture": "https://web.archive.org/web/20261025091305/https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-kendall-halman-ds-court.html",
@@ -115072,11 +115099,11 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-world-championship-nate-davis-ls-mwyhlv.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 250 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-11-04T21:40:22Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025113703/https://swccg.com/snapshots/pc/2025-world-championship-nate-davis-ls-mwyhlv.html",
+  "last": "2026-11-04T22:18:50Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-world-championship-randy-scott-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261025082318/https://swccg.com/snapshots/pc/2025-world-championship-randy-scott-ds-sycfa.html",
@@ -115643,9 +115670,9 @@
  "https://swccg.com/snapshots/pc/2026-endor-regionals-kyle-kallin-ls-trm.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:40:10Z",
+  "last": "2026-11-04T22:18:37Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-endor-regionals-mike-turner-ds-rots-dooku.html": {
   "capture": "https://web.archive.org/web/20261104203150/https://swccg.com/snapshots/pc/2026-endor-regionals-mike-turner-ds-rots-dooku.html",
@@ -115770,11 +115797,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-chris-menzel-ls-senate.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:48:12Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025115913/https://swccg.com/snapshots/pc/2026-european-championship-chris-menzel-ls-senate.html",
+  "last": "2026-11-04T22:20:34Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-emil-wallin-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261027005119/https://swccg.com/snapshots/pc/2026-european-championship-emil-wallin-ds-aobs.html",
@@ -115877,11 +115904,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-jon-holtet-ls-watch-your-step.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:50:13Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025115048/https://swccg.com/snapshots/pc/2026-european-championship-jon-holtet-ls-watch-your-step.html",
+  "last": "2026-11-04T22:21:15Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-jonas-hagen-norregaard-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261025102314/https://swccg.com/snapshots/pc/2026-european-championship-jonas-hagen-norregaard-ds-walkers.html",
@@ -115907,9 +115934,9 @@
  "https://swccg.com/snapshots/pc/2026-european-championship-julian-smolarek-ls-hidden-base.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:40:00Z",
+  "last": "2026-11-04T22:18:27Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-kevin-jaap-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261025084932/https://swccg.com/snapshots/pc/2026-european-championship-kevin-jaap-ds-endor-operations.html",
@@ -116180,11 +116207,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-cedrik-vanderhaegen-ls-watch-your-step.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:45:20Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025113841/https://swccg.com/snapshots/pc/2026-european-championship-top-8-cedrik-vanderhaegen-ls-watch-your-step.html",
+  "last": "2026-11-04T22:19:43Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-joe-olson-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261025085915/https://swccg.com/snapshots/pc/2026-european-championship-top-8-joe-olson-ds-shadow-collective.html",
@@ -116218,9 +116245,9 @@
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-koen-meijssen-ds-mkos.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:50:38Z",
+  "last": "2026-11-04T22:21:27Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-koen-meijssen-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261025101013/https://swccg.com/snapshots/pc/2026-european-championship-top-8-koen-meijssen-ls-zero-hour.html",
@@ -118517,9 +118544,9 @@
  "https://swccg.com/snapshots/pc/2026-yavin-4-regionals-karl-koenig-ls-skywalker-saga-luke.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:45:30Z",
+  "last": "2026-11-04T22:19:55Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-yavin-4-regionals-ryan-sersen-ds-court.html": {
   "capture": "https://web.archive.org/web/20261025110743/https://swccg.com/snapshots/pc/2026-yavin-4-regionals-ryan-sersen-ds-court.html",
