@@ -120925,10 +120925,10 @@
  },
  "https://swccg.com/snapshots/scomp/bib-fortuna-heir-to-the-palace.html": {
   "capture": "",
-  "job_id": "spn2-a3cb91cf1b8571dedb5e6c593b24fd846600ceec",
-  "last": "2026-10-25T05:58:09Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T14:06:00Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/bib-fortuna-v.html": {
   "capture": "https://web.archive.org/web/20261024070632/https://swccg.com/snapshots/scomp/bib-fortuna-v.html",
@@ -123670,10 +123670,10 @@
  },
  "https://swccg.com/snapshots/scomp/chandrila.html": {
   "capture": "",
-  "job_id": "spn2-c67b86361859330ea75089b404728a2e90f7eb7e",
-  "last": "2026-10-25T05:58:20Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T14:06:12Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/changing-the-odds.html": {
   "capture": "https://web.archive.org/web/20261025001925/https://swccg.com/snapshots/scomp/changing-the-odds.html",
@@ -124947,8 +124947,16 @@
   "capture": "https://web.archive.org/web/20261027001531/https://swccg.com/snapshots/scomp/commander-igar.html",
   "last": "2026-11-04T13:59:20Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T14:06:28Z",
+   "bytes": 263660,
+   "capture_id": "https://web.archive.org/web/20261027001531id_/https://swccg.com/snapshots/scomp/commander-igar.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e8bc50390a3c617d7eedef8c0e0ab387ee5d010c41e522f40a609ac6b99895b7"
+  }
  },
  "https://swccg.com/snapshots/scomp/commander-luke-skywalker-v.html": {
   "capture": "https://web.archive.org/web/20261023233956/https://swccg.com/snapshots/scomp/commander-luke-skywalker-v.html",
@@ -124995,10 +125003,10 @@
  },
  "https://swccg.com/snapshots/scomp/commander-nemet-v.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 57 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T13:33:02Z",
+  "error": "no job_id: The same snapshot had been made 248 hours, 29 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T14:05:24Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/commander-nemet.html": {
   "capture": "https://web.archive.org/web/20261027104618/https://swccg.com/snapshots/scomp/commander-nemet.html",
@@ -131262,10 +131270,10 @@
  },
  "https://swccg.com/snapshots/scomp/force-push-podracer-collision.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 48 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T13:33:27Z",
+  "error": "no job_id: The same snapshot had been made 248 hours, 21 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T14:05:49Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/force-push-v.html": {
   "capture": "https://web.archive.org/web/20261104044439/https://swccg.com/snapshots/scomp/force-push-v.html",
@@ -131950,8 +131958,16 @@
   "capture": "https://web.archive.org/web/20261025054934/https://swccg.com/snapshots/scomp/general-solo-v.html",
   "last": "2026-11-04T13:55:34Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T14:06:38Z",
+   "bytes": 753311,
+   "capture_id": "https://web.archive.org/web/20261025054934id_/https://swccg.com/snapshots/scomp/general-solo-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0b0841e686f2c7ec18bcbfa11efb84cf25758d1d2b9bd60817aa7b6b77971136"
+  }
  },
  "https://swccg.com/snapshots/scomp/general-solo.html": {
   "capture": "https://web.archive.org/web/20261024034831/https://swccg.com/snapshots/scomp/general-solo.html",
@@ -132345,10 +132361,10 @@
  },
  "https://swccg.com/snapshots/scomp/grand-admiral-thrawn-v.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 57 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T13:33:15Z",
+  "error": "no job_id: The same snapshot had been made 248 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T14:05:37Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/grand-admiral-thrawn.html": {
   "capture": "https://web.archive.org/web/20261024224016/https://swccg.com/snapshots/scomp/grand-admiral-thrawn.html",
@@ -136056,8 +136072,16 @@
   "capture": "https://web.archive.org/web/20261025054912/https://swccg.com/snapshots/scomp/jabiim-path-operations-center.html",
   "last": "2026-11-04T13:55:02Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T14:06:46Z",
+   "bytes": 696408,
+   "capture_id": "https://web.archive.org/web/20261025054912id_/https://swccg.com/snapshots/scomp/jabiim-path-operations-center.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6f8adcfc1a80dcee1d14334c8139876cb13161acbb22b11cc50fc521ba4bc9ea"
+  }
  },
  "https://swccg.com/snapshots/scomp/jabiim-starship-hangar.html": {
   "capture": "https://web.archive.org/web/20261027001036/https://swccg.com/snapshots/scomp/jabiim-starship-hangar.html",
