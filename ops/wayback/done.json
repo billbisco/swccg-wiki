@@ -83436,10 +83436,10 @@
  },
  "https://swccg.com/snapshots/forum/t86478.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T16:53:03Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 17 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:25:26Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/forum/t86534.html": {
   "capture": "https://web.archive.org/web/20261026204621/https://swccg.com/snapshots/forum/t86534.html",
@@ -111138,8 +111138,16 @@
   "capture": "https://web.archive.org/web/20261025075925/https://swccg.com/snapshots/pc/2024-tatooine-regionals-mark-billings-ls-yoda-communing.html",
   "last": "2026-11-04T17:18:43Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T17:25:42Z",
+   "bytes": 7121353,
+   "capture_id": "https://web.archive.org/web/20261025075925id_/https://swccg.com/snapshots/pc/2024-tatooine-regionals-mark-billings-ls-yoda-communing.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ebc571e300b2ec6f7a352b43fc46b3cce63b14458c205a9a91f63d2e6bfce520"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-tatooine-regionals-matt-thornton-ds-hunt-down.html": {
   "capture": "",
@@ -112567,8 +112575,16 @@
   "capture": "https://web.archive.org/web/20261025080633/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-joe-olson-ds-shadow-collective.html",
   "last": "2026-11-04T17:18:31Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T17:25:50Z",
+   "bytes": 7121904,
+   "capture_id": "https://web.archive.org/web/20261025080633id_/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-joe-olson-ds-shadow-collective.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a7a5c9a3637fe32db704fc90867142f73d0402efebfc938f6a8f2b355ebb870b"
+  }
  },
  "https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-joe-olson-ls-skywalker-saga-luke.html": {
   "capture": "https://web.archive.org/web/20261025093248/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-joe-olson-ls-skywalker-saga-luke.html",
@@ -113796,11 +113812,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-world-championship-matt-thornton-ds-sycfa.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104171120/https://swccg.com/snapshots/pc/2025-world-championship-matt-thornton-ds-sycfa.html",
   "job_id": "spn2-f4e145e2f0e5afbd079890ff3e1f5e9e2a6327d0",
-  "last": "2026-11-04T17:11:16Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T17:23:36Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-04T17:23:36Z",
+   "bytes": 7121831,
+   "capture_id": "https://web.archive.org/web/20261104171120id_/https://swccg.com/snapshots/pc/2025-world-championship-matt-thornton-ds-sycfa.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "82c1213d60d2905817d28ac310a71203c1cd222071f2e6e365377e185cb20711"
+  }
  },
  "https://swccg.com/snapshots/pc/2025-world-championship-matt-thornton-ls-watch-your-step.html": {
   "capture": "",
@@ -129191,10 +129215,10 @@
  },
  "https://swccg.com/snapshots/scomp/doikk-na-ts.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T16:49:38Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T17:23:52Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/domain-of-evil.html": {
   "capture": "https://web.archive.org/web/20261024013929/https://swccg.com/snapshots/scomp/domain-of-evil.html",
@@ -130406,11 +130430,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/emperor-s-personal-shuttle.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T16:51:07Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20261025070214/https://swccg.com/snapshots/scomp/emperor-s-personal-shuttle.html",
+  "last": "2026-11-04T17:24:18Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-11-04T17:24:24Z",
+   "bytes": 263461,
+   "capture_id": "https://web.archive.org/web/20261025070214id_/https://swccg.com/snapshots/scomp/emperor-s-personal-shuttle.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f7d210bb4a44f745fc1988686b355e7e7581d9a0f85f3eba05544389c9aff4b5"
+  }
  },
  "https://swccg.com/snapshots/scomp/emperor-s-power.html": {
   "capture": "https://web.archive.org/web/20261026215138/https://swccg.com/snapshots/scomp/emperor-s-power.html",
@@ -132958,10 +132990,10 @@
  },
  "https://swccg.com/snapshots/scomp/general-veers-v.html": {
   "capture": "https://web.archive.org/web/20261025065751/https://swccg.com/snapshots/scomp/general-veers-v.html",
-  "error": "no job_id: The same snapshot had been made 208 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T16:51:43Z",
+  "error": "no job_id: The same snapshot had been made 208 hours, 53 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:24:52Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/general-veers.html": {
   "capture": "https://web.archive.org/web/20261026210613/https://swccg.com/snapshots/scomp/general-veers.html",
@@ -133253,10 +133285,10 @@
  },
  "https://swccg.com/snapshots/scomp/gold-squadron-y-wing.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T16:49:54Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 29 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:24:03Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/goo-nee-tay.html": {
   "capture": "https://web.archive.org/web/20261024061224/https://swccg.com/snapshots/scomp/goo-nee-tay.html",
@@ -133889,10 +133921,10 @@
  },
  "https://swccg.com/snapshots/scomp/han-s-dice.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T16:51:54Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:25:04Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/han-s-heavy-blaster-pistol-v.html": {
   "capture": "https://web.archive.org/web/20261025053704/https://swccg.com/snapshots/scomp/han-s-heavy-blaster-pistol-v.html",
@@ -137660,10 +137692,10 @@
  },
  "https://swccg.com/snapshots/scomp/jedi-lightsaber-v-alt.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T16:52:07Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:25:15Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/jedi-lightsaber-v.html": {
   "capture": "https://web.archive.org/web/20261026230222/https://swccg.com/snapshots/scomp/jedi-lightsaber-v.html",
@@ -138260,10 +138292,10 @@
  },
  "https://swccg.com/snapshots/scomp/kef-bir-oceanic-ruins.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 54 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T16:46:35Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:23:39Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/kef-bir-oceanic-wreckage.html": {
   "capture": "https://web.archive.org/web/20261025055604/https://swccg.com/snapshots/scomp/kef-bir-oceanic-wreckage.html",
@@ -139304,10 +139336,10 @@
  },
  "https://swccg.com/snapshots/scomp/leia-s-back.html": {
   "capture": "https://web.archive.org/web/20261025065753/https://swccg.com/snapshots/scomp/leia-s-back.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T16:51:31Z",
+  "error": "no job_id: The same snapshot had been made 208 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T17:24:36Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/leia-s-blaster-rifle.html": {
   "capture": "https://web.archive.org/web/20261024015238/https://swccg.com/snapshots/scomp/leia-s-blaster-rifle.html",
