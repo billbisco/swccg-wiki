@@ -107665,10 +107665,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-alderaan-regionals-blake-silkwood-ls-hitco.html": {
   "capture": "",
-  "job_id": "spn2-1781fca54ffd15af9c4ec898248ecdfc1128a29c",
-  "last": "2026-10-25T10:08:14Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T20:26:52Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-alderaan-regionals-conor-britain-ds-walkers.html": {
   "capture": "",
@@ -107729,11 +107729,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-alderaan-regionals-lee-edwards-ls-tigih.html": {
-  "capture": "https://web.archive.org/web/20261025094509/https://swccg.com/snapshots/pc/2024-alderaan-regionals-lee-edwards-ls-tigih.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T19:53:12Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027005131/https://swccg.com/snapshots/pc/2024-alderaan-regionals-lee-edwards-ls-tigih.html",
+  "last": "2026-11-04T20:23:32Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T20:23:38Z",
+   "bytes": 7121973,
+   "capture_id": "https://web.archive.org/web/20261027005131id_/https://swccg.com/snapshots/pc/2024-alderaan-regionals-lee-edwards-ls-tigih.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "60e072f7f7628ced62206a7f2b9888f444d0b4205de61dd2acb7dcc6c411ebcb"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-alderaan-regionals-ryan-jellison-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261025094011/https://swccg.com/snapshots/pc/2024-alderaan-regionals-ryan-jellison-ds-shadow-collective.html",
@@ -107794,10 +107802,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-bespin-regionals-aj-hatoum-ls-whap.html": {
   "capture": "",
-  "job_id": "spn2-5c1cf039160a89eb2ea0f7b8c3025a6564208641",
-  "last": "2026-10-25T10:21:35Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 10 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:32:38Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-bespin-regionals-carson-stockman-ds-thrawn.html": {
   "capture": "",
@@ -108336,11 +108344,11 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-jim-boyle-ds-hunt-down.html": {
-  "capture": "",
-  "job_id": "spn2-1ad4d5044748056eba32725411f4aedec303ccb5",
-  "last": "2026-10-25T10:07:11Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025100715/https://swccg.com/snapshots/pc/2024-corellia-regionals-jim-boyle-ds-hunt-down.html",
+  "last": "2026-11-04T20:25:56Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-jim-boyle-ls-zerohour.html": {
   "capture": "https://web.archive.org/web/20261027005232/https://swccg.com/snapshots/pc/2024-corellia-regionals-jim-boyle-ls-zerohour.html",
@@ -108431,10 +108439,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-kendall-halman-ls-zero-hour.html": {
   "capture": "",
-  "job_id": "spn2-9ae75bb4a33e1a0047377c02b1f52999c7f39f68",
-  "last": "2026-10-25T10:19:39Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:31:20Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-matt-lutz-ds-rots-vader.html": {
   "capture": "",
@@ -108619,9 +108627,9 @@
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-steve-brentson-ds-mkos.html": {
   "capture": "",
   "job_id": "spn2-023294f2b93f58d947ec5b5adf3c4f2d8ffa73f0",
-  "last": "2026-10-25T10:09:29Z",
+  "last": "2026-11-04T20:28:25Z",
   "status": "pending",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-corellia-regionals-steve-brentson-ls-wys.html": {
   "capture": "",
@@ -108825,11 +108833,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-endor-regionals-kyle-krueger-ls-qmc.html": {
-  "capture": "",
-  "job_id": "spn2-8fe95c7cf43dcff0604c0925b1d0784e595c4832",
-  "last": "2026-10-25T10:18:35Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025101839/https://swccg.com/snapshots/pc/2024-endor-regionals-kyle-krueger-ls-qmc.html",
+  "last": "2026-11-04T20:30:27Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T20:30:34Z",
+   "bytes": 7121849,
+   "capture_id": "https://web.archive.org/web/20261025101839id_/https://swccg.com/snapshots/pc/2024-endor-regionals-kyle-krueger-ls-qmc.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c50e7287f9ff4d40111c661d92559ff52b49c7554f2d2120f1c45a7d47f07aa2"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-endor-regionals-ming-huo-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261025084022/https://swccg.com/snapshots/pc/2024-endor-regionals-ming-huo-ds-walkers.html",
@@ -109380,11 +109396,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-cedrik-vanderhaegen-ds-cotvg-mains.html": {
-  "capture": "",
-  "job_id": "spn2-b065d35ec951bc9743f7647cb69d10bc00433b1c",
-  "last": "2026-10-25T10:05:24Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025100527/https://swccg.com/snapshots/pc/2024-ithor-regionals-cedrik-vanderhaegen-ds-cotvg-mains.html",
+  "last": "2026-11-04T20:24:10Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-cedrik-vanderhaegen-ls-clones.html": {
   "capture": "",
@@ -109467,10 +109483,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-jeroen-wauters-ls-speeders.html": {
   "capture": "",
-  "job_id": "spn2-75e172e70568497f871c3a88dc3b55c150500015",
-  "last": "2026-10-25T10:17:21Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:28:36Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-kevin-jaap-ds-rots-maul.html": {
   "capture": "",
@@ -109530,11 +109546,11 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-tamas-papp-ds-isb.html": {
-  "capture": "",
-  "job_id": "spn2-8a7464f2c692028cd070ce546e2ff6c5e9b467fa",
-  "last": "2026-10-25T10:16:28Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025101717/https://swccg.com/snapshots/pc/2024-ithor-regionals-tamas-papp-ds-isb.html",
+  "last": "2026-11-04T20:24:47Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-tamas-papp-ls-qmc.html": {
   "capture": "",
@@ -109809,10 +109825,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-naboo-regionals-eric-spijksma-ls-clones.html": {
   "capture": "",
-  "job_id": "spn2-2f58ab7366991bb82e219c0add01ee565f2a2c22",
-  "last": "2026-10-25T10:20:42Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:32:04Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-naboo-regionals-john-moorley-ds-shadow-collective.html": {
   "capture": "",
@@ -110055,11 +110071,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-nal-hutta-regionals-brian-fred-ls-zero-hour.html": {
-  "capture": "",
-  "job_id": "spn2-2ef15208ef5cb22093fb8ca31b3d42dc40113d8d",
-  "last": "2026-10-25T10:05:35Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025100631/https://swccg.com/snapshots/pc/2024-nal-hutta-regionals-brian-fred-ls-zero-hour.html",
+  "last": "2026-11-04T20:24:23Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-nal-hutta-regionals-karl-koenig-ds-rots-vader.html": {
   "capture": "",
@@ -111252,10 +111268,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-ryloth-regionals-eric-spijksma-ls-qmc.html": {
   "capture": "",
-  "job_id": "spn2-3003f2dfc40a310a240199a8e8527849085613b5",
-  "last": "2026-10-25T10:09:07Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:27:53Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-ryloth-regionals-floris-de-vries-ds-court.html": {
   "capture": "",
@@ -111316,11 +111332,19 @@
   "tries": 6
  },
  "https://swccg.com/snapshots/pc/2024-ryloth-regionals-martin-den-boef-ds-isb.html": {
-  "capture": "",
-  "job_id": "spn2-a36fc298ca39ec5a75d91ee0449cf964121389bf",
-  "last": "2026-10-25T10:17:11Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025101714/https://swccg.com/snapshots/pc/2024-ryloth-regionals-martin-den-boef-ds-isb.html",
+  "last": "2026-11-04T20:27:19Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T20:27:41Z",
+   "bytes": 7121018,
+   "capture_id": "https://web.archive.org/web/20261025101714id_/https://swccg.com/snapshots/pc/2024-ryloth-regionals-martin-den-boef-ds-isb.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "be7a2d411e49bcf909883dee0336e2cd397cfb8809424d74e7809faa932d8c4a"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-ryloth-regionals-martin-den-boef-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261025120802/https://swccg.com/snapshots/pc/2024-ryloth-regionals-martin-den-boef-ls-hitco.html",
@@ -111409,10 +111433,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-scarif-regionals-daniel-amor-ds-rots-maul.html": {
   "capture": "",
-  "job_id": "spn2-afb1a254d112ea4e26ccff3752d7e88a6d62ca27",
-  "last": "2026-10-25T10:19:17Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:30:57Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-scarif-regionals-daniel-amor-ls-watch-your-step.html": {
   "capture": "",
@@ -111451,10 +111475,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-scarif-regionals-ryan-jellison-ls-the-empire-knows-were-here.html": {
   "capture": "",
-  "job_id": "spn2-a86a9239f0174dc10968530a87ca0152d727f5ce",
-  "last": "2026-10-25T10:20:31Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 10 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:31:53Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-tatooine-regionals-brett-bailey-ds-imperial-entanglements.html": {
   "capture": "",
@@ -111672,10 +111696,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-casper-jorgensen-ds-shadow-collective.html": {
   "capture": "",
-  "job_id": "spn2-e6d2506ff6440a944d0ece9b33cd7a2e27c7da8c",
-  "last": "2026-10-25T10:07:22Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T20:26:07Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-casper-jorgensen-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261025084033/https://swccg.com/snapshots/pc/2024-toola-regionals-casper-jorgensen-ls-qmc.html",
@@ -111692,11 +111716,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-emil-wallin-ds-hunt-down.html": {
-  "capture": "",
-  "job_id": "spn2-74ba8cbf1dd0b78c71fae690b183673ee1a3d55a",
-  "last": "2026-10-25T10:17:32Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025101749/https://swccg.com/snapshots/pc/2024-toola-regionals-emil-wallin-ds-hunt-down.html",
+  "last": "2026-11-04T20:29:11Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T20:29:16Z",
+   "bytes": 7121060,
+   "capture_id": "https://web.archive.org/web/20261025101749id_/https://swccg.com/snapshots/pc/2024-toola-regionals-emil-wallin-ds-hunt-down.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d268ba73020fca6f9aef041093d31abd3394459fa3f72327f1eaaaf17d2ff7e5"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-emil-wallin-ls-yoda-communing.html": {
   "capture": "https://web.archive.org/web/20261025110329/https://swccg.com/snapshots/pc/2024-toola-regionals-emil-wallin-ls-yoda-communing.html",
@@ -111880,10 +111912,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-yavin-4-regionals-barry-alperstein-ls-old-allies.html": {
   "capture": "",
-  "job_id": "spn2-6157127cf123d8d0bfdfc8f982700a269cc57ae0",
-  "last": "2026-10-25T10:06:38Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T20:25:14Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-yavin-4-regionals-david-woods-ds-imperial-entanglements.html": {
   "capture": "",
@@ -112101,10 +112133,10 @@
  },
  "https://swccg.com/snapshots/pc/2025-bespin-regionals-abe-christensen-ds-watto.html": {
   "capture": "",
-  "job_id": "spn2-df83d5d0a018817938b128fca75465cdef09fd3d",
-  "last": "2026-10-25T10:30:11Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T20:32:16Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-bespin-regionals-abe-christensen-ls-lwww-v.html": {
   "capture": "https://web.archive.org/web/20261025093816/https://swccg.com/snapshots/pc/2025-bespin-regionals-abe-christensen-ls-lwww-v.html",
@@ -112231,9 +112263,9 @@
  "https://swccg.com/snapshots/pc/2025-bespin-regionals-ellie-hoyt-ls-diplo.html": {
   "capture": "",
   "job_id": "spn2-dbbff758cda5e27e71e89e8514433f989cd3243a",
-  "last": "2026-10-25T10:09:18Z",
+  "last": "2026-11-04T20:28:04Z",
   "status": "pending",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-bespin-regionals-garrett-larson-ds-walkers.html": {
   "capture": "",
@@ -112349,11 +112381,11 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-bespin-regionals-sean-miller-ds-walkers.html": {
-  "capture": "",
-  "job_id": "spn2-df4ed016f844dfc8230395e547a73aa7da48b708",
-  "last": "2026-10-25T10:07:00Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025100710/https://swccg.com/snapshots/pc/2025-bespin-regionals-sean-miller-ds-walkers.html",
+  "last": "2026-11-04T20:25:42Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-bespin-regionals-sean-miller-ls-yavin-4-operations.html": {
   "capture": "https://web.archive.org/web/20261025075844/https://swccg.com/snapshots/pc/2025-bespin-regionals-sean-miller-ls-yavin-4-operations.html",
@@ -112757,11 +112789,11 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2025-endor-regionals-kyle-kallin-ds-first-order-reigns.html": {
-  "capture": "https://web.archive.org/web/20261025101233/https://swccg.com/snapshots/pc/2025-endor-regionals-kyle-kallin-ds-first-order-reigns.html",
-  "job_id": "spn2-4b035954f4b64c7b2bd72844e3acf1242b53b1d8",
-  "last": "2026-10-27T01:20:30Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027012118/https://swccg.com/snapshots/pc/2025-endor-regionals-kyle-kallin-ds-first-order-reigns.html",
+  "last": "2026-11-04T20:29:40Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-endor-regionals-kyle-kallin-ls-wys.html": {
   "capture": "https://web.archive.org/web/20261025094241/https://swccg.com/snapshots/pc/2025-endor-regionals-kyle-kallin-ls-wys.html",
@@ -112938,11 +112970,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-jonas-hagen-norregaard-ds-endor-operations.html": {
-  "capture": "https://web.archive.org/web/20261025095919/https://swccg.com/snapshots/pc/2025-european-championship-jonas-hagen-norregaard-ds-endor-operations.html",
-  "job_id": "spn2-00515c2b421419789a944fdd71d83d6e6eb701ec",
-  "last": "2026-10-27T00:52:18Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027005221/https://swccg.com/snapshots/pc/2025-european-championship-jonas-hagen-norregaard-ds-endor-operations.html",
+  "last": "2026-11-04T20:23:51Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T20:23:58Z",
+   "bytes": 7122169,
+   "capture_id": "https://web.archive.org/web/20261027005221id_/https://swccg.com/snapshots/pc/2025-european-championship-jonas-hagen-norregaard-ds-endor-operations.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5682010dfc78ca9466b51577db1925307bc98db0ac6659b270501528231f16d2"
+  }
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-jonas-hagen-norregaard-ls-whap.html": {
   "capture": "",
@@ -112959,11 +112999,11 @@
   "tries": 6
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-julian-smolarek-ls-rst.html": {
-  "capture": "",
-  "job_id": "spn2-c22b0268b6cdebf070a320615ccf51af512cc859",
-  "last": "2026-10-25T10:29:19Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025102922/https://swccg.com/snapshots/pc/2025-european-championship-julian-smolarek-ls-rst.html",
+  "last": "2026-11-04T20:29:28Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-justin-branch-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261025074651/https://swccg.com/snapshots/pc/2025-european-championship-justin-branch-ds-first-order-reigns.html",
@@ -113076,17 +113116,18 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-patrik-csapi-ds-walkers.html": {
-  "capture": "",
-  "job_id": "spn2-76310e8df808966f22f7f3aa6d81fb843f726f3e",
-  "last": "2026-10-25T10:06:28Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025100631/https://swccg.com/snapshots/pc/2025-european-championship-patrik-csapi-ds-walkers.html",
+  "last": "2026-11-04T20:25:01Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-patrik-csapi-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261025101024/https://swccg.com/snapshots/pc/2025-european-championship-patrik-csapi-ls-diplo.html",
-  "last": "2026-10-25T10:15:44Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:28:59Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-european-championship-timo-dusel-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261025080943/https://swccg.com/snapshots/pc/2025-european-championship-timo-dusel-ds-thrawn.html",
@@ -113443,10 +113484,10 @@
  },
  "https://swccg.com/snapshots/pc/2025-naboo-regionals-kevin-jaap-ds-map.html": {
   "capture": "",
-  "job_id": "spn2-34ce454b320c63daa43b06ed97e7197c9655eb7d",
-  "last": "2026-10-25T10:18:14Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T20:29:50Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-naboo-regionals-kevin-jaap-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261025095113/https://swccg.com/snapshots/pc/2025-naboo-regionals-kevin-jaap-ls-old-allies.html",
@@ -113535,11 +113576,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2025-naboo-regionals-peter-jacobson-ls-tatooine-cpv.html": {
-  "capture": "",
-  "job_id": "spn2-591b9984879ba27ca5aacad6bc680bc7599a9082",
-  "last": "2026-10-25T10:08:03Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025100807/https://swccg.com/snapshots/pc/2025-naboo-regionals-peter-jacobson-ls-tatooine-cpv.html",
+  "last": "2026-11-04T20:26:32Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-naboo-regionals-quirin-furgut-ds-agents-of-black-sun.html": {
   "capture": "",
@@ -114677,10 +114718,10 @@
  },
  "https://swccg.com/snapshots/pc/2025-world-championship-randy-scott-ls-trm.html": {
   "capture": "",
-  "job_id": "spn2-5854b5bce589a2b1dbdff1eee1ef63d5be4ac883",
-  "last": "2026-10-25T10:29:30Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 1 minute ago. You can make new capture of this URL after 720 hours",
+  "last": "2026-11-04T20:30:45Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2025-world-championship-ryan-french-ds-a-stunning-move.html": {
   "capture": "https://web.archive.org/web/20261025111657/https://swccg.com/snapshots/pc/2025-world-championship-ryan-french-ds-a-stunning-move.html",
@@ -115201,9 +115242,9 @@
  "https://swccg.com/snapshots/pc/2026-endor-regionals-mike-turner-ds-rots-dooku.html": {
   "capture": "",
   "job_id": "spn2-50e1a35df73353b6a856069eeb4f69f746928496",
-  "last": "2026-10-25T10:19:28Z",
+  "last": "2026-11-04T20:31:08Z",
   "status": "pending",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-endor-regionals-mike-turner-ls-watch-your-step.html": {
   "capture": "",
@@ -115526,11 +115567,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-marvin-tegeler-ls-hitco.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104202709/https://swccg.com/snapshots/pc/2026-european-championship-marvin-tegeler-ls-hitco.html",
   "job_id": "spn2-b63c110333c3749e17ae89c15ae929529a67a407",
-  "last": "2026-10-25T10:29:08Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T20:32:59Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T20:32:59Z",
+   "bytes": 7121339,
+   "capture_id": "https://web.archive.org/web/20261104202709id_/https://swccg.com/snapshots/pc/2026-european-championship-marvin-tegeler-ls-hitco.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "71b5acf9fed5f147a27438e94b280ed07fca18f823f1c625245f075d58e6bf43"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-matt-wadden-ds-aobs.html": {
   "capture": "",
@@ -115627,11 +115676,17 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-timo-dusel-ds-thrawn.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104202805/https://swccg.com/snapshots/pc/2026-european-championship-timo-dusel-ds-thrawn.html",
   "job_id": "spn2-f5ddcdb412ec2966981cd0ad66b1e73d844cd2de",
-  "last": "2026-10-25T10:08:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T20:33:04Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T20:33:04Z",
+   "capture_id": "https://web.archive.org/web/20261104202805id_/https://swccg.com/snapshots/pc/2026-european-championship-timo-dusel-ds-thrawn.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261025100832 (no capture at 20261104202805)"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-timo-dusel-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261025094417/https://swccg.com/snapshots/pc/2026-european-championship-timo-dusel-ls-zero-hour.html",
@@ -115678,11 +115733,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-cedrik-vanderhaegen-ds-hunt-down-v.html": {
-  "capture": "",
-  "job_id": "spn2-54a59912687deb3cb91a544dd69bb7443162c97c",
-  "last": "2026-10-25T10:18:25Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025101828/https://swccg.com/snapshots/pc/2026-european-championship-top-8-cedrik-vanderhaegen-ds-hunt-down-v.html",
+  "last": "2026-11-04T20:30:06Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-cedrik-vanderhaegen-ls-watch-your-step.html": {
   "capture": "",
@@ -115729,10 +115784,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-koen-meijssen-ls-zero-hour.html": {
   "capture": "",
-  "job_id": "spn2-e5bf388f2b09daab71138dede5aaabf6972cd28c",
-  "last": "2026-10-25T10:10:10Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:28:47Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-matt-wadden-ds-court.html": {
   "capture": "https://web.archive.org/web/20261025072136/https://swccg.com/snapshots/pc/2026-european-championship-top-8-matt-wadden-ds-court.html",
@@ -116446,10 +116501,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-nal-hutta-regionals-karl-koenig-ls-hidden-path.html": {
   "capture": "",
-  "job_id": "spn2-77f7a3bd47d019974a7d387897137744274b3d39",
-  "last": "2026-10-25T10:21:23Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 250 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:32:27Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-nal-hutta-regionals-kendall-halman-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261025100424/https://swccg.com/snapshots/pc/2026-nal-hutta-regionals-kendall-halman-ds-endor-operations.html",
@@ -117724,17 +117779,25 @@
  },
  "https://swccg.com/snapshots/pc/2026-ryloth-regionals-cedrik-vanderhaegen-ls-legend.html": {
   "capture": "",
-  "job_id": "spn2-a3736d6b4284c9c7659c652eab58783cbe510eef",
-  "last": "2026-10-25T11:19:58Z",
-  "status": "pending",
-  "tries": 2
+  "error": "no job_id: The same snapshot had been made 249 hours, 11 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T20:31:31Z",
+  "status": "retry",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-ryloth-regionals-eric-spijksma-ds-rots-vader.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T19:51:35Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025094316/https://swccg.com/snapshots/pc/2026-ryloth-regionals-eric-spijksma-ds-rots-vader.html",
+  "last": "2026-11-04T20:23:12Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T20:23:19Z",
+   "bytes": 7121031,
+   "capture_id": "https://web.archive.org/web/20261025094316id_/https://swccg.com/snapshots/pc/2026-ryloth-regionals-eric-spijksma-ds-rots-vader.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4541020206be0358a02f0434e2e1cd63d74124dcfcf9f8234da89d05379be703"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-ryloth-regionals-eric-spijksma-ls-zero-hour.html": {
   "capture": "",
@@ -117745,10 +117808,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-ryloth-regionals-floris-de-vries-ds-tdigwatt.html": {
   "capture": "",
-  "job_id": "spn2-a65cf40eefcb350393339c2239615f43ab750e40",
-  "last": "2026-10-25T10:05:46Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T20:24:33Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-ryloth-regionals-floris-de-vries-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261025101035/https://swccg.com/snapshots/pc/2026-ryloth-regionals-floris-de-vries-ls-zero-hour.html",
@@ -117884,9 +117947,9 @@
  "https://swccg.com/snapshots/pc/2026-yavin-4-regionals-chris-westergard-ds-invasion.html": {
   "capture": "",
   "job_id": "spn2-f352287699b8293e4a9e9614ce139d25947dc250",
-  "last": "2026-10-25T10:20:20Z",
+  "last": "2026-11-04T20:31:41Z",
   "status": "pending",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-yavin-4-regionals-chris-westergard-ls-skywalker-hut.html": {
   "capture": "https://web.archive.org/web/20261025083832/https://swccg.com/snapshots/pc/2026-yavin-4-regionals-chris-westergard-ls-skywalker-hut.html",
@@ -117934,11 +117997,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2026-yavin-4-regionals-karl-koenig-ds-my-kind-of-scum.html": {
-  "capture": "",
-  "job_id": "spn2-b49790693b80c870e696c546148d5a583ee6a06d",
-  "last": "2026-10-25T10:06:49Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025100653/https://swccg.com/snapshots/pc/2026-yavin-4-regionals-karl-koenig-ds-my-kind-of-scum.html",
+  "last": "2026-11-04T20:25:26Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2026-yavin-4-regionals-karl-koenig-ls-skywalker-saga-luke.html": {
   "capture": "",
