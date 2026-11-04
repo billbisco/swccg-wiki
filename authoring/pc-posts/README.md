@@ -52,3 +52,19 @@ Fills existing empty decklist stubs (2015–2017 PC events) from the Players Com
   first Source. Unmatched shields print as text under Defensive Shield (Goldenrod, as on earlier pages); other unmatched
   lines under "Not identified". `report.txt` = card counts and calls. Starting Card red links were swapped for the
   objective's CardLink (11 pages). Page list: `wave5/changed-pages-2026-10-29.md`.
+
+## Wave 6 (audit + live PC site, 2026-11-04) — LIVE
+
+- Inventory: Wayback CDX (4,257 deck posts) + the live site's Yoast post sitemaps via FlareSolverr (8,936 posts, ~7,600 deck posts).
+  1,246 candidates (uncited or ambiguous) were fetched through the WordPress REST API (`/wp-json/wp/v2/posts?slug=…`, 15 per call).
+- `wave6/compare.py` renders each post (`render.py`, wave-5 resolver) and compares its card multiset with the player's
+  decklist pages of that year; `classify.py` = COVERED only when a page of the same event + same player has ≥85% of
+  the cards (≥70% at the same stage). Event aliases: Seattle = EGP, Boston Winter Classic = BWC, PC20, 23OCS/T8, Outrider eur/usa/III/IV.
+- Result: 970 covered, 256 missing, 20 no longer on the site. `build.py` → `split.py` → batch A (139, named from the
+  player's own page at the event, `hubrows.py` adds hub + player rows, `publish.py`) and batch B (finished by four
+  agents: 2022 / retro / 2023-26 / early, `publish_merge.py` 3-way merges hub/player edits against live).
+- Live: 223 new deck pages, 22 retro (2021 Worlds Throwback) lists corrected from the posts, 8 existing pages got the
+  deck post as a source, new hub [[2026 Retro World Championship]], Tatooine section on [[2026 Regional Championships]],
+  222 GEMP files (built from the rendered card list; `gemp_importable` now escapes quotes in titles).
+- Lessons: `parse_wiki_cards` needs an `Nx` quantity on every line (do not use it on pages with single copies);
+  GEMP titles carry subtitles the wiki drops ("BB-8 (Beebee-Ate)") → `build.gemp_xml` BASE: fallback.
