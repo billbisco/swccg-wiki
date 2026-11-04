@@ -83285,10 +83285,10 @@
  },
  "https://swccg.com/snapshots/forum/t85271.html": {
   "capture": "",
-  "job_id": "spn2-4d01cdaf40d357cb32d14d8e7d733982804927b5",
-  "last": "2026-10-25T07:15:32Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T16:22:13Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t85450.html": {
   "capture": "https://web.archive.org/web/20261012160258/https://swccg.com/snapshots/forum/t85450.html",
@@ -83360,9 +83360,10 @@
  },
  "https://swccg.com/snapshots/forum/t86302.html": {
   "capture": "https://web.archive.org/web/20261025070754/https://swccg.com/snapshots/forum/t86302.html",
-  "last": "2026-10-25T07:13:19Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T16:22:02Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t86377.html": {
   "capture": "https://web.archive.org/web/20261025070900/https://swccg.com/snapshots/forum/t86377.html",
@@ -83387,10 +83388,10 @@
  },
  "https://swccg.com/snapshots/forum/t86478.html": {
   "capture": "",
-  "job_id": "spn2-1451aa54c09ca05d0133ab1d4c5568cd0cd147c9",
-  "last": "2026-10-25T07:07:27Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T16:21:50Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t86534.html": {
   "capture": "https://web.archive.org/web/20261026204621/https://swccg.com/snapshots/forum/t86534.html",
@@ -127062,10 +127063,10 @@
  },
  "https://swccg.com/snapshots/scomp/dark-deal.html": {
   "capture": "",
-  "job_id": "spn2-90677a8bb35d3ab77135b8ea16dd34c5fcd06865",
-  "last": "2026-10-25T07:15:21Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T16:21:39Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/dark-dissension.html": {
   "capture": "https://web.archive.org/web/20261024081719/https://swccg.com/snapshots/scomp/dark-dissension.html",
@@ -128972,8 +128973,16 @@
   "capture": "https://web.archive.org/web/20261027002824/https://swccg.com/snapshots/scomp/don-t-tread-on-me-v.html",
   "last": "2026-11-04T14:14:45Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T16:22:47Z",
+   "bytes": 723451,
+   "capture_id": "https://web.archive.org/web/20261027002824id_/https://swccg.com/snapshots/scomp/don-t-tread-on-me-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "27e3bf906859de646c1c26c4955786aff3a05cb951a9cb652d43112414c8ba8c"
+  }
  },
  "https://swccg.com/snapshots/scomp/don-t-tread-on-me.html": {
   "capture": "https://web.archive.org/web/20261027104813/https://swccg.com/snapshots/scomp/don-t-tread-on-me.html",
@@ -129653,8 +129662,16 @@
   "capture": "https://web.archive.org/web/20261027002725/https://swccg.com/snapshots/scomp/echo-base-trooper-rifle.html",
   "last": "2026-11-04T14:14:58Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T16:22:39Z",
+   "bytes": 323231,
+   "capture_id": "https://web.archive.org/web/20261027002725id_/https://swccg.com/snapshots/scomp/echo-base-trooper-rifle.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "dc5c17d9285748aff8dbbc0d6c619b0d677c3c1569854ba5e373571593b55b5c"
+  }
  },
  "https://swccg.com/snapshots/scomp/echo-base-trooper-v.html": {
   "capture": "https://web.archive.org/web/20261027001302/https://swccg.com/snapshots/scomp/echo-base-trooper-v.html",
@@ -131000,10 +131017,10 @@
  },
  "https://swccg.com/snapshots/scomp/ezra-hero-of-phoenix-squadron.html": {
   "capture": "",
-  "job_id": "spn2-de80033ce4bf56eb816e46e9dfe175a163d44fb5",
-  "last": "2026-10-25T07:06:45Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T16:21:27Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/ezra-s-blaster-lightsaber.html": {
   "capture": "https://web.archive.org/web/20261024180050/https://swccg.com/snapshots/scomp/ezra-s-blaster-lightsaber.html",
@@ -137677,8 +137694,16 @@
   "capture": "https://web.archive.org/web/20261025061214/https://swccg.com/snapshots/scomp/kashyyyk-chewie-s-hut.html",
   "last": "2026-11-04T14:15:15Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T16:22:30Z",
+   "bytes": 665331,
+   "capture_id": "https://web.archive.org/web/20261025061214id_/https://swccg.com/snapshots/scomp/kashyyyk-chewie-s-hut.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "b877ac886795084d23c3d820afdcffcbf407e183618510f3c9b89a07acd05b38"
+  }
  },
  "https://swccg.com/snapshots/scomp/kashyyyk-forest-depths.html": {
   "capture": "https://web.archive.org/web/20261024190924/https://swccg.com/snapshots/scomp/kashyyyk-forest-depths.html",
