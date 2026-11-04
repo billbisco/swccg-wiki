@@ -119658,10 +119658,10 @@
  },
  "https://swccg.com/snapshots/scomp/ap-lek.html": {
   "capture": "",
-  "job_id": "spn2-99e0884f25426666d5ba06108d9b2a8b947c0a26",
-  "last": "2026-10-25T04:53:19Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T13:00:43Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/apology-accepted-v.html": {
   "capture": "https://web.archive.org/web/20261026224618/https://swccg.com/snapshots/scomp/apology-accepted-v.html",
@@ -120788,11 +120788,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/bespin-cloud-city.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 248 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-11-04T12:29:20Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025042640/https://swccg.com/snapshots/scomp/bespin-cloud-city.html",
+  "last": "2026-11-04T13:00:08Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/bespin-motors-void-spider-thx-1138.html": {
   "capture": "https://web.archive.org/web/20261024173546/https://swccg.com/snapshots/scomp/bespin-motors-void-spider-thx-1138.html",
@@ -121141,11 +121141,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/blastech-e-11b-blaster-rifle.html": {
-  "capture": "https://web.archive.org/web/20261025035419/https://swccg.com/snapshots/scomp/blastech-e-11b-blaster-rifle.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T12:22:23Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261027000346/https://swccg.com/snapshots/scomp/blastech-e-11b-blaster-rifle.html",
+  "last": "2026-11-04T12:58:35Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/blasted-droid.html": {
   "capture": "https://web.archive.org/web/20261026221120/https://swccg.com/snapshots/scomp/blasted-droid.html",
@@ -122307,11 +122307,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/captain-han-solo.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104125326/https://swccg.com/snapshots/scomp/captain-han-solo.html",
   "job_id": "spn2-41aca33274a5904dfc800f58d029c975a3870390",
-  "last": "2026-11-04T12:53:23Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-11-04T12:57:46Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T12:57:46Z",
+   "bytes": 168017,
+   "capture_id": "https://web.archive.org/web/20261104125326id_/https://swccg.com/snapshots/scomp/captain-han-solo.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "b4f1cc1f137a176762a5d507b99d97463c6c43b529df022cbfea523ea70cfaf6"
+  }
  },
  "https://swccg.com/snapshots/scomp/captain-hera-syndulla-ai.html": {
   "capture": "https://web.archive.org/web/20261024230835/https://swccg.com/snapshots/scomp/captain-hera-syndulla-ai.html",
@@ -122401,10 +122409,10 @@
  },
  "https://swccg.com/snapshots/scomp/captain-mod-terrik.html": {
   "capture": "",
-  "job_id": "spn2-2c4f45bed1b9b829cb2103602890b14499b8b334",
-  "last": "2026-10-25T04:53:32Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T13:00:56Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/captain-moden-canady.html": {
   "capture": "https://web.archive.org/web/20261026213841/https://swccg.com/snapshots/scomp/captain-moden-canady.html",
@@ -122510,11 +122518,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/captain-rex-501st-legion-ai.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104130114/https://swccg.com/snapshots/scomp/captain-rex-501st-legion-ai.html",
   "job_id": "spn2-aa2b4672ee8ab0d96f83940ab32df7fc0332edc3",
-  "last": "2026-10-25T05:43:18Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-11-04T13:01:34Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T13:01:34Z",
+   "bytes": 302678,
+   "capture_id": "https://web.archive.org/web/20261104130114id_/https://swccg.com/snapshots/scomp/captain-rex-501st-legion-ai.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "84921da4a3b496a49807520f8b173a087d70263430de61b5b86bb114e4473b01"
+  }
  },
  "https://swccg.com/snapshots/scomp/captain-rex-501st-legion-holo-ai.html": {
   "capture": "",
@@ -123690,10 +123706,10 @@
  },
  "https://swccg.com/snapshots/scomp/chewie-s-at-st.html": {
   "capture": "",
-  "job_id": "spn2-1d40a8216d9e45a3c93338c3b489db693f029bb2",
-  "last": "2026-10-25T04:54:14Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T13:01:18Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/chewie-v.html": {
   "capture": "https://web.archive.org/web/20261024084350/https://swccg.com/snapshots/scomp/chewie-v.html",
@@ -124638,11 +124654,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/combat-response.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T12:28:51Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025042618/https://swccg.com/snapshots/scomp/combat-response.html",
+  "last": "2026-11-04T12:59:53Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/combined-fleet-action.html": {
   "capture": "https://web.archive.org/web/20261024020810/https://swccg.com/snapshots/scomp/combined-fleet-action.html",
@@ -124674,11 +124690,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/comlink.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T12:27:13Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025042434/https://swccg.com/snapshots/scomp/comlink.html",
+  "last": "2026-11-04T12:59:38Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T12:59:41Z",
+   "bytes": 165349,
+   "capture_id": "https://web.archive.org/web/20261025042434id_/https://swccg.com/snapshots/scomp/comlink.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "41a49c3753df9b332b1948cebb24f2fed61e4c3e0195baeb5bd0ee9b0c506e3c"
+  }
  },
  "https://swccg.com/snapshots/scomp/comm-chief.html": {
   "capture": "https://web.archive.org/web/20261024072004/https://swccg.com/snapshots/scomp/comm-chief.html",
@@ -124782,10 +124806,10 @@
  },
  "https://swccg.com/snapshots/scomp/commander-luke-skywalker.html": {
   "capture": "",
-  "job_id": "spn2-b5ab4cc13ef2609d5445424c9e19e91056ac946b",
-  "last": "2026-10-25T05:01:05Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 247 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T13:01:07Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/commander-merrejk.html": {
   "capture": "https://web.archive.org/web/20261023224505/https://swccg.com/snapshots/scomp/commander-merrejk.html",
@@ -125055,9 +125079,17 @@
  },
  "https://swccg.com/snapshots/scomp/concussion-missiles.html": {
   "capture": "https://web.archive.org/web/20261104123854/https://swccg.com/snapshots/scomp/concussion-missiles.html",
-  "last": "2026-11-04T12:41:21Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-11-04T12:57:47Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T12:57:53Z",
+   "bytes": 164562,
+   "capture_id": "https://web.archive.org/web/20261104123854id_/https://swccg.com/snapshots/scomp/concussion-missiles.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f50b5689c2f24c441a2491e15d2699fc5054728753b45f4249c1a401066118a5"
+  }
  },
  "https://swccg.com/snapshots/scomp/conduct-your-search.html": {
   "capture": "https://web.archive.org/web/20261024195427/https://swccg.com/snapshots/scomp/conduct-your-search.html",
@@ -125763,11 +125795,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/coruscant-the-works.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T12:23:36Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025041447/https://swccg.com/snapshots/scomp/coruscant-the-works.html",
+  "last": "2026-11-04T12:59:10Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T12:59:14Z",
+   "bytes": 164585,
+   "capture_id": "https://web.archive.org/web/20261025041447id_/https://swccg.com/snapshots/scomp/coruscant-the-works.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "fa28475115b52cd11fcab5af9f8d905f8d86f9f6ab983d8cac73c0c7b792faa7"
+  }
  },
  "https://swccg.com/snapshots/scomp/coruscant-v-ai.html": {
   "capture": "https://web.archive.org/web/20261025050729/https://swccg.com/snapshots/scomp/coruscant-v-ai.html",
@@ -127366,10 +127406,10 @@
  },
  "https://swccg.com/snapshots/scomp/death-star-plans.html": {
   "capture": "",
-  "job_id": "spn2-2f918fcfa636ebf85f166fa22bc144d57f6af84d",
-  "last": "2026-10-25T04:53:08Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T13:00:31Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/death-star-reactor-terminal.html": {
   "capture": "",
@@ -130112,11 +130152,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/executor-docking-bay.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 248 hours, 22 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:23:08Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261025040020/https://swccg.com/snapshots/scomp/executor-docking-bay.html",
+  "last": "2026-11-04T12:58:58Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/executor-holotheatre.html": {
   "capture": "https://web.archive.org/web/20261024200722/https://swccg.com/snapshots/scomp/executor-holotheatre.html",
@@ -132700,11 +132740,19 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/scomp/he-hasn-t-come-back-yet.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T12:20:28Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261025035006/https://swccg.com/snapshots/scomp/he-hasn-t-come-back-yet.html",
+  "last": "2026-11-04T12:58:05Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-04T12:58:09Z",
+   "bytes": 232453,
+   "capture_id": "https://web.archive.org/web/20261025035006id_/https://swccg.com/snapshots/scomp/he-hasn-t-come-back-yet.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d8968fd91c90dc98bdbe3aed1a18defbce8692b692cd1c27ae6917edb3002c45"
+  }
  },
  "https://swccg.com/snapshots/scomp/he-is-not-ready.html": {
   "capture": "https://web.archive.org/web/20261024211422/https://swccg.com/snapshots/scomp/he-is-not-ready.html",
@@ -135542,11 +135590,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/jabba-s-sail-barge-v.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T12:21:59Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261025035857/https://swccg.com/snapshots/scomp/jabba-s-sail-barge-v.html",
+  "last": "2026-11-04T12:58:21Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/jabba-s-sail-barge.html": {
   "capture": "https://web.archive.org/web/20261024025706/https://swccg.com/snapshots/scomp/jabba-s-sail-barge.html",
@@ -136133,11 +136181,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/jodo-kast.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 248 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-11-04T12:24:58Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025041631/https://swccg.com/snapshots/scomp/jodo-kast.html",
+  "last": "2026-11-04T12:59:25Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/joh-yowza.html": {
   "capture": "https://web.archive.org/web/20261025062942/https://swccg.com/snapshots/scomp/joh-yowza.html",
@@ -137469,10 +137517,10 @@
  },
  "https://swccg.com/snapshots/scomp/leia-rebel-princess.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 248 hours, 23 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:22:57Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T12:58:47Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/leia-s-back.html": {
   "capture": "https://web.archive.org/web/20261025065753/https://swccg.com/snapshots/scomp/leia-s-back.html",
