@@ -83696,10 +83696,10 @@
  },
  "https://swccg.com/snapshots/pc/100card.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:58:44Z",
+  "error": "no job_id: The same snapshot had been made 251 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T22:30:43Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2007-decklists.html": {
   "capture": "https://web.archive.org/web/20261013152327/https://swccg.com/snapshots/pc/2007-decklists.html",
@@ -86872,11 +86872,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104222433/https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html",
   "job_id": "spn2-280cc9ffd201c8c038abee5d70348242cc2d95cd",
-  "last": "2026-11-04T22:24:19Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T22:30:09Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-04T22:30:09Z",
+   "bytes": 7121480,
+   "capture_id": "https://web.archive.org/web/20261104222433id_/https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7866c9f9fb109e7f25354757194539704fe416ccdebb7c5ab4e95b1227c49690"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103232447/https://swccg.com/snapshots/pc/2019-nac-day-1-greg-nirshberg-ds-invasion.html?copy=2",
@@ -107474,9 +107482,17 @@
  },
  "https://swccg.com/snapshots/pc/2023-yavin-4-regionals-tommy-santosuosso-ds-tto.html": {
   "capture": "https://web.archive.org/web/20261104220944/https://swccg.com/snapshots/pc/2023-yavin-4-regionals-tommy-santosuosso-ds-tto.html",
-  "last": "2026-11-04T22:16:21Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-11-04T22:30:13Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T22:30:19Z",
+   "bytes": 7122004,
+   "capture_id": "https://web.archive.org/web/20261104220944id_/https://swccg.com/snapshots/pc/2023-yavin-4-regionals-tommy-santosuosso-ds-tto.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "fd58bc79d253dd2832c6e118660cdb68f0cf8a8717ce08b3f3f34575212f4765"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-yavin-4-regionals-tommy-santosuosso-ls-communing-obi-wan.html": {
   "capture": "https://web.archive.org/web/20261025112643/https://swccg.com/snapshots/pc/2023-yavin-4-regionals-tommy-santosuosso-ls-communing-obi-wan.html",
@@ -108858,9 +108874,9 @@
  "https://swccg.com/snapshots/pc/2024-endor-regionals-chris-wirfs-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261025115435/https://swccg.com/snapshots/pc/2024-endor-regionals-chris-wirfs-ls-qmc.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:52:41Z",
+  "last": "2026-11-04T22:31:03Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-endor-regionals-jack-douglass-ds-hunt-down-v.html": {
   "capture": "https://web.archive.org/web/20261025083422/https://swccg.com/snapshots/pc/2024-endor-regionals-jack-douglass-ds-hunt-down-v.html",
@@ -109948,9 +109964,9 @@
  "https://swccg.com/snapshots/pc/2024-naboo-regionals-adam-bott-ls-ebo.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:59:33Z",
+  "last": "2026-11-04T22:30:53Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2024-naboo-regionals-angelo-consoli-ds-rots-maul.html": {
   "capture": "https://web.archive.org/web/20261025073214/https://swccg.com/snapshots/pc/2024-naboo-regionals-angelo-consoli-ds-rots-maul.html",
@@ -111932,9 +111948,9 @@
  "https://swccg.com/snapshots/pc/2024-toola-regionals-bjorn-palmqvist-ls-tigih.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:57:42Z",
+  "last": "2026-11-04T22:30:32Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-casper-jorgensen-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261025100725/https://swccg.com/snapshots/pc/2024-toola-regionals-casper-jorgensen-ds-shadow-collective.html",
@@ -112160,9 +112176,8 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-yavin-4-regionals-david-woods-ds-imperial-entanglements.html": {
-  "capture": "",
-  "job_id": "spn2-715c4c9cedd54246e6bcde2ffaa4ad8e36da644c",
-  "last": "2026-11-04T22:11:21Z",
+  "capture": "https://web.archive.org/web/20261104221325/https://swccg.com/snapshots/pc/2024-yavin-4-regionals-david-woods-ds-imperial-entanglements.html",
+  "last": "2026-11-04T22:30:20Z",
   "status": "pending",
   "tries": 1
  },
@@ -115065,9 +115080,9 @@
  "https://swccg.com/snapshots/pc/2025-world-championship-jordan-gosiaco-ls-whap.html": {
   "capture": "https://web.archive.org/web/20261025102325/https://swccg.com/snapshots/pc/2025-world-championship-jordan-gosiaco-ls-whap.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:56:05Z",
+  "last": "2026-11-04T22:30:22Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2025-world-championship-matt-thornton-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261104171120/https://swccg.com/snapshots/pc/2025-world-championship-matt-thornton-ds-sycfa.html",
