@@ -107966,10 +107966,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-bespin-regionals-larry-nava-ds-thrawn.html": {
   "capture": "",
-  "job_id": "spn2-51bbfd27d9c3f76f03aaa108e5c95483df376b3c",
-  "last": "2026-10-25T12:12:38Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 249 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:03:29Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-bespin-regionals-mark-walseth-ds-isb.html": {
   "capture": "https://web.archive.org/web/20261025092616/https://swccg.com/snapshots/pc/2024-bespin-regionals-mark-walseth-ds-isb.html",
@@ -109523,10 +109523,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-angelo-consoli-ds-rots-maul.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:31:53Z",
+  "error": "no job_id: The same snapshot had been made 251 hours, 27 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:03:06Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-angelo-consoli-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261025095433/https://swccg.com/snapshots/pc/2024-ithor-regionals-angelo-consoli-ls-diplo.html",
@@ -110966,10 +110966,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-angelo-consoli-ls-diplo.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:31:20Z",
+  "error": "no job_id: The same snapshot had been made 251 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:02:43Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-cedrik-vanderhaegen-ds-hunt-down.html": {
   "capture": "https://web.archive.org/web/20261025093758/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-cedrik-vanderhaegen-ds-hunt-down.html",
@@ -111024,10 +111024,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-eric-spijksma-ls-clones.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:33:01Z",
+  "error": "no job_id: The same snapshot had been made 251 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:03:17Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-jeroen-wauters-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261025084737/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-jeroen-wauters-ds-aobs.html",
@@ -111126,8 +111126,16 @@
   "capture": "https://web.archive.org/web/20261025120121/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-quirin-furgut-ls-hitco.html",
   "last": "2026-11-04T21:59:45Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T22:03:59Z",
+   "bytes": 7121783,
+   "capture_id": "https://web.archive.org/web/20261025120121id_/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-quirin-furgut-ls-hitco.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c47afa05d6b8ade8fcbc7c8edc9b4950083b12c9c6ffc0a0ebcec2c15b51a1e8"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-tamas-papp-ds-isb.html": {
   "capture": "https://web.archive.org/web/20261104175108/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-tamas-papp-ds-isb.html",
@@ -114874,10 +114882,10 @@
  },
  "https://swccg.com/snapshots/pc/2025-tatooine-regionals-mark-billings-ls-mwyhlv.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T21:31:31Z",
+  "error": "no job_id: The same snapshot had been made 251 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:02:55Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2025-tatooine-regionals-paul-coggins-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261025095117/https://swccg.com/snapshots/pc/2025-tatooine-regionals-paul-coggins-ds-first-order-reigns.html",
@@ -115667,8 +115675,16 @@
   "capture": "https://web.archive.org/web/20261025120133/https://swccg.com/snapshots/pc/2026-european-championship-angelo-consoli-ls-diplo.html",
   "last": "2026-11-04T21:59:59Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T22:03:48Z",
+   "bytes": 7121217,
+   "capture_id": "https://web.archive.org/web/20261025120133id_/https://swccg.com/snapshots/pc/2026-european-championship-angelo-consoli-ls-diplo.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "733b13ffc38ba30e23c18fd3234696117e0516226b31dbc344f6c58d0a1b3cbb"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-bill-kafer-ds-verge.html": {
   "capture": "https://web.archive.org/web/20261025115132/https://swccg.com/snapshots/pc/2026-european-championship-bill-kafer-ds-verge.html",
