@@ -1,0 +1,34 @@
+[[File:Holotable Numbers specimen.png|thumb|right|320px|Holotable Numbers and the Akzidenz-Grotesk faces it replaces.]]
+'''Holotable Numbers''' is the free typeface family for the numbers on [[Players Committee]] virtual cards remastered by the swccg-cardmaker program: destiny, stat values (power, ability and the like), parsec and slip numbers in the Extended style, and the bottom-strip card number in Bold Italic.<ref name="folder" /> It is a modified version of TeX Gyre Heros, distributed under the GUST Font License.<ref name="license" /> It replaced the commercial Akzidenz-Grotesk Medium Extended and a digit subset of Akzidenz-Grotesk BE Bold Italic in swccg-cardmaker revision&nbsp;65 on 3&nbsp;November 2026.<ref name="fonts" />
+
+== How it was made ==
+* '''Base.''' TeX Gyre Heros Bold and Bold Italic. Of the free fonts compared (Archivo, Encode Sans, Barlow, Montserrat and TeX Gyre Heros), Heros' digits came closest in shape to the faces the Players Committee used. Heros is a Helvetica-style grotesque.<ref name="fontlog" /><ref name="gyre" />
+* '''Proportions.''' The Extended style is Heros Bold widened by 47&nbsp;percent. Both styles are scaled so the flat-topped digits (1, 4 and 7) have the height the card templates assume and sit on the baseline, with the same digit spacing as before.<ref name="fontlog" />
+* '''Tried and not used.''' The Extended digits were also redrawn from the Players Committee's own destiny numbers. Each was averaged from every virtual card with that single-digit destiny, between 6 and 240 copies per digit, and traced. Those digits matched the card images somewhat better, but at the program's 600&nbsp;DPI drawing size their outlines were lumpy, or rounded when smoothed. Heros' crisp drawn digits were kept.<ref name="fontlog" />
+* '''Build.''' The TeX Gyre Heros sources and the build script are published beside the fonts and rebuild them byte for byte.<ref name="folder" />
+
+== How close it is ==
+On 24 reference cards rebuilt by swccg-cardmaker, destiny numbers and stat values land where they did with Akzidenz-Grotesk Medium Extended. The destiny number's pixel difference from the Players Committee's card image averages 21.1 (median 20.0), against 18.9 with Akzidenz-Grotesk. Stat values are unchanged (40.1 against 40.2).<ref name="fontlog" /> On ten Players Committee system cards, one for each parsec from 0 to 9, the parsec number matches in position, width and height to the pixel.<ref name="standard" />
+
+== Where it falls short ==
+* The digits are Heros' Helvetica-style design, not Akzidenz-Grotesk's. The 2, 4 and 7 differ most.<ref name="fontlog" />
+* The widened Extended strokes are about 6&nbsp;percent heavier than Akzidenz-Grotesk Medium Extended's.<ref name="fontlog" />
+
+== See also ==
+* [[Holotable Title]]
+* [[Holotable Text]]
+* [[Typography of Star Wars CCG cards]]
+
+{{#if:1|<nowiki />
+<h2>References</h2>
+<references>
+<ref name="folder">[https://github.com/billbisco/swccg-cardmaker/tree/eafb246312e862da097dbd19f71aa03905072c3f/assets/fonts/HolotableNumbers Holotable Numbers], swccg-cardmaker on GitHub (revision 67): the fonts, licence, FONTLOG, sources and build script. Preserved copy: [https://web.archive.org/web/20261104022135/https://github.com/billbisco/swccg-cardmaker/tree/eafb246312e862da097dbd19f71aa03905072c3f/assets/fonts/HolotableNumbers Internet Archive].</ref>
+<ref name="fontlog">[https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/assets/fonts/HolotableNumbers/FONTLOG.txt FONTLOG for Holotable Numbers], swccg-cardmaker on GitHub (3 November 2026). Preserved copy: [https://web.archive.org/web/20261104021745/https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/assets/fonts/HolotableNumbers/FONTLOG.txt Internet Archive].</ref>
+<ref name="license">[https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/assets/fonts/HolotableNumbers/LICENSE.txt Holotable Numbers licence], swccg-cardmaker on GitHub: GUST Font License (LaTeX Project Public License 1.3c). Preserved copy: [https://web.archive.org/web/20261104021755/https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/assets/fonts/HolotableNumbers/LICENSE.txt Internet Archive].</ref>
+<ref name="gyre">[https://www.gust.org.pl/projects/e-foundry/tex-gyre TeX Gyre], GUST e-foundry. Preserved copy: [https://web.archive.org/web/20261023023825/https://www.gust.org.pl/projects/e-foundry/tex-gyre Internet Archive].</ref>
+<ref name="standard">[https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/STANDARD.md Original Virtual card remaster standard], swccg-cardmaker on GitHub, revision 67 (3 November 2026). Preserved copy: [https://web.archive.org/web/20261104022154/https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/STANDARD.md Internet Archive].</ref>
+<ref name="fonts">[https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/FONTS.md Fonts], swccg-cardmaker on GitHub (revision 67, 3 November 2026). Preserved copy: [https://web.archive.org/web/20261104022148/https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/FONTS.md Internet Archive].</ref>
+</references>}}
+
+[[Category:Meta]]
+[[Category:Card production]]

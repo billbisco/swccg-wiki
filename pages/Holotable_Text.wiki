@@ -1,0 +1,54 @@
+[[File:Holotable Text specimen.png|thumb|right|320px|Holotable Text and Akzidenz-Grotesk, the faces it replaces.]]
+'''Holotable Text''' is the free typeface family that sets the lore, game text, stat labels, type banners and copyright line of [[Players Committee]] virtual cards remastered by the swccg-cardmaker program.<ref name="folder" /> It is a modified version of Barlow Condensed, released like it under the SIL Open Font License&nbsp;1.1.<ref name="fontlog" /><ref name="ofl" /> It replaced the commercial Akzidenz-Grotesk BQ Light, BQ and BQ Bold Condensed in swccg-cardmaker revision&nbsp;64 on 3&nbsp;November 2026.<ref name="fonts" />
+
+== Background ==
+Decipher and the Players Committee set lore and game text in Akzidenz-Grotesk condensed faces, a Berthold design (see [[Typography of Star Wars CCG cards]]). The Players Committee's Defensive Shields sheet embeds AkzidenzGroteskBE-Cn and -BoldCn.<ref name="ds" /> Holotable Text keeps the sizes, line positions and line breaks those faces give on the cards, with letter shapes from a free font.<ref name="fontlog" />
+
+== How it was made ==
+* '''Base.''' Barlow Condensed, a free condensed grotesque designed by Jeremy Tribby.<ref name="fontlog" /><ref name="barlow" />
+* '''Weights.''' Each style starts from the Barlow Condensed weight whose strokes match the face it replaces once narrowed: Light from Light (lore), Regular from Medium (game text), Bold from SemiBold (labels).<ref name="fontlog" />
+* '''Proportions.''' Each weight was narrowed (to 80, 87 and 96&nbsp;percent) and rescaled to the cap height the card templates assume. Capitals, lowercase, digits, punctuation and the word space were then adjusted as groups so real card text sets to the same widths. Single letters keep Barlow's own widths.<ref name="fontlog" />
+* '''Lines.''' Line metrics match the replaced faces, so text sits on the same baselines.<ref name="fontlog" />
+* '''Build.''' The fonts are built with fontTools. The Barlow sources and the build script are published beside the fonts and rebuild them byte for byte.<ref name="folder" />
+
+== How close it is ==
+[[File:Holotable Text vs PC and Akzidenz-Grotesk.png|thumb|right|400px|Game text on four cards: Players Committee, Akzidenz-Grotesk and Holotable Text.]]
+On 24 reference cards rebuilt by swccg-cardmaker and compared with the Players Committee's images, lore, game text, banners, stat labels and the copyright line land in the same places as with Akzidenz-Grotesk, and lines break in the same places.<ref name="fontlog" />
+{| class="wikitable"
+! Element !! Pixel difference with Akzidenz-Grotesk !! With Holotable Text
+|-
+| Copyright line || 34.0 || 30.3
+|-
+| Stat labels || 40.3 || 40.2
+|-
+| Type banners || 16.0 || 16.0
+|-
+| Game text || 45.5 || 45.8
+|-
+| Lore || 20.0 || 21.4
+|}
+Medians over the reference cards, on a 0–255 scale, against the Players Committee's 745-pixel card images.<ref name="fontlog" />
+
+== Where it falls short ==
+* Barlow is a squarer, DIN-like grotesque. Its curves and stroke ends are not Akzidenz-Grotesk's, and its g, y, parentheses and quotes differ visibly at large sizes.<ref name="fontlog" />
+* Its descenders are a little longer, so they come closer to the next line of game text.<ref name="fontlog" />
+* Lore matches the Players Committee's images a little less closely than with Akzidenz-Grotesk (21.4 against 20.0).<ref name="fontlog" />
+
+== See also ==
+* [[Holotable Title]]
+* [[Holotable Numbers]]
+* [[Typography of Star Wars CCG cards]]
+
+{{#if:1|<nowiki />
+<h2>References</h2>
+<references>
+<ref name="folder">[https://github.com/billbisco/swccg-cardmaker/tree/c6e3b8b2e11e9e8f2000872b4781ad9c5e6c6d9b/assets/fonts/HolotableText Holotable Text], swccg-cardmaker on GitHub (revision 66): the fonts, licence, FONTLOG, sources and build script. Preserved copy: [https://web.archive.org/web/20261104022255/https://github.com/billbisco/swccg-cardmaker/tree/c6e3b8b2e11e9e8f2000872b4781ad9c5e6c6d9b/assets/fonts/HolotableText Internet Archive].</ref>
+<ref name="fontlog">[https://github.com/billbisco/swccg-cardmaker/blob/c6e3b8b2e11e9e8f2000872b4781ad9c5e6c6d9b/assets/fonts/HolotableText/FONTLOG.txt FONTLOG for Holotable Text], swccg-cardmaker on GitHub (3 November 2026). Preserved copy: [https://web.archive.org/web/20261104021922/https://github.com/billbisco/swccg-cardmaker/blob/c6e3b8b2e11e9e8f2000872b4781ad9c5e6c6d9b/assets/fonts/HolotableText/FONTLOG.txt Internet Archive].</ref>
+<ref name="fonts">[https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/FONTS.md Fonts], swccg-cardmaker on GitHub (revision 67, 3 November 2026). Preserved copy: [https://web.archive.org/web/20261104022148/https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/FONTS.md Internet Archive].</ref>
+<ref name="ofl">[https://openfontlicense.org/ SIL Open Font License], SIL International. Preserved copy: [https://web.archive.org/web/20261102233044/https://openfontlicense.org/ Internet Archive].</ref>
+<ref name="barlow">[https://github.com/jpt/barlow Barlow], GitHub. Preserved copy: [https://web.archive.org/web/20261104022334/https://github.com/jpt/barlow Internet Archive].</ref>
+<ref name="ds">[http://www.swccgpc.com/Resources/DefensiveShields.pdf Defensive Shields], Players Committee (PDF; the embedded fonts list ATFiorello-Condensed, AkzidenzGroteskBE-Cn, AkzidenzGroteskBE-BoldCn, AkzidenzGroteskBE-BoldIt and Arial Narrow). Preserved copy: [https://web.archive.org/web/20071028141121/http://www.swccgpc.com/Resources/DefensiveShields.pdf Internet Archive].</ref>
+</references>}}
+
+[[Category:Meta]]
+[[Category:Card production]]

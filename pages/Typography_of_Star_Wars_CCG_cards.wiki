@@ -1,11 +1,11 @@
 {{Hatnote|1=Working documentation of the typefaces on Star Wars CCG cards. Started 2026-10-12 by Holocron Claude from Bardez's template notes and measurements of printed cards, PC Holotable images and the PC Remaster slip sheets. Nothing here is an official Decipher or Players Committee statement; corrections welcome.}}
-The typefaces of the Star Wars CCG were never documented by Decipher. Known identifications come from the printed cards, the [[Players Committee]]'s Holotable card images and the font notes [[Bardez]] made for his 600&nbsp;DPI card templates (2021, see [[Making Custom SWCCG Cards]]). The Holotable images re-typeset the virtual sets in the same faces. The open-source [https://github.com/billbisco/swccg-cardmaker swccg-cardmaker]<ref>[https://github.com/billbisco/swccg-cardmaker swccg-cardmaker]. Preserved copy: [https://web.archive.org/web/20261021023413/https://github.com/billbisco/swccg-cardmaker Internet Archive].</ref> program behind the [[Original Virtual Set 3 remaster review|Original Virtual Set remasters]] follows these faces.
+The typefaces of the Star Wars CCG were never documented by Decipher. Known identifications come from the printed cards, the [[Players Committee]]'s Holotable card images and the font notes [[Bardez]] made for his 600&nbsp;DPI card templates (2021, see [[Making Custom SWCCG Cards]]). The Holotable images re-typeset the virtual sets in the same faces. The open-source [https://github.com/billbisco/swccg-cardmaker swccg-cardmaker]<ref>[https://github.com/billbisco/swccg-cardmaker swccg-cardmaker]. Preserved copy: [https://web.archive.org/web/20261021023413/https://github.com/billbisco/swccg-cardmaker Internet Archive].</ref> program behind the [[Original Virtual Set 3 remaster review|Original Virtual Set remasters]] follows these faces; [[#Faces in swccg-cardmaker|its own font files]] are listed below.
 
 == The faces ==
 {| class="wikitable"
 ! Element !! Typeface !! Notes
 |-
-| Card title || Fiorello CG Condensed || Decipher 1995–2001 and the PC alike. Also used for the deploy and forfeit numbers in the small boxes left of the game text.
+| Card title || Fiorello Condensed (AT/PL Fiorello Condensed) || Decipher 1995–2001 and the PC alike; the PC's Defensive Shields sheet embeds it as ''ATFiorello-Condensed''.<ref name="ds">[http://www.swccgpc.com/Resources/DefensiveShields.pdf Defensive Shields], Players Committee (PDF; the embedded fonts list ATFiorello-Condensed, AkzidenzGroteskBE-Cn, AkzidenzGroteskBE-BoldCn, AkzidenzGroteskBE-BoldIt and Arial Narrow). Preserved copy: [https://web.archive.org/web/20071028141121/http://www.swccgpc.com/Resources/DefensiveShields.pdf Internet Archive].</ref> Bardez's template pack has the digital copy Fiorello CG Condensed. Also used for the deploy and forfeit numbers in the small boxes left of the game text.
 |-
 | Lore || Akzidenz-Grotesk BQ Light Condensed || Left-aligned, first line indented, on every printed card checked (Premiere–Endor). Bold is used for a characteristic word in lore (e.g. ''leader'', ''smuggler'', ''spy'').
 |-
@@ -33,7 +33,29 @@ The Holotable image (745×1039) is the 600&nbsp;DPI card at half scale.
 * The PC's Holotable game text is larger than the text on the 2006 Remaster slip sheets, which were sized to fit a printed sleeve insert. The remaster program follows the Holotable size.
 * Special Edition and later sets changed the © line wording ("© LUCASFILM LTD. & TM. TM, ® & © 1998 DECIPHER INC.") but not the face.
 
+== Faces in swccg-cardmaker ==
+The remaster program ships only free fonts: anyone may use, copy, modify and redistribute them with its code. Each stands in for one of the faces above, fitted to the PC's own cards.<ref name="fonts">[https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/FONTS.md Fonts], swccg-cardmaker on GitHub (revision 67, 3 November 2026). Preserved copy: [https://web.archive.org/web/20261104022148/https://github.com/billbisco/swccg-cardmaker/blob/eafb246312e862da097dbd19f71aa03905072c3f/FONTS.md Internet Archive].</ref>
+{| class="wikitable"
+! Element !! Font in swccg-cardmaker !! Made from !! Licence
+|-
+| Card title, deploy and forfeit numbers, bottom-strip bullet || [[Holotable Title]] || Traced from the PC's card titles || SIL Open Font License 1.1
+|-
+| Lore || [[Holotable Text]] Light || Barlow Condensed Light || SIL Open Font License 1.1
+|-
+| Game text || [[Holotable Text]] Regular || Barlow Condensed Medium || SIL Open Font License 1.1
+|-
+| Stat labels, type banners, © line || [[Holotable Text]] Bold || Barlow Condensed SemiBold || SIL Open Font License 1.1
+|-
+| Destiny, stat values, parsec, slip numbers || [[Holotable Numbers]] Extended || TeX Gyre Heros Bold, digits traced from the PC's destiny numbers || GUST Font License (LPPL 1.3c)
+|-
+| Bottom-strip card number || [[Holotable Numbers]] Bold Italic || TeX Gyre Heros Bold Italic || GUST Font License (LPPL 1.3c)
+|-
+| Bottom-strip caption || Liberation Sans Narrow Bold (metric twin of the PC's Arial Narrow Bold) || — || GNU GPL v2 with the font exception
+|}
+Until 3 November 2026 the program used commercial copies of the original faces from Bardez's template pack: Fiorello CG Condensed, Akzidenz-Grotesk and Craft Gothic.<ref name="fonts" />
+
 == See also ==
+* [[Holotable Title]], [[Holotable Text]], [[Holotable Numbers]] — the remaster program's own fonts
 * [[Making Custom SWCCG Cards]] — Bardez's templates and font notes
 * [[Original Virtual Set 3 remaster review]]
 * [[Bardez]], [[Players Committee]]
@@ -41,3 +63,6 @@ The Holotable image (745×1039) is the 600&nbsp;DPI card at half scale.
 {{#if:1|<nowiki />
 <h2>References</h2>
 <references />}}
+
+[[Category:Meta]]
+[[Category:Card production]]

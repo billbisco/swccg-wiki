@@ -1,4 +1,4 @@
-'''Formats''' are the card pools and deck rules that Star Wars CCG games and tournaments are played under. This page lists every format the wiki documents, where each one comes from, and how many recorded tournaments used it. Each format has its own page with its card pool, history and tournaments. What "format" and "constructed" meant to Decipher and the Players Committee over the years is told in [[History of Star Wars CCG formats]].
+'''Formats''' are the card pools and deck rules that Star Wars CCG games and tournaments are played under. Every format the wiki documents is listed with where it comes from and how many recorded tournaments used it. Each format has its own page with its card pool, history and tournaments. What "format" and "constructed" meant to Decipher and the Players Committee over the years is told in [[History of Star Wars CCG formats]].
 
 == How to read this page ==
 
@@ -77,11 +77,11 @@ Sort by any column. ''Decipher'' and ''PC'' mark who defined or ran the format; 
 |-
 | [[Open]] || constructed || PC championship || Decipher cards plus current Virtual Sets and Defensive Shields || 2014 – ||  || ✓ || Open || Open || <code>open</code> || 27
 |-
-| [[Open (40 cards)]] || constructed || PC alternate || the Open pool, 40-card decks ||  ||  || ✓ || Open (40 cards) || Open (40 cards) || <code>open40card</code> || 
+| [[Open (40 cards)]] || constructed || PC alternate || the Open pool, 40-card decks ||  ||  || ✓ || Open (40 cards) || Open, deck size 40 || <code>open40card</code> || 
 |-
-| [[Open (45 cards)]] || constructed || PC alternate || the Open pool, 45-card decks ||  ||  || ✓ || Open (45 cards) || Open (45 cards) || <code>open_45_card</code> || 
+| [[Open (45 cards)]] || constructed || PC alternate || the Open pool, 45-card decks ||  ||  || ✓ || Open (45 cards) || Open, deck size 45 || <code>open_45_card</code> || 
 |-
-| [[Open (100 cards)]] || constructed || PC alternate || the Open pool, 100-card decks ||  ||  || ✓ || Open (100 cards) || Open (100 cards) || <code>open_100_card</code> || 
+| [[Open (100 cards)]] || constructed || PC alternate || the Open pool, 100-card decks ||  ||  || ✓ || Open (100 cards) || Open, deck size 100 || <code>open_100_card</code> || 
 |-
 | [[Open (no shields)]] || constructed || PC alternate || the Open pool without Defensive Shields ||  ||  || ✓ || Open (no shields) || Open (no shields) || <code>open_no_shields</code> || 
 |-
@@ -365,6 +365,7 @@ The PC's ''Alternate Format Tournament Guide'' and its formats pages define thes
 === Differences from the Players Committee GEMP ===
 The format list on play.swccg.com (billbisco/swccg-gemp, commit 16168b26) has 51 formats. The Players Committee format list (PlayersCommittee/gemp-swccg-public, commit 5e26dd19) has 37.<ref name="gemp" /><ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref> The differences are:
 * Formats only on play.swccg.com: [[Anything Goes]], [[Ewok Format|Ewok]], [[Premiere - A New Hope Sealed]], [[Endor - Death Star II Sealed]], [[Reflections Sealed]], [[Episode I Sealed]], [[All Of The Jedi Sealed]], [[Novelty - Space Sealed]], [[Watto's Cube with objective packs Cube]], [[Watto's Cube with fixed pack Cube]], [[Premiere - Death Star II Draft]], [[Premiere - Virtual Set 13 Draft]], [[Premiere - Virtual Set 25 Draft]] and [[Cube v7 + Objectives Draft]].<ref name="gemp" /><ref name="pc-gemp" />
+* [[Open (40 cards)]], [[Open (45 cards)]] and [[Open (100 cards)]]: separate formats in the Players Committee code. Since 3 November 2026, play.swccg.com plays them as [[Open]] with the deck size game option set to 40, 45 or 100, and their old codes still load that way.<ref name="pc-gemp" /><ref name="gemp-setup">[https://github.com/billbisco/swccg-gemp/blob/e0fb37f23b6d81b7a3a248127d78466601cb6be4/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit e0fb37f2), GitHub. Preserved copy: [https://web.archive.org/web/20261103212934/https://swccg.com/snapshots/github/billbisco/swccg-gemp/e0fb37f2/swccgFormats.json.html Internet Archive].</ref>
 * [[Cube]]: 40 cards on play.swccg.com and 45 cards in the Players Committee code.<ref name="gemp" /><ref name="pc-gemp" />
 * [[Jabba's Palace Sealed]] (<code>jp_sealed</code>): named "Jabba's Palace Sealed" on play.swccg.com and "JP Sealed" in the Players Committee code.<ref name="gemp" /><ref name="pc-gemp" />
 * [[Legacy Open|Legacy]]: play.swccg.com adds 18 set numbers from 1200 to 1292 and the <code>loreHeroicRule</code> setting.<ref name="gemp" /><ref name="pc-gemp" />
