@@ -109920,8 +109920,16 @@
   "capture": "https://web.archive.org/web/20261104195706/https://swccg.com/snapshots/pc/2024-naboo-regionals-tamas-papp-ds-shadow-collective.html",
   "job_id": "spn2-c00dbfa4a8f41f7dcd90f8ae22dd6fb15a4c190a",
   "last": "2026-11-04T19:57:48Z",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T20:00:15Z",
+   "bytes": 7121898,
+   "capture_id": "https://web.archive.org/web/20261104195706id_/https://swccg.com/snapshots/pc/2024-naboo-regionals-tamas-papp-ds-shadow-collective.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2a83c40f4479b0b1fb27533ab243999353ebd2d462a14e74380d13899cb0a898"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-naboo-regionals-tamas-papp-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261025095216/https://swccg.com/snapshots/pc/2024-naboo-regionals-tamas-papp-ls-qmc.html",
@@ -111828,10 +111836,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-yavin-4-regionals-joe-horbey-ls-hitco.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 250 hours ago. You can make new capture of this URL after 720 hours.",
-  "last": "2026-11-04T19:25:23Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T19:59:55Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-yavin-4-regionals-pat-johnson-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261025084520/https://swccg.com/snapshots/pc/2024-yavin-4-regionals-pat-johnson-ds-walkers.html",
@@ -113173,10 +113181,10 @@
  },
  "https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-kyle-krueger-ds-mkos.html": {
   "capture": "https://web.archive.org/web/20261025090529/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-kyle-krueger-ds-mkos.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T19:22:50Z",
+  "error": "no job_id: The same snapshot had been made 211 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T19:59:10Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-kyle-krueger-ls-wys.html": {
   "capture": "https://web.archive.org/web/20261025105034/https://swccg.com/snapshots/pc/2025-las-vegas-grand-prix-kyle-krueger-ls-wys.html",
@@ -115039,10 +115047,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-endor-regionals-mike-turner-ls-watch-your-step.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T19:24:19Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T19:59:33Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-aj-hatoum-ds-endor-operations.html": {
   "capture": "",
@@ -115173,10 +115181,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-erik-spijksma-ls-rebel-strike-team.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T19:23:28Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T19:59:21Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-hayes-hunter-ds-tdigwattv.html": {
   "capture": "https://web.archive.org/web/20261025095830/https://swccg.com/snapshots/pc/2026-european-championship-hayes-hunter-ds-tdigwattv.html",
@@ -116025,10 +116033,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-naboo-regionals-emil-wallin-ls-watch-your-step.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T19:25:06Z",
+  "error": "no job_id: The same snapshot had been made 250 hours, 44 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T19:59:44Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-naboo-regionals-enno-haede-ds-bring-him-before-me.html": {
   "capture": "",
@@ -116270,8 +116278,16 @@
   "capture": "https://web.archive.org/web/20261025100424/https://swccg.com/snapshots/pc/2026-nal-hutta-regionals-kendall-halman-ds-endor-operations.html",
   "last": "2026-11-04T19:56:17Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T20:00:26Z",
+   "bytes": 7121093,
+   "capture_id": "https://web.archive.org/web/20261025100424id_/https://swccg.com/snapshots/pc/2026-nal-hutta-regionals-kendall-halman-ds-endor-operations.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "66cc9465506099e5274b6306526a4f089dd063d3be44106fd8e999c6b5bee225"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-nal-hutta-regionals-kendall-halman-ls-zero-hour.html": {
   "capture": "",
