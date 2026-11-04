@@ -121044,10 +121044,10 @@
  },
  "https://swccg.com/snapshots/scomp/blizzard-2-v.html": {
   "capture": "",
-  "job_id": "spn2-c0d9a94d2dea9069cfb4a69c10ccdb1a4c87b4d4",
-  "last": "2026-10-24T07:30:33Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 262 hours, 41 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T06:11:56Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/blizzard-2.html": {
   "capture": "https://web.archive.org/web/20261024171818/https://swccg.com/snapshots/scomp/blizzard-2.html",
@@ -124105,10 +124105,10 @@
  },
  "https://swccg.com/snapshots/scomp/comm-chief.html": {
   "capture": "",
-  "job_id": "spn2-237991656a7e320021315c5a15623330ee551233",
-  "last": "2026-10-24T07:19:14Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 262 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T06:10:59Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/commander-brandei-v.html": {
   "capture": "",
@@ -125453,8 +125453,16 @@
   "capture": "https://web.archive.org/web/20261024070315/https://swccg.com/snapshots/scomp/dagobah-v.html",
   "last": "2026-11-04T05:51:00Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T06:13:24Z",
+   "bytes": 735878,
+   "capture_id": "https://web.archive.org/web/20261024070315id_/https://swccg.com/snapshots/scomp/dagobah-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ac6b2bbefdd31b0b3f76920ffac88311dce255afb3531a898009ed1e1e56e749"
+  }
  },
  "https://swccg.com/snapshots/scomp/dagobah-yoda-s-hut-v-ai.html": {
   "capture": "",
@@ -126113,10 +126121,10 @@
  },
  "https://swccg.com/snapshots/scomp/daughter-of-skywalker.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T05:33:19Z",
+  "error": "no job_id: The same snapshot had been made 264 hours, 29 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T06:10:37Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/daultay-dofine-v.html": {
   "capture": "https://web.archive.org/web/20261024211454/https://swccg.com/snapshots/scomp/daultay-dofine-v.html",
@@ -126473,10 +126481,10 @@
  },
  "https://swccg.com/snapshots/scomp/death-star-trooper.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T05:32:29Z",
+  "error": "no job_id: The same snapshot had been made 264 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T06:10:25Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/death-star-v-ai.html": {
   "capture": "https://web.archive.org/web/20261024201829/https://swccg.com/snapshots/scomp/death-star-v-ai.html",
@@ -130855,10 +130863,10 @@
  },
  "https://swccg.com/snapshots/scomp/green-squadron-pilot.html": {
   "capture": "https://web.archive.org/web/20261024073025/https://swccg.com/snapshots/scomp/green-squadron-pilot.html",
-  "job_id": "spn2-58b2a817ba8168b56e6b629d349ab7535e479967",
-  "last": "2026-10-26T21:37:13Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 200 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T06:11:29Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/grievous-gambit.html": {
   "capture": "https://web.archive.org/web/20261024165132/https://swccg.com/snapshots/scomp/grievous-gambit.html",
@@ -131900,10 +131908,10 @@
  },
  "https://swccg.com/snapshots/scomp/hoth.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 263 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T05:21:57Z",
+  "error": "no job_id: The same snapshot had been made 264 hours, 43 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T06:09:51Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/houjix-out-of-nowhere.html": {
   "capture": "https://web.archive.org/web/20261024020833/https://swccg.com/snapshots/scomp/houjix-out-of-nowhere.html",
@@ -131927,11 +131935,19 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/scomp/hound-s-tooth.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104061054/https://swccg.com/snapshots/scomp/hound-s-tooth.html",
   "job_id": "spn2-a7653ef7e13107ed4536f1a80a53027a6a8d2f4f",
-  "last": "2026-10-24T07:18:52Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T06:13:09Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T06:13:09Z",
+   "bytes": 166606,
+   "capture_id": "https://web.archive.org/web/20261104061054id_/https://swccg.com/snapshots/scomp/hound-s-tooth.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ee9451c18a774a7f87404500f3f0c3d72ce1ad9ae862ffcc1eaa8004ab634477"
+  }
  },
  "https://swccg.com/snapshots/scomp/how-did-we-get-into-this-mess.html": {
   "capture": "",
@@ -133463,8 +133479,16 @@
   "capture": "https://web.archive.org/web/20261024070332/https://swccg.com/snapshots/scomp/it-could-be-worse.html",
   "last": "2026-11-04T05:51:27Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T06:13:14Z",
+   "bytes": 300471,
+   "capture_id": "https://web.archive.org/web/20261024070332id_/https://swccg.com/snapshots/scomp/it-could-be-worse.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f8c82d8fe422e42756e7f6f2269d660de6853754fdeb46b74cd4c6b0e5dc90ec"
+  }
  },
  "https://swccg.com/snapshots/scomp/it-is-the-future-you-see-v.html": {
   "capture": "https://web.archive.org/web/20261024193845/https://swccg.com/snapshots/scomp/it-is-the-future-you-see-v.html",
@@ -133998,10 +134022,10 @@
  },
  "https://swccg.com/snapshots/scomp/jawa-ion-gun.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T05:32:08Z",
+  "error": "no job_id: The same snapshot had been made 264 hours, 19 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T06:10:02Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/jawa-pack.html": {
   "capture": "https://web.archive.org/web/20261024085515/https://swccg.com/snapshots/scomp/jawa-pack.html",
@@ -134577,10 +134601,10 @@
  },
  "https://swccg.com/snapshots/scomp/keep-your-eyes-open.html": {
   "capture": "https://web.archive.org/web/20261024071928/https://swccg.com/snapshots/scomp/keep-your-eyes-open.html",
-  "job_id": "spn2-753884f90a010c6599f8b717f4f38605412bfb11",
-  "last": "2026-10-24T08:17:32Z",
-  "status": "pending",
-  "tries": 2
+  "error": "no job_id: The same snapshot had been made 262 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T06:11:14Z",
+  "status": "retry",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/keeping-the-empire-out-forever.html": {
   "capture": "https://web.archive.org/web/20261025003229/https://swccg.com/snapshots/scomp/keeping-the-empire-out-forever.html",
@@ -134676,11 +134700,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/kessel.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T05:32:18Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261104061105/https://swccg.com/snapshots/scomp/kessel.html",
+  "job_id": "spn2-985b894172c024b4c4091556f9189b1b946ca66f",
+  "last": "2026-11-04T06:12:57Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T06:12:57Z",
+   "bytes": 169250,
+   "capture_id": "https://web.archive.org/web/20261104061105id_/https://swccg.com/snapshots/scomp/kessel.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bc4da27b30fa36720518aae8f172d1260ad5838c899464202b7ce36ba67b22a9"
+  }
  },
  "https://swccg.com/snapshots/scomp/ket-maliss.html": {
   "capture": "https://web.archive.org/web/20261024230935/https://swccg.com/snapshots/scomp/ket-maliss.html",
