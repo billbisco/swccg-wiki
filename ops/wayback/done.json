@@ -119682,10 +119682,10 @@
  },
  "https://swccg.com/snapshots/scomp/are-you-okay.html": {
   "capture": "https://web.archive.org/web/20261024191029/https://swccg.com/snapshots/scomp/are-you-okay.html",
-  "job_id": "spn2-5f8f8ea22f45181d768775f0a8c1064e7163fd6c",
-  "last": "2026-10-26T23:04:31Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 201 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T08:11:42Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/arica-v.html": {
   "capture": "https://web.archive.org/web/20261026200258/https://swccg.com/snapshots/scomp/arica-v.html",
@@ -121858,8 +121858,16 @@
   "capture": "https://web.archive.org/web/20261024181519/https://swccg.com/snapshots/scomp/bring-him-before-me-take-your-father-s-place.html",
   "last": "2026-11-04T07:45:53Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T08:12:44Z",
+   "bytes": 405486,
+   "capture_id": "https://web.archive.org/web/20261024181519id_/https://swccg.com/snapshots/scomp/bring-him-before-me-take-your-father-s-place.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3e39e7760e5b48b244fb49ff36888caaffd2806cfbcf535c7527c69cd52f18ca"
+  }
  },
  "https://swccg.com/snapshots/scomp/brisky-morning-munchen.html": {
   "capture": "",
@@ -125686,10 +125694,10 @@
  },
  "https://swccg.com/snapshots/scomp/dagobah-jungle.html": {
   "capture": "https://web.archive.org/web/20261024184451/https://swccg.com/snapshots/scomp/dagobah-jungle.html",
-  "job_id": "spn2-14830b4e01801762fbb8d391ec5c47e6f0dd7b42",
-  "last": "2026-10-26T23:13:42Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 200 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T08:12:16Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/dagobah-swamp.html": {
   "capture": "https://web.archive.org/web/20261024214734/https://swccg.com/snapshots/scomp/dagobah-swamp.html",
@@ -127175,10 +127183,10 @@
  },
  "https://swccg.com/snapshots/scomp/devastator.html": {
   "capture": "https://web.archive.org/web/20261024184429/https://swccg.com/snapshots/scomp/devastator.html",
-  "job_id": "spn2-4de2bf0260258dc847cd3f9e3460a25730841ffa",
-  "last": "2026-10-26T23:04:42Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 201 hours, 7 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T08:11:53Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/dexter-jettster.html": {
   "capture": "https://web.archive.org/web/20261024063240/https://swccg.com/snapshots/scomp/dexter-jettster.html",
@@ -127360,10 +127368,10 @@
  },
  "https://swccg.com/snapshots/scomp/disarming-creature.html": {
   "capture": "",
-  "job_id": "spn2-6554e7ae0416f2bdcf5ab4763d3304bb4b9bdfbb",
-  "last": "2026-10-24T18:44:36Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 253 hours, 27 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T08:12:05Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/dismantle-on-sight.html": {
   "capture": "",
@@ -128239,8 +128247,16 @@
   "capture": "https://web.archive.org/web/20261026221125/https://swccg.com/snapshots/scomp/eg-6-eegee-six.html",
   "last": "2026-11-04T07:48:34Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T08:12:30Z",
+   "bytes": 645953,
+   "capture_id": "https://web.archive.org/web/20261026221125id_/https://swccg.com/snapshots/scomp/eg-6-eegee-six.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bf624b59bfce9bdca0a76867f6ed1f72981943cc67b8a5a75145e18fe356b7b0"
+  }
  },
  "https://swccg.com/snapshots/scomp/egregious-pilot-error.html": {
   "capture": "",
@@ -132828,10 +132844,10 @@
  },
  "https://swccg.com/snapshots/scomp/i-had-no-choice.html": {
   "capture": "https://web.archive.org/web/20261024171646/https://swccg.com/snapshots/scomp/i-had-no-choice.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T07:40:27Z",
+  "error": "no job_id: The same snapshot had been made 201 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T08:11:31Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/i-have-a-bad-feeling-about-this.html": {
   "capture": "",
@@ -132844,8 +132860,16 @@
   "capture": "https://web.archive.org/web/20261104074108/https://swccg.com/snapshots/scomp/i-have-a-really-bad-feeling-about-this.html",
   "job_id": "spn2-ae189805c319ccde32129a3df491d5948ab7460e",
   "last": "2026-11-04T07:46:41Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-04T08:12:37Z",
+   "bytes": 307132,
+   "capture_id": "https://web.archive.org/web/20261104074108id_/https://swccg.com/snapshots/scomp/i-have-a-really-bad-feeling-about-this.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "b34f353208edf372492b7e1bb169e42ecfa04bed6e92bd5fc3fdd0f3f25c21ff"
+  }
  },
  "https://swccg.com/snapshots/scomp/i-have-a-very-bad-feeling-about-this.html": {
   "capture": "",
