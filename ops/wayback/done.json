@@ -119350,8 +119350,16 @@
   "capture": "https://web.archive.org/web/20261025055709/https://swccg.com/snapshots/scomp/ak-rev.html",
   "last": "2026-11-04T14:39:43Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T15:41:55Z",
+   "bytes": 452820,
+   "capture_id": "https://web.archive.org/web/20261025055709id_/https://swccg.com/snapshots/scomp/ak-rev.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "71092a4fc38d76e57d493270bce538d9eaec041cf6ad6ce68449eb63bae39b15"
+  }
  },
  "https://swccg.com/snapshots/scomp/alderaan.html": {
   "capture": "https://web.archive.org/web/20261026200444/https://swccg.com/snapshots/scomp/alderaan.html",
@@ -123760,10 +123768,10 @@
  },
  "https://swccg.com/snapshots/scomp/chadra-fan.html": {
   "capture": "",
-  "job_id": "spn2-98c9609470ea2f9e0eb8f1b5e8b57418fc2b4efa",
-  "last": "2026-10-25T06:54:36Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T15:41:20Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/chall-bekan.html": {
   "capture": "https://web.archive.org/web/20261104123902/https://swccg.com/snapshots/scomp/chall-bekan.html",
@@ -124902,11 +124910,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/colonel-wullf-yularen.html": {
-  "capture": "",
-  "job_id": "spn2-cfdd1e2a69af8123a9839cdeb8fabf230903d150",
-  "last": "2026-10-25T06:53:22Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025065327/https://swccg.com/snapshots/scomp/colonel-wullf-yularen.html",
+  "last": "2026-11-04T15:40:17Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T15:40:25Z",
+   "bytes": 168046,
+   "capture_id": "https://web.archive.org/web/20261025065327id_/https://swccg.com/snapshots/scomp/colonel-wullf-yularen.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "b42b9919b53c45c630501e598091a940af0143f72e7a1c6b770045d5b9bd4d3b"
+  }
  },
  "https://swccg.com/snapshots/scomp/combat-cloud-car.html": {
   "capture": "https://web.archive.org/web/20261026222711/https://swccg.com/snapshots/scomp/combat-cloud-car.html",
@@ -126542,10 +126558,10 @@
  },
  "https://swccg.com/snapshots/scomp/ct-5555-fives-ai.html": {
   "capture": "",
-  "job_id": "spn2-9ce88fc05dc77d75bca9ded1f6dc1698934bf744",
-  "last": "2026-10-25T06:53:33Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T15:40:37Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/ct-5555-fives.html": {
   "capture": "https://web.archive.org/web/20261104041300/https://swccg.com/snapshots/scomp/ct-5555-fives.html",
@@ -128708,10 +128724,10 @@
  },
  "https://swccg.com/snapshots/scomp/doikk-na-ts.html": {
   "capture": "",
-  "job_id": "spn2-6b3926f3b0639bfe96789c430a6feb254a08ff5a",
-  "last": "2026-10-25T07:14:02Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 26 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T15:41:00Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/domain-of-evil.html": {
   "capture": "https://web.archive.org/web/20261024013929/https://swccg.com/snapshots/scomp/domain-of-evil.html",
@@ -129405,10 +129421,10 @@
  },
  "https://swccg.com/snapshots/scomp/e-web-blaster.html": {
   "capture": "",
-  "job_id": "spn2-eeba37f646250359cfc892b954a08299fd68188d",
-  "last": "2026-10-25T06:53:44Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T15:40:49Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/echo-base-destroyed.html": {
   "capture": "https://web.archive.org/web/20261024193413/https://swccg.com/snapshots/scomp/echo-base-destroyed.html",
@@ -131684,8 +131700,16 @@
   "capture": "https://web.archive.org/web/20261025065015/https://swccg.com/snapshots/scomp/found-someone-you-have-v.html",
   "last": "2026-11-04T15:36:08Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T15:41:40Z",
+   "bytes": 741589,
+   "capture_id": "https://web.archive.org/web/20261025065015id_/https://swccg.com/snapshots/scomp/found-someone-you-have-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6e00a553d3f2c2d7b0998ab448ea2a855e2e232317db69c841e81c1d0743ab80"
+  }
  },
  "https://swccg.com/snapshots/scomp/found-someone-you-have.html": {
   "capture": "https://web.archive.org/web/20261026220422/https://swccg.com/snapshots/scomp/found-someone-you-have.html",
@@ -132626,10 +132650,10 @@
  },
  "https://swccg.com/snapshots/scomp/gold-squadron-y-wing.html": {
   "capture": "",
-  "job_id": "spn2-1d16aa58fcc4cbc47d9334aa509fd1ff542b9691",
-  "last": "2026-10-25T06:54:25Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T15:41:10Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/goo-nee-tay.html": {
   "capture": "https://web.archive.org/web/20261024061224/https://swccg.com/snapshots/scomp/goo-nee-tay.html",
@@ -134411,8 +134435,16 @@
   "capture": "https://web.archive.org/web/20261027015033/https://swccg.com/snapshots/scomp/hutt-bounty.html",
   "last": "2026-11-04T14:39:27Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 5
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-11-04T15:42:04Z",
+   "bytes": 438067,
+   "capture_id": "https://web.archive.org/web/20261027015033id_/https://swccg.com/snapshots/scomp/hutt-bounty.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a482e400e1c30bbeb5ca10032c2b41e44ae0b8f14e609c9318885a14e54c7ad1"
+  }
  },
  "https://swccg.com/snapshots/scomp/hutt-influence-v.html": {
   "capture": "https://web.archive.org/web/20261026231551/https://swccg.com/snapshots/scomp/hutt-influence-v.html",
@@ -136728,8 +136760,16 @@
   "capture": "https://web.archive.org/web/20261025055732/https://swccg.com/snapshots/scomp/jar-jar-binks.html",
   "last": "2026-11-04T14:40:14Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T15:41:47Z",
+   "bytes": 308082,
+   "capture_id": "https://web.archive.org/web/20261025055732id_/https://swccg.com/snapshots/scomp/jar-jar-binks.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e82c03faf242c45df58496d3d191e647ebdbe08b16ffbb18aa811bfd284977bf"
+  }
  },
  "https://swccg.com/snapshots/scomp/jar-jar-s-electropole.html": {
   "capture": "https://web.archive.org/web/20261024052605/https://swccg.com/snapshots/scomp/jar-jar-s-electropole.html",
@@ -137096,8 +137136,14 @@
   "capture": "https://web.archive.org/web/20261104153659/https://swccg.com/snapshots/scomp/juri-juice-v.html",
   "job_id": "spn2-926375bb7bf0ecbd1ea3b89b2e20b2f71fd473eb",
   "last": "2026-11-04T15:38:52Z",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T15:41:32Z",
+   "capture_id": "https://web.archive.org/web/20261104153659id_/https://swccg.com/snapshots/scomp/juri-juice-v.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261025070244 (no capture at 20261104153659)"
+  }
  },
  "https://swccg.com/snapshots/scomp/juri-juice.html": {
   "capture": "https://web.archive.org/web/20261027001430/https://swccg.com/snapshots/scomp/juri-juice.html",
@@ -137672,11 +137718,17 @@
   }
  },
  "https://swccg.com/snapshots/scomp/kiffex.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104153741/https://swccg.com/snapshots/scomp/kiffex.html",
   "job_id": "spn2-05cb283056786457c77805cba58fb37a3a77a36a",
-  "last": "2026-11-04T15:37:37Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-11-04T15:40:06Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T15:40:06Z",
+   "capture_id": "https://web.archive.org/web/20261104153741id_/https://swccg.com/snapshots/scomp/kiffex.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261025065140 (no capture at 20261104153741)"
+  }
  },
  "https://swccg.com/snapshots/scomp/kijimi.html": {
   "capture": "https://web.archive.org/web/20261104051325/https://swccg.com/snapshots/scomp/kijimi.html",
@@ -137715,11 +137767,17 @@
   }
  },
  "https://swccg.com/snapshots/scomp/kin-kian.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104153818/https://swccg.com/snapshots/scomp/kin-kian.html",
   "job_id": "spn2-1d7b1adbf9594755324ce60bf635ebde99670394",
-  "last": "2026-11-04T15:37:22Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-11-04T15:40:13Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T15:40:13Z",
+   "capture_id": "https://web.archive.org/web/20261104153818id_/https://swccg.com/snapshots/scomp/kin-kian.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261025065228 (no capture at 20261104153818)"
+  }
  },
  "https://swccg.com/snapshots/scomp/kintan-strider.html": {
   "capture": "",
