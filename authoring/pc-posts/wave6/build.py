@@ -103,6 +103,8 @@ def main():
             rep.append(f"NO-EVENT-OR-PLAYER {slug}: siblings {sib[:3]} lack Deck info Event/Player")
             plan.append(dict(slug=slug, status="no-event", post_title=ptitle, sibling=s0)); continue
         prefix = pre_override or pre[s0][1]
+        if not stage:
+            stage = stage_of(prefix)
         if stage and stage_of(prefix) != stage:
             old = stage_of(prefix)
             if old:
@@ -111,7 +113,7 @@ def main():
                 rep.append(f"STAGE-NOT-IN-TITLE {slug}: post stage {stage}, sibling {s0}")
         r = RD.render(pathlib.Path(HERE / "posts_html" / f"{slug}.html"), sd)
         obj = r["objective"]["title"].split(" / ")[0] if r["objective"] else None
-        deck = obj or (r["start_int"]["title"] if r["start_int"] else None) or (r["start_loc"]["title"] if r.get("start_loc") else None)
+        deck = obj or (r["start_loc"]["title"] if r.get("start_loc") else None) or (r["start_int"]["title"] if r["start_int"] else None)
         if not deck:
             m = re.search(r"\b(?:DS|LS)\b\s*(.*)$", ptitle); deck = (m.group(1).strip() if m else "") or "Deck"
         title = f"{yr} {prefix} {sd} {deck}"
@@ -124,19 +126,19 @@ def main():
         player = f"[[{player_override}]]" if player_override else inf.get("Player", "")
         event = inf.get("Event", "")
         fmt = inf.get("Format", "[[Open]]")
-        if not r["objective"] and not r["start_int"] and r.get("start_loc"):
-            r["objective"] = r["start_loc"]
-        start = (f"{{{{CardLink|{r['objective']['title']}|{r['objective']['image']}}}}}" if r["objective"] and r["objective"].get("image")
-                 else (f"[[{r['objective']['title']}]]" if r["objective"] else
-                       (f"{{{{CardLink|{r['start_int']['title']}|{r['start_int']['image']}}}}}" if r["start_int"] and r["start_int"].get("image") else "—")))
-        start_label = "Starting Card" if r["objective"] else ("Starting Interrupt" if r["start_int"] else "Starting Card")
+        def cl(i):
+            return f"{{{{CardLink|{i['title']}|{i['image']}}}}}" if i.get("image") else f"[[{i['title']}]]"
+        first = r["objective"] or r.get("start_loc")
+        start_block = "* '''Starting Card:''' " + (cl(first) if first else "—") + "\n"
+        if not r["objective"] and r["start_int"]:
+            start_block += "* '''Starting Interrupt:''' " + cl(r["start_int"]) + "\n"
         pname = re.sub(r"\[\[([^|\]]+)(?:\|([^\]]+))?\]\]", lambda m: m.group(2) or m.group(1), player)
         ename = re.sub(r"\[\[([^|\]]+)(?:\|([^\]]+))?\]\]", lambda m: m.group(1), event)
         link = (p.get("link") or f"https://www.starwarsccg.org/{slug}/").replace("starwarsccg.org/wp/", "starwarsccg.org/")
         page = (f"'''{title}''' was the {side_w} Side constructed list played by {player} at {event}"
                 + (f" ({stage})" if stage else "") + ".\n\n== Deck info ==\n\n"
                 f"* '''Player:''' {player}\n* '''Event:''' {event}\n" + (f"* '''Stage:''' {stage}\n" if stage else "")
-                + f"* '''Format:''' {fmt}\n* '''Side:''' [[{side_w}]]\n* '''{start_label}:''' {start}\n\n"
+                + f"* '''Format:''' {fmt}\n* '''Side:''' [[{side_w}]]\n" + start_block + "\n"
                 "== Decklist ==\n\n" + r["body"] + "\n== See also ==\n"
                 f"* {event}\n" + ("" if player_override else f"* [[{s0}]]\n") + "\n== Sources ==\n\n"
                 f"* [{link} {CP.H.escape(ptitle) if False else ptitle.replace('[', '(').replace(']', ')')}], starwarsccg.org (deck post).\n\n"
@@ -148,13 +150,23 @@ def main():
         gemp = None
         if not any(c[1] is None and not c[4] for c in r["cardlist"]):
             try:
-                g = gi.from_wiki_page(out / "pages" / fn, format_key="all", event_token=re.sub(r"[^A-Za-z]", "", ename.split()[1] if len(ename.split()) > 1 else "PC")[:8])
-                gname = g["filename"]; k = 2
+                grows = []
+                for q, ttl, hint in gi.parse_wiki_cards(page):
+                    ttl = ttl.replace("•", "").replace("&#8226;", "")
+                    ttl = re.sub(r" \((Premiere|Light)\)", "", ttl)
+                    if " (Dark) (Premiere)" in ttl or ttl.endswith(" (Dark)"): hint = "DARK"
+                    ttl = ttl.replace(" (Dark)", "")
+                    grows.append((q, ttl, hint))
+                xml, _notes = gi.xml_for(grows, "DARK" if sd == "DS" else "LIGHT", "all")
+                tok = re.sub(r"[^A-Za-z0-9]", "", ename.split()[1] if len(ename.split()) > 1 else "PC")[:8]
+                base = gi.safe_deck_filename(gi.deck_name("Open", deck.split(" / ")[0][:28], pname or player_override or "Player", sd, yr, tok))
+                g = {"xml": xml, "name": base}
+                gname = base + ".txt"; k = 2
                 while gname.lower() in used_files:
-                    gname = g["name"][:36] + f" {k}.txt"; k += 1
+                    gname = base[:36] + f" {k}.txt"; k += 1
                 used_files.add(gname.lower())
                 (out / "gemp" / gname).write_text(g["xml"], encoding="utf-8", newline="\n")
-                page = page.replace(f"* '''{start_label}:''' {start}\n", f"* '''{start_label}:''' {start}\n{gi.wiki_download_line(gname)}\n", 1)
+                page = page.replace(start_block, start_block + gi.wiki_download_line(gname) + "\n", 1)
                 (out / "pages" / fn).write_text(page, encoding="utf-8")
                 gemp = gname
             except Exception as e:

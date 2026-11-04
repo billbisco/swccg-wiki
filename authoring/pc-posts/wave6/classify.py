@@ -14,7 +14,7 @@ AL = [(r'world championships?', 'worlds'), (r'\bworld\b', 'worlds'), (r'endor gr
       (r'san diego super open', 'sdso'), (r'san diego grand prix', 'sdgp'), (r'\bus nationals\b|\bnationals\b', 'nationals'),
       (r'regionals?', 'regionals'), (r'final 4|final four', 'final4'), (r'final confrontation|\bfinals?\b', 'final'),
       (r'sweet 16|round of 16', 'r16'), (r'elite 8', 'top8'), (r'\btop (\d+)\b', r'top\1'), (r'\bday (\d)\b', r'day\1'),
-      (r'semifinals?', 'semi'), (r'\bendor\b(?! regionals)', 'egp'), (r'\bseattle\b', 'egp'), (r'\btournament\b', ' '), (r'quarterfinals?', 'quarter'), (r'\bpc 20\b|\bpc20\b', 'pc20')]
+      (r'semifinals?', 'top4'), (r'\bendor\b(?! regionals)', 'egp'), (r'\bseattle\b', 'egp'), (r'boston winter classic', 'bwc'), (r'\b\d\docs\b', 'ocs'), (r'\bt(\d+)\b', r'top\1'), (r'\bteam\b|\b(?:ii|iii|iv)\b', ' '), (r'\beur\b', 'europe'), (r'\bplayoffs?\b', ' '), (r'\btournament\b', ' '), (r'quarterfinals?', 'top8'), (r'\bpc 20\b|\bpc20\b', 'pc20')]
 NICK = {'matthew': 'matt', 'michael': 'mike', 'samuel': 'sam', 'jeffrey': 'jeff', 'christopher': 'chris', 'stephen': 'steve',
         'jonathan': 'jon', 'joseph': 'joe', 'bryan': 'brian', 'andrew': 'andy', 'patrick': 'pat', 'steven': 'steve',
         'daniel': 'dan', 'thomas': 'tom', 'robert': 'rob', 'nicholas': 'nick', 'william': 'bill', 'erik': 'eric'}
