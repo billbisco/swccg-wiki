@@ -83110,11 +83110,11 @@
   }
  },
  "https://swccg.com/snapshots/forum/t80902.html": {
-  "capture": "https://web.archive.org/web/20261021041720/https://swccg.com/snapshots/forum/t80902.html",
-  "job_id": "spn2-6dc228cefab7759c915b054058924a38657b9fd5",
-  "last": "2026-10-27T01:10:16Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027011032/https://swccg.com/snapshots/forum/t80902.html",
+  "last": "2026-11-04T22:36:38Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t80947-start20.html": {
   "capture": "https://web.archive.org/web/20261021003320/https://swccg.com/snapshots/forum/t80947-start20.html",
@@ -87141,10 +87141,10 @@
  },
  "https://swccg.com/snapshots/pc/2020-day-1-wayne-cullen-ds-asm.html": {
   "capture": "https://web.archive.org/web/20261021051408/https://swccg.com/snapshots/pc/2020-day-1-wayne-cullen-ds-asm.html",
-  "job_id": "spn2-f57abca4ce5cf986cbe7adfe96583b93aa3edc6d",
-  "last": "2026-10-27T01:51:33Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 212 hours, 44 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:35:58Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2020-endor-grand-prix.html": {
   "capture": "https://web.archive.org/web/20261013160553/https://swccg.com/snapshots/pc/2020-endor-grand-prix.html",
@@ -87183,10 +87183,9 @@
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-menzel-ds-hunt-down.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "error": "no job_id: The same snapshot had been made 354 hours, 36 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:35:24Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-chris-menzel-ds-hunt-down.html?copy=2": {
@@ -87198,10 +87197,9 @@
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "error": "no job_id: The same snapshot had been made 354 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:35:35Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html?copy=2": {
@@ -87233,18 +87231,25 @@
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-miyashiro-ds-hunt-down.html": {
   "capture": "https://web.archive.org/web/20261021035928/https://swccg.com/snapshots/pc/2020-mpc-day-1-justin-miyashiro-ds-hunt-down.html",
-  "job_id": "spn2-5c0bdda6290d156e94bd6cfa7ca7bf4f67209837",
-  "last": "2026-10-27T01:09:35Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 213 hours, 26 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T22:35:46Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-matthew-harrison-trainor-ds-hunt-down.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021043225/https://swccg.com/snapshots/pc/2020-mpc-day-1-matthew-harrison-trainor-ds-hunt-down.html",
+  "last": "2026-11-04T22:36:10Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-04T22:36:14Z",
+   "bytes": 7121657,
+   "capture_id": "https://web.archive.org/web/20261021043225id_/https://swccg.com/snapshots/pc/2020-mpc-day-1-matthew-harrison-trainor-ds-hunt-down.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e4501b0556cd4ce6d650bc0f10de952f4cef3788d5a9d343fb6254e1b4a650b0"
+  }
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-matthew-harrison-trainor-ds-hunt-down.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103232638/https://swccg.com/snapshots/pc/2020-mpc-day-1-matthew-harrison-trainor-ds-hunt-down.html?copy=2",
@@ -96543,12 +96548,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-kevin-jaap-ls-zero-hour.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021050351/https://swccg.com/snapshots/pc/2022-european-championship-kevin-jaap-ls-zero-hour.html",
+  "last": "2026-11-04T22:37:33Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-kevin-jaap-ls-zero-hour.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025012109/https://swccg.com/snapshots/pc/2022-european-championship-kevin-jaap-ls-zero-hour.html?copy=2",
@@ -96558,11 +96562,10 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ds-ropsv.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021042249/https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ds-ropsv.html",
+  "last": "2026-11-04T22:37:05Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ds-ropsv.html?copy=2": {
@@ -96579,12 +96582,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ls-zero-hour.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021050316/https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ls-zero-hour.html",
+  "last": "2026-11-04T22:37:19Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ls-zero-hour.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011227/https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ls-zero-hour.html?copy=2",
@@ -96594,11 +96596,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ds-eops.html": {
-  "capture": "https://web.archive.org/web/20261021060536/https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ds-eops.html",
-  "job_id": "spn2-07e47fc9e35c29d19606a51aafc295da69e19b58",
-  "last": "2026-10-27T01:22:24Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027012322/https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ds-eops.html",
+  "last": "2026-11-04T22:37:44Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ls-legend.html": {
   "capture": "https://web.archive.org/web/20261027011124/https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ls-legend.html",
@@ -96631,11 +96633,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-martin-den-boef-ls-communing-yoda.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021045316/https://swccg.com/snapshots/pc/2022-european-championship-martin-den-boef-ls-communing-yoda.html",
+  "last": "2026-11-04T22:41:45Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-martin-den-boef-ls-communing-yoda.html?copy=2": {
@@ -96646,11 +96647,10 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-miguel-tarin-vegas-ds-sc.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261104224124/https://swccg.com/snapshots/pc/2022-european-championship-miguel-tarin-vegas-ds-sc.html",
+  "job_id": "spn2-e3d5e02d7f4815e67c8be521d12b7cbd2c190f4f",
+  "last": "2026-11-04T22:43:46Z",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-miguel-tarin-vegas-ds-sc.html?copy=2": {
@@ -96669,11 +96669,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-miguel-tarin-vegas-ls-yoda-communing.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021045235/https://swccg.com/snapshots/pc/2022-european-championship-miguel-tarin-vegas-ls-yoda-communing.html",
+  "last": "2026-11-04T22:41:32Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-miguel-tarin-vegas-ls-yoda-communing.html?copy=2": {
@@ -96693,11 +96692,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261021043947/https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ds-shadow-collective.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "last": "2026-11-04T22:40:47Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ds-shadow-collective.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103232856/https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ds-shadow-collective.html?copy=2",
@@ -96716,10 +96714,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261021045224/https://swccg.com/snapshots/pc/2022-european-championship-mike-kessling-ls-communing-yoda.html",
-  "job_id": "spn2-9a645dae83675a3d11672fa65e4b50e145e52c72",
-  "last": "2026-10-27T01:40:28Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:40:57Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ds-map.html": {
   "capture": "",
@@ -96844,12 +96842,11 @@
   "tries": 6
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ds-rots-dooku.html": {
-  "capture": "https://web.archive.org/web/20261021045327/https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ds-rots-dooku.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021061334/https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ds-rots-dooku.html",
+  "last": "2026-11-04T22:42:00Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ds-rots-dooku.html?copy=2": {
   "capture": "",
@@ -96859,11 +96856,10 @@
   "tries": 6
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ls-communing-yoda.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021045420/https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ls-communing-yoda.html",
+  "last": "2026-11-04T22:42:13Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-quirin-furgut-ls-communing-yoda.html?copy=2": {
@@ -96883,10 +96879,9 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-rasmus-juul-ds-aobs.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:42:26Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-rasmus-juul-ds-aobs.html?copy=2": {
@@ -96897,11 +96892,10 @@
   "tries": 5
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-rasmus-juul-ls-steady-steady.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021045419/https://swccg.com/snapshots/pc/2022-european-championship-rasmus-juul-ls-steady-steady.html",
+  "last": "2026-11-04T22:42:37Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-rasmus-juul-ls-steady-steady.html?copy=2": {
@@ -96950,11 +96944,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ds-bhbm.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021045539/https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ds-bhbm.html",
+  "last": "2026-11-04T22:43:30Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ds-bhbm.html?copy=2": {
@@ -97003,11 +96996,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-timo-dusel-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261021044039/https://swccg.com/snapshots/pc/2022-european-championship-timo-dusel-ls-zero-hour.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "last": "2026-11-04T22:41:09Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-timo-dusel-ls-zero-hour.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025012539/https://swccg.com/snapshots/pc/2022-european-championship-timo-dusel-ls-zero-hour.html?copy=2",
@@ -97018,11 +97010,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ds-mustafar-crv.html": {
   "capture": "https://web.archive.org/web/20261021051635/https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ds-mustafar-crv.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "last": "2026-11-04T22:43:02Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ds-mustafar-crv.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025013412/https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ds-mustafar-crv.html?copy=2",
@@ -97032,11 +97023,10 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021045533/https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html",
+  "last": "2026-11-04T22:43:16Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html?copy=2": {
@@ -97055,11 +97045,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-bastian-winkelhaus-ds-ropsv.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021043800/https://swccg.com/snapshots/pc/2022-european-championship-top-8-bastian-winkelhaus-ds-ropsv.html",
+  "last": "2026-11-04T22:39:11Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-bastian-winkelhaus-ds-ropsv.html?copy=2": {
@@ -97071,10 +97060,9 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-bastian-winkelhaus-ls-legend.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:39:21Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-bastian-winkelhaus-ls-legend.html?copy=2": {
@@ -97086,10 +97074,9 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-brian-fred-ds-cct.html": {
   "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:40:24Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-brian-fred-ds-cct.html?copy=2": {
@@ -97107,11 +97094,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-brian-fred-ls-yoda-communing.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021044027/https://swccg.com/snapshots/pc/2022-european-championship-top-8-brian-fred-ls-yoda-communing.html",
+  "last": "2026-11-04T22:40:35Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-brian-fred-ls-yoda-communing.html?copy=2": {
@@ -97130,11 +97116,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021043908/https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html",
+  "last": "2026-11-04T22:39:59Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html?copy=2": {
@@ -97145,11 +97130,10 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ls-zero-hour.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021045314/https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ls-zero-hour.html",
+  "last": "2026-11-04T22:40:12Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ls-zero-hour.html?copy=2": {
@@ -97161,11 +97145,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ds-sc.html": {
   "capture": "https://web.archive.org/web/20261021043716/https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ds-sc.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "last": "2026-11-04T22:37:58Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ds-sc.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025013612/https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ds-sc.html?copy=2",
@@ -97182,12 +97165,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ls-oa.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021051520/https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ls-oa.html",
+  "last": "2026-11-04T22:38:11Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ls-oa.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025013537/https://swccg.com/snapshots/pc/2022-european-championship-top-8-emil-wallin-ls-oa.html?copy=2",
@@ -97205,11 +97187,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261021043658/https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ds-walkers.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "last": "2026-11-04T22:38:22Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ds-walkers.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025013548/https://swccg.com/snapshots/pc/2022-european-championship-top-8-jonas-hagen-ds-walkers.html?copy=2",
@@ -97241,12 +97222,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ds-sc.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021051624/https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ds-sc.html",
+  "last": "2026-11-04T22:39:33Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ds-sc.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103233433/https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ds-sc.html?copy=2",
@@ -97256,11 +97236,10 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ls-oa.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021043833/https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ls-oa.html",
+  "last": "2026-11-04T22:39:46Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-justin-branch-ls-oa.html?copy=2": {
@@ -97279,11 +97258,10 @@
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ds-cct.html": {
   "capture": "https://web.archive.org/web/20261021043740/https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ds-cct.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:38:45Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ds-cct.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194416/https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ds-cct.html?copy=2",
@@ -97293,11 +97271,11 @@
   "tries": 5
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ls-zero-hour.html": {
-  "capture": "https://web.archive.org/web/20261021051613/https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ls-zero-hour.html",
-  "job_id": "spn2-4681e0e2b323d562302471c5a9ffa8f30baaef1d",
-  "last": "2026-10-27T01:22:46Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027012249/https://swccg.com/snapshots/pc/2022-european-championship-top-8-koen-meijssen-ls-zero-hour.html",
+  "last": "2026-11-04T22:38:57Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-mike-kessling-ds-sc.html": {
   "capture": "https://web.archive.org/web/20261027011146/https://swccg.com/snapshots/pc/2022-european-championship-top-8-mike-kessling-ds-sc.html",
@@ -97315,11 +97293,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-mike-kessling-ls-yoda-communing.html": {
-  "capture": "https://web.archive.org/web/20261021053027/https://swccg.com/snapshots/pc/2022-european-championship-top-8-mike-kessling-ls-yoda-communing.html",
-  "job_id": "spn2-cef9bf020545d38f35c4df262de0b944f7e1e3e8",
-  "last": "2026-10-27T01:22:35Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027012309/https://swccg.com/snapshots/pc/2022-european-championship-top-8-mike-kessling-ls-yoda-communing.html",
+  "last": "2026-11-04T22:38:35Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-wrap-up-wallin-victorious.html": {
   "capture": "https://web.archive.org/web/20261104185335/https://swccg.com/snapshots/pc/2022-european-championship-wrap-up-wallin-victorious.html",
@@ -97337,11 +97315,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-ziemowit-skwara-ds-watto.html": {
-  "capture": "https://web.archive.org/web/20261021045528/https://swccg.com/snapshots/pc/2022-european-championship-ziemowit-skwara-ds-watto.html",
-  "job_id": "spn2-a7cbb0c2974eae3b163e6a750a90384f9463efb2",
-  "last": "2026-10-27T01:23:27Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027012330/https://swccg.com/snapshots/pc/2022-european-championship-ziemowit-skwara-ds-watto.html",
+  "last": "2026-11-04T22:42:49Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-ziemowit-skwara-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021045441/https://swccg.com/snapshots/pc/2022-european-championship-ziemowit-skwara-ls-qmc.html",
@@ -97358,11 +97336,10 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-european-championships-jonas-hagen-ds-walkers.html": {
-  "capture": "",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
+  "capture": "https://web.archive.org/web/20261021042234/https://swccg.com/snapshots/pc/2022-european-championships-jonas-hagen-ds-walkers.html",
+  "last": "2026-11-04T22:36:51Z",
+  "note": "already archived within 30d",
+  "status": "ok",
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-european-championships-jonas-hagen-ds-walkers.html?copy=2": {
@@ -108003,11 +107980,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2024-bespin-regionals-larry-nava-ds-thrawn.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T22:03:29Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025121241/https://swccg.com/snapshots/pc/2024-bespin-regionals-larry-nava-ds-thrawn.html",
+  "last": "2026-11-04T22:35:11Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-bespin-regionals-mark-walseth-ds-isb.html": {
   "capture": "https://web.archive.org/web/20261025092616/https://swccg.com/snapshots/pc/2024-bespin-regionals-mark-walseth-ds-isb.html",
@@ -109568,11 +109545,11 @@
   "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-angelo-consoli-ds-rots-maul.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 251 hours, 27 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T22:03:06Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20261025103542/https://swccg.com/snapshots/pc/2024-ithor-regionals-angelo-consoli-ds-rots-maul.html",
+  "last": "2026-11-04T22:33:38Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-angelo-consoli-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261025095433/https://swccg.com/snapshots/pc/2024-ithor-regionals-angelo-consoli-ls-diplo.html",
@@ -109618,11 +109595,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-eric-spijksma-ds-hoth-crv.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T22:00:23Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025121306/https://swccg.com/snapshots/pc/2024-ithor-regionals-eric-spijksma-ds-hoth-crv.html",
+  "last": "2026-11-04T22:34:13Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2024-ithor-regionals-eric-spijksma-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261025081423/https://swccg.com/snapshots/pc/2024-ithor-regionals-eric-spijksma-ls-qmc.html",
@@ -111011,11 +110988,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-angelo-consoli-ls-diplo.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 251 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T22:02:43Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20261025103141/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-angelo-consoli-ls-diplo.html",
+  "last": "2026-11-04T22:33:01Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-11-04T22:33:06Z",
+   "bytes": 7121997,
+   "capture_id": "https://web.archive.org/web/20261025103141id_/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-angelo-consoli-ls-diplo.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ab561750be73792e7f7bec6e5fdc00424612bb68193f40d62956625e3e22228d"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-cedrik-vanderhaegen-ds-hunt-down.html": {
   "capture": "https://web.archive.org/web/20261025093758/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-cedrik-vanderhaegen-ds-hunt-down.html",
@@ -111070,10 +111055,10 @@
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-eric-spijksma-ls-clones.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 251 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T22:03:17Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:33:48Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2024-ralltiir-regionals-jeroen-wauters-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261025084737/https://swccg.com/snapshots/pc/2024-ralltiir-regionals-jeroen-wauters-ds-aobs.html",
@@ -112096,11 +112081,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-quirin-furgut-ds-aobs.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T22:00:49Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025120236/https://swccg.com/snapshots/pc/2024-toola-regionals-quirin-furgut-ds-aobs.html",
+  "last": "2026-11-04T22:34:35Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T22:34:44Z",
+   "bytes": 7121884,
+   "capture_id": "https://web.archive.org/web/20261025120236id_/https://swccg.com/snapshots/pc/2024-toola-regionals-quirin-furgut-ds-aobs.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9472a15377ce3693f792144382c0df162ff60ad3589758f68fc072953439a795"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-quirin-furgut-ls-skywalker-saga-anakin.html": {
   "capture": "https://web.archive.org/web/20261025083918/https://swccg.com/snapshots/pc/2024-toola-regionals-quirin-furgut-ls-skywalker-saga-anakin.html",
@@ -114078,11 +114071,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-chad-lawrence-ls-skywalker-saga-luke.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T22:00:13Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025120228/https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-chad-lawrence-ls-skywalker-saga-luke.html",
+  "last": "2026-11-04T22:34:00Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-karl-koenig-ds-endor-operations.html": {
   "capture": "https://web.archive.org/web/20261025084818/https://swccg.com/snapshots/pc/2025-nal-hutta-regionals-karl-koenig-ds-endor-operations.html",
@@ -114934,11 +114927,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2025-tatooine-regionals-mark-billings-ls-mwyhlv.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 251 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T22:02:55Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20261025103431/https://swccg.com/snapshots/pc/2025-tatooine-regionals-mark-billings-ls-mwyhlv.html",
+  "last": "2026-11-04T22:33:18Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-11-04T22:33:27Z",
+   "bytes": 7122361,
+   "capture_id": "https://web.archive.org/web/20261025103431id_/https://swccg.com/snapshots/pc/2025-tatooine-regionals-mark-billings-ls-mwyhlv.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f7d8153830fb2ea3555e8a521a89a3be39f7a307a2258e104fadb322610ddc48"
+  }
  },
  "https://swccg.com/snapshots/pc/2025-tatooine-regionals-paul-coggins-ds-first-order-reigns.html": {
   "capture": "https://web.archive.org/web/20261025095117/https://swccg.com/snapshots/pc/2025-tatooine-regionals-paul-coggins-ds-first-order-reigns.html",
@@ -115506,10 +115507,10 @@
  },
  "https://swccg.com/snapshots/pc/2026-bespin-regionals-garrett-larson-ls-mwyhlv.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T22:00:35Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T22:34:23Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-bespin-regionals-logan-pietig-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261025090226/https://swccg.com/snapshots/pc/2026-bespin-regionals-logan-pietig-ds-shadow-collective.html",
@@ -116315,11 +116316,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-patrik-csapi-ls-diplo.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 249 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T22:01:00Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025120246/https://swccg.com/snapshots/pc/2026-european-championship-top-8-patrik-csapi-ls-diplo.html",
+  "last": "2026-11-04T22:34:55Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-quirin-furgut-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261025075909/https://swccg.com/snapshots/pc/2026-european-championship-top-8-quirin-furgut-ds-sycfa.html",
@@ -119195,12 +119196,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html": {
-  "capture": "https://web.archive.org/web/20261021040051/https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html",
-  "error": "stalled SPN2 pending since 2026-10-21; poked ?copy=2",
-  "last": "2026-10-25T00:36:01Z",
-  "note": "Datacard Grok poke 2026-10-24",
-  "status": "failed",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261021050106/https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html",
+  "last": "2026-11-04T22:36:27Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025034640/https://swccg.com/snapshots/pc/joe-olson-wins-the-25th-star-wars-ccg-world-championship.html?copy=2",
