@@ -127180,10 +127180,10 @@
  },
  "https://swccg.com/snapshots/scomp/desperate-tactics.html": {
   "capture": "https://web.archive.org/web/20261024164007/https://swccg.com/snapshots/scomp/desperate-tactics.html",
-  "error": "no job_id: The same snapshot had been made 201 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T08:00:24Z",
+  "error": "no job_id: The same snapshot had been made 201 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T08:31:02Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/destroyed-homestead.html": {
   "capture": "https://web.archive.org/web/20261026222317/https://swccg.com/snapshots/scomp/destroyed-homestead.html",
@@ -127315,10 +127315,10 @@
  },
  "https://swccg.com/snapshots/scomp/din-djarin.html": {
   "capture": "https://web.archive.org/web/20261026223015/https://swccg.com/snapshots/scomp/din-djarin.html",
-  "error": "no job_id: The same snapshot had been made 201 hours, 29 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T08:00:12Z",
+  "error": "no job_id: The same snapshot had been made 202 hours ago. You can make new capture of this URL after 720 hours.",
+  "last": "2026-11-04T08:30:51Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/dioxis.html": {
   "capture": "https://web.archive.org/web/20261024104718/https://swccg.com/snapshots/scomp/dioxis.html",
@@ -128249,10 +128249,10 @@
  },
  "https://swccg.com/snapshots/scomp/eee-chu-wawa.html": {
   "capture": "https://web.archive.org/web/20261024164909/https://swccg.com/snapshots/scomp/eee-chu-wawa.html",
-  "error": "no job_id: The same snapshot had been made 201 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T08:00:35Z",
+  "error": "no job_id: The same snapshot had been made 201 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T08:31:13Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/effective-repairs-starship-levitation.html": {
   "capture": "https://web.archive.org/web/20261026230017/https://swccg.com/snapshots/scomp/effective-repairs-starship-levitation.html",
@@ -128777,10 +128777,10 @@
  },
  "https://swccg.com/snapshots/scomp/endor-occupation.html": {
   "capture": "https://web.archive.org/web/20261024184036/https://swccg.com/snapshots/scomp/endor-occupation.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T07:52:57Z",
+  "error": "no job_id: The same snapshot had been made 201 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T08:31:36Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/endor-operations-imperial-outpost.html": {
   "capture": "",
@@ -129108,8 +129108,16 @@
   "capture": "https://web.archive.org/web/20261026231716/https://swccg.com/snapshots/scomp/evader-monnok.html",
   "last": "2026-11-04T08:27:04Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T08:32:06Z",
+   "bytes": 313987,
+   "capture_id": "https://web.archive.org/web/20261026231716id_/https://swccg.com/snapshots/scomp/evader-monnok.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d073899c577e6290b072cd598d6779a7912b9b4969f6fbee64ba0539a2451d1b"
+  }
  },
  "https://swccg.com/snapshots/scomp/evader.html": {
   "capture": "",
@@ -130564,8 +130572,16 @@
   "capture": "https://web.archive.org/web/20261024194021/https://swccg.com/snapshots/scomp/general-calrissian.html",
   "last": "2026-11-04T08:27:49Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T08:31:57Z",
+   "bytes": 394681,
+   "capture_id": "https://web.archive.org/web/20261024194021id_/https://swccg.com/snapshots/scomp/general-calrissian.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6193601416dbec1ba5583005f2b8834c293c20d67f0357a74f2bbc41cbc74e09"
+  }
  },
  "https://swccg.com/snapshots/scomp/general-carlist-rieekan-v.html": {
   "capture": "https://web.archive.org/web/20261023235503/https://swccg.com/snapshots/scomp/general-carlist-rieekan-v.html",
@@ -130648,8 +130664,16 @@
   "capture": "https://web.archive.org/web/20261024194012/https://swccg.com/snapshots/scomp/general-grievous-ai.html",
   "last": "2026-11-04T08:28:19Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-04T08:31:49Z",
+   "bytes": 164604,
+   "capture_id": "https://web.archive.org/web/20261024194012id_/https://swccg.com/snapshots/scomp/general-grievous-ai.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a625902f9da64df068c0e93d4742de8fce0ace3a32167d30000aad354b9d3c6e"
+  }
  },
  "https://swccg.com/snapshots/scomp/general-grievous-holo-ai.html": {
   "capture": "https://web.archive.org/web/20261025062905/https://swccg.com/snapshots/scomp/general-grievous-holo-ai.html",
@@ -131470,10 +131494,10 @@
  },
  "https://swccg.com/snapshots/scomp/grievous-gambit.html": {
   "capture": "https://web.archive.org/web/20261024165132/https://swccg.com/snapshots/scomp/grievous-gambit.html",
-  "error": "no job_id: The same snapshot had been made 201 hours, 20 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T08:00:46Z",
+  "error": "no job_id: The same snapshot had been made 201 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T08:31:25Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/grievous-will-run-and-hide.html": {
   "capture": "https://web.archive.org/web/20261024170428/https://swccg.com/snapshots/scomp/grievous-will-run-and-hide.html",
