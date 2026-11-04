@@ -966,7 +966,7 @@ def xml_for(
         hid = "true" if is_horizontal(card) else "false"
         lines.append(
             f'    <card blueprintId="{escape(card["cardId"])}" '
-            f'horizontal="{hid}" title="{escape(card["title"])}"/>'
+            f'horizontal="{hid}" title="{escape(card["title"], {chr(34): "&quot;"})}"/>'
         )
     lines.append("</deck>")
     lines.append("")
