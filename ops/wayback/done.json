@@ -119340,10 +119340,10 @@
  },
  "https://swccg.com/snapshots/scomp/ak-rev.html": {
   "capture": "",
-  "job_id": "spn2-327f50069c6b0f81e290d0cfef5c501a8cb155f4",
-  "last": "2026-10-25T05:57:06Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T14:00:38Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/alderaan.html": {
   "capture": "https://web.archive.org/web/20261026200444/https://swccg.com/snapshots/scomp/alderaan.html",
@@ -120144,11 +120144,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/azure-angel-ai.html": {
-  "capture": "https://web.archive.org/web/20261025052129/https://swccg.com/snapshots/scomp/azure-angel-ai.html",
-  "error": "no job_id: The same snapshot had been made 203 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T13:25:59Z",
-  "status": "retry",
-  "tries": 4
+  "capture": "https://web.archive.org/web/20261027013902/https://swccg.com/snapshots/scomp/azure-angel-ai.html",
+  "last": "2026-11-04T13:59:48Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 5
  },
  "https://swccg.com/snapshots/scomp/azure-angel.html": {
   "capture": "https://web.archive.org/web/20261024095441/https://swccg.com/snapshots/scomp/azure-angel.html",
@@ -124510,10 +124510,10 @@
  },
  "https://swccg.com/snapshots/scomp/cloud-city-trooper.html": {
   "capture": "",
-  "job_id": "spn2-12c3f9043d0865b1dd62fa57f987fdae62f8c413",
-  "last": "2026-10-25T06:10:25Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 247 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T14:01:12Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/cloud-city-upper-plaza-corridor.html": {
   "capture": "https://web.archive.org/web/20261024002301/https://swccg.com/snapshots/scomp/cloud-city-upper-plaza-corridor.html",
@@ -124587,11 +124587,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/collateral-damage.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T13:25:47Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025053023/https://swccg.com/snapshots/scomp/collateral-damage.html",
+  "last": "2026-11-04T13:59:37Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/collision.html": {
   "capture": "https://web.archive.org/web/20261024211510/https://swccg.com/snapshots/scomp/collision.html",
@@ -124622,11 +124622,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/colonel-davod-jon.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T13:23:21Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025051715/https://swccg.com/snapshots/scomp/colonel-davod-jon.html",
+  "last": "2026-11-04T13:58:38Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T13:58:42Z",
+   "bytes": 255621,
+   "capture_id": "https://web.archive.org/web/20261025051715id_/https://swccg.com/snapshots/scomp/colonel-davod-jon.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9ce37c51c66b8eb6dd8cf1a9acab19cd54bcc19db844054fe61302190ec59af4"
+  }
  },
  "https://swccg.com/snapshots/scomp/colonel-dyer.html": {
   "capture": "https://web.archive.org/web/20261026220919/https://swccg.com/snapshots/scomp/colonel-dyer.html",
@@ -124920,11 +124928,11 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/scomp/commander-igar.html": {
-  "capture": "https://web.archive.org/web/20261025052037/https://swccg.com/snapshots/scomp/commander-igar.html",
-  "error": "no job_id: The same snapshot had been made 205 hours, 10 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T13:25:36Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027001531/https://swccg.com/snapshots/scomp/commander-igar.html",
+  "last": "2026-11-04T13:59:20Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/commander-luke-skywalker-v.html": {
   "capture": "https://web.archive.org/web/20261023233956/https://swccg.com/snapshots/scomp/commander-luke-skywalker-v.html",
@@ -127151,10 +127159,10 @@
  },
  "https://swccg.com/snapshots/scomp/dathcha.html": {
   "capture": "",
-  "job_id": "spn2-25664d992c2fdb545e9a71126a4f202229b738ce",
-  "last": "2026-10-25T05:57:17Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T14:00:49Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/dathomir-maul-s-chambers-alt.html": {
   "capture": "",
@@ -128808,10 +128816,10 @@
  },
  "https://swccg.com/snapshots/scomp/droid-racks.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T13:26:11Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-04T13:59:59Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/droid-sensorscope.html": {
   "capture": "https://web.archive.org/web/20261024115812/https://swccg.com/snapshots/scomp/droid-sensorscope.html",
@@ -131887,11 +131895,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/general-mcquarrie.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 42 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T13:26:22Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025054332/https://swccg.com/snapshots/scomp/general-mcquarrie.html",
+  "last": "2026-11-04T14:00:11Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/general-nevar.html": {
   "capture": "https://web.archive.org/web/20261024164013/https://swccg.com/snapshots/scomp/general-nevar.html",
@@ -133958,10 +133966,10 @@
  },
  "https://swccg.com/snapshots/scomp/hutt-bounty.html": {
   "capture": "https://web.archive.org/web/20261025055233/https://swccg.com/snapshots/scomp/hutt-bounty.html",
-  "job_id": "spn2-bef9d9c02dec7722105df8f0ef1b84353bc9a82b",
-  "last": "2026-10-27T01:50:30Z",
-  "status": "pending",
-  "tries": 3
+  "error": "no job_id: The same snapshot had been made 204 hours, 9 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T14:00:26Z",
+  "status": "retry",
+  "tries": 4
  },
  "https://swccg.com/snapshots/scomp/hutt-influence-v.html": {
   "capture": "https://web.archive.org/web/20261026231551/https://swccg.com/snapshots/scomp/hutt-influence-v.html",
@@ -134660,11 +134668,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/ice-storm.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T13:24:49Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261104135904/https://swccg.com/snapshots/scomp/ice-storm.html",
+  "job_id": "spn2-211ac33392bf1b6d4bb1949ccbe6f0b1fcc2b5ef",
+  "last": "2026-11-04T14:01:28Z",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-04T14:01:28Z",
+   "bytes": 164512,
+   "capture_id": "https://web.archive.org/web/20261104135904id_/https://swccg.com/snapshots/scomp/ice-storm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7c72b66af498a95573a53a898d9b193385519a7a47007cd94023efad1efef697"
+  }
  },
  "https://swccg.com/snapshots/scomp/ickabel-g-ont.html": {
   "capture": "https://web.archive.org/web/20261026223158/https://swccg.com/snapshots/scomp/ickabel-g-ont.html",
@@ -135658,10 +135674,18 @@
  },
  "https://swccg.com/snapshots/scomp/it-o-eyetee-oh.html": {
   "capture": "https://web.archive.org/web/20261025051923/https://swccg.com/snapshots/scomp/it-o-eyetee-oh.html",
-  "error": "no job_id: The same snapshot had been made 248 hours, 5 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-11-04T13:25:05Z",
-  "status": "retry",
-  "tries": 2
+  "last": "2026-11-04T13:59:05Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T13:59:09Z",
+   "bytes": 558129,
+   "capture_id": "https://web.archive.org/web/20261025051923id_/https://swccg.com/snapshots/scomp/it-o-eyetee-oh.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ab906a3df80155b357ffdfbfe229130e21a5a37a2c9b81502689b11ade3b3e97"
+  }
  },
  "https://swccg.com/snapshots/scomp/it-s-a-hit.html": {
   "capture": "https://web.archive.org/web/20261026213324/https://swccg.com/snapshots/scomp/it-s-a-hit.html",
@@ -136219,10 +136243,10 @@
  },
  "https://swccg.com/snapshots/scomp/jar-jar-binks.html": {
   "capture": "",
-  "job_id": "spn2-2ab11917974c9cdbc98ddcb52583a11b509fb282",
-  "last": "2026-10-25T05:57:28Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T14:01:00Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/jar-jar-s-electropole.html": {
   "capture": "https://web.archive.org/web/20261024052605/https://swccg.com/snapshots/scomp/jar-jar-s-electropole.html",
