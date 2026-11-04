@@ -119815,10 +119815,10 @@
  },
  "https://swccg.com/snapshots/scomp/artoo.html": {
   "capture": "",
-  "job_id": "spn2-cef218a8a09c283aca0f52489485a9f5e27d6988",
-  "last": "2026-10-24T23:49:23Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 251 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:36:13Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/as-good-as-gone.html": {
   "capture": "https://web.archive.org/web/20261026210121/https://swccg.com/snapshots/scomp/as-good-as-gone.html",
@@ -119916,8 +119916,16 @@
   "capture": "https://web.archive.org/web/20261024201921/https://swccg.com/snapshots/scomp/asteroids-do-not-concern-me.html",
   "last": "2026-11-04T10:13:25Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-04T11:38:08Z",
+   "bytes": 286436,
+   "capture_id": "https://web.archive.org/web/20261024201921id_/https://swccg.com/snapshots/scomp/asteroids-do-not-concern-me.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c11830bbcc44b821a79aafe3b804efe195c6182fc81f21f525752ce5894cd78e"
+  }
  },
  "https://swccg.com/snapshots/scomp/astromech-translator.html": {
   "capture": "https://web.archive.org/web/20261024070550/https://swccg.com/snapshots/scomp/astromech-translator.html",
@@ -121289,10 +121297,10 @@
  },
  "https://swccg.com/snapshots/scomp/blockade-flagship-hallway.html": {
   "capture": "https://web.archive.org/web/20261025001727/https://swccg.com/snapshots/scomp/blockade-flagship-hallway.html",
-  "job_id": "spn2-77db5cd60dc35ba810c3e1630193774968049520",
-  "last": "2026-10-27T00:01:22Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 203 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:36:35Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/blockade-flagship.html": {
   "capture": "https://web.archive.org/web/20261027110828/https://swccg.com/snapshots/scomp/blockade-flagship.html",
@@ -122318,10 +122326,10 @@
  },
  "https://swccg.com/snapshots/scomp/captain-needa-v.html": {
   "capture": "",
-  "job_id": "spn2-f7cdd626475f862eec1dfe6c5e83d77cb40cb974",
-  "last": "2026-10-25T00:01:33Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 251 hours, 33 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:36:01Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/captain-needa.html": {
   "capture": "",
@@ -125721,8 +125729,16 @@
   "capture": "https://web.archive.org/web/20261024201911/https://swccg.com/snapshots/scomp/crack-shot.html",
   "last": "2026-11-04T10:13:03Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-04T11:38:16Z",
+   "bytes": 276515,
+   "capture_id": "https://web.archive.org/web/20261024201911id_/https://swccg.com/snapshots/scomp/crack-shot.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "46e752662b712819897d7fc32d32064e6ba12a778e79c2edda126bfa0b831823"
+  }
  },
  "https://swccg.com/snapshots/scomp/crait-outpost-entrance-cavern.html": {
   "capture": "",
@@ -126652,11 +126668,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/darth-vader.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261104094314/https://swccg.com/snapshots/scomp/darth-vader.html",
   "job_id": "spn2-eb50956897a1149ef557b93957ec0696a71f5172",
-  "last": "2026-10-24T23:50:28Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-04T11:38:03Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T11:38:03Z",
+   "bytes": 172358,
+   "capture_id": "https://web.archive.org/web/20261104094314id_/https://swccg.com/snapshots/scomp/darth-vader.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "38efc96d208b2ea88ea5b7b892f3f8c3279f38b69e721ef475b4cd1dfd725c74"
+  }
  },
  "https://swccg.com/snapshots/scomp/dash-in-rogue-12.html": {
   "capture": "https://web.archive.org/web/20261104092119/https://swccg.com/snapshots/scomp/dash-in-rogue-12.html",
@@ -126875,10 +126899,10 @@
  },
  "https://swccg.com/snapshots/scomp/death-squadron-star-destroyer.html": {
   "capture": "",
-  "job_id": "spn2-b7508dea1a03383fb490bb239f86f0fb3211a3c3",
-  "last": "2026-10-24T23:49:34Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 251 hours, 46 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:36:24Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/death-squadron.html": {
   "capture": "",
@@ -129536,10 +129560,10 @@
  },
  "https://swccg.com/snapshots/scomp/establish-control-v.html": {
   "capture": "https://web.archive.org/web/20261024235207/https://swccg.com/snapshots/scomp/establish-control-v.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T06:21:21Z",
-  "status": "failed",
-  "tries": 6
+  "error": "no job_id: The same snapshot had been made 251 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:37:44Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/scomp/establish-control.html": {
   "capture": "",
@@ -130683,10 +130707,10 @@
  },
  "https://swccg.com/snapshots/scomp/force-push.html": {
   "capture": "",
-  "job_id": "spn2-6472a4adcbf12344601f5e4c723a70175c333345",
-  "last": "2026-10-24T23:51:11Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 251 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:37:10Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/forced-landing.html": {
   "capture": "https://web.archive.org/web/20261024203201/https://swccg.com/snapshots/scomp/forced-landing.html",
@@ -130704,10 +130728,10 @@
  },
  "https://swccg.com/snapshots/scomp/forced-servitude.html": {
   "capture": "",
-  "job_id": "spn2-b8c69d3e3f3018840758d1bfd0e27391c1abd9c8",
-  "last": "2026-10-25T00:02:15Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 251 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:37:32Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/forest.html": {
   "capture": "",
@@ -133828,10 +133852,10 @@
  },
  "https://swccg.com/snapshots/scomp/i-ve-decided-to-go-back.html": {
   "capture": "https://web.archive.org/web/20261024235136/https://swccg.com/snapshots/scomp/i-ve-decided-to-go-back.html",
-  "job_id": "spn2-da5b50474a9c2ca2ddf684aa166cf5be1e58eaa8",
-  "last": "2026-10-25T03:46:43Z",
-  "status": "pending",
-  "tries": 2
+  "error": "no job_id: The same snapshot had been made 247 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:36:58Z",
+  "status": "retry",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/i-ve-got-a-bad-feeling-about-this.html": {
   "capture": "https://web.archive.org/web/20261025053820/https://swccg.com/snapshots/scomp/i-ve-got-a-bad-feeling-about-this.html",
@@ -134609,10 +134633,10 @@
  },
  "https://swccg.com/snapshots/scomp/information-exchange.html": {
   "capture": "",
-  "job_id": "spn2-dc78fd4655a5a73ff256ffc17b83c3f1bc4bf2e5",
-  "last": "2026-10-24T23:51:22Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 251 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T11:37:21Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/innocent-scoundrel.html": {
   "capture": "https://web.archive.org/web/20261026201838/https://swccg.com/snapshots/scomp/innocent-scoundrel.html",
