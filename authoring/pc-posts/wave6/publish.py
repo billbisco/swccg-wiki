@@ -27,20 +27,27 @@ def exists(fn):
     return not r.get("missing")
 
 
+prior = set()
+if (b / "prior-uploads.txt").exists():
+    prior = {l.strip() for l in open(b / "prior-uploads.txt", encoding="utf-8") if l.strip()}
 pages = [l.split("\t") for l in (b / "apply.tsv").read_text(encoding="utf-8").splitlines() if l]
 for title, rel in pages:
     p = plan[title]; text = (b / rel).read_text(encoding="utf-8")
     if p.get("gemp") and not dry:
         g = p["gemp"]; fn = g; k = 2
-        while exists(fn):
-            fn = re.sub(r"\.txt$", f" {k}.txt", g); k += 1
-        if fn != g:
-            text = text.replace(f"[[Media:{g} |", f"[[Media:{fn} |")
         desc = (f"== Summary ==\nGEMP import file for [[{title}]].\n\n== Source ==\n* [{p['link']} {p['post_title']}], starwarsccg.org (deck post).")
-        r = w.upload_new(b / "gemp" / g, fn, desc, SUM) if fn == g else None
-        if fn != g:
-            tmp = b / "gemp" / fn
-            tmp.write_bytes((b / "gemp" / g).read_bytes()); r = w.upload_new(tmp, fn, desc, SUM)
+        if g in prior:                      # our own earlier upload (incomplete list): overwrite in place
+            r = w.upload(b / "gemp" / g, "Complete card list (wave 6 fix, Holocron Claude)")
+        else:
+            while exists(fn):
+                fn = re.sub(r"\.txt$", f" {k}.txt", g); k += 1
+            if fn != g:
+                text = text.replace(f"[[Media:{g} |", f"[[Media:{fn} |")
+                (b / "gemp" / fn).write_bytes((b / "gemp" / g).read_bytes())
+            r = w.upload_new(b / "gemp" / fn, fn, desc, SUM)
+            if str(r).startswith("ERROR") and "duplicate" in str(r):   # same list as a teammate's file: keep its own name
+                r = w.upload(b / "gemp" / fn, SUM) + " (duplicate content of another file)"
+                w.edit("File:" + fn, desc, SUM)
         log.append(f"FILE\t{fn}\t{r}"); print("FILE", fn, r, flush=True)
     if dry:
         print("would edit", title); continue

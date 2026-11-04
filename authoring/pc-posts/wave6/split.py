@@ -20,7 +20,7 @@ for p in plan:
     if p["status"] != "built" or p["slug"] in evs:
         B.append(p); continue
     s = p["slug"].lower(); t = (p["sibling"] + " " + p["title"]).lower()
-    if any(w in s and w not in t for w in OTHER) or re.search(r"\d|nats|nationals", p["player"] or "") or len((p["player"] or "").split()) < 2:
+    if any(w in s and w not in t for w in OTHER) or re.search(r"\d|nats|nationals", p["player"] or "", re.I) or len((p["player"] or "").split()) < 2:
         B.append(p); continue
     A.append(p)
 if outA.exists(): shutil.rmtree(outA)

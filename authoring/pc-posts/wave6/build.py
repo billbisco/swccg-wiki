@@ -30,6 +30,51 @@ def stage_of(s):
     return None
 
 
+def gemp_rows(cardlist):
+    """(qty, GEMP title, side hint) from render()'s cardlist (resolved wiki titles; shields included)."""
+    global _NK
+    if _NK is None:
+        import unicodedata
+        _NK = {}
+        for c in json.load(open(gi.CARD_DB)):
+            _NK.setdefault((c.get("side"), nk(c["title"])), c["title"])
+            base = re.sub(r" \([^()]*\)$", "", c["title"])     # GEMP subtitle: "BB-8 (Beebee-Ate)"
+            if base != c["title"]: _NK.setdefault((c.get("side"), "BASE:" + nk(base)), c["title"])
+    rows = []
+    for q, ttl, raw, v, shield in cardlist:
+        if not ttl: continue
+        hint = "DARK" if " (Dark)" in ttl else None
+        t = ttl.replace("•", "").replace("&#8226;", "")
+        t = re.sub(r" \((?!V\)|AI\))[^()]*\)", "", t)   # strip wiki disambiguators, keep (V)/(AI)
+        rows.append((q, t, hint))
+    return rows
+
+
+_NK = None
+
+
+def nk(t):
+    import unicodedata
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower().replace("&", " and ")
+    return re.sub(r"[^a-z0-9]+", "", t)
+
+
+def gemp_xml(rows, side):
+    """xml_for with a normalized-title fallback per card; raises KeyError when a card has no GEMP blueprint."""
+    out = []
+    for q, t, hint in rows:
+        s2 = hint or side
+        try:
+            gi.lookup(t, s2, None); out.append((q, t, hint)); continue
+        except KeyError:
+            pass
+        hit = _NK.get((s2, nk(t))) or _NK.get((s2, nk(t.split(" / ")[0]))) or _NK.get((s2, "BASE:" + nk(t)))
+        if not hit:
+            raise KeyError(f"no blueprint for {s2} {t!r}")
+        out.append((q, hit, hint))
+    return gi.xml_for(out, side, "all")
+
+
 def info_lines(txt):
     return {m.group(1): m.group(2).strip() for m in re.finditer(r"^\* '''([^':]+):'''\s*(.*)$", txt, re.M)}
 
@@ -150,14 +195,8 @@ def main():
         gemp = None
         if not any(c[1] is None and not c[4] for c in r["cardlist"]):
             try:
-                grows = []
-                for q, ttl, hint in gi.parse_wiki_cards(page):
-                    ttl = ttl.replace("•", "").replace("&#8226;", "")
-                    ttl = re.sub(r" \((Premiere|Light)\)", "", ttl)
-                    if " (Dark) (Premiere)" in ttl or ttl.endswith(" (Dark)"): hint = "DARK"
-                    ttl = ttl.replace(" (Dark)", "")
-                    grows.append((q, ttl, hint))
-                xml, _notes = gi.xml_for(grows, "DARK" if sd == "DS" else "LIGHT", "all")
+                grows = gemp_rows(r["cardlist"])
+                xml, _notes = gemp_xml(grows, "DARK" if sd == "DS" else "LIGHT")
                 tok = re.sub(r"[^A-Za-z0-9]", "", ename.split()[1] if len(ename.split()) > 1 else "PC")[:8]
                 base = gi.safe_deck_filename(gi.deck_name("Open", deck.split(" / ")[0][:28], pname or player_override or "Player", sd, yr, tok))
                 g = {"xml": xml, "name": base}
