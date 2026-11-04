@@ -119466,10 +119466,10 @@
  },
  "https://swccg.com/snapshots/scomp/alter-friendly-fire.html": {
   "capture": "",
-  "job_id": "spn2-6e55b64b5f284e0f54c8c50efdc11882e46dc941",
-  "last": "2026-10-25T07:27:17Z",
-  "status": "pending",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 245 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T12:39:51Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/scomp/always-thinking-with-your-stomach.html": {
   "capture": "",
@@ -119672,10 +119672,10 @@
  },
  "https://swccg.com/snapshots/scomp/aquaris.html": {
   "capture": "https://web.archive.org/web/20261025043037/https://swccg.com/snapshots/scomp/aquaris.html",
-  "job_id": "spn2-8c876efa6dbba694f6a93f5cc1e61c751870e28b",
-  "last": "2026-10-26T20:05:24Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 208 hours, 32 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T12:38:39Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/aratech-corporation.html": {
   "capture": "https://web.archive.org/web/20261024191209/https://swccg.com/snapshots/scomp/aratech-corporation.html",
@@ -120129,11 +120129,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/awwww-cannot-get-your-ship-out.html": {
-  "capture": "",
-  "job_id": "spn2-b06ec81cbe185424d0d8143d8154ecf9e542fefb",
-  "last": "2026-10-25T04:29:24Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025042927/https://swccg.com/snapshots/scomp/awwww-cannot-get-your-ship-out.html",
+  "last": "2026-11-04T12:38:22Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/azure-angel-ai.html": {
   "capture": "https://web.archive.org/web/20261025052129/https://swccg.com/snapshots/scomp/azure-angel-ai.html",
@@ -120709,10 +120709,18 @@
  },
  "https://swccg.com/snapshots/scomp/beldon-s-eye-v.html": {
   "capture": "https://web.archive.org/web/20261025040439/https://swccg.com/snapshots/scomp/beldon-s-eye-v.html",
-  "error": "no job_id: The same snapshot had been made 247 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:03:16Z",
-  "status": "retry",
-  "tries": 2
+  "last": "2026-11-04T12:35:31Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T12:35:34Z",
+   "bytes": 747244,
+   "capture_id": "https://web.archive.org/web/20261025040439id_/https://swccg.com/snapshots/scomp/beldon-s-eye-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d2f08b92220556ba806d27620d6d3c5f436720b85e6406cc5dd56cac6a42b392"
+  }
  },
  "https://swccg.com/snapshots/scomp/beldon-s-eye.html": {
   "capture": "https://web.archive.org/web/20261104054840/https://swccg.com/snapshots/scomp/beldon-s-eye.html",
@@ -121603,11 +121611,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/bog-wing.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 59 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T11:59:18Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025040011/https://swccg.com/snapshots/scomp/bog-wing.html",
+  "last": "2026-11-04T12:33:54Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T12:33:58Z",
+   "bytes": 164499,
+   "capture_id": "https://web.archive.org/web/20261025040011id_/https://swccg.com/snapshots/scomp/bog-wing.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c8e5521062d33d4f17ef7fa49bd288b1a5d0ff4f41b87a3a378177e559486a2f"
+  }
  },
  "https://swccg.com/snapshots/scomp/bok-askol.html": {
   "capture": "https://web.archive.org/web/20261024000828/https://swccg.com/snapshots/scomp/bok-askol.html",
@@ -122247,11 +122263,19 @@
   "tries": 7
  },
  "https://swccg.com/snapshots/scomp/captain-daultay-dofine.html": {
-  "capture": "",
-  "job_id": "spn2-424878851a035807ec42d9c456282abeb5a3e096",
-  "last": "2026-10-25T04:27:39Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025042743/https://swccg.com/snapshots/scomp/captain-daultay-dofine.html",
+  "last": "2026-11-04T12:36:59Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-04T12:37:06Z",
+   "bytes": 284167,
+   "capture_id": "https://web.archive.org/web/20261025042743id_/https://swccg.com/snapshots/scomp/captain-daultay-dofine.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e6d7ba7c8462c0fc617d75750221efcee96768fadf2ead3331a059c61ec95dfd"
+  }
  },
  "https://swccg.com/snapshots/scomp/captain-gilad-pellaeon.html": {
   "capture": "https://web.archive.org/web/20261025035044/https://swccg.com/snapshots/scomp/captain-gilad-pellaeon.html",
@@ -123509,11 +123533,19 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/chall-bekan.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-25T08:05:36Z",
-  "status": "failed",
-  "tries": 6
+  "capture": "https://web.archive.org/web/20261104123902/https://swccg.com/snapshots/scomp/chall-bekan.html",
+  "job_id": "spn2-2b1d0483578b8fa285df3728d2f06c63532f4738",
+  "last": "2026-11-04T12:41:19Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-04T12:41:19Z",
+   "bytes": 647404,
+   "capture_id": "https://web.archive.org/web/20261104123902id_/https://swccg.com/snapshots/scomp/chall-bekan.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3128474c7ca739b5ced374b9e7ee291f244bea83243a93113df261a541ee3ae0"
+  }
  },
  "https://swccg.com/snapshots/scomp/chandrila.html": {
   "capture": "",
@@ -124131,11 +124163,19 @@
   "tries": 4
  },
  "https://swccg.com/snapshots/scomp/cloud-city-core-tunnel.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 57 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T11:59:41Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025040146/https://swccg.com/snapshots/scomp/cloud-city-core-tunnel.html",
+  "last": "2026-11-04T12:34:10Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T12:34:20Z",
+   "bytes": 315484,
+   "capture_id": "https://web.archive.org/web/20261025040146id_/https://swccg.com/snapshots/scomp/cloud-city-core-tunnel.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "8343070f7ca43d1e5775f67a59cc57841b6738d65a1c35a9eeb8f5d60c864704"
+  }
  },
  "https://swccg.com/snapshots/scomp/cloud-city-dining-room-v.html": {
   "capture": "https://web.archive.org/web/20261023233830/https://swccg.com/snapshots/scomp/cloud-city-dining-room-v.html",
@@ -124998,11 +125038,10 @@
   }
  },
  "https://swccg.com/snapshots/scomp/concussion-missiles.html": {
-  "capture": "",
-  "job_id": "spn2-c2d10a50f89729e0c6407c7af114c5f6b3bbb15b",
-  "last": "2026-10-25T04:36:12Z",
+  "capture": "https://web.archive.org/web/20261104123854/https://swccg.com/snapshots/scomp/concussion-missiles.html",
+  "last": "2026-11-04T12:41:21Z",
   "status": "pending",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/conduct-your-search.html": {
   "capture": "https://web.archive.org/web/20261024195427/https://swccg.com/snapshots/scomp/conduct-your-search.html",
@@ -125141,11 +125180,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/corellian-engineering-corporation.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:02:31Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025040426/https://swccg.com/snapshots/scomp/corellian-engineering-corporation.html",
+  "last": "2026-11-04T12:34:50Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/corellian-retort.html": {
   "capture": "https://web.archive.org/web/20261104121615/https://swccg.com/snapshots/scomp/corellian-retort.html",
@@ -125236,10 +125275,10 @@
  },
  "https://swccg.com/snapshots/scomp/corporal-delevar.html": {
   "capture": "",
-  "job_id": "spn2-956b836821bb91fab81e367479570c2d24157f58",
-  "last": "2026-10-25T07:27:28Z",
-  "status": "pending",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 245 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T12:40:41Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://swccg.com/snapshots/scomp/corporal-derdram.html": {
   "capture": "https://web.archive.org/web/20261025044230/https://swccg.com/snapshots/scomp/corporal-derdram.html",
@@ -125372,10 +125411,10 @@
  },
  "https://swccg.com/snapshots/scomp/corporal-pao.html": {
   "capture": "https://web.archive.org/web/20261025043133/https://swccg.com/snapshots/scomp/corporal-pao.html",
-  "job_id": "spn2-79e1f24d4ac60c53dde306c8da302112c01b58fb",
-  "last": "2026-10-27T00:11:44Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 204 hours, 26 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T12:39:28Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/corporal-prescott.html": {
   "capture": "https://web.archive.org/web/20261024192458/https://swccg.com/snapshots/scomp/corporal-prescott.html",
@@ -125637,17 +125676,17 @@
  },
  "https://swccg.com/snapshots/scomp/coruscant-jedi-temple-meditation-room.html": {
   "capture": "",
-  "job_id": "spn2-88e40b66f92b3d135d007e881603f9583f1af260",
-  "last": "2026-10-25T04:36:34Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T12:39:40Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/coruscant-jedi-temple.html": {
-  "capture": "",
-  "job_id": "spn2-78e1e71b9f777a3013be2ee39268a84c271b6b40",
-  "last": "2026-10-25T04:27:28Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025042732/https://swccg.com/snapshots/scomp/coruscant-jedi-temple.html",
+  "last": "2026-11-04T12:36:43Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/coruscant-night-club-ai.html": {
   "capture": "https://web.archive.org/web/20261026235816/https://swccg.com/snapshots/scomp/coruscant-night-club-ai.html",
@@ -125865,10 +125904,10 @@
  },
  "https://swccg.com/snapshots/scomp/covert-landing.html": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 246 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:03:29Z",
+  "error": "no job_id: The same snapshot had been made 247 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-04T12:35:50Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/crack-shot.html": {
   "capture": "https://web.archive.org/web/20261024201911/https://swccg.com/snapshots/scomp/crack-shot.html",
@@ -126657,11 +126696,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/darth-maul-with-lightsaber.html": {
-  "capture": "https://web.archive.org/web/20261025043132/https://swccg.com/snapshots/scomp/darth-maul-with-lightsaber.html",
-  "job_id": "spn2-439935761c59dbe912a61ab0b17c23d4dd33b1e3",
-  "last": "2026-10-27T00:04:12Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027000537/https://swccg.com/snapshots/scomp/darth-maul-with-lightsaber.html",
+  "last": "2026-11-04T12:39:02Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/darth-maul-young-apprentice-ai.html": {
   "capture": "https://web.archive.org/web/20261024193614/https://swccg.com/snapshots/scomp/darth-maul-young-apprentice-ai.html",
@@ -127279,11 +127318,11 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/death-star-level-6-core-shaft-corridor.html": {
-  "capture": "",
-  "job_id": "spn2-65aae6c88d6743f1f84a5c1998f0c62ec56a13c7",
-  "last": "2026-10-25T04:28:32Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025042842/https://swccg.com/snapshots/scomp/death-star-level-6-core-shaft-corridor.html",
+  "last": "2026-11-04T12:37:44Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/death-star-plans.html": {
   "capture": "",
@@ -127793,11 +127832,19 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/dfs-327.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 52 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:03:40Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025041127/https://swccg.com/snapshots/scomp/dfs-327.html",
+  "last": "2026-11-04T12:36:02Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-04T12:36:06Z",
+   "bytes": 156455,
+   "capture_id": "https://web.archive.org/web/20261025041127id_/https://swccg.com/snapshots/scomp/dfs-327.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "00bab45f7ab76c217b895dc6e36b01c96bb8cbbdd956905f91083b14894bd7ed"
+  }
  },
  "https://swccg.com/snapshots/scomp/dfs-squadron-starfighter.html": {
   "capture": "https://web.archive.org/web/20261024093931/https://swccg.com/snapshots/scomp/dfs-squadron-starfighter.html",
@@ -128148,11 +128195,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/don-t-do-that-again.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:03:05Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025040452/https://swccg.com/snapshots/scomp/don-t-do-that-again.html",
+  "last": "2026-11-04T12:35:18Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/don-t-forget-the-droids.html": {
   "capture": "https://web.archive.org/web/20261024170605/https://swccg.com/snapshots/scomp/don-t-forget-the-droids.html",
@@ -129447,11 +129494,11 @@
   "tries": 5
  },
  "https://swccg.com/snapshots/scomp/endor-operations-imperial-outpost.html": {
-  "capture": "",
-  "job_id": "spn2-01788807aa1d3e1bdd64329e8df8c13a07b0607f",
-  "last": "2026-10-25T04:28:21Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025042824/https://swccg.com/snapshots/scomp/endor-operations-imperial-outpost.html",
+  "last": "2026-11-04T12:37:32Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/endor-rebel-landing-site-forest-v.html": {
   "capture": "https://web.archive.org/web/20261027000920/https://swccg.com/snapshots/scomp/endor-rebel-landing-site-forest-v.html",
@@ -129837,11 +129884,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/everything-we-need.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 51 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:02:54Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025041116/https://swccg.com/snapshots/scomp/everything-we-need.html",
+  "last": "2026-11-04T12:35:04Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/evil-is-everywhere.html": {
   "capture": "https://web.archive.org/web/20261026205007/https://swccg.com/snapshots/scomp/evil-is-everywhere.html",
@@ -130248,18 +130295,18 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/scomp/fallen-portal.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 247 hours, 58 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T12:02:20Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261025040330/https://swccg.com/snapshots/scomp/fallen-portal.html",
+  "last": "2026-11-04T12:34:34Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/scomp/fambaa.html": {
-  "capture": "",
-  "job_id": "spn2-1ca030538611169010987e07ed363788127b70ac",
-  "last": "2026-10-25T04:27:18Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025042729/https://swccg.com/snapshots/scomp/fambaa.html",
+  "last": "2026-11-04T12:36:31Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/fanfare-tatooine-v.html": {
   "capture": "https://web.archive.org/web/20261023231040/https://swccg.com/snapshots/scomp/fanfare-tatooine-v.html",
@@ -131197,10 +131244,10 @@
  },
  "https://swccg.com/snapshots/scomp/gamorrean-guard.html": {
   "capture": "",
-  "job_id": "spn2-ba0f3d43069f64a496d464cdffd9adb1ad1e4264",
-  "last": "2026-10-25T04:37:26Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T12:40:16Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/gar-saxon.html": {
   "capture": "https://web.archive.org/web/20261024084225/https://swccg.com/snapshots/scomp/gar-saxon.html",
@@ -131652,11 +131699,11 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/scomp/get-to-your-ships.html": {
-  "capture": "",
-  "job_id": "spn2-da8cdddab21b124ddc38951640d4b0dff5aa2d8d",
-  "last": "2026-10-25T04:35:31Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025043534/https://swccg.com/snapshots/scomp/get-to-your-ships.html",
+  "last": "2026-11-04T12:37:19Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/ghana-gleemort.html": {
   "capture": "https://web.archive.org/web/20261024184220/https://swccg.com/snapshots/scomp/ghana-gleemort.html",
@@ -132041,11 +132088,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/gray-squadron-2.html": {
-  "capture": "",
-  "job_id": "spn2-afa2263449cc4f64b06a7957afbadcc7d0644e76",
-  "last": "2026-10-25T04:35:20Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025043615/https://swccg.com/snapshots/scomp/gray-squadron-2.html",
+  "last": "2026-11-04T12:36:18Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/gray-squadron-y-wing-pilot.html": {
   "capture": "https://web.archive.org/web/20261024161849/https://swccg.com/snapshots/scomp/gray-squadron-y-wing-pilot.html",
@@ -132677,11 +132724,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/he-s-the-best-smuggler-around.html": {
-  "capture": "https://web.archive.org/web/20261024234616/https://swccg.com/snapshots/scomp/he-s-the-best-smuggler-around.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-04T11:58:53Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261026235941/https://swccg.com/snapshots/scomp/he-s-the-best-smuggler-around.html",
+  "last": "2026-11-04T12:33:35Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-04T12:33:42Z",
+   "bytes": 650831,
+   "capture_id": "https://web.archive.org/web/20261026235941id_/https://swccg.com/snapshots/scomp/he-s-the-best-smuggler-around.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7d01a44e845a84907252defa1f35a9e5293121fdfa7d029a40e070890c14cdd3"
+  }
  },
  "https://swccg.com/snapshots/scomp/head-back-to-the-surface.html": {
   "capture": "https://web.archive.org/web/20261026225822/https://swccg.com/snapshots/scomp/head-back-to-the-surface.html",
@@ -133870,10 +133925,10 @@
  },
  "https://swccg.com/snapshots/scomp/i-hope-she-s-all-right.html": {
   "capture": "",
-  "job_id": "spn2-1f2d3ed4c5d72a3427fb172e138ebba6282ea62e",
-  "last": "2026-10-25T04:37:37Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T12:40:30Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/i-know.html": {
   "capture": "https://web.archive.org/web/20261024080636/https://swccg.com/snapshots/scomp/i-know.html",
@@ -133977,10 +134032,10 @@
  },
  "https://swccg.com/snapshots/scomp/i-m-with-you-too.html": {
   "capture": "",
-  "job_id": "spn2-0da52f4280481f1e8b1d9cf78140e1f7a9e43995",
-  "last": "2026-10-25T04:38:30Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T12:41:04Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/i-must-be-allowed-to-speak-smuggler-s-blues.html": {
   "capture": "",
@@ -134271,9 +134326,9 @@
  "https://swccg.com/snapshots/scomp/ig-88-s-neural-inhibitor.html": {
   "capture": "",
   "job_id": "spn2-b8555f609d32ad2dfe7b104676b84cea63aac351",
-  "last": "2026-10-25T04:37:15Z",
+  "last": "2026-11-04T12:40:02Z",
   "status": "pending",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/ig-88-s-pulse-cannon-v.html": {
   "capture": "https://web.archive.org/web/20261024063043/https://swccg.com/snapshots/scomp/ig-88-s-pulse-cannon-v.html",
@@ -134492,11 +134547,11 @@
   }
  },
  "https://swccg.com/snapshots/scomp/imperial-blaster.html": {
-  "capture": "",
-  "job_id": "spn2-439f6b0da35784de814447ae193896b3097f4c2b",
-  "last": "2026-10-25T04:28:42Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261025042925/https://swccg.com/snapshots/scomp/imperial-blaster.html",
+  "last": "2026-11-04T12:37:57Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/imperial-class-star-destroyer.html": {
   "capture": "https://web.archive.org/web/20261024011337/https://swccg.com/snapshots/scomp/imperial-class-star-destroyer.html",
@@ -136287,10 +136342,10 @@
  },
  "https://swccg.com/snapshots/scomp/kashyyyk-kachirho.html": {
   "capture": "",
-  "job_id": "spn2-051d23f13a55317bc8f47ec78903f93259350318",
-  "last": "2026-10-25T04:38:19Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 248 hours, 2 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-04T12:40:53Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/kashyyyk-operative.html": {
   "capture": "https://web.archive.org/web/20261024215129/https://swccg.com/snapshots/scomp/kashyyyk-operative.html",
@@ -137465,9 +137520,9 @@
  "https://swccg.com/snapshots/scomp/levitation-attack.html": {
   "capture": "",
   "job_id": "spn2-3fb6d0a900007c0500f038975fa48a7405dd74b6",
-  "last": "2026-10-25T04:36:23Z",
+  "last": "2026-11-04T12:39:16Z",
   "status": "pending",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/scomp/liana-merian.html": {
   "capture": "",
