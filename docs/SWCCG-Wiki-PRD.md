@@ -135,13 +135,15 @@ From `data-model.md`, plus wiki UX:
 
 Not in the wiki live bar. It still dictates schema and templates today.
 
-- Official historical printings to ingest as artifacts: English (complete), Japanese Takara (Premiere / ANH / Hoth and checklist appearances), Spanish Premiere.
+- Official historical printings to ingest as artifacts: English and the actually published Japanese Takara editions/cards. Verify Japanese coverage per product and card; reserved IDs do not prove publication. **Bill, 2026-11-05: English and Japanese were the only officially produced languages.** The earlier Spanish Premiere claim was incorrect.
 - New languages (Italian, German, modern Spanish, others) are **unofficial translations** of gold English, labeled as such.
 - Pipeline later (Phase 6): original scan stays the art; title, lore, and gametext are laid onto blank frames (or HTML overlay) per `version_id` + `lang`. Never bake translated words into the scan file.
 - Wiki UI can later switch `lang`. Card IDs do not change.
-- Do not invent printed-era foreign text. If we lack a scan of a JP/ES card, mark `needs_scan`.
+- Do not invent printed-era foreign text. If we lack a scan of an actual Japanese printing, record the missing scan; distinguish unverified coverage from a card never published in Japanese.
 
 Public voice on PC layers: accurate and cool, not sneering. Internal model: PC errata = popular house rules / organized-play mods of Decipher’s game. On-wiki label: “Players Committee errata — not published by Decipher.”
+
+Multilingual planning update (2026-11-05): Bill wants complete native-language reading and default labeled AI translation, including shared articles, GEMP chat and forums. Historical artifact language and article/interface language are separate. See [work epic #171](https://github.com/swccg-guild/work/issues/171) and its [research framework](https://github.com/swccg-guild/work/blob/main/docs/design-log/171-multilingual-framework.md). The future architecture remains proposed; the current single-text-field card template does not implement it.
 
 ### 6.3 Decklist page contract
 
