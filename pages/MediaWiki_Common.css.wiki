@@ -626,11 +626,11 @@ body.page-Jokes .mw-parser-output img.mw-file-element {
   #p-namespaces { position: absolute; top: 86px; left: 10px; }
   #p-views { position: absolute; top: 124px; left: 10px; }
   #left-navigation, #right-navigation { margin-top: 0 !important; }
-  .card-rail, .card-rail-right, .card-rail-dual.card-rail-responsive {
-    float: none;
+  body.mediawiki .card-rail, body.mediawiki .card-rail-right, body.mediawiki .card-rail-dual.card-rail-responsive {
+    float: none !important;
     width: 280px;
     max-width: 100%;
-    margin: 0 auto 1em;
+    margin: 0 auto 1em !important;
   }
   .card-body { clear: both; overflow: visible; }
   .card-body, .card-hatnote, .card-nav { overflow-wrap: break-word; }
