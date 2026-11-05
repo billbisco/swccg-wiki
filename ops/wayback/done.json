@@ -90655,13 +90655,14 @@
   "capture": "https://web.archive.org/web/20261021021309/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html",
   "last": "2026-11-05T04:52:31Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-05T22:49:03Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-05T23:26:13Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005256/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html?copy=2",
@@ -91243,8 +91244,16 @@
   "capture": "https://web.archive.org/web/20261021013927/https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html",
   "last": "2026-11-05T04:49:15Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T23:26:49Z",
+   "bytes": 7120833,
+   "capture_id": "https://web.archive.org/web/20261021013927id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "46c6862638866857d56dcee0ae41316cbaefd078321309b09f79257570e1c7ac"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103231931/https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html?copy=2",
