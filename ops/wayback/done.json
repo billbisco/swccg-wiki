@@ -67270,10 +67270,10 @@
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualCards18.pdf": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:03:55Z",
+  "error": "no job_id: The same snapshot had been made 657 hours, 8 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-05T04:48:23Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualCards1Premium.pdf": {
   "capture": "https://web.archive.org/web/20261008193754/https://res.starwarsccg.org/legacyblocks/VirtualCards1Premium.pdf",
@@ -83353,10 +83353,18 @@
  },
  "https://swccg.com/snapshots/forum/t85193.html": {
   "capture": "https://web.archive.org/web/20261021234456/https://swccg.com/snapshots/forum/t85193.html",
-  "error": "no job_id: The same snapshot had been made 340 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T04:03:44Z",
-  "status": "retry",
-  "tries": 4
+  "last": "2026-11-05T04:48:04Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-11-05T04:48:10Z",
+   "bytes": 2019767,
+   "capture_id": "https://web.archive.org/web/20261021234456id_/https://swccg.com/snapshots/forum/t85193.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4eb008bebf20dfb69e1b68b88f92b075de81c5a07ffc7ec32313e0bb9e96b914"
+  }
  },
  "https://swccg.com/snapshots/forum/t85238.html": {
   "capture": "https://web.archive.org/web/20261012164035/https://swccg.com/snapshots/forum/t85238.html",
@@ -83942,53 +83950,53 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-ie.html": {
-  "capture": "https://web.archive.org/web/20261022013830/https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-ie.html",
-  "job_id": "spn2-d41cba935844d9f41f979b811f2b613b97fd1f1f",
-  "last": "2026-10-27T04:31:17Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027043121/https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-ie.html",
+  "last": "2026-11-05T04:55:31Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-wys.html": {
-  "capture": "https://web.archive.org/web/20261022015017/https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-wys.html",
-  "job_id": "spn2-58c11ceaa7b2e1c6e378b2039bb5a74b1a31c5d2",
-  "last": "2026-10-27T04:31:28Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027043221/https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-wys.html",
+  "last": "2026-11-05T04:55:46Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-bastian-winkelhaus-diplo.html": {
   "capture": "https://web.archive.org/web/20261022013922/https://swccg.com/snapshots/pc/2017-ec-day-2-bastian-winkelhaus-diplo.html",
-  "job_id": "spn2-4d859f9c0cb1be767e5459d4e84d81e9d0052d70",
-  "last": "2026-10-27T04:40:13Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-05T04:56:14Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-bastian-winkelhaus-eops.html": {
-  "capture": "https://web.archive.org/web/20261022013946/https://swccg.com/snapshots/pc/2017-ec-day-2-bastian-winkelhaus-eops.html",
-  "job_id": "spn2-563f06a59acc8337c4cecd75944bbb968974d910",
-  "last": "2026-10-27T04:31:39Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027043241/https://swccg.com/snapshots/pc/2017-ec-day-2-bastian-winkelhaus-eops.html",
+  "last": "2026-11-05T04:55:57Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-casper-hb.html": {
-  "capture": "https://web.archive.org/web/20261021003828/https://swccg.com/snapshots/pc/2017-ec-day-2-casper-hb.html",
-  "job_id": "spn2-166d73c22815981eb3d9a2abfaa88e8589f7fe55",
-  "last": "2026-10-27T04:32:41Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027043245/https://swccg.com/snapshots/pc/2017-ec-day-2-casper-hb.html",
+  "last": "2026-11-05T04:56:49Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-casper-watto.html": {
   "capture": "https://web.archive.org/web/20261022015033/https://swccg.com/snapshots/pc/2017-ec-day-2-casper-watto.html",
-  "job_id": "spn2-fa2c5687b7c46321d2a13126a4c265b6cde7705e",
-  "last": "2026-10-27T04:32:31Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-05T04:56:37Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-bhbm.html": {
-  "capture": "https://web.archive.org/web/20261021003753/https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-bhbm.html",
-  "job_id": "spn2-ededab6af06fa68a06c9e45f53c9b7b252304673",
-  "last": "2026-10-27T04:32:20Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027043313/https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-bhbm.html",
+  "last": "2026-11-05T04:56:25Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-trm.html": {
   "capture": "https://web.archive.org/web/20261022013933/https://swccg.com/snapshots/pc/2017-ec-day-2-chris-menzel-trm.html",
@@ -84033,31 +84041,39 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021003905/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-bhbm.html",
-  "job_id": "spn2-bed7d9ff4f001cd963cf22d8bb3ac6d747790c11",
-  "last": "2026-10-27T04:40:23Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-05T04:56:59Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html": {
-  "capture": "https://web.archive.org/web/20261022014036/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html",
-  "job_id": "spn2-5df39b8821d9d48454468024e24afe75bf1cdcfa",
-  "last": "2026-10-27T04:33:23Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027043409/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html",
+  "last": "2026-11-05T04:57:11Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T04:57:24Z",
+   "bytes": 7120893,
+   "capture_id": "https://web.archive.org/web/20261027043409id_/https://swccg.com/snapshots/pc/2017-ec-day-2-david-luhaaer-tatooine-cpv.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "42fb350913d2a55eb60004e42f3cc44b16e943262a1083f92d2d6ea84ad4b5ba"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-isb.html": {
   "capture": "https://web.archive.org/web/20261021004106/https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-isb.html",
-  "job_id": "spn2-b63e6aaac8cb983ad9a84de932213c5cbd282e1c",
-  "last": "2026-10-27T04:40:34Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-05T04:57:48Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html": {
   "capture": "https://web.archive.org/web/20261021004117/https://swccg.com/snapshots/pc/2017-ec-day-2-emil-wallin-oa.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-10-22T04:55:03Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-05T04:58:00Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html": {
   "capture": "https://web.archive.org/web/20261021004148/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html",
@@ -84101,11 +84117,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-jimmy-faelens-thgg.html": {
-  "capture": "https://web.archive.org/web/20261022015039/https://swccg.com/snapshots/pc/2017-ec-day-2-jimmy-faelens-thgg.html",
-  "job_id": "spn2-28a48130b06301a072b9d9d6a46f50fd8250958c",
-  "last": "2026-10-27T04:33:33Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027043425/https://swccg.com/snapshots/pc/2017-ec-day-2-jimmy-faelens-thgg.html",
+  "last": "2026-11-05T04:57:36Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-john-morley-eops.html": {
   "capture": "https://web.archive.org/web/20261027043516/https://swccg.com/snapshots/pc/2017-ec-day-2-john-morley-eops.html",
@@ -84194,10 +84210,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-kevin-jaap-eops.html": {
   "capture": "https://web.archive.org/web/20261022015229/https://swccg.com/snapshots/pc/2017-ec-day-2-kevin-jaap-eops.html",
-  "job_id": "spn2-c32b1d8834eb9d7401f70cb7710109167b66ad92",
-  "last": "2026-10-27T04:53:10Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-05T04:58:12Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-nelson-hd.html": {
   "capture": "https://web.archive.org/web/20261027043439/https://swccg.com/snapshots/pc/2017-ec-day-2-nelson-hd.html",
@@ -84951,11 +84967,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-benedict-donnay-ls.html": {
-  "capture": "https://web.archive.org/web/20261022010710/https://swccg.com/snapshots/pc/2017-worlds-day-2-benedict-donnay-ls.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:23:28Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027041651/https://swccg.com/snapshots/pc/2017-worlds-day-2-benedict-donnay-ls.html",
+  "last": "2026-11-05T04:54:14Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-bill-kafer-coruscant-crv.html": {
   "capture": "https://web.archive.org/web/20261027040401/https://swccg.com/snapshots/pc/2017-worlds-day-2-bill-kafer-coruscant-crv.html",
@@ -85461,11 +85477,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ls.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:05:58Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021012331/https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ls.html",
+  "last": "2026-11-05T04:48:35Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T04:48:41Z",
+   "bytes": 7120706,
+   "capture_id": "https://web.archive.org/web/20261021012331id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ls.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "197e5ba4f151970cf92b9f615ac6516298666358a0540e92417ffabf8932539a"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025004134/https://swccg.com/snapshots/pc/2017-worlds-day-2-ethan-phou-ls.html?copy=2",
@@ -85477,9 +85501,9 @@
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-diplo.html": {
   "capture": "https://web.archive.org/web/20261021013243/https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-diplo.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:06:19Z",
+  "last": "2026-11-05T04:48:52Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-eops.html": {
   "capture": "https://web.archive.org/web/20261021012342/https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-eops.html",
@@ -85588,9 +85612,9 @@
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ds.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:08:44Z",
+  "last": "2026-11-05T04:49:26Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025004338/https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ds.html?copy=2",
@@ -85608,18 +85632,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ls.html": {
-  "capture": "https://web.archive.org/web/20261022002811/https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ls.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:08:54Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027040742/https://swccg.com/snapshots/pc/2017-worlds-day-2-jake-nelson-ls.html",
+  "last": "2026-11-05T04:49:38Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:18:40Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021021309/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html",
+  "last": "2026-11-05T04:52:31Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005256/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html?copy=2",
@@ -85673,18 +85697,26 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-trm.html": {
-  "capture": "https://web.archive.org/web/20261021015745/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-trm.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:13:44Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261022003850/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-trm.html",
+  "last": "2026-11-05T04:51:10Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T04:51:15Z",
+   "bytes": 7120782,
+   "capture_id": "https://web.archive.org/web/20261022003850id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-westergard-trm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "80ed4ad4e8388540f342907cb1be6feabfa43c0785c06f95130cf3cd29ce2337"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jeremy-dipaolo-court.html": {
-  "capture": "https://web.archive.org/web/20261021022341/https://swccg.com/snapshots/pc/2017-worlds-day-2-jeremy-dipaolo-court.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:24:03Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261022010755/https://swccg.com/snapshots/pc/2017-worlds-day-2-jeremy-dipaolo-court.html",
+  "last": "2026-11-05T04:54:28Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jeremy-dipaolo-diplo.html": {
   "capture": "https://web.archive.org/web/20261022010739/https://swccg.com/snapshots/pc/2017-worlds-day-2-jeremy-dipaolo-diplo.html",
@@ -85729,11 +85761,11 @@
   "tries": 6
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:10:50Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261105045031/https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html",
+  "job_id": "spn2-9d7f56480e035e835a3c18a1f68a96eace868927",
+  "last": "2026-11-05T04:58:28Z",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194147/https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html?copy=2",
@@ -85772,18 +85804,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-phillips-ls.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:15:23Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261022003931/https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-phillips-ls.html",
+  "last": "2026-11-05T04:51:54Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ds.html": {
-  "capture": "https://web.archive.org/web/20261021015908/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ds.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:15:46Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261022004023/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ds.html",
+  "last": "2026-11-05T04:52:06Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ls.html": {
   "capture": "https://web.archive.org/web/20261022004103/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ls.html",
@@ -85815,11 +85847,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-john-veasey-oa.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:18:30Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261022004045/https://swccg.com/snapshots/pc/2017-worlds-day-2-john-veasey-oa.html",
+  "last": "2026-11-05T04:52:18Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jonny-chu-ds.html": {
   "capture": "https://web.archive.org/web/20261021021108/https://swccg.com/snapshots/pc/2017-worlds-day-2-jonny-chu-ds.html",
@@ -85873,11 +85905,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-justin-desai-ls.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:07:16Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021021056/https://swccg.com/snapshots/pc/2017-worlds-day-2-justin-desai-ls.html",
+  "last": "2026-11-05T04:49:03Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-justin-desai-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025004455/https://swccg.com/snapshots/pc/2017-worlds-day-2-justin-desai-ls.html?copy=2",
@@ -85959,11 +85991,11 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-matt-scott-ls.html": {
-  "capture": "https://web.archive.org/web/20261022003633/https://swccg.com/snapshots/pc/2017-worlds-day-2-matt-scott-ls.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:10:27Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027041407/https://swccg.com/snapshots/pc/2017-worlds-day-2-matt-scott-ls.html",
+  "last": "2026-11-05T04:49:55Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-kessling-ds.html": {
   "capture": "https://web.archive.org/web/20261021014223/https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-kessling-ds.html",
@@ -86010,11 +86042,11 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-court.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:13:55Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021014700/https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-court.html",
+  "last": "2026-11-05T04:51:26Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-court.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025004727/https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-court.html?copy=2",
@@ -86136,11 +86168,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:07:51Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021013927/https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html",
+  "last": "2026-11-05T04:49:15Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103231931/https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ds.html?copy=2",
@@ -86215,11 +86247,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-sam-olson-ls.html": {
-  "capture": "https://web.archive.org/web/20261021014352/https://swccg.com/snapshots/pc/2017-worlds-day-2-sam-olson-ls.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:12:24Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261022003820/https://swccg.com/snapshots/pc/2017-worlds-day-2-sam-olson-ls.html",
+  "last": "2026-11-05T04:50:32Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-mwyhl.html": {
   "capture": "https://web.archive.org/web/20261022010326/https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-mwyhl.html",
@@ -86236,18 +86268,18 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-tatooine-crv.html": {
-  "capture": "https://web.archive.org/web/20261021014632/https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-tatooine-crv.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:14:16Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261022003838/https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-tatooine-crv.html",
+  "last": "2026-11-05T04:51:40Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ds.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:13:14Z",
+  "last": "2026-11-05T04:50:54Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103235631/https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ds.html?copy=2",
@@ -86291,11 +86323,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-fulner-ds.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:19:02Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021020033/https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-fulner-ds.html",
+  "last": "2026-11-05T04:52:47Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-fulner-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005514/https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-fulner-ds.html?copy=2",
@@ -86342,11 +86374,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-harpster-ls.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:11:14Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021014350/https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-harpster-ls.html",
+  "last": "2026-11-05T04:50:18Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-harpster-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005611/https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-harpster-ls.html?copy=2",
@@ -86372,16 +86404,16 @@
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-skilton-ls.html": {
   "capture": "https://web.archive.org/web/20261021014434/https://swccg.com/snapshots/pc/2017-worlds-day-2-steve-skilton-ls.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:12:47Z",
+  "last": "2026-11-05T04:50:44Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tim-culver-ds.html": {
-  "capture": "https://web.archive.org/web/20261022011607/https://swccg.com/snapshots/pc/2017-worlds-day-2-tim-culver-ds.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:21:36Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027041542/https://swccg.com/snapshots/pc/2017-worlds-day-2-tim-culver-ds.html",
+  "last": "2026-11-05T04:53:41Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tim-culver-ls.html": {
   "capture": "https://web.archive.org/web/20261022010522/https://swccg.com/snapshots/pc/2017-worlds-day-2-tim-culver-ls.html",
@@ -86406,11 +86438,11 @@
   "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-haid-ls.html": {
-  "capture": "https://web.archive.org/web/20261022010454/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-haid-ls.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:20:32Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027041518/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-haid-ls.html",
+  "last": "2026-11-05T04:53:14Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ds.html": {
   "capture": "https://web.archive.org/web/20261021021357/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ds.html",
@@ -86427,11 +86459,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ls.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:20:57Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021021408/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ls.html",
+  "last": "2026-11-05T04:53:26Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005659/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ls.html?copy=2",
@@ -86450,9 +86482,9 @@
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-marlin-ls.html": {
   "capture": "https://web.archive.org/web/20261022010556/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-marlin-ls.html",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:22:16Z",
+  "last": "2026-11-05T04:53:51Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-vikram-bali-ds.html": {
   "capture": "https://web.archive.org/web/20261022010456/https://swccg.com/snapshots/pc/2017-worlds-day-2-vikram-bali-ds.html",
@@ -86477,10 +86509,10 @@
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-william-ament-ds.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:22:26Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-668ad5f4bdddd4dc94826dc61f8b580d6a4299d3",
+  "last": "2026-11-05T04:54:02Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-william-ament-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010726/https://swccg.com/snapshots/pc/2017-worlds-day-2-william-ament-ds.html?copy=2",
@@ -86540,11 +86572,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-3-tom-kelly-ls.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:20:09Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261021021438/https://swccg.com/snapshots/pc/2017-worlds-day-3-tom-kelly-ls.html",
+  "last": "2026-11-05T04:52:59Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-3-tom-kelly-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005721/https://swccg.com/snapshots/pc/2017-worlds-day-3-tom-kelly-ls.html?copy=2",
@@ -120728,17 +120760,17 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ds-aobs.html": {
   "capture": "https://web.archive.org/web/20261022022035/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ds-aobs.html",
-  "job_id": "spn2-2ff91f2a86b56b07d4893d197d1ab42963e01445",
-  "last": "2026-10-27T04:30:25Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-05T04:54:40Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ls-qmc.html": {
-  "capture": "https://web.archive.org/web/20261022013848/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ls-qmc.html",
-  "job_id": "spn2-f0a1a4e889f6de430f1ad6044b95ceff27c5dc28",
-  "last": "2026-10-27T04:30:36Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027043041/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-marvin-tegeler-ls-qmc.html",
+  "last": "2026-11-05T04:54:52Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ds-court.html": {
   "capture": "https://web.archive.org/web/20261021003421/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-mike-damboise-ds-court.html",
@@ -120798,17 +120830,17 @@
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ds-hdadtj.html": {
   "capture": "https://web.archive.org/web/20261021003722/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ds-hdadtj.html",
-  "job_id": "spn2-f23bcefd21d5486cadedbde96c1f9d592524f099",
-  "last": "2026-10-27T04:53:00Z",
-  "status": "pending",
-  "tries": 1
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-05T04:55:05Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ls-wys-raiders.html": {
   "capture": "https://web.archive.org/web/20261021003641/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ls-wys-raiders.html",
-  "job_id": "spn2-2cc464f6bb2e249d7dc5c221c4fccd9993336fd5",
-  "last": "2026-10-22T01:38:16Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-11-05T04:55:16Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html": {
   "capture": "https://web.archive.org/web/20261027042916/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html",
@@ -173324,10 +173356,10 @@
  },
  "https://youtu.be/wdT3-tS-So8": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:03:33Z",
+  "error": "no job_id: The same snapshot had been made 653 hours ago. You can make new capture of this URL after 720 hours.",
+  "last": "2026-11-05T04:47:52Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://youtu.be/xR72a7lhST8": {
   "capture": "https://web.archive.org/web/20261105024314/https://www.youtube.com/watch?v=xR72a7lhST8&feature=youtu.be",
