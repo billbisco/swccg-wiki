@@ -6076,9 +6076,9 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-1fb42edc71863b7b276cf1aa609fc4d4114f1409",
-  "last": "2026-11-05T12:47:09Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-11-05T13:37:00Z",
+  "status": "failed",
+  "tries": 6
  },
  "http://www.angelfire.com/scifi2/thx113806107": {
   "capture": "",
@@ -63628,17 +63628,17 @@
   "capture": "",
   "error": "error:service-unavailable",
   "job_id": "spn2-3cc2c52e555a75ba0b0f5ed9fc51171a91430aef",
-  "last": "2026-11-05T12:47:11Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-11-05T13:37:02Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://cardguide.fandom.com/wiki/Premiere_Limited_(Star_Wars_CCG)_(ES)": {
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-60c486d5aff3b68b2f7765c967e73d8a5ef60ab9",
-  "last": "2026-11-05T12:47:12Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-11-05T13:37:03Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://cardguide.fandom.com/wiki/Star_Wars_CCG": {
   "capture": "https://web.archive.org/web/20260214102400/https://cardguide.fandom.com/wiki/Star_Wars_CCG",
@@ -71539,8 +71539,16 @@
   "capture": "https://web.archive.org/web/20261022130121/https://res.starwarsccg.org/wp/wp-content/uploads/2021/04/MPC%202021%20Banner%202.jpg",
   "last": "2026-11-05T09:26:46Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-05T13:37:30Z",
+   "bytes": 494291,
+   "capture_id": "https://web.archive.org/web/20261022130121id_/https://res.starwarsccg.org/wp/wp-content/uploads/2021/04/MPC%202021%20Banner%202.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a39e57d7279664d247423b38d782e71d7a003cf8d927ad838a9830f764c67400"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/DenverLogo.jpg": {
   "capture": "https://web.archive.org/web/20261027102015/https://res.starwarsccg.org/wp/wp-content/uploads/2021/07/DenverLogo.jpg",
@@ -71604,8 +71612,16 @@
   "capture": "https://web.archive.org/web/20261027101242/https://res.starwarsccg.org/wp/wp-content/uploads/2021/12/6thGEMPCBanner.png",
   "last": "2026-11-05T09:27:30Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T13:37:20Z",
+   "bytes": 415792,
+   "capture_id": "https://web.archive.org/web/20261027101242id_/https://res.starwarsccg.org/wp/wp-content/uploads/2021/12/6thGEMPCBanner.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "23b3315079f57b19b66baaab499ab99677208fdf1fe8e19a241422b82bbc6ef3"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/GameRoomUSNATS.jpg": {
   "capture": "https://web.archive.org/web/20261022134914/https://res.starwarsccg.org/wp/wp-content/uploads/2022/2022-us-nationals/GameRoomUSNATS.jpg",
@@ -71699,8 +71715,16 @@
   "capture": "https://web.archive.org/web/20261022131724/https://res.starwarsccg.org/wp/wp-content/uploads/2022/BespinReg.jpg",
   "last": "2026-11-05T09:27:44Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-05T13:37:11Z",
+   "bytes": 606605,
+   "capture_id": "https://web.archive.org/web/20261022131724id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/BespinReg.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "160265e3fee08bb1f216c00bfe6963ad3a59803857acda9d9971da0dfd2fdac8"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/CoruscantDSrare.jpg": {
   "capture": "https://web.archive.org/web/20261027102025/https://res.starwarsccg.org/wp/wp-content/uploads/2022/CoruscantDSrare.jpg",
