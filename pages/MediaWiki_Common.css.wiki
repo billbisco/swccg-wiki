@@ -600,6 +600,7 @@ body.page-Jokes .mw-parser-output img.mw-file-element {
 
 /* Card-history pilot QA: keep legacy Vector navigation above content on phones. */
 @media (max-width: 720px) {
+  body.mediawiki { position: relative; }
   #mw-head {
     left: 0 !important;
     right: 0 !important;
@@ -635,4 +636,5 @@ body.page-Jokes .mw-parser-output img.mw-file-element {
   .card-body { clear: both; overflow: visible; }
   .card-body, .card-hatnote, .card-nav { overflow-wrap: break-word; }
   .card-portrait img { max-width: 100%; height: auto; }
+  .expansion-infobox { float: none; max-width: 100%; margin: 0 auto 1em; }
 }
