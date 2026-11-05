@@ -90648,7 +90648,12 @@
   "last": "2026-11-05T04:52:31Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T22:11:12Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005256/https://swccg.com/snapshots/pc/2017-worlds-day-2-jan-berueda-ds.html?copy=2",
@@ -90833,8 +90838,16 @@
   "capture": "https://web.archive.org/web/20261022004023/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ds.html",
   "last": "2026-11-05T04:52:06Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T22:11:46Z",
+   "bytes": 7120591,
+   "capture_id": "https://web.archive.org/web/20261022004023id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ds.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "35e6161c463ca1c1264d3e9715296976430c1e559d2a386f358e30ff24d1128a"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ls.html": {
   "capture": "https://web.archive.org/web/20261022004103/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ls.html",
@@ -90869,8 +90882,16 @@
   "capture": "https://web.archive.org/web/20261022004045/https://swccg.com/snapshots/pc/2017-worlds-day-2-john-veasey-oa.html",
   "last": "2026-11-05T04:52:18Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T22:11:24Z",
+   "bytes": 7120741,
+   "capture_id": "https://web.archive.org/web/20261022004045id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-john-veasey-oa.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6f808b710fc4febd3079553cf73ac459bdd505699aef8c1ea1b2a65ddfcdf083"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jonny-chu-ds.html": {
   "capture": "https://web.archive.org/web/20261021021108/https://swccg.com/snapshots/pc/2017-worlds-day-2-jonny-chu-ds.html",
