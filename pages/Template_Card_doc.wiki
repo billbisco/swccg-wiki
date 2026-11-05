@@ -47,6 +47,10 @@ Optional '''image2_layout''' — how to place '''image2''' when set:
 * '''right''' — force side-by-side always (0 left, 7 right); classes '''card-portraits-row''' + '''card-rail-dual'''
 * '''responsive''' — preferred Objective mode: wide viewport = side-by-side (0 left, 7 right); narrow viewport (max-width '''720px''') = stacked. Same row/dual markup plus '''card-rail-responsive''' / '''card-portraits-responsive''' so CSS media query can adapt.
 
+Optional '''image3''', '''image4''', '''image5''', '''image6''' — further portraits, each 280px wide, with matching '''image3_trim''' … '''image6_trim''' (same rule as '''image2_trim'''). Used for the printed slip on [[Virtual Legacy]] card pages (swccg-guild/work#156), as '''image2''' shows the slip on [[Virtual Original]] pages.
+* Stacked layout (no '''image2_layout'''): they follow '''image2''' in order, top to bottom. A single-face card whose '''image2''' is free puts its slip in '''image2'''; a card whose '''image2''' is taken puts the slip in '''image3''' (a slip printed in two halves uses the next free slots, top half first).
+* '''right''' / '''responsive''' layout (two-sided Objectives): when '''image3''' or '''image4''' is set the portraits form two columns. The left column is '''image''' (0 side), '''image3''', '''image5'''; the right column is '''image2''' (7 side), '''image4''', '''image6'''. Put the 0 side's slip in '''image3''' and the 7 side's in '''image4'''; when a side's slip is printed in two halves, its second half goes in '''image5''' (0 side) or '''image6''' (7 side). In narrow (responsive) view the left column stacks above the right. Without '''image3'''/'''image4''' the layout is unchanged.
+
 <pre>
 {{Card
 |title=2X-3KPR (Tooex)
@@ -57,6 +61,7 @@ Optional '''image2_layout''' — how to place '''image2''' when set:
 |image=Premiere-L-2x3kpr.gif
 |image2=
 |image2_layout=
+|image3=
 |side=Light
 |type=Character
 |subtype=Droid
@@ -135,4 +140,4 @@ Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px =
 |set=Third Anthology
 |...
 }}
-</pre>
+</pre><noinclude>[[Category:Templates]]</noinclude>
