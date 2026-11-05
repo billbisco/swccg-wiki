@@ -36348,8 +36348,16 @@
   "capture": "https://web.archive.org/web/20261027051919/https://www.decktech.net/starwarsccg/deck/18297/",
   "last": "2026-11-05T05:21:35Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T09:09:36Z",
+   "bytes": 15197,
+   "capture_id": "https://web.archive.org/web/20261027051919id_/https://www.decktech.net/starwarsccg/deck/18297/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c62591ec66247b18b334eb0ffbce487e214e7c9c311779b61121aa6d8b345331"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18300": {
   "capture": "https://web.archive.org/web/20261022040739/https://www.decktech.net/starwarsccg/deck/18300/",
@@ -36503,15 +36511,31 @@
   "capture": "https://web.archive.org/web/20261020225529/https://www.decktech.net/starwarsccg/deck/18342/",
   "last": "2026-11-05T05:20:15Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T09:09:45Z",
+   "bytes": 13852,
+   "capture_id": "https://web.archive.org/web/20261020225529id_/https://www.decktech.net/starwarsccg/deck/18342/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "cd34ecc5d352afbb2a70bb956d7b0b6f1b5320abe6a505b09943d87097ca36ee"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18351": {
   "capture": "https://web.archive.org/web/20261027051837/https://www.decktech.net/starwarsccg/deck/18351/",
   "last": "2026-11-05T05:20:01Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T09:09:52Z",
+   "bytes": 17116,
+   "capture_id": "https://web.archive.org/web/20261027051837id_/https://www.decktech.net/starwarsccg/deck/18351/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "b20b0953980810945f43e088229a34945d81623d467e8dd53923d5a8fbf795f2"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18374": {
   "capture": "https://web.archive.org/web/20261017202257/https://www.decktech.net/starwarsccg/deck/18374/",
@@ -36547,8 +36571,16 @@
   "capture": "https://web.archive.org/web/20261020225436/https://www.decktech.net/starwarsccg/deck/18394/",
   "last": "2026-11-05T05:19:49Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T09:09:59Z",
+   "bytes": 14581,
+   "capture_id": "https://web.archive.org/web/20261020225436id_/https://www.decktech.net/starwarsccg/deck/18394/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ab0e350472ea6e5b09beeac478715f7df5b9097cb24d4714af9ce36d95c7f296"
+  }
  },
  "http://www.decktech.net/starwarsccg/deck/18411": {
   "capture": "https://web.archive.org/web/20261020225426/https://www.decktech.net/starwarsccg/deck/18411/",
@@ -68880,10 +68912,10 @@
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/dark/Card225_003.java": {
   "capture": "",
-  "job_id": "spn2-870f530c9b3072035b9f03f1d24bcdd305daff2e",
-  "last": "2026-10-22T11:21:26Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 333 hours, 45 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T09:07:06Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/light/Card225_051.java": {
   "capture": "https://web.archive.org/web/20261020174137/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/light/Card225_051.java",
@@ -68996,11 +69028,19 @@
   }
  },
  "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json": {
-  "capture": "https://web.archive.org/web/20261020174249/https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json",
-  "job_id": "spn2-5f68afee2def0aebd7bea128b07f6c5836fa92ef",
-  "last": "2026-10-27T09:51:29Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027095130/https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json",
+  "last": "2026-11-05T09:07:21Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T09:07:38Z",
+   "capture_id": "https://web.archive.org/web/20261027095130id_/https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 72% (< 85%)",
+   "text_match": 0.721
+  }
  },
  "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/LightLegacy.json": {
   "capture": "https://web.archive.org/web/20261027094647/https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/LightLegacy.json",
@@ -70635,18 +70675,34 @@
   "tries": 6
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock1.pdf": {
-  "capture": "https://web.archive.org/web/20261020181626/https://res.starwarsccg.org/legacyblocks/VirtualBlock1.pdf",
-  "job_id": "spn2-aafd4ad293edbc56ae3300c0981b459d89657c1f",
-  "last": "2026-10-27T10:04:26Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027100429/https://res.starwarsccg.org/legacyblocks/VirtualBlock1.pdf",
+  "last": "2026-11-05T09:07:49Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T09:07:57Z",
+   "bytes": 6811080,
+   "capture_id": "https://web.archive.org/web/20261027100429id_/https://res.starwarsccg.org/legacyblocks/VirtualBlock1.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0d384102d0f56e11eb19952b3763300f92df6513d1dec16dc6405e029040c8dd"
+  }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock2.pdf": {
-  "capture": "https://web.archive.org/web/20261020174312/https://res.starwarsccg.org/legacyblocks/VirtualBlock2.pdf",
-  "job_id": "spn2-5261d85a0cdc34bca11e31e5c3a377a2d3984534",
-  "last": "2026-10-27T09:52:12Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261027095258/https://res.starwarsccg.org/legacyblocks/VirtualBlock2.pdf",
+  "last": "2026-11-05T09:08:10Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T09:08:21Z",
+   "bytes": 6776571,
+   "capture_id": "https://web.archive.org/web/20261027095258id_/https://res.starwarsccg.org/legacyblocks/VirtualBlock2.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6802c315f5a1aed357c2e0e19cd7ac4c0088d5b090ee462c9622f028ec3e63bc"
+  }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock3.pdf": {
   "capture": "https://web.archive.org/web/20261020174313/https://res.starwarsccg.org/legacyblocks/VirtualBlock3.pdf",
@@ -70664,17 +70720,17 @@
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf": {
   "capture": "https://web.archive.org/web/20261020174331/https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf",
-  "job_id": "spn2-3a7574bcc56c150d698d02ba79d890365e6dd947",
-  "last": "2026-10-27T09:52:22Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 215 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T09:08:33Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf": {
   "capture": "https://web.archive.org/web/20261020175310/https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf",
-  "job_id": "spn2-ca7344d39aa1bf2141dee1642136696e3a8501a3",
-  "last": "2026-10-27T09:52:33Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 215 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T09:08:44Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock6_1.pdf": {
   "capture": "https://web.archive.org/web/20261008195540/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_1.pdf",
@@ -70692,24 +70748,24 @@
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock6_2.pdf": {
   "capture": "https://web.archive.org/web/20261020174418/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_2.pdf",
-  "job_id": "spn2-2485d1f949be427bf1af29a9f798985f6fc39bcc",
-  "last": "2026-10-27T10:18:18Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 214 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T09:08:56Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf": {
   "capture": "https://web.archive.org/web/20261020174429/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf",
-  "job_id": "spn2-7f6f743323f3513c0f64aead428f714ff280d5d3",
-  "last": "2026-10-27T09:53:15Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 215 hours, 15 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T09:09:07Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf": {
   "capture": "https://web.archive.org/web/20261020174512/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf",
-  "job_id": "spn2-054bcf7cebea4cf8c26e0538fe2950b9e8c60f45",
-  "last": "2026-10-27T09:53:25Z",
-  "status": "pending",
-  "tries": 1
+  "error": "no job_id: The same snapshot had been made 215 hours, 15 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T09:09:19Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock7_2.pdf": {
   "capture": "https://web.archive.org/web/20261016180935/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_2.pdf",
