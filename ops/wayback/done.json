@@ -88716,8 +88716,16 @@
   "capture": "https://web.archive.org/web/20261027043121/https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-ie.html",
   "last": "2026-11-05T04:55:31Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T21:09:00Z",
+   "bytes": 7120933,
+   "capture_id": "https://web.archive.org/web/20261027043121id_/https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-ie.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "8b315bd9e13705150d1b823c062b6a5e7d908ecfe3d3358d11558e45e669d8b6"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-wys.html": {
   "capture": "https://web.archive.org/web/20261027043221/https://swccg.com/snapshots/pc/2017-ec-day-2-angelo-consoli-wys.html",
@@ -88901,10 +88909,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-05T20:30:56Z",
+   "at": "2026-11-05T21:08:42Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html": {
   "capture": "https://web.archive.org/web/20261021004148/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html",
@@ -126263,7 +126271,12 @@
   "last": "2026-11-05T04:55:16Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 3
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T21:09:09Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html": {
   "capture": "https://web.archive.org/web/20261027042916/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html",
