@@ -90831,8 +90831,16 @@
   "capture": "https://web.archive.org/web/20261022003931/https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-phillips-ls.html",
   "last": "2026-11-05T04:51:54Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T22:23:45Z",
+   "bytes": 7120795,
+   "capture_id": "https://web.archive.org/web/20261022003931id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-phillips-ls.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "db6a844d491593e73be8f5dc7256ad0f25af7ba5da221177009320d3e432df3a"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ds.html": {
   "capture": "https://web.archive.org/web/20261022004023/https://swccg.com/snapshots/pc/2017-worlds-day-2-joel-cooper-ds.html",
@@ -91311,8 +91319,16 @@
   "capture": "https://web.archive.org/web/20261022003838/https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-tatooine-crv.html",
   "last": "2026-11-05T04:51:40Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T22:23:59Z",
+   "bytes": 7120821,
+   "capture_id": "https://web.archive.org/web/20261022003838id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-scott-lingrell-tatooine-crv.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d9f046682cd76e212669ed6dd90e5a9a95be21b50b3f0e0b7dc772c0acc0aa3d"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ds.html": {
   "capture": "https://web.archive.org/web/20261105053240/https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ds.html",
@@ -126354,13 +126370,14 @@
   "capture": "https://web.archive.org/web/20261021003641/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-nicholas-tobin-ls-wys-raiders.html",
   "last": "2026-11-05T04:55:16Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-11-05T21:46:49Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-05T22:23:36Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html": {
   "capture": "https://web.archive.org/web/20261027042916/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html",
