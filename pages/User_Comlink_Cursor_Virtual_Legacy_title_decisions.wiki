@@ -1,0 +1,1103 @@
+<div style="border:2px solid #b32424; background:#fdf2f2; padding:0.8em 1em; margin-bottom:1em; font-size:110%;">
+'''Working draft, not a public article.''' A decision sheet in [[User:Comlink Cursor|Comlink Cursor]]'s user space for [[Bill Bisco]]: one row per Virtual Legacy card whose printed title differs from its Players Committee title. Card pages and GEMP stay as they are until Bill picks.
+</div>
+
+'''How to answer:''' reply in chat with picks by GEMP id, for example "1273_6 printed, 1273_9 PC", or give one answer for a whole table ("Table C: PC for all").
+* '''Printed''' = the title on the physical card, as printed on the Players Committee's official card sheet.
+* '''PC''' = the Players Committee's title in its card data, which the Players Committee's GEMP uses.
+* '''Current''' = what GEMP (billbisco/swccg-gemp master, 4 November 2026) and the wiki use now.
+* Card images are the Players Committee's card images on the wiki. The sheet page for each card is in Sources.
+
+== Summary ==
+{| class="wikitable"
+! Table !! What differs !! Cards !! Printings
+|-
+| [[#A. Different names|A]] || A different name || 26 || 32
+|-
+| [[#B. Spelling|B]] || Spelling of the same name || 4 || 4
+|-
+| [[#C. Qualifier labels|C]] || A label in parentheses (side, edition, marker, host card) || 16 + 14 twin slips || 17 + 14
+|-
+| [[#D. Minor differences|D]] || (V) suffix, uniqueness dots, capitalization, punctuation, accents || 73 || 75
+|}
+Not counted: 176 titles that differ only in typography (curly or straight apostrophes, the sheet PDF's split "fi" and "fl" letters, a space after a uniqueness dot), 12 that differ only by the AI marker, and 9 objectives whose sheet heading shows the front title only.
+
+'''Facts for deciding'''
+* GEMP titles follow the PC on every coded card in these tables except [[Grievous' Lightsabers]] (1274_11), which GEMP titles "Cyborg Commander's Lightsabers", and [[Planetary Shiel]] (1273_31), where the PC title is missing its last letter.
+* GEMP's card text for the 7.3 and 7.4 cards follows the printed sheets ("Cyborg Commander", "Spice Mine Administrator", "The Count"), while the code finds those cards by their PC names or persona.<ref name="pr482" />
+* The wiki card pages use the PC titles.
+* Later sheets print the character names: the 8.3 sheet's [[Black Market Blaster]] says "Kyle Katarn", and 9.1 and 9.2 cards say "Jango".<ref name="VirtualBlock8_3" /><ref name="VirtualBlock9_1" /><ref name="VirtualBlock9_2" />
+
+'''Ways to decide'''
+# Card by card, in the tables below.
+# One rule for all: printed everywhere, or PC everywhere.
+# One title for GEMP deck matching and the wiki page title, with the other shown on the card page as "Printed as" (or as the PC title), so both names stay searchable.
+
+== A. Different names ==
+{| class="wikitable sortable" style="width:100%"
+! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Text that uses the other name !! class="unsortable" | Sources !! class="unsortable" | Bill's pick
+|-
+| 1273_6
+| [[File:VB7-D-ig100magnaguard-pre.gif|110px|link=File:VB7-D-ig100magnaguard-pre.gif]]
+| •••IG Bodyguard Droid
+| [[IG-100 MagnaGuard|•••IG-100 MagnaGuard]]
+| GEMP: PC<br />Wiki: PC
+| No other card names it. Its own text says "(or with Cyborg Commander)" on the sheet; the PC text says "(or with Grievous)" (see [[Grievous, Hunter Of Jedi]]).
+| <ref name="VirtualBlock7_3" /> p.&nbsp;2 <ref name="pcjson" /> <ref name="pr482" />
+| Bill's pick: ___
+|-
+| 1273_9
+| [[File:VB7-D-moruthdoolekesseladministrator-pre.gif|110px|link=File:VB7-D-moruthdoolekesseladministrator-pre.gif]]
+| •Spice Mine Administrator
+| [[Moruth Doole, Kessel Administrator|•Moruth Doole, Kessel Administrator]]
+| GEMP: PC<br />Wiki: PC
+| [[Kessel Surveillance System]]: sheet "Once per game, may [deploy from Reserve Deck] Spice Mine Administrator here"; PC text "may deploy Moruth Doole here". GEMP shows the sheet wording and finds the card by "Moruth Doole" in its title.
+| <ref name="VirtualBlock7_3" /> p.&nbsp;3 <ref name="pcjson" /> <ref name="pr482" />
+| Bill's pick: ___
+|-
+| 1271_1
+| [[File:VB7-D-grievoushunterofjedi-pre.gif|110px|link=File:VB7-D-grievoushunterofjedi-pre.gif]]
+| •Cyborg Commander, Hunter Of Jedi
+| [[Grievous, Hunter Of Jedi|•Grievous, Hunter Of Jedi]]
+| GEMP: not coded yet (branch legacy/p-vb7-1-dark-a plans printed)<br />Wiki: PC
+| Sheet says "Cyborg Commander", PC text says "Grievous" on: [[IG-100 MagnaGuard]]; [[Trophy Of A Kill]] ("Deploy on Cyborg Commander, Galen, …"); [[Coruscant: Palpatine's Quarters]]; [[A Stunning Move / A Valuable Hostage (V) (Virtual Block 7) (Errata)|A Stunning Move / A Valuable Hostage]] ("Cyborg Commander or The Count" vs "Dooku or Grievous"); [[Grievous' Lightsabers]] ("Deploy on Cyborg Commander"). GEMP code for these shows the sheet wording and matches the Grievous persona.
+| <ref name="VirtualBlock7_1" /> p.&nbsp;2 <ref name="pcjson" /> <ref name="pr482" /> <ref name="hw71" />
+| Bill's pick: ___
+|-
+| 1274_11
+| [[File:VB7-D-grievouslightsabers-pre.gif|110px|link=File:VB7-D-grievouslightsabers-pre.gif]]
+| •Cyborg Commander’s Lightsabers
+| [[Grievous' Lightsabers|•Grievous' Lightsabers]]
+| GEMP: printed<br />Wiki: PC
+| Its own text: sheet "Deploy on Cyborg Commander", PC "Deploy on Grievous". Depends on the [[Grievous, Hunter Of Jedi]] pick.
+| <ref name="VirtualBlock7_4" /> p.&nbsp;3 <ref name="pcjson" /> <ref name="pr482" />
+| Bill's pick: ___
+|-
+| 1240_66 / 1240_66ai
+| [[File:VB4-L-marisbroodfallenjedi-pre.gif|110px|link=File:VB4-L-marisbroodfallenjedi-pre.gif]]
+| •Fallen Jedi
+| [[Maris Brood, Fallen Jedi|•Maris Brood, Fallen Jedi]]
+| GEMP: PC (plays as the PC's 601_173)<br />Wiki: PC
+| [[Galen Marek, Starkiller]]: sheet "Power and defense value +2 while with Fallen Jedi"; PC text "while with Mariss Brood" [sic]. The PC text of [[Galen Marek, Starkiller (AI)]] still says "Fallen Jedi".
+| <ref name="VirtualBlock4" /> p.&nbsp;8 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1240_8 / 1240_8ai
+| [[File:VB4-D-galenmarekstarkiller-pre.gif|110px|link=File:VB4-D-galenmarekstarkiller-pre.gif]]
+| •Galen, Secret Apprentice (V)
+| [[Galen Marek, Starkiller|•Galen Marek, Starkiller]]
+| GEMP: PC (plays as the PC's 601_81)<br />Wiki: PC
+| Other cards say "Galen" on both the sheet and in PC text, so no change follows.
+| <ref name="VirtualBlock4" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1240_2 / 1240_3
+| [[File:VB4-D-junoeclipseblackleader-pre.gif|110px|link=File:VB4-D-junoeclipseblackleader-pre.gif]]
+| •Black Leader (V) (1240_3 prints "AI")
+| [[Juno Eclipse, Black Leader|•Juno Eclipse, Black Leader]]
+| GEMP: PC (plays as the PC's 601_89)<br />Wiki: PC
+| Sheet "Black Leader", PC text "Juno Eclipse": [[Galen Marek, Starkiller]] ("defending with Black Leader"); [[Galen's Lightsaber]]; [[Lone Pilot (V)]] ("STARTING: Black Leader"); [[One Bright Spot]]; [[One Beautiful Thing]]; [[Black 1]] ("May add Black Leader as pilot"). [[Rogue Shadow]] says "Black Leader" in both. Its own text: "matching weapon for Black Leader" vs "for her".
+| <ref name="VirtualBlock4" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1240_59
+| [[File:VB4-D-rogueshadow-pre.gif|110px|link=File:VB4-D-rogueshadow-pre.gif]]
+| •Galen’s Fighter
+| [[Rogue Shadow|•Rogue Shadow]]
+| GEMP: PC (plays as the PC's 601_95)<br />Wiki: PC
+| [[Hunt Down And Destroy The Jedi (V) / Their Fire Has Gone Out Of The Universe (V)|Hunt Down And Destroy The Jedi (V)]]: sheet "may [take into hand] Galen’s Fighter", PC "may take Rogue Shadow into hand"; [[If The Trace Was Correct (V)]]: sheet "Galen’s Fighter may deploy to sites", PC "Rogue Shadow may deploy".
+| <ref name="VirtualBlock4" /> p.&nbsp;8 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1240_17
+| [[File:VB4-D-thrawnsysalamir-pre.gif|110px|link=File:VB4-D-thrawnsysalamir-pre.gif]]
+| •Thrawn’s Pet
+| [[Thrawn's Ysalamir|•Thrawn's Ysalamir]]
+| GEMP: not coded yet<br />Wiki: PC
+| No Legacy card text names it.
+| <ref name="VirtualBlock4" /> p.&nbsp;3 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1240_112
+| [[File:VB4-L-infinity-pre.gif|110px|link=File:VB4-L-infinity-pre.gif]]
+| •BoShek’s Modified Light Freighter (V)
+| [[Infinity|•Infinity]]
+| GEMP: not coded yet<br />Wiki: PC
+| No Legacy card text names it.
+| <ref name="VirtualBlock4" /> p.&nbsp;12 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1250_8
+| [[File:VB5-D-jangofett-pre.gif|110px|link=File:VB5-D-jangofett-pre.gif]]
+| •The Mandalorian
+| [[Jango Fett (Dark)|•Jango Fett]]
+| GEMP: not coded yet<br />Wiki: PC
+| [[Mandalorian Armor (V)]]: sheet "(Used Pile if on The Mandalorian)", PC "(Used Pile if on Jango)". Later sheets print "Jango" ([[Geonosis: Petranaki Arena (Dark)]], [[Dexter Jettster (Virtual Block 9)]]).
+| <ref name="VirtualBlock5" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1281_9 / 1281_9ai
+| [[File:VB8-D-jangofetttheassassin-pre.gif|110px|link=File:VB8-D-jangofetttheassassin-pre.gif]]
+| •The Mandalorian, Father Of Fett
+| [[Jango Fett, The Assassin|•Jango Fett, The Assassin]]
+| GEMP: PC (plays as the PC's 601_13)<br />Wiki: PC
+| Same references as [[Jango Fett (Dark)]].
+| <ref name="VirtualBlock8_1" /> p.&nbsp;3 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1263_1
+| [[File:VB6-D-cadbane-pre.gif|110px|link=File:VB6-D-cadbane-pre.gif]]
+| •Bane, The Bounty Hunter
+| [[Cad Bane (Dark)|•Cad Bane]]
+| GEMP: not coded yet<br />Wiki: PC
+| No Legacy card text names it.
+| <ref name="VirtualBlock6_3" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1263_7
+| [[File:VB6-D-maareksteletheemperorsreach-pre.gif|110px|link=File:VB6-D-maareksteletheemperorsreach-pre.gif]]
+| •The Emperor’s Reach
+| [[Maarek Stele, The Emperor's Reach (Dark)|•Maarek Stele, The Emperor's Reach]]
+| GEMP: PC (plays as the PC's 601_186)<br />Wiki: PC
+| No Legacy card text names it.
+| <ref name="VirtualBlock6_3" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1271_5
+| [[File:VB7-D-ysanneisard-pre.gif|110px|link=File:VB7-D-ysanneisard-pre.gif]]
+| •Ice-Heart
+| [[Ysanne Isard (Dark)|•Ysanne Isard]]
+| GEMP: PC (plays as the PC's 601_189)<br />Wiki: PC
+| [[In The Hands Of The ISB]]: sheet "an ISB agent present with Ice-Heart here", PC "with Ysanne Isard here".
+| <ref name="VirtualBlock7_1" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1272_15
+| [[File:VB7-L-rahmkotablindjedi-pre.gif|110px|link=File:VB7-L-rahmkotablindjedi-pre.gif]]
+| •Blind Jedi
+| [[Rahm Kota, Blind Jedi|•Rahm Kota, Blind Jedi]]
+| GEMP: PC (unmerged branch legacy/p-vb7-2-a only)<br />Wiki: PC
+| No Legacy card text names it.
+| <ref name="VirtualBlock7_2" /> p.&nbsp;3 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1272_18
+| [[File:VB7-L-tarffulwookieeinsurgent-pre.gif|110px|link=File:VB7-L-tarffulwookieeinsurgent-pre.gif]]
+| •Kashyyyk Insurgent Leader
+| [[Tarfful, Wookiee Insurgent|•Tarfful, Wookiee Insurgent]]
+| GEMP: PC<br />Wiki: PC
+| No Legacy card text names it.
+| <ref name="VirtualBlock7_2" /> p.&nbsp;4 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1274_4
+| [[File:VB7-D-tibannafloatingrefinery-pre.gif|110px|link=File:VB7-D-tibannafloatingrefinery-pre.gif]]
+| ••Floating Refinery (V)
+| [[Tibanna Floating Refinery|•Tibanna Floating Refinery]]
+| GEMP: PC<br />Wiki: PC
+| Uniqueness differs too (•• printed, • PC). [[I'm Sorry (V) (Virtual Block 2)]] says "a Floating Refinery" on the sheet and in PC text.
+| <ref name="VirtualBlock7_4" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1281_28 / 1281_28ai
+| [[File:VB8-L-kylekatarn-pre.gif|110px|link=File:VB8-L-kylekatarn-pre.gif]]
+| •Rebel Agent
+| [[Kyle Katarn|•Kyle Katarn]]
+| GEMP: PC<br />Wiki: PC
+| Sheet "Rebel Agent", PC "Kyle Katarn": [[Kyle Katarn's Blaster Rifle]] ("Deploy on Rebel Agent"); [[Infiltration / Unlikely Allies]] ("'Luke' on opponent's objective is treated as 'Rebel Agent'"). The later 8.3 sheet prints "Kyle Katarn" on [[Black Market Blaster]].
+| <ref name="VirtualBlock8_1" /> p.&nbsp;5 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1281_47
+| [[File:VB8-L-kylekatarnsblasterrifle-pre.gif|110px|link=File:VB8-L-kylekatarnsblasterrifle-pre.gif]]
+| •Rebel Agent’s Blaster Rifle
+| [[Kyle Katarn's Blaster Rifle|•Kyle Katarn's Blaster Rifle]]
+| GEMP: PC<br />Wiki: PC
+| Its own text: sheet "Deploy on Rebel Agent", PC "Deploy on Kyle Katarn". Depends on the [[Kyle Katarn]] pick.
+| <ref name="VirtualBlock8_1" /> p.&nbsp;8 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1281_45 / 1281_45ai
+| [[File:VB8-L-errantventure-pre.gif|110px|link=File:VB8-L-errantventure-pre.gif]]
+| •Booster’s Star Destroyer (V)
+| [[Errant Venture|•Errant Venture]]
+| GEMP: PC<br />Wiki: PC
+| No Legacy card text names it.
+| <ref name="VirtualBlock8_1" /> p.&nbsp;8 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1282_13
+| [[File:VB8-L-vilmarhvilliegrahrk-pre.gif|110px|link=File:VB8-L-vilmarhvilliegrahrk-pre.gif]]
+| •Devaronian Uncle
+| [[Vilmarh 'Villie' Grahrk|•Vilmarh 'Villie' Grahrk]]
+| GEMP: PC<br />Wiki: PC
+| No Legacy card text names it.
+| <ref name="VirtualBlock8_2" /> p.&nbsp;3 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1282_27
+| [[File:VB8-L-ladyluck-pre.gif|110px|link=File:VB8-L-ladyluck-pre.gif]]
+| •Lando’s Luxury Yacht
+| [[Lady Luck|•Lady Luck]]
+| GEMP: PC (plays as the PC's 601_49)<br />Wiki: PC
+| [[Lando Calrissian, Unlikely Hero]]: sheet "May reveal from hand to [take into hand] Luxury Yacht", PC "to take Lady Luck into hand".
+| <ref name="VirtualBlock8_2" /> p.&nbsp;4 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1240_81
+| [[File:VB4-L-ejecteject-pre.gif|110px|link=File:VB4-L-ejecteject-pre.gif]]
+| Eject! Eject! & Imperial Atrocity
+| [[Eject! Eject! (V)]]
+| GEMP: not coded yet<br />Wiki: PC
+| Printed as a combo card. [[Hindsight (V)]] says "Unless Imperial Atrocity on table".
+| <ref name="VirtualBlock4" /> p.&nbsp;9 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1240_26
+| [[File:VB4-D-heisnotready-pre.gif|110px|link=File:VB4-D-heisnotready-pre.gif]]
+| He Is Not Ready & Imperial Propaganda
+| [[He Is Not Ready (V)]]
+| GEMP: not coded yet<br />Wiki: PC
+| Printed as a combo card. [[Desperate Counter (v)]] says "Unless Imperial Propaganda on table".
+| <ref name="VirtualBlock4" /> p.&nbsp;4 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1261_93
+| [[File:VB6-L-armedanddangerous&kraytdragonhowl-pre.gif|110px|link=File:VB6-L-armedanddangerous&kraytdragonhowl-pre.gif]]
+| •Krayt Dragon Howl & •Armed And Dangerous
+| [[Armed And Dangerous & •Krayt Dragon Howl|•Armed And Dangerous & •Krayt Dragon Howl]]
+| GEMP: not coded yet<br />Wiki: PC
+| Same two names in the other order.
+| <ref name="VirtualBlock6_1" /> p.&nbsp;12 <ref name="pcjson" />
+| Bill's pick: ___
+|}
+
+== B. Spelling ==
+{| class="wikitable sortable" style="width:100%"
+! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Text that uses the other name !! class="unsortable" | Sources !! Recommendation !! class="unsortable" | Bill's pick
+|-
+| 1230_16
+| [[File:VB3-D-nizucbek-pre.gif|110px|link=File:VB3-D-nizucbek-pre.gif]]
+| •Nizuk Bek (V)
+| [[Nizuc Bek (V)|•Nizuc Bek (V)]]
+| GEMP: PC<br />Wiki: PC
+| None.
+| <ref name="VirtualBlock3" /> p.&nbsp;2 <ref name="pcjson" />
+| PC: the Decipher card and GEMP's title constant spell it Nizuc
+| Bill's pick: ___
+|-
+| 1210_14
+| [[File:VB1-D-ito-pre.gif|110px|link=File:VB1-D-ito-pre.gif]]
+| •IT-0 (Eyetee-Oh) (V)
+| [[IT-O (Eyetee-Oh) (V)|•IT-O (Eyetee-Oh) (V)]]
+| GEMP: PC<br />Wiki: PC
+| None.
+| <ref name="VirtualBlock1" /> p.&nbsp;2 <ref name="pcjson" />
+| PC: the sheet has a zero; the card's name is IT-O
+| Bill's pick: ___
+|-
+| 1240_106
+| [[File:VB4-L-yavin4jediacademy-pre.gif|110px|link=File:VB4-L-yavin4jediacademy-pre.gif]]
+| •Yavin IV: Jedi Academy
+| [[Yavin 4: Jedi Academy|•Yavin 4: Jedi Academy]]
+| GEMP: not coded yet<br />Wiki: PC
+| None.
+| <ref name="VirtualBlock4" /> p.&nbsp;11 <ref name="pcjson" />
+| PC: other Yavin sites are titled "Yavin 4"
+| Bill's pick: ___
+|-
+| 1273_31
+| [[File:VB7-L-planetaryshield-pre.gif|110px|link=File:VB7-L-planetaryshield-pre.gif]]
+| •Planetary Shield
+| [[Planetary Shiel|•Planetary Shiel]]
+| GEMP: printed<br />Wiki: PC
+| [[Center Of Tyranny / A Liberated World]] and [[Coruscant: Main Power Plant]] say "Planetary Shield" on the sheet and in PC text.
+| <ref name="VirtualBlock7_3" /> p.&nbsp;6 <ref name="pcjson" />
+| Printed: the PC title drops the final d; GEMP already uses Planetary Shield
+| Bill's pick: ___
+|}
+
+== C. Qualifier labels ==
+These cards carry the same name; only a label in parentheses differs.
+{| class="wikitable sortable" style="width:100%"
+! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Sources !! class="unsortable" | Bill's pick
+|-
+| 1210_2
+| [[File:VB1-D-bobafett-pre.gif|110px|link=File:VB1-D-bobafett-pre.gif]]
+| •Boba Fett (Special Edition) (V)
+| [[Boba Fett (V) (Virtual Block 1)|•Boba Fett (V)]]
+| GEMP: PC<br />Wiki: PC
+| <ref name="VirtualBlock1" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1220_2
+| [[File:VB2-D-bobafett-pre.gif|110px|link=File:VB2-D-bobafett-pre.gif]]
+| •Boba Fett (Cloud City) (V)
+| [[Boba Fett (V) (Virtual Block 2)|•Boba Fett (V)]]
+| GEMP: PC<br />Wiki: PC
+| <ref name="VirtualBlock2" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1273_41
+| [[File:VB7-L-coruscant-pre.gif|110px|link=File:VB7-L-coruscant-pre.gif]]
+| •Coruscant (Special Edition)
+| [[Coruscant (V) (Virtual Block 7)|•Coruscant (V)]]
+| GEMP: PC<br />Wiki: PC
+| <ref name="VirtualBlock7_3" /> p.&nbsp;7 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1250_76
+| [[File:VB5-L-kashyyyk-pre.gif|110px|link=File:VB5-L-kashyyyk-pre.gif]]
+| •Kashyyyk (Light) (V)
+| [[Kashyyyk (V)|•Kashyyyk (V)]]
+| GEMP: not coded yet<br />Wiki: PC
+| <ref name="VirtualBlock5" /> p.&nbsp;8 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1283_25
+| [[File:VB8-L-tatooinecantina-pre.gif|110px|link=File:VB8-L-tatooinecantina-pre.gif]]
+| •Tatooine: Cantina (Light) (V)
+| [[Tatooine: Cantina (V) (Virtual Block 8)|•Tatooine: Cantina (V)]]
+| GEMP: PC<br />Wiki: PC
+| <ref name="VirtualBlock8_3" /> p.&nbsp;5 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1281_42
+| [[File:VB8-L-tatooinejawacamp-pre.gif|110px|link=File:VB8-L-tatooinejawacamp-pre.gif]]
+| •Tatooine: Jawa Camp (Light) (V)
+| [[Tatooine: Jawa Camp (V) (Virtual Block 8)|•Tatooine: Jawa Camp (V)]]
+| GEMP: PC<br />Wiki: PC
+| <ref name="VirtualBlock8_1" /> p.&nbsp;7 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1210_73
+| [[File:VB1-D-tatooinemoseisley-pre.gif|110px|link=File:VB1-D-tatooinemoseisley-pre.gif]]
+| •Tatooine: Mos Eisley (Dark) (V)
+| [[Tatooine: Mos Eisley (V) (Virtual Block 1)|•Tatooine: Mos Eisley (V)]]
+| GEMP: PC<br />Wiki: PC
+| <ref name="VirtualBlock1" /> p.&nbsp;6 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1283_14
+| [[File:VB8-D-tatooinewattosjunkyard-pre.gif|110px|link=File:VB8-D-tatooinewattosjunkyard-pre.gif]]
+| •Tatooine: Watto’s Junkyard (Dark) (V)
+| [[Tatooine: Watto's Junkyard (V)|•Tatooine: Watto's Junkyard (V)]]
+| GEMP: PC<br />Wiki: PC
+| <ref name="VirtualBlock8_3" /> p.&nbsp;3 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1261_111
+| [[File:VB6-L-hothechocommandcenterwarroom-pre.gif|110px|link=File:VB6-L-hothechocommandcenterwarroom-pre.gif]]
+| •Hoth: Echo Command Center (War Room) (Light)
+| [[Hoth: Echo Command Center (War Room) (V)|•Hoth: Echo Command Center (War Room) (V)]]
+| GEMP: not coded yet<br />Wiki: PC
+| <ref name="VirtualBlock6_1" /> p.&nbsp;14 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1261_61
+| [[File:VB6-D-blasterrifle-pre.gif|110px|link=File:VB6-D-blasterrifle-pre.gif]]
+| Blaster Rifle (Dark) (V)
+| [[Blaster Rifle (V) (Virtual Block 6)|Blaster Rifle (V)]]
+| GEMP: PC (plays as the PC's 601_215)<br />Wiki: PC
+| <ref name="VirtualBlock6_1" /> p.&nbsp;9 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1283_12
+| [[File:VB8-D-spaceportdockingbay-pre.gif|110px|link=File:VB8-D-spaceportdockingbay-pre.gif]]
+| Spaceport: Docking Bay (Dark) (V)
+| [[Spaceport Docking Bay (V)|<>Spaceport Docking Bay (V)]]
+| GEMP: PC<br />Wiki: PC
+| <ref name="VirtualBlock8_3" /> p.&nbsp;3 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1261_112
+| [[File:VB6-L-hothmainpowergenerators-pre.gif|110px|link=File:VB6-L-hothmainpowergenerators-pre.gif]]
+| •Hoth: Main Power Generators (V)
+| [[Hoth: Main Power Generators (1st Marker) (V) (Virtual Block 6)|•Hoth: Main Power Generators (1st Marker) (V)]]
+| GEMP: not coded yet<br />Wiki: PC
+| <ref name="VirtualBlock6_1" /> p.&nbsp;14 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1261_52
+| [[File:VB6-D-hothiceplains-pre.gif|110px|link=File:VB6-D-hothiceplains-pre.gif]]
+| •Hoth: Ice Plains (V)
+| [[Hoth: Ice Plains (5th Marker) (V) (Virtual Block 6)|•Hoth: Ice Plains (5th Marker) (V)]]
+| GEMP: not coded yet<br />Wiki: PC
+| <ref name="VirtualBlock6_1" /> p.&nbsp;7 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1272_9
+| [[File:VSh-D-fanfaretatooine-pre.gif|110px|link=File:VSh-D-fanfaretatooine-pre.gif]]
+| •Fanfare (V)
+| [[Fanfare (Tatooine) (V) (Virtual Shields)|•Fanfare (Tatooine) (V)]]
+| GEMP: printed (plays as the PC's 601_35)<br />Wiki: PC
+| <ref name="VirtualBlock7_2" /> p.&nbsp;2 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1272_21
+| [[File:VSh-L-dontdothatagaintatooine-pre.gif|110px|link=File:VSh-L-dontdothatagaintatooine-pre.gif]]
+| •Don’t Do That Again (V)
+| [[Don't Do That Again (Tatooine) (V) (Virtual Shields)|•Don't Do That Again (Tatooine) (V)]]
+| GEMP: printed (plays as the PC's 1200_8)<br />Wiki: PC
+| <ref name="VirtualBlock7_2" /> p.&nbsp;4 <ref name="pcjson" />
+| Bill's pick: ___
+|-
+| 1271_21 / 1271_43
+| [[File:VB7-D-altercoruscant-pre.gif|110px|link=File:VB7-D-altercoruscant-pre.gif]]
+| Alter (Premiere or Coruscant) (V)
+| [[Alter (Coruscant) (V) (Virtual Block 7) (Dark)|Alter (Coruscant) (V) and Alter (Premiere) (V)]]
+| GEMP: other ("Alter") (plays as the PC's 601_195)<br />Wiki: "Alter (Coruscant) (V)"
+| <ref name="VirtualBlock7_1" /> p.&nbsp;5 <ref name="pcjson" />
+| Bill's pick: ___
+|}
+
+=== Virtual Block 6.1 twin slips ===
+The 6.1 sheet printed two slips for each of these cards, one for each host card. The heading on every slip has no label; the small strip at the bottom names the host card. The PC labels the non-Reflections III versions and drops "(Reflections III)". One pick covers all 14: '''Bill's pick: ___'''
+{| class="wikitable sortable mw-collapsible mw-collapsed"
+! GEMP id !! Printed title !! Printed label strip !! PC title !! Current !! class="unsortable" | Sources
+|-
+| 1261_21
+| •Leave Them To Me (V)
+| •Leave Them To Me (Reflections III) (V)
+| •Leave Them To Me (V)
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_22
+| •No Escape (V)
+| •No Escape (Reflections III) (V)
+| •No Escape (V)
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_23
+| •Do They Have A Code Clearance? (V)
+| •Do They Have A Code Clearance? (Cor) (V)
+| [[Do They Have A Code Clearance? (Coruscant) (V)|•Do They Have A Code Clearance? (Coruscant) (V)]]
+| GEMP: printed (plays as the PC's 601_34)
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_24
+| •Leave Them To Me (V)
+| •Leave Them To Me (Death Star II) (V)
+| [[Leave Them To Me (Death Star II) (V)|•Leave Them To Me (Death Star II) (V)]]
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_25
+| •No Escape (V)
+| •No Escape (Premium) (V)
+| [[No Escape (Premium) (V)|•No Escape (Premium) (V)]]
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_26
+| •Do They Have A Code Clearance? (V)
+| •Do They Have A Code Clearance? (Ref III) (V)
+| •Do They Have A Code Clearance? (V)
+| GEMP: PC (plays as the PC's 601_34)
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_27
+| •You Cannot Hide Forever (V)
+| •You Cannot Hide Forever (Reflections III) (V)
+| •You Cannot Hide Forever (V)
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_28
+| •You Cannot Hide Forever (V)
+| •You Cannot Hide Forever (Death Star II) (V)
+| [[You Cannot Hide Forever (Death Star II) (V) (Virtual Shields)|•You Cannot Hide Forever (Death Star II) (V)]]
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;5
+|-
+| 1261_72
+| •Ounee Ta (V)
+| •Ounee Ta (Reflections III) (V)
+| •Ounee Ta (V)
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;10
+|-
+| 1261_73
+| •Your Insight Serves You Well (V)
+| •Your Insight Serves You Well (Reflections III) (V)
+| •Your Insight Serves You Well (V)
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;10
+|-
+| 1261_74
+| •Ounee Ta (V)
+| •Ounee Ta (Premium) (V)
+| [[Ounee Ta (Premium) (V)|•Ounee Ta (Premium) (V)]]
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;10
+|-
+| 1261_75
+| •Your Insight Serves You Well (V)
+| •Your Insight Serves You Well (Death Star II) (V)
+| [[Your Insight Serves You Well (Death Star II) (V) (Virtual Shields)|•Your Insight Serves You Well (Death Star II) (V)]]
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;10
+|-
+| 1261_76
+| •Let’s Keep A Little Optimism Here (V)
+| •Let’s Keep A Little Optimism Here (DS II) (V)
+| [[Let's Keep A Little Optimism Here (Death Star II) (V) (Virtual Shields)|•Let's Keep A Little Optimism Here (Death Star II) (V)]]
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;10
+|-
+| 1261_77
+| •Let’s Keep A Little Optimism Here (V)
+| •Let’s Keep A Little Optimism Here (Ref III) (V)
+| •Let's Keep A Little Optimism Here (V)
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;11
+|}
+
+== D. Minor differences ==
+Uniqueness dots in this table come from the sheet's text layer; check the sheet image before acting on a dot difference. One pick covers the whole table unless a row is named: '''Bill's pick for table D: ___''' (printed / PC / leave as is)
+{| class="wikitable sortable mw-collapsible"
+! GEMP id !! Printed title !! PC title !! Difference !! Current !! class="unsortable" | Sources
+|-
+| 1200_2
+| •I Find Your Lack Of Faith Disturbing (V)
+| [[I Find Your Lack Of Faith Disturbing (V)]]
+| uniqueness dots
+| GEMP: "I Find Your Lack Of Faith Disturbing" (PC's 601_37)
+| <ref name="vshields" /> p.&nbsp;2
+|-
+| 1200_4
+| •Reactor Terminal (V)
+| [[Reactor Terminal (V)]]
+| uniqueness dots
+| GEMP: "Reactor Terminal"
+| <ref name="vshields" /> p.&nbsp;2
+|-
+| 1200_5
+| •Fanfare
+| [[Fanfare (V) (Virtual Shields)|•Fanfare (V)]]
+| (V) suffix
+| GEMP: "Fanfare" (PC's 601_35)
+| <ref name="vshields" /> p.&nbsp;3
+|-
+| 1200_7
+| •Chasm (V)
+| [[Chasm (V)]]
+| uniqueness dots
+| GEMP: "Chasm"
+| <ref name="vshields" /> p.&nbsp;5
+|-
+| 1200_11
+| •There Is Another
+| [[There is Another|•There is Another]]
+| capitalization
+| GEMP: "There is Another"
+| <ref name="vshields" /> p.&nbsp;6
+|-
+| 1200_12
+| •Traffic Control (V)
+| [[Traffic Control (V)]]
+| uniqueness dots
+| GEMP: "Traffic Control"
+| <ref name="vshields" /> p.&nbsp;6
+|-
+| 1210_3
+| •Admiral Motti, Battlestation Coordinator
+| [[Admiral Motti, Battlestation Coordinator (V)|•Admiral Motti, Battlestation Coordinator (V)]]
+| (V) suffix
+| GEMP: "Admiral Motti, Battlestation Coordinator"
+| <ref name="VirtualBlock1" /> p.&nbsp;2
+|-
+| 1210_33
+| Blaster Rack(V)
+| [[Blaster Rack (V) (Virtual Block 1)|Blaster Rack (V)]]
+| punctuation or spacing
+| GEMP: "Blaster Rack" (PC's 601_74)
+| <ref name="VirtualBlock1" /> p.&nbsp;3
+|-
+| 1210_68
+| Imperial Entanglements/No One To Stop Us This Time
+| [[Imperial Entanglements / No One To Stop Us This Time (Virtual Block 1)|Imperial Entanglements / No One To Stop Us This Time]]
+| punctuation or spacing
+| GEMP: "Imperial Entanglements"
+| <ref name="VirtualBlock1" /> p.&nbsp;5
+|-
+| 1210_117
+| •Lars’ Hydroponics Station
+| [[Lars' Hydroponics Station]]
+| uniqueness dots
+| GEMP: "Lars' Hydroponics Station"
+| <ref name="VirtualBlock1" /> p.&nbsp;8
+|-
+| 1210_118
+| •Lars’ Vaporator
+| [[Lars' Vaporator]]
+| uniqueness dots
+| GEMP: "Lars' Vaporator"
+| <ref name="VirtualBlock1" /> p.&nbsp;8
+|-
+| 1220_33
+| •Forced Landing (V)
+| [[Forced Landing (V)]]
+| uniqueness dots
+| GEMP: "Forced Landing"
+| <ref name="VirtualBlock2" /> p.&nbsp;3
+|-
+| 1220_43
+| Precision Targeting (V)
+| [[Precision Targeting (V)|•Precision Targeting (V)]]
+| uniqueness dots
+| GEMP: "Precision Targeting"
+| <ref name="VirtualBlock2" /> p.&nbsp;4
+|-
+| 1220_67
+| •••AT-AT: Deployment Platform
+| [[AT-AT Deployment Platform|•••AT-AT Deployment Platform]]
+| punctuation or spacing
+| GEMP: "AT-AT Deployment Platform"
+| <ref name="VirtualBlock2" /> p.&nbsp;5
+|-
+| 1220_98
+| •R5-M2 (Arfive-Emmtoo) (V)
+| [[R5-M2 (Arfive-Emmtoo) (V)]]
+| uniqueness dots
+| GEMP: "R5-M2 (Arfive-Emmtoo)"
+| <ref name="VirtualBlock2" /> p.&nbsp;7
+|-
+| 1220_100
+| •Romas “Lock” Navander (V)
+| [[Romas 'Lock' Navander (V)|•Romas 'Lock' Navander (V)]]
+| punctuation or spacing
+| GEMP: "Romas 'Lock' Navander"
+| <ref name="VirtualBlock2" /> p.&nbsp;7
+|-
+| 1220_150
+| •NOOOOOOOOOOOO! (V)
+| [[NOOOOOOOOOOOO! (V)]]
+| uniqueness dots
+| GEMP: "NOOOOOOOOOOOO!"
+| <ref name="VirtualBlock2" /> p.&nbsp;10
+|-
+| 1220_161
+| •Hoth: Echo Med Lab
+| [[Hoth: Echo Med Lab (V)|•Hoth: Echo Med Lab (V)]]
+| (V) suffix
+| GEMP: "Hoth: Echo Med Lab"
+| <ref name="VirtualBlock2" /> p.&nbsp;11
+|-
+| 1230_109
+| •Rebel Leadership (V)
+| [[Rebel Leadership (V) (Virtual Block 3)|Rebel Leadership (V)]]
+| uniqueness dots
+| GEMP: "Rebel Leadership" (PC's 601_158)
+| <ref name="VirtualBlock3" /> p.&nbsp;7
+|-
+| 1230_111
+| •Endor: Ewok Village
+| [[Endor: Ewok Village (V) (Virtual Block 3)|•Endor: Ewok Village (V)]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock3" /> p.&nbsp;8
+|-
+| 1240_9
+| Imperial Stormtrooper (V)
+| [[Imperial Stormtrooper]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock4" /> p.&nbsp;2
+|-
+| 1240_37
+| •Deep Hatred (V)
+| [[Deep Hatred (V)]]
+| uniqueness dots
+| GEMP: not coded yet
+| <ref name="VirtualBlock4" /> p.&nbsp;4
+|-
+| 1240_45
+| •Let’s Pass On That
+| [[Let's Pass On That]]
+| uniqueness dots
+| GEMP: not coded yet
+| <ref name="VirtualBlock4" /> p.&nbsp;5
+|-
+| 1240_85
+| Eyes In The Dark (V)
+| [[Eyes In The Dark (V) (Virtual Block 4)|•Eyes In The Dark (V)]]
+| uniqueness dots
+| GEMP: not coded yet
+| <ref name="VirtualBlock4" /> p.&nbsp;10
+|-
+| 1240_111
+| •Booster In Pulsar Skate (V)
+| [[Booster In Pulsar Skate (Virtual Block 4)|•Booster In Pulsar Skate]]
+| (V) suffix
+| GEMP: "Booster In Pulsar Skate" (PC's 601_247)
+| <ref name="VirtualBlock4" /> p.&nbsp;12
+|-
+| 1250_4
+| •Coruscant Guard (V)
+| [[Coruscant Guard (V) (Virtual Block 5)|Coruscant Guard (V)]]
+| uniqueness dots
+| GEMP: "Coruscant Guard"
+| <ref name="VirtualBlock5" /> p.&nbsp;2
+|-
+| 1250_13
+| At Last We Are Getting Results (V)
+| [[At Last We Are Getting Results (V)|•At Last We Are Getting Results (V)]]
+| uniqueness dots
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;2
+|-
+| 1250_38
+| Clone Trooper (V)
+| [[Clone Trooper (Virtual Block 5)|Clone Trooper]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;5
+|-
+| 1250_39
+| •••Jedi Advisor (V)
+| [[Jedi Advisor|•••Jedi Advisor]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;5
+|-
+| 1250_40
+| •••Jedi Guardian (V)
+| [[Jedi Guardian|•••Jedi Guardian]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;5
+|-
+| 1250_41
+| •••Jedi Survivor (V)
+| [[Jedi Survivor|•••Jedi Survivor]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;5
+|-
+| 1250_46
+| Republic Trooper With Blaster Rifle (V)
+| [[Republic Trooper With Blaster Rifle]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;5
+|-
+| 1250_48 / 1250_48ai
+| •Padmé Naberrie (V)
+| [[Padme Naberrie (V) (Virtual Block 5)|•Padme Naberrie (V)]]
+| accent
+| GEMP: "Padme Naberrie" (PC's 601_55)
+| <ref name="VirtualBlock5" /> p.&nbsp;5
+|-
+| 1250_52
+| •Senator Padmé Amidala
+| [[Senator Padme Amidala|•Senator Padme Amidala]]
+| accent
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;6
+|-
+| 1250_53
+| •Supreme Chancellor Palpatine (V)
+| [[Supreme Chancellor Palpatine|•Supreme Chancellor Palpatine]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;6
+|-
+| 1250_58
+| •A Jedi’s Cunning (V)
+| [[A Jedi's Cunning|•A Jedi's Cunning]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;7
+|-
+| 1250_59
+| •A Jedi’s Plans (V)
+| [[A Jedi's Plans|•A Jedi's Plans]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;7
+|-
+| 1250_68
+| •Wookiee Guide
+| [[Wookiee Guide (V) (Virtual Block 5)|•Wookiee Guide (V)]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;7
+|-
+| 1250_69
+| •Wookiee Roar
+| [[Wookiee Roar (V) (Virtual Block 5)|•Wookiee Roar (V)]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;7
+|-
+| 1250_72
+| •Coruscant: Jedi Council Chamber
+| [[Coruscant: Jedi Council Chamber (V)|•Coruscant: Jedi Council Chamber (V)]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;8
+|-
+| 1250_79
+| •Alderaan Consular Ship
+| [[Alderaan Consular Ship]]
+| uniqueness dots
+| GEMP: not coded yet
+| <ref name="VirtualBlock5" /> p.&nbsp;9
+|-
+| 1261_18
+| •Thok & •Thug (V)
+| [[Thok & Thug (V)|•Thok & Thug (V)]]
+| uniqueness dots
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_19
+| Dianoga (V)
+| [[Dianoga (V)|•Dianoga (V)]]
+| uniqueness dots
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;4
+|-
+| 1261_48
+| Weapon Levitation & The Empire’s Back
+| [[Weapon Levitation & The Empire's Back|•Weapon Levitation & The Empire's Back]]
+| uniqueness dots
+| GEMP: "Weapon Levitation & The Empire's Back" (PC's 601_98)
+| <ref name="VirtualBlock6_1" /> p.&nbsp;7
+|-
+| 1261_58
+| •Blizzard 4
+| [[Blizzard 4 (V)|•Blizzard 4 (V)]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_1" /> p.&nbsp;8
+|-
+| 1261_97
+| •Let the Wookiee Win (V)
+| [[Let The Wookiee Win (V) (Virtual Block 6)|•Let The Wookiee Win (V)]]
+| capitalization
+| GEMP: "Let The Wookiee Win" (PC's 601_51)
+| <ref name="VirtualBlock6_1" /> p.&nbsp;13
+|-
+| 1262_13
+| •Cloud City: Dining Room
+| [[Cloud City: Dining Room (V) (Virtual Block 6)|•Cloud City: Dining Room (V)]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_2" /> p.&nbsp;3
+|-
+| 1262_20
+| •••Beast-Rider (V)
+| [[Beast Rider|•••Beast Rider]]
+| (V) suffix, punctuation or spacing
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_2" /> p.&nbsp;4
+|-
+| 1263_9
+| •Guild Of Assassins (V)
+| [[Guild Of Assassins|•Guild Of Assassins]]
+| (V) suffix
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_3" /> p.&nbsp;3
+|-
+| 1263_27
+| •Desperate Tactics (V)
+| [[Desperate Tactics(V)|•Desperate Tactics(V)]]
+| punctuation or spacing
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_3" /> p.&nbsp;5
+|-
+| 1263_29
+| I’m Here To Rescue You (V)
+| [[I'm Here to Rescue You (V)]]
+| capitalization
+| GEMP: not coded yet
+| <ref name="VirtualBlock6_3" /> p.&nbsp;5
+|-
+| 1271_42
+| •S-Foils (V)
+| [[S-foils (V)|•S-foils (V)]]
+| capitalization
+| GEMP: not coded yet
+| <ref name="VirtualBlock7_1" /> p.&nbsp;8
+|-
+| 1273_10
+| •Kessel Surveillance System
+| [[Kessel Surveillance System]]
+| uniqueness dots
+| GEMP: "Kessel Surveillance System"
+| <ref name="VirtualBlock7_3" /> p.&nbsp;3
+|-
+| 1273_21
+| •Elis in Hinthra
+| [[Elis In Hinthra (Dark)|•Elis In Hinthra]]
+| capitalization
+| GEMP: "Elis In Hinthra"
+| <ref name="VirtualBlock7_3" /> p.&nbsp;5
+|-
+| 1273_22
+| •Dack Ralter
+| [[Dack Ralter (V)|•Dack Ralter (V)]]
+| (V) suffix
+| GEMP: "Dack Ralter"
+| <ref name="VirtualBlock7_3" /> p.&nbsp;5
+|-
+| 1274_5
+| •Desperate Counter (V)
+| [[Desperate Counter (v)|•Desperate Counter (v)]]
+| capitalization
+| GEMP: "Desperate Counter"
+| <ref name="VirtualBlock7_4" /> p.&nbsp;2
+|-
+| 1281_15
+| •Well Guarded (V)
+| •Well Guarded (v)
+| capitalization
+| GEMP: "Well Guarded"
+| <ref name="VirtualBlock8_1" /> p.&nbsp;3
+|-
+| 1281_22
+| •Coruscant: Sub City Lair (V)
+| [[Coruscant: Sub City Lair|•Coruscant: Sub City Lair]]
+| (V) suffix
+| GEMP: "Coruscant: Sub City Lair"
+| <ref name="VirtualBlock8_1" /> p.&nbsp;4
+|-
+| 1281_30 / 1281_30ai
+| •Supreme Chancellor Valorum
+| [[Supreme Chancellor Valorum (V)|•Supreme Chancellor Valorum (V)]]
+| (V) suffix
+| GEMP: "Supreme Chancellor Valorum"
+| <ref name="VirtualBlock8_1" /> p.&nbsp;5
+|-
+| 1282_4
+| •Sith Fury & •End This Destructive Conflict
+| [[Sith Fury & End This Destructive Conflict|•Sith Fury & End This Destructive Conflict]]
+| uniqueness dots
+| GEMP: "Sith Fury"
+| <ref name="VirtualBlock8_2" /> p.&nbsp;2
+|-
+| 1282_8
+| •Hoth: Main Power Generators (1st Marker)
+| [[Hoth: Main Power Generators (1st Marker) (V) (Dark)|•Hoth: Main Power Generators (1st Marker) (V)]]
+| (V) suffix
+| GEMP: "Hoth: Main Power Generators (1st Marker)"
+| <ref name="VirtualBlock8_2" /> p.&nbsp;2
+|-
+| 1282_11
+| ••Assassin’s Blaster Rifle
+| [[Assassin's Blaster Rifle|•Assassin's Blaster Rifle]]
+| uniqueness dots
+| GEMP: "Assassin's Blaster Rifle"
+| <ref name="VirtualBlock8_2" /> p.&nbsp;3
+|-
+| 1282_23
+| Found Someone You Have & •Higher Ground
+| [[Found Someone You Have & Higher Ground|•Found Someone You Have & Higher Ground]]
+| uniqueness dots
+| GEMP: "Found Someone You Have & Higher Ground"
+| <ref name="VirtualBlock8_2" /> p.&nbsp;4
+|-
+| 1282_28
+| •Hoth: Echo Corridor (V)
+| [[Hoth: Echo Corridor (v)|•Hoth: Echo Corridor (v)]]
+| capitalization
+| GEMP: "Hoth: Echo Corridor"
+| <ref name="VirtualBlock8_2" /> p.&nbsp;4
+|-
+| 1283_2
+| •Greedo With Blaster Pistol
+| [[Greedo with Blaster Pistol|•Greedo with Blaster Pistol]]
+| capitalization
+| GEMP: "Greedo With Blaster Pistol"
+| <ref name="VirtualBlock8_3" /> p.&nbsp;2
+|-
+| 1283_18
+| •Trooper Utris M’Toc (V)
+| [[Trooper Utris M'toc (V)|•Trooper Utris M'toc (V)]]
+| capitalization
+| GEMP: "Trooper Utris M'Toc"
+| <ref name="VirtualBlock8_3" /> p.&nbsp;4
+|-
+| 1291_10
+| •Maul’s Cape
+| [[Maul's Cape]]
+| uniqueness dots
+| GEMP: "Maul's Cape"
+| <ref name="VirtualBlock9_1" /> p.&nbsp;3
+|-
+| 1291_32
+| IG-227 “Hailfire” Droid Tank
+| [[IG-227 'Hailfire' Droid Tank]]
+| punctuation or spacing
+| GEMP: "IG-227 'Hailfire' Droid Tank"
+| <ref name="VirtualBlock9_1" /> p.&nbsp;6
+|-
+| 1291_40
+| •Dormé
+| [[Dorme (Virtual Block 9)|•Dorme]]
+| accent
+| GEMP: "Dorme" (PC's 601_223)
+| <ref name="VirtualBlock9_1" /> p.&nbsp;8
+|-
+| 1291_52
+| •Much To Learn, You Still Have
+| [[Much to Learn, You Still Have]]
+| capitalization, uniqueness dots
+| GEMP: "Much to Learn, You Still Have"
+| <ref name="VirtualBlock9_1" /> p.&nbsp;9
+|-
+| 1291_55
+| •The Dark Side Is Growing
+| [[The Dark Side is Growing|•The Dark Side is Growing]]
+| capitalization
+| GEMP: "The Dark Side Is Growing"
+| <ref name="VirtualBlock9_1" /> p.&nbsp;10
+|-
+| 1292_2
+| •Toonbuck Toora
+| [[Toonbuck Toora (V)|•Toonbuck Toora (V)]]
+| (V) suffix
+| GEMP: "Toonbuck Toora"
+| <ref name="VirtualBlock9_2" /> p.&nbsp;2
+|-
+| 1292_3
+| •I Have You Now (V)
+| [[I Have You Now (V) (Virtual Block 9)|I Have You Now (V)]]
+| uniqueness dots
+| GEMP: "I Have You Now"
+| <ref name="VirtualBlock9_2" /> p.&nbsp;2
+|}
+
+== How the list was built ==
+* Every one of the 1,203 Legacy printings: the PC title<ref name="pcjson" /> against the heading on its official sheet.
+* Every Legacy card's game text, on the sheets and in the PC data, searched for both names of each card in tables A and B.
+* GEMP titles read from master (after [https://github.com/billbisco/swccg-gemp/pull/482 PR #482]) and from the unmerged branches legacy/p-vb7-2-a, legacy/p-vb7-2-light-b and legacy/p-vb7-1-dark-a named in Claude's handoff on swccg-guild/work issue #5 (a private repository).<ref name="hw71" />
+
+== References ==
+<references>
+<ref name="VirtualBlock7_3">[https://res.starwarsccg.org/legacyblocks/VirtualBlock7_3.pdf Virtual Block 7.3 official card sheet] (PDF), Star Wars CCG Players Committee (3 June 2011). Preserved copy: [https://web.archive.org/web/20261027095336/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_3.pdf Internet Archive]</ref>
+<ref name="pcjson">Players Committee card data, [https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/DarkLegacy.json DarkLegacy.json] and [https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightLegacy.json LightLegacy.json], swccgpc/swccg-card-json on GitHub (commit 65cd150). Preserved copies: [https://web.archive.org/web/20261105005012/https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/DarkLegacy.json Internet Archive], [https://web.archive.org/web/20261105005044/https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightLegacy.json Internet Archive]</ref>
+<ref name="pr482">[https://github.com/billbisco/swccg-gemp/pull/482 Pull request #482: Legacy Virtual Block 7.3 Dark], billbisco/swccg-gemp on GitHub (merged 4 November 2026). Preserved copy: [https://web.archive.org/web/20261105004651/https://github.com/billbisco/swccg-gemp/pull/482 Internet Archive]</ref>
+<ref name="VirtualBlock7_1">[https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf Virtual Block 7.1 official card sheet] (PDF), Star Wars CCG Players Committee (18 June 2010). Preserved copy: [https://web.archive.org/web/20261027095326/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf Internet Archive]</ref>
+<ref name="hw71">[https://raw.githubusercontent.com/billbisco/swccg-gemp/b2a1a27f82cf5f2b63b359991b397eb98528796d/HANDOFF-WAVE.md HANDOFF-WAVE.md], branch legacy/p-vb7-1-dark-a of billbisco/swccg-gemp on GitHub (commit b2a1a27). Preserved copy: [https://web.archive.org/web/20261105004825/https://raw.githubusercontent.com/billbisco/swccg-gemp/b2a1a27f82cf5f2b63b359991b397eb98528796d/HANDOFF-WAVE.md Internet Archive]</ref>
+<ref name="VirtualBlock7_4">[https://res.starwarsccg.org/legacyblocks/VirtualBlock7_4.pdf Virtual Block 7.4 official card sheet] (PDF), Star Wars CCG Players Committee (16 December 2011). Preserved copy: [https://web.archive.org/web/20261027100509/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_4.pdf Internet Archive]</ref>
+<ref name="VirtualBlock4">[https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf Virtual Block 4 official card sheet] (PDF), Star Wars CCG Players Committee (7 December 2009). Preserved copy: [https://web.archive.org/web/20261027095223/https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf Internet Archive]</ref>
+<ref name="VirtualBlock5">[https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf Virtual Block 5 official card sheet] (PDF), Star Wars CCG Players Committee (7 December 2009). Preserved copy: [https://web.archive.org/web/20261020175310/https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf Internet Archive]</ref>
+<ref name="VirtualBlock8_1">[https://res.starwarsccg.org/legacyblocks/VirtualBlock8_1.pdf Virtual Block 8.1 official card sheet] (PDF), Star Wars CCG Players Committee (11 May 2012). Preserved copy: [https://web.archive.org/web/20261027095418/https://res.starwarsccg.org/legacyblocks/VirtualBlock8_1.pdf Internet Archive]</ref>
+<ref name="VirtualBlock6_3">[https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf Virtual Block 6.3 official card sheet] (PDF), Star Wars CCG Players Committee (15 March 2010). Preserved copy: [https://web.archive.org/web/20261022213441/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf Internet Archive]</ref>
+<ref name="VirtualBlock7_2">[https://res.starwarsccg.org/legacyblocks/VirtualBlock7_2.pdf Virtual Block 7.2 official card sheet] (PDF), Star Wars CCG Players Committee (15 December 2010). Preserved copy: [https://web.archive.org/web/20261016180935/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_2.pdf Internet Archive]</ref>
+<ref name="VirtualBlock8_2">[https://res.starwarsccg.org/legacyblocks/VirtualBlock8_2.pdf Virtual Block 8.2 official card sheet] (PDF), Star Wars CCG Players Committee (14 September 2012). Preserved copy: [https://web.archive.org/web/20261022233130/https://res.starwarsccg.org/legacyblocks/VirtualBlock8_2.pdf Internet Archive]</ref>
+<ref name="VirtualBlock6_1">[https://res.starwarsccg.org/legacyblocks/VirtualBlock6_1.pdf Virtual Block 6.1 official card sheet] (PDF), Star Wars CCG Players Committee (4 September 2009). Preserved copy: [https://web.archive.org/web/20261008195540/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_1.pdf Internet Archive]</ref>
+<ref name="VirtualBlock3">[https://res.starwarsccg.org/legacyblocks/VirtualBlock3.pdf Virtual Block 3 official card sheet] (PDF), Star Wars CCG Players Committee (7 December 2009). Preserved copy: [https://web.archive.org/web/20261020174313/https://res.starwarsccg.org/legacyblocks/VirtualBlock3.pdf Internet Archive]</ref>
+<ref name="VirtualBlock1">[https://res.starwarsccg.org/legacyblocks/VirtualBlock1.pdf Virtual Block 1 official card sheet] (PDF), Star Wars CCG Players Committee (7 December 2009). Preserved copy: [https://web.archive.org/web/20261008195542/https://res.starwarsccg.org/legacyblocks/VirtualBlock1.pdf Internet Archive]</ref>
+<ref name="VirtualBlock2">[https://res.starwarsccg.org/legacyblocks/VirtualBlock2.pdf Virtual Block 2 official card sheet] (PDF), Star Wars CCG Players Committee (7 December 2009). Preserved copy: [https://web.archive.org/web/20261022152656/https://res.starwarsccg.org/legacyblocks/VirtualBlock2.pdf Internet Archive]</ref>
+<ref name="VirtualBlock8_3">[https://res.starwarsccg.org/legacyblocks/VirtualBlock8_3.pdf Virtual Block 8.3 official card sheet] (PDF), Star Wars CCG Players Committee (28 March 2013). Preserved copy: [https://web.archive.org/web/20261027095533/https://res.starwarsccg.org/legacyblocks/VirtualBlock8_3.pdf Internet Archive]</ref>
+<ref name="vshields">[https://res.starwarsccg.org/wp/wp-content/uploads/vshields.pdf Virtual Shields official card sheet] (PDF), Star Wars CCG Players Committee. Preserved copy: [https://web.archive.org/web/20261016180941/https://res.starwarsccg.org/wp/wp-content/uploads/vshields.pdf Internet Archive]</ref>
+<ref name="VirtualBlock6_2">[https://res.starwarsccg.org/legacyblocks/VirtualBlock6_2.pdf Virtual Block 6.2 official card sheet] (PDF), Star Wars CCG Players Committee (7 December 2009). Preserved copy: [https://web.archive.org/web/20261020174418/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_2.pdf Internet Archive]</ref>
+<ref name="VirtualBlock9_1">[https://res.starwarsccg.org/legacyblocks/VirtualBlock9_1.pdf Virtual Block 9.1 official card sheet] (PDF), Star Wars CCG Players Committee (10 January 2014). Preserved copy: [https://web.archive.org/web/20261027100519/https://res.starwarsccg.org/legacyblocks/VirtualBlock9_1.pdf Internet Archive]</ref>
+<ref name="VirtualBlock9_2">[https://res.starwarsccg.org/legacyblocks/VirtualBlock9_2.pdf Virtual Block 9.2 official card sheet] (PDF), Star Wars CCG Players Committee (14 July 2014). Preserved copy: [https://web.archive.org/web/20261023013408/https://res.starwarsccg.org/legacyblocks/VirtualBlock9_2.pdf Internet Archive]</ref>
+</references>
