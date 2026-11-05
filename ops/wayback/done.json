@@ -5984,10 +5984,10 @@
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2011/Worlds/2011+World_team.pdf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 660 hours, 59 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T11:00:37Z",
+  "error": "no job_id: The same snapshot had been made 661 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T11:36:09Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf": {
   "capture": "https://web.archive.org/web/20261008202947/http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf",
@@ -72475,8 +72475,16 @@
   "capture": "https://web.archive.org/web/20261027103324/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsGroup.jpg",
   "last": "2026-11-05T09:52:55Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T11:47:07Z",
+   "bytes": 716550,
+   "capture_id": "https://web.archive.org/web/20261027103324id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsGroup.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "747dcfda656362dc355c705c6894fb04eabbb863526354aad2a37556306cb80e"
+  }
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsTop8.jpg": {
   "capture": "https://web.archive.org/web/20261022195048/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsTop8.jpg",
@@ -72620,9 +72628,9 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-b5de6f7f01c4931de40529925ea4f4bfb2276181",
-  "last": "2026-11-05T10:58:38Z",
+  "last": "2026-11-05T11:46:38Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://starwars.fandom.com/wiki/Cloud_City_Limited": {
   "capture": "https://web.archive.org/web/20260929034118/https://starwars.fandom.com/wiki/Cloud_City_Limited",
@@ -124390,13 +124398,14 @@
   "capture": "https://web.archive.org/web/20261027112151/https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html",
   "last": "2026-11-05T10:27:23Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-11-05T11:08:27Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-05T11:46:47Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html?copy=2": {
   "capture": "https://web.archive.org/web/20261024140932/https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html?copy=2",
@@ -124438,13 +124447,14 @@
   "capture": "https://web.archive.org/web/20261027103631/https://swccg.com/snapshots/pc/joe-olson-wins-the-2021-match-play-championship.html",
   "last": "2026-11-05T09:59:33Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-05T11:09:12Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-05T11:46:57Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/joe-olson-wins-the-2021-match-play-championship.html?copy=2": {
   "capture": "https://web.archive.org/web/20261024141032/https://swccg.com/snapshots/pc/joe-olson-wins-the-2021-match-play-championship.html?copy=2",
@@ -147011,9 +147021,9 @@
   "capture": "",
   "error": "error:internal-server-error",
   "job_id": "spn2-98d7354c75f06402e345be575a76ec548df30ea6",
-  "last": "2026-11-05T10:58:39Z",
+  "last": "2026-11-05T11:46:40Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccgdb.com/decklist/view/5/operatives-1998-world-champion-1.0": {
   "capture": "https://web.archive.org/web/20260929064107/https://swccgdb.com/decklist/view/5/operatives-1998-world-champion-1.0",
@@ -164067,9 +164077,9 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-4c57c8962fbf3ead2b9d61fc3596fa09b6c2f265",
-  "last": "2026-11-05T10:58:41Z",
+  "last": "2026-11-05T11:46:41Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://www.trekcc.org/1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Tourn/tournamentguide0699.pdf": {
   "capture": "",
