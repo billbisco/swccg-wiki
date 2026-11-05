@@ -65793,10 +65793,11 @@
  },
  "https://melee.gg/Profile/Index/jademasters": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:00:28Z",
+  "error": "error:no-request",
+  "job_id": "spn2-10acce8fa7183ea64be627dcc325f3b83f708813",
+  "last": "2026-11-05T04:44:27Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://melee.gg/Profile/Index/redv": {
   "capture": "",
@@ -86892,8 +86893,16 @@
   "capture": "https://web.archive.org/web/20261105043047/https://swccg.com/snapshots/pc/2018-worlds-jarad-konsker-map.html",
   "job_id": "spn2-5ce730775370b8f592624434c4c172c2983e8e64",
   "last": "2026-11-05T04:40:45Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-05T04:44:58Z",
+   "bytes": 7120627,
+   "capture_id": "https://web.archive.org/web/20261105043047id_/https://swccg.com/snapshots/pc/2018-worlds-jarad-konsker-map.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a8fed9fd2db8771d6c6e287b946249d0daded10d625cafc26f1ee15c1a321b35"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-jarad-konsker-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005827/https://swccg.com/snapshots/pc/2018-worlds-jarad-konsker-map.html?copy=2",
@@ -106151,9 +106160,9 @@
   "capture": "https://web.archive.org/web/20261021095553/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html",
   "error": "error:not-found",
   "job_id": "spn2-c75cb39aa2197d0305b04451fbfc887b9f36b024",
-  "last": "2026-11-05T04:03:00Z",
+  "last": "2026-11-05T04:44:26Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025031507/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2",
@@ -120664,8 +120673,16 @@
   "capture": "https://web.archive.org/web/20261027043924/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-brian-bolletta-ls-bespin-careful-planning-v.html",
   "last": "2026-11-05T04:38:34Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T04:45:53Z",
+   "bytes": 7123409,
+   "capture_id": "https://web.archive.org/web/20261027043924id_/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-brian-bolletta-ls-bespin-careful-planning-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d7de8f9f292837c0451661508b51450a2549fe1cc8e0501b6364aa6b15867a4f"
+  }
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-chris-menzel-ds-senate.html": {
   "capture": "https://web.archive.org/web/20261021003554/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-chris-menzel-ds-senate.html",
@@ -120684,8 +120701,16 @@
   "capture": "https://web.archive.org/web/20261027043029/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-chris-menzel-ls-trm.html",
   "last": "2026-11-05T04:39:15Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T04:45:22Z",
+   "bytes": 7121607,
+   "capture_id": "https://web.archive.org/web/20261027043029id_/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-chris-menzel-ls-trm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "df26ad8bc07ae35edbe24f870691207da9c512d9256306886775b4e312d445ec"
+  }
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-john-anderson-ds-hdadtj.html": {
   "capture": "https://web.archive.org/web/20261022012331/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-john-anderson-ds-hdadtj.html",
@@ -120789,15 +120814,30 @@
   "capture": "https://web.archive.org/web/20261027042916/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html",
   "last": "2026-11-05T04:38:50Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T04:45:44Z",
+   "bytes": 7121508,
+   "capture_id": "https://web.archive.org/web/20261027042916id_/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ds-eops-tto.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "85824f518abfc2c8e3ec740403315f10b65924701ebb4acb36a4041e5b83482c"
+  }
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ls-ebo-attack-run.html": {
   "capture": "https://web.archive.org/web/20261021003541/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ls-ebo-attack-run.html",
   "last": "2026-11-05T04:39:03Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T04:45:31Z",
+   "capture_id": "https://web.archive.org/web/20261021003541id_/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-norman-lansing-ls-ebo-attack-run.html",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.994
+  }
  },
  "https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-sean-miller-ds-lsc-podracing.html": {
   "capture": "https://web.archive.org/web/20261022013811/https://swccg.com/snapshots/pc/worlds-2014-reset-beta-event-sean-miller-ds-lsc-podracing.html",
@@ -160781,11 +160821,19 @@
   }
  },
  "https://www.youtube.com/watch?v=2ZXDE7cO4YM": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:00:38Z",
-  "status": "retry",
-  "tries": 5
+  "capture": "https://web.archive.org/web/20261021032626/https://www.youtube.com/watch?v=2ZXDE7cO4YM",
+  "last": "2026-11-05T04:43:08Z",
+  "note": "already archived within 30d",
+  "status": "unverified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-05T04:43:16Z",
+   "capture_id": "https://web.archive.org/web/20261021032626id_/https://www.youtube.com/watch?v=2ZXDE7cO4YM",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 20% (< 85%)",
+   "text_match": 0.2
+  }
  },
  "https://www.youtube.com/watch?v=2Zu0-Ut4vJA": {
   "capture": "https://web.archive.org/web/20261021141732/https://www.youtube.com/watch?v=2Zu0-Ut4vJA",
@@ -161689,10 +161737,10 @@
  },
  "https://www.youtube.com/watch?v=7xLGIcvYKFM": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 651 hours, 55 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T04:00:51Z",
+  "error": "no job_id: The same snapshot had been made 652 hours, 38 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T04:43:29Z",
   "status": "retry",
-  "tries": 4
+  "tries": 5
  },
  "https://www.youtube.com/watch?v=85UThR7drRI": {
   "capture": "https://web.archive.org/web/20261021155920/https://www.youtube.com/watch?v=85UThR7drRI",
@@ -173089,10 +173137,10 @@
  },
  "https://youtu.be/K7PIzyidp7A": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 655 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T04:01:05Z",
+  "error": "no job_id: The same snapshot had been made 656 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T04:43:41Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://youtu.be/Kp74Cpcis8M": {
   "capture": "",
@@ -173219,10 +173267,10 @@
  },
  "https://youtu.be/cGcsgysrnws": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 652 hours, 14 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T04:01:17Z",
+  "error": "no job_id: The same snapshot had been made 652 hours, 56 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T04:43:52Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://youtu.be/eHxXe52lIck": {
   "capture": "",
@@ -173233,10 +173281,10 @@
  },
  "https://youtu.be/f393hAQVtaE": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:03:13Z",
+  "error": "no job_id: The same snapshot had been made 654 hours, 30 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T04:44:04Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://youtu.be/fAovLhw4U5g": {
   "capture": "",
@@ -173254,10 +173302,10 @@
  },
  "https://youtu.be/khgMi_K01tw": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T04:03:23Z",
+  "error": "no job_id: The same snapshot had been made 654 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T04:44:15Z",
   "status": "retry",
-  "tries": 3
+  "tries": 4
  },
  "https://youtu.be/peWq9HiAdbM": {
   "capture": "https://web.archive.org/web/20261105024332/https://www.youtube.com/watch?v=peWq9HiAdbM&feature=youtu.be",
