@@ -6067,10 +6067,10 @@
  },
  "http://theswca.com/index.php?action=disp_item&item_id=91371": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 366 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T10:13:48Z",
+  "error": "no job_id: The same snapshot had been made 366 hours, 50 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T10:48:11Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://theswca.com/index.php?action=disp_items_by&items_by=owner_credit&id=24&page=51": {
   "capture": "",
@@ -63607,10 +63607,10 @@
  },
  "https://boardgamegeek.com/filepage/33565/star-wars-ccg-complete-card-list-42": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 639 hours, 47 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T10:13:59Z",
+  "error": "no job_id: The same snapshot had been made 640 hours, 21 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T10:48:23Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set": {
   "capture": "https://web.archive.org/web/20261014165918/https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set",
@@ -68475,9 +68475,9 @@
  "https://garbagerollers.com/2024/02/02/community-spotlight-ktod-feb-2nd-2024/": {
   "capture": "",
   "error": "no job_id: Cannot resolve host garbagerollers.com. If the site is online, it may be blocking access from our service.",
-  "last": "2026-11-05T10:14:10Z",
+  "last": "2026-11-05T10:48:34Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$rv3f35y1eafz1uha": {
   "capture": "https://web.archive.org/web/20261027103213/https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$rv3f35y1eafz1uha",
@@ -69598,10 +69598,10 @@
  },
  "https://memory-alpha.fandom.com/wiki/File:Decipher_logo.png": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 660 hours, 53 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T10:14:23Z",
+  "error": "no job_id: The same snapshot had been made 661 hours, 28 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T10:48:46Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://open.spotify.com/show/49hIqjRmHqMkfategXWt1I": {
   "capture": "https://web.archive.org/web/20261022193443/https://open.spotify.com/show/49hIqjRmHqMkfategXWt1I",
@@ -71796,8 +71796,16 @@
   "capture": "https://web.archive.org/web/20261022214131/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/LAAngels.jpg",
   "last": "2026-11-05T10:11:45Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T10:59:07Z",
+   "bytes": 316149,
+   "capture_id": "https://web.archive.org/web/20261022214131id_/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/LAAngels.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1787fc962a3b4d4f664c94b955c1e6b0ac930078ea93f9ab26395e84db805f85"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Poland.jpg": {
   "capture": "https://web.archive.org/web/20261022214131/https://res.starwarsccg.org/wp/wp-content/uploads/2022/swccginpublic/Poland.jpg",
@@ -71810,15 +71818,31 @@
   "capture": "https://web.archive.org/web/20261022135250/https://res.starwarsccg.org/wp/wp-content/uploads/2023/SEBoosters.png",
   "last": "2026-11-05T10:11:59Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T10:58:58Z",
+   "bytes": 225412,
+   "capture_id": "https://web.archive.org/web/20261022135250id_/https://res.starwarsccg.org/wp/wp-content/uploads/2023/SEBoosters.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d0575a6531b2466c0dc304ac935389abee87c0da2b872589fd625163e9cfb316"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2024/Devon.png": {
   "capture": "https://web.archive.org/web/20261024141245/https://res.starwarsccg.org/wp/wp-content/uploads/2024/Devon.png",
   "last": "2026-11-05T10:12:10Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T10:58:50Z",
+   "bytes": 406571,
+   "capture_id": "https://web.archive.org/web/20261024141245id_/https://res.starwarsccg.org/wp/wp-content/uploads/2024/Devon.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3b1a3924d70412359e76a23d6f6baeaca02e5eea3ed4106441ec224e70fedd27"
+  }
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2024/GEMPC8Banner.jpg": {
   "capture": "https://web.archive.org/web/20261022135312/https://res.starwarsccg.org/wp/wp-content/uploads/2024/GEMPC8Banner.jpg",
@@ -72548,9 +72572,9 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-b5de6f7f01c4931de40529925ea4f4bfb2276181",
-  "last": "2026-11-05T09:58:00Z",
+  "last": "2026-11-05T10:58:38Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://starwars.fandom.com/wiki/Cloud_City_Limited": {
   "capture": "https://web.archive.org/web/20260929034118/https://starwars.fandom.com/wiki/Cloud_City_Limited",
@@ -146915,9 +146939,9 @@
   "capture": "",
   "error": "error:internal-server-error",
   "job_id": "spn2-98d7354c75f06402e345be575a76ec548df30ea6",
-  "last": "2026-11-05T10:08:30Z",
+  "last": "2026-11-05T10:58:39Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccgdb.com/decklist/view/5/operatives-1998-world-champion-1.0": {
   "capture": "https://web.archive.org/web/20260929064107/https://swccgdb.com/decklist/view/5/operatives-1998-world-champion-1.0",
@@ -163964,9 +163988,9 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-4c57c8962fbf3ead2b9d61fc3596fa09b6c2f265",
-  "last": "2026-11-05T10:08:54Z",
+  "last": "2026-11-05T10:58:41Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://www.trekcc.org/1e/rules_archive/decipher/Z_KLAUSERS_ARCHIVE/Tourn/tournamentguide0699.pdf": {
   "capture": "",
