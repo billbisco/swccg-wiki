@@ -6067,10 +6067,10 @@
  },
  "http://theswca.com/index.php?action=disp_item&item_id=91371": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 368 hours, 3 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-11-05T12:00:46Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 368 hours, 35 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T12:32:51Z",
+  "status": "failed",
+  "tries": 6
  },
  "http://theswca.com/index.php?action=disp_items_by&items_by=owner_credit&id=24&page=51": {
   "capture": "",
@@ -63607,10 +63607,10 @@
  },
  "https://boardgamegeek.com/filepage/33565/star-wars-ccg-complete-card-list-42": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 641 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T12:01:09Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 642 hours, 6 minutes ago. You can make new capture of this URL after 720 hour",
+  "last": "2026-11-05T12:33:02Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set": {
   "capture": "https://web.archive.org/web/20261014165918/https://boardgamegeek.com/thread/2902121/i-need-assistance-identifying-this-set",
@@ -68475,9 +68475,9 @@
  "https://garbagerollers.com/2024/02/02/community-spotlight-ktod-feb-2nd-2024/": {
   "capture": "",
   "error": "no job_id: Cannot resolve host garbagerollers.com. If the site is online, it may be blocking access from our service.",
-  "last": "2026-11-05T12:01:44Z",
-  "status": "retry",
-  "tries": 5
+  "last": "2026-11-05T12:33:13Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$rv3f35y1eafz1uha": {
   "capture": "https://web.archive.org/web/20261027103213/https://gemp.starwarsccg.org/gemp-swccg/game.html?replayId=dillen$rv3f35y1eafz1uha",
@@ -69003,15 +69003,29 @@
   "capture": "https://web.archive.org/web/20261027094507/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set223/dark/Card223_026.java",
   "last": "2026-11-05T09:37:03Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T12:35:00Z",
+   "capture_id": "https://web.archive.org/web/20261027094507id_/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set223/dark/Card223_026.java",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.911
+  }
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set223/dark/Card223_029.java": {
   "capture": "https://web.archive.org/web/20261027094434/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set223/dark/Card223_029.java",
   "last": "2026-11-05T09:37:17Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T12:34:51Z",
+   "capture_id": "https://web.archive.org/web/20261027094434id_/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set223/dark/Card223_029.java",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.878
+  }
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set223/light/Card223_030.java": {
   "capture": "https://web.archive.org/web/20261027095217/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set223/light/Card223_030.java",
@@ -69045,8 +69059,15 @@
   "capture": "https://web.archive.org/web/20261022112159/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/dark/Card225_003.java",
   "last": "2026-11-05T09:37:46Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T12:34:37Z",
+   "capture_id": "https://web.archive.org/web/20261022112159id_/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/dark/Card225_003.java",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.89
+  }
  },
  "https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/light/Card225_051.java": {
   "capture": "https://web.archive.org/web/20261020174137/https://github.com/billbisco/swccg-gemp/blob/d25ad653cad678c194a546f9198d27bb800d1ce4/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set225/light/Card225_051.java",
@@ -69325,15 +69346,31 @@
   "capture": "https://web.archive.org/web/20261027103221/https://i.ytimg.com/vi/swSmLNAG62A/maxresdefault.jpg",
   "last": "2026-11-05T09:41:02Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T12:34:27Z",
+   "bytes": 87598,
+   "capture_id": "https://web.archive.org/web/20261027103221id_/https://i.ytimg.com/vi/swSmLNAG62A/maxresdefault.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0976ff41b36b7268028d282a6e3a1dc9aee4a2114c1aba564eacc20e483355cd"
+  }
  },
  "https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg": {
   "capture": "https://web.archive.org/web/20261027102426/https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg",
   "last": "2026-11-05T09:41:14Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T12:34:18Z",
+   "bytes": 92146,
+   "capture_id": "https://web.archive.org/web/20261027102426id_/https://i.ytimg.com/vi/vajXhE3_H5M/maxresdefault.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "8cbe34bce7bac0f53359c0856d5bee287f4be4bec949d6b02aeee666cfbd2458"
+  }
  },
  "https://i.ytimg.com/vi/xHGFzJHIlcI/maxresdefault.jpg": {
   "capture": "https://web.archive.org/web/20261027102436/https://i.ytimg.com/vi/xHGFzJHIlcI/maxresdefault.jpg",
@@ -69598,10 +69635,10 @@
  },
  "https://memory-alpha.fandom.com/wiki/File:Decipher_logo.png": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 662 hours, 41 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T12:01:56Z",
-  "status": "retry",
-  "tries": 5
+  "error": "no job_id: The same snapshot had been made 663 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T12:33:24Z",
+  "status": "failed",
+  "tries": 6
  },
  "https://open.spotify.com/show/49hIqjRmHqMkfategXWt1I": {
   "capture": "https://web.archive.org/web/20261022193443/https://open.spotify.com/show/49hIqjRmHqMkfategXWt1I",
@@ -72291,8 +72328,16 @@
   "capture": "https://web.archive.org/web/20261022193920/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png",
   "last": "2026-11-05T09:44:28Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-05T12:34:10Z",
+   "bytes": 2128051,
+   "capture_id": "https://web.archive.org/web/20261022193920id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerFrame.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "35d8f07a4ed6b6625a49d715c7cb07e13a746ce2d58df71c1cda070f36651b77"
+  }
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerGroupShot.png": {
   "capture": "https://web.archive.org/web/20261105094457/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2024/BeezerGroupShot.png",
