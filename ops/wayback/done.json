@@ -5984,10 +5984,10 @@
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2011/Worlds/2011+World_team.pdf": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 659 hours, 49 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T09:50:13Z",
+  "error": "no job_id: The same snapshot had been made 660 hours, 23 minutes ago. You can make new capture of this URL after 720 hou",
+  "last": "2026-11-05T10:24:27Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf": {
   "capture": "https://web.archive.org/web/20261008202947/http://res.starwarsccg.org/Resources/tournaments/Decklists/2012/2012+World_d2.pdf",
@@ -6076,9 +6076,9 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-1fb42edc71863b7b276cf1aa609fc4d4114f1409",
-  "last": "2026-11-05T09:45:36Z",
+  "last": "2026-11-05T10:33:30Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "http://www.angelfire.com/scifi2/thx113806107": {
   "capture": "",
@@ -63620,17 +63620,17 @@
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-3cc2c52e555a75ba0b0f5ed9fc51171a91430aef",
-  "last": "2026-11-05T09:45:38Z",
+  "last": "2026-11-05T10:33:32Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://cardguide.fandom.com/wiki/Premiere_Limited_(Star_Wars_CCG)_(ES)": {
   "capture": "",
   "error": "error:no-request",
   "job_id": "spn2-60c486d5aff3b68b2f7765c967e73d8a5ef60ab9",
-  "last": "2026-11-05T09:45:40Z",
+  "last": "2026-11-05T10:33:33Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://cardguide.fandom.com/wiki/Star_Wars_CCG": {
   "capture": "https://web.archive.org/web/20260214102400/https://cardguide.fandom.com/wiki/Star_Wars_CCG",
@@ -68099,11 +68099,18 @@
   }
  },
  "https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG": {
-  "capture": "https://web.archive.org/web/20261022171457/https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T09:51:34Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027102242/https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG",
+  "last": "2026-11-05T10:25:19Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T10:25:32Z",
+   "capture_id": "https://web.archive.org/web/20261027102242id_/https://commons.wikimedia.org/wiki/File:Chesapeake_Conference_Center.JPG",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://creativecommons.org/licenses/by-sa/2.0/": {
   "capture": "https://web.archive.org/web/20261019175915/https://creativecommons.org/licenses/by-sa/2.0/",
@@ -70872,18 +70879,34 @@
   }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf": {
-  "capture": "https://web.archive.org/web/20261020174331/https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T09:48:18Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261027095223/https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf",
+  "last": "2026-11-05T10:23:01Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T10:23:08Z",
+   "bytes": 14727066,
+   "capture_id": "https://web.archive.org/web/20261027095223id_/https://res.starwarsccg.org/legacyblocks/VirtualBlock4.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "43f09c1ead137ff40e86af0c9a5c73c8ed9c686f1df9ee89633249e189847189"
+  }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf": {
-  "capture": "https://web.archive.org/web/20261020175310/https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T09:48:28Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261027095234/https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf",
+  "last": "2026-11-05T10:23:20Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T10:23:25Z",
+   "bytes": 10330337,
+   "capture_id": "https://web.archive.org/web/20261027095234id_/https://res.starwarsccg.org/legacyblocks/VirtualBlock5.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "72b9c7ae6c7c3bdbdba6157887f3448a0ea472c58955fdbaed0d26f2b854b557"
+  }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock6_1.pdf": {
   "capture": "https://web.archive.org/web/20261008195540/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_1.pdf",
@@ -70907,18 +70930,34 @@
   "tries": 3
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf": {
-  "capture": "https://web.archive.org/web/20261020174429/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T09:48:51Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261027095315/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf",
+  "last": "2026-11-05T10:23:40Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T10:23:44Z",
+   "bytes": 6807273,
+   "capture_id": "https://web.archive.org/web/20261027095315id_/https://res.starwarsccg.org/legacyblocks/VirtualBlock6_3.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c27c12184370c536def7bbead8434770511b4c281df4da18d0e9e0c200c16315"
+  }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf": {
-  "capture": "https://web.archive.org/web/20261020174512/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T09:49:01Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261027095326/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf",
+  "last": "2026-11-05T10:23:56Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-05T10:24:03Z",
+   "bytes": 9825688,
+   "capture_id": "https://web.archive.org/web/20261027095326id_/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "73ca46dab01cb9003cd0d17b96ae8d6a0c2e74e49d805da85d151cc08ff2513d"
+  }
  },
  "https://res.starwarsccg.org/legacyblocks/VirtualBlock7_2.pdf": {
   "capture": "https://web.archive.org/web/20261016180935/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_2.pdf",
@@ -72376,11 +72415,19 @@
   "tries": 2
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsTop8.jpg": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T09:53:06Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261022195048/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsTop8.jpg",
+  "last": "2026-11-05T10:25:49Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T10:26:03Z",
+   "bytes": 1767103,
+   "capture_id": "https://web.archive.org/web/20261022195048id_/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/26NationalsTop8.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9412a709e55a48b8653ad326f3179920fb2a99428c032ea4454d1119fd3f8167"
+  }
  },
  "https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/BWC_Phil.jpg": {
   "capture": "https://web.archive.org/web/20261027103335/https://s3.us-east-2.amazonaws.com/res.starwarsccg.org/wp/wp-content/uploads/2026/BWC_Phil.jpg",
@@ -99801,11 +99848,11 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ls-tatooine-slave-quarters-ltwwv.html": {
-  "capture": "https://web.archive.org/web/20261020202813/https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ls-tatooine-slave-quarters-ltwwv.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T09:50:02Z",
-  "status": "retry",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261027100711/https://swccg.com/snapshots/pc/2022-endor-grand-prix-justin-miyashiro-ls-tatooine-slave-quarters-ltwwv.html",
+  "last": "2026-11-05T10:24:15Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 4
  },
  "https://swccg.com/snapshots/pc/2022-endor-grand-prix-koen-meijssen-ls-oa.html": {
   "capture": "https://web.archive.org/web/20261027095934/https://swccg.com/snapshots/pc/2022-endor-grand-prix-koen-meijssen-ls-oa.html",
@@ -104549,11 +104596,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats.html": {
-  "capture": "https://web.archive.org/web/20261022202953/https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T09:54:42Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027103430/https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats.html",
+  "last": "2026-11-05T10:26:15Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T10:26:22Z",
+   "bytes": 15697685,
+   "capture_id": "https://web.archive.org/web/20261027103430id_/https://swccg.com/snapshots/pc/2022-us-nationals-wrap-olson-repeats.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "27fb46b4b8f2bb345be4bb4e12dc954e8f5e41d1ea963ea791dcfe96823c3232"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-world-championship-anthony-howard-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261027161612/https://swccg.com/snapshots/pc/2022-world-championship-anthony-howard-ds-shadow-collective.html",
@@ -120044,11 +120099,11 @@
   }
  },
  "https://swccg.com/snapshots/pc/2025-us-nationals-wrap-up-matt-scott-takes-it-down.html": {
-  "capture": "https://web.archive.org/web/20261022203147/https://swccg.com/snapshots/pc/2025-us-nationals-wrap-up-matt-scott-takes-it-down.html",
-  "error": "no job_id: The same snapshot had been made 215 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T09:55:09Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027103614/https://swccg.com/snapshots/pc/2025-us-nationals-wrap-up-matt-scott-takes-it-down.html",
+  "last": "2026-11-05T10:26:34Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/2025-world-championship-eric-spijksma-ds-rots-dooku.html": {
   "capture": "https://web.archive.org/web/20261025081920/https://swccg.com/snapshots/pc/2025-world-championship-eric-spijksma-ds-rots-dooku.html",
@@ -123982,11 +124037,11 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/conor-britain-captures-the-third-biennial-jawa-cup-crown.html": {
-  "capture": "https://web.archive.org/web/20261023204531/https://swccg.com/snapshots/pc/conor-britain-captures-the-third-biennial-jawa-cup-crown.html",
-  "error": "no job_id: The same snapshot had been made 215 hours, 19 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T09:55:21Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027103533/https://swccg.com/snapshots/pc/conor-britain-captures-the-third-biennial-jawa-cup-crown.html",
+  "last": "2026-11-05T10:26:48Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3
  },
  "https://swccg.com/snapshots/pc/contact.html": {
   "capture": "https://web.archive.org/web/20261022032215/https://swccg.com/snapshots/pc/contact.html",
@@ -124080,11 +124135,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame.html": {
-  "capture": "https://web.archive.org/web/20261022211618/https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame.html",
-  "error": "no job_id: The same snapshot had been made 215 hours, 18 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T09:55:32Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027103642/https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame.html",
+  "last": "2026-11-05T10:27:00Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T10:34:00Z",
+   "bytes": 21448077,
+   "capture_id": "https://web.archive.org/web/20261027103642id_/https://swccg.com/snapshots/pc/drew-lichtenstein-wins-the-san-diego-super-open-schoenthal-inducted-to-pc-hall-of-fame.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5c51bba7a601517af32615e043c6485291a08f7a2a1d969a6c0cf965f7eac299"
+  }
  },
  "https://swccg.com/snapshots/pc/egp-2023-wrap-up-hayes-hunter-on-a-roll-takes-title-bf.html": {
   "capture": "https://web.archive.org/web/20261022033740/https://swccg.com/snapshots/pc/egp-2023-wrap-up-hayes-hunter-on-a-roll-takes-title-bf.html",
@@ -124100,11 +124163,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/egp-2023-wrap-up-hayes-hunter-on-a-roll-takes-title.html": {
-  "capture": "",
-  "error": "no job_id: The same snapshot had been made 325 hours, 23 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T09:55:44Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261022203216/https://swccg.com/snapshots/pc/egp-2023-wrap-up-hayes-hunter-on-a-roll-takes-title.html",
+  "last": "2026-11-05T10:27:11Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T10:33:48Z",
+   "bytes": 101474,
+   "capture_id": "https://web.archive.org/web/20261022203216id_/https://swccg.com/snapshots/pc/egp-2023-wrap-up-hayes-hunter-on-a-roll-takes-title.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a3b4da40e6633dbd65c4ac4a7c6bd6b9d1a3d39788fdcda2b43894018fcc4e8d"
+  }
  },
  "https://swccg.com/snapshots/pc/gemp-announcements-request-for-applications-for-new-team.html": {
   "capture": "https://web.archive.org/web/20261022035219/https://swccg.com/snapshots/pc/gemp-announcements-request-for-applications-for-new-team.html",
@@ -124204,11 +124275,16 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html": {
-  "capture": "https://web.archive.org/web/20261024140932/https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html?copy=2",
-  "error": "no job_id: The same snapshot had been made 214 hours, 34 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-05T09:55:55Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261027112151/https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html",
+  "last": "2026-11-05T10:27:23Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-05T10:33:41Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html?copy=2": {
   "capture": "https://web.archive.org/web/20261024140932/https://swccg.com/snapshots/pc/indy-eclipse-wrap-up-sam-tashima-takes-his-first-major.html?copy=2",
