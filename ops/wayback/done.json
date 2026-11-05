@@ -88867,7 +88867,12 @@
   "last": "2026-11-05T04:58:00Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-05T20:30:56Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html": {
   "capture": "https://web.archive.org/web/20261021004148/https://swccg.com/snapshots/pc/2017-ec-day-2-floris-de-vries-cct.html",
@@ -90707,8 +90712,16 @@
   "capture": "https://web.archive.org/web/20261105045031/https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html",
   "job_id": "spn2-9d7f56480e035e835a3c18a1f68a96eace868927",
   "last": "2026-11-05T04:58:28Z",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-05T20:30:40Z",
+   "bytes": 7120757,
+   "capture_id": "https://web.archive.org/web/20261105045031id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6d6be014574b1e6c1e6254a74a13b275a42336d7d696411cbec51f30b5f98e69"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194147/https://swccg.com/snapshots/pc/2017-worlds-day-2-jim-li-ls.html?copy=2",
