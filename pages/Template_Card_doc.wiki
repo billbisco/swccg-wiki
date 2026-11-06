@@ -145,3 +145,5 @@ Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px =
 == Creature statistics ==
 
 Optional creature statistics: <code>ferocity</code> and <code>fangs</code> render their own Info rows when supplied. Use the printed creature statistics rather than recording ferocity as power.
+
+The optional <code>tentacles</code> parameter displays a creature’s printed tentacle count. Like <code>ferocity</code> and <code>fangs</code>, the row is omitted when the parameter is empty.
