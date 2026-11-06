@@ -90061,8 +90061,16 @@
   "capture": "https://web.archive.org/web/20261021010957/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ds.html",
   "last": "2026-11-05T03:06:17Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T09:46:41Z",
+   "bytes": 7120476,
+   "capture_id": "https://web.archive.org/web/20261021010957id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ds.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e674f3582813aa9283015bd1be33d844f81e10ac4b88b4db6b62b5b72444ef0f"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103231038/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ds.html?copy=2",
@@ -90083,8 +90091,16 @@
   "capture": "https://web.archive.org/web/20261027035233/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ls.html",
   "last": "2026-11-05T03:06:29Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T09:46:15Z",
+   "bytes": 7120812,
+   "capture_id": "https://web.archive.org/web/20261027035233id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-fred-ls.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "69d2f2fad4d4f87e5e7d1c5a5b240ba5898aa1461219c003ddf1359b15fab7f5"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-mischke-ds.html": {
   "capture": "https://web.archive.org/web/20261027035340/https://swccg.com/snapshots/pc/2017-worlds-day-2-brian-mischke-ds.html",
@@ -90347,10 +90363,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-06T09:07:35Z",
+   "at": "2026-11-06T09:46:02Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-westergard-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194052/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-westergard-ds.html?copy=2",
