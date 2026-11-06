@@ -107143,7 +107143,12 @@
   "last": "2026-11-05T02:47:00Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T14:39:42Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021424/https://swccg.com/snapshots/pc/2023-07-world-championships-morristown-new-jersey-aug-11-13.html?copy=2",
@@ -111816,8 +111821,16 @@
   "capture": "https://web.archive.org/web/20261027023829/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-grady-hutchins-ls-zero-hour.html",
   "last": "2026-11-05T02:52:01Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 5
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-11-06T14:38:55Z",
+   "bytes": 7121859,
+   "capture_id": "https://web.archive.org/web/20261027023829id_/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-grady-hutchins-ls-zero-hour.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bc39f294a8da8a6c80208f8d6feeee4b80903dcf8eeab9d192e62caa7107d659"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-jeroen-wauters-ds-map.html": {
   "capture": "https://web.archive.org/web/20261021095220/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-jeroen-wauters-ds-map.html",
@@ -179996,8 +180009,14 @@
   "capture": "https://web.archive.org/web/20261105024314/https://www.youtube.com/watch?v=xR72a7lhST8&feature=youtu.be",
   "job_id": "spn2-aa1667c4a62545ef60303975516232e4bc452a2b",
   "last": "2026-11-05T02:49:10Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T14:38:59Z",
+   "capture_id": "https://web.archive.org/web/20261105024314id_/https://www.youtube.com/watch?v=xR72a7lhST8&feature=youtu.be",
+   "method": "strict",
+   "reason": "redirects to another capture 20261008203542 (no capture at 20261105024314)"
+  }
  },
  "https://youtu.be/z6UspCGLxGw": {
   "capture": "https://web.archive.org/web/20261105024407/https://www.youtube.com/watch?v=z6UspCGLxGw&feature=youtu.be",
