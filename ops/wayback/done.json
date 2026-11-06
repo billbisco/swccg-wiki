@@ -69674,10 +69674,11 @@
  },
  "https://melee.gg/Profile/Index/allstarz97": {
   "capture": "",
+  "error": "error:no-request",
   "job_id": "spn2-798c5f932ae0ca86e6e3241a51297b497809391d",
-  "last": "2026-11-05T02:10:23Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-06T02:21:47Z",
+  "status": "retry",
+  "tries": 2
  },
  "https://melee.gg/Profile/Index/dillen": {
   "capture": "",
@@ -91849,8 +91850,16 @@
   "capture": "https://web.archive.org/web/20261027041829/https://swccg.com/snapshots/pc/2018-euros-day-3-casper-jorgenson.html",
   "last": "2026-11-05T04:25:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T02:22:43Z",
+   "bytes": 7120971,
+   "capture_id": "https://web.archive.org/web/20261027041829id_/https://swccg.com/snapshots/pc/2018-euros-day-3-casper-jorgenson.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f3efb76e13c77340a5b3268a653554a3c031edceaa86e77889a4ec0addd56c12"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-euros-gyorgy-bill-ebo.html": {
   "capture": "https://web.archive.org/web/20261027041716/https://swccg.com/snapshots/pc/2018-euros-gyorgy-bill-ebo.html",
@@ -91999,8 +92008,16 @@
   "capture": "https://web.archive.org/web/20261022010915/https://swccg.com/snapshots/pc/2018-worlds-bastian-winkelhaus-aobs.html",
   "last": "2026-11-05T04:27:15Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T02:21:53Z",
+   "bytes": 7120714,
+   "capture_id": "https://web.archive.org/web/20261022010915id_/https://swccg.com/snapshots/pc/2018-worlds-bastian-winkelhaus-aobs.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "78b18dba85c84a5f04f5c898b62e18986dd575cadcd6787379cd0b56b86ca963"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-bastian-winkelhaus-wys.html": {
   "capture": "https://web.archive.org/web/20261021034338/https://swccg.com/snapshots/pc/2018-worlds-bastian-winkelhaus-wys.html",
@@ -107707,10 +107724,17 @@
   }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-chad-lawrence-ds-hunt-down.html": {
-  "capture": "https://web.archive.org/web/20261105002042/https://swccg.com/snapshots/pc/2023-corellia-regionals-chad-lawrence-ds-hunt-down.html",
-  "last": "2026-11-05T01:59:02Z",
-  "status": "pending",
-  "tries": 3
+  "capture": "https://web.archive.org/web/20261106022024/https://swccg.com/snapshots/pc/2023-corellia-regionals-chad-lawrence-ds-hunt-down.html",
+  "job_id": "spn2-aab80ec6d104aa096b639de75a94e5bd2133b072",
+  "last": "2026-11-06T02:21:46Z",
+  "status": "unverified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-06T02:21:46Z",
+   "capture_id": "https://web.archive.org/web/20261106022024id_/https://swccg.com/snapshots/pc/2023-corellia-regionals-chad-lawrence-ds-hunt-down.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261027015623 (no capture at 20261106022024)"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-chad-lawrence-ls-saga-anakin.html": {
   "capture": "https://web.archive.org/web/20261021072953/https://swccg.com/snapshots/pc/2023-corellia-regionals-chad-lawrence-ls-saga-anakin.html",
@@ -107749,10 +107773,17 @@
   "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-dan-tartaglione-ls-obi-wan-communing.html": {
-  "capture": "https://web.archive.org/web/20261105002032/https://swccg.com/snapshots/pc/2023-corellia-regionals-dan-tartaglione-ls-obi-wan-communing.html",
-  "last": "2026-11-05T01:59:04Z",
-  "status": "pending",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261106022018/https://swccg.com/snapshots/pc/2023-corellia-regionals-dan-tartaglione-ls-obi-wan-communing.html",
+  "job_id": "spn2-eb5f805059d193405408a635fe7efa3fc7a7aa7b",
+  "last": "2026-11-06T02:21:39Z",
+  "status": "unverified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-06T02:21:39Z",
+   "capture_id": "https://web.archive.org/web/20261106022018id_/https://swccg.com/snapshots/pc/2023-corellia-regionals-dan-tartaglione-ls-obi-wan-communing.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261021072825 (no capture at 20261106022018)"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-dan-tartaglione-ls-obi-wan-communing.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025023527/https://swccg.com/snapshots/pc/2023-corellia-regionals-dan-tartaglione-ls-obi-wan-communing.html?copy=2",
