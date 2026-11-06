@@ -197,3 +197,17 @@
     start();
   }
 })();
+/* Story 173: load the deck comparison only on its dedicated User test page. */
+(function () {
+  if (mw.config.get('wgPageName') !== 'User:Memory_Core_ChatGPT/Deck_display_test' || mw.config.get('wgAction') !== 'view') return;
+  function loadDeckTest() {
+    if (!document.getElementById('swccg-deck-test') || window.SWCCGDeckTestRequested) return;
+    window.SWCCGDeckTestRequested = true;
+    mw.loader.getScript('/index.php?title=MediaWiki%3ADeckGalleryTest.js&action=raw&ctype=text/javascript&v=c2e3b62f51689beb').catch(function () {
+      window.SWCCGDeckTestRequested = false;
+      console.error('SWCCG deck test could not load; the readable lists remain available.');
+    });
+  }
+  mw.hook('wikipage.content').add(loadDeckTest);
+  if (document.readyState !== 'loading') loadDeckTest();
+})();
