@@ -68577,8 +68577,16 @@
   "capture": "https://web.archive.org/web/20261027082823/https://github.com/PlayersCommittee",
   "last": "2026-11-05T02:53:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T13:09:59Z",
+   "capture_id": "https://web.archive.org/web/20261027082823id_/https://github.com/PlayersCommittee",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 79% (< 85%)",
+   "text_match": 0.794
+  }
  },
  "https://github.com/PlayersCommittee/gemp-swccg-public/blob/ecec878b/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set210/dark/Card210_042.java": {
   "capture": "",
@@ -125498,8 +125506,16 @@
   "capture": "https://web.archive.org/web/20261027033717/https://swccg.com/snapshots/pc/about.html",
   "last": "2026-11-05T02:53:41Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T13:10:18Z",
+   "bytes": 7117429,
+   "capture_id": "https://web.archive.org/web/20261027033717id_/https://swccg.com/snapshots/pc/about.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "37e40a79e036f756a6204278fee09060f6447e0b7fa2fa02d004a66d0b85d4f7"
+  }
  },
  "https://swccg.com/snapshots/pc/awards.html": {
   "capture": "https://web.archive.org/web/20261013125358/https://swccg.com/snapshots/pc/awards.html",
