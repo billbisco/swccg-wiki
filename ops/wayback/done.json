@@ -90238,13 +90238,14 @@
   "capture": "https://web.archive.org/web/20261021010922/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-kelly-ls.html",
   "last": "2026-11-05T04:18:15Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-11-06T04:56:05Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-06T05:32:58Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-kelly-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194030/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-kelly-ls.html?copy=2",
@@ -91201,8 +91202,16 @@
   "capture": "https://web.archive.org/web/20261021014620/https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-diplo.html",
   "last": "2026-11-05T04:14:06Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T05:33:09Z",
+   "bytes": 7120928,
+   "capture_id": "https://web.archive.org/web/20261021014620id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-diplo.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "02ea648bb97bd25821d2bdd45deb99631f131fd785053e18d6533b3e9aaef14c"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-diplo.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025004724/https://swccg.com/snapshots/pc/2017-worlds-day-2-mike-turner-diplo.html?copy=2",
@@ -91501,10 +91510,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-05T04:13:34Z",
+   "at": "2026-11-06T05:33:18Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010700/https://swccg.com/snapshots/pc/2017-worlds-day-2-stephen-cellucci-ls.html?copy=2",
