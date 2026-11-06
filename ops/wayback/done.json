@@ -114144,8 +114144,14 @@
   "capture": "https://web.archive.org/web/20261027032028/https://swccg.com/snapshots/pc/2023-toola-regionals-emil-wallin-ds-walkers.html",
   "last": "2026-11-05T01:52:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T23:54:07Z",
+   "capture_id": "https://web.archive.org/web/20261027032028id_/https://swccg.com/snapshots/pc/2023-toola-regionals-emil-wallin-ds-walkers.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261021121959 (no capture at 20261027032028)"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-toola-regionals-emil-wallin-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021121325/https://swccg.com/snapshots/pc/2023-toola-regionals-emil-wallin-ls-old-allies.html",
@@ -114268,8 +114274,16 @@
   "capture": "https://web.archive.org/web/20261027033243/https://swccg.com/snapshots/pc/2023-toola-regionals-quirin-furgut-ls-obi-wan-communing.html",
   "last": "2026-11-05T01:52:44Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T23:54:57Z",
+   "bytes": 7121285,
+   "capture_id": "https://web.archive.org/web/20261027033243id_/https://swccg.com/snapshots/pc/2023-toola-regionals-quirin-furgut-ls-obi-wan-communing.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3f83ec382602ccdef47a2e6c958a7825b95faaa78b605f0b20bf7c69bf813acf"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-toola-regionals-tony-petersson-ds-invasion.html": {
   "capture": "https://web.archive.org/web/20261027033304/https://swccg.com/snapshots/pc/2023-toola-regionals-tony-petersson-ds-invasion.html",
