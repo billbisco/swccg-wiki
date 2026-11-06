@@ -111691,8 +111691,16 @@
   "capture": "https://web.archive.org/web/20261027025027/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-quirin-furgut-ls-communing-qui-gon.html",
   "last": "2026-11-05T03:48:53Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 6
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-06T07:52:02Z",
+   "bytes": 7121935,
+   "capture_id": "https://web.archive.org/web/20261027025027id_/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-quirin-furgut-ls-communing-qui-gon.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a97fbe5c9a7187547e6b0032fa74f6d906376efe6636fab72572575b0e4073c2"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-stephan-de-vos-ds-eops.html": {
   "capture": "https://web.archive.org/web/20261105010536/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-stephan-de-vos-ds-eops.html",
@@ -179355,8 +179363,16 @@
  "https://youtu.be/6ZXLDRxBuRQ": {
   "capture": "https://web.archive.org/web/20261105023348/https://www.youtube.com/watch?v=6ZXLDRxBuRQ&feature=youtu.be",
   "last": "2026-11-05T03:48:25Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T07:52:10Z",
+   "capture_id": "https://web.archive.org/web/20261105023348id_/https://www.youtube.com/watch?v=6ZXLDRxBuRQ&feature=youtu.be",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 14% (< 85%)",
+   "text_match": 0.135
+  }
  },
  "https://youtu.be/7-8DF6xesa0": {
   "capture": "",
