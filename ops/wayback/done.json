@@ -91402,8 +91402,16 @@
   "capture": "https://web.archive.org/web/20261021015631/https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ls.html",
   "last": "2026-11-05T04:08:04Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T06:49:20Z",
+   "bytes": 7120911,
+   "capture_id": "https://web.archive.org/web/20261021015631id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ls.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "504cbc83326f793cba7b04cca932b65431e1498e4144035846e76ba681aecc3d"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194230/https://swccg.com/snapshots/pc/2017-worlds-day-2-phil-aasen-ls.html?copy=2",
@@ -91417,7 +91425,12 @@
   "last": "2026-11-05T04:08:19Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T06:48:35Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005422/https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ds.html?copy=2",
