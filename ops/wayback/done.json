@@ -90529,8 +90529,16 @@
   "capture": "https://web.archive.org/web/20261021012342/https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-eops.html",
   "last": "2026-11-05T04:06:09Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T07:26:50Z",
+   "bytes": 7120956,
+   "capture_id": "https://web.archive.org/web/20261021012342id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-eops.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1d1a2b345799f58e793ba6aeec635ad26225e8e243c4d1bd5b4409e1fdd2f6c1"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-eops.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025012829/https://swccg.com/snapshots/pc/2017-worlds-day-2-fernando-souza-eops.html?copy=2",
@@ -90874,8 +90882,16 @@
   "capture": "https://web.archive.org/web/20261022002729/https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-olson-ds.html",
   "last": "2026-11-05T04:06:31Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-06T07:26:41Z",
+   "bytes": 7120715,
+   "capture_id": "https://web.archive.org/web/20261022002729id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-olson-ds.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "21d464ed68cf4002f84a218aefa159a026c086377ebadf73c3032b2762d7f378"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-olson-ls.html": {
   "capture": "https://web.archive.org/web/20261021021035/https://swccg.com/snapshots/pc/2017-worlds-day-2-joe-olson-ls.html",
@@ -91450,10 +91466,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-06T06:48:35Z",
+   "at": "2026-11-06T07:26:31Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005422/https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ds.html?copy=2",
@@ -170925,7 +170941,12 @@
   "job_id": "spn2-a2ca4febe7fd2599c62e759b70ecdc3becf7d5bc",
   "last": "2026-11-05T04:03:11Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T07:26:57Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=LYU2Qe-Y8yY": {
   "capture": "https://web.archive.org/web/20261021171739/https://www.youtube.com/watch?v=LYU2Qe-Y8yY",
