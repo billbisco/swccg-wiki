@@ -89565,8 +89565,16 @@
   "capture": "https://web.archive.org/web/20261027035029/https://swccg.com/snapshots/pc/2017-tmw-day-1-michael-richards-watto.html",
   "last": "2026-11-05T02:59:01Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T10:50:14Z",
+   "bytes": 7120651,
+   "capture_id": "https://web.archive.org/web/20261027035029id_/https://swccg.com/snapshots/pc/2017-tmw-day-1-michael-richards-watto.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bd8d3a28b6f802925955853916335bd5e43110252872e1370384a8b04a83efd0"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-court.html": {
   "capture": "https://web.archive.org/web/20261027035042/https://swccg.com/snapshots/pc/2017-tmw-day-1-mike-kessling-court.html",
@@ -90554,10 +90562,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-06T10:10:55Z",
+   "at": "2026-11-06T10:49:43Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025004212/https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ds.html?copy=2",
