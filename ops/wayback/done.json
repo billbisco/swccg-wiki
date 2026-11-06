@@ -91915,8 +91915,16 @@
   "capture": "https://web.archive.org/web/20261027041819/https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-ls-mains.html",
   "last": "2026-11-05T04:25:43Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T02:35:27Z",
+   "bytes": 7120956,
+   "capture_id": "https://web.archive.org/web/20261027041819id_/https://swccg.com/snapshots/pc/2018-euros-pete-the-welsh-ls-mains.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "fd2fd4d39a64038747415f3b2160cb0a7e2003e90897262d231891bca6b754f9"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-us-nationals.html": {
   "capture": "https://web.archive.org/web/20261013160155/https://swccg.com/snapshots/pc/2018-us-nationals.html",
@@ -148390,11 +148398,19 @@
   }
  },
  "https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG": {
-  "capture": "https://web.archive.org/web/20261021024045/https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG",
+  "capture": "https://web.archive.org/web/20261106022409/https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG",
   "job_id": "spn2-943f9a9d27176af4a13e189aab14324728d7051b",
-  "last": "2026-11-05T02:11:13Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-06T02:34:43Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T02:34:43Z",
+   "bytes": 52023,
+   "capture_id": "https://web.archive.org/web/20261106022409id_/https://upload.wikimedia.org/wikipedia/commons/e/e5/Chesapeake_Conference_Center.JPG",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "da96f790b68c6cc9250fd78d624ef849340d1e14d78db2d2bfda9daf16ab227a"
+  }
  },
  "https://upload.wikimedia.org/wikipedia/en/5/52/Star_Trek_Customizable_Card_Game_cardback.jpg": {
   "capture": "https://web.archive.org/web/20261105100144/https://upload.wikimedia.org/wikipedia/en/5/52/Star_Trek_Customizable_Card_Game_cardback.jpg",
@@ -165788,11 +165804,19 @@
   }
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRDizhlUKOtAE2RXQamMzwr": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261106022903/https://www.youtube.com/playlist?list=PLQSFYZX0M9YRDizhlUKOtAE2RXQamMzwr",
   "job_id": "spn2-5a667497f9cd2a3b786103b0900c79ea459fc71b",
-  "last": "2026-11-05T02:13:02Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-06T02:34:49Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T02:34:49Z",
+   "capture_id": "https://web.archive.org/web/20261106022903id_/https://www.youtube.com/playlist?list=PLQSFYZX0M9YRDizhlUKOtAE2RXQamMzwr",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 29% (< 85%)",
+   "text_match": 0.286
+  }
  },
  "https://www.youtube.com/playlist?list=PLQSFYZX0M9YRcSzce7qXC2-eP2cROWz4-": {
   "capture": "",
@@ -166023,11 +166047,16 @@
   }
  },
  "https://www.youtube.com/watch?v=-R6jdaUBlBk": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261106022917/https://www.youtube.com/watch?v=-R6jdaUBlBk",
   "job_id": "spn2-dbc3b274406ad438a1b10fcc954f3ffb434e2d21",
-  "last": "2026-11-05T02:13:26Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-06T02:35:00Z",
+  "status": "ok",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T02:35:00Z",
+   "error": "source HTTP 429"
+  },
+  "verify_tries": 1
  },
  "https://www.youtube.com/watch?v=-RA6URmq97U": {
   "capture": "https://web.archive.org/web/20261015174525/https://www.youtube.com/watch?v=-RA6URmq97U",
