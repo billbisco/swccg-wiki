@@ -110355,8 +110355,16 @@
   "capture": "https://web.archive.org/web/20261021091630/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ds-bhbm.html",
   "last": "2026-11-05T03:18:42Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 5
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-11-06T08:41:50Z",
+   "bytes": 7121794,
+   "capture_id": "https://web.archive.org/web/20261021091630id_/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ds-bhbm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2b7b6af4e8ed790eb32396d144f97e3c0fc95a16641afe4509056f919d401cde"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026195812/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-kendall-halman-ds-bhbm.html?copy=2",
@@ -149770,13 +149778,15 @@
   "capture": "https://web.archive.org/web/20261021123853/https://www.kendallcast.ninja/2022/09/corran-on-horn-11-tom-haid.html",
   "last": "2026-11-05T03:21:20Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "verified",
   "tries": 4,
   "verify": {
-   "at": "2026-11-05T03:23:15Z",
-   "error": "source HTTP 429"
-  },
-  "verify_tries": 1
+   "at": "2026-11-06T08:41:41Z",
+   "capture_id": "https://web.archive.org/web/20261021123853id_/https://www.kendallcast.ninja/2022/09/corran-on-horn-11-tom-haid.html",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 1.0
+  }
  },
  "https://www.kendallcast.ninja/2022/10/corran-on-horn-12-phil-aasen.html": {
   "capture": "https://web.archive.org/web/20261015015514/https://www.kendallcast.ninja/2022/10/corran-on-horn-12-phil-aasen.html",
@@ -174709,8 +174719,16 @@
   "capture": "https://web.archive.org/web/20261105023109/https://www.youtube.com/watch?v=cgpQLDt2Rto",
   "job_id": "spn2-c05547ed1cf453f62635903f49c1a9ac39e34ca5",
   "last": "2026-11-05T03:33:00Z",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T08:41:34Z",
+   "capture_id": "https://web.archive.org/web/20261105023109id_/https://www.youtube.com/watch?v=cgpQLDt2Rto",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 13% (< 85%)",
+   "text_match": 0.132
+  }
  },
  "https://www.youtube.com/watch?v=ci0p1jskeLE": {
   "capture": "https://web.archive.org/web/20261016012518/https://www.youtube.com/watch?v=ci0p1jskeLE",
@@ -179546,8 +179564,16 @@
   "capture": "https://web.archive.org/web/20261105024113/https://www.youtube.com/watch?v=UglxdllFzLI&feature=youtu.be",
   "job_id": "spn2-c80852545a39249409cf14ed1eb934d444ef6c4b",
   "last": "2026-11-05T03:18:24Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T08:42:00Z",
+   "capture_id": "https://web.archive.org/web/20261105024113id_/https://www.youtube.com/watch?v=UglxdllFzLI&feature=youtu.be",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 14% (< 85%)",
+   "text_match": 0.143
+  }
  },
  "https://youtu.be/ZAC_Wn9Bw_A": {
   "capture": "",
