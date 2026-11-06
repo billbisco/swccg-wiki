@@ -88577,13 +88577,14 @@
   "capture": "https://web.archive.org/web/20261021002644/https://swccg.com/snapshots/pc/2012-decklists.html",
   "last": "2026-11-05T04:36:41Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-06T01:19:00Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-06T01:56:43Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2015-european-championship-day-3-3rd-place-ds-angelo-consoli-tto.html": {
   "capture": "https://web.archive.org/web/20261025120513/https://swccg.com/snapshots/pc/2015-european-championship-day-3-3rd-place-ds-angelo-consoli-tto.html",
@@ -92047,8 +92048,16 @@
   "capture": "https://web.archive.org/web/20261021022629/https://swccg.com/snapshots/pc/2018-worlds-casper-jorgenson-whap.html",
   "last": "2026-11-05T04:27:27Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T01:57:22Z",
+   "bytes": 7120819,
+   "capture_id": "https://web.archive.org/web/20261021022629id_/https://swccg.com/snapshots/pc/2018-worlds-casper-jorgenson-whap.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1a9c48f6016348107a6d46d8afdd7bab002ade328ae31e9f80976089b9550e81"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-casper-jorgenson-whap.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005745/https://swccg.com/snapshots/pc/2018-worlds-casper-jorgenson-whap.html?copy=2",
