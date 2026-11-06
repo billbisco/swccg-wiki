@@ -167918,13 +167918,16 @@
   "capture": "https://web.archive.org/web/20261105021725/https://www.youtube.com/watch?v=5K5m0Yywu_Q",
   "job_id": "spn2-b20ec0e9d62ba5bdece1009078244e85793036e7",
   "last": "2026-11-05T02:23:27Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-05T02:23:27Z",
-   "error": "source HTTP 429"
-  },
-  "verify_tries": 1
+   "at": "2026-11-06T20:19:09Z",
+   "capture_id": "https://web.archive.org/web/20261105021725id_/https://www.youtube.com/watch?v=5K5m0Yywu_Q",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 13% (< 85%)",
+   "text_match": 0.132
+  }
  },
  "https://www.youtube.com/watch?v=5L-y94NwGU4": {
   "capture": "https://web.archive.org/web/20261015181519/https://www.youtube.com/watch?v=5L-y94NwGU4",
@@ -167972,8 +167975,14 @@
   "capture": "https://web.archive.org/web/20261105021806/https://www.youtube.com/watch?v=5hTwJWgW5uQ",
   "job_id": "spn2-6d29a52761e8adeac344668fdfc444d4ee255557",
   "last": "2026-11-05T02:20:31Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T20:19:14Z",
+   "capture_id": "https://web.archive.org/web/20261105021806id_/https://www.youtube.com/watch?v=5hTwJWgW5uQ",
+   "method": "strict",
+   "reason": "redirects to another capture 20260927114421 (no capture at 20261105021806)"
+  }
  },
  "https://www.youtube.com/watch?v=5j3uQRj6-jQ": {
   "capture": "https://web.archive.org/web/20261016233835/https://www.youtube.com/watch?v=5j3uQRj6-jQ",
@@ -168729,15 +168738,31 @@
   "capture": "https://web.archive.org/web/20261021160300/https://www.youtube.com/watch?v=9IHlgqwDr1s",
   "last": "2026-11-05T02:18:08Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T20:19:35Z",
+   "capture_id": "https://web.archive.org/web/20261021160300id_/https://www.youtube.com/watch?v=9IHlgqwDr1s",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 16% (< 85%)",
+   "text_match": 0.161
+  }
  },
  "https://www.youtube.com/watch?v=9Iw6kw45G88": {
   "capture": "https://web.archive.org/web/20261021160316/https://www.youtube.com/watch?v=9Iw6kw45G88",
   "last": "2026-11-05T02:18:20Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T20:19:25Z",
+   "capture_id": "https://web.archive.org/web/20261021160316id_/https://www.youtube.com/watch?v=9Iw6kw45G88",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 13% (< 85%)",
+   "text_match": 0.128
+  }
  },
  "https://www.youtube.com/watch?v=9LanoZ8dt9I": {
   "capture": "https://web.archive.org/web/20261021163554/https://www.youtube.com/watch?v=9LanoZ8dt9I",
