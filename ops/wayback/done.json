@@ -89841,8 +89841,16 @@
   "capture": "https://web.archive.org/web/20261027033738/https://swccg.com/snapshots/pc/2017-tmw-day-2-matt-scott-diplo.html",
   "last": "2026-11-05T02:54:32Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T12:57:20Z",
+   "bytes": 7120874,
+   "capture_id": "https://web.archive.org/web/20261027033738id_/https://swccg.com/snapshots/pc/2017-tmw-day-2-matt-scott-diplo.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "83ac28ce861c6ab7e85fc14245deb0601ab7f323547a64a3947f822f582e9d17"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-kessling-bhbm.html": {
   "capture": "https://web.archive.org/web/20261027034806/https://swccg.com/snapshots/pc/2017-tmw-day-2-mike-kessling-bhbm.html",
@@ -122132,7 +122140,12 @@
   "last": "2026-11-05T02:54:19Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T12:57:41Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025033841/https://swccg.com/snapshots/pc/2026-04-san-diego-super-open-san-diego-california-apr-11-to-12-2026.html?copy=2",
