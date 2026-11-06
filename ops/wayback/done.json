@@ -90111,8 +90111,16 @@
   "capture": "https://web.archive.org/web/20261027040206/https://swccg.com/snapshots/pc/2017-worlds-day-2-cal-aldred-ls.html",
   "last": "2026-11-05T03:08:19Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T08:55:20Z",
+   "bytes": 7120726,
+   "capture_id": "https://web.archive.org/web/20261027040206id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-cal-aldred-ls.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "004df8f5cc3e17f6fd38aaae88141347156932f74293c21f67e8ee6d8bb8553f"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-charlie-arlandson-ds.html": {
   "capture": "https://web.archive.org/web/20261027035418/https://swccg.com/snapshots/pc/2017-worlds-day-2-charlie-arlandson-ds.html",
@@ -90195,10 +90203,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-05T03:09:28Z",
+   "at": "2026-11-06T08:54:36Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-gogolen-ls.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194008/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-gogolen-ls.html?copy=2",
@@ -90341,13 +90349,14 @@
   "capture": "https://web.archive.org/web/20261021010938/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ds.html",
   "last": "2026-11-05T03:38:10Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-06T08:17:06Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-06T08:54:26Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194119/https://swccg.com/snapshots/pc/2017-worlds-day-2-chris-wirfs-ds.html?copy=2",
