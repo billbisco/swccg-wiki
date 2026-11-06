@@ -88560,10 +88560,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-06T00:54:15Z",
+   "at": "2026-11-06T01:31:11Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2011-decklists.html": {
   "capture": "https://web.archive.org/web/20261021002534/https://swccg.com/snapshots/pc/2011-decklists.html",
@@ -125967,8 +125967,16 @@
   "capture": "https://web.archive.org/web/20261027042035/https://swccg.com/snapshots/pc/swccg-returns-to-live-major-events-olson-wins-us-nationals.html",
   "last": "2026-11-05T04:36:08Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T01:31:52Z",
+   "bytes": 11239931,
+   "capture_id": "https://web.archive.org/web/20261027042035id_/https://swccg.com/snapshots/pc/swccg-returns-to-live-major-events-olson-wins-us-nationals.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7fe304171bd0afa7347e61291972f44dbae1edea472db3cf5a40ce24440d1e65"
+  }
  },
  "https://swccg.com/snapshots/pc/team-europe-wins-the-2021-outrider-cup-bf.html": {
   "capture": "https://web.archive.org/web/20261022023504/https://swccg.com/snapshots/pc/team-europe-wins-the-2021-outrider-cup-bf.html",
