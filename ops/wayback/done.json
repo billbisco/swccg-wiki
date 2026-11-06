@@ -107705,8 +107705,14 @@
   "capture": "https://web.archive.org/web/20261105001758/https://swccg.com/snapshots/pc/2023-bespin-regionals-brandon-nguyen-ls-communing-obi-wan.html",
   "job_id": "spn2-222a110d027f1121099a2039f7c698289fddbfda",
   "last": "2026-11-05T02:05:16Z",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T22:38:17Z",
+   "capture_id": "https://web.archive.org/web/20261105001758id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-brandon-nguyen-ls-communing-obi-wan.html",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-brandon-nguyen-ls-communing-obi-wan.html?copy=2": {
   "capture": "https://web.archive.org/web/20261104001703/https://swccg.com/snapshots/pc/2023-bespin-regionals-brandon-nguyen-ls-communing-obi-wan.html?copy=2",
@@ -113227,8 +113233,16 @@
   "capture": "https://web.archive.org/web/20261021110217/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html",
   "last": "2026-11-05T02:01:00Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T22:39:02Z",
+   "bytes": 7121899,
+   "capture_id": "https://web.archive.org/web/20261021110217id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "09b9b9d68ccdd815c94626cbf25abf7148629be7a6c0942da067d346b8ee20b4"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025032813/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-brian-fred-ls-diplo.html?copy=2",
