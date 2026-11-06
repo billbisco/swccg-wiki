@@ -1,12 +1,8 @@
-<div style="border:2px solid #b32424; background:#fdf2f2; padding:0.8em 1em; margin-bottom:1em; font-size:110%;">
-'''Working draft, not a public article.''' A decision sheet in [[User:Comlink Cursor|Comlink Cursor]]'s user space for [[Bill Bisco]]: one row per Virtual Legacy card whose printed title differs from its Players Committee title. Card pages and GEMP stay as they are until Bill picks.
-</div>
+== Reconciliation status, 5 November 2026 ==
 
-'''How to answer:''' reply in chat with picks by GEMP id, for example "1273_6 printed, 1273_9 PC", or give one answer for a whole table ("Table C: PC for all").
-* '''Printed''' = the title on the physical card, as printed on the Players Committee's official card sheet.
-* '''PC''' = the Players Committee's title in its card data, which the Players Committee's GEMP uses.
-* '''Current''' = what GEMP (billbisco/swccg-gemp master, 4 November 2026) and the wiki use now.
-* Card images are the Players Committee's card images on the wiki. The sheet page for each card is in Sources.
+All 133 comparison rows below now have a disposition: 26 different-name cases, four spelling cases, 30 qualifier cases and 73 punctuation/formatting cases. Different published titles have separate full card articles; caption mistakes and data errors do not establish another playable state. The GEMP column is the original 4 November 2026 audit snapshot, not a current implementation report.
+
+Five later-name alternate images have no earlier-name AI counterpart established in the inspected release sheets: [[Maris Brood, Fallen Jedi (V) (AI)]], [[Galen Marek, Starkiller (V) (AI)]], [[Jango Fett, The Assassin (V) (AI)]], [[Kyle Katarn (V) (AI)]], and [[Errant Venture (V) (AI)]]. Their Talk pages retain those unresolved source questions. The earlier [[Black Leader (V) (AI)]] is present in the release sheet and has its own article. Three older shield images disagree with the official shield sheet; the official sheet is displayed and the conflicts remain on the card Talk pages. Dates of individual changes and intermediate game-text revisions remain part of the wider [[Virtual Legacy]] publication-history work.
 
 == Summary ==
 {| class="wikitable"
@@ -22,20 +18,11 @@
 |}
 Not counted: 176 titles that differ only in typography (curly or straight apostrophes, the sheet PDF's split "fi" and "fl" letters, a space after a uniqueness dot), 12 that differ only by the AI marker, and 9 objectives whose sheet heading shows the front title only.
 
-'''Facts for deciding'''
-* GEMP titles follow the PC on every coded card in these tables except [[Grievous' Lightsabers]] (1274_11), which GEMP titles "Cyborg Commander's Lightsabers", and [[Planetary Shiel]] (1273_31), where the PC title is missing its last letter.
-* GEMP's card text for the 7.3 and 7.4 cards follows the printed sheets ("Cyborg Commander", "Spice Mine Administrator", "The Count"), while the code finds those cards by their PC names or persona.<ref name="pr482" />
-* The wiki card pages use the PC titles.
-* Later sheets print the character names: the 8.3 sheet's [[Black Market Blaster]] says "Kyle Katarn", and 9.1 and 9.2 cards say "Jango".<ref name="VirtualBlock8_3" /><ref name="VirtualBlock9_1" /><ref name="VirtualBlock9_2" />
-
-'''Ways to decide'''
-# Card by card, in the tables below.
-# One rule for all: printed everywhere, or PC everywhere.
-# One title for GEMP deck matching and the wiki page title, with the other shown on the card page as "Printed as" (or as the PC title), so both names stay searchable.
+The comparison columns below preserve the original audit; the disposition column records the source reconciliation.
 
 == A. Different names ==
 {| class="wikitable sortable" style="width:100%"
-! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Text that uses the other name !! class="unsortable" | Sources !! class="unsortable" | Bill's pick
+! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Text that uses the other name !! class="unsortable" | Sources !! class="unsortable" | Disposition
 |-
 | 1273_6
 | [[File:VB7-D-ig100magnaguard-pre.gif|110px|link=File:VB7-D-ig100magnaguard-pre.gif]]
@@ -44,7 +31,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC<br />Wiki: PC
 | No other card names it. Its own text says "(or with Cyborg Commander)" on the sheet; the PC text says "(or with Grievous)" (see [[Grievous, Hunter Of Jedi]]).
 | <ref name="VirtualBlock7_3" /> p.&nbsp;2 <ref name="pcjson" /> <ref name="pr482" />
-| Bill's pick: ___
+| Resolved: [[IG Bodyguard Droid|Earlier title]] → [[IG-100 MagnaGuard (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1273_9
 | [[File:VB7-D-moruthdoolekesseladministrator-pre.gif|110px|link=File:VB7-D-moruthdoolekesseladministrator-pre.gif]]
@@ -53,7 +40,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC<br />Wiki: PC
 | [[Kessel Surveillance System]]: sheet "Once per game, may [deploy from Reserve Deck] Spice Mine Administrator here"; PC text "may deploy Moruth Doole here". GEMP shows the sheet wording and finds the card by "Moruth Doole" in its title.
 | <ref name="VirtualBlock7_3" /> p.&nbsp;3 <ref name="pcjson" /> <ref name="pr482" />
-| Bill's pick: ___
+| Resolved: [[Spice Mine Administrator (V)|Earlier title]] → [[Moruth Doole, Kessel Administrator (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1271_1
 | [[File:VB7-D-grievoushunterofjedi-pre.gif|110px|link=File:VB7-D-grievoushunterofjedi-pre.gif]]
@@ -62,7 +49,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: not coded yet (branch legacy/p-vb7-1-dark-a plans printed)<br />Wiki: PC
 | Sheet says "Cyborg Commander", PC text says "Grievous" on: [[IG-100 MagnaGuard]]; [[Trophy Of A Kill]] ("Deploy on Cyborg Commander, Galen, …"); [[Coruscant: Palpatine's Quarters]]; [[A Stunning Move / A Valuable Hostage (V) (Virtual Block 7) (Errata)|A Stunning Move / A Valuable Hostage]] ("Cyborg Commander or The Count" vs "Dooku or Grievous"); [[Grievous' Lightsabers]] ("Deploy on Cyborg Commander"). GEMP code for these shows the sheet wording and matches the Grievous persona.
 | <ref name="VirtualBlock7_1" /> p.&nbsp;2 <ref name="pcjson" /> <ref name="pr482" /> <ref name="hw71" />
-| Bill's pick: ___
+| Resolved: [[Cyborg Commander, Hunter Of Jedi|Earlier title]] → [[Grievous, Hunter Of Jedi (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1274_11
 | [[File:VB7-D-grievouslightsabers-pre.gif|110px|link=File:VB7-D-grievouslightsabers-pre.gif]]
@@ -71,7 +58,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: printed<br />Wiki: PC
 | Its own text: sheet "Deploy on Cyborg Commander", PC "Deploy on Grievous". Depends on the [[Grievous, Hunter Of Jedi]] pick.
 | <ref name="VirtualBlock7_4" /> p.&nbsp;3 <ref name="pcjson" /> <ref name="pr482" />
-| Bill's pick: ___
+| Resolved: [[Cyborg Commander's Lightsabers (V)|Earlier title]] → [[Grievous' Lightsabers (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1240_66 / 1240_66ai
 | [[File:VB4-L-marisbroodfallenjedi-pre.gif|110px|link=File:VB4-L-marisbroodfallenjedi-pre.gif]]
@@ -80,7 +67,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (plays as the PC's 601_173)<br />Wiki: PC
 | [[Galen Marek, Starkiller]]: sheet "Power and defense value +2 while with Fallen Jedi"; PC text "while with Mariss Brood" [sic]. The PC text of [[Galen Marek, Starkiller (AI)]] still says "Fallen Jedi".
 | <ref name="VirtualBlock4" /> p.&nbsp;8 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Fallen Jedi (V)|Earlier title]] → [[Maris Brood, Fallen Jedi (V)|later title]]; [[Maris Brood, Fallen Jedi (V) (AI)]]; no earlier-name AI slip established in the inspected release sheet. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1240_8 / 1240_8ai
 | [[File:VB4-D-galenmarekstarkiller-pre.gif|110px|link=File:VB4-D-galenmarekstarkiller-pre.gif]]
@@ -89,7 +76,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (plays as the PC's 601_81)<br />Wiki: PC
 | Other cards say "Galen" on both the sheet and in PC text, so no change follows.
 | <ref name="VirtualBlock4" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Galen, Secret Apprentice (V)|Earlier title]] → [[Galen Marek, Starkiller (V)|later title]]; [[Galen Marek, Starkiller (V) (AI)]]; no earlier-name AI slip established in the inspected release sheet. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1240_2 / 1240_3
 | [[File:VB4-D-junoeclipseblackleader-pre.gif|110px|link=File:VB4-D-junoeclipseblackleader-pre.gif]]
@@ -98,7 +85,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (plays as the PC's 601_89)<br />Wiki: PC
 | Sheet "Black Leader", PC text "Juno Eclipse": [[Galen Marek, Starkiller]] ("defending with Black Leader"); [[Galen's Lightsaber]]; [[Lone Pilot (V)]] ("STARTING: Black Leader"); [[One Bright Spot]]; [[One Beautiful Thing]]; [[Black 1]] ("May add Black Leader as pilot"). [[Rogue Shadow]] says "Black Leader" in both. Its own text: "matching weapon for Black Leader" vs "for her".
 | <ref name="VirtualBlock4" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Black Leader (V)|Earlier title]] → [[Juno Eclipse, Black Leader (V)|later title]]; [[Black Leader (V) (AI)|Earlier title]] → [[Juno Eclipse, Black Leader (V) (AI)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1240_59
 | [[File:VB4-D-rogueshadow-pre.gif|110px|link=File:VB4-D-rogueshadow-pre.gif]]
@@ -107,7 +94,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (plays as the PC's 601_95)<br />Wiki: PC
 | [[Hunt Down And Destroy The Jedi (V) / Their Fire Has Gone Out Of The Universe (V)|Hunt Down And Destroy The Jedi (V)]]: sheet "may [take into hand] Galen’s Fighter", PC "may take Rogue Shadow into hand"; [[If The Trace Was Correct (V)]]: sheet "Galen’s Fighter may deploy to sites", PC "Rogue Shadow may deploy".
 | <ref name="VirtualBlock4" /> p.&nbsp;8 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Galen's Fighter (V)|Earlier title]] → [[Rogue Shadow (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1240_17
 | [[File:VB4-D-thrawnsysalamir-pre.gif|110px|link=File:VB4-D-thrawnsysalamir-pre.gif]]
@@ -116,7 +103,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: not coded yet<br />Wiki: PC
 | No Legacy card text names it.
 | <ref name="VirtualBlock4" /> p.&nbsp;3 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Thrawn's Pet (V)|Earlier title]] → [[Thrawn's Ysalamir (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1240_112
 | [[File:VB4-L-infinity-pre.gif|110px|link=File:VB4-L-infinity-pre.gif]]
@@ -125,7 +112,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: not coded yet<br />Wiki: PC
 | No Legacy card text names it.
 | <ref name="VirtualBlock4" /> p.&nbsp;12 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[BoShek's Modified Light Freighter (V)|Earlier title]] → [[Infinity (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1250_8
 | [[File:VB5-D-jangofett-pre.gif|110px|link=File:VB5-D-jangofett-pre.gif]]
@@ -134,7 +121,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: not coded yet<br />Wiki: PC
 | [[Mandalorian Armor (V)]]: sheet "(Used Pile if on The Mandalorian)", PC "(Used Pile if on Jango)". Later sheets print "Jango" ([[Geonosis: Petranaki Arena (Dark)]], [[Dexter Jettster (Virtual Block 9)]]).
 | <ref name="VirtualBlock5" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[The Mandalorian (V)|Earlier title]] → [[Jango Fett (V) (Dark)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1281_9 / 1281_9ai
 | [[File:VB8-D-jangofetttheassassin-pre.gif|110px|link=File:VB8-D-jangofetttheassassin-pre.gif]]
@@ -143,7 +130,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (plays as the PC's 601_13)<br />Wiki: PC
 | Same references as [[Jango Fett (Dark)]].
 | <ref name="VirtualBlock8_1" /> p.&nbsp;3 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[The Mandalorian, Father Of Fett (V)|Earlier title]] → [[Jango Fett, The Assassin (V)|later title]]; [[Jango Fett, The Assassin (V) (AI)]]; no earlier-name AI slip established in the inspected release sheet. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1263_1
 | [[File:VB6-D-cadbane-pre.gif|110px|link=File:VB6-D-cadbane-pre.gif]]
@@ -152,7 +139,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: not coded yet<br />Wiki: PC
 | No Legacy card text names it.
 | <ref name="VirtualBlock6_3" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Bane, The Bounty Hunter (V)|Earlier title]] → [[Cad Bane (V) (Dark)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1263_7
 | [[File:VB6-D-maareksteletheemperorsreach-pre.gif|110px|link=File:VB6-D-maareksteletheemperorsreach-pre.gif]]
@@ -161,7 +148,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (plays as the PC's 601_186)<br />Wiki: PC
 | No Legacy card text names it.
 | <ref name="VirtualBlock6_3" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[The Emperor's Reach (V)|Earlier title]] → [[Maarek Stele, The Emperor's Reach (V) (Dark)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1271_5
 | [[File:VB7-D-ysanneisard-pre.gif|110px|link=File:VB7-D-ysanneisard-pre.gif]]
@@ -170,7 +157,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (plays as the PC's 601_189)<br />Wiki: PC
 | [[In The Hands Of The ISB]]: sheet "an ISB agent present with Ice-Heart here", PC "with Ysanne Isard here".
 | <ref name="VirtualBlock7_1" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Ice-Heart (V)|Earlier title]] → [[Ysanne Isard (V) (Dark)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1272_15
 | [[File:VB7-L-rahmkotablindjedi-pre.gif|110px|link=File:VB7-L-rahmkotablindjedi-pre.gif]]
@@ -179,7 +166,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (unmerged branch legacy/p-vb7-2-a only)<br />Wiki: PC
 | No Legacy card text names it.
 | <ref name="VirtualBlock7_2" /> p.&nbsp;3 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Blind Jedi (V)|Earlier title]] → [[Rahm Kota, Blind Jedi (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1272_18
 | [[File:VB7-L-tarffulwookieeinsurgent-pre.gif|110px|link=File:VB7-L-tarffulwookieeinsurgent-pre.gif]]
@@ -188,7 +175,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC<br />Wiki: PC
 | No Legacy card text names it.
 | <ref name="VirtualBlock7_2" /> p.&nbsp;4 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Kashyyyk Insurgent Leader (V)|Earlier title]] → [[Tarfful, Wookiee Insurgent (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1274_4
 | [[File:VB7-D-tibannafloatingrefinery-pre.gif|110px|link=File:VB7-D-tibannafloatingrefinery-pre.gif]]
@@ -197,7 +184,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC<br />Wiki: PC
 | Uniqueness differs too (•• printed, • PC). [[I'm Sorry (V) (Virtual Block 2)]] says "a Floating Refinery" on the sheet and in PC text.
 | <ref name="VirtualBlock7_4" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Floating Refinery (V)|Earlier title]] → [[Tibanna Floating Refinery (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1281_28 / 1281_28ai
 | [[File:VB8-L-kylekatarn-pre.gif|110px|link=File:VB8-L-kylekatarn-pre.gif]]
@@ -206,7 +193,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC<br />Wiki: PC
 | Sheet "Rebel Agent", PC "Kyle Katarn": [[Kyle Katarn's Blaster Rifle]] ("Deploy on Rebel Agent"); [[Infiltration / Unlikely Allies]] ("'Luke' on opponent's objective is treated as 'Rebel Agent'"). The later 8.3 sheet prints "Kyle Katarn" on [[Black Market Blaster]].
 | <ref name="VirtualBlock8_1" /> p.&nbsp;5 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Rebel Agent (V)|Earlier title]] → [[Kyle Katarn (V)|later title]]; [[Kyle Katarn (V) (AI)]]; no earlier-name AI slip established in the inspected release sheet. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1281_47
 | [[File:VB8-L-kylekatarnsblasterrifle-pre.gif|110px|link=File:VB8-L-kylekatarnsblasterrifle-pre.gif]]
@@ -215,7 +202,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC<br />Wiki: PC
 | Its own text: sheet "Deploy on Rebel Agent", PC "Deploy on Kyle Katarn". Depends on the [[Kyle Katarn]] pick.
 | <ref name="VirtualBlock8_1" /> p.&nbsp;8 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Rebel Agent's Blaster Rifle (V)|Earlier title]] → [[Kyle Katarn's Blaster Rifle (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1281_45 / 1281_45ai
 | [[File:VB8-L-errantventure-pre.gif|110px|link=File:VB8-L-errantventure-pre.gif]]
@@ -224,7 +211,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC<br />Wiki: PC
 | No Legacy card text names it.
 | <ref name="VirtualBlock8_1" /> p.&nbsp;8 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Booster's Star Destroyer (V)|Earlier title]] → [[Errant Venture (V)|later title]]; [[Errant Venture (V) (AI)]]; no earlier-name AI slip established in the inspected release sheet. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1282_13
 | [[File:VB8-L-vilmarhvilliegrahrk-pre.gif|110px|link=File:VB8-L-vilmarhvilliegrahrk-pre.gif]]
@@ -233,7 +220,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC<br />Wiki: PC
 | No Legacy card text names it.
 | <ref name="VirtualBlock8_2" /> p.&nbsp;3 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Devaronian Uncle (V)|Earlier title]] → [[Vilmarh 'Villie' Grahrk (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1282_27
 | [[File:VB8-L-ladyluck-pre.gif|110px|link=File:VB8-L-ladyluck-pre.gif]]
@@ -242,7 +229,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: PC (plays as the PC's 601_49)<br />Wiki: PC
 | [[Lando Calrissian, Unlikely Hero]]: sheet "May reveal from hand to [take into hand] Luxury Yacht", PC "to take Lady Luck into hand".
 | <ref name="VirtualBlock8_2" /> p.&nbsp;4 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Lando's Luxury Yacht (V)|Earlier title]] → [[Lady Luck (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1240_81
 | [[File:VB4-L-ejecteject-pre.gif|110px|link=File:VB4-L-ejecteject-pre.gif]]
@@ -251,7 +238,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: not coded yet<br />Wiki: PC
 | Printed as a combo card. [[Hindsight (V)]] says "Unless Imperial Atrocity on table".
 | <ref name="VirtualBlock4" /> p.&nbsp;9 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Eject! Eject! & Imperial Atrocity (V)|Earlier title]] → [[Eject! Eject! (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1240_26
 | [[File:VB4-D-heisnotready-pre.gif|110px|link=File:VB4-D-heisnotready-pre.gif]]
@@ -260,7 +247,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: not coded yet<br />Wiki: PC
 | Printed as a combo card. [[Desperate Counter (v)]] says "Unless Imperial Propaganda on table".
 | <ref name="VirtualBlock4" /> p.&nbsp;4 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[He Is Not Ready & Imperial Propaganda (V)|Earlier title]] → [[He Is Not Ready (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |-
 | 1261_93
 | [[File:VB6-L-armedanddangerous&kraytdragonhowl-pre.gif|110px|link=File:VB6-L-armedanddangerous&kraytdragonhowl-pre.gif]]
@@ -269,12 +256,12 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | GEMP: not coded yet<br />Wiki: PC
 | Same two names in the other order.
 | <ref name="VirtualBlock6_1" /> p.&nbsp;12 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Krayt Dragon Howl & Armed And Dangerous (V)|Earlier title]] → [[Armed And Dangerous & Krayt Dragon Howl (V)|later title]]. Separate published title states retained. Effective dates remain subject to source reconciliation.
 |}
 
 == B. Spelling ==
 {| class="wikitable sortable" style="width:100%"
-! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Text that uses the other name !! class="unsortable" | Sources !! Recommendation !! class="unsortable" | Bill's pick
+! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Text that uses the other name !! class="unsortable" | Sources !! Recommendation !! class="unsortable" | Disposition
 |-
 | 1230_16
 | [[File:VB3-D-nizucbek-pre.gif|110px|link=File:VB3-D-nizucbek-pre.gif]]
@@ -284,7 +271,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | None.
 | <ref name="VirtualBlock3" /> p.&nbsp;2 <ref name="pcjson" />
 | PC: the Decipher card and GEMP's title constant spell it Nizuc
-| Bill's pick: ___
+| Resolved: [[Nizuc Bek (V)]]. Caption typo “Nizuk”; partial slip leaves physical Nizuc Bek title unchanged. No separate title errata established.
 |-
 | 1210_14
 | [[File:VB1-D-ito-pre.gif|110px|link=File:VB1-D-ito-pre.gif]]
@@ -294,7 +281,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | None.
 | <ref name="VirtualBlock1" /> p.&nbsp;2 <ref name="pcjson" />
 | PC: the sheet has a zero; the card's name is IT-O
-| Bill's pick: ___
+| Resolved: [[IT-O (Eyetee-Oh) (V)]]. Zero in outside captions; physical IT-O host retains letter O. No separate title errata established.
 |-
 | 1240_106
 | [[File:VB4-L-yavin4jediacademy-pre.gif|110px|link=File:VB4-L-yavin4jediacademy-pre.gif]]
@@ -304,7 +291,7 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | None.
 | <ref name="VirtualBlock4" /> p.&nbsp;11 <ref name="pcjson" />
 | PC: other Yavin sites are titled "Yavin 4"
-| Bill's pick: ___
+| Resolved: [[Yavin 4: Jedi Academy]]. Outside heading uses IV; actual location face uses YAVIN 4. No title errata.
 |-
 | 1273_31
 | [[File:VB7-L-planetaryshield-pre.gif|110px|link=File:VB7-L-planetaryshield-pre.gif]]
@@ -314,13 +301,13 @@ Not counted: 176 titles that differ only in typography (curly or straight apostr
 | [[Center Of Tyranny / A Liberated World]] and [[Coruscant: Main Power Plant]] say "Planetary Shield" on the sheet and in PC text.
 | <ref name="VirtualBlock7_3" /> p.&nbsp;6 <ref name="pcjson" />
 | Printed: the PC title drops the final d; GEMP already uses Planetary Shield
-| Bill's pick: ___
+| Resolved: [[Planetary Shield (V)]]. “Planetary Shiel” is a card-data truncation; printed title is Planetary Shield.
 |}
 
 == C. Qualifier labels ==
 These cards carry the same name; only a label in parentheses differs.
 {| class="wikitable sortable" style="width:100%"
-! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Sources !! class="unsortable" | Bill's pick
+! GEMP id !! class="unsortable" | Card image !! Printed title !! PC title !! Current !! class="unsortable" | Sources !! class="unsortable" | Disposition
 |-
 | 1210_2
 | [[File:VB1-D-bobafett-pre.gif|110px|link=File:VB1-D-bobafett-pre.gif]]
@@ -328,7 +315,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Boba Fett (V) (Virtual Block 1)|•Boba Fett (V)]]
 | GEMP: PC<br />Wiki: PC
 | <ref name="VirtualBlock1" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Boba Fett (V) (Virtual Block 1)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1220_2
 | [[File:VB2-D-bobafett-pre.gif|110px|link=File:VB2-D-bobafett-pre.gif]]
@@ -336,7 +323,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Boba Fett (V) (Virtual Block 2)|•Boba Fett (V)]]
 | GEMP: PC<br />Wiki: PC
 | <ref name="VirtualBlock2" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Boba Fett (V) (Virtual Block 2)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1273_41
 | [[File:VB7-L-coruscant-pre.gif|110px|link=File:VB7-L-coruscant-pre.gif]]
@@ -344,7 +331,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Coruscant (V) (Virtual Block 7)|•Coruscant (V)]]
 | GEMP: PC<br />Wiki: PC
 | <ref name="VirtualBlock7_3" /> p.&nbsp;7 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Coruscant (V) (Virtual Block 7)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1250_76
 | [[File:VB5-L-kashyyyk-pre.gif|110px|link=File:VB5-L-kashyyyk-pre.gif]]
@@ -352,7 +339,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Kashyyyk (V)|•Kashyyyk (V)]]
 | GEMP: not coded yet<br />Wiki: PC
 | <ref name="VirtualBlock5" /> p.&nbsp;8 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Kashyyyk (V)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1283_25
 | [[File:VB8-L-tatooinecantina-pre.gif|110px|link=File:VB8-L-tatooinecantina-pre.gif]]
@@ -360,7 +347,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Tatooine: Cantina (V) (Virtual Block 8)|•Tatooine: Cantina (V)]]
 | GEMP: PC<br />Wiki: PC
 | <ref name="VirtualBlock8_3" /> p.&nbsp;5 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Tatooine: Cantina (V) (Virtual Block 8)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1281_42
 | [[File:VB8-L-tatooinejawacamp-pre.gif|110px|link=File:VB8-L-tatooinejawacamp-pre.gif]]
@@ -368,7 +355,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Tatooine: Jawa Camp (V) (Virtual Block 8)|•Tatooine: Jawa Camp (V)]]
 | GEMP: PC<br />Wiki: PC
 | <ref name="VirtualBlock8_1" /> p.&nbsp;7 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Tatooine: Jawa Camp (V) (Virtual Block 8)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1210_73
 | [[File:VB1-D-tatooinemoseisley-pre.gif|110px|link=File:VB1-D-tatooinemoseisley-pre.gif]]
@@ -376,7 +363,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Tatooine: Mos Eisley (V) (Virtual Block 1)|•Tatooine: Mos Eisley (V)]]
 | GEMP: PC<br />Wiki: PC
 | <ref name="VirtualBlock1" /> p.&nbsp;6 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Tatooine: Mos Eisley (V) (Virtual Block 1)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1283_14
 | [[File:VB8-D-tatooinewattosjunkyard-pre.gif|110px|link=File:VB8-D-tatooinewattosjunkyard-pre.gif]]
@@ -384,7 +371,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Tatooine: Watto's Junkyard (V)|•Tatooine: Watto's Junkyard (V)]]
 | GEMP: PC<br />Wiki: PC
 | <ref name="VirtualBlock8_3" /> p.&nbsp;3 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Tatooine: Watto's Junkyard (V)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1261_111
 | [[File:VB6-L-hothechocommandcenterwarroom-pre.gif|110px|link=File:VB6-L-hothechocommandcenterwarroom-pre.gif]]
@@ -392,7 +379,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Hoth: Echo Command Center (War Room) (V)|•Hoth: Echo Command Center (War Room) (V)]]
 | GEMP: not coded yet<br />Wiki: PC
 | <ref name="VirtualBlock6_1" /> p.&nbsp;14 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Hoth: Echo Command Center (War Room) (V)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1261_61
 | [[File:VB6-D-blasterrifle-pre.gif|110px|link=File:VB6-D-blasterrifle-pre.gif]]
@@ -400,7 +387,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Blaster Rifle (V) (Virtual Block 6)|Blaster Rifle (V)]]
 | GEMP: PC (plays as the PC's 601_215)<br />Wiki: PC
 | <ref name="VirtualBlock6_1" /> p.&nbsp;9 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Blaster Rifle (V) (Virtual Block 6)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1283_12
 | [[File:VB8-D-spaceportdockingbay-pre.gif|110px|link=File:VB8-D-spaceportdockingbay-pre.gif]]
@@ -408,7 +395,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Spaceport Docking Bay (V)|<>Spaceport Docking Bay (V)]]
 | GEMP: PC<br />Wiki: PC
 | <ref name="VirtualBlock8_3" /> p.&nbsp;3 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Spaceport: Docking Bay (V)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1261_112
 | [[File:VB6-L-hothmainpowergenerators-pre.gif|110px|link=File:VB6-L-hothmainpowergenerators-pre.gif]]
@@ -416,7 +403,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Hoth: Main Power Generators (1st Marker) (V) (Virtual Block 6)|•Hoth: Main Power Generators (1st Marker) (V)]]
 | GEMP: not coded yet<br />Wiki: PC
 | <ref name="VirtualBlock6_1" /> p.&nbsp;14 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Hoth: Main Power Generators (1st Marker) (V) (Virtual Block 6)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1261_52
 | [[File:VB6-D-hothiceplains-pre.gif|110px|link=File:VB6-D-hothiceplains-pre.gif]]
@@ -424,7 +411,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Hoth: Ice Plains (5th Marker) (V) (Virtual Block 6)|•Hoth: Ice Plains (5th Marker) (V)]]
 | GEMP: not coded yet<br />Wiki: PC
 | <ref name="VirtualBlock6_1" /> p.&nbsp;7 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Hoth: Ice Plains (5th Marker) (V) (Virtual Block 6)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1272_9
 | [[File:VSh-D-fanfaretatooine-pre.gif|110px|link=File:VSh-D-fanfaretatooine-pre.gif]]
@@ -432,7 +419,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Fanfare (Tatooine) (V) (Virtual Shields)|•Fanfare (Tatooine) (V)]]
 | GEMP: printed (plays as the PC's 601_35)<br />Wiki: PC
 | <ref name="VirtualBlock7_2" /> p.&nbsp;2 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Fanfare (V) (Tatooine) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1272_21
 | [[File:VSh-L-dontdothatagaintatooine-pre.gif|110px|link=File:VSh-L-dontdothatagaintatooine-pre.gif]]
@@ -440,7 +427,7 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Don't Do That Again (Tatooine) (V) (Virtual Shields)|•Don't Do That Again (Tatooine) (V)]]
 | GEMP: printed (plays as the PC's 1200_8)<br />Wiki: PC
 | <ref name="VirtualBlock7_2" /> p.&nbsp;4 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Don't Do That Again (V) (Tatooine) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
 |-
 | 1271_21 / 1271_43
 | [[File:VB7-D-altercoruscant-pre.gif|110px|link=File:VB7-D-altercoruscant-pre.gif]]
@@ -448,13 +435,13 @@ These cards carry the same name; only a label in parentheses differs.
 | [[Alter (Coruscant) (V) (Virtual Block 7) (Dark)|Alter (Coruscant) (V) and Alter (Premiere) (V)]]
 | GEMP: other ("Alter") (plays as the PC's 601_195)<br />Wiki: "Alter (Coruscant) (V)"
 | <ref name="VirtualBlock7_1" /> p.&nbsp;5 <ref name="pcjson" />
-| Bill's pick: ___
+| Resolved: [[Alter (V) (Dark) (Coruscant) (Virtual Block 7)]]; [[Alter (V) (Coruscant) (Virtual Block 7)]]. Both Premiere and Coruscant full host articles and existing distinct IDs retained; Premiere first (Bill, 5 November 2026).
 |}
 
 === Virtual Block 6.1 twin slips ===
-The 6.1 sheet printed two slips for each of these cards, one for each host card. The heading on every slip has no label; the small strip at the bottom names the host card. The PC labels the non-Reflections III versions and drops "(Reflections III)". One pick covers all 14: '''Bill's pick: ___'''
+The 6.1 sheet printed two slips for each of these cards, one for each host card. The heading on every slip has no label; the small strip at the bottom names the host card. The PC labels the non-Reflections III versions and drops "(Reflections III)". Host distinctions are retained for all 14: '''preserve the host distinctions shown below'''
 {| class="wikitable sortable mw-collapsible mw-collapsed"
-! GEMP id !! Printed title !! Printed label strip !! PC title !! Current !! class="unsortable" | Sources
+! GEMP id !! Printed title !! Printed label strip !! PC title !! Current !! class="unsortable" | Sources !! class="unsortable" | Disposition
 |-
 | 1261_21
 | •Leave Them To Me (V)
@@ -462,6 +449,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | •Leave Them To Me (V)
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[Leave Them To Me (V)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_22
 | •No Escape (V)
@@ -469,6 +458,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | •No Escape (V)
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[No Escape (V) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_23
 | •Do They Have A Code Clearance? (V)
@@ -476,6 +467,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | [[Do They Have A Code Clearance? (Coruscant) (V)|•Do They Have A Code Clearance? (Coruscant) (V)]]
 | GEMP: printed (plays as the PC's 601_34)
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[Do They Have A Code Clearance? (V) (Coruscant)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_24
 | •Leave Them To Me (V)
@@ -483,6 +476,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | [[Leave Them To Me (Death Star II) (V)|•Leave Them To Me (Death Star II) (V)]]
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[Leave Them To Me (V) (Death Star II)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_25
 | •No Escape (V)
@@ -490,6 +485,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | [[No Escape (Premium) (V)|•No Escape (Premium) (V)]]
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[No Escape (V) (Premium)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_26
 | •Do They Have A Code Clearance? (V)
@@ -497,6 +494,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | •Do They Have A Code Clearance? (V)
 | GEMP: PC (plays as the PC's 601_34)
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[Do They Have A Code Clearance? (V)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_27
 | •You Cannot Hide Forever (V)
@@ -504,6 +503,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | •You Cannot Hide Forever (V)
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[You Cannot Hide Forever (V) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_28
 | •You Cannot Hide Forever (V)
@@ -511,6 +512,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | [[You Cannot Hide Forever (Death Star II) (V) (Virtual Shields)|•You Cannot Hide Forever (Death Star II) (V)]]
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;5
+| Resolved: [[You Cannot Hide Forever (V) (Death Star II) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_72
 | •Ounee Ta (V)
@@ -518,6 +521,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | •Ounee Ta (V)
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;10
+| Resolved: [[Ounee Ta (V) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_73
 | •Your Insight Serves You Well (V)
@@ -525,6 +530,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | •Your Insight Serves You Well (V)
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;10
+| Resolved: [[Your Insight Serves You Well (V) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_74
 | •Ounee Ta (V)
@@ -532,6 +539,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | [[Ounee Ta (Premium) (V)|•Ounee Ta (Premium) (V)]]
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;10
+| Resolved: [[Ounee Ta (V) (Premium)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_75
 | •Your Insight Serves You Well (V)
@@ -539,6 +548,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | [[Your Insight Serves You Well (Death Star II) (V) (Virtual Shields)|•Your Insight Serves You Well (Death Star II) (V)]]
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;10
+| Resolved: [[Your Insight Serves You Well (V) (Death Star II) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_76
 | •Let’s Keep A Little Optimism Here (V)
@@ -546,6 +557,8 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | [[Let's Keep A Little Optimism Here (Death Star II) (V) (Virtual Shields)|•Let's Keep A Little Optimism Here (Death Star II) (V)]]
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;10
+| Resolved: [[Let's Keep A Little Optimism Here (V) (Death Star II) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |-
 | 1261_77
 | •Let’s Keep A Little Optimism Here (V)
@@ -553,12 +566,14 @@ The 6.1 sheet printed two slips for each of these cards, one for each host card.
 | •Let's Keep A Little Optimism Here (V)
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;11
+| Resolved: [[Let's Keep A Little Optimism Here (V) (Virtual Shields)]]. Host/side qualifier retained where needed; not a separately evidenced title errata.
+
 |}
 
 == D. Minor differences ==
 Uniqueness dots in this table come from the sheet's text layer; check the sheet image before acting on a dot difference. One pick covers the whole table unless a row is named: '''Bill's pick for table D: ___''' (printed / PC / leave as is)
 {| class="wikitable sortable mw-collapsible"
-! GEMP id !! Printed title !! PC title !! Difference !! Current !! class="unsortable" | Sources
+! GEMP id !! Printed title !! PC title !! Difference !! Current !! class="unsortable" | Sources !! class="unsortable" | Disposition
 |-
 | 1200_2
 | •I Find Your Lack Of Faith Disturbing (V)
@@ -566,6 +581,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "I Find Your Lack Of Faith Disturbing" (PC's 601_37)
 | <ref name="vshields" /> p.&nbsp;2
+| Resolved: [[I Find Your Lack Of Faith Disturbing (V)]]. official shield master selected over inconsistent older full-card image; Talk conflict retained.
+
 |-
 | 1200_4
 | •Reactor Terminal (V)
@@ -573,6 +590,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Reactor Terminal"
 | <ref name="vshields" /> p.&nbsp;2
+| Resolved: [[Reactor Terminal (V)]]. official shield master selected over inconsistent older full-card image; Talk conflict retained.
+
 |-
 | 1200_5
 | •Fanfare
@@ -580,6 +599,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Fanfare" (PC's 601_35)
 | <ref name="vshields" /> p.&nbsp;3
+| Resolved: [[Fanfare (V) (Virtual Shields)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1200_7
 | •Chasm (V)
@@ -587,6 +608,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Chasm"
 | <ref name="vshields" /> p.&nbsp;5
+| Resolved: [[Chasm (V)]]. official shield master selected over inconsistent older full-card image; Talk conflict retained.
+
 |-
 | 1200_11
 | •There Is Another
@@ -594,6 +617,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "There is Another"
 | <ref name="vshields" /> p.&nbsp;6
+| Resolved: [[There Is Another (V)]]. official shield master selected over inconsistent older full-card image; Talk conflict retained.
+
 |-
 | 1200_12
 | •Traffic Control (V)
@@ -601,6 +626,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Traffic Control"
 | <ref name="vshields" /> p.&nbsp;6
+| Resolved: [[Traffic Control (V)]]. official shield master selected over inconsistent older full-card image; Talk conflict retained.
+
 |-
 | 1210_3
 | •Admiral Motti, Battlestation Coordinator
@@ -608,6 +635,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Admiral Motti, Battlestation Coordinator"
 | <ref name="VirtualBlock1" /> p.&nbsp;2
+| Resolved: [[Admiral Motti, Battlestation Coordinator (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1210_33
 | Blaster Rack(V)
@@ -615,6 +644,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | punctuation or spacing
 | GEMP: "Blaster Rack" (PC's 601_74)
 | <ref name="VirtualBlock1" /> p.&nbsp;3
+| Resolved: [[Blaster Rack (V) (Virtual Block 1)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1210_68
 | Imperial Entanglements/No One To Stop Us This Time
@@ -622,6 +653,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | punctuation or spacing
 | GEMP: "Imperial Entanglements"
 | <ref name="VirtualBlock1" /> p.&nbsp;5
+| Resolved: [[Imperial Entanglements / No One To Stop Us This Time (V) (Virtual Block 1)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1210_117
 | •Lars’ Hydroponics Station
@@ -629,6 +662,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Lars' Hydroponics Station"
 | <ref name="VirtualBlock1" /> p.&nbsp;8
+| Resolved: [[Lars' Hydroponics Station (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1210_118
 | •Lars’ Vaporator
@@ -636,6 +671,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Lars' Vaporator"
 | <ref name="VirtualBlock1" /> p.&nbsp;8
+| Resolved: [[Lars' Vaporator (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1220_33
 | •Forced Landing (V)
@@ -643,6 +680,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Forced Landing"
 | <ref name="VirtualBlock2" /> p.&nbsp;3
+| Resolved: [[Forced Landing (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1220_43
 | Precision Targeting (V)
@@ -650,6 +689,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Precision Targeting"
 | <ref name="VirtualBlock2" /> p.&nbsp;4
+| Resolved: [[Precision Targeting (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1220_67
 | •••AT-AT: Deployment Platform
@@ -657,6 +698,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | punctuation or spacing
 | GEMP: "AT-AT Deployment Platform"
 | <ref name="VirtualBlock2" /> p.&nbsp;5
+| Resolved: [[AT-AT: Deployment Platform (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1220_98
 | •R5-M2 (Arfive-Emmtoo) (V)
@@ -664,6 +707,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "R5-M2 (Arfive-Emmtoo)"
 | <ref name="VirtualBlock2" /> p.&nbsp;7
+| Resolved: [[R5-M2 (Arfive-Emmtoo) (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1220_100
 | •Romas “Lock” Navander (V)
@@ -671,6 +716,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | punctuation or spacing
 | GEMP: "Romas 'Lock' Navander"
 | <ref name="VirtualBlock2" /> p.&nbsp;7
+| Resolved: [[Romas "Lock" Navander (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1220_150
 | •NOOOOOOOOOOOO! (V)
@@ -678,6 +725,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "NOOOOOOOOOOOO!"
 | <ref name="VirtualBlock2" /> p.&nbsp;10
+| Resolved: [[NOOOOOOOOOOOO! (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1220_161
 | •Hoth: Echo Med Lab
@@ -685,6 +734,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Hoth: Echo Med Lab"
 | <ref name="VirtualBlock2" /> p.&nbsp;11
+| Resolved: [[Hoth: Echo Med Lab (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1230_109
 | •Rebel Leadership (V)
@@ -692,6 +743,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Rebel Leadership" (PC's 601_158)
 | <ref name="VirtualBlock3" /> p.&nbsp;7
+| Resolved: [[Rebel Leadership (V) (Virtual Block 3)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1230_111
 | •Endor: Ewok Village
@@ -699,6 +752,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock3" /> p.&nbsp;8
+| Resolved: [[Endor: Ewok Village (V) (Virtual Block 3)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1240_9
 | Imperial Stormtrooper (V)
@@ -706,6 +761,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock4" /> p.&nbsp;2
+| Resolved: [[Imperial Stormtrooper (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1240_37
 | •Deep Hatred (V)
@@ -713,6 +770,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: not coded yet
 | <ref name="VirtualBlock4" /> p.&nbsp;4
+| Resolved: [[Deep Hatred (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1240_45
 | •Let’s Pass On That
@@ -720,6 +779,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: not coded yet
 | <ref name="VirtualBlock4" /> p.&nbsp;5
+| Resolved: [[Let's Pass On That (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1240_85
 | Eyes In The Dark (V)
@@ -727,6 +788,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: not coded yet
 | <ref name="VirtualBlock4" /> p.&nbsp;10
+| Resolved: [[Eyes In The Dark (V) (Virtual Block 4)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1240_111
 | •Booster In Pulsar Skate (V)
@@ -734,6 +797,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Booster In Pulsar Skate" (PC's 601_247)
 | <ref name="VirtualBlock4" /> p.&nbsp;12
+| Resolved: [[Booster In Pulsar Skate (V) (Virtual Block 4)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_4
 | •Coruscant Guard (V)
@@ -741,6 +806,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Coruscant Guard"
 | <ref name="VirtualBlock5" /> p.&nbsp;2
+| Resolved: [[Coruscant Guard (V) (Virtual Block 5)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_13
 | At Last We Are Getting Results (V)
@@ -748,6 +815,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;2
+| Resolved: [[At Last We Are Getting Results (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_38
 | Clone Trooper (V)
@@ -755,6 +824,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;5
+| Resolved: [[Clone Trooper (V) (Virtual Block 5)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_39
 | •••Jedi Advisor (V)
@@ -762,6 +833,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;5
+| Resolved: [[Jedi Advisor (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_40
 | •••Jedi Guardian (V)
@@ -769,6 +842,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;5
+| Resolved: [[Jedi Guardian (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_41
 | •••Jedi Survivor (V)
@@ -776,6 +851,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;5
+| Resolved: [[Jedi Survivor (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_46
 | Republic Trooper With Blaster Rifle (V)
@@ -783,6 +860,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;5
+| Resolved: [[Republic Trooper With Blaster Rifle (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_48 / 1250_48ai
 | •Padmé Naberrie (V)
@@ -790,6 +869,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | accent
 | GEMP: "Padme Naberrie" (PC's 601_55)
 | <ref name="VirtualBlock5" /> p.&nbsp;5
+| Resolved: [[Padmé Naberrie (V) (Virtual Block 5)]]; [[Padmé Naberrie (V) (Virtual Block 5) (AI)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_52
 | •Senator Padmé Amidala
@@ -797,6 +878,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | accent
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;6
+| Resolved: [[Senator Padmé Amidala (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_53
 | •Supreme Chancellor Palpatine (V)
@@ -804,6 +887,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;6
+| Resolved: [[Supreme Chancellor Palpatine (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_58
 | •A Jedi’s Cunning (V)
@@ -811,6 +896,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;7
+| Resolved: [[A Jedi's Cunning (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_59
 | •A Jedi’s Plans (V)
@@ -818,6 +905,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;7
+| Resolved: [[A Jedi's Plans (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_68
 | •Wookiee Guide
@@ -825,6 +914,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;7
+| Resolved: [[Wookiee Guide (V) (Virtual Block 5)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_69
 | •Wookiee Roar
@@ -832,6 +923,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;7
+| Resolved: [[Wookiee Roar (V) (Virtual Block 5)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_72
 | •Coruscant: Jedi Council Chamber
@@ -839,6 +932,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;8
+| Resolved: [[Coruscant: Jedi Council Chamber (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1250_79
 | •Alderaan Consular Ship
@@ -846,6 +941,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: not coded yet
 | <ref name="VirtualBlock5" /> p.&nbsp;9
+| Resolved: [[Alderaan Consular Ship (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1261_18
 | •Thok & •Thug (V)
@@ -853,6 +950,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[Thok & Thug (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1261_19
 | Dianoga (V)
@@ -860,6 +959,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;4
+| Resolved: [[Dianoga (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1261_48
 | Weapon Levitation & The Empire’s Back
@@ -867,6 +968,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Weapon Levitation & The Empire's Back" (PC's 601_98)
 | <ref name="VirtualBlock6_1" /> p.&nbsp;7
+| Resolved: [[Weapon Levitation & The Empire's Back (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1261_58
 | •Blizzard 4
@@ -874,6 +977,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_1" /> p.&nbsp;8
+| Resolved: [[Blizzard 4 (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1261_97
 | •Let the Wookiee Win (V)
@@ -881,6 +986,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "Let The Wookiee Win" (PC's 601_51)
 | <ref name="VirtualBlock6_1" /> p.&nbsp;13
+| Resolved: [[Let the Wookiee Win (V) (Virtual Block 6)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1262_13
 | •Cloud City: Dining Room
@@ -888,6 +995,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_2" /> p.&nbsp;3
+| Resolved: [[Cloud City: Dining Room (V) (Virtual Block 6)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1262_20
 | •••Beast-Rider (V)
@@ -895,6 +1004,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix, punctuation or spacing
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_2" /> p.&nbsp;4
+| Resolved: [[Beast-Rider (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1263_9
 | •Guild Of Assassins (V)
@@ -902,6 +1013,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_3" /> p.&nbsp;3
+| Resolved: [[Guild Of Assassins (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1263_27
 | •Desperate Tactics (V)
@@ -909,6 +1022,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | punctuation or spacing
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_3" /> p.&nbsp;5
+| Resolved: [[Desperate Tactics (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1263_29
 | I’m Here To Rescue You (V)
@@ -916,6 +1031,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: not coded yet
 | <ref name="VirtualBlock6_3" /> p.&nbsp;5
+| Resolved: [[I'm Here To Rescue You (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1271_42
 | •S-Foils (V)
@@ -923,6 +1040,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: not coded yet
 | <ref name="VirtualBlock7_1" /> p.&nbsp;8
+| Resolved: [[S-Foils (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1273_10
 | •Kessel Surveillance System
@@ -930,6 +1049,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Kessel Surveillance System"
 | <ref name="VirtualBlock7_3" /> p.&nbsp;3
+| Resolved: [[Kessel Surveillance System (V) (Errata)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1273_21
 | •Elis in Hinthra
@@ -937,6 +1058,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "Elis In Hinthra"
 | <ref name="VirtualBlock7_3" /> p.&nbsp;5
+| Resolved: [[Elis in Hinthra (V) (Dark)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1273_22
 | •Dack Ralter
@@ -944,6 +1067,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Dack Ralter"
 | <ref name="VirtualBlock7_3" /> p.&nbsp;5
+| Resolved: [[Dack Ralter (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1274_5
 | •Desperate Counter (V)
@@ -951,6 +1076,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "Desperate Counter"
 | <ref name="VirtualBlock7_4" /> p.&nbsp;2
+| Resolved: [[Desperate Counter (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1281_15
 | •Well Guarded (V)
@@ -958,6 +1085,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "Well Guarded"
 | <ref name="VirtualBlock8_1" /> p.&nbsp;3
+| Resolved: [[Well Guarded (V) (Virtual Block 8)]]. malformed identifier and publisher/era corrected; capitalization.
+
 |-
 | 1281_22
 | •Coruscant: Sub City Lair (V)
@@ -965,6 +1094,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Coruscant: Sub City Lair"
 | <ref name="VirtualBlock8_1" /> p.&nbsp;4
+| Resolved: [[Coruscant: Sub City Lair (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1281_30 / 1281_30ai
 | •Supreme Chancellor Valorum
@@ -972,6 +1103,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Supreme Chancellor Valorum"
 | <ref name="VirtualBlock8_1" /> p.&nbsp;5
+| Resolved: [[Supreme Chancellor Valorum (V)]]; [[Supreme Chancellor Valorum (V) (AI)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1282_4
 | •Sith Fury & •End This Destructive Conflict
@@ -979,6 +1112,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Sith Fury"
 | <ref name="VirtualBlock8_2" /> p.&nbsp;2
+| Resolved: [[Sith Fury & End This Destructive Conflict (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1282_8
 | •Hoth: Main Power Generators (1st Marker)
@@ -986,6 +1121,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Hoth: Main Power Generators (1st Marker)"
 | <ref name="VirtualBlock8_2" /> p.&nbsp;2
+| Resolved: [[Hoth: Main Power Generators (1st Marker) (V) (Dark)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1282_11
 | ••Assassin’s Blaster Rifle
@@ -993,6 +1130,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Assassin's Blaster Rifle"
 | <ref name="VirtualBlock8_2" /> p.&nbsp;3
+| Resolved: [[Assassin's Blaster Rifle (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1282_23
 | Found Someone You Have & •Higher Ground
@@ -1000,6 +1139,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Found Someone You Have & Higher Ground"
 | <ref name="VirtualBlock8_2" /> p.&nbsp;4
+| Resolved: [[Found Someone You Have & Higher Ground (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1282_28
 | •Hoth: Echo Corridor (V)
@@ -1007,6 +1148,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "Hoth: Echo Corridor"
 | <ref name="VirtualBlock8_2" /> p.&nbsp;4
+| Resolved: [[Hoth: Echo Corridor (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1283_2
 | •Greedo With Blaster Pistol
@@ -1014,6 +1157,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "Greedo With Blaster Pistol"
 | <ref name="VirtualBlock8_3" /> p.&nbsp;2
+| Resolved: [[Greedo With Blaster Pistol (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1283_18
 | •Trooper Utris M’Toc (V)
@@ -1021,6 +1166,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "Trooper Utris M'Toc"
 | <ref name="VirtualBlock8_3" /> p.&nbsp;4
+| Resolved: [[Trooper Utris M'Toc (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1291_10
 | •Maul’s Cape
@@ -1028,6 +1175,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "Maul's Cape"
 | <ref name="VirtualBlock9_1" /> p.&nbsp;3
+| Resolved: [[Maul's Cape (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1291_32
 | IG-227 “Hailfire” Droid Tank
@@ -1035,6 +1184,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | punctuation or spacing
 | GEMP: "IG-227 'Hailfire' Droid Tank"
 | <ref name="VirtualBlock9_1" /> p.&nbsp;6
+| Resolved: [[IG-227 "Hailfire" Droid Tank (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1291_40
 | •Dormé
@@ -1042,6 +1193,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | accent
 | GEMP: "Dorme" (PC's 601_223)
 | <ref name="VirtualBlock9_1" /> p.&nbsp;8
+| Resolved: [[Dormé (V) (Virtual Block 9)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1291_52
 | •Much To Learn, You Still Have
@@ -1049,6 +1202,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization, uniqueness dots
 | GEMP: "Much to Learn, You Still Have"
 | <ref name="VirtualBlock9_1" /> p.&nbsp;9
+| Resolved: [[Much To Learn, You Still Have (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1291_55
 | •The Dark Side Is Growing
@@ -1056,6 +1211,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | capitalization
 | GEMP: "The Dark Side Is Growing"
 | <ref name="VirtualBlock9_1" /> p.&nbsp;10
+| Resolved: [[The Dark Side Is Growing (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1292_2
 | •Toonbuck Toora
@@ -1063,6 +1220,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | (V) suffix
 | GEMP: "Toonbuck Toora"
 | <ref name="VirtualBlock9_2" /> p.&nbsp;2
+| Resolved: [[Toonbuck Toora (V)]]. formatting/data discrepancy; no separate errata state established.
+
 |-
 | 1292_3
 | •I Have You Now (V)
@@ -1070,6 +1229,8 @@ Uniqueness dots in this table come from the sheet's text layer; check the sheet 
 | uniqueness dots
 | GEMP: "I Have You Now"
 | <ref name="VirtualBlock9_2" /> p.&nbsp;2
+| Resolved: [[I Have You Now (V) (Virtual Block 9)]]. formatting/data discrepancy; no separate errata state established.
+
 |}
 
 == How the list was built ==
