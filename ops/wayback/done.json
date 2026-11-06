@@ -89601,15 +89601,31 @@
   "capture": "https://web.archive.org/web/20261027035230/https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-senate.html",
   "last": "2026-11-05T02:59:36Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T10:11:45Z",
+   "bytes": 7120713,
+   "capture_id": "https://web.archive.org/web/20261027035230id_/https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-senate.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "04235b22ede76e10b2b25033edba719b4def7507c931dc51a4f5c98384d4cceb"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-trm.html": {
   "capture": "https://web.archive.org/web/20261027035134/https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-trm.html",
   "last": "2026-11-05T02:59:48Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-06T10:11:04Z",
+   "bytes": 7120890,
+   "capture_id": "https://web.archive.org/web/20261027035134id_/https://swccg.com/snapshots/pc/2017-tmw-day-1-steve-baroni-trm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c24b67c110aa0f56296a2e4ccd71b3325e7bee261906acde794e7e74f9f679dc"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-ie.html": {
   "capture": "https://web.archive.org/web/20261027034915/https://swccg.com/snapshots/pc/2017-tmw-day-1-tom-haid-ie.html",
@@ -90519,7 +90535,12 @@
   "last": "2026-11-05T03:00:13Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T10:10:55Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025004212/https://swccg.com/snapshots/pc/2017-worlds-day-2-emil-wallin-ds.html?copy=2",
@@ -179701,8 +179722,14 @@
  "https://youtu.be/bkjv8uImTcQ": {
   "capture": "https://web.archive.org/web/20261105024205/https://www.youtube.com/watch?v=bkjv8uImTcQ&feature=youtu.be",
   "last": "2026-11-05T03:03:58Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-06T10:10:45Z",
+   "capture_id": "https://web.archive.org/web/20261105024205id_/https://www.youtube.com/watch?v=bkjv8uImTcQ&feature=youtu.be",
+   "method": "strict",
+   "reason": "redirects to another capture 20261008203546 (no capture at 20261105024205)"
+  }
  },
  "https://youtu.be/cGcsgysrnws": {
   "capture": "",
