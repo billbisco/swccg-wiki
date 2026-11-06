@@ -91463,13 +91463,14 @@
   "capture": "https://web.archive.org/web/20261021014111/https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ds.html",
   "last": "2026-11-05T04:08:19Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-06T07:26:31Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-06T08:04:32Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ds.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025005422/https://swccg.com/snapshots/pc/2017-worlds-day-2-ryan-jellison-ds.html?copy=2",
@@ -170963,13 +170964,16 @@
   "capture": "https://web.archive.org/web/20261105022819/https://www.youtube.com/watch?v=LQzjQvOK9PQ",
   "job_id": "spn2-a2ca4febe7fd2599c62e759b70ecdc3becf7d5bc",
   "last": "2026-11-05T04:03:11Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-06T07:26:57Z",
-   "error": "source HTTP 429"
-  },
-  "verify_tries": 1
+   "at": "2026-11-06T08:04:42Z",
+   "capture_id": "https://web.archive.org/web/20261105022819id_/https://www.youtube.com/watch?v=LQzjQvOK9PQ",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 20% (< 85%)",
+   "text_match": 0.2
+  }
  },
  "https://www.youtube.com/watch?v=LYU2Qe-Y8yY": {
   "capture": "https://web.archive.org/web/20261021171739/https://www.youtube.com/watch?v=LYU2Qe-Y8yY",
