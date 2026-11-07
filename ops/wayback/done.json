@@ -112582,10 +112582,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-07T16:34:17Z",
+   "at": "2026-11-07T17:11:37Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ls-skywalker-saga-anakin.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025031520/https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ls-skywalker-saga-anakin.html?copy=2",
@@ -112714,8 +112714,16 @@
   "capture": "https://web.archive.org/web/20261021104431/https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ls-diplo.html",
   "last": "2026-11-05T01:07:13Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-07T17:12:02Z",
+   "bytes": 7121816,
+   "capture_id": "https://web.archive.org/web/20261021104431id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ls-diplo.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "705fc0a5c92dab29030a8e2f954d021473e5593ce39291d5b444b3c27ca78126"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ls-diplo.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026200902/https://swccg.com/snapshots/pc/2023-ryloth-regionals-tom-damen-ls-diplo.html?copy=2",
