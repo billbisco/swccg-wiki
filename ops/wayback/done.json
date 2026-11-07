@@ -112997,8 +112997,14 @@
   "capture": "https://web.archive.org/web/20261021105715/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ls-qmc.html",
   "last": "2026-11-05T01:09:23Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-07T15:26:37Z",
+   "capture_id": "https://web.archive.org/web/20261021105715id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ls-qmc.html",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ls-qmc.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025032336/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-daniel-amor-ls-qmc.html?copy=2",
@@ -113798,8 +113804,16 @@
   "capture": "https://web.archive.org/web/20261021104730/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html",
   "last": "2026-11-05T01:09:11Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-07T15:27:16Z",
+   "bytes": 7121856,
+   "capture_id": "https://web.archive.org/web/20261021104730id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ds-aobs.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e39fe9a73c614c53a40b1a4767ef209f4da4b94068e67c4f164a6f5282b816ea"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261105010937/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-2-daniel-amor-ls-qmc.html",
