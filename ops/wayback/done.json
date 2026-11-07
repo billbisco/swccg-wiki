@@ -112543,15 +112543,28 @@
   "capture": "https://web.archive.org/web/20261027024115/https://swccg.com/snapshots/pc/2023-ryloth-regionals-floris-de-vries-ds-hunt-down.html",
   "last": "2026-11-05T01:03:58Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-07T19:15:29Z",
+   "capture_id": "https://web.archive.org/web/20261027024115id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-floris-de-vries-ds-hunt-down.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261021102227 (no capture at 20261027024115)"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-floris-de-vries-ls-diplo.html": {
   "capture": "https://web.archive.org/web/20261021113745/https://swccg.com/snapshots/pc/2023-ryloth-regionals-floris-de-vries-ls-diplo.html",
   "last": "2026-11-05T01:04:12Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-07T19:15:23Z",
+   "capture_id": "https://web.archive.org/web/20261021113745id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-floris-de-vries-ls-diplo.html",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.994
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-grady-hutchins-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261021102300/https://swccg.com/snapshots/pc/2023-ryloth-regionals-grady-hutchins-ds-shadow-collective.html",
@@ -112628,8 +112641,16 @@
   "capture": "https://web.archive.org/web/20261027025016/https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ds-thrawn.html",
   "last": "2026-11-05T01:03:42Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-07T19:16:06Z",
+   "bytes": 7121984,
+   "capture_id": "https://web.archive.org/web/20261027025016id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ds-thrawn.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "878116af841592e68dcf6aacd30e86d90037a9554c7721abc57bffe31cbc5f37"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ls-skywalker-saga-anakin.html": {
   "capture": "https://web.archive.org/web/20261021105551/https://swccg.com/snapshots/pc/2023-ryloth-regionals-marvin-tegeler-ls-skywalker-saga-anakin.html",
