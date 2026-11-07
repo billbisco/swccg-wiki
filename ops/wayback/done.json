@@ -112325,8 +112325,16 @@
   "capture": "https://web.archive.org/web/20261021104306/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ls-aitc.html",
   "last": "2026-11-05T01:06:22Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-07T18:23:17Z",
+   "bytes": 7122008,
+   "capture_id": "https://web.archive.org/web/20261021104306id_/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-tamas-papp-ls-aitc.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "40f9431b2decc78c33f9e7353366cad47d81dd2a4c272dfd29700ace8d36a372"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ralltiir-regionals-timo-dusel-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261105010655/https://swccg.com/snapshots/pc/2023-ralltiir-regionals-timo-dusel-ds-thrawn.html",
@@ -112691,13 +112699,14 @@
   "capture": "https://web.archive.org/web/20261021104534/https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ls-qmc.html",
   "last": "2026-11-05T01:07:59Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-07T17:24:23Z",
-   "error": "source HTTP 404"
-  },
-  "verify_tries": 2
+   "at": "2026-11-07T18:22:45Z",
+   "capture_id": "https://web.archive.org/web/20261021104534id_/https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ls-qmc.html",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ls-qmc.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025031703/https://swccg.com/snapshots/pc/2023-ryloth-regionals-stephan-de-vos-ls-qmc.html?copy=2",
