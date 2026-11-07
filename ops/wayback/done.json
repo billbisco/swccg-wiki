@@ -112863,8 +112863,14 @@
   "capture": "https://web.archive.org/web/20261021114225/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jacy-smith-ds-cct.html",
   "last": "2026-11-05T01:45:27Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-07T03:31:08Z",
+   "capture_id": "https://web.archive.org/web/20261021114225id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jacy-smith-ds-cct.html",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jacy-smith-ds-cct.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025032429/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-jacy-smith-ds-cct.html?copy=2",
@@ -113011,8 +113017,15 @@
   "capture": "https://web.archive.org/web/20261021125706/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-thornton-ls-wys.html",
   "last": "2026-11-05T01:45:15Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-07T03:31:32Z",
+   "capture_id": "https://web.archive.org/web/20261021125706id_/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-thornton-ls-wys.html",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.994
+  }
  },
  "https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-wadden-ds-ropsv.html": {
   "capture": "https://web.archive.org/web/20261027030816/https://swccg.com/snapshots/pc/2023-san-diego-super-open-day-1-matt-wadden-ds-ropsv.html",
