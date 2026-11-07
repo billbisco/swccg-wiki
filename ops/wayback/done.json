@@ -110778,8 +110778,16 @@
   "capture": "https://web.archive.org/web/20261021102112/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html",
   "last": "2026-11-05T00:52:21Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-07T22:56:51Z",
+   "bytes": 7121694,
+   "capture_id": "https://web.archive.org/web/20261021102112id_/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7f8e0d23a1cd913652c00c225f108746ed816fd868da78e6c8522fc078f571bf"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026195809/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ds-bhbm.html?copy=2",
@@ -110800,8 +110808,14 @@
   "capture": "https://web.archive.org/web/20261027023730/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ls-echo-base-operations.html",
   "last": "2026-11-05T00:52:35Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-07T22:56:31Z",
+   "capture_id": "https://web.archive.org/web/20261027023730id_/https://swccg.com/snapshots/pc/2023-naboo-regionals-l-pater-ls-echo-base-operations.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261021095114 (no capture at 20261027023730)"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ds-thrawn.html": {
   "capture": "https://web.archive.org/web/20261027023621/https://swccg.com/snapshots/pc/2023-naboo-regionals-marvin-tegeler-ds-thrawn.html",
@@ -110880,8 +110894,16 @@
   "capture": "https://web.archive.org/web/20261027023624/https://swccg.com/snapshots/pc/2023-naboo-regionals-tamas-papp-ls-agents-in-the-court.html",
   "last": "2026-11-05T00:52:09Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-07T22:57:01Z",
+   "bytes": 7122097,
+   "capture_id": "https://web.archive.org/web/20261027023624id_/https://swccg.com/snapshots/pc/2023-naboo-regionals-tamas-papp-ls-agents-in-the-court.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0c45a52c9241ca739d5cd46b14fc2c2555ac72ca2c2a25a388c8b34b225d2e6d"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ds-hunt-down.html": {
   "capture": "https://web.archive.org/web/20261027023509/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ds-hunt-down.html",
