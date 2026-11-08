@@ -88007,8 +88007,14 @@
   "capture": "https://web.archive.org/web/20261104232806/https://swccg.com/snapshots/forum/t81726.html",
   "job_id": "spn2-b1c1d183a142fae7489ed05389a7b822471ebfa2",
   "last": "2026-11-04T23:35:55Z",
-  "status": "ok",
-  "tries": 1
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T18:35:50Z",
+   "capture_id": "https://web.archive.org/web/20261104232806id_/https://swccg.com/snapshots/forum/t81726.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261013155123 (no capture at 20261104232806)"
+  }
  },
  "https://swccg.com/snapshots/forum/t82074.html": {
   "capture": "https://web.archive.org/web/20261025074131/https://swccg.com/snapshots/forum/t82074.html",
@@ -104081,8 +104087,14 @@
   "capture": "https://web.archive.org/web/20261104232454/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-michael-pistone-ds-ropsv.html",
   "job_id": "spn2-2b62412af741e93dd59dfb23f608d00f3b78d25f",
   "last": "2026-11-04T23:34:05Z",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T18:35:55Z",
+   "capture_id": "https://web.archive.org/web/20261104232454id_/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-michael-pistone-ds-ropsv.html",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-michael-pistone-ds-ropsv.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103233648/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-michael-pistone-ds-ropsv.html?copy=2",
@@ -108107,8 +108119,16 @@
   "capture": "https://web.archive.org/web/20261021071026/https://swccg.com/snapshots/pc/2023-bespin-regionals-charlie-arlandson-ds-aobs.html",
   "last": "2026-11-04T23:32:50Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T18:36:12Z",
+   "bytes": 7121865,
+   "capture_id": "https://web.archive.org/web/20261021071026id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-charlie-arlandson-ds-aobs.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "50d8007410ec92d5bdbafa0501a9b302bb3ff8e6d1b36657fe52010d92a39cb7"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-charlie-arlandson-ds-aobs.html?copy=2": {
   "capture": "https://web.archive.org/web/20261104001733/https://swccg.com/snapshots/pc/2023-bespin-regionals-charlie-arlandson-ds-aobs.html?copy=2",
@@ -108265,10 +108285,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-08T17:57:38Z",
+   "at": "2026-11-08T18:35:45Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-jake-nelson-ds-senate.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025022516/https://swccg.com/snapshots/pc/2023-bespin-regionals-jake-nelson-ds-senate.html?copy=2",
