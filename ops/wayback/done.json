@@ -109719,8 +109719,16 @@
   "capture": "https://web.archive.org/web/20261021083717/https://swccg.com/snapshots/pc/2023-european-championship-joe-olson-ls-communing-obi-wan.html",
   "last": "2026-11-05T00:24:17Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T05:04:49Z",
+   "bytes": 7122149,
+   "capture_id": "https://web.archive.org/web/20261021083717id_/https://swccg.com/snapshots/pc/2023-european-championship-joe-olson-ls-communing-obi-wan.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0dc7370fcce108cc8ef26743e2d380aa7f58f386b6dcb283938603b846df79d3"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-joe-olson-ls-communing-obi-wan.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030858/https://swccg.com/snapshots/pc/2023-european-championship-joe-olson-ls-communing-obi-wan.html?copy=2",
@@ -109990,7 +109998,12 @@
   "last": "2026-11-05T00:24:03Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T05:05:30Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-koen-meijssen-ls-zero-hour.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194942/https://swccg.com/snapshots/pc/2023-european-championship-koen-meijssen-ls-zero-hour.html?copy=2",
