@@ -109135,8 +109135,16 @@
   "capture": "https://web.archive.org/web/20261021074307/https://swccg.com/snapshots/pc/2023-dagobah-regionals-jonathan-murray-ds-combat.html",
   "last": "2026-11-05T00:30:12Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T04:27:05Z",
+   "bytes": 7121531,
+   "capture_id": "https://web.archive.org/web/20261021074307id_/https://swccg.com/snapshots/pc/2023-dagobah-regionals-jonathan-murray-ds-combat.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "be399dc32017a26f4a5d0092f9fbb0ab5c239d909f4ba73d22f5af5d28986ae5"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-dagobah-regionals-jonathan-murray-ds-combat.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025024634/https://swccg.com/snapshots/pc/2023-dagobah-regionals-jonathan-murray-ds-combat.html?copy=2",
@@ -109938,13 +109946,14 @@
   "capture": "https://web.archive.org/web/20261021093119/https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ls-saga-anakin.html",
   "last": "2026-11-05T00:32:05Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-08T03:47:49Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-08T04:26:35Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ls-saga-anakin.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026195028/https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ls-saga-anakin.html?copy=2",
