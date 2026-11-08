@@ -110254,15 +110254,29 @@
   "capture": "https://web.archive.org/web/20261027022541/https://swccg.com/snapshots/pc/2023-european-championship-top-8-jonas-hagen-norregaard-ds-sc.html",
   "last": "2026-11-05T00:37:25Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T01:02:10Z",
+   "bytes": 7121267,
+   "capture_id": "https://web.archive.org/web/20261027022541id_/https://swccg.com/snapshots/pc/2023-european-championship-top-8-jonas-hagen-norregaard-ds-sc.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0f79545f8ac4ef4f904c35d583f8975811aefcdc9d2e009d690d5675659f47b1"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-top-8-jonas-hagen-norregaard-ls-whap.html": {
   "capture": "https://web.archive.org/web/20261027034606/https://swccg.com/snapshots/pc/2023-european-championship-top-8-jonas-hagen-norregaard-ls-whap.html",
   "last": "2026-11-05T00:37:39Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "unverified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-08T01:01:39Z",
+   "capture_id": "https://web.archive.org/web/20261027034606id_/https://swccg.com/snapshots/pc/2023-european-championship-top-8-jonas-hagen-norregaard-ls-whap.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261021105249 (no capture at 20261027034606)"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-top-8-justin-branch-ds-walkers.html": {
   "capture": "https://web.archive.org/web/20261021090537/https://swccg.com/snapshots/pc/2023-european-championship-top-8-justin-branch-ds-walkers.html",
