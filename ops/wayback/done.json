@@ -107165,10 +107165,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-08T16:29:59Z",
+   "at": "2026-11-08T17:07:13Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ls-combat.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021355/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ls-combat.html?copy=2",
@@ -107648,8 +107648,16 @@
   "capture": "https://web.archive.org/web/20261027015528/https://swccg.com/snapshots/pc/2023-alderaan-regionals-chris-schoenthal-ds-thrawn.html",
   "last": "2026-11-04T23:43:17Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T17:07:37Z",
+   "bytes": 7121072,
+   "capture_id": "https://web.archive.org/web/20261027015528id_/https://swccg.com/snapshots/pc/2023-alderaan-regionals-chris-schoenthal-ds-thrawn.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "508a4c4b6e61c1a2ba46797ee2ba4bda39fad8cd19f2f031c12d00a0d00428e7"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-alderaan-regionals-chris-schoenthal-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261021072548/https://swccg.com/snapshots/pc/2023-alderaan-regionals-chris-schoenthal-ls-old-allies.html",
