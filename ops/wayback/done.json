@@ -105087,7 +105087,12 @@
   "last": "2026-11-04T23:13:04Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T21:56:59Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-nick-gorski-ls-skywalker-saga-anakin.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025015928/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-nick-gorski-ls-skywalker-saga-anakin.html?copy=2",
@@ -105561,8 +105566,16 @@
   "capture": "https://web.archive.org/web/20261027015147/https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ds-watto.html",
   "last": "2026-11-04T23:13:16Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T21:56:48Z",
+   "bytes": 7121793,
+   "capture_id": "https://web.archive.org/web/20261027015147id_/https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ds-watto.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "68d9d1c1cd85a5032c92d86873b5efb54950f164b8beafe6151433866720e2a5"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ls-endor-cpv.html": {
   "capture": "https://web.archive.org/web/20261027014218/https://swccg.com/snapshots/pc/2022-toola-regionals-bjorn-palmqvist-ls-endor-cpv.html",
@@ -105583,8 +105596,16 @@
   "capture": "https://web.archive.org/web/20261027014206/https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ds-rots-dooku.html",
   "last": "2026-11-04T23:13:30Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T21:56:38Z",
+   "bytes": 7121848,
+   "capture_id": "https://web.archive.org/web/20261027014206id_/https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ds-rots-dooku.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6f96e810d22f39fdfd6349f1490526fb3cc74e611533a31ab45a953add70e15e"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ls-obi-wan-communing.html": {
   "capture": "https://web.archive.org/web/20261021062836/https://swccg.com/snapshots/pc/2022-toola-regionals-casper-jorgensen-ls-obi-wan-communing.html",
