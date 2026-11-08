@@ -107203,13 +107203,14 @@
   "capture": "https://web.archive.org/web/20261021072706/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-tim-simon-ls-yoda-communing.html",
   "last": "2026-11-04T23:44:14Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-08T16:42:47Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-08T17:19:32Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-tim-simon-ls-yoda-communing.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021332/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-tim-simon-ls-yoda-communing.html?copy=2",
@@ -107774,8 +107775,16 @@
   "capture": "https://web.archive.org/web/20261021071743/https://swccg.com/snapshots/pc/2023-alderaan-regionals-joe-olson-ds-invasion.html",
   "last": "2026-11-04T23:42:02Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T17:19:59Z",
+   "bytes": 7121594,
+   "capture_id": "https://web.archive.org/web/20261021071743id_/https://swccg.com/snapshots/pc/2023-alderaan-regionals-joe-olson-ds-invasion.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "050825b12e7ef7d813fb988161a86b75844f0fd7ca33b1045cbde2055eda675c"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-alderaan-regionals-joe-olson-ds-invasion.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025022225/https://swccg.com/snapshots/pc/2023-alderaan-regionals-joe-olson-ds-invasion.html?copy=2",
@@ -107841,8 +107850,16 @@
   "capture": "https://web.archive.org/web/20261021072504/https://swccg.com/snapshots/pc/2023-alderaan-regionals-lee-edwards-ls-communing-obi-wan.html",
   "last": "2026-11-04T23:42:36Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T17:19:46Z",
+   "bytes": 7122016,
+   "capture_id": "https://web.archive.org/web/20261021072504id_/https://swccg.com/snapshots/pc/2023-alderaan-regionals-lee-edwards-ls-communing-obi-wan.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5bfa5390491c2b2fd130a09c6f78894d3f6a27bd11a52d5958b86ac560300880"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-alderaan-regionals-lee-edwards-ls-communing-obi-wan.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025022345/https://swccg.com/snapshots/pc/2023-alderaan-regionals-lee-edwards-ls-communing-obi-wan.html?copy=2",
