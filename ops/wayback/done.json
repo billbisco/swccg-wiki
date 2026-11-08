@@ -108792,13 +108792,14 @@
   "capture": "https://web.archive.org/web/20261021075239/https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ls-yavin-4-base-operations.html",
   "last": "2026-11-05T00:30:52Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-08T04:39:11Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-08T05:17:41Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ls-yavin-4-base-operations.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025023818/https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ls-yavin-4-base-operations.html?copy=2",
@@ -109990,8 +109991,16 @@
   "capture": "https://web.archive.org/web/20261027021329/https://swccg.com/snapshots/pc/2023-european-championship-koen-meijssen-ds-isb-operations.html",
   "last": "2026-11-05T00:23:48Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T05:18:34Z",
+   "bytes": 7121814,
+   "capture_id": "https://web.archive.org/web/20261027021329id_/https://swccg.com/snapshots/pc/2023-european-championship-koen-meijssen-ds-isb-operations.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "da84cb0b31c1fff0a297768a73de430f6f2e22c98d7b9e284c6849b1474fb7de"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-koen-meijssen-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261021083655/https://swccg.com/snapshots/pc/2023-european-championship-koen-meijssen-ls-zero-hour.html",
