@@ -107140,8 +107140,16 @@
   "capture": "https://web.archive.org/web/20261021072629/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ds-verge.html",
   "last": "2026-11-04T23:44:32Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T16:42:30Z",
+   "bytes": 7121004,
+   "capture_id": "https://web.archive.org/web/20261021072629id_/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ds-verge.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "cafa4a63edb58f96aa8d54bbea76de33ae8c76279ae914ca0f3c730bd6bc0a46"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ds-verge.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021937/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ds-verge.html?copy=2",
@@ -107190,10 +107198,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-04T23:44:18Z",
+   "at": "2026-11-08T16:42:47Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-tim-simon-ls-yoda-communing.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021332/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-tim-simon-ls-yoda-communing.html?copy=2",
