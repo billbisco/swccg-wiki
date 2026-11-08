@@ -107162,13 +107162,14 @@
   "capture": "https://web.archive.org/web/20261021072735/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ls-combat.html",
   "last": "2026-11-04T23:44:46Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-08T17:07:13Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-08T17:44:46Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ls-combat.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021355/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-steve-yaeger-ls-combat.html?copy=2",
@@ -107961,8 +107962,16 @@
   "capture": "https://web.archive.org/web/20261027015447/https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ls-clones.html",
   "last": "2026-11-04T23:39:51Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T17:45:20Z",
+   "bytes": 7123376,
+   "capture_id": "https://web.archive.org/web/20261027015447id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-braeden-grant-ls-clones.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f1caf804a8e2e481cc99970499c257a83a4f0640b4ef65f52e3fa470e204ccea"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-brandon-nguyen-ds-tto.html": {
   "capture": "https://web.archive.org/web/20261021071211/https://swccg.com/snapshots/pc/2023-bespin-regionals-brandon-nguyen-ds-tto.html",
