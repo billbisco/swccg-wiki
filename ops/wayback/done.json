@@ -108200,8 +108200,16 @@
   "capture": "https://web.archive.org/web/20261021073936/https://swccg.com/snapshots/pc/2023-bespin-regionals-sam-tashima-ls-clones.html",
   "last": "2026-11-05T00:29:39Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T04:39:55Z",
+   "bytes": 7121804,
+   "capture_id": "https://web.archive.org/web/20261021073936id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-sam-tashima-ls-clones.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9c07bf542e54befd0452a483f04b8047f98f28de9d9b1551093942346405f2c2"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-sam-tashima-ls-clones.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025023228/https://swccg.com/snapshots/pc/2023-bespin-regionals-sam-tashima-ls-clones.html?copy=2",
@@ -108787,10 +108795,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-11-08T04:00:34Z",
+   "at": "2026-11-08T04:39:11Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ls-yavin-4-base-operations.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025023818/https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ls-yavin-4-base-operations.html?copy=2",
