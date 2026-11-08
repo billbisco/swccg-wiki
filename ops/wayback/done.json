@@ -110137,8 +110137,16 @@
   "capture": "https://web.archive.org/web/20261021090548/https://swccg.com/snapshots/pc/2023-european-championship-tommy-santosusso-ls-communing-obi-wan.html",
   "last": "2026-11-05T00:38:52Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T00:12:53Z",
+   "bytes": 7122230,
+   "capture_id": "https://web.archive.org/web/20261021090548id_/https://swccg.com/snapshots/pc/2023-european-championship-tommy-santosusso-ls-communing-obi-wan.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6d1825af5d47d8e1a07a05aa10ea2ffde0be3d62c15779c5efe80b073be71ab4"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-tommy-santosusso-ls-communing-obi-wan.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030828/https://swccg.com/snapshots/pc/2023-european-championship-tommy-santosusso-ls-communing-obi-wan.html?copy=2",
@@ -111003,8 +111011,14 @@
   "capture": "https://web.archive.org/web/20261027023509/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ds-hunt-down.html",
   "last": "2026-11-05T00:39:05Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T00:12:21Z",
+   "capture_id": "https://web.archive.org/web/20261027023509id_/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ds-hunt-down.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261021134029 (no capture at 20261027023509)"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261021090643/https://swccg.com/snapshots/pc/2023-nal-hutta-regionals-brian-fred-ls-zero-hour.html",
