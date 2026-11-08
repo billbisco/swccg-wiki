@@ -109045,7 +109045,12 @@
   "last": "2026-11-05T00:08:38Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T09:20:10Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025023933/https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ds-bhbm.html?copy=2",
@@ -109065,8 +109070,16 @@
   "capture": "https://web.archive.org/web/20261021080502/https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ls-old-allies.html",
   "last": "2026-11-05T00:08:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T09:19:56Z",
+   "bytes": 7121109,
+   "capture_id": "https://web.archive.org/web/20261021080502id_/https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ls-old-allies.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "dcd0038b4d38762c857abf737524945a3c90f45d51d2797e59b627e4ce28b228"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ls-old-allies.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025025711/https://swccg.com/snapshots/pc/2023-coruscant-regionals-greg-shaw-ls-old-allies.html?copy=2",
