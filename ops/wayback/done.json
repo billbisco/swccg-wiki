@@ -108784,8 +108784,16 @@
   "capture": "https://web.archive.org/web/20261027020648/https://swccg.com/snapshots/pc/2023-corellia-regionals-greg-shaw-ls-communing-obi-wan.html",
   "last": "2026-11-04T23:55:21Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T12:31:40Z",
+   "bytes": 7123943,
+   "capture_id": "https://web.archive.org/web/20261027020648id_/https://swccg.com/snapshots/pc/2023-corellia-regionals-greg-shaw-ls-communing-obi-wan.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "816202db43c6a3a58d285666acf826558a50b7f7fa3c638e10e38cc35f2bb794"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-hayes-hunter-ds-desert-landing-site-ssav.html": {
   "capture": "https://web.archive.org/web/20261021075340/https://swccg.com/snapshots/pc/2023-corellia-regionals-hayes-hunter-ds-desert-landing-site-ssav.html",
@@ -108872,7 +108880,12 @@
   "last": "2026-11-04T23:55:34Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T12:31:12Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-karl-koenig-ds-desert-landing-site-ssav.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025023726/https://swccg.com/snapshots/pc/2023-corellia-regionals-karl-koenig-ds-desert-landing-site-ssav.html?copy=2",
