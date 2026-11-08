@@ -93446,10 +93446,10 @@
   "status": "ok",
   "tries": 3,
   "verify": {
-   "at": "2026-11-08T18:11:20Z",
+   "at": "2026-11-08T18:48:09Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011027/https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2",
@@ -108395,8 +108395,16 @@
   "capture": "https://web.archive.org/web/20261027020527/https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ds-bhbm.html",
   "last": "2026-11-04T23:32:28Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T18:48:25Z",
+   "bytes": 7121656,
+   "capture_id": "https://web.archive.org/web/20261027020527id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ds-bhbm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "27d491486b02f62cc31475dd2975d21cbfc1254f4b92060f02875e5b9ea24005"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ls-skywalker-saga-luke.html": {
   "capture": "https://web.archive.org/web/20261021074051/https://swccg.com/snapshots/pc/2023-bespin-regionals-logan-pietig-ls-skywalker-saga-luke.html",
