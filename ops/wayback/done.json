@@ -93443,13 +93443,14 @@
   "capture": "https://web.archive.org/web/20261021043256/https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html",
   "last": "2026-11-04T23:36:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 3,
   "verify": {
-   "at": "2026-11-08T18:48:09Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-08T19:25:35Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011027/https://swccg.com/snapshots/pc/2019-worlds-day-3-steve-baroni-ls-trm.html?copy=2",
@@ -106946,8 +106947,16 @@
   "capture": "https://web.archive.org/web/20261021070034/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-casey-johnson-ds-hd.html",
   "last": "2026-11-04T23:30:55Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T19:25:43Z",
+   "bytes": 7120961,
+   "capture_id": "https://web.archive.org/web/20261021070034id_/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-casey-johnson-ds-hd.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c4c564e37f4428cbd31018ef4530c4f4853270c21d489549aa1fab7f8e304a40"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-casey-johnson-ds-hd.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021035/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-casey-johnson-ds-hd.html?copy=2",
@@ -107053,8 +107062,16 @@
   "capture": "https://web.archive.org/web/20261021064821/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-jon-mcfarland-ls-zero-hour.html",
   "last": "2026-11-04T23:30:11Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T19:26:13Z",
+   "bytes": 7120970,
+   "capture_id": "https://web.archive.org/web/20261021064821id_/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-jon-mcfarland-ls-zero-hour.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "34f1d2997bb665a4e9ee41edb41b8fdd41cb22b78f8a8d760d9568e53bbcd83a"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-jon-mcfarland-ls-zero-hour.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025021148/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-jon-mcfarland-ls-zero-hour.html?copy=2",
@@ -107127,8 +107144,16 @@
   "capture": "https://web.archive.org/web/20261021070012/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-nick-abbondanzo-ds-aobs.html",
   "last": "2026-11-04T23:30:33Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T19:25:52Z",
+   "bytes": 7121019,
+   "capture_id": "https://web.archive.org/web/20261021070012id_/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-nick-abbondanzo-ds-aobs.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "00f5c716b6e236915f3244cc83f3ad136927b61528940c7e58a2ad52b60ac55e"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-nick-abbondanzo-ds-aobs.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026202734/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-nick-abbondanzo-ds-aobs.html?copy=2",
