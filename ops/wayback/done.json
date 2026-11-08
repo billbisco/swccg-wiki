@@ -109573,8 +109573,15 @@
   "capture": "https://web.archive.org/web/20261021094906/https://swccg.com/snapshots/pc/2023-european-championship-eric-spijksma-ls-clones.html",
   "last": "2026-11-05T00:32:29Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T03:09:57Z",
+   "capture_id": "https://web.archive.org/web/20261021094906id_/https://swccg.com/snapshots/pc/2023-european-championship-eric-spijksma-ls-clones.html",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.994
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ds-desert-landing-site-ssav.html": {
   "capture": "https://web.archive.org/web/20261027021327/https://swccg.com/snapshots/pc/2023-european-championship-fernando-castanon-ds-desert-landing-site-ssav.html",
@@ -109887,7 +109894,12 @@
   "last": "2026-11-05T00:32:05Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T03:10:37Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ls-saga-anakin.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026195028/https://swccg.com/snapshots/pc/2023-european-championship-kevin-jaap-ls-saga-anakin.html?copy=2",
@@ -110148,8 +110160,16 @@
   "capture": "https://web.archive.org/web/20261021084940/https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ds-hunt-down.html",
   "last": "2026-11-05T00:32:41Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T03:09:46Z",
+   "bytes": 7121787,
+   "capture_id": "https://web.archive.org/web/20261021084940id_/https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ds-hunt-down.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "fa3657945079fdba361e9dbb3401cad7fe0cc051e94ca03e254c4eb34e902798"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ds-hunt-down.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026195647/https://swccg.com/snapshots/pc/2023-european-championship-tom-damen-ds-hunt-down.html?copy=2",
