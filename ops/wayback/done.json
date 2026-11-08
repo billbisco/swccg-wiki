@@ -108409,8 +108409,16 @@
   "capture": "https://web.archive.org/web/20261027020638/https://swccg.com/snapshots/pc/2023-bespin-regionals-stew-yoo-ds-tdigwatt.html",
   "last": "2026-11-04T23:53:48Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T13:09:18Z",
+   "bytes": 7122002,
+   "capture_id": "https://web.archive.org/web/20261027020638id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-stew-yoo-ds-tdigwatt.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "433511e00534d444e93c55e102cdc47230abe9ae3f3de963148ca8aacbee8064"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-stew-yoo-ls-communing-yoda.html": {
   "capture": "https://web.archive.org/web/20261027015927/https://swccg.com/snapshots/pc/2023-bespin-regionals-stew-yoo-ls-communing-yoda.html",
@@ -108898,10 +108906,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-08T12:31:12Z",
+   "at": "2026-11-08T13:08:49Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-karl-koenig-ds-desert-landing-site-ssav.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025023726/https://swccg.com/snapshots/pc/2023-corellia-regionals-karl-koenig-ds-desert-landing-site-ssav.html?copy=2",
