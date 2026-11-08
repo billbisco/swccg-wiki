@@ -105573,10 +105573,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-04T23:26:00Z",
+   "at": "2026-11-08T20:53:46Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-jon-holtet-ds-coruscant-ssav-blasters.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025020030/https://swccg.com/snapshots/pc/2022-toola-regionals-jon-holtet-ds-coruscant-ssav-blasters.html?copy=2",
@@ -105743,8 +105743,16 @@
   "capture": "https://web.archive.org/web/20261021064319/https://swccg.com/snapshots/pc/2022-toola-regionals-tamas-papp-ls-ebo.html",
   "last": "2026-11-04T23:26:21Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T20:53:36Z",
+   "bytes": 7121804,
+   "capture_id": "https://web.archive.org/web/20261021064319id_/https://swccg.com/snapshots/pc/2022-toola-regionals-tamas-papp-ls-ebo.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f2e3a28bfee7198c72e70dae9201272c4c1883fb1fd98f5465be88155a40c5ec"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-toola-regionals-tamas-papp-ls-ebo.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025020754/https://swccg.com/snapshots/pc/2022-toola-regionals-tamas-papp-ls-ebo.html?copy=2",
@@ -125133,8 +125141,16 @@
   "capture": "https://web.archive.org/web/20261025121448/https://swccg.com/snapshots/pc/2026-bespin-regionals-nick-swedal-ls-no-idea.html",
   "last": "2026-11-04T23:17:28Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-08T20:54:25Z",
+   "bytes": 7121194,
+   "capture_id": "https://web.archive.org/web/20261025121448id_/https://swccg.com/snapshots/pc/2026-bespin-regionals-nick-swedal-ls-no-idea.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ffc2e875eb9f73c7584484582f6d296d707dddb24bcc733e9e4ef056c998da46"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-bespin-regionals-sam-tashima-ds-my-kind-of-scum.html": {
   "capture": "https://web.archive.org/web/20261025110753/https://swccg.com/snapshots/pc/2026-bespin-regionals-sam-tashima-ds-my-kind-of-scum.html",
