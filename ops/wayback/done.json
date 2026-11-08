@@ -110111,7 +110111,12 @@
   "last": "2026-11-05T00:25:22Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T04:52:20Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-european-championship-par-b-ds-hunt-down-and-destroy-the-jedi.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025025119/https://swccg.com/snapshots/pc/2023-european-championship-par-b-ds-hunt-down-and-destroy-the-jedi.html?copy=2",
@@ -110657,8 +110662,16 @@
   "capture": "https://web.archive.org/web/20261105002551/https://swccg.com/snapshots/pc/2023-european-championships-stephan-de-vos-ds-aobs.html",
   "job_id": "spn2-5c94fdb9fcdfb131330d3fd244aa31d742383fcf",
   "last": "2026-11-05T00:29:16Z",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-08T04:51:57Z",
+   "bytes": 7121084,
+   "capture_id": "https://web.archive.org/web/20261105002551id_/https://swccg.com/snapshots/pc/2023-european-championships-stephan-de-vos-ds-aobs.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ecb331fee25fdcc04e2725118d54c9c23c22e8a7ee5eebbd05f26f7486696dcf"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-european-championships-stephan-de-vos-ds-aobs.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025030931/https://swccg.com/snapshots/pc/2023-european-championships-stephan-de-vos-ds-aobs.html?copy=2",
@@ -120482,8 +120495,14 @@
   "capture": "https://web.archive.org/web/20261104230534/https://swccg.com/snapshots/pc/2024-toola-regionals-bjorn-palmqvist-ls-tigih.html",
   "job_id": "spn2-1bdcacc8312622c771cc80a46ae2e6bae61bb170",
   "last": "2026-11-05T00:27:02Z",
-  "status": "ok",
-  "tries": 6
+  "status": "unverified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-08T04:52:03Z",
+   "capture_id": "https://web.archive.org/web/20261104230534id_/https://swccg.com/snapshots/pc/2024-toola-regionals-bjorn-palmqvist-ls-tigih.html",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-casper-jorgensen-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261025100725/https://swccg.com/snapshots/pc/2024-toola-regionals-casper-jorgensen-ds-shadow-collective.html",
