@@ -108959,8 +108959,16 @@
   "capture": "https://web.archive.org/web/20261027020729/https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ds-cct.html",
   "last": "2026-11-04T23:55:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T12:19:04Z",
+   "bytes": 7122088,
+   "capture_id": "https://web.archive.org/web/20261027020729id_/https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ds-cct.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6ed7214868957cd82d66d0599d07bff4c3575132a282bf02bc22a42a92a1dec1"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ls-yavin-4-base-operations.html": {
   "capture": "https://web.archive.org/web/20261021075239/https://swccg.com/snapshots/pc/2023-corellia-regionals-ryan-sersen-ls-yavin-4-base-operations.html",
@@ -108993,8 +109001,14 @@
   "capture": "https://web.archive.org/web/20261027020739/https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ds-bhbm.html",
   "last": "2026-11-04T23:56:29Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-08T12:18:21Z",
+   "capture_id": "https://web.archive.org/web/20261027020739id_/https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ds-bhbm.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261021090019 (no capture at 20261027020739)"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261027020750/https://swccg.com/snapshots/pc/2023-corellia-regionals-travis-morris-ls-hitco.html",
