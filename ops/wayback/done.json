@@ -92766,8 +92766,16 @@
   "capture": "https://web.archive.org/web/20261021044716/https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html",
   "last": "2026-11-04T23:00:04Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-09T01:29:46Z",
+   "bytes": 7120809,
+   "capture_id": "https://web.archive.org/web/20261021044716id_/https://swccg.com/snapshots/pc/2018-worlds-day-3-stephen-cellucci-trm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e37247381639a38877ff0027cda6ba2177a3c3155fb8d9e94e334d462a5a1885"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-day-3-tom-kelly-oa.html": {
   "capture": "https://web.archive.org/web/20261021034648/https://swccg.com/snapshots/pc/2018-worlds-day-3-tom-kelly-oa.html",
@@ -92983,8 +92991,14 @@
   "capture": "https://web.archive.org/web/20261021034629/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html",
   "last": "2026-11-04T22:59:53Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-09T01:29:53Z",
+   "capture_id": "https://web.archive.org/web/20261021034629id_/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html",
+   "method": "strict",
+   "reason": "capture HTTP 404"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010045/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html?copy=2",
@@ -93600,13 +93614,14 @@
   "capture": "https://web.archive.org/web/20261021035938/https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html",
   "last": "2026-11-04T23:06:41Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-09T00:52:23Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-09T01:29:37Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011225/https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html?copy=2",
@@ -126272,8 +126287,16 @@
   "capture": "https://web.archive.org/web/20261025115133/https://swccg.com/snapshots/pc/2026-european-championship-top-8-koen-meijssen-ds-mkos.html",
   "last": "2026-11-04T22:59:21Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 4
+  "status": "verified",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-09T01:30:02Z",
+   "bytes": 7121061,
+   "capture_id": "https://web.archive.org/web/20261025115133id_/https://swccg.com/snapshots/pc/2026-european-championship-top-8-koen-meijssen-ds-mkos.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7f609ebf265756849799be4e72879ed10db871f1cebc036d39b08c2c2e9dde66"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-koen-meijssen-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261025101013/https://swccg.com/snapshots/pc/2026-european-championship-top-8-koen-meijssen-ls-zero-hour.html",
