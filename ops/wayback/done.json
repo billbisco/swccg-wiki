@@ -104271,8 +104271,14 @@
   "capture": "https://web.archive.org/web/20261027012505/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-steve-baroni-ls-diplo.html",
   "last": "2026-11-04T22:53:33Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-09T02:31:51Z",
+   "capture_id": "https://web.archive.org/web/20261027012505id_/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-steve-baroni-ls-diplo.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261021062640 (no capture at 20261027012505)"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-tommy-santosuosso-jr-ds-sycfa.html": {
   "capture": "https://web.archive.org/web/20261104225353/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-tommy-santosuosso-jr-ds-sycfa.html",
@@ -104300,8 +104306,16 @@
   "capture": "https://web.archive.org/web/20261021054232/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-tommy-santosuosso-jr-ls-qmc.html",
   "last": "2026-11-04T22:53:57Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T02:31:47Z",
+   "bytes": 7121280,
+   "capture_id": "https://web.archive.org/web/20261021054232id_/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-tommy-santosuosso-jr-ls-qmc.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1b6c8723f4990930746a7a834d063958b81d0ff5c312f0bc3e6c88926e91e994"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-tommy-santosuosso-jr-ls-qmc.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103233830/https://swccg.com/snapshots/pc/2022-kashyyyk-regionals-tommy-santosuosso-jr-ls-qmc.html?copy=2",
@@ -104508,8 +104522,16 @@
   "capture": "https://web.archive.org/web/20261027012609/https://swccg.com/snapshots/pc/2022-naboo-regionals-emil-wallin-ds-asm.html",
   "last": "2026-11-04T22:54:23Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-09T02:31:28Z",
+   "bytes": 7121927,
+   "capture_id": "https://web.archive.org/web/20261027012609id_/https://swccg.com/snapshots/pc/2022-naboo-regionals-emil-wallin-ds-asm.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4989d75e3c78633ca7c25907325d86c726909f81a19bd3ca9ad439d0a6dfda49"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-emil-wallin-ls-old-allies.html": {
   "capture": "https://web.archive.org/web/20261027012614/https://swccg.com/snapshots/pc/2022-naboo-regionals-emil-wallin-ls-old-allies.html",
@@ -104674,8 +104696,15 @@
   "capture": "https://web.archive.org/web/20261021061638/https://swccg.com/snapshots/pc/2022-naboo-regionals-justin-branch-ds-shadow-collective.html",
   "last": "2026-11-04T22:54:12Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T02:31:37Z",
+   "capture_id": "https://web.archive.org/web/20261021061638id_/https://swccg.com/snapshots/pc/2022-naboo-regionals-justin-branch-ds-shadow-collective.html",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.994
+  }
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-justin-branch-ds-shadow-collective.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025014929/https://swccg.com/snapshots/pc/2022-naboo-regionals-justin-branch-ds-shadow-collective.html?copy=2",
