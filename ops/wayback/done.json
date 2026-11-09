@@ -93278,8 +93278,16 @@
   "capture": "https://web.archive.org/web/20261021035748/https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html",
   "last": "2026-11-04T22:24:06Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T08:48:09Z",
+   "bytes": 7121427,
+   "capture_id": "https://web.archive.org/web/20261021035748id_/https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d0fc3f87908739eea9d9e80cfc1c1d3153c510f616f2f44b500eb2af63942284"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194252/https://swccg.com/snapshots/pc/2019-nac-day-1-dennis-reinhardt-ds-map.html?copy=2",
@@ -93337,7 +93345,12 @@
   "last": "2026-11-04T22:24:41Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T08:47:45Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010837/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2",
