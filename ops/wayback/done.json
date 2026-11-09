@@ -93222,8 +93222,16 @@
   "capture": "https://web.archive.org/web/20261021034710/https://swccg.com/snapshots/pc/2019-nac-day-1-andrew-moss-ds-ie.html",
   "last": "2026-11-04T22:23:27Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T09:00:50Z",
+   "bytes": 7121560,
+   "capture_id": "https://web.archive.org/web/20261021034710id_/https://swccg.com/snapshots/pc/2019-nac-day-1-andrew-moss-ds-ie.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c4d83fbd559b3257d386671671ab20863d2f426ccc51828287cd1578c6ae53cb"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-andrew-moss-ds-ie.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025012006/https://swccg.com/snapshots/pc/2019-nac-day-1-andrew-moss-ds-ie.html?copy=2",
@@ -93237,7 +93245,12 @@
   "last": "2026-11-04T22:23:38Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T09:00:41Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-bryan-mischke-ds-map.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010745/https://swccg.com/snapshots/pc/2019-nac-day-1-bryan-mischke-ds-map.html?copy=2",
@@ -93258,7 +93271,12 @@
   "last": "2026-11-04T22:23:52Z",
   "note": "already archived within 30d",
   "status": "ok",
-  "tries": 1
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T09:00:30Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-danny-lamar-ds-dark-combat.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010836/https://swccg.com/snapshots/pc/2019-nac-day-1-danny-lamar-ds-dark-combat.html?copy=2",
