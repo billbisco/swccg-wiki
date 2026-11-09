@@ -93056,8 +93056,16 @@
   "capture": "https://web.archive.org/web/20261027010816/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html",
   "last": "2026-11-04T22:22:34Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-09T09:25:36Z",
+   "bytes": 7120749,
+   "capture_id": "https://web.archive.org/web/20261027010816id_/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "04de5886f1045355856e79c4a5376b43a5186bc737bbf1559187fb450b49de59"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-reid-smith-hitco.html": {
   "capture": "https://web.archive.org/web/20261021034522/https://swccg.com/snapshots/pc/2018-worlds-reid-smith-hitco.html",
@@ -93378,10 +93386,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-09T08:47:45Z",
+   "at": "2026-11-09T09:25:18Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010837/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2",
