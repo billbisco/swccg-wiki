@@ -93565,10 +93565,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-11-09T00:14:40Z",
+   "at": "2026-11-09T00:52:23Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025011225/https://swccg.com/snapshots/pc/2020-mpc-day-1-joe-olson-ls-profit.html?copy=2",
@@ -104992,8 +104992,16 @@
   "capture": "https://web.archive.org/web/20261021061700/https://swccg.com/snapshots/pc/2022-naboo-regionals-stephan-fox-ls-old-allies.html",
   "last": "2026-11-04T23:01:43Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T00:52:52Z",
+   "bytes": 7121802,
+   "capture_id": "https://web.archive.org/web/20261021061700id_/https://swccg.com/snapshots/pc/2022-naboo-regionals-stephan-fox-ls-old-allies.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f3709b8fd32069dd2cab11f9289e7efc87211c3838e1fdef564bff37911d5e1c"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-stephan-fox-ls-old-allies.html?copy=2": {
   "capture": "https://web.archive.org/web/20261103234524/https://swccg.com/snapshots/pc/2022-naboo-regionals-stephan-fox-ls-old-allies.html?copy=2",
