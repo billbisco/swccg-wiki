@@ -23,6 +23,8 @@ Optional '''slip''' — printed slip number on the virtual sheet (for example <c
 
 Do not pass '''version_label'''. The old Version row (printed / virtual) is dropped. Era and Versions already mark Players Committee printings as Virtual Original, Virtual Legacy, or Virtual Modern.
 
+Optional '''version_code''' (Bill, 2026-11-08) — this page's errata version: <code>&lt;Issuer&gt;-E&lt;n&gt;</code>, where the issuer is <code>D</code> (Decipher) or <code>PC</code> (Players Committee) and n counts that card's published changes in date order, rephrases included (<code>PC-E1</code>, <code>PC-E2</code>…). Renders as '''Errata version''' above the Errata mark. Omit it on the original printed face, which has no code. It is our version id, not a printed stamp: the stamp printed on the card goes in '''errata_mark''' as printed (E1, D-E1). Page titles stay as in the Style guide: plain = original, then (Errata), (Errata 2), (Errata 3). Worked: [[Hindsight (V) (Errata)]] = <code>PC-E1</code>.
+
 
 Optional '''likeness''' — person whose face is on the card: a photographic model Decipher (or the Players Committee) cast, or the film portrayer of that character. Wiki-link the person page. Worked: [[Mara Jade, The Emperor's Hand]] → [[Shannon Baksa]]; [[Aurra Sing]] / [[Aurra Sing (AI)]] → [[Michonne Bourriague]]. Omit when the art is illustration, a starship/weapon, or a later virtual photograph that is not that person.
 

@@ -36,6 +36,7 @@
 {{#if:{{{versions|{{{printings|}}}}}}|<tr><th>Versions</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
 {{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}
 {{#if:{{{original_title|}}}|<tr><th>Printed title strip</th><td>{{#switch:{{{original_title_italic|}}}|yes=''{{{original_title}}}''|#default={{{original_title}}}{{#if:{{{original_title_italic|}}}|<br/><small>(italic: ''{{{original_title_italic}}}'')</small>}}}}</td></tr>}}
+{{#if:{{{version_code|}}}|<tr><th>Errata version</th><td>{{{version_code}}}</td></tr>}}
 {{#if:{{{errata_mark|}}}|<tr><th>Errata mark</th><td>{{{errata_mark}}}</td></tr>}}
 {{#if:{{{ai_mark|}}}|<tr><th>Alternate-image stamp</th><td>[[File:SWCCG Players Committee logo.png|44px|link=Players Committee|alt=SWCCG Players Committee logo]] {{{ai_mark}}}</td></tr>}}
 {{#if:{{{concept_credit|}}}|<tr><th>Concept credit</th><td>{{{concept_credit}}}</td></tr>}}
