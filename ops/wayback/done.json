@@ -103685,13 +103685,14 @@
   "capture": "https://web.archive.org/web/20261021050541/https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ls-funeral-pyre.html",
   "last": "2026-11-04T22:47:04Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-09T04:37:30Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-09T05:14:40Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ls-funeral-pyre.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025012433/https://swccg.com/snapshots/pc/2022-european-championship-sean-mackin-ls-funeral-pyre.html?copy=2",
@@ -103887,8 +103888,16 @@
   "capture": "https://web.archive.org/web/20261021043908/https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html",
   "last": "2026-11-04T22:39:59Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T05:14:59Z",
+   "bytes": 7121250,
+   "capture_id": "https://web.archive.org/web/20261021043908id_/https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d4088cec70a71b78b2c118454aa832de98ea56f4fa236b010585fd24ebf92e8b"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html?copy=2": {
   "capture": "https://web.archive.org/web/20261026194433/https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ds-ropsv.html?copy=2",
@@ -103901,8 +103910,16 @@
   "capture": "https://web.archive.org/web/20261021045314/https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ls-zero-hour.html",
   "last": "2026-11-04T22:40:12Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 1
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-09T05:14:50Z",
+   "bytes": 7121142,
+   "capture_id": "https://web.archive.org/web/20261021045314id_/https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ls-zero-hour.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "749c4fc5e4add918e5c00e9679b587b5d0a9e5f914994efad76f6b8cf83a22a0"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-top-8-cedrik-vanderhaegen-ls-zero-hour.html?copy=2": {
   "capture": "",
