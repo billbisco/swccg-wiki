@@ -93399,13 +93399,14 @@
   "capture": "https://web.archive.org/web/20261021034934/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html",
   "last": "2026-11-04T22:24:41Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-09T09:25:18Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-09T10:02:36Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025010837/https://swccg.com/snapshots/pc/2019-nac-day-1-joe-olson-ls-trm.html?copy=2",
@@ -122483,8 +122484,16 @@
   "capture": "https://web.archive.org/web/20261025114007/https://swccg.com/snapshots/pc/2024-tatooine-regionals-randy-scott-ls-rey-saga.html",
   "last": "2026-11-04T22:20:19Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-09T10:02:49Z",
+   "bytes": 7120700,
+   "capture_id": "https://web.archive.org/web/20261025114007id_/https://swccg.com/snapshots/pc/2024-tatooine-regionals-randy-scott-ls-rey-saga.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4dfceed586b6f651063aeb25a0552bb1f11f7b0e85ee1875597a637bcdfd6c27"
+  }
  },
  "https://swccg.com/snapshots/pc/2024-toola-regionals-angelo-consoli-ds-rots-maul.html": {
   "capture": "https://web.archive.org/web/20261025113543/https://swccg.com/snapshots/pc/2024-toola-regionals-angelo-consoli-ds-rots-maul.html",
@@ -126981,8 +126990,16 @@
   "capture": "https://web.archive.org/web/20261025113841/https://swccg.com/snapshots/pc/2026-european-championship-top-8-cedrik-vanderhaegen-ls-watch-your-step.html",
   "last": "2026-11-04T22:19:43Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-09T10:02:58Z",
+   "bytes": 7121446,
+   "capture_id": "https://web.archive.org/web/20261025113841id_/https://swccg.com/snapshots/pc/2026-european-championship-top-8-cedrik-vanderhaegen-ls-watch-your-step.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "45f4e6791e5424e82cf77042b07cf1157a028e7d6fb6301ed3f83aab07dbf00f"
+  }
  },
  "https://swccg.com/snapshots/pc/2026-european-championship-top-8-joe-olson-ds-shadow-collective.html": {
   "capture": "https://web.archive.org/web/20261025085915/https://swccg.com/snapshots/pc/2026-european-championship-top-8-joe-olson-ds-shadow-collective.html",
