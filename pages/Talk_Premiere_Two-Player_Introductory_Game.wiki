@@ -1,6 +1,6 @@
 == Style pass (2026-10-15) ==
 === Missing data ===
-* Packaging section said "predetermined deck lists follow", but the page has no lists of the two 60-card preconstructed decks.
+* <s>Packaging section said "predetermined deck lists follow", but the page has no lists of the two 60-card preconstructed decks.</s> Done 10 November 2026: the Card list gives both 60-card decks (swccg-guild/work#251).
 === Possibly faulty data ===
 * Jim Colson (BoardMatt interview, 2022, 51:56) says mass-market (Kmart/Walmart) boxes held white-border packs and hobby boxes black-border packs; the Collecting Encyclopedia 3.2 says the box held one Premiere pack, Limited in the first ~50,000 boxes and Unlimited after. Kept in the article as Colson's account.
 === Marginal cuts ===
@@ -27,7 +27,7 @@
 [[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 20:24, 27 October 2026 (UTC)
 
 == Build notes ==
-Card-list thumbs for [[Death Star: Docking Control Room 327]] and [[Death Star: Level 6 Core Shaft Corridor]] now use the original printed scans. The previous <code>.gif</code> Files are Holotable D-E1 (PC Errata). Ticket [[swccg-guild/work#235]]. [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 18:13, 9 November 2026 (UTC)
+Card-list thumbs for [[Death Star: Docking Control Room 327]] and [[Death Star: Level 6 Core Shaft Corridor]] now use the original printed scans. The previous <code>.gif</code> Files are Holotable D-E1 (PC Errata). Ticket swccg-guild/work#235. [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 18:13, 9 November 2026 (UTC)
 
 == Full deck lists and stacked titles (10 November 2026) ==
 === Build notes ===
@@ -35,8 +35,20 @@ Card-list thumbs for [[Death Star: Docking Control Room 327]] and [[Death Star: 
 * Per the [[SWCCG Wiki:Style guide#Card versions vs products|Style guide (Card versions vs products)]], the 60 reprints that match Premiere Unlimited were moved from <code>Title (Unlimited)</code> to <code>Title (Premiere Two-Player) (Unlimited)</code> (Set Premiere Two-Player Introductory Game, Set icon none, Also in Premiere Unlimited, GEMP <code>71_n</code> then <code>51_n</code>). The move leaves a redirect from each <code>Title (Unlimited)</code>; <code>Card:51_n</code> now points at the stacked title and <code>Card:71_n</code> was added. The short names (for example [[Imperial Barrier]]) are the black-border Premiere Limited articles, a different version, so they were not turned into redirects. [[Electrobinoculars (Two-Player)]] and [[Tatooine: Lars' Moisture Farm (Two-Player)]] keep their titles.
 * Fixed the merged Lars' Moisture Farm / Level 6 Core Shaft Corridor table row and the repeated Light Side sentence on [[Death Star: Docking Control Room 327]].
 === Missing data ===
-* No Premiere Two-Player face has been opened for the 58 reprints that are not misprints. Their white border, lack of an expansion icon and © 1995 date rest on House of Checklists ("these appear to be identical to the Unlimited cards"), Collecting Encyclopedia 3.2 p. 49 (which counts only the six premiums as distinct English cards for this box) and the two opened misprint faces from the same decks, which print © 1995. The deck-table images on those rows are the Premiere Unlimited faces from each article; whether each is an honest Unlimited scan is tracked in swccg-guild/work#240.
+* No Premiere Two-Player face has been opened for the 58 reprints that are not misprints. Their white border, lack of an expansion icon and © 1995 date rest on House of Checklists ("these appear to be identical to the Unlimited cards"), Collecting Encyclopedia 3.2 p. 49 (which counts only the six premiums as distinct English cards for this box) and the two opened misprint faces from the same decks, which print © 1995. The deck-table images on those rows were removed on 11 November 2026 under swccg-guild/work#240 (see below).
 === Possibly faulty data ===
 * The rules booklet prints "Death Star: Docking Bay Control Room 327"; the card title is [[Death Star: Docking Control Room 327]].
 * The Players Committee deck-list page ([https://web.archive.org/web/20210829115919/https://www.starwarsccg.org/pre-constructed-deck-lists/ Preserved copy], 29 August 2021) marks Electrobinoculars and Lars' Moisture Farm as having "the unrevised (black bordered) game text". The opened Two-Player faces differ from the Premiere Limited (black-border) text; the article follows Collecting Encyclopedia 3.2 p. 46 ("incorrect game text").
 [[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 23:06, 10 November 2026 (UTC)
+
+== QA fixes (11 November 2026) ==
+=== Build notes ===
+* [[Luke (Premiere Two-Player Introductory Game)]] and [[Vader (Premiere Two-Player Introductory Game)]] were moved to [[Luke]] and [[Vader]], the printed titles, because no other page has those titles ([[SWCCG Wiki:Style guide#Card page titles (Bill, 2026-11-04)|Style guide, Card page titles]]). Their Japanese printings are now [[Luke (Japanese Premiere Two-Player)]] and [[Vader (Japanese Premiere Two-Player)]]. The old titles redirect; <code>Card:101_2</code>, <code>Card:101_5</code> and [[ルーク]] point at the new titles. Ticket swccg-guild/work#270.
+* [[:File:P2P-L-tatooinelarsmoisturefarm-2pg.jpg]] was stored upside down; the current revision is rotated 180° (art upright, Light Side text at the bottom). Both misprint File pages now cite the Category One Games listing and photo, with Preserved copies.
+* The ticket reference in the 9 November build entry (a wiki link to a page that does not exist) is now plain text: swccg-guild/work is a private repository, so its issues have no Preserved copy.
+* The lead no longer calls this the "third" Star Wars CCG product; no cited source gives that ordinal.
+* Card text no longer links the Tatooine expansion set for "Deploy only on Tatooine" or the Jawa disambiguation page for "Jawas".
+=== Missing data ===
+* The 60 reprint rows here and the 60 <code>(Premiere Two-Player) (Unlimited)</code> articles have no face image. Their <code>Premiere-U-*</code> Files are CCG-Singles catalog photos, which swccg-guild/work#240 rules out (R4, AC4), so they were removed under #240; that ticket will add clean photos. The Files themselves were left in place.
+* The Category One Games photo of [[Electrobinoculars (Two-Player)]] is itself cropped inside the printed white border, so the File cannot show the border until a fuller photo is found (swccg-guild/work#240).
+[[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 14:24, 11 November 2026 (UTC)
