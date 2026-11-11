@@ -199,7 +199,9 @@ def nicknames() -> dict[str, dict]:
 # Posted names that mean the learned nickname even though a card prints that exact title. A bare "Luke" in a
 # decklist is Luke With Lightsaber, not the Premiere Two-Player exclusive [[Luke]] (Bill dest, 10 Nov 2026,
 # swccg-guild/work#270: the exclusive moved from "Luke (Premiere Two-Player Introductory Game)" to "Luke").
-NICKNAME_BEATS_EXACT = {"luke"}
+# A bare "Vader" is Darth Vader (Premiere), not the Premiere Two-Player exclusive [[Vader]] (Bill dest, 11 Nov 2026,
+# swccg-guild/work#278: shorthand means the stronger, more common Premiere card unless a list shows otherwise).
+NICKNAME_BEATS_EXACT = {"luke", "vader"}
 
 
 def suggest(posted: str, side: str) -> tuple[str, str]:
