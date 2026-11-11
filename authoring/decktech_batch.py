@@ -196,12 +196,11 @@ def nicknames() -> dict[str, dict]:
     return _NICK
 
 
-# Posted names that mean the learned nickname even though a card prints that exact title. A bare "Luke" in a
-# decklist is Luke With Lightsaber, not the Premiere Two-Player exclusive [[Luke]] (Bill dest, 10 Nov 2026,
-# swccg-guild/work#270: the exclusive moved from "Luke (Premiere Two-Player Introductory Game)" to "Luke").
-# A bare "Vader" is Darth Vader (Premiere), not the Premiere Two-Player exclusive [[Vader]] (Bill dest, 11 Nov 2026,
-# swccg-guild/work#278: shorthand means the stronger, more common Premiere card unless a list shows otherwise).
-NICKNAME_BEATS_EXACT = {"luke", "vader"}
+# Bare posted "Luke" / "Vader" are the Premiere Two-Player exclusives actually titled [[Luke]] and [[Vader]] (Bill dest,
+# 11 Nov 2026 12:18 PM, swccg-guild/work#278; supersedes the #270 rule that sent "Luke" to Luke With Lightsaber).
+# Checked before nicknames and on either side, so a learned nickname can't send them to another card; a list that
+# meant a different card is a per-deck hand fix.
+BARE_EXACT = {"luke": "Luke", "vader": "Vader"}
 
 
 def suggest(posted: str, side: str) -> tuple[str, str]:
@@ -213,8 +212,8 @@ def suggest(posted: str, side: str) -> tuple[str, str]:
     c = canon()
     key = f"{side}|{cl.lookup_key(name).casefold()}"
     nk = nicknames().get(name.casefold())
-    if name.casefold() in NICKNAME_BEATS_EXACT and nk and "card" in nk:
-        return "nickname", nk["card"]
+    if name.casefold() in BARE_EXACT:
+        return "exact", BARE_EXACT[name.casefold()]
     if key in c:
         return "exact", sorted(c[key])[0]
     if nk and "card" in nk:
