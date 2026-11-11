@@ -7,8 +7,14 @@
 <tr><th>Side</th><td>[[{{{side}}}]]</td></tr>
 <tr><th>Type</th><td>[[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>— [[{{{subtype_link}}}{{!}}{{{subtype}}}]]}}{{#if:{{{model|}}}|<nowiki> </nowiki>({{{model}}})}}</td></tr>
 <tr><th>Set</th><td>[[{{Set page|{{{set}}}}}|{{{set}}}]]</td></tr>
+<tr><th>Set icon</th><td>{{#if:{{{set_icon|{{{expansion_icon|}}}}}}|{{{set_icon|{{{expansion_icon|}}}}}}|{{#switch:{{{set|}}}|Premiere Limited|Premiere Unlimited|Premiere Two-Player|Premiere Two-Player Introductory Game|Premiere|Japanese Premiere|Japanese Premiere Two-Player|ESB Two-Player=none|#default=}}}}</td></tr>
+{{#if:{{{also_in|{{{products|}}}}}}|<tr><th>Also in</th><td>{{{also_in|{{{products|}}}}}}</td></tr>}}
 {{#if:{{{publisher|}}}|<tr><th>Publisher</th><td>{{{publisher}}}</td></tr>}}
 {{#if:{{{era|}}}|<tr><th>Era</th><td>{{{era}}}</td></tr>}}
+{{#if:{{{blanked|}}}|<tr><th>Blanked</th><td>{{{blanked}}}</td></tr>}}
+{{#if:{{{gemp_id|{{{card_uid|}}}}}}|<tr><th>GEMP ID</th><td><code>{{{gemp_id|{{{card_uid|}}}}}}</code>{{#if:{{{gemp_id2|}}}| <code>{{{gemp_id2}}}</code>}}</td></tr>}}
+{{#if:{{{pc_alias|}}}|<tr><th>PC alias</th><td><code>{{{pc_alias}}}</code></td></tr>}}
+{{#if:{{{slip|}}}|<tr><th>Slip</th><td>{{{slip}}}</td></tr>}}
 {{#if:{{{rarity|}}}|<tr><th>Rarity</th><td>[[{{{rarity_link|Rarity}}}|{{{rarity}}}]]</td></tr>}}
 {{#if:{{{uniqueness|}}}|<tr><th>Uniqueness</th><td>{{{uniqueness}}}</td></tr>}}
 {{#if:{{{destiny|}}}|<tr><th>Destiny</th><td>{{{destiny}}}</td></tr>}}
@@ -30,9 +36,6 @@
 {{#if:{{{dark_icons|}}}|<tr><th>Dark Side Icons</th><td>{{{dark_icons}}}</td></tr>}}
 {{#if:{{{light_icons|}}}|<tr><th>Light Side Icons</th><td>{{{light_icons}}}</td></tr>}}
 {{#if:{{{icons|}}}|<tr><th>Icons</th><td>{{{icons}}}</td></tr>}}
-{{#if:{{{gemp_id|{{{card_uid|}}}}}}|<tr><th>GEMP ID</th><td><code>{{{gemp_id|{{{card_uid|}}}}}}</code></td></tr>}}
-{{#if:{{{pc_alias|}}}|<tr><th>PC alias</th><td><code>{{{pc_alias}}}</code></td></tr>}}
-{{#if:{{{slip|}}}|<tr><th>Slip</th><td>{{{slip}}}</td></tr>}}
 {{#if:{{{versions|{{{printings|}}}}}}|<tr><th>Versions</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
 {{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}
 {{#if:{{{original_title|}}}|<tr><th>Printed title strip</th><td>{{#switch:{{{original_title_italic|}}}|yes=''{{{original_title}}}''|#default={{{original_title}}}{{#if:{{{original_title_italic|}}}|<br/><small>(italic: ''{{{original_title_italic}}}'')</small>}}}}</td></tr>}}
@@ -108,5 +111,5 @@
 <h2>References</h2>
 <references />}}
 </div>
-[[Category:Cards]][[Category:{{{set}}}]][[Category:{{{side}}}]][[Category:{{{type}}}]]{{#if:{{{anagram|}}}|[[Category:Anagrams]]}}{{#if:{{{joke|}}}|[[Category:Jokes]]}}{{#if:{{{easter_egg|}}}|[[Category:Easter eggs]]}}
+[[Category:Cards]][[Category:{{{set}}}]][[Category:{{{side}}}]][[Category:{{{type}}}]]{{#if:{{{anagram|}}}|[[Category:Anagrams]]}}{{#if:{{{joke|}}}|[[Category:Jokes]]}}{{#if:{{{easter_egg|}}}|[[Category:Easter eggs]]}}{{#if:{{{blanked|}}}|[[Category:Blanked cards]]}}
 </includeonly><noinclude>[[Category:Templates]]</noinclude>

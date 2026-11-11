@@ -5,11 +5,17 @@ One page = one printing. Do '''not''' put empty errata sections on a card that w
 Optional '''card_status''' — a short status label for a printing that needs context outside the standard Decipher / Players Committee bands (for example, a cancelled design's community remaster). The label appears above the card template. Use only a sourced status; omit it for ordinary printings.
 
 
-Optional '''publisher''' — publisher credited by the set article (<code>[[Decipher]]</code>, <code>[[Players Committee]]</code>, or a named person). Inherit from the set infobox. For a cancelled set, use its documented planned publisher; this does not imply that the cards were released. Renders after Set when filled.
+Optional '''set_icon''' — printed expansion symbol. Always shown. Premiere = none (still shown). Pass <code>none</code> or a wikilink/file for the printed icon. Alias '''expansion_icon'''. When omitted, Premiere-family sets (Premiere Limited, Premiere Unlimited, Premiere Two-Player, Premiere Two-Player Introductory Game, Premiere, Japanese Premiere, Japanese Premiere Two-Player, ESB Two-Player) default to <code>none</code>; other sets show an empty cell until filled. Do not mass-restamp 24k articles.
+
+Optional '''also_in''' (alias '''products''') — leftover or extra products that shipped this same version (Enhanced Premiere boosters, First Anthology starters, Reflections I–III bulk). Named editions of the same cardboard stack in the article title instead. Omit when none.
+
+Optional '''publisher''' — publisher credited by the set article (<code>[[Decipher]]</code>, <code>[[Players Committee]]</code>, or a named person). Inherit from the set infobox. For a cancelled set, use its documented planned publisher; this does not imply that the cards were released. Renders after Also in when filled.
 
 Optional '''era''' — championship era hub: <code>[[Decipher era]]</code>, <code>[[Virtual Original]]</code>, <code>[[Virtual Legacy]]</code>, or <code>[[Virtual Modern]]</code>. Renders after Publisher when filled.
 
-'''GEMP ID''' — the id GEMP actually loads, as <code>set_card</code> (for example <code>1220_51</code>, <code>1_19</code>). Bare on the current playable article, <code>o</code> on the first-published face, <code>d</code> only as a middle layer when print, Decipher errata, and PC errata are three distinct texts. Pass '''gemp_id''' or the older '''card_uid''' (alias). Shown in monospace. Dest keys such as <code>pc|vbN|...</code> belong in authoring JSON, not here.
+'''GEMP ID''' — the id GEMP actually loads, as <code>set_card</code> (for example <code>1220_51</code>, <code>1_19</code>). Bare on the current playable article, <code>o</code> on the first-published face, <code>d</code> only as a middle layer when print, Decipher errata, and PC errata are three distinct texts. Pass '''gemp_id''' or the older '''card_uid''' (alias). Optional '''gemp_id2''' — a second GEMP id when this version is a named edition of two constructed sets. Render both as adjacent <code><nowiki><code></nowiki></code> spans, 2PG first ('''gemp_id''') then Unlimited ('''gemp_id2'''). Omit '''gemp_id2''' when empty. Worked: Imperial Barrier white <code>71_249</code> then <code>51_249</code>. Shown in monospace. Dest keys such as <code>pc|vbN|...</code> belong in authoring JSON, not here.
+
+Infobox identity order: Set, Set icon, Also in, Publisher, Era, GEMP ID, then rarity/stats/gameplay Icons.
 
 Optional '''rarity''' and '''uniqueness''' — omit either field when the source does not establish it; no blank row is shown. Read uniqueness from the printed title marker: one bullet is Unique, no marker is Unrestricted, and multiple bullets use the corresponding Limited or Restricted value. For a combo, inspect the marker on both halves. If the title area is cropped or unreadable, omit uniqueness.
 
@@ -69,6 +75,8 @@ Optional '''image3''', '''image4''', '''image5''', '''image6''' — further port
 |subtype=Droid
 |model=Security
 |set=Premiere Limited
+|set_icon=none
+|also_in=
 |rarity=U1
 |rarity_link=Rarity#Uncommon
 |uniqueness=Unrestricted
@@ -149,3 +157,6 @@ Example Objective responsive (preferred): wide = side-by-side, narrow ≤720px =
 Optional creature statistics: <code>ferocity</code> and <code>fangs</code> render their own Info rows when supplied. Use the printed creature statistics rather than recording ferocity as power.
 
 The optional <code>tentacles</code> parameter displays a creature’s printed tentacle count. Like <code>ferocity</code> and <code>fangs</code>, the row is omitted when the parameter is empty.
+
+== Blanked date (Bill, 10 November 2026) ==
+Optional '''blanked''' — the date the Players Committee blanked the card (in effect banned it), with a <code><nowiki><ref></nowiki></code> to the announcement, e.g. <code><nowiki>|blanked=26 April 2011<ref name="...">...</ref></nowiki></code>. It shows a ''Blanked'' row after ''Era'' and adds [[:Category:Blanked cards]]. Blanking is not a new version: the card stays in its set and is legal in period formats before that date. Leave it out on cards that were never blanked (no row is shown).
