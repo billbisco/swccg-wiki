@@ -196,6 +196,12 @@ def nicknames() -> dict[str, dict]:
     return _NICK
 
 
+# Posted names that mean the learned nickname even though a card prints that exact title. A bare "Luke" in a
+# decklist is Luke With Lightsaber, not the Premiere Two-Player exclusive [[Luke]] (Bill dest, 10 Nov 2026,
+# swccg-guild/work#270: the exclusive moved from "Luke (Premiere Two-Player Introductory Game)" to "Luke").
+NICKNAME_BEATS_EXACT = {"luke"}
+
+
 def suggest(posted: str, side: str) -> tuple[str, str]:
     """(status, card) where status is exact | nickname | fuzzy | ? ."""
     name = re.sub(r"\s+", " ", posted).strip(" -*•")
@@ -204,9 +210,11 @@ def suggest(posted: str, side: str) -> tuple[str, str]:
         return ("exact", name) if name in cl.ovs_index().get(base, []) else ("?", "")
     c = canon()
     key = f"{side}|{cl.lookup_key(name).casefold()}"
+    nk = nicknames().get(name.casefold())
+    if name.casefold() in NICKNAME_BEATS_EXACT and nk and "card" in nk:
+        return "nickname", nk["card"]
     if key in c:
         return "exact", sorted(c[key])[0]
-    nk = nicknames().get(name.casefold())
     if nk and "card" in nk:
         return "nickname", nk["card"]
     titles = sorted({t for k, ts in c.items() if k.startswith(side + "|") for t in ts})
