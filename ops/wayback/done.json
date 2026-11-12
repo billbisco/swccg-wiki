@@ -93138,8 +93138,16 @@
   "capture": "https://web.archive.org/web/20261025005827/https://swccg.com/snapshots/pc/2018-worlds-jarad-konsker-map.html?copy=2",
   "last": "2026-11-03T23:22:13Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T06:28:01Z",
+   "bytes": 7120627,
+   "capture_id": "https://web.archive.org/web/20261025005827id_/https://swccg.com/snapshots/pc/2018-worlds-jarad-konsker-map.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a8fed9fd2db8771d6c6e287b946249d0daded10d625cafc26f1ee15c1a321b35"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-jared-napolitano-coruscant-crv.html": {
   "capture": "https://web.archive.org/web/20261021022726/https://swccg.com/snapshots/pc/2018-worlds-jared-napolitano-coruscant-crv.html",
@@ -93190,8 +93198,16 @@
   "capture": "https://web.archive.org/web/20261025005850/https://swccg.com/snapshots/pc/2018-worlds-jeff-scales-wys.html?copy=2",
   "last": "2026-11-03T23:22:40Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T06:27:51Z",
+   "bytes": 7120857,
+   "capture_id": "https://web.archive.org/web/20261025005850id_/https://swccg.com/snapshots/pc/2018-worlds-jeff-scales-wys.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1546b2efaa585a6651f2b8a30b87786498881e5fed495c7d8b60caf684383891"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-jeremy-gardner-sycfa.html": {
   "capture": "https://web.archive.org/web/20261021034414/https://swccg.com/snapshots/pc/2018-worlds-jeremy-gardner-sycfa.html",
@@ -93344,8 +93360,16 @@
   "capture": "https://web.archive.org/web/20261025010045/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html?copy=2",
   "last": "2026-11-03T23:23:03Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T06:27:43Z",
+   "bytes": 7120636,
+   "capture_id": "https://web.archive.org/web/20261025010045id_/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-bhbm.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "09d866821a3702457c5bb613b9cfa1269a5eed18093593afdc4ce1f46fa6f802"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html": {
   "capture": "https://web.archive.org/web/20261027010816/https://swccg.com/snapshots/pc/2018-worlds-mitch-nieland-tigih.html",
@@ -104448,13 +104472,14 @@
   "capture": "https://web.archive.org/web/20261025013412/https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ds-mustafar-crv.html?copy=2",
   "last": "2026-11-03T23:32:55Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-12T05:49:56Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-12T06:27:34Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021045533/https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html",
