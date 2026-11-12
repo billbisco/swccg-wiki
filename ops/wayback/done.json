@@ -92454,8 +92454,16 @@
   "capture": "https://web.archive.org/web/20261025005659/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ls.html?copy=2",
   "last": "2026-11-03T23:21:10Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T06:40:35Z",
+   "bytes": 7120863,
+   "capture_id": "https://web.archive.org/web/20261025005659id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-kelly-ls.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a713516d1c2de30d618ac5d9b6d3baf1a78d19c41526d3c7b8bfa0f33cefba3c"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-marlin-ds.html": {
   "capture": "https://web.archive.org/web/20261027041624/https://swccg.com/snapshots/pc/2017-worlds-day-2-tom-marlin-ds.html",
@@ -92648,8 +92656,16 @@
   "capture": "https://web.archive.org/web/20261025005721/https://swccg.com/snapshots/pc/2017-worlds-day-3-tom-kelly-ls.html?copy=2",
   "last": "2026-11-03T23:21:34Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T06:40:26Z",
+   "bytes": 7120987,
+   "capture_id": "https://web.archive.org/web/20261025005721id_/https://swccg.com/snapshots/pc/2017-worlds-day-3-tom-kelly-ls.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "513143e07969f359419416229401bdf05fc7a7e2c99cbedc0aa7996e97b73c1f"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-egp-kyle-krueger-qmc.html": {
   "capture": "https://web.archive.org/web/20261022010932/https://swccg.com/snapshots/pc/2018-egp-kyle-krueger-qmc.html",
@@ -93003,8 +93019,16 @@
   "capture": "https://web.archive.org/web/20261025005745/https://swccg.com/snapshots/pc/2018-worlds-casper-jorgenson-whap.html?copy=2",
   "last": "2026-11-03T23:21:58Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T06:40:17Z",
+   "bytes": 7120819,
+   "capture_id": "https://web.archive.org/web/20261025005745id_/https://swccg.com/snapshots/pc/2018-worlds-casper-jorgenson-whap.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1a9c48f6016348107a6d46d8afdd7bab002ade328ae31e9f80976089b9550e81"
+  }
  },
  "https://swccg.com/snapshots/pc/2018-worlds-charlie-arlandson-aobs.html": {
   "capture": "https://web.archive.org/web/20261022011721/https://swccg.com/snapshots/pc/2018-worlds-charlie-arlandson-aobs.html",
@@ -103828,13 +103852,14 @@
   "capture": "https://web.archive.org/web/20261025011227/https://swccg.com/snapshots/pc/2022-european-championship-koen-meijssen-ls-zero-hour.html?copy=2",
   "last": "2026-11-03T23:26:56Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-12T06:02:34Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-12T06:40:09Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ds-eops.html": {
   "capture": "https://web.archive.org/web/20261027012322/https://swccg.com/snapshots/pc/2022-european-championship-marc-nickels-ds-eops.html",
@@ -116854,9 +116879,9 @@
   "capture": "https://web.archive.org/web/20261021095553/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html",
   "error": "error:not-found",
   "job_id": "spn2-c75cb39aa2197d0305b04451fbfc887b9f36b024",
-  "last": "2026-11-12T05:49:38Z",
+  "last": "2026-11-12T06:40:01Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025031507/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2",
