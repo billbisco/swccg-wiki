@@ -106443,13 +106443,14 @@
   "capture": "https://web.archive.org/web/20261103234708/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-nick-gorski-ds-rots-dooku.html?copy=2",
   "job_id": "spn2-52a77611be513911b856c4ccdaea54e1f492e45c",
   "last": "2026-11-04T00:04:56Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-12T01:51:09Z",
-   "error": "source HTTP 404"
+   "at": "2026-11-12T02:28:36Z",
+   "error": "source HTTP 404",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-nick-gorski-ls-skywalker-saga-anakin.html": {
   "capture": "https://web.archive.org/web/20261021065826/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-nick-gorski-ls-skywalker-saga-anakin.html",
@@ -108485,8 +108486,16 @@
   "capture": "https://web.archive.org/web/20261025021056/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-bill-kafer-ds-ropsv.html?copy=2",
   "last": "2026-11-03T23:51:31Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T02:29:07Z",
+   "bytes": 7121137,
+   "capture_id": "https://web.archive.org/web/20261025021056id_/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-bill-kafer-ds-ropsv.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5b145753d4f4d798e53720a7c674098ab955ab9ce42369e017d30529cec201c4"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-bill-kafer-ls-no-idea.html": {
   "capture": "https://web.archive.org/web/20261021064713/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-bill-kafer-ls-no-idea.html",
@@ -108582,8 +108591,16 @@
   "capture": "https://web.archive.org/web/20261025021032/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-dan-tartaglione-ds-ropsv.html?copy=2",
   "last": "2026-11-03T23:52:06Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T02:28:53Z",
+   "bytes": 7121016,
+   "capture_id": "https://web.archive.org/web/20261025021032id_/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-dan-tartaglione-ds-ropsv.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "111936604cf6f7bb98d377beb887634f5e9161d8f89c8be02d75a3d336aa61c2"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-yavin-4-regionals-dan-tartaglione-ls-zero-hour.html": {
   "capture": "https://web.archive.org/web/20261021064610/https://swccg.com/snapshots/pc/2022-yavin-4-regionals-dan-tartaglione-ls-zero-hour.html",
@@ -110315,11 +110332,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ls-skywalker-saga-anakin.html": {
-  "capture": "https://web.archive.org/web/20261021080322/https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ls-skywalker-saga-anakin.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T02:08:24Z",
-  "status": "failed",
-  "tries": 6
+  "capture": "https://web.archive.org/web/20261027015716/https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ls-skywalker-saga-anakin.html",
+  "last": "2026-11-12T02:18:01Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-12T02:18:14Z",
+   "bytes": 7123613,
+   "capture_id": "https://web.archive.org/web/20261027015716id_/https://swccg.com/snapshots/pc/2023-bespin-regionals-peter-jacobson-ls-skywalker-saga-anakin.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c9c1d21e8321586b4a27de6a5262d09047cb4299dabce2f52f07eecfd3c26b82"
+  }
  },
  "https://swccg.com/snapshots/pc/2023-bespin-regionals-ryan-ritter-ds-imperial-entanglements.html": {
   "capture": "https://web.archive.org/web/20261021074143/https://swccg.com/snapshots/pc/2023-bespin-regionals-ryan-ritter-ds-imperial-entanglements.html",
