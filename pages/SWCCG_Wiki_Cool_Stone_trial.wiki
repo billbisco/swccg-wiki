@@ -1,0 +1,25 @@
+This is a background-color trial for white-border Unlimited cards. Datacard Grok cannot edit [[MediaWiki:Common.css]] (`protectednamespace-interface`). Paste the block below into that page (or ask an interface admin). Revert by restoring `body` `#f6f6f6` and content/header/sidebar `#fff`.
+
+Search field stays white.
+
+<pre>
+/* Cool Stone trial 2026-11-11 */
+body.mediawiki { background: #e4e8ec !important; }
+#mw-page-base { background: #e4e8ec !important; }
+#p-personal { background: #e4e8ec !important; }
+.vector-menu-tabs li.selected { background: #e4e8ec !important; }
+#mw-panel,
+.vector-legacy-sidebar { background: #e4e8ec !important; }
+#content { background: #e4e8ec; }
+</pre>
+
+Eyeball after the paste (hard-refresh):
+
+* [[Main Page]]
+* [[Beru Lars]] next to [[Beru Lars (Unlimited)]] ([[File:Premiere-U-L-berulars.png]])
+* [[Utinni!]] next to [[Utinni! (Unlimited)]] ([[File:Premiere-U-L-utinnil.png]])
+* [[Darth Vader]] next to [[Darth Vader (Unlimited)]] ([[File:Premiere-U-D-darthvader.png]])
+
+Unlimited faces are 350×490 PNGs, same size as the Limited Decipher GIFs: white rounded printed border, transparent corners. Page color shows through the corners. Until Common.css is updated they sit on article white.
+
+Local click-through (Cool Stone already applied in the file): `file:///C:/Users/gythe/AppData/Local/Temp/pu-recolor/bg-preview/index.html`

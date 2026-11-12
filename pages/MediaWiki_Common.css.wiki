@@ -1,7 +1,8 @@
+/* Cool Stone trial 2026-11-11: chrome #e4e8ec. Prior body #f6f6f6, content/header/sidebar #fff. */
 /* Logo centered over the left sidebar; search in the header to its right. */
 
 body.mediawiki {
-  background: #f6f6f6 !important;
+  background: #e4e8ec !important;
   font-size: 0.92em;
 }
 
@@ -21,7 +22,7 @@ li#footer-poweredbyico,
 
 #mw-page-base {
   height: 72px !important;
-  background: #ffffff !important;
+  background: #e4e8ec !important;
   border-bottom: 1px solid #a7d7f9;
   margin: 0 !important;
   margin-left: 11em !important;
@@ -121,7 +122,7 @@ li#footer-poweredbyico,
   display: none !important;
 }
 #searchButton {
-  background: #f8f9fa !important;
+  background: #d7dce2 !important;
   border: 1px solid #a2a9b1 !important;
   text-indent: 0 !important;
   font-size: 0.75em !important;
@@ -146,7 +147,7 @@ li#footer-poweredbyico,
   right: 10px !important;
   left: auto !important;
   z-index: 80 !important;
-  background: #ffffff !important;
+  background: #e4e8ec !important;
   padding: 2px 6px 2px 10px;
   font-size: 0.85em;
   white-space: nowrap;
@@ -176,13 +177,13 @@ li#footer-poweredbyico,
   height: auto !important;
   margin: 0 1px 0 0 !important;
   padding: 0 !important;
-  background: #f3f3f3 !important;
+  background: #d7dce2 !important;
   background-image: none !important;
   font-size: 0.8em !important;
   line-height: 1.15 !important;
 }
 .vector-menu-tabs li.selected {
-  background: #ffffff !important;
+  background: #e4e8ec !important;
 }
 .vector-menu-tabs li a,
 .vector-menu-tabs li a span {
@@ -198,7 +199,7 @@ li#footer-poweredbyico,
 
 #mw-panel,
 .vector-legacy-sidebar {
-  background: #ffffff !important;
+  background: #e4e8ec !important;
   top: 0 !important;
   width: 11em !important;
   z-index: 12;
@@ -217,7 +218,7 @@ li#footer-poweredbyico,
   margin-top: 0 !important;
   margin-left: 11em !important;
   padding-top: 0.45em;
-  background: #fff;
+  background: #e4e8ec;
   border: 1px solid #a7d7f9;
   border-top: none;
   padding-left: 1em;
@@ -304,7 +305,7 @@ li#footer-poweredbyico,
   padding-top: 0.5em;
   border: 1px dashed #ccc;
   box-sizing: border-box;
-  background: #fafafa;
+  background: transparent;
 }
 .set-tile.set-tile-text .set-name {
   min-height: 3.2em;
@@ -545,6 +546,24 @@ html.card-device-narrow .card-portraits-row.card-portraits-responsive .card-port
   text-align: left;
 }
 
+/* Cool Stone trial: card infobox matches page chrome (Vector wikitable is white). */
+.card-rail .card-infobox,
+table.wikitable.card-infobox,
+table.wikitable.card-infobox > caption,
+table.wikitable.card-infobox > tbody > tr > th,
+table.wikitable.card-infobox > tbody > tr > td {
+  background: #e4e8ec;
+  background-color: #e4e8ec;
+}
+
+/* Cool Stone trial: GEMP ID / Versions <code> chips. Vector code is #f8f9fa white. */
+.mw-body code,
+.mw-parser-output code,
+.card-infobox code {
+  background: #d7dce2;
+  background-color: #d7dce2;
+}
+
 table.card-thumbs {
   width: 100%;
   overflow: visible;
@@ -581,8 +600,9 @@ table.card-thumbs a {
   object-fit: contain;
   pointer-events: none;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
-  background: #111;
-  border: 2px solid #fff;
+  /* Transparent PNG corners (Unlimited) showed #111 as black; match Limited gray pockets. */
+  background: #e4e8ec;
+  border: 2px solid #c5ccd3;
 }
 #swccg-card-zoom.is-on {
   display: block;
@@ -637,4 +657,60 @@ body.page-Jokes .mw-parser-output img.mw-file-element {
   .card-body, .card-hatnote, .card-nav { overflow-wrap: break-word; }
   .card-portrait img { max-width: 100%; height: auto; }
   .expansion-infobox { float: none; max-width: 100%; margin: 0 auto 1em; }
+}
+
+/* Cool Stone follow-up: no white islands on the #e4e8ec page (2026-11-11, swccg-guild/work#272).
+   Palette: page/surfaces #e4e8ec, headers/tabs/chips #d7dce2, borders unchanged, typing fields stay #fff. */
+
+/* 1. All wiki tables (card lists, set infobox, tournament, decklists, Main Page boxes, file history, Special:Version) */
+.mw-body table.wikitable,
+.mw-body table.wikitable > * > tr > td {
+  background-color: #e4e8ec;
+}
+.mw-body table.wikitable > * > tr > th,
+.mw-body table.wikitable:not(.card-infobox) > caption {
+  background-color: #d7dce2;
+}
+
+/* 2. Contents box, category bar, file-page jump bar */
+.mw-body .toc,
+.mw-body #toc,
+#catlinks .catlinks,
+.catlinks,
+#filetoc {
+  background-color: #e4e8ec;
+}
+
+/* 3. Picture frames and galleries */
+.mw-body figure[typeof~="mw:File/Thumb"],
+.mw-body figure[typeof~="mw:File/Frame"],
+.mw-body figure[typeof~="mw:File/Thumb"] > figcaption,
+.mw-body figure[typeof~="mw:File/Frame"] > figcaption,
+.mw-body .thumbinner,
+.mw-body li.gallerybox div.thumb {
+  background-color: #e4e8ec;
+}
+
+/* 4. Code blocks (template docs, examples) match the code chips */
+.mw-body pre {
+  background-color: #d7dce2;
+}
+
+/* 5. History and diff screens */
+.mw-body td.diff-context {
+  background-color: #d7dce2;
+}
+#pagehistory li.selected,
+.mw-contributions-list li.selected {
+  background-color: #d7dce2;
+}
+
+/* 6. Special-page panels (search tabs, Recent changes filter area, file list rows) */
+.mw-body .mw-search-profile-tabs,
+.mw-body .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined,
+.mw-body .mw-rcfilters-container .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+.mw-body .mw-changeslist-legend,
+.mw-body .TablePager td,
+.mw-body .mw-datatable td {
+  background-color: #e4e8ec;
 }
