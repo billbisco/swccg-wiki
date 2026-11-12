@@ -93887,8 +93887,16 @@
   "capture": "https://web.archive.org/web/20261025011027/https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ds-map.html?copy=2",
   "last": "2026-11-03T23:25:43Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T05:50:05Z",
+   "bytes": 7121520,
+   "capture_id": "https://web.archive.org/web/20261025011027id_/https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ds-map.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "52416b36395807fbed12adc6abfe95bc516995dfaee2cfa53f31cf01b92cad7e"
+  }
  },
  "https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ls-trm.html": {
   "capture": "https://web.archive.org/web/20261021035219/https://swccg.com/snapshots/pc/2019-worlds-day-2-bryan-mischke-ls-trm.html",
@@ -104387,10 +104395,10 @@
   "status": "ok",
   "tries": 2,
   "verify": {
-   "at": "2026-11-12T05:12:07Z",
+   "at": "2026-11-12T05:49:56Z",
    "error": "source HTTP 404"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html": {
   "capture": "https://web.archive.org/web/20261021045533/https://swccg.com/snapshots/pc/2022-european-championship-tom-damen-ls-hitco.html",
@@ -116763,10 +116771,11 @@
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html": {
   "capture": "https://web.archive.org/web/20261021095553/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T05:26:45Z",
-  "status": "failed",
-  "tries": 6
+  "error": "error:not-found",
+  "job_id": "spn2-c75cb39aa2197d0305b04451fbfc887b9f36b024",
+  "last": "2026-11-12T05:49:38Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2": {
   "capture": "https://web.archive.org/web/20261025031507/https://swccg.com/snapshots/pc/2023-ryloth-regionals-koen-meijssen-ds-bhbm.html?copy=2",
@@ -181575,11 +181584,19 @@
   }
  },
  "https://www.youtube.com/watch?v=7xLGIcvYKFM": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-05T05:27:05Z",
-  "status": "failed",
-  "tries": 6
+  "capture": "https://web.archive.org/web/20261112053921/https://www.youtube.com/watch?v=7xLGIcvYKFM",
+  "job_id": "spn2-3015df8a3ae3a8831bd528afcd94921d418731fd",
+  "last": "2026-11-12T05:49:51Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-12T05:49:51Z",
+   "capture_id": "https://web.archive.org/web/20261112053921id_/https://www.youtube.com/watch?v=7xLGIcvYKFM",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 14% (< 85%)",
+   "text_match": 0.139
+  }
  },
  "https://www.youtube.com/watch?v=85UThR7drRI": {
   "capture": "https://web.archive.org/web/20261021155920/https://www.youtube.com/watch?v=85UThR7drRI",
