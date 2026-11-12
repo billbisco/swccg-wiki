@@ -90874,8 +90874,16 @@
   "capture": "https://web.archive.org/web/20261025012902/https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ds.html?copy=2",
   "last": "2026-11-04T00:13:57Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 5
+  "status": "verified",
+  "tries": 5,
+  "verify": {
+   "at": "2026-11-12T01:13:57Z",
+   "bytes": 7120834,
+   "capture_id": "https://web.archive.org/web/20261025012902id_/https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ds.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "b83427dc7da688c2ca45843c4cd6c8829c315b228faf963f1f9bf908f9438fc1"
+  }
  },
  "https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ls.html": {
   "capture": "https://web.archive.org/web/20261027035529/https://swccg.com/snapshots/pc/2017-worlds-day-2-cory-lauer-ls.html",
@@ -103764,8 +103772,16 @@
   "capture": "https://web.archive.org/web/20261026194354/https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ds-map.html?copy=2",
   "last": "2026-11-03T23:58:18Z",
   "note": "already archived within 30d",
-  "status": "ok",
-  "tries": 3
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-12T01:14:26Z",
+   "bytes": 7121049,
+   "capture_id": "https://web.archive.org/web/20261026194354id_/https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ds-map.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "22a779027db1511d0e1c9d716723b4c0d342148ca96768ab191f2f6db558e00f"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ls-qmc.html": {
   "capture": "https://web.archive.org/web/20261021050726/https://swccg.com/snapshots/pc/2022-european-championship-mike-klarenbeek-ls-qmc.html",
@@ -106086,8 +106102,16 @@
   "capture": "https://web.archive.org/web/20261103234600/https://swccg.com/snapshots/pc/2022-naboo-regionals-tom-damen-ls-hitco.html?copy=2",
   "job_id": "spn2-f2de1a3032110ca22b218bab72711c5032b7d2fd",
   "last": "2026-11-04T00:07:23Z",
-  "status": "ok",
-  "tries": 2
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T01:14:08Z",
+   "bytes": 7121610,
+   "capture_id": "https://web.archive.org/web/20261103234600id_/https://swccg.com/snapshots/pc/2022-naboo-regionals-tom-damen-ls-hitco.html?copy=2",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d1d96f36878de517657c39d94798c0444a44c472cd1804f4adad28ae574c903f"
+  }
  },
  "https://swccg.com/snapshots/pc/2022-naboo-regionals-wayne-poppleton-ds-asm.html": {
   "capture": "https://web.archive.org/web/20261027012631/https://swccg.com/snapshots/pc/2022-naboo-regionals-wayne-poppleton-ds-asm.html",
@@ -106303,7 +106327,12 @@
   "job_id": "spn2-52a77611be513911b856c4ccdaea54e1f492e45c",
   "last": "2026-11-04T00:04:56Z",
   "status": "ok",
-  "tries": 2
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-12T01:14:17Z",
+   "error": "source HTTP 404"
+  },
+  "verify_tries": 1
  },
  "https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-nick-gorski-ls-skywalker-saga-anakin.html": {
   "capture": "https://web.archive.org/web/20261021065826/https://swccg.com/snapshots/pc/2022-nal-hutta-regionals-nick-gorski-ls-skywalker-saga-anakin.html",
