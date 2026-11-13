@@ -1,0 +1,148 @@
+# Remaining evidence limits
+#361 audits field coverage and repairs verified omissions; it does not certify a new full linguistic proofreading of all 324 existing transcriptions.
+
+135 current images have video-derived filenames. This is a candidate list, not a count of proven incomplete faces. Original crops remain preserved when a better photo replaces them.
+
+## Exact field gaps
+[]
+
+## Specifically unresolved edge
+- [Chief Bast](https://wiki.swccg.com/wiki/Chief_Bast_(Japanese)): Imperial and Pilot are visible; the lower edge is cropped. No absent additional symbol is inferred.
+
+## Video-image candidates for full-face inspection or replacement
+
+- [Biggs Darklighter (Japanese)](https://wiki.swccg.com/wiki/Biggs_Darklighter_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [General Dodonna (Japanese)](https://wiki.swccg.com/wiki/General_Dodonna_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Jawa (Light) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Jawa_(Light)_(Premiere)_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [R2-X2 (Artoo-Extoo) (Japanese)](https://wiki.swccg.com/wiki/R2-X2_(Artoo-Extoo)_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Rebel Guard (Japanese)](https://wiki.swccg.com/wiki/Rebel_Guard_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Rebel Pilot (Japanese)](https://wiki.swccg.com/wiki/Rebel_Pilot_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Red Leader (Japanese)](https://wiki.swccg.com/wiki/Red_Leader_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Shistavanen Wolfman (Japanese)](https://wiki.swccg.com/wiki/Shistavanen_Wolfman_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Talz (Japanese)](https://wiki.swccg.com/wiki/Talz_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Targeting Computer (Japanese)](https://wiki.swccg.com/wiki/Targeting_Computer_(Japanese)) — not independently assessed across the entire face
+- [Lightsaber Proficiency (Japanese)](https://wiki.swccg.com/wiki/Lightsaber_Proficiency_(Japanese)) — not independently assessed across the entire face
+- [A Few Maneuvers (Japanese)](https://wiki.swccg.com/wiki/A_Few_Maneuvers_(Japanese)) — not independently assessed across the entire face
+- [Alter (Light) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Alter_(Light)_(Premiere)_(Japanese)) — not independently assessed across the entire face
+- [Beru Stew (Japanese)](https://wiki.swccg.com/wiki/Beru_Stew_(Japanese)) — not independently assessed across the entire face
+- [Cantina Brawl (Japanese)](https://wiki.swccg.com/wiki/Cantina_Brawl_(Japanese)) — not independently assessed across the entire face
+- [Collision! (Japanese)](https://wiki.swccg.com/wiki/Collision%21_(Japanese)) — not independently assessed across the entire face
+- [Combined Attack (Japanese)](https://wiki.swccg.com/wiki/Combined_Attack_(Japanese)) — not independently assessed across the entire face
+- [Don't Get Cocky (Japanese)](https://wiki.swccg.com/wiki/Don't_Get_Cocky_(Japanese)) — not independently assessed across the entire face
+- [Don't Underestimate Our Chances (Japanese)](https://wiki.swccg.com/wiki/Don't_Underestimate_Our_Chances_(Japanese)) — not independently assessed across the entire face
+- [Droid Shutdown (Japanese)](https://wiki.swccg.com/wiki/Droid_Shutdown_(Japanese)) — not independently assessed across the entire face
+- [Escape Pod (Japanese)](https://wiki.swccg.com/wiki/Escape_Pod_(Japanese)) — not independently assessed across the entire face
+- [Friendly Fire (Japanese)](https://wiki.swccg.com/wiki/Friendly_Fire_(Japanese)) — not independently assessed across the entire face
+- [Full Throttle (Japanese)](https://wiki.swccg.com/wiki/Full_Throttle_(Japanese)) — not independently assessed across the entire face
+- [Gift Of The Mentor (Japanese)](https://wiki.swccg.com/wiki/Gift_Of_The_Mentor_(Japanese)) — not independently assessed across the entire face
+- [Han's Back (Japanese)](https://wiki.swccg.com/wiki/Han's_Back_(Japanese)) — not independently assessed across the entire face
+- [Hyper Escape (Japanese)](https://wiki.swccg.com/wiki/Hyper_Escape_(Japanese)) — not independently assessed across the entire face
+- [Into The Garbage Chute, Flyboy (Japanese)](https://wiki.swccg.com/wiki/Into_The_Garbage_Chute,_Flyboy_(Japanese)) — not independently assessed across the entire face
+- [It Could Be Worse (Japanese)](https://wiki.swccg.com/wiki/It_Could_Be_Worse_(Japanese)) — not independently assessed across the entire face
+- [I've Got A Bad Feeling About This (Japanese)](https://wiki.swccg.com/wiki/I've_Got_A_Bad_Feeling_About_This_(Japanese)) — not independently assessed across the entire face
+- [Jedi Presence (Japanese)](https://wiki.swccg.com/wiki/Jedi_Presence_(Japanese)) — not independently assessed across the entire face
+- [Krayt Dragon Howl (Japanese)](https://wiki.swccg.com/wiki/Krayt_Dragon_Howl_(Japanese)) — not independently assessed across the entire face
+- [Leia's Back (Japanese)](https://wiki.swccg.com/wiki/Leia's_Back_(Japanese)) — not independently assessed across the entire face
+- [Luke's Back (Japanese)](https://wiki.swccg.com/wiki/Luke's_Back_(Japanese)) — not independently assessed across the entire face
+- [Move Along... (Japanese)](https://wiki.swccg.com/wiki/Move_Along..._(Japanese)) — not independently assessed across the entire face
+- [Nabrun Leids (Japanese)](https://wiki.swccg.com/wiki/Nabrun_Leids_(Japanese)) — not independently assessed across the entire face
+- [Narrow Escape (Japanese)](https://wiki.swccg.com/wiki/Narrow_Escape_(Japanese)) — not independently assessed across the entire face
+- [Noble Sacrifice (Japanese)](https://wiki.swccg.com/wiki/Noble_Sacrifice_(Japanese)) — not independently assessed across the entire face
+- [Old Ben (Japanese)](https://wiki.swccg.com/wiki/Old_Ben_(Japanese)) — not independently assessed across the entire face
+- [On The Edge (Japanese)](https://wiki.swccg.com/wiki/On_The_Edge_(Japanese)) — not independently assessed across the entire face
+- [Out Of Nowhere (Japanese)](https://wiki.swccg.com/wiki/Out_Of_Nowhere_(Japanese)) — not independently assessed across the entire face
+- [Panic (Japanese)](https://wiki.swccg.com/wiki/Panic_(Japanese)) — not independently assessed across the entire face
+- [Radar Scanner (Japanese)](https://wiki.swccg.com/wiki/Radar_Scanner_(Japanese)) — not independently assessed across the entire face
+- [Rebel Barrier (Japanese)](https://wiki.swccg.com/wiki/Rebel_Barrier_(Japanese)) — not independently assessed across the entire face
+- [Rebel Reinforcements (Japanese)](https://wiki.swccg.com/wiki/Rebel_Reinforcements_(Japanese)) — not independently assessed across the entire face
+- [Return Of A Jedi (Japanese)](https://wiki.swccg.com/wiki/Return_Of_A_Jedi_(Japanese)) — not independently assessed across the entire face
+- [Scomp Link Access (Japanese)](https://wiki.swccg.com/wiki/Scomp_Link_Access_(Japanese)) — not independently assessed across the entire face
+- [Skywalkers (Japanese)](https://wiki.swccg.com/wiki/Skywalkers_(Japanese)) — not independently assessed across the entire face
+- [Solo Han (Japanese)](https://wiki.swccg.com/wiki/Solo_Han_(Japanese)) — not independently assessed across the entire face
+- [Surprise Assault (Japanese)](https://wiki.swccg.com/wiki/Surprise_Assault_(Japanese)) — not independently assessed across the entire face
+- [The Bith Shuffle (Japanese)](https://wiki.swccg.com/wiki/The_Bith_Shuffle_(Japanese)) — not independently assessed across the entire face
+- [The Force Is Strong With This One (Japanese)](https://wiki.swccg.com/wiki/The_Force_Is_Strong_With_This_One_(Japanese)) — not independently assessed across the entire face
+- [This Is All Your Fault (Japanese)](https://wiki.swccg.com/wiki/This_Is_All_Your_Fault_(Japanese)) — not independently assessed across the entire face
+- [Utinni! (Japanese)](https://wiki.swccg.com/wiki/Utinni%21_(Japanese)) — not independently assessed across the entire face
+- [Dantooine (Japanese)](https://wiki.swccg.com/wiki/Dantooine_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Tatooine (Light) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Tatooine_(Light)_(Premiere)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Tatooine: Jawa Camp (Japanese)](https://wiki.swccg.com/wiki/Tatooine:_Jawa_Camp_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Tatooine: Mos Eisley (Japanese)](https://wiki.swccg.com/wiki/Tatooine:_Mos_Eisley_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Yavin 4: Jungle (Japanese)](https://wiki.swccg.com/wiki/Yavin_4:_Jungle_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Red 1 (Japanese)](https://wiki.swccg.com/wiki/Red_1_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Red 3 (Japanese)](https://wiki.swccg.com/wiki/Red_3_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Lift Tube (Japanese)](https://wiki.swccg.com/wiki/Lift_Tube_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Luke's X-34 Landspeeder (Japanese)](https://wiki.swccg.com/wiki/Luke's_X-34_Landspeeder_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [SoroSuub V-35 Landspeeder (Japanese)](https://wiki.swccg.com/wiki/SoroSuub_V-35_Landspeeder_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Blaster (Japanese)](https://wiki.swccg.com/wiki/Blaster_(Japanese)) — not independently assessed across the entire face
+- [Blaster Rifle (Japanese)](https://wiki.swccg.com/wiki/Blaster_Rifle_(Japanese)) — not independently assessed across the entire face
+- [5D6-RA-7 (Fivedesix) (Japanese)](https://wiki.swccg.com/wiki/5D6-RA-7_(Fivedesix)_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Chief Bast (Japanese)](https://wiki.swccg.com/wiki/Chief_Bast_(Japanese)) — lower edge cropped; Imperial/Pilot visible; any additional lower symbol remains unresolved
+- [Colonel Wullf Yularen (Japanese)](https://wiki.swccg.com/wiki/Colonel_Wullf_Yularen_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Commander Praji (Japanese)](https://wiki.swccg.com/wiki/Commander_Praji_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Dathcha (Japanese)](https://wiki.swccg.com/wiki/Dathcha_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Death Star Trooper (Japanese)](https://wiki.swccg.com/wiki/Death_Star_Trooper_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Djas Puhr (Japanese)](https://wiki.swccg.com/wiki/Djas_Puhr_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Dr. Evazan (Japanese)](https://wiki.swccg.com/wiki/Dr._Evazan_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [DS-61-2 (Japanese)](https://wiki.swccg.com/wiki/DS-61-2_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [DS-61-3 (Japanese)](https://wiki.swccg.com/wiki/DS-61-3_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [EG-6 (Eegee-Six) (Japanese)](https://wiki.swccg.com/wiki/EG-6_(Eegee-Six)_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Feltipern Trevagg (Japanese)](https://wiki.swccg.com/wiki/Feltipern_Trevagg_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Garindan (Japanese)](https://wiki.swccg.com/wiki/Garindan_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Imperial Pilot (Japanese)](https://wiki.swccg.com/wiki/Imperial_Pilot_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Jawa (Dark) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Jawa_(Dark)_(Premiere)_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Kitik Keed'kak (Japanese)](https://wiki.swccg.com/wiki/Kitik_Keed'kak_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Labria (Japanese)](https://wiki.swccg.com/wiki/Labria_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [LIN-V8M (Elleyein-Veeateemm) (Japanese)](https://wiki.swccg.com/wiki/LIN-V8M_(Elleyein-Veeateemm)_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [M'iiyoom Onith (Japanese)](https://wiki.swccg.com/wiki/M'iiyoom_Onith_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Myo (Japanese)](https://wiki.swccg.com/wiki/Myo_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Tonnika Sisters (Japanese)](https://wiki.swccg.com/wiki/Tonnika_Sisters_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Blaster Scope (Japanese)](https://wiki.swccg.com/wiki/Blaster_Scope_(Japanese)) — not independently assessed across the entire face
+- [Caller (Dark) (Japanese)](https://wiki.swccg.com/wiki/Caller_(Dark)_(Japanese)) — not independently assessed across the entire face
+- [Comlink (Japanese)](https://wiki.swccg.com/wiki/Comlink_(Japanese)) — not independently assessed across the entire face
+- [Restraining Bolt (Dark) (Japanese)](https://wiki.swccg.com/wiki/Restraining_Bolt_(Dark)_(Japanese)) — not independently assessed across the entire face
+- [A Disturbance In The Force (Japanese)](https://wiki.swccg.com/wiki/A_Disturbance_In_The_Force_(Japanese)) — not independently assessed across the entire face
+- [Blast Door Controls (Japanese)](https://wiki.swccg.com/wiki/Blast_Door_Controls_(Japanese)) — not independently assessed across the entire face
+- [Blaster Rack (Japanese)](https://wiki.swccg.com/wiki/Blaster_Rack_(Japanese)) — not independently assessed across the entire face
+- [Dark Hours (Japanese)](https://wiki.swccg.com/wiki/Dark_Hours_(Japanese)) — not independently assessed across the entire face
+- [Death Star Sentry (Japanese)](https://wiki.swccg.com/wiki/Death_Star_Sentry_(Japanese)) — not independently assessed across the entire face
+- [Fear Will Keep Them In Line (Japanese)](https://wiki.swccg.com/wiki/Fear_Will_Keep_Them_In_Line_(Japanese)) — not independently assessed across the entire face
+- [Jawa Pack (Japanese)](https://wiki.swccg.com/wiki/Jawa_Pack_(Japanese)) — not independently assessed across the entire face
+- [Juri Juice (Japanese)](https://wiki.swccg.com/wiki/Juri_Juice_(Japanese)) — not independently assessed across the entire face
+- [Luke? Luuuuke! (Japanese)](https://wiki.swccg.com/wiki/Luke%3F_Luuuuke%21_(Japanese)) — not independently assessed across the entire face
+- [Alter (Dark) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Alter_(Dark)_(Premiere)_(Japanese)) — not independently assessed across the entire face
+- [Boring Conversation Anyway (Japanese)](https://wiki.swccg.com/wiki/Boring_Conversation_Anyway_(Japanese)) — not independently assessed across the entire face
+- [Collateral Damage (Japanese)](https://wiki.swccg.com/wiki/Collateral_Damage_(Japanese)) — not independently assessed across the entire face
+- [Dark Jedi Presence (Japanese)](https://wiki.swccg.com/wiki/Dark_Jedi_Presence_(Japanese)) — not independently assessed across the entire face
+- [Dead Jawa (Japanese)](https://wiki.swccg.com/wiki/Dead_Jawa_(Japanese)) — not independently assessed across the entire face
+- [Elis Helrot (Japanese)](https://wiki.swccg.com/wiki/Elis_Helrot_(Japanese)) — not independently assessed across the entire face
+- [Evacuate? (Japanese)](https://wiki.swccg.com/wiki/Evacuate%3F_(Japanese)) — not independently assessed across the entire face
+- [Gravel Storm (Japanese)](https://wiki.swccg.com/wiki/Gravel_Storm_(Japanese)) — not independently assessed across the entire face
+- [Imperial Barrier (Japanese)](https://wiki.swccg.com/wiki/Imperial_Barrier_(Japanese)) — not independently assessed across the entire face
+- [Imperial Code Cylinder (Japanese)](https://wiki.swccg.com/wiki/Imperial_Code_Cylinder_(Japanese)) — not independently assessed across the entire face
+- [Imperial Reinforcements (Japanese)](https://wiki.swccg.com/wiki/Imperial_Reinforcements_(Japanese)) — not independently assessed across the entire face
+- [It's Worse (Japanese)](https://wiki.swccg.com/wiki/It's_Worse_(Japanese)) — not independently assessed across the entire face
+- [I've Got A Problem Here (Japanese)](https://wiki.swccg.com/wiki/I've_Got_A_Problem_Here_(Japanese)) — not independently assessed across the entire face
+- [Limited Resources (Japanese)](https://wiki.swccg.com/wiki/Limited_Resources_(Japanese)) — not independently assessed across the entire face
+- [Lone Warrior (Japanese)](https://wiki.swccg.com/wiki/Lone_Warrior_(Japanese)) — not independently assessed across the entire face
+- [Look Sir, Droids (Japanese)](https://wiki.swccg.com/wiki/Look_Sir,_Droids_(Japanese)) — not independently assessed across the entire face
+- [Dantooine (Dark) (Japanese)](https://wiki.swccg.com/wiki/Dantooine_(Dark)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Death Star: Central Core (Japanese)](https://wiki.swccg.com/wiki/Death_Star:_Central_Core_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Death Star: Docking Bay 327 (Dark) (Japanese)](https://wiki.swccg.com/wiki/Death_Star:_Docking_Bay_327_(Dark)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Death Star: War Room (Japanese)](https://wiki.swccg.com/wiki/Death_Star:_War_Room_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Kessel (Dark) (Japanese)](https://wiki.swccg.com/wiki/Kessel_(Dark)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Tatooine: Docking Bay 94 (Dark) (Japanese)](https://wiki.swccg.com/wiki/Tatooine:_Docking_Bay_94_(Dark)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Tatooine: Jawa Camp (Dark) (Japanese)](https://wiki.swccg.com/wiki/Tatooine:_Jawa_Camp_(Dark)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Tatooine: Jundland Wastes (Japanese)](https://wiki.swccg.com/wiki/Tatooine:_Jundland_Wastes_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Tatooine: Mos Eisley (Dark) (Japanese)](https://wiki.swccg.com/wiki/Tatooine:_Mos_Eisley_(Dark)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Yavin 4: Docking Bay (Dark) (Japanese)](https://wiki.swccg.com/wiki/Yavin_4:_Docking_Bay_(Dark)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Yavin 4: Jungle (Dark) (Japanese)](https://wiki.swccg.com/wiki/Yavin_4:_Jungle_(Dark)_(Japanese)) — both side bars and symbols visually inspected in #361
+- [Black 2 (Japanese)](https://wiki.swccg.com/wiki/Black_2_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Black 3 (Japanese)](https://wiki.swccg.com/wiki/Black_3_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Bantha (Japanese)](https://wiki.swccg.com/wiki/Bantha_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Lift Tube (Dark) (Japanese)](https://wiki.swccg.com/wiki/Lift_Tube_(Dark)_(Japanese)) — visible printed symbols inspected; full edge completeness not certified
+- [Assault Rifle (Japanese)](https://wiki.swccg.com/wiki/Assault_Rifle_(Japanese)) — not independently assessed across the entire face
+- [Blaster Rifle (Dark) (Japanese)](https://wiki.swccg.com/wiki/Blaster_Rifle_(Dark)_(Japanese)) — not independently assessed across the entire face
+- [Boosted TIE Cannon (Japanese)](https://wiki.swccg.com/wiki/Boosted_TIE_Cannon_(Japanese)) — not independently assessed across the entire face
+- [Dark Jedi Lightsaber (Japanese)](https://wiki.swccg.com/wiki/Dark_Jedi_Lightsaber_(Japanese)) — not independently assessed across the entire face
+- [Han Seeker (Japanese)](https://wiki.swccg.com/wiki/Han_Seeker_(Japanese)) — not independently assessed across the entire face
