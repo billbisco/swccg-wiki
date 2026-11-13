@@ -714,3 +714,333 @@ body.page-Jokes .mw-parser-output img.mw-file-element {
 .mw-body .mw-datatable td {
   background-color: #e4e8ec;
 }
+/* Search: Go button fills the field's right end (no white strip under it) */
+#searchInput {
+  display: block !important;
+}
+#simpleSearch {
+  height: auto !important;
+}
+#searchButton {
+  top: 1px !important;
+  bottom: 1px !important;
+  right: 1px !important;
+  height: auto !important;
+  border: 0 !important;
+  border-left: 1px solid #a2a9b1 !important;
+  line-height: 1 !important;
+  font-size: 0.8em !important;
+  padding: 0 0.7em !important;
+}
+#searchButton:hover {
+  background: #c8ced6 !important;
+}
+/* Search field: soft gray-white to sit on the #e4e8ec header; white while typing */
+#searchInput {
+  background: #f4f6f8 !important;
+  color: #202122 !important;
+}
+#searchInput:focus {
+  background: #fff !important;
+  border-color: #36c !important;
+}
+
+/* FlaggedRevs review box ("Review this revision" / "Re-review this revision"): no white card on the gray page */
+#mw-fr-reviewform .flaggedrevs_reviewform,
+.flaggedrevs_reviewform.cdx-card {
+  background-color: #d7dce2 !important;
+  border-color: #a2a9b1 !important;
+}
+/* ===== 2026-11-12 site-wide polish (Bill): header, narrow windows, special pages, article layout ===== */
+/* Header (all pages, >720px): search field's left edge lines up with the first tab and the content box edge (was 8px right of them) */
+@media (min-width: 721px) {
+  #p-search {
+    left: 0 !important;
+  }
+  /* Header (all pages, >720px): #p-search/#searchform boxes were 24em (353px) wide, 59px past the visible field+Go, overlapping Log in at 768px */
+  #p-search,
+  #searchform {
+    width: calc(20 * 0.92rem) !important;
+  }
+  /* Header (all pages, >720px): personal links (Create account / Log in) vertically centred on the 29px search field instead of riding its top edge */
+  #p-personal {
+    top: 14px !important;
+  }
+}
+
+/* Tabs: desktop/tablet only (>720px); the phone layout stacks tabs and is left as is */
+@media (min-width: 721px) {
+  /* Tabs (all pages): label text sat at the top of a 29px tab with ~15px of empty tab below it, and the inner span repeated the link padding; centre the label, make it readable (was 9.6px) */
+  .vector-menu-tabs li a {
+    height: 30px !important;
+    box-sizing: border-box !important;
+    padding: 0 0.75em !important;
+    line-height: 30px !important;
+    font-size: 0.85em !important;
+  }
+  .vector-menu-tabs li a span {
+    padding: 0 !important;
+    line-height: inherit !important;
+  }
+  /* Tabs (all pages): the selected tab was the same #e4e8ec as the header with no edge, so "Page"/"Read" floated as loose text; give it the content box's border so it reads as the tab joined to the page */
+  .vector-menu-tabs li.selected {
+    box-shadow: inset 1px 0 0 #a7d7f9, inset -1px 0 0 #a7d7f9, inset 0 1px 0 #a7d7f9 !important;
+  }
+}
+
+/* Search suggestions dropdown (all pages): pure-white list and dark-blue #2a4b8d highlight clashed with the gray header; use the search field's #f4f6f8 and the #d7dce2 tab gray for the highlighted row */
+.suggestions-results,
+.suggestions-special {
+  background: #f4f6f8 !important;
+  border-color: #a2a9b1 !important;
+  color: #202122;
+}
+.suggestions-result,
+.suggestions-special .special-query {
+  color: #202122;
+}
+.suggestions-result-current,
+.suggestions-special.suggestions-result-current {
+  background: #d7dce2 !important;
+  color: #202122 !important;
+}
+.suggestions-special .special-label {
+  color: #54595d;
+}
+
+/* Narrow windows (<=720px), all pages: put the Views tabs and the "More" dropdown together on the second tab row.
+   Before: #right-navigation sat at top:-37px, so "More" was off-screen and its menu (Read / View source /
+   View history) dropped down over the left end of the search field; Vector's collapsibleTabs had folded every
+   Views tab into it because #left-navigation spanned the full width (tab distance < 0). */
+@media (max-width: 720px) {
+  /* Zero-width, far-left #left-navigation: collapsibleTabs measures a large gap and keeps (or restores) the tabs
+     instead of folding them into "More". Its tabs (#p-namespaces) are absolutely placed, so they don't move. */
+  #left-navigation {
+    width: 0;
+    margin-left: -2000px !important;
+  }
+  #right-navigation {
+    position: absolute;
+    top: 124px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 !important;
+    float: none;
+  }
+  #right-navigation #p-views {
+    position: static;
+  }
+  #right-navigation #p-cactions {
+    position: relative;
+  }
+}
+/* Narrow windows (<=720px): "More" label sat ~16px lower than the Read / View source / View history tabs beside it */
+@media (max-width: 720px) {
+  #right-navigation #p-cactions .vector-menu-heading {
+    box-sizing: border-box;
+    height: 29px;
+    margin-top: 0;
+    padding: 0.18em 0.55em 0;
+    line-height: 1.15;
+    align-items: flex-start;
+  }
+  #right-navigation #p-cactions .vector-menu-content {
+    top: 29px;
+  }
+}
+
+/* Cool Stone: special and system pages (agent "special", 2026-11-12). Typing fields and checkboxes stay white. */
+
+/* S1. Plain (non-blue) buttons were #f8f9fa: Codex buttons (history "Compare selected revisions", login "Join SWCCG Wiki") */
+.mw-body .cdx-button:not(.cdx-button--weight-primary):not(.cdx-button--weight-quiet):enabled,
+.mw-body a.cdx-button--fake-button:not(.cdx-button--weight-primary):not(.cdx-button--weight-quiet) {
+  background-color: #d7dce2;
+  border-color: #a2a9b1;
+}
+.mw-body .cdx-button:not(.cdx-button--weight-primary):not(.cdx-button--weight-quiet):enabled:hover,
+.mw-body a.cdx-button--fake-button:not(.cdx-button--weight-primary):not(.cdx-button--weight-quiet):hover {
+  background-color: #c8ced6;
+}
+
+/* S2. Plain OOUI framed buttons were #f8f9fa: RC "Live updates" / "50 changes, 7 days", history tag-filter arrow, popup number buttons */
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active):not(.oo-ui-toggleWidget-on) > .oo-ui-buttonElement-button {
+  background-color: #d7dce2;
+  border-color: #a2a9b1;
+}
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active):not(.oo-ui-toggleWidget-on) > .oo-ui-buttonElement-button:hover {
+  background-color: #c8ced6;
+}
+
+/* S3. RC active-filter chips ("Human (not bot)") were white */
+.mw-body .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+.mw-body .oo-ui-tagItemWidget.oo-ui-widget-enabled {
+  background-color: #d7dce2;
+  border-color: #a2a9b1;
+}
+
+/* S4. Dropdown pickers (AllPages / Contributions "Namespace") were #f8f9fa, white when open */
+.mw-body .oo-ui-dropdownInputWidget.oo-ui-widget-enabled,
+.mw-body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+.mw-body .oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle {
+  background-color: #d7dce2;
+  border-color: #a2a9b1;
+}
+.mw-body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover {
+  background-color: #c8ced6;
+}
+
+/* S5. Pop-up panels and drop-down lists were white: RC filter menu, RC "50 changes" popup, namespace list, date picker */
+.oo-ui-popupWidget-popup,
+.oo-ui-menuSelectWidget,
+.mw-rcfilters-ui-filterMenuHeaderWidget-header,
+.mw-rcfilters-ui-menuSelectWidget-footer,
+.mw-widget-calendarWidget {
+  background-color: #e4e8ec;
+}
+.oo-ui-popupWidget-anchored-top .oo-ui-popupWidget-anchor::after {
+  border-bottom-color: #e4e8ec;
+}
+.oo-ui-popupWidget-anchored-bottom .oo-ui-popupWidget-anchor::after {
+  border-top-color: #e4e8ec;
+}
+/* group headings in the RC filter menu were #eaecf0 */
+.oo-ui-menuSectionOptionWidget.mw-rcfilters-ui-filterMenuSectionOptionWidget {
+  background-color: #d7dce2;
+}
+/* hovered / keyboard-highlighted rows were pale blue #eaf3ff */
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+.mw-rcfilters-ui-itemMenuOptionWidget:hover {
+  background-color: #d7dce2;
+}
+/* selected rows (namespace list choice, ticked RC filters) were #eaf3ff: stone-blue so they stay distinct */
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected,
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+.mw-rcfilters-ui-itemMenuOptionWidget.oo-ui-optionWidget-selected {
+  background-color: #d5deea;
+}
+/* muted (filter-has-no-effect) rows in the RC filter menu were #f8f9fa */
+.mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted:not(.oo-ui-optionWidget-selected) {
+  background-color: #dbe0e5;
+}
+
+/* S6. Special:Search "Advanced" namespace panel was #f8f9fa */
+.mw-body #mw-searchoptions {
+  background-color: #e4e8ec;
+}
+.mw-body #mw-searchoptions input[type="button"] {
+  background-color: #d7dce2;
+  border: 1px solid #a2a9b1;
+}
+
+/* S7. Special:ListFiles (and other sortable TablePager) headers were blue-white #eaeeff */
+.mw-body table.mw-datatable > thead > tr > th,
+.mw-body table.mw-datatable > tbody > tr > th,
+.mw-body .TablePager th {
+  background-color: #d7dce2;
+}
+.mw-body table.mw-datatable tr:hover > td {
+  background-color: #d7dce2;
+}
+
+/* S8. FlaggedRevs "checked" tint on history rows and diff headers was #eaf3ff (pale stripes on gray); keep a stone-blue tint */
+.mw-body .flaggedrevs-color-1 {
+  background-color: #d5deea;
+}
+
+/* S9. Phones (<=720px): the Recent changes "List of abbreviations" box floated right and squeezed the date
+   headings into a one-word column ("12 / Nove / mber"); let it sit full width above the list */
+@media (max-width: 720px) {
+  .mw-body .mw-changeslist-legend {
+    float: none;
+    clear: both;
+    margin: 0 0 0.6em;
+  }
+}
+
+/* S10. Phones (<=720px): File-page "File history" table ran to ~635px at 390 and was cut off by html{overflow-x:clip};
+   let it scroll sideways inside its own box */
+@media (max-width: 720px) {
+  .mw-body table.filehistory {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* S11. Phones (<=720px): Special:Version credit/library tables have fixed 13em+13em+6em columns (table-layout:fixed),
+   so they ran ~30px past the screen and were clipped. Size columns to content, keep names whole, give the
+   text columns a readable minimum, and let the table scroll sideways in its own box when it is still too wide */
+@media (max-width: 720px) {
+  .mw-body table.mw-installed-software {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    table-layout: auto;
+  }
+  .mw-body table.mw-installed-software > thead > tr > th {
+    width: auto;
+  }
+  .mw-body table.mw-installed-software > * > tr > :nth-child(-n+3) {
+    word-break: normal;
+  }
+  .mw-body table.mw-installed-software > * > tr > :nth-child(n+4) {
+    min-width: 9em;
+  }
+}
+
+/* Content audit (agent "content") 2026-11-12. Narrow-screen fixes only; nothing changes above 720px. */
+
+/* 1. Set/tournament infobox with inline float:right (e.g. 1997 Decipher World Championship) squeezed the lead
+      text into a ~50px column at 390px; the existing ".expansion-infobox {float:none}" loses to the inline style. */
+@media (max-width: 720px) {
+  .mw-parser-output table.expansion-infobox {
+    float: none !important;
+    margin: 0 auto 1em !important;
+  }
+}
+
+/* 2. Right/left-floated thumbnails (Chuck Kallenbach portrait, Playtest cards archive photo, Players Committee
+      logo) left only a 50-70px text column beside them at phone width: stack them centred instead. */
+@media (max-width: 540px) {
+  .mw-parser-output figure.mw-halign-right,
+  .mw-parser-output figure.mw-halign-left {
+    float: none;
+    clear: both;
+    display: table;
+    margin: 0.5em auto 1em;
+  }
+}
+
+/* 3. Card list tables (Premiere Unlimited etc.): Common.css "table.card-thumbs {overflow: visible}" cancels
+      Vector's phone rule (tables scroll sideways), so the Rarity / Destiny / Game text columns were cut off
+      and unreachable at 390px (html has overflow-x: clip). Restore the sideways scroll. */
+@media (max-width: 720px) {
+  .mw-parser-output table.card-thumbs {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* 4. Vector only makes wide tables scroll below 640px, but Common.css clips the page from 720px down, so
+      between 640 and 720px wide tables (Virtual Set 6 card list, World Championships champions) were cut off. */
+@media (min-width: 640px) and (max-width: 720px) {
+  .mw-parser-output table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* "More" dropdown (logged-in action menu): white panel on the gray header; use the page gray with a border */
+.vector-menu-dropdown .vector-menu-content {
+  background: #e4e8ec !important;
+  border: 1px solid #a2a9b1 !important;
+}
+/* Collapsible table captions (e.g. the card "Info [Collapse]" box): space between the caption text and the [Collapse] toggle */
+.mw-collapsible > caption .mw-collapsible-toggle {
+  margin-left: 0.4em;
+}

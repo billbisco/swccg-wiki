@@ -1,0 +1,27 @@
+<span class="mystery-flag" style="font-size:85%; font-style:italic;">&#91;'''Mystery:''' {{#if:{{{question|{{{1|}}}}}}|{{{question|{{{1|}}}}}}?|not known.}} {{#if:{{{section|{{{2|}}}}}}|[[Mysteries#{{{section|{{{2|}}}}}}|Can you help?]]|[[Mysteries|Can you help?]]}}&#93;</span><includeonly>{{#if:{{{nocat|}}}||{{#ifeq:{{NAMESPACE}}|{{ns:0}}|[[Category:Mysteries]]}}}}</includeonly><noinclude>
+== Purpose ==
+Flags an open question at the spot in an article where the record has a gap: a result that sources disagree on, a document that was published but never preserved, or a fact no surviving source gives. The flag shows a short line in the text and links to the [[Mysteries]] page, where each question is written up with what is known, its sources, and what would settle it. Articles that use it are listed in [[:Category:Mysteries]].
+
+== Usage ==
+Put it right after the sentence or table cell where the gap is:
+<pre>{{Mystery|question=Who won the Atlanta qualifier|section=1997 qualifiers: Atlanta, Mobile, Denver and Origins}}</pre>
+renders as: {{Mystery|question=Who won the Atlanta qualifier|section=1997 qualifiers: Atlanta, Mobile, Denver and Origins|nocat=yes}}
+
+=== Parameters ===
+{| class="wikitable"
+! Parameter !! Meaning
+|-
+| <code>question</code> (or the first unnamed parameter) || The open question, short, without the final question mark (the template adds it). Left out, the note reads "not known".
+|-
+| <code>section</code> (or the second unnamed parameter) || Optional. The heading of the entry on [[Mysteries]], so the link goes straight to it. Leave it out to link to the top of the page.
+|-
+| <code>nocat</code> || Optional. Any value stops the category (for examples and documentation).
+|}
+
+=== Good practice ===
+* Only articles (main namespace) are added to [[:Category:Mysteries]]; on Talk and project pages the flag shows without the category.
+* Every flag needs an entry on [[Mysteries]]. Add the entry first, with its sources, then flag the article.
+* The full working notes stay on the article's Talk page (usually in its faulty-data or missing-data section).
+* When the question is answered, update the article with the source, remove the flag, and move the entry on [[Mysteries]] to its '''Solved''' section with the answer and who supplied it.
+
+[[Category:Templates]]</noinclude>

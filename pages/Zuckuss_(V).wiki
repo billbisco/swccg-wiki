@@ -1,9 +1,10 @@
 {{Card
 |title=Zuckuss (V)
-|card_uid=220_5
-|image=V20-D-zuckuss.gif
+|card_uid=220_5o
+|image=V20-D-zuckuss-original.png
 |display_title=Zuckuss
-|errata_mark=E1
+|margin_note=Zuckuss
+|underlying_card=[[Zuckuss]]
 |copyright_line=TM & © 1997 LUCASFILM LTD. TM, ® & © 1997 DECIPHER INC.
 |side=Dark
 |type=Character
@@ -23,14 +24,14 @@
 |set_band=Virtual
 |prev=Third Sister
 |lore=Male Gand. Practitioner of ancient religious findsman vocation. Bounty hunter and scout. Gains surprisingly accurate information through mystical visions during meditation.
-|game_text=Adds 2 to power of anything he pilots. If present (or piloting an [Independent] starship) during battle, may make a just drawn destiny = the printed destiny of the top card of opponent's Lost Pile. Immune to attrition &lt; 2 + the number of weapon destiny draws that were completed this battle.
-|printings='''Virtual Set 20''' — this page
+|game_text=Adds 2 to power of anything he pilots. Power and defense value +2 with 4-LOM. Once during battle, if opponent just drew weapon or battle destiny, may draw destiny; reset opponent's destiny number to your drawn destiny number. Immune to attrition &lt; 3.
 |sources=* [https://res.starwarsccg.org/cardlists/Set20Type.html Virtual Set 20 card list] at res.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261008201835/https://res.starwarsccg.org/cardlists/Set20Type.html Internet Archive]
 * [https://www.starwarsccg.org/resources/virtual-slips/ Virtual slips] at starwarsccg.org — Dark: Zuckuss (V). Preserved copy: [https://web.archive.org/web/20240920164229/https://www.starwarsccg.org/resources/virtual-slips/ Internet Archive]
 * [https://scomp.starwarsccg.org/?s=Zuckuss%20%28V%29 Scomp Link Access]
-|hatnote=For the Decipher card, see [[Zuckuss]].
-|rulings=* Weapon destiny draws of both players increase [[Zuckuss]]' immunity.<ref name="scomp">https://scomp.starwarsccg.org/?s=Zuckuss%20%28V%29</ref>
-* Canceled weapon destiny draws do not count. For a weapon destiny that is canceled and redrawn, count only the redraw.
+* [https://github.com/swccgpc/holotable/commits/master/Images-HT/starwars/Virtual20-Dark/large/zuckuss.gif History of the PC card image <code>zuckuss.gif</code>] (holotable repository)
+* [https://github.com/swccgpc/swccg-card-json/commits/main PC card data history] (swccg-card-json; dating evidence only)
+<references />
+|hatnote=For the current text, see [[Zuckuss (V) (Errata)]].
 |matching=* [[Mist Hunter]]
 |matching_weapon=* [[Zuckuss' Snare Rifle]]
 |personas=* [[Zuckuss (persona)|Zuckuss]]
@@ -39,5 +40,9 @@
 * bounty hunter
 * Gand
 * scout
-|has_refs=1
+|errata_mark=
+|errata_history=This is the original printed text of [[Zuckuss (V)]] (version 1 of 2). The image here is the Players Committee card image as first published (11 December 2022). The current text is [[Zuckuss (V) (Errata)]] (PC-E1). Each version below is quoted in full with its dated source.
+* '''Original''' (this page): Virtual Set 20 release; card image first published 11 December 2022<ref name="img-o-0">Players Committee card image <code>Virtual20-Dark/large/zuckuss.gif</code> as published 11 December 2022: [https://github.com/swccgpc/holotable/blob/23a3730ee5dc43921699d347d0a1ea05f8f2848a/Images-HT/starwars/Virtual20-Dark/large/zuckuss.gif holotable commit 23a3730] (the PC's card-image repository, which serves res.starwarsccg.org/cards).</ref><ref name="cj-o">Players Committee card data, [https://github.com/swccgpc/swccg-card-json/commit/f434d313352448d45db14e080230103c086b1276 swccg-card-json commit f434d31335] (12 December 2022): dating evidence only.</ref>: “Adds 2 to power of anything he pilots. Power and defense value +2 with 4-LOM. Once during battle, if opponent just drew weapon or battle destiny, may draw destiny; reset opponent's destiny number to your drawn destiny number. Immune to attrition &lt; 3.” No E mark. Margin: “Zuckuss”.
+* '''PC-E1''' ([[Zuckuss (V) (Errata)]]): PC errata of 9 March 2026; card image marked E1 published 9 March 2026, and the current [https://res.starwarsccg.org/cardlists/Set20Type.html Virtual Set 20 card list]<ref name="img-PC-E1-0">Players Committee card image <code>Virtual20-Dark/large/zuckuss.gif</code> as published 9 March 2026: [https://github.com/swccgpc/holotable/blob/6f23e077ed3f1bb8f34b62099641028868d7a2ae/Images-HT/starwars/Virtual20-Dark/large/zuckuss.gif holotable commit 6f23e07] (the PC's card-image repository, which serves res.starwarsccg.org/cards).</ref><ref name="cj-PC-E1">Players Committee card data, [https://github.com/swccgpc/swccg-card-json/commit/12dc019807542584225f1cde07e1787ad5121f03 swccg-card-json commit 12dc019807] (14 March 2026): dating evidence only.</ref>: “Adds 2 to power of anything he pilots. If present (or piloting an [Independent] starship) during battle, may make a just drawn destiny = the printed destiny of the top card of opponent's Lost Pile. Immune to attrition &lt; 2 + the number of weapon destiny draws that were completed this battle.” The PC card data's errata note (errataDate 9 March 2026) quotes the original text. '''What changed:''' Everything after the pilot ability was replaced: the 4-LOM bonus and the destiny-reset ability became “If present (or piloting an [Independent] starship) during battle, may make a just drawn destiny = the printed destiny of the top card of opponent's Lost Pile.”, and “Immune to attrition &lt; 3” became “Immune to attrition &lt; 2 + the number of weapon destiny draws that were completed this battle.” Stats unchanged. The card gained the E1 mark.
+|versions='''Decipher''' — [[Zuckuss]] (<code>4_107o</code>)<br />'''Decipher (Revised)''' — [[Zuckuss (Revised)]] (<code>54_107</code>)<br />'''Decipher Errata''' — [[Zuckuss (Errata)]] (<code>4_107</code>)<br />'''Virtual Original''' — [[Zuckuss (V) (Virtual Set 7: Shadows Of The Empire)]] (<code>1107_22</code>)<br />'''Virtual Modern''' — '''this page'''<br />'''Virtual Modern Errata''' — [[Zuckuss (V) (Errata)]]
 }}

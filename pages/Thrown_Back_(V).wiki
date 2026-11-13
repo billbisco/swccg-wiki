@@ -1,10 +1,10 @@
 {{Card
 |title=Thrown Back (V)
-|card_uid=220_10
-|gemp_id=220_10
-|image=VD-L-thrownback.gif
+|card_uid=220_10o
+|image=VD-L-thrownback-original.png
 |display_title=Thrown Back
-|errata_mark=E1
+|margin_note=Thrown Back
+|underlying_card=[[Thrown Back]]
 |copyright_line=© 2001 LUCASFILM LTD. & TM. TM, ® & © 2001 DECIPHER INC.
 |side=Light
 |type=Defensive Shield
@@ -20,9 +20,18 @@
 |prev=There Is Another
 |next=Yavin Sentry & •Goldenrod
 |game_text=Plays on table. At end of a turn, if opponent has 15 or more cards in hand, may use 3 Force to shuffle all but 9 (random selection) into Used Pile. If Monnok or Drop! just targeted your hand, may reveal 3 cards from hand; they cannot be removed or checked for duplicates.
-|versions='''Decipher''' — [[Thrown Back]] (<code>12_49</code>)<br />'''Virtual Original''' — [[Thrown Back (V) (Virtual Set 8: Jabba's Court)]] (<code>1108_21</code>)<br />'''Virtual Legacy''' — [[Thrown Back (V) (Virtual Block 6)]] (<code>1262_23</code>)<br />'''Virtual Modern''' — '''this page''' (<code>220_10</code>)
+|versions='''Decipher''' — [[Thrown Back]] (<code>12_49</code>)<br />'''Virtual Original''' — [[Thrown Back (V) (Virtual Set 8: Jabba's Court)]] (<code>1108_21</code>)<br />'''Virtual Legacy''' — [[Thrown Back (V) (Virtual Block 6)]] (<code>1262_23</code>)<br />'''Virtual Modern''' — '''this page'''<br />'''Virtual Modern Errata''' — [[Thrown Back (V) (Errata)]]<br />'''Virtual Modern Errata 2''' — [[Thrown Back (V) (Errata 2)]]
 |sources=* [https://res.starwarsccg.org/cardlists/SetDType.html Virtual Set D card list] at res.starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261008193607/https://res.starwarsccg.org/cardlists/SetDType.html Internet Archive]
 * [https://www.starwarsccg.org/resources/virtual-slips/ Virtual slips] at starwarsccg.org — Light: Thrown Back (V). Preserved copy: [https://web.archive.org/web/20240920164229/https://www.starwarsccg.org/resources/virtual-slips/ Internet Archive]
 * [https://github.com/billbisco/swccg-gemp/blob/abf679ac933803acab2e1a598240c2ac582e6723/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set220/light/Card220_010.java Card220_010.java] (GEMP card blueprint, billbisco/swccg-gemp). Preserved copy: [https://web.archive.org/web/20261020173916/https://github.com/billbisco/swccg-gemp/blob/abf679ac933803acab2e1a598240c2ac582e6723/src/gemp-swccg-cards/src/main/java/com/gempukku/swccgo/cards/set220/light/Card220_010.java Internet Archive].
-|hatnote=For the Decipher card, see [[Thrown Back]].
+* [https://github.com/swccgpc/holotable/commits/master/Images-HT/starwars/Virtual20-Light/large/thrownback.gif History of the PC card image <code>thrownback.gif</code>] (holotable repository)
+* [https://github.com/swccgpc/swccg-card-json/commits/main PC card data history] (swccg-card-json; dating evidence only)
+* [https://res.starwarsccg.org/virtual/DShieldUpdateKit_2024_July.pdf July 2024 Defensive Shield Update Kit] (Players Committee PDF, file created 2 August 2024)
+<references />
+|hatnote=For the current text, see [[Thrown Back (V) (Errata 2)]].
+|errata_mark=
+|errata_history=This is the original printed text of [[Thrown Back (V)]] (version 1 of 3). The image here is the Players Committee card image as first published. The current text is [[Thrown Back (V) (Errata 2)]] (PC-E2). Each version below is quoted in full with its dated source. Every published image or slip that differs visibly from the one before is a version, numbered in release order; a printed errata mark that does not match that order is recorded as a PC transcription error (Bill, 12 November 2026).
+* '''Original''' (this page): Virtual Set 20 release; card image first published 11 December 2022<ref name="v0-1">Players Committee card image <code>Virtual20-Light/large/thrownback.gif</code> as published 11 December 2022: [https://github.com/swccgpc/holotable/blob/23a3730ee5dc43921699d347d0a1ea05f8f2848a/Images-HT/starwars/Virtual20-Light/large/thrownback.gif holotable commit 23a3730] (the PC's card-image repository, which serves res.starwarsccg.org/cards).</ref>: “Plays on table. At end of a turn, if opponent has 15 or more cards in hand, may use 2 Force to shuffle all but 9 (random selection) into Used Pile. If Monnok or Drop! just targeted your hand, may reveal 2 cards from hand; they cannot be removed or checked for duplicates.”
+* '''PC-E1''' ([[Thrown Back (V) (Errata)]]): Card image published 22 July 2024, and the current [https://res.starwarsccg.org/cardlists/Set20Type.html Virtual Set 20 card list]<ref name="v1-1">Players Committee card image <code>Virtual20-Light/large/thrownback.gif</code> as published 22 July 2024: [https://github.com/swccgpc/holotable/blob/6c22b092dca1396fcd637dae561b4b951698a640/Images-HT/starwars/Virtual20-Light/large/thrownback.gif holotable commit 6c22b09] (the PC's card-image repository, which serves res.starwarsccg.org/cards).</ref>: “Plays on table. At end of a turn, if opponent has 15 or more cards in hand, may use 3 Force to shuffle all but 9 (random selection) into Used Pile. If Monnok or Drop! just targeted your hand, may reveal 3 cards from hand; they cannot be removed or checked for duplicates.” The PC card data and card list still print “2 Force” and “2 cards” (the original wording); only the E1 card image carries the errata. The wording printed on the card image takes precedence over the card data (Bill, 12 November 2026); the card data and GEMP should follow the image. '''What changed:''' Game text: “2” became “3”; “2” became “3”.
+* '''PC-E2''' ([[Thrown Back (V) (Errata 2)]]): Partial slip in the July 2024 Defensive Shield Update Kit<ref name="dskit2024-slip">Players Committee, [https://res.starwarsccg.org/virtual/DShieldUpdateKit_2024_July.pdf July 2024 Defensive Shield Update Kit] (PDF, 3 pages, footer “SWCCG Players Committee, July 2024”; file created 2 August 2024), page 2: partial slip labelled “•Thrown Back”. Released with [[Virtual Set 23]] (22 July 2024); the PDF itself is dated by its creation date.</ref>: “Plays on table. At end of a turn, if opponent has 15 or more cards in hand, may use 3 Force to shuffle all but 9 (random selection) into Used Pile. If Monnok or Drop! just targeted your hand, may reveal 3 cards from hand; they cannot be removed or checked for duplicates.” '''What changed:''' Same words as the 22 July 2024 card image ([[Thrown Back (V) (Errata)]]). The kit prints the card as a partial slip — the title bar and lore, a blank white area where the picture is, and the game-text box — with the lower-left name and the errata mark “E1” at the bottom, to be laid over a printed card. A separate PC publication that looks visibly different from the card image, so a version (Bill, 11 and 12 November 2026: every publication and every visible change is a version). '''Errata mark:''' the slip prints “E1” but is errata 2 in release order; recorded as printed and listed as a [[Players Committee transcription errors|PC transcription error]] (Bill, 12 November 2026).
 }}
