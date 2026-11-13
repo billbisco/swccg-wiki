@@ -19,9 +19,9 @@ if mode=='images':
 else:
     dest='authoring/japanese_other369/' if mode=='wiki' else 'evidence/369/'
     for path in root.iterdir():
-        if path.is_file() and path.suffix in ['.py','.md','.json','.jsonl','.csv','.txt','.wiki','.webp','.png']:
+        if path.is_file() and path.suffix in ['.py','.md','.json','.jsonl','.csv','.txt','.wiki','.webp','.png','.gz']:
             binary=path.read_bytes()
-            if path.suffix not in ['.png','.webp']:binary=binary.replace(b'\r\n',b'\n')
+            if path.suffix not in ['.png','.webp','.gz']:binary=binary.replace(b'\r\n',b'\n')
             if path.suffix in ['.py','.md','.txt']:binary=binary.rstrip()+b'\n'
             files[dest+('work/japanese-other369/' if mode=='wiki' else '')+path.name]=binary
     if mode=='wiki':

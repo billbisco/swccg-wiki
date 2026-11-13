@@ -23,7 +23,8 @@ for title,page in heads.items():
     if typ not in ['Location','Epic Event']:fields.append('printed_lore')
     required=['dark_icons','light_icons'] if typ=='Location' else ['destiny']
     if typ=='Location' and 'System' in display:required+=['parsec']
-    if typ in ['Character','Starship','Vehicle','Creature']:required+=['power','deploy','forfeit']
+    if typ in ['Character','Starship','Vehicle']:required+=['power','deploy','forfeit']
+    if typ=='Creature':required+=['ferocity','deploy','forfeit']
     droid='Droid' in display or bool(re.search(r'<th>Subtype</th><td>.*?Droid',params.get('extra_info',''))) or bool(re.search(r'^(R[235]-|RA-7|FX-|EG-4|M-HYD|WED15|2-1B)',title))
     if typ=='Character' and not droid:required+=['ability']
     if typ=='Starship' and not re.search(r'^(Black 4|TIE )',title):required+=['hyperspeed']
