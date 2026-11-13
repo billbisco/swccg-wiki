@@ -1,11 +1,7 @@
-# #287 — Japanese/shared card infobox migration in progress
+# #287 — Shared Japanese card infobox migration
 
-Bill authorized migration first, then remaining Japanese-set content repairs. Shared guidance: ai-team-skills commit 426db52.
+Live migration complete: 794 cards, 797 changed pages including template controls, zero lint/Cite errors, 50 unchanged English controls. [Migration report](migration-report.md) · [all live page links](published-pages.md) · [PASS report](287-pass-report.md).
 
-Current scope: 794 live manual infoboxes (793 Japanese plus the oversized English promo), captured after #361. No card article or production Template:Card has yet been changed for this migration.
+Reproduction from the authoring bundle root: install requirements, then run `python work/japanese-infobox287/check.py drafts` and `python work/japanese-infobox287/fidelity.py` for captured conservation checks. `verify.py` performs live read-only checks; publication scripts are guarded and should never be replayed over newer revisions. `convert.py` must be followed by `set-icons.py` when rebuilding drafts.
 
-Inputs: heads-before.json, before-renders.json.gz, targets.json, english-sample.json, baseline-summary.json, lint-backlog.csv. Converter: convert.py. Optional template extension: template.py / template-draft.wiki. Publication must use exact current revision/hash and timestamps; never replay old packets over a newer revision.
-
-The draft preserves native sections and existing metadata/navigation. Old undefined photo references are restored from their existing printing-specific File pages and separately recorded. Further translation, statistics or identity repairs belong to the later content pass. The follow-up Task completes the original style backlog immediately after rebuilding.
-
-Next: publish only Template:Card/sandbox, render the 10 initial samples and 50 English controls, fix conservation failures, then validate all 794 drafts before touching the production template or cards.
+No separate wiki Test exists; sandbox examples preceded live publication. Code and source backup: [PR #15](https://github.com/billbisco/swccg-wiki/pull/15). Task #366 resolves the original citation/style backlog. Follow-up #369 audits the remaining Japanese sets.

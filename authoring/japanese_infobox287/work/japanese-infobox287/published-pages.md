@@ -1,0 +1,801 @@
+# Published pages — #287
+
+Every changed page, with final public revision; no pages deleted.
+
+- [2-1B (Too-Onebee) (Japanese)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28Japanese%29) — revision 300440
+- [2X-3KPR (Tooex) (Japanese)](https://wiki.swccg.com/wiki/2X-3KPR_%28Tooex%29_%28Japanese%29) — revision 300441
+- [5D6-RA-7 (Fivedesix) (Japanese)](https://wiki.swccg.com/wiki/5D6-RA-7_%28Fivedesix%29_%28Japanese%29) — revision 300475
+- [A Dark Time For The Rebellion (Japanese)](https://wiki.swccg.com/wiki/A_Dark_Time_For_The_Rebellion_%28Japanese%29) — revision 300476
+- [A Disturbance In The Force (Japanese)](https://wiki.swccg.com/wiki/A_Disturbance_In_The_Force_%28Japanese%29) — revision 300477
+- [A Few Maneuvers (Japanese)](https://wiki.swccg.com/wiki/A_Few_Maneuvers_%28Japanese%29) — revision 300478
+- [A Tremor In The Force (Japanese)](https://wiki.swccg.com/wiki/A_Tremor_In_The_Force_%28Japanese%29) — revision 300479
+- [AT-AT Cannon (Japanese)](https://wiki.swccg.com/wiki/AT-AT_Cannon_%28Japanese%29) — revision 300480
+- [AT-AT Driver (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/AT-AT_Driver_%28Japanese_ESB_Two-Player%29) — revision 300481
+- [AT-AT Driver (Japanese)](https://wiki.swccg.com/wiki/AT-AT_Driver_%28Japanese%29) — revision 300482
+- [Admiral Motti (Japanese)](https://wiki.swccg.com/wiki/Admiral_Motti_%28Japanese%29) — revision 300483
+- [Admiral Ozzel (Japanese)](https://wiki.swccg.com/wiki/Admiral_Ozzel_%28Japanese%29) — revision 300484
+- [Advance Preparation (Japanese)](https://wiki.swccg.com/wiki/Advance_Preparation_%28Japanese%29) — revision 300485
+- [Advosze (Japanese)](https://wiki.swccg.com/wiki/Advosze_%28Japanese%29) — revision 300486
+- [Affect Mind (Japanese)](https://wiki.swccg.com/wiki/Affect_Mind_%28Japanese%29) — revision 300487
+- [Alderaan (Dark) (Japanese)](https://wiki.swccg.com/wiki/Alderaan_%28Dark%29_%28Japanese%29) — revision 300488
+- [Alderaan (Japanese)](https://wiki.swccg.com/wiki/Alderaan_%28Japanese%29) — revision 300442
+- [Alter (Dark) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Alter_%28Dark%29_%28Premiere%29_%28Japanese%29) — revision 300489
+- [Alter (Light) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Alter_%28Light%29_%28Premiere%29_%28Japanese%29) — revision 300490
+- [Alternatives To Fighting (Japanese)](https://wiki.swccg.com/wiki/Alternatives_To_Fighting_%28Japanese%29) — revision 300491
+- [Anakin's Lightsaber (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Anakin%27s_Lightsaber_%28Japanese_Reflections_III_Foil%29) — revision 300492
+- [Anakin's Lightsaber (Japanese)](https://wiki.swccg.com/wiki/Anakin%27s_Lightsaber_%28Japanese%29) — revision 300493
+- [Arcona (Japanese)](https://wiki.swccg.com/wiki/Arcona_%28Japanese%29) — revision 300494
+- [Artillery Remote (Japanese)](https://wiki.swccg.com/wiki/Artillery_Remote_%28Japanese%29) — revision 300495
+- [Assault Rifle (Japanese)](https://wiki.swccg.com/wiki/Assault_Rifle_%28Japanese%29) — revision 300496
+- [Astromech Shortage (Japanese)](https://wiki.swccg.com/wiki/Astromech_Shortage_%28Japanese%29) — revision 300497
+- [Atgar Laser Cannon (Japanese)](https://wiki.swccg.com/wiki/Atgar_Laser_Cannon_%28Japanese%29) — revision 300498
+- [Attack Pattern Delta (Japanese)](https://wiki.swccg.com/wiki/Attack_Pattern_Delta_%28Japanese%29) — revision 300499
+- [Attack Run (Japanese)](https://wiki.swccg.com/wiki/Attack_Run_%28Japanese%29) — revision 300500
+- [Bacta Tank (Japanese)](https://wiki.swccg.com/wiki/Bacta_Tank_%28Japanese%29) — revision 300501
+- [Baniss Keeg (Japanese)](https://wiki.swccg.com/wiki/Baniss_Keeg_%28Japanese%29) — revision 300502
+- [Bantha (Japanese)](https://wiki.swccg.com/wiki/Bantha_%28Japanese%29) — revision 300503
+- [Beggar (Japanese)](https://wiki.swccg.com/wiki/Beggar_%28Japanese%29) — revision 300504
+- [Beru Lars (Japanese)](https://wiki.swccg.com/wiki/Beru_Lars_%28Japanese%29) — revision 300505
+- [Beru Stew (Japanese)](https://wiki.swccg.com/wiki/Beru_Stew_%28Japanese%29) — revision 300506
+- [Besieged (Japanese)](https://wiki.swccg.com/wiki/Besieged_%28Japanese%29) — revision 300507
+- [Bespin Motors Void Spider THX 1138 (Japanese)](https://wiki.swccg.com/wiki/Bespin_Motors_Void_Spider_THX_1138_%28Japanese%29) — revision 300508
+- [Biggs Darklighter (Japanese)](https://wiki.swccg.com/wiki/Biggs_Darklighter_%28Japanese%29) — revision 300509
+- [Black 2 (Japanese)](https://wiki.swccg.com/wiki/Black_2_%28Japanese%29) — revision 300510
+- [Black 3 (Japanese)](https://wiki.swccg.com/wiki/Black_3_%28Japanese%29) — revision 300511
+- [Black 4 (Japanese)](https://wiki.swccg.com/wiki/Black_4_%28Japanese%29) — revision 300512
+- [Blast Door Controls (Japanese)](https://wiki.swccg.com/wiki/Blast_Door_Controls_%28Japanese%29) — revision 300513
+- [Blast The Door, Kid! (Japanese)](https://wiki.swccg.com/wiki/Blast_The_Door%2C_Kid%21_%28Japanese%29) — revision 300514
+- [Blaster (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Blaster_%28Japanese_ESB_Two-Player%29) — revision 300515
+- [Blaster (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Blaster_%28Japanese_Premiere_Two-Player%29) — revision 300516
+- [Blaster (Japanese)](https://wiki.swccg.com/wiki/Blaster_%28Japanese%29) — revision 300517
+- [Blaster Rack (Japanese)](https://wiki.swccg.com/wiki/Blaster_Rack_%28Japanese%29) — revision 300518
+- [Blaster Rifle (Dark) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Blaster_Rifle_%28Dark%29_%28Japanese_ESB_Two-Player%29) — revision 300519
+- [Blaster Rifle (Dark) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Blaster_Rifle_%28Dark%29_%28Japanese_Premiere_Two-Player%29) — revision 300443
+- [Blaster Rifle (Dark) (Japanese)](https://wiki.swccg.com/wiki/Blaster_Rifle_%28Dark%29_%28Japanese%29) — revision 300520
+- [Blaster Rifle (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Blaster_Rifle_%28Japanese_Premiere_Two-Player%29) — revision 300521
+- [Blaster Rifle (Japanese)](https://wiki.swccg.com/wiki/Blaster_Rifle_%28Japanese%29) — revision 300522
+- [Blaster Scope (Japanese)](https://wiki.swccg.com/wiki/Blaster_Scope_%28Japanese%29) — revision 300523
+- [Blizzard 1 (Japanese)](https://wiki.swccg.com/wiki/Blizzard_1_%28Japanese%29) — revision 300524
+- [Blizzard 2 (Japanese)](https://wiki.swccg.com/wiki/Blizzard_2_%28Japanese%29) — revision 300525
+- [Blizzard Scout 1 (Japanese)](https://wiki.swccg.com/wiki/Blizzard_Scout_1_%28Japanese%29) — revision 300526
+- [Blizzard Walker (Japanese)](https://wiki.swccg.com/wiki/Blizzard_Walker_%28Japanese%29) — revision 300527
+- [Blue Milk (Japanese)](https://wiki.swccg.com/wiki/Blue_Milk_%28Japanese%29) — revision 300528
+- [BoShek (Japanese)](https://wiki.swccg.com/wiki/BoShek_%28Japanese%29) — revision 300444
+- [Boosted TIE Cannon (Japanese)](https://wiki.swccg.com/wiki/Boosted_TIE_Cannon_%28Japanese%29) — revision 300529
+- [Boring Conversation Anyway (Japanese)](https://wiki.swccg.com/wiki/Boring_Conversation_Anyway_%28Japanese%29) — revision 300530
+- [Bowcaster (Japanese)](https://wiki.swccg.com/wiki/Bowcaster_%28Japanese%29) — revision 300531
+- [Brainiac (Japanese Reflections II Foil)](https://wiki.swccg.com/wiki/Brainiac_%28Japanese_Reflections_II_Foil%29) — revision 300445
+- [Brainiac (Japanese)](https://wiki.swccg.com/wiki/Brainiac_%28Japanese%29) — revision 300532
+- [Breached Defenses (Japanese)](https://wiki.swccg.com/wiki/Breached_Defenses_%28Japanese%29) — revision 300533
+- [C-3PO (See-Threepio) (Japanese)](https://wiki.swccg.com/wiki/C-3PO_%28See-Threepio%29_%28Japanese%29) — revision 300534
+- [CZ-3 (Seezee-Three) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/CZ-3_%28Seezee-Three%29_%28Japanese_Premiere_Two-Player%29) — revision 300535
+- [CZ-3 (Seezee-Three) (Japanese)](https://wiki.swccg.com/wiki/CZ-3_%28Seezee-Three%29_%28Japanese%29) — revision 300536
+- [Cal Alder (Japanese)](https://wiki.swccg.com/wiki/Cal_Alder_%28Japanese%29) — revision 300537
+- [Caller (Dark) (Japanese)](https://wiki.swccg.com/wiki/Caller_%28Dark%29_%28Japanese%29) — revision 300538
+- [Caller (Japanese)](https://wiki.swccg.com/wiki/Caller_%28Japanese%29) — revision 300539
+- [Cantina Brawl (Japanese)](https://wiki.swccg.com/wiki/Cantina_Brawl_%28Japanese%29) — revision 300540
+- [Captain Khurgee (Japanese)](https://wiki.swccg.com/wiki/Captain_Khurgee_%28Japanese%29) — revision 300541
+- [Captain Lennox (Japanese)](https://wiki.swccg.com/wiki/Captain_Lennox_%28Japanese%29) — revision 300542
+- [Captain Piett (Japanese)](https://wiki.swccg.com/wiki/Captain_Piett_%28Japanese%29) — revision 300543
+- [Cell 2187 (Japanese)](https://wiki.swccg.com/wiki/Cell_2187_%28Japanese%29) — revision 300544
+- [Charming To The Last (Japanese)](https://wiki.swccg.com/wiki/Charming_To_The_Last_%28Japanese%29) — revision 300545
+- [Chewbacca (Japanese)](https://wiki.swccg.com/wiki/Chewbacca_%28Japanese%29) — revision 300546
+- [Chewie (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Chewie_%28Japanese_ESB_Two-Player%29) — revision 300547
+- [Chief Bast (Japanese)](https://wiki.swccg.com/wiki/Chief_Bast_%28Japanese%29) — revision 300548
+- [Clak'dor VII (Japanese)](https://wiki.swccg.com/wiki/Clak%27dor_VII_%28Japanese%29) — revision 300549
+- [Cold Feet (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Cold_Feet_%28Japanese_ESB_Two-Player%29) — revision 300550
+- [Cold Feet (Japanese)](https://wiki.swccg.com/wiki/Cold_Feet_%28Japanese%29) — revision 300551
+- [Collapsing Corridor (Japanese)](https://wiki.swccg.com/wiki/Collapsing_Corridor_%28Japanese%29) — revision 300552
+- [Collateral Damage (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Collateral_Damage_%28Japanese_Premiere_Two-Player%29) — revision 300553
+- [Collateral Damage (Japanese)](https://wiki.swccg.com/wiki/Collateral_Damage_%28Japanese%29) — revision 300554
+- [Collision! (Japanese)](https://wiki.swccg.com/wiki/Collision%21_%28Japanese%29) — revision 300555
+- [Colonel Wullf Yularen (Japanese)](https://wiki.swccg.com/wiki/Colonel_Wullf_Yularen_%28Japanese%29) — revision 300556
+- [ComScan Detection (Japanese)](https://wiki.swccg.com/wiki/ComScan_Detection_%28Japanese%29) — revision 300557
+- [Combined Attack (Japanese)](https://wiki.swccg.com/wiki/Combined_Attack_%28Japanese%29) — revision 300558
+- [Come With Me (Japanese)](https://wiki.swccg.com/wiki/Come_With_Me_%28Japanese%29) — revision 300559
+- [Comlink (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Comlink_%28Japanese_Premiere_Two-Player%29) — revision 300560
+- [Comlink (Japanese)](https://wiki.swccg.com/wiki/Comlink_%28Japanese%29) — revision 300561
+- [Commander Evram Lajaie (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Commander_Evram_Lajaie_%28Japanese_ESB_Two-Player%29) — revision 300562
+- [Commander Evram Lajaie (Japanese)](https://wiki.swccg.com/wiki/Commander_Evram_Lajaie_%28Japanese%29) — revision 300563
+- [Commander Luke Skywalker (Japanese)](https://wiki.swccg.com/wiki/Commander_Luke_Skywalker_%28Japanese%29) — revision 300564
+- [Commander Praji (Japanese)](https://wiki.swccg.com/wiki/Commander_Praji_%28Japanese%29) — revision 300565
+- [Commander Vanden Willard (Japanese)](https://wiki.swccg.com/wiki/Commander_Vanden_Willard_%28Japanese%29) — revision 300566
+- [Commence Primary Ignition (Japanese)](https://wiki.swccg.com/wiki/Commence_Primary_Ignition_%28Japanese%29) — revision 300567
+- [Commence Recharging (Japanese)](https://wiki.swccg.com/wiki/Commence_Recharging_%28Japanese%29) — revision 300568
+- [Concussion Grenade (Japanese)](https://wiki.swccg.com/wiki/Concussion_Grenade_%28Japanese%29) — revision 300569
+- [Conquest (Japanese)](https://wiki.swccg.com/wiki/Conquest_%28Japanese%29) — revision 300570
+- [Corellia (Japanese)](https://wiki.swccg.com/wiki/Corellia_%28Japanese%29) — revision 300571
+- [Corellian (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Corellian_%28Japanese_ESB_Two-Player%29) — revision 300572
+- [Corellian (Japanese)](https://wiki.swccg.com/wiki/Corellian_%28Japanese%29) — revision 300573
+- [Corellian Corvette (Japanese)](https://wiki.swccg.com/wiki/Corellian_Corvette_%28Japanese%29) — revision 300574
+- [Corellian Slip (Japanese)](https://wiki.swccg.com/wiki/Corellian_Slip_%28Japanese%29) — revision 300576
+- [Counter Assault (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Counter_Assault_%28Japanese_ESB_Two-Player%29) — revision 300577
+- [Counter Assault (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Counter_Assault_%28Japanese_Premiere_Two-Player%29) — revision 300578
+- [Counter Assault (Japanese)](https://wiki.swccg.com/wiki/Counter_Assault_%28Japanese%29) — revision 300579
+- [Crash Landing (Japanese)](https://wiki.swccg.com/wiki/Crash_Landing_%28Japanese%29) — revision 300580
+- [Crash Site Memorial (Japanese)](https://wiki.swccg.com/wiki/Crash_Site_Memorial_%28Japanese%29) — revision 300581
+- [DS-61-2 (Japanese)](https://wiki.swccg.com/wiki/DS-61-2_%28Japanese%29) — revision 300582
+- [DS-61-3 (Japanese)](https://wiki.swccg.com/wiki/DS-61-3_%28Japanese%29) — revision 300583
+- [DS-61-4 (Japanese)](https://wiki.swccg.com/wiki/DS-61-4_%28Japanese%29) — revision 300584
+- [Dack Ralter (Japanese)](https://wiki.swccg.com/wiki/Dack_Ralter_%28Japanese%29) — revision 300585
+- [Dannik Jerriko (Japanese)](https://wiki.swccg.com/wiki/Dannik_Jerriko_%28Japanese%29) — revision 300586
+- [Dantooine (Dark) (Japanese)](https://wiki.swccg.com/wiki/Dantooine_%28Dark%29_%28Japanese%29) — revision 300587
+- [Dantooine (Japanese)](https://wiki.swccg.com/wiki/Dantooine_%28Japanese%29) — revision 300588
+- [Danz Borin (Japanese)](https://wiki.swccg.com/wiki/Danz_Borin_%28Japanese%29) — revision 300590
+- [Dark Collaboration (Japanese)](https://wiki.swccg.com/wiki/Dark_Collaboration_%28Japanese%29) — revision 300591
+- [Dark Dissension (Japanese)](https://wiki.swccg.com/wiki/Dark_Dissension_%28Japanese%29) — revision 300592
+- [Dark Hours (Japanese)](https://wiki.swccg.com/wiki/Dark_Hours_%28Japanese%29) — revision 300593
+- [Dark Jedi Lightsaber (Japanese)](https://wiki.swccg.com/wiki/Dark_Jedi_Lightsaber_%28Japanese%29) — revision 300594
+- [Dark Jedi Presence (Japanese)](https://wiki.swccg.com/wiki/Dark_Jedi_Presence_%28Japanese%29) — revision 300595
+- [Dark Maneuvers (Japanese)](https://wiki.swccg.com/wiki/Dark_Maneuvers_%28Japanese%29) — revision 300596
+- [Dark Waters (Japanese)](https://wiki.swccg.com/wiki/Dark_Waters_%28Japanese%29) — revision 300597
+- [Darth Vader (Japanese Reflections II Foil)](https://wiki.swccg.com/wiki/Darth_Vader_%28Japanese_Reflections_II_Foil%29) — revision 300598
+- [Darth Vader (Japanese)](https://wiki.swccg.com/wiki/Darth_Vader_%28Japanese%29) — revision 300599
+- [Dathcha (Japanese)](https://wiki.swccg.com/wiki/Dathcha_%28Japanese%29) — revision 300600
+- [Dead Jawa (Japanese)](https://wiki.swccg.com/wiki/Dead_Jawa_%28Japanese%29) — revision 300601
+- [Death Mark (Japanese)](https://wiki.swccg.com/wiki/Death_Mark_%28Japanese%29) — revision 300602
+- [Death Squadron (Japanese)](https://wiki.swccg.com/wiki/Death_Squadron_%28Japanese%29) — revision 300603
+- [Death Star (Japanese Reflections II Foil)](https://wiki.swccg.com/wiki/Death_Star_%28Japanese_Reflections_II_Foil%29) — revision 300604
+- [Death Star (Japanese)](https://wiki.swccg.com/wiki/Death_Star_%28Japanese%29) — revision 300605
+- [Death Star Gunner (Japanese)](https://wiki.swccg.com/wiki/Death_Star_Gunner_%28Japanese%29) — revision 300606
+- [Death Star Plans (Japanese)](https://wiki.swccg.com/wiki/Death_Star_Plans_%28Japanese%29) — revision 300607
+- [Death Star Sentry (Japanese)](https://wiki.swccg.com/wiki/Death_Star_Sentry_%28Japanese%29) — revision 300608
+- [Death Star Tractor Beam (Japanese)](https://wiki.swccg.com/wiki/Death_Star_Tractor_Beam_%28Japanese%29) — revision 300609
+- [Death Star Trooper (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Death_Star_Trooper_%28Japanese_Premiere_Two-Player%29) — revision 300610
+- [Death Star Trooper (Japanese)](https://wiki.swccg.com/wiki/Death_Star_Trooper_%28Japanese%29) — revision 300611
+- [Death Star: Central Core (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Central_Core_%28Japanese%29) — revision 300612
+- [Death Star: Conference Room (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Conference_Room_%28Japanese%29) — revision 300613
+- [Death Star: Detention Block Control Room (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Detention_Block_Control_Room_%28Japanese%29) — revision 300614
+- [Death Star: Detention Block Corridor (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Death_Star%3A_Detention_Block_Corridor_%28Japanese_Premiere_Two-Player%29) — revision 300615
+- [Death Star: Detention Block Corridor (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Detention_Block_Corridor_%28Japanese%29) — revision 300616
+- [Death Star: Docking Bay 327 (Dark) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Death_Star%3A_Docking_Bay_327_%28Dark%29_%28Japanese_Premiere_Two-Player%29) — revision 300617
+- [Death Star: Docking Bay 327 (Dark) (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Docking_Bay_327_%28Dark%29_%28Japanese%29) — revision 300618
+- [Death Star: Docking Bay 327 (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Death_Star%3A_Docking_Bay_327_%28Japanese_Premiere_Two-Player%29) — revision 300619
+- [Death Star: Docking Bay 327 (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Docking_Bay_327_%28Japanese%29) — revision 300620
+- [Death Star: Docking Control Room 327 (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Death_Star%3A_Docking_Control_Room_327_%28Japanese_Premiere_Two-Player%29) — revision 300621
+- [Death Star: Level 4 Military Corridor (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Level_4_Military_Corridor_%28Japanese%29) — revision 300622
+- [Death Star: Level 6 Core Shaft Corridor (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Death_Star%3A_Level_6_Core_Shaft_Corridor_%28Japanese_Premiere_Two-Player%29) — revision 300623
+- [Death Star: Trash Compactor (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Trash_Compactor_%28Japanese%29) — revision 300624
+- [Death Star: Trench (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_Trench_%28Japanese%29) — revision 300625
+- [Death Star: War Room (Japanese)](https://wiki.swccg.com/wiki/Death_Star%3A_War_Room_%28Japanese%29) — revision 300626
+- [Debris Zone (Japanese)](https://wiki.swccg.com/wiki/Debris_Zone_%28Japanese%29) — revision 300627
+- [Defel (Japanese)](https://wiki.swccg.com/wiki/Defel_%28Japanese%29) — revision 300628
+- [Deflector Shield Generators (Japanese)](https://wiki.swccg.com/wiki/Deflector_Shield_Generators_%28Japanese%29) — revision 300629
+- [Dejarik Hologameboard (Japanese)](https://wiki.swccg.com/wiki/Dejarik_Hologameboard_%28Japanese%29) — revision 300630
+- [Demotion (Japanese)](https://wiki.swccg.com/wiki/Demotion_%28Japanese%29) — revision 300631
+- [Derek 'Hobbie' Klivian (Japanese)](https://wiki.swccg.com/wiki/Derek_%27Hobbie%27_Klivian_%28Japanese%29) — revision 300632
+- [Devastator (Japanese)](https://wiki.swccg.com/wiki/Devastator_%28Japanese%29) — revision 300633
+- [Dianoga (Japanese)](https://wiki.swccg.com/wiki/Dianoga_%28Japanese%29) — revision 300634
+- [Dice Ibegon (Japanese)](https://wiki.swccg.com/wiki/Dice_Ibegon_%28Japanese%29) — revision 300635
+- [Direct Hit (Japanese)](https://wiki.swccg.com/wiki/Direct_Hit_%28Japanese%29) — revision 300636
+- [Disarmed (Dark) (Japanese)](https://wiki.swccg.com/wiki/Disarmed_%28Dark%29_%28Japanese%29) — revision 300637
+- [Disarmed (Japanese)](https://wiki.swccg.com/wiki/Disarmed_%28Japanese%29) — revision 300638
+- [Disarming Creature (Japanese)](https://wiki.swccg.com/wiki/Disarming_Creature_%28Japanese%29) — revision 300639
+- [Djas Puhr (Japanese)](https://wiki.swccg.com/wiki/Djas_Puhr_%28Japanese%29) — revision 300640
+- [Doikk Na'ts (Japanese)](https://wiki.swccg.com/wiki/Doikk_Na%27ts_%28Japanese%29) — revision 300641
+- [Don't Get Cocky (Japanese)](https://wiki.swccg.com/wiki/Don%27t_Get_Cocky_%28Japanese%29) — revision 300642
+- [Don't Underestimate Our Chances (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Don%27t_Underestimate_Our_Chances_%28Japanese_Premiere_Two-Player%29) — revision 300643
+- [Don't Underestimate Our Chances (Japanese)](https://wiki.swccg.com/wiki/Don%27t_Underestimate_Our_Chances_%28Japanese%29) — revision 300644
+- [Double Agent (Japanese)](https://wiki.swccg.com/wiki/Double_Agent_%28Japanese%29) — revision 300645
+- [Dr. Evazan (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Dr._Evazan_%28Japanese_Reflections_III_Foil%29) — revision 300646
+- [Dr. Evazan (Japanese)](https://wiki.swccg.com/wiki/Dr._Evazan_%28Japanese%29) — revision 300647
+- [Droid Detector (Japanese)](https://wiki.swccg.com/wiki/Droid_Detector_%28Japanese%29) — revision 300648
+- [Droid Shutdown (Japanese)](https://wiki.swccg.com/wiki/Droid_Shutdown_%28Japanese%29) — revision 300649
+- [Dual Laser Cannon (Japanese)](https://wiki.swccg.com/wiki/Dual_Laser_Cannon_%28Japanese%29) — revision 300650
+- [Dutch (Japanese)](https://wiki.swccg.com/wiki/Dutch_%28Japanese%29) — revision 300651
+- [E-web Blaster (Japanese)](https://wiki.swccg.com/wiki/E-web_Blaster_%28Japanese%29) — revision 300652
+- [EG-4 (Eegee-Four) (Japanese)](https://wiki.swccg.com/wiki/EG-4_%28Eegee-Four%29_%28Japanese%29) — revision 300446
+- [EG-6 (Eegee-Six) (Japanese)](https://wiki.swccg.com/wiki/EG-6_%28Eegee-Six%29_%28Japanese%29) — revision 300653
+- [Echo Base Operations (Japanese)](https://wiki.swccg.com/wiki/Echo_Base_Operations_%28Japanese%29) — revision 300654
+- [Echo Base Trooper (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Echo_Base_Trooper_%28Japanese_ESB_Two-Player%29) — revision 300655
+- [Echo Base Trooper (Japanese)](https://wiki.swccg.com/wiki/Echo_Base_Trooper_%28Japanese%29) — revision 300656
+- [Echo Base Trooper Officer (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Echo_Base_Trooper_Officer_%28Japanese_ESB_Two-Player%29) — revision 300657
+- [Echo Base Trooper Officer (Japanese)](https://wiki.swccg.com/wiki/Echo_Base_Trooper_Officer_%28Japanese%29) — revision 300658
+- [Echo Trooper Backpack (Japanese)](https://wiki.swccg.com/wiki/Echo_Trooper_Backpack_%28Japanese%29) — revision 300659
+- [Eject! Eject! (Japanese)](https://wiki.swccg.com/wiki/Eject%21_Eject%21_%28Japanese%29) — revision 300660
+- [Electro-Rangefinder (Japanese)](https://wiki.swccg.com/wiki/Electro-Rangefinder_%28Japanese%29) — revision 300661
+- [Electrobinoculars (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Electrobinoculars_%28Japanese_Premiere_Two-Player%29) — revision 300662
+- [Electrobinoculars (Japanese)](https://wiki.swccg.com/wiki/Electrobinoculars_%28Japanese%29) — revision 300663
+- [Elis Helrot (Japanese)](https://wiki.swccg.com/wiki/Elis_Helrot_%28Japanese%29) — revision 300664
+- [Ellorrs Madak (Japanese)](https://wiki.swccg.com/wiki/Ellorrs_Madak_%28Japanese%29) — revision 300665
+- [Emergency Deployment (Japanese)](https://wiki.swccg.com/wiki/Emergency_Deployment_%28Japanese%29) — revision 300666
+- [Enhanced TIE Laser Cannon (Japanese)](https://wiki.swccg.com/wiki/Enhanced_TIE_Laser_Cannon_%28Japanese%29) — revision 300667
+- [Escape Pod (Japanese)](https://wiki.swccg.com/wiki/Escape_Pod_%28Japanese%29) — revision 300668
+- [Evacuate? (Japanese)](https://wiki.swccg.com/wiki/Evacuate%3F_%28Japanese%29) — revision 300669
+- [Evacuation Control (Japanese)](https://wiki.swccg.com/wiki/Evacuation_Control_%28Japanese%29) — revision 300670
+- [Evader (Japanese)](https://wiki.swccg.com/wiki/Evader_%28Japanese%29) — revision 300671
+- [Exhaustion (Japanese)](https://wiki.swccg.com/wiki/Exhaustion_%28Japanese%29) — revision 300672
+- [Expand The Empire (Japanese)](https://wiki.swccg.com/wiki/Expand_The_Empire_%28Japanese%29) — revision 300673
+- [Exposure (Japanese)](https://wiki.swccg.com/wiki/Exposure_%28Japanese%29) — revision 300674
+- [Eyes In The Dark (Japanese)](https://wiki.swccg.com/wiki/Eyes_In_The_Dark_%28Japanese%29) — revision 300675
+- [FX-10 (Effex-ten) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/FX-10_%28Effex-ten%29_%28Japanese_ESB_Two-Player%29) — revision 300447
+- [FX-10 (Effex-ten) (Japanese)](https://wiki.swccg.com/wiki/FX-10_%28Effex-ten%29_%28Japanese%29) — revision 300676
+- [FX-7 (Effex-Seven) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/FX-7_%28Effex-Seven%29_%28Japanese_ESB_Two-Player%29) — revision 300677
+- [FX-7 (Effex-Seven) (Japanese)](https://wiki.swccg.com/wiki/FX-7_%28Effex-Seven%29_%28Japanese%29) — revision 300678
+- [Fall Back! (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Fall_Back%21_%28Japanese_ESB_Two-Player%29) — revision 300679
+- [Fall Back! (Japanese)](https://wiki.swccg.com/wiki/Fall_Back%21_%28Japanese%29) — revision 300680
+- [Fear Will Keep Them In Line (Japanese)](https://wiki.swccg.com/wiki/Fear_Will_Keep_Them_In_Line_%28Japanese%29) — revision 300681
+- [Feltipern Trevagg (Japanese)](https://wiki.swccg.com/wiki/Feltipern_Trevagg_%28Japanese%29) — revision 300682
+- [Figrin D'an (Japanese)](https://wiki.swccg.com/wiki/Figrin_D%27an_%28Japanese%29) — revision 300683
+- [Fire Extinguisher (Japanese)](https://wiki.swccg.com/wiki/Fire_Extinguisher_%28Japanese%29) — revision 300684
+- [Friendly Fire (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Friendly_Fire_%28Japanese_Premiere_Two-Player%29) — revision 300685
+- [Friendly Fire (Japanese)](https://wiki.swccg.com/wiki/Friendly_Fire_%28Japanese%29) — revision 300686
+- [Frostbite (Dark) (Japanese)](https://wiki.swccg.com/wiki/Frostbite_%28Dark%29_%28Japanese%29) — revision 300687
+- [Frostbite (Japanese)](https://wiki.swccg.com/wiki/Frostbite_%28Japanese%29) — revision 300688
+- [Frozen Dinner (Japanese)](https://wiki.swccg.com/wiki/Frozen_Dinner_%28Japanese%29) — revision 300689
+- [Full Scale Alert (Japanese)](https://wiki.swccg.com/wiki/Full_Scale_Alert_%28Japanese%29) — revision 300690
+- [Full Throttle (Japanese)](https://wiki.swccg.com/wiki/Full_Throttle_%28Japanese%29) — revision 300691
+- [Furry Fury (Japanese)](https://wiki.swccg.com/wiki/Furry_Fury_%28Japanese%29) — revision 300692
+- [Fusion Generator Supply Tanks (Dark) (Japanese)](https://wiki.swccg.com/wiki/Fusion_Generator_Supply_Tanks_%28Dark%29_%28Japanese%29) — revision 300693
+- [Fusion Generator Supply Tanks (Japanese)](https://wiki.swccg.com/wiki/Fusion_Generator_Supply_Tanks_%28Japanese%29) — revision 300694
+- [Gaderffii Stick (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Gaderffii_Stick_%28Japanese_Premiere_Two-Player%29) — revision 300695
+- [Gaderffii Stick (Japanese)](https://wiki.swccg.com/wiki/Gaderffii_Stick_%28Japanese%29) — revision 300696
+- [Garindan (Japanese)](https://wiki.swccg.com/wiki/Garindan_%28Japanese%29) — revision 300697
+- [Garouf Lafoe (Japanese)](https://wiki.swccg.com/wiki/Garouf_Lafoe_%28Japanese%29) — revision 300698
+- [General Carlist Rieekan (Japanese)](https://wiki.swccg.com/wiki/General_Carlist_Rieekan_%28Japanese%29) — revision 300699
+- [General Dodonna (Japanese)](https://wiki.swccg.com/wiki/General_Dodonna_%28Japanese%29) — revision 300700
+- [General Tagge (Japanese)](https://wiki.swccg.com/wiki/General_Tagge_%28Japanese%29) — revision 300701
+- [General Veers (Japanese)](https://wiki.swccg.com/wiki/General_Veers_%28Japanese%29) — revision 300702
+- [Ghhhk (Japanese)](https://wiki.swccg.com/wiki/Ghhhk_%28Japanese%29) — revision 300703
+- [Gift Of The Mentor (Japanese)](https://wiki.swccg.com/wiki/Gift_Of_The_Mentor_%28Japanese%29) — revision 300704
+- [Golan Laser Battery (Japanese)](https://wiki.swccg.com/wiki/Golan_Laser_Battery_%28Japanese%29) — revision 300705
+- [Gold 1 (Japanese)](https://wiki.swccg.com/wiki/Gold_1_%28Japanese%29) — revision 300706
+- [Gold 2 (Japanese)](https://wiki.swccg.com/wiki/Gold_2_%28Japanese%29) — revision 300707
+- [Gold 5 (Japanese)](https://wiki.swccg.com/wiki/Gold_5_%28Japanese%29) — revision 300708
+- [Grand Moff Tarkin (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Grand_Moff_Tarkin_%28Japanese_Reflections_III_Foil%29) — revision 300709
+- [Grand Moff Tarkin (Japanese)](https://wiki.swccg.com/wiki/Grand_Moff_Tarkin_%28Japanese%29) — revision 300710
+- [Grappling Hook (Japanese)](https://wiki.swccg.com/wiki/Grappling_Hook_%28Japanese%29) — revision 300711
+- [Gravel Storm (Japanese)](https://wiki.swccg.com/wiki/Gravel_Storm_%28Japanese%29) — revision 300712
+- [Greedo (Japanese)](https://wiki.swccg.com/wiki/Greedo_%28Japanese%29) — revision 300713
+- [Grimtaash (Japanese)](https://wiki.swccg.com/wiki/Grimtaash_%28Japanese%29) — revision 300714
+- [Han Seeker (Japanese)](https://wiki.swccg.com/wiki/Han_Seeker_%28Japanese%29) — revision 300715
+- [Han Solo (Japanese)](https://wiki.swccg.com/wiki/Han_Solo_%28Japanese%29) — revision 300716
+- [Han's Back (Japanese)](https://wiki.swccg.com/wiki/Han%27s_Back_%28Japanese%29) — revision 300717
+- [Han's Dice (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Han%27s_Dice_%28Japanese_Premiere_Two-Player%29) — revision 300718
+- [Han's Dice (Japanese)](https://wiki.swccg.com/wiki/Han%27s_Dice_%28Japanese%29) — revision 300719
+- [Han's Heavy Blaster Pistol (Japanese)](https://wiki.swccg.com/wiki/Han%27s_Heavy_Blaster_Pistol_%28Japanese%29) — revision 300720
+- [He Hasn't Come Back Yet (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/He_Hasn%27t_Come_Back_Yet_%28Japanese_ESB_Two-Player%29) — revision 300721
+- [He Hasn't Come Back Yet (Japanese)](https://wiki.swccg.com/wiki/He_Hasn%27t_Come_Back_Yet_%28Japanese%29) — revision 300722
+- [Hear Me Baby, Hold Together (Japanese)](https://wiki.swccg.com/wiki/Hear_Me_Baby%2C_Hold_Together_%28Japanese%29) — revision 300723
+- [Help Me Obi-Wan Kenobi (Japanese)](https://wiki.swccg.com/wiki/Help_Me_Obi-Wan_Kenobi_%28Japanese%29) — revision 300724
+- [Hem Dazon (Japanese)](https://wiki.swccg.com/wiki/Hem_Dazon_%28Japanese%29) — revision 300725
+- [Het Nkik (Japanese)](https://wiki.swccg.com/wiki/Het_Nkik_%28Japanese%29) — revision 300726
+- [High Anxiety (Japanese)](https://wiki.swccg.com/wiki/High_Anxiety_%28Japanese%29) — revision 300727
+- [Hoth (Dark) (Japanese)](https://wiki.swccg.com/wiki/Hoth_%28Dark%29_%28Japanese%29) — revision 300728
+- [Hoth (Light) (Japanese)](https://wiki.swccg.com/wiki/Hoth_%28Light%29_%28Japanese%29) — revision 300729
+- [Hoth Survival Gear (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth_Survival_Gear_%28Japanese_ESB_Two-Player%29) — revision 300730
+- [Hoth Survival Gear (Japanese)](https://wiki.swccg.com/wiki/Hoth_Survival_Gear_%28Japanese%29) — revision 300731
+- [Hoth: Defensive Perimeter (3rd Marker) (Dark) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Defensive_Perimeter_%283rd_Marker%29_%28Dark%29_%28Japanese_ESB_Two-Player%29) — revision 300732
+- [Hoth: Defensive Perimeter (3rd Marker) (Dark) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Defensive_Perimeter_%283rd_Marker%29_%28Dark%29_%28Japanese%29) — revision 300733
+- [Hoth: Defensive Perimeter (3rd Marker) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Defensive_Perimeter_%283rd_Marker%29_%28Japanese_ESB_Two-Player%29) — revision 300734
+- [Hoth: Defensive Perimeter (3rd Marker) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Defensive_Perimeter_%283rd_Marker%29_%28Japanese%29) — revision 300735
+- [Hoth: Echo Command Center (War Room) (Dark) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Command_Center_%28War_Room%29_%28Dark%29_%28Japanese%29) — revision 300736
+- [Hoth: Echo Command Center (War Room) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Command_Center_%28War_Room%29_%28Japanese%29) — revision 300737
+- [Hoth: Echo Corridor (Dark) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Corridor_%28Dark%29_%28Japanese%29) — revision 300738
+- [Hoth: Echo Corridor (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Corridor_%28Japanese_ESB_Two-Player%29) — revision 300739
+- [Hoth: Echo Corridor (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Corridor_%28Japanese%29) — revision 300740
+- [Hoth: Echo Docking Bay (Dark) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Docking_Bay_%28Dark%29_%28Japanese_ESB_Two-Player%29) — revision 300741
+- [Hoth: Echo Docking Bay (Dark) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Docking_Bay_%28Dark%29_%28Japanese%29) — revision 300742
+- [Hoth: Echo Docking Bay (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Docking_Bay_%28Japanese_ESB_Two-Player%29) — revision 300743
+- [Hoth: Echo Docking Bay (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Docking_Bay_%28Japanese%29) — revision 300744
+- [Hoth: Echo Med Lab (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Med_Lab_%28Japanese_ESB_Two-Player%29) — revision 300745
+- [Hoth: Echo Med Lab (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Echo_Med_Lab_%28Japanese%29) — revision 300746
+- [Hoth: Ice Plains (5th Marker) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Ice_Plains_%285th_Marker%29_%28Japanese_ESB_Two-Player%29) — revision 300747
+- [Hoth: Ice Plains (5th Marker) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Ice_Plains_%285th_Marker%29_%28Japanese%29) — revision 300748
+- [Hoth: Main Power Generators (1st Marker) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Main_Power_Generators_%281st_Marker%29_%28Japanese%29) — revision 300749
+- [Hoth: Mountains (6th Marker) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Mountains_%286th_Marker%29_%28Japanese_ESB_Two-Player%29) — revision 300750
+- [Hoth: North Ridge (4th Marker) (Dark) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_North_Ridge_%284th_Marker%29_%28Dark%29_%28Japanese_ESB_Two-Player%29) — revision 300751
+- [Hoth: North Ridge (4th Marker) (Dark) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_North_Ridge_%284th_Marker%29_%28Dark%29_%28Japanese%29) — revision 300752
+- [Hoth: North Ridge (4th Marker) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_North_Ridge_%284th_Marker%29_%28Japanese%29) — revision 300753
+- [Hoth: Snow Trench (2nd Marker) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Hoth%3A_Snow_Trench_%282nd_Marker%29_%28Japanese_ESB_Two-Player%29) — revision 300754
+- [Hoth: Snow Trench (2nd Marker) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Snow_Trench_%282nd_Marker%29_%28Japanese%29) — revision 300755
+- [Hoth: Wampa Cave (7th Marker) (Japanese)](https://wiki.swccg.com/wiki/Hoth%3A_Wampa_Cave_%287th_Marker%29_%28Japanese%29) — revision 300756
+- [Houjix (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Houjix_%28Japanese_ESB_Two-Player%29) — revision 300757
+- [Houjix (Japanese)](https://wiki.swccg.com/wiki/Houjix_%28Japanese%29) — revision 300758
+- [How Did We Get Into This Mess? (Japanese)](https://wiki.swccg.com/wiki/How_Did_We_Get_Into_This_Mess%3F_%28Japanese%29) — revision 300759
+- [Hunchback (Japanese)](https://wiki.swccg.com/wiki/Hunchback_%28Japanese%29) — revision 300760
+- [Hydroponics Station (Japanese)](https://wiki.swccg.com/wiki/Hydroponics_Station_%28Japanese%29) — revision 300761
+- [Hyper Escape (Japanese)](https://wiki.swccg.com/wiki/Hyper_Escape_%28Japanese%29) — revision 300762
+- [Hyperwave Scan (Japanese)](https://wiki.swccg.com/wiki/Hyperwave_Scan_%28Japanese%29) — revision 300763
+- [Hypo (Japanese)](https://wiki.swccg.com/wiki/Hypo_%28Japanese%29) — revision 300764
+- [I Find Your Lack Of Faith Disturbing (Japanese)](https://wiki.swccg.com/wiki/I_Find_Your_Lack_Of_Faith_Disturbing_%28Japanese%29) — revision 300765
+- [I Have A Very Bad Feeling About This (Japanese)](https://wiki.swccg.com/wiki/I_Have_A_Very_Bad_Feeling_About_This_%28Japanese%29) — revision 300766
+- [I Have You Now (Japanese)](https://wiki.swccg.com/wiki/I_Have_You_Now_%28Japanese%29) — revision 300767
+- [I Thought They Smelled Bad On The Outside (Japanese)](https://wiki.swccg.com/wiki/I_Thought_They_Smelled_Bad_On_The_Outside_%28Japanese%29) — revision 300768
+- [I'd Just As Soon Kiss A Wookiee (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/I%27d_Just_As_Soon_Kiss_A_Wookiee_%28Japanese_ESB_Two-Player%29) — revision 300769
+- [I'd Just As Soon Kiss A Wookiee (Japanese)](https://wiki.swccg.com/wiki/I%27d_Just_As_Soon_Kiss_A_Wookiee_%28Japanese%29) — revision 300770
+- [I'm Here To Rescue You (Japanese)](https://wiki.swccg.com/wiki/I%27m_Here_To_Rescue_You_%28Japanese%29) — revision 300771
+- [I'm On The Leader (Japanese)](https://wiki.swccg.com/wiki/I%27m_On_The_Leader_%28Japanese%29) — revision 300772
+- [I've Got A Bad Feeling About This (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/I%27ve_Got_A_Bad_Feeling_About_This_%28Japanese_Premiere_Two-Player%29) — revision 300773
+- [I've Got A Bad Feeling About This (Japanese)](https://wiki.swccg.com/wiki/I%27ve_Got_A_Bad_Feeling_About_This_%28Japanese%29) — revision 300774
+- [I've Got A Problem Here (Japanese)](https://wiki.swccg.com/wiki/I%27ve_Got_A_Problem_Here_%28Japanese%29) — revision 300775
+- [I've Lost Artoo! (Japanese)](https://wiki.swccg.com/wiki/I%27ve_Lost_Artoo%21_%28Japanese%29) — revision 300776
+- [IT-O (Eyetee-Oh) (Japanese)](https://wiki.swccg.com/wiki/IT-O_%28Eyetee-Oh%29_%28Japanese%29) — revision 300777
+- [Ice Storm (Dark) (Japanese)](https://wiki.swccg.com/wiki/Ice_Storm_%28Dark%29_%28Japanese%29) — revision 300778
+- [Ice Storm (Japanese)](https://wiki.swccg.com/wiki/Ice_Storm_%28Japanese%29) — revision 300779
+- [Ickabel G'ont (Japanese)](https://wiki.swccg.com/wiki/Ickabel_G%27ont_%28Japanese%29) — revision 300780
+- [Image Of The Dark Lord (Japanese)](https://wiki.swccg.com/wiki/Image_Of_The_Dark_Lord_%28Japanese%29) — revision 300781
+- [Imperial Barrier (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Imperial_Barrier_%28Japanese_Premiere_Two-Player%29) — revision 300782
+- [Imperial Barrier (Japanese)](https://wiki.swccg.com/wiki/Imperial_Barrier_%28Japanese%29) — revision 300783
+- [Imperial Blaster (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Imperial_Blaster_%28Japanese_ESB_Two-Player%29) — revision 300784
+- [Imperial Blaster (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Imperial_Blaster_%28Japanese_Premiere_Two-Player%29) — revision 300785
+- [Imperial Blaster (Japanese)](https://wiki.swccg.com/wiki/Imperial_Blaster_%28Japanese%29) — revision 300786
+- [Imperial Code Cylinder (Japanese)](https://wiki.swccg.com/wiki/Imperial_Code_Cylinder_%28Japanese%29) — revision 300787
+- [Imperial Commander (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Imperial_Commander_%28Japanese_ESB_Two-Player%29) — revision 300788
+- [Imperial Commander (Japanese)](https://wiki.swccg.com/wiki/Imperial_Commander_%28Japanese%29) — revision 300789
+- [Imperial Domination (Japanese)](https://wiki.swccg.com/wiki/Imperial_Domination_%28Japanese%29) — revision 300790
+- [Imperial Gunner (Japanese)](https://wiki.swccg.com/wiki/Imperial_Gunner_%28Japanese%29) — revision 300791
+- [Imperial Holotable (Japanese)](https://wiki.swccg.com/wiki/Imperial_Holotable_%28Japanese%29) — revision 300792
+- [Imperial Justice (Japanese)](https://wiki.swccg.com/wiki/Imperial_Justice_%28Japanese%29) — revision 300793
+- [Imperial Pilot (Japanese)](https://wiki.swccg.com/wiki/Imperial_Pilot_%28Japanese%29) — revision 300794
+- [Imperial Reinforcements (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Imperial_Reinforcements_%28Japanese_Premiere_Two-Player%29) — revision 300795
+- [Imperial Reinforcements (Japanese)](https://wiki.swccg.com/wiki/Imperial_Reinforcements_%28Japanese%29) — revision 300796
+- [Imperial Squad Leader (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Imperial_Squad_Leader_%28Japanese_ESB_Two-Player%29) — revision 300797
+- [Imperial Squad Leader (Japanese)](https://wiki.swccg.com/wiki/Imperial_Squad_Leader_%28Japanese%29) — revision 300798
+- [Imperial Supply (Japanese)](https://wiki.swccg.com/wiki/Imperial_Supply_%28Japanese%29) — revision 300799
+- [Imperial Trooper Guard (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Imperial_Trooper_Guard_%28Japanese_ESB_Two-Player%29) — revision 300800
+- [Imperial Trooper Guard (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Imperial_Trooper_Guard_%28Japanese_Premiere_Two-Player%29) — revision 300801
+- [Imperial Trooper Guard (Japanese)](https://wiki.swccg.com/wiki/Imperial_Trooper_Guard_%28Japanese%29) — revision 300802
+- [Imperial Walker (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Imperial_Walker_%28Japanese_ESB_Two-Player%29) — revision 300803
+- [Imperial Walker (Japanese Reflections II Foil)](https://wiki.swccg.com/wiki/Imperial_Walker_%28Japanese_Reflections_II_Foil%29) — revision 300804
+- [Imperial-Class Star Destroyer (Japanese)](https://wiki.swccg.com/wiki/Imperial-Class_Star_Destroyer_%28Japanese%29) — revision 300805
+- [Incom T-16 Skyhopper (Japanese)](https://wiki.swccg.com/wiki/Incom_T-16_Skyhopper_%28Japanese%29) — revision 300806
+- [Infantry Mine (Dark) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Infantry_Mine_%28Dark%29_%28Japanese_ESB_Two-Player%29) — revision 300807
+- [Infantry Mine (Dark) (Japanese)](https://wiki.swccg.com/wiki/Infantry_Mine_%28Dark%29_%28Japanese%29) — revision 300808
+- [Infantry Mine (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Infantry_Mine_%28Japanese_ESB_Two-Player%29) — revision 300809
+- [Infantry Mine (Japanese)](https://wiki.swccg.com/wiki/Infantry_Mine_%28Japanese%29) — revision 300810
+- [Informant (Japanese)](https://wiki.swccg.com/wiki/Informant_%28Japanese%29) — revision 300811
+- [Into The Garbage Chute, Flyboy (Japanese)](https://wiki.swccg.com/wiki/Into_The_Garbage_Chute%2C_Flyboy_%28Japanese%29) — revision 300812
+- [Ion Cannon (Japanese)](https://wiki.swccg.com/wiki/Ion_Cannon_%28Japanese%29) — revision 300813
+- [It Can Wait (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/It_Can_Wait_%28Japanese_ESB_Two-Player%29) — revision 300814
+- [It Can Wait (Japanese)](https://wiki.swccg.com/wiki/It_Can_Wait_%28Japanese%29) — revision 300815
+- [It Could Be Worse (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/It_Could_Be_Worse_%28Japanese_ESB_Two-Player%29) — revision 300816
+- [It Could Be Worse (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/It_Could_Be_Worse_%28Japanese_Premiere_Two-Player%29) — revision 300817
+- [It Could Be Worse (Japanese)](https://wiki.swccg.com/wiki/It_Could_Be_Worse_%28Japanese%29) — revision 300818
+- [It's Worse (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/It%27s_Worse_%28Japanese_Premiere_Two-Player%29) — revision 300819
+- [It's Worse (Japanese)](https://wiki.swccg.com/wiki/It%27s_Worse_%28Japanese%29) — revision 300820
+- [Jawa (Dark) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Jawa_%28Dark%29_%28Japanese_Premiere_Two-Player%29) — revision 300821
+- [Jawa (Dark) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Jawa_%28Dark%29_%28Premiere%29_%28Japanese%29) — revision 300822
+- [Jawa (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Jawa_%28Japanese_Premiere_Two-Player%29) — revision 300823
+- [Jawa (Light) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Jawa_%28Light%29_%28Premiere%29_%28Japanese%29) — revision 300824
+- [Jawa Blaster (Japanese)](https://wiki.swccg.com/wiki/Jawa_Blaster_%28Japanese%29) — revision 300825
+- [Jawa Ion Gun (Japanese)](https://wiki.swccg.com/wiki/Jawa_Ion_Gun_%28Japanese%29) — revision 300826
+- [Jawa Pack (Japanese)](https://wiki.swccg.com/wiki/Jawa_Pack_%28Japanese%29) — revision 300827
+- [Jawa Siesta (Japanese)](https://wiki.swccg.com/wiki/Jawa_Siesta_%28Japanese%29) — revision 300828
+- [Jedi Lightsaber (Japanese)](https://wiki.swccg.com/wiki/Jedi_Lightsaber_%28Japanese%29) — revision 300829
+- [Jedi Presence (Japanese)](https://wiki.swccg.com/wiki/Jedi_Presence_%28Japanese%29) — revision 300830
+- [Jek Porkins (Japanese)](https://wiki.swccg.com/wiki/Jek_Porkins_%28Japanese%29) — revision 300831
+- [Jeroen Webb (Japanese)](https://wiki.swccg.com/wiki/Jeroen_Webb_%28Japanese%29) — revision 300832
+- [Juri Juice (Japanese)](https://wiki.swccg.com/wiki/Juri_Juice_%28Japanese%29) — revision 300833
+- [K'lor'slug (Japanese)](https://wiki.swccg.com/wiki/K%27lor%27slug_%28Japanese%29) — revision 300834
+- [K-3PO (Kay-Threepio) (Japanese)](https://wiki.swccg.com/wiki/K-3PO_%28Kay-Threepio%29_%28Japanese%29) — revision 300835
+- [Kabe (Japanese)](https://wiki.swccg.com/wiki/Kabe_%28Japanese%29) — revision 300836
+- [Kal'Falnl C'ndros (Japanese)](https://wiki.swccg.com/wiki/Kal%27Falnl_C%27ndros_%28Japanese%29) — revision 300837
+- [Kashyyyk (Dark) (Japanese)](https://wiki.swccg.com/wiki/Kashyyyk_%28Dark%29_%28Japanese%29) — revision 300448
+- [Kashyyyk (Japanese)](https://wiki.swccg.com/wiki/Kashyyyk_%28Japanese%29) — revision 300838
+- [Kessel (Dark) (Japanese)](https://wiki.swccg.com/wiki/Kessel_%28Dark%29_%28Japanese%29) — revision 300839
+- [Kessel (Japanese)](https://wiki.swccg.com/wiki/Kessel_%28Japanese%29) — revision 300840
+- [Kessel Run (Japanese)](https://wiki.swccg.com/wiki/Kessel_Run_%28Japanese%29) — revision 300841
+- [Ket Maliss (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Ket_Maliss_%28Japanese_ESB_Two-Player%29) — revision 300842
+- [Ket Maliss (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Ket_Maliss_%28Japanese_Premiere_Two-Player%29) — revision 300843
+- [Ket Maliss (Japanese)](https://wiki.swccg.com/wiki/Ket_Maliss_%28Japanese%29) — revision 300844
+- [Kiffex (Japanese)](https://wiki.swccg.com/wiki/Kiffex_%28Japanese%29) — revision 300845
+- [Kintan Strider (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Kintan_Strider_%28Japanese_Premiere_Two-Player%29) — revision 300846
+- [Kintan Strider (Japanese)](https://wiki.swccg.com/wiki/Kintan_Strider_%28Japanese%29) — revision 300847
+- [Kitik Keed'kak (Japanese)](https://wiki.swccg.com/wiki/Kitik_Keed%27kak_%28Japanese%29) — revision 300848
+- [Krayt Dragon Bones (Japanese)](https://wiki.swccg.com/wiki/Krayt_Dragon_Bones_%28Japanese%29) — revision 300849
+- [Krayt Dragon Howl (Japanese)](https://wiki.swccg.com/wiki/Krayt_Dragon_Howl_%28Japanese%29) — revision 300850
+- [LIN-V8K (Elleyein-Veeatekay) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/LIN-V8K_%28Elleyein-Veeatekay%29_%28Japanese_ESB_Two-Player%29) — revision 300851
+- [LIN-V8K (Elleyein-Veeatekay) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/LIN-V8K_%28Elleyein-Veeatekay%29_%28Japanese_Premiere_Two-Player%29) — revision 300852
+- [LIN-V8K (Elleyein-Veeatekay) (Japanese)](https://wiki.swccg.com/wiki/LIN-V8K_%28Elleyein-Veeatekay%29_%28Japanese%29) — revision 300853
+- [LIN-V8M (Elleyein-Veeateemm) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/LIN-V8M_%28Elleyein-Veeateemm%29_%28Japanese_ESB_Two-Player%29) — revision 300854
+- [LIN-V8M (Elleyein-Veeateemm) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/LIN-V8M_%28Elleyein-Veeateemm%29_%28Japanese_Premiere_Two-Player%29) — revision 300855
+- [LIN-V8M (Elleyein-Veeateemm) (Japanese)](https://wiki.swccg.com/wiki/LIN-V8M_%28Elleyein-Veeateemm%29_%28Japanese%29) — revision 300856
+- [Labria (Japanese)](https://wiki.swccg.com/wiki/Labria_%28Japanese%29) — revision 300857
+- [Laser Gate (Japanese)](https://wiki.swccg.com/wiki/Laser_Gate_%28Japanese%29) — revision 300858
+- [Laser Projector (Japanese)](https://wiki.swccg.com/wiki/Laser_Projector_%28Japanese%29) — revision 300859
+- [Lateral Damage (Japanese)](https://wiki.swccg.com/wiki/Lateral_Damage_%28Japanese%29) — revision 300860
+- [Leesub Sirln (Japanese)](https://wiki.swccg.com/wiki/Leesub_Sirln_%28Japanese%29) — revision 300861
+- [Leia (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Leia_%28Japanese_ESB_Two-Player%29) — revision 300862
+- [Leia (Japanese Reflections II Foil)](https://wiki.swccg.com/wiki/Leia_%28Japanese_Reflections_II_Foil%29) — revision 300863
+- [Leia Organa (Japanese)](https://wiki.swccg.com/wiki/Leia_Organa_%28Japanese%29) — revision 300864
+- [Leia Seeker (Japanese)](https://wiki.swccg.com/wiki/Leia_Seeker_%28Japanese%29) — revision 300865
+- [Leia's Back (Japanese)](https://wiki.swccg.com/wiki/Leia%27s_Back_%28Japanese%29) — revision 300866
+- [Leia's Sporting Blaster (Japanese)](https://wiki.swccg.com/wiki/Leia%27s_Sporting_Blaster_%28Japanese%29) — revision 300867
+- [Let The Wookiee Win (Japanese)](https://wiki.swccg.com/wiki/Let_The_Wookiee_Win_%28Japanese%29) — revision 300868
+- [Lieutenant Cabbel (Japanese)](https://wiki.swccg.com/wiki/Lieutenant_Cabbel_%28Japanese%29) — revision 300869
+- [Lieutenant Tanbris (Japanese)](https://wiki.swccg.com/wiki/Lieutenant_Tanbris_%28Japanese%29) — revision 300870
+- [Lift Tube (Dark) (Japanese)](https://wiki.swccg.com/wiki/Lift_Tube_%28Dark%29_%28Japanese%29) — revision 300871
+- [Lift Tube (Japanese)](https://wiki.swccg.com/wiki/Lift_Tube_%28Japanese%29) — revision 300872
+- [Light Repeating Blaster Rifle (Japanese)](https://wiki.swccg.com/wiki/Light_Repeating_Blaster_Rifle_%28Japanese%29) — revision 300873
+- [Lightsaber Deficiency (Japanese)](https://wiki.swccg.com/wiki/Lightsaber_Deficiency_%28Japanese%29) — revision 300874
+- [Lightsaber Proficiency (Japanese)](https://wiki.swccg.com/wiki/Lightsaber_Proficiency_%28Japanese%29) — revision 300875
+- [Limited Resources (Japanese)](https://wiki.swccg.com/wiki/Limited_Resources_%28Japanese%29) — revision 300876
+- [Lirin Car'n (Japanese)](https://wiki.swccg.com/wiki/Lirin_Car%27n_%28Japanese%29) — revision 300877
+- [Local Trouble (Japanese)](https://wiki.swccg.com/wiki/Local_Trouble_%28Japanese%29) — revision 300878
+- [Logistical Delay (Japanese)](https://wiki.swccg.com/wiki/Logistical_Delay_%28Japanese%29) — revision 300879
+- [Lone Pilot (Japanese)](https://wiki.swccg.com/wiki/Lone_Pilot_%28Japanese%29) — revision 300880
+- [Lone Rogue (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Lone_Rogue_%28Japanese_ESB_Two-Player%29) — revision 300881
+- [Lone Warrior (Japanese)](https://wiki.swccg.com/wiki/Lone_Warrior_%28Japanese%29) — revision 300882
+- [Look Sir, Droids (Japanese)](https://wiki.swccg.com/wiki/Look_Sir%2C_Droids_%28Japanese%29) — revision 300883
+- [Lt. Pol Treidum (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Lt._Pol_Treidum_%28Japanese_ESB_Two-Player%29) — revision 300884
+- [Lt. Pol Treidum (Japanese)](https://wiki.swccg.com/wiki/Lt._Pol_Treidum_%28Japanese%29) — revision 300885
+- [Lt. Shann Childsen (Japanese)](https://wiki.swccg.com/wiki/Lt._Shann_Childsen_%28Japanese%29) — revision 300886
+- [Lucky Shot (Japanese)](https://wiki.swccg.com/wiki/Lucky_Shot_%28Japanese%29) — revision 300887
+- [Luke (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Luke_%28Japanese_Premiere_Two-Player%29) — revision 300888
+- [Luke Seeker (Japanese)](https://wiki.swccg.com/wiki/Luke_Seeker_%28Japanese%29) — revision 300889
+- [Luke Skywalker (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Luke_Skywalker_%28Japanese_Reflections_III_Foil%29) — revision 300890
+- [Luke Skywalker (Japanese)](https://wiki.swccg.com/wiki/Luke_Skywalker_%28Japanese%29) — revision 300891
+- [Luke's Back (Japanese)](https://wiki.swccg.com/wiki/Luke%27s_Back_%28Japanese%29) — revision 300892
+- [Luke's Cape (Japanese)](https://wiki.swccg.com/wiki/Luke%27s_Cape_%28Japanese%29) — revision 300893
+- [Luke's Hunting Rifle (Japanese)](https://wiki.swccg.com/wiki/Luke%27s_Hunting_Rifle_%28Japanese%29) — revision 300894
+- [Luke's X-34 Landspeeder (Japanese)](https://wiki.swccg.com/wiki/Luke%27s_X-34_Landspeeder_%28Japanese%29) — revision 300895
+- [Luke? Luuuuke! (Japanese)](https://wiki.swccg.com/wiki/Luke%3F_Luuuuke%21_%28Japanese%29) — revision 300896
+- [M'iiyoom Onith (Japanese)](https://wiki.swccg.com/wiki/M%27iiyoom_Onith_%28Japanese%29) — revision 300897
+- [M-HYD 'Binary' Droid (Japanese)](https://wiki.swccg.com/wiki/M-HYD_%27Binary%27_Droid_%28Japanese%29) — revision 300898
+- [MSE-6 'Mouse' Droid (Japanese)](https://wiki.swccg.com/wiki/MSE-6_%27Mouse%27_Droid_%28Japanese%29) — revision 300899
+- [Macroscan (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Macroscan_%28Japanese_Premiere_Two-Player%29) — revision 300900
+- [Macroscan (Japanese)](https://wiki.swccg.com/wiki/Macroscan_%28Japanese%29) — revision 300901
+- [Magnetic Suction Tube (Dark) (Japanese)](https://wiki.swccg.com/wiki/Magnetic_Suction_Tube_%28Dark%29_%28Japanese%29) — revision 300902
+- [Magnetic Suction Tube (Japanese)](https://wiki.swccg.com/wiki/Magnetic_Suction_Tube_%28Japanese%29) — revision 300903
+- [Major Bren Derlin (Japanese)](https://wiki.swccg.com/wiki/Major_Bren_Derlin_%28Japanese%29) — revision 300904
+- [Maneuver Check (Japanese)](https://wiki.swccg.com/wiki/Maneuver_Check_%28Japanese%29) — revision 300905
+- [Mantellian Savrip (Japanese)](https://wiki.swccg.com/wiki/Mantellian_Savrip_%28Japanese%29) — revision 300906
+- [Mara Jade & •Corran Horn & •Talon Karrde](https://wiki.swccg.com/wiki/Mara_Jade_%26_%E2%80%A2Corran_Horn_%26_%E2%80%A2Talon_Karrde) — revision 300575
+- [Medium Repeating Blaster Cannon (Japanese)](https://wiki.swccg.com/wiki/Medium_Repeating_Blaster_Cannon_%28Japanese%29) — revision 300907
+- [Medium Transport (Japanese)](https://wiki.swccg.com/wiki/Medium_Transport_%28Japanese%29) — revision 300908
+- [Merc Sunlet (Japanese)](https://wiki.swccg.com/wiki/Merc_Sunlet_%28Japanese%29) — revision 300909
+- [Meteor Impact? (Japanese)](https://wiki.swccg.com/wiki/Meteor_Impact%3F_%28Japanese%29) — revision 300910
+- [Millennium Falcon (Japanese)](https://wiki.swccg.com/wiki/Millennium_Falcon_%28Japanese%29) — revision 300911
+- [Mobquet A-1 Deluxe Floater (Japanese)](https://wiki.swccg.com/wiki/Mobquet_A-1_Deluxe_Floater_%28Japanese%29) — revision 300912
+- [Molator (Japanese)](https://wiki.swccg.com/wiki/Molator_%28Japanese%29) — revision 300913
+- [Momaw Nadon (Japanese)](https://wiki.swccg.com/wiki/Momaw_Nadon_%28Japanese%29) — revision 300914
+- [Moment Of Triumph (Japanese)](https://wiki.swccg.com/wiki/Moment_Of_Triumph_%28Japanese%29) — revision 300915
+- [Monnok (Japanese)](https://wiki.swccg.com/wiki/Monnok_%28Japanese%29) — revision 300916
+- [Mosep (Japanese)](https://wiki.swccg.com/wiki/Mosep_%28Japanese%29) — revision 300917
+- [Motti Seeker (Japanese)](https://wiki.swccg.com/wiki/Motti_Seeker_%28Japanese%29) — revision 300918
+- [Mournful Roar (Japanese)](https://wiki.swccg.com/wiki/Mournful_Roar_%28Japanese%29) — revision 300919
+- [Move Along... (Japanese)](https://wiki.swccg.com/wiki/Move_Along..._%28Japanese%29) — revision 300920
+- [Myo (Japanese)](https://wiki.swccg.com/wiki/Myo_%28Japanese%29) — revision 300921
+- [Nabrun Leids (Japanese)](https://wiki.swccg.com/wiki/Nabrun_Leids_%28Japanese%29) — revision 300922
+- [Nalan Cheel (Japanese)](https://wiki.swccg.com/wiki/Nalan_Cheel_%28Japanese%29) — revision 300923
+- [Narrow Escape (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Narrow_Escape_%28Japanese_Premiere_Two-Player%29) — revision 300924
+- [Narrow Escape (Japanese)](https://wiki.swccg.com/wiki/Narrow_Escape_%28Japanese%29) — revision 300925
+- [Nevar Yalnal (Japanese)](https://wiki.swccg.com/wiki/Nevar_Yalnal_%28Japanese%29) — revision 300926
+- [Ng'ok (Japanese)](https://wiki.swccg.com/wiki/Ng%27ok_%28Japanese%29) — revision 300927
+- [Nice Of You Guys To Drop By (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Nice_Of_You_Guys_To_Drop_By_%28Japanese_ESB_Two-Player%29) — revision 300928
+- [Nice Of You Guys To Drop By (Japanese)](https://wiki.swccg.com/wiki/Nice_Of_You_Guys_To_Drop_By_%28Japanese%29) — revision 300929
+- [Nightfall (Japanese)](https://wiki.swccg.com/wiki/Nightfall_%28Japanese%29) — revision 300930
+- [Noble Sacrifice (Japanese)](https://wiki.swccg.com/wiki/Noble_Sacrifice_%28Japanese%29) — revision 300931
+- [Obi-Wan Kenobi (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Obi-Wan_Kenobi_%28Japanese_Reflections_III_Foil%29) — revision 300932
+- [Obi-Wan Kenobi (Japanese)](https://wiki.swccg.com/wiki/Obi-Wan_Kenobi_%28Japanese%29) — revision 300933
+- [Obi-Wan's Cape (Japanese)](https://wiki.swccg.com/wiki/Obi-Wan%27s_Cape_%28Japanese%29) — revision 300934
+- [Obi-Wan's Lightsaber (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Obi-Wan%27s_Lightsaber_%28Japanese_Reflections_III_Foil%29) — revision 300935
+- [Obi-Wan's Lightsaber (Japanese)](https://wiki.swccg.com/wiki/Obi-Wan%27s_Lightsaber_%28Japanese%29) — revision 300936
+- [Observation Holocam (Japanese)](https://wiki.swccg.com/wiki/Observation_Holocam_%28Japanese%29) — revision 300937
+- [Officer Evax (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Officer_Evax_%28Japanese_ESB_Two-Player%29) — revision 300938
+- [Officer Evax (Japanese)](https://wiki.swccg.com/wiki/Officer_Evax_%28Japanese%29) — revision 300939
+- [Oh, Switch Off (Japanese)](https://wiki.swccg.com/wiki/Oh%2C_Switch_Off_%28Japanese%29) — revision 300940
+- [Old Ben (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Old_Ben_%28Japanese_Premiere_Two-Player%29) — revision 300941
+- [Old Ben (Japanese)](https://wiki.swccg.com/wiki/Old_Ben_%28Japanese%29) — revision 300942
+- [Ommni Box (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Ommni_Box_%28Japanese_Premiere_Two-Player%29) — revision 300943
+- [Ommni Box (Japanese)](https://wiki.swccg.com/wiki/Ommni_Box_%28Japanese%29) — revision 300944
+- [On The Edge (Japanese)](https://wiki.swccg.com/wiki/On_The_Edge_%28Japanese%29) — revision 300945
+- [One More Pass (Japanese)](https://wiki.swccg.com/wiki/One_More_Pass_%28Japanese%29) — revision 300946
+- [Oo-ta Goo-ta, Solo? (Japanese)](https://wiki.swccg.com/wiki/Oo-ta_Goo-ta%2C_Solo%3F_%28Japanese%29) — revision 300947
+- [Ord Mantell (Dark) (Japanese)](https://wiki.swccg.com/wiki/Ord_Mantell_%28Dark%29_%28Japanese%29) — revision 300948
+- [Ord Mantell (Japanese)](https://wiki.swccg.com/wiki/Ord_Mantell_%28Japanese%29) — revision 300949
+- [Organa's Ceremonial Necklace (Japanese)](https://wiki.swccg.com/wiki/Organa%27s_Ceremonial_Necklace_%28Japanese%29) — revision 300950
+- [Our First Catch Of The Day (Japanese)](https://wiki.swccg.com/wiki/Our_First_Catch_Of_The_Day_%28Japanese%29) — revision 300951
+- [Our Most Desperate Hour (Japanese)](https://wiki.swccg.com/wiki/Our_Most_Desperate_Hour_%28Japanese%29) — revision 300952
+- [Out Of Commission (Japanese)](https://wiki.swccg.com/wiki/Out_Of_Commission_%28Japanese%29) — revision 300953
+- [Out Of Nowhere (Japanese)](https://wiki.swccg.com/wiki/Out_Of_Nowhere_%28Japanese%29) — revision 300954
+- [Overload (Japanese)](https://wiki.swccg.com/wiki/Overload_%28Japanese%29) — revision 300955
+- [Owen Lars (Japanese)](https://wiki.swccg.com/wiki/Owen_Lars_%28Japanese%29) — revision 300956
+- [Panic (Japanese)](https://wiki.swccg.com/wiki/Panic_%28Japanese%29) — revision 300957
+- [Perimeter Scan (Japanese)](https://wiki.swccg.com/wiki/Perimeter_Scan_%28Japanese%29) — revision 300958
+- [Physical Choke (Japanese)](https://wiki.swccg.com/wiki/Physical_Choke_%28Japanese%29) — revision 300959
+- [Planet Defender Ion Cannon (Japanese)](https://wiki.swccg.com/wiki/Planet_Defender_Ion_Cannon_%28Japanese%29) — revision 300960
+- [Plastoid Armor (Japanese)](https://wiki.swccg.com/wiki/Plastoid_Armor_%28Japanese%29) — revision 300961
+- [Ponda Baba (Japanese)](https://wiki.swccg.com/wiki/Ponda_Baba_%28Japanese%29) — revision 300962
+- [Pops (Japanese)](https://wiki.swccg.com/wiki/Pops_%28Japanese%29) — revision 300963
+- [Portable Fusion Generator (Japanese)](https://wiki.swccg.com/wiki/Portable_Fusion_Generator_%28Japanese%29) — revision 300964
+- [Power Harpoon (Japanese)](https://wiki.swccg.com/wiki/Power_Harpoon_%28Japanese%29) — revision 300965
+- [Precise Attack (Japanese)](https://wiki.swccg.com/wiki/Precise_Attack_%28Japanese%29) — revision 300966
+- [Presence Of The Force (Japanese)](https://wiki.swccg.com/wiki/Presence_Of_The_Force_%28Japanese%29) — revision 300967
+- [Probe Antennae (Japanese)](https://wiki.swccg.com/wiki/Probe_Antennae_%28Japanese%29) — revision 300968
+- [Probe Droid (Japanese)](https://wiki.swccg.com/wiki/Probe_Droid_%28Japanese%29) — revision 300969
+- [Probe Droid Laser (Japanese)](https://wiki.swccg.com/wiki/Probe_Droid_Laser_%28Japanese%29) — revision 300970
+- [Probe Telemetry (Japanese)](https://wiki.swccg.com/wiki/Probe_Telemetry_%28Japanese%29) — revision 300971
+- [Program Trap (Japanese)](https://wiki.swccg.com/wiki/Program_Trap_%28Japanese%29) — revision 300972
+- [Prophetess (Japanese)](https://wiki.swccg.com/wiki/Prophetess_%28Japanese%29) — revision 300973
+- [Proton Torpedoes (Japanese)](https://wiki.swccg.com/wiki/Proton_Torpedoes_%28Japanese%29) — revision 300974
+- [Quad Laser Cannon (Japanese)](https://wiki.swccg.com/wiki/Quad_Laser_Cannon_%28Japanese%29) — revision 300975
+- [Quite A Mercenary (Japanese)](https://wiki.swccg.com/wiki/Quite_A_Mercenary_%28Japanese%29) — revision 300976
+- [R-3PO (Ar-Threepio) (Japanese)](https://wiki.swccg.com/wiki/R-3PO_%28Ar-Threepio%29_%28Japanese%29) — revision 300977
+- [R1-G4 (Arone-Geefour) (Japanese)](https://wiki.swccg.com/wiki/R1-G4_%28Arone-Geefour%29_%28Japanese%29) — revision 300978
+- [R2 Sensor Array (Japanese)](https://wiki.swccg.com/wiki/R2_Sensor_Array_%28Japanese%29) — revision 300979
+- [R2-D2 (Artoo-Detoo) (Japanese)](https://wiki.swccg.com/wiki/R2-D2_%28Artoo-Detoo%29_%28Japanese%29) — revision 300980
+- [R2-Q2 (Artoo-Kyootoo) (Japanese)](https://wiki.swccg.com/wiki/R2-Q2_%28Artoo-Kyootoo%29_%28Japanese%29) — revision 300981
+- [R2-X2 (Artoo-Extoo) (Japanese)](https://wiki.swccg.com/wiki/R2-X2_%28Artoo-Extoo%29_%28Japanese%29) — revision 300982
+- [R3-T6 (Arthree-Teesix) (Japanese)](https://wiki.swccg.com/wiki/R3-T6_%28Arthree-Teesix%29_%28Japanese%29) — revision 300983
+- [R4-E1 (Arfour-Eeone) (Japanese)](https://wiki.swccg.com/wiki/R4-E1_%28Arfour-Eeone%29_%28Japanese%29) — revision 300984
+- [R4-M9 (Arfour-Emmnine) (Japanese)](https://wiki.swccg.com/wiki/R4-M9_%28Arfour-Emmnine%29_%28Japanese%29) — revision 300985
+- [R5-A2 (Arfive-Aytoo) (Japanese)](https://wiki.swccg.com/wiki/R5-A2_%28Arfive-Aytoo%29_%28Japanese%29) — revision 300986
+- [R5-D4 (Arfive-Defour) (Japanese)](https://wiki.swccg.com/wiki/R5-D4_%28Arfive-Defour%29_%28Japanese%29) — revision 300987
+- [R5-M2 (Arfive-Emmtoo) (Japanese)](https://wiki.swccg.com/wiki/R5-M2_%28Arfive-Emmtoo%29_%28Japanese%29) — revision 300988
+- [RA-7 (Aray-Seven) (Japanese)](https://wiki.swccg.com/wiki/RA-7_%28Aray-Seven%29_%28Japanese%29) — revision 300989
+- [Radar Scanner (Japanese)](https://wiki.swccg.com/wiki/Radar_Scanner_%28Japanese%29) — revision 300990
+- [Ralltiir (Dark) (Japanese)](https://wiki.swccg.com/wiki/Ralltiir_%28Dark%29_%28Japanese%29) — revision 300991
+- [Ralltiir (Japanese)](https://wiki.swccg.com/wiki/Ralltiir_%28Japanese%29) — revision 300992
+- [Reactor Terminal (Japanese)](https://wiki.swccg.com/wiki/Reactor_Terminal_%28Japanese%29) — revision 300993
+- [Rebel Barrier (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Rebel_Barrier_%28Japanese_Premiere_Two-Player%29) — revision 300994
+- [Rebel Barrier (Japanese)](https://wiki.swccg.com/wiki/Rebel_Barrier_%28Japanese%29) — revision 300995
+- [Rebel Commander (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Rebel_Commander_%28Japanese_ESB_Two-Player%29) — revision 300996
+- [Rebel Commander (Japanese)](https://wiki.swccg.com/wiki/Rebel_Commander_%28Japanese%29) — revision 300997
+- [Rebel Guard (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Rebel_Guard_%28Japanese_ESB_Two-Player%29) — revision 300998
+- [Rebel Guard (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Rebel_Guard_%28Japanese_Premiere_Two-Player%29) — revision 300999
+- [Rebel Guard (Japanese)](https://wiki.swccg.com/wiki/Rebel_Guard_%28Japanese%29) — revision 301000
+- [Rebel Pilot (Japanese)](https://wiki.swccg.com/wiki/Rebel_Pilot_%28Japanese%29) — revision 301001
+- [Rebel Planners (Japanese)](https://wiki.swccg.com/wiki/Rebel_Planners_%28Japanese%29) — revision 301002
+- [Rebel Reinforcements (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Rebel_Reinforcements_%28Japanese_Premiere_Two-Player%29) — revision 301003
+- [Rebel Reinforcements (Japanese)](https://wiki.swccg.com/wiki/Rebel_Reinforcements_%28Japanese%29) — revision 301004
+- [Rebel Scout (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Rebel_Scout_%28Japanese_ESB_Two-Player%29) — revision 301005
+- [Rebel Scout (Japanese)](https://wiki.swccg.com/wiki/Rebel_Scout_%28Japanese%29) — revision 301006
+- [Rebel Snowspeeder (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Rebel_Snowspeeder_%28Japanese_ESB_Two-Player%29) — revision 301007
+- [Rebel Snowspeeder (Japanese Reflections II Foil)](https://wiki.swccg.com/wiki/Rebel_Snowspeeder_%28Japanese_Reflections_II_Foil%29) — revision 301008
+- [Rebel Squad Leader (Japanese)](https://wiki.swccg.com/wiki/Rebel_Squad_Leader_%28Japanese%29) — revision 301009
+- [Rebel Tech (Japanese)](https://wiki.swccg.com/wiki/Rebel_Tech_%28Japanese%29) — revision 301010
+- [Rebel Trooper (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Rebel_Trooper_%28Japanese_Premiere_Two-Player%29) — revision 301011
+- [Rebel Trooper (Japanese)](https://wiki.swccg.com/wiki/Rebel_Trooper_%28Japanese%29) — revision 301012
+- [Rectenna (Japanese)](https://wiki.swccg.com/wiki/Rectenna_%28Japanese%29) — revision 301013
+- [Red 1 (Japanese)](https://wiki.swccg.com/wiki/Red_1_%28Japanese%29) — revision 301014
+- [Red 2 (Japanese)](https://wiki.swccg.com/wiki/Red_2_%28Japanese%29) — revision 301015
+- [Red 3 (Japanese)](https://wiki.swccg.com/wiki/Red_3_%28Japanese%29) — revision 301016
+- [Red 5 (Japanese)](https://wiki.swccg.com/wiki/Red_5_%28Japanese%29) — revision 301017
+- [Red 6 (Japanese)](https://wiki.swccg.com/wiki/Red_6_%28Japanese%29) — revision 301018
+- [Red Leader (Japanese)](https://wiki.swccg.com/wiki/Red_Leader_%28Japanese%29) — revision 301019
+- [Reegesk (Japanese)](https://wiki.swccg.com/wiki/Reegesk_%28Japanese%29) — revision 301020
+- [Remote (Japanese)](https://wiki.swccg.com/wiki/Remote_%28Japanese%29) — revision 301021
+- [Reserve Pilot (Japanese)](https://wiki.swccg.com/wiki/Reserve_Pilot_%28Japanese%29) — revision 301022
+- [Responsibility Of Command (Japanese)](https://wiki.swccg.com/wiki/Responsibility_Of_Command_%28Japanese%29) — revision 301023
+- [Restraining Bolt (Dark) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Restraining_Bolt_%28Dark%29_%28Japanese_ESB_Two-Player%29) — revision 301024
+- [Restraining Bolt (Dark) (Japanese)](https://wiki.swccg.com/wiki/Restraining_Bolt_%28Dark%29_%28Japanese%29) — revision 301025
+- [Restraining Bolt (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Restraining_Bolt_%28Japanese_ESB_Two-Player%29) — revision 301026
+- [Restraining Bolt (Japanese)](https://wiki.swccg.com/wiki/Restraining_Bolt_%28Japanese%29) — revision 301027
+- [Restricted Deployment (Japanese)](https://wiki.swccg.com/wiki/Restricted_Deployment_%28Japanese%29) — revision 301028
+- [Retract The Bridge (Japanese)](https://wiki.swccg.com/wiki/Retract_The_Bridge_%28Japanese%29) — revision 301029
+- [Return Of A Jedi (Japanese)](https://wiki.swccg.com/wiki/Return_Of_A_Jedi_%28Japanese%29) — revision 301030
+- [Revolution (Japanese)](https://wiki.swccg.com/wiki/Revolution_%28Japanese%29) — revision 301031
+- [Rodian (Japanese)](https://wiki.swccg.com/wiki/Rodian_%28Japanese%29) — revision 301032
+- [Rogue 1 (Japanese)](https://wiki.swccg.com/wiki/Rogue_1_%28Japanese%29) — revision 301033
+- [Rogue 2 (Japanese)](https://wiki.swccg.com/wiki/Rogue_2_%28Japanese%29) — revision 301034
+- [Rogue 3 (Japanese)](https://wiki.swccg.com/wiki/Rogue_3_%28Japanese%29) — revision 301035
+- [Rogue Bantha (Japanese)](https://wiki.swccg.com/wiki/Rogue_Bantha_%28Japanese%29) — revision 301036
+- [Rogue Gunner (Japanese)](https://wiki.swccg.com/wiki/Rogue_Gunner_%28Japanese%29) — revision 301037
+- [Romas 'Lock' Navander (Japanese)](https://wiki.swccg.com/wiki/Romas_%27Lock%27_Navander_%28Japanese%29) — revision 301038
+- [Rug Hug (Japanese)](https://wiki.swccg.com/wiki/Rug_Hug_%28Japanese%29) — revision 301039
+- [Run Luke, Run! (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Run_Luke%2C_Run%21_%28Japanese_Premiere_Two-Player%29) — revision 301040
+- [Rycar Ryjerd (Japanese)](https://wiki.swccg.com/wiki/Rycar_Ryjerd_%28Japanese%29) — revision 301041
+- [SW-4 Ion Cannon (Japanese)](https://wiki.swccg.com/wiki/SW-4_Ion_Cannon_%28Japanese%29) — revision 301042
+- [Sabotage (Japanese)](https://wiki.swccg.com/wiki/Sabotage_%28Japanese%29) — revision 301043
+- [Sai'torr Kal Fas (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Sai%27torr_Kal_Fas_%28Japanese_ESB_Two-Player%29) — revision 301044
+- [Sai'torr Kal Fas (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Sai%27torr_Kal_Fas_%28Japanese_Premiere_Two-Player%29) — revision 301045
+- [Sai'torr Kal Fas (Japanese)](https://wiki.swccg.com/wiki/Sai%27torr_Kal_Fas_%28Japanese%29) — revision 301046
+- [Sandcrawler (Dark) (Japanese)](https://wiki.swccg.com/wiki/Sandcrawler_%28Dark%29_%28Japanese%29) — revision 301047
+- [Sandcrawler (Japanese)](https://wiki.swccg.com/wiki/Sandcrawler_%28Japanese%29) — revision 301048
+- [Sandcrawler: Droid Junkheap (Japanese)](https://wiki.swccg.com/wiki/Sandcrawler%3A_Droid_Junkheap_%28Japanese%29) — revision 301049
+- [Sandcrawler: Loading Bay (Japanese)](https://wiki.swccg.com/wiki/Sandcrawler%3A_Loading_Bay_%28Japanese%29) — revision 301050
+- [Saurin (Japanese)](https://wiki.swccg.com/wiki/Saurin_%28Japanese%29) — revision 301051
+- [Scanner Techs (Japanese)](https://wiki.swccg.com/wiki/Scanner_Techs_%28Japanese%29) — revision 301052
+- [Scanning Crew (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Scanning_Crew_%28Japanese_Premiere_Two-Player%29) — revision 301053
+- [Scanning Crew (Japanese)](https://wiki.swccg.com/wiki/Scanning_Crew_%28Japanese%29) — revision 301054
+- [Scomp Link Access (Japanese)](https://wiki.swccg.com/wiki/Scomp_Link_Access_%28Japanese%29) — revision 301055
+- [Scruffy-Looking Nerf Herder (Japanese)](https://wiki.swccg.com/wiki/Scruffy-Looking_Nerf_Herder_%28Japanese%29) — revision 301056
+- [Self-Destruct Mechanism (Japanese)](https://wiki.swccg.com/wiki/Self-Destruct_Mechanism_%28Japanese%29) — revision 301057
+- [Send A Detachment Down (Japanese)](https://wiki.swccg.com/wiki/Send_A_Detachment_Down_%28Japanese%29) — revision 301058
+- [Sense (Dark) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Sense_%28Dark%29_%28Premiere%29_%28Japanese%29) — revision 301059
+- [Sense (Light) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Sense_%28Light%29_%28Premiere%29_%28Japanese%29) — revision 301060
+- [Sensor Panel (Japanese)](https://wiki.swccg.com/wiki/Sensor_Panel_%28Japanese%29) — revision 301061
+- [Set For Stun (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Set_For_Stun_%28Japanese_Premiere_Two-Player%29) — revision 301062
+- [Set For Stun (Japanese)](https://wiki.swccg.com/wiki/Set_For_Stun_%28Japanese%29) — revision 301063
+- [Shawn Valdez (Japanese)](https://wiki.swccg.com/wiki/Shawn_Valdez_%28Japanese%29) — revision 301064
+- [Shistavanen Wolfman (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Shistavanen_Wolfman_%28Japanese_Premiere_Two-Player%29) — revision 301065
+- [Shistavanen Wolfman (Japanese)](https://wiki.swccg.com/wiki/Shistavanen_Wolfman_%28Japanese%29) — revision 301066
+- [Silence Is Golden (Japanese)](https://wiki.swccg.com/wiki/Silence_Is_Golden_%28Japanese%29) — revision 301067
+- [Skywalkers (Japanese)](https://wiki.swccg.com/wiki/Skywalkers_%28Japanese%29) — revision 301068
+- [Sniper (Japanese)](https://wiki.swccg.com/wiki/Sniper_%28Japanese%29) — revision 301069
+- [Snowspeeder (Japanese)](https://wiki.swccg.com/wiki/Snowspeeder_%28Japanese%29) — revision 301070
+- [Snowtrooper (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Snowtrooper_%28Japanese_ESB_Two-Player%29) — revision 301071
+- [Snowtrooper (Japanese)](https://wiki.swccg.com/wiki/Snowtrooper_%28Japanese%29) — revision 301072
+- [Snowtrooper Officer (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Snowtrooper_Officer_%28Japanese_ESB_Two-Player%29) — revision 301073
+- [Snowtrooper Officer (Japanese)](https://wiki.swccg.com/wiki/Snowtrooper_Officer_%28Japanese%29) — revision 301074
+- [Solo Han (Japanese)](https://wiki.swccg.com/wiki/Solo_Han_%28Japanese%29) — revision 301075
+- [Solomahal (Japanese)](https://wiki.swccg.com/wiki/Solomahal_%28Japanese%29) — revision 301076
+- [SoroSuub V-35 Landspeeder (Japanese)](https://wiki.swccg.com/wiki/SoroSuub_V-35_Landspeeder_%28Japanese%29) — revision 301077
+- [Sorry About The Mess (Japanese)](https://wiki.swccg.com/wiki/Sorry_About_The_Mess_%28Japanese%29) — revision 301078
+- [Spaceport Speeders (Japanese)](https://wiki.swccg.com/wiki/Spaceport_Speeders_%28Japanese%29) — revision 301079
+- [Special Modifications (Japanese)](https://wiki.swccg.com/wiki/Special_Modifications_%28Japanese%29) — revision 301080
+- [Spice Mines Of Kessel (Japanese)](https://wiki.swccg.com/wiki/Spice_Mines_Of_Kessel_%28Japanese%29) — revision 301081
+- [Stalker (Japanese)](https://wiki.swccg.com/wiki/Stalker_%28Japanese%29) — revision 301082
+- [Stop Motion (Japanese)](https://wiki.swccg.com/wiki/Stop_Motion_%28Japanese%29) — revision 301083
+- [Stormtrooper (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Stormtrooper_%28Japanese_Premiere_Two-Player%29) — revision 301084
+- [Stormtrooper (Japanese)](https://wiki.swccg.com/wiki/Stormtrooper_%28Japanese%29) — revision 301085
+- [Stormtrooper Backpack (Japanese)](https://wiki.swccg.com/wiki/Stormtrooper_Backpack_%28Japanese%29) — revision 301086
+- [Stormtrooper Utility Belt (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Stormtrooper_Utility_Belt_%28Japanese_Premiere_Two-Player%29) — revision 301087
+- [Stormtrooper Utility Belt (Japanese)](https://wiki.swccg.com/wiki/Stormtrooper_Utility_Belt_%28Japanese%29) — revision 301088
+- [Stunning Leader (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Stunning_Leader_%28Japanese_ESB_Two-Player%29) — revision 301089
+- [Stunning Leader (Japanese)](https://wiki.swccg.com/wiki/Stunning_Leader_%28Japanese%29) — revision 301090
+- [Sunsdown (Japanese)](https://wiki.swccg.com/wiki/Sunsdown_%28Japanese%29) — revision 301091
+- [Superlaser (Japanese)](https://wiki.swccg.com/wiki/Superlaser_%28Japanese%29) — revision 301092
+- [Surface Defense Cannon (Japanese)](https://wiki.swccg.com/wiki/Surface_Defense_Cannon_%28Japanese%29) — revision 301093
+- [Surprise Assault (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Surprise_Assault_%28Japanese_ESB_Two-Player%29) — revision 301094
+- [Surprise Assault (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Surprise_Assault_%28Japanese_Premiere_Two-Player%29) — revision 301095
+- [Surprise Assault (Japanese)](https://wiki.swccg.com/wiki/Surprise_Assault_%28Japanese%29) — revision 301096
+- [Swilla Corey (Japanese)](https://wiki.swccg.com/wiki/Swilla_Corey_%28Japanese%29) — revision 301097
+- [TIE Advanced x1 (Japanese)](https://wiki.swccg.com/wiki/TIE_Advanced_x1_%28Japanese%29) — revision 301098
+- [TIE Assault Squadron (Japanese)](https://wiki.swccg.com/wiki/TIE_Assault_Squadron_%28Japanese%29) — revision 301099
+- [TIE Fighter (Japanese)](https://wiki.swccg.com/wiki/TIE_Fighter_%28Japanese%29) — revision 301100
+- [TIE Scout (Japanese)](https://wiki.swccg.com/wiki/TIE_Scout_%28Japanese%29) — revision 301101
+- [TIE Vanguard (Japanese)](https://wiki.swccg.com/wiki/TIE_Vanguard_%28Japanese%29) — revision 301102
+- [Tactical Re-Call (Japanese)](https://wiki.swccg.com/wiki/Tactical_Re-Call_%28Japanese%29) — revision 301103
+- [Tactical Support (Japanese)](https://wiki.swccg.com/wiki/Tactical_Support_%28Japanese%29) — revision 301104
+- [Tagge Seeker (Japanese)](https://wiki.swccg.com/wiki/Tagge_Seeker_%28Japanese%29) — revision 301105
+- [Takeel (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Takeel_%28Japanese_Premiere_Two-Player%29) — revision 301106
+- [Takeel (Japanese)](https://wiki.swccg.com/wiki/Takeel_%28Japanese%29) — revision 301107
+- [Tallon Roll (Japanese)](https://wiki.swccg.com/wiki/Tallon_Roll_%28Japanese%29) — revision 301108
+- [Talz (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Talz_%28Japanese_Premiere_Two-Player%29) — revision 301109
+- [Talz (Japanese)](https://wiki.swccg.com/wiki/Talz_%28Japanese%29) — revision 301110
+- [Tamizander Rey (Japanese)](https://wiki.swccg.com/wiki/Tamizander_Rey_%28Japanese%29) — revision 301111
+- [Tantive IV (Japanese)](https://wiki.swccg.com/wiki/Tantive_IV_%28Japanese%29) — revision 301112
+- [Target The Main Generator (Japanese)](https://wiki.swccg.com/wiki/Target_The_Main_Generator_%28Japanese%29) — revision 301113
+- [Targeting Computer (Japanese)](https://wiki.swccg.com/wiki/Targeting_Computer_%28Japanese%29) — revision 301114
+- [Tarkin Seeker (Japanese)](https://wiki.swccg.com/wiki/Tarkin_Seeker_%28Japanese%29) — revision 301115
+- [Tatooine (Dark) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Tatooine_%28Dark%29_%28Premiere%29_%28Japanese%29) — revision 301116
+- [Tatooine (Light) (Premiere) (Japanese)](https://wiki.swccg.com/wiki/Tatooine_%28Light%29_%28Premiere%29_%28Japanese%29) — revision 301117
+- [Tatooine Utility Belt (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine_Utility_Belt_%28Japanese_Premiere_Two-Player%29) — revision 301118
+- [Tatooine Utility Belt (Japanese)](https://wiki.swccg.com/wiki/Tatooine_Utility_Belt_%28Japanese%29) — revision 301119
+- [Tatooine: Bluffs (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Bluffs_%28Japanese%29) — revision 301120
+- [Tatooine: Cantina (Dark) (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Cantina_%28Dark%29_%28Japanese%29) — revision 301121
+- [Tatooine: Cantina (Light) (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Cantina_%28Light%29_%28Japanese%29) — revision 301122
+- [Tatooine: Docking Bay 94 (Dark) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine%3A_Docking_Bay_94_%28Dark%29_%28Japanese_Premiere_Two-Player%29) — revision 301123
+- [Tatooine: Docking Bay 94 (Dark) (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Docking_Bay_94_%28Dark%29_%28Japanese%29) — revision 301124
+- [Tatooine: Docking Bay 94 (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine%3A_Docking_Bay_94_%28Japanese_Premiere_Two-Player%29) — revision 301125
+- [Tatooine: Docking Bay 94 (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Docking_Bay_94_%28Japanese%29) — revision 301126
+- [Tatooine: Dune Sea (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine%3A_Dune_Sea_%28Japanese_Premiere_Two-Player%29) — revision 301127
+- [Tatooine: Dune Sea (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Dune_Sea_%28Japanese%29) — revision 301128
+- [Tatooine: Jawa Camp (Dark) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine%3A_Jawa_Camp_%28Dark%29_%28Japanese_Premiere_Two-Player%29) — revision 301129
+- [Tatooine: Jawa Camp (Dark) (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Jawa_Camp_%28Dark%29_%28Japanese%29) — revision 301130
+- [Tatooine: Jawa Camp (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine%3A_Jawa_Camp_%28Japanese_Premiere_Two-Player%29) — revision 301131
+- [Tatooine: Jawa Camp (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Jawa_Camp_%28Japanese%29) — revision 301132
+- [Tatooine: Jundland Wastes (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine%3A_Jundland_Wastes_%28Japanese_Premiere_Two-Player%29) — revision 301133
+- [Tatooine: Jundland Wastes (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Jundland_Wastes_%28Japanese%29) — revision 301134
+- [Tatooine: Lars' Moisture Farm (Dark) (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Lars%27_Moisture_Farm_%28Dark%29_%28Japanese%29) — revision 301135
+- [Tatooine: Lars' Moisture Farm (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine%3A_Lars%27_Moisture_Farm_%28Japanese_Premiere_Two-Player%29) — revision 301136
+- [Tatooine: Lars' Moisture Farm (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Lars%27_Moisture_Farm_%28Japanese%29) — revision 301137
+- [Tatooine: Mos Eisley (Dark) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tatooine%3A_Mos_Eisley_%28Dark%29_%28Japanese_Premiere_Two-Player%29) — revision 301138
+- [Tatooine: Mos Eisley (Dark) (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Mos_Eisley_%28Dark%29_%28Japanese%29) — revision 301139
+- [Tatooine: Mos Eisley (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Mos_Eisley_%28Japanese%29) — revision 301140
+- [Tatooine: Obi-Wan's Hut (Japanese)](https://wiki.swccg.com/wiki/Tatooine%3A_Obi-Wan%27s_Hut_%28Japanese%29) — revision 301141
+- [Tauntaun (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Tauntaun_%28Japanese_ESB_Two-Player%29) — revision 301142
+- [Tauntaun (Japanese)](https://wiki.swccg.com/wiki/Tauntaun_%28Japanese%29) — revision 301143
+- [Tauntaun Bones (Japanese)](https://wiki.swccg.com/wiki/Tauntaun_Bones_%28Japanese%29) — revision 301144
+- [Tauntaun Handler (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Tauntaun_Handler_%28Japanese_ESB_Two-Player%29) — revision 301145
+- [Tauntaun Handler (Japanese)](https://wiki.swccg.com/wiki/Tauntaun_Handler_%28Japanese%29) — revision 301146
+- [Tech Mo'r (Japanese)](https://wiki.swccg.com/wiki/Tech_Mo%27r_%28Japanese%29) — revision 301147
+- [Tentacle (Japanese)](https://wiki.swccg.com/wiki/Tentacle_%28Japanese%29) — revision 301148
+- [Thank The Maker (Japanese)](https://wiki.swccg.com/wiki/Thank_The_Maker_%28Japanese%29) — revision 301149
+- [That's It, The Rebels Are There! (Japanese)](https://wiki.swccg.com/wiki/That%27s_It%2C_The_Rebels_Are_There%21_%28Japanese%29) — revision 301150
+- [The Bith Shuffle (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/The_Bith_Shuffle_%28Japanese_Premiere_Two-Player%29) — revision 301151
+- [The Bith Shuffle (Japanese)](https://wiki.swccg.com/wiki/The_Bith_Shuffle_%28Japanese%29) — revision 301152
+- [The Circle Is Now Complete (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/The_Circle_Is_Now_Complete_%28Japanese_Reflections_III_Foil%29) — revision 301153
+- [The Circle Is Now Complete (Japanese)](https://wiki.swccg.com/wiki/The_Circle_Is_Now_Complete_%28Japanese%29) — revision 301154
+- [The Empire's Back (Japanese)](https://wiki.swccg.com/wiki/The_Empire%27s_Back_%28Japanese%29) — revision 301155
+- [The First Transport Is Away! (Japanese)](https://wiki.swccg.com/wiki/The_First_Transport_Is_Away%21_%28Japanese%29) — revision 301156
+- [The Force Is Strong With This One (Japanese)](https://wiki.swccg.com/wiki/The_Force_Is_Strong_With_This_One_%28Japanese%29) — revision 301157
+- [The Shield Doors Must Be Closed (Japanese)](https://wiki.swccg.com/wiki/The_Shield_Doors_Must_Be_Closed_%28Japanese%29) — revision 301158
+- [There'll Be Hell To Pay (Japanese)](https://wiki.swccg.com/wiki/There%27ll_Be_Hell_To_Pay_%28Japanese%29) — revision 301159
+- [They're On Dantooine (Japanese)](https://wiki.swccg.com/wiki/They%27re_On_Dantooine_%28Japanese%29) — revision 301160
+- [This Is All Your Fault (Japanese)](https://wiki.swccg.com/wiki/This_Is_All_Your_Fault_%28Japanese%29) — revision 301161
+- [This Is Just Wrong (Japanese)](https://wiki.swccg.com/wiki/This_Is_Just_Wrong_%28Japanese%29) — revision 301162
+- [This Is Some Rescue! (Japanese)](https://wiki.swccg.com/wiki/This_Is_Some_Rescue%21_%28Japanese%29) — revision 301163
+- [Tigran Jamiro (Japanese)](https://wiki.swccg.com/wiki/Tigran_Jamiro_%28Japanese%29) — revision 301164
+- [Timer Mine (Dark) (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Timer_Mine_%28Dark%29_%28Japanese_ESB_Two-Player%29) — revision 301165
+- [Timer Mine (Dark) (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Timer_Mine_%28Dark%29_%28Japanese_Premiere_Two-Player%29) — revision 301166
+- [Timer Mine (Dark) (Japanese)](https://wiki.swccg.com/wiki/Timer_Mine_%28Dark%29_%28Japanese%29) — revision 301167
+- [Timer Mine (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Timer_Mine_%28Japanese_ESB_Two-Player%29) — revision 301168
+- [Timer Mine (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Timer_Mine_%28Japanese_Premiere_Two-Player%29) — revision 301169
+- [Timer Mine (Japanese)](https://wiki.swccg.com/wiki/Timer_Mine_%28Japanese%29) — revision 301170
+- [Tiree (Japanese)](https://wiki.swccg.com/wiki/Tiree_%28Japanese%29) — revision 301171
+- [Tonnika Sisters (Japanese)](https://wiki.swccg.com/wiki/Tonnika_Sisters_%28Japanese%29) — revision 301172
+- [Too Cold For Speeders (Japanese)](https://wiki.swccg.com/wiki/Too_Cold_For_Speeders_%28Japanese%29) — revision 301173
+- [Toryn Farr (Japanese)](https://wiki.swccg.com/wiki/Toryn_Farr_%28Japanese%29) — revision 301174
+- [Tractor Beam (Japanese)](https://wiki.swccg.com/wiki/Tractor_Beam_%28Japanese%29) — revision 301175
+- [Traffic Control (Japanese)](https://wiki.swccg.com/wiki/Traffic_Control_%28Japanese%29) — revision 301176
+- [Trample (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Trample_%28Japanese_Reflections_III_Foil%29) — revision 301177
+- [Trample (Japanese)](https://wiki.swccg.com/wiki/Trample_%28Japanese%29) — revision 301178
+- [Trinto Duaba (Japanese)](https://wiki.swccg.com/wiki/Trinto_Duaba_%28Japanese%29) — revision 301179
+- [Trooper Charge (Japanese)](https://wiki.swccg.com/wiki/Trooper_Charge_%28Japanese%29) — revision 301180
+- [Trooper Davin Felth (Japanese)](https://wiki.swccg.com/wiki/Trooper_Davin_Felth_%28Japanese%29) — revision 301181
+- [Turbolaser Battery (Japanese)](https://wiki.swccg.com/wiki/Turbolaser_Battery_%28Japanese%29) — revision 301182
+- [Turn It Off! Turn It Off! (Japanese)](https://wiki.swccg.com/wiki/Turn_It_Off%21_Turn_It_Off%21_%28Japanese%29) — revision 301183
+- [Tusken Breath Mask (Japanese)](https://wiki.swccg.com/wiki/Tusken_Breath_Mask_%28Japanese%29) — revision 301184
+- [Tusken Raider (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tusken_Raider_%28Japanese_Premiere_Two-Player%29) — revision 301185
+- [Tusken Raider (Japanese)](https://wiki.swccg.com/wiki/Tusken_Raider_%28Japanese%29) — revision 301186
+- [Tusken Scavengers (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Tusken_Scavengers_%28Japanese_Premiere_Two-Player%29) — revision 301187
+- [Tusken Scavengers (Japanese)](https://wiki.swccg.com/wiki/Tusken_Scavengers_%28Japanese%29) — revision 301188
+- [Tyrant (Japanese)](https://wiki.swccg.com/wiki/Tyrant_%28Japanese%29) — revision 301189
+- [Tzizvvt (Japanese)](https://wiki.swccg.com/wiki/Tzizvvt_%28Japanese%29) — revision 301190
+- [U-3PO (Yoo-Threepio) (Japanese)](https://wiki.swccg.com/wiki/U-3PO_%28Yoo-Threepio%29_%28Japanese%29) — revision 301191
+- [URoRRuR'R'R (Japanese)](https://wiki.swccg.com/wiki/URoRRuR%27R%27R_%28Japanese%29) — revision 301192
+- [URoRRuR'R'R's Hunting Rifle (Japanese)](https://wiki.swccg.com/wiki/URoRRuR%27R%27R%27s_Hunting_Rifle_%28Japanese%29) — revision 301193
+- [Ubrikkian 9000 Z001 (Japanese)](https://wiki.swccg.com/wiki/Ubrikkian_9000_Z001_%28Japanese%29) — revision 301194
+- [Under Attack (Japanese)](https://wiki.swccg.com/wiki/Under_Attack_%28Japanese%29) — revision 301195
+- [Undercover (Dark) (Japanese)](https://wiki.swccg.com/wiki/Undercover_%28Dark%29_%28Japanese%29) — revision 301196
+- [Undercover (Japanese)](https://wiki.swccg.com/wiki/Undercover_%28Japanese%29) — revision 301197
+- [Utinni! (Dark) (Japanese)](https://wiki.swccg.com/wiki/Utinni%21_%28Dark%29_%28Japanese%29) — revision 301198
+- [Utinni! (Japanese)](https://wiki.swccg.com/wiki/Utinni%21_%28Japanese%29) — revision 301199
+- [Vader (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Vader_%28Japanese_Premiere_Two-Player%29) — revision 301200
+- [Vader's Custom TIE (Japanese)](https://wiki.swccg.com/wiki/Vader%27s_Custom_TIE_%28Japanese%29) — revision 301201
+- [Vader's Eye (Japanese)](https://wiki.swccg.com/wiki/Vader%27s_Eye_%28Japanese%29) — revision 301202
+- [Vader's Lightsaber (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Vader%27s_Lightsaber_%28Japanese_Reflections_III_Foil%29) — revision 301203
+- [Vader's Lightsaber (Japanese)](https://wiki.swccg.com/wiki/Vader%27s_Lightsaber_%28Japanese%29) — revision 301204
+- [Vader's Obsession (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/Vader%27s_Obsession_%28Japanese_Premiere_Two-Player%29) — revision 301205
+- [Vaporator (Japanese)](https://wiki.swccg.com/wiki/Vaporator_%28Japanese%29) — revision 301206
+- [Veers (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Veers_%28Japanese_ESB_Two-Player%29) — revision 301207
+- [Vehicle Mine (Dark) (Japanese)](https://wiki.swccg.com/wiki/Vehicle_Mine_%28Dark%29_%28Japanese%29) — revision 301208
+- [Vehicle Mine (Japanese)](https://wiki.swccg.com/wiki/Vehicle_Mine_%28Japanese%29) — revision 301209
+- [Victory-Class Star Destroyer (Japanese)](https://wiki.swccg.com/wiki/Victory-Class_Star_Destroyer_%28Japanese%29) — revision 301210
+- [WED-1016 'Techie' Droid (Japanese)](https://wiki.swccg.com/wiki/WED-1016_%27Techie%27_Droid_%28Japanese%29) — revision 301211
+- [WED-9-M1 'Bantha' Droid (Japanese)](https://wiki.swccg.com/wiki/WED-9-M1_%27Bantha%27_Droid_%28Japanese%29) — revision 301212
+- [WED15-I662 'Treadwell' Droid (Japanese)](https://wiki.swccg.com/wiki/WED15-I662_%27Treadwell%27_Droid_%28Japanese%29) — revision 301213
+- [WED15-l7 'Septoid' Droid (Japanese)](https://wiki.swccg.com/wiki/WED15-l7_%27Septoid%27_Droid_%28Japanese%29) — revision 301214
+- [Walker Barrage (Japanese)](https://wiki.swccg.com/wiki/Walker_Barrage_%28Japanese%29) — revision 301215
+- [Walker Garrison (Japanese ESB Two-Player)](https://wiki.swccg.com/wiki/Walker_Garrison_%28Japanese_ESB_Two-Player%29) — revision 301216
+- [Walker Sighting (Japanese)](https://wiki.swccg.com/wiki/Walker_Sighting_%28Japanese%29) — revision 301217
+- [Wall Of Fire (Japanese)](https://wiki.swccg.com/wiki/Wall_Of_Fire_%28Japanese%29) — revision 301218
+- [Wampa (Japanese)](https://wiki.swccg.com/wiki/Wampa_%28Japanese%29) — revision 301219
+- [Warrior's Courage (Japanese)](https://wiki.swccg.com/wiki/Warrior%27s_Courage_%28Japanese%29) — revision 301220
+- [We Have A Prisoner (Japanese)](https://wiki.swccg.com/wiki/We_Have_A_Prisoner_%28Japanese%29) — revision 301221
+- [We're All Gonna Be A Lot Thinner! (Japanese)](https://wiki.swccg.com/wiki/We%27re_All_Gonna_Be_A_Lot_Thinner%21_%28Japanese%29) — revision 301222
+- [We're Doomed (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/We%27re_Doomed_%28Japanese_Premiere_Two-Player%29) — revision 301223
+- [We're Doomed (Japanese)](https://wiki.swccg.com/wiki/We%27re_Doomed_%28Japanese%29) — revision 301224
+- [Weapon Malfunction (Japanese)](https://wiki.swccg.com/wiki/Weapon_Malfunction_%28Japanese%29) — revision 301225
+- [Wedge Antilles (Japanese Reflections III Foil)](https://wiki.swccg.com/wiki/Wedge_Antilles_%28Japanese_Reflections_III_Foil%29) — revision 301226
+- [Wedge Antilles (Japanese)](https://wiki.swccg.com/wiki/Wedge_Antilles_%28Japanese%29) — revision 301227
+- [Wes Janson (Japanese)](https://wiki.swccg.com/wiki/Wes_Janson_%28Japanese%29) — revision 301228
+- [What're You Tryin' To Push On Us? (Japanese)](https://wiki.swccg.com/wiki/What%27re_You_Tryin%27_To_Push_On_Us%3F_%28Japanese%29) — revision 301229
+- [Who's Scruffy-Looking? (Japanese)](https://wiki.swccg.com/wiki/Who%27s_Scruffy-Looking%3F_%28Japanese%29) — revision 301230
+- [Wioslea (Japanese)](https://wiki.swccg.com/wiki/Wioslea_%28Japanese%29) — revision 301231
+- [Wookiee Roar (Japanese)](https://wiki.swccg.com/wiki/Wookiee_Roar_%28Japanese%29) — revision 301232
+- [Wrong Turn (Japanese)](https://wiki.swccg.com/wiki/Wrong_Turn_%28Japanese%29) — revision 301233
+- [Wuher (Japanese)](https://wiki.swccg.com/wiki/Wuher_%28Japanese%29) — revision 301234
+- [Wyron Serper (Japanese)](https://wiki.swccg.com/wiki/Wyron_Serper_%28Japanese%29) — revision 301235
+- [X-wing (Japanese)](https://wiki.swccg.com/wiki/X-wing_%28Japanese%29) — revision 301236
+- [Y-wing (Japanese)](https://wiki.swccg.com/wiki/Y-wing_%28Japanese%29) — revision 301237
+- [Y-wing Assault Squadron (Japanese)](https://wiki.swccg.com/wiki/Y-wing_Assault_Squadron_%28Japanese%29) — revision 301238
+- [Yaggle Gakkle (Japanese)](https://wiki.swccg.com/wiki/Yaggle_Gakkle_%28Japanese%29) — revision 301239
+- [Yavin 4 (Dark) (Japanese)](https://wiki.swccg.com/wiki/Yavin_4_%28Dark%29_%28Japanese%29) — revision 301240
+- [Yavin 4 (Japanese)](https://wiki.swccg.com/wiki/Yavin_4_%28Japanese%29) — revision 301241
+- [Yavin 4: Briefing Room (Japanese)](https://wiki.swccg.com/wiki/Yavin_4%3A_Briefing_Room_%28Japanese%29) — revision 301242
+- [Yavin 4: Docking Bay (Dark) (Japanese)](https://wiki.swccg.com/wiki/Yavin_4%3A_Docking_Bay_%28Dark%29_%28Japanese%29) — revision 301243
+- [Yavin 4: Docking Bay (Japanese)](https://wiki.swccg.com/wiki/Yavin_4%3A_Docking_Bay_%28Japanese%29) — revision 301244
+- [Yavin 4: Jungle (Dark) (Japanese)](https://wiki.swccg.com/wiki/Yavin_4%3A_Jungle_%28Dark%29_%28Japanese%29) — revision 301245
+- [Yavin 4: Jungle (Japanese)](https://wiki.swccg.com/wiki/Yavin_4%3A_Jungle_%28Japanese%29) — revision 301246
+- [Yavin 4: Massassi Ruins (Japanese)](https://wiki.swccg.com/wiki/Yavin_4%3A_Massassi_Ruins_%28Japanese%29) — revision 301247
+- [Yavin 4: Massassi Throne Room (Japanese)](https://wiki.swccg.com/wiki/Yavin_4%3A_Massassi_Throne_Room_%28Japanese%29) — revision 301248
+- [Yavin 4: Massassi War Room (Japanese)](https://wiki.swccg.com/wiki/Yavin_4%3A_Massassi_War_Room_%28Japanese%29) — revision 301249
+- [Yavin Sentry (Japanese)](https://wiki.swccg.com/wiki/Yavin_Sentry_%28Japanese%29) — revision 301250
+- [Yerka Mig (Japanese)](https://wiki.swccg.com/wiki/Yerka_Mig_%28Japanese%29) — revision 301251
+- [You Have Failed Me For The Last Time (Japanese)](https://wiki.swccg.com/wiki/You_Have_Failed_Me_For_The_Last_Time_%28Japanese%29) — revision 301252
+- [You Overestimate Their Chances (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/You_Overestimate_Their_Chances_%28Japanese_Premiere_Two-Player%29) — revision 301253
+- [You Overestimate Their Chances (Japanese)](https://wiki.swccg.com/wiki/You_Overestimate_Their_Chances_%28Japanese%29) — revision 301254
+- [You Will Go To The Dagobah System (Japanese)](https://wiki.swccg.com/wiki/You_Will_Go_To_The_Dagobah_System_%28Japanese%29) — revision 301255
+- [You're All Clear Kid! (Japanese)](https://wiki.swccg.com/wiki/You%27re_All_Clear_Kid%21_%28Japanese%29) — revision 301256
+- [Your Eyes Can Deceive You (Japanese)](https://wiki.swccg.com/wiki/Your_Eyes_Can_Deceive_You_%28Japanese%29) — revision 301257
+- [Your Powers Are Weak, Old Man (Japanese)](https://wiki.swccg.com/wiki/Your_Powers_Are_Weak%2C_Old_Man_%28Japanese%29) — revision 301258
+- [Zev Senesca (Japanese)](https://wiki.swccg.com/wiki/Zev_Senesca_%28Japanese%29) — revision 301259
+- [Zutton (Japanese)](https://wiki.swccg.com/wiki/Zutton_%28Japanese%29) — revision 301260
+- [Template:Card](https://wiki.swccg.com/wiki/Template%3ACard) — revision 300438
+- [Template:Card/doc](https://wiki.swccg.com/wiki/Template%3ACard%2Fdoc) — revision 300439
+- [Template:Card/sandbox](https://wiki.swccg.com/wiki/Template%3ACard%2Fsandbox) — revision 300245

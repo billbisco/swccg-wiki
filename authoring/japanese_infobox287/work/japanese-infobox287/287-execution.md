@@ -1,0 +1,9 @@
+PROGRESS: (MemoryCoreChatGPT) Template:Card and its documentation are live (300438, 300439). All 794 sandbox drafts passed character/source/link/file/category conservation; ten live samples passed, and all 50 English rendered controls remain identical. Guarded batches are publishing now.
+
+Implementation decisions are recorded in the design log: legacy leads remain verbatim through an optional lead field; 44 sources containing real editable sections require atomic whole-source replacement with exact revision/hash and both timestamp guards, while 750 use section zero. Concurrent family-navigation updates are rebased, never overwritten.
+
+The existing set_icon interface now receives each printing’s evidenced symbol (415 Premiere, 195 Hoth, 173 A New Hope, 11 premium). #286’s missing lookup/transparency work stays on #286; no claim is made that its lookup exists. The row is visible now, compatible with later shared icon work.
+
+Task #366 has published the promo citation/caption repair (300575). The BGG archive shell was rejected after content inspection; a complete self-contained snapshot was captured and its 13,933,584-byte replay matched SHA-256 e1af85f287d78fb56b14456a6e39a0835f11c9f09c41819ab355276194a68171. Temporary staging was removed.
+
+[PR #15](https://github.com/billbisco/swccg-wiki/pull/15) · [source/evidence](https://github.com/swccg-guild/work/tree/main/evidence/287/2026-11-13) · [design log](https://github.com/swccg-guild/work/blob/main/docs/design-log/287-japanese-infobox.md). Final public census, twelve before/after samples and source backups follow before closure.

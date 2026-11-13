@@ -4,6 +4,10 @@ from pathlib import Path
 import requests
 root=Path(__file__).parent
 drafts=json.loads((root/'drafts.json').read_bytes())
+receipts=root/'cards-receipts.jsonl'
+done={r['title'] for r in map(json.loads,receipts.read_text(encoding='utf8').splitlines())} if receipts.exists() else set()
+prior={r['title']:r for r in json.loads((root/'cards-packet.json').read_bytes())} if (root/'cards-packet.json').exists() else {}
+remaining=[r for r in drafts if r['title'] not in done]
 def get(rows):
     titles='|'.join(r['title'] for r in rows)
     common=dict(action='query',format='json',formatversion=2,titles=titles,prop='revisions',rvprop='ids|timestamp|content',rvslots='main')
@@ -19,9 +23,9 @@ def get(rows):
         section=0 if lead[t]['revisions'][0]['slots']['main']['content']==text else None
         result.append(dict(row,section=section,summary='Use the shared Card infobox; preserve native text, translations and sources (#287)'))
     return result
-out=[]
+out=[prior[t] for t in done]
 with ThreadPoolExecutor(max_workers=3) as pool:
-    for rows in pool.map(get,[drafts[i:i+40] for i in range(0,len(drafts),40)]):out+=rows
+    for rows in pool.map(get,[remaining[i:i+40] for i in range(0,len(remaining),40)]):out+=rows
 samples=json.loads((root/'sample-titles.json').read_bytes());out.sort(key=lambda r:(r['title'] not in samples,r['title']))
 conflicts=[r for r in out if r.get('conflict')]
 if conflicts:
@@ -29,6 +33,7 @@ if conflicts:
     print('Rebase required:',[r['title'] for r in conflicts]);raise SystemExit(2)
 (root/'cards-packet.json').write_text(json.dumps(out,ensure_ascii=False,indent=2),encoding='utf8')
 print('Concurrent-edit guards passed:',len(out),'; atomic whole-source replacements required:',sum(r['section'] is None for r in out))
+if done:raise SystemExit(0)
 heads=json.loads((root/'heads-before.json').read_bytes());controls=[]
 for title,file in [('Template:Card','template-draft.wiki'),('Template:Card/doc','Template-Card-doc.wiki')]:
     rev=heads[title]['revisions'][0];text=(root/file).read_text(encoding='utf8');old=rev['slots']['main']['content']

@@ -6,6 +6,7 @@ from playwright.sync_api import sync_playwright
 root=Path(__file__).parent.resolve();mode=sys.argv[1]
 titles=json.loads((root/('sample-titles.json' if mode=='sandbox' else 'final-sample-titles.json')).read_bytes())
 renders=json.load(gzip.open(root/'drafts-renders.json.gz','rt',encoding='utf8')) if mode=='sandbox' else None
+heads=json.loads((root/'heads-before.json').read_bytes())
 results=[]
 with sync_playwright() as driver:
     browser=driver.chromium.launch_persistent_context(str(root/'qa-browser-profile'),channel='chrome',headless=True,viewport={'width':1300,'height':1100})
@@ -13,13 +14,16 @@ with sync_playwright() as driver:
         page=browser.new_page()
         for i,title in enumerate(titles,1):
             url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe='')
+            if mode=='before':url='https://wiki.swccg.com/index.php?title='+quote(title.replace(' ','_'),safe='')+'&oldid='+str(heads[title]['revisions'][0]['revid'])
             page.goto(url,wait_until='networkidle',timeout=60000)
             if renders:
                 page.locator('#mw-content-text > .mw-parser-output').evaluate('(el,html)=>el.innerHTML=html',renders[title]['text'])
             page.evaluate('document.fonts.ready')
             page.locator('#mw-content-text').screenshot(path=str(root/f'{mode}-{i:02d}.png'))
             with Image.open(root/f'{mode}-{i:02d}.png') as image:image.convert('RGB').save(root/f'{mode}-{i:02d}.webp',quality=78,method=6)
+            with Image.open(root/f'{mode}-{i:02d}.png') as image:image.convert('RGB').quantize(colors=128).save(root/f'{mode}-{i:02d}-small.png',optimize=True)
             (root/f'{mode}-{i:02d}.png').unlink()
+            assert (root/f'{mode}-{i:02d}-small.png').stat().st_size<=500000
             checks=page.locator('#mw-content-text').evaluate('el=>({tables:el.querySelectorAll(".card-infobox").length,errors:el.querySelectorAll(".mw-ext-cite-error").length,brokenImages:[...el.querySelectorAll("img")].filter(x=>!x.complete||x.naturalWidth===0).map(x=>x.src),text:el.innerText})')
             results.append(dict(title=title,url=url,file=f'{mode}-{i:02d}.webp',**checks))
             assert checks['tables']==1 and not checks['errors'] and not checks['brokenImages'],results[-1]

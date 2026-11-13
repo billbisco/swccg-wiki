@@ -14,18 +14,22 @@ if mode=='before':
     jobs=[dict(title=t,oldid=heads[t]['revisions'][0]['revid']) for t in titles]
 else:
     rows=json.loads((root/'drafts.json').read_bytes())
-    if mode=='samples':
+    if mode in ['live','live-samples']:
+        sample=json.loads((root/'sample-titles.json').read_bytes())
+        jobs=[dict(title=r['title'],live=True) for r in rows if mode=='live' or r['title'] in sample]
+    elif mode=='samples':
         titles=json.loads((root/'sample-titles.json').read_bytes())
         jobs=[r for r in rows if r['title'] in titles]
     elif mode=='drafts':jobs=rows
-    elif mode in ['english-sandbox','english-before']:
+    elif mode in ['english-sandbox','english-before','english-production']:
         jobs=[dict(title=t,text=heads[t]['revisions'][0]['slots']['main']['content']) for t in json.loads((root/'english-sample.json').read_bytes())]
     else:raise ValueError(mode)
 def render(job):
     params=dict(format='json',formatversion=2,action='parse',prop='text|links|images|categories')
     if 'text' in job:
-        text=job['text'] if mode=='english-before' else re.sub(r'\{\{\s*Card(?=\s*[|\n])','{{Card/sandbox',job['text'],count=1)
+        text=job['text'] if mode in ['english-before','english-production'] else re.sub(r'\{\{\s*Card(?=\s*[|\n])','{{Card/sandbox',job['text'],count=1)
         params.update(title=job['title'],text=text,contentmodel='wikitext')
+    elif job.get('live'):params.update(page=job['title'])
     else:params.update(oldid=job['oldid'])
     response=requests.post('https://wiki.swccg.com/api.php',data=params,timeout=90)
     response.raise_for_status();result=response.json();assert 'error' not in result,(job['title'],result.get('error'))

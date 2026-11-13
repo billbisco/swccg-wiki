@@ -12,6 +12,7 @@ def visible(value):
     # No Unicode normalization: retain Japanese punctuation, width and characters.
     return ''.join(html.unescape(mw.parse(value).strip_code()).split())
 report=[]
+conservation={r['title']:r for r in json.loads((root/'drafts-conservation.json').read_bytes())}
 for item in details:
     title=item['title'];params=item['params'];sections=item['source_sections']
     checks={}
@@ -30,8 +31,10 @@ for item in details:
     report.append(dict(title=title,native_translation_checks=checks,missing_external_urls=missing_urls,missing_reference_text=missing_refs,passed=all(checks.values()) and not missing_urls and not missing_refs))
 (root/'fidelity-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
 with (root/'content-diff.csv').open('w',encoding='utf8',newline='') as f:
-    writer=csv.DictWriter(f,fieldnames=['title','native_translation_exact','external_urls_preserved','references_preserved','pass']);writer.writeheader()
-    for row in report:writer.writerow(dict(title=row['title'],native_translation_exact=all(row['native_translation_checks'].values()),external_urls_preserved=not row['missing_external_urls'],references_preserved=not row['missing_reference_text'],**{'pass':row['passed']}))
+    writer=csv.DictWriter(f,fieldnames=['title','native_translation_exact','external_urls_preserved','references_preserved','missing_words','missing_links','missing_images','added_words','added_links','added_images','pass']);writer.writeheader()
+    for row in report:
+        r=conservation[row['title']]
+        writer.writerow(dict(title=row['title'],native_translation_exact=all(row['native_translation_checks'].values()),external_urls_preserved=not row['missing_external_urls'],references_preserved=not row['missing_reference_text'],**{k:json.dumps(r.get(k,{}),ensure_ascii=False) for k in ['missing_words','missing_links','missing_images','added_words','added_links','added_images']},**{'pass':row['passed']}))
 with (root/'categories-before-after.csv').open('w',encoding='utf8',newline='') as f:
     writer=csv.writer(f);writer.writerow(['title','before','after','reason'])
     for row in json.loads((root/'drafts-conservation.json').read_bytes()):

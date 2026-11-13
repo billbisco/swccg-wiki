@@ -19,7 +19,7 @@ def soup(text):
     return node
 def tokens(text):return collections.Counter(re.findall(r'\w+',soup(text).get_text(' ',strip=True)))
 report=[]
-if mode=='english-sandbox':
+if mode in ['english-sandbox','english-production']:
     if (root/'english-before-renders.json.gz').exists():before=json.load(gzip.open(root/'english-before-renders.json.gz','rt',encoding='utf8'))
     for title,new in after.items():
         a=str(soup(before[title]['text']));b=str(soup(new['text']))
@@ -28,7 +28,7 @@ if mode=='english-sandbox':
         if not equal:
             import difflib
             (root/('english-diff-'+str(len(report))+'.diff')).write_text(''.join(difflib.unified_diff(a.splitlines(True),b.splitlines(True))),encoding='utf8')
-    path=root/'english-sandbox-report.json'
+    path=root/(mode+'-report.json')
     path.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
     print(sum(r['identical'] for r in report),'of',len(report),'English rendered DOMs identical')
 else:
@@ -43,6 +43,7 @@ else:
         errors=soup(new['text']).select('.mw-ext-cite-error')
         raw_errors=BeautifulSoup(new['text'],'html.parser').select('.mw-ext-cite-error')
         entry=dict(title=title,missing_words=meaningful_missing,missing_links=sorted(old_links-new_links),missing_images=sorted(set(old['images'])-set(new['images'])),missing_categories=sorted(oldcats-newcats),added_categories=sorted(newcats-oldcats),cite_errors=[e.get_text(' ',strip=True) for e in raw_errors])
+        entry.update(added_words=dict(tokens(new['text'])-tokens(old['text'])),added_links=sorted(new_links-old_links),added_images=sorted(set(new['images'])-set(old['images'])))
         expected_removed={'Pages_with_reference_errors'} if title in reference_repairs and not raw_errors else set()
         entry['allowed_category_changes']=['Remove maintenance category after restoring the existing photo reference'] if expected_removed & oldcats else []
         entry['unexpected_category_changes']=sorted((oldcats-newcats)-expected_removed)+entry['added_categories']
