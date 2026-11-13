@@ -1,0 +1,4 @@
+# Upgrade override (prepared, not deployed): pins the security release. See MW-1.43.11-UPGRADE-RUNBOOK.md.
+services:
+  wiki:
+    image: mediawiki:1.43.11

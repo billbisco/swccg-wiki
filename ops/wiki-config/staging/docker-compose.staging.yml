@@ -1,0 +1,101 @@
+# Wiki staging on test.swccg.com (https://test.swccg.com/wiki/...). Self-contained: its own wiki DB
+# server, GEMP-auth DB server and volumes. Production's images are mounted read-only; thumbnails are
+# rendered into staging's own volume. Shares nothing writable with production. Project dir on the VPS: /opt/swccg-wiki-staging (see STAGING.md).
+name: swccg-wiki-staging
+services:
+  wiki:
+    image: mediawiki:1.43.11
+    container_name: swccg_wiki_staging
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:17013:80"
+    volumes:
+      # Production's images, READ-ONLY (host path of the swccg-wiki_wiki_images volume; a bind mount, so
+      # 'docker compose down -v' here never touches it). Thumbnails go to staging_images (staging-settings.php).
+      - /var/lib/docker/volumes/swccg-wiki_wiki_images/_data:/var/www/html/images:ro
+      - staging_images:/var/www/html/staging-thumbs
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php:ro
+      - ./copy/chrome:/swccg-chrome:ro
+      - ./copy/SwccgChrome.php:/var/www/html/SwccgChrome.php:ro
+      - ./copy/flaggedrevs-settings.php:/var/www/html/flaggedrevs-settings.php:ro
+      - ./copy/extra-settings.php:/var/www/html/extra-settings.php:ro
+      - ./copy/logo/swccg-wiki-logo.png:/var/www/html/resources/assets/swccg-wiki-logo.png:ro
+      - ./copy/extensions/FlaggedRevs:/var/www/html/extensions/FlaggedRevs:ro
+      - ./wiki-config/login-security.php:/var/www/html/login-security.php:ro
+      - ./wiki-config/dev-mail-logonly.php:/var/www/html/dev-mail-logonly.php:ro
+      - ./wiki-config/staging/staging-settings.php:/var/www/html/staging-settings.php:ro
+      - ./wiki-config/extensions/GempAuth:/var/www/html/extensions/GempAuth:ro
+      - ./secrets/wiki:/var/www/html/secrets:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    networks: [web, auth]
+
+  db:
+    image: mariadb:10.11
+    container_name: swccg_wiki_staging_db
+    restart: unless-stopped
+    env_file: ./secrets/wiki-db.env
+    volumes:
+      - staging_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks: [web]
+
+  gempauth:
+    # Staging GEMP auth listener: PR #287 build, real AuthService + DbPlayerDAO, no game server.
+    image: gemp_app:latest            # existing local image, used only for its Java 21 runtime
+    container_name: swccg_gempauth_staging
+    restart: unless-stopped
+    entrypoint: ["java"]
+    command: ["-Xmx256m", "-Dlog4j2.configurationFile=/app/log4j2-staging.xml", "-cp", "/app/app/*:/app/lib/*",
+              "com.gempukku.swccgo.async.internal.e2e.WikiAuthStagingServer"]
+    env_file: ./secrets/gempauth.env
+    environment:
+      INTERNAL_AUTH_PORT: "8090"
+      DB_CONTAINER_NAME: gempdb
+      MYSQL_DATABASE: gemp-swccg
+      STAGING_PLAYER: wikistage
+      STAGING_PLAYER_PASSWORD_FILE: /run/staging/player-password
+    volumes:
+      - ./gempauth:/app:ro
+      - ./secrets/player-password:/run/staging/player-password:ro
+    depends_on:
+      gempdb:
+        condition: service_healthy
+    networks: [auth, gempdb]        # both internal: no host port, no egress
+
+  gempdb:
+    image: mariadb:10.11
+    container_name: swccg_gemp_staging_db
+    restart: unless-stopped
+    env_file: ./secrets/gempdb.env
+    environment:
+      MARIADB_DATABASE: gemp-swccg
+    volumes:
+      - staging_gemp_db:/var/lib/mysql
+      - ./gempauth/sql:/docker-entrypoint-initdb.d:ro   # pre-#284 schema, then update_password_hashing.sql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks: [gempdb]
+
+networks:
+  web:
+    ipam:
+      config:
+        - subnet: 172.31.13.0/24      # gateway 172.31.13.1 = $wgCdnServersNoPurge in staging-settings.php
+  auth:
+    internal: true
+  gempdb:
+    internal: true
+
+volumes:
+  staging_db:
+  staging_images:
+  staging_gemp_db:

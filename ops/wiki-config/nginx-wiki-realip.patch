@@ -1,0 +1,29 @@
+# /etc/nginx/sites-enabled/wiki.swccg.com  (NOT applied; needs Bill's go-ahead)
+#
+# Proxy chain (checked read-only 2026-10-19): client -> host nginx (no Cloudflare; the A record
+# points straight at the VPS) -> 127.0.0.1:17003 (docker-proxy) -> swccg_wiki:80 (Apache).
+# Apache/MediaWiki see every request from the swccg-wiki_default gateway 172.18.0.1.
+#
+# 1) Send only the real peer address. With $proxy_add_x_forwarded_for nginx keeps any
+#    client-supplied X-Forwarded-For. MediaWiki ($wgCdnServersNoPurge = ['172.18.0.1']) already
+#    takes only the right-most entry, which nginx added, but $remote_addr removes the ambiguity
+#    (finding H4) and keeps Apache/other consumers honest.
+# 2) Optional: a POST burst limit on the account pages only. Keyed on an empty string for
+#    everything else, so page views, edits and the bots' API traffic are never limited here.
+--- a/wiki.swccg.com
++++ b/wiki.swccg.com
+@@ top of file (http context, before the first server {)
++map "$request_method $request_uri" $wiki_acct_post {
++    default "";
++    "~*^POST .*Special(:|%3A)(UserLogin|PasswordReset|ConfirmEmail|ChangeEmail|ChangePassword|CreateAccount)" $binary_remote_addr;
++}
++limit_req_zone $wiki_acct_post zone=wiki_acct_post:10m rate=10r/m;
+@@ location /wiki/ { ... }, location /images/ { ... }, location / { ... }  (all three)
+-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
++        proxy_set_header X-Forwarded-For $remote_addr;
+@@ location /wiki/ { ... } and location / { ... }  (add one line each)
++        limit_req zone=wiki_acct_post burst=10 nodelay;
++        limit_req_status 429;
+#
+# Apply: back up the file, edit, `nginx -t && systemctl reload nginx`. Roll back: restore backup, reload.
+# Same X-Forwarded-For change is recommended on play/test/lotr vhosts (GEMP finding H4; Alpha3/ops).

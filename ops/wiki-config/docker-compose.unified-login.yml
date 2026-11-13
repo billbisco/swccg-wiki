@@ -1,0 +1,17 @@
+# Override for /opt/swccg-wiki (wiki side of unified login). NOT deployed; see UNIFIED-LOGIN-RUNBOOK.md.
+# Use: docker compose -f docker-compose.yml -f docker-compose.localsettings.yml -f docker-compose.unified-login.yml up -d wiki
+services:
+  wiki:
+    volumes:
+      - ./extensions/GempAuth:/var/www/html/extensions/GempAuth:ro
+      - ./login-security.php:/var/www/html/login-security.php:ro
+      - ./secrets:/var/www/html/secrets:ro          # gempauth-secret.php, mode 0640, untracked
+    environment:
+      GEMP_AUTH_ENDPOINT: http://gemp_swccg_app_1:8090/internal/v1/verify
+    networks:
+      default: {}
+      swccg-auth: {}
+
+networks:
+  swccg-auth:
+    external: true

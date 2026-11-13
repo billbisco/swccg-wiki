@@ -1,0 +1,54 @@
+{
+	"name": "GempAuth",
+	"version": "0.1.0",
+	"author": [ "SWCCG wiki team" ],
+	"url": "https://github.com/billbisco/swccg-wiki/tree/main/ops/wiki-config/extensions/GempAuth",
+	"descriptionmsg": "gempauth-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "auth",
+	"requires": { "MediaWiki": ">= 1.43.0" },
+	"AutoloadNamespaces": { "MediaWiki\\Extension\\GempAuth\\": "src/" },
+	"TestAutoloadNamespaces": { "MediaWiki\\Extension\\GempAuth\\Tests\\": "tests/phpunit/" },
+	"MessagesDirs": { "GempAuth": [ "i18n" ] },
+	"AuthManagerAutoConfig": {
+		"primaryauth": {
+			"MediaWiki\\Extension\\GempAuth\\GempPrimaryAuthenticationProvider": {
+				"class": "MediaWiki\\Extension\\GempAuth\\GempPrimaryAuthenticationProvider",
+				"services": [ "GempAuth.Client", "UserIdentityLookup", "UserOptionsManager", "ConnectionProvider" ],
+				"sort": 50
+			}
+		}
+	},
+	"ServiceWiringFiles": [ "src/ServiceWiring.php" ],
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\GempAuth\\Hooks",
+			"services": [ "MainConfig", "UserOptionsLookup" ]
+		}
+	},
+	"Hooks": {
+		"getUserPermissionsErrors": "main",
+		"SpecialPasswordResetOnSubmit": "main"
+	},
+	"AvailableRights": [ "editcontent" ],
+	"config": {
+		"GempAuthEndpoint": {
+			"value": "",
+			"description": "Full URL of GEMP's private verify endpoint, e.g. http://gemp_swccg_app_1:8090/internal/v1/verify. Empty disables GEMP login."
+		},
+		"GempAuthSecret": {
+			"value": "",
+			"description": "Shared HMAC secret (>= 32 bytes). Set it from an untracked settings file, never in git."
+		},
+		"GempAuthTimeout": { "value": 5, "description": "Seconds to wait for GEMP." },
+		"GempAuthAccountUrl": {
+			"value": "https://play.swccg.com/",
+			"description": "Where GEMP players sign up, change or reset their password."
+		},
+		"GempAuthEmailGateNamespaces": {
+			"value": null,
+			"description": "Namespaces whose pages need the editcontent right to edit/create/move/upload. null = content namespaces + Project, Template, Help, Category, File, Card, Module."
+		}
+	},
+	"manifest_version": 2
+}
