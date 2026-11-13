@@ -41,4 +41,3 @@ def fetch(title, **extra):
 def current(p):
     r=p["revisions"][0]
     return r["revid"],r["slots"]["main"]["content"]
-
