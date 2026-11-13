@@ -10,6 +10,11 @@ if mode=='sandbox':
 else:
     targets=[('2-1b','2-1B (Too-Onebee) (Japanese)',1280),('fx7','FX-7 (Effex-Seven) (Japanese)',1280),('r3-t6','R3-T6 (Arthree-Teesix) (Japanese)',1280),('brainiac','Brainiac (Japanese)',1280),('squadron','Y-wing Assault Squadron (Japanese)',1280),('arcona','Arcona (Japanese)',1280),('creature','Wampa (Japanese)',1280),('rotation-dark','Hoth: Echo Command Center (War Room) (Dark) (Japanese)',1280),('rotation-light','Hoth: Echo Command Center (War Room) (Japanese)',1280),('hoth-set','Hoth (Japanese)',1280),('mobile','FX-7 (Effex-Seven) (Japanese)',390),('rotation-mobile','Hoth: Echo Command Center (War Room) (Japanese)',390)]
     renders=None
+oldids={}
+if mode=='before':
+    targets=[('2-1b','2-1B (Too-Onebee) (Japanese)',1280),('fx7','FX-7 (Effex-Seven) (Japanese)',1280),('creature','Wampa (Japanese)',1280)]
+    for stage in ['phase1','phase2','phase3']:
+        for title,p in json.loads((root/(stage+'-heads.json')).read_bytes()).items():oldids.setdefault(title,p['revisions'][0]['revid'])
 results=[]
 with sync_playwright() as driver:
     context=driver.chromium.launch_persistent_context(str(root/'qa-profile'),channel='chrome',headless=True)
@@ -17,7 +22,9 @@ with sync_playwright() as driver:
         page=context.new_page()
         for name,title,width in targets:
             page.set_viewport_size(dict(width=width,height=1300));url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe='')
+            if mode=='before':url+='?oldid='+str(oldids[title])
             page.goto(url,wait_until='networkidle',timeout=60000)
+            page.locator('#mw-content-text').wait_for()
             if renders:page.locator('#mw-content-text > .mw-parser-output').evaluate('(el,html)=>el.innerHTML=html',renders[title]['text'])
             page.locator('#mw-content-text').evaluate('async el=>await Promise.all([...el.querySelectorAll("img")].map(im=>im.complete?Promise.resolve():new Promise(resolve=>{im.addEventListener("load",resolve,{once:true});im.addEventListener("error",resolve,{once:true})})))')
             page.evaluate('document.fonts.ready')

@@ -50,4 +50,3 @@ elif MODE=="apply":
     publish(rows)
 else:
     raise ValueError(MODE)
-

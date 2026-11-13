@@ -11,7 +11,9 @@ records=[]
 def plain(value):
     value=re.sub(r'<ref\b(?![^>]*?/\s*>)[^>]*>.*?</ref>|<ref[^>]*/>','',value,flags=re.S)
     return BeautifulSoup(mw.parse(value).strip_code(),'html.parser').get_text(' ',strip=True)
-def missing(value):return value.strip()!='*' and (not plain(value).strip() or bool(re.search(r'not yet (?:transcribed|added|verified)|await(?:s|ing)? verification|not transcribed|untranscribed',plain(value),re.I)))
+def missing(value):
+    without_refs=re.sub(r'<ref\b(?![^>]*?/\s*>)[^>]*>.*?</ref>|<ref[^>]*/>','',value,flags=re.S).strip()
+    return without_refs!='*' and (not plain(value).strip() or bool(re.search(r'not yet (?:transcribed|added|verified)|await(?:s|ing)? verification|not transcribed|untranscribed',plain(value),re.I)))
 for title,page in heads.items():
     if title not in targets:continue
     text=page['revisions'][0]['slots']['main']['content'];template=next(t for t in mw.parse(text).filter_templates(recursive=False) if str(t.name).strip()=='Card')

@@ -185,3 +185,7 @@ Example of separate native and translated fields (an abridged language-field exa
 |translation='''Title:''' Alderaan.
 }}
 </pre>
+
+== Source-photo orientation ==
+
+Optional '''image_rotation''' — <code>left</code> displays the first portrait a quarter turn counterclockwise. Use it for an original source photograph whose card is sideways. The original File and downloaded photograph stay unchanged. Omit it for an upright photo. '''image_rotated_height''' is the displayed height in pixels after rotation; use the nearest integer to <code>280 × original image width / original image height</code> (default 167). The template scales the standard thumbnail inside its 280px rail. Works with the first portrait in stacked and two-column layouts. Do not use rotation to infer a different printing or to hide a cropped card edge.
