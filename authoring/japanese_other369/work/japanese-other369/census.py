@@ -1,19 +1,19 @@
 import collections,csv,json,re,sys
 from pathlib import Path
 from bs4 import BeautifulSoup
-root=Path('work/japanese-other369');root.mkdir(exist_ok=True)
-base=Path(__file__).parent
+root=Path(__file__).parent;root.mkdir(exist_ok=True)
+base=root.parent/'japanese-infobox287'
 sys.path.insert(0,str(base/'vendor'))
 import mwparserfromhell as mw
-prem={r['title'] for r in json.loads(Path('work/japanese-audit13/census.json').read_bytes())}
-heads=json.loads((base/'checked-heads.json').read_bytes())
+heads=json.loads((root/'heads-before.json').read_bytes());targets=set(heads)
+if (root/'checked-heads.json').exists():heads.update(json.loads((root/'checked-heads.json').read_bytes()))
 records=[]
 def plain(value):
     value=re.sub(r'<ref\b(?![^>]*?/\s*>)[^>]*>.*?</ref>|<ref[^>]*/>','',value,flags=re.S)
     return BeautifulSoup(mw.parse(value).strip_code(),'html.parser').get_text(' ',strip=True)
 def missing(value):return value.strip()!='*' and (not plain(value).strip() or bool(re.search(r'not yet (?:transcribed|added|verified)|await(?:s|ing)? verification|not transcribed|untranscribed',plain(value),re.I)))
 for title,page in heads.items():
-    if title in prem or 'Japanese' not in title:continue
+    if title not in targets:continue
     text=page['revisions'][0]['slots']['main']['content'];template=next(t for t in mw.parse(text).filter_templates(recursive=False) if str(t.name).strip()=='Card')
     params={str(p.name).strip():str(p.value).strip() for p in template.params}
     images=[x for x in re.findall(r'\[\[File:([^|\]]+)',text) if not x.startswith('Icon-')]
@@ -32,7 +32,7 @@ for title,page in heads.items():
     if not images:gaps.insert(0,'scan')
     records.append(dict(title=title,revid=page['revisions'][0]['revid'],set=params['set'],type=typ,images=list(dict.fromkeys(images)),gaps=gaps,uniqueness=params.get('uniqueness',''),icons=params.get('icons',''),params=params))
 assert len(records)==469,len(records)
-(root/'heads-before.json').write_text(json.dumps({r['title']:heads[r['title']] for r in records},ensure_ascii=False,indent=2),encoding='utf8')
+# Keep the input baseline immutable; updated output goes in census.json.
 (root/'census.json').write_text(json.dumps(records,ensure_ascii=False,indent=2),encoding='utf8')
 with (root/'coverage.csv').open('w',encoding='utf8',newline='') as f:
     writer=csv.writer(f);writer.writerow(['title','set','type','image_count','gaps','uniqueness','icons'])

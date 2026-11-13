@@ -9,6 +9,7 @@ files=[dict(title='File:'+name,name=name,desc=desc,data=base64.b64encode(data).d
 prefix=Path('work/wiki_title_publish.py').read_text(encoding='utf8').split('def main(payload):')[0]
 helpers=Path('work/japanese-complete/upload.py').read_text(encoding='utf8').split('packet=json.loads')[0].replace('Add original Japanese Premiere card face (#172)','Add original Japanese Hoth 2-1B photograph (#369)')
 suffix='''
+import hashlib
 digest=lambda text:hashlib.sha256(text.encode()).hexdigest()
 files=json.loads(gzip.decompress(base64.b64decode(PACKET)))
 env=Path('/opt/swccg-wiki/.env').read_text(encoding='utf-8-sig')
