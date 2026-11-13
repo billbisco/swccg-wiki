@@ -15,3 +15,10 @@
 **Verification.** Capture all 794 old rendered pages and 50 deterministic English controls before touching the template. Check 10 initial sandbox samples (5 per old layout), all-page content/link/file/reference/category conservation, 12 final product/layout examples, unchanged English HTML, guarded section-zero writes, supported scoped reviews and public output. Do not claim full linguistic or scan-edge verification from a structural migration.
 
 **Who / status.** Bill authorized execution in chat; MemoryCoreChatGPT implements #287. Set-icon asset/lookup work stays on #286; content audits resume after the shared structure is verified.
+
+
+## 2026-11-13 — Sandbox checks complete; guarded replacement of legacy sections
+
+All 794 drafts pass rendered text, internal/external link, file, citation and category conservation; native/translated field comparison preserves every non-whitespace character without Unicode normalization. Ten sandbox browser samples preserve both layouts; 50 fresh English DOM controls are identical. Twenty-five repaired photo references remove only the existing reference-error maintenance category. Printed expansion icons were checked against the existing foil/promo and eight ESB premium faces.
+
+Preflight caught concurrent family-navigator edits; the converter rebases these onto their latest source and keeps immutable initial baselines. Exactly 750 old HTML sources support whole-source section zero. The remaining 44 contain real wikitext sections, so conversion requires one atomic whole-source replacement, guarded by exact revision, SHA-256 and both timestamps. This avoids duplicate leftover sections and multiple transient partial edits. Subsequent template pages support section zero.

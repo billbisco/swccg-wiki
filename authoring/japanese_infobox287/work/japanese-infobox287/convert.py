@@ -74,6 +74,7 @@ for title in titles:
     image='';image_note=''
     if portraits:
         portrait=str(portraits[0].contents)
+        image_note=portrait.strip()
         links=[l for l in mw.parse(portrait).filter_wikilinks() if str(l.title).startswith('File:')]
         if links:
             image=str(links[0].title)[5:]
@@ -168,6 +169,8 @@ for title in titles:
     if sections:
         params['extra_sections']='\n'.join('<h2>'+name+'</h2>\n'+value for name,value in sections.items())
     auto={'Cards',params['set'],params['side'],params['type']}
+    if not auto.issubset(set(cats)):
+        params['category_override']=''.join('[[Category:'+c+']]' for c in cats)
     extra_cats=[c for c in cats if c not in auto] if 'category_override' not in params else []
     template=Template('Card\n')
     for key,value in params.items():template.add(key,value+'\n',showkey=True,preserve_spacing=False)

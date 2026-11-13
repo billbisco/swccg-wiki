@@ -1,0 +1,22 @@
+Optional '''language''' — ISO language code for this printing, for example <code>ja</code>. Shows the printed-language row and enables optional edition metadata. Omit for existing English entries. '''language_display''' supplies a sourced display value instead of the language name; '''label_language''' preserves an existing row label.
+
+'''printed_title''', '''printed_game_text''' and '''printed_lore''' hold the printing's native text, including its punctuation and title markers. They render in their own language-tagged sections. '''translation''' holds the English translation separately; '''translation_note''' holds a comparison with the English printing. Never substitute English card text for an unreadable Japanese face. Preserve a distinction between a blank printed field and a field that has not been transcribed.
+
+Optional '''edition''', '''border_finish''', '''release''', '''size''' and '''year''' show metadata rows when supplied together with '''language'''. Set identifies the product; '''set_icon''' identifies the symbol actually printed on this face. A foil or introductory product can reuse another expansion's symbol or print the premium symbol. Read the face rather than inferring its symbol from the product name.
+
+The migration also supports existing article material through '''lead''', '''navigation''', '''image_note''', '''type_display''', '''set_display''', '''rarity_display''', '''extra_info''', '''extra_sections''' and '''see_also_heading'''. Display overrides preserve existing linked wording without changing the underlying side/type/set values. '''extra_info''' accepts table rows inside the shared infobox; it must not contain another infobox table. The '''label_type''', '''label_gemp_id''', '''label_dark_icons''', '''label_light_icons''', '''label_icons''', '''label_landspeed''' and '''label_versions''' overrides retain existing field labels. '''category_override''' retains an exceptional printing's complete existing category list; omit it for ordinary new entries.
+
+Example of separate native and translated fields (an abridged language-field example; add the verified image, statistics, Versions and sources for a complete article):
+<pre>
+{{Card
+|title=Alderaan
+|side=Light
+|type=Location
+|subtype=System
+|set=Premiere (Japanese)
+|language=ja
+|set_icon=None ([[Premiere Limited|Premiere]])
+|printed_title=オルデラン
+|translation='''Title:''' Alderaan.
+}}
+</pre>

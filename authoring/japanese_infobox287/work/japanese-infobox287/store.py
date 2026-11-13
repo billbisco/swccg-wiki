@@ -8,7 +8,10 @@ mode=sys.argv[1]
 repo='work/wiki-source' if mode=='wiki' else 'work/japanese-preservation/evidence-repo'
 branch='codex/japanese-card-infobox-287' if mode=='wiki' else 'main'
 env=dict(os.environ,GIT_INDEX_FILE=str((root/(mode+'-store.index')).resolve()),GIT_NO_LAZY_FETCH='1')
-def git(*args,data=None):return subprocess.check_output(['git','-C',repo,'-c','core.protectNTFS=false',*args],input=data,env=env)
+def git(*args,data=None):
+    child_env=dict(env)
+    if args and args[0]=='show':child_env.pop('GIT_NO_LAZY_FETCH',None)
+    return subprocess.check_output(['git','-C',repo,'-c','core.protectNTFS=false',*args],input=data,env=child_env)
 exists=git('ls-remote','--heads','origin','refs/heads/'+branch).strip()
 git('fetch','origin',branch if exists else 'main')
 parent=git('rev-parse','FETCH_HEAD').decode().strip()

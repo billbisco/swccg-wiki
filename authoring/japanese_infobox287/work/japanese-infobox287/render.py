@@ -1,6 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor
 import gzip
 import json
+import re
 from pathlib import Path
 import sys
 import requests
@@ -17,12 +18,14 @@ else:
         titles=json.loads((root/'sample-titles.json').read_bytes())
         jobs=[r for r in rows if r['title'] in titles]
     elif mode=='drafts':jobs=rows
-    elif mode=='english-sandbox':
-        jobs=[dict(title=t,text=heads[t]['revisions'][0]['slots']['main']['content'].replace('{{Card\n','{{Card/sandbox\n').replace('{{Card|','{{Card/sandbox|')) for t in json.loads((root/'english-sample.json').read_bytes())]
+    elif mode in ['english-sandbox','english-before']:
+        jobs=[dict(title=t,text=heads[t]['revisions'][0]['slots']['main']['content']) for t in json.loads((root/'english-sample.json').read_bytes())]
     else:raise ValueError(mode)
 def render(job):
     params=dict(format='json',formatversion=2,action='parse',prop='text|links|images|categories')
-    if 'text' in job:params.update(title=job['title'],text=job['text'].replace('{{Card\n','{{Card/sandbox\n',1),contentmodel='wikitext')
+    if 'text' in job:
+        text=job['text'] if mode=='english-before' else re.sub(r'\{\{\s*Card(?=\s*[|\n])','{{Card/sandbox',job['text'],count=1)
+        params.update(title=job['title'],text=text,contentmodel='wikitext')
     else:params.update(oldid=job['oldid'])
     response=requests.post('https://wiki.swccg.com/api.php',data=params,timeout=90)
     response.raise_for_status();result=response.json();assert 'error' not in result,(job['title'],result.get('error'))
