@@ -1,0 +1,81 @@
+<noinclude>
+Sandbox for '''infobox proposal B''' (pass 5). Live [[Template:Card]] is unchanged.
+
+One Info list: Title, Side, Type, Set, Publisher, GEMP ID, PC alias, Slip, Era, Rarity, Uniqueness, Extra, stats, Dark Force Icons, Light Force Icons, Icons, Likeness, Versions last.
+
+Versions prefixes: Decipher, Decipher (AI), Virtual Original, Virtual Legacy, Virtual Legacy (AI), Virtual Modern, Virtual Modern (ALT).
+
+Empty optional rows are omitted. '''test=1''' skips card categories and adds a live-card link.
+
+See [[SWCCG Wiki:Card infobox test B]].
+
+{{Template:Card/doc}}
+</noinclude><includeonly>__NOTOC__{{#if:{{{test|}}}|<div class="card-hatnote">'''Infobox proposal B.''' Live card: [[{{{live_title|{{{title}}}}}}]].</div>}}{{#ifeq:{{{set_band|Decipher}}}|Decipher||'''Players Committee / Virtual''' — not a Decipher card.}}
+<div class="card-nav">{{#if:{{{prev|}}}|« [[{{{prev}}}]]<nowiki> </nowiki>· }}[[{{Set page|{{{set}}}}}|{{{set}}}]]{{#if:{{{next|}}}|<nowiki> </nowiki>· [[{{{next}}}]] »}}</div>
+<div class="card-rail{{#ifeq:{{{rail|}}}|right|<nowiki> </nowiki>card-rail-right}}{{#ifeq:{{{image2_layout|}}}|right|<nowiki> </nowiki>card-rail-dual}}{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-rail-dual card-rail-responsive}}">
+{{#if:{{#ifeq:{{{image2_layout|}}}|right|1|}}{{#ifeq:{{{image2_layout|}}}|responsive|1|}}|{{#if:{{{image|}}}|<div class="card-portraits-row{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-portraits-responsive}}"><div class="card-portrait">[[File:{{{image}}}|280px]]</div>{{#if:{{{image2|}}}|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}</div>}}|{{#if:{{{image|}}}|<div class="card-portrait">[[File:{{{image}}}|280px]]</div>}}{{#if:{{{image2|}}}|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}}}<table class="wikitable mw-collapsible card-infobox">
+<caption>Info</caption>
+<tr><th>Title</th><td>{{{title}}}</td></tr>
+<tr><th>Side</th><td>[[{{{side}}}]]</td></tr>
+<tr><th>Type</th><td>[[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>— [[{{{subtype_link}}}{{!}}{{{subtype}}}]]}}{{#if:{{{model|}}}|<nowiki> </nowiki>({{{model}}})}}</td></tr>
+<tr><th>Set</th><td>[[{{Set page|{{{set}}}}}|{{{set}}}]]</td></tr>{{#if:{{{publisher|}}}|<tr><th>Publisher</th><td>{{{publisher}}}</td></tr>}}{{#if:{{{gemp_id|{{{card_uid|}}}}}}|<tr><th>GEMP ID</th><td><code>{{{gemp_id|{{{card_uid}}}}}}</code></td></tr>}}{{#if:{{{pc_alias|}}}|<tr><th>PC alias</th><td><code>{{{pc_alias}}}</code></td></tr>}}{{#if:{{{slip|}}}|<tr><th>Slip</th><td>{{{slip}}}</td></tr>}}{{#if:{{{era|}}}|<tr><th>Era</th><td>{{{era}}}</td></tr>}}{{#if:{{{rarity|}}}|<tr><th>Rarity</th><td>[[{{{rarity_link|Rarity}}}|{{{rarity}}}]]</td></tr>}}{{#if:{{{uniqueness|}}}|<tr><th>Uniqueness</th><td>{{{uniqueness}}}</td></tr>}}{{#if:{{{restriction|}}}|<tr><th>Restriction</th><td>{{{restriction}}}</td></tr>}}{{#if:{{{extra_identity|}}}|<tr><th>Extra</th><td>{{{extra_identity}}}</td></tr>}}{{#if:{{{destiny|}}}|<tr><th>Destiny</th><td>{{{destiny}}}</td></tr>}}{{#if:{{{power|}}}|<tr><th>Power</th><td>{{{power}}}</td></tr>}}{{#if:{{{ability|}}}|<tr><th>Ability</th><td>{{{ability}}}</td></tr>}}{{#if:{{{influence|}}}|<tr><th>Influence</th><td>{{{influence}}}</td></tr>}}{{#if:{{{politics|}}}|<tr><th>Politics</th><td>{{{politics}}}</td></tr>}}{{#if:{{{deploy|}}}|<tr><th>Deploy</th><td>{{{deploy}}}</td></tr>}}{{#if:{{{forfeit|}}}|<tr><th>Forfeit</th><td>{{{forfeit}}}</td></tr>}}{{#if:{{{armor|}}}|<tr><th>Armor</th><td>{{{armor}}}</td></tr>}}{{#if:{{{maneuver|}}}|<tr><th>Maneuver</th><td>{{{maneuver}}}</td></tr>}}{{#if:{{{hyperspeed|}}}|<tr><th>Hyperspeed</th><td>{{{hyperspeed}}}</td></tr>}}{{#if:{{{landspeed|}}}|<tr><th>Landspeed</th><td>{{{landspeed}}}</td></tr>}}{{#if:{{{parsec|}}}|<tr><th>Parsec</th><td>{{{parsec}}}</td></tr>}}{{#if:{{{dark_icons|}}}|<tr><th>Dark Force Icons</th><td>{{{dark_icons}}}</td></tr>}}{{#if:{{{light_icons|}}}|<tr><th>Light Force Icons</th><td>{{{light_icons}}}</td></tr>}}{{#if:{{{icons|}}}|<tr><th>Icons</th><td>{{{icons}}}</td></tr>}}{{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>Versions</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
+</table>
+</div>{{#if:{{{hatnote|}}}|<div class="card-hatnote">''{{{hatnote}}}''</div>}}
+<div class="card-body">
+'''{{{title}}}''' is a [[{{{side}}}]] [[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>([[{{{subtype_link}}}{{!}}{{{subtype}}}]])}} from [[{{Set page|{{{set}}}}}|{{{set}}}]].
+
+== Card Text ==
+{{{game_text|}}}{{#if:{{{game_text_note|}}}|
+
+''{{{game_text_note}}}''}}
+
+== Lore ==
+{{#if:{{{lore|}}}|''{{{lore}}}''}}
+
+{{#if:{{{anagram|}}}|<nowiki />
+<h2>Anagram</h2>
+{{{anagram}}}}}{{#if:{{{joke|}}}|<nowiki />
+<h2>Joke</h2>
+{{{joke}}}}}{{#if:{{{notes|}}}|<nowiki />
+<h2>Notes</h2>
+{{{notes}}}}}{{#if:{{{strategy|}}}|<nowiki />
+<h2>Strategy</h2>
+{{{strategy}}}}}{{#if:{{{combos|}}}|<nowiki />
+<h2>Combos</h2>
+{{{combos}}}}}{{#if:{{{rulings|}}}|<nowiki />
+<h2>Rulings</h2>
+{{{rulings}}}}}{{#if:{{{pulled_by|}}}|<nowiki />
+<h2>Pulled by</h2>
+{{{pulled_by}}}}}{{#if:{{{pulls|}}}|<nowiki />
+<h2>Pulls</h2>
+{{{pulls}}}}}{{#if:{{{canceled_by|}}}|<nowiki />
+<h2>Canceled by</h2>
+{{{canceled_by}}}}}{{#if:{{{cancels|}}}|<nowiki />
+<h2>Cancels</h2>
+{{{cancels}}}}}{{#if:{{{matching|}}}|<nowiki />
+<h2>Matching</h2>
+{{{matching}}}}}{{#if:{{{matching_weapon|}}}|<nowiki />
+<h2>Matching weapons</h2>
+{{{matching_weapon}}}}}{{#if:{{{also_known_as|}}}|<nowiki />
+<h2>Also known as</h2>
+{{{also_known_as}}}}}{{#if:{{{personas|}}}|<nowiki />
+<h2>Persona</h2>
+{{{personas}}}}}{{#if:{{{characteristics|}}}|<nowiki />
+<h2>Characteristics</h2>
+{{{characteristics}}}}}{{#if:{{{counterpart|}}}|<nowiki />
+<h2>Counterpart</h2>
+{{{counterpart}}}}}{{#if:{{{underlying_card_for|}}}|<nowiki />
+<h2>Underlying card for</h2>
+{{{underlying_card_for}}}}}{{#if:{{{easter_egg|}}}|<nowiki />
+<h2>Easter egg</h2>
+{{{easter_egg}}}}}
+
+{{#if:{{{see_also|}}}|<nowiki />
+<h2>See Also</h2>
+{{{see_also}}}}}{{#if:{{{sources|}}}|<nowiki />
+<h2>Sources</h2>
+{{{sources}}}}}{{#if:{{{has_refs|}}}|<nowiki />
+<h2>References</h2>
+<references />}}
+</div>{{#if:{{{test|}}}||[[Category:Cards]][[Category:{{{set}}}]][[Category:{{{side}}}]][[Category:{{{type}}}]]{{#if:{{{anagram|}}}|[[Category:Anagrams]]}}{{#if:{{{joke|}}}|[[Category:Jokes]]}}{{#if:{{{easter_egg|}}}|[[Category:Easter eggs]]}}}}
+</includeonly><noinclude>[[Category:Templates]]</noinclude>
