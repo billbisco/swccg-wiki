@@ -1,0 +1,9 @@
+# Japanese card audit — #369
+
+Completed bounded audit, 13 November 2026, following #287. Census: 469 printings; 252 card articles repaired, two set checklists updated. Ten original photographs preserved (nine newly resolve missing faces; one correctly identified additional photograph supports an existing card). The shared Card template gains optional display-only orientation for sideways originals; its default path preserves English output.
+
+`verification-summary.json`, `source-verification.json` and `public-verification.json` record 485 live source checks and 268 changed public pages. All are reviewed, lint/Cite zero; ten uploaded image SHA1s match. Ghhhk and Hypo retain concurrent family-version edits, with all audit fields exact. Twelve final desktop/mobile screenshots, three old-revision examples and 50 identical English controls supplement these checks.
+
+`coverage.csv`/`census.json` cover every printing; `remaining-evidence.md` names 47 missing faces and nine untranscribed cards. `recommendations.md` separates completed shared-template work from future data/discovery opportunities. `published-pages.md` links every changed page. Field readings, source manifests, before heads, guarded publication receipts and original-byte archive receipts are included. Re-running mutation scripts is unnecessary.
+
+Publication source: [PR17](https://github.com/billbisco/swccg-wiki/pull/17). Story: [#369](https://github.com/swccg-guild/work/issues/369). Shared evidence: [evidence/369](https://github.com/swccg-guild/work/tree/main/evidence/369). Reproduction requires Python requests, beautifulsoup4, Pillow, mwparserfromhell; browser captures additionally require Playwright and Chrome. `census.py` runs offline; `verify.py` is read-only. Publishing/uploading requires the documented own bot credential on gemp, held in memory only. Preserve the directory layout in the authoring bundle.

@@ -1,0 +1,131 @@
+<noinclude>{{Template:Card/doc}}</noinclude><includeonly>__NOTOC__{{#if:{{{card_status|}}}|'''{{{card_status}}}'''|{{#ifeq:{{{set_band|Decipher}}}|Decipher||'''Players Committee / Virtual''' — not a Decipher card.}}}}
+<div class="card-nav">{{#if:{{{navigation|}}}|{{{navigation|}}}|{{#if:{{{prev|}}}|« [[{{{prev}}}]]<nowiki> </nowiki>·<nowiki> </nowiki>}}[[{{Set page|{{{set}}}}}|{{{set}}}]]{{#if:{{{next|}}}|<nowiki> </nowiki>· [[{{{next}}}]] »}}}}</div>
+<div class="card-rail{{#ifeq:{{{rail|}}}|right|<nowiki> </nowiki>card-rail-right}}{{#ifeq:{{{image2_layout|}}}|right|<nowiki> </nowiki>card-rail-dual}}{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-rail-dual card-rail-responsive}}">
+{{#if:{{#ifeq:{{{image2_layout|}}}|right|1|}}{{#ifeq:{{{image2_layout|}}}|responsive|1|}}|{{#if:{{{image|}}}|<div class="card-portraits-row{{#ifeq:{{{image2_layout|}}}|responsive|<nowiki> </nowiki>card-portraits-responsive}}">{{#if:{{{image3|}}}{{{image4|}}}|<div class="card-portrait-col" style="flex:0 0 auto;width:280px;display:flex;flex-direction:column;gap:0.45em;"><div class="card-portrait">{{#ifeq:{{{image_rotation|}}}|left|<div class="card-image-rotation" style="position:relative;width:280px;height:{{{image_rotated_height|167}}}px;"><div style="position:absolute;left:0;top:{{{image_rotated_height|167}}}px;width:280px;transform:rotate(-90deg) scale({{#expr:{{{image_rotated_height|167}}}/280}});transform-origin:0 0;">[[File:{{{image}}}|280px]]</div></div>|[[File:{{{image}}}|280px]]}}</div>{{#if:{{{image3|}}}|{{#if:{{{image3_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image3_trim}}}}}px;margin:-{{{image3_trim}}}px;">[[File:{{{image3}}}|{{#expr:280+2*{{{image3_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image3}}}|280px]]</div>}}}}{{#if:{{{image5|}}}|{{#if:{{{image5_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image5_trim}}}}}px;margin:-{{{image5_trim}}}px;">[[File:{{{image5}}}|{{#expr:280+2*{{{image5_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image5}}}|280px]]</div>}}}}</div><div class="card-portrait-col" style="flex:0 0 auto;width:280px;display:flex;flex-direction:column;gap:0.45em;">{{#if:{{{image2|}}}|{{#if:{{{image2_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image2_trim}}}}}px;margin:-{{{image2_trim}}}px;">[[File:{{{image2}}}|{{#expr:280+2*{{{image2_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}}}{{#if:{{{image4|}}}|{{#if:{{{image4_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image4_trim}}}}}px;margin:-{{{image4_trim}}}px;">[[File:{{{image4}}}|{{#expr:280+2*{{{image4_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image4}}}|280px]]</div>}}}}{{#if:{{{image6|}}}|{{#if:{{{image6_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image6_trim}}}}}px;margin:-{{{image6_trim}}}px;">[[File:{{{image6}}}|{{#expr:280+2*{{{image6_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image6}}}|280px]]</div>}}}}</div>|<div class="card-portrait">{{#ifeq:{{{image_rotation|}}}|left|<div class="card-image-rotation" style="position:relative;width:280px;height:{{{image_rotated_height|167}}}px;"><div style="position:absolute;left:0;top:{{{image_rotated_height|167}}}px;width:280px;transform:rotate(-90deg) scale({{#expr:{{{image_rotated_height|167}}}/280}});transform-origin:0 0;">[[File:{{{image}}}|280px]]</div></div>|[[File:{{{image}}}|280px]]}}</div>{{#if:{{{image2|}}}|{{#if:{{{image2_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image2_trim}}}}}px;margin:-{{{image2_trim}}}px;">[[File:{{{image2}}}|{{#expr:280+2*{{{image2_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}}}}}</div>}}|{{#if:{{{image|}}}|<div class="card-portrait">{{#ifeq:{{{image_rotation|}}}|left|<div class="card-image-rotation" style="position:relative;width:280px;height:{{{image_rotated_height|167}}}px;"><div style="position:absolute;left:0;top:{{{image_rotated_height|167}}}px;width:280px;transform:rotate(-90deg) scale({{#expr:{{{image_rotated_height|167}}}/280}});transform-origin:0 0;">[[File:{{{image}}}|280px]]</div></div>|[[File:{{{image}}}|280px]]}}</div>}}{{#if:{{{image2|}}}|{{#if:{{{image2_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image2_trim}}}}}px;margin:-{{{image2_trim}}}px;">[[File:{{{image2}}}|{{#expr:280+2*{{{image2_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image2}}}|280px]]</div>}}}}{{#if:{{{image3|}}}|{{#if:{{{image3_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image3_trim}}}}}px;margin:-{{{image3_trim}}}px;">[[File:{{{image3}}}|{{#expr:280+2*{{{image3_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image3}}}|280px]]</div>}}}}{{#if:{{{image4|}}}|{{#if:{{{image4_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image4_trim}}}}}px;margin:-{{{image4_trim}}}px;">[[File:{{{image4}}}|{{#expr:280+2*{{{image4_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image4}}}|280px]]</div>}}}}{{#if:{{{image5|}}}|{{#if:{{{image5_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image5_trim}}}}}px;margin:-{{{image5_trim}}}px;">[[File:{{{image5}}}|{{#expr:280+2*{{{image5_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image5}}}|280px]]</div>}}}}{{#if:{{{image6|}}}|{{#if:{{{image6_trim|}}}|<div class="card-remaster-window" style="width:280px;overflow:hidden;border-radius:8px;margin:0 0 0.45em;flex:0 0 auto;"><div style="width:{{#expr:280+2*{{{image6_trim}}}}}px;margin:-{{{image6_trim}}}px;">[[File:{{{image6}}}|{{#expr:280+2*{{{image6_trim}}}}}px]]</div></div>|<div class="card-portrait">[[File:{{{image6}}}|280px]]</div>}}}}}}{{#if:{{{image_note|}}}|<div class="card-image-note">{{{image_note|}}}</div>|}}<table class="wikitable mw-collapsible card-infobox">
+<caption>Info</caption>
+{{#if:{{{hires_image|}}}|<tr><td colspan="2" class="card-hires-scan" style="text-align:center;">[[File:{{{hires_image}}}|60px|link=File:{{{hires_image}}}|alt=High-Res Scan]]{{#if:{{{hires_image2|}}}|&nbsp;[[File:{{{hires_image2}}}|60px|link=File:{{{hires_image2}}}|alt=High-Res Scan (second side)]]}}<br />[[:File:{{{hires_image}}}|High-Res Scan]]{{#if:{{{hires_image2|}}}| · [[:File:{{{hires_image2}}}|second side]]}} <small>(600 dpi)</small></td></tr>}}
+<tr><th>Title</th><td>{{{title}}}</td></tr>
+{{#if:{{{sheet_label|}}}|<tr><th>[[Virtual cards#How the sheet labels vary|Sheet Label]]</th><td>{{{sheet_label}}}</td></tr>}}
+{{#if:{{{display_title|{{{original_title|}}}}}}|<tr><th>[[Virtual cards#Display Title|Display Title]]</th><td>{{#switch:{{{original_title_italic|}}}|yes=''{{{display_title|{{{original_title|}}}}}}''|#default={{{display_title|{{{original_title|}}}}}}{{#if:{{{original_title_italic|}}}|<br/><small>(italic: ''{{{original_title_italic}}}'')</small>}}}}</td></tr>}}
+{{#if:{{{margin_note|}}}|<tr><th>[[Virtual cards#Margin Note|Margin Note]]</th><td>{{{margin_note}}}</td></tr>}}
+{{#if:{{{underlying_card|}}}|<tr><th>[[Virtual cards#Underlying Card|Underlying Card]]</th><td>{{{underlying_card}}}</td></tr>}}
+<tr><th>Side</th><td>[[{{{side}}}]]</td></tr>
+<tr><th>{{{label_type|Type}}}</th><td>{{#if:{{{type_display|}}}|{{{type_display|}}}|[[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>— [[{{{subtype_link}}}{{!}}{{{subtype}}}]]}}{{#if:{{{model|}}}|<nowiki> </nowiki>({{{model}}})}}}}</td></tr>
+<tr><th>Set</th><td>{{#if:{{{set_display|}}}|{{{set_display|}}}|[[{{Set page|{{{set}}}}}|{{{set}}}]]}}</td></tr>
+{{#if:{{{language|}}}|{{#if:{{{language|}}}|<tr><th>{{{label_language|Printed language}}}</th><td>{{{language_display|{{#language:{{{language|en}}}|en}}}}}</td></tr>|}}{{#if:{{{edition|}}}|<tr><th>Edition</th><td>{{{edition|}}}</td></tr>|}}{{#if:{{{border_finish|}}}|<tr><th>Border / finish</th><td>{{{border_finish|}}}</td></tr>|}}{{#if:{{{release|}}}|<tr><th>Release</th><td>{{{release|}}}</td></tr>|}}{{#if:{{{size|}}}|<tr><th>Size</th><td>{{{size|}}}</td></tr>|}}{{#if:{{{year|}}}|<tr><th>Year</th><td>{{{year|}}}</td></tr>|}}|}}<tr><th>Set icon</th><td>{{#if:{{{set_icon|{{{expansion_icon|}}}}}}|{{{set_icon|{{{expansion_icon|}}}}}}|{{#switch:{{{set|}}}|Premiere Limited|Premiere Unlimited|Premiere Two-Player|Premiere Two-Player Introductory Game|Premiere|Japanese Premiere|Japanese Premiere Two-Player|ESB Two-Player=none|#default=}}}}</td></tr>
+{{#if:{{{also_in|{{{products|}}}}}}|<tr><th>Also in</th><td>{{{also_in|{{{products|}}}}}}</td></tr>}}
+{{#if:{{{publisher|}}}|<tr><th>Publisher</th><td>{{{publisher}}}</td></tr>}}
+{{#if:{{{era|}}}|<tr><th>Era</th><td>{{{era}}}</td></tr>}}
+{{#if:{{{blanked|}}}|<tr><th>Blanked</th><td>{{{blanked}}}</td></tr>}}
+{{#if:{{{gemp_id|{{{card_uid|}}}}}}|<tr><th>{{{label_gemp_id|GEMP ID}}}</th><td><code>{{{gemp_id|{{{card_uid|}}}}}}</code>{{#if:{{{gemp_id2|}}}| <code>{{{gemp_id2}}}</code>}}</td></tr>}}
+{{#if:{{{pc_alias|}}}|<tr><th>PC alias</th><td><code>{{{pc_alias}}}</code></td></tr>}}
+{{#if:{{{slip|}}}|<tr><th>Slip</th><td>{{{slip}}}</td></tr>}}
+{{#if:{{{rarity|}}}|<tr><th>Rarity</th><td>{{#if:{{{rarity_display|}}}|{{{rarity_display|}}}|[[{{{rarity_link|Rarity}}}|{{{rarity}}}]]}}</td></tr>}}
+{{#if:{{{uniqueness|}}}|<tr><th>Uniqueness</th><td>{{{uniqueness}}}</td></tr>}}
+{{#if:{{{destiny|}}}|<tr><th>Destiny</th><td>{{{destiny}}}</td></tr>}}
+{{#switch:{{lc:{{{credits|}}}}}|0=|null=|=|#default=<tr><th>Credits</th><td>{{{credits}}}</td></tr>}}
+{{#if:{{{power|}}}|<tr><th>Power</th><td>{{{power}}}</td></tr>}}
+{{#if:{{{ferocity|}}}|<tr><th>Ferocity</th><td>{{{ferocity}}}</td></tr>}}
+{{#if:{{{fangs|}}}|<tr><th>Fangs</th><td>{{{fangs}}}</td></tr>}}
+{{#if:{{{tentacles|}}}|<tr><th>Tentacles</th><td>{{{tentacles}}}</td></tr>}}
+{{#if:{{{ability|}}}|<tr><th>Ability</th><td>{{{ability}}}</td></tr>}}
+{{#if:{{{influence|}}}|<tr><th>Influence</th><td>{{{influence}}}</td></tr>}}
+{{#if:{{{politics|}}}|<tr><th>Politics</th><td>{{{politics}}}</td></tr>}}
+{{#if:{{{deploy|}}}|<tr><th>Deploy</th><td>{{{deploy}}}</td></tr>}}
+{{#if:{{{forfeit|}}}|<tr><th>Forfeit</th><td>{{{forfeit}}}</td></tr>}}
+{{#if:{{{armor|}}}|<tr><th>Armor</th><td>{{{armor}}}</td></tr>}}
+{{#if:{{{maneuver|}}}|<tr><th>Maneuver</th><td>{{{maneuver}}}</td></tr>}}
+{{#if:{{{hyperspeed|}}}|<tr><th>Hyperspeed</th><td>{{{hyperspeed}}}</td></tr>}}
+{{#if:{{{landspeed|}}}|<tr><th>{{{label_landspeed|Landspeed}}}</th><td>{{{landspeed}}}</td></tr>}}
+{{#if:{{{parsec|}}}|<tr><th>Parsec</th><td>{{{parsec}}}</td></tr>}}
+{{#if:{{{dark_icons|}}}|<tr><th>{{{label_dark_icons|Dark Side Icons}}}</th><td>{{{dark_icons}}}</td></tr>}}
+{{#if:{{{light_icons|}}}|<tr><th>{{{label_light_icons|Light Side Icons}}}</th><td>{{{light_icons}}}</td></tr>}}
+{{#if:{{{icons|}}}|<tr><th>{{{label_icons|Icons}}}</th><td>{{{icons}}}</td></tr>}}
+{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>{{{label_versions|Versions}}}</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
+{{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}
+{{#if:{{{version_code|}}}|<tr><th>Errata version</th><td>{{{version_code}}}</td></tr>}}
+{{#if:{{{errata_mark|}}}|<tr><th>Errata mark</th><td>{{{errata_mark}}}</td></tr>}}
+{{#if:{{{ai_mark|}}}|<tr><th>Alternate-image stamp</th><td>[[File:SWCCG Players Committee logo.png|44px|link=Players Committee|alt=SWCCG Players Committee logo]] {{{ai_mark}}}</td></tr>}}
+{{#if:{{{concept_credit|}}}|<tr><th>Concept credit</th><td>{{{concept_credit}}}</td></tr>}}
+{{#if:{{{art_credit|}}}|<tr><th>Art credit</th><td>{{{art_credit}}}</td></tr>}}
+{{#if:{{{dedication|}}}|<tr><th>Dedication</th><td>{{{dedication}}}</td></tr>}}
+{{#if:{{{printed_label|}}}|<tr><th>Other printed label</th><td>{{{printed_label}}}</td></tr>}}
+{{#if:{{{copyright_line|}}}|<tr><th>Copyright line</th><td><small>{{{copyright_line}}}</small></td></tr>}}
+{{#if:{{{extra_info|}}}|{{{extra_info|}}}|}}</table>
+</div>{{#if:{{{hatnote|}}}|<div class="card-hatnote">''{{{hatnote}}}''</div>}}
+<div class="card-body">
+{{#if:{{{lead|}}}|{{{lead|}}}|'''{{{title}}}''' is a [[{{{side}}}]] [[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>([[{{{subtype_link}}}{{!}}{{{subtype}}}]])}} from [[{{Set page|{{{set}}}}}|{{{set}}}]].}}
+
+{{#if:{{{printed_title|}}}|<nowiki />
+<h2>Title</h2>
+<div lang="{{{language|en}}}">
+{{{printed_title|}}}
+</div>|}}{{#if:{{{printed_game_text|{{{game_text|}}}}}}|<h2>Card Text</h2>
+{{#if:{{{printed_game_text|}}}|<div lang="{{{language|en}}}">
+{{{printed_game_text|}}}
+</div>|{{{game_text}}}}}{{#if:{{{game_text_note|}}}|
+
+''{{{game_text_note}}}''}}}}
+
+{{#if:{{{printed_lore|{{{lore|}}}}}}|<h2>Lore</h2>
+{{#if:{{{printed_lore|}}}|<div lang="{{{language|en}}}">
+{{{printed_lore|}}}
+</div>|''{{{lore}}}''}}}}
+
+{{#if:{{{translation|}}}|<nowiki />
+<h2>Translation of Japanese Text</h2>
+{{{translation|}}}|}}{{#if:{{{translation_note|}}}|<nowiki />
+<h2>Comparison with the English printing</h2>
+{{{translation_note|}}}|}}{{#if:{{{errata_history|}}}|<h2>Errata</h2>
+{{{errata_history}}}}}
+
+{{#if:{{{anagram|}}}|<nowiki />
+<h2>Anagram</h2>
+{{{anagram}}}}}{{#if:{{{joke|}}}|<nowiki />
+<h2>Joke</h2>
+{{{joke}}}}}{{#if:{{{notes|}}}|<nowiki />
+<h2>Notes</h2>
+{{{notes}}}}}{{#if:{{{strategy|}}}|<nowiki />
+<h2>Strategy</h2>
+{{{strategy}}}}}{{#if:{{{reviews|}}}|<nowiki />
+<h2>Reviews</h2>
+{{{reviews}}}}}{{#if:{{{combos|}}}|<nowiki />
+<h2>Combos</h2>
+{{{combos}}}}}{{#if:{{{rulings|}}}|<nowiki />
+<h2>Rulings</h2>
+{{{rulings}}}}}{{#if:{{{pulled_by|}}}|<nowiki />
+<h2>Pulled by</h2>
+{{{pulled_by}}}}}{{#if:{{{pulls|}}}|<nowiki />
+<h2>Pulls</h2>
+{{{pulls}}}}}{{#if:{{{canceled_by|}}}|<nowiki />
+<h2>Canceled by</h2>
+{{{canceled_by}}}}}{{#if:{{{cancels|}}}|<nowiki />
+<h2>Cancels</h2>
+{{{cancels}}}}}{{#if:{{{matching|}}}|<nowiki />
+<h2>Matching</h2>
+{{{matching}}}}}{{#if:{{{matching_weapon|}}}|<nowiki />
+<h2>Matching weapons</h2>
+{{{matching_weapon}}}}}{{#if:{{{also_known_as|}}}|<nowiki />
+<h2>Also known as</h2>
+{{{also_known_as}}}}}{{#if:{{{personas|}}}|<nowiki />
+<h2>Persona</h2>
+{{{personas}}}}}{{#if:{{{characteristics|}}}|<nowiki />
+<h2>Characteristics</h2>
+{{{characteristics}}}}}{{#if:{{{counterpart|}}}|<nowiki />
+<h2>Counterpart</h2>
+{{{counterpart}}}}}{{#if:{{{underlying_card_for|}}}|<nowiki />
+<h2>Underlying card for</h2>
+{{{underlying_card_for}}}}}{{#if:{{{easter_egg|}}}|<nowiki />
+<h2>Easter egg</h2>
+{{{easter_egg}}}}}
+
+{{#if:{{{extra_sections|}}}|{{{extra_sections|}}}|}}{{#if:{{{see_also|}}}|<nowiki />
+<h2>{{{see_also_heading|See Also}}}</h2>
+{{{see_also}}}}}{{#if:{{{sources|}}}|<nowiki />
+<h2>Sources</h2>
+{{{sources}}}}}{{#if:{{{has_refs|}}}|<nowiki />
+<h2>References</h2>
+<references />}}
+</div>
+{{#if:{{{category_override|}}}|{{{category_override|}}}|[[Category:Cards]][[Category:{{{set}}}]][[Category:{{{side}}}]][[Category:{{{type}}}]]}}{{#if:{{{anagram|}}}|[[Category:Anagrams]]}}{{#if:{{{joke|}}}|[[Category:Jokes]]}}{{#if:{{{easter_egg|}}}|[[Category:Easter eggs]]}}{{#if:{{{blanked|}}}|[[Category:Blanked cards]]}}{{#if:{{{hires_image|}}}|[[Category:Cards with high-res scans]]}}
+</includeonly><noinclude>[[Category:Templates]]</noinclude>
