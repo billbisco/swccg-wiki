@@ -122,4 +122,3 @@ None. Bill decided the rebuild on 12 Nov 2026 (quoted above). Field names follow
 - **Verification:** AC1 audit · AC2 content diff · AC3 sample screenshots · AC4 English render diff · AC5 category diff · AC6 parse after #286 · AC7 lint before/after plus Task PASS-REPORT · AC8 /doc diff.
 
 The wiki has no Test server, so sandbox renders stand in for Test. Done = live on the wiki with AC1–AC8 met.
-
