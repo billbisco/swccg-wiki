@@ -33,7 +33,9 @@ for row in rows:
         if 'sectiontitle' in row:args['sectiontitle']=row['sectiontitle']
         if args.get('section')==0:
             lead=call(action='query',titles=title,prop='revisions',rvprop='content',rvslots='main',rvsection=0)['query']['pages'][0]['revisions'][0]['slots']['main']['content']
-            assert lead==current_text,(title,'Editable source sections need a narrower packet')
+            if 'section_text' in row:
+                assert hashlib.sha256(lead.encode()).hexdigest()==row['before_section_sha256'],(title,'Lead section changed')
+            else:assert lead==current_text,(title,'Editable source sections need a narrower packet')
         edit=call(True,action='edit',title=title,text=row.get('section_text',row['text']),summary=row['summary'],
             bot=1,assertuser=BOT,token=csrf,maxlag=5,nocreate=1,baserevid=rev['revid'],basetimestamp=rev['timestamp'],starttimestamp=starttimestamp,**args)['edit']
         assert edit['result']=='Success',title

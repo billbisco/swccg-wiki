@@ -10,7 +10,10 @@ def one(pair):
     if not path.exists():
         response=requests.get(row['asset'],timeout=60);response.raise_for_status();path.write_bytes(response.content)
     with Image.open(path) as im:w,h=im.size
-    return dict(number=i,title=row['live_title'],uid=row['uid'],url=row['asset'],gallery=row['gallery'],file=str(path.relative_to(root)),sha256=hashlib.sha256(path.read_bytes()).hexdigest(),width=w,height=h)
+    result=dict(number=i,title=row['live_title'],uid=row['uid'],url=row['asset'],gallery=row['gallery'],file=str(path.relative_to(root)),sha256=hashlib.sha256(path.read_bytes()).hexdigest(),width=w,height=h)
+    if '/156625016/' in row['asset']:
+        result.update(title="I'm On The Leader (Japanese)",uid='1302_133o',rejected_catalog_assignment=dict(title=row['live_title'],uid=row['uid'],reason='PSA label/candidate mapping is wrong; printed title, game text, unique marker and destiny 3 identify I am On The Leader'))
+    return result
 with ThreadPoolExecutor(max_workers=3) as pool:records=list(pool.map(one,enumerate(rows,1)))
 (root/'recovered-face-manifest.json').write_text(json.dumps(records,ensure_ascii=False,indent=2),encoding='utf8')
 for offset in range(0,len(records),3):

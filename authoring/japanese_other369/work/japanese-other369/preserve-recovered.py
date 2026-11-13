@@ -15,7 +15,7 @@ import wayback_worker as worker
 def fetch(url):
     with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':worker.UA}),timeout=60) as response:data=response.read()
     return gzip.decompress(data) if data[:2]==b'\\x1f\\x8b' else data
-path=Path('/opt/swccg-res/snapshots/psa/japanese-nine-faces-369.html');path.parent.mkdir(exist_ok=True,parents=True);path.parent.chmod(0o755)
+path=Path('/opt/swccg-res/snapshots/psa/japanese-nine-faces-369-v2.html');path.parent.mkdir(exist_ok=True,parents=True);path.parent.chmod(0o755)
 binary=base64.b64decode(BODY);path.write_bytes(binary);path.chmod(0o644);url='https://swccg.com/snapshots/psa/'+path.name
 assert fetch(url)==binary
 try:
