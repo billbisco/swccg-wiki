@@ -36,7 +36,17 @@ The top-level JSON object contains:
 | `registry_export` | Bundle-relative `path`, exact `sha256`, and immutable Git `storage` locator |
 | `pages` | Array containing exactly one matching title for each invocation |
 
-The registry export locator is `{kind: "git", repository, commit, path}`. Use a full 40-character commit and safe repository-relative path in `billbisco/swccg-wiki`, `billbisco/swccg-wiki-files` or `swccg-guild/work`. All evidence paths are relative to the manifest directory, cannot escape it and must match their stated SHA-256. A structural validator cannot prove that a claimed Git object exists remotely; the producer/publisher must independently retrieve and check the immutable backup and export before approval.
+The registry export locator is `{kind: "git", repository, commit, path}`. Use a full 40-character commit and safe repository-relative path in `billbisco/swccg-wiki`, `billbisco/swccg-wiki-files` or `swccg-guild/work`. Evidence can use a bundle-relative path or an immutable GitHub blob URI with an explicit offline locator below. Local files cannot escape the manifest directory and must match their stated SHA-256. A structural validator cannot prove that a claimed Git object exists remotely; the producer/publisher must independently retrieve and check the immutable backup and export before approval.
+
+### Portable evidence identities and offline locators
+
+Keep a registered proof's canonical URI unchanged. An optional manifest `evidence_files` list binds each immutable identity to bytes already retrieved into the review bundle:
+
+```json
+{"evidence_files": [{"uri": "https://github.com/swccg-guild/work/blob/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/evidence/proof.json", "sha256": "<actual 64-character SHA-256>", "path": "proofs/proof.json"}]}
+```
+
+The source's evidence reference still uses that exact URI and expected hash; `path` in this list is only the local bundle locator. The reporter never fetches the URI. It accepts only HTTPS GitHub blob URLs in the three approved repositories, with a full lowercase 40-hex commit and safe path. Branches, credentials, query/fragment components, percent-encoded paths, traversal, duplicate URI mappings and contradictory local payload hashes fail closed. The local file must stay inside the manifest directory and its actual bytes must match the canonical expected hash. Existing relative-path evidence needs no mapping. The approved manifest hash binds the whole locator list; changing a locator requires renewed manifest approval.
 
 Each page has:
 
