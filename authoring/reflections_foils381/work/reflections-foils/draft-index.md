@@ -1,37 +1,9 @@
 # Remaining unpublished foil drafts — story381
 
-118 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
+90 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
 
 | Article | Stage | Reading | Draft |
 |---|---|---|---|
-| Executor: Holotheatre (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Executor: Meditation Chamber (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Fighters Coming In (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Hoth: Wampa Cave (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Janus Greejatus (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Kiffex (Dark) (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Lateral Damage (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Sienar Fleet Systems (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Sim Aloo (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Echo Base Operations (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
-| Gift Of The Mentor (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Gold Squadron Y-wing (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Kal'Falnl C'ndros (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Red Squadron X-wing (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Wicket (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Arleil Schous (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Blue Squadron B-wing (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Goo Nee Tay (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Green Squadron A-wing (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Kiffex (Reflections II Foil) | batch20 | [batch20-readings.json](batch20-readings.json) | [batch20-new-packet.json](batch20-new-packet.json) |
-| Lone Rogue (Reflections II Foil) | batch21 | [batch21-readings.json](batch21-readings.json) | [batch21-new-packet.json](batch21-new-packet.json) |
-| Scum And Villainy (Reflections II Foil) | batch21 | [batch21-readings.json](batch21-readings.json) | [batch21-new-packet.json](batch21-new-packet.json) |
-| Orrimaarko (Reflections II Foil) | batch21 | [batch21-readings.json](batch21-readings.json) | [batch21-new-packet.json](batch21-new-packet.json) |
-| Order To Engage (Reflections II Foil) | batch21 | [batch21-readings.json](batch21-readings.json) | [batch21-new-packet.json](batch21-new-packet.json) |
-| Red Leader In Red 1 (Reflections II Foil) | batch21 | [batch21-readings.json](batch21-readings.json) | [batch21-new-packet.json](batch21-new-packet.json) |
-| Run Luke, Run! (Reflections II Foil) | batch21 | [batch21-readings.json](batch21-readings.json) | [batch21-new-packet.json](batch21-new-packet.json) |
-| Tawss Khaa (Reflections II Foil) | batch21 | [batch21-readings.json](batch21-readings.json) | [batch21-new-packet.json](batch21-new-packet.json) |
-| Z-95 Headhunter (Reflections II Foil) | batch21 | [batch21-readings.json](batch21-readings.json) | [batch21-new-packet.json](batch21-new-packet.json) |
 | Qui-Gon Jinn (AI) (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
 | Threepio With His Parts Showing (AI) (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
 | Corran Horn (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |

@@ -33,12 +33,12 @@ MemoryCoreChatGPT
 
 ## Current delivery
 
-The314 regular foil slots reconcile as114 Reflections I,100 II and100 III. Seventeen existing articles are reused (sixteen at the initial census, plus Don't Get Cocky discovered afterwards). 179 new articles are live; 179 have completed publication checks, including 109 accepted with preservation queued. 0 live new articles are still being checked. 118 new articles remain drafted. No physical faces remain unread; all298 initial-gap original photographs were checked independently and hashed.
+The314 regular foil slots reconcile as114 Reflections I,100 II and100 III. Seventeen existing articles are reused (sixteen at the initial census, plus Don't Get Cocky discovered afterwards). 207 new articles are live; 207 have completed publication checks, including 137 accepted with preservation queued. 0 live new articles are still being checked. 90 new articles remain drafted. No physical faces remain unread; all298 initial-gap original photographs were checked independently and hashed.
 
 | Product | New publication complete | New live/checks underway | New drafts | Existing reused |
 |---|---:|---:|---:|---:|
 | Reflections | 113 | 0 | 0 | 1 |
-| Reflections II: Expanding the Galaxy | 66 | 0 | 28 | 6 |
+| Reflections II: Expanding the Galaxy | 94 | 0 | 0 | 6 |
 | Reflections III | 0 | 0 | 90 | 10 |
 
 Publication continues under Bill’s explicit archive deferral. Preservation is tracked in [task412](https://github.com/swccg-guild/work/issues/412); queued captures are never reported verified. All other checks remain mandatory. [Publication source PR21](https://github.com/billbisco/swccg-wiki/pull/21), [current evidence/report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md), [all changed pages](https://github.com/swccg-guild/work/blob/main/evidence/381/published-pages.md). No article deletion is needed.

@@ -73,7 +73,7 @@ for r in readings:
     nav.append(dict(article=r['article'],family_members=len(families[r['title']]),shared_navigator=shared,no_invented_playable_id=True))
 print(len(heads),'exact sources; non-archive lint 0, reviewed; original image hashes match; archive findings retained separately',flush=True)
 def public(title):
-    url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe='');response=requests.get(url,timeout=60);response.raise_for_status();html=response.text;soup=BeautifulSoup(html,'html.parser');body=soup.select_one('#mw-content-text');assert body,title
+    url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe=':(),');response=requests.get(url,timeout=60);response.raise_for_status();html=response.text;soup=BeautifulSoup(html,'html.parser');body=soup.select_one('#mw-content-text');assert body,title
     rev=heads[title]['revisions'][0]['revid'];m=re.search(r'"wgRevisionId":(\d+)',html);initial=int(m[1]) if m else None
     if initial!=rev:
         purge=requests.post('https://wiki.swccg.com/api.php',data=dict(action='purge',format='json',formatversion=2,titles=title,forcelinkupdate=1),timeout=60);purge.raise_for_status();assert purge.json()['purge'][0].get('purged'),title
@@ -93,7 +93,7 @@ for r in readings:
     if '{{Card versions/' not in values(heads[r['article']]['revisions'][0]['slots']['main']['content']):continue
     needle='/wiki/'+quote(r['article'].replace(' ','_'),safe='(),')
     for sibling in families[r['title']]:
-        url='https://wiki.swccg.com/wiki/'+quote(sibling.replace(' ','_'),safe='');response=requests.get(url,timeout=60);response.raise_for_status()
+        url='https://wiki.swccg.com/wiki/'+quote(sibling.replace(' ','_'),safe=':(),');response=requests.get(url,timeout=60);response.raise_for_status()
         def linked(html):
             soup=BeautifulSoup(html,'html.parser');box=soup.select_one('.card-infobox')
             return bool(box and any(unquote(a.get('href','').split('/wiki/',1)[-1]).replace('_',' ')==r['article'] for a in box.select('a[href]')))
@@ -106,5 +106,5 @@ if shared_checks:(root/(stage+'-shared-family-public-verification.json')).write_
 for suffix,data in [('source-verification',report),('public-verification',public_report),('navigation-verification',nav),('conservation',conservation),('published-heads',heads)]:
     (root/(stage+'-'+suffix+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
 allheads=json.loads((root/'published-heads.json').read_bytes()) if (root/'published-heads.json').exists() else {};allheads.update(heads);(root/'published-heads.json').write_text(json.dumps(allheads,ensure_ascii=False,indent=2),encoding='utf8')
-(root/'published-pages.md').write_text('# Story381 — changed live pages\n\n'+''.join('- ['+t+'](https://wiki.swccg.com/wiki/'+quote(t.replace(' ','_'),safe='')+') — revision '+str(p['revisions'][0]['revid'])+'\n' for t,p in sorted(allheads.items())),encoding='utf8')
+(root/'published-pages.md').write_text('# Story381 — changed live pages\n\n'+''.join('- ['+t+'](https://wiki.swccg.com/wiki/'+quote(t.replace(' ','_'),safe=':(),')+') — revision '+str(p['revisions'][0]['revid'])+'\n' for t,p in sorted(allheads.items())),encoding='utf8')
 print(len(public_report),'anonymous public pages current, Cite 0; reciprocal navigation and existing content conserved',flush=True)
