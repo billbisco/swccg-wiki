@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<!-- snapshot-of: https://scomp.starwarsccg.org/?s=Het%20Nkik captured: 2026-11-14T20:39:08.424880+00:00 -->
+<!DOCTYPE html>
+
+<html><head><meta charset="utf-8"/><title>Scomp Link Access — Het Nkik</title><style>body{font:16px/1.5 Arial;background:#f5f6f8;color:#17212b}main{max-width:1050px;margin:auto;padding:24px;background:white}aside{padding:12px;background:#fff1c6}a{color:#0645ad;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}th,td{border:1px solid #aaa;padding:8px;text-align:left}th{background:#eee}</style></head><body><main><aside>Saved copy of <a href="https://scomp.starwarsccg.org/?s=Het%20Nkik">https://scomp.starwarsccg.org/?s=Het%20Nkik</a>, rendered page acquired 2026-11-14T20:39:08.424880+00:00. Scope: Complete loaded Het results table and Extra Card Data/rulings; search controls, logo and image preview excluded. Metadata/rulings source, not whole card-face evidence.</aside><h1>Scomp Link Access — Het Nkik</h1><article id="source-article"><div>
+<div>
+<i></i>
+</div>
+<div>
+            Extra Card Data
+          </div>
+<!-- ngIf: data.showExtraData --><div>
+<!-- ngIf: !hasExtraData(data.selectedCard) -->
+<!-- Pulls -->
+<!-- ngIf: data.selectedCard.pulls -->
+<!-- Pulled By -->
+<!-- ngIf: data.selectedCard.pulledBy --><div>
+<div>Pulled By:</div>
+<!-- ngRepeat: pulledBy in data.selectedCard.pulledBy track by $index --><div>
+<!-- ngIf: pulledBy.title -->
+<!-- ngIf: !pulledBy.title --><div>
+<a href="https://scomp.starwarsccg.org/?s=Aved Luun">Aved Luun</a>
+</div><!-- end ngIf: !pulledBy.title -->
+</div><!-- end ngRepeat: pulledBy in data.selectedCard.pulledBy track by $index --><div>
+<!-- ngIf: pulledBy.title -->
+<!-- ngIf: !pulledBy.title --><div>
+<a href="https://scomp.starwarsccg.org/?s=General Crix Madine to deploy to same location">General Crix Madine to deploy to same location</a>
+</div><!-- end ngIf: !pulledBy.title -->
+</div><!-- end ngRepeat: pulledBy in data.selectedCard.pulledBy track by $index -->
+</div><!-- end ngIf: data.selectedCard.pulledBy -->
+<!-- Counterpart -->
+<!-- ngIf: data.selectedCard.counterpart -->
+<!-- Combo -->
+<!-- ngIf: data.selectedCard.combo -->
+<!-- Matching -->
+<!-- ngIf: data.selectedCard.matching -->
+<!-- Matching Weapon -->
+<!-- ngIf: data.selectedCard.matchingWeapon -->
+<!-- Canceled By -->
+<!-- ngIf: data.selectedCard.canceledBy -->
+<!-- Cancels -->
+<!-- ngIf: data.selectedCard.cancels -->
+<!-- Abbreviation -->
+<!-- ngIf: data.selectedCard.abbreviations && data.selectedCard.abbreviations.length > 0 -->
+<!-- Underlying Cards -->
+<!-- ngIf: data.selectedCard.underlyingcardfor && data.selectedCard.underlyingcardfor.length > 0 -->
+<!-- Personas -->
+<!-- ngIf: data.selectedCard.personas && data.selectedCard.personas.length > 0 --><div>
+<div>Personas:</div>
+<!-- ngRepeat: persona in data.selectedCard.personas track by $index --><div>
+<div>Het</div>
+</div><!-- end ngRepeat: persona in data.selectedCard.personas track by $index -->
+</div><!-- end ngIf: data.selectedCard.personas && data.selectedCard.personas.length > 0 -->
+<!-- Rulings -->
+<!-- ngIf: data.selectedCard.rulings --><div>
+<div>Rulings:</div>
+<!-- ngRepeat: rulings in data.selectedCard.rulings track by $index --><div>
+<div>Opponent's use of Force to deploy this card is mandatory.</div>
+</div><!-- end ngRepeat: rulings in data.selectedCard.rulings track by $index --><div>
+<div>May not be deployed if either player cannot pay.</div>
+</div><!-- end ngRepeat: rulings in data.selectedCard.rulings track by $index --><div>
+<div>Anything that modifies or resets the deploy cost affects the cost for both players.</div>
+</div><!-- end ngRepeat: rulings in data.selectedCard.rulings track by $index --><div>
+<div>If game text is canceled, the asterisk is treated as an unmodifiable zero.</div>
+</div><!-- end ngRepeat: rulings in data.selectedCard.rulings track by $index -->
+</div><!-- end ngIf: data.selectedCard.rulings -->
+<!-- Important Details -->
+<!-- ngIf: (data.selectedCard.front.type == 'Character') || data.selectedCard.front.characteristics || data.selectedCard.back.characteristics --><div>
+<div>Misc</div>
+<div>Character: Alien</div>
+<!-- Characteristics -->
+<!-- ngIf: data.selectedCard.front.characteristics --><div>
+<ul>
+<!-- ngRepeat: characteristics in data.selectedCard.front.characteristics track by $index --><li>
+<div>Jawa</div>
+</li><!-- end ngRepeat: characteristics in data.selectedCard.front.characteristics track by $index --><li>
+<div>scout</div>
+</li><!-- end ngRepeat: characteristics in data.selectedCard.front.characteristics track by $index -->
+</ul>
+</div><!-- end ngIf: data.selectedCard.front.characteristics -->
+<!-- ngIf: data.selectedCard.back.characteristics -->
+<!-- Removing these sections for now until we can find a better plan which isn't quite as obtrusive 
+                   and doesn't clutter things. (For example, having "NOT A JEDI" on things like Jawas is odd)
+
+                   Ideas:
+                   1) Only put "Not a Jedi" on characters who are ability >= 5 which aren't Jedi?
+                      And also make it not in all-caps and sticking out so much
+                   2) Put "Resistance" as a hyperlink where the hyperlink tells you what Resistance characters are
+                   3) Have all of the cards with Force-Attuned, Force Sensitive, Jedi Knight, Master, etc
+                      have a hyperlink which shows what those things are instead of it being there directly
+                      on the page
+
+              !-- ######## NOT A REBEL ########## --
+              <div class="ability-info ability-not-a-jedi" ng-if="(data.selectedCard.front.side == 'Light') && (data.selectedCard.front.subType == 'Resistance')">
+                <strong>NOT A REBEL</strong><p />
+                The <strong>Resistance</strong> is different than the <strong>Rebel Alliance</strong>.
+              </div>
+
+              !-- ######## NOT A RESISTANCE ########## --
+              <div class="ability-info ability-not-a-jedi" ng-if="(data.selectedCard.front.side == 'Light') && (data.selectedCard.front.subType == 'Rebel')">
+                <strong>NOT A MEMBER OF RESISTANCE</strong><p />
+                The <strong>Resistance</strong> is different than the <strong>Rebel Alliance</strong>.
+              </div>
+
+
+              !-- ######## NOT A JEDI ########## --
+              <div class="ability-info ability-not-a-jedi" ng-if="(data.selectedCard.front.side == 'Light') && (data.selectedCard.front.ability < 6)">
+                <strong>NOT A JEDI</strong><p />
+                Any character with an <strong>ability</strong> less than 6 is <em>never</em> considered a Jedi, Dark Jedi, or Sith.
+              </div>
+
+              <div class="ability-info ability-not-a-jedi" ng-if="(data.selectedCard.front.side == 'Dark') && (data.selectedCard.front.ability < 6)">
+                <strong>NOT A DARK JEDI or SITH</strong><p />
+                Any character with an <strong>ability</strong> less than 6 is <em>never</em> considered a Jedi, Dark Jedi, or Sith.
+              </div>
+
+              !-- ######## JEDI KNIGHT ########## --
+              <div class="ability-info ability-jedi-knight" ng-if="(data.selectedCard.front.side == 'Light') && (data.selectedCard.front.ability == 6)">
+                <strong>JEDI KNIGHT</strong><p />
+                Any character with an <strong>ability</strong> less than 6 is <em>never</em> considered a Jedi, Dark Jedi, or Sith.<p />Characters with an ability of 7 are Masters.
+              </div>
+
+              <div class="ability-info ability-dark-jedi" ng-if="(data.selectedCard.front.side == 'Dark') && (data.selectedCard.front.ability == 6)">
+                <strong>DARK JEDI or SITH</strong><p />
+                Any character with an <strong>ability</strong> less than 6 is <em>never</em> considered a Jedi, Dark Jedi, or Sith.<p />Characters with an ability of 7 are Masters.
+              </div>
+
+              !-- ######## JEDI MASTER ########## --
+
+              <div class="ability-info ability-jedi-master" ng-if="(data.selectedCard.front.side == 'Light') && (data.selectedCard.front.ability == 7)">
+                <strong>JEDI MASTER</strong><p />
+                Any character with an <strong>ability</strong> less than 6 is <em>never</em> considered a Jedi, Dark Jedi, or Sith.<p />Characters with an ability of 7 are Masters.
+              </div>
+
+              <div class="ability-info ability-dark-jedi-master" ng-if="(data.selectedCard.front.side == 'Dark') && (data.selectedCard.front.ability == 7)">
+                <strong>DARK JEDI MASTER or SITH MASTER</strong><p />
+                Any character with an <strong>ability</strong> less than 6 is <em>never</em> considered a Jedi, Dark Jedi, or Sith.<p />Characters with an ability of 7 are Masters.
+              </div>
+            -->
+</div><!-- end ngIf: (data.selectedCard.front.type == 'Character') || data.selectedCard.front.characteristics || data.selectedCard.back.characteristics --><!-- / important details -->
+</div><!-- end ngIf: data.showExtraData -->
+</div><div>
+<!-- <div class="cs-search-results-label">Search Results</div> -->
+<!-- ngIf: data.loadingLight || data.loadingDark --><!-- ngIf: !data.loadingLight && !data.loadingDark && !data.performedSearch --><!-- ngIf: !data.loadingLight && !data.loadingDark && data.noResultsFound --><!-- ngIf: data.matches.length > 0 --><div>
+            Match Count: 1
+          </div><!-- end ngIf: data.matches.length > 0 --><table>
+<tbody><tr>
+<th>
+              Card Name
+            </th>
+<th>
+              Side
+            </th>
+<th>
+              Set
+            </th>
+<th>
+              Type
+            </th>
+<th>
+              Sub Type
+            </th>
+<th>
+              Rare
+            </th>
+<th>
+              Destiny
+            </th>
+</tr>
+<!-- ngRepeat: card in data.matches track by $index --><tr>
+<td>
+              •Het Nkik
+            </td>
+<td>
+              Light
+            </td>
+<td>
+              ANH
+            </td>
+<td>
+              Character
+            </td>
+<td>
+<div>
+                Alien
+              </div>
+</td>
+<td>
+              U2
+            </td>
+<td>
+              3
+            </td>
+</tr><!-- end ngRepeat: card in data.matches track by $index -->
+</tbody></table>
+</div></article></main></body></html>
