@@ -17,6 +17,9 @@ class SwccgCardImages {
         $options['swccg-card-images'] = 'original';
     }
     public static function addPilot( $out ): void {
+        if ( !is_readable( '/swccg-chrome/card-image-pilot.json' ) ) {
+            return;
+        }
         $manifest = json_decode( file_get_contents( '/swccg-chrome/card-image-pilot.json' ), true );
         $title = $out->getTitle();
         if ( !$title || !isset( $manifest['pages'][$title->getPrefixedText()] ) ) {

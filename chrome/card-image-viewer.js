@@ -52,7 +52,7 @@
         return Promise.resolve(saved);
       }
       // Never put an account value into public HTML/config or guest localStorage.
-      return win.mw.loader.using('mediawiki.api').then(function () {
+      return Promise.resolve().then(function () { return win.mw.loader.using('mediawiki.api'); }).then(function () {
         api = new win.mw.Api();
         return api.get({ action: 'query', meta: 'userinfo', uiprop: 'options', assert: 'user' });
       }).then(function (response) {
@@ -64,7 +64,9 @@
       value = preference(value);
       if (loggedIn) {
         if (!api) return Promise.reject(new Error('Account preference service unavailable'));
-        return api.postWithToken('csrf', { action: 'options', change: OPTION + '=' + value, assert: 'user' })
+        return Promise.resolve().then(function () {
+          return api.postWithToken('csrf', { action: 'options', change: OPTION + '=' + value, assert: 'user' });
+        })
           .then(function () { saved = value; });
       }
       try { win.localStorage.setItem(OPTION, value); saved = value; return Promise.resolve(); }
