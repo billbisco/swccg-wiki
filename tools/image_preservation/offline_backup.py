@@ -5,6 +5,20 @@ from .store import connect,batch_lock,ensure_space,now
 
 CAP=25*1024**3
 
+def write_progress(path,data):
+    """Windows readers can briefly deny replacement; a heartbeat is not the backup ledger."""
+    temp=path.with_name(path.name+'.'+str(os.getpid())+'.part')
+    temp.write_text(json.dumps(data,indent=2))
+    try:
+        for attempt in range(10):
+            try:os.replace(temp,path);return True
+            except PermissionError:time.sleep(.05*(attempt+1))
+        print('HEARTBEAT_WRITE_DEFERRED committed ledger remains authoritative',flush=True)
+        return False
+    finally:
+        try:temp.unlink(missing_ok=True)
+        except PermissionError:pass
+
 def wiki_image_url(url):
     p=urllib.parse.urlsplit(url)
     if p.scheme!='https' or p.netloc!='wiki.swccg.com' or not p.path.startswith('/images/'):
@@ -114,7 +128,7 @@ def progress(db,data,root,status):
       'copy_sources':dict(db.execute('SELECT kind,count(*) FROM local_copy_sources GROUP BY kind')),
       'cache_cap_bytes':CAP,'pc_free_bytes':shutil.disk_usage(root).free,
       'archive_verified_versions':db.execute("SELECT count(*) FROM versions WHERE status='verified'").fetchone()[0]}
-    temp=data/'offline-backup-progress.part';temp.write_text(json.dumps(result,indent=2));os.replace(temp,data/'offline-backup-progress.json')
+    write_progress(data/'offline-backup-progress.json',result)
     return result
 
 def run(data,limit,reuse_index=None,reuse_root=None):

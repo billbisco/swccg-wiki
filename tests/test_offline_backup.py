@@ -1,11 +1,11 @@
-import hashlib,io,sqlite3,sys,tempfile,unittest,urllib.request
+import hashlib,io,json,os,sqlite3,sys,tempfile,unittest,urllib.request
 from unittest.mock import Mock,patch
 from email.message import Message
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 repo_tools=Path(__file__).resolve().parents[1]/'tools'
 if repo_tools.is_dir():sys.path.insert(0,str(repo_tools))
-from image_preservation.offline_backup import wiki_image_url,WikiOnlyRedirect,source_identity,hashes,backup_one,reuse_local,CAP
+from image_preservation.offline_backup import wiki_image_url,WikiOnlyRedirect,source_identity,hashes,backup_one,reuse_local,write_progress,CAP
 
 class OfflineBackupTests(unittest.TestCase):
     def test_archive_org_rejected_without_network(self):
@@ -54,5 +54,21 @@ class OfflineBackupTests(unittest.TestCase):
             local=Mock();local.execute.return_value.fetchone.return_value={'source_path':str(source),'sha256':hashlib.sha256(b'original').hexdigest()}
             info={'id':'a'*64,'sha1':hashlib.sha1(b'original').hexdigest(),'bytes':8}
             self.assertFalse(reuse_local(info,part,{'db':local,'root':root}))
+    def test_progress_retries_a_temporary_windows_read_lock(self):
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/'progress.json';real_replace=os.replace;calls=[]
+            def replace(a,b):
+                calls.append(1)
+                if len(calls)==1:raise PermissionError('reader has target open')
+                return real_replace(a,b)
+            with patch('image_preservation.offline_backup.os.replace',side_effect=replace),patch('image_preservation.offline_backup.time.sleep'):
+                self.assertTrue(write_progress(target,{'backed_up':5}))
+            self.assertEqual(2,len(calls));self.assertEqual({'backed_up':5},json.loads(target.read_text()))
+    def test_locked_heartbeat_does_not_abort_committed_backup_work(self):
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)/'progress.json';target.write_text('{"backed_up":4}')
+            with patch('image_preservation.offline_backup.os.replace',side_effect=PermissionError('reader')),patch('image_preservation.offline_backup.time.sleep'):
+                self.assertFalse(write_progress(target,{'backed_up':5}))
+            self.assertEqual({'backed_up':4},json.loads(target.read_text()));self.assertEqual([target],list(Path(d).iterdir()))
 
 if __name__=='__main__':unittest.main()
