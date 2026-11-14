@@ -28,6 +28,12 @@
     var doc = win.document;
     var config = win.mw && win.mw.config.get('swccgCardImagePilot');
     if (!config) return;
+    // Vector legacy uses a fixed 1120px viewport. Fit only these allowlisted
+    // review pages to phones; keep the site's skin/configuration untouched.
+    var viewport = doc.querySelector('meta[name="viewport"]');
+    if (viewport && win.screen.width > 0 && win.screen.width <= 720) {
+      viewport.content = 'width=device-width, initial-scale=1';
+    }
     var words = config.messages;
     var controllers = [];
     var saved = 'original';
