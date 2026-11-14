@@ -30,6 +30,13 @@ else:
             b=p.read_bytes()
             if p.suffix not in ['.webp','.png','.gz']:b=b.replace(b'\r\n',b'\n')
             if p.suffix in ['.py','.md','.txt']:b=b.rstrip()+b'\n'
+            if p.suffix=='.txt':b=b'\n'.join(line.rstrip(b' \t') for line in b.split(b'\n'))
+            # Original bytes live in the image repository; do not duplicate base64
+            # payloads in every evidence/source commit. upload-batch.py regenerates them.
+            if p.name.endswith('-files-payload.json'):
+                payload=json.loads(b)
+                for row in payload:row.pop('data',None)
+                b=(json.dumps(payload,ensure_ascii=False,indent=2)+'\n').encode()
             files[prefix+p.name]=b
     if mode=='evidence' and (root/'design-log.md').exists():files['docs/design-log/381-reflections-foils.md']=(root/'design-log.md').read_bytes().replace(b'\r\n',b'\n')
     if mode=='wiki':
@@ -44,21 +51,27 @@ else:
             from datetime import datetime,timezone
             now=datetime.now(timezone.utc).isoformat();done=json.loads(git('show',base+':ops/wayback/done.json'));queue=git('show',base+':ops/wayback/queue.txt').decode().splitlines()
             captures=[]
-            for name in ['first-preservation.json','old-primary-preservation.json']:
-                if (root/name).exists():
-                    r=json.loads((root/name).read_bytes())
+            for preserve_file in [root/'first-preservation.json',root/'old-primary-preservation.json',*root.glob('batch*-preservation.json')]:
+                if preserve_file.exists():
+                    r=json.loads(preserve_file.read_bytes())
                     if r.get('verified'):captures.append(r)
-            if (root/'first-image-captures.jsonl').exists():
-                latest={r['url']:r for r in map(json.loads,(root/'first-image-captures.jsonl').read_text().splitlines())}
+            for capture_file in [root/'first-image-captures.jsonl',*root.glob('batch*-image-captures.jsonl')]:
+                if not capture_file.exists():continue
+                latest={r['url']:r for r in map(json.loads,capture_file.read_text().splitlines())}
                 captures.extend(r for r in latest.values() if r.get('verified'))
+                for url,r in latest.items():
+                    if url not in queue:queue.append(url)
+                    if not r.get('verified') and done.get(url,{}).get('status')!='verified':
+                        done[url]=dict(status='retry',last=now,note='Story381 exact original-image version awaiting a byte-verified replay: '+r.get('error','capture pending'),wiki_image_version=dict(title=r['title'],timestamp=r['version'],sha1=r['sha1'],mime=r['mime']),expected_sha256=r['image_sha256'])
             for r in captures:
                 verify=dict(method='sha256',sha256=r['sha256'],bytes=r.get('bytes',r.get('size')),at=now)
                 entry=dict(status='verified',capture=r['capture'],last=now,verify=verify,note='Exact original/source snapshot payload verified by MemoryCoreChatGPT (#381)')
                 if r.get('version'):entry['wiki_image_version']=dict(title=r['title'],timestamp=r['version'],sha1=r['sha1'],mime=r['mime'])
                 done[r['url']]=entry
                 if r['url'] not in queue:queue.append(r['url'])
-            if (root/'old-citation-final.json').exists():
-                for r in json.loads((root/'old-citation-final.json').read_bytes()).values():
+            for citation_file in [root/'old-citation-final.json',*root.glob('batch*-citation-final.json')]:
+                if not citation_file.exists():continue
+                for r in json.loads(citation_file.read_bytes()).values():
                     if r.get('verify') and r.get('status')=='verified':
                         url=r.get('preserved_url',r['url']);done[url]=dict(status='verified',capture=r['capture'],last=now,verify=r['verify'],note='Inherited foil-family citation preserved and verified (#381)')
                         if url not in queue:queue.append(url)
@@ -70,5 +83,9 @@ for path,b in files.items():
 git('update-index','--info-only','-z','--index-info',data=''.join(updates).encode())
 tree=git('write-tree','--missing-ok').decode().strip();commit=git('commit-tree',tree,*[a for p in parents for a in ['-p',p]],'-m','Inventory and complete regular Reflections foil publications (Refs swccg-guild/work#381)').decode().strip()
 changed=set(p for p in git('diff','--name-only','-z',base,commit).decode().split('\0') if p);assert changed<=set(files)
+if mode=='wiki':
+    check=subprocess.run(['git','-C',repo,'-c','core.protectNTFS=false','diff','--check',base,commit],env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+    (root/'source-diff-check.txt').write_bytes(check.stdout)
+    assert check.returncode==0,check.stdout.decode(errors='replace')[:2500]
 git('push','origin',commit+':refs/heads/'+branch)
 (root/(mode+'-commit.txt')).write_text(commit+'\n',encoding='utf8');print(mode,commit,len(changed),'paths')
