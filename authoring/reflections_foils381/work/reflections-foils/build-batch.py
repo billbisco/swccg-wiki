@@ -47,7 +47,7 @@ for r,f in zip(readings,files):
             fields['set_icon']=expansion_link(r['original_set'])
     for k in ['destiny','power','ability','armor','maneuver','hyperspeed','landspeed','deploy','forfeit','printed_label','parsec','light_icons','dark_icons']:
         if k in r:fields[k]=r[k]
-    fields['icons']=' '.join('[['+x+']]' for x in r['icons'])
+    fields['icons']=' '.join('[['+{'Scomp link':'Scomp Link','Nav computer':'Nav Computer','Permanent weapon':'Permanent Weapon'}.get(x,x)+']]' for x in r['icons'])
     if r['type']=='Character':fields.setdefault('landspeed','1')
     fields['extra_info']='<tr><th>Original expansion</th><td>'+expansion_link(r['original_set'])+'</td></tr><tr><th>Publication ID</th><td><code>'+pid+'</code></td></tr>'
     if r.get('printed_extra_stats'):fields['extra_info']=''.join('<tr><th>'+k+'</th><td>'+v+'</td></tr>' for k,v in r['printed_extra_stats'].items())+fields['extra_info']

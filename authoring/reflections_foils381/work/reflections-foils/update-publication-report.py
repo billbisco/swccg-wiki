@@ -18,6 +18,8 @@ Task412 retains the separate archival work: {len(queue)} distinct source/citatio
 
 The first70 new cards completed strict preservation before the exception. Subsequent publication markers explicitly say archive_deferred:true. Original photographs are backed up unchanged. The exact outstanding public image timestamps/SHA1/SHA256 and source URLs are in preservation-queue.json, also carried into source ops/wayback/queue.txt where supported.
 
+The updated central-owner workflow is installed in the operations checkout. The real server registered517 exact-byte objects, including all228 pending Wiki originals; central-registration-receipts.json and central-registry-server-export.json retain actual object/job/request identifiers. Those records currently await receipt reconciliation and owner promotion, and are not submissions. The remaining419 source/citation entries retain their original URLs for payload/evidence reconciliation under task412. New pending URLs are not directly promoted into the worker queue by the backup script after central registration.
+
 ## Continuation
 
 Finish current batch checks and inspect its representative desktop/mobile captures, then continue batches9–31 through run-publication-batch.py with fresh family/set heads. Never replay obsolete revision guards or duplicate the existing Don't Get Cocky article. Current source PR21 is the publication checkpoint; PR18 was the earlier merged backup. After all articles/checklists/family links pass, merge current backup and close story381 under the amended acceptance criteria. Task412 remains open for external preservation.

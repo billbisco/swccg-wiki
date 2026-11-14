@@ -85,7 +85,7 @@ else:
                         url=r.get('preserved_url',r['url']);done[url]=dict(status='verified',capture=r['capture'],last=now,verify=r['verify'],note='Inherited foil-family citation preserved and verified (#381)')
                         if url not in queue:queue.append(url)
             pending=root/'preservation-queue.json'
-            if pending.exists():
+            if pending.exists() and not (root/'central-registration-receipts.json').exists():
                 for item in json.loads(pending.read_bytes()).values():
                     if item.get('worker_url') and item['worker_url'] not in queue:queue.append(item['worker_url'])
             files['ops/wayback/done.json']=(json.dumps(done,ensure_ascii=False,indent=2,sort_keys=True)+'\n').encode()

@@ -17,3 +17,9 @@
 - Why: Bill explicitly instructed “Please don’t let Wayback block this. Queue the preservation requests for later and proceed with publishing the remaining217 foil articles and finishing the ten incomplete ones.”
 - Alternatives: Do not wait for archival recovery, weaken non-archive validation, invent replay URLs or label queued captures verified. Standard linter unchanged; task-scoped wrapper records deferred ARCHIVE flags.
 - Who/status: Bill authorizes; MemoryCoreChatGPT executes. R5/AC4 archival prerequisite is amended for this publication only; all content, image-hash, review, navigation, conservation and public/visual checks remain.
+
+## 14 November 2026 — Complete publication and register deferred exact objects
+- Decision: All 217 unpublished drafts and ten incomplete cards are complete. Reuse 17 existing articles; final inventory is 314 articles/images and publication identities (114/100/100). Current navigation checks cover 1,352 pages and 1,292 introduced foil memberships.
+- Why: Final source/public/review/hash/conservation/visual checks passed. Visual review identified icon-link capitalization; 41 narrow corrections preserve all other bytes. The 15 reused Japanese foils received catalog identities while all prior content and playable mappings remained exact.
+- Alternatives: No duplicate articles, fabricated foil effects, altered original photographs or unchecked capture claims. Existing shared navigators and concurrent edits retained.
+- Who/status: MemoryCoreChatGPT; publication complete, final merged backup pending. Newly refreshed owner workflow is used for follow-up: 517 known exact-byte objects are registered on the existing server, including all 228 outstanding Wiki image versions. Another 419 source/citation entries remain queued for exact-payload reconciliation in task412. Registrations await receipt import and owner promotion; none is claimed submitted or verified.

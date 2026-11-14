@@ -5,7 +5,11 @@ root=Path(__file__).parent;stage=sys.argv[1];titles=set()
 for kind in ['new','family-final','shared-nav','set','talk','correction']:
     path=root/(stage+'-'+kind+'-packet.json')
     if path.exists():titles.update(r['title'] for r in json.loads(path.read_bytes()))
-titles.update(r['title'] for r in json.loads((root/(stage+'-files-payload.json')).read_bytes()))
+packet=root/(stage+'-packet.json')
+if packet.exists():titles.update(r['title'] for r in json.loads(packet.read_bytes()))
+files=root/(stage+'-files-payload.json')
+if files.exists():titles.update(r['title'] for r in json.loads(files.read_bytes()))
+assert titles,'No approved packet titles supplied'
 code='TITLES='+repr(sorted(titles))+'\n'+'''import subprocess
 result=subprocess.run(['docker','exec','-i','-u','www-data','swccg_wiki','php','maintenance/run.php','purgePage'],input=('\\n'.join(TITLES)+'\\n').encode(),stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
 print(result.stdout.decode());raise SystemExit(result.returncode)
