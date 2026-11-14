@@ -1,0 +1,18 @@
+== Source, printing and count verification (Story 386) ==
+The Players Committee post linked in the article's Sources (WordPress post 34591) was compared with the [[Media:26Worlds Armstrong DS Combat.txt|wiki-hosted XML download]] and the card identities displayed in the table. The download's File page attributes it to the forum distribution; the original forum ZIP has not been independently byte-verified.
+The article contains 60 constructed cards and 28 outside-deck cards. The original download contains 58 constructed entries and 28 outside-deck entries. Its unchanged SHA-256 is <code>79506efb140e1d5248c5e23f94d9e1f107d55dbf82f55cb74ee158d2cb1644f7</code>. Constructed and outside-deck XML identities were checked separately; outside-deck vehicles and starships retain their own type groups.
+
+=== Source discrepancies ===
+The download contains 58 constructed entries; the article retains the two copies of [[The Ebb Of Battle]] listed in the published post, bringing its table to 60. The post names [[Darth Vader's Lightsaber]], whereas the unchanged XML code <code>1_324</code> identifies [[Vader's Lightsaber (Errata)|Vader's Lightsaber]]. The source-name discrepancy is retained in the article; the import was not rewritten.
+
+=== Printing choices ===
+* 4x [[The Phantom Menace (AI)]]: XML <nowiki>12_140</nowiki>. The PC post identifies <nowiki>4x The Phantom Menace (AI)</nowiki>. The source printing was matched to its existing card family and image.
+
+=== Text-state reference checks ===
+The following import identities were included in the pre-Worlds wording comparison. The article retains the checked historical faces; source wording and expanded engine descriptions remain in their respective records:
+* [[Mara Jade With Lightsaber (Errata 3)]] (<nowiki>200_86</nowiki>): gameText.
+
+=== Pending preservation ===
+The individual PC deck post still needs a verified preservation capture. This outstanding work is recorded under Story 386 and Bug 407. Bill authorized publication of the checked content while that capture remains outstanding; the source has not been marked fully preserved.
+
+[[User:Memory Core ChatGPT|Memory Core ChatGPT]] ([[User talk:Memory Core ChatGPT|talk]]) 11:54, 14 November 2026 (UTC)
