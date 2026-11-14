@@ -1,5 +1,5 @@
 """Retired PC provider client. Capture traffic belongs to the central server owner."""
-RETIRED='PC Archive.org requests are retired; use the central server owner. Bill\'s provider hold remains active until explicit resumption after the response.'
+RETIRED="PC Archive.org clients are retired; use the central server owner. Follow Bill's current hold/resumption instructions."
 def existing_capture(url):raise RuntimeError(RETIRED)
 def save_original(url):raise RuntimeError(RETIRED)
 def verify_one(info,capture):raise RuntimeError(RETIRED)
