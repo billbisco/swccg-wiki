@@ -1,0 +1,18 @@
+.swccg-card-images { width:280px; max-width:100%; }
+.swccg-card-images .swccg-card-image-stage { width:100%; aspect-ratio:350/490; display:grid; place-items:center; }
+.swccg-card-images .card-portrait { max-width:100%; margin:0 0 6px; }
+.swccg-card-images .card-portrait img { max-width:100%; height:auto; }
+.swccg-card-images .swccg-card-image-stage img { max-height:392px; width:auto; object-fit:contain; }
+.swccg-card-image-choices { display:flex; gap:4px; margin:0 0 8px; }
+.swccg-card-image-choices button { flex:1; min-width:0; padding:2px 8px; background:#fff; color:#202122; border:1px solid #a2a9b1; border-radius:4px; font:13px/20px sans-serif; cursor:pointer; }
+.swccg-card-image-choices button[aria-pressed="true"] { background:#eaf3ff; border-color:#36c; font-weight:bold; }
+.swccg-card-image-choices button:focus-visible,.swccg-card-image-settings :focus-visible { outline:3px solid #36c; outline-offset:2px; }
+.swccg-card-images [hidden] { display:none!important; }
+.swccg-card-image-settings { display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin:0 0 1em; padding:8px; border:1px solid #a2a9b1; }
+.swccg-card-image-settings select,.swccg-card-image-settings button { font:inherit; min-height:32px; }
+.swccg-card-image-status { font-size:90%; }
+@media(max-width:520px) {
+ .swccg-card-images.card-rail { float:none!important; margin:0 auto 1em!important; }
+ .swccg-card-image-choices button { min-height:36px; }
+}
+@media print { .swccg-card-image-choices,.swccg-card-image-settings { display:none; } }

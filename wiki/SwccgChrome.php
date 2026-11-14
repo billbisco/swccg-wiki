@@ -4,6 +4,8 @@
  * Also emits Open Graph tags so Discord/Slack previews show the card image.
  */
 
+require_once '/swccg-chrome/card-image-preferences.php';
+
 class SwccgChrome {
 
 	public static function onBeforePageDisplay( $out, $skin ): void {
@@ -15,15 +17,7 @@ class SwccgChrome {
 		);
 		// Foil photograph framing and intrinsic inline-symbol sizes (work#436).
 		$out->addInlineStyle( '.mw-parser-output table.card-thumbs td:not(:first-child) img{width:auto;height:auto;max-width:none;vertical-align:middle;} .mw-parser-output .card-photo-source img{width:100%!important;max-width:none!important;height:auto;display:block;} .mw-parser-output .card-photo-source a,.mw-parser-output .card-photo-source>span{display:block;width:100%;}' );
-		// Bounded review pilot: no resources or behavior on ordinary card pages.
-		$title = $out->getTitle();
-		if ( $title && $title->getPrefixedText() === 'SWCCG Wiki:Samples/Original Virtual Darth Vader image viewer' ) {
-			$assets = '/swccg-chrome/';
-			if ( is_readable( $assets . 'vader-image-viewer.css' ) && is_readable( $assets . 'vader-image-viewer.js' ) ) {
-				$out->addInlineStyle( file_get_contents( $assets . 'vader-image-viewer.css' ) );
-				$out->addInlineScript( file_get_contents( $assets . 'vader-image-viewer.js' ) );
-			}
-		}
+		SwccgCardImages::addPilot( $out );
 		try {
 			self::addOpenGraph( $out );
 		} catch ( Throwable $e ) {
