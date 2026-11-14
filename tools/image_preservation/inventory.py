@@ -42,11 +42,11 @@ def histories(db,directory,max_batches=0):
             for p in d['query']['pages']:
                 # allimages uses database filenames; title queries normalize underscores to spaces.
                 title=p['title'].replace(' ','_')
-                current_row=db.execute('SELECT sha1,timestamp FROM files WHERE title=?',(title,)).fetchone()
+                current_row=db.execute('SELECT sha1,timestamp,current_url FROM files WHERE title=?',(title,)).fetchone()
                 if not current_row:continue
                 for x in p.get('imageinfo',[]):
                     x['canonical_title']=p['title']
-                    add_version(db,title,x,x['sha1']==current_row['sha1'] and x['timestamp']==current_row['timestamp'])
+                    add_version(db,title,x,x['sha1']==current_row['sha1'] and x['timestamp']==current_row['timestamp'] and x['url']==current_row['current_url'])
                 for u in p.get('fileusage',[]):
                     db.execute('INSERT OR REPLACE INTO usage VALUES(?,?,?,?)',(title,u['pageid'],u['title'],u['ns']))
                 for rev in p.get('revisions',[]):

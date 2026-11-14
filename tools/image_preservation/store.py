@@ -42,6 +42,11 @@ def connect(directory):
       CREATE TABLE IF NOT EXISTS usage(title TEXT,pageid INTEGER,page TEXT,ns INTEGER,PRIMARY KEY(title,pageid));
       CREATE TABLE IF NOT EXISTS descriptions(title TEXT PRIMARY KEY,revid INTEGER,text TEXT);
       CREATE TABLE IF NOT EXISTS events(time TEXT,event TEXT,data TEXT);
+      CREATE TABLE IF NOT EXISTS upload_versions(upload_id TEXT PRIMARY KEY,title TEXT NOT NULL,timestamp TEXT NOT NULL,
+        sha1 TEXT NOT NULL,bytes INTEGER NOT NULL,current_version_id TEXT);
+      CREATE TABLE IF NOT EXISTS version_aliases(version_id TEXT PRIMARY KEY,upload_id TEXT NOT NULL);
+      CREATE INDEX IF NOT EXISTS upload_versions_by_title ON upload_versions(title);
+      CREATE INDEX IF NOT EXISTS versions_by_title ON versions(title);
     ''')
     return db
 
@@ -60,12 +65,33 @@ def version_id(title,info):
     import hashlib
     return hashlib.sha256(json.dumps([title,info['timestamp'],info['sha1'],info['url']],ensure_ascii=False).encode()).hexdigest()
 
+def upload_id(title,info):
+    """An upload stays the same when its original URL becomes a retained-history URL."""
+    import hashlib
+    return hashlib.sha256(json.dumps([title,info['timestamp'],info['sha1'],info['size']],ensure_ascii=False).encode()).hexdigest()
+
+def register_upload_alias(db,title,info,is_current):
+    alias=version_id(title,info);identity=upload_id(title,info)
+    db.execute('INSERT OR IGNORE INTO upload_versions VALUES(?,?,?,?,?,NULL)',
+               (identity,title,info['timestamp'],info['sha1'],info['size']))
+    db.execute('INSERT OR REPLACE INTO version_aliases VALUES(?,?)',(alias,identity))
+    if is_current:
+        db.execute('UPDATE upload_versions SET current_version_id=NULL WHERE title=?',(title,))
+        db.execute('UPDATE upload_versions SET current_version_id=? WHERE upload_id=?',(alias,identity))
+    return identity
+
 def add_version(db,title,info,current):
     if not info.get('url') or not info.get('sha1') or not info.get('timestamp'):
         raise ValueError('Public version missing identity')
+    canonical=db.execute('SELECT current_url,sha1,timestamp,bytes FROM files WHERE title=?',(title,)).fetchone()
+    if canonical:
+        current=bool(current and (info['url'],info['sha1'],info['timestamp'],info['size'])==tuple(canonical))
+    if current:
+        db.execute('UPDATE versions SET current=0 WHERE title=? AND id!=?',(title,version_id(title,info)))
     db.execute('''INSERT INTO versions(id,title,url,timestamp,sha1,bytes,mime,current,metadata)
       VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(id) DO UPDATE SET current=excluded.current,metadata=excluded.metadata''',
       (version_id(title,info),title,info['url'],info['timestamp'],info['sha1'],info['size'],info.get('mime',''),int(current),json.dumps(info)))
+    register_upload_alias(db,title,info,current)
 
 def event(db,name,data):
     db.execute('INSERT INTO events VALUES(?,?,?)',(now(),name,json.dumps(data)));db.commit()
@@ -81,6 +107,7 @@ def report(db,directory):
       'scanned_unused_files':q('SELECT COUNT(*) FROM files f WHERE history_done=1 AND NOT EXISTS(SELECT 1 FROM usage u WHERE u.title=f.title)'),
       'current_image_bytes':q("SELECT COALESCE(SUM(bytes),0) FROM files WHERE mime LIKE 'image/%'"),
       'unique_inventoried_image_hashes':q("SELECT COUNT(DISTINCT sha1) FROM versions WHERE mime LIKE 'image/%'"),
+      'distinct_image_upload_versions':q("SELECT count(DISTINCT a.upload_id) FROM version_aliases a JOIN versions v ON v.id=a.version_id WHERE v.mime LIKE 'image/%'"),
       'inventory_complete':getmeta(db,'inventory_complete',False),
       'states':dict(db.execute("SELECT status,COUNT(*) FROM versions WHERE mime LIKE 'image/%' GROUP BY status")),
       'site_statistics_start':getmeta(db,'site_statistics'),
