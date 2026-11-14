@@ -619,6 +619,67 @@ class ProducerTests(unittest.TestCase):
         self.assertEqual(["revision"], seen)
         self.assertEqual(1, result["completed_tasks"])
 
+    def test_upload_events_bypass_backfill_without_starving_history(self):
+        producer = self.producer(lambda query: self.fail("no network"))
+        for number in range(30):
+            producer.inbox.add({"kind": "file_history", "title": f"File:Old{number}.bin", "generation": 1})
+            producer.inbox.add({"kind": "revision", "title": "Test", "revision_id": number})
+        for number in range(10):
+            producer.inbox.add({"kind": "file_history", "title": f"File:Fresh{number}.pdf", "upload_log_id": number,
+                                "observed_at": "2026-11-14T19:00:00Z"})
+        producer.inbox.add({"kind": "file_usage", "title": "File:Old.bin"})
+        producer.inbox.add({"kind": "page_history", "title": "Talk:Test"})
+        ordered = list(producer.due_tasks())
+        first = [task for _, task in ordered[:10]]
+        self.assertEqual(2, sum("upload_log_id" in task for task in first))
+        self.assertGreaterEqual(sum(task["kind"] == "file_history" and "generation" in task for task in first), 1)
+        self.assertEqual({"revision", "file_history", "file_usage", "page_history"}, {task["kind"] for task in first})
+        self.assertEqual(72, len(ordered))
+        self.assertEqual(len(ordered), len({key for key, _ in ordered}))
+
+    def test_upload_priority_honors_durable_backoff(self):
+        producer = self.producer(lambda query: self.fail("no network"))
+        delayed = producer.inbox.add({"kind": "file_history", "title": "File:Delayed.pdf", "upload_log_id": 1,
+                                      "observed_at": "2026-11-14T20:00:00Z"})
+        producer.inbox.issue(delayed, "retry later")
+        due = producer.inbox.add({"kind": "file_history", "title": "File:Due.pdf", "upload_log_id": 2,
+                                  "observed_at": "2026-11-14T19:00:00Z"})
+        historical = producer.inbox.add({"kind": "file_history", "title": "File:Old.pdf", "generation": 1})
+        self.assertEqual([due, historical], [key for key, _ in producer.due_tasks()])
+
+    def test_event_order_uses_source_identity_and_time_not_discovery_order(self):
+        inbox = Inbox(self.root / "ordered-events")
+        for revision in (300, 200, 100):
+            inbox.add({"kind": "revision", "title": "Test", "revision_id": revision})
+        for day in (14, 13, 12):
+            inbox.add({"kind": "file_history", "title": "File:Test.pdf", "upload_log_id": day,
+                       "observed_at": f"2026-11-{day}T19:00:00Z"})
+        self.assertEqual([300, 200, 100], [task["revision_id"] for _, task in inbox.newest_events("revision")])
+        self.assertEqual([14, 13], [task["upload_log_id"] for _, task in inbox.newest_events("file_history", limit=2)])
+        key, task = inbox.newest_events("revision")[0]
+        inbox.issue(key, "backoff")
+        self.assertEqual([200, 100], [task["revision_id"] for _, task in inbox.newest_events("revision")])
+        inbox.complete(key, {"state": "test"})
+        self.assertFalse(inbox.event_pointer(key, task).exists())
+        inbox.add(task)
+        self.assertFalse(inbox.event_pointer(key, task).exists())
+
+    def test_event_index_failure_cannot_advance_discovery_cursor_and_retry_repairs_pointer(self):
+        inbox = Inbox(self.root / "interrupted-event-index")
+        response = {"query": {"recentchanges": [{"title": "Test", "revid": 501}]}}
+        from backup_versions import atomic_json as real_atomic
+        def interrupted(path, data, **kwargs):
+            if path.parent.name == "event-revisions":
+                raise OSError("index interrupted")
+            return real_atomic(path, data, **kwargs)
+        with patch("backup_versions.atomic_json", side_effect=interrupted):
+            with self.assertRaisesRegex(OSError, "index interrupted"):
+                discover_changes(lambda query: response, inbox)
+        self.assertFalse((inbox.directory / "recentchanges.json").exists())
+        discover_changes(lambda query: response, inbox)
+        self.assertEqual(1, len(inbox.newest_events("revision")))
+        self.assertEqual(1, len(list(inbox.pending())))
+
     def test_failed_edit_cannot_prevent_independent_history_progress(self):
         producer = self.producer(lambda query: self.fail("discovery must be mocked"))
         producer.inbox.add({"kind": "revision", "title": "Test", "revision_id": 42})
