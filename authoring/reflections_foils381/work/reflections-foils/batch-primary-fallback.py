@@ -32,6 +32,8 @@ for row in rows:
             if 'raw.githubusercontent.com/swccgpc/holotable/3d2c89e5f02cee6c39d70bd023260b638f3c0dc1/' in url:
                 url=url.replace('/large/hansolo.gif','/hires/hansolo.png').replace('/large/sonofskywalker.gif','/hires/sonofskywalker.png')
                 record['preserved_url']=url;record['correction']='Exact cited commit adds hires PNG; original large GIF citation was broken'
+            if 'res.starwarsccg.org/cards/Images-HT/starwars/' in url:
+                url=url.replace('/cards/Images-HT/starwars/','/cards/');record['preserved_url']=url;record['correction']='Remove a duplicated repository-path prefix from the published card-image URL; corrected resource retrieved directly'
             localfile=local_sources.get(url.split('#')[0])
             if localfile and localfile.exists():data=localfile.read_bytes();mime='text/html'
             else:

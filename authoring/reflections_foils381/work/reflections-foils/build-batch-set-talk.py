@@ -22,6 +22,8 @@ for product in products:
 for r,f in zip(readings,files):
     p=provenance(r)
     text='== Build notes ==\nThe '+r['product']+' foil publication was checked against [[:'+f['title']+'|the original physical foil photograph]] from '+p['credit']+'. The original JPEG and provenance are retained on the File page. Printed wording, symbols and statistics were read from this face independently of earlier printings. Publication identity is separate from any playable mapping.\n\n~~~~\n'
+    if r.get('printed_extra_stats',{}).get('Hyperdrive'):
+        text=text.replace('\n\n~~~~','\n\nThe foil prints “Hyperdrive '+r['printed_extra_stats']['Hyperdrive']+'” as the speed label. That printed label is retained separately in the infobox.\n\n~~~~')
     talk.append(dict(title='Talk:'+r['article'],text=text,new=True,signed_note=True,summary='Record independent physical-foil transcription and source provenance (#381)'))
 (root/(stage+'-set-heads.json')).write_text(json.dumps(heads,ensure_ascii=False,indent=2),encoding='utf8')
 for kind,rows in [('set',packets),('talk',talk)]:

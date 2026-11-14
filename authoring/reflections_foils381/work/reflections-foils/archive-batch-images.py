@@ -13,7 +13,7 @@ for p in r.json()['query']['pages']:
 prior={r['title']:r for r in map(json.loads,(root/(stage+'-image-captures.jsonl')).read_text().splitlines())} if (root/(stage+'-image-captures.jsonl')).exists() else {}
 rows=[r for r in rows if not prior.get(r['title'],{}).get('verified')]
 code='ROWS='+repr(rows)+'\n'+'''
-import hashlib,json,re,sys,urllib.request
+import hashlib,json,re,sys,time,urllib.request
 sys.path.insert(0,'/opt/swccg-ops/repos/swccg-wiki/ops');import wayback_worker as worker
 for row in ROWS:
     try:
@@ -23,6 +23,9 @@ for row in ROWS:
         assert data.startswith(b'\\xff\\xd8') and len(data)==row['size'] and digest==row['image_sha256'],('Image payload mismatch',mime,len(data))
         print(json.dumps(dict(row,capture=capture,verified=True,sha256=digest,bytes=len(data),capture_mime=mime)),flush=True)
     except Exception as e:print(json.dumps(dict(row,verified=False,error=str(e))),flush=True)
+    # Match the shared worker's conservative request cadence. Other authoring and
+    # source-reading work can continue while this finite preservation job runs.
+    time.sleep(20)
 '''
 p=subprocess.Popen(['ssh','-o','BatchMode=yes','gemp','python3','-'],stdin=subprocess.PIPE,stdout=subprocess.PIPE);p.stdin.write(code.encode());p.stdin.close()
 with (root/(stage+'-image-captures.jsonl')).open('ab') as log:

@@ -5,6 +5,7 @@ sys.path.insert(0,'work/wiki-tools');from style_lint import lint
 root=Path(__file__).parent;stage=sys.argv[1]
 from source_registry import provenance
 from navigation import new_navigation
+from publication_identity import publication_id
 readings=json.loads((root/(stage+'-readings.json')).read_bytes());files=json.loads((root/(stage+'-files-payload.json')).read_bytes())
 heads=json.loads((root/(stage+'-family-heads.json')).read_bytes());families=json.loads((root/(stage+'-families.json')).read_bytes())
 check='[https://res.starwarsccg.org/Resources/swccgcardlist4.0.pdf Complete Card List v4.0], pp. 28–32 (collecting compilation). Preserved copy: [https://web.archive.org/web/20261009184033/https://res.starwarsccg.org/Resources/swccgcardlist4.0.pdf Internet Archive].'
@@ -22,10 +23,13 @@ def insert(value,line):
 packets=[];old_drafts={};checks=[]
 for r,f in zip(readings,files):
     title=r['article'];product=r['product'];product_label={'Reflections':'Reflections','Reflections II: Expanding the Galaxy':'Reflections II','Reflections III':'Reflections III'}[product];release={'Reflections':'January 2000','Reflections II: Expanding the Galaxy':'January 2001','Reflections III':'October 2001'}[product];pid='decipher-'+re.sub(r'[^a-z0-9]+','-',product_label.lower())+'-'+re.sub(r'[^a-z0-9]+','-',r['printed_title'].lower()).strip('-')+'-foil-en'
-    if r.get('alternate_image') or '(AI)' in r['article']:pid=pid.replace('-foil-en','-ai-foil-en')
+    pid=publication_id(r['article'],product)
     p=provenance(r)
     face='<ref name="foil-face">[[:'+f['title']+'|Original printed '+product_label+' foil face]], '+p['credit']+'.</ref>'
-    fields=dict(title=r['printed_title'],publication_id=pid,image=f['name'],image_note='Reflections foil, photographed in a grading holder.',side=r['side'],type=r['type'])
+    caption=product_label+' foil, photographed in a grading holder.' if p['kind']=='PSA' else product_label+' foil.'
+    fields=dict(title=r['printed_title'],publication_id=pid,image=f['name'],image_note=caption,side=r['side'],type=r['type'])
+    for k in ['image_rotation','image_rotated_height']:
+        if k in r:fields[k]=r[k]
     for k in ['subtype','type_display','model']:
         if k in r:fields[k]=r[k]
     if 'subtype' in r:fields['subtype_link']=r['subtype']
@@ -34,11 +38,12 @@ for r,f in zip(readings,files):
     else:
         icon={'A New Hope':'A-New-Hope','Cloud City':'Cloud-City',"Jabba's Palace":'Jabbas-Palace','Special Edition':'Special-Edition'}.get(r['set_icon'],r['set_icon'])
         fields['set_icon']='[[File:Icon-set-'+icon+'.png|20px|link='+r['original_set']+']] [['+r['original_set']+']]'
-    for k in ['destiny','power','ability','armor','maneuver','hyperspeed','deploy','forfeit','printed_label']:
+    for k in ['destiny','power','ability','armor','maneuver','hyperspeed','landspeed','deploy','forfeit','printed_label']:
         if k in r:fields[k]=r[k]
     fields['icons']=' '.join('[['+x+']]' for x in r['icons'])
     if r['type']=='Character':fields['landspeed']='1'
     fields['extra_info']='<tr><th>Original expansion</th><td>[['+r['original_set']+']]</td></tr><tr><th>Publication ID</th><td><code>'+pid+'</code></td></tr>'
+    if r.get('printed_extra_stats'):fields['extra_info']=''.join('<tr><th>'+k+'</th><td>'+v+'</td></tr>' for k,v in r['printed_extra_stats'].items())+fields['extra_info']
     fields['version_label']=product_label+' foil';fields['set_band']='Decipher';fields['navigation']='[['+product+']] · [['+r['title']+'|Earlier non-foil printing]]'
     fields['lead']="'''"+r['printed_title']+"''' is a [["+r['side']+']] [['+r['type']+']] released as a '+{'VR':'very-rare','SR':'super-rare','UR':'ultra-rare'}[r['rarity']]+' foil in [['+product+']] in '+release+'.<ref name="checklist">'+check+'</ref><ref name="encyc">'+encyc+'</ref> It is a foil printing of the [['+r['original_set']+']] card.'+face
     if r['lore'] is not None:fields['lore']=r['lore']+'<ref name="foil-face" />'

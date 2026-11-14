@@ -33,6 +33,10 @@ MemoryCoreChatGPT
 
 ## Current delivery
 
-Initial missing count: 298 English articles. Ten have now been created, leaving 288. These ten have independent physical-face transcriptions, unchanged original JPEGs, archived provenance, complete family links and direct Reflections checklist targets. Source differences were preserved, notably 2-1B, Ben Kenobi, Attack Run, Biggs and Black 2. No original/errata text was blindly cloned into the foil articles.
+The dated inventory reconciles 314 regular pack foils: 114 Reflections I, 100 Reflections II and 100 Reflections III. Sixteen articles existed initially; 50 of the 298 missing English articles have now been completed and verified, leaving 248. All remaining source photographs have been retrieved and backed up; discovery photographs and OCR are not approved transcriptions until each physical face has been read.
 
-[Inventory and first batch evidence](https://github.com/swccg-guild/work/tree/main/evidence/381). Whole-story work remains In Progress.
+Completed batches have independently transcribed text/stats/symbols, unchanged original photographs, version-specific wiki-original binary captures and File-page replay links, reviewed sources, direct checklist targets, reciprocal family navigation, source conservation and anonymous public/desktop/mobile checks. The existing shared Darth Vader navigator now includes the foil, and all eleven existing member pages were checked for propagation. Source differences and symbolic values are retained; no unverified playable mappings are asserted.
+
+Next: continue complete physical-reading/publication batches. The sixth batch's ten starship faces have been read and its source-photo preservation is underway. Rarity and release facts use explicitly credited collecting references; printed data comes from physical card faces. No article deletion is required by the completed work. The source PR and whole story remain In Progress.
+
+[Inventory, field evidence, verification and all changed-page links](https://github.com/swccg-guild/work/tree/main/evidence/381). [Source PR18](https://github.com/billbisco/swccg-wiki/pull/18). [Detailed batch report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md).

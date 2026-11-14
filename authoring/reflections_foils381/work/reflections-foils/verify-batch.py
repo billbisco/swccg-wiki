@@ -13,7 +13,21 @@ for kind in ['new','family-final','shared-nav','set','file-preservation','correc
     if p.exists():expected.update({r['title']:r['text'] for r in json.loads(p.read_bytes())})
 files=json.loads((root/(stage+'-files-payload.json')).read_bytes())
 for f in files:expected.setdefault(f['title'],f['desc'])
+# A later complete checklist packet can legitimately supersede this batch's
+# checklist while its slower image captures finish. Verify that exact saved
+# packet, then separately require every link introduced by this batch.
+superseded={}
+for packet_file in root.glob('*-set-packet.json'):
+    prefix=packet_file.name[:-len('-packet.json')];receipt_file=root/(prefix+'-receipts.jsonl')
+    if not receipt_file.exists():continue
+    saved={r['title']:r for r in map(json.loads,receipt_file.read_text().splitlines())}
+    for row in json.loads(packet_file.read_bytes()):
+        if row['title'] not in expected or row['title'] not in saved:continue
+        rid=saved[row['title']]['revid']
+        if rid>superseded.get(row['title'],{}).get('revid',0):superseded[row['title']]=dict(revid=rid,packet=prefix,text=row['text'])
+for title,row in superseded.items():expected[title]=row['text']
 receipts={r['title']:r for r in map(json.loads,(root/(stage+'-talk-receipts.jsonl')).read_text().splitlines())}
+if (root/(stage+'-reading-note-receipts.jsonl')).exists():receipts.update({r['title']:r for r in map(json.loads,(root/(stage+'-reading-note-receipts.jsonl')).read_text().splitlines())})
 titles=sorted(set(expected)|set(receipts))
 def fetch(batch):
     r=requests.get('https://wiki.swccg.com/api.php',params=dict(action='query',format='json',formatversion=2,titles='|'.join(batch),prop='revisions|flagged|imageinfo',rvprop='ids|timestamp|content',rvslots='main',iiprop='url|sha1'),timeout=60);r.raise_for_status();j=r.json();assert 'error' not in j,j;return j['query']['pages']
@@ -39,10 +53,12 @@ def conserved(s):
     s=str(code)
     for r in archives.values():s=re.sub(r'\s*Preserved copy:\s*\['+re.escape(r['capture'])+r' [^\]]*\]\.','',s)
     for old,new in corrections.items():s=s.replace(old,new)
+    s=s.replace('== Notes ==\n* This card has published mistakes listed on the [[Remaster changes list]]','== Remaster changes ==\n* This card has published mistakes listed on the [[Remaster changes list]]')
     return re.sub(r'\s+','',s)
 conservation=[];nav=[]
 for r in readings:
     text=heads[r['article']]['revisions'][0]['slots']['main']['content'];t=card(text);assert not t.has('gemp_id') and not t.has('card_uid') and t.has('publication_id')
+    settext=heads[r['product']]['revisions'][0]['slots']['main']['content'];assert settext.count('[['+r['article']+'|'+r['printed_title']+']]')==1,(r['article'],'Direct checklist target missing')
     value=values(text);shared='{{Card versions/' in value
     for sibling in families[r['title']]:
         old=baseline[sibling]['revisions'][0]['slots']['main']['content']

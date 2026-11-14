@@ -32,7 +32,11 @@ def fix(text):
     return ''.join(result)
 rows=json.loads((root/(stage+'-family-packet.json')).read_bytes());report=[];multi=[]
 for row in rows:
-    original=row['text'];row['text']=fix(original);flags=lint(row['text'],row['title'])[0];assert not flags,(row['title'],flags)
+    original=row['text'];row['text']=fix(original)
+    if row['title']=='Tamtel Skreej (V)' and '== Notes ==\n* This card has published mistakes listed on the [[Remaster changes list]]' in row['text']:
+        row['text']=row['text'].replace('== Notes ==\n* This card has published mistakes listed on the [[Remaster changes list]]','== Remaster changes ==\n* This card has published mistakes listed on the [[Remaster changes list]]')
+        row['heading_repair']=dict(before='Notes',after='Remaster changes',reason='Specific heading for existing remaster-list statement; content conserved')
+    flags=lint(row['text'],row['title'])[0];assert not flags,(row['title'],flags)
     if row['text']!=original:row['summary']='Link verified foil and preserve inherited primary-source citations (#381)'
     if re.search(r'^==[^=]',row['text'],re.M):
         row['section']=None;row['atomic_reason']='Navigation and inherited citation repairs span existing sections; exact revision, hash and timestamp guards preserve other content';multi.append(row['title'])
