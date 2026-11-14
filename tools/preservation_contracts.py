@@ -136,6 +136,43 @@ def source_backup_subject(source: dict) -> dict:
     return subject
 
 
+def validate_source_representation(source: dict) -> list[str]:
+    """Bind a cited primary page to an explicitly checked snapshot representation."""
+    if not isinstance(source, dict):
+        return ["source representation must be an object"]
+    primary = source.get("primary_url", source.get("url"))
+    representation = source.get("representation", "original")
+    if representation == "original":
+        return [] if primary == source.get("url") else ["different primary/capture URLs need a checked snapshot representation"]
+    if representation != "checked_self_contained_snapshot":
+        return ["source representation is unsupported"]
+    errors = []
+    proof = source.get("provenance_equivalence")
+    if not isinstance(proof, dict):
+        return ["snapshot provenance equivalence proof is required"]
+    if proof.get("primary_url") != primary or proof.get("snapshot_url") != source.get("url"):
+        errors.append("equivalence proof URLs do not bind this primary/snapshot pair")
+    try:
+        primary_parts = urllib.parse.urlsplit(primary)
+        snapshot_parts = urllib.parse.urlsplit(source.get("url", ""))
+        if primary_parts.scheme not in {"http", "https"} or not primary_parts.hostname or primary_parts.username or primary_parts.password:
+            errors.append("primary source URL is invalid")
+        if snapshot_parts.scheme != "https" or snapshot_parts.hostname != "swccg.com" or not snapshot_parts.path.startswith("/snapshots/") or snapshot_parts.username or snapshot_parts.password:
+            errors.append("snapshot capture target is not the approved public snapshot location")
+    except (TypeError, ValueError):
+        errors.append("primary/snapshot URL is invalid")
+    for field in ("primary_html_sha256", "snapshot_html_sha256", "primary_article_text_sha256", "snapshot_article_text_sha256", "evidence_sha256"):
+        if not is_sha256(proof.get(field)):
+            errors.append("equivalence proof needs " + field)
+    if proof.get("snapshot_html_sha256") != source.get("sha256"):
+        errors.append("snapshot hash differs from the actual capture-target payload")
+    if proof.get("primary_article_text_sha256") != proof.get("snapshot_article_text_sha256"):
+        errors.append("primary/snapshot article text does not match")
+    if not isinstance(proof.get("evidence_path"), str) or not proof["evidence_path"].strip():
+        errors.append("equivalence proof needs its durable evidence path")
+    return errors
+
+
 def validate_source_backup_receipt(receipt: object, source: dict, shared_subject: dict | None = None) -> list[str]:
     try:
         expected = source_backup_subject(source)
@@ -187,4 +224,20 @@ def validate_backup_receipt(receipt: object, subject: dict) -> list[str]:
         errors.append("restored backup byte count does not match the exact subject")
     if not is_utc_timestamp(verification.get("verified_at")):
         errors.append("restore/readback verification needs a UTC timestamp")
+    if isinstance(storage, dict) and storage.get("container") is not None:
+        if storage["container"] != "tar.xz":
+            errors.append("backup container type is unsupported")
+        member = storage.get("member")
+        if not isinstance(member, str) or not member or PurePosixPath(member).is_absolute() or ".." in PurePosixPath(member).parts or "\\" in member:
+            errors.append("backup container member must be a safe relative path")
+        if not is_sha256(storage.get("artifact_sha256")):
+            errors.append("backup container needs its compressed artifact SHA-256")
+        if not is_nonnegative_int(storage.get("artifact_bytes")) or storage.get("artifact_bytes") == 0:
+            errors.append("backup container needs its compressed artifact byte count")
+        if not is_nonnegative_int(storage.get("uncompressed_bytes")) or storage.get("uncompressed_bytes", -1) < subject["bytes"]:
+            errors.append("backup container needs its complete member-payload byte tally")
+        if verification.get("restored_container_sha256") != storage.get("artifact_sha256") or not is_sha256(verification.get("restored_container_sha256")):
+            errors.append("independent container readback SHA-256 is absent or mismatched")
+        if type(verification.get("restored_container_bytes")) is not int or verification["restored_container_bytes"] != storage.get("artifact_bytes"):
+            errors.append("independent container readback byte count is absent or mismatched")
     return errors

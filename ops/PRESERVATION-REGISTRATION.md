@@ -29,6 +29,24 @@ that subject to one exact source URL/hash. `job_id` is `payload:` plus the sourc
 SHA-256, deduplicating payload work without dropping multiple citations from
 one page or separate versions sharing bytes.
 
+For a checked self-contained source representation, retain the actual cited
+URL as `source.primary_url` and the capture target as `source.url`. Set
+`representation` to `checked_self_contained_snapshot` and provide
+`provenance_equivalence` with primary_url, snapshot_url, primary_html_sha256,
+snapshot_html_sha256, matching primary_article_text_sha256 and
+snapshot_article_text_sha256, evidence_path and evidence_sha256.
+`validate_source_representation` checks those bindings. Compiled snapshot
+bytes are never relabeled as the untransformed primary HTTP response.
+
+A source backup can reference an independently recovered `tar.xz` container.
+Its storage fields are `container`, `member`, `artifact_sha256`,
+`artifact_bytes` and `uncompressed_bytes`, in addition to the existing immutable
+Git locator. The uncompressed tally includes every regular member's payload,
+including a manifest, but excludes tar headers and padding. Verification binds
+the compressed object in `restored_container_sha256/restored_container_bytes`
+and the selected raw member in `restored_sha256/restored_bytes`. Those hashes
+and counts serve different purposes and are not substituted for each other.
+
 ## Registration and updates
 
 Clients use `tools/preservation_enqueue.py REQUEST.json --registry PATH`. It

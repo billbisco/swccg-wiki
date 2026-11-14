@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "ops")]
 from preservation_contracts import (object_id, registration_job_id, registration_object_id,
                                     source_backup_subject, validate_backup_receipt,
-                                    validate_registration_identity)
+                                    validate_registration_identity, validate_source_representation)
 from preservation_enqueue import deliver
 from preservation_registry import SERVER_OWNER, export_records, promote_ready, register
 
@@ -68,6 +68,46 @@ class BackupContractTests(unittest.TestCase):
             receipt = copy.deepcopy(request["backup_receipt"])
             receipt["subject"] = subject
             self.assertTrue(validate_backup_receipt(receipt, subject))
+
+    def snapshot_source(self):
+        source = fixture()["source"]
+        source["primary_url"] = "https://www.starwarsccg.org/event-deck/"
+        source["url"] = "https://swccg.com/snapshots/pc/event-deck.html"
+        source["representation"] = "checked_self_contained_snapshot"
+        source["provenance_equivalence"] = dict(
+            primary_url=source["primary_url"], snapshot_url=source["url"],
+            primary_html_sha256="c" * 64, snapshot_html_sha256=source["sha256"],
+            primary_article_text_sha256="d" * 64, snapshot_article_text_sha256="d" * 64,
+            evidence_path="evidence/409/proof.json", evidence_sha256="e" * 64)
+        return source
+
+    def test_checked_snapshot_keeps_distinct_primary_and_capture_payload_identities(self):
+        self.assertEqual([], validate_source_representation(self.snapshot_source()))
+
+    def test_different_article_text_or_unbound_capture_target_fails(self):
+        for field, value in (("snapshot_article_text_sha256", "f" * 64),
+                             ("snapshot_html_sha256", "f" * 64),
+                             ("primary_url", "https://example.org/another")):
+            source = self.snapshot_source()
+            source["provenance_equivalence"][field] = value
+            self.assertTrue(validate_source_representation(source))
+
+    def test_snapshot_alias_without_explicit_equivalence_is_not_an_original(self):
+        source = self.snapshot_source()
+        source.pop("representation")
+        self.assertTrue(validate_source_representation(source))
+
+    def test_container_receipt_binds_both_compressed_artifact_and_raw_member(self):
+        request = fixture()
+        receipt = request["backup_receipt"]
+        receipt["storage"].update(container="tar.xz", member="sources/one.png",
+                                  artifact_sha256="c" * 64, artifact_bytes=123,
+                                  uncompressed_bytes=456)
+        receipt["verification"].update(restored_container_sha256="c" * 64,
+                                       restored_container_bytes=123)
+        self.assertEqual([], validate_backup_receipt(receipt, request["subject"]))
+        receipt["verification"].pop("restored_container_sha256")
+        self.assertTrue(validate_backup_receipt(receipt, request["subject"]))
 
 
 class RegistrationTests(unittest.TestCase):

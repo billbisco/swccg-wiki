@@ -23,7 +23,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from preservation_contracts import (  # noqa: E402
     canonical_bytes, is_nonnegative_int, is_sha256, object_id,
     registration_job_id, registration_object_id, subject_errors,
-    validate_backup_receipt, validate_source_backup_receipt,
+    validate_backup_receipt, validate_source_backup_receipt, validate_source_representation,
 )
 
 MAX_REQUEST_BYTES = 1024 * 1024
@@ -183,6 +183,9 @@ def state_reason(request: dict) -> tuple[str, str]:
     errors = validate_source_backup_receipt(source_receipt(request), request["source"], request["subject"])
     if errors:
         return "awaiting_backup", "Independent source backup: " + "; ".join(errors)
+    errors = validate_source_representation(request["source"])
+    if errors:
+        return "needs_attention", "; ".join(errors)
     if not request["readiness"]["ready"]:
         return "awaiting_stage", request["readiness"]["reason"]
     evidence = request["source"].get("checked_evidence")
@@ -224,7 +227,8 @@ def export_records(registry: Path) -> dict:
             "subject", "source", "readiness", "owner", "continuation", "approval_scope")}
         # Only whitelisted public fields enter the shared evidence export.
         row["source"] = {key: request["source"][key] for key in (
-            "url", "sha256", "bytes", "checked_evidence") if key in request["source"]}
+            "url", "sha256", "bytes", "checked_evidence", "primary_url",
+            "representation", "provenance_equivalence") if key in request["source"]}
         row["readiness"] = {key: request["readiness"][key] for key in ("ready", "reason", "stage_bytes")}
         row.update(object_id=registration_object_id(request["subject"], request["source"]),
                    subject_id=object_id(request["subject"]),
