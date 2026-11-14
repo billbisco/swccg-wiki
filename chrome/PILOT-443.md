@@ -4,9 +4,11 @@ The initial three review pages and their hub remain allowlisted in card-image-pi
 
 The existing Luke Skywalker review sample already had a deployed legacy hook when this work began. Preserve that hook and its assets unchanged; it is not activated by the new pilot manifest. New markers and legacy Vader markers are distinct, so the old viewer cannot initialize the three updated panels. This is compatibility preservation, not another rollout example or ownership transfer.
 
-Use `npm ci --ignore-scripts` then `npm run test:card-images` for the15 behavioral checks. PHP is syntax-checked against the deployed MediaWiki PHP runtime. Native API persistence and live browser geometry/cache checks follow controlled deployment.
+Use `npm ci --ignore-scripts` then `npm run test:card-images` for the18 behavioral checks. PHP is syntax-checked against the deployed MediaWiki PHP runtime. Native API persistence and live browser geometry/cache checks follow controlled deployment.
 
 Account preference: swccg-card-images through core GetPreferences/UserGetDefaultOptions and API options. Guest preference: the same key in browser localStorage. Page config contains only public image mappings and localized labels; account options are fetched through authenticated private API requests. Explicit Save default affects future panel initialization; per-card buttons do not write preferences.
+
+Bill rejected the saved-default form above article content. It is now rendered only into an explicit target on `SWCCG Wiki:Display settings`, reached by a localized native navigation tab immediately after Discussion. Card articles and review pages have no saved-default form or article-content spacer; their below-slip Original/Remastered pair remains local to that view. Account users can also use the existing Appearance preference. Native navigation provides the settings destination without JavaScript; JavaScript is needed for browser-local guest storage. The setting's storage key and existing saved values are unchanged.
 
 Rollback: restore the exact old /opt/swccg-wiki/SwccgChrome.php in place from the scoped before-deploy volume backup. The legacy viewer remains intact. New chrome assets can remain dormant. Restore the old Vader sample revision if desired; preserve new original files and their provenance. Do not roll back unrelated common CSS, templates or other sample pages.
 
