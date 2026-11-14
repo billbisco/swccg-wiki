@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from backup_spool import DEFAULT_WORK
 from backup_versions import Producer, backup_owner
 from preservation_registry import atomic_json
+from source_inventory import SourceInventory
 
 API = "https://wiki.swccg.com/api.php"
 MAX_API_BYTES = 16 * 1024 * 1024
@@ -59,14 +60,15 @@ def main() -> int:
     with backup_owner(arguments.work):
         old = json.loads(arguments.state.read_text(encoding="utf-8")) if arguments.state.exists() else {}
         producer = Producer(api, arguments.pages_repo.resolve(), arguments.files_repo.resolve(),
-                            arguments.work, arguments.registry)
+                            arguments.work, arguments.registry,
+                            source_consumer=SourceInventory(arguments.work / "source-inventory", arguments.registry))
         # Import the legacy discovery watermark once; never infer all tasks
         # completed merely because a discovery or run timestamp advanced.
         status = producer.run(since=arguments.since or old.get("last"),
                               task_limit=arguments.task_limit, seconds=arguments.seconds)
         atomic_json(arguments.state, {"schema_version": 2, **status})
         print(json.dumps(status, sort_keys=True))
-        return 1 if status["failed_tasks"] or status["discovery_failures"] else 0
+        return 1 if status["failed_tasks"] or status["discovery_failures"] or status.get("source_inventory_failures") else 0
 
 
 if __name__ == "__main__":
