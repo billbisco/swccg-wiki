@@ -384,6 +384,54 @@ class ProducerTests(unittest.TestCase):
         self.assertFalse(counts["task_count_partial"])
         self.assertTrue(inbox.health_counts(scan_limit=0)["task_count_partial"])
 
+    def test_edit_backlog_does_not_starve_images_usage_or_history(self):
+        producer = self.producer(lambda query: self.fail("discovery must be mocked"))
+        for number in range(20):
+            producer.inbox.add({"kind": "revision", "title": "Test", "revision_id": number})
+        for kind in ("file_history", "file_usage", "page_history"):
+            producer.inbox.add({"kind": kind, "title": "File:Test.bin" if kind != "page_history" else "Test"})
+        seen = []
+        def complete(key, task):
+            seen.append(task["kind"])
+            producer.inbox.complete(key, {"state": "synthetic completion"})
+        producer.task = complete
+        with patch("backup_versions.discover_changes"), patch("backup_versions.reconcile_inventory"):
+            result = producer.run(task_limit=8)
+        self.assertEqual(8, result["completed_tasks"])
+        self.assertEqual(["revision"] * 4, seen[:4])
+        self.assertEqual({"revision", "file_history", "file_usage", "page_history"}, set(seen))
+        self.assertGreater(result["pending_task_count"], 0)
+
+    def test_fair_scheduling_still_respects_single_task_budget(self):
+        producer = self.producer(lambda query: self.fail("discovery must be mocked"))
+        producer.inbox.add({"kind": "revision", "title": "Test", "revision_id": 42})
+        producer.inbox.add({"kind": "file_history", "title": "File:Test.bin"})
+        seen = []
+        producer.task = lambda key, task: seen.append(task["kind"])
+        with patch("backup_versions.discover_changes"), patch("backup_versions.reconcile_inventory"):
+            result = producer.run(task_limit=1)
+        self.assertEqual(["revision"], seen)
+        self.assertEqual(1, result["completed_tasks"])
+
+    def test_failed_edit_cannot_prevent_independent_history_progress(self):
+        producer = self.producer(lambda query: self.fail("discovery must be mocked"))
+        producer.inbox.add({"kind": "revision", "title": "Test", "revision_id": 42})
+        producer.inbox.add({"kind": "page_history", "title": "Independent"})
+        seen = []
+        def task(key, value):
+            if value["kind"] == "revision":
+                raise ValueError("injected source failure")
+            seen.append(value["kind"])
+            producer.inbox.complete(key, {"state": "synthetic completion"})
+        producer.task = task
+        with patch("backup_versions.discover_changes"), patch("backup_versions.reconcile_inventory"):
+            result = producer.run(task_limit=2)
+        self.assertEqual(["page_history"], seen)
+        self.assertEqual(1, result["completed_tasks"])
+        self.assertEqual(1, len(result["failed_tasks"]))
+        self.assertEqual(1, result["failed_pending_task_count"])
+        self.assertFalse(result["source_inventory_automatic_consumer_implemented"])
+
 
 if __name__ == "__main__":
     unittest.main()

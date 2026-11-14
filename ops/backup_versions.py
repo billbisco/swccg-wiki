@@ -289,7 +289,9 @@ class Producer:
         """Text backup is not proof that this revision's citations are preserved."""
         path = self.source_inventory / (object_id(artifact.subject) + ".json")
         atomic_json(path, {"schema_version": 1, "subject": artifact.subject,
-                           "state": "source_inventory_required", "owner": "Wiki source-preservation reconciliation (Story 410)",
+                           "state": "source_inventory_required", "owner": "MemoryCoreChatGPT: Story 410 source-preservation reconciliation",
+                           "story": "https://github.com/swccg-guild/work/issues/410",
+                           "automatic_consumer_implemented": False,
                            "backup_storage": receipt["storage"],
                            "continuation": "inventory citations in this exact revision; check each exact source payload and independent backup, then register source mappings with the existing owner",
                            "capture_submitted": False}, create_only=True)
@@ -306,7 +308,24 @@ class Producer:
                 if entry.name.endswith(".json"):
                     row = json.loads(Path(entry.path).read_text(encoding="utf-8"))
                     count += row.get("state") == "source_inventory_required"
-        return {"source_inventory_required": count, "source_inventory_count_partial": partial}
+        return {"source_inventory_required": count, "source_inventory_count_partial": partial,
+                "source_inventory_owner": "MemoryCoreChatGPT: Story 410 source-preservation reconciliation",
+                "source_inventory_story": "https://github.com/swccg-guild/work/issues/410",
+                "source_inventory_automatic_consumer_implemented": False}
+
+    def due_tasks(self):
+        """Favor short edit events without starving originals and history."""
+        kinds = ("revision", "file_history", "file_usage", "page_history")
+        pending = {kind: iter(self.inbox.pending(kind, due_only=True)) for kind in kinds}
+        schedule = ("revision",) * 4 + ("file_history",) * 2 + ("file_usage", "page_history")
+        while pending:
+            for kind in schedule:
+                if kind not in pending:
+                    continue
+                try:
+                    yield next(pending[kind])
+                except StopIteration:
+                    del pending[kind]
 
     def task(self, key: str, task: dict) -> dict:
         kind = task["kind"]
@@ -398,18 +417,15 @@ class Producer:
                             {"state": "needs_reconciliation", "reason": type(error).__name__ + ": " + str(error),
                              "observed_at": utcnow(), "continuation": "retry discovery on next existing run; cursors were not advanced"})
         completed, failures = 0, []
-        # Exact edit events take priority; a large history inventory or a bad
-        # original must not stall unrelated recent edits and uploads.
-        for kind in ("revision", "file_history", "file_usage", "page_history"):
-            for key, task in self.inbox.pending(kind, due_only=True):
-                if completed + len(failures) >= task_limit or time.monotonic() >= deadline:
-                    break
-                try:
-                    self.task(key, task)
-                    completed += 1
-                except Exception as error:
-                    self.inbox.issue(key, type(error).__name__ + ": " + str(error))
-                    failures.append({"task": key, "reason": type(error).__name__})
+        for key, task in self.due_tasks():
+            if completed + len(failures) >= task_limit or time.monotonic() >= deadline:
+                break
+            try:
+                self.task(key, task)
+                completed += 1
+            except Exception as error:
+                self.inbox.issue(key, type(error).__name__ + ": " + str(error))
+                failures.append({"task": key, "reason": type(error).__name__})
         counts = self.inbox.health_counts()
         progress = self.spool.directory / "backup-progress.json"
         last_verified = json.loads(progress.read_text(encoding="utf-8"))["last_actual_verified_backup_at"] if progress.exists() else None
