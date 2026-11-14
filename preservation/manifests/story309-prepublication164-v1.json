@@ -1,0 +1,817 @@
+{
+  "story": 309,
+  "scope": "Prepublication Let164 exact native-PST draft and raw asset backup; no Wiki publication, version timestamp or capture claim",
+  "packet_sha256": "17a36c5581ec4e4a156184f5c8cb7c9c70766881c7b96986fcb1ec522520580d",
+  "restore_receipts": {
+    "schema_version": 1,
+    "status": "EXACT_REMOTE_BLOB_READBACK_VERIFIED",
+    "staging_manifest_sha256": "a2302a3e929809d8f0a4084fffc9f381a01d71782663608b75e8bf5fd8aecfdd",
+    "receipts": [
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (PC Errata 4)",
+          "content_sha256": "88666ad25f982787c26ec3e6b2e41b1850ae76e3f913fcabd765b901a270bb08",
+          "bytes": 5261
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/88/88666ad25f982787c26ec3e6b2e41b1850ae76e3f913fcabd765b901a270bb08.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "88666ad25f982787c26ec3e6b2e41b1850ae76e3f913fcabd765b901a270bb08",
+          "restored_bytes": 5261,
+          "verified_at": "2026-11-14T14:47:48.848817+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Talk:Let The Wookiee Win (PC Errata 4)",
+          "content_sha256": "fe59b5853d99e950e31438a046804c3ba8dc87a0ed8ac341de1044f70d72f406",
+          "bytes": 1776
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/fe/fe59b5853d99e950e31438a046804c3ba8dc87a0ed8ac341de1044f70d72f406.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "fe59b5853d99e950e31438a046804c3ba8dc87a0ed8ac341de1044f70d72f406",
+          "restored_bytes": 1776,
+          "verified_at": "2026-11-14T14:47:49.874761+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (PC Errata 3)",
+          "content_sha256": "77c8c669acf5cb8d8cfb993ce4d8d12428ca4e607be523fe2085484f39cf3e68",
+          "bytes": 5507
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/77/77c8c669acf5cb8d8cfb993ce4d8d12428ca4e607be523fe2085484f39cf3e68.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "77c8c669acf5cb8d8cfb993ce4d8d12428ca4e607be523fe2085484f39cf3e68",
+          "restored_bytes": 5507,
+          "verified_at": "2026-11-14T14:47:50.834677+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Talk:Let The Wookiee Win (PC Errata 3)",
+          "content_sha256": "2c849fe65d797ea565b3f01e5c3dda2e9d8c448862508070079889f688cea52e",
+          "bytes": 1601
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/2c/2c849fe65d797ea565b3f01e5c3dda2e9d8c448862508070079889f688cea52e.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "2c849fe65d797ea565b3f01e5c3dda2e9d8c448862508070079889f688cea52e",
+          "restored_bytes": 1601,
+          "verified_at": "2026-11-14T14:47:51.844091+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (PC Errata 2)",
+          "content_sha256": "45d21b40fd2ee4210d307c441ec9d1d04a6de7c5fbe7140700f9d5e6aa888d1e",
+          "bytes": 5912
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/45/45d21b40fd2ee4210d307c441ec9d1d04a6de7c5fbe7140700f9d5e6aa888d1e.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "45d21b40fd2ee4210d307c441ec9d1d04a6de7c5fbe7140700f9d5e6aa888d1e",
+          "restored_bytes": 5912,
+          "verified_at": "2026-11-14T14:47:52.857870+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Talk:Let The Wookiee Win (PC Errata 2)",
+          "content_sha256": "b1ab9fd4332afba2a623061beda9359c95c0d1ac4fca56c1c787af0d4f4b1cb3",
+          "bytes": 2106
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/b1/b1ab9fd4332afba2a623061beda9359c95c0d1ac4fca56c1c787af0d4f4b1cb3.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "b1ab9fd4332afba2a623061beda9359c95c0d1ac4fca56c1c787af0d4f4b1cb3",
+          "restored_bytes": 2106,
+          "verified_at": "2026-11-14T14:47:53.751771+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (PC Errata)",
+          "content_sha256": "e27d90a12a796f6a410b80625a5b731eb3d95ab135e8599b9776d98149981efc",
+          "bytes": 4823
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/e2/e27d90a12a796f6a410b80625a5b731eb3d95ab135e8599b9776d98149981efc.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "e27d90a12a796f6a410b80625a5b731eb3d95ab135e8599b9776d98149981efc",
+          "restored_bytes": 4823,
+          "verified_at": "2026-11-14T14:47:54.598943+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Talk:Let The Wookiee Win (PC Errata)",
+          "content_sha256": "8a2b39c291d46805fb62505bf164b84ef06323c0976306b425463c03007b1c96",
+          "bytes": 867
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/8a/8a2b39c291d46805fb62505bf164b84ef06323c0976306b425463c03007b1c96.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "8a2b39c291d46805fb62505bf164b84ef06323c0976306b425463c03007b1c96",
+          "restored_bytes": 867,
+          "verified_at": "2026-11-14T14:47:55.681120+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win",
+          "content_sha256": "6bc300baf6a195aa7e6dafaf1b2b30c08eaa1a8e530ca266269af14d860cd2eb",
+          "bytes": 3719
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/6b/6bc300baf6a195aa7e6dafaf1b2b30c08eaa1a8e530ca266269af14d860cd2eb.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "6bc300baf6a195aa7e6dafaf1b2b30c08eaa1a8e530ca266269af14d860cd2eb",
+          "restored_bytes": 3719,
+          "verified_at": "2026-11-14T14:47:56.535169+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (V) (Errata)",
+          "content_sha256": "3be704c54de45d3c6fca559c5e15ed6f45adc8c35572c7d6f2e9b6a5ceba7fcc",
+          "bytes": 5984
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/3b/3be704c54de45d3c6fca559c5e15ed6f45adc8c35572c7d6f2e9b6a5ceba7fcc.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "3be704c54de45d3c6fca559c5e15ed6f45adc8c35572c7d6f2e9b6a5ceba7fcc",
+          "restored_bytes": 5984,
+          "verified_at": "2026-11-14T14:47:57.565234+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let the Wookiee Win (V) (Virtual Block 6) (Errata)",
+          "content_sha256": "e121b4cdee414c434c10529d375bff68060b45778c14d5368a0e1a430ac5f5b2",
+          "bytes": 9774
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/e1/e121b4cdee414c434c10529d375bff68060b45778c14d5368a0e1a430ac5f5b2.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "e121b4cdee414c434c10529d375bff68060b45778c14d5368a0e1a430ac5f5b2",
+          "restored_bytes": 9774,
+          "verified_at": "2026-11-14T14:47:59.822397+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let the Wookiee Win (V) (Virtual Block 6)",
+          "content_sha256": "da37acb1a56ac393e45eea81b4abd5099e0df46babcedd960a75d668baedc548",
+          "bytes": 9616
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/da/da37acb1a56ac393e45eea81b4abd5099e0df46babcedd960a75d668baedc548.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "da37acb1a56ac393e45eea81b4abd5099e0df46babcedd960a75d668baedc548",
+          "restored_bytes": 9616,
+          "verified_at": "2026-11-14T14:48:00.911020+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (Japanese)",
+          "content_sha256": "975db241884247d754811a8905f4de275b5604ca2ada31759129cd9485e94413",
+          "bytes": 4125
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/97/975db241884247d754811a8905f4de275b5604ca2ada31759129cd9485e94413.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "975db241884247d754811a8905f4de275b5604ca2ada31759129cd9485e94413",
+          "restored_bytes": 4125,
+          "verified_at": "2026-11-14T14:48:02.188905+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (Revised)",
+          "content_sha256": "0c982e2f5480218424d575ff58cf1cebee0b86d9fb3a8c87d4ccbb0a72e1000c",
+          "bytes": 3216
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/0c/0c982e2f5480218424d575ff58cf1cebee0b86d9fb3a8c87d4ccbb0a72e1000c.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "0c982e2f5480218424d575ff58cf1cebee0b86d9fb3a8c87d4ccbb0a72e1000c",
+          "restored_bytes": 3216,
+          "verified_at": "2026-11-14T14:48:03.348190+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let the Wookiee Win (V) (Virtual Block 6) (Errata 2)",
+          "content_sha256": "114ea135bb89e46c054df8e31885d3aacba61efd1a065df004d1a077f73cf674",
+          "bytes": 9694
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/11/114ea135bb89e46c054df8e31885d3aacba61efd1a065df004d1a077f73cf674.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "114ea135bb89e46c054df8e31885d3aacba61efd1a065df004d1a077f73cf674",
+          "restored_bytes": 9694,
+          "verified_at": "2026-11-14T14:48:04.603210+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let the Wookiee Win (V) (Virtual Block 6) (Errata 3)",
+          "content_sha256": "3c8f614ea7bedcaabad902176804eb6bc95a0123b9448e6595b680a6d7acdd1c",
+          "bytes": 9568
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/3c/3c8f614ea7bedcaabad902176804eb6bc95a0123b9448e6595b680a6d7acdd1c.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "3c8f614ea7bedcaabad902176804eb6bc95a0123b9448e6595b680a6d7acdd1c",
+          "restored_bytes": 9568,
+          "verified_at": "2026-11-14T14:48:05.811144+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (V)",
+          "content_sha256": "5c2d09e17c8b42ac74d985e94590025758cd55384c3274d3ef70042d6c6346c1",
+          "bytes": 5894
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/5c/5c2d09e17c8b42ac74d985e94590025758cd55384c3274d3ef70042d6c6346c1.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "5c2d09e17c8b42ac74d985e94590025758cd55384c3274d3ef70042d6c6346c1",
+          "restored_bytes": 5894,
+          "verified_at": "2026-11-14T14:48:06.966290+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Card:2 53",
+          "content_sha256": "cda2f34264ff5d1658df3dace297cf39087b3948c6274538325397eca5c218e3",
+          "bytes": 47
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/cd/cda2f34264ff5d1658df3dace297cf39087b3948c6274538325397eca5c218e3.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "cda2f34264ff5d1658df3dace297cf39087b3948c6274538325397eca5c218e3",
+          "restored_bytes": 47,
+          "verified_at": "2026-11-14T14:48:08.054669+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "PC Errata",
+          "content_sha256": "deefafb9292793687fa5fdce83525647d4fafbe6e1a889ef2bb3954967eb7b1b",
+          "bytes": 32043
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/de/deefafb9292793687fa5fdce83525647d4fafbe6e1a889ef2bb3954967eb7b1b.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "deefafb9292793687fa5fdce83525647d4fafbe6e1a889ef2bb3954967eb7b1b",
+          "restored_bytes": 32043,
+          "verified_at": "2026-11-14T14:48:09.256687+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Errata",
+          "content_sha256": "6bb227daabf1040037e969da9b14d5fb9996b36d42a5bf2e31665a0a5ac49beb",
+          "bytes": 291257
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/6b/6bb227daabf1040037e969da9b14d5fb9996b36d42a5bf2e31665a0a5ac49beb.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "6bb227daabf1040037e969da9b14d5fb9996b36d42a5bf2e31665a0a5ac49beb",
+          "restored_bytes": 291257,
+          "verified_at": "2026-11-14T14:48:11.033173+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Players Committee transcription errors",
+          "content_sha256": "f851d0d8904063b506546dff4d0a90f9cf96da1c4ce792ff97ac0467b1acdd37",
+          "bytes": 308216
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/f8/f851d0d8904063b506546dff4d0a90f9cf96da1c4ce792ff97ac0467b1acdd37.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "f851d0d8904063b506546dff4d0a90f9cf96da1c4ce792ff97ac0467b1acdd37",
+          "restored_bytes": 308216,
+          "verified_at": "2026-11-14T14:48:12.575404+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (Glossary 1998)",
+          "content_sha256": "3ede55544699bfcb6fcdcf2ad187d59be1e913598c948932c499987bc07ee1d4",
+          "bytes": 3357
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/3e/3ede55544699bfcb6fcdcf2ad187d59be1e913598c948932c499987bc07ee1d4.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "3ede55544699bfcb6fcdcf2ad187d59be1e913598c948932c499987bc07ee1d4",
+          "restored_bytes": 3357,
+          "verified_at": "2026-11-14T14:48:13.606155+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Talk:Let The Wookiee Win (Glossary 1998)",
+          "content_sha256": "50b0a48f94d8a213065f9396b9959cf256b76a38325407e817dbb58cf16d812d",
+          "bytes": 1460
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/50/50b0a48f94d8a213065f9396b9959cf256b76a38325407e817dbb58cf16d812d.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "50b0a48f94d8a213065f9396b9959cf256b76a38325407e817dbb58cf16d812d",
+          "restored_bytes": 1460,
+          "verified_at": "2026-11-14T14:48:14.613180+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Let The Wookiee Win (Glossary Supplement 2002)",
+          "content_sha256": "34ddcf68eec209e24b6d84f635dea13e4e9452eca7bd0a5faa4bfd184eab445b",
+          "bytes": 3357
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/34/34ddcf68eec209e24b6d84f635dea13e4e9452eca7bd0a5faa4bfd184eab445b.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "34ddcf68eec209e24b6d84f635dea13e4e9452eca7bd0a5faa4bfd184eab445b",
+          "restored_bytes": 3357,
+          "verified_at": "2026-11-14T14:48:15.681366+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "Talk:Let The Wookiee Win (Glossary Supplement 2002)",
+          "content_sha256": "493372409f4eb221d6b952ad45c9fcb23065e4435dc58c0d495d27be7524e3b9",
+          "bytes": 1473
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/49/493372409f4eb221d6b952ad45c9fcb23065e4435dc58c0d495d27be7524e3b9.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "493372409f4eb221d6b952ad45c9fcb23065e4435dc58c0d495d27be7524e3b9",
+          "restored_bytes": 1473,
+          "verified_at": "2026-11-14T14:48:16.773747+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "File:ANH-L-letthewookieewin-PC-June-2017-composed.png",
+          "content_sha256": "930272e7159af53fb00d60248f803730fc356ab000c3cda3559460981d1f6e6b",
+          "bytes": 541
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/93/930272e7159af53fb00d60248f803730fc356ab000c3cda3559460981d1f6e6b.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "930272e7159af53fb00d60248f803730fc356ab000c3cda3559460981d1f6e6b",
+          "restored_bytes": 541,
+          "verified_at": "2026-11-14T14:48:17.807747+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "File:ANH-L-letthewookieewin-errata-hires.webp",
+          "content_sha256": "dd08f76657bf4825bc36396c41163804842bf4064dd44f0e37a121b6b352566f",
+          "bytes": 2176
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/dd/dd08f76657bf4825bc36396c41163804842bf4064dd44f0e37a121b6b352566f.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "dd08f76657bf4825bc36396c41163804842bf4064dd44f0e37a121b6b352566f",
+          "restored_bytes": 2176,
+          "verified_at": "2026-11-14T14:48:18.979688+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "File:ANH-L-letthewookieewin-PC-gallery-20071218114834.gif",
+          "content_sha256": "afbf92cbd37d0aa637b4037ada183dcd8aff45dfc13e8b3fd4c93d224a073dca",
+          "bytes": 698
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/af/afbf92cbd37d0aa637b4037ada183dcd8aff45dfc13e8b3fd4c93d224a073dca.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "afbf92cbd37d0aa637b4037ada183dcd8aff45dfc13e8b3fd4c93d224a073dca",
+          "restored_bytes": 698,
+          "verified_at": "2026-11-14T14:48:20.091237+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "File:ANH-L-letthewookieewin-gallery-and-later-PC-sources.png",
+          "content_sha256": "d1280e18e92f5f24ae6b81e056930b5e1c39b05e3c0ec93b1b71d405a709ae63",
+          "bytes": 447
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/d1/d1280e18e92f5f24ae6b81e056930b5e1c39b05e3c0ec93b1b71d405a709ae63.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "d1280e18e92f5f24ae6b81e056930b5e1c39b05e3c0ec93b1b71d405a709ae63",
+          "restored_bytes": 447,
+          "verified_at": "2026-11-14T14:48:21.275937+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "File:ANH-L-letthewookieewin-Glossary-1998-entry.png",
+          "content_sha256": "43b6ced0d9cca76ddb52ed5400ac25763852ba8533e47e8c76c2a7ea92948ab2",
+          "bytes": 599
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/43/43b6ced0d9cca76ddb52ed5400ac25763852ba8533e47e8c76c2a7ea92948ab2.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "43b6ced0d9cca76ddb52ed5400ac25763852ba8533e47e8c76c2a7ea92948ab2",
+          "restored_bytes": 599,
+          "verified_at": "2026-11-14T14:48:22.372784+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "wiki_draft",
+          "title": "File:ANH-L-letthewookieewin-Glossary-Supplement-2002-entry.png",
+          "content_sha256": "353405ef5a9d740d29c41882752a4b272712edda3895c5a3ad66128b0d9aa43a",
+          "bytes": 624
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/35/353405ef5a9d740d29c41882752a4b272712edda3895c5a3ad66128b0d9aa43a.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "353405ef5a9d740d29c41882752a4b272712edda3895c5a3ad66128b0d9aa43a",
+          "restored_bytes": 624,
+          "verified_at": "2026-11-14T14:48:23.523913+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "source_snapshot",
+          "title": "Unpublished reviewed Wiki asset: File:ANH-L-letthewookieewin-PC-gallery-20071218114834.gif",
+          "content_sha256": "7a3619a72f1c3f1c38501fbcadf0315e23e3755d0f3a71f98b2c120a561fbf56",
+          "bytes": 126834
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/7a/7a3619a72f1c3f1c38501fbcadf0315e23e3755d0f3a71f98b2c120a561fbf56.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "7a3619a72f1c3f1c38501fbcadf0315e23e3755d0f3a71f98b2c120a561fbf56",
+          "restored_bytes": 126834,
+          "verified_at": "2026-11-14T14:48:25.039283+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "source_snapshot",
+          "title": "Unpublished reviewed Wiki asset: File:ANH-L-letthewookieewin-gallery-and-later-PC-sources.png",
+          "content_sha256": "47b6dd747562a2fdc8933625c6e176ca4a9fc68b1b062ab35bad53d4a7f24c44",
+          "bytes": 1207544
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/47/47b6dd747562a2fdc8933625c6e176ca4a9fc68b1b062ab35bad53d4a7f24c44.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "47b6dd747562a2fdc8933625c6e176ca4a9fc68b1b062ab35bad53d4a7f24c44",
+          "restored_bytes": 1207544,
+          "verified_at": "2026-11-14T14:48:26.948690+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "source_snapshot",
+          "title": "Unpublished reviewed Wiki asset: File:ANH-L-letthewookieewin-Glossary-1998-entry.png",
+          "content_sha256": "41d2af2ba674bcb9719eedfed87600ea0a3dfe5a4b595cdbb75a38c248cf41bd",
+          "bytes": 46503
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/41/41d2af2ba674bcb9719eedfed87600ea0a3dfe5a4b595cdbb75a38c248cf41bd.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "41d2af2ba674bcb9719eedfed87600ea0a3dfe5a4b595cdbb75a38c248cf41bd",
+          "restored_bytes": 46503,
+          "verified_at": "2026-11-14T14:48:28.181981+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      },
+      {
+        "schema_version": 1,
+        "subject": {
+          "kind": "source_snapshot",
+          "title": "Unpublished reviewed Wiki asset: File:ANH-L-letthewookieewin-Glossary-Supplement-2002-entry.png",
+          "content_sha256": "22a1115474a0f0bd74c5a179d4b3cd59d0578fa95af0920cb9f569969847fa17",
+          "bytes": 53705
+        },
+        "storage": {
+          "kind": "git",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "commit": "38cd85e1596bdc42d0233f2697531f6f581038be",
+          "path": "preservation/raw/sha256/22/22a1115474a0f0bd74c5a179d4b3cd59d0578fa95af0920cb9f569969847fa17.bin"
+        },
+        "verification": {
+          "status": "verified",
+          "independent": true,
+          "restored_sha256": "22a1115474a0f0bd74c5a179d4b3cd59d0578fa95af0920cb9f569969847fa17",
+          "restored_bytes": 53705,
+          "verified_at": "2026-11-14T14:48:29.545304+00:00",
+          "method": "gh GET immutable Contents JSON + Git Blob JSON/base64; decoded Git SHA-1, SHA-256 and byte count checked"
+        }
+      }
+    ]
+  }
+}
