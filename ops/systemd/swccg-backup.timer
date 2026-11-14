@@ -1,0 +1,8 @@
+[Unit]
+Description=swccg wiki backup (daily + hourly catch-up through 2026-11-17 UTC)
+[Timer]
+OnCalendar=*-*-* 07:15:00 UTC
+OnCalendar=2026-11-14..17 *:00:00 UTC
+Persistent=true
+[Install]
+WantedBy=timers.target

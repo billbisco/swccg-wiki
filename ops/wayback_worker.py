@@ -66,7 +66,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gitsync import commit_and_push, reset_to_origin  # noqa: E402
-from wayback_control import Busy, Control, Paused  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
+from preservation_owner import OwnerAdapter, load_allowed_objects  # noqa: E402
+from wayback_control import Busy, Control, Paused, atomic_json  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
 QUEUE = "ops/wayback/queue.txt"
@@ -1049,6 +1051,40 @@ def reconcile_recovery_probe(control: Control, done: dict, changed: dict, deadli
         control.probe_needs_repair("accepted canary unresolved after24hours")
 
 
+def registry_repair(control: Control, phase: str, error: Exception) -> None:
+    """Persist only metadata; exception messages can contain private URLs/keys."""
+    repair = {"schema": 1, "status": "open", "repair_issue": 410,
+              "owner": "server-wayback-owner", "updated_at": iso(now()),
+              "continuation": "existing owner retries this phase on its next eligible run",
+              "phase": phase, "error_type": type(error).__name__}
+    atomic_json(control.directory / "registry-repair.json", repair)
+
+
+def registry_recovered(control: Control, phase: str) -> None:
+    path = control.directory / "registry-repair.json"
+    if path.exists():
+        repair = json.loads(path.read_text(encoding="utf-8"))
+        if repair.get("phase") == phase and repair.get("status") == "open":
+            repair.update(status="resolved", updated_at=iso(now()))
+            atomic_json(path, repair)
+
+
+def prune_legacy_snapshots(control: Control, done: dict) -> None:
+    if getattr(control, "registry_prepare_failed", False):
+        return
+    try:
+        protected = {snapshot_file(url) for url in control.registry_adapter.protected_snapshot_urls()}
+        protected.discard(None)
+        candidates = {url: entry for url, entry in done.items()
+                      if snapshot_file(url) not in protected}
+    except Exception as error:
+        # An incomplete inventory must never authorize even legacy deletions.
+        registry_repair(control, "prune-inventory", error)
+        return
+    registry_recovered(control, "prune-inventory")
+    prune_verified_snapshots(candidates)
+
+
 def _run(repo: Path, minutes: float, control: Control) -> None:
     reset_to_origin(repo)
     urls, done = load(repo)
@@ -1063,6 +1099,24 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
 
     # Recovery is not stranded behind the ordinary2h pending-confirm cutoff.
     reconcile_recovery_probe(control, done, changed, deadline)
+    control.registry_deadline = deadline
+    control.registry_prepare_failed = False
+    try:
+        adapter = OwnerAdapter(sys.modules[__name__], repo, control,
+                               load_allowed_objects(control.directory / "registry"))
+        control.registry_adapter = adapter
+        prepared = adapter.prepare(deadline)
+        done.update(prepared["ledger_updates"])
+        changed.update(prepared["ledger_updates"])
+        registry_recovered(control, "prepare")
+    except Paused:
+        raise
+    except Exception as error:
+        control.registry_prepare_failed = True
+        registry_repair(control, "prepare", error)
+    control.checkpoint(done, control.initial_done)
+    # Queue appends may reset the shared checkout; keep our journal-backed ledger.
+    urls = load(repo)[0]
 
     # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
     confirm_urls = [url for url in pending_confirm_urls(done) if url != control.state.get("probe_url")]
@@ -1100,6 +1154,9 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
             print("STALE", e["status"], url, flush=True)
             if e["status"] == "failed":
                 e = dict(e, tries=0)
+        registry_epoch = {field: e[field] for field in
+                          ("registered_payload_sha256", "registry_job_id", "previous_capture", "recapture")
+                          if e and field in e}
         tries = (e or {}).get("tries", 0) + 1
         try:
             control.submitting(url)
@@ -1108,6 +1165,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
                 if j.get("recent"):
                     e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
                          "note": "already archived within 30d"}
+                    e.update(registry_epoch)
                     print("RECENT", url, j["recent"], flush=True)
                     try_verify(url, e)
                     done[url] = e
@@ -1136,6 +1194,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
             errors_in_row += 1
             print("ERROR", url, str(ex)[:120], flush=True)
+        e.update(registry_epoch)
         done[url] = e
         changed[url] = e
         control.checkpoint(done, control.initial_done)
@@ -1180,7 +1239,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     #    fresh strict check; entries that fail it are demoted to unverified and pushed
     DEMOTED.clear()
     DeleteBudget.left = DELETE_CHECKS_PER_RUN
-    prune_verified_snapshots(done)
+    prune_legacy_snapshots(control, done)
     changed.update(DEMOTED)
 
     control.checkpoint(done, control.initial_done)
@@ -1247,12 +1306,35 @@ def run(repo: Path, minutes: float) -> None:
                 # Keep the journal even if Git or this process is unavailable.
                 raise
             finally:
+                finish_error = None
+                adapter = getattr(control, "registry_adapter", None)
+                if adapter is not None:
+                    try:
+                        adapter.finish(control.registry_deadline)
+                        registry_recovered(control, "finish")
+                    except Exception as error:
+                        finish_error = error
+                        # Recreate/preserve acknowledged-job recovery even if Git saved.
+                        try:
+                            control.checkpoint(control.done, control.initial_done)
+                        except Exception as journal_error:
+                            print("REGISTRY-JOURNAL-ERR", type(journal_error).__name__, flush=True)
+                        try:
+                            registry_repair(control, "finish", error)
+                        except Exception as repair_error:
+                            # Keep the primary pause/failure even if storage is broken.
+                            print("REGISTRY-REPAIR-ERR", type(repair_error).__name__, flush=True)
                 ACTIVE_CONTROL = None
                 previously_verified = {u for u,e in control.initial_done.items()
                                        if e.get("status") == "verified"}
                 control.reconcile(control.done, previously_verified)
+                primary_completed = outcome == "completed"
+                if finish_error is not None and primary_completed:
+                    outcome = "paused" if isinstance(finish_error, Paused) else "failed"
                 health = control.health(control.done, outcome)
                 print("WAYBACK-HEALTH", json.dumps(health, sort_keys=True), flush=True)
+                if finish_error is not None and primary_completed and not isinstance(finish_error, Paused):
+                    raise finish_error
     except Busy:
         print("WAYBACK-BUSY existing owner active; no network request made", flush=True)
 

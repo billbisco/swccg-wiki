@@ -8,6 +8,7 @@ sys.path.insert(0,'work/wiki-tools');from style_lint import lint
 root=Path(__file__).parent;mode=sys.argv[1];inventory=json.loads((root/'inventory.json').read_bytes());packet=json.loads((root/'packet.json').read_bytes())
 def check_tables(title,html):
     soup=BeautifulSoup(html,'html.parser');assert not soup.select('.mw-ext-cite-error'),title
+    assert soup.select_one('#Foil_cards') and soup.select_one('#Possible_foils'),(title,'Foil heading or old anchor absent')
     tables=[t for t in soup.select('table.card-thumbs') if t.find('caption') and 'Side foils (' in t.find('caption').get_text()]
     assert len(tables)==2,(title,len(tables));actual=[];primary=[]
     for table in tables:
@@ -42,6 +43,8 @@ titles=[r['title'] for r in packet];heads={}
 for i in range(0,len(titles),25):
     response=requests.get('https://wiki.swccg.com/api.php',params=dict(action='query',format='json',formatversion=2,titles='|'.join(titles[i:i+25]),prop='revisions|flagged',rvprop='ids|timestamp|content',rvslots='main'),timeout=60);response.raise_for_status();heads.update({h['title']:h for h in response.json()['query']['pages']})
 receipts={r['title']:r for r in map(json.loads,(root/'phase-receipts.jsonl').read_text(encoding='utf8').splitlines())};report=[]
+if (root/'heading-correction-receipts.jsonl').exists():receipts.update({r['title']:r for r in map(json.loads,(root/'heading-correction-receipts.jsonl').read_text(encoding='utf8').splitlines())})
+if (root/'rotation-correction-receipts.jsonl').exists():receipts.update({r['title']:r for r in map(json.loads,(root/'rotation-correction-receipts.jsonl').read_text(encoding='utf8').splitlines())})
 for row in packet:
     title=row['title']
     if title not in receipts:continue

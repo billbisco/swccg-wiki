@@ -1,0 +1,17 @@
+# Offline inventory and independent readback contribution to #382
+
+Bill requested continuation of offline backups/image inventory with Archive.org wholly paused, plus a reminder to reassess uploads even without an email response. Shared skills refreshed to7ab088c. This contribution does not own or restart the coordinating chat's full original downloader. Shared SQLite and cache are read-only here.
+
+At2026-11-14T17:33:05Z:36617 raw image-version rows,31379 current image filenames,5237 rows flagged historical,2843 unused current images;11109 non-image version rows tracked separately. Raw current image rows total31380 because one same-upload URL alias candidate is flagged current twice. Keep both URL mappings; reconcile before claiming distinct upload-event or historical totals. Initial inventory is not a final upload/replacement delta.
+
+The full raw image-version mapping is compressed in inventory-checkpoint.jsonl.gz, with title/original URL/upload identity/MIME/size/dimensions/MediaWiki SHA1/usage count/File-description revision and available local SHA256/backup status. Exact export hashes and counts are in offline-audit.json. Existing cache objects for all214 backed-up rows were independently rehashed against recorded SHA256 and source SHA1/size:101646395bytes. No mismatch. Three isolated local GIF/JPEG/PNG restore samples decode and match. Sample payloads remain on the PC; they are recoverable from the referenced existing cache, not a new Archive.org recovery claim.
+
+Three current originals (Imperial Justice and the ABR pair) were separately restored from their exact immutable approved GitHub image backups, decoded and reconciled to the #382 ledger using original URL, timestamp, SHA1 and size. These receipts are NOT imported into the shared ledger by this read-only contribution; the coordinating owner can reconcile them without duplicate downloads.
+
+One candidate: File:Premiere-D-5d6ra7-decipher-archive.gif has normal/archive-path rows with identical upload timestamp2026-09-25T03:41:04Z, SHA1 and77010bytes. No live history refresh or ledger correction was performed; see github-restore-and-alias-reconciliation.json.
+
+No Archive.org requests of any kind were made. Archive-verified ledger count remains199. No downloader, saver, verifier or scheduler for preservation was started; no shared DB/cache/provider controls changed. The existing PC bulk job is owned by the coordinating chat and separately supervised there. PC free space after this audit349958483968bytes (~326GiB), with20GiB reserve; isolated sample330410bytes under64MiB cap. Total source inventory14.56GB; SHA1/size grouping indicates14.42GB distinct candidate payloads, but this is an inventory estimate, not completed local backups.
+
+Reminder created through Codex app: reassess-archive-org-upload-hold; next reassessment approximately17November2026 at13:30Caracas.72-hour interval, instructed to notify once and pause itself. It asks Bill whether to authorize a controlled retry even without an email response; it does NOT lift the hold, contact Archive.org or restart uploads. Elapsed time does not fix a401 authentication rejection.
+
+Remaining full-story work: complete ongoing local original pass, final metadata/version/alias delta, import independently verified backup mappings through the owner, then external capture/recovery/File Preservation checks only after explicit resumption. This is bounded evidence, not AC1-AC7 completion.

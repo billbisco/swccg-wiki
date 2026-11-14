@@ -3,6 +3,7 @@ import collections,hashlib,json,re,sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 import requests
+from images import rotated
 sys.path.insert(0,'work/japanese-infobox287/vendor');import mwparserfromhell as mw
 sys.path.insert(0,'work/wiki-tools');from style_lint import lint
 root=Path(__file__).parent;manifest=json.loads(Path('work/reflections-foils/manifest.json').read_bytes())
@@ -52,8 +53,7 @@ def image_cell(row,t):
     if not filename or not info:return '{{Card scan request|card='+title+'}}',False
     alt=row['label']+', '+row['product']+' foil, '+row['language']
     if val(t,'image_rotation')=='left':
-        width=round(200*info['width']/info['height'])
-        image=f'<div style="position:relative;width:200px;height:{width}px;"><div style="position:absolute;left:0;top:0;width:{width}px;transform:translateY({width}px) rotate(-90deg);transform-origin:0 0;">[[File:{filename}|{width}px|link={title}|alt={alt}]]</div></div>'
+        image=rotated(filename,title,alt,info)
     else:image=f'[[File:{filename}|200px|link={title}|alt={alt}]]'
     return image,True
 add(template,marker,'Add an accessible missing-card-scan invitation (#430)')
@@ -89,7 +89,7 @@ for product in products:
     other=old[:match.start()]+old[match.end():];exclusive=''
     exclusive_match=re.search(r'^== Card list ==\n.*?(?=^== [^=]|\Z)',other,re.M|re.S)
     if exclusive_match:
-        original=exclusive_match.group();exclusive=original.replace('== Card list ==','== Exclusive cards ==',1)
+        original=exclusive_match.group();exclusive=original.replace('== Card list ==','== Exclusive cards ==',1)+'\n\n'
         other=other[:exclusive_match.start()]+other[exclusive_match.end():]
     insertion=match.start()
     new=other[:insertion]+exclusive+foil+other[insertion:]
@@ -108,4 +108,4 @@ for product in products:
 for name,data in [('packet.json',packet),('inventory.json',inventory),('conservation.json',proof),('article-heads.json',heads),('image-heads.json',files)]:
     (root/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
 for row in packet:(root/('draft-'+row['title'].replace(':','-').replace('/','-')+'.wiki')).write_text(row['text'],encoding='utf8')
-print(len(inventory),'exact foil rows;',sum(not r['image_available'] for r in inventory),'missing images;',len(packet),'guarded pages; strict lint 0')
+print(len(inventory),'exact foil rows;',sum(not r['image_available'] for r in inventory),'missing images;',len(packet),'guarded pages; changed-content strict lint 0; prior Talk archive flags recorded')

@@ -123,3 +123,13 @@ citation-inventory counts. Metadata scans are bounded to 50,000 entries/two
 seconds each; partial counts are explicitly marked as lower bounds. Discovery,
 usage-only work, cached receipt reuse and process success do not manufacture
 verified-backup progress or claim the historical backlog completed.
+
+## Fair progress and remaining citation work (14 November 2026)
+
+Each bounded processing pass interleaves four exact revisions, two original-history tasks, one usage task and one page-history task. Empty kinds are skipped incrementally. A large edit backlog cannot consume every slot before an original or projection-history retry receives work; the existing task, time and byte budgets still apply, and failures retain their own backoff.
+
+Source-inventory markers and health explicitly name the Story410 implementation owner and link the shared ticket. They state that an automatic citation consumer is not implemented. The current101 markers remain pending semantic/source review and per-source backup/registration; this producer does not manufacture checked citation or capture receipts.
+
+The actual14November deployed producer completed100tasks in11m53s with no new task/discovery failure. A separate two-task smoke restored exact page/image bytes and checked compatible flat mirrors. The run left5739durable tasks and one earlier peer-projection retry; these are backlog, not a daily arrival measurement or proof of unprotected articles.
+
+Bill approved hourly backups after root recommended temporary catch-up. The existing timer retains daily07:15UTC and adds hourly calendar events through17November2026UTC, then automatically returns to daily scheduling. Limits, service, deploy keys, mounted work volume and archive authentication circuit stay unchanged. The source timer is recorded in ops/systemd/swccg-backup.timer; its actual installation and monitored invocation are recorded on Story410. No application Git update implicitly installs or changes systemd configuration.
