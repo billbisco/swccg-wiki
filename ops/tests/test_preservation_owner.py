@@ -9,6 +9,7 @@ import unittest
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT / "tools"), str(ROOT / "ops"), str(ROOT / "tests")]
@@ -122,6 +123,48 @@ class OwnerTests(unittest.TestCase):
         result = self.adapter(stage_budget=1, readback=lambda *a, **k: self.fail("overbudget restore")).prepare(time.monotonic() + 300)
         self.assertEqual(0, result["prepared"])
         self.assertEqual("awaiting_stage", export_records(self.registry)["objects"][0]["state"])
+
+    def test_default_work_refuses_unmounted_volume_before_restore(self):
+        self.add(ready=False, snapshot=True)
+        adapter = OwnerAdapter(self.worker, self.repo, self.control, self.allowed,
+                               readback=lambda *a, **k: self.fail("unmounted restore"))
+        with patch("preservation_owner.os.path.ismount", return_value=False):
+            result = adapter.prepare(time.monotonic() + 300)
+        self.assertEqual(0, result["prepared"])
+        self.assertIn("refusing root-disk fallback", result["observations"][0]["reason"])
+        self.assertEqual([], self.commits)
+
+    def test_private_restore_is_removed_when_provider_pauses(self):
+        request, _ = self.add(ready=False, snapshot=True)
+        def restore(subject, storage, *, restore_to):
+            restore_to.write_bytes(self.payload)
+            self.control.state["mode"] = "auth_blocked"
+        result = self.adapter(readback=restore).prepare(time.monotonic() + 300)
+        self.assertEqual(0, result["prepared"])
+        self.assertFalse((self.root / "work" / (request["source"]["sha256"] + ".restored")).exists())
+        self.assertFalse(self.worker.snapshot_file(request["source"]["url"]).exists())
+
+    def test_private_restore_is_removed_when_deadline_expires(self):
+        request, _ = self.add(ready=False, snapshot=True)
+        late = [False]
+        def restore(subject, storage, *, restore_to):
+            restore_to.write_bytes(self.payload)
+            late[0] = True
+        with patch("preservation_owner.time.monotonic", side_effect=lambda: 950 if late[0] else 0):
+            result = self.adapter(readback=restore).prepare(1000)
+        self.assertEqual(0, result["prepared"])
+        self.assertFalse((self.root / "work" / (request["source"]["sha256"] + ".restored")).exists())
+        self.assertFalse(self.worker.snapshot_file(request["source"]["url"]).exists())
+
+    def test_failed_readback_removes_partial_private_restore(self):
+        request, _ = self.add(ready=False, snapshot=True)
+        def restore(subject, storage, *, restore_to):
+            restore_to.write_bytes(b"incomplete")
+            raise ValueError("injected independent restore failure")
+        result = self.adapter(readback=restore).prepare(time.monotonic() + 300)
+        self.assertEqual(0, result["prepared"])
+        self.assertFalse((self.root / "work" / (request["source"]["sha256"] + ".restored")).exists())
+        self.assertEqual([], self.commits)
 
     def test_public_payload_mismatch_is_durable_and_never_queued(self):
         request, _ = self.add()

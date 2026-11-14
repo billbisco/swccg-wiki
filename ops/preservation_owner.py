@@ -22,6 +22,7 @@ from preservation_owner_receipts import load_event, store_event
 PUBLIC_STAGE_BUDGET = 32 * 1024 * 1024
 STAGE_SCAN_LIMIT = 50000
 DISK_RESERVE = 2 * 1024 * 1024 * 1024
+DEFAULT_WORK = Path("/mnt/HC_Volume_107153504/work/swccg-preservation-owner")
 
 
 def load_allowed_objects(registry: Path) -> set[str]:
@@ -44,7 +45,7 @@ def load_allowed_objects(registry: Path) -> set[str]:
 
 class OwnerAdapter:
     def __init__(self, worker, repository: Path, control, allowed_objects: set[str], *,
-                 work=Path("/mnt/HC_Volume_107153504/work/swccg-preservation-owner"),
+                 work=DEFAULT_WORK,
                  stage_budget=PUBLIC_STAGE_BUDGET, limit=2, readback=independent_receipt):
         self.worker, self.repository, self.control = worker, repository, control
         if getattr(worker, "ACTIVE_CONTROL", None) is not control or not getattr(control, "lock", None) or control.lock.closed:
@@ -116,6 +117,8 @@ class OwnerAdapter:
             if hashes["sha256"] != source["sha256"] or hashes["bytes"] != source["bytes"]:
                 raise ValueError("existing public target has different bytes; do not overwrite peer staging")
         else:
+            if self.work == DEFAULT_WORK and not os.path.ismount(DEFAULT_WORK.parents[1]):
+                raise ValueError("approved persistent owner volume is not mounted; refusing root-disk fallback")
             if self._stage_usage() + source["bytes"] > self.stage_budget:
                 return False
             if time.monotonic() > deadline - 90:
@@ -127,18 +130,19 @@ class OwnerAdapter:
             backup = source_receipt(request)
             # The original subject may be a page; this is the separately
             # validated source-payload receipt, never the wikitext receipt.
-            self.readback(backup["subject"], backup["storage"], restore_to=private)
-            hashes = payload_hashes(private)
-            if hashes["sha256"] != source["sha256"] or hashes["bytes"] != source["bytes"]:
-                raise ValueError("restored source differs from its approved capture payload")
-            if not self.healthy() or time.monotonic() > deadline - 60:
-                return False
-            target.parent.mkdir(parents=True, exist_ok=True)
-            # Source and public paths may live on separate volumes. Publish a
-            # fully fsynced sibling atomically without overwriting another owner.
-            temporary = target.with_name("." + target.name + "." + source["sha256"] + ".part")
-            temporary.unlink(missing_ok=True)  # only this exact owner/job's crash partial
+            temporary = None
             try:
+                self.readback(backup["subject"], backup["storage"], restore_to=private)
+                hashes = payload_hashes(private)
+                if hashes["sha256"] != source["sha256"] or hashes["bytes"] != source["bytes"]:
+                    raise ValueError("restored source differs from its approved capture payload")
+                if not self.healthy() or time.monotonic() > deadline - 60:
+                    return False
+                target.parent.mkdir(parents=True, exist_ok=True)
+                # Publish a fully fsynced sibling across volumes without
+                # overwriting peer staging. Cleanup also covers late restores.
+                temporary = target.with_name("." + target.name + "." + source["sha256"] + ".part")
+                temporary.unlink(missing_ok=True)
                 with private.open("rb") as original, temporary.open("xb") as output:
                     shutil.copyfileobj(original, output, 128 * 1024)
                     output.flush()
@@ -146,7 +150,8 @@ class OwnerAdapter:
                 os.chmod(temporary, 0o644)
                 os.link(temporary, target)
             finally:
-                temporary.unlink(missing_ok=True)
+                if temporary is not None:
+                    temporary.unlink(missing_ok=True)
                 private.unlink(missing_ok=True)
         readiness = {"ready": True, "reason": "owner restored the independently backed exact approved snapshot",
                      "stage_bytes": source["bytes"]}

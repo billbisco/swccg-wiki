@@ -65,6 +65,11 @@ and need no new public stage. Unrecognized private representations remain
 pending, rather than inventing a capture target. Queue appends preserve order
 and comments through the shared locked Git callback.
 
+The default restore work path refuses a missing persistent mount before creating
+directories or restoring bytes. Each owned private restored copy is removed on
+success, restore/hash error, provider pause or expired staging deadline; a late
+restore cannot accumulate outside the public-stage budget.
+
 Registration/queued intent is not submission. Owner receipts report an actual
 accepted job ID separately. Verified means strict indexed replay plus a whole
 raw SHA-256/byte-count match to the registered payload; a text-similarity
