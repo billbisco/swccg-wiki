@@ -1,0 +1,9 @@
+import b2common as base
+base.B=base.ROOT/'settings-correction';base.B.mkdir(exist_ok=True);base.P=base.B;base.lib.P=base.B
+from b2common import *
+def gate(phase,pages,registry,proofpin):
+ export=phase+'-registry-export.json';save(export,registry['export']);path='evidence/443/settings-correction/'+export;rp=pin('billbisco/swccg-wiki',phase+'-registry',{path:(B/export).read_bytes()});evidence={'path':proofpin['repository']+'/blob/'+proofpin['commit']+'/authoring/pilots/443/settings-correction/source-accuracy.json','sha256':sha((B/'source-accuracy.json').read_bytes())}
+ manifest={'schema_version':1,'approval_scope':{'ticket':443,'approval':'Bill rejected the above-article default form and requested a settings-page/tab treatment; routine correction, preview, backup and publication authorized'},'registry_export':{'path':export,'sha256':sha((B/export).read_bytes()),'storage':{'kind':'git','repository':rp['repository'],'commit':rp['commit'],'path':path}},'evidence_files':[{'uri':evidence['path'],'sha256':evidence['sha256'],'path':'source-accuracy.json'}],'pages':pages};save(phase+'-manifest.json',manifest);mh=sha((B/(phase+'-manifest.json')).read_bytes());save(phase+'-approval.json',{'approved':True,'manifest_sha256':mh,'scope':'User-directed settings placement correction; Archive.org uploads held'})
+ for row in read('plan.json'):
+  r=subprocess.run(['python',str(ROOT/'source/authoring/style_lint.py'),str(B/'drafts'/row['file']),'--title',row['title'],'--publication-manifest',str(B/(phase+'-manifest.json')),'--approved-manifest-sha256',mh,'--report-json',str(B/(phase+'-'+row['file']+'.report.json'))],capture_output=True);(B/(phase+'-'+row['file']+'.log')).write_bytes(r.stdout+r.stderr);assert r.returncode==0,(r.stdout+r.stderr).decode(errors='replace')[-1500:]
+ print(json.dumps({'gates':'PASS','pages':len(pages)}),flush=True)

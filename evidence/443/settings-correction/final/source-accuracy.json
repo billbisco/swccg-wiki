@@ -1,0 +1,8 @@
+{
+  "ticket": 443,
+  "user_correction": "Saved default belongs on settings page; no large controls in article reading space; a tab after Discussion is acceptable",
+  "implementation": "Dedicated Display settings project page; native localized after-Discussion tab; explicit config flag plus placeholder required for default form; account and guest storage keys preserved; per-card controls unchanged",
+  "checks": "18 behavior tests pass including article form absence, dedicated target placement, guest navigation persistence and failures; PHP/core hook and live browser checks follow deployment",
+  "archive_policy": "Reading/downloads allowed; uploads/Save Page Now paused",
+  "card_text_image_versions_changed": false
+}

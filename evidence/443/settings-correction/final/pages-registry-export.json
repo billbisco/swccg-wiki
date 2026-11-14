@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "subject": {
+        "bytes": 3647,
+        "content_sha256": "45f130fdac3416b2e3c3e3349ba1cb86e0e24c4ec3f8abaf3dff41cc4ec5e0b7",
+        "kind": "wiki_draft",
+        "title": "SWCCG Wiki talk:Samples/Original Virtual card images"
+      },
+      "source": {
+        "url": "https://github.com/swccg-guild/work/issues/443",
+        "sha256": "8a27e78446704d7e15782d65eef37a80255ddb1b2e4be508305729fd89fa1dc6",
+        "bytes": 18192,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/2fa3855ce881b053ea9136652f4006b01b6ecc50/authoring/pilots/443/settings-correction/source-accuracy.json",
+          "sha256": "ae1a8e2dccdd6904213bdfcd88cae5285cabdb0540a80f178aa58832604eecb7"
+        }
+      },
+      "readiness": {
+        "ready": true,
+        "reason": "Exact source/version and independent GitHub readback checked; Archive.org uploads and Save Page Now remain paused; reading/downloading allowed",
+        "stage_bytes": 0
+      },
+      "owner": "server-wayback-owner",
+      "continuation": "Story443: Bill explicitly allows Archive.org reads/downloads. Keep uploads, Save Page Now and saver/timer restarts paused. Existing central owner completes original-image replay verification and File Preservation links under the applicable read policy; submits preservation writes only after explicit resumption. No client staging/promotion.",
+      "approval_scope": {
+        "approval": "Bill approved the remaining nine OVS1 cards with exact text checks and repaired primary source references; viewing/downloading Archive.org explicitly allowed; preservation uploads remain paused",
+        "ticket": 443
+      },
+      "object_id": "ad96d70771ffe817e27e0c652291ac3e4046b152c2d30d3820b3807e82dbe635",
+      "subject_id": "012fcd6d2f3886b55e27318c4b8414ac8b5ab5800ade7742d1913c86952e869f",
+      "job_id": "payload:8a27e78446704d7e15782d65eef37a80255ddb1b2e4be508305729fd89fa1dc6",
+      "request_id": "db9d45d5febaaacf56c90230e5b0b14dce4437a59ed47bccaea4972f8a256405",
+      "generation": 0,
+      "record_sha256": "b97d29516a12476a77abc9093e34d4fa5cca6de57c0e2239f181effc63410a85",
+      "record": "requests/8a27e78446704d7e15782d65eef37a80255ddb1b2e4be508305729fd89fa1dc6/ad96d70771ffe817e27e0c652291ac3e4046b152c2d30d3820b3807e82dbe635/db9d45d5febaaacf56c90230e5b0b14dce4437a59ed47bccaea4972f8a256405.json",
+      "state": "ready",
+      "reason": "Exact source/version and independent GitHub readback checked; Archive.org uploads and Save Page Now remain paused; reading/downloading allowed",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "2fa3855ce881b053ea9136652f4006b01b6ecc50",
+          "kind": "git",
+          "path": "authoring/pilots/443/settings-correction/drafts/talk-hub.wiki",
+          "repository": "https://github.com/billbisco/swccg-wiki"
+        },
+        "subject": {
+          "bytes": 3647,
+          "content_sha256": "45f130fdac3416b2e3c3e3349ba1cb86e0e24c4ec3f8abaf3dff41cc4ec5e0b7",
+          "kind": "wiki_draft",
+          "title": "SWCCG Wiki talk:Samples/Original Virtual card images"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 3647,
+          "restored_sha256": "45f130fdac3416b2e3c3e3349ba1cb86e0e24c4ec3f8abaf3dff41cc4ec5e0b7",
+          "status": "verified",
+          "verified_at": "2026-11-14T23:38:27.987695+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "2fa3855ce881b053ea9136652f4006b01b6ecc50",
+          "kind": "git",
+          "path": "authoring/pilots/443/settings-correction/issue.json",
+          "repository": "https://github.com/billbisco/swccg-wiki"
+        },
+        "subject": {
+          "bytes": 18192,
+          "content_sha256": "8a27e78446704d7e15782d65eef37a80255ddb1b2e4be508305729fd89fa1dc6",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccg-guild/work/issues/443",
+          "title": "https://github.com/swccg-guild/work/issues/443"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 18192,
+          "restored_sha256": "8a27e78446704d7e15782d65eef37a80255ddb1b2e4be508305729fd89fa1dc6",
+          "status": "verified",
+          "verified_at": "2026-11-14T23:38:27.987695+00:00"
+        }
+      }
+    }
+  ],
+  "submission_owner": "server-wayback-owner"
+}
