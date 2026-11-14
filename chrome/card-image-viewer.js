@@ -19,7 +19,8 @@
     var selected = options.find(function (r) { return r.kind === preference(preferred); }) || options[0];
     var original = options.find(function (r) { return r.kind === 'original'; });
     var remaster = options.find(function (r) { return r.kind === 'remastered'; });
-    return { selected: selected, pair: !!(original && remaster && original.file !== remaster.file) };
+    return { selected: selected, pair: !!(original && remaster && original.file !== remaster.file &&
+      !(original.sha256 && original.sha256 === remaster.sha256)) };
   }
   function start(win) {
     if (win.swccgCardImages) { win.swccgCardImages.initialize(); return; }
