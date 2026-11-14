@@ -34,13 +34,16 @@ for row in rows:
             section=row.get('section',0)
             if section is not None:
                 args['section']=section
-                lead=call(action='query',titles=title,prop='revisions',rvprop='content',rvslots='main',rvsection=section)['query']['pages'][0]['revisions'][0]['slots']['main']['content']
-                if 'before_section_sha256' in row:assert hashlib.sha256(lead.encode()).hexdigest()==row['before_section_sha256']
-                else:assert section==0 and lead==old,(title,'Need a section-scoped packet')
+                if section=='new':args['sectiontitle']=row['sectiontitle']
+                else:
+                    lead=call(action='query',titles=title,prop='revisions',rvprop='content',rvslots='main',rvsection=section)['query']['pages'][0]['revisions'][0]['slots']['main']['content']
+                    if 'before_section_sha256' in row:assert hashlib.sha256(lead.encode()).hexdigest()==row['before_section_sha256']
+                    else:assert section==0 and lead==old,(title,'Need a section-scoped packet')
             args.update(nocreate=1,baserevid=rev['revid'],basetimestamp=rev['timestamp'])
             edit=call(True,**args)['edit'];assert edit['result']=='Success';revid=edit['newrevid']
     reviewable=page.get('ns',0)%2==0
     if reviewable:assert 'review' in call(True,action='review',revid=revid,flag_accuracy=1,comment='Verified historical Reflections foil publication and sources (#381)',assertuser=BOT,token=csrf,maxlag=5)
+    call(True,action='purge',titles=title,forcelinkupdate=1)
     final=fetch(title);rid,text=current(final);assert rid==revid,title
     assert equivalent(row,text),title
     print(json.dumps(dict(title=title,revid=revid,pageid=final['pageid'],sha256=hashlib.sha256(text.encode()).hexdigest(),reviewed=True if reviewable else None,review_status='reviewed' if reviewable else 'not applicable: talk namespace')),flush=True)

@@ -4,7 +4,7 @@ from pathlib import Path
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 root=Path(__file__).parent;start=int(sys.argv[1]) if len(sys.argv)>1 else 0;count=int(sys.argv[2]) if len(sys.argv)>2 else 40
-rows=json.loads((root/'swca-requests.json').read_bytes())[start:start+count]
+rows=[r for r in json.loads((root/'swca-requests.json').read_bytes()) if not (root/'source-html'/(r['name']+'.html')).exists()][start:start+count]
 code='ROWS='+repr(rows)+'\n'+'''
 import base64,json,re,urllib.request,uuid
 from pathlib import Path

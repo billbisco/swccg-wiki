@@ -2,7 +2,7 @@
 import json,os,subprocess,sys
 from pathlib import Path
 root=Path(__file__).parent;mode=sys.argv[1]
-repo={'wiki':'work/wiki-source','evidence':'work/japanese-preservation/evidence-repo','images':'work/japanese-files-backup.git'}[mode]
+repo={'wiki':'work/wiki-source','evidence':'work/japanese-preservation/evidence-repo','images':'work/japanese-files-backup.git','sources':'work/japanese-files-backup.git'}[mode]
 branch='codex/reflections-foil-articles-381' if mode=='wiki' else 'main'
 env=dict(os.environ,GIT_INDEX_FILE=str((root/(mode+'.index')).resolve()),GIT_NO_LAZY_FETCH='1')
 def git(*args,data=None):
@@ -15,11 +15,14 @@ if mode=='wiki':
     git('fetch','origin','main');base=git('rev-parse','FETCH_HEAD').decode().strip()
     if base!=parent:parents.append(base)
 files={}
-if mode=='images':
+if mode in ['images','sources']:
     import hashlib
-    for r in json.loads((root/'uploaded-images.json').read_bytes()):
+    records=json.loads((root/'uploaded-images.json').read_bytes()) if mode=='images' else json.loads((root/'psa-originals.json').read_bytes())+list(map(json.loads,(root/'swca-originals-results.jsonl').read_text().splitlines()))
+    for r in records:
+        if 'local_file' not in r:continue
         binary=(root/r['local_file']).read_bytes();assert hashlib.sha256(binary).hexdigest()==r['sha256']
-        files['files/'+r['name']]=binary
+        path='files/'+r['name'] if mode=='images' else 'sources/381/'+r['local_file'].replace('\\','/')
+        files[path]=binary
 else:
     prefix='authoring/reflections_foils381/work/reflections-foils/' if mode=='wiki' else 'evidence/381/'
     for p in root.iterdir():
@@ -38,6 +41,29 @@ else:
                 path=index.get(title,'pages/'+wiki_fname(title));assert not any(t!=title and q.casefold()==path.casefold() for t,q in index.items())
                 index[title]=path;files[path]=(p['revisions'][0]['slots']['main']['content'].rstrip()+'\n').encode()
             files['pages/INDEX.tsv']=''.join(t+'\t'+p+'\n' for t,p in sorted(index.items(),key=lambda x:(x[0].casefold(),x[0]))).encode()
+            from datetime import datetime,timezone
+            now=datetime.now(timezone.utc).isoformat();done=json.loads(git('show',base+':ops/wayback/done.json'));queue=git('show',base+':ops/wayback/queue.txt').decode().splitlines()
+            captures=[]
+            for name in ['first-preservation.json','old-primary-preservation.json']:
+                if (root/name).exists():
+                    r=json.loads((root/name).read_bytes())
+                    if r.get('verified'):captures.append(r)
+            if (root/'first-image-captures.jsonl').exists():
+                latest={r['url']:r for r in map(json.loads,(root/'first-image-captures.jsonl').read_text().splitlines())}
+                captures.extend(r for r in latest.values() if r.get('verified'))
+            for r in captures:
+                verify=dict(method='sha256',sha256=r['sha256'],bytes=r.get('bytes',r.get('size')),at=now)
+                entry=dict(status='verified',capture=r['capture'],last=now,verify=verify,note='Exact original/source snapshot payload verified by MemoryCoreChatGPT (#381)')
+                if r.get('version'):entry['wiki_image_version']=dict(title=r['title'],timestamp=r['version'],sha1=r['sha1'],mime=r['mime'])
+                done[r['url']]=entry
+                if r['url'] not in queue:queue.append(r['url'])
+            if (root/'old-citation-final.json').exists():
+                for r in json.loads((root/'old-citation-final.json').read_bytes()).values():
+                    if r.get('verify') and r.get('status')=='verified':
+                        url=r.get('preserved_url',r['url']);done[url]=dict(status='verified',capture=r['capture'],last=now,verify=r['verify'],note='Inherited foil-family citation preserved and verified (#381)')
+                        if url not in queue:queue.append(url)
+            files['ops/wayback/done.json']=(json.dumps(done,ensure_ascii=False,indent=2,sort_keys=True)+'\n').encode()
+            files['ops/wayback/queue.txt']=('\n'.join(queue).rstrip()+'\n').encode()
 git('read-tree',base);updates=[]
 for path,b in files.items():
     oid=git('hash-object','-w','--stdin',data=b).decode().strip();updates.append('100644 '+oid+'\t'+path+'\0')

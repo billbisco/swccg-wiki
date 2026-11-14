@@ -4,9 +4,9 @@ from bs4 import BeautifulSoup
 root=Path(__file__).parent;manifest=json.loads((root/'manifest.json').read_bytes());photos=json.loads((root/'photo-candidates.json').read_bytes())
 def norm(s):
     s=re.sub(r'\([^)]*\)','',s)
-    s=unicodedata.normalize('NFKD',s).encode('ascii','ignore').decode().lower()
+    s=unicodedata.normalize('NFKD',s).encode('ascii','ignore').decode().lower().replace('&','and')
     s=re.sub(r'[^a-z0-9]','',s)
-    return s.replace('c3p0','c3po').replace('it0','ito').replace('vibroaxe','vibroax').replace('pallaeon','pellaeon').replace('lottdodd','lottdod').replace('holotheater','holotheatre')
+    return s.replace('c3p0','c3po').replace('it0','ito').replace('vibroaxe','vibroax').replace('pallaeon','pellaeon').replace('palleon','pellaeon').replace('lottdodd','lottdod').replace('holotheater','holotheatre').replace('calrisian','calrissian').replace('orrimaakro','orrimaarko').replace('tawssklaa','tawsskhaa').replace('deetoo','detoo')
 selected=[];ambiguous=[]
 for row in manifest:
     if row['language']!='English':continue

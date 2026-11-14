@@ -11,6 +11,7 @@ expected={}
 for stage in ['first-new','first-family-final','first-set','first-nav']:
     expected.update({r['title']:r['text'] for r in json.loads((root/(stage+'-packet.json')).read_bytes())})
 files=json.loads((root/'first-files-payload.json').read_bytes());expected.update({f['title']:f['desc'] for f in files})
+if (root/'first-file-preservation-packet.json').exists():expected.update({r['title']:r['text'] for r in json.loads((root/'first-file-preservation-packet.json').read_bytes())})
 talk_receipts={r['title']:r for r in map(json.loads,(root/'first-talk-receipts.jsonl').read_text().splitlines())}
 titles=sorted(set(expected)|set(talk_receipts))
 def fetch(batch):

@@ -64,16 +64,16 @@
 - [Black 2 (V) (Virtual Set 1)](https://wiki.swccg.com/wiki/Black_2_%28V%29_%28Virtual_Set_1%29) — revision 302544
 - [Black 2 (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Black_2_%28V%29_%28Virtual_Set_1%29_%28Errata_2%29) — revision 302545
 - [Black 2 (V) (Virtual Set 1) (Errata)](https://wiki.swccg.com/wiki/Black_2_%28V%29_%28Virtual_Set_1%29_%28Errata%29) — revision 302546
-- [File:Reflections-Foil-D-4-LOM-PSA-92003756-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-4-LOM-PSA-92003756-original.jpg) — revision 302463
-- [File:Reflections-Foil-D-Bane-Malar-PSA-89232379-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Bane-Malar-PSA-89232379-original.jpg) — revision 302467
-- [File:Reflections-Foil-D-Bib-Fortuna-PSA-117537193-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Bib-Fortuna-PSA-117537193-original.jpg) — revision 302469
-- [File:Reflections-Foil-D-Black-2-PSA-117537197-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Black-2-PSA-117537197-original.jpg) — revision 302471
-- [File:Reflections-Foil-L-2-1B-Too-Onebee-PSA-73325450-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-2-1B-Too-Onebee-PSA-73325450-original.jpg) — revision 302462
-- [File:Reflections-Foil-L-All-Wings-Report-In-PSA-117537208-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-All-Wings-Report-In-PSA-117537208-original.jpg) — revision 302464
-- [File:Reflections-Foil-L-Artoo-PSA-75985147-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Artoo-PSA-75985147-original.jpg) — revision 302465
-- [File:Reflections-Foil-L-Attack-Run-PSA-72605733-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Attack-Run-PSA-72605733-original.jpg) — revision 302466
-- [File:Reflections-Foil-L-Ben-Kenobi-PSA-75985154-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Ben-Kenobi-PSA-75985154-original.jpg) — revision 302468
-- [File:Reflections-Foil-L-Biggs-Darklighter-PSA-73826307-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Biggs-Darklighter-PSA-73826307-original.jpg) — revision 302470
+- [File:Reflections-Foil-D-4-LOM-PSA-92003756-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-4-LOM-PSA-92003756-original.jpg) — revision 302638
+- [File:Reflections-Foil-D-Bane-Malar-PSA-89232379-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Bane-Malar-PSA-89232379-original.jpg) — revision 302642
+- [File:Reflections-Foil-D-Bib-Fortuna-PSA-117537193-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Bib-Fortuna-PSA-117537193-original.jpg) — revision 302644
+- [File:Reflections-Foil-D-Black-2-PSA-117537197-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Black-2-PSA-117537197-original.jpg) — revision 302646
+- [File:Reflections-Foil-L-2-1B-Too-Onebee-PSA-73325450-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-2-1B-Too-Onebee-PSA-73325450-original.jpg) — revision 302637
+- [File:Reflections-Foil-L-All-Wings-Report-In-PSA-117537208-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-All-Wings-Report-In-PSA-117537208-original.jpg) — revision 302639
+- [File:Reflections-Foil-L-Artoo-PSA-75985147-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Artoo-PSA-75985147-original.jpg) — revision 302640
+- [File:Reflections-Foil-L-Attack-Run-PSA-72605733-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Attack-Run-PSA-72605733-original.jpg) — revision 302641
+- [File:Reflections-Foil-L-Ben-Kenobi-PSA-75985154-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Ben-Kenobi-PSA-75985154-original.jpg) — revision 302643
+- [File:Reflections-Foil-L-Biggs-Darklighter-PSA-73826307-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Biggs-Darklighter-PSA-73826307-original.jpg) — revision 302645
 - [Reflections](https://wiki.swccg.com/wiki/Reflections) — revision 302505
 - [Talk:2-1B (Too-Onebee) (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3A2-1B_%28Too-Onebee%29_%28Reflections_Foil%29) — revision 302548
 - [Talk:4-LOM (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3A4-LOM_%28Reflections_Foil%29) — revision 302549

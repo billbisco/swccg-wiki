@@ -13,7 +13,7 @@ p=subprocess.run(['ssh','-o','BatchMode=yes','gemp','python3','-'],input=code.en
 data=base64.b64decode(p.stdout);assert hashlib.sha256(data).hexdigest()==source['sha256']
 (root/'checklist.pdf').write_bytes(data)
 doc=pymupdf.open(stream=data,filetype='pdf')
-text='\n'.join('PAGE '+str(i+1)+'\n'+doc[i].get_text(sort=True) for i in range(28,32))
+text='\n'.join('PAGE '+str(i+1)+'\n'+doc[i].get_text(sort=True) for i in range(27,32))
 (root/'checklist-pages29-32.txt').write_text(text,encoding='utf8')
-(root/'checklist-preservation.json').write_text(json.dumps(dict(**source,verified=True,replayed_via='VPS direct',pages_read=[29,30,31,32]),indent=2),encoding='utf8')
+(root/'checklist-preservation.json').write_text(json.dumps(dict(**source,verified=True,replayed_via='VPS direct',pages_read=[28,29,30,31,32]),indent=2),encoding='utf8')
 print(text[:6500])
