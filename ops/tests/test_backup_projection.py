@@ -5,6 +5,7 @@ import tempfile
 import tracemalloc
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 sys.path[:0] = [str(Path(__file__).resolve().parents[1]), str(Path(__file__).resolve().parents[2] / "tools")]
 from backup_projection import Projection
@@ -121,6 +122,38 @@ class ProjectionTests(unittest.TestCase):
         finally:
             tracemalloc.stop()
         self.assertLess(peak, 64 * 1024 * 1024)
+
+    def test_output_cap_keeps_existing_payload_and_index_byte_identical(self):
+        projector = self.projector("file")
+        first = file_artifact("File:Test.bin", {**file_info(b"old"), "mime": "x"}, b"old")
+        projector.write(first, projector.observe("File:Test.bin"))
+        index = self.root / "files/INDEX.tsv"
+        before = index.read_bytes()
+        marker = next((self.root / "preservation/projections").glob("*.json"))
+        marker_before = marker.read_bytes()
+        next_artifact = file_artifact("File:Test.bin", {**file_info(b"new", "2026-11-15T00:00:00Z"), "mime": "application/" + "x" * 100}, b"new")
+        with patch("backup_projection.MAX_TABLE_BYTES", len(before) + 1):
+            observed = projector.observe("File:Test.bin")
+            with self.assertRaisesRegex(ValueError, "byte budget"):
+                projector.write(next_artifact, observed)
+        self.assertEqual(b"old", (self.root / "files/Test.bin").read_bytes())
+        self.assertEqual(before, index.read_bytes())
+        self.assertEqual(marker_before, marker.read_bytes())
+
+    def test_output_cap_new_title_leaves_no_payload_or_marker_residue(self):
+        directory = self.root / "pages"
+        directory.mkdir()
+        index = directory / "INDEX.tsv"
+        before = b"Other\tpages/Other.wiki\n"
+        index.write_bytes(before)
+        projector = self.projector()
+        with patch("backup_projection.MAX_TABLE_BYTES", len(before) + 1):
+            observed = projector.observe("Example")
+            with self.assertRaisesRegex(ValueError, "byte budget"):
+                projector.write(revision_artifact({"title": "Example"}, revision()), observed)
+        self.assertFalse((directory / "Example.wiki").exists())
+        self.assertFalse((self.root / "preservation/projections").exists())
+        self.assertEqual(before, index.read_bytes())
 
 
 if __name__ == "__main__":

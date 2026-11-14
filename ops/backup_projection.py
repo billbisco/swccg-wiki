@@ -120,7 +120,6 @@ class Projection:
         if previous.get("upload_timestamp", "") > subject.get("upload_timestamp", ""):
             self.deferred_reason = "flat projection already records a newer upload version"
             return []
-        write_payload(target, artifact.payload)
         rows = [row for row in rows if row[0] != observed["key"]]
         if self.kind == "page":
             rows.append([observed["key"], observed["relative"]])
@@ -128,8 +127,13 @@ class Projection:
             rows.append([observed["key"], observed["relative"].removeprefix("files/"),
                          artifact.provenance.get("mime", ""), str(subject["bytes"])])
         index = self.repository / self.prefix / "INDEX.tsv"
-        write_payload(index, table_bytes("\t".join(row) for row in sorted(rows)))
-        write_payload(marker, canonical_bytes({**subject, "flat_path": observed["relative"]}) + b"\n")
+        # Preflight every bounded metadata result before replacing any payload.
+        # An output-cap failure must leave both old and new targets untouched.
+        index_bytes = table_bytes("\t".join(row) for row in sorted(rows))
+        marker_bytes = canonical_bytes({**subject, "flat_path": observed["relative"]}) + b"\n"
+        write_payload(target, artifact.payload)
+        write_payload(index, index_bytes)
+        write_payload(marker, marker_bytes)
         return [observed["relative"], self.prefix + "/INDEX.tsv", marker.relative_to(self.repository).as_posix()]
 
     def usage(self, title, rows):
