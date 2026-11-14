@@ -17,7 +17,7 @@ if mode=='wiki':
 files={}
 if mode in ['images','sources']:
     import hashlib
-    records=json.loads((root/'uploaded-images.json').read_bytes()) if mode=='images' else json.loads((root/'psa-originals.json').read_bytes())+list(map(json.loads,(root/'swca-originals-results.jsonl').read_text().splitlines()))
+    records=json.loads((root/'uploaded-images.json').read_bytes()) if mode=='images' else json.loads((root/'psa-originals.json').read_bytes())+list(map(json.loads,(root/'swca-originals-results.jsonl').read_text(encoding='utf8').splitlines()))
     for r in records:
         if 'local_file' not in r:continue
         binary=(root/r['local_file']).read_bytes();assert hashlib.sha256(binary).hexdigest()==r['sha256']
@@ -66,7 +66,7 @@ else:
                         if r['url'] not in queue:queue.append(r['url'])
             for capture_file in [root/'first-image-captures.jsonl',*root.glob('batch*-image-captures.jsonl')]:
                 if not capture_file.exists():continue
-                latest={r['url']:r for r in map(json.loads,capture_file.read_text().splitlines())}
+                latest={r['url']:r for r in map(json.loads,capture_file.read_text(encoding='utf8').splitlines())}
                 captures.extend(r for r in latest.values() if r.get('verified'))
                 for url,r in latest.items():
                     if url not in queue:queue.append(url)

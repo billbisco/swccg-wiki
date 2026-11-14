@@ -1,25 +1,42 @@
-# Story 381 — publication progress, 14 November 2026
+# Story381 — current delivery, 14 November 2026
 
-The initial census reconciled 314 regular foil slots: 114 Reflections I, 100 Reflections II, and 100 Reflections III. Sixteen articles existed initially and 298 English articles were initially missing. Current delivery: 70 newly completed and fully verified; 10 additional new articles live with full-batch work pending; 147 new article drafts prepared but not published; one additional existing article discovered and awaiting integration audit; 70 further articles not yet drafted. The entire story remains unfinished.
+Inventory: 314 regular foil slots (114 Reflections I, 100 II, 100 III). Sixteen articles existed initially. Of the 298 initial gaps: 70 new articles passed full verification; ten additional new articles are live with preservation/family completion outstanding; 217 new drafts are prepared; one additional existing article was discovered and reused. No faces remain unread or undrafted. The story remains unfinished; AC2–AC5 are open.
 
-## Verified delivery
 
-Seven batches of ten passed exact source, style lint, supported review, public current revision/Cite, reciprocal navigation, source conservation, original-image hash, source/archive and representative desktop/mobile checks. All seventy full-resolution wiki-original image versions have byte-verified Wayback captures and File-page Preservation links. The Vader shared navigator was retained and propagation checked on its existing members. Every changed backed-up page is linked in [published-pages.md](published-pages.md): 661 distinct pages.
+| Product | Initial existing | Fully verified new | Additional new live | Unsaved drafts | Additional existing reused |
+|---|---:|---:|---:|---:|---:|
+| Reflections | 1 | 70 | 10 | 33 | 0 |
+| Reflections II: Expanding the Galaxy | 5 | 0 | 0 | 94 | 1 |
+| Reflections III | 10 | 0 | 0 | 90 | 0 |
 
-The eighth batch's ten new articles, ten File descriptions/original binaries, ten signed Talk notes, and direct checklist links are live and checked (31 pages, exact source/review/public/Cite/image SHA). Its 45 family drafts are not saved yet: some inherited citations need the blocked primary snapshot. Its ten wiki-original image captures are pending. This partial check is explicitly not the whole-batch PASS file.
+## Delivered and checked
+
+The first seven batches passed exact source, style, supported review, public current revision/Cite, reciprocal family/checklist links, source conservation, source preservation, exact wiki-original binary captures and representative desktop/mobile checks. All70 File pages have byte-verified replay links. Subsequent independent navigation additions on Conquest/Red5 families were retained in the backup, with foil text/stat fields unchanged (post-delivery-current-heads.json).
+
+Batch8 has ten new articles, ten original images/File descriptions, ten signed Talk notes and direct Reflections checklist links live. Its published subset passed a separate31-page source/public/review/image-hash check. Its45 family drafts and ten wiki-original captures/File Preservation links remain unfinished. The partial check is not a full-batch PASS.
+
+The existing Don't Get Cocky Reflections II foil was independently checked against two complete photographs. Missing language, finish and release metadata and the direct Reflections II checklist target were completed (revisions304301–304303), retaining its four reciprocal family links, image and printed text. Public/review/style/Cite and desktop/mobile checks passed. Its source photo has a replay; the exact wiki-image URL still needs its own capture. This is not an81st new card or a fully preserved delivery.
+
+Current backup: 664 distinct live pages, all linked in published-pages.md. No article deletion is required.
 
 ## Prepared work
 
-All 113 initially missing Reflections I physical faces have been independently read. Batches 9–11 supply the final 33 unsaved Reflections I drafts; all have zero style/Cite flags and intact shared Card previews. The prepared Reflections II drafts now cover all remaining missing faces. Each has zero style/Cite flags and an intact shared Card preview. The additional existing Don’t Get Cocky article is retained for integration audit. No unverified gameplay IDs are assigned. Discovery/OCR alone is not approved transcription.
+All298 initially missing English physical faces were independently read:113/95/90 by product. Every original hash is checked. Batches9–11 contain33 unsaved Reflections I drafts;12–21 contain94 Reflections II drafts;22–31 contain90 Reflections III drafts. All217 new drafts have zero style flags, shared-Card previews, exact field/reading agreement and unique publication IDs. See prepared-work-verification.json and draft-index.md. Draft-only image identities are not uploads. The12 Reflections III alternate-image faces were manually compared against regular and alternate references and matched (artwork-verification.json).
 
-Printed differences remain distinct from later errata. The Redemption punctuation was checked against a second complete SWCA photograph and corrected to “have been modified”; no separate misprint is asserted. Locations retain side-specific text/Force icons, and named creature statistics and symbolic values remain explicit. Unpublished Light twin names and Artoo-Detoo were normalized before creation; the initial inventory is unchanged historical evidence. Existing card-family roots use their actual current titles (the two Death Star base pages use different expansion qualifiers).
+Printed differences, symbolic/named statistics, side-specific location text and copyright evidence are retained; no playable mappings are invented. Existing Japanese foils and Luke's completed English foil are reused. Ric Olié's source-name mismatch was fixed by explicitly reading the UTF8 discovery ledger, without renaming or losing its original photograph.
 
-## Preservation blocker and exact recovery
+Inherited family citations are separately inventoried:211 distinct URLs,27 reusable verified receipts,184 still needing archival verification. This is not a physical-face gap. No unverified family packet was published. Refresh all family/set guards before applying these historical drafts.
 
-Wayback GET saves from the VPS and Bill's PC returned HTTP520 / “Job failed”. The public POST route returned HTTP429 explicitly identifying automated-traffic throttling; submissions were stopped. The documented authenticated VPS route returned HTTP401. No credentials were exposed. The old working captures remain recorded; current failures are not marked verified. Exact pending image versions and the retained source snapshot are queued in the source PR; no archive URL is invented. Original photographs are backed up in swccg-wiki-files.
+## External preservation blocker
 
-Next publication step after archive recovery: capture and verify batch8's primary snapshot, repair/preview/publish its 45 family drafts, obtain byte-matching captures of its ten wiki originals, add File Preservation links and run full verify-batch.py batch8. Then publish prepared batches9–23 through the guarded pipeline, re-fetching current heads. Draft-only image identity packets intentionally cannot be uploaded: regenerate complete packets with upload-batch.py only after verified source snapshots exist. Inspect remaining II/III faces while publication is pending. Do not replay old revision guards against newer pages.
+Wayback anonymous GET saves on both VPS and Bill's PC returned HTTP520 / “Job failed”. The public POST route returned HTTP429 explicitly identifying automated-traffic throttling, so submissions stopped. The documented authenticated VPS route returned HTTP401. One ordinary retry after an extended cooldown still returned520. No credentials were exposed, no requests were rotated to bypass throttling, and no failed capture was certified.
 
-Retained VPS files: /opt/swccg-res/snapshots/psa/reflections381-batch8-primary-sources.html and reflections381-batch8-wiki-originals.html. Do not delete them without a checked capture. Gallery capture is an optimization only; every original binary still requires independent comparison. No deletion of wiki articles is required.
+Core rules require “Never save with open flags.” Unpreserved File descriptions and inherited citations fail ARCHIVE lint; exact public image versions also need their own byte-verified replay. The general access fallback does not authorize weakening the explicit lint/image rules. No further permission question is outstanding. Service recovery or maintenance of the existing authenticated credential is required for complete publication.
 
-[Story #381](https://github.com/swccg-guild/work/issues/381); [source PR18](https://github.com/billbisco/swccg-wiki/pull/18); [shared evidence](https://github.com/swccg-guild/work/tree/main/evidence/381).
+Original photographs are backed up in swccg-wiki-files. Exact image versions and retained staging URLs are queued in the source repository. Keep /opt/swccg-res/snapshots/psa/reflections381-batch8-primary-sources.html and reflections381-batch8-wiki-originals.html until captures are checked. A gallery capture does not replace each binary comparison.
+
+## Continuation
+
+Finish batch8's primary snapshot,45 family edits, ten exact wiki-original captures and File links, then full verification. Capture the reused Don't Get Cocky wiki image too. Continue prepared batches9–31 with fresh family/set guards and complete upload packets regenerated only after verified source snapshots. See RESUME.md. Source backup PR18 is a checkpoint, not closure of the story.
+
+[Story381](https://github.com/swccg-guild/work/issues/381); [source backup PR18](https://github.com/billbisco/swccg-wiki/pull/18); [shared evidence](https://github.com/swccg-guild/work/tree/main/evidence/381).

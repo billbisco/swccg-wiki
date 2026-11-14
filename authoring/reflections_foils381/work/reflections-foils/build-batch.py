@@ -43,7 +43,7 @@ for r,f in zip(readings,files):
         icon={'A New Hope':'A-New-Hope','Cloud City':'Cloud-City',"Jabba's Palace":'Jabbas-Palace','Special Edition':'Special-Edition','Death Star II':'Death-Star-II','Premium':'premium'}.get(r['set_icon'],r['set_icon'])
         target='Death Star II (expansion)' if r['original_set']=='Death Star II' else r['original_set']
         fields['set_icon']='[[File:Icon-set-'+icon+'.png|20px|link='+target+']] '+('Premium — ' if r['set_icon']=='Premium' else '')+expansion_link(r['original_set'])
-        if r['set_icon'] in ['Coruscant','Reflections II']:
+        if r['set_icon'] in ['Coruscant','Reflections II','Theed Palace']:
             fields['set_icon']=expansion_link(r['original_set'])
     for k in ['destiny','power','ability','armor','maneuver','hyperspeed','landspeed','deploy','forfeit','printed_label','parsec','light_icons','dark_icons']:
         if k in r:fields[k]=r[k]

@@ -1,4 +1,4 @@
-# Changed live pages — story 381
+# Changed live pages — story381
 
 * [2-1B (Too-Onebee)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29)
 * [2-1B (Too-Onebee) (Japanese)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28Japanese%29)
@@ -185,6 +185,7 @@
 * [Devastator (V) (Errata)](https://wiki.swccg.com/wiki/Devastator_%28V%29_%28Errata%29)
 * [Devastator (V) (Virtual Block 1)](https://wiki.swccg.com/wiki/Devastator_%28V%29_%28Virtual_Block_1%29)
 * [Devastator (V) (Virtual Set 15: Galactic Frontier)](https://wiki.swccg.com/wiki/Devastator_%28V%29_%28Virtual_Set_15%3A_Galactic_Frontier%29)
+* [Don't Get Cocky (Reflections II Foil)](https://wiki.swccg.com/wiki/Don%27t_Get_Cocky_%28Reflections_II_Foil%29)
 * [Dutch](https://wiki.swccg.com/wiki/Dutch)
 * [Dutch (Errata)](https://wiki.swccg.com/wiki/Dutch_%28Errata%29)
 * [Dutch (Japanese)](https://wiki.swccg.com/wiki/Dutch_%28Japanese%29)
@@ -477,6 +478,7 @@
 * [Reflection (V) (Errata)](https://wiki.swccg.com/wiki/Reflection_%28V%29_%28Errata%29)
 * [Reflection (V) (Virtual Block 6)](https://wiki.swccg.com/wiki/Reflection_%28V%29_%28Virtual_Block_6%29)
 * [Reflections](https://wiki.swccg.com/wiki/Reflections)
+* [Reflections II: Expanding the Galaxy](https://wiki.swccg.com/wiki/Reflections_II%3A_Expanding_the_Galaxy)
 * [Revolution](https://wiki.swccg.com/wiki/Revolution)
 * [Revolution (Errata)](https://wiki.swccg.com/wiki/Revolution_%28Errata%29)
 * [Revolution (Japanese)](https://wiki.swccg.com/wiki/Revolution_%28Japanese%29)
@@ -551,6 +553,7 @@
 * [Talk:Death Star Plans (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ADeath_Star_Plans_%28Reflections_Foil%29)
 * [Talk:Dengar (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ADengar_%28Reflections_Foil%29)
 * [Talk:Devastator (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ADevastator_%28Reflections_Foil%29)
+* [Talk:Don't Get Cocky (Reflections II Foil)](https://wiki.swccg.com/wiki/Talk%3ADon%27t_Get_Cocky_%28Reflections_II_Foil%29)
 * [Talk:Dutch (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ADutch_%28Reflections_Foil%29)
 * [Talk:Executor (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3AExecutor_%28Reflections_Foil%29)
 * [Talk:General Veers (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3AGeneral_Veers_%28Reflections_Foil%29)

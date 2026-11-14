@@ -4,7 +4,7 @@ from urllib.parse import quote
 from PIL import Image
 from playwright.sync_api import sync_playwright
 root=Path(__file__).parent;stage=sys.argv[1];readings=json.loads((root/(stage+'-readings.json')).read_bytes());rows=[]
-targets=[(readings[i]['article'],1280) for i in sorted(set([0,1,len(readings)//2,len(readings)-1]))]+[(readings[0]['article'],390)]
+targets=[(readings[i]['article'],1280) for i in sorted(set([0,1,len(readings)//2,len(readings)-1])) if i<len(readings)]+[(readings[0]['article'],390)]
 offset=0
 if '--focus' in sys.argv:
     focus=sys.argv[sys.argv.index('--focus')+1];r=next(r for r in readings if r['printed_title']==focus)

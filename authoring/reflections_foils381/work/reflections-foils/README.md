@@ -1,7 +1,11 @@
-# Regular Reflections foil publications — #381
+# Regular Reflections foil publications — story381
 
-In progress under Bill's explicit authorization. Story: https://github.com/swccg-guild/work/issues/381 . Inventory and source research precede guarded publication batches. Existing Luke and Japanese foils are reused; promotional/topper cards and random non-foil reprints are separate scope.
+Inventory: 314 regular foil slots (114 Reflections I, 100 II, 100 III). Sixteen articles existed initially. Of the 298 initial gaps: 70 new articles passed full verification; ten additional new articles are live with preservation/family completion outstanding; 217 new drafts are prepared; one additional existing article was discovered and reused. No faces remain unread or undrafted. The story remains unfinished; AC2–AC5 are open.
 
-Local scripts and captured source records are mirrored here so another AI can resume. `bootstrap-heads.json` holds the set/checklist/pilot baseline; `existing-foil-heads.json` inventories live foil/Reflections title candidates; `all-article-titles.json` records the full mainspace non-redirect title census. These are discovery records, not blanket certification of article correctness or foil identity.
+| Product | Initial existing | Fully verified new | Additional new live | Unsaved drafts | Additional existing reused |
+|---|---:|---:|---:|---:|---:|
+| Reflections | 1 | 70 | 10 | 33 | 0 |
+| Reflections II: Expanding the Galaxy | 5 | 0 | 0 | 94 | 1 |
+| Reflections III | 10 | 0 | 0 | 90 | 0 |
 
-70 new articles completed and verified; ten more live/pending; 147 unsaved drafts. Whole story remains In Progress. See current-batch-report.md and completion-progress.json. Original sources live in swccg-wiki-files; draft-only image packets are not upload packets. Never claim pending image captures verified or replay obsolete revision guards.
+Read current-batch-report.md, RESUME.md, draft-index.md and published-pages.md. Never count drafts, queues or partial checks as whole-story completion.

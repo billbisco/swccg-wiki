@@ -1,51 +1,51 @@
+"""Current evidence summary; partial work never counts as full delivery."""
 import json,re
 from pathlib import Path
-root=Path(__file__).parent;p=json.loads((root/'completion-progress.json').read_bytes());c=p['counts'];heads=json.loads((root/'published-heads.json').read_bytes());drafts=[]
-for f in root.glob('batch*-new-packet.json'):
-    if not (root/(f.name.replace('-new-packet.json','-new-receipts.jsonl'))).exists():drafts.extend(r['title'] for r in json.loads(f.read_bytes()))
-text=f'''# Story 381 — publication progress, 14 November 2026
+root=Path(__file__).parent
+p=json.loads((root/'completion-progress.json').read_bytes());heads=json.loads((root/'published-heads.json').read_bytes())
+summary='Inventory: 314 regular foil slots (114 Reflections I, 100 II, 100 III). Sixteen articles existed initially. Of the 298 initial gaps: 70 new articles passed full verification; ten additional new articles are live with preservation/family completion outstanding; 217 new drafts are prepared; one additional existing article was discovered and reused. No faces remain unread or undrafted. The story remains unfinished; AC2–AC5 are open.\n'
+table='\n| Product | Initial existing | Fully verified new | Additional new live | Unsaved drafts | Additional existing reused |\n|---|---:|---:|---:|---:|---:|\n'
+for product,c in p['per_product'].items():table+='| '+product+' | '+' | '.join(str(c.get(k,0)) for k in ['existing','created','published_pending_batch_verification','draft_prepared_awaiting_preservation','existing_pending_preservation'])+' |\n'
+text='''# Story381 — current delivery, 14 November 2026
 
-The initial census reconciled 314 regular foil slots: 114 Reflections I, 100 Reflections II, and 100 Reflections III. Sixteen articles existed initially and 298 English articles were initially missing. Current delivery: {c['created']} newly completed and fully verified; {c['published_pending_batch_verification']} additional new articles live with full-batch work pending; {c['draft_prepared_awaiting_preservation']} new article drafts prepared but not published; one additional existing article discovered and awaiting integration audit; {c['missing']} further articles not yet drafted. The entire story remains unfinished.
+SUMMARY
+TABLE
+## Delivered and checked
 
-## Verified delivery
+The first seven batches passed exact source, style, supported review, public current revision/Cite, reciprocal family/checklist links, source conservation, source preservation, exact wiki-original binary captures and representative desktop/mobile checks. All70 File pages have byte-verified replay links. Subsequent independent navigation additions on Conquest/Red5 families were retained in the backup, with foil text/stat fields unchanged (post-delivery-current-heads.json).
 
-Seven batches of ten passed exact source, style lint, supported review, public current revision/Cite, reciprocal navigation, source conservation, original-image hash, source/archive and representative desktop/mobile checks. All seventy full-resolution wiki-original image versions have byte-verified Wayback captures and File-page Preservation links. The Vader shared navigator was retained and propagation checked on its existing members. Every changed backed-up page is linked in [published-pages.md](published-pages.md): {len(heads)} distinct pages.
+Batch8 has ten new articles, ten original images/File descriptions, ten signed Talk notes and direct Reflections checklist links live. Its published subset passed a separate31-page source/public/review/image-hash check. Its45 family drafts and ten wiki-original captures/File Preservation links remain unfinished. The partial check is not a full-batch PASS.
 
-The eighth batch's ten new articles, ten File descriptions/original binaries, ten signed Talk notes, and direct checklist links are live and checked (31 pages, exact source/review/public/Cite/image SHA). Its 45 family drafts are not saved yet: some inherited citations need the blocked primary snapshot. Its ten wiki-original image captures are pending. This partial check is explicitly not the whole-batch PASS file.
+The existing Don't Get Cocky Reflections II foil was independently checked against two complete photographs. Missing language, finish and release metadata and the direct Reflections II checklist target were completed (revisions304301–304303), retaining its four reciprocal family links, image and printed text. Public/review/style/Cite and desktop/mobile checks passed. Its source photo has a replay; the exact wiki-image URL still needs its own capture. This is not an81st new card or a fully preserved delivery.
+
+Current backup: PAGECOUNT distinct live pages, all linked in published-pages.md. No article deletion is required.
 
 ## Prepared work
 
-All 113 initially missing Reflections I physical faces have been independently read. Batches 9–11 supply the final 33 unsaved Reflections I drafts; all have zero style/Cite flags and intact shared Card previews. Batch12 has nine new Reflections II drafts plus an independently read existing Don't Get Cocky foil to reuse; batch13 has ten more. New Reflections II drafts pass the same lint/template preview checks. No unverified gameplay IDs are assigned. Discovery/OCR alone is not approved transcription.
+All298 initially missing English physical faces were independently read:113/95/90 by product. Every original hash is checked. Batches9–11 contain33 unsaved Reflections I drafts;12–21 contain94 Reflections II drafts;22–31 contain90 Reflections III drafts. All217 new drafts have zero style flags, shared-Card previews, exact field/reading agreement and unique publication IDs. See prepared-work-verification.json and draft-index.md. Draft-only image identities are not uploads. The12 Reflections III alternate-image faces were manually compared against regular and alternate references and matched (artwork-verification.json).
 
-Printed differences remain distinct from later errata. The Redemption punctuation was checked against a second complete SWCA photograph and corrected to “have been modified”; no separate misprint is asserted. Locations retain side-specific text/Force icons, and named creature statistics and symbolic values remain explicit. Unpublished Light twin names and Artoo-Detoo were normalized before creation; the initial inventory is unchanged historical evidence. Existing card-family roots use their actual current titles (the two Death Star base pages use different expansion qualifiers).
+Printed differences, symbolic/named statistics, side-specific location text and copyright evidence are retained; no playable mappings are invented. Existing Japanese foils and Luke's completed English foil are reused. Ric Olié's source-name mismatch was fixed by explicitly reading the UTF8 discovery ledger, without renaming or losing its original photograph.
 
-## Preservation blocker and exact recovery
+Inherited family citations are separately inventoried:211 distinct URLs,27 reusable verified receipts,184 still needing archival verification. This is not a physical-face gap. No unverified family packet was published. Refresh all family/set guards before applying these historical drafts.
 
-Wayback GET saves from the VPS and Bill's PC returned HTTP520 / “Job failed”. The public POST route returned HTTP429 explicitly identifying automated-traffic throttling; submissions were stopped. The documented authenticated VPS route returned HTTP401. No credentials were exposed. The old working captures remain recorded; current failures are not marked verified. Exact pending image versions and the retained source snapshot are queued in the source PR; no archive URL is invented. Original photographs are backed up in swccg-wiki-files.
+## External preservation blocker
 
-Next publication step after archive recovery: capture and verify batch8's primary snapshot, repair/preview/publish its 45 family drafts, obtain byte-matching captures of its ten wiki originals, add File Preservation links and run full verify-batch.py batch8. Then publish prepared batches9–13 through the guarded pipeline, re-fetching current heads. Draft-only image identity packets intentionally cannot be uploaded: regenerate complete packets with upload-batch.py only after verified source snapshots exist. Inspect remaining II/III faces while publication is pending. Do not replay old revision guards against newer pages.
+Wayback anonymous GET saves on both VPS and Bill's PC returned HTTP520 / “Job failed”. The public POST route returned HTTP429 explicitly identifying automated-traffic throttling, so submissions stopped. The documented authenticated VPS route returned HTTP401. One ordinary retry after an extended cooldown still returned520. No credentials were exposed, no requests were rotated to bypass throttling, and no failed capture was certified.
 
-Retained VPS files: /opt/swccg-res/snapshots/psa/reflections381-batch8-primary-sources.html and reflections381-batch8-wiki-originals.html. Do not delete them without a checked capture. Gallery capture is an optimization only; every original binary still requires independent comparison. No deletion of wiki articles is required.
+Core rules require “Never save with open flags.” Unpreserved File descriptions and inherited citations fail ARCHIVE lint; exact public image versions also need their own byte-verified replay. The general access fallback does not authorize weakening the explicit lint/image rules. No further permission question is outstanding. Service recovery or maintenance of the existing authenticated credential is required for complete publication.
 
-[Story #381](https://github.com/swccg-guild/work/issues/381); [source PR18](https://github.com/billbisco/swccg-wiki/pull/18); [shared evidence](https://github.com/swccg-guild/work/tree/main/evidence/381).
-'''
-last=max(int(re.match(r'batch(\d+)',f.name)[1]) for f in root.glob('batch*-new-packet.json'))
-text=text.replace('batches9–13','batches9–'+str(last)).replace('batches 9–13','batches 9–'+str(last))
-text=re.sub(r'Batch12 has nine new Reflections II drafts.*?No unverified gameplay IDs', 'The prepared Reflections II drafts now cover all remaining missing faces. Each has zero style/Cite flags and an intact shared Card preview. The additional existing Don’t Get Cocky article is retained for integration audit. No unverified gameplay IDs',text)
+Original photographs are backed up in swccg-wiki-files. Exact image versions and retained staging URLs are queued in the source repository. Keep /opt/swccg-res/snapshots/psa/reflections381-batch8-primary-sources.html and reflections381-batch8-wiki-originals.html until captures are checked. A gallery capture does not replace each binary comparison.
+
+## Continuation
+
+Finish batch8's primary snapshot,45 family edits, ten exact wiki-original captures and File links, then full verification. Capture the reused Don't Get Cocky wiki image too. Continue prepared batches9–31 with fresh family/set guards and complete upload packets regenerated only after verified source snapshots. See RESUME.md. Source backup PR18 is a checkpoint, not closure of the story.
+
+[Story381](https://github.com/swccg-guild/work/issues/381); [source backup PR18](https://github.com/billbisco/swccg-wiki/pull/18); [shared evidence](https://github.com/swccg-guild/work/tree/main/evidence/381).
+'''.replace('SUMMARY',summary).replace('TABLE',table).replace('PAGECOUNT',str(len(heads)))
 (root/'current-batch-report.md').write_text(text,encoding='utf8')
-delivery=f'''## Current delivery
-
-Inventory: 314 regular foil slots (114/100/100). Sixteen articles existed initially. Of the 298 initial gaps, {c['created']} new articles are fully completed and verified, ten more are live with preservation/family completion pending, {c['draft_prepared_awaiting_preservation']} have unsaved lint-clean/template-previewed drafts, and one additional existing article has been found for reuse. {c['missing']} more remain to draft. The story remains In Progress; AC2–AC5 are not yet met.
-
-All 113 initially missing Reflections I faces have been read. Completed batches retain exact physical text/stats/icons, original photographs, byte-verified wiki-image captures, supported reviews, direct checklist links, reciprocal family navigation, source conservation and public/visual checks. The latest live batch's published subset was independently checked without falsely marking the full batch complete. Source originals for all remaining cards are backed up. No article deletion is required.
-
-Current external blocker: Wayback GET saves returned520; its public POST returned429 explicitly throttling automated traffic, so submissions stopped. The documented authenticated VPS route returned401. Uncaptured staging files remain and exact image versions are queued. No credential change or approval is required from Bill to continue ordinary work. Next publication step after archive recovery: finish batch8's inherited-source snapshot,45 family links,10 wiki-original binary captures and File links, then its full QA; continue prepared batches9–13 and remaining II/III physical readings. Do not count drafts, queue acceptance or published-only pages as complete.
-
-[Inventory, field evidence, current report and all changed-page links](https://github.com/swccg-guild/work/tree/main/evidence/381). [Source PR18](https://github.com/billbisco/swccg-wiki/pull/18). [Detailed current report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md).
-'''
-delivery=delivery.replace('batches9–13','batches9–'+str(last))
+links='[Detailed report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md), [all changed pages](https://github.com/swccg-guild/work/blob/main/evidence/381/published-pages.md), [draft index](https://github.com/swccg-guild/work/blob/main/evidence/381/draft-index.md), [source backup PR18](https://github.com/billbisco/swccg-wiki/pull/18).'
 live=(root/'story-live.md').read_text(encoding='utf-8-sig');assert live.count('## Current delivery')==1
+delivery='## Current delivery\n\n'+summary+table+'\nAll298 initial-gap faces were independently read and original hashes checked;12 AI artwork comparisons verified. All217 unsaved drafts pass style/field/infobox-preview checks. Existing Don’t Get Cocky metadata and direct checklist integration are complete; its wiki-image capture remains.\n\nPublication is externally blocked: anonymous archive saves520, explicit public POST throttling429, documented authenticated route401. No captures were invented or failed results marked verified. Next: complete batch8 preservation/family work, then publish9–31 with fresh guards. No further authorization is needed and no articles need deletion.\n\n'+links+'\n'
 (root/'story-current.md').write_text(re.sub(r'## Current delivery\n.*',lambda m:delivery,live,flags=re.S),encoding='utf8')
-readme=(root/'README.md').read_text(encoding='utf8');match=re.search(r'First verified batch:|\d+ new articles completed',readme);assert match
-(root/'README.md').write_text(readme[:match.start()]+f"{c['created']} new articles completed and verified; ten more live/pending; {c['draft_prepared_awaiting_preservation']} unsaved drafts. Whole story remains In Progress. See current-batch-report.md and completion-progress.json. Original sources live in swccg-wiki-files; draft-only image packets are not upload packets. Never claim pending image captures verified or replay obsolete revision guards.\n",encoding='utf8')
-print(len(heads),'live pages backed up;',len(drafts),'unsaved drafts; current report and story body prepared')
+(root/'README.md').write_text('# Regular Reflections foil publications — story381\n\n'+summary+table+'\nRead current-batch-report.md, RESUME.md, draft-index.md and published-pages.md. Never count drafts, queues or partial checks as whole-story completion.\n',encoding='utf8')
+print(len(heads),'live backup pages;217 drafts;298 initial-gap faces read; whole story unfinished')
