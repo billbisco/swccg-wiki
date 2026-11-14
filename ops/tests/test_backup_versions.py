@@ -254,6 +254,34 @@ class ProducerTests(unittest.TestCase):
         self.assertFalse(marker["capture_submitted"])
         self.assertEqual("source_inventory_required", marker["state"])
 
+    def test_revision_retry_preserves_existing_source_owner_progress_and_storage(self):
+        producer = self.producer(lambda query: {"query": {"pages": [{"title": "Test", "revisions": [revision()]}]}})
+        task = {"kind": "revision", "title": "Test", "revision_id": 42}
+        producer.task(producer.inbox.add(task), task)
+        path = next(producer.source_inventory.glob("*.json"))
+        existing = json.loads(path.read_text())
+        existing.update(owner="Earlier source owner", state="inventory_reviewed", continuation="check missing exact citations")
+        existing["backup_storage"]["commit"] = "b" * 40
+        path.write_text(json.dumps(existing))
+        retry = dict(task, projection_retry=1)
+        producer.task(producer.inbox.add(retry), retry)
+        self.assertEqual(existing, json.loads(path.read_text()))
+        self.assertEqual([], list(producer.inbox.pending()))
+
+    def test_revision_retry_does_not_accept_conflicting_source_subject(self):
+        producer = self.producer(lambda query: {"query": {"pages": [{"title": "Test", "revisions": [revision()]}]}})
+        task = {"kind": "revision", "title": "Test", "revision_id": 42}
+        producer.task(producer.inbox.add(task), task)
+        path = next(producer.source_inventory.glob("*.json"))
+        existing = json.loads(path.read_text())
+        existing["subject"]["content_sha256"] = "b" * 64
+        path.write_text(json.dumps(existing))
+        retry = dict(task, projection_retry=1)
+        with self.assertRaisesRegex(ValueError, "conflicting immutable"):
+            producer.task(producer.inbox.add(retry), retry)
+        self.assertEqual(existing, json.loads(path.read_text()))
+        self.assertEqual(1, len(list(producer.inbox.pending())))
+
     def test_failed_readback_keeps_item_pending_and_spooled(self):
         producer = self.producer(lambda query: {"query": {"pages": [{"title": "Test", "revisions": [revision()]}]}})
         producer.readback = lambda subject, storage: (_ for _ in ()).throw(ValueError("remote mismatch"))
