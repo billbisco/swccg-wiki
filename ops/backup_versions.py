@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import contextlib
 import hashlib
+import heapq
 import json
 import os
 import re
@@ -62,13 +63,50 @@ def backup_owner(directory: Path):
 class Inbox:
     def __init__(self, directory: Path):
         self.directory = directory
-        for part in ("tasks", "completed", "issues"):
+        for part in ("tasks", "completed", "issues", "event-revisions", "event-uploads"):
             (directory / part).mkdir(parents=True, exist_ok=True)
 
     def add(self, task: dict) -> str:
         key = hashlib.sha256(canonical_bytes(task)).hexdigest()
         atomic_json(self.directory / "tasks" / (key + ".json"), task, create_only=True)
+        event = self.event_pointer(key, task)
+        if event is not None and not (self.directory / "completed" / (key + ".json")).exists():
+            # Must succeed before discovery may advance its durable cursor.
+            atomic_json(event, {"task_id": key}, create_only=True)
         return key
+
+    def event_pointer(self, key, task):
+        revision = task.get("revision_id")
+        upload, observed = task.get("upload_log_id"), task.get("observed_at")
+        if task.get("kind") == "revision" and type(revision) is int and 0 < revision < 10**20:
+            return self.directory / "event-revisions" / (f"{revision:020d}-" + key + ".json")
+        if (task.get("kind") == "file_history" and type(upload) is int and 0 <= upload < 10**20
+                and isinstance(observed, str) and re.fullmatch(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ", observed)):
+            return self.directory / "event-uploads" / (observed.replace(":", "") + f"-{upload:020d}-" + key + ".json")
+        return None
+
+    def newest_events(self, kind, limit=100):
+        """Bounded memory; rank actual event identity/time, never pointer mtime."""
+        directory = self.directory / ("event-revisions" if kind == "revision" else "event-uploads")
+        def eligible():
+            with os.scandir(directory) as entries:
+                for entry in entries:
+                    key = entry.name[-69:-5]
+                    if not entry.name.endswith(".json") or not re.fullmatch(r"[0-9a-f]{64}", key):
+                        continue
+                    if (self.directory / "completed" / (key + ".json")).exists():
+                        continue
+                    issue = self.directory / "issues" / (key + ".json")
+                    if issue.exists() and json.loads(issue.read_text()).get("retry_after", 0) > time.time():
+                        continue
+                    yield entry.name
+        selected = []
+        for name in heapq.nlargest(limit, eligible()):
+            key = name[-69:-5]
+            task = json.loads((self.directory / "tasks" / (key + ".json")).read_text(encoding="utf-8"))
+            if self.event_pointer(key, task) == directory / name:
+                selected.append((key, task))
+        return selected
 
     def pending(self, kind=None, *, due_only=False):
         # scandir is incremental; never load all historical version tasks.
@@ -86,6 +124,11 @@ class Inbox:
     def complete(self, key: str, evidence: dict) -> None:
         atomic_json(self.directory / "completed" / (key + ".json"), evidence)
         (self.directory / "issues" / (key + ".json")).unlink(missing_ok=True)
+        task_path = self.directory / "tasks" / (key + ".json")
+        if task_path.exists():
+            event = self.event_pointer(key, json.loads(task_path.read_text(encoding="utf-8")))
+            if event is not None:
+                event.unlink(missing_ok=True)
 
     def issue(self, key: str, reason: str) -> None:
         path = self.directory / "issues" / (key + ".json")
@@ -367,7 +410,16 @@ class Producer:
         """Favor short edit events without starving originals and history."""
         kinds = ("revision", "file_history", "file_usage", "page_history")
         pending = {kind: iter(self.inbox.pending(kind, due_only=True)) for kind in kinds}
-        schedule = ("revision",) * 4 + ("file_history",) * 2 + ("file_usage", "page_history")
+        recent = self.inbox.newest_events("revision") + self.inbox.newest_events("file_history")
+        selected = {key for key, _ in recent}
+        def older(kind):
+            yield from (item for item in self.inbox.pending(kind, due_only=True) if item[0] not in selected)
+        pending["revision"] = older("revision")
+        pending["file_history"] = older("file_history")
+        pending["recent_revision"] = iter(item for item in recent if item[1]["kind"] == "revision")
+        pending["recent_upload"] = iter(item for item in recent if item[1]["kind"] == "file_history")
+        schedule = (("recent_revision",) * 4 + ("recent_upload",) * 2
+                    + ("revision", "file_history", "file_usage", "page_history"))
         while pending:
             for kind in schedule:
                 if kind not in pending:
