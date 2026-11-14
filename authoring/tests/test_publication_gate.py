@@ -80,6 +80,83 @@ class PublicationGateTests(unittest.TestCase):
         self.assertEqual(['ARCHIVE  missing capture'], result['raw_flags'])
         self.assertEqual('awaiting_stage', result['preservation_pending'][0]['state'])
 
+    def mapped_proof(self):
+        uri = 'https://github.com/swccg-guild/work/blob/' + 'a' * 40 + '/evidence/proof.txt'
+        original = copy.deepcopy(self.proof)
+        self.proof['path'] = uri
+        self.manifest['evidence_files'] = [{'uri': uri, 'sha256': original['sha256'], 'path': original['path']}]
+        return uri
+
+    def test_immutable_uri_uses_checked_offline_file_without_registry_rewrite(self):
+        self.mapped_proof()
+        before = copy.deepcopy(self.row)
+        with patch('urllib.request.urlopen', side_effect=AssertionError('offline only')):
+            self.assertTrue(self.run_gate()['publication_eligible'])
+        self.assertEqual(before, self.row)
+
+    def test_uri_locator_requires_exact_identity_and_hash(self):
+        uri = self.mapped_proof()
+        entry = self.manifest['evidence_files'][0]
+        for field, value in [('uri', uri + 'other'), ('sha256', '0' * 64), ('path', 'missing.txt')]:
+            with self.subTest(field=field):
+                before = entry[field]; entry[field] = value
+                self.assertFalse(self.run_gate()['publication_eligible'])
+                entry[field] = before
+        self.manifest.pop('evidence_files')
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
+    def test_uri_rejects_mutable_untrusted_and_ambiguous_locators(self):
+        uri = self.mapped_proof()
+        entry = self.manifest['evidence_files'][0]
+        bad = [uri.replace('a' * 40, 'main'), uri.replace('github.com', 'evil.example'),
+               uri.replace('swccg-guild/work', 'stranger/work'), uri.replace('github.com', 'user@github.com'),
+               uri + '?', uri + '#fragment', uri.replace('/evidence/', '/../'),
+               uri.replace('/evidence/', '/%2e%2e/'), uri.replace('/evidence/', '//'),
+               uri.replace('/evidence/', '/./'), uri.replace('github.com', '[invalid'),
+               uri.replace('https:', 'http:'), uri + ' ']
+        for value in bad:
+            with self.subTest(uri=value):
+                entry['uri'] = value
+                self.assertFalse(self.run_gate()['publication_eligible'])
+        entry['uri'] = uri
+        self.manifest['evidence_files'].append(copy.deepcopy(entry))
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
+    def test_uri_rejects_bundle_escape_and_changed_bytes(self):
+        self.mapped_proof()
+        entry = self.manifest['evidence_files'][0]
+        for path in ('../proof.txt', str(self.root / 'proof.txt'), 'C:proof.txt'):
+            with self.subTest(path=path):
+                entry['path'] = path
+                self.assertFalse(self.run_gate()['publication_eligible'])
+        entry['path'] = 'proof.txt'
+        (self.root / 'proof.txt').write_bytes(b'tampered')
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
+    def test_registered_uri_cannot_be_replaced_by_relative_alias(self):
+        self.mapped_proof()
+        self.page['sources'][0]['evidence'] = {'path': 'proof.txt', 'sha256': self.proof['sha256']}
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
+    def test_uri_map_rejects_conflicting_payload_and_malformed_list(self):
+        uri = self.mapped_proof()
+        self.manifest['evidence_files'].append({'uri': uri + '2', 'sha256': '0' * 64, 'path': 'proof.txt'})
+        self.assertFalse(self.run_gate()['publication_eligible'])
+        self.manifest['evidence_files'] = {}
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
+    def test_snapshot_equivalence_uses_exact_mapped_proof(self):
+        self.mapped_proof()
+        self.use_checked_snapshot()
+        self.assertTrue(self.run_gate()['publication_eligible'])
+        self.row['source']['provenance_equivalence']['evidence_path'] += 'other'
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
+    def test_malformed_uri_reference_hash_fails_closed(self):
+        self.mapped_proof()
+        self.page['source_accuracy']['evidence'] = {'path': self.proof['path'], 'sha256': []}
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
     def test_non_archive_findings_block(self):
         self.assertFalse(self.run_gate(['EMAIL personal address'])['publication_eligible'])
 

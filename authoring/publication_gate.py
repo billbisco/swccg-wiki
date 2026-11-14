@@ -38,7 +38,69 @@ def _safe_relative(value: object) -> bool:
             and not re.match(r'^[A-Za-z]:', value))
 
 
-def _read_file(root: Path, ref: object, errors: list[str], label: str) -> bytes | None:
+def _immutable_evidence_uri(uri: object, repositories: set[str]) -> bool:
+    """Canonical identity only: never fetch or normalize a caller's URI."""
+    if (not isinstance(uri, str) or any(c in uri for c in '%\\?#')
+            or any(c.isspace() or ord(c) < 32 for c in uri)):
+        return False
+    try:
+        parsed = urllib.parse.urlsplit(uri)
+    except ValueError:
+        return False
+    if (parsed.scheme != 'https' or parsed.netloc != 'github.com'
+            or parsed.query or parsed.fragment):
+        return False
+    parts = parsed.path.split('/')
+    return (len(parts) >= 6 and parts[0] == '' and parts[3] == 'blob'
+            and 'https://github.com/' + '/'.join(parts[1:3]) in repositories
+            and re.fullmatch(r'[0-9a-f]{40}', parts[4]) is not None
+            and all(part not in {'', '.', '..'} and ':' not in part for part in parts[5:]))
+
+
+def _evidence_files(root, entries, contracts, errors):
+    """Validate explicit offline locators without mutating registry identities."""
+    repositories = contracts.BACKUP_REPOSITORIES | {'https://github.com/swccg-guild/work'}
+    if not isinstance(entries, list):
+        errors.append('evidence files: explicit mapping list required')
+        return {}
+    files, seen_uris, local_hashes = {}, set(), {}
+    for entry in entries:
+        if (not isinstance(entry, dict)
+                or not _immutable_evidence_uri(entry.get('uri'), repositories)
+                or not re.fullmatch(r'[0-9a-f]{64}', str(entry.get('sha256', '')))):
+            errors.append('evidence files: immutable approved Git URI and SHA-256 required')
+            continue
+        uri, digest = entry['uri'], entry['sha256']
+        if uri in seen_uris:
+            errors.append('evidence files: duplicate or contradictory URI mapping')
+            continue
+        seen_uris.add(uri)
+        local_ref = {'path': entry.get('path'), 'sha256': digest}
+        if not _safe_relative(local_ref['path']) or ':' in local_ref['path']:
+            errors.append('evidence files: safe bundle-relative locator required')
+            continue
+        local = (root / local_ref['path']).resolve()
+        if local in local_hashes and local_hashes[local] != digest:
+            errors.append('evidence files: contradictory local payload hashes')
+            continue
+        local_hashes[local] = digest
+        payload = _read_file(root, local_ref, errors, 'mapped evidence')
+        if payload is not None:
+            files[(uri, digest)] = payload
+    return files
+
+
+def _read_file(root: Path, ref: object, errors: list[str], label: str,
+               evidence_files=None) -> bytes | None:
+    if isinstance(ref, dict) and isinstance(ref.get('path'), str) and ':' in ref['path']:
+        if not isinstance(ref.get('sha256'), str):
+            errors.append(label + ': exact hash-bound offline URI mapping required')
+            return None
+        key = (ref['path'], ref.get('sha256'))
+        if evidence_files is not None and key in evidence_files:
+            return evidence_files[key]
+        errors.append(label + ': exact hash-bound offline URI mapping required')
+        return None
     if not isinstance(ref, dict) or not _safe_relative(ref.get('path')):
         errors.append(label + ': safe bundle-relative evidence path required')
         return None
@@ -57,8 +119,8 @@ def _read_file(root: Path, ref: object, errors: list[str], label: str) -> bytes 
     return data
 
 
-def _read_export(root: Path, ref: object, contracts, errors: list[str]) -> dict:
-    data = _read_file(root, ref, errors, 'registry export')
+def _read_export(root: Path, ref: object, contracts, errors: list[str], evidence_files=None) -> dict:
+    data = _read_file(root, ref, errors, 'registry export', evidence_files)
     if data is None:
         return {}
     storage = ref.get('storage')
@@ -113,7 +175,7 @@ def _backup_errors(contracts, receipt, subject):
         return ['malformed backup receipt or subject']
 
 
-def _checked_object(binding, objects, root, contracts, errors, citation_url=None):
+def _checked_object(binding, objects, root, contracts, errors, citation_url=None, evidence_files=None):
     if (not isinstance(binding, dict) or not isinstance(binding.get('object_id'), str)
             or binding['object_id'] not in objects):
         errors.append('unregistered preservation object')
@@ -135,7 +197,7 @@ def _checked_object(binding, objects, root, contracts, errors, citation_url=None
     if source.get('representation') == 'checked_self_contained_snapshot' and not representation_errors:
         proof = source['provenance_equivalence']
         _read_file(root, {'path': proof['evidence_path'], 'sha256': proof['evidence_sha256']},
-                   errors, 'primary/snapshot equivalence')
+                   errors, 'primary/snapshot equivalence', evidence_files)
     if citation_url is not None:
         allowed = {_url(source['url'])} if isinstance(source.get('url'), str) else set()
         if not representation_errors and isinstance(source.get('primary_url'), str):
@@ -164,8 +226,11 @@ def _checked_object(binding, objects, root, contracts, errors, citation_url=None
     registered = source.get('checked_evidence')
     if not isinstance(evidence, dict) or not isinstance(registered,dict) or evidence.get('sha256') != registered.get('sha256'):
         errors.append('checked source evidence does not match the registered object')
+    elif (isinstance(registered.get('path'), str) and ':' in registered['path']
+          and evidence.get('path') != registered['path']):
+        errors.append('checked source evidence must retain its exact registered URI')
     else:
-        _read_file(root, evidence, errors, 'checked source')
+        _read_file(root, evidence, errors, 'checked source', evidence_files)
     return row
 
 
@@ -234,8 +299,9 @@ def publication_report(text: str, title: str, flags: list[str], required_sources
         accuracy = {}
     if accuracy.get('status') != 'checked':
         errors.append('checked source accuracy is required')
-    _read_file(manifest_path.parent, accuracy.get('evidence'), errors, 'source accuracy')
-    objects = _read_export(manifest_path.parent, manifest.get('registry_export'), contracts, errors)
+    evidence_files = _evidence_files(manifest_path.parent, manifest.get('evidence_files', []), contracts, errors)
+    _read_file(manifest_path.parent, accuracy.get('evidence'), errors, 'source accuracy', evidence_files)
+    objects = _read_export(manifest_path.parent, manifest.get('registry_export'), contracts, errors, evidence_files)
     mappings = page.get('sources')
     if not isinstance(mappings, list):
         errors.append('explicit source mappings required')
@@ -249,7 +315,7 @@ def publication_report(text: str, title: str, flags: list[str], required_sources
         if url in seen:
             errors.append('duplicate source mapping')
         seen.add(url)
-        row = _checked_object(binding, objects, manifest_path.parent, contracts, errors, binding['url'])
+        row = _checked_object(binding, objects, manifest_path.parent, contracts, errors, binding['url'], evidence_files)
         if row:
             report['preservation_pending'].append({'url':url,'object_id':row['object_id'],'job_id':row['job_id'],'state':row['state']})
     if {_url(u) for u in required_sources} - seen:
@@ -260,7 +326,7 @@ def publication_report(text: str, title: str, flags: list[str], required_sources
         versions = []
     covered = set()
     for binding in versions:
-        row = _checked_object(binding, objects, manifest_path.parent, contracts, errors)
+        row = _checked_object(binding, objects, manifest_path.parent, contracts, errors, evidence_files=evidence_files)
         if row:
             if row['subject']['kind'] != 'wiki_file_version' or binding.get('subject') != row['subject']:
                 errors.append('original version does not bind exact public version identity')
