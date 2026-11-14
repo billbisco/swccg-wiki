@@ -1,0 +1,87 @@
+# Story381 — changed live pages
+
+- [2-1B (Too-Onebee)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29) — revision 302492
+- [2-1B (Too-Onebee) (Japanese)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28Japanese%29) — revision 302493
+- [2-1B (Too-Onebee) (PC Errata)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28PC_Errata%29) — revision 302494
+- [2-1B (Too-Onebee) (Reflections Foil)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28Reflections_Foil%29) — revision 302592
+- [2-1B (Too-Onebee) (Revised)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28Revised%29) — revision 302495
+- [2-1B (Too-Onebee) (V)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28V%29) — revision 302496
+- [2-1B (Too-Onebee) (V) (Virtual Set 4)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28V%29_%28Virtual_Set_4%29) — revision 302497
+- [2-1B (Too-Onebee) (V) (Virtual Set 4) (Errata)](https://wiki.swccg.com/wiki/2-1B_%28Too-Onebee%29_%28V%29_%28Virtual_Set_4%29_%28Errata%29) — revision 302498
+- [4-LOM](https://wiki.swccg.com/wiki/4-LOM) — revision 302499
+- [4-LOM (Reflections Foil)](https://wiki.swccg.com/wiki/4-LOM_%28Reflections_Foil%29) — revision 302593
+- [4-LOM (Revised)](https://wiki.swccg.com/wiki/4-LOM_%28Revised%29) — revision 302500
+- [All Wings Report In](https://wiki.swccg.com/wiki/All_Wings_Report_In) — revision 302501
+- [All Wings Report In (Reflections Foil)](https://wiki.swccg.com/wiki/All_Wings_Report_In_%28Reflections_Foil%29) — revision 302594
+- [Artoo (Jabba's Palace)](https://wiki.swccg.com/wiki/Artoo_%28Jabba%27s_Palace%29) — revision 302502
+- [Artoo (Jabba's Palace) (Errata)](https://wiki.swccg.com/wiki/Artoo_%28Jabba%27s_Palace%29_%28Errata%29) — revision 302503
+- [Artoo (Reflections Foil)](https://wiki.swccg.com/wiki/Artoo_%28Reflections_Foil%29) — revision 302595
+- [Artoo (V)](https://wiki.swccg.com/wiki/Artoo_%28V%29) — revision 302504
+- [Artoo (V) (Errata)](https://wiki.swccg.com/wiki/Artoo_%28V%29_%28Errata%29) — revision 302506
+- [Artoo (V) (Virtual Block 1)](https://wiki.swccg.com/wiki/Artoo_%28V%29_%28Virtual_Block_1%29) — revision 302507
+- [Artoo (V) (Virtual Set 15: Galactic Frontier)](https://wiki.swccg.com/wiki/Artoo_%28V%29_%28Virtual_Set_15%3A_Galactic_Frontier%29) — revision 302508
+- [Attack Run](https://wiki.swccg.com/wiki/Attack_Run) — revision 302509
+- [Attack Run (Errata)](https://wiki.swccg.com/wiki/Attack_Run_%28Errata%29) — revision 302510
+- [Attack Run (Japanese)](https://wiki.swccg.com/wiki/Attack_Run_%28Japanese%29) — revision 302511
+- [Attack Run (PC Errata 2)](https://wiki.swccg.com/wiki/Attack_Run_%28PC_Errata_2%29) — revision 302512
+- [Attack Run (PC Errata)](https://wiki.swccg.com/wiki/Attack_Run_%28PC_Errata%29) — revision 302513
+- [Attack Run (Reflections Foil)](https://wiki.swccg.com/wiki/Attack_Run_%28Reflections_Foil%29) — revision 302596
+- [Attack Run (Revised)](https://wiki.swccg.com/wiki/Attack_Run_%28Revised%29) — revision 302514
+- [Bane Malar](https://wiki.swccg.com/wiki/Bane_Malar) — revision 302515
+- [Bane Malar (Reflections Foil)](https://wiki.swccg.com/wiki/Bane_Malar_%28Reflections_Foil%29) — revision 302597
+- [Bane Malar (V)](https://wiki.swccg.com/wiki/Bane_Malar_%28V%29) — revision 302516
+- [Bane Malar (V) (Virtual Set 7)](https://wiki.swccg.com/wiki/Bane_Malar_%28V%29_%28Virtual_Set_7%29) — revision 302517
+- [Bane Malar (V) (Virtual Set 7) (Errata 2)](https://wiki.swccg.com/wiki/Bane_Malar_%28V%29_%28Virtual_Set_7%29_%28Errata_2%29) — revision 302518
+- [Bane Malar (V) (Virtual Set 7) (Errata)](https://wiki.swccg.com/wiki/Bane_Malar_%28V%29_%28Virtual_Set_7%29_%28Errata%29) — revision 302519
+- [Ben Kenobi](https://wiki.swccg.com/wiki/Ben_Kenobi) — revision 302520
+- [Ben Kenobi (PC Errata)](https://wiki.swccg.com/wiki/Ben_Kenobi_%28PC_Errata%29) — revision 302521
+- [Ben Kenobi (Reflections Foil)](https://wiki.swccg.com/wiki/Ben_Kenobi_%28Reflections_Foil%29) — revision 302598
+- [Bib Fortuna](https://wiki.swccg.com/wiki/Bib_Fortuna) — revision 302522
+- [Bib Fortuna (Reflections Foil)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28Reflections_Foil%29) — revision 302599
+- [Bib Fortuna (Reflections III)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28Reflections_III%29) — revision 302523
+- [Bib Fortuna (V)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28V%29) — revision 302524
+- [Bib Fortuna (V) (Errata)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28V%29_%28Errata%29) — revision 302525
+- [Bib Fortuna (V) (Virtual Block 3)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28V%29_%28Virtual_Block_3%29) — revision 302526
+- [Bib Fortuna (V) (Virtual Block 3) (Errata 2)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28V%29_%28Virtual_Block_3%29_%28Errata_2%29) — revision 302527
+- [Bib Fortuna (V) (Virtual Block 3) (Errata 3)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28V%29_%28Virtual_Block_3%29_%28Errata_3%29) — revision 302528
+- [Bib Fortuna (V) (Virtual Block 3) (Errata)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28V%29_%28Virtual_Block_3%29_%28Errata%29) — revision 302529
+- [Bib Fortuna (V) (Virtual Set 15: Galactic Frontier)](https://wiki.swccg.com/wiki/Bib_Fortuna_%28V%29_%28Virtual_Set_15%3A_Galactic_Frontier%29) — revision 302530
+- [Biggs Darklighter](https://wiki.swccg.com/wiki/Biggs_Darklighter) — revision 302531
+- [Biggs Darklighter (Errata)](https://wiki.swccg.com/wiki/Biggs_Darklighter_%28Errata%29) — revision 302532
+- [Biggs Darklighter (Japanese)](https://wiki.swccg.com/wiki/Biggs_Darklighter_%28Japanese%29) — revision 302533
+- [Biggs Darklighter (Reflections Foil)](https://wiki.swccg.com/wiki/Biggs_Darklighter_%28Reflections_Foil%29) — revision 302600
+- [Biggs Darklighter (Unlimited)](https://wiki.swccg.com/wiki/Biggs_Darklighter_%28Unlimited%29) — revision 302534
+- [Biggs Darklighter (V) (Virtual Set 2)](https://wiki.swccg.com/wiki/Biggs_Darklighter_%28V%29_%28Virtual_Set_2%29) — revision 302535
+- [Biggs Darklighter (V) (Virtual Set 2) (Errata)](https://wiki.swccg.com/wiki/Biggs_Darklighter_%28V%29_%28Virtual_Set_2%29_%28Errata%29) — revision 302536
+- [Black 2](https://wiki.swccg.com/wiki/Black_2) — revision 302537
+- [Black 2 (Errata)](https://wiki.swccg.com/wiki/Black_2_%28Errata%29) — revision 302538
+- [Black 2 (Japanese)](https://wiki.swccg.com/wiki/Black_2_%28Japanese%29) — revision 302539
+- [Black 2 (Reflections Foil)](https://wiki.swccg.com/wiki/Black_2_%28Reflections_Foil%29) — revision 302601
+- [Black 2 (Unlimited)](https://wiki.swccg.com/wiki/Black_2_%28Unlimited%29) — revision 302540
+- [Black 2 (V)](https://wiki.swccg.com/wiki/Black_2_%28V%29) — revision 302541
+- [Black 2 (V) (Errata)](https://wiki.swccg.com/wiki/Black_2_%28V%29_%28Errata%29) — revision 302542
+- [Black 2 (V) (Virtual Block 1)](https://wiki.swccg.com/wiki/Black_2_%28V%29_%28Virtual_Block_1%29) — revision 302543
+- [Black 2 (V) (Virtual Set 1)](https://wiki.swccg.com/wiki/Black_2_%28V%29_%28Virtual_Set_1%29) — revision 302544
+- [Black 2 (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Black_2_%28V%29_%28Virtual_Set_1%29_%28Errata_2%29) — revision 302545
+- [Black 2 (V) (Virtual Set 1) (Errata)](https://wiki.swccg.com/wiki/Black_2_%28V%29_%28Virtual_Set_1%29_%28Errata%29) — revision 302546
+- [File:Reflections-Foil-D-4-LOM-PSA-92003756-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-4-LOM-PSA-92003756-original.jpg) — revision 302463
+- [File:Reflections-Foil-D-Bane-Malar-PSA-89232379-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Bane-Malar-PSA-89232379-original.jpg) — revision 302467
+- [File:Reflections-Foil-D-Bib-Fortuna-PSA-117537193-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Bib-Fortuna-PSA-117537193-original.jpg) — revision 302469
+- [File:Reflections-Foil-D-Black-2-PSA-117537197-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-D-Black-2-PSA-117537197-original.jpg) — revision 302471
+- [File:Reflections-Foil-L-2-1B-Too-Onebee-PSA-73325450-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-2-1B-Too-Onebee-PSA-73325450-original.jpg) — revision 302462
+- [File:Reflections-Foil-L-All-Wings-Report-In-PSA-117537208-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-All-Wings-Report-In-PSA-117537208-original.jpg) — revision 302464
+- [File:Reflections-Foil-L-Artoo-PSA-75985147-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Artoo-PSA-75985147-original.jpg) — revision 302465
+- [File:Reflections-Foil-L-Attack-Run-PSA-72605733-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Attack-Run-PSA-72605733-original.jpg) — revision 302466
+- [File:Reflections-Foil-L-Ben-Kenobi-PSA-75985154-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Ben-Kenobi-PSA-75985154-original.jpg) — revision 302468
+- [File:Reflections-Foil-L-Biggs-Darklighter-PSA-73826307-original.jpg](https://wiki.swccg.com/wiki/File%3AReflections-Foil-L-Biggs-Darklighter-PSA-73826307-original.jpg) — revision 302470
+- [Reflections](https://wiki.swccg.com/wiki/Reflections) — revision 302505
+- [Talk:2-1B (Too-Onebee) (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3A2-1B_%28Too-Onebee%29_%28Reflections_Foil%29) — revision 302548
+- [Talk:4-LOM (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3A4-LOM_%28Reflections_Foil%29) — revision 302549
+- [Talk:All Wings Report In (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3AAll_Wings_Report_In_%28Reflections_Foil%29) — revision 302550
+- [Talk:Artoo (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3AArtoo_%28Reflections_Foil%29) — revision 302551
+- [Talk:Attack Run (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3AAttack_Run_%28Reflections_Foil%29) — revision 302552
+- [Talk:Bane Malar (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ABane_Malar_%28Reflections_Foil%29) — revision 302553
+- [Talk:Ben Kenobi (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ABen_Kenobi_%28Reflections_Foil%29) — revision 302554
+- [Talk:Bib Fortuna (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ABib_Fortuna_%28Reflections_Foil%29) — revision 302555
+- [Talk:Biggs Darklighter (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ABiggs_Darklighter_%28Reflections_Foil%29) — revision 302556
+- [Talk:Black 2 (Reflections Foil)](https://wiki.swccg.com/wiki/Talk%3ABlack_2_%28Reflections_Foil%29) — revision 302557
