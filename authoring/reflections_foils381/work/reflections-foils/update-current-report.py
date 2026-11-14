@@ -29,6 +29,9 @@ Retained VPS files: /opt/swccg-res/snapshots/psa/reflections381-batch8-primary-s
 
 [Story #381](https://github.com/swccg-guild/work/issues/381); [source PR18](https://github.com/billbisco/swccg-wiki/pull/18); [shared evidence](https://github.com/swccg-guild/work/tree/main/evidence/381).
 '''
+last=max(int(re.match(r'batch(\d+)',f.name)[1]) for f in root.glob('batch*-new-packet.json'))
+text=text.replace('batches9–13','batches9–'+str(last)).replace('batches 9–13','batches 9–'+str(last))
+text=re.sub(r'Batch12 has nine new Reflections II drafts.*?No unverified gameplay IDs', 'The prepared Reflections II drafts now cover all remaining missing faces. Each has zero style/Cite flags and an intact shared Card preview. The additional existing Don’t Get Cocky article is retained for integration audit. No unverified gameplay IDs',text)
 (root/'current-batch-report.md').write_text(text,encoding='utf8')
 delivery=f'''## Current delivery
 
@@ -40,6 +43,7 @@ Current external blocker: Wayback GET saves returned520; its public POST returne
 
 [Inventory, field evidence, current report and all changed-page links](https://github.com/swccg-guild/work/tree/main/evidence/381). [Source PR18](https://github.com/billbisco/swccg-wiki/pull/18). [Detailed current report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md).
 '''
+delivery=delivery.replace('batches9–13','batches9–'+str(last))
 live=(root/'story-live.md').read_text(encoding='utf-8-sig');assert live.count('## Current delivery')==1
 (root/'story-current.md').write_text(re.sub(r'## Current delivery\n.*',lambda m:delivery,live,flags=re.S),encoding='utf8')
 readme=(root/'README.md').read_text(encoding='utf8');match=re.search(r'First verified batch:|\d+ new articles completed',readme);assert match

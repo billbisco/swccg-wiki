@@ -1,0 +1,13 @@
+== Source, printing and text-state verification (Story 386) ==
+The [https://www.starwarsccg.org/2026-world-championship-larry-nava-de-santiago-ds-endor-operations/ published Players Committee decklist] was compared with the [[Media:26Worlds Nava De Santiago DS Eops.txt|wiki-hosted XML download]] and the card articles linked in the table. Preserved copy: [https://web.archive.org/web/20261114034934/https://swccg.com/snapshots/pc/2026-world-championship-larry-nava-de-santiago-ds-endor-operations.html Players Committee decklist]. The download's File page attributes the XML to the forum distribution; the original forum ZIP has not been independently byte-verified.
+The download contains 60 constructed-card entries. Its SHA-256 is <code>efea064954d493ebfb5a7b4b0321376982a011b604d78e591aac3b4044beb8c1</code>; the download bytes were retained. The article lists 60 constructed cards and 28 outside-deck cards. Each outside-deck XML identity is counted separately; a card outside the deck is placed in its own card-type group when it is not a Defensive Shield.
+
+=== Printing choices ===
+* 1x [[Grand Admiral Thrawn (V) (ALT) (Errata)]]: XML <nowiki>207_30</nowiki>. The published list says <nowiki>1x Grand Admiral Thrawn (AI) (V)</nowiki>. The linked AI/ALT belongs to the same card family and its engine gameplay record matches the ordinary image after excluding image-identity fields.
+* 2x [[The Phantom Menace (AI)]]: XML <nowiki>12_140</nowiki>. The published list says <nowiki>2x The Phantom Menace (AI)</nowiki>. The linked AI/ALT belongs to the same card family and its engine gameplay record matches the ordinary image after excluding image-identity fields.
+
+=== Wording in the import reference ===
+These links use the existing article with the requested card identity. The engine reference associated with the XML code and that article have the following wording differences; neither the card article nor the download was rewritten to erase them.
+* [[Mara Jade With Lightsaber (Errata 3)]] (<nowiki>200_86</nowiki>, gameText): engine reference <nowiki>With Luke or Emperor on table, power +1 and she moves for free. Permanent weapon is •Mara Jade's Lightsaber (may target a character or creature for free; draw two destiny; target hit, and its forfeit = 0, if total destiny > defense value).</nowiki>; card article <nowiki>While Luke or Emperor on table, power +1 and she moves for free. Permanent weapon is •Mara Jade's Lightsaber (may target a character or creature for free; draw two destiny; target hit, and its forfeit = 0, if total destiny > defense value).</nowiki>.
+
+[[User:Memory Core ChatGPT|Memory Core ChatGPT]] ([[User talk:Memory Core ChatGPT|talk]]) 04:11, 14 November 2026 (UTC)

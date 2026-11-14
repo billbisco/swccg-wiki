@@ -4,4 +4,4 @@ In progress under Bill's explicit authorization. Story: https://github.com/swccg
 
 Local scripts and captured source records are mirrored here so another AI can resume. `bootstrap-heads.json` holds the set/checklist/pilot baseline; `existing-foil-heads.json` inventories live foil/Reflections title candidates; `all-article-titles.json` records the full mainspace non-redirect title census. These are discovery records, not blanket certification of article correctness or foil identity.
 
-70 new articles completed and verified; ten more live/pending; 52 unsaved drafts. Whole story remains In Progress. See current-batch-report.md and completion-progress.json. Original sources live in swccg-wiki-files; draft-only image packets are not upload packets. Never claim pending image captures verified or replay obsolete revision guards.
+70 new articles completed and verified; ten more live/pending; 147 unsaved drafts. Whole story remains In Progress. See current-batch-report.md and completion-progress.json. Original sources live in swccg-wiki-files; draft-only image packets are not upload packets. Never claim pending image captures verified or replay obsolete revision guards.

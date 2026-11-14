@@ -10,5 +10,8 @@ def finish(stage,rows,year):
         row.update(product=src['product'],language='English',finish='Foil',copyright_year=year,rarity=m['rarity'],article=src['article'],source_photo=src['local_file'],source_url=src.get('source_url',src.get('source')),source_sha256=src['sha256'],inspection='Complete physical foil independently read on '+stage+' inspection sheets; source metadata is provenance, not text evidence',status='manually inspected and independently transcribed',gemp_mapping='unverified: omit playable ID')
         if 'candidate' in src:row.update(source_gallery=src['candidate']['source_html'],registry_key=src['candidate']['registry_key'])
         else:row.update(source_kind='SWCA',source_id=src['id'],source_gallery=src['entry_url'])
+        if src.get('alternate_image'):
+            arts=json.loads((root/'artwork-verification.json').read_bytes());art=next(a for a in arts if a['article']==row['article']);assert art['verified'] and art['source_sha256']==row['source_sha256']
+            row.update(alternate_image=True,artwork_verification=art)
         row['field_status']={k:'printed' for k in row if k in ['printed_title','type','subtype','destiny','power','ability','armor','maneuver','landspeed','hyperspeed','deploy','forfeit','parsec','light_icons','dark_icons','icons','lore','game_text','uniqueness','copyright_year']};row['field_status']['rarity']='catalogued: Complete Card List v4.0'
     (root/(stage+'-readings.json')).write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf8');print(len(rows),'independent readings recorded for',stage)

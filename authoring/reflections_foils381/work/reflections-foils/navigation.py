@@ -27,13 +27,14 @@ def label(title,t):
     return 'Decipher'
 
 def new_navigation(r,heads,families,readings):
-    root=card(heads[r['title']]['revisions'][0]['slots']['main']['content'])
+    root_title=canonical(r['title'],heads)
+    root=card(heads[root_title]['revisions'][0]['slots']['main']['content'])
     oldvalue='\n'.join(str(root.get(k).value) for k in ['versions','printings'] if root.has(k))
     navigators=[t for t in mw.parse(oldvalue).filter_templates() if str(t.name).strip().startswith('Card versions/')]
     if navigators:
         assert len(navigators)==1
         return str(navigators[0])
-    order=[r['title']]+[canonical(str(w.title).strip(),heads) for w in mw.parse(oldvalue).filter_wikilinks()]+families[r['title']]
+    order=[root_title]+[canonical(str(w.title).strip(),heads) for w in mw.parse(oldvalue).filter_wikilinks()]+families[r['title']]
     order=list(dict.fromkeys(t for t in order if t in families[r['title']]))
     entries=[]
     for i,title in enumerate(order):
