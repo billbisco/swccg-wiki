@@ -113,7 +113,7 @@ def _backup_errors(contracts, receipt, subject):
         return ['malformed backup receipt or subject']
 
 
-def _checked_object(binding, objects, root, contracts, errors):
+def _checked_object(binding, objects, root, contracts, errors, citation_url=None):
     if (not isinstance(binding, dict) or not isinstance(binding.get('object_id'), str)
             or binding['object_id'] not in objects):
         errors.append('unregistered preservation object')
@@ -127,6 +127,21 @@ def _checked_object(binding, objects, root, contracts, errors):
         return row
     if type(source.get('bytes')) is not int or source['bytes'] < 0:
         errors.append('registered source needs an exact nonnegative byte count')
+    try:
+        representation_errors = contracts.validate_source_representation(source)
+    except (TypeError, ValueError):
+        representation_errors = ['malformed source representation']
+    errors.extend('source representation: ' + error for error in representation_errors)
+    if source.get('representation') == 'checked_self_contained_snapshot' and not representation_errors:
+        proof = source['provenance_equivalence']
+        _read_file(root, {'path': proof['evidence_path'], 'sha256': proof['evidence_sha256']},
+                   errors, 'primary/snapshot equivalence')
+    if citation_url is not None:
+        allowed = {_url(source['url'])} if isinstance(source.get('url'), str) else set()
+        if not representation_errors and isinstance(source.get('primary_url'), str):
+            allowed.add(_url(source['primary_url']))
+        if _url(citation_url) not in allowed:
+            errors.append('citation URL is not the registered source or its checked primary alias')
     if source.get('sha256') != subject['content_sha256'] or source.get('bytes') != subject['bytes']:
         try:
             source_errors = contracts.validate_source_backup_receipt(row.get('source_backup_receipt'), source)
@@ -189,7 +204,7 @@ def publication_report(text: str, title: str, flags: list[str], required_sources
         return report
     if any(not callable(getattr(contracts, name, None)) for name in (
             'validate_backup_receipt', 'validate_registration_identity',
-            'registration_object_id', 'validate_source_backup_receipt')):
+            'registration_object_id', 'validate_source_backup_receipt', 'validate_source_representation')):
         errors.append('current Story 410 registration/backup contract required')
         return report
     if (not isinstance(manifest, dict) or type(manifest.get('schema_version')) is not int or manifest['schema_version'] != 1
@@ -234,7 +249,7 @@ def publication_report(text: str, title: str, flags: list[str], required_sources
         if url in seen:
             errors.append('duplicate source mapping')
         seen.add(url)
-        row = _checked_object(binding, objects, manifest_path.parent, contracts, errors)
+        row = _checked_object(binding, objects, manifest_path.parent, contracts, errors, binding['url'])
         if row:
             report['preservation_pending'].append({'url':url,'object_id':row['object_id'],'job_id':row['job_id'],'state':row['state']})
     if {_url(u) for u in required_sources} - seen:

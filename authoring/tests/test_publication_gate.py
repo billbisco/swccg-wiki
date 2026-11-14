@@ -147,12 +147,13 @@ class PublicationGateTests(unittest.TestCase):
         self.row['record'] = f"requests/{subject['content_sha256']}/{self.row['object_id']}/{self.row['request_id']}.json"
         self.row['backup_receipt'] = receipt(subject)
         self.page['sources'][0]['object_id'] = self.row['object_id']
+        self.page['sources'][0]['url'] = subject['original_version_url']
         self.page['rendered_originals'] = [subject['title']]
         self.page['original_versions'] = [{'subject': copy.deepcopy(subject),
             'object_id': self.row['object_id'], 'evidence': self.proof}]
-        self.assertTrue(self.run_gate()['publication_eligible'])
+        self.assertTrue(self.run_gate(sources={subject['original_version_url']})['publication_eligible'])
         self.page['original_versions'][0]['subject']['upload_timestamp'] = '2026-11-13T12:00:00Z'
-        self.assertFalse(self.run_gate()['publication_eligible'])
+        self.assertFalse(self.run_gate(sources={subject['original_version_url']})['publication_eligible'])
 
     def test_unhashable_json_values_fail_closed(self):
         for holder, key in [(self.page['sources'][0], 'object_id'), (self.row, 'state'),
@@ -251,6 +252,48 @@ class PublicationGateTests(unittest.TestCase):
         result = self.run_gate(sources={'https://example.org/source', 'https://example.org/second'})
         self.assertTrue(result['publication_eligible'])
         self.assertEqual(2, len({item['job_id'] for item in result['preservation_pending']}))
+
+    def use_checked_snapshot(self):
+        source = self.row['source']
+        primary = source['url']
+        source.update(url='https://swccg.com/snapshots/pc/exact-source.html', primary_url=primary,
+                      representation='checked_self_contained_snapshot')
+        source['provenance_equivalence'] = {
+            'primary_url': primary, 'snapshot_url': source['url'],
+            'primary_html_sha256': sha(b'different primary rendered html'),
+            'snapshot_html_sha256': source['sha256'],
+            'primary_article_text_sha256': sha(b'exact article text'),
+            'snapshot_article_text_sha256': sha(b'exact article text'),
+            'evidence_path': self.proof['path'], 'evidence_sha256': self.proof['sha256']}
+        self.row['object_id'] = contracts.registration_object_id(self.row['subject'], source)
+        self.row['record'] = f"requests/{source['sha256']}/{self.row['object_id']}/{self.row['request_id']}.json"
+        self.page['sources'][0]['object_id'] = self.row['object_id']
+
+    def test_checked_primary_alias_preserves_actual_snapshot_payload_identity(self):
+        self.use_checked_snapshot()
+        result = self.run_gate()
+        self.assertTrue(result['publication_eligible'], result['errors'])
+        source = self.row['source']
+        self.assertNotEqual(source['provenance_equivalence']['primary_html_sha256'], source['sha256'])
+        self.assertFalse(result['preservation_complete'])
+
+    def test_unproved_or_unrelated_primary_alias_blocks(self):
+        self.use_checked_snapshot()
+        proof = self.row['source']['provenance_equivalence']
+        proof['snapshot_article_text_sha256'] = sha(b'different article text')
+        self.assertFalse(self.run_gate()['publication_eligible'])
+        proof['snapshot_article_text_sha256'] = proof['primary_article_text_sha256']
+        self.page['sources'][0]['url'] = 'https://example.org/unrelated'
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
+    def test_wrong_snapshot_payload_or_missing_equivalence_evidence_blocks(self):
+        self.use_checked_snapshot()
+        proof = self.row['source']['provenance_equivalence']
+        proof['snapshot_html_sha256'] = proof['primary_html_sha256']
+        self.assertFalse(self.run_gate()['publication_eligible'])
+        proof['snapshot_html_sha256'] = self.row['source']['sha256']
+        proof['evidence_path'] = 'missing-proof.json'
+        self.assertFalse(self.run_gate()['publication_eligible'])
 
 
 if __name__ == '__main__':
