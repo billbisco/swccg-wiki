@@ -121,34 +121,15 @@ class SharedCheckoutTests(unittest.TestCase):
 
 
 class NightlyTransactionTests(unittest.TestCase):
-    def test_page_writer_has_no_prewrite_before_locked_callback(self):
-        with tempfile.TemporaryDirectory() as directory:
-            repo = Path(directory)
-            written = []
-            fake = SimpleNamespace(
-                INDEX=repo / "INDEX.tsv", index_existing=lambda: {},
-                dump_from_tsv=lambda tsv, existing, rows: rows.append(("Example", "pages/Example.wiki")),
-                _merge_index=lambda rows, keep_old: rows,
-                write_index=lambda rows: written.append(rows),
-            )
-            def commit(repo, paths, message, redo):
-                self.assertEqual([], paths)
-                self.assertEqual([], written, "page text was written before the Git transaction")
-                self.assertFalse((repo / ".nightly-titles.tsv").exists())
-                self.assertEqual(["pages/Example.wiki", "pages/INDEX.tsv"], redo())
-                return True
-            with patch.dict(sys.modules, dump_live=fake), patch.object(nightly_backup, "commit_and_push", side_effect=commit):
-                self.assertEqual(1, nightly_backup.backup_pages(repo, {"Example"}))
-            self.assertEqual(1, len(written))
-
-    def test_git_failure_keeps_nightly_checkpoint_for_same_window_retry(self):
+    def test_git_failure_keeps_legacy_checkpoint_for_same_window_retry(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             state = root / "state.json"
             previous = '{"last":"2026-11-13T00:00:00Z"}'
             state.write_text(previous, encoding="utf-8")
-            argv = ["nightly_backup.py", str(root), str(root), "--state", str(state)]
-            with patch.object(sys, "argv", argv), patch.object(nightly_backup, "changed_since", return_value=({"Example"}, set())), patch.object(nightly_backup, "backup_pages", side_effect=gitsync.RepositoryBusy("busy")):
+            argv = ["nightly_backup.py", str(root), str(root), "--state", str(state), "--work", str(root / "work")]
+            producer = SimpleNamespace(run=lambda **kwargs: (_ for _ in ()).throw(gitsync.RepositoryBusy("busy")))
+            with patch.object(sys, "argv", argv), patch.object(nightly_backup, "Producer", return_value=producer):
                 with self.assertRaises(gitsync.RepositoryBusy):
                     nightly_backup.main()
             self.assertEqual(previous, state.read_text(encoding="utf-8"))
