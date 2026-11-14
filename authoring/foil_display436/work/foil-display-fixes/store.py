@@ -32,7 +32,7 @@ for path,data in files.items():
     oid=git('hash-object','-w','--stdin',data=data).decode().strip();updates.append('100644 '+oid+'\t'+path+'\0')
 git('update-index','--info-only','-z','--index-info',data=''.join(updates).encode());tree=git('write-tree','--missing-ok').decode().strip()
 commit=git('commit-tree',tree,*[a for p in parents for a in ['-p',p]],'-m','Correct foil photo framing and inline-symbol sizing (Refs swccg-guild/work#436)').decode().strip()
-assert set(git('diff','--name-only',base,commit).decode().splitlines())<=set(files)
+assert set(filter(None,git('diff','--name-only','-z',base,commit).decode().split('\0')))<=set(files)
 check=subprocess.run(['git','-C',repo,'-c','core.protectNTFS=false','diff','--check',base,commit],env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT);assert check.returncode==0,check.stdout.decode()
 git('push','origin',commit+':refs/heads/'+branch);(root/(mode+'-commit.txt')).write_text(commit+'\n',encoding='utf8')
 print(mode,commit,len(files),'scoped paths backed up')

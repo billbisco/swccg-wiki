@@ -187,7 +187,7 @@ class Producer:
     def __init__(self, api, pages_repo: Path, files_repo: Path, work=DEFAULT_WORK,
                  registry: Path | None = None, *, spool=None, commit=commit_and_push,
                  readback=independent_receipt, remote_head=None, max_run_bytes=256 * 1024 * 1024,
-                 projection_factory=Projection):
+                 projection_factory=Projection, source_consumer=None):
         self.api, self.pages_repo, self.files_repo = api, pages_repo, files_repo
         self.inbox = Inbox(Path(work) / "inbox")
         self.source_inventory = Path(work) / "source-inventory"
@@ -198,6 +198,7 @@ class Producer:
         self.remote_head = remote_head or self._remote_head
         self.max_run_bytes, self.processed_bytes = max_run_bytes, 0
         self.deadline = None
+        self.source_consumer = source_consumer
         self.projections = {pages_repo: projection_factory(pages_repo, "page"),
                             files_repo: projection_factory(files_repo, "file")} if projection_factory else {}
 
@@ -337,6 +338,7 @@ class Producer:
 
     def pending_source_inventory(self):
         count = 0
+        review, recorded, pending_sources = 0, 0, 0
         scanned, partial, deadline = 0, False, time.monotonic() + 2
         with os.scandir(self.source_inventory) as entries:
             for entry in entries:
@@ -347,10 +349,16 @@ class Producer:
                 if entry.name.endswith(".json"):
                     row = json.loads(Path(entry.path).read_text(encoding="utf-8"))
                     count += row.get("state") == "source_inventory_required"
+                    review += row.get("state") == "source_inventory_review_required"
+                    recorded += row.get("state") == "source_inventory_recorded"
+                    pending_sources += row.get("unresolved_source_count", 0)
         return {"source_inventory_required": count, "source_inventory_count_partial": partial,
                 "source_inventory_owner": "MemoryCoreChatGPT: Story 410 source-preservation reconciliation",
                 "source_inventory_story": "https://github.com/swccg-guild/work/issues/410",
-                "source_inventory_automatic_consumer_implemented": False}
+                "source_inventory_review_required": review,
+                "source_inventory_recorded": recorded,
+                "source_inventory_pending_sources": pending_sources,
+                "source_inventory_automatic_consumer_implemented": self.source_consumer is not None}
 
     def due_tasks(self):
         """Favor short edit events without starving originals and history."""
@@ -465,12 +473,13 @@ class Producer:
             except Exception as error:
                 self.inbox.issue(key, type(error).__name__ + ": " + str(error))
                 failures.append({"task": key, "reason": type(error).__name__})
+        source_status = self.source_consumer.run(deadline=deadline) if self.source_consumer else {}
         counts = self.inbox.health_counts()
         progress = self.spool.directory / "backup-progress.json"
         last_verified = json.loads(progress.read_text(encoding="utf-8"))["last_actual_verified_backup_at"] if progress.exists() else None
         status = {"completed_tasks": completed, "failed_tasks": failures,
                   "discovery_failures": discovery_failures,
-                  **self.pending_source_inventory(), **counts,
+                  **self.pending_source_inventory(), **counts, **source_status,
                   "last_actual_verified_backup_at": last_verified,
                   "pending": counts["pending_task_count"] > 0 or counts["task_count_partial"],
                   "archive_submitted": False, "observed_at": utcnow()}
