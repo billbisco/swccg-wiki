@@ -20,8 +20,8 @@ from backup_spool import Spool, BackupDeferred, DEFAULT_WORK, DISK_RESERVE
 from backup_projection import Projection
 from gitsync import commit_and_push, git, RepositoryBusy
 from preservation_backups import revision_artifact, independent_receipt
-from preservation_contracts import canonical_bytes, object_id, validate_backup_receipt
-from preservation_registry import atomic_json, register
+from preservation_contracts import canonical_bytes, object_id, registration_object_id, validate_backup_receipt
+from preservation_registry import atomic_json, iter_records, object_state, register, validate_request
 
 API = "https://wiki.swccg.com/api.php"
 SERVER_OWNER = "server-wayback-owner"
@@ -283,7 +283,32 @@ class Producer:
                                  "stage_bytes": 0},
                    "owner": SERVER_OWNER, "continuation": "existing server owner validates public bytes and queues once within its budgets",
                    "approval_scope": {"ticket": 410, "purpose": "Bill-approved public Wiki version preservation"}}
-        return register(self.registry, request)
+        errors = validate_request(request)
+        if errors:
+            raise ValueError("; ".join(errors))
+        try:
+            result = register(self.registry, request)
+            if result["state"] != "superseded":
+                return result
+        except ValueError:
+            # A separately checked client can have registered this immutable
+            # original first. That is not a failed backup or a reason to demote
+            # its readiness, replace provenance, or reset its generation.
+            pass
+        key = registration_object_id(request["subject"], request["source"])
+        for _ in range(3):
+            existing = next(iter_records(self.registry, object_ids={key}), None)
+            if existing is None:
+                raise BackupDeferred("conflicting registration requires owned reconciliation")
+            previous = existing["request"]
+            if (previous["subject"] != request["subject"] or
+                    any(previous["source"][name] != source[name] for name in ("url", "sha256", "bytes")) or
+                    object_state(previous) not in {"ready", "awaiting_stage"}):
+                raise BackupDeferred("existing exact-version registration needs backup/source repair; peer observation retained")
+            result = register(self.registry, previous)
+            if result["state"] != "superseded":
+                return {**result, "reused_existing_observation": True}
+        raise BackupDeferred("registration advanced repeatedly; retry without overwriting peer observations")
 
     def _mark_source_inventory(self, artifact, receipt):
         """Text backup is not proof that this revision's citations are preserved."""

@@ -119,10 +119,10 @@ class OwnerAdapter:
         if source.get("representation") != "checked_self_contained_snapshot":
             if source.get("representation", "original") != "original" or not self._check_public(source):
                 return False
-            advance_readiness(self.registry, entry,
-                              {"ready": True, "reason": "owner checked the already-public exact original payload", "stage_bytes": 0},
-                              owner=SERVER_OWNER)
-            return True
+            advanced = advance_readiness(self.registry, entry,
+                                         {"ready": True, "reason": "owner checked the already-public exact original payload", "stage_bytes": 0},
+                                         owner=SERVER_OWNER)
+            return advanced["state"] == "ready"
         target = self.worker.snapshot_file(source["url"])
         if target is None:
             raise ValueError("capture target is not an approved snapshot path")
@@ -169,8 +169,8 @@ class OwnerAdapter:
                 private.unlink(missing_ok=True)
         readiness = {"ready": True, "reason": "owner restored the independently backed exact approved snapshot",
                      "stage_bytes": source["bytes"]}
-        advance_readiness(self.registry, entry, readiness, owner=SERVER_OWNER)
-        return True
+        advanced = advance_readiness(self.registry, entry, readiness, owner=SERVER_OWNER)
+        return advanced["state"] == "ready"
 
     def _check_public(self, source):
         actual = self.worker.fetch(source["url"])

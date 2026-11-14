@@ -14,7 +14,7 @@ from backup_spool import Spool, BackupDeferred, candidate_id, CHUNK_BYTES, NoOri
 from backup_versions import Inbox, Producer, discover_changes, reconcile_inventory, backup_owner
 from preservation_backups import revision_artifact
 from preservation_contracts import object_id
-from preservation_registry import export_records
+from preservation_registry import export_records, records, register
 from backup_projection import Projection
 
 
@@ -355,6 +355,43 @@ class ProducerTests(unittest.TestCase):
         state = export_records(producer.registry)
         self.assertEqual(1, len(state["objects"]))
         self.assertEqual("ready", state["objects"][0]["state"])
+
+    def peer_original_registration(self, producer, *, valid_backup=True):
+        registry = producer.registry
+        producer.registry = None
+        task = {"kind": "file_history", "title": "File:Test.bin", "generation": 1}
+        result = producer.task(producer.inbox.add(task), task)
+        producer.registry = registry
+        subject = result["versions"][0]["subject"]
+        peer = {"schema_version": 1, "generation": 0, "subject": subject,
+                "source": {"url": subject["original_version_url"], "sha256": subject["content_sha256"],
+                           "bytes": subject["bytes"], "checked_evidence": {"path": "peer-check.json", "sha256": "a" * 64}},
+                "backup_receipt": producer.spool.receipt(subject) if valid_backup else None,
+                "readiness": {"ready": valid_backup, "stage_bytes": 0, "reason": "peer observation"},
+                "owner": "Other approved AI / source follow-up", "continuation": "existing server owner",
+                "approval_scope": {"story": 309}}
+        register(registry, peer)
+        return peer
+
+    def test_other_client_exact_original_registration_is_reused_without_demotion(self):
+        producer = self.producer(lambda query: {"query": {"pages": [{"title": "File:Test.bin", "imageinfo": [file_info(b"image")]}]}})
+        peer = self.peer_original_registration(producer)
+        task = {"kind": "file_history", "title": "File:Test.bin", "generation": 2}
+        result = producer.task(producer.inbox.add(task), task)
+        self.assertTrue(result["versions"][0]["registration"]["reused_existing_observation"])
+        self.assertEqual(peer, records(producer.registry)[0]["request"])
+        self.assertEqual(0, producer.spool.used_bytes())
+        self.assertEqual("ready", export_records(producer.registry)["objects"][0]["state"])
+
+    def test_other_client_missing_backup_is_not_falsely_accepted_as_ready(self):
+        producer = self.producer(lambda query: {"query": {"pages": [{"title": "File:Test.bin", "imageinfo": [file_info(b"image")]}]}})
+        peer = self.peer_original_registration(producer, valid_backup=False)
+        task = {"kind": "file_history", "title": "File:Test.bin", "generation": 2}
+        key = producer.inbox.add(task)
+        with self.assertRaisesRegex(BackupDeferred, "needs backup/source repair"):
+            producer.task(key, task)
+        self.assertEqual(peer, records(producer.registry)[0]["request"])
+        self.assertIn(key, {item[0] for item in producer.inbox.pending()})
 
     def test_peer_projection_skip_has_a_separate_durable_retry(self):
         def factory(repo, kind):
