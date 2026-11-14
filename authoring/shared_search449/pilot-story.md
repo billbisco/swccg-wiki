@@ -1,0 +1,25 @@
+## User story
+As a reader/deck builder, I want a small working search pilot across Wiki, GEMP and our SCOMPLINK so that symbols, uniqueness and decks containing a card give consistent, understandable answers without forcing all interfaces to be identical.
+
+## Authorization and principles
+Bill authorized existing-story updates, gap stories and implementation of this pilot on14 November2026. He explicitly authorizes first-principles judgment and contradiction where useful. Start from the user's job and trustworthy answers, not an obligation to unify every UI or put all facts in one database. Share identifiers, version context, public card-filter meanings and reproducible fixtures. Preserve context-specific defaults and source authority. PC SCOMP is a reference, not an authorized upstream deployment target. Archive.org/web.archive.org hold remains absolute.
+
+## Requirements
+- R1 Use a bounded, explicitly labeled real-data snapshot with verified card publication/text identities, printed versus referenced symbol roles, uniqueness categories and published decklist membership.
+- R2 Implement one reusable query contract/engine with three native entry points: a live Wiki sample, our GEMP Test/Play pilot reached from the deckbuilder, and an explicitly labeled own SCOMPLINK pilot. No copied screens masquerading as independent integrations; each has appropriate navigation/actions.
+- R3 Query symbols by stable identity/name/aliases, keeping release product, printed symbol and game-text reference distinct. Faithful and readable display modes return identical record IDs and preserve copy meanings.
+- R4 Expose typed uniqueness, including unrestricted/unique/restricted/per-system diamond where verified, with unknown distinct from unrestricted. Do not infer attributes from filenames or an engine field alone as evidence of printed facts.
+- R5 Find real published decklists containing a selected card, with count, exact/family scope, source links, completeness and no starting-card double count. Catalog/search scope must stay visible.
+- R6 Use source/backup/revision guards, existing own-account workflows, appropriate automated and native browser checks, safe deployment and merged source/evidence.
+
+## Acceptance criteria
+- [ ] AC1 Dated data/source ledger and independently inspected sample faces establish printing, symbol roles, uniqueness and actual published deck membership; coverage/gaps are visible.
+- [ ] AC2 All three live/native pilot entry points execute the common queries and display context-appropriate links/actions. Native GEMP existing filters still work; no gameplay behavior/data overwritten.
+- [ ] AC3 A pinned query suite independently names expected IDs for symbol/alias/role, uniqueness and deck membership cases. Equivalent public queries over the same snapshot return the same IDs in all adapters. Unknown/invalid input fails clearly.
+- [ ] AC4 Visual/readable/copy modes preserve semantic text and identical results; desktop/mobile, keyboard labels and meaningful empty/error states pass. Two fields with different meanings never silently map to one generic icon filter.
+- [ ] AC5 Wiki publication/review/public checks, GEMP native entry/context checks, static pilot checks, immutable independent backups, merged PRs, rollback/deployment receipts and per-AC PASS are shared. Deferred archive metadata remains pending, never reported captured.
+
+## Scope and plan
+Own this small pilot. Reuse32 for the future full SCOMPLINK/GEMP public-filter rollout,33 for full public deck exports,87 for format search,435 for common symbols. Gap stories cover Wiki discovery and GEMP current/saved-deck search. Audit first, implement a shared browser/query module and small real snapshot, add thin native adapters, test independently expected answers, deploy Test then Play and Wiki/own SCOMPLINK, and verify all URLs before closure. No engine card changes, private-deck indexing, full catalog migration, upstream-PC mutation or new service/configuration required.
+
+MemoryCoreChatGPT
