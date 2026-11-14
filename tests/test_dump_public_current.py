@@ -20,10 +20,11 @@ def page(page_id, namespace, title, text):
 
 
 class Fixture:
-    def __init__(self, pages, namespaces=None, closing_extra=None):
+    def __init__(self, pages, namespaces=None, closing_extra=None, closing_pages=None):
         self.pages = pages
         self.namespaces = namespaces or sorted({p["ns"] for p in pages} | {-2, -1, 0})
         self.closing_extra = closing_extra or []
+        self.closing_pages = closing_pages
         self.calls = []
 
     def __call__(self, params):
@@ -31,7 +32,9 @@ class Fixture:
         if params.get("meta") == "siteinfo":
             return {"query": {"namespaces": {str(ns): {"id": ns} for ns in self.namespaces}}}
         if params.get("generator") == "allpages":
-            selected = [p for p in self.pages if p["ns"] == int(params["gapnamespace"])]
+            closing = "content" not in params.get("rvprop", "").split("|")
+            source = (self.closing_pages if self.closing_pages is not None else self.pages + self.closing_extra) if closing else self.pages
+            selected = [p for p in source if p["ns"] == int(params["gapnamespace"])]
             start, limit = int(params.get("gapcontinue", 0)), int(params["gaplimit"])
             result = {"query": {"pages": selected[start:start + limit]}}
             if start + limit < len(selected):
@@ -42,7 +45,8 @@ class Fixture:
             return {"query": {"allpages": [{k: p[k] for k in ("pageid", "ns", "title")} for p in selected]}}
         if "pageids" in params:
             wanted = set(map(int, params["pageids"].split("|")))
-            return {"query": {"pages": [p for p in self.pages + self.closing_extra if p["pageid"] in wanted]}}
+            source = self.closing_pages if self.closing_pages is not None else self.pages + self.closing_extra
+            return {"query": {"pages": [p for p in source if p["pageid"] in wanted]}}
         raise AssertionError(params)
 
 
@@ -71,7 +75,7 @@ class PublicDumpTests(unittest.TestCase):
         self.assertEqual(manifest["closing_inventory_pages"], 4)
         for source in samples:
             raw = source["revisions"][0]["slots"]["main"]["content"].encode("utf-8")
-            self.assertEqual((self.root / f"pages/by-id/{source['pageid']}.wiki").read_bytes(), raw)
+            self.assertEqual((self.root / f"pages/public-current/payloads/{source['pageid']}.wiki").read_bytes(), raw)
             record = self.metadata(source["ns"])[0]
             self.assertEqual(record["sha256"], hashlib.sha256(raw).hexdigest())
             self.assertEqual(record["mediawiki_sha1"], hashlib.sha1(raw).hexdigest())
@@ -94,8 +98,8 @@ class PublicDumpTests(unittest.TestCase):
         (self.root / "pages/INDEX.tsv").write_text("A/B\tpages/A_B.wiki\nA:B\tpages/A_B.wiki\n")
         (self.root / "pages/A_B.wiki").write_text("old alias")
         manifest = self.run_dump(Fixture([page(1, 0, "A/B", "first"), page(2, 0, "A:B", "second")]))
-        self.assertEqual((self.root / "pages/by-id/1.wiki").read_bytes(), b"first")
-        self.assertEqual((self.root / "pages/by-id/2.wiki").read_bytes(), b"second")
+        self.assertEqual((self.root / "pages/public-current/payloads/1.wiki").read_bytes(), b"first")
+        self.assertEqual((self.root / "pages/public-current/payloads/2.wiki").read_bytes(), b"second")
         self.assertEqual((self.root / "pages/A_B.wiki").read_text(), "old alias")
         self.assertEqual(manifest["canonical_alias_collisions"], {"pages/A_B.wiki": ["A/B", "A:B"]})
 
@@ -103,9 +107,16 @@ class PublicDumpTests(unittest.TestCase):
         (self.root / "pages").mkdir()
         (self.root / "pages/INDEX.tsv").write_text("Recreated\tpages/by-id/1.wiki\n")
         manifest = self.run_dump(Fixture([page(1, 0, "Other", "one"), page(2, 0, "Recreated", "two")]))
-        self.assertEqual((self.root / "pages/by-id/1.wiki").read_bytes(), b"one")
-        self.assertEqual((self.root / "pages/by-id/2.wiki").read_bytes(), b"two")
+        self.assertEqual((self.root / "pages/public-current/payloads/1.wiki").read_bytes(), b"one")
+        self.assertEqual((self.root / "pages/public-current/payloads/2.wiki").read_bytes(), b"two")
         self.assertEqual(manifest["numeric_alias_replacements"], {"Recreated": "pages/by-id/1.wiki"})
+
+    def test_canonical_index_cannot_enter_reserved_payload_storage(self):
+        (self.root / "pages").mkdir()
+        (self.root / "pages/INDEX.tsv").write_text("A\tpages/public-current/payloads/99.wiki\n")
+        with self.assertRaisesRegex(dump.ExportError, "reserved public-current"):
+            self.run_dump(Fixture([page(1, 0, "A", "one")]))
+        self.assertFalse((self.root / "pages/public-current/payloads/99.wiki").exists())
 
     def test_hidden_revision_content_is_excluded_without_payload_or_secret(self):
         hidden = page(1, 0, "Public title", "suppressed secret")
@@ -113,15 +124,15 @@ class PublicDumpTests(unittest.TestCase):
         manifest = self.run_dump(Fixture([hidden]))
         self.assertEqual(manifest["captured_pages"], 0)
         self.assertEqual(manifest["excluded_pages"][0]["excluded"], "revision_content_not_public")
-        self.assertFalse((self.root / "pages/by-id/1.wiki").exists())
+        self.assertFalse((self.root / "pages/public-current/payloads/1.wiki").exists())
         self.assertNotIn("suppressed secret", json.dumps(manifest))
 
-    def test_no_revision_at_cutoff_is_explicitly_excluded(self):
+    def test_no_public_revision_is_explicitly_excluded(self):
         later = {"pageid": 1, "ns": 0, "title": "Created after cutoff", "revisions": []}
         manifest = self.run_dump(Fixture([later]))
         self.assertEqual(manifest["captured_pages"], 0)
         self.assertEqual(manifest["closing_inventory_pages"], 1)
-        self.assertEqual(manifest["excluded_pages"][0]["excluded"], "no_public_revision_at_cutoff")
+        self.assertEqual(manifest["excluded_pages"][0]["excluded"], "no_public_revision_returned")
 
     def test_sha1_size_mismatch_and_missing_content_fail_before_completed_manifest(self):
         for mutation in (lambda p: p["revisions"][0].update(size=999),
@@ -145,12 +156,13 @@ class PublicDumpTests(unittest.TestCase):
         state_path = self.root / ".git/wiki-public-export/state.json"
         state = json.loads(state_path.read_text())
         self.assertEqual(state["batches"], 1)
-        self.assertFalse((self.root / "pages/by-id/1.wiki").exists())
+        self.assertFalse((self.root / "pages/public-current/payloads/1.wiki").exists())
         fixture.calls.clear()
         manifest = self.run_dump(fixture, batch_size=1)
         first_scan = next(c for c in fixture.calls if c.get("generator"))
         self.assertEqual(first_scan["gapcontinue"], "1")
-        self.assertEqual(manifest["revision_cutoff"], state["cutoff"])
+        self.assertEqual(manifest["inventory_started_at"], state["started_at"])
+        self.assertGreaterEqual(manifest["revision_cutoff"], state["started_at"])
         self.assertEqual(manifest["captured_pages"], 2)
 
     def test_closing_inventory_reconciles_page_missed_by_first_scan(self):
@@ -158,6 +170,33 @@ class PublicDumpTests(unittest.TestCase):
         manifest = self.run_dump(fixture)
         self.assertEqual(manifest["captured_pages"], 2)
         self.assertTrue(any(c.get("pageids") == "2" for c in fixture.calls))
+
+    def test_closing_changed_revision_is_refetched_and_bound_to_new_exact_bytes(self):
+        old, new = page(1, 0, "A", "old"), page(1, 0, "A", "new\r\n")
+        new["revisions"][0]["revid"] = 11
+        fixture = Fixture([old], closing_pages=[new])
+        manifest = self.run_dump(fixture)
+        record = self.metadata(0)[0]
+        self.assertEqual(record["revision_id"], 11)
+        self.assertEqual((self.root / record["payload_path"]).read_bytes(), b"new\r\n")
+        self.assertEqual(manifest["captured_pages"], 1)
+        self.assertTrue(any(c.get("pageids") == "1" for c in fixture.calls))
+
+    def test_revision_hidden_after_scan_is_not_emitted_from_cached_public_bytes(self):
+        old, hidden = page(1, 0, "A", "initially public"), page(1, 0, "A", "now hidden")
+        hidden["revisions"][0]["texthidden"] = True
+        manifest = self.run_dump(Fixture([old], closing_pages=[hidden]))
+        self.assertEqual(manifest["captured_pages"], 0)
+        self.assertFalse((self.root / "pages/public-current/payloads/1.wiki").exists())
+        self.assertNotIn("sha1", json.dumps(manifest["excluded_pages"]))
+
+    def test_newly_observed_hidden_page_is_accounted_for_without_payload(self):
+        hidden = page(2, 0, "Hidden", "secret")
+        hidden["revisions"][0]["texthidden"] = True
+        manifest = self.run_dump(Fixture([], closing_pages=[hidden]))
+        self.assertEqual(manifest["closing_inventory_pages"], 1)
+        self.assertEqual(len(manifest["excluded_pages"]), 1)
+        self.assertEqual(manifest["captured_pages"], 0)
 
     def test_corrupted_resume_payload_cannot_be_published(self):
         fixture = Fixture([page(1, 0, "A", "one")])

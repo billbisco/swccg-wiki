@@ -175,31 +175,72 @@ class PushWikiDumpTests(unittest.TestCase):
 
     def test_full_export_alias_conflict_keeps_upstream_and_cutoff_payload(self):
         self.write(self.worker, "pages/A.wiki", "old compatibility view\n")
-        self.write(self.worker, "pages/by-id/1.wiki", "exact cutoff payload\r\n")
+        self.write(self.worker, "pages/public-current/payloads/1.wiki", "exact cutoff payload\r\n")
         manifest = {"schema_version": 1, "revision_cutoff": "fixed", "namespace_metadata": [{"sha256": "unchanged"}]}
         self.write(self.worker, "pages/public-current/manifest.json", json.dumps(manifest))
         self.peer_push("pages/A.wiki", "newer upstream compatibility view\n")
         with patch.object(sync, "live_page", side_effect=AssertionError("must not refresh snapshot")):
             sync.push_dump(self.worker, retry_seconds=0)
         self.assertEqual(self.remote_text("pages/A.wiki"), "newer upstream compatibility view")
-        self.assertEqual(self.remote_text("pages/by-id/1.wiki"), "exact cutoff payload")
+        self.assertEqual(self.remote_text("pages/public-current/payloads/1.wiki"), "exact cutoff payload")
         restored = json.loads(self.remote_text("pages/public-current/manifest.json"))
         self.assertEqual(restored["revision_cutoff"], "fixed")
         self.assertEqual(restored["namespace_metadata"], manifest["namespace_metadata"])
         self.assertEqual(restored["compatibility_alias_conflicts_kept_from_upstream"], ["pages/A.wiki"])
 
     def test_full_export_numeric_payload_conflict_fails_without_refresh(self):
-        self.write(self.worker, "pages/by-id/1.wiki", "base\n")
+        self.write(self.worker, "pages/public-current/payloads/1.wiki", "base\n")
         self.write(self.worker, "pages/public-current/manifest.json", json.dumps({"schema_version": 1}))
         self.commit(self.worker, "full export base")
         self.run_git(self.worker, "push", "origin", "HEAD:main")
         self.run_git(self.peer, "pull", "--ff-only")
-        self.write(self.worker, "pages/by-id/1.wiki", "candidate cutoff\n")
-        self.peer_push("pages/by-id/1.wiki", "upstream authoritative\n")
+        self.write(self.worker, "pages/public-current/payloads/1.wiki", "candidate cutoff\n")
+        self.peer_push("pages/public-current/payloads/1.wiki", "upstream authoritative\n")
         with patch.object(sync, "live_page", side_effect=AssertionError("must not refresh snapshot")):
             with self.assertRaisesRegex(sync.SyncError, "Authoritative public-export"):
                 sync.push_dump(self.worker, retry_seconds=0)
-        self.assertEqual(self.remote_text("pages/by-id/1.wiki"), "upstream authoritative")
+        self.assertEqual(self.remote_text("pages/public-current/payloads/1.wiki"), "upstream authoritative")
+
+    def test_auto_merged_authoritative_lines_fail_without_push(self):
+        for path in ("pages/public-current/payloads/1.wiki", "pages/public-current/ns-0.jsonl"):
+            rows = [f"line {i}\n" for i in range(30)]
+            self.write(self.worker, path, "".join(rows))
+            self.write(self.worker, "pages/public-current/manifest.json", json.dumps({"schema_version": 1, "revision_cutoff": "fixed"}))
+            self.commit(self.worker, "authoritative base")
+            self.run_git(self.worker, "push", "origin", "HEAD:main")
+            self.run_git(self.peer, "pull", "--ff-only")
+            candidate = list(rows)
+            candidate[3] = "candidate change\n"
+            self.write(self.worker, path, "".join(candidate))
+            upstream = list(rows)
+            upstream[25] = "upstream change\n"
+            self.peer_push(path, "".join(upstream))
+            with patch.object(sync, "refresh_conflicts", side_effect=AssertionError("Git should merge these lines automatically")):
+                with self.assertRaisesRegex(sync.SyncError, "Authoritative payload/namespace tree changed"):
+                    sync.push_dump(self.worker, retry_seconds=0)
+            self.assertEqual(self.remote_text(path), "".join(upstream).strip())
+            # Restore the fixture clone for the next independent path case.
+            self.run_git(self.worker, "reset", "--hard", "refs/remotes/origin/main")
+
+    def test_reserved_index_alias_is_refused_after_rebase(self):
+        self.write(self.worker, "pages/A.wiki", "dump\n")
+        self.peer_push("pages/INDEX.tsv", "A\tpages/public-current/payloads/1.wiki\n")
+        with self.assertRaisesRegex(sync.SyncError, "reserved public-current"):
+            sync.push_dump(self.worker, retry_seconds=0)
+        self.assertEqual(self.remote_text("pages/A.wiki"), "original")
+
+    def test_authoritative_bytes_survive_windows_autocrlf_configuration(self):
+        self.write(self.worker, ".gitattributes", "pages/public-current/** -text -filter -ident\n")
+        self.commit(self.worker, "reserve exact backup bytes")
+        self.run_git(self.worker, "push", "origin", "HEAD:main")
+        self.run_git(self.worker, "config", "core.autocrlf", "true")
+        raw = b"exact\r\nwithout final newline"
+        path = "pages/public-current/payloads/1.wiki"
+        self.write(self.worker, path, raw.decode())
+        self.write(self.worker, "pages/public-current/manifest.json", json.dumps({"schema_version": 1}))
+        sync.push_dump(self.worker, retry_seconds=0)
+        restored = subprocess.run(["git", "--git-dir", str(self.remote), "show", "main:" + path], check=True, capture_output=True).stdout
+        self.assertEqual(restored, raw)
 
     def test_full_export_index_union_updates_only_compatibility_digest(self):
         self.write(self.worker, "pages/INDEX.tsv", "A\tpages/A.wiki\nDump\tpages/Dump.wiki\n")

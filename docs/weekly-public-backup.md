@@ -14,38 +14,51 @@ is separate and is not contacted by either export or its regression tests.
 `pages/public-current/manifest.json` records the revision cutoff, the API inventory
 observation window, namespace/count totals, exclusions, metadata-file hashes and
 original payload byte count. This is not an atomic database transaction snapshot:
-membership comes from the closing public page inventory, while each selected
-revision is the latest public revision at or before the cutoff. Pages created
-after that cutoff and hidden text are explicitly excluded rather than invented.
+membership and selected revision metadata come from a closing public inventory;
+new or changed revisions are fetched again before completion. The cutoff is the
+final capture watermark, not a claim that every page was globally latest at one
+instant. MediaWiki cannot combine historical rvstart cutoffs with multi-page
+queries. Each row therefore identifies the latest public revision actually
+observed during scan/closing/reconciliation. Hidden or unavailable public text
+is explicitly excluded rather than invented; cached text hidden by the closing
+pass is not published.
 
 Each `pages/public-current/ns-N.jsonl` row records page ID, observed title and
 namespace, exact revision/parent/timestamp, content model, MediaWiki SHA1 and size,
 SHA256, byte count and `payload_path`. Restore from **`payload_path`**, under
-`pages/by-id/`, at the same immutable Git commit as the manifest and metadata.
+`pages/public-current/payloads/`, at the same immutable Git commit as the manifest and metadata.
 The bytes are UTF-8 API content without adding a newline, changing line endings,
-or dropping empty pages. Verify metadata-file SHA256 first, then every payload's
+or dropping empty pages. Reserved Git attributes disable newline/filter/ident
+rewrites for this authoritative directory, including Windows checkouts. Verify metadata-file SHA256 first, then every payload's
 SHA256, SHA1 and byte counts. The resulting text plus metadata identifies the
 revision to import into a recovery wiki; do not import into production as a test.
 
 `pages/INDEX.tsv` and old canonical `.wiki` paths are compatibility views, not the
 authoritative restore inventory. Existing canonical paths are retained for
-existing titles; new titles use numeric IDs. An ambiguous old filename alias is
+existing titles; new titles use numeric `pages/by-id/` compatibility paths, separate
+from reserved authoritative payload storage. An ambiguous old filename alias is
 reported and left alone, while both exact numeric payloads are preserved. If a
 title was recreated with a different page ID, a numeric alias cannot overwrite
 another ID's authoritative payload.
 
-The push helper preserves competing Git writers. Authoritative numeric-payload
+The push helper preserves competing Git writers. Canonical INDEX mappings into
+reserved `pages/public-current/` storage are refused, so ordinary nightly/delta
+writers cannot select an authoritative snapshot payload through INDEX. Authoritative numeric-payload
 or namespace/manifest conflicts stop without a push and require a fresh full
 export. Conflicting compatibility aliases keep upstream bytes; their paths are
 recorded separately in the manifest. Compatibility INDEX unions update only its
-digest/count, not the cutoff, revision IDs or authoritative payload hashes.
+digest/count, not the cutoff, revision IDs or authoritative payload hashes. Every
+post-rebase push compares the entire reserved authoritative tree with the local
+immutable dump snapshot, excluding only explicitly allowed compatibility fields
+in its manifest. Even a conflict-free automatic Git merge of authoritative bytes
+fails closed before pushing.
 
 ## Resuming an interrupted export
 
 The exporter checkpoints each bounded API batch under
 `.git/wiki-public-export/`; partial payloads are never added to tracked pages.
 Rerun `python tools/dump_public_current.py` in that same isolated checkout to
-resume its cutoff, namespaces and continuation. A completed checkpoint re-emits
+resume its scan window, namespaces and continuation. A completed checkpoint re-emits
 that same snapshot. Use a fresh isolated checkout (as hosted runs already do), or
 a new `--state-dir`, for a new cutoff. Do not run two exporters against the same
 checkout/checkpoint. A completed manifest is emitted only after every closing
