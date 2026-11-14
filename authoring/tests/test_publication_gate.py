@@ -46,6 +46,7 @@ class PublicationGateTests(unittest.TestCase):
         self.row = {'subject': subject, 'subject_id': contracts.object_id(subject),
                     'object_id': oid, 'job_id': contracts.registration_job_id(source),
                     'request_id': request, 'record': f"requests/{subject['content_sha256']}/{oid}/{request}.json",
+                    'record_sha256': 'd' * 64, 'generation': 0,
                     'source': source,
                     'backup_receipt': receipt(subject), 'state': 'awaiting_stage',
                     'owner': 'MemoryCoreChatGPT', 'reason': 'Provider outage',
@@ -164,6 +165,14 @@ class PublicationGateTests(unittest.TestCase):
 
     def test_missing_expanded_original_inventory_blocks(self):
         del self.page['rendered_originals']
+        self.assertFalse(self.run_gate()['publication_eligible'])
+
+    def test_unbacked_queue_status_and_unpinned_record_block(self):
+        self.row['state'] = 'queued'
+        self.assertFalse(self.run_gate()['publication_eligible'])
+        self.row['queue_receipt'] = {'queued': True, 'url': self.row['source']['url'], 'job_id': self.row['job_id']}
+        self.assertTrue(self.run_gate()['publication_eligible'])
+        del self.row['record_sha256']
         self.assertFalse(self.run_gate()['publication_eligible'])
 
     def test_live_cli_title_cannot_override_actual_target(self):

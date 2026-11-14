@@ -96,6 +96,9 @@ def _read_export(root: Path, ref: object, contracts, errors: list[str]) -> dict:
         record = f"requests/{row['source']['sha256']}/{oid}/{request}.json"
         if (not isinstance(request,str)
                 or not re.fullmatch(r'[0-9a-f]{64}', request) or row.get('record') != record
+                or not isinstance(row.get('record_sha256'), str)
+                or not re.fullmatch(r'[0-9a-f]{64}', row['record_sha256'])
+                or type(row.get('generation')) is not int or row['generation'] < 0
                 or oid in objects):
             errors.append('registry export: inconsistent or duplicate object/job identity')
             continue
@@ -137,6 +140,11 @@ def _checked_object(binding, objects, root, contracts, errors):
         # The registry export has no replay-proof field. A declared verified state
         # must use a future checked-receipt adapter, never a caller's bare boolean.
         errors.append('object state has no supported checked preservation receipt')
+    if row.get('state') == 'queued':
+        queued = row.get('queue_receipt')
+        if (not isinstance(queued, dict) or queued.get('queued') is not True
+                or queued.get('job_id') != row['job_id'] or queued.get('url') != source.get('url')):
+            errors.append('queued state needs the actual central promotion receipt')
     evidence = binding.get('evidence')
     registered = source.get('checked_evidence')
     if not isinstance(evidence, dict) or not isinstance(registered,dict) or evidence.get('sha256') != registered.get('sha256'):
