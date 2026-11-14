@@ -65,7 +65,9 @@ class OwnerAdapter:
     def _eligible(self, entry):
         request = entry["request"]
         key = registration_object_id(request["subject"], request["source"])
-        return (key in self.allowed and request["owner"] == SERVER_OWNER and
+        # Registration owner names the client's continuation owner. Capture
+        # authority is the active Control lock plus the exact approved cohort.
+        return (key in self.allowed and
                 object_state(request) in {"ready", "awaiting_stage"})
 
     def _groups(self):
@@ -77,6 +79,17 @@ class OwnerAdapter:
                 group = groups.setdefault(key, {"entry": entry, "objects": []})
                 group["objects"].append(registration_object_id(request["subject"], request["source"]))
         return groups
+
+    def protected_snapshot_urls(self):
+        """Approved managed targets await their separate strict cleanup seam."""
+        protected = set()
+        for entry in iter_records(self.registry):
+            request = entry["request"]
+            key = registration_object_id(request["subject"], request["source"])
+            url = request["source"]["url"]
+            if key in self.allowed and self.worker.snapshot_file(url) is not None:
+                protected.add(url)
+        return protected
 
     def _event(self, entries, state, reason, *, approved_object_ids=None, **details):
         request = entries[0]["request"]

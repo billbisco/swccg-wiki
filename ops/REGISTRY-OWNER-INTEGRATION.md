@@ -95,6 +95,14 @@ stages can legitimately keep the aggregate budget full. Do not silently remove
 that safeguard or claim the complete JIT workflow deployed before this gate and
 the small worker hooks pass integration tests.
 
+`protected_snapshot_urls()` returns only exact approved managed snapshot source
+URLs, regardless of readiness. The worker must also protect legacy URL aliases
+that resolve to those same stage files, and skip deletions if this metadata scan
+fails. A registration's `owner` is its client's continuation owner; it does not
+grant capture authority. Independently reviewed object identity plus the real
+active Control lock govern promotion, including approved entries prepared by
+other clients. Unknown global registrations remain excluded.
+
 Source-only offline fixtures cover paused modes, absent active owner, unknown
 global objects, stable ordered queue appends, shared mappings, exact JIT
 restoration, stage quota, wrong source bytes, accepted job identity, strict

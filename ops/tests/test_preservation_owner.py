@@ -104,6 +104,18 @@ class OwnerTests(unittest.TestCase):
         self.assertEqual(2, len(rows))
         self.assertTrue(all(row["state"] == "queued" for row in rows))
 
+    def test_approved_client_continuation_owner_uses_the_same_capture_owner(self):
+        request = fixture(title="File:approved-client.png")
+        request["owner"] = "MemoryCoreChatGPT / Story309 continuation"
+        registered = register(self.registry, request)
+        self.allowed.add(registered["object_id"])
+        self.responses[request["source"]["url"]] = {"status": 200, "sha256": request["source"]["sha256"], "size": request["source"]["bytes"]}
+        result = self.adapter().prepare(time.monotonic() + 300)
+        self.assertEqual(1, result["prepared"])
+        self.assertEqual(1, len(self.commits))
+        self.assertEqual(request["owner"], records(self.registry)[0]["request"]["owner"])
+        self.assertIs(self.control, self.worker.ACTIVE_CONTROL)
+
     def test_checked_snapshot_restores_exact_bytes_then_advances_generation(self):
         request, _ = self.add(ready=False, snapshot=True)
         calls = []
@@ -123,6 +135,16 @@ class OwnerTests(unittest.TestCase):
         result = self.adapter(stage_budget=1, readback=lambda *a, **k: self.fail("overbudget restore")).prepare(time.monotonic() + 300)
         self.assertEqual(0, result["prepared"])
         self.assertEqual("awaiting_stage", export_records(self.registry)["objects"][0]["state"])
+
+    def test_only_approved_snapshot_targets_are_protected_from_legacy_cleanup(self):
+        approved, _ = self.add(ready=False, snapshot=True)
+        self.add(title="File:original.png")
+        unknown = fixture(title="File:unapproved-snapshot.png", ready=False)
+        unknown["source"] = dict(approved["source"], url="https://swccg.com/snapshots/pc/unknown.html")
+        unknown["source_backup_receipt"] = dict(approved["source_backup_receipt"])
+        unknown["source_backup_receipt"]["subject"] = source_backup_subject(unknown["source"])
+        register(self.registry, unknown)
+        self.assertEqual({approved["source"]["url"]}, self.adapter().protected_snapshot_urls())
 
     def test_default_work_refuses_unmounted_volume_before_restore(self):
         self.add(ready=False, snapshot=True)
