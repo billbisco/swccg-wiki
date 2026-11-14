@@ -10,7 +10,7 @@ def git(*args,data=None):return subprocess.check_output(['git','-C',str(independ
 if not independent.exists():subprocess.run(['git','init','--bare',str(independent)],check=True,stdout=subprocess.DEVNULL)
 if not git('remote').strip():git('remote','add','origin','https://github.com/'+repository+'.git')
 git('config','remote.origin.promisor','true');git('config','remote.origin.partialclonefilter','blob:none')
-git('fetch','--filter=blob:none','--depth=1','--no-tags','origin',commit)
+git('fetch','--quiet','--filter=blob:none','--depth=1','--no-tags','origin',commit)
 entries={}
 for record in git('ls-tree','-rz','--full-tree',commit).split(b'\0'):
     if not record:continue
@@ -19,7 +19,7 @@ for record in git('ls-tree','-rz','--full-tree',commit).split(b'\0'):
 expected={}
 if mode=='wiki':
     # The authoritative saved path mapping is independently fetched as a blob.
-    git('fetch','--no-tags','origin',entries['pages/INDEX.tsv'])
+    git('fetch','--quiet','--no-tags','origin',entries['pages/INDEX.tsv'])
     index=git('show',commit+':pages/INDEX.tsv').decode()
     paths=dict(line.split('\t',1) for line in index.splitlines() if '\t' in line)
     for title,h in json.loads((root/'published-heads.json').read_bytes()).items():
@@ -27,11 +27,20 @@ if mode=='wiki':
         expected[paths[title]]=dict(sha256=hashlib.sha256(data).hexdigest(),bytes=len(data),title=title,revision_id=h['revisions'][0]['revid'])
 else:
     for row in json.loads((root/'uploaded-images.json').read_bytes()):
-        expected['files/'+row['name']]=dict(sha256=row['sha256'],bytes=(root/row['local_file']).stat().st_size,title=row['title'])
+        expected['files/'+row['name']]=dict(sha256=row['sha256'],bytes=(root/row['local_file']).stat().st_size,title=row.get('title','File:'+row['name']))
+    # Two separately cited source photographs were replaced by other actual
+    # foil photographs for publication; their original source payloads persist.
+    known={r['sha256'] for r in expected.values()}
+    wanted={r['subject']['content_sha256'] for r in json.loads((root/'central-registration-requests.json').read_bytes())}-known
+    sources=json.loads((root/'psa-originals.json').read_bytes())+[json.loads(s) for s in (root/'swca-originals-results.jsonl').read_text(encoding='utf8').splitlines()]
+    for row in sources:
+        if row.get('sha256') not in wanted or 'local_file' not in row:continue
+        path='sources/381/'+row['local_file'].replace('\\','/')
+        expected[path]=dict(sha256=row['sha256'],bytes=(root/row['local_file']).stat().st_size,title=row.get('source_url',row.get('source')))
 oids=list(dict.fromkeys(entries[path] for path in expected))
 checked=git('cat-file','--batch-check=%(objectname) %(objecttype)',data=('\n'.join(oids)+'\n').encode()).decode().splitlines()
 missing=[line.split()[0] for line in checked if line.endswith(' missing')]
-if missing:git('fetch','--no-tags','origin','--stdin',data=('\n'.join(missing)+'\n').encode())
+if missing:git('fetch','--quiet','--no-tags','origin','--stdin',data=('\n'.join(missing)+'\n').encode())
 print(mode,len(expected),'remote paths fetched; checking raw blob SHA-256/bytes',flush=True)
 process=subprocess.Popen(['git','-C',str(independent),'cat-file','--batch'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,env=env)
 def write():

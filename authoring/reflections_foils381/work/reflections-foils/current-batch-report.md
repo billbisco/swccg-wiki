@@ -20,7 +20,7 @@ Task412 retains the separate archival work: 936 distinct source/citation/image q
 
 The first70 new cards completed strict preservation before the exception. Subsequent publication markers explicitly say archive_deferred:true. Original photographs are backed up unchanged. The exact outstanding public image timestamps/SHA1/SHA256 and source URLs are in preservation-queue.json, also carried into source ops/wayback/queue.txt where supported.
 
-The updated central-owner workflow is installed in the operations checkout. The real server registered517 exact-byte objects, including all228 pending Wiki originals; central-registration-receipts.json and central-registry-server-export.json retain actual object/job/request identifiers. Those records currently await receipt reconciliation and owner promotion, and are not submissions. The remaining419 source/citation entries retain their original URLs for payload/evidence reconciliation under task412. New pending URLs are not directly promoted into the worker queue by the backup script after central registration.
+The updated central-owner workflow is installed in the operations checkout. The real server registered517 exact-byte objects, including all228 pending Wiki originals; central-registration-receipts.json and central-registry-server-export.json retain actual object/job/request identifiers. Those records have independently verified immutable backup receipts and await owner promotion, and are not submissions. The remaining419 source/citation entries retain their original URLs for payload/evidence reconciliation under task412. New pending URLs are not directly promoted into the worker queue by the backup script after central registration.
 
 ## Publication result
 

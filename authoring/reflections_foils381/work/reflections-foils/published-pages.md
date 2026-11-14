@@ -1,4 +1,4 @@
-# All changed live pages — story381
+# Changed live pages — story381
 
 * [2-1B (Too-Onebee)](https://wiki.swccg.com/wiki/2-1B_(Too-Onebee))
 * [2-1B (Too-Onebee) (Japanese)](https://wiki.swccg.com/wiki/2-1B_(Too-Onebee)_(Japanese))
