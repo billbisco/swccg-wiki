@@ -107,7 +107,8 @@ python tools/preservation_chunks.py --subject exact-subject.json --max-total-byt
 
 No network/upload/capture action is performed by local staging. Neither command
 changes a timer, registry, queue, credential, worker budget or provider hold.
-Archive.org/web.archive.org requests remain paused. Bulk local measurements
+Archive preservation writes remain paused; this contribution makes no Archive
+requests or runtime-guard changes. Bulk local measurements
 belong on Bill's PC, not VPS `/tmp`. Do not upload large source bodies, chunks,
 private metadata or contact values as part of this code PR.
 
