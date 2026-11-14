@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 import preservation_chunks as chunks
 import preservation_chunk_profile as profile
 from preservation_backups import independent_receipt
+from preservation_backups import _fetch
 from preservation_contracts import canonical_bytes, validate_backup_receipt
 
 
@@ -241,6 +242,19 @@ class ChunkTests(unittest.TestCase):
         receipt = self.recover()
         with patch.dict(sys.modules, {"preservation_chunk_profile": None}):
             self.assertTrue(any("integration is incomplete" in e for e in validate_backup_receipt(receipt, self.subject)))
+
+    def test_large_contents_metadata_uses_supported_media_raw_git_unchanged(self):
+        # GitHub documents the object/raw media requirement for 1–100MB files.
+        self.meta_override = dict(encoding="none", content="")
+        self.assertEqual(validate_backup_receipt(self.recover(), self.subject), [])
+        self.meta_override = {}  # Missing inline content is also valid metadata.
+        self.assertEqual(validate_backup_receipt(self.recover(), self.subject), [])
+        with patch("preservation_backups.urllib.request.build_opener") as opener:
+            _fetch("https://api.github.com/repos/billbisco/swccg-wiki/contents/large.bin?ref=" + "a" * 40)
+            request = opener.return_value.open.call_args.args[0]
+            self.assertEqual(request.get_header("Accept"), "application/vnd.github.object+json")
+            _fetch("https://raw.githubusercontent.com/billbisco/swccg-wiki/" + "a" * 40 + "/large.bin")
+            self.assertIsNone(opener.return_value.open.call_args.args[0].get_header("Accept"))
 
 
 if __name__ == "__main__":

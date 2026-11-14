@@ -51,6 +51,9 @@ producer. At the pinned repository/commit, the producer:
 
 1. Fetches immutable GitHub Contents metadata for the manifest path. It checks
    file type, exact path, size, Git blob SHA-1 and the corresponding Git/raw URLs.
+   Requests use `application/vnd.github.object+json`, the [GitHub-supported
+   Contents metadata media type](https://docs.github.com/en/rest/repos/contents)
+   for files between 1 and 100 MB; raw payload requests remain unchanged.
 2. Streams the manifest's raw bytes, independently computes Git's framed blob
    SHA-1 plus SHA-256/size, and checks the strict manifest and original subject.
 3. Repeats both metadata and streamed raw readback for **every** ordered part.

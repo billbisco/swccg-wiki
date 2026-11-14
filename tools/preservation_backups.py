@@ -178,8 +178,11 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def _fetch(url: str):
-    request = urllib.request.Request(url, headers={
-        "User-Agent": "SWCCG-Preservation-Recovery/1.0", "Accept-Encoding": "identity"})
+    headers = {"User-Agent": "SWCCG-Preservation-Recovery/1.0", "Accept-Encoding": "identity"}
+    if url.startswith("https://api.github.com/repos/"):
+        # Contents metadata for 1–100 MB requires the object custom media type.
+        headers["Accept"] = "application/vnd.github.object+json"
+    request = urllib.request.Request(url, headers=headers)
     return urllib.request.build_opener(_NoRedirect()).open(request, timeout=60)
 
 
