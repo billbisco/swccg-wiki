@@ -517,7 +517,10 @@ def lint(text, title=None, cats=None):
     talk = is_talk_page(title)
     if talk: own = mask_foreign_comments(own)                                   # Talk: skip others' comments
     scan = unquote(re.sub(r"^=+.*?=+\s*$", "", body(mask_names(own, title)), flags=re.M))
-    for wd in BANNED:
+    # The canonical editorial guide names these terms to define its rules.
+    # All privacy, citation, heading and other checks still run normally.
+    banned_words = () if title == "SWCCG Wiki:Style guide" else BANNED
+    for wd in banned_words:
         if wd.strip() in ("this page", "we") and is_list_page(title, text): continue
         for m in re.finditer(rf"\b{re.escape(wd.strip())}\b", scan, re.I):
             ctx = " ".join(scan[max(0, m.start()-50):m.end()+50].split())
