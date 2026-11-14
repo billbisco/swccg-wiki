@@ -15,7 +15,7 @@ with sync_playwright() as p:
     try:
         page=context.new_page()
         for index,(title,width) in enumerate(targets):
-            page.set_viewport_size(dict(width=width,height=1300));url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe='');page.goto(url,wait_until='networkidle',timeout=60000)
+            page.set_viewport_size(dict(width=width,height=1300));url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe=':(),');page.goto(url,wait_until='networkidle',timeout=60000)
             page.locator('#mw-content-text').evaluate('async el=>await Promise.all([...el.querySelectorAll("img")].map(im=>im.complete?Promise.resolve():new Promise(resolve=>{im.addEventListener("load",resolve,{once:true});im.addEventListener("error",resolve,{once:true})})))')
             page.evaluate('document.fonts.ready');checks=page.locator('#mw-content-text').evaluate('el=>({citeErrors:el.querySelectorAll(".mw-ext-cite-error").length,infoboxes:el.querySelectorAll("table.card-infobox").length,brokenImages:[...el.querySelectorAll("img")].filter(x=>!x.naturalWidth).map(x=>x.src)})')
             assert checks['infoboxes']==1 and not checks['citeErrors'] and not checks['brokenImages'],(title,checks)

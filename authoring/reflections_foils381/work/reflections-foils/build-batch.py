@@ -1,10 +1,10 @@
 import hashlib,json,re,sys
 from pathlib import Path
 sys.path.insert(0,'work/japanese-infobox287/vendor');import mwparserfromhell as mw
-sys.path.insert(0,'work/wiki-tools');from style_lint import lint
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
 root=Path(__file__).parent;stage=sys.argv[1]
 from source_registry import provenance
-from navigation import new_navigation
+from navigation import new_navigation,canonical
 from publication_identity import publication_id
 readings=json.loads((root/(stage+'-readings.json')).read_bytes());files=json.loads((root/(stage+'-files-payload.json')).read_bytes())
 heads=json.loads((root/(stage+'-family-heads.json')).read_bytes());families=json.loads((root/(stage+'-families.json')).read_bytes())
@@ -31,7 +31,7 @@ for r,f in zip(readings,files):
     fields=dict(title=r['printed_title'],publication_id=pid,image=f['name'],image_note=caption,side=r['side'],type=r['type'])
     if r.get('alternate_image'):
         assert r.get('artwork_verification',{}).get('verified'),title
-        fields['ai_mark']='1'
+        # ai_mark denotes a PC stamp; Decipher alternate art has no PC stamp.
     for k in ['image_rotation','image_rotated_height']:
         if k in r:fields[k]=r[k]
     for k in ['subtype','type_display','model']:
@@ -47,11 +47,14 @@ for r,f in zip(readings,files):
             fields['set_icon']=expansion_link(r['original_set'])
     for k in ['destiny','power','ability','armor','maneuver','hyperspeed','landspeed','deploy','forfeit','printed_label','parsec','light_icons','dark_icons']:
         if k in r:fields[k]=r[k]
-    fields['icons']=' '.join('[['+x+']]' for x in r['icons'])
+    fields['icons']=' '.join('[['+{'Scomp link':'Scomp Link','Nav computer':'Nav Computer','Permanent weapon':'Permanent Weapon'}.get(x,x)+']]' for x in r['icons'])
     if r['type']=='Character':fields.setdefault('landspeed','1')
     fields['extra_info']='<tr><th>Original expansion</th><td>'+expansion_link(r['original_set'])+'</td></tr><tr><th>Publication ID</th><td><code>'+pid+'</code></td></tr>'
     if r.get('printed_extra_stats'):fields['extra_info']=''.join('<tr><th>'+k+'</th><td>'+v+'</td></tr>' for k,v in r['printed_extra_stats'].items())+fields['extra_info']
-    fields['version_label']=product_label+' foil';fields['set_band']='Decipher';fields['navigation']='[['+product+']] · [['+r['title']+'|Earlier non-foil printing]]'
+    root_title=canonical(r['title'],heads)
+    earlier_label='Card family' if root_title!=r['title'] else 'Earlier non-foil printing'
+    if r.get('alternate_image'):fields['extra_info']='<tr><th>Image variant</th><td>Alternate image</td></tr>'+fields['extra_info']
+    fields['version_label']=product_label+' foil';fields['set_band']='Decipher';fields['navigation']='[['+product+']] · [['+root_title+'|'+earlier_label+']]'
     fields['lead']="'''"+r['printed_title']+"''' is a [["+r['side']+']] [['+r['type']+']] released as a '+{'VR':'very-rare','SR':'super-rare','UR':'ultra-rare'}[r['rarity']]+' foil in [['+product+']] in '+release+'.<ref name="checklist">'+check+'</ref><ref name="encyc">'+encyc+'</ref> It is a foil printing of the '+expansion_link(r['original_set'])+' card.'+face
     if r['lore'] is not None:fields['lore']=r['lore']+'<ref name="foil-face" />'
     game=r['game_text']
@@ -64,12 +67,14 @@ for r,f in zip(readings,files):
     flags=lint(text,title)[0];checks.append(dict(title=title,lint=flags));assert not flags,(title,flags)
     packets.append(dict(title=title,text=text,new=True,section=0,summary='Document the verified original Reflections foil printing and printed fields (#381)'))
     for sibling in families[r['title']]:
+        if sibling in {row['article'] for row in readings}:continue
         old=old_drafts.get(sibling,source(sibling));code=mw.parse(old);t=next(t for t in code.filter_templates(recursive=False) if str(t.name).strip()=='Card')
         if any(t.has(k) and '{{Card versions/' in str(t.get(k).value) for k in ['versions','printings']):continue
         for k in ['versions','printings']:
             if t.has(k):
-                value=str(t.get(k).value);assert r['article'] not in value,(sibling,'Foil already present; refresh baseline')
-                t.get(k).value=insert(value.strip(),entry(r))+'\n'
+                value=str(t.get(k).value);
+                if r['article'] not in value:t.get(k).value=insert(value.strip(),entry(r))+'\n'
+                else:assert value.count(r['article'])==1,(sibling,'Duplicate foil link')
         old_drafts[sibling]=str(code)
 (root/(stage+'-new-packet.json')).write_text(json.dumps(packets,ensure_ascii=False,indent=2),encoding='utf8')
 family=[]

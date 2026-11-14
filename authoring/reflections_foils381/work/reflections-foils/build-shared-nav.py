@@ -1,10 +1,11 @@
 import hashlib,json,sys
 from pathlib import Path
 sys.path.insert(0,'work/japanese-infobox287/vendor');import mwparserfromhell as mw
+from navigation import canonical
 root=Path(__file__).parent;stage=sys.argv[1]
 heads=json.loads((root/(stage+'-family-heads.json')).read_bytes());readings=json.loads((root/(stage+'-readings.json')).read_bytes());drafts={}
 for r in readings:
-    source=heads[r['title']]['revisions'][0]['slots']['main']['content'];card=next(t for t in mw.parse(source).filter_templates(recursive=False) if str(t.name).strip()=='Card')
+    source=heads[canonical(r['title'],heads)]['revisions'][0]['slots']['main']['content'];card=next(t for t in mw.parse(source).filter_templates(recursive=False) if str(t.name).strip()=='Card')
     for k in ['versions','printings']:
         if not card.has(k):continue
         for nav in mw.parse(str(card.get(k).value)).filter_templates():

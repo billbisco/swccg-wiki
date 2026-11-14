@@ -6,7 +6,7 @@ from urllib.parse import quote,unquote
 import requests
 from bs4 import BeautifulSoup
 sys.path.insert(0,'work/japanese-infobox287/vendor');import mwparserfromhell as mw
-sys.path.insert(0,'work/wiki-tools');from style_lint import lint
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint,standard_lint
 root=Path(__file__).parent;stage=sys.argv[1];expected={}
 for kind in ['new','family-final','shared-nav','set','file-preservation','correction']:
     p=root/(stage+'-'+kind+'-packet.json')
@@ -39,7 +39,8 @@ for title,p in heads.items():
     rev=p['revisions'][0];text=rev['slots']['main']['content'];flags=lint(text,title)[0]
     exact=text.rstrip()==expected[title].rstrip() if title in expected else hashlib.sha256(text.encode()).hexdigest()==receipts[title]['sha256']
     reviewed=p.get('flagged',{}).get('stable_revid')==rev['revid'] if p['ns']%2==0 else None
-    row=dict(title=title,revid=rev['revid'],exact=exact,lint=flags,reviewed=reviewed);report.append(row);assert exact and not flags and reviewed is not False,row
+    deferred=[flag for flag in standard_lint(text,title)[0] if flag.startswith('ARCHIVE')]
+    row=dict(title=title,revid=rev['revid'],exact=exact,lint=flags,deferred_archive_flags=deferred,reviewed=reviewed);report.append(row);assert exact and not flags and reviewed is not False,row
 for f in files:assert heads[f['title']]['imageinfo'][0]['sha1']==f['sha1'],f['title']
 families=json.loads((root/(stage+'-families.json')).read_bytes());readings=json.loads((root/(stage+'-readings.json')).read_bytes());baseline=json.loads((root/(stage+'-family-heads.json')).read_bytes())
 archives=json.loads((root/(stage+'-citation-final.json')).read_bytes());corrections=json.loads((root/(stage+'-citation-corrections.json')).read_bytes())
@@ -61,6 +62,7 @@ for r in readings:
     settext=heads[r['product']]['revisions'][0]['slots']['main']['content'];assert settext.count('[['+r['article']+'|'+r['printed_title']+']]')==1,(r['article'],'Direct checklist target missing')
     value=values(text);shared='{{Card versions/' in value
     for sibling in families[r['title']]:
+        if sibling==r['article']:continue
         old=baseline[sibling]['revisions'][0]['slots']['main']['content']
         if shared and '{{Card versions/' in values(old):continue
         new=heads[sibling]['revisions'][0]['slots']['main']['content'];ok=conserved(old)==conserved(new);assert ok,sibling
@@ -69,9 +71,9 @@ for r in readings:
             if current.has(k):assert str(current.get(k).value).count('[['+r['article']+'|')==1,(sibling,k)
         conservation.append(dict(title=sibling,non_navigation_content_conserved=True))
     nav.append(dict(article=r['article'],family_members=len(families[r['title']]),shared_navigator=shared,no_invented_playable_id=True))
-print(len(heads),'exact sources; lint 0, reviewed; original image hashes match',flush=True)
+print(len(heads),'exact sources; non-archive lint 0, reviewed; original image hashes match; archive findings retained separately',flush=True)
 def public(title):
-    url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe='');response=requests.get(url,timeout=60);response.raise_for_status();html=response.text;soup=BeautifulSoup(html,'html.parser');body=soup.select_one('#mw-content-text');assert body,title
+    url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe=':(),');response=requests.get(url,timeout=60);response.raise_for_status();html=response.text;soup=BeautifulSoup(html,'html.parser');body=soup.select_one('#mw-content-text');assert body,title
     rev=heads[title]['revisions'][0]['revid'];m=re.search(r'"wgRevisionId":(\d+)',html);initial=int(m[1]) if m else None
     if initial!=rev:
         purge=requests.post('https://wiki.swccg.com/api.php',data=dict(action='purge',format='json',formatversion=2,titles=title,forcelinkupdate=1),timeout=60);purge.raise_for_status();assert purge.json()['purge'][0].get('purged'),title
@@ -81,7 +83,8 @@ def public(title):
     if reading:
         boxes=body.select('table.card-infobox');assert len(boxes)==1,title
         links={unquote(a.get('href','').split('/wiki/',1)[1].split('#')[0]).replace('_',' ') for a in boxes[0].select('a[href]') if '/wiki/' in a['href']}
-        assert set(families[reading['title']])<=links,(title,'Missing family destinations',set(families[reading['title']])-links)
+        required=set(families[reading['title']])-{title}
+        assert required<=links,(title,'Missing family destinations',required-links)
         row['infoboxes']=1;row['family_links_verified']=len(families[reading['title']])
     return row
 with ThreadPoolExecutor(max_workers=4) as pool:public_report=list(pool.map(public,titles))
@@ -90,7 +93,7 @@ for r in readings:
     if '{{Card versions/' not in values(heads[r['article']]['revisions'][0]['slots']['main']['content']):continue
     needle='/wiki/'+quote(r['article'].replace(' ','_'),safe='(),')
     for sibling in families[r['title']]:
-        url='https://wiki.swccg.com/wiki/'+quote(sibling.replace(' ','_'),safe='');response=requests.get(url,timeout=60);response.raise_for_status()
+        url='https://wiki.swccg.com/wiki/'+quote(sibling.replace(' ','_'),safe=':(),');response=requests.get(url,timeout=60);response.raise_for_status()
         def linked(html):
             soup=BeautifulSoup(html,'html.parser');box=soup.select_one('.card-infobox')
             return bool(box and any(unquote(a.get('href','').split('/wiki/',1)[-1]).replace('_',' ')==r['article'] for a in box.select('a[href]')))
@@ -103,5 +106,5 @@ if shared_checks:(root/(stage+'-shared-family-public-verification.json')).write_
 for suffix,data in [('source-verification',report),('public-verification',public_report),('navigation-verification',nav),('conservation',conservation),('published-heads',heads)]:
     (root/(stage+'-'+suffix+'.json')).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
 allheads=json.loads((root/'published-heads.json').read_bytes()) if (root/'published-heads.json').exists() else {};allheads.update(heads);(root/'published-heads.json').write_text(json.dumps(allheads,ensure_ascii=False,indent=2),encoding='utf8')
-(root/'published-pages.md').write_text('# Story381 — changed live pages\n\n'+''.join('- ['+t+'](https://wiki.swccg.com/wiki/'+quote(t.replace(' ','_'),safe='')+') — revision '+str(p['revisions'][0]['revid'])+'\n' for t,p in sorted(allheads.items())),encoding='utf8')
+(root/'published-pages.md').write_text('# Story381 — changed live pages\n\n'+''.join('- ['+t+'](https://wiki.swccg.com/wiki/'+quote(t.replace(' ','_'),safe=':(),')+') — revision '+str(p['revisions'][0]['revid'])+'\n' for t,p in sorted(allheads.items())),encoding='utf8')
 print(len(public_report),'anonymous public pages current, Cite 0; reciprocal navigation and existing content conserved',flush=True)

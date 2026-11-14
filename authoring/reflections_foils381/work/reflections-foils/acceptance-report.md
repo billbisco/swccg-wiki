@@ -1,15 +1,11 @@
-FAIL-REPORT v1 — ticket #381 — agent: MemoryCoreChatGPT — 2026-11-14 04:59 (UTC-4)
+# Story 381 — Publication verified — final merged backup pending
 
-| AC | Result | Evidence |
-|---|---|---|
-| AC1 Inventory | PASS | initial-manifest.json, manifest.json, inventory.csv, completion-progress.json;314 slots reconciled114/100/100; existing printing reused without duplication |
-| AC2 Complete articles | FAIL |70 fully verified new,10 additional new live,217 unsaved drafts,one additional existing reused; prepared-work-verification.json proves298 physical readings/source hashes and217 draft field/style/preview checks, not publication |
-| AC3 Direct checklist/family links | FAIL | first seven full-batch reports pass; batch8 family45 unfinished;217 drafts not integrated. Existing Don't Get Cocky reciprocal links retained and direct checklist repaired304302 |
-| AC4 Public/review/visual/archive | FAIL | first70 full checks; batch8 partial-public-verification explicitly limited31 pages. Existing-integration-public-verification and visual proofs pass3 edits. Wiki-original captures for batch8 ten and existing Don't Get Cocky one remain;184 inherited URLs need archival verification |
-| AC5 Merged backup/evidence/closure | FAIL | Source backup checkpoint PR18 and shared evidence supplied; whole-story delivery/closure cannot pass while AC2–4 remain open. Backup merge receipt belongs on story; this report is not whole-story PASS |
+All 217 previously unpublished drafts are published and the ten incomplete articles are finished. The full inventory contains 314 regular foil articles: 114 Reflections I, 100 Reflections II and 100 Reflections III; 297 new articles and 17 existing articles reused. No article deletion is required.
 
-Overall: FAIL — AC2–AC5; fixing
+Publication verification is complete: final-inventory-audit.json, final-navigation-audit.json, publication-identity-check.json, per-batch source/public/conservation/navigation reports and accepted desktop/mobile captures. All original photographs are retained unchanged. Seventy new articles completed strict preservation earlier; preservation for 227 subsequent new articles and one reused article is separately queued under Bill’s explicit amendment. The queue contains 936 distinct entries, including 228 exact public image versions. Queue entries are not verified captures.
 
-External blocker: Wayback anonymous saves520 on VPS/PC, explicit public POST throttling429, documented authenticated route401. Ordinary retry after cooldown still520. Submissions stopped; no bypass or invented captures. Required core rule: “Never save with open flags.” Source originals and all217 drafts are backed up; exact pending image versions/staging URLs are queued. No further approval question is outstanding. Next step is batch8 primary snapshot after archive recovery, followed by refreshed family edits and exact binary preservation. See RESUME.md and current-batch-report.md.
+Continue preservation only via [task412](https://github.com/swccg-guild/work/issues/412), using preservation-queue.json and source ops/wayback/queue.txt. Keep uncaptured staging and previous valid captures. Do not replay the publication scripts or wait for Wayback to accept the already completed publication. [Bug416](https://github.com/swccg-guild/work/issues/416) separately tracks an existing See-Threepio non-foil redirect; its foil article uses truthful family navigation.
 
-Visual evidence: first-visual*, batch2–batch7-visual*, batch8-visual*, existing-integration-visual-0.webp and existing-integration-visual-1.webp. All changed live URLs are in published-pages.md. No article deletion is required.
+The existing central server registry holds517 exact-byte registrations, including all228 pending Wiki original versions. Actual identifiers/export are in central-registration-receipts.json and central-registry-server-export.json. They have independently verified immutable backup receipts and await owner promotion; registration is not submission. Another419 source/citation entries require exact payload/evidence reconciliation in task412. No client-side saver, new service or direct pending-URL promotion was introduced.
+
+[Story381](https://github.com/swccg-guild/work/issues/381); [source PR21](https://github.com/billbisco/swccg-wiki/pull/21); [all changed live page links](https://github.com/swccg-guild/work/blob/main/evidence/381/published-pages.md).

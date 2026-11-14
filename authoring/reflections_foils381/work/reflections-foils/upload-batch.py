@@ -1,16 +1,20 @@
 import base64,gzip,hashlib,json,re,subprocess,sys,unicodedata
 from pathlib import Path
 from source_registry import provenance
-sys.path.insert(0,'work/wiki-tools');from style_lint import lint
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
 root=Path(__file__).parent;stage=sys.argv[1]
-rows=json.loads((root/(stage+'-readings.json')).read_bytes());archive=json.loads((root/(stage+'-preservation.json')).read_bytes());assert archive['verified']
+rows=json.loads((root/(stage+'-readings.json')).read_bytes());archive=json.loads((root/(stage+'-preservation.json')).read_bytes()) if (root/(stage+'-preservation.json')).exists() else {}
+if not archive.get('verified'):
+    from publication_policy import AUTHORIZATION
+    assert json.loads((root/'publication-authorization.json').read_bytes())['quote']==AUTHORIZATION
 files=[];originals=[]
 for row in rows:
     data=(root/row['source_photo']).read_bytes();assert hashlib.sha256(data).hexdigest()==row['source_sha256'];p=provenance(row)
     code={'Reflections':'Reflections','Reflections II: Expanding the Galaxy':'Reflections-II','Reflections III':'Reflections-III'}[row['product']]
     slug=re.sub(r'[^A-Za-z0-9]+','-',unicodedata.normalize('NFKD',row['printed_title']).encode('ascii','ignore').decode()).strip('-')
     name=code+'-Foil-'+('L' if row['side']=='Light' else 'D')+'-'+slug+'-'+p['kind']+'-photo-'+p['photo_id']+'-original.jpg'
-    desc='Original physical [['+row['product']+']] foil face of [['+row['article']+']], '+row['side']+' Side. Photograph from '+p['credit']+'. Original JPEG retained unchanged.<ref name="source">['+p['url']+' Source collection entry] · ['+row['source_url']+' Original photograph]. Preserved copy: ['+archive['capture']+' Internet Archive source photographs], including this unchanged JPEG.</ref>\n\n== References ==\n<references />\n\n[[Category:Card images]]'
+    preserved=' Preserved copy: ['+archive['capture']+' Internet Archive source photographs], including this unchanged JPEG.' if archive.get('verified') else ''
+    desc='Original physical [['+row['product']+']] foil face of [['+row['article']+']], '+row['side']+' Side. Photograph from '+p['credit']+'. Original JPEG retained unchanged.<ref name="source">['+p['url']+' Source collection entry] · ['+row['source_url']+' Original photograph].'+preserved+'</ref>\n\n== References ==\n<references />\n\n[[Category:Card images]]'
     assert not lint(desc,'File:'+name)[0],lint(desc,'File:'+name)[0]
     files.append(dict(title='File:'+name,name=name,card_title=row['article'],desc=desc,data=base64.b64encode(data).decode(),sha1=hashlib.sha1(data).hexdigest(),sha256=row['source_sha256'],urls=[p['url'],row['source_url']]))
     originals.append(dict(name=name,local_file=row['source_photo'],sha256=row['source_sha256']))

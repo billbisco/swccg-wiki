@@ -13,5 +13,9 @@ def finish(stage,rows,year):
         if src.get('alternate_image'):
             arts=json.loads((root/'artwork-verification.json').read_bytes());art=next(a for a in arts if a['article']==row['article']);assert art['verified'] and art['source_sha256']==row['source_sha256']
             row.update(alternate_image=True,artwork_verification=art)
+        if row.get('image_rotation')=='left' and not row.get('image_rotated_height'):
+            from PIL import Image,ImageOps
+            with Image.open(root/row['source_photo']) as image:
+                width,height=ImageOps.exif_transpose(image).size;row['image_rotated_height']=str(round(280*width/height))
         row['field_status']={k:'printed' for k in row if k in ['printed_title','type','subtype','destiny','power','ability','armor','maneuver','landspeed','hyperspeed','deploy','forfeit','parsec','light_icons','dark_icons','icons','lore','game_text','uniqueness','copyright_year']};row['field_status']['rarity']='catalogued: Complete Card List v4.0'
     (root/(stage+'-readings.json')).write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf8');print(len(rows),'independent readings recorded for',stage)

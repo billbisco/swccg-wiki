@@ -14,12 +14,27 @@ def canonical(title,heads):
         title=m[1]
     return title
 
-def label(title,t):
+def label(title,t,preferred=None):
+    valid=lambda s:bool(re.match(r'^(?:Decipher|PC Errata|Virtual Original|Virtual Legacy|Virtual Modern)(?:\b|$)',s))
+    if preferred and valid(preferred):return preferred
+    # Existing publication metadata is sometimes absent. Its explicitly labeled
+    # self entry is stronger evidence than guessing Decipher from a blank era.
+    for k in ['versions','printings']:
+        if not t.has(k):continue
+        for bit in re.split(r'<br\s*/?>',str(t.get(k).value)):
+            match=re.search(r"'''([^']+)'''",bit)
+            if match and "'''this page'''" in bit and valid(match[1]):return match[1]
     era=str(t.get('era').value) if t.has('era') else ''
     suffix=' Errata'+(' 2' if '(Errata 2)' in title else ' 3' if '(Errata 3)' in title else '') if '(Errata' in title else ''
     for key in ['Virtual Original','Virtual Legacy','Virtual Modern']:
         if key in era:return key+suffix
-    if '(PC Errata' in title:return 'PC Errata'+(' 2' if '(PC Errata 2)' in title else '')
+    if '(PC Errata' in title:
+        number=re.search(r'\(PC Errata (\d+)\)',title)
+        return 'PC Errata'+(' '+number[1] if number else '')
+    if '(V)' in title:
+        if '(Virtual Block ' in title:return 'Virtual Legacy'+suffix
+        if '(Virtual Set ' in title:return 'Virtual Original'+suffix
+        return 'Virtual Modern'+suffix
     if '(Errata' in title:return 'Decipher Errata'+(' 2' if '(Errata 2)' in title else '')
     if 'Japanese' in title:return 'Decipher (Japanese)'
     for qualifier in ['Revised','Unlimited','Reflections III Foil','Reflections II Foil','Reflections Foil']:
@@ -35,10 +50,18 @@ def new_navigation(r,heads,families,readings):
         assert len(navigators)==1
         return str(navigators[0])
     order=[root_title]+[canonical(str(w.title).strip(),heads) for w in mw.parse(oldvalue).filter_wikilinks()]+families[r['title']]
-    order=list(dict.fromkeys(t for t in order if t in families[r['title']]))
+    current_batch={row['article'] for row in readings}
+    order=list(dict.fromkeys(t for t in order if t in families[r['title']] and t not in current_batch))
     entries=[]
+    explicit={}
+    for bit in re.split(r'<br\s*/?>',oldvalue):
+        prefix=re.search(r"'''([^']+)'''",bit)
+        if not prefix:continue
+        for link in mw.parse(bit).filter_wikilinks():
+            target=canonical(str(link.title).strip(),heads)
+            if target in order:explicit.setdefault(target,prefix[1])
     for i,title in enumerate(order):
-        t=card(heads[title]['revisions'][0]['slots']['main']['content']);prefix=label(title,t)
+        t=card(heads[title]['revisions'][0]['slots']['main']['content']);prefix=label(title,t,explicit.get(title))
         group=0 if prefix.startswith('Decipher') and 'Errata' not in prefix else 1 if prefix.startswith('Decipher') else 2 if prefix.startswith('PC') else 3 if prefix.startswith('Virtual Original') else 4 if prefix.startswith('Virtual Legacy') else 5
         entries.append((group,i,"'''"+prefix+"''' — [["+title+']]'))
     for row in readings:

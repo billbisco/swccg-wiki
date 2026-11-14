@@ -11,3 +11,17 @@
 - Why: Save Page Now stopped working: GET520 on both routes, explicit POST429 throttling, documented authenticated401; an ordinary cooldown retry still520. Missing photographs are not the blocker. Core lint/image rules prohibit claiming unpreserved work done.
 - Alternatives: Do not bypass throttling, weaken ARCHIVE lint, invent replay URLs, recreate an existing printing, substitute generic foil renders or label drafts as publication. No new approval is required from Bill.
 - Who/status: MemoryCoreChatGPT; all physical faces/drafts ready, whole story remains In Progress pending external archival recovery and publication. RESUME.md supplies the exact next step. Source backup checkpoint does not close story381.
+
+## 14 November2026 — Bill authorizes publication with preservation queued
+- Decision: Publish the remaining217 foil articles and complete batch8 now; defer external captures to linked task412.
+- Why: Bill explicitly instructed “Please don’t let Wayback block this. Queue the preservation requests for later and proceed with publishing the remaining217 foil articles and finishing the ten incomplete ones.”
+- Alternatives: Do not wait for archival recovery, weaken non-archive validation, invent replay URLs or label queued captures verified. Standard linter unchanged; task-scoped wrapper records deferred ARCHIVE flags.
+- Who/status: Bill authorizes; MemoryCoreChatGPT executes. R5/AC4 archival prerequisite is amended for this publication only; all content, image-hash, review, navigation, conservation and public/visual checks remain.
+
+## 14 November 2026 — Complete publication and register deferred exact objects
+- Decision: All 217 unpublished drafts and ten incomplete cards are complete. Reuse 17 existing articles; final inventory is 314 articles/images and publication identities (114/100/100). Current navigation checks cover 1,352 pages and 1,292 introduced foil memberships.
+- Why: Final source/public/review/hash/conservation/visual checks passed. Visual review identified icon-link capitalization; 41 narrow corrections preserve all other bytes. The 15 reused Japanese foils received catalog identities while all prior content and playable mappings remained exact.
+- Alternatives: No duplicate articles, fabricated foil effects, altered original photographs or unchecked capture claims. Existing shared navigators and concurrent edits retained.
+- Who/status: MemoryCoreChatGPT; publication complete, final merged backup pending. Newly refreshed owner workflow is used for follow-up: 517 known exact-byte objects are registered on the existing server, including all 228 outstanding Wiki image versions. Another 419 source/citation entries remain queued for exact-payload reconciliation in task412. Registrations await receipt import and owner promotion; none is claimed submitted or verified.
+
+- Completion addendum: all517 registered exact-byte objects now have actual independent remote Git readback receipts attached in generation1; central state ready, not submitted. Readback matched2,123 saved Wiki sources and300 binary paths (298 uploaded originals plus two distinct cited source photographs).
