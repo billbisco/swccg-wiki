@@ -1,0 +1,98 @@
+# Registry consumer seam (Story 410)
+
+This module has no capture submitter or standalone runner. Integrate it into the
+existing `wayback_worker.py` Control-owned run; keep that worker's provider
+circuit, authentication behavior, accepted-job journal and service/timer.
+
+## Exact approved cohort
+
+The default is no approved objects, not every registration in the global inbox.
+An operator-reviewed metadata file at `CONTROL/registry/approved-objects.json`
+has schema version 1, owner `server-wayback-owner`, a nonempty `approval_scope`
+with the immutable evidence/export reference, and `object_ids` containing the
+exact approved registration object hashes. Maximum 5,000 mappings and 1 MiB.
+Installing/revising this is an explicit review of owner data; it is not inferred
+from a client's claim or a global registry export. Other clients' objects,
+generations, queue order and completed ledger records remain untouched.
+
+`load_allowed_objects(registry)` reads this file, returning an empty set if it
+does not exist. Each eligible observation still requires valid independent
+subject/source receipts and source-representation evidence. Metadata scans
+retain one current observation per object rather than all historical bodies.
+Readiness changes use a locked compare-and-swap against the exact registered
+request; another client's newer generation cannot be overwritten by a stale
+restore. Every prior observation remains immutable.
+
+## Worker hook contract
+
+After recovery reconciliation inside `_run`, when `ACTIVE_CONTROL` is the
+actual active Control object:
+
+```python
+adapter = OwnerAdapter(worker_module, repo, control,
+                       load_allowed_objects(control.directory / "registry"))
+control.registry_adapter = adapter
+prepared = adapter.prepare(deadline)
+done.update(prepared["ledger_updates"])
+changed.update(prepared["ledger_updates"])
+control.checkpoint(done, control.initial_done)
+urls = load(repo)[0]  # queue append may have reset/pushed the shared Git tree
+```
+
+Use the existing baseline/changed transaction and accepted-job journal; do not
+replace in-memory `done` with a fresh ledger after applying the returned delta.
+In the existing owner finalization, before clearing `ACTIVE_CONTROL`, call the
+created adapter's `finish(deadline)`. A paused run that never created an adapter
+does not need a new one. Preserve the worker's original outcome and durable
+journal if this auxiliary reconciliation reports an error. No provider request
+is permitted while the circuit is paused, half-open or authentication-blocked;
+finish can record real accepted job IDs from existing receipts without network.
+
+## Bounded staging, queue and version lifecycle
+
+The default is two attempted prepare jobs per run, with an exact-cohort cursor
+so early failures do not starve independent objects. Finish also rotates its
+bounded checks. Many filename/revision mappings share one exact SHA-256 payload
+job; each mapping is retained, with actual capture-host provenance preserved.
+
+Checked self-contained snapshots can be independently restored from their
+existing Git backup/container into the approved persistent work volume, then
+published at the exact approved snapshot target. The aggregate public-stage
+budget is 32 MiB, including other existing stages; scan cap is 50,000 files.
+There is a 2 GiB work-volume reserve. Existing different target bytes are never
+overwritten. Already-public originals require an exact public hash/size check
+and need no new public stage. Unrecognized private representations remain
+pending, rather than inventing a capture target. Queue appends preserve order
+and comments through the shared locked Git callback.
+
+Registration/queued intent is not submission. Owner receipts report an actual
+accepted job ID separately. Verified means strict indexed replay plus a whole
+raw SHA-256/byte-count match to the registered payload; a text-similarity
+verification from the legacy worker is insufficient. Immutable owner events
+and hash-bound pointers live outside Git resets; export keeps actual capture
+original URLs rather than rewriting a shared capture into another source URL.
+
+A previously completed URL may refer to a different historical body. Only a
+strict, indexed, raw mismatch after the current source passes its exact check
+can request a new version epoch. The old full worker receipt and checked old
+capture hashes are retained before returning a retry delta. Accepted pending
+jobs are never reset. Terminal failures lacking usable version evidence become
+owned repair records, not endless resets of the same payload.
+
+## Cleanup and remaining integration gate
+
+The adapter does not delete stages. The existing pruner's citation safeguard
+still applies. A production integration must connect verified registry receipts
+to publication/citation reconciliation or approve an equally strict scoped
+cleanup seam (exact approved mapping, independent source backup, strict raw
+capture proof and unchanged staged bytes). Otherwise verified but uncited
+stages can legitimately keep the aggregate budget full. Do not silently remove
+that safeguard or claim the complete JIT workflow deployed before this gate and
+the small worker hooks pass integration tests.
+
+Source-only offline fixtures cover paused modes, absent active owner, unknown
+global objects, stable ordered queue appends, shared mappings, exact JIT
+restoration, stage quota, wrong source bytes, accepted job identity, strict
+capture bytes, safe old-version retry, concurrent readiness CAS and receipt
+pointer tampering. No live registry, stage, queue, configuration or capture API
+is changed by those tests.

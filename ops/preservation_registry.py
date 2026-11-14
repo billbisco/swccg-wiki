@@ -144,6 +144,36 @@ def atomic_json(path: Path, value: dict, *, create_only: bool = False) -> bool:
 
 
 def register(registry: Path, request: dict) -> dict:
+    with registration_lock(registry):
+        return _register_locked(registry, request)
+
+
+def advance_readiness(registry: Path, entry: dict, readiness: dict, *, owner: str) -> dict:
+    """CAS a staged observation under the same short registration transaction.
+
+    Only readiness changes. Subject/source/backup/approval history is retained;
+    another client's newer observation is never overwritten by a stale restore.
+    """
+    if owner != SERVER_OWNER:
+        raise PermissionError("only the existing server owner advances staging")
+    request = entry["request"]
+    object_key = registration_object_id(request["subject"], request["source"])
+    job_key = registration_job_id(request["source"]).split(":", 1)[1]
+    with registration_lock(registry):
+        current = _latest_object(registry / "requests" / job_key / object_key, registry)
+        if current is None:
+            raise ValueError("staging observation has no immutable registered request")
+        latest = current["request"]
+        latest_id = hashlib.sha256(canonical_bytes(latest)).hexdigest()
+        if latest_id != entry["request_id"]:
+            raise ValueError("registered observation advanced during staging; retain restored bytes and re-read")
+        if latest["readiness"] == readiness:
+            return _register_locked(registry, latest)
+        updated = dict(latest, readiness=readiness, generation=latest.get("generation", 0) + 1)
+        return _register_locked(registry, updated)
+
+
+def _register_locked(registry: Path, request: dict) -> dict:
     errors = validate_request(request)
     if errors:
         raise ValueError("; ".join(errors))
@@ -156,13 +186,11 @@ def register(registry: Path, request: dict) -> dict:
     # does not erase prior observations or merge away filename/version mappings.
     request_key = hashlib.sha256(canonical_bytes(request)).hexdigest()
     relative = Path("requests", job_key.split(":", 1)[1], object_key, request_key + ".json")
-    with registration_lock(registry):
-        prior = [json.loads(path.read_text(encoding="utf-8"))
-                 for path in (registry / relative.parent).glob("*.json")]
-        latest_generation = max((r.get("generation", 0) for r in prior), default=-1)
-        if not (registry / relative).exists() and request["generation"] <= latest_generation:
-            raise ValueError("changed observations need a strictly increasing generation")
-        created = atomic_json(registry / relative, request, create_only=True)
+    current = _latest_object(registry / relative.parent, registry)
+    latest_generation = current["request"].get("generation", 0) if current else -1
+    if not (registry / relative).exists() and request["generation"] <= latest_generation:
+        raise ValueError("changed observations need a strictly increasing generation")
+    created = atomic_json(registry / relative, request, create_only=True)
     state = "superseded" if request["generation"] < latest_generation else object_state(request)
     return {"schema_version": 1, "job_id": job_key, "object_id": object_key,
             "subject_id": object_id(request["subject"]),
@@ -198,10 +226,14 @@ def source_receipt(request: dict) -> dict | None:
     return request.get("source_backup_receipt") or request.get("backup_receipt")
 
 
-def records(registry: Path) -> list[dict]:
-    latest = {}
-    for path in sorted((registry / "requests").glob("*/*/*.json")):
-        request = json.loads(path.read_text(encoding="utf-8"))
+def _latest_object(directory: Path, registry: Path) -> dict | None:
+    latest, seen = None, set()
+    for path in directory.glob("*.json"):
+        with path.open("rb") as stream:
+            raw = stream.read(MAX_REQUEST_BYTES + 1)
+        if len(raw) > MAX_REQUEST_BYTES:
+            raise ValueError("registry record exceeds its metadata cap")
+        request = json.loads(raw)
         errors = validate_request(request)
         if errors:
             raise ValueError(path.name + ": " + "; ".join(errors))
@@ -209,13 +241,29 @@ def records(registry: Path) -> list[dict]:
         request_key = hashlib.sha256(canonical_bytes(request)).hexdigest()
         if path.stem != request_key or path.parent.name != key or path.parent.parent.name != request["source"]["sha256"]:
             raise ValueError("registry record content does not match its immutable identity")
-        entry = {"path": path.relative_to(registry).as_posix(),
-                 "request_id": path.stem, "request": request}
-        if key not in latest or request.get("generation", 0) > latest[key]["request"].get("generation", 0):
-            latest[key] = entry
-        elif request.get("generation", 0) == latest[key]["request"].get("generation", 0):
+        generation = request.get("generation", 0)
+        if generation in seen:
             raise ValueError("conflicting observations share a generation")
-    return sorted(latest.values(), key=lambda row: row["path"])
+        seen.add(generation)
+        if len(seen) > 1000:
+            raise ValueError("object observation history exceeds its explicit scan budget")
+        entry = {"path": path.relative_to(registry).as_posix(), "request_id": path.stem, "request": request}
+        if latest is None or generation > latest["request"].get("generation", 0):
+            latest = entry
+    return latest
+
+
+def iter_records(registry: Path):
+    # Sort only small directory names, not all parsed request/receipt payloads.
+    for directory in sorted((registry / "requests").glob("*/*")):
+        if directory.is_dir():
+            entry = _latest_object(directory, registry)
+            if entry:
+                yield entry
+
+
+def records(registry: Path) -> list[dict]:
+    return list(iter_records(registry))
 
 
 def export_records(registry: Path) -> dict:
@@ -246,6 +294,8 @@ def export_records(registry: Path) -> dict:
             if promotion["request_id"] == row["request_id"] and row["state"] == "ready":
                 row["state"] = "queued"
                 row["queue_receipt"] = promotion["queue_receipt"]
+        from preservation_owner_receipts import apply_export
+        apply_export(row, registry)
         rows.append(row)
     return {"schema_version": 1, "objects": rows, "submission_owner": SERVER_OWNER}
 
