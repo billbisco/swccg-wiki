@@ -225,6 +225,19 @@ def save_anon(url: str) -> str:
     return loc
 
 
+def submit_capture(url: str, entry: dict | None, session: dict) -> dict:
+    """Use the public anonymous route if SPN rejects authentication; keep rate limits intact."""
+    if session["authenticated"]:
+        try:
+            return spn2_submit(url, force=True) if (entry or {}).get("recapture") else spn2_submit(url)
+        except urllib.error.HTTPError as ex:
+            if ex.code != 401:
+                raise
+            session["authenticated"] = False
+            print("AUTH-UNAVAILABLE SPN2 returned401; using anonymous saves for this run", flush=True)
+    return {"anonymous_capture": save_anon(url)}
+
+
 def capture_ok(capture: str) -> bool:
     req = urllib.request.Request(capture, headers={"User-Agent": UA})
     try:
@@ -610,11 +623,13 @@ def try_verify(url: str, e: dict) -> None:
 def load(repo: Path) -> tuple[list[str], dict]:
     q = repo / QUEUE
     urls = []
+    seen = set()
     if q.exists():
         for line in q.read_text(encoding="utf-8").splitlines():
             line = line.strip()
-            if line and not line.startswith("#") and line not in urls:
+            if line and not line.startswith("#") and line not in seen:
                 urls.append(line)
+                seen.add(line)
     d = repo / DONE
     done = json.loads(d.read_text(encoding="utf-8")) if d.exists() else {}
     return urls, done
@@ -946,6 +961,7 @@ def run(repo: Path, minutes: float) -> None:
     errors_in_row = 0
     backoff = BACKOFF_START
     print("auth:", "SPN2 authenticated" if AUTH else "anonymous", flush=True)
+    submission_session = {"authenticated": bool(AUTH)}
 
     # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
     ia_up = True
@@ -985,8 +1001,8 @@ def run(repo: Path, minutes: float) -> None:
                 e = dict(e, tries=0)
         tries = (e or {}).get("tries", 0) + 1
         try:
-            if AUTH:
-                j = spn2_submit(url, force=True) if (e or {}).get("recapture") else spn2_submit(url)
+            j = submit_capture(url, e, submission_session)
+            if "anonymous_capture" not in j:
                 if j.get("recent"):
                     e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
                          "note": "already archived within 30d"}
@@ -1002,7 +1018,7 @@ def run(repo: Path, minutes: float) -> None:
                 submitted.append(url)
                 print("SUBMITTED", url, j["job_id"], flush=True)
             else:
-                cap = save_anon(url)
+                cap = j["anonymous_capture"]
                 e = {"capture": cap, "status": "pending", "tries": tries, "last": iso(now())}
                 print("SAVED", url, cap, flush=True)
             errors_in_row = 0
