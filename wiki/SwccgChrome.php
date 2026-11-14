@@ -13,6 +13,8 @@ class SwccgChrome {
 			'.card-rail{float:left!important;clear:left!important;margin:0 1em 1em 0!important;}'
 			. '.card-rail-right{float:right!important;clear:right!important;margin:0 0 1em 1em!important;}'
 		);
+		// Foil photograph framing and intrinsic inline-symbol sizes (work#436).
+		$out->addInlineStyle( '.mw-parser-output table.card-thumbs td:not(:first-child) img{width:auto;height:auto;max-width:none;vertical-align:middle;} .mw-parser-output .card-photo-source img{width:100%!important;max-width:none!important;height:auto;display:block;} .mw-parser-output .card-photo-source a,.mw-parser-output .card-photo-source>span{display:block;width:100%;}' );
 		// Bounded review pilot: no resources or behavior on ordinary card pages.
 		$title = $out->getTitle();
 		if ( $title && $title->getPrefixedText() === 'SWCCG Wiki:Samples/Original Virtual Darth Vader image viewer' ) {
@@ -98,7 +100,7 @@ class SwccgChrome {
 				return $lore;
 			}
 		}
-		return $title->getText() . ' — Star Wars CCG card on SWCCG Wiki.';
+		return $title->getText() . ' â€” Star Wars CCG card on SWCCG Wiki.';
 	}
 
 	private static function cardImage( $title ): ?array {

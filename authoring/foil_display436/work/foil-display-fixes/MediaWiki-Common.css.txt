@@ -1,0 +1,1046 @@
+/* Cool Stone trial 2026-11-11: chrome #e4e8ec. Prior body #f6f6f6, content/header/sidebar #fff. */
+/* Logo centered over the left sidebar; search in the header to its right. */
+
+body.mediawiki {
+  background: #e4e8ec !important;
+  font-size: 0.92em;
+}
+
+body.mediawiki .swccg-header,
+body.mediawiki .swccg-footer,
+body.mediawiki #siteNotice,
+#mw-indicator-mw-helplink {
+  display: none !important;
+}
+
+#footer-icons,
+#footer-poweredbyico,
+li#footer-poweredbyico,
+.mw-wiki-poweredbyico {
+  display: none !important;
+}
+
+#mw-page-base {
+  height: 72px !important;
+  background: #e4e8ec !important;
+  border-bottom: 1px solid #a7d7f9;
+  margin: 0 !important;
+  margin-left: 11em !important;
+}
+#mw-head-base {
+  height: 0 !important;
+  margin: 0 !important;
+  margin-left: 11em !important;
+  background: transparent !important;
+}
+
+/* Header starts AFTER the sidebar so it never covers the logo */
+#mw-head {
+  left: 11em !important;
+  right: 0 !important;
+  width: auto !important;
+  height: 72px;
+}
+
+/* Bigger logo, centered in the sidebar column */
+#p-logo,
+#mw-panel #p-logo {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 11em !important;
+  height: 130px !important;
+  margin: 0 auto !important;
+  z-index: 20;
+}
+#p-logo a.mw-wiki-logo {
+  background-image: url(/resources/assets/swccg-wiki-logo.png?v=8) !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  width: 11em !important;
+  height: 124px !important;
+  margin: 4px auto 0 !important;
+}
+
+/* Search immediately right of the logo column â€” text field only, no overlay buttons */
+#p-search {
+  position: absolute !important;
+  left: 8px !important;
+  top: 10px !important;
+  width: 24em !important;
+  margin: 0 !important;
+  float: none !important;
+  z-index: 20;
+  background: transparent !important;
+}
+#p-search h3,
+.vector-search-box h3 {
+  display: none !important;
+}
+#searchform,
+#simpleSearch,
+.vector-search-box-inner {
+  position: relative !important;
+  width: 24em !important;
+  height: 2.1em !important;
+  background: transparent !important;
+  margin: 0 !important;
+}
+#searchInput {
+  position: relative !important;
+  z-index: 3 !important;
+  height: 2.1em !important;
+  width: 24em !important;
+  max-width: 100% !important;
+  font-size: 0.95em !important;
+  background: #fff !important;
+  border: 1px solid #a2a9b1 !important;
+  padding: 0 2.2em 0 0.5em !important;
+  box-sizing: border-box !important;
+}
+/* Hide the giant white Search/Go buttons that sat on top of the field */
+#searchButton,
+#mw-searchButton,
+.searchButton {
+  position: absolute !important;
+  top: 2px !important;
+  right: 2px !important;
+  width: 1.9em !important;
+  height: 1.9em !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  background: transparent url(/resources/assets/swccg-wiki-logo.png?v=8) no-repeat !important;
+  background-size: 0 !important;
+  cursor: pointer !important;
+  z-index: 4;
+}
+#mw-searchButton {
+  display: none !important;
+}
+#searchButton {
+  background: #d7dce2 !important;
+  border: 1px solid #a2a9b1 !important;
+  text-indent: 0 !important;
+  font-size: 0.75em !important;
+  color: #202122 !important;
+  width: auto !important;
+  padding: 0 0.45em !important;
+}
+
+.vector-search-box-auto-expand-width,
+.vector-search-box-show-thumbnail {
+  width: 24em !important;
+  max-width: 24em !important;
+}
+.vector-search-box-show-thumbnail .vector-search-box-input {
+  padding-left: 0.5em !important;
+  background-image: none !important;
+}
+
+#p-personal {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  left: auto !important;
+  z-index: 80 !important;
+  background: #e4e8ec !important;
+  padding: 2px 6px 2px 10px;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+#left-navigation {
+  margin-left: 0 !important;
+  margin-top: 42px !important;
+  float: left;
+}
+#right-navigation {
+  margin-top: 42px !important;
+}
+
+.vector-menu-tabs,
+.vector-menu-tabs-legacy {
+  background: transparent !important;
+  padding-top: 0 !important;
+  height: auto !important;
+  background-image: none !important;
+}
+.vector-menu-tabs ul {
+  height: auto !important;
+  background-image: none !important;
+}
+.vector-menu-tabs li {
+  height: auto !important;
+  margin: 0 1px 0 0 !important;
+  padding: 0 !important;
+  background: #d7dce2 !important;
+  background-image: none !important;
+  font-size: 0.8em !important;
+  line-height: 1.15 !important;
+}
+.vector-menu-tabs li.selected {
+  background: #e4e8ec !important;
+}
+.vector-menu-tabs li a,
+.vector-menu-tabs li a span {
+  padding: 0.18em 0.55em !important;
+  line-height: 1.15 !important;
+  background-image: none !important;
+}
+#p-namespaces .vector-menu-heading,
+#p-views .vector-menu-heading,
+#p-search .vector-menu-heading {
+  display: none;
+}
+
+#mw-panel,
+.vector-legacy-sidebar {
+  background: #e4e8ec !important;
+  top: 0 !important;
+  width: 11em !important;
+  z-index: 12;
+  padding-top: 0;
+}
+#mw-panel .vector-menu-heading,
+#mw-panel .vector-menu-heading-label {
+  color: #54595d;
+  font-size: 0.8em;
+}
+#mw-panel a {
+  color: #0645ad;
+}
+
+#content {
+  margin-top: 0 !important;
+  margin-left: 11em !important;
+  padding-top: 0.45em;
+  background: #e4e8ec;
+  border: 1px solid #a7d7f9;
+  border-top: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1.2em;
+}
+#firstHeading {
+  margin-top: 0.1em;
+  margin-bottom: 0.25em;
+  font-size: 1.55em;
+  border-bottom: 1px solid #a2a9b1;
+  padding-bottom: 0.08em;
+}
+.page-Main_Page #firstHeading {
+  display: none !important;
+}
+#siteSub,
+#contentSub,
+#contentSub2 {
+  display: none;
+}
+
+.page-Main_Page #toc,
+.page-Main_Page .toc,
+.page-Main_Page .flaggedrevs_short,
+.page-Main_Page #mw-fr-revision-details,
+.page-Main_Page .mw-fr-revision-details,
+.page-Main_Page .mw-fr-reviewNotice {
+  display: none !important;
+}
+
+.set-tile {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 168px;
+  max-width: 100%;
+  margin: 0.3em 0.45em 0.85em;
+  text-align: center;
+  vertical-align: top;
+  font-size: 0.8em;
+  line-height: 1.25;
+}
+.set-tile img {
+  box-sizing: border-box;
+  width: 160px;
+  max-width: 100%;
+  height: 110px;
+  object-fit: contain;
+  object-position: center;
+  border: 1px solid #ccc;
+  background: transparent;
+}
+.set-tile .set-name {
+  display: block;
+  margin-top: 0.25em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+  min-height: 2.6em; /* dampen uneven rows from 2â€“3 line titles */
+}
+.set-tile .set-meta {
+  display: block;
+  color: #54595d;
+  font-size: 0.92em;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Virtual Original pack facsimiles: vertical, do not crop like title banners */
+.set-tile.set-tile-vert {
+  width: 118px;
+}
+.set-tile.set-tile-vert img {
+  width: 100px;
+  height: auto;
+  max-height: 170px;
+  object-fit: contain;
+  object-position: center top;
+  background: transparent;
+}
+.set-tile.set-tile-text {
+  min-height: 8em;
+  padding-top: 0.5em;
+  border: 1px dashed #ccc;
+  box-sizing: border-box;
+  background: transparent;
+}
+.set-tile.set-tile-text .set-name {
+  min-height: 3.2em;
+  margin-top: 1.5em;
+}
+@media (max-width: 600px) {
+  .set-tile.set-tile-vert img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+  .set-tile.set-tile-text {
+    min-height: 0;
+  }
+}
+
+/* Narrow viewports: collapse legacy Vector sidebar + kill Vector ~500px min-width / header overflow */
+@media (max-width: 720px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  #mw-panel,
+  .vector-legacy-sidebar {
+    display: none !important;
+  }
+  /* skins.vector.styles.legacy historically sets min-width ~500px on content chrome */
+  #content,
+  .mw-body,
+  #mw-page-base,
+  #mw-head-base,
+  #footer {
+    min-width: 0 !important;
+    margin-left: 0 !important;
+  }
+  #mw-head {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: clip;
+  }
+  #p-personal {
+    position: static !important;
+    float: none !important;
+    right: auto !important;
+    max-width: 100%;
+  }
+  #left-navigation,
+  #right-navigation {
+    float: none;
+    max-width: 100%;
+  }
+  /* Absolute #p-search was extending scrollWidth past viewport (~523 on 390) */
+  #p-search,
+  .vector-search-box-vue {
+    position: static !important;
+    float: none !important;
+    right: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.35em 0 !important;
+    box-sizing: border-box;
+  }
+  #searchform,
+  #simpleSearch,
+  #searchInput {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .page-Main_Page .wikitable {
+    max-width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+}
+/* Mobile: shrink tiles to reduce horizontal overflow */
+@media (max-width: 600px) {
+  .set-tile {
+    width: 46%;
+    margin: 0.25em 1.5% 0.65em;
+    font-size: 0.74em;
+  }
+  .set-tile img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 11;
+  }
+  .set-tile .set-name {
+    min-height: 0;
+  }
+}
+
+.expansion-infobox {
+  float: right;
+  clear: right;
+  width: 280px;
+  margin: 0 0 1em 1em;
+}
+.set-pair td {
+  width: 50%;
+  text-align: center;
+  vertical-align: middle;
+}
+.set-pair img {
+  max-height: 380px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.card-rail {
+  float: left;
+  clear: left;
+  width: 280px;
+  margin: 0 1em 1em 0;
+}
+.card-rail-right {
+  float: right;
+  clear: right;
+  margin: 0 0 1em 1em;
+}
+.card-rail > p {
+  display: none;
+}
+.card-body {
+  overflow: hidden;
+}
+.card-body h2 {
+  margin-top: 0.9em;
+  margin-bottom: 0.35em;
+}
+.card-body p,
+.card-body ul,
+.card-body ol.references {
+  margin-top: 0.25em;
+  margin-bottom: 0.45em;
+  margin-left: 0;
+  padding-left: 1.6em;
+}
+.card-body .mw-references-wrap {
+  margin: 0.25em 0 0.45em;
+  padding-left: 0;
+  margin-left: 0;
+}
+.card-body .mw-references-wrap > ol.references {
+  margin: 0;
+  padding-left: 1.6em;
+}
+.card-rail .card-infobox {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+.card-portrait {
+  margin: 0 0 0.45em;
+  text-align: center;
+}
+.card-portrait img {
+  width: 280px;
+  height: auto;
+  /* card images have transparent rounded corners (PC scans and remasters): no box, no fill */
+  border: none;
+  background: transparent;
+}
+
+.card-rail-dual {
+  width: 580px;
+}
+.card-portraits-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.45em;
+  margin: 0 0 0.45em;
+  align-items: flex-start;
+}
+.card-portraits-row > p {
+  display: none;
+}
+.card-portraits-row .card-portrait {
+  margin: 0;
+  flex: 0 0 auto;
+}
+.card-portraits-row .card-portrait img {
+  width: 280px;
+  height: auto;
+}
+
+/* Objective dual portraits: responsive mode (~phone/tablet portrait ≤720px stacks; wider = side-by-side) */
+@media (max-width: 720px) {
+  .card-rail-dual.card-rail-responsive {
+    width: 280px;
+  }
+  .card-portraits-row.card-portraits-responsive {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  .card-portraits-row.card-portraits-responsive .card-portrait {
+    margin: 0 0 0.45em;
+  }
+}
+
+/* Primary phone path with viewport width=1120: html.card-device-narrow from
+   Common.js when screen.width ≤720. @media path above still helps desktop resize. */
+html.card-device-narrow .card-rail-dual.card-rail-responsive {
+  width: 280px;
+}
+html.card-device-narrow .card-portraits-row.card-portraits-responsive {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+html.card-device-narrow .card-portraits-row.card-portraits-responsive .card-portrait {
+  margin: 0 0 0.45em;
+}
+
+.card-nav {
+  font-size: 0.9em;
+  margin: 0 0 0.6em;
+}
+.card-hatnote {
+  font-size: 0.92em;
+  margin: 0 0 0.6em;
+  color: #54595d;
+}
+.card-infobox th {
+  width: 38%;
+  text-align: left;
+  vertical-align: top;
+}
+.card-infobox td {
+  width: 62%;
+}
+.card-infobox caption {
+  font-weight: bold;
+  padding: 0.25em 0.4em;
+  text-align: left;
+}
+
+/* Cool Stone trial: card infobox matches page chrome (Vector wikitable is white). */
+.card-rail .card-infobox,
+table.wikitable.card-infobox,
+table.wikitable.card-infobox > caption,
+table.wikitable.card-infobox > tbody > tr > th,
+table.wikitable.card-infobox > tbody > tr > td {
+  background: #e4e8ec;
+  background-color: #e4e8ec;
+}
+
+/* Cool Stone trial: GEMP ID / Versions <code> chips. Vector code is #f8f9fa white. */
+.mw-body code,
+.mw-parser-output code,
+.card-infobox code {
+  background: #d7dce2;
+  background-color: #d7dce2;
+}
+
+table.card-thumbs {
+  width: 100%;
+  overflow: visible;
+}
+table.card-thumbs td,
+table.card-thumbs th {
+  vertical-align: top;
+  font-size: 0.88em;
+  overflow: visible;
+}
+table.card-thumbs td:first-child {
+  width: 210px;
+  overflow: visible;
+}
+table.card-thumbs img {
+  width: 200px;
+  height: auto;
+  vertical-align: top;
+}
+table.card-thumbs a {
+  display: inline-block;
+}
+
+/* Card hover popup: size from natural image aspect (portrait OR landscape sites).
+   Do NOT clamp every card to vertical 450x630 â€” that scrunches horizontal locations. */
+#swccg-card-zoom {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  width: auto;
+  height: auto;
+  max-height: min(630px, 92vh);
+  max-width: min(900px, 92vw);
+  object-fit: contain;
+  pointer-events: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+  /* Transparent PNG corners (Unlimited) showed #111 as black; match Limited gray pockets. */
+  background: #e4e8ec;
+  border: 2px solid #c5ccd3;
+}
+#swccg-card-zoom.is-on {
+  display: block;
+}
+#swccg-card-zoom.is-landscape {
+  max-height: min(520px, 85vh);
+  max-width: min(920px, 94vw);
+}
+
+/* Jokes: let row images shrink to fit narrow windows; desktop sizes unchanged */
+body.page-Jokes .mw-parser-output img.mw-file-element {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Card-history pilot QA: keep legacy Vector navigation above content on phones. */
+@media (max-width: 720px) {
+  body.mediawiki { position: relative; }
+  #mw-head {
+    left: 0 !important;
+    right: 0 !important;
+    height: 178px;
+    overflow: visible;
+  }
+  #mw-page-base { height: 178px !important; }
+  #p-search, .vector-search-box-vue {
+    position: absolute !important;
+    top: 8px !important;
+    left: 10px !important;
+    width: calc(100% - 20px) !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+  #searchform, #simpleSearch, #searchInput { width: 100% !important; }
+  #p-personal {
+    position: absolute !important;
+    top: 48px !important;
+    left: 10px !important;
+    right: 10px !important;
+    white-space: normal;
+  }
+  #p-namespaces { position: absolute; top: 86px; left: 10px; }
+  #p-views { position: absolute; top: 124px; left: 10px; }
+  #left-navigation, #right-navigation { margin-top: 0 !important; }
+  body.mediawiki .card-rail, body.mediawiki .card-rail-right, body.mediawiki .card-rail-dual.card-rail-responsive {
+    float: none !important;
+    width: 280px;
+    max-width: 100%;
+    margin: 0 auto 1em !important;
+  }
+  .card-body { clear: both; overflow: visible; }
+  .card-body, .card-hatnote, .card-nav { overflow-wrap: break-word; }
+  .card-portrait img { max-width: 100%; height: auto; }
+  .expansion-infobox { float: none; max-width: 100%; margin: 0 auto 1em; }
+}
+
+/* Cool Stone follow-up: no white islands on the #e4e8ec page (2026-11-11, swccg-guild/work#272).
+   Palette: page/surfaces #e4e8ec, headers/tabs/chips #d7dce2, borders unchanged, typing fields stay #fff. */
+
+/* 1. All wiki tables (card lists, set infobox, tournament, decklists, Main Page boxes, file history, Special:Version) */
+.mw-body table.wikitable,
+.mw-body table.wikitable > * > tr > td {
+  background-color: #e4e8ec;
+}
+.mw-body table.wikitable > * > tr > th,
+.mw-body table.wikitable:not(.card-infobox) > caption {
+  background-color: #d7dce2;
+}
+
+/* 2. Contents box, category bar, file-page jump bar */
+.mw-body .toc,
+.mw-body #toc,
+#catlinks .catlinks,
+.catlinks,
+#filetoc {
+  background-color: #e4e8ec;
+}
+
+/* 3. Picture frames and galleries */
+.mw-body figure[typeof~="mw:File/Thumb"],
+.mw-body figure[typeof~="mw:File/Frame"],
+.mw-body figure[typeof~="mw:File/Thumb"] > figcaption,
+.mw-body figure[typeof~="mw:File/Frame"] > figcaption,
+.mw-body .thumbinner,
+.mw-body li.gallerybox div.thumb {
+  background-color: #e4e8ec;
+}
+
+/* 4. Code blocks (template docs, examples) match the code chips */
+.mw-body pre {
+  background-color: #d7dce2;
+}
+
+/* 5. History and diff screens */
+.mw-body td.diff-context {
+  background-color: #d7dce2;
+}
+#pagehistory li.selected,
+.mw-contributions-list li.selected {
+  background-color: #d7dce2;
+}
+
+/* 6. Special-page panels (search tabs, Recent changes filter area, file list rows) */
+.mw-body .mw-search-profile-tabs,
+.mw-body .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined,
+.mw-body .mw-rcfilters-container .mw-rcfilters-ui-filterTagMultiselectWidget.oo-ui-widget-enabled .oo-ui-tagMultiselectWidget-handle,
+.mw-body .mw-changeslist-legend,
+.mw-body .TablePager td,
+.mw-body .mw-datatable td {
+  background-color: #e4e8ec;
+}
+/* Search: Go button fills the field's right end (no white strip under it) */
+#searchInput {
+  display: block !important;
+}
+#simpleSearch {
+  height: auto !important;
+}
+#searchButton {
+  top: 1px !important;
+  bottom: 1px !important;
+  right: 1px !important;
+  height: auto !important;
+  border: 0 !important;
+  border-left: 1px solid #a2a9b1 !important;
+  line-height: 1 !important;
+  font-size: 0.8em !important;
+  padding: 0 0.7em !important;
+}
+#searchButton:hover {
+  background: #c8ced6 !important;
+}
+/* Search field: soft gray-white to sit on the #e4e8ec header; white while typing */
+#searchInput {
+  background: #f4f6f8 !important;
+  color: #202122 !important;
+}
+#searchInput:focus {
+  background: #fff !important;
+  border-color: #36c !important;
+}
+
+/* FlaggedRevs review box ("Review this revision" / "Re-review this revision"): no white card on the gray page */
+#mw-fr-reviewform .flaggedrevs_reviewform,
+.flaggedrevs_reviewform.cdx-card {
+  background-color: #d7dce2 !important;
+  border-color: #a2a9b1 !important;
+}
+/* ===== 2026-11-12 site-wide polish (Bill): header, narrow windows, special pages, article layout ===== */
+/* Header (all pages, >720px): search field's left edge lines up with the first tab and the content box edge (was 8px right of them) */
+@media (min-width: 721px) {
+  #p-search {
+    left: 0 !important;
+  }
+  /* Header (all pages, >720px): #p-search/#searchform boxes were 24em (353px) wide, 59px past the visible field+Go, overlapping Log in at 768px */
+  #p-search,
+  #searchform {
+    width: calc(20 * 0.92rem) !important;
+  }
+  /* Header (all pages, >720px): personal links (Create account / Log in) vertically centred on the 29px search field instead of riding its top edge */
+  #p-personal {
+    top: 14px !important;
+  }
+}
+
+/* Tabs: desktop/tablet only (>720px); the phone layout stacks tabs and is left as is */
+@media (min-width: 721px) {
+  /* Tabs (all pages): label text sat at the top of a 29px tab with ~15px of empty tab below it, and the inner span repeated the link padding; centre the label, make it readable (was 9.6px) */
+  .vector-menu-tabs li a {
+    height: 30px !important;
+    box-sizing: border-box !important;
+    padding: 0 0.75em !important;
+    line-height: 30px !important;
+    font-size: 0.85em !important;
+  }
+  .vector-menu-tabs li a span {
+    padding: 0 !important;
+    line-height: inherit !important;
+  }
+  /* Tabs (all pages): the selected tab was the same #e4e8ec as the header with no edge, so "Page"/"Read" floated as loose text; give it the content box's border so it reads as the tab joined to the page */
+  .vector-menu-tabs li.selected {
+    box-shadow: inset 1px 0 0 #a7d7f9, inset -1px 0 0 #a7d7f9, inset 0 1px 0 #a7d7f9 !important;
+  }
+}
+
+/* Search suggestions dropdown (all pages): pure-white list and dark-blue #2a4b8d highlight clashed with the gray header; use the search field's #f4f6f8 and the #d7dce2 tab gray for the highlighted row */
+.suggestions-results,
+.suggestions-special {
+  background: #f4f6f8 !important;
+  border-color: #a2a9b1 !important;
+  color: #202122;
+}
+.suggestions-result,
+.suggestions-special .special-query {
+  color: #202122;
+}
+.suggestions-result-current,
+.suggestions-special.suggestions-result-current {
+  background: #d7dce2 !important;
+  color: #202122 !important;
+}
+.suggestions-special .special-label {
+  color: #54595d;
+}
+
+/* Narrow windows (<=720px), all pages: put the Views tabs and the "More" dropdown together on the second tab row.
+   Before: #right-navigation sat at top:-37px, so "More" was off-screen and its menu (Read / View source /
+   View history) dropped down over the left end of the search field; Vector's collapsibleTabs had folded every
+   Views tab into it because #left-navigation spanned the full width (tab distance < 0). */
+@media (max-width: 720px) {
+  /* Zero-width, far-left #left-navigation: collapsibleTabs measures a large gap and keeps (or restores) the tabs
+     instead of folding them into "More". Its tabs (#p-namespaces) are absolutely placed, so they don't move. */
+  #left-navigation {
+    width: 0;
+    margin-left: -2000px !important;
+  }
+  #right-navigation {
+    position: absolute;
+    top: 124px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 !important;
+    float: none;
+  }
+  #right-navigation #p-views {
+    position: static;
+  }
+  #right-navigation #p-cactions {
+    position: relative;
+  }
+}
+/* Narrow windows (<=720px): "More" label sat ~16px lower than the Read / View source / View history tabs beside it */
+@media (max-width: 720px) {
+  #right-navigation #p-cactions .vector-menu-heading {
+    box-sizing: border-box;
+    height: 29px;
+    margin-top: 0;
+    padding: 0.18em 0.55em 0;
+    line-height: 1.15;
+    align-items: flex-start;
+  }
+  #right-navigation #p-cactions .vector-menu-content {
+    top: 29px;
+  }
+}
+
+/* Cool Stone: special and system pages (agent "special", 2026-11-12). Typing fields and checkboxes stay white. */
+
+/* S1. Plain (non-blue) buttons were #f8f9fa: Codex buttons (history "Compare selected revisions", login "Join SWCCG Wiki") */
+.mw-body .cdx-button:not(.cdx-button--weight-primary):not(.cdx-button--weight-quiet):enabled,
+.mw-body a.cdx-button--fake-button:not(.cdx-button--weight-primary):not(.cdx-button--weight-quiet) {
+  background-color: #d7dce2;
+  border-color: #a2a9b1;
+}
+.mw-body .cdx-button:not(.cdx-button--weight-primary):not(.cdx-button--weight-quiet):enabled:hover,
+.mw-body a.cdx-button--fake-button:not(.cdx-button--weight-primary):not(.cdx-button--weight-quiet):hover {
+  background-color: #c8ced6;
+}
+
+/* S2. Plain OOUI framed buttons were #f8f9fa: RC "Live updates" / "50 changes, 7 days", history tag-filter arrow, popup number buttons */
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active):not(.oo-ui-toggleWidget-on) > .oo-ui-buttonElement-button {
+  background-color: #d7dce2;
+  border-color: #a2a9b1;
+}
+.oo-ui-buttonElement-framed.oo-ui-widget-enabled:not(.oo-ui-flaggedElement-primary):not(.oo-ui-buttonElement-active):not(.oo-ui-toggleWidget-on) > .oo-ui-buttonElement-button:hover {
+  background-color: #c8ced6;
+}
+
+/* S3. RC active-filter chips ("Human (not bot)") were white */
+.mw-body .oo-ui-tagMultiselectWidget.oo-ui-widget-enabled.oo-ui-tagMultiselectWidget-outlined .oo-ui-tagItemWidget.oo-ui-widget-enabled,
+.mw-body .oo-ui-tagItemWidget.oo-ui-widget-enabled {
+  background-color: #d7dce2;
+  border-color: #a2a9b1;
+}
+
+/* S4. Dropdown pickers (AllPages / Contributions "Namespace") were #f8f9fa, white when open */
+.mw-body .oo-ui-dropdownInputWidget.oo-ui-widget-enabled,
+.mw-body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle,
+.mw-body .oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle {
+  background-color: #d7dce2;
+  border-color: #a2a9b1;
+}
+.mw-body .oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle:hover {
+  background-color: #c8ced6;
+}
+
+/* S5. Pop-up panels and drop-down lists were white: RC filter menu, RC "50 changes" popup, namespace list, date picker */
+.oo-ui-popupWidget-popup,
+.oo-ui-menuSelectWidget,
+.mw-rcfilters-ui-filterMenuHeaderWidget-header,
+.mw-rcfilters-ui-menuSelectWidget-footer,
+.mw-widget-calendarWidget {
+  background-color: #e4e8ec;
+}
+.oo-ui-popupWidget-anchored-top .oo-ui-popupWidget-anchor::after {
+  border-bottom-color: #e4e8ec;
+}
+.oo-ui-popupWidget-anchored-bottom .oo-ui-popupWidget-anchor::after {
+  border-top-color: #e4e8ec;
+}
+/* group headings in the RC filter menu were #eaecf0 */
+.oo-ui-menuSectionOptionWidget.mw-rcfilters-ui-filterMenuSectionOptionWidget {
+  background-color: #d7dce2;
+}
+/* hovered / keyboard-highlighted rows were pale blue #eaf3ff */
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+.mw-rcfilters-ui-itemMenuOptionWidget:hover {
+  background-color: #d7dce2;
+}
+/* selected rows (namespace list choice, ticked RC filters) were #eaf3ff: stone-blue so they stay distinct */
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected,
+.oo-ui-menuOptionWidget.oo-ui-optionWidget-selected.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted,
+.mw-rcfilters-ui-itemMenuOptionWidget.oo-ui-optionWidget-selected {
+  background-color: #d5deea;
+}
+/* muted (filter-has-no-effect) rows in the RC filter menu were #f8f9fa */
+.mw-rcfilters-ui-filterMenuOptionWidget.oo-ui-flaggedElement-muted:not(.oo-ui-optionWidget-selected) {
+  background-color: #dbe0e5;
+}
+
+/* S6. Special:Search "Advanced" namespace panel was #f8f9fa */
+.mw-body #mw-searchoptions {
+  background-color: #e4e8ec;
+}
+.mw-body #mw-searchoptions input[type="button"] {
+  background-color: #d7dce2;
+  border: 1px solid #a2a9b1;
+}
+
+/* S7. Special:ListFiles (and other sortable TablePager) headers were blue-white #eaeeff */
+.mw-body table.mw-datatable > thead > tr > th,
+.mw-body table.mw-datatable > tbody > tr > th,
+.mw-body .TablePager th {
+  background-color: #d7dce2;
+}
+.mw-body table.mw-datatable tr:hover > td {
+  background-color: #d7dce2;
+}
+
+/* S8. FlaggedRevs "checked" tint on history rows and diff headers was #eaf3ff (pale stripes on gray); keep a stone-blue tint */
+.mw-body .flaggedrevs-color-1 {
+  background-color: #d5deea;
+}
+
+/* S9. Phones (<=720px): the Recent changes "List of abbreviations" box floated right and squeezed the date
+   headings into a one-word column ("12 / Nove / mber"); let it sit full width above the list */
+@media (max-width: 720px) {
+  .mw-body .mw-changeslist-legend {
+    float: none;
+    clear: both;
+    margin: 0 0 0.6em;
+  }
+}
+
+/* S10. Phones (<=720px): File-page "File history" table ran to ~635px at 390 and was cut off by html{overflow-x:clip};
+   let it scroll sideways inside its own box */
+@media (max-width: 720px) {
+  .mw-body table.filehistory {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* S11. Phones (<=720px): Special:Version credit/library tables have fixed 13em+13em+6em columns (table-layout:fixed),
+   so they ran ~30px past the screen and were clipped. Size columns to content, keep names whole, give the
+   text columns a readable minimum, and let the table scroll sideways in its own box when it is still too wide */
+@media (max-width: 720px) {
+  .mw-body table.mw-installed-software {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    table-layout: auto;
+  }
+  .mw-body table.mw-installed-software > thead > tr > th {
+    width: auto;
+  }
+  .mw-body table.mw-installed-software > * > tr > :nth-child(-n+3) {
+    word-break: normal;
+  }
+  .mw-body table.mw-installed-software > * > tr > :nth-child(n+4) {
+    min-width: 9em;
+  }
+}
+
+/* Content audit (agent "content") 2026-11-12. Narrow-screen fixes only; nothing changes above 720px. */
+
+/* 1. Set/tournament infobox with inline float:right (e.g. 1997 Decipher World Championship) squeezed the lead
+      text into a ~50px column at 390px; the existing ".expansion-infobox {float:none}" loses to the inline style. */
+@media (max-width: 720px) {
+  .mw-parser-output table.expansion-infobox {
+    float: none !important;
+    margin: 0 auto 1em !important;
+  }
+}
+
+/* 2. Right/left-floated thumbnails (Chuck Kallenbach portrait, Playtest cards archive photo, Players Committee
+      logo) left only a 50-70px text column beside them at phone width: stack them centred instead. */
+@media (max-width: 540px) {
+  .mw-parser-output figure.mw-halign-right,
+  .mw-parser-output figure.mw-halign-left {
+    float: none;
+    clear: both;
+    display: table;
+    margin: 0.5em auto 1em;
+  }
+}
+
+/* 3. Card list tables (Premiere Unlimited etc.): Common.css "table.card-thumbs {overflow: visible}" cancels
+      Vector's phone rule (tables scroll sideways), so the Rarity / Destiny / Game text columns were cut off
+      and unreachable at 390px (html has overflow-x: clip). Restore the sideways scroll. */
+@media (max-width: 720px) {
+  .mw-parser-output table.card-thumbs {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* 4. Vector only makes wide tables scroll below 640px, but Common.css clips the page from 720px down, so
+      between 640 and 720px wide tables (Virtual Set 6 card list, World Championships champions) were cut off. */
+@media (min-width: 640px) and (max-width: 720px) {
+  .mw-parser-output table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* "More" dropdown (logged-in action menu): white panel on the gray header; use the page gray with a border */
+.vector-menu-dropdown .vector-menu-content {
+  background: #e4e8ec !important;
+  border: 1px solid #a2a9b1 !important;
+}
+/* Collapsible table captions (e.g. the card "Info [Collapse]" box): space between the caption text and the [Collapse] toggle */
+.mw-collapsible > caption .mw-collapsible-toggle {
+  margin-left: 0.4em;
+}
