@@ -1,5 +1,5 @@
 """Scoped partial-repository backup; never checks out or rewrites unrelated files."""
-import json,os,subprocess,sys
+import hashlib,json,os,subprocess,sys
 from pathlib import Path
 root=Path(__file__).parent;mode=sys.argv[1]
 repo={'wiki':'work/wiki-source','evidence':'work/japanese-preservation/evidence-repo','images':'work/japanese-files-backup.git','sources':'work/japanese-files-backup.git'}[mode]
@@ -87,8 +87,19 @@ else:
             files['ops/wayback/done.json']=(json.dumps(done,ensure_ascii=False,indent=2,sort_keys=True)+'\n').encode()
             files['ops/wayback/queue.txt']=('\n'.join(queue).rstrip()+'\n').encode()
 git('read-tree',base);updates=[]
+# Most large evidence blobs already exist after the previous checkpoint. Check
+# all object identities together; write only new blobs, keeping updates scoped.
+assert git('rev-parse','--show-object-format').strip()==b'sha1'
+objects={path:hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest() for path,b in files.items()}
+unique=list(dict.fromkeys(objects.values()))
+checked=git('cat-file','--batch-check=%(objectname) %(objecttype)',data=('\n'.join(unique)+'\n').encode()).decode().splitlines()
+present={line.split()[0] for line in checked if line.endswith(' blob')}
 for path,b in files.items():
-    oid=git('hash-object','-w','--stdin',data=b).decode().strip();updates.append('100644 '+oid+'\t'+path+'\0')
+    oid=objects[path]
+    if oid not in present:
+        assert git('hash-object','-w','--stdin',data=b).decode().strip()==oid
+        present.add(oid)
+    updates.append('100644 '+oid+'\t'+path+'\0')
 git('update-index','--info-only','-z','--index-info',data=''.join(updates).encode())
 tree=git('write-tree','--missing-ok').decode().strip();commit=git('commit-tree',tree,*[a for p in parents for a in ['-p',p]],'-m','Inventory and complete regular Reflections foil publications (Refs swccg-guild/work#381)').decode().strip()
 changed=set(p for p in git('diff','--name-only','-z',base,commit).decode().split('\0') if p);assert changed<=set(files)
