@@ -24,6 +24,14 @@ Finish current batch checks and inspect its representative desktop/mobile captur
 
 [Story381](https://github.com/swccg-guild/work/issues/381); [preservation task412](https://github.com/swccg-guild/work/issues/412); [publication source PR21](https://github.com/billbisco/swccg-wiki/pull/21); [all changed pages](published-pages.md).
 '''
+if complete==297 and not c.get('published_pending_batch_verification',0) and not c.get('draft_prepared_awaiting_preservation',0):
+    start=text.index('## Continuation')
+    end=text.index('[Story381]',start)
+    text=text[:start]+'''## Publication result
+
+All297 new articles have completed publication checks;17 existing articles are reused. All314 regular foil slots are represented. This completes the217 previously unpublished drafts and the ten articles whose completion was interrupted by the archive gate. The final census is in final-inventory-audit.json; per-batch receipts retain source conservation, public output, navigation and visual evidence. Preservation remains a separate queued follow-up in task412. Queue entries are not verified captures. No article deletion is required.
+
+'''+text[end:]
 draft_titles={r['proposed_article'] for r in json.loads((root/'manifest.json').read_bytes()) if r['status']=='draft_prepared_awaiting_preservation'}
 index='# Remaining unpublished foil drafts — story381\n\n'+str(len(draft_titles))+' new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.\n\n| Article | Stage | Reading | Draft |\n|---|---|---|---|\n'
 for stage in ['batch'+str(n) for n in range(9,32)]:
@@ -32,5 +40,6 @@ for stage in ['batch'+str(n) for n in range(9,32)]:
 (root/'draft-index.md').write_text(index,encoding='utf8')
 (root/'current-batch-report.md').write_text(text,encoding='utf8');(root/'README.md').write_text(text,encoding='utf8')
 body=(root/'story-authorized.md').read_text(encoding='utf-8-sig');start=body.index('## Current delivery');end=body.find('\n## User amendment',start);assert end>=0
-delivery='## Current delivery\n\n'+summary+'\n'+table+'\nPublication continues under Bill’s explicit archive deferral. Preservation is tracked in [task412](https://github.com/swccg-guild/work/issues/412); queued captures are never reported verified. All other checks remain mandatory. [Publication source PR21](https://github.com/billbisco/swccg-wiki/pull/21), [current evidence/report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md), [all changed pages](https://github.com/swccg-guild/work/blob/main/evidence/381/published-pages.md). No article deletion is needed.\n'
+state='Publication is complete' if complete==297 else 'Publication continues'
+delivery='## Current delivery\n\n'+summary+'\n'+table+'\n'+state+' under Bill’s explicit archive deferral. Preservation is tracked in [task412](https://github.com/swccg-guild/work/issues/412); queued captures are never reported verified. All other checks remain mandatory. [Publication source PR21](https://github.com/billbisco/swccg-wiki/pull/21), [current evidence/report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md), [all changed pages](https://github.com/swccg-guild/work/blob/main/evidence/381/published-pages.md). No article deletion is needed.\n'
 (root/'story-publishing.md').write_text(body[:start]+delivery+body[end:],encoding='utf8');print('New publication complete',complete,';new live',live,';new drafts',c.get('draft_prepared_awaiting_preservation',0),';source pages',len(heads))

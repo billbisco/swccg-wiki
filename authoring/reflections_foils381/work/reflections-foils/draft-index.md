@@ -1,33 +1,9 @@
 # Remaining unpublished foil drafts — story381
 
-60 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
+36 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
 
 | Article | Stage | Reading | Draft |
 |---|---|---|---|
-| Destroyer Droid (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Dr. Evazan & Ponda Baba (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Grand Admiral Thrawn (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Guri (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Imperial Artillery (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Lott Dod (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Maul Strikes (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Maul's Sith Infiltrator (AI) (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Ominous Rumors (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| P-60 (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
-| Prince Xizor (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| Rolling, Rolling, Rolling (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| Snoova (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| Stinger (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| TC-14 (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| The Phantom Menace (AI) (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| Watto (AI) (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| Battle Deployment (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| Boonta Eve Podrace (Dark) (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| Disarmed (Dark) (Reflections III Foil) | batch26 | [batch26-readings.json](batch26-readings.json) | [batch26-new-packet.json](batch26-new-packet.json) |
-| Imperial Command (Reflections III Foil) | batch27 | [batch27-readings.json](batch27-readings.json) | [batch27-new-packet.json](batch27-new-packet.json) |
-| Mighty Jabba (Reflections III Foil) | batch27 | [batch27-readings.json](batch27-readings.json) | [batch27-new-packet.json](batch27-new-packet.json) |
-| Power Of The Hutt (Reflections III Foil) | batch27 | [batch27-readings.json](batch27-readings.json) | [batch27-new-packet.json](batch27-new-packet.json) |
-| You May Start Your Landing (Reflections III Foil) | batch27 | [batch27-readings.json](batch27-readings.json) | [batch27-new-packet.json](batch27-new-packet.json) |
 | After Her! (Reflections III Foil) | batch28 | [batch28-readings.json](batch28-readings.json) | [batch28-new-packet.json](batch28-new-packet.json) |
 | Brangus Glee (Reflections III Foil) | batch28 | [batch28-readings.json](batch28-readings.json) | [batch28-new-packet.json](batch28-new-packet.json) |
 | Captain Gilad Pellaeon (Reflections III Foil) | batch28 | [batch28-readings.json](batch28-readings.json) | [batch28-new-packet.json](batch28-new-packet.json) |
