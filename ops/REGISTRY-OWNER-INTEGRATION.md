@@ -84,6 +84,16 @@ capture hashes are retained before returning a retry delta. Accepted pending
 jobs are never reset. Terminal failures lacking usable version evidence become
 owned repair records, not endless resets of the same payload.
 
+A queued version epoch retains its old strict raw receipt before returning a
+ledger delta. If the owner dies before the worker checkpoints that delta, the
+next run revalidates the public bytes and replays the same intent. An accepted
+job or already applied epoch never has its retry counter reset. The worker
+retains the narrow payload/job/previous-capture/recapture fields across every
+submission outcome. A completed epoch with wrong bytes becomes owned repair,
+retaining its actual accepted job identity rather than claiming verification.
+Provider pauses propagate immediately. Owner scans parse only approved object
+directories, so unrelated malformed client data cannot block this cohort.
+
 ## Cleanup and remaining integration gate
 
 The adapter does not delete stages. The existing pruner's citation safeguard

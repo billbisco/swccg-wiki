@@ -18,6 +18,7 @@ from preservation_contracts import canonical_bytes, registration_object_id, regi
 from preservation_registry import (SERVER_OWNER, advance_readiness, atomic_json,
                                    iter_records, object_state, source_receipt)
 from preservation_owner_receipts import load_event, store_event
+from wayback_control import Paused
 
 PUBLIC_STAGE_BUDGET = 32 * 1024 * 1024
 STAGE_SCAN_LIMIT = 50000
@@ -72,7 +73,7 @@ class OwnerAdapter:
 
     def _groups(self):
         groups = {}
-        for entry in iter_records(self.registry):
+        for entry in iter_records(self.registry, object_ids=self.allowed):
             if self._eligible(entry):
                 request = entry["request"]
                 key = registration_job_id(request["source"])
@@ -83,7 +84,7 @@ class OwnerAdapter:
     def protected_snapshot_urls(self):
         """Approved managed targets await their separate strict cleanup seam."""
         protected = set()
-        for entry in iter_records(self.registry):
+        for entry in iter_records(self.registry, object_ids=self.allowed):
             request = entry["request"]
             key = registration_object_id(request["subject"], request["source"])
             url = request["source"]["url"]
@@ -186,6 +187,39 @@ class OwnerAdapter:
             return [self.worker.QUEUE]
         self.worker.commit_and_push(self.repository, [], "register approved exact-payload capture target", write)
 
+    @staticmethod
+    def _retry_delta(source, previous):
+        return {"status": "retry", "tries": 0, "last": "1970-01-01T00:00:00Z",
+                "registered_payload_sha256": source["sha256"],
+                "registry_job_id": registration_job_id(source),
+                "previous_capture": previous["capture"], "recapture": True}
+
+    @staticmethod
+    def _epoch_applied(source, legacy):
+        return (legacy.get("registered_payload_sha256") == source["sha256"] and
+                legacy.get("registry_job_id") == registration_job_id(source))
+
+    def _queued_epoch_delta(self, event, source, legacy):
+        previous = event.get("superseded_worker_receipt")
+        if (not previous or not legacy or self._epoch_applied(source, legacy) or
+                legacy.get("status") == "pending" and legacy.get("job_id") or
+                legacy.get("capture") != previous.get("capture")):
+            return {}
+        proof = event.get("superseded_capture_raw", {})
+        if (not proof.get("strict_index") or proof.get("capture") != previous.get("capture") or
+                (proof.get("raw_sha256") == source["sha256"] and proof.get("raw_bytes") == source["bytes"])):
+            raise ValueError("queued version epoch lacks retained strict old-payload evidence")
+        return self._retry_delta(source, previous)
+
+    def _attention(self, entry, object_ids, job, error):
+        if isinstance(error, Paused):
+            raise error
+        reason = type(error).__name__ + ": " + str(error)
+        self.observations.append({"job_id": job, "state": "needs_attention", "reason": reason})
+        store_event(self.registry, self._event([entry], "needs_attention", reason,
+            approved_object_ids=object_ids,
+            continuation="existing owner resolves this exact source/backup/staging finding while independent jobs continue"))
+
     def prepare(self, deadline):
         """Stage/promote only the supplied cohort; never submit or reset jobs."""
         if not self.healthy() or not self.allowed:
@@ -202,10 +236,29 @@ class OwnerAdapter:
             entry, object_ids = group["entry"], group["objects"]
             request = entry["request"]
             source, job = request["source"], registration_job_id(request["source"])
-            existing = load_event(self.registry, source)
+            try:
+                existing = load_event(self.registry, source)
+            except Exception as error:
+                attempted += 1
+                atomic_json(cursor_path, {"after": job})
+                self._attention(entry, object_ids, job, error)
+                continue
             if existing and existing["state"] in {"queued", "submitted", "verified"}:
                 if existing["approved_object_ids"] != object_ids:
                     store_event(self.registry, dict(existing, approved_object_ids=object_ids))
+                if existing["state"] == "queued":
+                    try:
+                        delta = self._queued_epoch_delta(existing, source, self.control.done.get(source["url"], {}))
+                        if delta:
+                            attempted += 1
+                            atomic_json(cursor_path, {"after": job})
+                            if not self._check_public(source):
+                                raise ValueError("queued epoch source no longer matches its exact payload")
+                            self._enqueue(source["url"])
+                            ledger_updates[source["url"]] = delta
+                            prepared += 1
+                    except Exception as error:
+                        self._attention(entry, object_ids, job, error)
                 continue
             attempted += 1
             atomic_json(cursor_path, {"after": job})
@@ -224,6 +277,13 @@ class OwnerAdapter:
                 if legacy.get("capture") and legacy.get("status") in {"verified", "ok", "unverified", "failed", "retry"}:
                     outcome = self._observe([entry], legacy, deadline, object_ids)
                     if outcome == "different_payload":
+                        if self._epoch_applied(source, legacy):
+                            store_event(self.registry, self._event([entry], "needs_attention",
+                                "applied version epoch still has different capture bytes; preserve retries for owned repair",
+                                approved_object_ids=object_ids, superseded_worker_receipt=legacy,
+                                accepted_job_id=legacy.get("job_id"),
+                                continuation="review the existing epoch/provider result; do not reset this payload's retry budget"))
+                            continue
                         # Preserve the complete prior URL receipt durably before
                         # asking the worker to retry this new exact payload.
                         self._enqueue(source["url"])
@@ -233,9 +293,7 @@ class OwnerAdapter:
                                            superseded_capture_raw=self.last_capture_observation,
                                            queue_receipt={"queued": True, "url": source["url"], "job_id": job})
                         store_event(self.registry, event)
-                        ledger_updates[source["url"]] = {"status": "retry", "tries": 0, "last": "1970-01-01T00:00:00Z",
-                            "registered_payload_sha256": source["sha256"], "registry_job_id": job,
-                            "previous_capture": legacy["capture"]}
+                        ledger_updates[source["url"]] = self._retry_delta(source, legacy)
                         prepared += 1
                     elif outcome != "verified":
                         store_event(self.registry, self._event([entry], "capture_check_pending",
@@ -254,10 +312,7 @@ class OwnerAdapter:
                 store_event(self.registry, event)
                 prepared += 1
             except Exception as error:
-                reason = type(error).__name__ + ": " + str(error)
-                self.observations.append({"job_id": job, "state": "needs_attention", "reason": reason})
-                store_event(self.registry, self._event([entry], "needs_attention", reason,
-                            approved_object_ids=object_ids, continuation="existing owner retries only after exact source/backup/staging finding is resolved"))
+                self._attention(entry, object_ids, job, error)
         return {"prepared": prepared, "attempted": attempted, "observations": self.observations, "ledger_updates": ledger_updates}
 
     def _observe(self, entries, legacy, deadline, object_ids=None):
@@ -309,7 +364,17 @@ class OwnerAdapter:
                     continue
                 legacy = self.control.done.get(request["source"]["url"])
                 if legacy:
-                    self._observe([entry], legacy, deadline, group["objects"])
+                    outcome = self._observe([entry], legacy, deadline, group["objects"])
+                    if outcome == "different_payload" and self._epoch_applied(request["source"], legacy):
+                        store_event(self.registry, self._event([entry], "needs_attention",
+                            "applied version epoch returned different raw capture bytes",
+                            approved_object_ids=group["objects"], superseded_worker_receipt=legacy,
+                            accepted_job_id=legacy.get("job_id"),
+                            continuation="review the provider result without resetting accepted jobs or retry budgets"))
+                    elif outcome == "different_payload":
+                        store_event(self.registry, self._event([entry], "capture_check_pending",
+                            "queued URL resolved to another payload; next prepare establishes a checked version epoch",
+                            approved_object_ids=group["objects"], superseded_worker_receipt=legacy))
                     checked += 1
                     atomic_json(cursor_path, {"after": job})
         return checked

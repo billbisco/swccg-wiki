@@ -19,6 +19,7 @@ from preservation_contracts import registration_object_id, source_backup_subject
 from preservation_registry import (register, records, export_records, advance_readiness, SERVER_OWNER)
 from preservation_owner import OwnerAdapter, load_allowed_objects
 from preservation_owner_receipts import load_event, store_event
+from wayback_control import Paused
 
 
 class OwnerTests(unittest.TestCase):
@@ -75,6 +76,19 @@ class OwnerTests(unittest.TestCase):
             self.assertEqual(0, result["prepared"])
         self.assertEqual([], self.calls)
         self.assertEqual([], self.commits)
+
+    def test_provider_pause_during_prepare_propagates_without_more_work(self):
+        request, _ = self.add()
+        capture = "https://web.archive.org/web/20261114000000/" + request["source"]["url"]
+        self.control.done[request["source"]["url"]] = {"status": "verified", "capture": capture}
+        def pause(url):
+            self.control.state["mode"] = "open"
+            raise Paused("fixture provider cooldown")
+        self.worker.strict_check = pause
+        with self.assertRaises(Paused):
+            self.adapter().prepare(time.monotonic() + 300)
+        self.assertEqual([], self.commits)
+        self.assertIsNone(load_event(self.registry, request["source"]))
 
     def test_adapter_requires_actual_active_owner_context(self):
         self.worker.ACTIVE_CONTROL = None
@@ -229,6 +243,82 @@ class OwnerTests(unittest.TestCase):
         self.assertEqual(previous, event["superseded_worker_receipt"])
         self.assertEqual(request["source"]["sha256"], outcome["ledger_updates"][request["source"]["url"]]["registered_payload_sha256"])
         self.assertEqual(1, len(self.commits))
+
+    def queued_epoch(self):
+        request, _ = self.add()
+        capture = "https://web.archive.org/web/20261114000000/" + request["source"]["url"]
+        self.responses[self.worker.id_url(capture)] = {"status": 200, "sha256": "0" * 64, "size": len(self.payload)}
+        previous = {"status": "verified", "capture": capture}
+        self.control.done[request["source"]["url"]] = previous.copy()
+        delta = self.adapter().prepare(time.monotonic() + 300)["ledger_updates"]
+        return request, previous, delta
+
+    def test_restart_replays_queued_version_delta_before_worker_checkpoint(self):
+        request, previous, expected = self.queued_epoch()
+        # Simulate process death after durable owner event, before returning or
+        # checkpointing the delta into the worker's URL ledger.
+        result = self.adapter().prepare(time.monotonic() + 300)
+        self.assertEqual(expected, result["ledger_updates"])
+        self.assertEqual(previous, self.control.done[request["source"]["url"]])
+        self.assertTrue(result["ledger_updates"][request["source"]["url"]]["recapture"])
+        self.assertEqual([request["source"]["url"]], (self.repo / self.worker.QUEUE).read_text().splitlines())
+
+    def test_queued_epoch_does_not_reset_an_accepted_job_after_restart(self):
+        request, _, _ = self.queued_epoch()
+        accepted = {"status": "pending", "job_id": "actually-accepted", "tries": 3}
+        self.control.done[request["source"]["url"]] = accepted.copy()
+        self.assertEqual({}, self.adapter().prepare(time.monotonic() + 300)["ledger_updates"])
+        self.assertEqual(accepted, self.control.done[request["source"]["url"]])
+
+    def test_queued_epoch_does_not_reset_already_applied_retry_budget(self):
+        request, _, delta = self.queued_epoch()
+        applied = dict(delta[request["source"]["url"]], tries=3)
+        self.control.done[request["source"]["url"]] = applied.copy()
+        self.assertEqual({}, self.adapter().prepare(time.monotonic() + 300)["ledger_updates"])
+        self.assertEqual(applied, self.control.done[request["source"]["url"]])
+
+    def test_replayed_epoch_rechecks_public_payload_before_replacing_old_ledger(self):
+        request, previous, _ = self.queued_epoch()
+        self.responses[request["source"]["url"]]["sha256"] = "1" * 64
+        result = self.adapter().prepare(time.monotonic() + 300)
+        self.assertEqual({}, result["ledger_updates"])
+        self.assertEqual(previous, self.control.done[request["source"]["url"]])
+        self.assertEqual("needs_attention", load_event(self.registry, request["source"])["state"])
+
+    def test_applied_epoch_with_wrong_capture_becomes_owned_repair_not_retry_reset(self):
+        request, previous, delta = self.queued_epoch()
+        applied = dict(delta[request["source"]["url"]], status="verified", capture=previous["capture"], tries=3, job_id="accepted-epoch-job")
+        self.control.done[request["source"]["url"]] = applied.copy()
+        self.adapter().finish(time.monotonic() + 300)
+        self.assertEqual("needs_attention", load_event(self.registry, request["source"])["state"])
+        exported = export_records(self.registry)["objects"][0]
+        self.assertTrue(exported["submitted"])
+        self.assertEqual("accepted-epoch-job", exported["owner_job_receipt"]["accepted_job_id"])
+        self.assertEqual({}, self.adapter().prepare(time.monotonic() + 300)["ledger_updates"])
+        self.assertEqual(applied, self.control.done[request["source"]["url"]])
+
+    def test_new_queue_recent_old_capture_gets_one_checked_version_epoch(self):
+        request, _ = self.add()
+        self.adapter().prepare(time.monotonic() + 300)
+        capture = "https://web.archive.org/web/20261114000000/" + request["source"]["url"]
+        self.responses[self.worker.id_url(capture)] = {"status": 200, "sha256": "0" * 64, "size": len(self.payload)}
+        previous = {"status": "verified", "capture": capture, "tries": 1}
+        self.control.done[request["source"]["url"]] = previous.copy()
+        self.adapter().finish(time.monotonic() + 300)
+        self.assertEqual("capture_check_pending", load_event(self.registry, request["source"])["state"])
+        result = self.adapter().prepare(time.monotonic() + 300)
+        self.assertTrue(result["ledger_updates"][request["source"]["url"]]["recapture"])
+        self.assertEqual(previous, self.control.done[request["source"]["url"]])
+
+    def test_corrupt_unapproved_record_does_not_block_the_approved_cohort(self):
+        self.add()
+        unknown = fixture(title="File:other-client.png")
+        result = register(self.registry, unknown)
+        path = self.registry / result["record"]
+        path.write_bytes(b"broken unrelated metadata")
+        self.assertEqual(1, self.adapter().prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(set(), self.adapter().protected_snapshot_urls())
+        self.assertEqual(b"broken unrelated metadata", path.read_bytes())
 
     def test_readiness_compare_and_swap_preserves_newer_observation(self):
         request, _ = self.add(ready=False)

@@ -68,4 +68,4 @@ def apply_export(row: dict, registry: Path):
         row.update(state="verified", submitted=True, capture=capture,
                    capture_original_url=event["capture_original_url"])
     elif event["state"] in {"needs_version_retry", "needs_attention"}:
-        row.update(state="needs_attention", submitted=False)
+        row.update(state="needs_attention", submitted=bool(event.get("accepted_job_id")))

@@ -253,9 +253,11 @@ def _latest_object(directory: Path, registry: Path) -> dict | None:
     return latest
 
 
-def iter_records(registry: Path):
+def iter_records(registry: Path, *, object_ids=None):
     # Sort only small directory names, not all parsed request/receipt payloads.
     for directory in sorted((registry / "requests").glob("*/*")):
+        if object_ids is not None and directory.name not in object_ids:
+            continue
         if directory.is_dir():
             entry = _latest_object(directory, registry)
             if entry:
