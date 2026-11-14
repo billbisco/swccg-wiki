@@ -313,13 +313,27 @@ class Producer:
     def _mark_source_inventory(self, artifact, receipt):
         """Text backup is not proof that this revision's citations are preserved."""
         path = self.source_inventory / (object_id(artifact.subject) + ".json")
-        atomic_json(path, {"schema_version": 1, "subject": artifact.subject,
+        marker = {"schema_version": 1, "subject": artifact.subject,
                            "state": "source_inventory_required", "owner": "MemoryCoreChatGPT: Story 410 source-preservation reconciliation",
                            "story": "https://github.com/swccg-guild/work/issues/410",
                            "automatic_consumer_implemented": False,
                            "backup_storage": receipt["storage"],
                            "continuation": "inventory citations in this exact revision; check each exact source payload and independent backup, then register source mappings with the existing owner",
-                           "capture_submitted": False}, create_only=True)
+                           "capture_submitted": False}
+        try:
+            atomic_json(path, marker, create_only=True)
+        except ValueError:
+            existing = json.loads(path.read_text(encoding="utf-8"))
+            storage = existing.get("backup_storage", {})
+            if (existing.get("schema_version") != 1 or existing.get("subject") != artifact.subject
+                    or not isinstance(existing.get("state"), str) or not existing["state"]
+                    or not existing.get("owner") or not existing.get("continuation")
+                    or storage.get("repository") != receipt["storage"]["repository"]
+                    or storage.get("path") != receipt["storage"]["path"]
+                    or not re.fullmatch(r"[0-9a-f]{40}", storage.get("commit", ""))):
+                raise
+            # Work markers belong to an exact revision, not a particular run's
+            # receipt commit or owner label. Keep prior follow-up progress.
 
     def pending_source_inventory(self):
         count = 0
