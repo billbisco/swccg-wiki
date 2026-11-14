@@ -1,4 +1,4 @@
-/* Story 429: progressive enhancement for the explicitly marked review sample. */
+/* Stories 384/429: progressive enhancement for the two bounded review samples. */
 (function () {
   'use strict';
   function element(tag, className, text) {
@@ -15,6 +15,7 @@
       if (portraits.length !== 3 || portraits.some(function (p) { return !p.querySelector('img'); })) return;
       rail.dataset.viewerReady = 'true';
       rail.classList.add('swccg-vader-viewer');
+      var cardName = marker.dataset.cardName || 'Card';
       var labels = ['Original', 'Remastered'];
       var controls = element('div', 'swccg-viewer-choices');
       controls.setAttribute('role', 'group');
@@ -32,7 +33,7 @@
         panel.id = 'vader-viewer-' + index + '-' + i;
         panel.classList.add('swccg-viewer-panel');
         var image = panel.querySelector('img');
-        image.alt = 'Darth Vader, Virtual Original Set 1 — ' + labels[i];
+        image.alt = cardName + ', Virtual Original Set 1 — ' + labels[i];
         var button = element('button', 'swccg-viewer-choice', labels[i]);
         button.type = 'button';
         button.setAttribute('aria-controls', panel.id);
@@ -51,11 +52,12 @@
         stage.append(panel);
       });
       var viewer = element('div', 'swccg-viewer-main');
-      viewer.append(controls, stage);
+      viewer.append(stage);
       rail.insertBefore(viewer, rail.firstChild);
       var slip = portraits[2];
       slip.classList.add('swccg-viewer-slip');
-      slip.querySelector('img').alt = 'Publisher slip for Darth Vader, Original Set 1, later wording';
+      slip.querySelector('img').alt = 'Publisher slip for ' + cardName + ', Original Set 1, later wording';
+      slip.after(controls);
       marker.hidden = true;
       select(0);
     });

@@ -1,0 +1,3 @@
+# Paired Versions review
+
+Story384 resumes the Luke/Vader pilots without global rollout. The exact two sample titles receive the same progressive image selector; controls follow the main image and slip. The shared family templates preserve all18Luke/13Vader members. Card publication navigation and image rendition choices remain separate. Only Luke's verified later-Original printed transcription is corrected; source numbering and all IDs are retained. Evidence, required gate reports and revision guards live under work/evidence384 in the work repo. Source baseline includes the other-agent foil styling; preserve it.
