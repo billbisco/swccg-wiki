@@ -338,7 +338,7 @@ class Producer:
 
     def pending_source_inventory(self):
         count = 0
-        review, recorded, pending_sources = 0, 0, 0
+        review, recorded, pending_sources, failed = 0, 0, 0, 0
         scanned, partial, deadline = 0, False, time.monotonic() + 2
         with os.scandir(self.source_inventory) as entries:
             for entry in entries:
@@ -349,6 +349,8 @@ class Producer:
                 if entry.name.endswith(".json"):
                     row = json.loads(Path(entry.path).read_text(encoding="utf-8"))
                     count += row.get("state") == "source_inventory_required"
+                    failed += (row.get("state") == "source_inventory_required"
+                               and (self.source_inventory / "consumer-issues" / entry.name).is_file())
                     review += row.get("state") == "source_inventory_review_required"
                     recorded += row.get("state") == "source_inventory_recorded"
                     pending_sources += row.get("unresolved_source_count", 0)
@@ -356,6 +358,7 @@ class Producer:
                 "source_inventory_owner": "MemoryCoreChatGPT: Story 410 source-preservation reconciliation",
                 "source_inventory_story": "https://github.com/swccg-guild/work/issues/410",
                 "source_inventory_review_required": review,
+                "source_inventory_failed_pending": failed,
                 "source_inventory_recorded": recorded,
                 "source_inventory_pending_sources": pending_sources,
                 "source_inventory_automatic_consumer_implemented": self.source_consumer is not None}
