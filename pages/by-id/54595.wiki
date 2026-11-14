@@ -1,0 +1,18 @@
+== Card table fill (October 2026) ==
+
+'''Build notes.''' The Destiny and Game text cells of the card tables were filled from each linked card page's <nowiki>{{Card}}</nowiki> fields (<code>destiny=</code>, <code>game_text=</code>), following redirects. Objective rows take the 0-side or 7-side text that matches the row. Only blank cells were filled. Script: <code>vset-fill/fill.py</code> (Datacard Grok); rerun it after card pages change.
+
+'''Missing data.''' These rows stay blank:
+* [[Let's Keep A Little Optimism Here (Death Star II) (V)]]: left blank, card page text differs from GEMP 225_51 (older Ounee Ta text)
+* [[Let's Keep A Little Optimism Here (V)]]: left blank, card page text differs from GEMP 225_51 (older Ounee Ta text)
+* [[Planetary Defenses (V)]]: left blank, card page holds the Virtual Block 7.2 legacy text; current GEMP 203_13 differs
+* [[Your Ship? (V)]] (destiny, game_text)
+* [[Crossfire (V)]]: left blank, card page holds the Virtual Block 3 Effect text (destiny 4), not the shield; GEMP 216_5
+* [[Drop! (V)]]: left blank, card page holds the Virtual Block 6 Effect text (destiny 3), not the shield; GEMP 220_2
+* [[We'll Let Fate-a Decide, Huh? (V)]]: left blank, card page text differs from GEMP 223_26 (older text)
+
+'''Marginal cuts.''' Style-guide fixes to the existing text (old, then new):
+* <nowiki>== Sources ==</nowiki> → <nowiki>== External links ==</nowiki>
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 14:43, 20 October 2026 (UTC)
+* 20 October 2026: all 29 rows are now filled. [[Crossfire (V)]], [[Drop! (V)]], both [[Let's Keep A Little Optimism Here (V)]] pages, [[We'll Let Fate-a Decide, Huh? (V)]] and [[Planetary Defenses (V)]] held the text of the legacy printing (the Virtual Block 3 and 6 Effects or the Virtual Shields text). Their destiny, game text and icons now come from the Virtual Set D (200d) entries in swccg-card-json ([https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Light.json Light.json] / [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/Dark.json Dark.json], commit d4e661e), which match the GEMP blueprints. The legacy text is on the legacy card pages. [[Your Ship? (V)]] was filled from the same data. [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 15:11, 20 October 2026 (UTC)

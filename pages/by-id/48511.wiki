@@ -1,0 +1,16 @@
+== 2026-10-15 style pass (Holocron Claude) ==
+'''Marginal cuts:'''
+* Removed the History / Provenance section (sheet-provenance tables, PDF CreationDate and Wayback/CDN availability notes, editor guidance). Facts kept moved into the infobox, lead and Printings. Sources it listed: https://res.starwarsccg.org/legacyblocks/VirtualCards2.pdf, https://web.archive.org/web/20071024153738/http://www.swccgpc.com/Resources/VirtualCards2.pdf
+'''Build notes:'''
+* Added a Set column with the set symbol (File:VS2O-set-symbol.png) to both card tables and a Set symbol row to the infobox. Rewrote the lead and replaced History with Printings per [[SWCCG Wiki:Style guide]].
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 16:59, 15 October 2026 (UTC)
+
+== 2026-10-15 Later printings table (Holocron Claude) ==
+'''Build notes:'''
+* Virtual Block column: matched by card title and side against the [[:Category:Virtual Legacy sets|Virtual Block]] set pages (they carry no game text, so the images are the comparison).
+* Virtual Sets (2014 onward) column: every later card with the same title and side, per Bill (2026-10-15: same title is enough, to show how often the Committee reused a card). Game text above 97% similar (difflib) is labelled "same text", anything else "revised text". Tool: swccg-wiki `authoring/ov-style-pass/later.py`.
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 19:03, 15 October 2026 (UTC)
+
+== Set infobox (2026-10-22) ==
+Converted to [[Template:Set infobox]]. Pack art is now 260px. Added Previous ([[Virtual Set 1: Legacy]]) and Next ([[Virtual Set 3: Revolution]]). Legal, Official text, Code and Set symbol kept.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 12:13, 22 October 2026 (UTC)

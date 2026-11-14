@@ -1,0 +1,19 @@
+== Card table fill (October 2026) ==
+
+'''Build notes.''' The Destiny and Game text cells of the card tables were filled from each linked card page's <nowiki>{{Card}}</nowiki> fields (<code>destiny=</code>, <code>game_text=</code>), following redirects. Objective rows take the 0-side or 7-side text that matches the row. Only blank cells were filled. Script: <code>vset-fill/fill.py</code> (Datacard Grok); rerun it after card pages change.
+
+'''Missing data.''' These rows stay blank:
+* [[Republic At War / Aggressive Negotiations]] (game_text)
+* [[Separatist Uprising / At War With Itself]] (game_text)
+
+'''Marginal cuts.''' Style-guide fixes to the existing text (old, then new):
+* <nowiki>== Sources ==</nowiki> → <nowiki>== External links ==</nowiki>
+* <nowiki>Virtual Set 9.2 day remains '''unverified'''. The hub Date banner keeps the honest range '''2013–2014'''</nowiki> → <nowiki>The hub Date gives the range '''2013–2014'''</nowiki>
+* <nowiki>; page list stops at 8.3 (9.2 day still unverified)</nowiki> → <nowiki>; page list stops at 8.3</nowiki>
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 14:42, 20 October 2026 (UTC)
+* 20 October 2026: the four blank rows are now filled. Their card pages got destiny, game text and the other missing fields from swccg-card-json ([https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/LightLegacy.json LightLegacy.json] / [https://github.com/swccgpc/swccg-card-json/blob/d4e661ec735dcb111266fbda98704f2181e1cfab/DarkLegacy.json DarkLegacy.json], commit d4e661e). [[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 15:11, 20 October 2026 (UTC)
+
+== Set infobox, printed slips, table standard (2026-10-22) ==
+Converted to [[Template:Set infobox]] (portrait [[File:Set-VB9-logo.jpg]] matching Blocks 1–8, symbol [[File:VB9-set-symbol.png]], code VB9 · GEMP set 601). Tables match [[Virtual Block 1]]. Slip crops are 300 DPI from two official PDFs. VirtualBlock9_1.pdf official text 10 January 2014; Preserved copy 20261020174637, sha256 fcd9d6263dcc67a0186f0ebc72af73a110399e9e8c072a975c46d1556fa6e80f. VirtualBlock9_2.pdf 14 July 2014; 20261023013408, sha256 d60713a39eb3a507acee108ef7314d10cdf3a324a15b303a50f91642b1835645. Dual-face [[Republic At War / Aggressive Negotiations]] and [[Separatist Uprising / At War With Itself]] each count once. [[Dexter Jettster (AI)]] shares the non-AI overlay. Overlay wiki titles use the Holotable original. Unused overlay-shield slips (03-Everything Is Going As Planned-2) stay off the card list. Last of nine Blocks; no next.
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 01:53, 23 October 2026 (UTC)

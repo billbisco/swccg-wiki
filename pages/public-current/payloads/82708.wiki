@@ -1,0 +1,160 @@
+Test page for card maker changes, starting with the Light Side Device frame on [[Obi-Wan's Journal]]. Rounds 1 to 3 are live on the card maker since 1 November 2026. The card pages and card images are unchanged.
+
+== Round 3: errata mark and text sizing (live) ==
+These changes and the round 2 changes are now live on the card maker (swccg.com/cardmaker).
+
+=== Errata mark ===
+The card maker printed the "1" of D-E1 a little lower than the "E". That came from the font, not from the layout. In the bold condensed face the card maker uses, figures are about 6% shorter than capitals, so the top of the "1" sat about 1 px below the top of the "E" on a 745 px card. The PC prints its figures at full capital height. The card maker's hyphen was also longer and thinner than the PC's, and the mark slanted more.
+
+The mark now follows the PC's:
+* Figures are stretched to capital height, and the "1" is a little wider, as the PC's is.
+* The hyphen is the PC's short, heavy bar.
+* The slant is 8.5 degrees instead of 12.
+* The "E" sits where the PC puts it, and any prefix such as "D-" goes to its left.
+Each glyph now lands within 1 px of the PC's on Obi-Wan's Journal, Frustration, Grappling Hook (D-E2), Fallen Order (E1) and Ominous Rumors (V) (E2). On every face measured, the PC prints the mark in exactly the same place.
+
+[[File:TEST CardMaker round 3 - errata mark before and after.png|none|900px]]
+
+=== Text sizing for each card type ===
+The game text boxes now come from the PC's own faces. Up to 14 Holotable images per card type from the Virtual Sets were measured for the leftmost glyph, the longest line and the top of the first line. All of them set game text at about 62 px on 64 px lines (a 32 px pitch on a 745 px card). Long text fits by rewording rather than by smaller type. The card maker now uses the same boxes and line pitch. Its letter spacing is a little tighter, at −0.4 px, which matches the PC's line widths and the 600 DPI print of Obi-Wan's Journal. When text doesn't fit, it tightens letter spacing first and leading second, and only then tries a smaller size.
+
+The editor and API also have a manual size adjust: "Game text size ±" and "Lore size ±" in the editor, or <code>text_adjust</code> and <code>lore_adjust</code> in px through the API. They move the largest size the fitter will try up or down.
+
+{| class="wikitable"
+! Card type !! PC cards measured !! PC text, left to right (745 px) !! PC line pitch (745 px) !! Box before (x, y, width, height) !! Box after !! Sample cards, size before → after
+|-
+| Character, Light (Rebel) || 14 || 142–616 || 32 || 340, 1668, 990, 326 || 353, 1658, 953, 336 || 61px → 59px, 62px → 62px
+|-
+| Character, Light (alien) || 14 || 142–618 || 32 || 340, 1668, 990, 326 || 354, 1659, 956, 335 || 62px → 62px, 62px → 62px
+|-
+| Character, Light (droid) || 13 || 141–613 || 32 || 354, 1660, 932, 326 || 354, 1661, 946, 326 || 60px → 60px, 62px → 62px
+|-
+| Character, Dark (Imperial) || 14 || 142–611 || 32 || 341, 1663, 971, 333 || 354, 1662, 942, 334 || 57px → 56px, 62px → 62px
+|-
+| Character, Dark (alien) || 14 || 141–615 || 32 || 341, 1666, 971, 333 || 353, 1663, 951, 336 || 58px → 57px, 62px → 62px
+|-
+| Character, Dark (droid) || 14 || 142–612 || 32 || 341, 1666, 971, 333 || 353, 1663, 945, 336 || 62px → 62px, 62px → 62px
+|-
+| Effect, Light || 14 || 121–628 || 32 || 320, 1658, 997, 328 || 311, 1656, 1019, 330 || 62px → 62px, 62px → 62px
+|-
+| Effect, Dark || 14 || 121–630 || 32 || 320, 1667, 1000, 328 || 314, 1660, 1020, 335 || 52px → 54px, 62px → 62px
+|-
+| Interrupt, Light || 14 || 121–630 || 32 || 320, 1668, 1000, 326 || 312, 1661, 1022, 333 || 62px → 62px, 62px → 62px
+|-
+| Interrupt, Dark || 13 || 122–626 || 32 || 316, 1666, 997, 328 || 315, 1665, 1011, 329 || 62px → 62px, 62px → 62px
+|-
+| Weapon, Light || 14 || 121–628 || 32 || 320, 1658, 997, 328 || 312, 1655, 1018, 331 || 62px → 62px, 62px → 62px
+|-
+| Weapon, Dark || 14 || 122–627 || 32 || 318, 1669, 997, 328 || 314, 1663, 1014, 334 || 62px → 62px, 62px → 62px
+|-
+| Device, Light || 5 || 121–628 || 32 || 320, 1658, 1020, 328 || 312, 1655, 1018, 331 || 62px → 62px, 62px → 62px
+|-
+| Device, Dark || 5 || 122–627 || 32 || 318, 1669, 997, 328 || 313, 1663, 1015, 334 || 62px → 62px, 62px → 62px
+|-
+| Starship, Light || 14 || 138–635 || 32 || 349, 1729, 982, 279 || 346, 1720, 998, 288 || 62px → 62px, 62px → 62px
+|-
+| Starship, Dark || 14 || 142–604 || 32 || 344, 1732, 925, 265 || 354, 1726, 928, 271 || 62px → 62px, 62px → 62px
+|-
+| Vehicle, Light || 4 || 138–635 || 32 || 349, 1729, 982, 279 || 345, 1719, 999, 289 || 62px → 62px, 62px → 62px
+|-
+| Vehicle, Dark || 8 || 142–606 || 32 || 348, 1731, 925, 265 || 354, 1726, 932, 270 || 60px → 60px, 62px → 62px
+|-
+| Creature || 1 || 135–608 || 31 || 352, 1727, 925, 270 || 338, 1727, 952, 270 || 58px → 60px
+|-
+| Epic Event (Dark) || 7 || 104–645 || 32 || 290, 1340, 1060, 650 || 304, 1332, 1060, 676 || 62px → 62px, 62px → 63px
+|}
+
+Sizes are px on the 1632 px master. Boxes are (x, y, width, height) on the master. Some long cards come out 1–2 px smaller than before, because the Character boxes are now as narrow as the PC's. The PC rewords those cards (▼ for "deploy", for example), so their printed text is shorter than the text the card maker gets.
+
+[[File:TEST CardMaker round 3 - text sizing A.jpg|none|900px]]
+[[File:TEST CardMaker round 3 - text sizing B.jpg|none|900px]]
+[[File:TEST CardMaker round 3 - text sizing C.jpg|none|900px]]
+
+=== Still different ===
+* The Jedi Test, the tall Dark Effect, Objectives, Light Epic Events and the Reflections Gold wide cards had too few PC samples and keep their old boxes. The PC's wide Effects set game text at about 62 px, where the card maker uses 56 px.
+* Lore sizes are unchanged.
+* The card maker's "E" in the errata mark is a little lighter than the PC's.
+
+== Round 2: text fit, labels, set symbols and hexagon dots ==
+Four more changes, now live on the card maker.
+
+{| class="wikitable"
+! Card maker, Errata with D-E1 !! [[Obi-Wan's Journal (PC Errata)|PC Errata]] !! Card maker, Original !! Decipher Original
+|-
+| [[File:TEST CardMaker round 2 - Obi-Wan's Journal (Errata, D-E1).png|260px]] || [[File:Ref2-L-obiwansjournal.gif|260px]] || [[File:TEST CardMaker round 2 - Obi-Wan's Journal (Original).png|260px]] || [[File:ReflectionsII-L-obiwansjournal-decipher-archive.gif|260px]]
+|}
+
+=== Text fit ===
+The card maker used to start at a standard size and only shrink the text until it fit. It now looks for the largest size that fits. At each size it first tightens the letter spacing, then the line spacing, and only then tries a smaller size. Once a size fits, it gives back as much letter spacing as the text can spare. The limits come from the printed Obi-Wan's Journal: 62 px text on 63–64 px lines, with letter spacing pulled in by up to about 1 px. A card can set its own largest and smallest size and spacing limits if it needs to.
+
+Obi-Wan's Journal now comes out at the printed size for both versions: 62 px on 63 px lines and five lines each. Before, the Original was 60 px and the Errata 57 px. The Light Side Device text box is now as wide as the printed one. The close-up also checks Portable Scanner, Looking To The Future (lore only), Frustration (an Interrupt) and Chewie, Enraged (a Character).
+
+[[File:TEST CardMaker round 2 - text fit before and after.jpg|none|900px]]
+
+=== PC labels ===
+The card maker can now print the labels the PC adds to Virtual and Errata cards. The editor has a field for the errata mark, such as D-E1, and a field for one more label with a choice of position:
+* '''errata''': bottom right, bold italic, as in D-E1, E1 and E2.
+* '''bottom-left''': the title line on the bottom border, as on Virtual Sets 21–27.
+* '''bottom-right''': the same style anchored to the right.
+* '''concept''': a centred italic credit, as in "Original concept by …".
+* '''top-right''': a small label in the top-right corner.
+Each label can also set its own position, size, font and colour. On Obi-Wan's Journal and Frustration the card maker's D-E1 lines up with the PC's to within about 1 px.
+
+[[File:TEST CardMaker round 2 - PC labels.jpg|none|900px]]
+
+=== Set symbols ===
+The card maker now keeps both versions of each set symbol: the Decipher original and the PC's redraw. A card can use either one, and the PC version is the default. There are pairs for 14 sets, including Reflections II and Special Edition. Enhanced Jabba's Palace has only the Decipher symbol, and Reflections Gold keeps its own gold symbol. The source of every file is listed in the card maker's set symbol notes. The PC's Reflections II symbol is pinker with a darker ring. Its Special Edition symbol is orange and red with a white burst, where Decipher's is paler and more yellow.
+
+[[File:TEST CardMaker round 2 - set icons Decipher vs PC.jpg|none|900px]]
+
+=== Device hexagon dots ===
+Some Device icons show small green or blue dots on the hexagons and others don't, on both Decipher and PC cards. The dots come from saving the images as GIFs, not from the printed card. The PC's own full-colour image of [[Han's Medal]] has no dots. Its 256-colour GIF of the same card has them. The 600 DPI scan of a printed Obi-Wan's Journal has none either. On the other cards the dots appear and disappear from one GIF to the next. The correct icon is plain hexagons with no dots, which is what the card maker already uses. The icon is unchanged.
+
+[[File:TEST CardMaker round 2 - Device hexagon dots evidence.jpg|none|900px]]
+
+==== Differences that remain ====
+* The Errata's line breaks differ slightly from the PC Errata, though both have five lines.
+* Printed text boxes on other card types are about 20–30 px wider than the card maker's. Only the Light Side Device box has been widened, so Frustration still comes out at 58 px.
+* Lore is still 58 px. Printed lore is about 4% larger.
+* The card maker's D-E1 slants a little more than the PC's, and its "1" has a different shape.
+* The PC symbols are upscaled from small images, so they are softer than the Decipher ones. The card maker draws a heavier ring around them than the PC does.
+
+== Round 1: Light Side Device frame ==
+=== What changed ===
+The card maker built its Light Side Device frame from the Light Side Weapon frame and swapped in the Device icon. That kept two Weapon-only marks: the two bolts under the type icon and the burn mark left of the lore box. Decipher printed those on Light Side Weapons, not on Devices. The new frame is the Device frame layer from Bardez's ''LS - Device'' template, which has neither mark. Its picture window is a few pixels different from the Weapon frame, so the picture box now follows the Device frame's own window. The Light Side Weapon frame is unchanged.
+
+Virtual remasters of Devices, such as [[Han's Toolkit]], now get the Device frame too. Before this they fell back to the Weapon frame unless a card asked for the Device frame.
+
+[[File:TEST CardMaker LS Device - before and after (bolts and burn mark).png|none|900px]]
+
+=== Obi-Wan's Journal ===
+Both renders use the card's own picture from a 600 DPI print scan, fitted to the same crop as the printed card.
+{| class="wikitable"
+! Card maker, Errata !! [[Obi-Wan's Journal (PC Errata)|PC Errata]] !! Card maker, Original !! Decipher Original
+|-
+| [[File:TEST CardMaker LS Device - Obi-Wan's Journal (Errata).png|260px]] || [[File:Ref2-L-obiwansjournal.gif|260px]] || [[File:TEST CardMaker LS Device - Obi-Wan's Journal (Original).png|260px]] || [[File:ReflectionsII-L-obiwansjournal-decipher-archive.gif|260px]]
+|}
+
+== Differences that remain ==
+The close-ups are at 400% and line up the card maker with the PC Errata, the Decipher Original and [[Han's Medal]]. The icon close-up also shows Jedi Holocron.
+* '''Type icon:''' the hexagons match Han's Medal, Jedi Holocron and the printed card in layout and colour. The card maker's icon is softer, because the frame is an upscaled image, and it sits about 2 px lower and to the right.
+* '''Frame edge:''' the card maker's frame starts about 2 px right and 3 px lower than the PC cards' frame on a 745 px image. The right and bottom edges match. The old frame had the same offset.
+* '''Destiny:''' the card maker's "2" is a little larger and thinner than the printed one.
+* '''Title:''' the size and length match. The card maker prints a straight apostrophe (Obi-Wan's) where the card has a curly one, and the title sits about 3 px higher.
+* '''Card type:''' "DEVICE" sits about 4 px right of the printed one.
+* '''Game text:''' the card maker's text is smaller than the printed text. The Original has the same five lines, but its block is about 10% shorter. Both the Errata and the PC Errata have five lines. (Fixed in round 2.)
+* '''Errata mark:''' the PC Errata prints "D-E1" in the bottom-right corner. The card maker had no place for it. (Added in round 2.)
+* '''Picture:''' the crop matches the printed card. The colours are those of the print scan, which are a little paler than the PC Errata image.
+* '''Set symbol:''' the Reflections II sphere is in the same place. The card maker draws it a little larger with a heavier dark ring.
+
+[[File:TEST CardMaker LS Device - QA type icon and destiny.png|none|900px]]
+[[File:TEST CardMaker LS Device - QA burn mark area and set symbol.png|none|900px]]
+[[File:TEST CardMaker LS Device - QA title and lore.png|none|900px]]
+[[File:TEST CardMaker LS Device - QA art window and copyright.png|none|900px]]
+[[File:TEST CardMaker LS Device - QA card type and game text.png|none|900px]]
+[[File:TEST CardMaker LS Device - QA bottom corner.png|none|900px]]
+
+=== Dark Side Device ===
+The Dark Side Device frame is built the same way, from the Dark Side Weapon frame. That frame has no Weapon-only marks, and it matches Bardez's ''DS - Device'' frame, Homing Beacon and Electro-Rangefinder (V) apart from the icon. It is unchanged.
+
+[[File:TEST CardMaker LS Device - DS Device check.png|none|900px]]

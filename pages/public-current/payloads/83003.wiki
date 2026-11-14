@@ -1,0 +1,61 @@
+[[File:Holotable Title specimen.png|thumb|right|300px|Holotable Title, version 1.000: every character.]]
+'''Holotable Title''' is a free display typeface made for the card titles of the swccg-cardmaker program, which remasters [[Players Committee]] virtual cards.<ref name="repo">[https://github.com/billbisco/swccg-cardmaker swccg-cardmaker], GitHub. Preserved copy: [https://web.archive.org/web/20261027032316/https://github.com/billbisco/swccg-cardmaker Internet Archive].</ref><ref name="folder" /> Its letter shapes are traced from the card titles on the Players Committee's own Holotable card images. It is released under the SIL Open Font License&nbsp;1.1, so anyone may use, modify and redistribute it.<ref name="ofl" /> It replaced Fiorello CG Condensed, a commercial typeface, in swccg-cardmaker revision&nbsp;62 on 3&nbsp;November 2026.<ref name="fonts" />
+
+== Background ==
+The Players Committee set its card titles in Fiorello Condensed, the face of Decipher's printed titles (see [[Typography of Star Wars CCG cards]]). Its Defensive Shields sheet embeds the face as ''ATFiorello-Condensed''.<ref name="ds" /> Fiorello CG Condensed, which came with [[Bardez]]'s template pack, is a commercial copy of the same design.<ref name="fonts" /> United States copyright law does not protect a typeface's letter shapes as such,<ref name="cfr" /> but font files are software. Holotable Title was therefore drawn from printed and rendered card titles, without copying or editing any font file, and was given its own name.<ref name="fontlog" />
+
+== How it was made ==
+* '''Sources.''' The title strips of 1,267 Players Committee virtual cards, taken from the Players Committee's 745&nbsp;×&nbsp;1039&nbsp;pixel Holotable images. Location titles use a different all-caps face, so they were left out.<ref name="fontlog" />
+* '''Finding the letters.''' Each title's ink was split into letter shapes and matched to the card's title text. Titles were used where every shape could be assigned to a letter: 405 directly and 263 more by aligning shapes to letters.<ref name="fontlog" />
+* '''Averaging.''' Every copy of a letter was scaled to a common capital height (32&nbsp;pixels on the card image), aligned to the others to a fraction of a pixel, and averaged at eight times the image resolution. The most common letter, ''e'', has 1,166 copies.<ref name="fontlog" />
+* '''Outlines.''' The averaged letters were smoothed and traced into vector outlines with potrace.<ref name="fontlog" />
+* '''Spacing.''' Letter spacing was fitted to 689 letter pairs measured on the cards. Kerning was kept only where at least eight measurements agreed (V–a, O–r, O–f). The word space is the median measured space.<ref name="fontlog" />
+* '''Characters the cards never print in a title''' (: ; ' ‘ “ ” – / # ◊ and accented letters such as é) were assembled from traced parts or drawn to the measured stroke weight. The curly quotes are built from the Players Committee's apostrophe, a slanted tick.<ref name="fontlog" />
+* '''Build.''' The font was built with the fontTools library. The sources and the build script are published beside the font and rebuild it byte for byte.<ref name="folder" />
+
+The font has 92 glyphs. They cover every character in every Players Committee virtual and legacy card title.<ref name="fontlog" />
+
+== How close it is ==
+[[File:Holotable Title vs PC and Fiorello CG.webp|thumb|right|400px|Players Committee, Fiorello CG Condensed and Holotable Title titles on 24 cards.]]
+Each card was rebuilt in swccg-cardmaker and compared with the Players Committee's image of the same card.<ref name="accuracy" />
+{| class="wikitable"
+! Measure !! Fiorello CG Condensed !! Holotable Title
+|-
+| Title width against the Players Committee's, 180 titles, median difference || 2.70&nbsp;px || 1.11&nbsp;px
+|-
+| Title width on 24 rebuilt reference cards, median difference || 2.0&nbsp;px || 1.0&nbsp;px
+|-
+| Stroke thickness on black titles (Players Committee: 4.70&nbsp;px) || 4.40&nbsp;px || 4.78&nbsp;px
+|-
+| Stroke thickness on white titles (Players Committee: 4.94&nbsp;px) || 5.54&nbsp;px || 4.91&nbsp;px
+|-
+| Pixel difference, white Dark Side interrupt titles, median (0–255) || 12.1 || 9.3
+|}
+Measurements are in pixels of the 745-pixel card image.<ref name="accuracy" />
+
+== Where it falls short ==
+* On long black titles (Light Side cards), the pixel difference from the Players Committee's image is higher than with Fiorello CG. The worst case is ''The Destiny Of A Jedi'' (10.8 with Fiorello CG, 15.2 with Holotable Title). Fiorello CG is a copy of the Players Committee's own typeface, so it places every letter within one pixel. Holotable Title gets the total width and height of each title right, but single letters can drift by one or two pixels in the middle of a title, and its edges are softer. Across 24 reference cards, its pixel difference is higher than Fiorello CG's on 10.<ref name="accuracy" />
+* The largest known images of these titles are 745&nbsp;pixels wide, so a capital letter is only about 32&nbsp;pixels tall. Averaging many copies recovers detail finer than one pixel, but not every fine corner.<ref name="accuracy" />
+* The characters the Players Committee never printed in a title are constructions, not traces.<ref name="fontlog" />
+* A final per-letter adjustment, fitted to 340 titles and scored on 60 others, improved the match by only 0.2&nbsp;percent.<ref name="accuracy" />
+
+== See also ==
+* [[Holotable Text]] and [[Holotable Numbers]], the program's other fonts
+* [[Typography of Star Wars CCG cards]]
+* [[Making Custom SWCCG Cards]]
+* [[Players Committee]]
+
+{{#if:1|<nowiki />
+<h2>References</h2>
+<references>
+<ref name="folder">[https://github.com/billbisco/swccg-cardmaker/tree/main/assets/fonts/HolotableTitle Holotable Title], swccg-cardmaker on GitHub: the font, its licence, FONTLOG, sources and build script. Preserved copy: [https://web.archive.org/web/20261104013622/https://github.com/billbisco/swccg-cardmaker/tree/main/assets/fonts/HolotableTitle Internet Archive].</ref>
+<ref name="ofl">[https://openfontlicense.org/ SIL Open Font License], SIL International. Preserved copy: [https://web.archive.org/web/20261102233044/https://openfontlicense.org/ Internet Archive].</ref>
+<ref name="fonts">[https://github.com/billbisco/swccg-cardmaker/blob/main/FONTS.md Fonts], swccg-cardmaker on GitHub (revision 62, 3 November 2026). Preserved copy: [https://web.archive.org/web/20261104014734/https://github.com/billbisco/swccg-cardmaker/blob/main/FONTS.md Internet Archive].</ref>
+<ref name="ds">[http://www.swccgpc.com/Resources/DefensiveShields.pdf Defensive Shields], Players Committee (PDF; the embedded fonts list ATFiorello-Condensed, AkzidenzGroteskBE-Cn, AkzidenzGroteskBE-BoldCn, AkzidenzGroteskBE-BoldIt and Arial Narrow). Preserved copy: [https://web.archive.org/web/20071028141121/http://www.swccgpc.com/Resources/DefensiveShields.pdf Internet Archive].</ref>
+<ref name="cfr">[https://www.ecfr.gov/current/title-37/chapter-II/subchapter-A/part-202/section-202.1 37 CFR 202.1(e)], Code of Federal Regulations: "typeface as typeface" is among the material not subject to copyright. Preserved copy: [https://web.archive.org/web/20260607225338/https://www.ecfr.gov/current/title-37/chapter-II/subchapter-A/part-202/section-202.1 Internet Archive].</ref>
+<ref name="fontlog">[https://github.com/billbisco/swccg-cardmaker/blob/main/assets/fonts/HolotableTitle/FONTLOG.txt FONTLOG for Holotable Title], swccg-cardmaker on GitHub. Preserved copy: [https://web.archive.org/web/20261104012036/https://github.com/billbisco/swccg-cardmaker/blob/main/assets/fonts/HolotableTitle/FONTLOG.txt Internet Archive].</ref>
+<ref name="accuracy">[https://github.com/billbisco/swccg-cardmaker/blob/main/assets/fonts/HolotableTitle/ACCURACY.md Holotable Title: how close it is to the PC's titles], swccg-cardmaker on GitHub (3 November 2026). Preserved copy: [https://web.archive.org/web/20261104013644/https://github.com/billbisco/swccg-cardmaker/blob/main/assets/fonts/HolotableTitle/ACCURACY.md Internet Archive].</ref>
+</references>}}
+
+[[Category:Meta]]
+[[Category:Card production]]

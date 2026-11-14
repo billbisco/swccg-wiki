@@ -1,0 +1,65 @@
+'''Cube''' is the [[Players Committee]]'s draft format in which players draft decks from a fixed, curated card pool (the "Cube") instead of opening sealed product. The Players Committee calls it '''Watto's Chance Cube''', or simply Cube.<ref name="pc-cube">[https://www.starwarsccg.org/cube/ Cube], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261025010558/https://swccg.com/snapshots/pc/cube.html Internet Archive].</ref> It is also a format on [[GEMP]] (code <code>cube</code>). Its GEMP definition links to the Players Committee Cube page and is marked as not a game hall format.<ref name="gemp" /><ref name="lib" />
+
+* '''Type:''' cube
+* '''Defined by:''' Players Committee (by 2013)
+* '''Card pool:''' the current official Cube list: fixed cards for each player plus draft cards
+* '''In use:''' by 2013 &ndash;
+* '''Also called:''' Watto's Chance Cube; Watto's Cube
+* '''GEMP:''' ''Cube'' (<code>cube</code>) on both the Players Committee GEMP (45 cards) and play.swccg.com (40 cards)
+
+== Card pool ==
+Players draft from "packs" made by shuffling a curated set of cards, instead of opening sealed product. Each Cube has fixed cards given to each player, hundreds of draftable cards, and add-on cards that come with some draftable cards.<ref name="pc-cube" /> The Players Committee's 2019 Tournament Formats page explains that the decks are built from "familiar (and often times more useful) cards", and that players need bring no cards because the Tournament Director brings the Cube.<ref name="pc-formats-2019">[https://www.starwarsccg.org/tournament-formats/ Tournament Formats], Players Committee (27 June 2019). Preserved copy: [https://web.archive.org/web/20210122060510/https://www.starwarsccg.org/tournament-formats/ Internet Archive].</ref>
+
+=== Players Committee rules (2015) ===
+The ''Alternate Format Tournament Guide'' (revised September 2015) describes two types of Watto's Cube event, "Traditional" and "Secret Squirrel". Both use 45-card decks.<ref name="afg">[https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Star Wars CCG Alternate Format Tournament Guide] (revised 09/2015), Players Committee. Preserved copy: [https://web.archive.org/web/20261008195355/https://res.starwarsccg.org/wp/wp-content/uploads/Alternate-Formats-Guide.pdf Internet Archive].</ref> Its rules:<ref name="afg" />
+* The card pool is a pre-defined set of 450 cards. Each player receives a set of 10 "fixed" cards; the rest are shuffled into "virtual packs", five 9-card packs for each player.
+* '''Traditional:''' players are assigned Light or Dark and drafted in groups of up to 5 of the same side, so each group's packs contain only that side's cards (for example 10 players = 2 groups of 5).
+* '''Secret Squirrel:''' players are placed in groups of about 8 (never more than 10). Each is randomly assigned a side and given their fixed cards, but may draft cards of either side (for example 16 players = 2 groups of 8).
+* Picks pass left from the first pack, then right, switching each round. After the draft players have 10 minutes to build 45-card decks, and may re-customize between games from their own drafted cards.
+
+=== Deck size on GEMP ===
+On play.swccg.com, GEMP sets the Cube format to 40 cards. The Players Committee GEMP code sets it to 45 cards.<ref name="gemp" /><ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref><ref name="lib" />
+
+== History ==
+=== The Cube (2013) ===
+By December 2013 the Players Committee's Game Formats page described the Cube as "a limited format for Star Wars CCG", a way to simulate sealed play "without having to actually open sealed product, which is becoming increasingly scarce". That Cube was a list of 480 cards to draft plus 12 "unlimited" locations for each side, and every card was playable on its own. Each Cube supported up to 10 players, split into a Light pod and a Dark pod. Each player drafted five 9-card packs (45 cards), received a set of the unlimited locations, and had about 20 minutes to build a 40-card deck, then played as in a normal sealed tournament. The official list was usually changed quarterly.<ref name="pc-gameformats">[http://www.starwarsccg.org/about/game-formats/ Game Formats], Players Committee. Preserved copy: [https://web.archive.org/web/20131213093344/http://www.starwarsccg.org/about/game-formats/ Internet Archive].</ref>
+
+The same page listed alternate ways to run it: a Winston Draft for odd numbers of players; drafting decks for both sides when only four players attend; a "Squirrel format" in which all 480 cards are shuffled together and drafted in one pod; and "Cube sealed", in which each player takes 45 random cards of one side.<ref name="pc-gameformats" />
+
+=== Watto's Chance Cube (2015) ===
+By November 2015 the Players Committee page had the name Watto's Chance Cube and a new structure: 390 draft cards and 10 fixed cards per side, with six copies of each fixed card, for 450 cards per side. The Official Watto's Chance Cube used standard virtual cards only, no legacy virtual cards. The page linked the Watto's Chance Cube Official Tournament Guide (updated 09/2015) and the official card list, version 2.0 (revised 09/2015).<ref name="pc-cube-2015">[http://www.starwarsccg.org/cube/ Cube], Players Committee. Preserved copy: [https://web.archive.org/web/20151127013344/http://www.starwarsccg.org/cube/ Internet Archive].</ref> The 2015 ''Alternate Format Tournament Guide'' gives the rules above.<ref name="afg" />
+
+=== Version 7 and later ===
+In January 2023 the Players Committee page showed Cube version 7, created in December 2020: 290 draft cards and 10 fixed cards per side (six copies of each), 350 cards per side, still with standard virtual cards only, and a Cube Guide v7. Version 8 was in development, with version 7 as the basis of an "Every Era Cube". The page said the Cube's source of truth lives on GitHub (swccgpc/swccg-cube), as one YAML file each for the Dark and Light cubes.<ref name="pc-cube-2023">[https://www.starwarsccg.org/cube/ Cube], Players Committee. Preserved copy: [https://web.archive.org/web/20230125063013/https://www.starwarsccg.org/cube/ Internet Archive].</ref>
+
+== GEMP cube and draft formats ==
+* [[Watto's Cube with objective packs Cube]] (<code>wattos_cube_with_objective</code>)
+* [[Watto's Cube with fixed pack Cube]] (<code>wattos_cube_with_fixed</code>)
+* [[Premiere - Death Star II Draft]] (<code>basic_premds2_draft</code>)
+* [[Premiere - Virtual Set 13 Draft]] (<code>basic_premv13_draft</code>)
+* [[Premiere - Virtual Set 25 Draft]] (<code>holocron_premv25_draft</code>)
+* [[Cube v7 + Objectives Draft]] (<code>c7obj_draft</code>)
+All six have a deck size of 40 and link to the PC Cube page.<ref name="gemp" />
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+No tournament on [[List of SWCCG tournaments]] is recorded in this format yet. Events are added here when their page gives this format.
+<!-- format-tournaments:end -->
+
+== See also ==
+* [[Formats]]
+* [[Watto's Chance Cube]] (card)
+* [[Secret Squirrel]]
+* [[Booster Draft]]
+* [[Sealed]]
+* [[GEMP sealed league products]]
+* [[GEMP draft and cube products]]
+
+== References ==
+<references>
+<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
+<ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+</references>
+
+[[Category:Formats]]
+[[Category:GEMP]]

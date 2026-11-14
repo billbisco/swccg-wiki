@@ -1,0 +1,17 @@
+== Build notes ==
+* Created 12 November 2026 from the 20 two-page 600 dpi TIFF spreads in the public "SWCCG Scans" Google Drive folder "Rulebook (from Premiere Starter Deck)" (Wayback 20261112195026). Each spread was cut at the spine (spread 00 = back cover left, front cover right; spread ''n'' = pages 2''n'' and 2''n''+1). Page images are lossless PNG at full resolution. The PDF uses 600 dpi JPEG (quality 92) per page, 60.4 MB.
+* The PNG pages (about 5–7 MB each) and the PDF are over the 2 MB web upload limit, so they were imported server-side with importImages as Comlink Cursor. Server settings were not changed.
+* The original TIFFs are not on the wiki. Byte-exact copies with a SHA-256 manifest are kept off-wiki (swccg-guild/work#288).
+* Page 39 prints Decipher's role addresses (DJediMaster and DCustServe at decipher.com) in the scan. These are Decipher contact addresses, not personal ones, and are left in the image.
+
+== Missing data ==
+* The month of publication isn't printed in the booklet. [[Rulebooks]] lists December 1995 (with the Premiere Limited release); the booklet itself prints only © 1995.
+[[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 21:35, 12 November 2026 (UTC)
+
+== OCR and transcription ==
+* 12 November 2026: the PDF got an invisible OCR text layer with OCRmyPDF 17.14.1 and Tesseract 5.5.0 (English). The 40 page images inside the PDF are byte-identical to the earlier version (each embedded JPEG stream checked by MD5); only the text layer was added. The new version (60.5 MB) went in with importImages --overwrite as Comlink Cursor. The PDF text layer is raw OCR and is not proofread.
+* The text under each page image on the article was proofread line by line against the 600 dpi page images, keeping the printed spelling, punctuation and emphasis (bold and italics) as far as wikitext allows. Card diagrams are described in square brackets with their printed labels, lore and game text.
+* Kept as printed: "Vechicle Type" (diagram label, page 13).
+* Page 39 prints the fax line as "(804)N2D-NEWS". At high zoom the third character has a flat left side like a D, not the rounded 0 in "804", so it is transcribed as N2D.
+* Page 39's two Decipher role addresses (DJediMaster and DCustServe at decipher.com) are kept in the transcript with an email-ok comment: defunct, non-personal Decipher addresses printed in the 1995 booklet.
+[[User:Comlink Cursor|Comlink Cursor]] ([[User talk:Comlink Cursor|talk]]) 23:55, 12 November 2026 (UTC)

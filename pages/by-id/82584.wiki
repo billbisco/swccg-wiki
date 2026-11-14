@@ -1,0 +1,98 @@
+Test only. This page checks the card frames used by the SWCCG Card Maker and by the remastered card images ([[Original Virtual]] remasters and [[Reflections Gold]] remasters) against Decipher's own card images, one card type at a time. The Card Maker cards come from a scratch copy on the Grok Bot computer; its frame files are byte-for-byte the same as the live Card Maker's. No template, live card image, card page or the live Card Maker has changed.
+
+The Decipher images are the large card images from Decipher's 2002 Special Edition card lists, read from the Internet Archive, for example [https://web.archive.org/web/2002/http://www.decipher.com/starwars/cardlists/specialedition/light/images/legendarystarfighter.gif Legendary Starfighter] and [https://web.archive.org/web/2002/http://www.decipher.com/starwars/cardlists/specialedition/light/images/princessorgana.gif Princess Organa]. They are 367 x 506 pixel GIFs, so in the close-ups below they are enlarged about 2 times and look blurry. Fine grain and colour shades in them are not reliable; shapes, marks and bevels are.
+
+Each Decipher card is scaled so its silver frame lines up with the Card Maker render of the same card (745 x 1039). The Dark Side frames have no silver edge, so the Dark Side crops are only roughly lined up.
+
+== Summary ==
+{| class="wikitable"
+! Template !! What differs from Decipher !! Evidence
+|-
+| Card Maker, Light Side Effect || Has the Effect marks: the mark right of the icon, the marks above and below the destiny number, the gold scuff and white scratch under the sphere, the banner streaks and the bottom tear. Destiny ring too bright and thick. || b, c, d, e, g
+|-
+| Card Maker, Light Side Character || Close. Destiny ring and icon ring a little brighter and thicker. Lore text sets the word "leader" in bold. || f, g, i
+|-
+| Card Maker, Light Side Device || Two bolts under the icon and a dark burn mark left of the lore box that Decipher does not have. Icon hexagons orange, not white and yellow. || h
+|-
+| Card Maker, Light Side Interrupt, Starship, Vehicle, Weapon || Close. Only the destiny ring. || g
+|-
+| Card Maker, Dark Side Character, Effect, Interrupt, Starship, Vehicle, Weapon, Device || Close in shape. Destiny ring brighter. Dark Side Effect and Interrupt red and Device green are brighter than the Decipher images, and the Device icon hexagons are orange. || j, k, l, m
+|-
+| Card Maker, systems and sites || Close. || n
+|-
+| Reflections Gold remaster, Light Side Effect (Looking To The Future) || Missing all the Effect marks: no mark right of the icon, no marks by the destiny number (dark scorch spots instead), no gold scuff or white scratch, no banner streaks, no bottom tear. || b, c, d, e
+|-
+| Reflections Gold remaster, Light Side Character (Anakin Skywalker) || The stipple right of the icon is smoother and fainter than on Decipher. || b, f
+|-
+| Original Virtual remaster, Light Side Effect (Meditation) || Has the Effect marks, same as the Card Maker. Destiny ring too bright. || b, c, d, e
+|-
+| Original Virtual remaster, Starship (Red Squadron 7) || A white smudge left of the destiny number that the Decipher starship frame does not have. || g
+|-
+| Original Virtual remaster, Device (Han's Toolkit) || Has the Card Maker's bolts and burn mark. Its icon is a weapon icon, not the device icon. || h
+|}
+
+My earlier test page [[User:Comlink Cursor/Reflections Gold CardMaker test]] called the gold scuff, the marks by the destiny number, the banner streaks and the bottom tear "Bardez frame marks". That was wrong. The Decipher Effects have all of them, so they belong to the Light Side Effect frame. The Card Maker is right to have them and the Reflections Gold remaster is wrong to lack them.
+
+== Light Side Effect against Character ==
+[[File:TEST Frame audit - a Decipher top left native.png|none|1200px]]
+a: the top left of two Decipher Effects and two Decipher Characters at their real pixels, enlarged 3 times. The Effects have a red plate with grey flecks under the title bar; the Characters have a white plate with grey stipple. The lower edge of the title bar and the curve round the icon are the same shape on all four.
+
+[[File:TEST Frame audit - b half-moon area.png|none|1200px]]
+b: the area right of the icon, under the start of the title (pink box). On both Decipher Effects there is a small curved grey mark here. The Card Maker Effect frame and the Meditation remaster have it. The Looking To The Future remaster has a clean plate there. The Characters have a patch of grey stipple in the same place instead of the curved mark.
+
+== Light Side Effect, other marks ==
+[[File:TEST Frame audit - c LS Effect destiny area.png|none|1200px]]
+c: top right. Decipher has two small embossed marks above the destiny number and three below it, a gold scuff on the red plate under the sphere, and a white scratch running down from the sphere. The Card Maker and the Meditation remaster have all of these. The Looking To The Future remaster has none of them and has dark scorch spots above the destiny number instead. On Decipher the destiny number sits in a plain black disc. The Card Maker and the Meditation remaster put a bright silver ring round it.
+
+[[File:TEST Frame audit - d LS Effect banner.png|none|1200px]]
+d: the EFFECT banner. Decipher has grey streaks on the red band above the banner and a yellow scuff on the right edge. The Card Maker and the Meditation remaster have them. The Looking To The Future remaster has a plain red band.
+
+[[File:TEST Frame audit - e LS Effect bottom edge.png|none|1200px]]
+e: the bottom edge, centre. Decipher has a white triangular tear with a squiggle beside it. The Card Maker and the Meditation remaster have it. The Looking To The Future remaster does not.
+
+== Light Side Character ==
+[[File:TEST Frame audit - f LS Character top left.png|none|1000px]]
+f: top left. The Card Maker Character frame matches Decipher closely. Its icon ring is a little thicker and brighter. The Anakin Skywalker remaster has a smoother, fainter stipple right of the icon.
+
+[[File:TEST Frame audit - i lore text.png|none|1200px]]
+i: lore text. The Card Maker prints "leader" in bold on both cards. Decipher prints it in the normal lore type. The Card Maker also writes "battle of Hoth" where Decipher has "Battle of Hoth"; that comes from the card data, not the frame.
+
+== Destiny ring on other types ==
+[[File:TEST Frame audit - g destiny ring.png|none|1200px]]
+g: Light Side Vehicle, Starship, Interrupt and Weapon, plus two Original Virtual remasters. On every Decipher card the destiny number sits in a black disc with only a thin edge. Every Card Maker template and both remasters add a wide, bright silver ring. The rest of these frames, including the Interrupt scorch marks and the Weapon scratches, match Decipher. The Red Squadron 7 remaster has a white smudge left of the destiny number.
+
+== Light Side Device ==
+[[File:TEST Frame audit - h LS Device top left.png|none|1200px]]
+h: top left. The Card Maker Device frame has two bolts under the icon and a dark burn mark on the green plate left of the lore box. Neither Decipher Device has them. The Card Maker icon shows orange hexagons where Decipher shows white, yellow and pale green ones. The Han's Toolkit remaster has the same bolts and burn mark, and a weapon icon.
+
+== Dark Side ==
+[[File:TEST Frame audit - j DS overview 1.png|none|1200px]]
+[[File:TEST Frame audit - k DS overview 2.png|none|1200px]]
+j and k: Dark Side Character, Effect, Interrupt, Starship, Vehicle, Weapon, Device and Site, Decipher on the left of each pair and the Card Maker on the right.
+
+[[File:TEST Frame audit - l DS top right.png|none|1200px]]
+l: top right of four Dark Side types. The frame shapes and bevels match. The destiny ring is brighter on the Card Maker. Its Effect and Interrupt red and Device green are brighter and more even than on the Decipher images; GIF colours are not reliable, so check against a real card before changing them.
+
+[[File:TEST Frame audit - m DS top left.png|none|1200px]]
+m: top left. The shapes match. The Dark Side Device icon also has orange hexagons on the Card Maker.
+
+== Locations ==
+[[File:TEST Frame audit - n locations.png|none|1200px]]
+n: a Light Side site, Light Side and Dark Side systems. The Card Maker system frames match Decipher.
+
+== Proposed fixes ==
+These are proposals only. Nothing has been changed.
+# Reflections Gold remaster Light Side Effects: add back the Effect marks (mark right of the icon, marks by the destiny number, gold scuff, white scratch, banner streaks, bottom tear) and take off the scorch spots, or re-render the cards in the Card Maker, which already has the right frame.
+# All Card Maker templates: make the destiny disc plain black with a thin edge, as on Decipher.
+# Card Maker Device frames (both sides): remove the two bolts and the burn mark, and use the white, yellow and pale green device icon.
+# Card Maker lore: stop setting "leader" in bold.
+# Original Virtual remasters: remove the Red Squadron 7 smudge, check the Han's Toolkit icon, and fix the destiny ring and Device marks when the Card Maker is fixed.
+
+== Questions for Bill ==
+* Is the mark in picture b (pink box) the half-moon you meant, or do you mean another spot?
+* Should the Card Maker copy the Decipher destiny disc exactly, or keep the brighter ring for all remasters so they match each other?
+* Is Han's Toolkit meant to have the weapon icon?
+* Do you want the Reflections Gold Effects fixed by editing the remaster images, or re-made in the Card Maker?
+
+== Card images used ==
+Decipher card lists (2002 copies on the Internet Archive), Special Edition, file names light/images/: princessorgana, commanderwedge, legendarystarfighter, meditation, heroesofyavin, red7, sandspeeder, leiasblasterrifle, portablescanner, wristcomlink, coruscant, tatooinejawacanyon; dark/images/: sergeanttorent, imperialpropaganda, blastpoints, vengeance, combatcloudcar, drevazanssawedoff, homingbeacon, cloudcityinterrogationroom, kuat. Remasters: [[:File:OVS11-09-Meditation-remaster.webp]], [[:File:OVS1-05-Luke Skywalker-remaster.webp]], [[:File:OVS12-20-Red Squadron 7-remaster.webp]], [[:File:OVS12-18-Precise Hit-remaster.webp]], [[:File:OVS11-06-Han s Toolkit-remaster.webp]], [[:File:RG-GEMP-Looking-To-The-Future.png]], [[:File:RG-GEMP-Anakin-Skywalker.png]].
