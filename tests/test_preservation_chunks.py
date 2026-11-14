@@ -256,6 +256,14 @@ class ChunkTests(unittest.TestCase):
             _fetch("https://raw.githubusercontent.com/billbisco/swccg-wiki/" + "a" * 40 + "/large.bin")
             self.assertIsNone(opener.return_value.open.call_args.args[0].get_header("Accept"))
 
+    def test_manifest_cannot_smuggle_boolean_numbers_through_python_equality(self):
+        manifest = copy.deepcopy(self.manifest)
+        manifest["parts"][0]["index"] = False  # False == 0 is insufficient.
+        self.assertTrue(profile.manifest_errors(manifest, self.storage, self.subject))
+        tiny = {**self.subject, "bytes": 1}
+        self.assertFalse(profile.exact_subject({**tiny, "bytes": True}, tiny))
+        self.assertFalse(profile.exact_subject({**tiny, "bytes": 1.0}, tiny))
+
 
 if __name__ == "__main__":
     unittest.main()

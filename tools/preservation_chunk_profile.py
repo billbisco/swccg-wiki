@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 from pathlib import PurePosixPath
 
-from preservation_contracts import BACKUP_REPOSITORIES, is_sha256, subject_errors
+from preservation_contracts import BACKUP_REPOSITORIES, canonical_bytes, is_sha256, subject_errors
 
 KIND = "git_raw_chunks_v1"
 PART_LIMIT = 64 * 1024 * 1024
@@ -22,6 +22,14 @@ def safe_path(path):
 
 def keys(value, expected):
     return isinstance(value, dict) and set(value) == set(expected)
+
+
+def exact_subject(candidate, subject):
+    # Python equality alone treats True as 1, including inside nested objects.
+    try:
+        return not subject_errors(candidate) and canonical_bytes(candidate) == canonical_bytes(subject)
+    except (TypeError, ValueError):
+        return False
 
 
 def parts_errors(parts, subject, manifest_path):
@@ -77,8 +85,9 @@ def manifest_errors(manifest, storage, subject):
     errors = []
     if type(manifest["schema_version"]) is not int or manifest["schema_version"] != 1 or manifest["profile"] != KIND:
         errors.append("chunk manifest version/profile is unsupported")
-    if manifest["subject"] != subject:
+    if not exact_subject(manifest["subject"], subject):
         errors.append("chunk manifest does not bind the COMPLETE original subject")
+    errors.extend(parts_errors(manifest["parts"], subject, storage["path"]))
     if manifest["parts"] != storage["parts"]:
         errors.append("chunk manifest parts do not match the pinned storage order/identity")
     return errors
@@ -107,6 +116,8 @@ def receipt_errors(receipt, subject):
         return ["chunk receipt has unknown or missing fields"]
     storage = receipt["storage"]
     errors = storage_errors(storage, subject)
+    if not exact_subject(receipt["subject"], subject):
+        errors.append("chunk receipt does not bind the exact typed original subject")
     if errors:
         return errors
     proof = receipt["verification"]
