@@ -1,5 +1,7 @@
 .swccg-card-images { width:280px; max-width:100%; }
 .swccg-card-images .swccg-card-image-stage { width:100%; aspect-ratio:350/490; display:grid; place-items:center; }
+.swccg-card-images .swccg-card-image-stage .card-portrait { margin:0; }
+.swccg-card-images .swccg-card-image-stage a,.swccg-card-images .swccg-card-image-stage img { display:block; }
 .swccg-card-images .card-portrait { max-width:100%; margin:0 0 6px; }
 .swccg-card-images .card-portrait img { max-width:100%; height:auto; }
 .swccg-card-images .swccg-card-image-stage img { max-height:392px; width:auto; object-fit:contain; }
