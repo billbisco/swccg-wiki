@@ -1,12 +1,13 @@
-import subprocess,json,hashlib
+import subprocess,json,hashlib,re
 from pathlib import Path
 import requests
 p=Path(__file__).parent;manifest=json.loads((p/'build-manifest.json').read_bytes())
 raw=subprocess.check_output(['ssh','-o','BatchMode=yes','gemp','cat','/opt/swccg-wiki/SwccgChrome.php']);(p/'SwccgChrome.live-before.php').write_bytes(raw)
 # Match the current checked-in application file before adding a bounded hook.
 repo=subprocess.check_output(['git','-C','work/wiki-source','show','origin/main:wiki/SwccgChrome.php'])
-assert raw.replace(b'\r\n',b'\n')==repo.replace(b'\r\n',b'\n'),'Live hook differs from source; reconcile first'
-source=raw.decode();anchor='\t\t$title = $out->getTitle();'
+def without_own_hook(text):return re.sub(r'\n        // Bounded public shared-search pilot449;[^\n]*\n        if \([^\n]*\) \{\n            \$out->addInlineStyle\([^\n]*\n            \$out->addInlineScript\([^\n]*\n        \}\n','',text,count=1)
+assert without_own_hook(raw.decode()).replace('\r\n','\n')==without_own_hook(repo.decode()).replace('\r\n','\n'),'Live hook differs from source; reconcile first'
+source=without_own_hook(raw.decode());anchor='\t\t$title = $out->getTitle();'
 method=source.split('public static function onBeforePageDisplay',1)[1].split('public static function',1)[0]
 assert method.count(anchor)==1
 addition='''

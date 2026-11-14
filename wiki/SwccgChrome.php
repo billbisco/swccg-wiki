@@ -23,7 +23,7 @@ class SwccgChrome {
         // Bounded public shared-search pilot449; ordinary Wiki pages load no resources.
         if ( $title && $title->getPrefixedText() === 'SWCCG Wiki:Samples/Shared search pilot' ) {
             $out->addInlineStyle( file_get_contents( '/swccg-chrome/shared-search-449.ef40c6e80858.css' ) );
-            $out->addInlineScript( file_get_contents( '/swccg-chrome/shared-search-449.436fe437626f.js' ) );
+            $out->addInlineScript( file_get_contents( '/swccg-chrome/shared-search-449.eaab1776ae20.js' ) );
         }
 
 		if ( $title && in_array( $title->getPrefixedText(), [

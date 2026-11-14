@@ -168,24 +168,25 @@ window.SharedSearchPilotData={"schemaVersion":1,"snapshotId":"449-6b358f28bac5",
             ['contains','identity','zone'].forEach(k=>{controls[k].disabled=!decks;controls[k].closest('label').hidden=!decks;});
             controls.text.placeholder=decks?'Player, event or deck title':'Try JP, Ghhhk, or a title';
         }
-        function symbolNode(id) {
+        function symbolNode(id, iconWordFollows) {
             const s=data.symbols.find(s=>s.id===id);
             if(!s)return element('span','[Unknown symbol]');
-            if(controls.display.value==='readable'||!s.image)return element('span','['+s.label+(id==='none'?'':' icon')+']');
+            if(controls.display.value==='readable'||!s.image)return element('span','['+s.label+(id==='none'||iconWordFollows?'':' icon')+']');
             const span=element('span',null,{class:'ssp-symbol',title:s.label+' icon'});
-            span.append(element('img',null,{src:s.image,alt:s.label+' icon'})); return span;
+            span.append(element('img',null,{src:s.image,alt:s.label+(iconWordFollows?'':' icon')})); return span;
         }
         function textWithSymbols(text) {
             const holder=element('p',null,{class:'ssp-text'});let at=0;
             for(const match of text.matchAll(/\[([^\]]+)\]/g)) {
                 holder.append(document.createTextNode(text.slice(at,match.index)));
                 let id;try{id=engine.symbolId(data,match[1]);}catch(_){id=null;}
-                holder.append(id?symbolNode(id):document.createTextNode(match[0]));at=match.index+match[0].length;
+                const iconWordFollows=/^\s+icon\b/i.test(text.slice(match.index+match[0].length));
+                holder.append(id?symbolNode(id,iconWordFollows):document.createTextNode(match[0]));at=match.index+match[0].length;
             }
             holder.append(document.createTextNode(text.slice(at)));return holder;
         }
         function plainText(text) {
-            return text.replace(/\[([^\]]+)\]/g,(whole,value)=>{try{const id=engine.symbolId(data,value);return '['+data.symbols.find(s=>s.id===id).label+' icon]';}catch(_){return whole;}});
+            return text.replace(/\[([^\]]+)\]/g,(whole,value,offset)=>{try{const id=engine.symbolId(data,value);const follows=/^\s+icon\b/i.test(text.slice(offset+whole.length));return '['+data.symbols.find(s=>s.id===id).label+(follows?'':' icon')+']';}catch(_){return whole;}});
         }
         async function copy(text) {
             copyArea.textContent=text;copyArea.hidden=false;
@@ -196,7 +197,9 @@ window.SharedSearchPilotData={"schemaVersion":1,"snapshotId":"449-6b358f28bac5",
             const h=element('h2');h.append(link(card.title,card.wiki));article.append(h);
             const meta=element('div',null,{class:'ssp-meta'});
             [card.product,labels[card.uniqueness||'unknown']].forEach(text=>meta.append(element('span',text,{class:'ssp-chip'})));
-            const mark=element('span');mark.append(document.createTextNode('Printed symbol: '),symbolNode(card.printedSymbol),document.createTextNode(' '+data.symbols.find(s=>s.id===card.printedSymbol).label));meta.append(mark);article.append(meta,textWithSymbols(card.text));
+            const mark=element('span');const printed=data.symbols.find(s=>s.id===card.printedSymbol);mark.append(document.createTextNode('Printed symbol: '));
+            if(controls.display.value==='symbols'&&printed.image){const image=symbolNode(card.printedSymbol);image.setAttribute('aria-hidden','true');mark.append(image,document.createTextNode(' '));}
+            mark.append(document.createTextNode(printed.label));meta.append(mark);article.append(meta,textWithSymbols(card.text));
             const actions=element('div',null,{class:'ssp-actions'});
             const decks=element('button','Find published decks',{type:'button'});decks.addEventListener('click',()=>{setQuery({mode:'decks',contains:card.id});render(true);});actions.append(decks);
             const copyButton=element('button','Copy readable card text',{type:'button'});copyButton.addEventListener('click',()=>copy(card.title+'\n'+plainText(card.text)));actions.append(copyButton);
@@ -237,7 +240,7 @@ window.SharedSearchPilotData={"schemaVersion":1,"snapshotId":"449-6b358f28bac5",
         const params=new URLSearchParams(location.search);const initial={};
         Object.keys(controls).forEach(key=>{if(params.has('sp_'+key))initial[key]=params.get('sp_'+key);});
         try {
-            const checked=engine.canonicalQuery(data,initial);
+            const checked=engine.search(data,initial).query;
             if(initial.display&&!['symbols','readable'].includes(initial.display))throw new Error('Unknown text display mode.');
             setQuery(Object.assign({},checked,{display:initial.display||'symbols'}));render(false);
         } catch(e) {

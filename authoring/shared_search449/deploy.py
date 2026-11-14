@@ -4,7 +4,10 @@ from pathlib import Path
 p=Path(__file__).parent;phase=sys.argv[1];assert phase in ['shared','test','play'];m=json.loads((p/'build-manifest.json').read_bytes());items=[]
 sha=lambda b:hashlib.sha256(b).hexdigest()
 def add(target,source,old=None,bind=False):
-    raw=(p/'product'/source).read_bytes();items.append(dict(path=target,data=base64.b64encode(raw).decode(),sha256=sha(raw),expected_sha256=sha(old) if old is not None else None,bind_file=bind))
+    raw=(p/'product'/source).read_bytes();prior=[]
+    receipt=p/(phase+'-deployment.json')
+    if receipt.exists():prior=[r.get('after_sha256') or r.get('sha256') for r in json.loads(receipt.read_bytes())['receipts'] if r['path']==target]
+    items.append(dict(path=target,data=base64.b64encode(raw).decode(),sha256=sha(raw),expected_sha256=sha(old) if old is not None else None,prior_own_sha256=prior,bind_file=bind))
 if phase=='shared':
     for name in [m['js'],m['css']]:add('/opt/swccg-wiki/chrome/'+name,name)
     add('/opt/swccg-wiki/SwccgChrome.php','SwccgChrome.php',(p/'SwccgChrome.live-before.php').read_bytes(),True)
@@ -27,7 +30,7 @@ for item in ITEMS:
     target=pathlib.Path(item['path']);raw=base64.b64decode(item['data']);assert hashlib.sha256(raw).hexdigest()==item['sha256']
     if target.exists():
         old=target.read_bytes();oldsha=hashlib.sha256(old).hexdigest()
-        assert oldsha in [item['sha256'],item['expected_sha256']],(str(target),'Concurrent or pre-existing different file; stop')
+        assert oldsha in [item['sha256'],item['expected_sha256']]+item['prior_own_sha256'],(str(target),'Concurrent or pre-existing different file; stop')
     else:assert item['expected_sha256'] is None,(str(target),'Expected old file missing')
     if item['path'].endswith('.php'):
         check=subprocess.run(['docker','exec','-i','swccg_wiki','php','-l','/dev/stdin'],input=raw,stdout=subprocess.PIPE,stderr=subprocess.STDOUT);assert check.returncode==0,check.stdout.decode()
@@ -36,7 +39,7 @@ for item in ITEMS:
     target=pathlib.Path(item['path']);raw=base64.b64decode(item['data']);before=target.read_bytes() if target.exists() else None
     if before==raw:receipts.append(dict(path=str(target),sha256=item['sha256'],already_applied=True));continue
     target.parent.mkdir(parents=True,exist_ok=True)
-    saved=backup/(PHASE+'-'+hashlib.sha256(str(target).encode()).hexdigest()[:12]+'.before')
+    saved=backup/(PHASE+'-'+hashlib.sha256(str(target).encode()).hexdigest()[:12]+'-'+(hashlib.sha256(before).hexdigest()[:12] if before else 'new')+'.before')
     if before is not None:
         assert not saved.exists() or saved.read_bytes()==before;saved.write_bytes(before)
     oldstat=target.stat() if target.exists() else None

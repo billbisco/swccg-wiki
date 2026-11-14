@@ -20,6 +20,12 @@ class SwccgChrome {
 		SwccgCardImages::addPilot( $out );
 		// Bounded review pilot: no resources or behavior on ordinary card pages.
 		$title = $out->getTitle();
+        // Bounded public shared-search pilot449; ordinary Wiki pages load no resources.
+        if ( $title && $title->getPrefixedText() === 'SWCCG Wiki:Samples/Shared search pilot' ) {
+            $out->addInlineStyle( file_get_contents( '/swccg-chrome/shared-search-449.ef40c6e80858.css' ) );
+            $out->addInlineScript( file_get_contents( '/swccg-chrome/shared-search-449.436fe437626f.js' ) );
+        }
+
 		if ( $title && in_array( $title->getPrefixedText(), [
 			'SWCCG Wiki:Samples/Original Virtual Darth Vader image viewer',
 			'SWCCG Wiki:Samples/Original Virtual Luke Skywalker image viewer',
