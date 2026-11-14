@@ -9,8 +9,9 @@ const card={label:'Example',state:'1101_1:PC-E2',language:'en',slip:'slip.png',r
 const messages={original:'Original',remastered:'Remastered',group:'Card image',setting:'Card images',save:'Save default',saved:'Saved',failed:'Save failed'};
 function portrait(file){return `<div class="card-portrait"><a href="/wiki/File:${file}"><img src="/images/${file}"></a></div>`;}
 function markup(key='example'){return `<div class="card-rail">${portrait('original.gif')}${portrait('remaster.webp')}${portrait('slip.png')}<div class="card-image-note"><span class="swccg-card-image-marker" data-card-image-key="${key}"></span></div><table class="card-infobox"><caption>Info</caption></table></div><p class="game-text">Exact selected publication text</p>`;}
-async function fixture({guest='original',account,invalidAccount,failRead,failWrite,failLoad,legacyThenables,blockStorage,words=messages,definition=card}={}){
- const dom=new JSDOM(`<div class="mw-parser-output">${markup()}</div>`,{url:'https://wiki.swccg.com/wiki/Example'});const w=dom.window;
+async function fixture({guest='original',account,invalidAccount,failRead,failWrite,failLoad,legacyThenables,blockStorage,screenWidth,words=messages,definition=card}={}){
+ const dom=new JSDOM(`<meta name="viewport" content="width=1120"><div class="mw-parser-output">${markup()}</div>`,{url:'https://wiki.swccg.com/wiki/Example'});const w=dom.window;
+ if(screenWidth)Object.defineProperty(w.screen,'width',{value:screenWidth});
  const cfg={wgUserName:account?'TestBot':null,swccgCardImagePilot:{cards:{example:structuredClone(definition)},messages:words}};
  const calls=[];let value=invalidAccount||account;let guestValue=guest;
  Object.defineProperty(w,'localStorage',{value:{getItem(){if(blockStorage)throw Error('blocked');return guestValue;},setItem(k,v){if(blockStorage)throw Error('blocked');guestValue=v;}}});
@@ -72,6 +73,11 @@ test('single rendition has no visible pair and unknown markers retain native fal
 });
 test('interface localization is independent of English image language',async()=>{
  const f=await fixture({words:{...messages,original:'オリジナル',remastered:'リマスター'}});assert.ok(button(f,'オリジナル'));button(f,'リマスター').click();assert.equal(selected(f),'/images/remaster.webp');f.close();
+});
+test('phone viewport adjustment is limited to allowlisted pilot script activation',async()=>{
+ const phone=await fixture({screenWidth:390});assert.equal(phone.doc.querySelector('meta[name="viewport"]').content,'width=device-width, initial-scale=1');phone.close();
+ const desktop=await fixture({screenWidth:1920});assert.equal(desktop.doc.querySelector('meta[name="viewport"]').content,'width=1120');desktop.close();
+ const dom=new JSDOM('<meta name="viewport" content="width=1120">');Object.defineProperty(dom.window.screen,'width',{value:390});dom.window.mw={config:{get:()=>undefined}};viewer.start(dom.window);assert.equal(dom.window.document.querySelector('meta').content,'width=1120');dom.window.close();
 });
 test('replacing selected card/language recomputes availability without duplicate controls',async()=>{
  const f=await fixture();f.cfg.swccgCardImagePilot.cards.example={...card,language:'ja',renditions:[{...card.renditions[1],language:'ja'}]};await f.w.swccgCardImages.initialize();assert.equal(selected(f),'/images/remaster.webp');assert.equal(f.doc.querySelector('.swccg-card-image-choices').hidden,true);assert.equal(f.doc.querySelectorAll('.swccg-card-image-stage').length,1);f.close();
