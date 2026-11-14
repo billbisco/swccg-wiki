@@ -138,9 +138,9 @@ def control_directory(repo: Path) -> Path:
 def archive_response(url: str, status: int, headers=None):
     if ACTIVE_CONTROL and urllib.parse.urlsplit(url).hostname in {"web.archive.org", "archive.org"}:
         path = urllib.parse.urlsplit(url).path
-        if status == 401 and (path == "/save" or path.startswith("/save/status/")):
+        if status == 401 and (path == "/save" or path.startswith("/save/")):
             ACTIVE_CONTROL.authentication_failed()
-        if status == 403 and (path == "/save" or path.startswith("/save/status/")):
+        if status == 403 and (path == "/save" or path.startswith("/save/")):
             ACTIVE_CONTROL.provider_failed(status)
         if status == 429 or status >= 500:
             ACTIVE_CONTROL.provider_failed(status, (headers or {}).get("Retry-After"))
@@ -225,9 +225,16 @@ def latest_capture(url: str) -> str:
     q = "https://archive.org/wayback/available?url=" + urllib.parse.quote(url, safe="")
     try:
         with urllib.request.urlopen(urllib.request.Request(q, headers={"User-Agent": UA}), timeout=60) as r:
+            archive_response(q, r.status, r.headers)
             snap = json.loads(r.read().decode()).get("archived_snapshots", {}).get("closest") or {}
     except Paused:
         raise
+    except urllib.error.HTTPError as error:
+        archive_response(q, error.code, error.headers)
+        return ""
+    except (urllib.error.URLError, TimeoutError, ConnectionError):
+        archive_transport_failed(q)
+        return ""
     except Exception:  # noqa: BLE001
         return ""
     cap = snap.get("url", "")
@@ -244,6 +251,7 @@ def save_anon(url: str) -> str:
     req = urllib.request.Request("https://web.archive.org/save/" + url, headers={"User-Agent": UA})
     try:
         resp = OPENER.open(req, timeout=90)
+        archive_response(req.full_url, resp.status, resp.headers)
         loc = resp.headers.get("Location") or resp.geturl()
     except urllib.error.HTTPError as e:
         archive_response(req.full_url, e.code, e.headers)
@@ -1001,6 +1009,46 @@ def confirm(url: str, e: dict) -> bool:
     return True
 
 
+def reconcile_recovery_probe(control: Control, done: dict, changed: dict, deadline: float) -> None:
+    """One accepted canary bypasses the ordinary pending-job age window.
+
+    Never resubmit an acknowledged probe merely because it was offline. Poll or
+    verify it once per run; an unresolved24h outcome becomes an explicit repair.
+    """
+    probe = control.state.get("probe_url")
+    if control.state["mode"] != "half_open" or not probe:
+        return
+    entry = done.get(probe)
+    if not entry or not (entry.get("job_id") or entry.get("capture")):
+        control.probe_needs_repair("accepted canary receipt is missing")
+    if time.monotonic() > deadline - 60:
+        return
+    if control.state.get("probe_started_at") is None:
+        try:
+            value = control.state.get("last_submission_attempt_at") or entry["last"]
+            date = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            if date.tzinfo is None:
+                raise ValueError("canary time has no timezone")
+            started = date.timestamp()
+        except (KeyError, ValueError):
+            control.probe_needs_repair("accepted canary age cannot be established")
+        control.state["probe_started_at"] = started
+        control.save()
+    try:
+        if entry.get("status") == "pending":
+            if confirm(probe, entry):
+                changed[probe] = entry
+        elif entry.get("status") == "ok":
+            try_verify(probe, entry)
+            changed[probe] = entry
+    except StatusRetry:
+        control.provider_failed()
+    control.checkpoint(done, control.initial_done)
+    if (entry.get("status") != "verified" and
+            control.clock() - control.state["probe_started_at"] >= Control.PROBE_DEADLINE):
+        control.probe_needs_repair("accepted canary unresolved after24hours")
+
+
 def _run(repo: Path, minutes: float, control: Control) -> None:
     reset_to_origin(repo)
     urls, done = load(repo)
@@ -1013,8 +1061,11 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     print("auth:", "SPN2 authenticated" if AUTH else "anonymous", flush=True)
     submission_session = {"authenticated": bool(AUTH)}
 
+    # Recovery is not stranded behind the ordinary2h pending-confirm cutoff.
+    reconcile_recovery_probe(control, done, changed, deadline)
+
     # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
-    confirm_urls = pending_confirm_urls(done)
+    confirm_urls = [url for url in pending_confirm_urls(done) if url != control.state.get("probe_url")]
     print(
         f"pending-confirm {len(confirm_urls)} cap={PENDING_CONFIRM_CAP} "
         f"max_age_s={int(PENDING_CONFIRM_MAX_AGE.total_seconds())}",

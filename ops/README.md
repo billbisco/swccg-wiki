@@ -47,6 +47,14 @@ programs that ignore this owner; those clients must enqueue work here.
   A submission acknowledgment or HTTP200 cannot close the circuit; the existing
   strict replay/content verifier must mark that canary verified first. Source
   failures remain distinct from a provider/account failure.
+  The accepted canary is reconciled once per run even after the ordinary2h
+  pending-confirm window. After24h without a verified outcome, one final bounded
+  reconciliation leaves it in `probe_blocked` owned repair, preserving its job
+  ID/capture rather than silently stranding or replacing it. Further timer runs
+  make no Archive.org requests for that unresolved probe. An independent checked
+  receipt can be synced into the ledger to release the repair state; do not delete
+  control files or invent a verification result. A provider/auth pause during a
+  probe retains the same accepted identity for later reconciliation.
 * Accepted jobs and partial ledger updates are checkpointed atomically before
   waiting. After interruption they are reconciled against the fresh Git ledger.
   A different newer receipt causes a guarded stop, never an overwrite. Unknown
@@ -60,6 +68,11 @@ ledger counts, oldest pending activity and last newly verified progress.
 `repair.json` records a deduplicated open/recovered incident, owning account and
 repair issue407. Service exit0 is explicitly **not** proof of a new capture.
 No new notification destination, systemd unit, credential or timer is installed.
+The combined worker defers its Archive.org submission, status and replay traffic
+while paused, including availability lookups. Independent backups, registration,
+health reading and Wiki publication are unaffected. A separately owned bounded
+read-only archive-verification lane may continue; this worker does not promise
+preservation progress while its authentication circuit is blocked.
 
 Read health without contacting Git or Archive.org:
 

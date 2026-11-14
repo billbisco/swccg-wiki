@@ -62,6 +62,7 @@ class Control:
     MIN_PAUSE = 15 * 60
     MAX_PAUSE = 24 * 60 * 60
     SUBMISSION_GAP = 10
+    PROBE_DEADLINE = 24 * 60 * 60
 
     def __init__(self, directory: Path, credential: str | None, clock=time.time):
         self.directory = Path(directory)
@@ -122,13 +123,16 @@ class Control:
     def _validate(self):
         s = self.state
         if (s.get("schema") != 1 or s.get("mode") not in
-                {"healthy", "open", "auth_blocked", "half_open"} or
+                {"healthy", "open", "auth_blocked", "half_open", "probe_blocked"} or
                 not isinstance(s.get("failure_count"), int) or s["failure_count"] < 0 or
                 not isinstance(s.get("next_attempt"), (int, float)) or
                 not math.isfinite(s["next_attempt"]) or s["next_attempt"] < 0 or
                 not isinstance(s.get("next_submission_at", 0), (int, float)) or
                 not math.isfinite(s.get("next_submission_at", 0)) or
                 s.get("next_submission_at", 0) < 0 or
+                not isinstance(s.get("probe_started_at", 0), (int, float)) or
+                not math.isfinite(s.get("probe_started_at", 0)) or
+                s.get("probe_started_at", 0) < 0 or
                 not (s.get("probe_url") is None or isinstance(s["probe_url"], str))):
             raise ValueError("Invalid Wayback control state; refusing network work")
 
@@ -168,17 +172,22 @@ class Control:
 
     def begin(self):
         s = self.state
+        if s["mode"] == "probe_blocked":
+            if self.done.get(s.get("probe_url"), {}).get("status") == "verified":
+                self.reconcile(self.done, set())
+            else:
+                raise Paused("accepted recovery canary needs reconciliation; no request made")
         if s["mode"] == "auth_blocked":
             if not self.credential or self.credential == s.get("rejected_credential"):
                 raise Paused("authentication repair required; no request made")
-            s.update(mode="half_open", next_attempt=0, probe_url=None,
+            s.update(mode="half_open", next_attempt=0,
                      reason="changed credential requires verified canary")
         if s["next_attempt"] > self.clock():
             raise Paused("shared cooldown is still active; no request made")
         if s.get("next_submission_at", 0) > self.clock():
             raise Paused("shared submission pacing is still active; no request made")
         if s["mode"] == "open":
-            s.update(mode="half_open", probe_url=None,
+            s.update(mode="half_open",
                      reason="provider recovery requires verified canary")
         self.save()
 
@@ -192,14 +201,16 @@ class Control:
             raise Paused("one recovery canary is awaiting verification")
         if self.state["mode"] == "half_open":
             self.state["probe_url"] = url
+            self.state["probe_started_at"] = self.clock()
         self.state["last_submission_attempt_at"] = timestamp(self.clock())
         self.state["next_submission_at"] = self.clock() + self.SUBMISSION_GAP
         self.save()
 
     def authentication_failed(self):
+        accepted = self.accepted_probe()
         self.state.update(mode="auth_blocked", reason="authentication rejected",
                           http_status=401, rejected_credential=self.credential,
-                          next_attempt=0, probe_url=None)
+                          next_attempt=0, probe_url=accepted)
         self.save()
         self._pause_with_repair("authentication rejected; authorized account repair required",
                                "authentication rejected; no anonymous fallback")
@@ -210,9 +221,20 @@ class Control:
         delay = max(delay, retry_seconds(retry_after, self.clock()))
         self.state.update(mode="open", failure_count=count,
                           reason="provider throttled" if status == 429 else "provider unavailable",
-                          http_status=status, next_attempt=self.clock() + delay, probe_url=None)
+                          http_status=status, next_attempt=self.clock() + delay, probe_url=self.accepted_probe())
         self.save()
         self._pause_with_repair(self.state["reason"], "provider circuit opened; shared cooldown persisted")
+
+    def accepted_probe(self):
+        probe = self.state.get("probe_url")
+        entry = self.done.get(probe, {})
+        return probe if entry.get("job_id") or entry.get("capture") else None
+
+    def probe_needs_repair(self, reason: str):
+        # Keep probe_url and its accepted job/capture in the ledger and journal.
+        self.state.update(mode="probe_blocked", reason=reason, next_attempt=0)
+        self.save()
+        self._pause_with_repair(reason, "accepted recovery canary requires owned reconciliation")
 
     def _pause_with_repair(self, reason: str, message: str):
         try:
@@ -242,7 +264,7 @@ class Control:
         if newly_verified:
             self.state["last_verified_progress_at"] = timestamp(self.clock())
         probe = self.state.get("probe_url")
-        if self.state["mode"] == "half_open" and probe:
+        if self.state["mode"] in {"half_open", "probe_blocked"} and probe:
             entry = done.get(probe, {})
             if entry.get("status") == "verified":
                 self.state.update(mode="healthy", failure_count=0, next_attempt=0,
@@ -252,7 +274,7 @@ class Control:
                     data = json.loads(repair.read_text(encoding="utf-8"))
                     data.update(status="recovered", recovered_at=timestamp(self.clock()))
                     atomic_json(repair, data)
-            elif entry.get("status") in {"retry", "failed", "unverified"}:
+            elif self.state["mode"] == "half_open" and entry.get("status") in {"retry", "failed", "unverified"}:
                 # A source-specific rejection does not certify provider recovery.
                 self.state.update(probe_url=None, next_attempt=self.clock() + self.MIN_PAUSE,
                                   reason="canary unverified; next bounded probe deferred")
@@ -267,7 +289,7 @@ class Control:
             "schema": 1, "checked_at": timestamp(self.clock()), "owner": "server-wayback-queue",
             "outcome": outcome, "mode": self.state["mode"],
             "reason": self.state.get("reason"), "http_status": self.state.get("http_status"),
-            "next_eligible_attempt_at": None if self.state["mode"] == "auth_blocked" or awaiting else
+            "next_eligible_attempt_at": None if self.state["mode"] in {"auth_blocked", "probe_blocked"} or awaiting else
                 timestamp(max(self.state["next_attempt"], self.state.get("next_submission_at", 0))),
             "awaiting_canary_verification": awaiting,
             "last_submission_attempt_at": self.state.get("last_submission_attempt_at"),
