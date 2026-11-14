@@ -1,0 +1,9 @@
+Public current-page backup and restore checkpoint
+
+This bundle includes EVERY page namespace returned by MediaWiki public export, including File descriptions, Talk/User pages, templates, categories and Card pages. It contains current revisions, not all historical text revisions. Public image/file bytes and their history are a separate upload-version backup.
+
+The base wiki-current.xml.gz is the official MediaWiki XML public --current export and can be decompressed and imported into an isolated MediaWiki via the supported importDump maintenance script. Never run that import against the production wiki for verification. Target page identities and exact UTF8 payload hashes are in target-pages-manifest.jsonl. closing-delta-pages.jsonl.gz carries any changed/new immutable target revisions; this checkpoint has zero deltas. closing-current-stub.xml.gz independently enumerates target revisions; the complete target set matched the base.
+
+Publication manifest object paths are content-addressed. Locate each logical file by versions[].id and its sha256, then use objects[sha256].path at the SAME immutable commit. Verify every artifact before parsing. Run the pinned verify_restored_pages.py READER_ROOT MANIFEST_PATH from an independent fresh HTTPS reader, with no alternates/shared Git objects. It reconstructs every target text from base plus delta and verifies page/revision IDs, exact bytes and SHA256; no production writes or Archive.org calls.
+
+Scope time: export intervals are recorded in export-receipt.json and closing-receipt.json. The closing export is an observed interval rather than a database-wide instant. Every listed revision ID is immutable; later edits belong to later backups. Hidden/private/deleted revisions are not promised by this PUBLIC export. Full database/configuration recovery is covered by the separate encrypted backup system.

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "source": "MediaWiki public dumpBackup --current",
+  "started_at": "2026-11-14T18:45:41.816786+00:00",
+  "finished_at": "2026-11-14T18:49:24.365936+00:00",
+  "cutoff_semantics": "Export interval; concurrent updates require closing delta reconciliation. Not a single-instant snapshot.",
+  "archive_org_requests": 0,
+  "restart_or_live_mutation": false,
+  "xml_bytes": 320017208,
+  "gzip_sha256": "e6d50349f1f6624d79ba73276850fe631512dbbc28494977748b9a8dab043248",
+  "gzip_bytes": 52182532,
+  "parts": [
+    {
+      "path": "wiki-current.xml.gz",
+      "index": 0,
+      "offset": 0,
+      "bytes": 52182532,
+      "sha256": "e6d50349f1f6624d79ba73276850fe631512dbbc28494977748b9a8dab043248"
+    }
+  ],
+  "pages": 107621,
+  "text_bytes": 243462962,
+  "namespace_counts": {
+    "0": 43697,
+    "10": 15,
+    "3000": 8769,
+    "8": 6,
+    "6": 42974,
+    "14": 271,
+    "2": 39,
+    "4": 25,
+    "1": 11792,
+    "5": 5,
+    "11": 5,
+    "7": 16,
+    "3": 5,
+    "15": 2
+  },
+  "sha1_size_failures": 0,
+  "local_independent_restore": {
+    "restored_pages": 107621,
+    "all_page_payloads_sha256_verified": true,
+    "ordered_page_sha256_digest": "c47dd2b50edb8b8471aebb128cd55e5c755d20d5d10664b7b5c808c564366106"
+  }
+}

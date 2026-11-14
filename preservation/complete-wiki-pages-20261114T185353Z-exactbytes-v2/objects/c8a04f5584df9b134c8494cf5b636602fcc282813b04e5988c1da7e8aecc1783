@@ -1,0 +1,78 @@
+from __future__ import annotations
+import argparse,collections,datetime,gzip,hashlib,json,os,shutil,sqlite3,subprocess,time,urllib.parse,urllib.request,xml.etree.ElementTree as ET
+from pathlib import Path
+HERE=Path(__file__).resolve().parent
+API='https://wiki.swccg.com/api.php'
+NS='{http://www.mediawiki.org/xml/export-0.11/}'
+def now():return datetime.datetime.now(datetime.timezone.utc).isoformat()
+def atomic(path,data):
+ t=path.with_suffix(path.suffix+'.tmp');t.write_text(json.dumps(data,indent=2)+'\n',encoding='utf8');os.replace(t,path)
+def api(params):
+ params={'format':'json','formatversion':2,**params};u=API+'?'+urllib.parse.urlencode(params)
+ r=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'SWCCG-IndependentBackupAudit/1.0'}),timeout=90)
+ with r:j=json.load(r)
+ if 'error' in j:raise RuntimeError(j['error'])
+ return j
+def digest(path):
+ h=hashlib.sha256();n=0
+ with path.open('rb') as f:
+  while b:=f.read(1024**2):h.update(b);n+=len(b)
+ return h.hexdigest(),n
+def parse(source,manifest,dbpath):
+ db=sqlite3.connect(dbpath);db.execute('CREATE TABLE pages(page_id INTEGER PRIMARY KEY,title TEXT UNIQUE,namespace INTEGER,revision_id INTEGER,timestamp TEXT,model TEXT,bytes INTEGER,sha1 TEXT,sha256 TEXT,text_deleted INTEGER)')
+ counts=collections.Counter();total=0;bad=[];last=0
+ with gzip.open(source,'rb') as f,manifest.open('w',encoding='utf8',newline='\n') as out:
+  for event,e in ET.iterparse(f,events=('end',)):
+   if e.tag!=NS+'page':continue
+   pid=int(e.findtext(NS+'id'));title=e.findtext(NS+'title');ns=int(e.findtext(NS+'ns'));rev=e.find(NS+'revision')
+   if rev is None:raise RuntimeError('Page has no public revision: '+str(pid))
+   rid=int(rev.findtext(NS+'id'));stamp=rev.findtext(NS+'timestamp');model=rev.findtext(NS+'model');text=rev.find(NS+'text')
+   if text is None:raise RuntimeError('Page has no main text: '+str(pid))
+   hidden=int('deleted' in text.attrib);raw=(text.text or '').encode('utf8');sha1=hashlib.sha1(raw).hexdigest();sha256=hashlib.sha256(raw).hexdigest();declared=text.get('sha1',rev.findtext(NS+'sha1',''));expected=int(text.get('bytes',len(raw)))
+   if not hidden and (expected!=len(raw) or (declared and int(declared,36)!=int(sha1,16))):bad.append(pid)
+   row={'page_id':pid,'title':title,'namespace':ns,'revision_id':rid,'timestamp':stamp,'model':model,'bytes':len(raw),'sha1':sha1,'sha256':sha256,'text_deleted':hidden}
+   db.execute('INSERT INTO pages VALUES(?,?,?,?,?,?,?,?,?,?)',tuple(row.values()));out.write(json.dumps(row,ensure_ascii=False,separators=(',',':'))+'\n');counts[str(ns)]+=1;total+=len(raw);last+=1;e.clear()
+   if last%10000==0:db.commit();atomic(HERE/'progress.json',{'phase':'parsing','pages':last,'bytes':total,'at':now()})
+ db.commit();db.close()
+ if bad:raise RuntimeError('XML text size/SHA1 mismatch pages '+str(bad[:20]))
+ return {'pages':last,'text_bytes':total,'namespace_counts':dict(counts),'sha1_size_failures':len(bad)}
+def restore(source,manifest):
+ n=0;h=hashlib.sha256()
+ with gzip.open(source,'rb') as f,manifest.open(encoding='utf8') as m:
+  for event,e in ET.iterparse(f,events=('end',)):
+   if e.tag!=NS+'page':continue
+   row=json.loads(next(m));rev=e.find(NS+'revision');text=rev.find(NS+'text');raw=(text.text or '').encode('utf8')
+   if (int(e.findtext(NS+'id'))!=row['page_id'] or int(rev.findtext(NS+'id'))!=row['revision_id'] or len(raw)!=row['bytes'] or hashlib.sha256(raw).hexdigest()!=row['sha256']):raise RuntimeError('Independent restore mismatch '+str(row['page_id']))
+   n+=1;h.update(bytes.fromhex(row['sha256']));e.clear()
+  if m.read().strip():raise RuntimeError('Manifest trailing rows')
+ return {'restored_pages':n,'all_page_payloads_sha256_verified':True,'ordered_page_sha256_digest':h.hexdigest()}
+def main():
+ p=argparse.ArgumentParser();p.add_argument('--end',type=int);a=p.parse_args();HERE.mkdir(exist_ok=True)
+ site=api({'action':'query','meta':'siteinfo','siprop':'namespaces|statistics'})['query'];atomic(HERE/'siteinfo-before.json',site)
+ started=now();target=HERE/'wiki-current.xml.gz';errpath=HERE/'export-stderr.txt'
+ args=['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','gemp','docker exec -u www-data swccg_wiki nice -n 10 php maintenance/run.php dumpBackup --current --quiet'+(' --end '+str(a.end) if a.end else '')]
+ n=0;tick=time.monotonic()
+ with errpath.open('wb') as err:
+  proc=subprocess.Popen(args,stdout=subprocess.PIPE,stderr=err)
+  try:
+   with target.open('wb') as output,gzip.GzipFile(filename='',mode='wb',fileobj=output,mtime=0,compresslevel=6) as gz:
+    while b:=proc.stdout.read(1024**2):
+     if shutil.disk_usage(HERE).free<20*1024**3:raise RuntimeError('PC20GiB free reserve reached')
+     n+=len(b)
+     if n>2*1024**3:raise RuntimeError('Explicit2GiB XML budget reached')
+     gz.write(b)
+     if time.monotonic()-tick>10:atomic(HERE/'progress.json',{'phase':'streaming','xml_bytes':n,'compressed_bytes':output.tell(),'at':now()});tick=time.monotonic()
+   if proc.wait(timeout=60):raise RuntimeError('Remote public export failed; inspect stderr')
+  except BaseException:proc.kill();proc.wait();raise
+ finished=now();atomic(HERE/'progress.json',{'phase':'parsing','xml_bytes':n,'at':now()})
+ parsed=parse(target,HERE/'pages-manifest.jsonl',HERE/'pages.sqlite');verified=restore(target,HERE/'pages-manifest.jsonl');sha,size=digest(target)
+ parts=[]
+ if size>90*1024**2:
+  with target.open('rb') as f:
+   offset=0;i=0
+   while b:=f.read(90*1024**2):
+    part=HERE/f'wiki-current.xml.gz.part-{i:03d}';part.write_bytes(b);parts.append({'path':part.name,'index':i,'offset':offset,'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()});offset+=len(b);i+=1
+ else:parts=[{'path':target.name,'index':0,'offset':0,'bytes':size,'sha256':sha}]
+ atomic(HERE/'export-receipt.json',{'schema_version':1,'source':'MediaWiki public dumpBackup --current','started_at':started,'finished_at':finished,'cutoff_semantics':'Export interval; concurrent updates require closing delta reconciliation. Not a single-instant snapshot.','archive_org_requests':0,'restart_or_live_mutation':False,'xml_bytes':n,'gzip_sha256':sha,'gzip_bytes':size,'parts':parts,**parsed,'local_independent_restore':verified})
+ print(json.dumps({'status':'complete',**parsed,**verified,'gzip_bytes':size,'path':str(target)},indent=2),flush=True)
+if __name__=='__main__':main()

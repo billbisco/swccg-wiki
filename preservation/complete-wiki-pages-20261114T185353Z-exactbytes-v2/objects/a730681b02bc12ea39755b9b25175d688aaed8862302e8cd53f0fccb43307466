@@ -1,0 +1,39 @@
+"""Verify all current-page payloads from a separately downloaded immutable snapshot."""
+import argparse,gzip,hashlib,json,xml.etree.ElementTree as ET
+from pathlib import Path
+NS='{http://www.mediawiki.org/xml/export-0.11/}'
+def digest(path):
+ h=hashlib.sha256();n=0
+ with path.open('rb') as f:
+  while b:=f.read(1024**2):h.update(b);n+=len(b)
+ return h.hexdigest(),n
+def verify(root,manifest):
+ m=json.loads(manifest.read_text(encoding='utf8'));paths={}
+ for record in m['versions']:
+  obj=m['objects'][record['sha256']];path=(root/obj['path']).resolve()
+  if not path.is_relative_to(root.resolve()):raise ValueError('Unsafe object path')
+  if digest(path)!=(record['sha256'],record['bytes']):raise ValueError('Artifact hash mismatch '+record['id'])
+  paths[record['id']]=path
+ targets={r['page_id']:r for r in map(json.loads,paths['target-pages-manifest.jsonl'].open(encoding='utf8'))}
+ deltas={r['page_id']:r for r in map(json.loads,gzip.open(paths['closing-delta-pages.jsonl.gz'],'rt',encoding='utf8'))}
+ seen=set();textbytes=0;aggregate=hashlib.sha256()
+ with gzip.open(paths['wiki-current.xml.gz'],'rb') as f:
+  for _,page in ET.iterparse(f,events=('end',)):
+   if page.tag!=NS+'page':continue
+   pid=int(page.findtext(NS+'id'));target=targets.get(pid)
+   if target is None:page.clear();continue
+   if pid in seen:raise ValueError('Duplicate base page')
+   if pid in deltas:row=deltas[pid];raw=row['text'].encode('utf8');rid=row['revision_id']
+   else:rev=page.find(NS+'revision');raw=(rev.findtext(NS+'text','')).encode('utf8');rid=int(rev.findtext(NS+'id'))
+   if rid!=target['revision_id'] or len(raw)!=target['bytes'] or hashlib.sha256(raw).hexdigest()!=target['sha256']:raise ValueError('Page payload mismatch '+str(pid))
+   seen.add(pid);textbytes+=len(raw);aggregate.update(bytes.fromhex(target['sha256']));page.clear()
+ for pid in set(targets)-seen:
+  target=targets[pid];row=deltas.get(pid)
+  if row is None:raise ValueError('Target page missing from base and delta')
+  raw=row['text'].encode('utf8')
+  if row['revision_id']!=target['revision_id'] or len(raw)!=target['bytes'] or hashlib.sha256(raw).hexdigest()!=target['sha256']:raise ValueError('New page payload mismatch')
+  seen.add(pid);textbytes+=len(raw);aggregate.update(bytes.fromhex(target['sha256']))
+ return {'schema_version':1,'scope':m['scope'],'frozen_at':m['frozen_at'],'target_pages':len(targets),'restored_pages':len(seen),'restored_text_bytes':textbytes,'all_artifact_and_page_hashes_verified':True,'ordered_page_sha256_digest':aggregate.hexdigest(),'archive_org_requests':0,'live_restore_performed':False,'method':'Artifact hash verification, gzip/XML extraction and exact target revision/byte/SHA256 check for every page'}
+if __name__=='__main__':
+ p=argparse.ArgumentParser();p.add_argument('reader_root',type=Path);p.add_argument('manifest',type=Path);a=p.parse_args();print(json.dumps(verify(a.reader_root,a.manifest),indent=2))
+

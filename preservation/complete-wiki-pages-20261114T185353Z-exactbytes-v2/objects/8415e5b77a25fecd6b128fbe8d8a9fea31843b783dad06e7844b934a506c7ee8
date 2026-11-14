@@ -1,0 +1,31 @@
+import sys,tempfile,unittest,gzip,hashlib,xml.etree.ElementTree as ET
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+import export_current as e
+class ExportTest(unittest.TestCase):
+ def test_all_namespace_unicode_and_empty_restore(self):
+  with tempfile.TemporaryDirectory() as td:
+   p=Path(td);root=ET.Element(e.NS+'mediawiki')
+   values=[(1,0,'Main','lastline'),(2,1,'Talk:Main','Unicode á 漢字\n\n'),(3,6,'File:One',''),(4,3001,'Card talk:A','\r\n')]
+   # XML normalizes CR/LF, so use supported wiki-normalized inputs in good fixture.
+   values[-1]=(4,3001,'Card talk:A','\n')
+   for pid,ns,title,text in values:
+    page=ET.SubElement(root,e.NS+'page');ET.SubElement(page,e.NS+'title').text=title;ET.SubElement(page,e.NS+'ns').text=str(ns);ET.SubElement(page,e.NS+'id').text=str(pid)
+    rev=ET.SubElement(page,e.NS+'revision');ET.SubElement(rev,e.NS+'id').text=str(pid+100);ET.SubElement(rev,e.NS+'timestamp').text='2026-11-14T18:00:00Z';ET.SubElement(rev,e.NS+'model').text='wikitext'
+    raw=text.encode();sha=hashlib.sha1(raw).hexdigest();n=int(sha,16);digits='0123456789abcdefghijklmnopqrstuvwxyz';out=''
+    while n:out=digits[n%36]+out;n//=36
+    ET.SubElement(rev,e.NS+'text',{'bytes':str(len(raw)),'sha1':out or '0'}).text=text
+   f=p/'source.gz'
+   with gzip.open(f,'wb') as gz:gz.write(ET.tostring(root,encoding='utf-8'))
+   old=e.HERE;e.HERE=p
+   try:r=e.parse(f,p/'manifest',p/'pages.db');v=e.restore(f,p/'manifest')
+   finally:e.HERE=old
+   self.assertEqual(r['pages'],4);self.assertEqual(set(r['namespace_counts']),{'0','1','6','3001'});self.assertEqual(v['restored_pages'],4)
+   raw=f.read_bytes();f.write_bytes(raw[:-6])
+   with self.assertRaises((EOFError,OSError)):e.restore(f,p/'manifest')
+ def test_reject_wrong_source_sha(self):
+  with tempfile.TemporaryDirectory() as td:
+   p=Path(td);f=p/'s.gz';xml=f'<mediawiki xmlns="{e.NS[1:-1]}"><page><title>X</title><ns>0</ns><id>1</id><revision><id>2</id><text bytes="1" sha1="0">x</text></revision></page></mediawiki>'
+   with gzip.open(f,'wb') as g:g.write(xml.encode())
+   with self.assertRaisesRegex(RuntimeError,'SHA1'):e.parse(f,p/'manifest',p/'pages.db')
+if __name__=='__main__':unittest.main()

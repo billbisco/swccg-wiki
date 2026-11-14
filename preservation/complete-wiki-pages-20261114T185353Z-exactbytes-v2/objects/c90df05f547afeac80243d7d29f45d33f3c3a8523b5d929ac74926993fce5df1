@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source": "MediaWiki public dumpBackup --current --stub",
+  "target_inventory_started_at": "2026-11-14T18:52:53.411250+00:00",
+  "target_inventory_finished_at": "2026-11-14T18:53:47.210157+00:00",
+  "closure_finished_at": "2026-11-14T18:53:53.251195+00:00",
+  "scope": "Every public page current revision returned by closing public export across all namespaces",
+  "consistency_limit": "Target enumeration is an observed interval, not a frozen database instant. Exact target revision IDs remain immutable; later edits are outside this checkpoint.",
+  "base_pages": 107621,
+  "closing_pages": 107621,
+  "changed_or_new_payloads": 0,
+  "removed_base_page_ids": [],
+  "archive_org_requests": 0,
+  "local_bundle_restore": {
+    "target_pages": 107621,
+    "restored_target_pages": 107621,
+    "restored_text_bytes": 243462962,
+    "base_pages_excluded_as_no_longer_current": null,
+    "all_target_bytes_and_sha256_verified": true
+  }
+}
