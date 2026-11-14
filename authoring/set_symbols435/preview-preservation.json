@@ -1,0 +1,168 @@
+{
+  "receipt": {
+    "schema_version": 1,
+    "job_id": "payload:e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+    "object_id": "c4f0f8a08c80cd8d09dc40b64d1dba57fce88cd80cbf65e8040c38fffa6713bb",
+    "subject_id": "574080497ba962e159ad88b48401557efeed46c6a88f6af616146fcc3097f24c",
+    "request_id": "c3b6d76b7cf066893acb44f88c9a07e18dfb69b74d232c784e22d4ff65798992",
+    "record": "requests/e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4/c4f0f8a08c80cd8d09dc40b64d1dba57fce88cd80cbf65e8040c38fffa6713bb/c3b6d76b7cf066893acb44f88c9a07e18dfb69b74d232c784e22d4ff65798992.json",
+    "record_sha256": "7bf1d02e16e15b9d1dfe69885a2a33702c1e8e92d5e2c3d674c451fa1020a843",
+    "state": "awaiting_stage",
+    "reason": "Bill active absolute Archive.org hold; visual review page is independently backed up, not submitted or archived.",
+    "submitted": false,
+    "created": true
+  },
+  "export": {
+    "schema_version": 1,
+    "objects": [
+      {
+        "subject": {
+          "bytes": 582194,
+          "content_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+          "kind": "source_snapshot",
+          "title": "https://swccg.com/snapshots/review/story-435-set-symbols.html"
+        },
+        "source": {
+          "url": "https://swccg.com/snapshots/review/story-435-set-symbols.html",
+          "sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+          "bytes": 582194
+        },
+        "readiness": {
+          "ready": false,
+          "reason": "Bill active absolute Archive.org hold; visual review page is independently backed up, not submitted or archived.",
+          "stage_bytes": 0
+        },
+        "owner": "MemoryCoreChatGPT / swccg-guild/work#435",
+        "continuation": "Keep all archive requests paused. Only after explicit Bill resumption may the existing server-wayback-owner stage/promote/submit and verify the exact HTML.",
+        "approval_scope": {
+          "authorization": "Bill requested shared symbols and a visual test on14 November2026",
+          "story": 435
+        },
+        "object_id": "c4f0f8a08c80cd8d09dc40b64d1dba57fce88cd80cbf65e8040c38fffa6713bb",
+        "subject_id": "574080497ba962e159ad88b48401557efeed46c6a88f6af616146fcc3097f24c",
+        "job_id": "payload:e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+        "request_id": "c3b6d76b7cf066893acb44f88c9a07e18dfb69b74d232c784e22d4ff65798992",
+        "generation": 0,
+        "record_sha256": "7bf1d02e16e15b9d1dfe69885a2a33702c1e8e92d5e2c3d674c451fa1020a843",
+        "record": "requests/e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4/c4f0f8a08c80cd8d09dc40b64d1dba57fce88cd80cbf65e8040c38fffa6713bb/c3b6d76b7cf066893acb44f88c9a07e18dfb69b74d232c784e22d4ff65798992.json",
+        "state": "awaiting_stage",
+        "reason": "Bill active absolute Archive.org hold; visual review page is independently backed up, not submitted or archived.",
+        "submitted": false,
+        "backup_receipt": {
+          "schema_version": 1,
+          "storage": {
+            "commit": "5220e4be00c0d589f485f84264fc4279315b2498",
+            "kind": "git",
+            "path": "authoring/set_symbols435/preview.html",
+            "repository": "https://github.com/billbisco/swccg-wiki"
+          },
+          "subject": {
+            "bytes": 582194,
+            "content_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+            "kind": "source_snapshot",
+            "title": "https://swccg.com/snapshots/review/story-435-set-symbols.html"
+          },
+          "verification": {
+            "independent": true,
+            "restored_bytes": 582194,
+            "restored_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+            "status": "verified",
+            "verified_at": "2026-11-14T20:31:35.436882+00:00"
+          }
+        },
+        "source_backup_receipt": {
+          "schema_version": 1,
+          "storage": {
+            "commit": "5220e4be00c0d589f485f84264fc4279315b2498",
+            "kind": "git",
+            "path": "authoring/set_symbols435/preview.html",
+            "repository": "https://github.com/billbisco/swccg-wiki"
+          },
+          "subject": {
+            "bytes": 582194,
+            "content_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+            "kind": "source_snapshot",
+            "title": "https://swccg.com/snapshots/review/story-435-set-symbols.html"
+          },
+          "verification": {
+            "independent": true,
+            "restored_bytes": 582194,
+            "restored_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+            "status": "verified",
+            "verified_at": "2026-11-14T20:31:35.436882+00:00"
+          }
+        }
+      }
+    ],
+    "submission_owner": "server-wayback-owner"
+  },
+  "backup_receipt": {
+    "schema_version": 1,
+    "subject": {
+      "kind": "source_snapshot",
+      "title": "https://swccg.com/snapshots/review/story-435-set-symbols.html",
+      "content_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+      "bytes": 582194
+    },
+    "storage": {
+      "kind": "git",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "commit": "5220e4be00c0d589f485f84264fc4279315b2498",
+      "path": "authoring/set_symbols435/preview.html"
+    },
+    "verification": {
+      "status": "verified",
+      "independent": true,
+      "restored_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+      "restored_bytes": 582194,
+      "verified_at": "2026-11-14T20:31:35.436882+00:00"
+    }
+  },
+  "request": {
+    "schema_version": 1,
+    "subject": {
+      "kind": "source_snapshot",
+      "title": "https://swccg.com/snapshots/review/story-435-set-symbols.html",
+      "content_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+      "bytes": 582194
+    },
+    "source": {
+      "url": "https://swccg.com/snapshots/review/story-435-set-symbols.html",
+      "sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+      "bytes": 582194
+    },
+    "backup_receipt": {
+      "schema_version": 1,
+      "subject": {
+        "kind": "source_snapshot",
+        "title": "https://swccg.com/snapshots/review/story-435-set-symbols.html",
+        "content_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+        "bytes": 582194
+      },
+      "storage": {
+        "kind": "git",
+        "repository": "https://github.com/billbisco/swccg-wiki",
+        "commit": "5220e4be00c0d589f485f84264fc4279315b2498",
+        "path": "authoring/set_symbols435/preview.html"
+      },
+      "verification": {
+        "status": "verified",
+        "independent": true,
+        "restored_sha256": "e494351a3d0395fefb66f7f2fc02fa538b3912bba74e8d7eb087d2b457c2b7c4",
+        "restored_bytes": 582194,
+        "verified_at": "2026-11-14T20:31:35.436882+00:00"
+      }
+    },
+    "readiness": {
+      "ready": false,
+      "reason": "Bill active absolute Archive.org hold; visual review page is independently backed up, not submitted or archived.",
+      "stage_bytes": 0
+    },
+    "owner": "MemoryCoreChatGPT / swccg-guild/work#435",
+    "continuation": "Keep all archive requests paused. Only after explicit Bill resumption may the existing server-wayback-owner stage/promote/submit and verify the exact HTML.",
+    "approval_scope": {
+      "story": 435,
+      "authorization": "Bill requested shared symbols and a visual test on14 November2026"
+    }
+  }
+}

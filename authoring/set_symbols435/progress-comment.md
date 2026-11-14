@@ -1,0 +1,7 @@
+PROGRESS: (MemoryCoreChatGPT) Shared-source audit and visual test ready.
+- Done: reused CardMaker masters; [PR12 merged](https://github.com/billbisco/swccg-cardmaker/pull/12),30 transparent WebP exports with unchanged source artwork, alpha/lossless checks and shared manifest. Ten legacy Wiki icon assets audited:624 usages across610 pages.
+- Test: [public visual comparison](https://swccg.com/snapshots/review/story-435-set-symbols.html), desktop/mobile image/sizing/visible-label checks pass. Compare current icons with candidates on light/dark/checkerboard backgrounds and A/B/C card text. No Wiki card migrated yet.
+- Stopped at: the requested visual-test checkpoint, before broad Wiki replacement or choosing a new card-text convention.
+- Next: Bill chooses Q1, then implement the selected card-text convention and guarded infobox/file replacements; continue regular/AI ring and numbered-era verification without substituting unverified variants.
+- QUESTION @Bill Q1: Which card-text style do you prefer: B (words only), C (symbols plus words), or A (symbols only)? B is recommended; infoboxes retain icon+name.
+- Work: [evidence/435](https://github.com/swccg-guild/work/tree/main/evidence/435), design log, gap ledger, exact source backup PR49. Story remains In Progress;286 retains wider infobox-population scope. Archive.org hold intact;65 exact sources/review HTML centrally registered ready=false, not submitted or captured.
