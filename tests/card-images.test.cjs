@@ -8,13 +8,14 @@ const card={label:'Example',state:'1101_1:PC-E2',language:'en',slip:'slip.png',r
 const messages={original:'Original',remastered:'Remastered',group:'Card image',setting:'Card images',save:'Save default',saved:'Saved',failed:'Save failed'};
 function portrait(file){return `<div class="card-portrait"><a href="/wiki/File:${file}"><img src="/images/${file}"></a></div>`;}
 function markup(key='example'){return `<div class="card-rail">${portrait('original.gif')}${portrait('remaster.webp')}${portrait('slip.png')}<div class="card-image-note"><span class="swccg-card-image-marker" data-card-image-key="${key}"></span></div><table class="card-infobox"><caption>Info</caption></table></div><p class="game-text">Exact selected publication text</p>`;}
-async function fixture({guest='original',account,invalidAccount,failRead,failWrite,failLoad,blockStorage,words=messages,definition=card}={}){
+async function fixture({guest='original',account,invalidAccount,failRead,failWrite,failLoad,legacyThenables,blockStorage,words=messages,definition=card}={}){
  const dom=new JSDOM(`<div class="mw-parser-output">${markup()}</div>`,{url:'https://wiki.swccg.com/wiki/Example'});const w=dom.window;
  const cfg={wgUserName:account?'TestBot':null,swccgCardImagePilot:{cards:{example:structuredClone(definition)},messages:words}};
  const calls=[];let value=invalidAccount||account;let guestValue=guest;
  Object.defineProperty(w,'localStorage',{value:{getItem(){if(blockStorage)throw Error('blocked');return guestValue;},setItem(k,v){if(blockStorage)throw Error('blocked');guestValue=v;}}});
  for(const img of w.document.querySelectorAll('img')){Object.defineProperty(img,'complete',{value:true});Object.defineProperty(img,'naturalWidth',{value:350});}
  w.mw={config:{get:k=>cfg[k]},loader:{using:()=>failLoad?Promise.reject(Error('unavailable')):Promise.resolve()},Api:function(){this.get=async p=>{calls.push(p);if(failRead)throw Error('read failed');return {query:{userinfo:{options:{'swccg-card-images':value}}}};};this.postWithToken=async(t,p)=>{calls.push(p);if(failWrite)throw Error('write failed');value=p.change.split('=')[1];return {options:'success'};};},hook:()=>({add(){}})};
+ if(legacyThenables){const NativeApi=w.mw.Api;const wrap=p=>({then:(resolve,reject)=>p.then(resolve,reject)});w.mw.loader.using=()=>wrap(Promise.resolve());w.mw.Api=function(){const a=new NativeApi();this.get=p=>wrap(a.get(p));this.postWithToken=(t,p)=>wrap(a.postWithToken(t,p));};}
  viewer.start(w);await w.swccgCardImages.initialize();
  return {w,doc:w.document,cfg,calls,guestValue:()=>guestValue,accountValue:()=>value,close:()=>dom.window.close()};
 }
@@ -50,6 +51,9 @@ test('account overrides guest; account save never modifies guest storage',async(
 });
 test('account read/write failures and invalid account values fail usefully',async()=>{
  for(const options of [{account:'remastered',failRead:true},{account:'remastered',failLoad:true},{account:'remastered',invalidAccount:'bad'},{account:'original',failWrite:true}]){const f=await fixture(options);assert.equal(selected(f),'/images/original.gif');await save(f,'remastered');assert.equal(f.doc.querySelector('[role="status"]').textContent,options.failLoad||options.failWrite?'Save failed':'Saved');assert.equal(f.guestValue(),'original');f.close();}
+});
+test('MediaWiki-style thenables without catch/finally save and re-enable the form',async()=>{
+ const f=await fixture({account:'original',legacyThenables:true});await save(f,'remastered');assert.equal(f.accountValue(),'remastered');assert.equal(f.doc.querySelector('[role="status"]').textContent,'Saved');assert.equal(f.doc.querySelector('form button').disabled,false);f.close();
 });
 test('image failure hides the pair and falls back, retaining preference',async()=>{
  const f=await fixture({guest:'remastered'});const im=f.doc.querySelector('img[src="/images/remaster.webp"]');im.dispatchEvent(new f.w.Event('error'));assert.equal(selected(f),'/images/original.gif');assert.equal(f.doc.querySelector('.swccg-card-image-choices').hidden,true);assert.equal(f.guestValue(),'remastered');im.dispatchEvent(new f.w.Event('load'));assert.equal(selected(f),'/images/remaster.webp');assert.equal(f.doc.querySelector('.swccg-card-image-choices').hidden,false);f.close();
