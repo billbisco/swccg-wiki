@@ -3,7 +3,8 @@
   'use strict';
   var api = factory();
   if (typeof module === 'object' && module.exports) module.exports = api;
-  else api.start(root);
+  else if (root.mw && root.mw.config) api.start(root);
+  else (root.RLQ = root.RLQ || []).push(function () { api.start(root); });
 }(typeof window === 'undefined' ? globalThis : window, function () {
   'use strict';
   var OPTION = 'swccg-card-images';

@@ -1,6 +1,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const {JSDOM}=require('jsdom');
+const fs=require('node:fs');
 const viewer=require('../chrome/card-image-viewer.js');
 const card={label:'Example',state:'1101_1:PC-E2',language:'en',slip:'slip.png',renditions:[
  {kind:'original',state:'1101_1:PC-E2',language:'en',file:'original.gif'},
@@ -28,6 +29,14 @@ test('availability matrix excludes other state/card/language and duplicate asset
  }
  assert.equal(viewer.choose(card,'remastered',r=>r.kind==='original').selected.kind,'original');
  assert.equal(viewer.preference('bad'),'original');
+});
+test('browser entry waits for asynchronous MediaWiki startup before reading config',async()=>{
+ const dom=new JSDOM(`<div class="mw-parser-output">${markup()}</div>`,{url:'https://wiki.swccg.com/wiki/Example',runScripts:'outside-only'});const w=dom.window;
+ for(const image of w.document.querySelectorAll('img')){Object.defineProperty(image,'complete',{value:true});Object.defineProperty(image,'naturalWidth',{value:350});}
+ w.eval(fs.readFileSync(require.resolve('../chrome/card-image-viewer.js'),'utf8'));
+ assert.equal(w.RLQ.length,1);assert.equal(w.swccgCardImages,undefined);
+ const cfg={wgUserName:null,swccgCardImagePilot:{cards:{example:card},messages}};w.mw={config:{get:k=>cfg[k]},hook:()=>({add(){}})};
+ for(const ready of w.RLQ)ready();await w.swccgCardImages.initialize();assert.equal(w.document.querySelectorAll('.swccg-card-image-choices button').length,2);dom.window.close();
 });
 test('buttons follow stage and publisher slip and precede Info; no duplicate initialization',async()=>{
  const f=await fixture();const rail=f.doc.querySelector('.card-rail');const stage=rail.querySelector('.swccg-card-image-stage');const slip=[...rail.children].find(p=>p.querySelector('img[src="/images/slip.png"]'));const controls=rail.querySelector('.swccg-card-image-choices');
