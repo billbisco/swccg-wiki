@@ -16,9 +16,11 @@ class SwccgChrome {
 		// Bounded review pilot: no resources or behavior on ordinary card pages.
 		$title = $out->getTitle();
 		if ( $title && $title->getPrefixedText() === 'SWCCG Wiki:Samples/Original Virtual Darth Vader image viewer' ) {
-			$assets = __DIR__ . '/chrome/';
-			$out->addInlineStyle( file_get_contents( $assets . 'vader-image-viewer.css' ) );
-			$out->addInlineScript( file_get_contents( $assets . 'vader-image-viewer.js' ) );
+			$assets = '/swccg-chrome/';
+			if ( is_readable( $assets . 'vader-image-viewer.css' ) && is_readable( $assets . 'vader-image-viewer.js' ) ) {
+				$out->addInlineStyle( file_get_contents( $assets . 'vader-image-viewer.css' ) );
+				$out->addInlineScript( file_get_contents( $assets . 'vader-image-viewer.js' ) );
+			}
 		}
 		try {
 			self::addOpenGraph( $out );
