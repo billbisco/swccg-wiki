@@ -19,6 +19,7 @@ class PushWikiDumpTests(unittest.TestCase):
         subprocess.run(["git", "init", "--bare", "--initial-branch=main", str(self.remote)], check=True, capture_output=True)
         self.worker = self.clone("worker")
         self.write(self.worker, "pages/A.wiki", "original\n")
+        self.write(self.worker, "pages/INDEX.tsv", "A\tpages/A.wiki\n")
         self.write(self.worker, "README.md", "original\n")
         self.commit(self.worker, "seed")
         self.run_git(self.worker, "push", "origin", "HEAD:main")
@@ -89,14 +90,51 @@ class PushWikiDumpTests(unittest.TestCase):
         self.assertEqual(self.remote_text("pages/Peer.wiki"), "peer page")
         self.assertEqual(self.remote_text("pages/A.wiki"), "dump")
 
-    def test_same_page_conflict_aborts_without_overwriting_either_copy(self):
+    def test_same_page_conflict_refreshes_live_text_and_keeps_peer_history(self):
         self.write(self.worker, "pages/A.wiki", "dump\n")
         self.peer_push("pages/A.wiki", "newer peer page\n")
-        with self.assertRaisesRegex(sync.SyncError, "Concurrent content conflict"):
+        peer_commit = self.run_git(self.peer, "rev-parse", "HEAD")
+        with patch.object(sync, "live_page", return_value="current live page\n") as live:
+            result = sync.push_dump(self.worker, retry_seconds=0)
+        live.assert_called_once_with("A")
+        self.assertEqual(self.remote_text("pages/A.wiki"), "current live page")
+        self.run_git(self.worker, "merge-base", "--is-ancestor", peer_commit, result["published_commit"])
+        self.assertFalse((self.worker / ".git/rebase-merge").exists())
+
+    def test_same_page_conflict_can_become_no_change_after_live_refresh(self):
+        self.write(self.worker, "pages/A.wiki", "dump\n")
+        self.peer_push("pages/A.wiki", "newer peer page\n")
+        with patch.object(sync, "live_page", return_value="newer peer page\n"):
             sync.push_dump(self.worker, retry_seconds=0)
+        self.assertEqual(self.remote_text("pages/A.wiki"), "newer peer page")
+        self.assertFalse((self.worker / ".git/rebase-merge").exists())
+
+    def test_failed_live_refresh_aborts_without_overwriting_either_copy(self):
+        self.write(self.worker, "pages/A.wiki", "dump\n")
+        self.peer_push("pages/A.wiki", "newer peer page\n")
+        with patch.object(sync, "live_page", side_effect=sync.SyncError("live source unavailable")):
+            with self.assertRaisesRegex(sync.SyncError, "live source unavailable"):
+                sync.push_dump(self.worker, retry_seconds=0)
         self.assertEqual(self.remote_text("pages/A.wiki"), "newer peer page")
         self.assertEqual((self.worker / "pages/A.wiki").read_text(), "dump\n")
         self.assertFalse((self.worker / ".git/rebase-merge").exists())
+
+    def test_index_conflict_preserves_both_concurrent_additions(self):
+        self.write(self.worker, "pages/INDEX.tsv", "A\tpages/A.wiki\nDump\tpages/Dump.wiki\n")
+        self.write(self.worker, "pages/Dump.wiki", "dump addition\n")
+        self.write(self.peer, "pages/Peer.wiki", "peer addition\n")
+        self.peer_push("pages/INDEX.tsv", "A\tpages/A.wiki\nPeer\tpages/Peer.wiki\n")
+        sync.push_dump(self.worker, retry_seconds=0)
+        self.assertEqual(self.remote_text("pages/INDEX.tsv"), "A\tpages/A.wiki\nDump\tpages/Dump.wiki\nPeer\tpages/Peer.wiki")
+        self.assertEqual(self.remote_text("pages/Peer.wiki"), "peer addition")
+        self.assertEqual(self.remote_text("pages/Dump.wiki"), "dump addition")
+
+    def test_conflicting_canonical_mapping_fails_closed(self):
+        self.write(self.worker, "pages/INDEX.tsv", "A\tpages/Old.wiki\n")
+        self.peer_push("pages/INDEX.tsv", "A\tpages/New.wiki\n")
+        with self.assertRaisesRegex(sync.SyncError, "canonical page path changed"):
+            sync.push_dump(self.worker, retry_seconds=0)
+        self.assertEqual(self.remote_text("pages/INDEX.tsv"), "A\tpages/New.wiki")
 
     def test_exhausted_pushes_are_bounded_and_leave_remote_unchanged(self):
         self.write(self.worker, "pages/A.wiki", "dump\n")
