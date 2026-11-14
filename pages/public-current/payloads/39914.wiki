@@ -1,0 +1,42 @@
+'''Anything Goes''' is a constructed [[GEMP]] environment on [https://play.swccg.com/ play.swccg.com]<ref name="play" />: every set is legal, the collection is the player's constructed card pool, and the intended deck size is 40&ndash;60 cards. Its definition calls it the default format for casual and AI play.<ref name="gemp" /> Casual tables and AI tables on this instance are meant to default to this environment. [[Open]] stays in the format list for current-virtual constructed play.
+
+* '''Type:''' casual
+* '''Defined by:''' play.swccg.com
+* '''Card pool:''' Decipher, current virtual and Legacy virtual sets, 40&ndash;60 cards
+* '''In use:''' unknown
+* '''GEMP:''' ''Anything Goes'' (<code>anything_goes</code>) on play.swccg.com; none on the Players Committee GEMP
+
+== Card pool ==
+The format allows Decipher set ids 1&ndash;14 and premium ids 101&ndash;112, current Virtual Sets 0&ndash;27 (ids 200&ndash;227), the Virtual Premium Set (id 301), and the set numbers that the [[Legacy Open|Legacy]] format uses (601 and 1200&ndash;1292). The definition's comment calls this "Legacy plus non-Legacy".<ref name="gemp" /> A deck must have at least 40 and at most 60 cards.<ref name="gemp" /><ref name="lib" />
+
+The definition sets <code>skipFormatPool</code>. A card must still come from a listed set, but GEMP then skips the format's checks for banned icons, banned rarities and banned cards.<ref name="gemp" /><ref name="dsf" />
+
+Structural checks still apply. A list with both Light and Dark cards, no side, more than one [[Objective]], more than one Starting Effect, uniqueness violations, or unrecognizable cards does not start a game.
+
+== History ==
+Anything Goes exists only on play.swccg.com; the Players Committee format list does not have it.<ref name="gemp" /><ref name="pc-gemp" /> Further work for this environment (same-side tables, true any-size lists, empty Reserve / short-hand autoloss, and account-stored settings) is listed on [[GEMP planned features]]. No tournament is known to have used it.
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+No tournament on [[List of SWCCG tournaments]] is recorded in this format yet. Events are added here when their page gives this format.
+<!-- format-tournaments:end -->
+
+== See also ==
+* [[GEMP planned features]]
+* [[GEMP]]
+* [[Formats]]
+* [[Open]]
+* [[Legacy Open]]
+
+== References ==
+<references>
+<ref name="play">[https://play.swccg.com/ play.swccg.com], GEMP. Preserved copy: [https://web.archive.org/web/20261009095947/https://play.swccg.com/ Internet Archive].</ref>
+<ref name="gemp">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref>
+<ref name="lib">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+<ref name="dsf">[https://github.com/billbisco/swccg-gemp/blob/c97690ec35ff140229551b0c64b42e6957577d3e/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/DefaultSwccgFormat.java DefaultSwccgFormat.java], GEMP source code (billbisco/swccg-gemp, commit c97690ec), GitHub. Preserved copy: [https://web.archive.org/web/20261025011214/https://raw.githubusercontent.com/billbisco/swccg-gemp/c97690ec35ff140229551b0c64b42e6957577d3e/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/DefaultSwccgFormat.java Internet Archive].</ref>
+<ref name="pc-gemp">[https://github.com/PlayersCommittee/gemp-swccg-public/blob/5e26dd19cc700adbf77de53e0d7b89720c94f03e/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (PlayersCommittee/gemp-swccg-public, commit 5e26dd19), GitHub. Preserved copy: [https://web.archive.org/web/20261021130403/https://swccg.com/snapshots/github/PlayersCommittee/gemp-swccg-public/5e26dd19/swccgFormats.json.html Internet Archive].</ref>
+</references>
+
+[[Category:Formats]]
+[[Category:GEMP]]
+[[Category:Meta]]

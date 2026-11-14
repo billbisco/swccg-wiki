@@ -1,0 +1,1270 @@
+'''Premiere &ndash; Death Star II''' is a constructed environment on [https://play.swccg.com/ play.swccg.com]<ref name="play">[https://play.swccg.com/ play.swccg.com], GEMP. Preserved copy: [https://web.archive.org/web/20261009095947/https://play.swccg.com/ Internet Archive].</ref> whose legal pool is the Decipher sets from [[Premiere]] through [[Death Star II (expansion)|Death Star II]]. Its GEMP code is <code>premiere_ds2</code> (display name '''Premiere - Death Star II''').
+
+== Deck size ==
+{| class="wikitable"
+! Default deck size on [[GEMP]]
+| 60 cards
+|}
+The GEMP format definition sets no deck size, so GEMP uses its default of 60 cards.<ref name="gemp-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json swccgFormats.json], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021114513/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/swccgFormats.json.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022040117/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/resources/swccgFormats.json Internet Archive].</ref><ref name="lib-ec48dc19">[https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java SwccgoFormatLibrary.java], GEMP source code (billbisco/swccg-gemp, commit 16168b26), GitHub. Preserved copy: [https://web.archive.org/web/20261021121011/https://swccg.com/snapshots/github/billbisco/swccg-gemp/ec48dc19/SwccgoFormatLibrary.java.html Internet Archive]. Preserved copy: [https://web.archive.org/web/20261022041206/https://github.com/billbisco/swccg-gemp/blob/16168b26aa0c245d4427f58bbb023338af3cbf6b/src/gemp-swccg-server/src/main/java/com/gempukku/swccgo/game/formats/SwccgoFormatLibrary.java Internet Archive].</ref>
+
+== Card pool ==
+
+As configured in GEMP <code>swccgFormats.json</code>, the environment includes set ids <code>1&ndash;9</code> plus the premium/reflections ids listed for that format entry (ids <code>101&ndash;111</code>).<ref name="gempfmt">GEMP format list (<code>premiere_ds2</code> / "Premiere - Death Star II") in <code>swccgFormats.json</code> on the play.swccg.com codebase</ref> In plain language: printed Decipher cards from Premiere through Death Star II (and the premium products GEMP maps into those ids). It does '''not''' include later Decipher sets (for example Reflections II / Tatooine / Coruscant / Theed Palace) or Players Committee Virtual Sets unless a specific event document says otherwise.
+
+== Organized play ==
+
+Players Committee online events sometimes use this pool under the label '''Premiere to DSII''' (or similar). Example:
+
+* [[2000 Decipher World Championship]] &mdash; last Decipher Worlds played in this printed pool (Death Star II was the newest expansion).
+* [[2026 Retro GEMP Match Play Championship (Premiere to DSII)]] &mdash; July&ndash;September 2026 Retro GEMP Match Play Championship on GEMP.<ref name="pc-retro-2026">[https://www.starwarsccg.org/2026-09-retro-gemp-match-play-championship-premiere-to-dsii-july-to-sept-2026/ 2026-09 Retro GEMP Match Play Championship (Premiere to DSII) &ndash; July to Sept. 2026], starwarsccg.org. Preserved copy: [https://web.archive.org/web/20261021133413/https://swccg.com/snapshots/pc/2026-09-retro-gemp-match-play-championship-premiere-to-dsii-july-to-sept-2026.html Internet Archive].</ref>
+
+== Decklists ==
+=== Printed Decipher cards only ===
+These decks use only printed Decipher cards. Each is listed with its legal day.
+
+* [[Randy Bautista Imperial Black & Blue]] (11 August 1999)
+* [[Randy Bautista Imperial Black & Blue (Revised)]] (15 August 1999)
+* [[Ryan Fojtik Yavin4 Occupation (imperial style)]] (23 August 1999)
+* [[Andrew Moss Big Bad Blue Tatooine Occupation]] (24 August 1999)
+* [[Brian Wene EPP s got you down try this]] (29 August 1999)
+* [[Mike Kessling Singing the Bues the black and blue]] (1 September 1999)
+* [[Jonathan Morse Vicious Rumors]] (6 September 1999)
+* [[Colin Burton Bunker Down and Manipulate the Rebels v2 67845]] (2 October 1999)
+* [[Colin Burton Dangerous Times]] (4 October 1999)
+* [[Michael Josem No Subtlety]] (27 November 1999)
+* [[Evan Clemens The Stereotype Beatdown]] (28 November 1999)
+* [[Alan Finch Hunt Down and Devestate the Jedi]] (8 January 2000)
+* [[Alan Finch Flawless Devestation]] (7 February 2000)
+* [[Jessie Bartolome Unique Hidden Base]] (9 February 2000)
+* [[Eddie Brown That Hellhole They Call Ralitiir]] (10 February 2000)
+* [[John Veasey The Leaders of Ralltiir]] (13 February 2000)
+* [[Carson Swanek Big Blue ISB v2 1]] (29 February 2000)
+* [[Mike Kessling Wait and Bleed (ISB Space)]] (8 March 2000)
+* [[Rich Jeffery ONE-ARM s Carbon Freezing Deck 2 0]] (9 March 2000)
+* [[David Sidhu Ral Ops Quick-E-Drain]] (11 March 2000)
+* [[Carson Swanek Big Blue ISB v2 2]] (15 March 2000)
+* [[Lee Fisk My final Endor OPS deck]] (17 March 2000)
+* [[Martijn Peeters Mothership Connection]] (20 March 2000)
+* [[Brad Eier a good ROPS deck]] (21 March 2000)
+* [[Brody Hughes Hunt Down Brody s Way]] (27 March 2000)
+* [[John Veasey The Leaders of Ralltiir V 2 0]] (2 April 2000)
+* [[2000 Denver Grand Slam Kyle Craft Kyle Craft s DS Denver Grand Slam deck]] (3 April 2000)
+* [[Brody Hughes My Smackdown Has A 1st Name Its Ralltiir]] (6 April 2000)
+* [[Tim Linden I ve Heard About Some Ominous Rumors Sir]] (23 April 2000)
+* [[David Sidhu The Occupation Of Cloud City]] (30 April 2000)
+* [[Ryan Mathison Hidden Base Squadrons]] (5 May 2000)
+* [[Blake Senn Imperial Intelligence Operations]] (9 May 2000)
+* [[David Sidhu Occupation of Cloud City v 4 0]] (6 June 2000)
+* [[Karl Schultz Blowin Stuff Up (v 2 0)]] (11 June 2000)
+* [[Karl Schultz Blowin Stuff Up]] (11 June 2000)
+* [[Brandon Allen DS]] (12 June 2000)
+* [[Brandon Allen Why Brandon Allen is No. 817 in the world]] (12 June 2000)
+* [[Cat Ceder MBO v 1]] (15 June 2000)
+* [[Ryan Mathison Set your course for Ald nevermind]] (16 June 2000)
+* [[Karl Schultz Blowin Stuff Up (v 4 0)]] (16 June 2000)
+* [[Jamie Giberti Profit From The Sun v1 2]] (21 June 2000)
+* [[Jodo Kast17 Big Blue ISB]] (24 June 2000)
+* [[Brad Eier ebo-like rops there all the same]] (26 June 2000)
+* [[2000 Death Star II Pre-Release (Mountain View) Cat Ceder DII - Pre-Release Deck]] (27 June 2000)
+* [[Geoff Snider Emperor s Finest troops]] (27 June 2000)
+* [[Blake Senn Waiting for the Wheel to Turn]] (29 June 2000)
+* [[Jodo Kast17 Big Blue ISB ver2 0]] (30 June 2000)
+* [[Tim Linden Death Star II Enhanced Endor Ops]] (7 July 2000)
+* [[Blake Senn Forest of the Night - RalOps]] (9 July 2000)
+* [[Christoffer Niska the Firebase (DS2 Booster Ralltiir Ops)]] (9 July 2000)
+* [[Bastian Winkelhaus Training next to the second Death Star]] (9 July 2000)
+* [[Carson Swanek OOPS was that YOUR planet]] (10 July 2000)
+* [[Jodo Kast17 No Longer a Secret]] (12 July 2000)
+* [[Chris Fanchi Flagship Home One]] (17 July 2000)
+* [[Christopher Mason A night at Dark Jedi Anonymous]] (17 July 2000)
+* [[Daniel Blackford Enter Sandman]] (18 July 2000)
+* [[Joe Horbey Horbey s D2 HuntDown]] (18 July 2000)
+* [[Karim Jetha HDADTJ (Duelish)]] (19 July 2000)
+* [[Justin Warren I-Swarm (Ultimate TIE deck)]] (19 July 2000)
+* [[Steve Kuperman The End Of The Games]] (20 July 2000)
+* [[Daniel Blackford Palpatine's Pleasure]] (20 July 2000)
+* [[Jason Foss There Is Good In Him / I Can Save Him]] (20 July 2000)
+* [[Christopher Zdarsky Post DSII EBO v1 0]] (20 July 2000)
+* [[Dan Christy Mystikal s Endor Ops]] (21 July 2000)
+* [[Blake Senn Dark Machinery of Fate]] (21 July 2000)
+* [[Brad Eier the most broken deck ever]] (21 July 2000)
+* [[James Hsu DII New School HB]] (21 July 2000)
+* [[Jim Robertson Endor Space domination]] (21 July 2000)
+* [[Jason Foss RalOps Version 2]] (21 July 2000)
+* [[Seth Van Winkle BEING IN PASIVE MODE SUCKS]] (21 July 2000)
+* [[Lewis Blake THE Tessek Deck (Now with Death Star II)]] (22 July 2000)
+* [[Jodo Kast17 Matching Mayhem]] (22 July 2000)
+* [[Alex Tennet In Attack Position]] (22 July 2000)
+* [[Walter Winkler ~Another~ Light Jedi and I don t mean Luke]] (22 July 2000)
+* [[Jodo Kast17 What Asteroids v2 0]] (22 July 2000)
+* [[Robert Waygood HB Squadron Assignments]] (22 July 2000)
+* [[Scott Carver Don t those pesky jedi ever learn]] (23 July 2000)
+* [[Gordon Marx Das Rebelstrikenteamenheimer]] (23 July 2000)
+* [[John Tatta Imperial Command]] (23 July 2000)
+* [[Tyler Alexander The Rops Post D 2]] (23 July 2000)
+* [[Walter Winkler ~Another~ Light Jedi and I don t mean Luke v2 0]] (23 July 2000)
+* [[2000 Kashyyyk Regionals Steve Baroni Local Uprising With a Big Twist]] (23 July 2000)
+* [[2000 Kashyyyk Regionals Steve Baroni Bring Him The Sevens]] (24 July 2000)
+* [[Ryan Hase The Best Ral Ops]] (24 July 2000)
+* [[Carson Swanek OOPS Was That YOUR Planet v2 0]] (24 July 2000)
+* [[Sean Luhks Power destiny dueling and tech]] (24 July 2000)
+* [[Chris Young Wait And Bleed]] (24 July 2000)
+* [[Andy Klema Tat Occ-Post DS2]] (25 July 2000)
+* [[Andy McClure MWYHL Finally a strong deck]] (25 July 2000)
+* [[Carson Swanek Return of the killer EBO]] (25 July 2000)
+* [[Joe Fox Intercepter]] (25 July 2000)
+* [[Drew Scott Did someone say BEATDOWN in space]] (25 July 2000)
+* [[Frank Lamantia Frank s Jedi Testing]] (25 July 2000)
+* [[Jodo Kast17 Deal to Drain]] (25 July 2000)
+* [[Eddie Brown Speedy TIEs]] (25 July 2000)
+* [[2000 San Diego Comic-Con Open Alfred Dong The Brahma Bull's Throne Room]] (26 July 2000)
+* [[Brian Garrison Post DSII YOPS]] (26 July 2000)
+* [[Rich Dailey It's all MINES]] (26 July 2000)
+* [[Rich Jeffery Bring Him Before Me Docking Bays and Guards]] (26 July 2000)
+* [[2000 Kashyyyk Regionals Eric Hunter kashyyyk reg 2nd ls]] (26 July 2000)
+* [[Frank Lamantia Frank s Jedi Testing v2]] (27 July 2000)
+* [[Dan Christy Mystikal s Shoot]] (27 July 2000)
+* [[Carmine Arca The New EBO Deck]] (27 July 2000)
+* [[Andy McClure TDIGWATT It s all about the Mobilization Points baby]] (27 July 2000)
+* [[Cat Ceder Mobilized RalOps]] (27 July 2000)
+* [[Chris Fanchi The Son Of Skywalker Must Become A Jedi]] (27 July 2000)
+* [[Alex Tennet Order To Engage]] (27 July 2000)
+* [[Chris Fanchi DS]] (27 July 2000)
+* [[Peter Hall Advanced Beatdown]] (28 July 2000)
+* [[Jake Rich New School Rops]] (28 July 2000)
+* [[Jacob Mayer Jake's Post-DSII Hunt Down]] (28 July 2000)
+* [[Adam Prosak Yoda]] (28 July 2000)
+* [[Kyle Szklenski Pseudo Old Skool again with ALL cards this time]] (28 July 2000)
+* [[Peter Tenneson ISB on Endor]] (28 July 2000)
+* [[Tim Linden Hunt Down Mosh Deck]] (28 July 2000)
+* [[Preston Stahley Win BIG with EBO v2 0]] (28 July 2000)
+* [[Tim Linden Endor Uprising]] (28 July 2000)
+* [[Sean Luhks Anti-Ralltiir Operations deck]] (28 July 2000)
+* [[Kyle Ishimaru Ralops with DS2 tech]] (29 July 2000)
+* [[Alfred Dong I call it Black Death]] (29 July 2000)
+* [[Paul Myers Paul s Endor TRM---A K A ENDUP Version 1 0]] (29 July 2000)
+* [[Ryan Hase Hunt Down at the Docking Bays]] (29 July 2000)
+* [[Hartman Andersen LUKE WILL DIE]] (29 July 2000)
+* [[Jim Robertson Endor Ops-Death by Drain]] (29 July 2000)
+* [[Dan Grover Endor Operations]] (29 July 2000)
+* [[Chris Fanchi Luke Shall Join Us Or Die]] (29 July 2000)
+* [[Jodo Kast17 BH More Powerful Than You Can Imagine]] (29 July 2000)
+* [[Karl Harford ISB with drains for days in space]] (29 July 2000)
+* [[Clint Hays It Beat the Hell Out of Gary Carmen]] (29 July 2000)
+* [[Dan Grover Damn kids get off my lawn]] (30 July 2000)
+* [[Michael Josem It wins]] (30 July 2000)
+* [[David Monteiro The Sky Is Falling]] (30 July 2000)
+* [[Geoff Gallo-Cornell That Thing Is Operational]] (30 July 2000)
+* [[Ryan Hase The Best Ral Ops v2 0]] (30 July 2000)
+* [[Jason Foss Squadron Assignments]] (31 July 2000)
+* [[Geoff Gallo-Cornell That Thing Is Operational V2 5]] (31 July 2000)
+* [[Carson Swanek Return Of The Killer EBO v1 1]] (31 July 2000)
+* [[Danny Rider (I Know) I Can Save Him]] (31 July 2000)
+* [[2000 Virginia Beach Grand Slam Matt Lush Matt s ROP Killa]] (31 July 2000)
+* [[Patrick Gstell Post DS2 Duel-less Huntdown]] (31 July 2000)
+* [[Steven Lewis The Worst Objective Isn't So Bad Anymore]] (1 August 2000)
+* [[Steven Lewis Stick It In Your Yavin]] (1 August 2000)
+* [[Joe Fox Our Most Desperate Hour]] (1 August 2000)
+* [[Geoff Snider TDIGWATT]] (1 August 2000)
+* [[Carson Swanek OOPS Was that YOUR planet v2 1]] (1 August 2000)
+* [[Greg Heisler Bring Him Before Me is MONEY]] (1 August 2000)
+* [[Landon Sommer Launching the EBO Assault]] (2 August 2000)
+* [[Justin Warren Unideck DSII-style]] (2 August 2000)
+* [[Justin Abdallah Your Insight Does Not Server You Well Sir]] (2 August 2000)
+* [[Chris Praskac Praskac's Strike Plan FIXED VERSION]] (2 August 2000)
+* [[Chris Praskac Scum 2000 Praskac Style]] (2 August 2000)
+* [[Carson Swanek Hunt Down FLOPS]] (2 August 2000)
+* [[Nick Stefanko Tatooine Superior Court Now In Session]] (2 August 2000)
+* [[Peter Hall Flagship Operations The Real McCoy]] (3 August 2000)
+* [[Sean Luhks Total Tech Profit Deck]] (3 August 2000)
+* [[Sean Luhks Attrition]] (3 August 2000)
+* [[Chris Fanchi Jabba s Thugs Post DSII]] (3 August 2000)
+* [[Hartman Andersen Overseeing YAVIN 4 s Occupation Version 2]] (3 August 2000)
+* [[James Thorn EBOXv2 0]] (3 August 2000)
+* [[Mike Grazul Wicked Luke]] (3 August 2000)
+* [[Lee Edwards Why Lee Edwards is No 1 057 in the world]] (3 August 2000)
+* [[Rich Jeffery My Not-Quite-As-Ultimate Control]] (3 August 2000)
+* [[Ronald Rullens TIE Interceptor are in Fighter Cover]] (3 August 2000)
+* [[Rich Baliban Death to all]] (4 August 2000)
+* [[Michael Sneed The Match Game]] (4 August 2000)
+* [[Matthew Clark Tatooine Air Support]] (4 August 2000)
+* [[Matt Sokol Hunt BHBM Down]] (4 August 2000)
+* [[Jim Robertson Bargawins What the HELL]] (4 August 2000)
+* [[2000 San Diego Comic-Con Open Clayton Atkin The Kev/Clay RalOps deck by Clayton Atkin]] (5 August 2000)
+* [[Dan Grover Look Pa I'm a Jedi]] (5 August 2000)
+* [[Hartman Andersen Must Liberate Endor Operatives]] (5 August 2000)
+* [[James Eby my playtest Hidden Base Deck]] (6 August 2000)
+* [[Michael Sorrell Big Time Activation = Big Time BEAT DOWN]] (6 August 2000)
+* [[Dan Grover Palpy oversees Ralltiir Personally]] (6 August 2000)
+* [[Hartman Andersen Endor Throne Room Pinata Party]] (6 August 2000)
+* [[Derek Tessier Endor Ops And Biker Scouts A New Power]] (6 August 2000)
+* [[2000 RopeCon Christoffer Niska Brake Stuff]] (6 August 2000)
+* [[Lee Edwards The Emperor s Love Machine (Or Why Lee Edwards is No Longer 1 057 in the World)]] (6 August 2000)
+* [[Jim Li Stimmed Jim's Hidden Base Uprising]] (6 August 2000)
+* [[Scott Carver The McSkywalker V1 0]] (6 August 2000)
+* [[Justin Brinkerhoff Foo on tracking Hunt Down deck]] (7 August 2000)
+* [[Jodo Kast17 Profit Main Protect and Beat Down]] (7 August 2000)
+* [[Chris Praskac Decipher s Anti-Christ]] (7 August 2000)
+* [[Jim Robertson Endor Ops-Death by Drain V2 0]] (7 August 2000)
+* [[Jodo Kast17 BH More Powerful Than You Can Imagine v2 0]] (7 August 2000)
+* [[Garrhet Noda TIE Coppers]] (7 August 2000)
+* [[Jodo Kast17 The Base That Can t Be Found]] (7 August 2000)
+* [[Brandon Knapp It Is Your Destiny (v1 o)]] (8 August 2000)
+* [[Alfred Dong JUST BRING IT]] (8 August 2000)
+* [[Kyle Ishimaru Endor Uprising check this stuff out]] (9 August 2000)
+* [[Evan Clemens Evan's Quick Refrigeration Service]] (9 August 2000)
+* [[Justin Brinkerhoff They Can't Track]] (9 August 2000)
+* [[Mike Kessling 7 Words- Anti ROPS TIGIH]] (9 August 2000)
+* [[Robert Parker Who says Rallops can't get activation]] (9 August 2000)
+* [[Dan Grover Palpy's party on Ralltiir (v 2 0)]] (9 August 2000)
+* [[Jodo Kast17 The Base That Can t Be Found v2 0]] (9 August 2000)
+* [[Ryan Austin NOT a STORYBOOK ending]] (9 August 2000)
+* [[Jamie Giberti Overseeing Imperial Security]] (9 August 2000)
+* [[2000 Dagobah Regionals Adam Beauchamp Machine Ralltiir Ops]] (9 August 2000)
+* [[Andy McClure Why Andy McClure is No. 94 in the world]] (9 August 2000)
+* [[Jim Robertson What A Walker Deck Revised DS]] (10 August 2000)
+* [[David Marincic This Is Some Rescue]] (10 August 2000)
+* [[Jim Robertson What A Walker Deck DS]] (10 August 2000)
+* [[Jodo Kast17 BH More Powerful Than You Can Imagine v2 01]] (10 August 2000)
+* [[Robert Parker Have you heard some Ominous Rumors Lately]] (10 August 2000)
+* [[Jared Arthur The Way of a Jedi]] (10 August 2000)
+* [[Robert Parker EBO v 2]] (10 August 2000)
+* [[Ryan Austin NOT a STORYBOOK ending v 2 0]] (10 August 2000)
+* [[J. Kegler TDIGWATT w/ bounty hunter/carbon freezing help]] (11 August 2000)
+* [[Bob Schlutz Endor Opps]] (11 August 2000)
+* [[Matt Hanson YCEPBT/OBD]] (11 August 2000)
+* [[Mike Fitzgerald Set Your SDs in Attack Position]] (11 August 2000)
+* [[Brandon Knapp Cows don't like eating pregnant bananas v2 0]] (11 August 2000)
+* [[Chris Fanchi Imperial Tyranny/Dark Jedi Dominance]] (12 August 2000)
+* [[Mike Merletto Court Of The Vile Abyssins]] (12 August 2000)
+* [[Ryan Austin NOT a STORYBOOK ending V3 (THE BEST)]] (12 August 2000)
+* [[Christoffer Niska the Rampage v2]] (12 August 2000)
+* [[Ryan Hamre Simplicity]] (12 August 2000)
+* [[Jodo Kast17 BH More Powerful Than You Can Imagine v3 0]] (12 August 2000)
+* [[Ronald Rullens Rallttir Ops 2K]] (12 August 2000)
+* [[2000 North American Continental Championship Jim Li Stimmed Jim's Scum version 2]] (13 August 2000)
+* [[Hartman Andersen Eyes in the Dark on Cloud City]] (13 August 2000)
+* [[Robert Parker EBO the final version (v 3)]] (13 August 2000)
+* [[J. Kegler my ewok deck]] (13 August 2000)
+* [[J. Kegler Tatooine Celebration w/ a-wing help]] (13 August 2000)
+* [[Luca Costanzo Tunnel Manip]] (13 August 2000)
+* [[David Houle Bring Him Before Me]] (14 August 2000)
+* [[Mark Kloida Draino Rallops]] (14 August 2000)
+* [[Jason Foss Tatooine occupation]] (14 August 2000)
+* [[Justin Brinkerhoff RalOps Mega-Damage]] (14 August 2000)
+* [[Christopher Zdarsky MWYHL With Some Elom Help]] (14 August 2000)
+* [[Jeremy Oakes SOS You Must Confront Your Father v2.0]] (14 August 2000)
+* [[Mike Fitzgerald Top Gun ( HB w/ Weapons )]] (14 August 2000)
+* [[2000 North American Continental Championship Steven Lewis Monkey TIE's]] (15 August 2000)
+* [[2000 North American Continental Championship Steven Lewis Speederholics Anonymous]] (15 August 2000)
+* [[Michael Trepanier The sniper's court of the imperials]] (15 August 2000)
+* [[Jeremy Oakes Making Good Use of Those 7's]] (15 August 2000)
+* [[Mike Nash MWYHL Mains and Toys]] (15 August 2000)
+* [[2000 North American Continental Championship Yannick Lapointe GenCon winner DS deck]] (15 August 2000)
+* [[2000 North American Continental Championship Yannick Lapointe GenCon winner LS deck]] (15 August 2000)
+* [[2000 European Championship Alex Tennet The Emperor's Hand]] (15 August 2000)
+* [[Mark Kloida MWYHL A Game Of Chance V2 0]] (16 August 2000)
+* [[Alfred Dong The Brahma Bull's Throne Room v2]] (16 August 2000)
+* [[Mark Balderston Red Squadron Space Party]] (16 August 2000)
+* [[Adam Beauchamp Machine Test To 5 with Test 6]] (16 August 2000)
+* [[David Marincic This Is Some Rescue v2 0]] (17 August 2000)
+* [[Steve Skilton Court Beatdown/Manipulation]] (17 August 2000)
+* [[Sean Luhks Throne Room Mains]] (17 August 2000)
+* [[Brett Severson Planet destroyer 1 0]] (17 August 2000)
+* [[Carson Swanek Rebel Strike Team]] (17 August 2000)
+* [[Brett Severson Ewok BeatDown 1 0]] (17 August 2000)
+* [[Mark Kloida Draino Rallops v2 0]] (17 August 2000)
+* [[James Eby dont let the door hit you on your way out]] (17 August 2000)
+* [[Geoff Gallo-Cornell Space Draining Manipulator]] (18 August 2000)
+* [[Matt Hanson dagobah beatdown]] (18 August 2000)
+* [[J C A Ronto]] (18 August 2000)
+* [[Chris Wodicka Gundam Wing Sideshow 238478926 - Return of the Dingo]] (19 August 2000)
+* [[Thomas Dowling Tom s SYCFA Manip D2 style]] (19 August 2000)
+* [[Scott Carver The McSkywalker v2 0 (bigger and tastier than before)]] (19 August 2000)
+* [[Larry Rigsby DS]] (19 August 2000)
+* [[Mike Rebman SuperProfit v1 0]] (19 August 2000)
+* [[Andrew Ehret The New Deal]] (19 August 2000)
+* [[David Monteiro Dave s BHBM Manipulator]] (19 August 2000)
+* [[Cullen Burns DS 2nd place deck in states]] (19 August 2000)
+* [[Brandon Knapp Next Generation Endor Ops v1 0]] (19 August 2000)
+* [[Evan Clemens Evan s New Age Falcon]] (19 August 2000)
+* [[Joe Horbey Horbey s Anti-RALops HB]] (19 August 2000)
+* [[Tim Guzman That thing works]] (20 August 2000)
+* [[Matt Woleske Hidden Base Has Never Been Better]] (20 August 2000)
+* [[Geoff Gallo-Cornell Space Draining Manipulator v2 0]] (20 August 2000)
+* [[Jason Foss Hunt Down with dueling]] (20 August 2000)
+* [[2000 Dagobah Regionals Mike Fitzgerald Burn Him Before Me]] (20 August 2000)
+* [[Jim Sells Celebrate Good Times Come On]] (21 August 2000)
+* [[Larry Rigsby Myo s Scum and Jabba s Villany]] (21 August 2000)
+* [[Ryan Austin NOT a STORYBOOK ending V 4 0]] (21 August 2000)
+* [[Brett Severson Ewok Beatdown 1 5]] (21 August 2000)
+* [[Brett Severson Planet Destroyer 1 5]] (21 August 2000)
+* [[Joe Horbey Horbey s Speed Profit]] (21 August 2000)
+* [[Paul Strangio Bring Him Before Me Dark Jedi Style]] (21 August 2000)
+* [[David Marincic Set Your Course For Endor]] (21 August 2000)
+* [[Mike Rebman SuperProfit v2 0- The Tech Deck]] (21 August 2000)
+* [[John Digiovanni How d This Thing Win]] (21 August 2000)
+* [[Jamie Giberti Old Skool Vile Court]] (21 August 2000)
+* [[Brandon Chong Soon You Will Call Me Master]] (21 August 2000)
+* [[Anthony Payne squadron attack]] (22 August 2000)
+* [[Jeremy Arak RST It Actually Works]] (22 August 2000)
+* [[Nick Stefanko Crusade Of Salvation]] (22 August 2000)
+* [[Cullen Burns HuntDown is not dead]] (22 August 2000)
+* [[Andy McClure Post D2 CotVG Better Than Ever]] (22 August 2000)
+* [[Geoff Bowman Low Destiny High Annoyance ISB]] (22 August 2000)
+* [[Bastian Winkelhaus Brangus Glee Superstar Winkelhaus-Style]] (22 August 2000)
+* [[Jeremy Sumrall Make 7 UP YOURS]] (22 August 2000)
+* [[Charlie Herren DS]] (22 August 2000)
+* [[Chris Wodicka Gundam Wing Sideshow 238478927 - Dingo s Revenge]] (22 August 2000)
+* [[Brad Vogel My God It s it s Flops]] (22 August 2000)
+* [[Jamie Giberti The Modal Node Shuffle]] (22 August 2000)
+* [[Quan Mueller Skywalker Sevens Battle Training]] (23 August 2000)
+* [[Robert Parker Who Says Ralops Can t Get Activation v 2]] (23 August 2000)
+* [[Jeremy Arak RST-It actually Works v1 1]] (23 August 2000)
+* [[John Digiovanni Ralltiir Operations There they go again]] (23 August 2000)
+* [[Russell Bartlett But Daddy]] (23 August 2000)
+* [[Geoff Gallo-Cornell This Deal Really Blow For The LS]] (23 August 2000)
+* [[Tony Harris my Boot your Ass -- BHBM]] (24 August 2000)
+* [[Alan Jern The Deftones are cool]] (24 August 2000)
+* [[Jeremy Arak ISB/Manip]] (24 August 2000)
+* [[David Marincic Set Your Course For Endor v2 0]] (24 August 2000)
+* [[2000 Hoth North Ridge Regionals Alan Sagan Hoth North Ridge Regional LS Winner]] (24 August 2000)
+* [[2000 Hoth North Ridge Regionals Alan Sagan Hoth North Ridge DS Regional Winner]] (24 August 2000)
+* [[Scott Poster Dantooine Fat Beats]] (25 August 2000)
+* [[Derek Halpern The World Is Not Enough]] (25 August 2000)
+* [[Geoff Bowman Endor Uprising Mains and Toys]] (25 August 2000)
+* [[Ryan Austin NOT a STORYBOOK ending V4 2]] (25 August 2000)
+* [[Michael Sorrell BHBM Bring It All Day Long]] (25 August 2000)
+* [[Geoff Gallo-Cornell There is Insertion Planning in Him]] (25 August 2000)
+* [[Matt Woleske The New Set Your Course]] (25 August 2000)
+* [[Matt Berta Hunt for Numbers]] (25 August 2000)
+* [[Andrew Ybarrondo Dark Deal with style]] (25 August 2000)
+* [[Paul Merrian Space Warfare Deck]] (26 August 2000)
+* [[Justin Abdallah Zett tu seet Jabba no tuzindy honkabee]] (27 August 2000)
+* [[Lewis Blake ISB is making it worse for the Alliance]] (27 August 2000)
+* [[Russell Bartlett But Daddy Im A Jedi]] (27 August 2000)
+* [[Sean Luhks They re on Dantooine]] (27 August 2000)
+* [[2000 Brussels Grand Slam Chris Moore Mango]] (27 August 2000)
+* [[Norman Horn Scouts and Fallen Portals Anonymous]] (28 August 2000)
+* [[John Veasey A Profit Elom beating]] (28 August 2000)
+* [[Alex Heerman How to TIE a knot (Intercepters)]] (28 August 2000)
+* [[Jake Rich Rallops The wheel of death]] (28 August 2000)
+* [[Alex Heerman Father/Son Bonding]] (28 August 2000)
+* [[Peter Tenneson Ackbar s Hidden Base Starfleet]] (28 August 2000)
+* [[Paul Strangio Who s Your Daddy]] (28 August 2000)
+* [[Danny Rider Rumors of the Rim]] (29 August 2000)
+* [[Tony Harris my Boot your Ass (version 2 0)]] (29 August 2000)
+* [[Matt Hanson ELOM beatdown]] (29 August 2000)
+* [[Matt Hanson space deck]] (29 August 2000)
+* [[Michael Sorrell Hidden Base Retrieval and Beat Downs Oh My]] (29 August 2000)
+* [[Dan Grover Ralltiir Occupation - When Worlds Collide]] (29 August 2000)
+* [[Alex Heerman How to TIE a knot (Intercepters) V 2 0]] (29 August 2000)
+* [[Alexandre Dufresne Hunt Down and Destroy Then]] (30 August 2000)
+* [[Alfred Dong Who let the dogs out]] (30 August 2000)
+* [[Evan Clemens Evan's Amazing Rescue]] (30 August 2000)
+* [[Alexandre Dufresne Rebel Fleet Deck 1 0]] (30 August 2000)
+* [[Alexandre Dufresne Beat Down Time]] (30 August 2000)
+* [[Keith Watabayashi Just a solid EBO]] (30 August 2000)
+* [[Matt Bliffert Anti-Profit - The Power Within v 3]] (31 August 2000)
+* [[Steve Kuperman It May Not Be Crap But It Sure Looks Like It]] (1 September 2000)
+* [[Andy Klema Diet Super Falcon Uprising]] (1 September 2000)
+* [[Peter Hall Chadra-Fans of Doom]] (1 September 2000)
+* [[Andy Klema Post DS2 Rumors]] (1 September 2000)
+* [[Jason Foss Hunt Down]] (1 September 2000)
+* [[Chris Wodicka The nameless deck by Wedge]] (1 September 2000)
+* [[Eric Bailey There Is Good In Ewoks]] (1 September 2000)
+* [[Matt Lush ISB Insanity]] (2 September 2000)
+* [[Michael Pistone Just Another BHBM deck]] (2 September 2000)
+* [[Michael Pistone The Ultimate Profit Deck]] (2 September 2000)
+* [[Todd Vandewalker Bombtrack]] (2 September 2000)
+* [[Jason Foss Ominous Rumors]] (2 September 2000)
+* [[Ryan Austin This is TRUE POWER]] (2 September 2000)
+* [[Keith Watabayashi Hidden Base ISB Choke]] (2 September 2000)
+* [[Bryan Prittie X-wing Swarm - TRM Style]] (3 September 2000)
+* [[Karl Schultz ELMOS EVERYWHERE v 1 5]] (3 September 2000)
+* [[Geoff Gallo-Cornell Diet Coke Of Evil]] (3 September 2000)
+* [[Stephen Moriarty Endor Ops Speed Drains Crazy Activation]] (3 September 2000)
+* [[Stu McCurdy Isb s not dead just build it right]] (3 September 2000)
+* [[J.D. LaCure The Ground Beatdown deck that starts Rendezvous Point]] (3 September 2000)
+* [[Karl Schultz ELMOS EVERYWHERE]] (3 September 2000)
+* [[Anthony Payne fury attackers]] (3 September 2000)
+* [[Ryan Austin The true POWER of the FORCE v1 2]] (3 September 2000)
+* [[Matt Bliffert Anti-Profit - The Power Within v 4]] (4 September 2000)
+* [[Godsmacker Rall Ops of course]] (4 September 2000)
+* [[2000 North American Continental Championship Jim Li Stimmed Jim's EBO]] (4 September 2000)
+* [[Jeremy Arak These Guards Are Getting Worse All The Time]] (4 September 2000)
+* [[Jamie Giberti The Revenge Of The Flying Hellfish V1 5]] (4 September 2000)
+* [[Karl Schultz Why The Tennessee Vols SHOULD Be No. 1]] (4 September 2000)
+* [[Brian Hunter Rebel Strike Team done RIGHT]] (5 September 2000)
+* [[Evan Clemens Evan s Quick Refrigeration Service 2 0]] (5 September 2000)
+* [[Cat Ceder The Emperor goes on a trip]] (5 September 2000)
+* [[Ryan Austin The true POWER of the FORCE v2 0 LS]] (5 September 2000)
+* [[Brandon Gravo A Good Deck- it s true it s true]] (5 September 2000)
+* [[Peter Tenneson ISB s invasion of Endor]] (5 September 2000)
+* [[James Falco ROPS The way to go]] (5 September 2000)
+* [[Dan Christy ISB Mystikal Style]] (5 September 2000)
+* [[Dan Grover Rebel SWAT Team - BOE style]] (6 September 2000)
+* [[Anthony Payne Goodbye Alderan again]] (6 September 2000)
+* [[Joe Fox Life Is Peachy]] (6 September 2000)
+* [[Carson Swanek The way Hunt Down was supposed 2 be]] (6 September 2000)
+* [[Alex George The Emperor s Summer Home on Tatooine]] (6 September 2000)
+* [[Nick Stefanko The Emperor s TIE Interceptor Hell]] (6 September 2000)
+* [[Todd Vandewalker Wake Up]] (6 September 2000)
+* [[Paul Strangio OUCH (BHBM Smack Down)]] (6 September 2000)
+* [[Chris Young The Emperor s True Power]] (6 September 2000)
+* [[Ted Panczyszyn Really Bad EBO Deck]] (7 September 2000)
+* [[Rich Jeffery Tinker Toyz]] (7 September 2000)
+* [[John Veasey A Profit Elom Beating]] (7 September 2000)
+* [[Frank Lamantia Frank's ISB]] (7 September 2000)
+* [[John Digiovanni Is There Still Good In This]] (7 September 2000)
+* [[Dan Christy ISB Mystikal Style v1 1]] (7 September 2000)
+* [[Yit Fun Yap Analog Bubblebath]] (8 September 2000)
+* [[Michael Pistone The Ultimate Profit Deck v 2 0]] (8 September 2000)
+* [[Chris Aven Aven s DOcking Bay Hunt Down]] (8 September 2000)
+* [[Eric Bailey There Is Good In Ewoks v 2 1]] (8 September 2000)
+* [[Brian Hunter Hunt Down done RIGHT aka A Dead Jedi Hath No Honor]] (8 September 2000)
+* [[Michael Adams More Than Just Mining Going On Up There]] (9 September 2000)
+* [[Bryan Prittie Big P s Turbo - (Speed) Profit]] (9 September 2000)
+* [[John Terkovich EPP SMACKDOWN]] (9 September 2000)
+* [[Andrew Ledwith Snub Fighters]] (9 September 2000)
+* [[Andrew Ledwith Imperial High Command]] (9 September 2000)
+* [[Keith Watabayashi The Bad Touch V1 1]] (9 September 2000)
+* [[Eric Bailey There Is Good In Ewoks v 2 3]] (9 September 2000)
+* [[Jeremy Oakes Stormtrooper Invasion on Cloud City (v0 1)]] (10 September 2000)
+* [[Ted Panczyszyn Big Pete s Revenge]] (10 September 2000)
+* [[Mike Fitzgerald Final-Burn Him Before Me]] (10 September 2000)
+* [[Bryan Prittie Profit - The Power Within]] (10 September 2000)
+* [[Geoff Gallo-Cornell Pepsi One Of Evil]] (10 September 2000)
+* [[J. Kegler Ewoks - Take 2]] (10 September 2000)
+* [[Jason Foss Hunt down with some dueling]] (10 September 2000)
+* [[Chris Wodicka MWYHL X-wings post DII]] (10 September 2000)
+* [[Chris Wodicka MWYHL Speeders]] (10 September 2000)
+* [[Dan Grover Static-X's Amazing Elom Brigade]] (11 September 2000)
+* [[Martin Akesson The Celebration (The Conterpart)]] (11 September 2000)
+* [[Martin Akesson The Ocucupation (Tatooine ROPs)]] (11 September 2000)
+* [[Mike Panayotou Mike's Hunt Down v 1 0]] (13 September 2000)
+* [[2000 Nashville Grand Slam Clint Hays Got Evader]] (13 September 2000)
+* [[Ryan Austin The TRUE nature of the FORCE]] (13 September 2000)
+* [[Jodo Kast17 BH More Powerful Than You Can Imagine v4 0]] (13 September 2000)
+* [[Joe Gold And you thought it would be pretty]] (14 September 2000)
+* [[Matt Hanson ELOM beatdown V2 0]] (14 September 2000)
+* [[Jason Foss Fallen Portals Please Review]] (14 September 2000)
+* [[Evan Clemens Evan's Refridgeration Service 2 1]] (14 September 2000)
+* [[Anthony Payne ewok and turn him]] (14 September 2000)
+* [[Andy McClure DBO yes DBO (fun deck)]] (14 September 2000)
+* [[Matt Berta Battle of Endor Light v1]] (14 September 2000)
+* [[Norman Horn Norman's D2 Hidden Base]] (14 September 2000)
+* [[Cullen Burns anti-profit]] (15 September 2000)
+* [[Jayke Ball Bring Him Before me with all that force you have]] (15 September 2000)
+* [[Andy Klema My Third Profit]] (15 September 2000)
+* [[John Digiovanni Rebel Strike Team (Dual Purpose)]] (15 September 2000)
+* [[Eric Bailey There Is Good In Ewoks v 3 0]] (15 September 2000)
+* [[2000 Nashville Grand Slam Charlie Herren Moe Larry Curly and 25 of their closest friends (Profit)]] (15 September 2000)
+* [[Luca Costanzo Chinese Acrobats]] (16 September 2000)
+* [[Chris Young Feed Me (Court/Rancor Tech)]] (16 September 2000)
+* [[Jason Foss The Evil In Luke]] (16 September 2000)
+* [[John Digiovanni Endor Ops (Please review need comments)]] (16 September 2000)
+* [[Nick Stefanko Crusade Of Salvation v1 01]] (16 September 2000)
+* [[Raphael Asselin Again original and creative]] (16 September 2000)
+* [[Mike Fitzgerald Superman's Dead]] (16 September 2000)
+* [[Kyle Ishimaru BHBM Are you ready]] (17 September 2000)
+* [[Johnny Grigonis QMC Is it worth playing]] (17 September 2000)
+* [[Chris Fanchi What the Tauntauns]] (17 September 2000)
+* [[Stephen Moriarty Endor Ops Speed Drains Crazy Activation v 1 0]] (17 September 2000)
+* [[Chris Wodicka MWYHL Eloms]] (17 September 2000)
+* [[Peter Tenneson Jedi training taken seriously]] (17 September 2000)
+* [[Stephen Moriarty Endor Operations Speeders on the move]] (17 September 2000)
+* [[Brent Haertlein (R&RAP) MWYHL DB Beatdown]] (17 September 2000)
+* [[Anthony Payne Shoot 'em up]] (18 September 2000)
+* [[Chris Wodicka Gundam Wing - White Dingo Sideshow 238478928]] (18 September 2000)
+* [[Alex George There Is Good In Him LS]] (18 September 2000)
+* [[Brent Haertlein (R&RAP) I think I can I think I can]] (18 September 2000)
+* [[Steve Brentson The White Shadow]] (18 September 2000)
+* [[Jamie Giberti The Ayatolla of Rock and Rolla]] (18 September 2000)
+* [[Luca Costanzo Old School New Setup]] (18 September 2000)
+* [[Carson Swanek The Way Hunt Down Was Supposed To Be v1 5]] (19 September 2000)
+* [[Peter Tenneson Hidden Base Drainer]] (19 September 2000)
+* [[Carson Bell Your Prayers Haven't Been Answered-The Deal Has Been Altered Much FurtherFurther]] (19 September 2000)
+* [[Jordan Murph EBO Drain 'n Pain]] (20 September 2000)
+* [[Dan Grover The Return of the Amazing Elom Brigade]] (20 September 2000)
+* [[Mike d'Amboise Profit/Numbers]] (20 September 2000)
+* [[Michael Pistone Just Another BHBM deck v 2 0]] (20 September 2000)
+* [[John Digiovanni Endor Mind Games do not be fooled]] (20 September 2000)
+* [[Edmund Gray SYC w/ Onith]] (21 September 2000)
+* [[Geoff Snider LS]] (21 September 2000)
+* [[Carson Swanek Speeder Beatdown]] (22 September 2000)
+* [[Bryan Prittie Hunt Down Dueling - Post JPSD]] (22 September 2000)
+* [[Edmund Gray Forget Han return with me to the Clouds]] (22 September 2000)
+* [[Alex George The Emperor's Summer Home On Tatooine v 2 0]] (22 September 2000)
+* [[Alexander Schwarz Lando s Casa (QMC)]] (22 September 2000)
+* [[Eric Bailey There Is Good In Ewoks v 3 1]] (22 September 2000)
+* [[Matthew Peddle Prototype My Kind of Scum/Fearless and Inventive]] (22 September 2000)
+* [[Joe Fox 2 6 Huntdown]] (23 September 2000)
+* [[Ned Cox QMC with troopers Jedi and Red Squadron]] (23 September 2000)
+* [[Scott Lingrell Mordenheim - Corrected]] (23 September 2000)
+* [[Henry Krinkle Those Abyssins are My kinda scum]] (23 September 2000)
+* [[John Digiovanni DBO More Dangerous Than YOU Realize]] (23 September 2000)
+* [[Edmund Gray Cloud City Profit]] (23 September 2000)
+* [[Joe Gold Probed Ralltiir]] (23 September 2000)
+* [[James Falco A Profit deck like no other]] (23 September 2000)
+* [[Nick Stefanko Icy Lockdown]] (24 September 2000)
+* [[David Monteiro SoroSuub V-35 Lowriders]] (24 September 2000)
+* [[John Digiovanni RST Dual Purpose v1 1- You Too Can Own The Darkside]] (24 September 2000)
+* [[Alexander Schwarz Gangstas Paradise]] (24 September 2000)
+* [[Jason Foss Star Destroyers will Dominate]] (24 September 2000)
+* [[2000 North American Continental Championship Brian Hunter Ralltir done RIGHT aka The Answer (Retirement Party)]] (25 September 2000)
+* [[Joe Gold But I don't want to be destroyed V 2 0]] (25 September 2000)
+* [[Jayke Ball Mind what you haven't learned]] (25 September 2000)
+* [[Stephen Moriarty The Agents are in the Court (New Objective)]] (25 September 2000)
+* [[Chris Wodicka X-wing Swarm - A New Way]] (26 September 2000)
+* [[Joe Gold But I dont want to be destroyed V 2 1]] (26 September 2000)
+* [[Dan Christy Mystikal Endor Ops V1 1]] (26 September 2000)
+* [[Nick Stefanko Unlikely Court Members]] (26 September 2000)
+* [[Geoff Snider vader kicking @$$]] (26 September 2000)
+* [[Paul Strangio Nothing But The Best]] (27 September 2000)
+* [[Keith Cervantes ISB Is Back For Good]] (27 September 2000)
+* [[Jason Foss Please Review mains deck]] (27 September 2000)
+* [[John Digiovanni This deal just sucks]] (27 September 2000)
+* [[Justin Brinkerhoff You Have Learned Well]] (27 September 2000)
+* [[Steve Kuperman If I Lose I Still Win]] (28 September 2000)
+* [[Peter Jacobson The Shepherds and the Flock]] (28 September 2000)
+* [[Brian Hunter Dark Deal done RIGHT aka This is NOT yo mamas Dark Deal]] (28 September 2000)
+* [[Jayke Ball BHBM NO MAINS FOR YOU]] (28 September 2000)
+* [[Nick Stefanko Jabba's ISB]] (28 September 2000)
+* [[Michael Pistone JPOTSD isn't out yet so here's my last shot at a ROPS deck]] (28 September 2000)
+* [[Phil Aasen I Shall Enjoy Watching You Cry]] (28 September 2000)
+* [[Alexander Schwarz Gangstas Paradise Version 1 1]] (29 September 2000)
+* [[Phil Aasen EBO's The Way To Go]] (29 September 2000)
+* [[Evan Fitzgerald MBO can work]] (29 September 2000)
+* [[Michael Trepanier court of the vile snitkin]] (30 September 2000)
+* [[William Diniega Imperial control of Yavin 4]] (30 September 2000)
+* [[Jason Foss Retrival is good please reveiw]] (30 September 2000)
+* [[Jayke Ball Myoom onith the Emporers Hand]] (1 October 2000)
+* [[Alex George Just Bring It Ver 1 1]] (1 October 2000)
+* [[Chris Wodicka X-wing Swarm - A New Way V2]] (1 October 2000)
+* [[Keith Henderson Scummy ISB]] (1 October 2000)
+* [[Nick Stefanko CPI Navy v3 0]] (1 October 2000)
+* [[Nick Stefanko Run With It]] (1 October 2000)
+* [[Alexandre Dufresne What is so secret about this]] (2 October 2000)
+* [[Chris Wodicka X-wing Swarm - A New Way V3]] (2 October 2000)
+* [[William Diniega Speed space Palpy and lots of ships]] (2 October 2000)
+* [[Blair Beveridge Ol' Skool Shuffle Post JPSD]] (2 October 2000)
+* [[Dan Grover Disco Lando's Deal-O-Rama]] (2 October 2000)
+* [[William Diniega Spanking Vader's @$$]] (2 October 2000)
+* [[Jayke Ball BHBM Myoom onith Main KILLA]] (3 October 2000)
+* [[Daniel Heefner Hunt Down Annoy The Jedi]] (3 October 2000)
+* [[Dan Grover Disco Lando's Deal-O-Rama v 2 0]] (3 October 2000)
+* [[Mark Zoran Another Rebel Strike Team EvilDoers Beware]] (4 October 2000)
+* [[Brett Severson Rebel Strike Team Beatdown]] (4 October 2000)
+* [[Dan Grover Revenge Of The Amazing Elom Brigade]] (4 October 2000)
+* [[Nick Stefanko DS]] (6 October 2000)
+* [[Bryan Prittie Sleep Now in the Fire - ROPs]] (7 October 2000)
+* [[Chris Wodicka Slayn and Korpil - B-wing Weapons]] (7 October 2000)
+* [[Chris Wodicka Speeders in the Court Speeder Beatdown]] (7 October 2000)
+* [[Nick Stefanko Ewok Rescue - Two Films Early]] (7 October 2000)
+* [[Daniel Fargis Space Blitzkrieg]] (8 October 2000)
+* [[Justin Warren Symphony Of Destruction (Hunt Down by Hoostino)]] (8 October 2000)
+* [[Martijn Peeters BX-Weapons]] (8 October 2000)
+* [[Jeff Heinz Speeder Bike Drain Deck]] (9 October 2000)
+* [[Jayke Ball EBO 7 is your lucky number]] (9 October 2000)
+* [[Chris Wodicka Speed Profit]] (9 October 2000)
+* [[Zach Branch That Thing's Operational Norfolk Style]] (9 October 2000)
+* [[Phil Aasen Set your course for endor Version 2 0]] (9 October 2000)
+* [[Chris Wodicka SYCFA - Balanced Attack]] (9 October 2000)
+* [[Edmund Gray Court Occupation]] (9 October 2000)
+* [[Andrew Wise The Iron Curtain v1 0]] (9 October 2000)
+* [[Jim Li Stimmed Jim's EBO version 2]] (9 October 2000)
+* [[2000 Decipher World Championship Geoff Snider Blitzkrieg (thanks for the name girard)]] (10 October 2000)
+* [[Chris Wodicka SFS Beatdown]] (10 October 2000)
+* [[2000 Decipher World Championship Kyle Craft Craft's worlds decks]] (10 October 2000)
+* [[Donald Hanson In The Hands Of The Empire Forever]] (10 October 2000)
+* [[2000 Decipher World Championship Martin Akesson New Age Throneroom]] (10 October 2000)
+* [[Alex George The Dark Apocalypse]] (10 October 2000)
+* [[2000 Decipher World Championship Yannick Lapointe THE MACHINE KILLA 2]] (10 October 2000)
+* [[Edmund Gray Awesome Tant Occupation Deck]] (10 October 2000)
+* [[Brian Terwilliger Twigg's Revenge - World Champion ISB]] (10 October 2000)
+* [[2000 Decipher World Championship Yannick Lapointe The MACHINE KILLA]] (10 October 2000)
+* [[2000 Decipher World Championship Yannick Lapointe THE MACHINE]] (10 October 2000)
+* [[2000 Decipher World Championship Martin Falke MARTIN FALKE`s Trooper Ralltiir]] (10 October 2000)
+* [[Brandon Allen Choke the Chicken]] (10 October 2000)
+* [[2000 Decipher World Championship Chris Praskac I Grab Your Ghhhk Martin Falke Worlds 2k (Anti Foreign Deck)]] (11 October 2000)
+* [[2000 Decipher World Championship T.J. Holman E B ghettO]] (11 October 2000)
+* [[Jamie Giberti The Ayatolla of Rock N Rolla Returns]] (11 October 2000)
+* [[Matt Ward Endor Operations with Scouts]] (12 October 2000)
+* [[Jayke Ball EBO 7 is your Lucky Number v 2]] (12 October 2000)
+* [[2000 Decipher World Championship Tim Guzman Guzman's LS Worlds Deck]] (12 October 2000)
+* [[Phil Aasen Death Star II deck]] (12 October 2000)
+* [[John Digiovanni Throne Room Beat Down]] (12 October 2000)
+* [[John Digiovanni Where's The Court]] (13 October 2000)
+* [[Joseph Gagliardi LS]] (13 October 2000)
+* [[Matt Woleske The Rumors Are Quite Ominous]] (13 October 2000)
+* [[Greg Heisler The Light Side Deck of Doom v2 0]] (13 October 2000)
+* [[2000 Decipher World Championship Matt Sokol The Beast]] (13 October 2000)
+* [[R. Smith Freaks and Geeks]] (13 October 2000)
+* [[Joe Pestro EBO At Its Best]] (14 October 2000)
+* [[Chris Fanchi The Pride of the ISB]] (14 October 2000)
+* [[Alex George The Swarm]] (14 October 2000)
+* [[Joe Gold Trooper-manipulator]] (14 October 2000)
+* [[Ben Tomlinson To EBO or To Smash Opponents DECK (Nicely of course)]] (14 October 2000)
+* [[2000 Decipher World Championship Jonny Chu Chu's Xwing Swarm]] (15 October 2000)
+* [[Greg Buccini That's Operational (aka Can I have Fries with that)]] (15 October 2000)
+* [[Joseph Hirabayashi Hidden Base]] (15 October 2000)
+* [[Edmund Gray The Empire has invaded Tantooine We're all going to die]] (15 October 2000)
+* [[Justin Warren The A-Team (Profit by Hoostino)]] (15 October 2000)
+* [[Derek Schneuer Dantooine the not so boring planet]] (15 October 2000)
+* [[Alexandre Dufresne There Is Still Good In Him]] (15 October 2000)
+* [[Ryan Beckham MWYHL- Save me it can]] (15 October 2000)
+* [[Jayke Ball SYCFA Manipulator v 1]] (15 October 2000)
+* [[Jayke Ball EBO 7 is your Lucky Number v 3]] (15 October 2000)
+* [[Alexander Schwarz Gangstas Paradise 1 3]] (15 October 2000)
+* [[George Fulton dsv's Profit(with a strategy this time)]] (15 October 2000)
+* [[2000 Decipher World Championship Michael Raveling Imperial Command BHBM]] (16 October 2000)
+* [[Allen McCabe More Death in Space]] (16 October 2000)
+* [[Dan Christy Mystikal Court]] (16 October 2000)
+* [[Tim Linden ISB - My Way]] (16 October 2000)
+* [[John Digiovanni Dinky little troopers and the games they play]] (16 October 2000)
+* [[Ted Baker What The Heck Are We Doing Here]] (16 October 2000)
+* [[Kevin Harlow CC Royal Guards v1 1]] (16 October 2000)
+* [[Ivan Kanner Mind What Madine Has Learned]] (16 October 2000)
+* [[hookem Chadra-Fun is the One]] (16 October 2000)
+* [[Steven Brentson The Whiter Shadow]] (16 October 2000)
+* [[Matt Ward Endor Operations with scouts version 2 0]] (16 October 2000)
+* [[2000 Decipher World Championship Steven Lewis Invincible Court]] (17 October 2000)
+* [[Jonathan Ballin bombing secret base 2]] (17 October 2000)
+* [[Zared Gehrig Rescue the Princes with a twist]] (17 October 2000)
+* [[Jack Reese I Didn't Know Tatooine Had Clouds]] (17 October 2000)
+* [[Ryan Beckham Training is Fun-When Done Right]] (17 October 2000)
+* [[Ben Terry EBO Fakeout]] (17 October 2000)
+* [[Alex George The Swarm The Second Coming]] (17 October 2000)
+* [[2000 Decipher World Championship Clint Hays Steven Lewis is a Genius(worlds deck)]] (17 October 2000)
+* [[Ryan Beckham EBO-Defending the Galaxy with X-Wings v1 2]] (17 October 2000)
+* [[2000 Decipher World Championship Michael Raveling Raveling's Space]] (18 October 2000)
+* [[Mark Zoran Imperials Rule Endor]] (18 October 2000)
+* [[Donald Hanson Insertion And Take Em' Down]] (18 October 2000)
+* [[Phil Aasen EBO I think I finally got it]] (18 October 2000)
+* [[Matt Ward Court of Darth Con Dark Lord of the Sith]] (19 October 2000)
+* [[Cat Ceder Lots of Fun]] (19 October 2000)
+* [[Jamie Giberti Turnabout is Fair Play]] (19 October 2000)
+* [[Bryan Prittie BHBM - Space SmackDown]] (21 October 2000)
+* [[Thomas Dowling My Hidden Base is Kiffex]] (21 October 2000)
+* [[Matt Ward Party on Endor]] (22 October 2000)
+* [[Carson Swanek Rebel Strike Team - MWYHL style]] (22 October 2000)
+* [[Keith Watabayashi Celebrating Rebel Leadership]] (22 October 2000)
+* [[Brad Eier RopsThe Mains version- 1 more time]] (22 October 2000)
+* [[2000 Minneapolis Grand Slam Michael Raveling Raveling's Bunker Deck]] (25 October 2000)
+* [[Phil Aasen Kuat Star Fleet (Die you rebel scum)]] (25 October 2000)
+* [[Kevin Elia This Is My Kind Of Scum]] (25 October 2000)
+* [[Ryan Hase Hunt Down with Guns (post-JPSD)]] (25 October 2000)
+* [[Jason Foss scum of the universe please review]] (25 October 2000)
+* [[2000 Minneapolis Grand Slam Josh Kohman EBO Original and down right super-duper]] (25 October 2000)
+* [[Joe Gold Trooper-manipulator V 1 5]] (25 October 2000)
+* [[2000 Minneapolis Grand Slam Joshua Grace You'll Never Find My Hidden Base]] (25 October 2000)
+* [[Justin Beal Profit with a twist of Scouts]] (25 October 2000)
+* [[Juliën Riviëre French Main&Toys]] (25 October 2000)
+* [[Olivier De Ridder Welcome Joung Skywalker]] (25 October 2000)
+* [[Andy Klema EBO Baragwins LS]] (26 October 2000)
+* [[Edmund Gray Oedipus the Jedi]] (26 October 2000)
+* [[Matt Ward Party on Endor 2 (better much better)]] (26 October 2000)
+* [[Mike Patterson Maddux's BHBM Psych Odds]] (27 October 2000)
+* [[Robert Parker You said Force Drain What's that LS]] (27 October 2000)
+* [[Evan Fitzgerald you don't really use matching black pilots]] (27 October 2000)
+* [[2000 Minneapolis Grand Slam Michael Raveling Raveling's Throne Room]] (27 October 2000)
+* [[Phil Aasen The Wierdest Huntdown you've ever seen]] (27 October 2000)
+* [[Philippe Parise who chot the home one my little tie DID ;)]] (28 October 2000)
+* [[Zach Cute BIG BLUE REACTOR]] (28 October 2000)
+* [[Jim Sells Bad Deals]] (28 October 2000)
+* [[Alan Jern 3 Libras]] (28 October 2000)
+* [[2000 Minneapolis Grand Slam Joshua Grace Grace's GS-winning Hunt Down]] (28 October 2000)
+* [[Philippe Parise DS]] (29 October 2000)
+* [[Zach Cute operatives and kessel running does still work]] (29 October 2000)
+* [[Brad Eier My Kind Of Scum My Kind Of Deck]] (29 October 2000)
+* [[Jason Foss Jabbas Palace Mains]] (29 October 2000)
+* [[Joe Fox ISB Ties]] (29 October 2000)
+* [[Justin Desai Huntdown 2k--By H2O]] (29 October 2000)
+* [[Chris Young Uh-oh More White Weenies]] (30 October 2000)
+* [[2000 Minneapolis Grand Slam Graham Neal Jabba's Twisted World]] (30 October 2000)
+* [[David Jones Old Fashion Carbon Freezing]] (30 October 2000)
+* [[Nick Stefanko Ewok Agents and Jedi Protectors]] (30 October 2000)
+* [[Daniel Heefner My kind of Scum]] (30 October 2000)
+* [[Paul Merrian Endor Scouts]] (30 October 2000)
+* [[Ivan Kanner DSII Closed Enviroment]] (30 October 2000)
+* [[Zach Cute my rst]] (31 October 2000)
+* [[Jacob Mayer Jake's Post-JPSD Hunt Down]] (31 October 2000)
+* [[M C Endor Ops v 1]] (31 October 2000)
+* [[Ronald Rullens Court/OMDH]] (31 October 2000)
+* [[Frank Lamantia Frank's Hunt Down]] (31 October 2000)
+* [[Chris Young Why Epic Hunt Down Rocks (Post JPSD)]] (1 November 2000)
+* [[Eric Fletcher Oops I did it again]] (1 November 2000)
+* [[Daniel Noonan My Kind of One-eyed Scum]] (1 November 2000)
+* [[Jason Foss Hunt Down 2 0]] (1 November 2000)
+* [[Travis Bean People's Court]] (1 November 2000)
+* [[Kevin Elia Chocolate Starfish And The Hotdog Flavored Water]] (1 November 2000)
+* [[2000 Decipher World Championship Dominic Gaudreault Why I Finish 5 at World]] (1 November 2000)
+* [[John Digiovanni Mind What You've Learned on Endor]] (2 November 2000)
+* [[Jayke Ball Ralltiir is Still ALIVE]] (2 November 2000)
+* [[Zach Cute my ebo]] (2 November 2000)
+* [[Rich Jeffery Tinker Toyz 2 The Revenge of the Scouts]] (2 November 2000)
+* [[Jim Li Yet another one of my ebo decks]] (2 November 2000)
+* [[Jayke Ball Vader Invades Jabba's Palace]] (2 November 2000)
+* [[Cat Ceder Giant Flying Purole Kubaz]] (2 November 2000)
+* [[Alex George The Dark Apocalypse The Second Day]] (2 November 2000)
+* [[Juliën Riviëre Court Of The French Gangster]] (2 November 2000)
+* [[John Veasey Scummy court of Retrival]] (3 November 2000)
+* [[Brian Hollingworth Insanely Stupid Badgers (ISB)]] (3 November 2000)
+* [[Mike Fitzgerald Project 86]] (3 November 2000)
+* [[Mike Fitzgerald Cult of Janus]] (3 November 2000)
+* [[Nick Stefanko ISB Biker Gang]] (4 November 2000)
+* [[Steve Marshall Palpatine Operations]] (5 November 2000)
+* [[Andy Gegg It's Clobberin' TIE-me]] (5 November 2000)
+* [[Jeremy Sumrall New age EBO]] (6 November 2000)
+* [[Clint Hays Deadbolt]] (6 November 2000)
+* [[2000 Phoenix Grand Slam Steven Lewis How To Cook A Chevin]] (6 November 2000)
+* [[Chris Wodicka New Age Throne Room w/o Mains]] (6 November 2000)
+* [[Alfred Dong The Brahma Bull's New Age LS]] (6 November 2000)
+* [[Jamie Giberti Yoda's Three I's]] (6 November 2000)
+* [[Jonathan Ballin EBO (ice included) BSBv3 0]] (7 November 2000)
+* [[2000 Decipher World Championship Mike Gemme Manipubation]] (7 November 2000)
+* [[Ted Hansen The Dark Side's Most Desperate Hour]] (7 November 2000)
+* [[2000 Phoenix Grand Slam Tim Guzman So cool so fun]] (7 November 2000)
+* [[Steve Marshall Yub-Yub]] (7 November 2000)
+* [[Matt Ward Court of the Vile Bubo]] (7 November 2000)
+* [[Jayke Ball Bring Him Before Me DS]] (8 November 2000)
+* [[Brad Eier Dont be a Endor Ops]] (8 November 2000)
+* [[2000 Tierfon Con I Olivier De Ridder Winner light of Tierfon Con I]] (8 November 2000)
+* [[Douglas Harvilla Strike Team Assembled]] (8 November 2000)
+* [[Jayke Ball BHBM Luke it is your destiny]] (9 November 2000)
+* [[Chris Wodicka Speed Profit 2 0]] (9 November 2000)
+* [[Edmund Gray EBO at its Best]] (9 November 2000)
+* [[Clayton Atkin Atkin's Ketwol EBO]] (9 November 2000)
+* [[Keith Watabayashi Original Net Deck]] (10 November 2000)
+* [[Phil Aasen Karrdeshark's X-wings]] (10 November 2000)
+* [[Jordan Murph EBO Drain 'n Pain v 2 0]] (11 November 2000)
+* [[MeatDonkey EBO and X-wings It's All Good]] (11 November 2000)
+* [[Frank Lamantia Frank's Hunt Down v1 1]] (12 November 2000)
+* [[Keith Watabayashi Original Net Deck V 1 0]] (12 November 2000)
+* [[Jason Foss ISB scouts]] (12 November 2000)
+* [[MeatDonkey EBO And X-wings It's All Good v 2]] (12 November 2000)
+* [[Chris O'Hara Silly Little Tat Deck]] (12 November 2000)
+* [[Casey Barson How to lose friends and irritate people]] (12 November 2000)
+* [[Jake Rich Super TIGIH A gift from God or Satan]] (13 November 2000)
+* [[Philippe Parise how to profit from BHBM & destroy the rest]] (13 November 2000)
+* [[Philippe Parise cough cheesy cough (baragwins and tibs)]] (13 November 2000)
+* [[Philippe Parise KaBo0OM]] (13 November 2000)
+* [[Jayke Ball BHBM Luke it is your destiny V 2]] (13 November 2000)
+* [[Andy McClure The Chevin's lockdown]] (14 November 2000)
+* [[Jason Foss Hidden Mains with Retreival]] (14 November 2000)
+* [[Mike Panayotou Mike's Hunt Down v 2 0 -- Please Rate]] (14 November 2000)
+* [[2000 Phoenix Grand Slam Charles Hickey Hidden Operatives]] (14 November 2000)
+* [[Brian Terwilliger Biggest Twigg's Big Blue Mosh at Endor]] (14 November 2000)
+* [[Cat Ceder Chandra-Fan Madness]] (14 November 2000)
+* [[Grond YT Retreival Hidden Base]] (15 November 2000)
+* [[Quirin Fürgut BHBM for D2 & Endor only Tournament]] (15 November 2000)
+* [[Jamie Giberti The Ayatolla OF Rock N Rolla Re-Returns]] (15 November 2000)
+* [[Bryce Leen THE ELOM DECK]] (15 November 2000)
+* [[Travis Bean I'll Profit from this]] (16 November 2000)
+* [[Geoff Bowman Jabba and his Court flies off to Space]] (16 November 2000)
+* [[Cat Ceder Hunt Down Done Left er Right]] (16 November 2000)
+* [[Shaun Mills There is Another]] (17 November 2000)
+* [[Geoff Bowman Jabba & Court Goes 2 Space Take 2]] (17 November 2000)
+* [[Justin Fleenor Altimus]] (17 November 2000)
+* [[Cat Ceder This Deal Is Getting Worse In The Clouds]] (17 November 2000)
+* [[Scott Poster Come to Papa Court gone mad]] (17 November 2000)
+* [[Jason Foss Hidden Mains v2 Please Review]] (18 November 2000)
+* [[2000 Mega Weekend Brian Hunter EBO done RIGHT aka The Real Deal]] (19 November 2000)
+* [[Jayke Ball BHBM Who's your daddy]] (19 November 2000)
+* [[Michael Raveling Raveling's Agents In The Court]] (19 November 2000)
+* [[Jeff Kasper Hidden EBO version 1 2]] (19 November 2000)
+* [[Josh Kohman ANTI-SCUM EBO]] (19 November 2000)
+* [[Quirin Fürgut A real MWYHL-Deck]] (19 November 2000)
+* [[Mark Kloida They're Made In Milwaukee Next To The Beer Bottlers]] (20 November 2000)
+* [[Alexandre Dufresne All B- wings Report In]] (20 November 2000)
+* [[Andy McClure Closed Environment Tech]] (20 November 2000)
+* [[Jason Foss Hidden Mains V3]] (20 November 2000)
+* [[Casey Barson Wonder Who They Found (Endor-DSII Deck)]] (20 November 2000)
+* [[Scott Lingrell Crash's Garrison]] (21 November 2000)
+* [[Douglas Harvilla Technological Terrors]] (21 November 2000)
+* [[Cat Ceder The Rescue Of Daddy's Little Girl]] (21 November 2000)
+* [[Michael Raveling Raveling's My Kind Of Scum]] (21 November 2000)
+* [[Charlie Herren Team Machine Musicians post-JPSD]] (21 November 2000)
+* [[Mike Panayotou Mike's Bring Him Before Me v 1 0]] (22 November 2000)
+* [[Bryan Prittie The PowerHouse]] (22 November 2000)
+* [[Jim Li Stimmed Jim's Ketwol]] (22 November 2000)
+* [[Zach Cute EB not so ghettO]] (22 November 2000)
+* [[Ronald Rullens Court Deck (DS)]] (22 November 2000)
+* [[Jake Rich Welcome Home Daddy v1 6]] (22 November 2000)
+* [[Casey Barson A BHBM Deck That Doesn't Suck]] (22 November 2000)
+* [[Garrett Larson Deadbody's Bring hime Before me]] (23 November 2000)
+* [[Andrew Carson There Is Still Good In TIGIH]] (23 November 2000)
+* [[Chris Terwilliger LittleTwigg's Bring Him Before Me]] (23 November 2000)
+* [[Jayke Ball BHBM THE SITH ARE HERE TO STAY]] (23 November 2000)
+* [[Yannick Lapointe MKOS DS]] (23 November 2000)
+* [[Chris Wodicka Starcraft Multi Slayers]] (23 November 2000)
+* [[Jason Foss Jasons 3-5 Marker]] (23 November 2000)
+* [[Jordan Murph Simple BHBM]] (24 November 2000)
+* [[Ben Tomlinson (Jump On Th Bag Wagin) V1 2 Refined Version]] (24 November 2000)
+* [[Eric Deluca Bring Him Before me tormentos way]] (25 November 2000)
+* [[Brian Garrison Hotdog Flavored Hidden Base]] (25 November 2000)
+* [[Robert Parker The x-wing goes long Interception]] (25 November 2000)
+* [[Carson Swanek Speeder Beatdown v2 0]] (25 November 2000)
+* [[Dante Kawalsky I activate therefor i am]] (25 November 2000)
+* [[Patrick Mathieson FiftyTwo BHBM Beatdown]] (25 November 2000)
+* [[Tyler Martin Rescue The Princess]] (25 November 2000)
+* [[Aaron Komar BHBM Beat Down/No flip]] (25 November 2000)
+* [[Garrett Larson Missing on Tatooine]] (25 November 2000)
+* [[Jon Bragg Wow's The Man Deck]] (26 November 2000)
+* [[John Digiovanni Greased Monkey Rolls (mmm delicious)]] (27 November 2000)
+* [[Eric Deluca Profite or too bad]] (27 November 2000)
+* [[Robert Parker Dark Deal Dead On]] (27 November 2000)
+* [[Tyler Martin Court of the Vile Gangster]] (27 November 2000)
+* [[Mike Rebman Speeders From Hell; Part I]] (27 November 2000)
+* [[Chris Young New Age Hidden Mains]] (28 November 2000)
+* [[Luca Costanzo ISB that WINS]] (28 November 2000)
+* [[Justin Warren Heart Of Darkness (Dueling By Hoostino)]] (28 November 2000)
+* [[2000 Decipher World Championship Dominic Gaudreault Dominic World 1-2 PILE]] (28 November 2000)
+* [[Ted Baker Ounee Ta Sucks RalOps Rocks]] (28 November 2000)
+* [[2000 Coruscant Civil War Brian Terwilliger Twigg's Our Most Desperate Hour Mains and Smack]] (28 November 2000)
+* [[Juliën Riviëre French Operations]] (28 November 2000)
+* [[Brian Hunter Hidden Mains done RIGHT aka where is that weather vane]] (29 November 2000)
+* [[Chris Wodicka Starcraft Multi Slayers - The Newer Version]] (29 November 2000)
+* [[Master 666 THE DUEL BEGINS (HD -R-U-L-E-Z)]] (29 November 2000)
+* [[Steve Marshall Fun QMC that doesn't suck]] (30 November 2000)
+* [[Jeff Kasper Hidden Base/EBO version 1 3]] (30 November 2000)
+* [[Paul Motz Lockbox]] (30 November 2000)
+* [[Andy McClure OMDH- Andy Style]] (30 November 2000)
+* [[Tom Culpepper BHBM and kill his friends]] (30 November 2000)
+* [[Geoff Gallo-Cornell Urban Assault Vehicle]] (1 December 2000)
+* [[Andy Klema Blah Blah Blah Abyssins]] (4 December 2000)
+* [[Josh Kohman Kohman's Captains]] (4 December 2000)
+* [[Eric Fletcher Pile Of Tech]] (4 December 2000)
+* [[Jayke Ball DS]] (4 December 2000)
+* [[Geoff Gallo-Cornell LS]] (4 December 2000)
+* [[Tom Culpepper BHBM The Great Destroyer]] (4 December 2000)
+* [[Ryan Mathison HB Squadrons Ver 2 0]] (6 December 2000)
+* [[Jayke Ball Echo Base Operations LS]] (6 December 2000)
+* [[Steve Marshall Hunting Down Phil]] (7 December 2000)
+* [[SockMan LS]] (7 December 2000)
+* [[Ryan Austin Jabba's MACHINE]] (8 December 2000)
+* [[Paul Merrian Light Fighter Screen]] (8 December 2000)
+* [[Andy Klema Bomb Track]] (8 December 2000)
+* [[Matthew Starling Your Worse Nightmare]] (8 December 2000)
+* [[Paul Merrian Fighter Screen]] (8 December 2000)
+* [[Jayke Ball X-wing Swarm V2 LS]] (8 December 2000)
+* [[Douglas Harvilla Echo Strike Team]] (8 December 2000)
+* [[Jordan Murph Speeder Bikes Love Ralltiir]] (9 December 2000)
+* [[Ryan Austin The POWER of the UNDERWORLD]] (9 December 2000)
+* [[Brian Sykes How to build a happy fun ball]] (10 December 2000)
+* [[Jayke Ball There Is Good In Him LS]] (10 December 2000)
+* [[Chris Wodicka Starcraft Multi Slayers - The Final Version]] (10 December 2000)
+* [[Andy McKillip Enhanced Beatdown LS]] (10 December 2000)
+* [[Joe Horbey Horbey's Brangus Ralops]] (10 December 2000)
+* [[Christopher Hanudel Sabacc is Back]] (10 December 2000)
+* [[Henry Krinkle Mind Over Matter]] (10 December 2000)
+* [[R. Smith Age of Aquaris]] (11 December 2000)
+* [[Phil Aasen Phillip's X-wing Hive]] (11 December 2000)
+* [[Andy McClure Andy's Old School Hidden Fakeout]] (11 December 2000)
+* [[M C Endor Ops v 2]] (11 December 2000)
+* [[Dan Christy LS]] (12 December 2000)
+* [[Geoff Gallo-Cornell Saber In Your Eye]] (12 December 2000)
+* [[Matt Hanson your a horrible person]] (12 December 2000)
+* [[Chris Wodicka EBO X-wings Review me please]] (12 December 2000)
+* [[Chris Burnett Ewoks have usage v2]] (12 December 2000)
+* [[Markus Wüst Totmacher - die Erste]] (12 December 2000)
+* [[Cat Ceder Ishi's In The Court]] (12 December 2000)
+* [[Justin Beal Speed MWYHL w/ Space CRUNCH v1 1]] (12 December 2000)
+* [[Jonathan Ballin court of the vile kalit/jawa rampage]] (13 December 2000)
+* [[Drew Scott LS got no stick against walkers and vader]] (13 December 2000)
+* [[Mike Crawford Eloms on Speeders]] (14 December 2000)
+* [[Jayke Ball There Is Good In Him LS v2]] (14 December 2000)
+* [[Edmund Gray BHBM w/ SAC and bombers]] (14 December 2000)
+* [[Cat Ceder Suh-WEET BHBM v 2 0]] (14 December 2000)
+* [[Nick Stefanko The Emperor's TIE Interceptor Hell v2 1]] (14 December 2000)
+* [[Nick Stefanko Why Ewoks Care About Hansicles v2 1]] (14 December 2000)
+* [[Geoff Gallo-Cornell Saber In Your Eye v2 0]] (14 December 2000)
+* [[Chris Burnett ewoks are useful v2]] (14 December 2000)
+* [[Zach Cute Really Scary Tech(rst)]] (15 December 2000)
+* [[Edmund Gray Huntdown Scum]] (15 December 2000)
+* [[Geoff Gallo-Cornell Saber In Your Eye v3 0]] (15 December 2000)
+* [[Alex Helmke Hunt Down and KILL v1 0]] (15 December 2000)
+* [[Steven Harpster Hunt Down And Win the Sabacc]] (15 December 2000)
+* [[Fernando Medalón THE EMPIRE TAKING CONTROL OF CLOUD CITY]] (15 December 2000)
+* [[Brian Sykes Obi in da House Party Time]] (16 December 2000)
+* [[Zach Cute black and blue endor ops]] (16 December 2000)
+* [[Hayes Hunter Hayes New Age Throne Room]] (16 December 2000)
+* [[Jason Tomko Ralltir Heavy Assault]] (16 December 2000)
+* [[Chris Praskac Why Steven Lewis Has My Uncut Sheet]] (17 December 2000)
+* [[Jason Foss Jason's Dark Deal]] (17 December 2000)
+* [[Matt Ward Wrist Wars(RST)]] (17 December 2000)
+* [[Michael Pistone Court Of The Vile Miyooom]] (17 December 2000)
+* [[Eddie Brown Black Death]] (17 December 2000)
+* [[Jayke Ball The Prophecy]] (17 December 2000)
+* [[Steve Harpster My kind of scum/The Myo Way]] (17 December 2000)
+* [[Cat Ceder Hidden Mains]] (17 December 2000)
+* [[2000 Endor Regionals Steve Harpster Hidden Ralltiir Freighter Captains]] (17 December 2000)
+* [[J.D. LaCure Talz' Hidden Mains]] (18 December 2000)
+* [[Alan Sagan Sagan and his Huntdown]] (18 December 2000)
+* [[Michael Sorrell Undefeated BHBM (Closed Environment)]] (18 December 2000)
+* [[Alex George The Blue Snowstorm HB Retrieval]] (18 December 2000)
+* [[Andy McClure Teleportation The newest Dark Jedi skill]] (18 December 2000)
+* [[Justin Desai H2O's EBO room]] (18 December 2000)
+* [[Jayke Ball The Prophecy V 2]] (18 December 2000)
+* [[Chris Praskac Meta DB]] (19 December 2000)
+* [[M C MWYHL my way]] (19 December 2000)
+* [[Brad Eier Wow never seen this deck before]] (19 December 2000)
+* [[Steve Kuperman Why Kuperman Sucks]] (20 December 2000)
+* [[Andy Klema Wake Up]] (20 December 2000)
+* [[Geoff Gallo-Cornell Unoriginal and Uncreative--Again]] (20 December 2000)
+* [[Yannick Lapointe Why Tamre look like Ketwol]] (20 December 2000)
+* [[Tom Culpepper Gand posted a light deck]] (21 December 2000)
+* [[Josh Jacob ISB what more is there to say (on coruscant)]] (21 December 2000)
+* [[Denny Chapin Bouny Hunters vs1 1]] (21 December 2000)
+* [[Ed Rebman MKOS beats the LS down v2 0]] (21 December 2000)
+* [[Tyler Williams The Trials and Tribulations of Crix Madine]] (21 December 2000)
+* [[Tyler Williams The Mad Abyssin Deck Beta]] (21 December 2000)
+* [[Scott Shepherd New Age Hunt Down]] (21 December 2000)
+* [[Robert Parker Dark Deal Dead On v 2]] (22 December 2000)
+* [[Carson Swanek Mad Crazy Jawas from Tatooine]] (22 December 2000)
+* [[Robert Parker Easy Beatdown Operations]] (22 December 2000)
+* [[Geoff Snider Phil Operations]] (23 December 2000)
+* [[Quirin Fürgut Sniper TK-422s DS]] (23 December 2000)
+* [[Denny Chapin Crazy Cloud Cars]] (24 December 2000)
+* [[Jayke Ball Bullet with Butterfly x-wings]] (25 December 2000)
+* [[M C MWYHL my way (aka-the way I play MWYHL)]] (25 December 2000)
+* [[Michael Schiemer Mike Schiemer's Trademark Dueler]] (25 December 2000)
+* [[Frederick Ealick ONYX The Rock Hard Deck v 1 0]] (25 December 2000)
+* [[Denny Chapin How did i just lose to rats]] (25 December 2000)
+* [[Tom Culpepper CCISB beta DS]] (26 December 2000)
+* [[Brian Hunter Scum 2K done RIGHT aka Set Your Course for Villainy]] (26 December 2000)
+* [[Justin Desai H2O's Ballpoint pen deck]] (26 December 2000)
+* [[Andy McClure Andy's Rodent Beats]] (26 December 2000)
+* [[Jim Li Stimmed Jim's MKOS]] (26 December 2000)
+* [[Geoff Gallo-Cornell Covert Operations]] (26 December 2000)
+* [[Jake Rich Who's My Daddy v1 8]] (26 December 2000)
+* [[James Eby Don't Let The Door Hit You On The @$$ On Your Way Out V2]] (27 December 2000)
+* [[Denny Chapin How Did I Just Lose To Rats Again]] (27 December 2000)
+* [[Justin Warren American Beauty (Hidden Mains by Hoostino)]] (27 December 2000)
+* [[Ryan Austin The Home One Conspiracy]] (27 December 2000)
+* [[Patrick Mathieson The Fifty-Second Endor Ops Deck Ever]] (27 December 2000)
+* [[Mark Carila QMC that kicks booty]] (28 December 2000)
+* [[Mike Crawford Eloms on Speeders Again]] (28 December 2000)
+* [[Bryce Leen Bring Him Before the Royal Gaurds v1 00]] (28 December 2000)
+* [[Bryce Leen These Troopers Are Getting More Anoying All The Time]] (28 December 2000)
+* [[Heraclio Sanchez Yavin 4 base occupation]] (29 December 2000)
+* [[John Anderson Onyx The Rock Hard Deck v 1 2]] (29 December 2000)
+* [[Brian Hollingworth More Insanely Stupid Badgers]] (30 December 2000)
+* [[Ryan Austin Agents of DEATH]] (30 December 2000)
+* [[Andy Gegg Endor Ops]] (30 December 2000)
+* [[Peter Hall Wraaaaaarw (Wookies on Tatooine)]] (31 December 2000)
+* [[Jason Foss Jason's EBO]] (31 December 2000)
+* [[Hayes Hunter Hayes' AITC Mains]] (31 December 2000)
+* [[Tom Culpepper Sometimes I amaze even myself]] (1 January 2001)
+* [[Henry Krinkle Cancerous Courtroom 2 0]] (1 January 2001)
+* [[Jeff Kasper kazper's hidden ebo v 1 6]] (1 January 2001)
+* [[Tom Culpepper MKOS mmmm tasty]] (1 January 2001)
+* [[Heraclio Sanchez Tricky SYCFA]] (2 January 2001)
+* [[Quirin Fürgut DS]] (2 January 2001)
+* [[Brad Eier One Knight Stand]] (2 January 2001)
+* [[Steve Gossett look a sandstorm is coming]] (2 January 2001)
+* [[Jayke Ball AHHH Elephants Everywhere]] (2 January 2001)
+* [[James Eby Hunt Down V1 0]] (2 January 2001)
+* [[Fernando Medalón Get dark side frozen]] (3 January 2001)
+* [[Norman Horn Cogito Ergo Supero]] (3 January 2001)
+* [[Bjørn Sørgjerd Endor Operations]] (3 January 2001)
+* [[Alexandre Dufresne The DSII Is Operational again]] (3 January 2001)
+* [[Philippe Parise When teady bears KILL]] (4 January 2001)
+* [[Mike Panayotou Mike's BHBM v 2 0]] (4 January 2001)
+* [[Andy McClure I don't need no stinkin' starships or do I - The sequal]] (4 January 2001)
+* [[Heraclio Sanchez Niktmare]] (5 January 2001)
+* [[Fernando Medalón Hidden Base LS]] (5 January 2001)
+* [[Heraclio Sanchez Rescue The Princess LS]] (5 January 2001)
+* [[Dan Grover Symphony of Destruction- SYC Bombers]] (5 January 2001)
+* [[Mark Carila Hunt Down And Annoy The Jedi]] (6 January 2001)
+* [[Greg Buccini Leia was an exceptional student]] (6 January 2001)
+* [[Phil Aasen My Kind Of Abyssin]] (6 January 2001)
+* [[Jono Monroe Uterus' Scum For Life]] (7 January 2001)
+* [[Justin Alfs Vader and His Clique]] (7 January 2001)
+* [[Stu McCurdy Destroying the Jedi]] (7 January 2001)
+* [[Justin Warren A Clockwork Black (HD Duel by Hoostino - Final)]] (8 January 2001)
+* [[Brian Terwilliger Twigg's Hunt Down Suprise]] (8 January 2001)
+* [[John Anderson Onyx The Rock Hard Deck v 2 56]] (8 January 2001)
+* [[Stu McCurdy Destroying the Jedi v2]] (8 January 2001)
+* [[Gordon Marx LS]] (9 January 2001)
+* [[Philip Marschall I'm watching the Duke game right now which has nothing to do with this deck]] (9 March 2001)
+
+== Tournaments ==
+<!-- format-tournaments:start (generated from formats/registry.json; edit the event pages) -->
+127 tournaments on [[List of SWCCG tournaments]] used this format, newest first.
+
+{| class="wikitable sortable"
+|-
+! Tag !! Event !! Dates !! Site !! Winner
+|-
+| 2026-11 || [[2026 Retro World Championship]] || October 2026 || Bloomington, Minnesota || [[Will Tarbox]]<ref>[https://www.starwarsccg.org/2026-12-swccg-retro-event-at-worlds-prem-ds2-bloomington-minnesota-oct-23-25-2026/ 2026 Retro Event at Worlds results], [[Players Committee]] (2 November 2026). Preserved copy: [https://web.archive.org/web/20261114003208/https://swccg.com/snapshots/pc/2026-12-swccg-retro-event-at-worlds-prem-ds2-bloomington-minnesota-oct-23-25-2026.html Internet Archive].</ref>
+|-
+| 2026-09 || [[2026 Retro GEMP Match Play Championship (Premiere to DSII)]] || July–September 2026 || GEMP || [[Timo Dusel]]
+|-
+| 2026-09 || [[2026 Retro League Event 3]] || 9 August – 20 September 2026 || GEMP || [[Andrew Bethell]]
+|-
+| 2026-07 || [[2026 Retro U.S. Nationals]] || 1 August 2026 || New Brunswick, New Jersey || [[Jonny Chu]]
+|-
+| 2025-07 || [[2025 Retro League Event 3]] || 8 June – 20 July 2025 || GEMP || [[Matthew Ford]]
+|-
+| 2025-04 || [[2025 Retro GEMP Match Play Championship (Premiere to DSII)]] || May–July 2025 || GEMP || [[Timo Dusel]]
+|-
+| 2024-10 || [[2024 Retro League Event 4]] || 25 August – 2 October 2024 || GEMP || [[Joe Horbey]]
+|-
+| 2023-07 || [[2023 Retro League Event 3]] || 4 June – 16 July 2023 || GEMP || [[Paul Todd Feldman]]
+|-
+| 2022-07 || [[2022 Retro League Event 3]] || late May – mid-July 2022 || GEMP || [[Charles Hickey]]
+|-
+| 2009-03-27 || [[2009 2K Event]] || 27–29 March 2009<ref name="pc-news57">[https://web.archive.org/web/20090413053951/http://www.swccgpc.com:80/news/news.php?id=57 Worlds 2K Event – Penn. March 27-29, 09 – From Chris Fanchi] (2 April 2009), swccgpc.com. Internet Archive capture 13 April 2009.</ref> || Blue Bell, Pennsylvania<ref name="pc-news57" /> || [[Hayes Hunter]]
+|-
+| 2000-11 || [[2000 Tierfon Con I]] || 4 November 2000 || Belgium || [[Olivier De Ridder]]
+|-
+| 2000-10 || [[2000 Decipher World Championship]] || 5–8 October 2000 || DecipherCon, Kissimmee, Florida || [[Matt Sokol]]
+|-
+| 2000-10 || [[October 2000 Virginia Beach tournament]] || 22 October 2000 || The Comic Alternative, Virginia Beach, VA || [[Lincoln Torrey]]
+|-
+| 2000-10 || [[October 2000 Milwaukee tournament]] || 21 October 2000 || Egomania Comics, Milwaukee, Wisconsin || 
+|-
+| 2000-10 || [[October 2000 Bountiful tournament]] || 21 October 2000 || End Zone Comics, Bountiful, Utah || [[Jason Ayre]]
+|-
+| 2000-10 || [[October 2000 Rochester tournament (21 October)]] || 21 October 2000 || Millennium Games and Hobbies, Rochester, NY || [[Charles Clarkson]]
+|-
+| 2000-10 || [[October 2000 San Jose tournament]] || 21 October 2000 || Comics & Fantasies, San Jose, CA || [[Kevin Shannon]]
+|-
+| 2000-10 || [[October 2000 Los Gatos tournament]] || 21 October 2000 || Los Gatos, CA || [[Alex Stefanko]]
+|-
+| 2000-10 || [[2000 Tol-Con tournament]] || 21 October 2000 || Tol-Con, Toledo, Ohio || [[Brad Eier]]
+|-
+| 2000-10 || [[October 2000 Parker tournament]] || 21 October 2000 || Parker, Colorado || [[Brian Hunter]]
+|-
+| 2000-10 || [[2000 Minneapolis Grand Slam]] || 21 October 2000 || Minneapolis–Saint Paul, Minnesota || [[Joshua Grace]]
+|-
+| 2000-10 || [[October 2000 Maryland tournament]] || 15 October 2000 || Maryland || [[Mike Gandy]]
+|-
+| 2000-10 || [[October 2000 Folsom tournament]] || 15 October 2000 || Folsom, CA || [[Alfred Dong]]
+|-
+| 2000-10 || [[October 2000 Kingsport tournament]] || 14 October 2000 || Evermore, Kingsport, TN || [[Eric Erwin]]
+|-
+| 2000-10 || [[October 2000 Green Bay tournament]] || 14 October 2000 || HobbyTown USA, Green Bay, Wisconsin || [[Matt Upstone]]
+|-
+| 2000-10 || [[October 2000 St. Cloud tournament]] || 14 October 2000 || St. Cloud, Minnesota || 
+|-
+| 2000-10 || [[October 2000 Tempe tournament]] || 14 October 2000 || AZ Gamer, Arizona || [[Brett Kitani]]
+|-
+| 2000-10 || [[October 2000 Minneapolis tournament]] || 10 October 2000 || Mirkwood Coffee & Comics, Minneapolis, Minnesota || 
+|-
+| 2000-10 || [[October 2000 Modesto tournament]] || 7 October 2000 || Modesto, CA || [[Kyle Ishimaru]]
+|-
+| 2000-10 || [[2000 DecipherCon 8-Man (Saturday, Charles Hickey)]] || 7 October 2000 || Kissimmee, Florida || [[Charles Hickey]]
+|-
+| 2000-10 || [[2000 DecipherCon 8-Man (Friday, Clay Ramey)]] || 6 October 2000 || Kissimmee, Florida || [[Clay Ramey]]
+|-
+| 2000-10 || [[2000 DecipherCon IRC 8-Man]] || 6 October 2000 || Kissimmee, Florida || 
+|-
+| 2000-10 || [[2000 DecipherCon 8-Man (Friday, Brian Terwilliger)]] || 6 October 2000 || Kissimmee, Florida || [[Brian Terwilliger]]
+|-
+| 2000-10 || [[October 2000 Clarks Summit tournament]] || 1 October 2000 || Clarks Summit, PA || [[Joseph Gagliardi]]
+|-
+| 2000-10 || [[October 2000 Phoenix tournament]] || 1 October 2000 || Gamer's Edge, Phoenix, AZ || [[Chris Shaner]]
+|-
+| 2000-10 || [[2000 AugustaCon Constructed (Day 1)]] || October 2000 || AugustaCon, Augusta, Georgia || 
+|-
+| 2000-10 || [[October 2000 Utica tournament]] || October 2000 || Wizards of the Coast store, Utica, Michigan || [[Casey Galvan]]
+|-
+| 2000-09 || [[September 2000 Rochester tournament (30 September)]] || 30 September 2000 || Millenium Games, Rochester, NY || [[Jake Rich]]
+|-
+| 2000-09 || [[September 2000 Parker tournament]] || 30 September 2000 || Parker, CO || [[Brian Hunter]]
+|-
+| 2000-09 || [[September 2000 Virginia Beach tournament]] || 24 September 2000 || The Comic Alternative, Virginia Beach, VA || [[Steven Yeager]]
+|-
+| 2000-09 || [[September 2000 Stickney tournament]] || 23 September 2000 || Crazy Cards and Comics, Stickney, Illinois || [[Edmund Gray]]
+|-
+| 2000-09 || [[September 2000 St. Cloud tournament]] || 23 September 2000 || St. Cloud State University (Atwood Center), St. Cloud, Minnesota || [[Michael Raveling]]
+|-
+| 2000-09 || [[September 2000 Joliet tournament]] || 23 September 2000 || Leisure Hours Hobbies, Joliet, Illinois || [[Steve Kuperman]]
+|-
+| 2000-09 || [[September 2000 Livingston tournament]] || 23 September 2000 || New World Manga, Livingston, NJ || [[Patrick Ziagos]]
+|-
+| 2000-09 || [[September 2000 Las Vegas tournament (23 September)]] || 23 September 2000 || Hobbytown USA, Las Vegas, NV || [[Tim Guzman]]
+|-
+| 2000-09 || [[September 2000 Seattle tournament (23 September)]] || 23 September 2000 || Broken Games, Seattle, WA || [[Douglas Harvilla]]
+|-
+| 2000-09 || [[September 2000 Vancouver tournament (17 September)]] || 17 September 2000 || Vancouver, BC || [[James Hsu]]
+|-
+| 2000-09 || [[September 2000 Pleasanton tournament]] || 17 September 2000 || KK's Kards and Komics, Pleasanton, CA || 
+|-
+| 2000-09 || [[September 2000 Boca Raton tournament]] || 17 September 2000 || Boca Raton, FL || [[Michael Fitzgerald]]
+|-
+| 2000-09 || [[September 2000 Green Bay tournament (16 September)]] || 16 September 2000 || Green Bay, Wisconsin || [[Mark Kloida]]
+|-
+| 2000-09 || [[September 2000 Rochester tournament (16 September)]] || 16 September 2000 || Millennium Games and Hobbies, Rochester, NY || [[Tom Colarocco]]
+|-
+| 2000-09 || [[September 2000 Shreveport tournament]] || 16 September 2000 || Shreveport, Louisiana || [[David Monteiro]]
+|-
+| 2000-09 || [[September 2000 Las Vegas tournament (16 September)]] || 16 September 2000 || Las Vegas, NV || [[Matt Berta]]
+|-
+| 2000-09 || [[September 2000 Kingman tournament]] || 16 September 2000 || Kingman, AZ || [[Tim Guzman]]
+|-
+| 2000-09 || [[September 2000 Seattle tournament (16 September)]] || 16 September 2000 || Broken Games, Seattle, WA || [[Joe Olson]]
+|-
+| 2000-09 || [[September 2000 Modesto tournament]] || 16 September 2000 || Kriers Cards and Comics, Modesto, CA || [[Paul Todd Feldman]]
+|-
+| 2000-09 || [[September 2000 San Francisco tournament]] || 10 September 2000 || Ballpark Game Center, South San Francisco, CA || [[Chris Leung]]
+|-
+| 2000-09 || [[September 2000 Cedar Grove tournament]] || 9 September 2000 || Cedar Grove, NJ || [[Andrew Parks]]
+|-
+| 2000-09 || [[September 2000 San Jose tournament]] || 9 September 2000 || Comics and Fantasies, San Jose, CA || [[Alfred Dong]]
+|-
+| 2000-09 || [[September 2000 Williston Park tournament (9 September)]] || 9 September 2000 || Williston Park, NY || [[Matt Ehrhart]]
+|-
+| 2000-09 || [[September 2000 Amsterdam tournament]] || 3 September 2000 || Amsterdam, Netherlands || 
+|-
+| 2000-09 || [[September 2000 Green Bay tournament (2 September)]] || 2 September 2000 || HobbyTown USA, Green Bay, Wisconsin || Christian K.
+|-
+| 2000-09 || [[September 2000 Geneva tournament]] || 2 September 2000 || Beyond Reality, Geneva, Illinois || [[Paul Motz]]
+|-
+| 2000-09 || [[September 2000 Raleigh tournament]] || 2 September 2000 || Raleigh, NC || [[Adam Weinstein]]
+|-
+| 2000-09 || [[September 2000 Rochester tournament (2 September)]] || 2 September 2000 || Millenium Games and Hobby Store, Rochester, NY || [[Jon Schultz]]
+|-
+| 2000-09 || [[September 2000 Williston Park tournament (2 September)]] || 2 September 2000 || Williston Park, NY || [[Bucksun Lee]]
+|-
+| 2000-09 || [[September 2000 Vancouver tournament (2 September)]] || 2 September 2000 || Vancouver, BC, Canada || [[Ryan Mathison]]
+|-
+| 2000-09 || [[September 2000 Menomonee Falls tournament]] || September 2000 || Menomonee Falls, Wisconsin || [[Bryan Prittie]]
+|-
+| 2000-09 || [[September 2000 Phoenix tournament]] || September 2000 || Gamers Edge, Phoenix area, AZ || [[Patrick Hug]]
+|-
+| 2000-09 || [[September 2000 Tucson tournament]] || September 2000 || Kards 4 You, Tucson, AZ || [[Steve Marshall]]
+|-
+| 2000-09 || [[2000 Krakow Grand Slam]] || September 2000 || Kraków, Poland || Unknown
+|-
+| 2000-08 || [[August 2000 Glenside tournament]] || 27 August 2000 || RPG Outpost, Glenside, PA || [[Chris Praskac]]
+|-
+| 2000-08 || [[August 2000 Centerville tournament]] || 26 August 2000 || Schumers Cards and Comics, Centerville, Ohio || [[Russell Hockenberry]]
+|-
+| 2000-08 || [[August 2000 San Jose tournament]] || 26 August 2000 || Comics and Fantasies, San Jose, CA || [[Paul Todd Feldman]]
+|-
+| 2000-08 || [[August 2000 Los Gatos tournament]] || 26 August 2000 || Collector's Corner, Los Gatos, CA || [[Kevin Shannon]]
+|-
+| 2000-08 || [[August 2000 Las Vegas tournament (26 August)]] || 26 August 2000 || Las Vegas, NV || [[Matt Berta]]
+|-
+| 2000-08 || [[August 2000 Augusta tournament (26 August)]] || 26 August 2000 || Book Exchange, Augusta, GA || [[Arthur Rhodes]]
+|-
+| 2000-08 || [[2000 Blue Springs Grand Slam]] || 26 August 2000 || Blue Springs, Missouri || Unknown
+|-
+| 2000-08 || [[August 2000 Sherwood tournament (25 August)]] || 25 August 2000 || Sherwood, Arkansas || 
+|-
+| 2000-08 || [[August 2000 Minneapolis tournament]] || 22 August 2000 || Mirkwood, Minneapolis, Minnesota || [[Joshua Grace]]
+|-
+| 2000-08 || [[August 2000 Pleasanton tournament]] || 20 August 2000 || KK's Kards and Komics, Pleasanton, CA || [[John Monroe]]
+|-
+| 2000-08 || [[August 2000 Augusta tournament (20 August)]] || 20 August 2000 || Book Exchange, Augusta, GA || [[Paul Myers]]
+|-
+| 2000-08 || [[August 2000 Marlton tournament (20 August)]] || 20 August 2000 || Great Traditions, Marlton, NJ || [[Livio D'Alessio]]
+|-
+| 2000-08 || [[August 2000 Austin tournament]] || 19 August 2000 || Juniors Cards and Comics, Austin, TX || [[Jacob Mayer]]
+|-
+| 2000-08 || [[August 2000 Las Vegas tournament (19 August)]] || 19 August 2000 || Las Vegas, NV || [[Chris Hines]]
+|-
+| 2000-08 || [[August 2000 Terryville tournament]] || 19 August 2000 || Terryville, CT || [[Steve Brentson]]
+|-
+| 2000-08 || [[August 2000 Williston Park tournament]] || 19 August 2000 || Grasshoppers Comics, Williston Park, NY || [[Bucksun Lee]]
+|-
+| 2000-08 || [[August 2000 Lakewood tournament]] || 18 August 2000 || Coach's Corner Collectibles, Lakewood, WA || [[Douglas Harvilla]]
+|-
+| 2000-08 || [[August 2000 Sioux Falls tournament]] || 13 August 2000 || Dragon's Den, Sioux Falls, South Dakota || [[TJ Olson]]
+|-
+| 2000-08 || [[2000 European Championship]] || 13 August 2000 || — || —
+|-
+| 2000-08 || [[August 2000 Sherwood tournament (12 August)]] || 12 August 2000 || Warp Drive Cards and Comics, Sherwood, Arkansas || 
+|-
+| 2000-08 || [[August 2000 Huntsville tournament]] || 12 August 2000 || Huntsville, AL || 
+|-
+| 2000-08 || [[August 2000 Cedar Grove tournament]] || 12 August 2000 || Cedar Grove, NJ || [[Michael Dalton]]
+|-
+| 2000-08 || [[August 2000 Seattle tournament]] || 12 August 2000 || Broken Games, Seattle, WA || [[Ben Rich]]
+|-
+| 2000-08 || [[2000 North American Continental Championship]] || 11 August 2000 ||  || [[Yannick Lapointe]]
+|-
+| 2000-08 || [[2000 Brussels Grand Slam]] || 11 August 2000 || Brussels, Belgium || [[Martin Akesson]]
+|-
+| 2000-08 || [[August 2000 Marlton tournament]] || 6 August 2000 || Marlton, NJ || [[Chris Praskac]]
+|-
+| 2000-08 || [[2000 Ord Mantell Regionals]] || 6 August 2000 ||  || [[Kouji Yukuhisa]]
+|-
+| 2000-08 || [[2000 Ryloth Regionals]] || 6 August 2000 ||  || [[Koen Meijssen]]
+|-
+| 2000-08 || [[2000 RopeCon]] || 2000 (before 6 August) || Finland || —
+|-
+| 2000-08 || [[August 2000 Framingham tournament]] || 5 August 2000 || Framingham, MA || [[Justin Desai]]
+|-
+| 2000-08 || [[August 2000 San Francisco tournament]] || 5 August 2000 || BallPark, San Francisco, CA || [[Alfred Dong]]
+|-
+| 2000-08 || [[August 2000 Fairmont tournament]] || 5 August 2000 || Fairmont, WV || [[Steven Yeager]]
+|-
+| 2000-08 || [[August 2000 San Diego tournament]] || 5 August 2000 || San Diego, California || [[Tyler Alexander]]
+|-
+| 2000-08 || [[August 2000 Las Vegas tournament]] || 5 August 2000 || Las Vegas || [[Chris Hines]]
+|-
+| 2000-08 || [[2000 Hoth North Ridge Regionals]] || 5 August 2000 ||  || [[Alan Sagan]]
+|-
+| 2000-08 || [[2000 Ralltiir Regionals]] || 5 August 2000 ||  || [[Martin Falke]]
+|-
+| 2000-08 || [[2000 Wizard World Open]] || 4 August 2000 || Rosemont Convention Center, Rosemont (Chicago), Illinois || [[Jared Lockwood]]
+|-
+| 2000-08 || [[August 2000 Normal tournament]] || 3 August 2000 || Normal, Illinois || 
+|-
+| 2000-08 || [[2000 Nashville Grand Slam]] || August 2000 || Nashville, Tennessee || [[Chris Praskac]]
+|-
+| 2000-08 || [[2000 Los Angeles Grand Slam]] || August 2000 || Los Angeles, California || Unknown
+|-
+| 2000-07 || [[July 2000 Tempe tournament]] || 30 July 2000 || Arizona Gamer || [[Michael Girard]]
+|-
+| 2000-07 || [[July 2000 Springfield tournament]] || 29 July 2000 || Springfield, Illinois || 
+|-
+| 2000-07 || [[July 2000 Huntsville tournament (29 July)]] || 29 July 2000 || The Deep, Huntsville, AL || [[Brandon Ruck]]
+|-
+| 2000-07 || [[July 2000 Austin tournament (29 July)]] || 29 July 2000 || Austin Sci-Fi Expo, Austin, TX || [[Justin Warren]]
+|-
+| 2000-07 || [[2000 Alderaan Regionals]] || 29 July 2000 ||  || [[Paul Todd Feldman|Paul Feldman]]
+|-
+| 2000-07 || [[2000 Bespin Regionals]] || 29 July 2000 ||  || [[Nick Reisch]]
+|-
+| 2000-07 || [[2000 Dagobah Regionals]] || 29 July 2000 ||  || [[Charlie Herren]]
+|-
+| 2000-07 || [[2000 Virginia Beach Grand Slam]] || 29 July 2000 || Virginia Beach, Virginia || [[Joe Alread]]
+|-
+| 2000-07 || [[July 2000 Rancho Cucamonga tournament]] || 28 July 2000 || Rancho Cucamonga, California || 
+|-
+| 2000-07 || [[July 2000 Wauwatosa tournament]] || 26 July 2000 || Wauwatosa, WI || Eric
+|-
+| 2000-07 || [[July 2000 Glenside tournament]] || 23 July 2000 || RPG Outpost, Glenside, Pennsylvania || [[Livio D'Alessio]]
+|-
+| 2000-07 || [[2000 San Diego Comic-Con Team Event]] || 22 July 2000 || San Diego Comic-Con, San Diego, California || 
+|-
+| 2000-07 || [[2000 Kashyyyk Regionals]] || 22 July 2000 ||  || [[Steve Brentson]]
+|-
+| 2000-07 || [[2000 Landshut Grand Slam]] || 22 July 2000 || Landshut, Germany || Unknown
+|-
+| 2000-07 || [[2000 San Diego Comic-Con Open]] || 20 July 2000 ||  || [[Kevin Shannon]]
+|-
+| 2000-06 || [[2000 Death Star II Pre-Release (Mountain View)]] || 24 June 2000 || Mountain View, California || —
+|}
+<!-- format-tournaments:end -->
+
+== See also ==
+
+* [[Formats]]
+* [[GEMP]] / [https://play.swccg.com/ play.swccg.com]
+* [[Death Star II (expansion)|Death Star II]]
+* [[Championships]]
+
+{{#if:1|<nowiki />
+<h2>References</h2>
+<references />}}
+
+[[Category:Formats]]
+[[Category:GEMP]]
+[[Category:Meta]]

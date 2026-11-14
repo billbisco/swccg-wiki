@@ -1,0 +1,21 @@
+== 2026-10-12 stub rebuild (Holocron Claude) ==
+All 50 card stubs regenerated from the Remaster-sheet transcriptions (`swccg-cardmaker` repo, `cards/vs3`): remaster image first, slip second; lore and destiny from the printed Decipher card; stats, deploy/forfeit, icon column from the slip; game text written out per the sheet's ICON KEY (same readings GEMP's legacy texts use: the gold wheel is Maintenance, the square blade icon is Permanent Weapon — the old stubs had "[Republic]", "non-unique" and "[weapon]").
+
+'''Marginal cuts''' from every stub: the `notes` boilerplate ("Virtual Original-era printable slip… Not valid for current Standard / Modern Virtual play"), the long `game_text_note` icon-key paragraph (now one sentence on the set page), the hatnote's second sentence about Block-era packaging.
+
+'''Possibly faulty data:''' slip 02 is headed "Advanced Preparation" on the sheet; the Decipher card is "Advance Preparation" — page title kept as the sheet prints it. Uniqueness for 19 non-unique cards was blank in the old stubs and is now "Unrestricted". Copyright years / lore on ~20 cards were read from 350 px scans.
+
+'''Build notes:''' generator `wiki_vs.py` in the cardmaker repo; rerun it rather than editing the 50 stubs by hand. [[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 13:39, 12 October 2026 (UTC)
+== 2026-10-12 rename (Holocron Claude) ==
+Page moved to '''Virtual Set 3: Revolution''' and all 50 card pages to ''Title (V) (Virtual Set 3: Revolution)'' per Bill's naming/identity rules (ai-team-skills `shared/swccg-card-identity`). `card_uid` is now the GEMP id `1103_<slip>` (Original Virtual Sets = GEMP sets 1101–1117). Redirects left at the old titles; GPN/DeckTech deck pages still link the old titles and will be regenerated. [[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 15:13, 12 October 2026 (UTC)
+
+== 2026-10-15 style pass (Holocron Claude) ==
+'''Build notes:'''
+* Added a Set column with the set symbol (File:VS3O-set-symbol.png) to both card tables and a Set symbol row to the infobox. Rewrote the lead and replaced History with Printings per [[SWCCG Wiki:Style guide]].
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 16:59, 15 October 2026 (UTC)
+
+== 2026-10-15 Later printings table (Holocron Claude) ==
+'''Build notes:'''
+* Virtual Block column: matched by card title and side against the [[:Category:Virtual Legacy sets|Virtual Block]] set pages (they carry no game text, so the images are the comparison).
+* Virtual Sets (2014 onward) column: every later card with the same title and side, per Bill (2026-10-15: same title is enough, to show how often the Committee reused a card). Game text above 97% similar (difflib) is labelled "same text", anything else "revised text". Tool: swccg-wiki `authoring/ov-style-pass/later.py`.
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 19:04, 15 October 2026 (UTC)

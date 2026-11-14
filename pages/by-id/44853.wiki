@@ -1,0 +1,490 @@
+== Missing data ==
+
+* '''Fair-deck odds are not final.''' Bill chose Deck C, the dealer rule (stand on 8 or more), a 3:2 perfect sabacc, and the card-game over rule. The house edge under that over rule needs a tie rule (see [[#Deck C and the card-game over rule|below]]); the tie rule is not chosen.
+* No canonical location for [[Trooper Sabacc]]. The card requires "a gambler or trooper at a site".
+* No value is defined for a deck card without a destiny number. Counted from the wiki card pages (all printings): 1,317 have a blank destiny and 29 have a non-numeric one (such as ½, π, "4½", "2 or 5").
+* No tracks yet for Dune Sea, Jabba's Palace, or Trooper Sabacc. The Cloud City demo is not on the wiki ([[Talk:Sabacc game mode music]]).
+* No dealer chosen for Trooper Sabacc; no Dark Side Trooper gambler was found (the Dark gamblers on cards are listed in the outline).
+
+== Possibly faulty data ==
+
+Points in the original notes that do not match the card game or the cards:
+
+# '''Name.''' The notes say "Rick Dickteneck"; the card is [[R'kik D'nec, Hero Of The Dune Sea]] (Light Side Jawa, Jabba's Palace). There is no Dark Side R'kik. The Dark Side Dune Sea Jawa with Sabacc text is [[Iasa, The Traitor Of Jawa Canyon]].
+# '''"Sabacc is blackjack to 11."''' Partly. The hit-or-pass idea and the target match. But in the card game there is no dealer, each player draws from their own Reserve Deck (two to six cards), hands stay hidden until the end, going over 11 is not an automatic loss (if both go over, the closer player wins), a tie goes to fewer cards, and a perfect sabacc wins double. A dealer's shown card has no card-game equivalent.
+# '''"The dealer corresponds to the sabacc version."''' The Light Side and Dark Side card of each variant have identical game text, so Light versus Dark changes the picture and lore, not the rules. The variants themselves do differ (wild ranges 1–6, 0–7, 1–6, 2–7; different clone cards and stakes).
+# '''Jawas at Jabba's Palace.''' The notes list Jawas on the Dark Side there. [[Jabba's Palace Sabacc]] requires a gambler, gangster, smuggler, or information broker; [[Dune Sea Sabacc]] requires a Jawa.
+# '''Card values 0 to 7.''' Most numeric destinies are 0 to 7, but a real deck is not uniform. Wiki card pages (all printings) with destiny 0–7 average 2.51, with few 6s and 7s. A deck built from that spread gives the player a large edge against a dealer (see below).
+# '''Lando.''' The notes match his text: "may add 1 to or subtract 1 from your total" (10 or 12 becomes 11). One extra rule: using such a modifier rules out a perfect sabacc.
+# '''Gold and silver.''' GEMP stores one currency number and shows it as gold and silver (100 silver is 1 gold, from GEMP's display code). Renaming changes only the display. Whether every player starts with a balance was not checked.
+# '''Tiebreaker.''' Tournament Guide 2.2's last-resort hand uses each player's last-played deck with no wild or clone cards, and both players act and reveal together. It is player against player, so it does not use a dealer or the fair deck.
+
+== Fair-deck math (working numbers) ==
+
+Method: exact dynamic programming over an infinite deck (floating point), player plays the best hit-or-stand strategy knowing only own cards and the dealer's shown card. Simplifications: hit or stand only; dealer checks for a natural; natural (two cards totalling exactly the target) pays 3:2; ties push (the fewest-cards rule is not modelled); sabacc hands stop at six cards; no wild or clone cards. Blackjack baseline uses the same simplifications, so its house edge is 2.42%, not the usual 0.5%. Script and outputs: kept with the project files (fairdeck.py, run outputs).
+
+{| class="wikitable"
+! Case !! House edge !! Player win / push / loss
+|-
+| Blackjack baseline (same simplifications) || 2.42% || 43.3% / 8.7% / 48.0%
+|-
+| Uniform 0–7 deck (7 of each value), dealer draws below 8, going over loses || 2.76% || 41.4% / 11.6% / 47.1%
+|-
+| Same, natural pays 2:1 (the card game's "win double") || −0.17% || about even
+|-
+| Same, dealer draws below 7 || −6.04% || player ahead
+|-
+| Same, dealer draws below 9 || 5.69% || house ahead
+|-
+| Same, card-game comparison (both over: closer wins), dealer below 8 || −3.73% || 43.3% / 14.2% / 42.5%
+|-
+| Best-fit non-uniform 52-card deck (counts of 0 to 7: 18, 5, 4, 1, 5, 9, 4, 6), dealer below 8 || 2.59% || 43.2% / 8.7% / 48.1%
+|-
+| Deck weighted like the real card pool (mean 2.51), dealer below 8 || −12.8% || 48.2% / 15.9% / 35.9%
+|}
+
+Notes:
+* Uniform 0–7 matches blackjack's win/loss within about two points; natural chance is 6.25% against 4.73%, and the dealer goes over 24.9% of hands against 28.2%. The best-fit deck matches all six measures within 0.2 points but is odd and under-determined (many decks fit), so it is not recommended. A finite 56-card deck, reshuffled each hand, gave 2.69% in 1,000,000 simulated hands.
+* The dealer's draw threshold is a coarse knob (one step moves the edge by about 3–9 points). The natural payout and the deck are the fine knobs.
+* If going over 11 follows the card game (closer wins when both go over), the house loses edge at the same threshold, so the dealer or payout would need retuning.
+* Lando adjusting by ±1: house edge 25.3% if he decides his draws on the adjusted total, 36.5% if he draws to 8 and adjusts the final total. Used on a random 10%, 25%, or 50% of hands, 6.1%, 11.2%, or 19.6%.
+* Progression by winning money is unlikely against a fair-deck dealer with a house edge. Exact chance to go from 100 units to 200 before going broke, flat bet: 0.3% (bet 1), 23.8% (bet 5), 35.6% (bet 10), 42.1% (bet 20). Against Lando: about 0% up to bet 10, 1.5% at bet 20.
+* Between players (simulation, 400,000 hands per pairing, own fair deck each, card-game comparison): drawing while below 8 beats drawing while below 6, 7, or 10, and is about even with below 9. Perfect sabacc happens in 6.2% of hands and 24.9% of hands go over at threshold 8.
+
+== Fair deck using only 0 to 7 ==
+
+''Added in answer to Bill's question: what would a fair deck of 0 to 7 look like, how many of each card, and why.''
+
+'''What "close to blackjack" means here.''' The same simplified game is used for both: the player hits or stands knowing only their own cards and the dealer's shown card, going over loses at once, ties push, the dealer checks for a natural, and a natural (first two cards exactly on target) pays extra. Blackjack gets the same simplifications, which is why its house edge here is 2.42%. Real blackjack with basic strategy and doubling and splitting is about 0.5%. Targets taken from blackjack in this model: house edge 2.42%; player win / push / loss 43.3 / 8.7 / 48.0%; player goes over 16.9%; dealer goes over 28.2%; natural 4.7%.
+
+{| class="wikitable"
+! Deck !! Cards of value 0 / 1 / 2 / 3 / 4 / 5 / 6 / 7 !! Total !! Natural pays !! House edge !! Win / push / loss % !! Player over !! Dealer over !! Natural
+|-
+| Blackjack, same model || (13 ranks, 16 of 52 are tens) || 52 || 3:2 || 2.42% || 43.3 / 8.7 / 48.0 || 16.9% || 28.2% || 4.7%
+|-
+| A. Uniform || 7 / 7 / 7 / 7 / 7 / 7 / 7 / 7 || 56 || 3:2 || 2.76% || 41.4 / 11.6 / 47.1 || 26.8% || 24.9% || 6.2%
+|-
+| A. Uniform, 2:1 natural || 7 / 7 / 7 / 7 / 7 / 7 / 7 / 7 || 56 || 2:1 || -0.17% || 41.4 / 11.6 / 47.1 || 26.8% || 24.9% || 6.2%
+|-
+| B. Blackjack profile (also 104 = two of these) || 16 / 9 / 3 / 1 / 4 / 9 / 5 / 5 || 52 || 3:2 || 2.49% || 43.3 / 8.7 / 48.1 || 16.9% || 28.0% || 4.8%
+|-
+| B2. Same, edge near real blackjack || 20 / 6 / 6 / 2 / 4 / 10 / 6 / 6 || 60 || 2:1 || 0.40% || 43.2 / 8.8 / 48.0 || 16.9% || 28.1% || 4.7%
+|-
+| C. Big-card heavy || 3 / 20 / 0 / 4 / 0 / 16 / 4 / 5 || 52 || 3:2 || 2.48% || 42.8 / 9.6 / 47.6 || 16.7% || 28.5% || 4.7%
+|}
+
+In every sabacc row the dealer draws on 7 or less and stands on 8 or more. Percentages are exact for an endless deck; real finite decks are checked below.
+
+'''Reading the table.'''
+* '''A. Uniform''' (7 of each, 56 cards) is the simplest, and its edge is close to blackjack's. But it is "lumpy": the player goes over 27% of the time against blackjack's 17%, the dealer only 25% against 28%, and naturals come 6.25% of hands against 4.7%. With a 2:1 natural it is about even.
+* '''B. Blackjack profile''' matches all seven targets within about 0.2 points: 16 zeros, 9 ones, 3 twos, 1 three, 4 fours, 9 fives, 5 sixes, 5 sevens in 52 cards. Zeros are 16 of 52 (30.8%), the same share as tens in blackjack. The fit chose this on its own. A zero can never make you go over, so zeros appear to play the part that the flexible ace plays in blackjack (my reading, not proven). A 104-card deck of two copies of B behaves the same. Other sizes (56, 60, 64, 80, 104) also fit within about 0.2 points; the search found many near-equal decks, so B is one good answer, not the only one.
+* '''B2''' uses the same shape with a 2:1 natural and lands at 0.40%, near real blackjack's 0.5%.
+* '''C.''' Blackjack is top-heavy (16 tens). The closest 0 to 7 version puts 16 cards on 5 (5 is about the same fraction of 11 as 10 is of 21), 20 on 1, and few elsewhere. It matches the overall numbers but is no better than B, and not natural to explain. Scaling blackjack's ranks straight down (no 0, 6, or 7) fails: it has no naturals, because 11 needs a 6 and 5 or a 7 and 4, and it gives a −4.6% edge.
+* '''What cannot be matched:''' blackjack's dealer goes over most often on weak shown cards (about 39% on a 2 to 6) and least on a 10 or ace (about 22%). With a 0 to 7 deck the order flips: a shown 7 is 64% of the target, so high shown cards go over most (a shown 6 or 7 goes over about 40% to 57% of the time). No single 0 to 7 deck fixes this.
+* There is no soft ace in sabacc. Adding one (a card that counts as either of two values) would help a player avoid going over, as in blackjack. This was not tested; zeros partly stand in for it.
+
+'''Finite-deck check''' (simulation, 6,000,000 hands each, ±0.04 points; the player uses the best strategy for an endless deck, no card counting). House edge with 1 / 2 / 6 decks:
+
+{| class="wikitable"
+! Deck !! Exact, endless deck !! 1 deck !! 2 decks !! 6 decks
+|-
+| A. Uniform || 2.76% || 2.77% || 2.83% || 2.77%
+|-
+| B. Blackjack profile || 2.49% || 2.36% || 2.43% || 2.55%
+|-
+| B2. Edge near 0.5% || 0.40% || 0.37% || 0.35% || 0.44%
+|-
+| C. Big-card heavy || 2.48% || 2.11% || 2.26% || 2.45%
+|}
+
+Dealing from one real deck and reshuffling each hand stays within about 0.4 points of the endless-deck numbers. Odd decks like C move the most.
+
+'''Method, in plain language.'''
+# '''Why there is a house edge.''' The player must finish their hand first. If they go over 11 they lose before the dealer draws a card. In model B that is about 17 hands in 100. The dealer going over (28 in 100) only helps when the player is still in. Wins are 43.3% and losses 48.1%, a 4.8-point gap. A natural paying 3:2 gives back about 2.3 points (4.8% of hands, half a bet extra), leaving about 2.5%.
+# '''The dealer's stopping rule is a knob, but a coarse one.''' With the uniform deck, dealer stops at 7+ gives −6.0% (player ahead), at 8+ gives +2.8%, at 9+ gives +5.7%. One step moves the edge by 3 to 9 points, too coarse to tune alone. Fine control comes from the deck and from the natural payout (3:2 to 2:1 moves it about 3 points).
+# '''Why uniform is lumpy.''' Every value from 0 to 7 is equally likely, and sabacc has no soft ace. In this model, taking the ace's flexibility away from blackjack (ace always 1) raises its house edge from 2.42% to 5.74%. Without it, a 0 to 7 hand goes over a lot: hitting on 8 goes over on a 4, 5, 6, or 7, which is 4 cards in 8 (50%). Blackjack's hard hit on 12 goes over only on a ten, 16 in 52 (31%), and a soft hand cannot go over on one hit. The extra zeros in deck B give back some of that safety.
+# '''What each lever does.''' More zeros: safer hits, fewer overs, more pushes. More 7s and 6s: bigger swings, more naturals (a natural needs 4+7 or 5+6). More 5s: a "ten-like" middle. The search tries whole-number decks for each size and picks the one whose seven measures are closest to blackjack's (exact calculation over an endless deck for each candidate; best of many starting points, one card moved at a time).
+# '''Worked example.''' Player holds 8 in a 0 to 7 uniform deck and hits: 4, 5, 6, or 7 goes over, so 4 in 8 (50%). In deck B it is 23 cards of 52 (44%). Dealer holding 6 draws; in uniform a 6 or 7 busts, 2 in 8 (25%).
+
+'''Caveats.''' The numbers assume hit or stand only, going over loses immediately, ties push, a six-card limit (as in the card game), no wild or clone cards, and the dealer drawing below 8. The card game itself has no dealer and breaks ties by fewest cards (Advanced Rulebook, Sabacc); that is not in this blackjack-style model. Many decks fit about equally well, and a different dealer rule or natural payout needs a re-fit.
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 19:59, 11 October 2026 (UTC)
+
+== Deck B at 60 cards ==
+
+''Added at Bill's request: a 60-card deck with shares close to Deck B.''
+
+All 60-card decks were checked where each count is within 3 of 60/52 × Deck B's count (772,052 decks, exact calculation for each). Rules unchanged: dealer stands on 8+, natural pays 3:2, going over loses. Decks were ranked on two things together: closeness of each value's share of the deck to Deck B's, and closeness of the seven outcome numbers (house edge, win / push / loss, player over, dealer over, natural).
+
+{| class="wikitable"
+! Deck !! Cards of value 0 / 1 / 2 / 3 / 4 / 5 / 6 / 7 !! Total !! Natural pays !! House edge !! Win / push / loss % !! Player over !! Dealer over !! Natural !! Simulated edge, one deck
+|-
+| Deck B (52 cards, for reference) || 16 / 9 / 3 / 1 / 4 / 9 / 5 / 5 || 52 || 3:2 || 2.49% || 43.3 / 8.7 / 48.1 || 16.9% || 28.0% || 4.8% || 2.47%
+|-
+| 1. Recommended 60 || 19 / 10 / 3 / 1 / 5 / 11 / 5 / 6 || 60 || 3:2 || 2.34% || 43.3 / 8.7 / 47.9 || 16.8% || 27.7% || 4.7% || 2.29%
+|-
+| 2. Plain scaling (60/52 × B, rounded) || 19 / 10 / 3 / 1 / 5 / 10 / 6 / 6 || 60 || 3:2 || 2.38% || 43.4 / 8.4 / 48.2 || 16.9% || 28.6% || 5.0% || 2.45%
+|-
+| 3. Runner-up || 18 / 11 / 3 / 1 / 5 / 10 / 6 / 6 || 60 || 3:2 || 2.69% || 43.2 / 8.5 / 48.3 || 16.8% || 28.5% || 5.0% || 2.77%
+|-
+| 2:1 natural, best fit || 18 / 11 / 3 / 2 / 4 / 10 / 5 / 7 || 60 || 2:1 || 1.17% || 43.0 / 8.6 / 48.4 || 18.0% || 29.1% || 4.3% || —
+|}
+
+Share of the deck, percent:
+
+{| class="wikitable"
+! Deck !! 0 !! 1 !! 2 !! 3 !! 4 !! 5 !! 6 !! 7 !! Largest gap from B
+|-
+| Deck B (52 cards, for reference) || 30.8 || 17.3 || 5.8 || 1.9 || 7.7 || 17.3 || 9.6 || 9.6 || 0.0
+|-
+| 1. Recommended 60 || 31.7 || 16.7 || 5.0 || 1.7 || 8.3 || 18.3 || 8.3 || 10.0 || 1.3
+|-
+| 2. Plain scaling (60/52 × B, rounded) || 31.7 || 16.7 || 5.0 || 1.7 || 8.3 || 16.7 || 10.0 || 10.0 || 0.9
+|-
+| 3. Runner-up || 30.0 || 18.3 || 5.0 || 1.7 || 8.3 || 16.7 || 10.0 || 10.0 || 1.0
+|-
+| 2:1 natural, best fit || 30.0 || 18.3 || 5.0 || 3.3 || 6.7 || 16.7 || 8.3 || 11.7 || 2.1
+|}
+
+* '''Recommended: 19 / 10 / 3 / 1 / 5 / 11 / 5 / 6.''' Every outcome number is within 0.3 points of Deck B (edge 2.34% against 2.49%, dealer over 27.7% against 28.0%, natural 4.7% against 4.8%). Its largest share gap is 1.3 points (the 6s).
+* '''Plain scaling''' (19 / 10 / 3 / 1 / 5 / 10 / 6 / 6) has the closest shares (largest gap 0.9 points) and is a near tie. Its natural comes up slightly more (5.0%) and the edge is 2.38%.
+* 60 cards cannot copy B's shares exactly, because 60/52 × B's counts are not whole numbers. In this search no 60-card deck gets closer than 0.9 points on every value.
+* Decks that match B's outcome numbers more tightly exist (for example 18 / 11 / 4 / 0 / 5 / 11 / 5 / 6, edge 2.53%) but they move shares by up to 1.9 points, including having no 3s.
+* '''2:1 natural.''' Within these limits a 2:1 natural cannot keep an edge near 2.5% with similar shares: the best combined fit is 18 / 11 / 3 / 2 / 4 / 10 / 5 / 7 at about 1.2%. If 2:1 is wanted, the earlier 60-card deck B2 (20 / 6 / 6 / 2 / 4 / 10 / 6 / 6, edge 0.40%) matches blackjack's real-world edge instead, but its shares differ from B's.
+* '''Finite-deck check''' (simulation, 4,000,000 hands each, ±0.05 points, one deck reshuffled each hand, endless-deck best strategy, no card counting): the recommended deck gives 2.29% against 2.34% exact; Deck B gives 2.47% against 2.49%. Both agree with the exact numbers.
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 23:24, 11 October 2026 (UTC)
+
+== Deck C and the card-game over rule ==
+
+''Added after Bill chose Deck C (60 cards: 19 / 10 / 3 / 1 / 5 / 11 / 5 / 6 for values 0 to 7), a dealer that stands on 8 or more, and a 3:2 perfect sabacc. He also chose the card game's rule for going over 11. Planning numbers, not final.''
+
+'''What changed in the model.''' Same method as before (exact calculation over an endless deck; the player picks hit or stand to do best, knowing only their own cards and the dealer's face-up card; the dealer checks for a perfect sabacc; six cards at most; no wild or clone cards). The new part is the over rule. A player over 11 is no longer out: the dealer still plays, and the totals are compared. If neither is over, the higher total wins. If only one is over, the other wins. If both are over, the lower total wins. Equal totals are a tie. The player's best strategy was recalculated for this rule. Negative house edge means the player is ahead.
+
+{| class="wikitable"
+! Rule on Deck C !! House edge, perfect sabacc 3:2 !! House edge, perfect sabacc 2:1 !! Player win / push / loss % (3:2) !! Player over !! Dealer over
+|-
+| Going over loses, ties push (the earlier model) || 2.34% || 0.09% || 43.3 / 8.7 / 47.9 || 16.8% || 27.7%
+|-
+| Card-game rule (lower total wins if both over), ties push || −2.93% || −5.18% || 44.7 / 11.2 / 44.0 || 18.8% || 27.7%
+|-
+| Card-game rule, tie goes to fewer cards, equal cards push || −4.04% || −6.29% || 49.4 / 2.9 / 47.6 || 18.1% || 27.7%
+|-
+| Card-game rule, tie goes to fewer cards, equal cards to the dealer || −1.35% || −3.59% || 49.4 / 0.2 / 50.3 || 17.5% || 27.7%
+|-
+| Card-game rule, dealer wins ties on 9, 10, 11 (proposed) || 2.45% || 0.20% || 44.7 / 5.9 / 49.4 || 18.8% || 27.7%
+|}
+
+'''Reading the table.''' The card-game rule swings the result by about 5 points, from the house ahead by 2.3% to the player ahead by 2.9%. Going over costs the player much less, so the player can hit more freely, while the dealer still follows a fixed draw-on-7 rule. The card game's own tiebreak (fewer cards wins) makes the player's edge larger, not smaller. The rulebook says a perfect sabacc wins double; a 2:1 payout lowers the house edge by about 2.3 points in every row. "Over" is the share of hands where that side ends over 11.
+
+'''Finding a knob.''' Each row changes one thing on Deck C with the card-game over rule. Negative means the player is ahead.
+
+{| class="wikitable"
+! Change !! House edge, 3:2 !! House edge, 2:1 !! Player win / push / loss % (3:2)
+|-
+| Dealer stands on 7 or more || −3.14% || −5.39% || 44.0 / 12.9 / 43.1
+|-
+| Dealer stands on 8 or more (now) || −2.93% || −5.18% || 44.7 / 11.2 / 44.0
+|-
+| Dealer stands on 9 or more || −10.38% || −12.63% || 49.2 / 9.7 / 41.1
+|-
+| Natural pays 1:1 (even money), tie pushes || −0.68% || – || 44.7 / 11.2 / 44.0
+|-
+| Dealer wins ties on 9, 10, 11 (proposed) || 2.45% || 0.20% || 44.7 / 5.9 / 49.4
+|-
+| Dealer wins ties on 9, 11, and over 11 || 2.33% || 0.08% || 44.7 / 6.0 / 49.3
+|-
+| Dealer wins ties on 8, 9, 11 || 2.75% || 0.50% || 44.8 / 5.4 / 49.8
+|-
+| Dealer wins ties on 8 and 10 || 2.15% || −0.10% || 44.8 / 6.0 / 49.2
+|-
+| Dealer wins ties on 9 and above, including over 11 || 4.73% || 2.48% || 44.8 / 3.4 / 51.8
+|-
+| Dealer wins ties on 10, 11, and over 11 || 3.05% || 0.80% || 44.7 / 5.3 / 50.0
+|-
+| Dealer wins every tie from 8 up || 7.29% || 5.04% || 44.8 / 0.8 / 54.3
+|}
+
+* '''Dealer threshold is not a knob here.''' Standing on 9 or more makes the dealer go over 38% of the time and the player's edge much larger. Standing on 7 or more is about the same as now.
+* '''The deck cannot fix it either.''' All 289,339 decks of 60 cards where each count is within 3 of Deck C's were calculated under the new rule. None gives the house an edge; the best is the player ahead by 0.8%, and it moves card shares by 5 points. Within 1.7 points of Deck C's shares the best is the player ahead by 1.6%.
+* '''Tie rules work.''' The smallest change near 2.3 to 2.5% is that the dealer wins ties on totals of 9, 10, and 11 (house 2.45%). It keeps the natural at 3:2 and leaves ties under 9 and ties over 11 as pushes. Pushes fall from 8.7% to 5.9%, and the player wins 44.7% of hands against Deck C's 43.3% earlier. Another way is a 2:1 perfect sabacc with the dealer winning every tie from 9 up (house 2.48%), but pushes then fall to 3.4%.
+
+'''Finite-deck check''' (simulation of one 60-card deck reshuffled each hand, 3,000,000 hands each; the player uses the endless-deck best strategy and does not count cards):
+
+{| class="wikitable"
+! Case !! Exact, endless deck !! Simulated house edge !! Simulated win / push / loss %
+|-
+| Going over loses, ties push || 2.34% || 2.37% ± 0.06 || 43.5 / 8.4 / 48.1
+|-
+| Card-game rule, ties push || −2.93% || −2.72% ± 0.06 || 44.8 / 10.9 / 44.4
+|-
+| Card-game rule, fewer cards wins ties || −4.04% || −3.77% ± 0.06 || 49.4 / 2.7 / 47.9
+|-
+| Card-game rule, dealer wins ties on 9, 10, 11 || 2.45% || 2.49% ± 0.06 || 44.8 / 5.6 / 49.6
+|-
+| Same, with Lando adjusting every hand || 46.32% || 46.72% ± 0.05 || 24.5 / 1.9 / 73.5
+|}
+
+The simulation agrees with the exact numbers within 0.4 points, so the over-rule results hold for one real deck.
+
+'''Lando's cheat.''' Modelled as follows: Lando draws like any dealer, then sees the player's total and may move his own final total by 1 up or down, choosing what is best for him. He cannot create a perfect sabacc, as in the rulebook. Moving one step toward 11 is never worse for him, so a Lando who always does that gets the same result as one who looks. The player knows about the cheat and plays the best response; when Lando adjusts on only some hands, the player does not know which. Deck C, dealer stands on 8 or more, perfect sabacc 3:2.
+
+{| class="wikitable"
+! Share of hands Lando may adjust !! House edge, dealer wins ties on 9, 10, 11 !! Player win / push / loss % !! House edge, ties push
+|-
+| 0.0% || 2.45% || 44.7 / 5.9 / 49.4 || −2.93%
+|-
+| 2.5% || 3.55% || 44.2 / 5.8 / 50.0 || −1.92%
+|-
+| 5.0% || 4.65% || 43.7 / 5.7 / 50.6 || −0.91%
+|-
+| 10.0% || 6.85% || 42.7 / 5.5 / 51.8 || 1.11%
+|-
+| 15.0% || 9.05% || 41.7 / 5.3 / 53.0 || 3.11%
+|-
+| 25.0% || 13.45% || 39.7 / 4.9 / 55.4 || 7.11%
+|-
+| 50.0% || 24.44% || 34.7 / 4.0 / 61.4 || 17.10%
+|-
+| 100.0% || 46.32% || 24.7 / 2.1 / 73.2 || 36.80%
+|}
+
+Each 1% of hands adds about 0.4 points of house edge. On every hand it adds about 44 points, so the player loses almost half of each stake.
+
+'''Duel odds.''' One unit bet per hand, Lando with the proposed tie rule. The player beats Lando by gaining the width in units and loses the duel by losing that many (200,000 duels each).
+
+{| class="wikitable"
+! Share of hands Lando may adjust !! House edge !! Chance to beat Lando, width 10 !! Chance to beat Lando, width 20 !! Average hands, width 10
+|-
+| 0.0% || 2.45% || 37.6% || 27.1% || 103
+|-
+| 5.0% || 4.65% || 27.9% || 13.2% || 98
+|-
+| 10.0% || 6.85% || 19.7% || 6.0% || 90
+|-
+| 15.0% || 9.05% || 13.7% || 2.5% || 82
+|-
+| 25.0% || 13.45% || 6.1% || 0.5% || 67
+|-
+| 50.0% || 24.44% || 0.7% || 0.0% || 41
+|-
+| 100.0% || 46.32% || 0.0% || 0.0% || 22
+|}
+
+'''A step-in trigger idea.''' A player bets one unit per hand for 1,000 hands under the proposed tie rule (house 2.45%). Lando steps in when the player's profit first reaches the trigger, then the duel of width 20 runs. If the player wins, the next trigger is that much higher. If the player loses the duel, play goes on with the normal dealer (300,000 sessions each).
+
+{| class="wikitable"
+! Trigger (profit in units) !! Share of hands Lando may adjust !! Sessions where Lando shows !! Chance to beat Lando when he shows !! Best profit reached: median / 90th / 99th percentile !! End profit: mean / median
+|-
+| No Lando || 0% || 0.0% || – || 11.0 / 34.0 / 60.0 || −24.5 / −24.5
+|-
+| 20 || 10% || 28.5% || 4.9% || 11.0 / 27.5 / 43.5 || −27.8 / −26.0
+|-
+| 20 || 25% || 28.4% || 0.4% || 11.0 / 24.0 / 33.0 || −29.8 / −27.5
+|-
+| 40 || 10% || 6.3% || 4.2% || 11.0 / 34.0 / 52.0 || −25.2 / −24.5
+|-
+| 40 || 25% || 6.3% || 0.3% || 11.0 / 34.0 / 46.5 || −25.6 / −24.5
+|-
+| 40 || 50% || 6.3% || 0.0% || 11.0 / 34.0 / 44.0 || −25.7 / −24.5
+|}
+
+* Lando's step-in lowers the high peaks (99th percentile 60 units without him, about 33 to 52 with him) but the typical player is not helped or hurt much: the median best profit stays at 11 units, and the average end is about 25 to 30 units down against 24.5 without him.
+* A trigger of 20 units meets Lando in about 28% of sessions, and one of 40 units in about 6%.
+* A duel of width 10 with Lando adjusting on about 5% of hands gives the player about a 28% chance; at 10% it is about 20%. Width 20 is much harder (13% at 5%).
+* Not modelled: Lando adjusting during the draws, bets that vary in size, the starting amount, hands between players, and any effect of the hole card on the player's choices.
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 00:32, 12 October 2026 (UTC)
+
+== Rulebook ties and what the dealer can see ==
+
+''Added after Bill asked for the rulebook version (closest to 11 wins, fewer cards wins ties) and whether a dealer who sees the player's cards first has an advantage. Deck C, endless-deck exact calculation, with a simulation of one 60-card deck. Planning numbers.''
+
+'''Rules modelled.''' Closest to 11 wins; if both go over, the lower total wins; equal totals go to the player with fewer cards; equal cards is a draw (rulebook) or goes to the dealer (a house option). Perfect sabacc (first two cards total 11) wins double in the rulebook, so three payout columns are given: player's perfect sabacc pays 3:2 or 2:1 while the dealer's costs 1, and 2:1 both ways (the dealer's perfect sabacc also costs 2). Each side holds at most six cards, as in the rulebook. Wild and clone cards are not modelled. A negative house edge means the player is ahead.
+
+'''The regimes, in plain words.'''
+* '''R1, the dealer commits.''' The dealer draws on 7 or less and stands on 8 or more and never looks at the player's total, as at a blackjack table. The player moves first and sees only the dealer's face-up card. The earlier rows (−4.04%, −1.35%) are this regime: the same fixed dealer, with the dealer checking for a perfect sabacc first.
+* '''R1b, the dealer sees the finished hand and chases.''' The player plays out first with cards face up. The dealer then keeps drawing while he is behind and stops when he ties or wins.
+* '''R2, the dealer sees the finished hand and replies perfectly.''' Same as R1b, but the dealer works out the best reply to the player's exact total and card count at every draw. The player picks the best stopping point knowing that, and sees the dealer's face-up card. R1b and R2 give identical numbers, because chasing is already the best reply in every case that comes up.
+* '''R3, nobody sees a total (the rulebook itself).''' Hands stay hidden until both have finished. R3a is two players who each stand on a fixed total; the best is to stand on 7 or more, and by symmetry neither side has an edge. R3b is the fixed dealer (8 or more) against a player who sees nothing, not even the dealer's up card. R3c is the second mover learning only how many cards the first holds; the figure is an upper bound because the first mover is limited to a fixed standing total.
+
+{| class="wikitable"
+! Regime !! Equal cards !! House edge, 3:2 !! House edge, 2:1 !! House edge, 2:1 both ways !! Player win / push / loss % !! Simulated edge, 3:2
+|-
+| R1. Dealer commits: draws on 7 or less, ignores the player's hand || push || −4.04% || −6.29% || −1.79% || 49.4 / 2.9 / 47.6 || −3.64% ± 0.06
+|-
+| R1. Dealer commits || dealer || −1.35% || −3.59% || 0.90% || 49.4 / 0.2 / 50.3 || −1.14% ± 0.06
+|-
+| R1b. Dealer sees the finished hand and chases || push || 8.03% || 5.78% || 10.28% || 42.6 / 4.5 / 52.9 || –
+|-
+| R1b. Dealer sees the finished hand and chases || dealer || 12.44% || 10.19% || 14.69% || 42.7 / 0.0 / 57.3 || –
+|-
+| R2. Dealer sees the finished hand and replies perfectly || push || 8.03% || 5.78% || 10.28% || 42.6 / 4.5 / 52.9 || 7.93% ± 0.06
+|-
+| R2. Dealer sees the finished hand and replies perfectly || dealer || 12.44% || 10.19% || 14.69% || 42.7 / 0.0 / 57.3 || 12.08% ± 0.06
+|-
+| R3a. Nobody sees any total, both stand on 7 or more (the rulebook, two players) || push || – || – || 0.00% || 47.9 / 4.2 / 47.9 || not simulated
+|-
+| R3b. Dealer stands on 8 or more, player sees nothing at all || push || −3.48% || −5.73% || −1.23% || 49.2 / 2.8 / 48.0 || not simulated
+|-
+| R3c. Second mover learns only how many cards the first mover holds || push || −0.87% || −3.12% || 1.38% || 47.2 / 4.2 / 48.6 || not simulated
+|}
+
+For R3 the win / push / loss and the "2:1 both ways" column are from the symmetric rulebook payout (both sides win double). In R3b and R3c the first two columns use the player-pays-3:2-or-2:1, dealer-pays-1 convention of the other rows. Simulated = one 60-card deck reshuffled each hand, 3,000,000 hands, endless-deck strategies; it can differ from the exact figure by up to 0.5 points because the deck is finite.
+
+'''Does seeing the cards help the dealer?''' Yes. With the same deck and rules, letting the dealer see the finished hand moves the house edge from the player ahead by 4.0% (R1) to the house ahead by 8.0% (R2), a swing of 12 points. The rulebook itself avoids this by keeping totals hidden; only card counts show. That small clue is worth about 1.4 points to the second mover (R3c).
+
+'''Can a tie rule bring the informed dealer to about 2.5%?''' No.
+
+{| class="wikitable"
+! Tie rule with the informed dealer (R2) !! House edge, 3:2 !! House edge, 2:1 !! House edge, 2:1 both ways !! Player win / push / loss % (3:2)
+|-
+| Every tie in totals goes to the player || 5.91% || 3.55% || 8.05% || 45.9 / 0.0 / 54.1
+|-
+| Every tie in totals is a draw, card counts ignored || 6.59% || 4.76% || 8.78% || 37.2 / 17.2 / 45.6
+|-
+| Rulebook: fewer cards wins, equal cards draw || 8.03% || 5.78% || 10.28% || 42.6 / 4.5 / 52.9
+|-
+| Fewer cards wins, equal cards to the dealer || 12.44% || 10.19% || 14.69% || 42.7 / 0.0 / 57.3
+|-
+| Every tie in totals goes to the dealer || 23.10% || 21.27% || 25.77% || 37.5 / 0.0 / 62.5
+|}
+
+Even giving the player every tie leaves the house ahead by 5.9% (3:2) or 3.6% (2:1). An informed dealer is too strong for the tie rule alone. The dealer has to commit: play a fixed rule that does not use the player's hand (R1), which is also what keeps blackjack's dealer fair.
+
+'''A rulebook-style tie rule for the committed dealer.''' With the dealer committed (R1), fewer cards wins ties only on totals of 9, 10, and 11; every other equal-total tie (below 9, and when both are over 11) goes to the dealer. Result: house edge 2.50% (3:2), 0.25% (2:1), 4.75% (2:1 both ways); player win / push / loss 46.8 / 1.6 / 51.6; simulated 2.38% ± 0.06 at 3:2. Earlier option: ties push except that the dealer wins ties on 9, 10, 11 (house 2.45%, win / push / loss 44.7 / 5.9 / 49.4). Both keep the dealer committed; the new one keeps the rulebook's fewer-cards tiebreak for ties on 9, 10, and 11.
+
+'''Why the numbers move, in plain words.''' In blackjack the dealer sees the hand but follows a fixed rule, and the casino wins because the player can go over first and loses at once. Under the card-game rule going over is not an automatic loss, so that source of edge is gone. A dealer who may look at the finished hand gets it back and more: he draws only when behind, stops as soon as he wins, and never takes a risk he does not need. A committed dealer cannot do that, which is why the committed dealer is the fairer table and the informed one is not.
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 00:50, 12 October 2026 (UTC)
+
+== Dune Sea decks and the dealer's deck ==
+
+''Added after Bill asked for sample Dune Sea decks with Deck C's spread and for the effect of a dealer deck that differs from the player's. Exact calculation with endless decks; planning numbers. The decks are on [[Sabacc game mode Dune Sea decks]].''
+
+'''Rules modelled.''' The player always plays Deck C. The dealer follows the card-game comparison (closest to 11, both over: lower total wins, fewer cards wins ties), commits to drawing on 7 or less without looking at the player's hand, and checks for a perfect sabacc first. Perfect sabacc pays double both ways. Six cards at most each. Wild and clone cards are not modelled. A negative house edge means the player is ahead.
+
+{| class="wikitable"
+! Dealer's deck (player plays Deck C) !! Cards of value 0 to 7 !! Total !! House edge !! Player win / push / loss %
+|-
+| Same deck both sides, equal cards a draw (rulebook) || 19, 10, 3, 1, 5, 11, 5, 6 || 60 || −1.79% || 49.4 / 3.0 / 47.6
+|-
+| Same deck both sides, equal cards to the dealer || 19, 10, 3, 1, 5, 11, 5, 6 || 60 || 0.90% || 49.4 / 0.2 / 50.3
+|-
+| Same deck, dealer draws on 8 or less (stands on 9) || 19, 10, 3, 1, 5, 11, 5, 6 || 60 || −10.20% || 53.9 / 2.4 / 43.7
+|-
+| Dealer +2 zeros || 21, 10, 3, 1, 5, 11, 5, 6 || 62 || −3.14% || 50.0 / 2.8 / 47.2
+|-
+| Dealer +4 zeros || 23, 10, 3, 1, 5, 11, 5, 6 || 64 || −4.49% || 50.6 / 2.7 / 46.7
+|-
+| Dealer −5 zeros || 14, 10, 3, 1, 5, 11, 5, 6 || 55 || 1.50% || 48.1 / 3.3 / 48.7
+|-
+| Dealer −6 zeros || 13, 10, 3, 1, 5, 11, 5, 6 || 54 || 2.17% || 47.8 / 3.3 / 48.9
+|-
+| Dealer −7 zeros || 12, 10, 3, 1, 5, 11, 5, 6 || 53 || 2.84% || 47.6 / 3.4 / 49.1
+|-
+| Swap 2 zeros for 2 fives || 17, 10, 3, 1, 5, 13, 5, 6 || 60 || 1.93% || 47.7 / 3.2 / 49.1
+|-
+| Swap 2 zeros for 2 threes || 17, 10, 3, 3, 5, 11, 5, 6 || 60 || 1.08% || 47.8 / 3.2 / 48.9
+|-
+| Swap 3 zeros for 3 threes || 16, 10, 3, 4, 5, 11, 5, 6 || 60 || 2.34% || 47.2 / 3.3 / 49.5
+|-
+| Swap 3 zeros for 3 threes, equal cards to the dealer || 16, 10, 3, 4, 5, 11, 5, 6 || 60 || 5.42% || 47.2 / 0.2 / 52.6
+|-
+| Swap 3 ones for 3 threes || 19, 7, 3, 4, 5, 11, 5, 6 || 60 || 2.04% || 47.4 / 3.2 / 49.4
+|-
+| Swap 2 zeros for 2 twos || 17, 10, 5, 1, 5, 11, 5, 6 || 60 || −0.73% || 48.8 / 3.1 / 48.1
+|-
+| Swap 4 sevens for 4 zeros || 23, 10, 3, 1, 5, 11, 5, 2 || 60 || 1.65% || 47.3 / 2.7 / 50.0
+|-
+| Swap 5 sevens for 5 zeros || 24, 10, 3, 1, 5, 11, 5, 1 || 60 || 2.31% || 46.9 / 2.6 / 50.5
+|}
+
+'''Checks.''' The two-deck calculation gives the same numbers as the earlier single-deck one when both decks are Deck C (−1.79% and 0.90%). An endless-deck simulation of 1,000,000 hands with the exact strategy gave −1.72% for Deck C and 2.36% for the swap of three 0s for three 3s, against exact −1.79% and 2.34% (error about ±0.11). A finite 60-card deck was not simulated for the Dune Sea decks.
+
+'''What the numbers say.'''
+* More 0s in the dealer's deck help the player, not the house. Inference, not checked: the dealer draws more cards before he stands. The house gains from a dealer deck with fewer 0s, more middle cards (3s and 5s), or fewer 7s.
+* Deck C allows only four Jawas, because Jawa cards are worth 2 or 3 and Deck C has only three 2s and one 3. A deck with many Jawas needs another spread, and the odds then change a lot (see the article).
+* R'kik's card text, read literally, doubles every win at Dune Sea Sabacc. Applied to every hand it gives the house 47%. Each 1% of his wins that double adds about 0.45 points. Iasa's plus or minus 1 is modelled as Lando's was: he moves his finished total one step toward 11 on a share of hands. That is never worse for him, so the result is the same whether or not he sees the player's hand. Deck lists for the Dune Sea contenders and bosses are on [[Sabacc game mode Dune Sea decks#Contenders and decks (draft)|the Dune Sea decks page]].
+* Equal cards going to the dealer instead of a draw is a much stronger tie rule (about 5.4% on the three-Jawa dealer deck), so it would need a weaker dealer deck.
+
+'''Missing data.'''
+* The virtual card pages often show no destiny number (for example [[Jawa Ion Gun (V)]]), so only Decipher printings were used.
+* No copy limit for sabacc decks was found in the Advanced Rulebook. The drafts assume 3 copies, or 2 for a unique card.
+* The Light Side has no 7-valued card with a clear Tatooine link, and the Dark Side has one ([[Double Laser Cannon]]).
+
+'''Possibly faulty data.''' Some titles are different cards with different destinies in different sets, for example [[Tusken Raider]] (2 in Premiere Limited, 3 in Coruscant). The drafts use only titles whose destiny is the same in every Decipher printing.
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 02:30, 12 October 2026 (UTC)
+
+== Deck design principles (Bill) ==
+
+''Recorded 12 October 2026 from Bill's review of the Het Nkik deck. They apply to every themed dealer deck; see [[Sabacc game mode Dune Sea decks#Level 1 decks|Level 1 decks]].''
+
+* '''One theme per contender''', taken from the card's lore or text. Het Nkik: cheap and bad devices.
+* '''Only cards that fit the theme directly.''' A keyword alone is not enough: [[Scanner Techs]] mentions Jawas but needs starships, so it is out.
+* '''Cluster the sets''' around the contender's own set (Premiere and A New Hope for Het Nkik and Dathcha). Branch out when a card ties to the deck's characters: [[Luke's Backpack]] (Dagobah) can carry Jawas and Luke is in the deck.
+* '''No Episode I versions''' when clustering classic sets.
+* '''Mostly bad or underpowered cards''', with a couple of combos (for example [[Don't Get Cocky]] with Han and Luke in the deck).
+* '''Real destiny values''' in each slot. Special cases are flagged: [[EG-4 (Eegee-Four)|EG-4]] ("destiny equals zero") and [[R2-D2 (Artoo-Detoo)|R2-D2]] ("2 or 5").
+* Limits as before: the dealer spread 16 / 10 / 3 / 4 / 5 / 11 / 5 / 6, at most 3 copies (2 of a unique card), the contender's own card included, and cards kept exclusive to one contender except in the boss decks.
+* ''Added 12 October 2026 (second review):''
+** '''Early contenders may be plainly bad.''' Het Nkik is a very early, low-level contender, so bad cards are fine.
+** '''Keep the exact versions Bill picks.''' Het's Han and Leia are the Jedi Pack [[Han]] and [[Leia (Jedi Pack)|Leia]].
+** '''Use the right side's version''' of cards that exist on both sides, such as [[Caller]] and [[Restraining Bolt]].
+** '''Mirror paired contenders.''' Dathcha's deck mirrors Het Nkik's slot by slot with Dark Side cards wherever that works.
+** '''Some imbalance is acceptable''' (for example R2-D2's "2 or 5"), but a cheap balancing swap is preferred.
+** '''Cards from other sets are fine for thin slots''', such as the 7s.
+** '''Every deck must be a legal SWCCG deck''': exactly 60 cards, one side, a location to start from, and only cards from legal printed products. Campaign mode may later cut decks to about 40 cards, so the theme and combos should survive a cut.
+** '''Poor decks still need some weak synergies.'''
+* ''Added 12 October 2026 (third review):''
+** '''Jawa themes are site-based.''' Jawa decks stay on the ground with sites, sandcrawlers, droids and devices; starship cards such as [[Intruder Missile (Dark)|Intruder Missile]], or cards that need a starship such as [[I've Lost Artoo!]], are out.
+** '''Every character needs a deploy path.''' The Introductory Game [[Vader (Premiere Two-Player Introductory Game)|Vader]] must deploy on the Death Star, so his deck needs a Death Star site; [[Vader's Obsession]] needs Vader on Tatooine, so the deck also needs [[Tatooine: Docking Bay 94 (Dark)|Docking Bay 94]].
+** '''Every attachment needs its host''' unless it is flagged as deliberate junk: [[Double Laser Cannon]] needs a sandcrawler.
+** '''Favour theme cards''' (Premiere and A New Hope; Jawa, Tatooine, droid and device cards), with only minor additions from other sets.
+** '''A contender who loses a reserved card gets an on-theme substitute''', recorded in the reservation map.
+
+* ''Added 12 October 2026 (fourth review):''
+** '''Sprinkle a few good or decent cards even in weak decks''' (Dathcha keeps both Vaders), but nothing simply too strong ([[Imperial Artillery]] was cut).
+** '''Save cards for the deck they belong in.''' [[Hypo]] needs IT-O and belongs in a future Dark Side detention-block and capture deck, so it stays out of Dathcha's deck.
+** '''Check the copy cap.''' [[Hunting Party]] is unique, so 2 copies at most.
+** '''Never mix sides''' when substituting: a Dark Side contender only gets Dark Side cards.
+** '''Reserved pair:''' [[Ronto]] and [[Ronto (Dark)]] are held as a mirrored pair for a later Light Side and Dark Side contender matchup, so Nebit gets [[Skiff]] instead.
+
+== Marginal cuts ==
+
+* Visual ideas (colours per location) and the anti-abuse, tie, and PvP thinking were left off the article until Bill picks directions. They are in the project report.
+* Sample decks for Jabba's Palace, Trooper, and Cloud City are not built yet. The Dune Sea decks leave out the sabacc Interrupt itself and the weaker flavour cards that were available at 7.
+* The list of every Light Side and Dark Side gambler (19 Light and 10 Dark card titles by the gambler characteristic) was cut to a few per table.
+
+== Build notes ==
+
+* Rules: Players Committee Advanced Rulebook 2023, Appendix C, Sabacc (PDF pages 171–172).
+* Variant text: the eight sabacc Interrupt pages. Lando text: [[Lando Calrissian]] (5_5) and [[Lando Calrissian (Dark)]] (5_99o). Dune Sea Sabacc wins double: R'kik D'nec's card; Iasa's card adds ±1 for Dune Sea Sabacc.
+* Gamblers: counted from the card pages' characteristics and lore (all printings); the Cloud City casino location card also rewards a gambler who wins Cloud City Sabacc (see [[Cloud City: Casino]]).
+* The outline sits on its own page so [[True Sabacc]] stays short; True Sabacc keeps a summary and the old anchor.
+* Deck C section: calculations in the project folder (engine_rule.py exact calculation, sim_rule.py simulation, search60c.py, lando_table.py, lando_sessions.py).
+* Dune Sea decks section: engine2.py (two-deck exact calculation, built from engine_rule.py), decks.py (card lists, checked against the card pages), run_dealer.py, run_boss.py, mc_check.py (simulation). Card list: every card page's destiny, one entry per title, side, and set, skipping Original, Errata, and PC Errata pages.
+* Rulebook ties section: engine_info.py (exact, informed dealer), regime3.py (hidden hands), sim_info.py and run_info.py (simulation). Turn order from the rulebook: players alternate drawing or passing, starting with the opponent of the player who started sabacc; a pass is final; totals stay hidden until both have passed. Alternating turns are not modelled (R3c uses card count only).
+
+[[User:Datacard Grok|Datacard Grok]] ([[User talk:Datacard Grok|talk]]) 19:02, 11 October 2026 (UTC)
+
+== Style pass (2026-10-15) ==
+=== Missing data ===
+Open questions moved from the article's "Open questions" section:
+* Final name of the mode ("True Sabacc" for now).
+* Bill's confirmation that real gold and silver are won or lost only in the Campaign mode, which would replace the standalone For keeps mode.
+* The house edge tool: a different dealer deck, a boss perk, or a tie rule. The card-game rules alone leave the player ahead. Options are on this talk page and [[Sabacc game mode Dune Sea decks]].
+* The perfect sabacc payout: 3:2 was chosen with Deck C, but the card game pays double.
+* Whether the stakes and who-may-start rules of each variant apply, or only the wild and clone cards that come with the decks.
+* What value cards without a destiny number have in a player's own deck.
+* The Trooper Sabacc location theme and its dealers.
+* Whether Jawas appear on the Dark Side at Jabba's Palace. The Jabba's Palace Sabacc card does not require a Jawa; Dune Sea Sabacc does.
+* Rules for hands between players: stakes, any house cut, and ties.
+* Side bets.
+* Gold sinks and other ways to drain inflation, given the existing merchant system.
+* The currency names, the starting amount of practice chips, and abuse protection.
+* Lando: how often he adjusts, what makes the house-attention meter rise, the ceiling on progression, and what beating him gives.
+* Mini-campaign details: how many dealers in each area, the story, the campaign rewards, and what controlling the casino means.
+* How the tiebreaker use fits the dealer-table design, since the tournament hand is between two players.
+[[User:Holocron Claude|Holocron Claude]] ([[User talk:Holocron Claude|talk]]) 17:20, 15 October 2026 (UTC)
