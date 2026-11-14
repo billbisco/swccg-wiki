@@ -210,6 +210,16 @@ class OwnerTests(unittest.TestCase):
         self.assertEqual([], self.commits)
         self.assertEqual("needs_attention", load_event(self.registry, request["source"])["state"])
 
+    def test_missing_checked_evidence_cannot_be_promoted_by_public_bytes_alone(self):
+        request = fixture(title="File:missing-evidence.png", ready=False)
+        request["source"].pop("checked_evidence")
+        registered = register(self.registry, request)
+        self.allowed.add(registered["object_id"])
+        self.responses[request["source"]["url"]] = {"status": 200, "sha256": request["source"]["sha256"], "size": request["source"]["bytes"]}
+        self.assertEqual(0, self.adapter().prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual([], self.commits)
+        self.assertEqual("needs_attention", export_records(self.registry)["objects"][0]["state"])
+
     def test_accepted_job_is_reported_while_auth_paused_without_network(self):
         request, _ = self.add()
         self.control.done[request["source"]["url"]] = {"status": "pending", "job_id": "actual-spn-job-123"}
