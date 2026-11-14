@@ -96,6 +96,25 @@ class Inbox:
                      "attempts": attempts, "retry_after": time.time() + min(86400, 60 * 2 ** min(attempts, 11)),
                      "owner": "nightly-backup", "continuation": "retry the exact durable task in the next existing run"})
 
+    def health_counts(self, *, scan_limit=50000, seconds=2):
+        deadline = time.monotonic() + seconds
+        pending, failed, oldest, scanned, partial = 0, 0, None, 0, False
+        with os.scandir(self.directory / "tasks") as entries:
+            for entry in entries:
+                if scanned >= scan_limit or time.monotonic() >= deadline:
+                    partial = True
+                    break
+                scanned += 1
+                if not entry.name.endswith(".json") or (self.directory / "completed" / entry.name).exists():
+                    continue
+                pending += 1
+                failed += (self.directory / "issues" / entry.name).exists()
+                created = entry.stat().st_mtime
+                oldest = created if oldest is None else min(oldest, created)
+        return {"pending_task_count": pending, "failed_pending_task_count": failed,
+                "oldest_pending_age_seconds_observed": None if oldest is None else max(0, int(time.time() - oldest)),
+                "task_count_partial": partial, "task_metadata_scanned": scanned}
+
 
 def discover_changes(api, inbox: Inbox, *, since: str | None = None, max_pages=10) -> dict:
     """Persist every task before advancing a bounded RC discovery cursor."""
@@ -234,6 +253,9 @@ class Producer:
         if not known_receipt:
             receipt = self.readback(artifact.subject, storage)
             self.spool.record_receipt(receipt)
+            atomic_json(self.spool.directory / "backup-progress.json",
+                        {"last_actual_verified_backup_at": receipt["verification"]["verified_at"],
+                         "subject": artifact.subject, "storage": receipt["storage"]})
         self.processed_bytes += artifact.subject["bytes"]
         if projection and projection[0].deferred_reason:
             # The exact version backup succeeded independently. Its compatible
@@ -274,12 +296,17 @@ class Producer:
 
     def pending_source_inventory(self):
         count = 0
+        scanned, partial, deadline = 0, False, time.monotonic() + 2
         with os.scandir(self.source_inventory) as entries:
             for entry in entries:
+                if scanned >= 50000 or time.monotonic() >= deadline:
+                    partial = True
+                    break
+                scanned += 1
                 if entry.name.endswith(".json"):
                     row = json.loads(Path(entry.path).read_text(encoding="utf-8"))
                     count += row.get("state") == "source_inventory_required"
-        return count
+        return {"source_inventory_required": count, "source_inventory_count_partial": partial}
 
     def task(self, key: str, task: dict) -> dict:
         kind = task["kind"]
@@ -383,9 +410,14 @@ class Producer:
                 except Exception as error:
                     self.inbox.issue(key, type(error).__name__ + ": " + str(error))
                     failures.append({"task": key, "reason": type(error).__name__})
+        counts = self.inbox.health_counts()
+        progress = self.spool.directory / "backup-progress.json"
+        last_verified = json.loads(progress.read_text(encoding="utf-8"))["last_actual_verified_backup_at"] if progress.exists() else None
         status = {"completed_tasks": completed, "failed_tasks": failures,
                   "discovery_failures": discovery_failures,
-                  "source_inventory_required": self.pending_source_inventory(),
-                  "pending": any(self.inbox.pending()), "archive_submitted": False, "observed_at": utcnow()}
+                  **self.pending_source_inventory(), **counts,
+                  "last_actual_verified_backup_at": last_verified,
+                  "pending": counts["pending_task_count"] > 0 or counts["task_count_partial"],
+                  "archive_submitted": False, "observed_at": utcnow()}
         atomic_json(self.inbox.directory / "health.json", status)
         return status

@@ -116,3 +116,10 @@ allocation. That is distinct from the less-than-2-MiB binary streaming fixture;
 neither measurement claims constant total process/Git RSS. A table exceeding
 the cap becomes an explicit pending reconciliation issue, preserving its
 existing bytes instead of attempting an unbounded split/sort.
+
+Health includes pending and failed-pending task counts, oldest observed pending
+age, the last actual independent backup verification timestamp, and separate
+citation-inventory counts. Metadata scans are bounded to 50,000 entries/two
+seconds each; partial counts are explicitly marked as lower bounds. Discovery,
+usage-only work, cached receipt reuse and process success do not manufacture
+verified-backup progress or claim the historical backlog completed.

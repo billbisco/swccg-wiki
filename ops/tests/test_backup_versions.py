@@ -248,7 +248,7 @@ class ProducerTests(unittest.TestCase):
         self.assertEqual(0, producer.spool.used_bytes())
         self.assertEqual([], list(producer.inbox.pending()))
         self.assertEqual(1, len(self.commits))
-        self.assertEqual(1, producer.pending_source_inventory())
+        self.assertEqual(1, producer.pending_source_inventory()["source_inventory_required"])
         marker = json.loads(next(producer.source_inventory.glob("*.json")).read_text())
         self.assertEqual(42, marker["subject"]["revision_id"])
         self.assertFalse(marker["capture_submitted"])
@@ -297,6 +297,7 @@ class ProducerTests(unittest.TestCase):
         self.assertEqual(1, status["completed_tasks"])
         self.assertEqual(2, len(status["discovery_failures"]))
         self.assertFalse(status["pending"])
+        self.assertIsNotNone(status["last_actual_verified_backup_at"])
 
     def test_bad_item_gets_backoff_while_unrelated_item_continues(self):
         def api(query):
@@ -371,6 +372,17 @@ class ProducerTests(unittest.TestCase):
         self.assertIn("projection_retry", pending[0][1])
         self.assertTrue((producer.inbox.directory / "issues" / (pending[0][0] + ".json")).exists())
         self.assertEqual("peer advance", (self.pages / "pages/Test.wiki").read_text())
+
+    def test_health_has_backlog_failure_age_and_explicit_partial_counts(self):
+        inbox = Inbox(self.root / "health-inbox")
+        key = inbox.add({"kind": "revision", "title": "Test", "revision_id": 42})
+        inbox.issue(key, "readback needs retry")
+        counts = inbox.health_counts()
+        self.assertEqual(1, counts["pending_task_count"])
+        self.assertEqual(1, counts["failed_pending_task_count"])
+        self.assertIsNotNone(counts["oldest_pending_age_seconds_observed"])
+        self.assertFalse(counts["task_count_partial"])
+        self.assertTrue(inbox.health_counts(scan_limit=0)["task_count_partial"])
 
 
 if __name__ == "__main__":
