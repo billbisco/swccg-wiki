@@ -215,6 +215,18 @@ class DiscoveryTests(unittest.TestCase):
                 with backup_owner(self.root):
                     self.fail("second owner entered")
 
+    def test_every_public_namespace_is_enumerated_including_file_descriptions_and_custom_namespaces(self):
+        namespaces = [0, 1, 6, 7, 8, 10, 14, 3000]
+        def api(query):
+            if query.get("meta"):
+                return {"query": {"namespaces": {str(ns): {"id": ns} for ns in namespaces + [-1, -2]}}}
+            return {"query": {"allpages": [{"title": "Namespace " + str(query["apnamespace"])}]}}
+        reconcile_inventory(api, self.inbox, pages=len(namespaces))
+        tasks = [task for _, task in self.inbox.pending()]
+        self.assertEqual({"Namespace " + str(ns) for ns in namespaces},
+                         {task["title"] for task in tasks if task["kind"] == "page_history"})
+        self.assertEqual(["Namespace 6"], [task["title"] for task in tasks if task["kind"] == "file_history"])
+
 
 class ProducerTests(unittest.TestCase):
     def setUp(self):
@@ -351,6 +363,97 @@ class ProducerTests(unittest.TestCase):
         pending = list(producer.inbox.pending())
         self.assertEqual(1, len(pending))
         self.assertEqual("older", pending[0][1]["continue"]["rvcontinue"])
+
+    def test_missing_moved_history_is_dispositioned_without_fake_backup_and_target_is_durable(self):
+        def api(query):
+            if query.get("list") == "logevents":
+                return {"query": {"logevents": [{"type": "move", "title": "Talk:Old", "timestamp": "2026-11-13T00:00:00Z",
+                                                   "params": {"target_title": "Talk:New", "target_ns": 1}}]}}
+            return {"query": {"pages": [{"title": "Talk:Old", "ns": 1, "missing": True}]}}
+        producer = self.producer(api)
+        historical = self.pages / "old-version.bin"
+        historical.write_bytes(b"retain earlier independent payload")
+        task = {"kind": "page_history", "title": "Talk:Old"}
+        key = producer.inbox.add(task)
+        producer.inbox.issue(key, "older missing-title retry")
+        proof = producer.task(key, task)
+        self.assertEqual("public_title_unavailable", proof["state"])
+        self.assertFalse(proof["independent_backup_claimed"])
+        self.assertEqual([], proof["versions"])
+        self.assertEqual(b"retain earlier independent payload", historical.read_bytes())
+        self.assertFalse((producer.inbox.directory / "issues" / (key + ".json")).exists())
+        self.assertEqual("Talk:New", list(producer.inbox.pending())[0][1]["title"])
+        self.assertEqual([], self.commits)
+
+    def test_missing_title_without_public_move_retains_observation_and_recreated_generation_is_new_work(self):
+        def api(query):
+            if query.get("list") == "logevents":
+                return {"query": {"logevents": []}}
+            return {"query": {"pages": [{"title": "Talk:Missing", "ns": 1, "missing": True}]}}
+        producer = self.producer(api)
+        task = {"kind": "page_history", "title": "Talk:Missing", "generation": 1}
+        proof = producer.task(producer.inbox.add(task), task)
+        self.assertEqual("public_title_unavailable", proof["state"])
+        self.assertIsNone(proof["observed_move_target"])
+        producer.inbox.add(dict(task, generation=2))
+        self.assertEqual(1, len(list(producer.inbox.pending())))
+
+    def test_unavailable_exact_revision_and_invalid_title_are_not_retired(self):
+        for query_result, task in (
+            ({"query": {"badrevids": {"42": {"revid": 42}}}}, {"kind": "revision", "title": "Test", "revision_id": 42}),
+            ({"query": {"pages": [{"title": "Test", "ns": 0, "missing": True, "invalid": True}]}}, {"kind": "page_history", "title": "Test"}),
+            ({"query": {"pages": [{"title": "Other", "ns": 0, "missing": True}]}}, {"kind": "page_history", "title": "Test"}),
+        ):
+            with self.subTest(task=task):
+                producer = self.producer(lambda query: query_result)
+                key = producer.inbox.add(task)
+                with self.assertRaises(BackupDeferred):
+                    producer.task(key, task)
+                self.assertFalse((producer.inbox.directory / "completed" / (key + ".json")).exists())
+
+    def test_move_target_is_checkpointed_before_obsolete_task_completes_and_retry_deduplicates(self):
+        def api(query):
+            if query.get("list") == "logevents":
+                return {"query": {"logevents": [{"type": "move", "title": "Talk:Old", "timestamp": "2026-11-13T00:00:00Z",
+                                                   "params": {"target_title": "Talk:New", "target_ns": 1}}]}}
+            return {"query": {"pages": [{"title": "Talk:Old", "ns": 1, "missing": True}]}}
+        producer = self.producer(api)
+        task = {"kind": "page_history", "title": "Talk:Old"}
+        key = producer.inbox.add(task)
+        with patch.object(producer.inbox, "complete", side_effect=RuntimeError("interrupted")):
+            with self.assertRaises(RuntimeError):
+                producer.task(key, task)
+        self.assertEqual(2, len(list(producer.inbox.pending())))
+        producer.task(key, task)
+        self.assertEqual(1, len(list(producer.inbox.pending())))
+
+    def test_nonimage_pdf_original_is_backed_up_and_registered_without_mime_filter(self):
+        raw = b"%PDF-1.4\npublic original fixture\n%%EOF"
+        info = {**file_info(raw), "mime": "application/pdf"}
+        producer = self.producer(lambda query: {"query": {"pages": [{"title": "File:Original.pdf", "imageinfo": [info]}]}})
+        producer.spool.fetch = lambda url: ChunkOnly(raw)
+        task = {"kind": "file_history", "title": "File:Original.pdf"}
+        proof = producer.task(producer.inbox.add(task), task)
+        row = export_records(producer.registry)["objects"][0]
+        self.assertEqual("independently_backed_up", proof["state"])
+        self.assertEqual("File:Original.pdf", row["subject"]["title"])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), row["subject"]["content_sha256"])
+        self.assertEqual("ready", row["state"])
+
+    def test_unavailable_title_dispositions_are_counted_separately_from_backups(self):
+        producer = self.producer(lambda query: self.fail("discovery is mocked"))
+        task = {"kind": "page_history", "title": "Talk:Missing"}
+        producer.inbox.add(task)
+        def disposition(key, task):
+            proof = {"state": "public_title_unavailable", "independent_backup_claimed": False}
+            producer.inbox.complete(key, proof)
+            return proof
+        producer.task = disposition
+        with patch("backup_versions.discover_changes"), patch("backup_versions.reconcile_inventory"):
+            result = producer.run(task_limit=1)
+        self.assertEqual(1, result["completed_tasks"])
+        self.assertEqual(1, result["unavailable_public_title_tasks"])
+        self.assertEqual([], result["failed_tasks"])
 
     def test_failed_discovery_does_not_prevent_existing_independent_task(self):
         def api(query):

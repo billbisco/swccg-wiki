@@ -394,6 +394,9 @@ class Producer:
                 raise BackupDeferred("exact revision is no longer publicly available")
             receipts = []
             pages = data.get("query", {}).get("pages", [])
+            if (kind == "page_history" and len(pages) == 1
+                    and pages[0].get("missing") is True and not pages[0].get("invalid")):
+                return self._unavailable_title(key, task, pages[0], data)
             for page in pages:
                 if page.get("missing") or page.get("invalid"):
                     raise BackupDeferred("public title is missing; historical backups retained")
@@ -451,6 +454,45 @@ class Producer:
         self.inbox.complete(key, evidence)
         return evidence
 
+    def _unavailable_title(self, key: str, task: dict, page: dict, data: dict) -> dict:
+        """Retire an observed absent title, never an exact revision or payload.
+
+        A move without a redirect leaves valid old discovery work behind. Keep
+        its public missing-title observation and any public move target before
+        completing the obsolete title task; do not label it backed up or delete
+        old artifacts. A recreated title is rediscovered by later generations
+        and RecentChanges revisions, regardless of this disposition.
+        """
+        if (page.get("title") != task["title"] or type(page.get("ns")) is not int
+                or page["ns"] < 0 or page.get("revisions") or data.get("continue")
+                or data.get("error") or data.get("warnings")):
+            raise BackupDeferred("missing-title response is not an unambiguous public observation")
+        self.check_deadline()
+        history = self.api({"action": "query", "list": "logevents", "letype": "move",
+                            "letitle": task["title"], "leprop": "title|type|details|timestamp", "lelimit": 1})
+        if history.get("error") or history.get("warnings"):
+            raise BackupDeferred("public move-log lookup failed; unavailable task retained")
+        target, target_key = None, None
+        for event in history.get("query", {}).get("logevents", []):
+            if any(flag in event for flag in ("suppressed", "actionhidden", "titlehidden", "commenthidden")):
+                continue
+            params = event.get("params", {})
+            candidate = params.get("target_title")
+            if (event.get("type") == "move" and event.get("title") == task["title"]
+                    and isinstance(candidate, str) and candidate and candidate != task["title"]
+                    and type(params.get("target_ns")) is int and params["target_ns"] >= 0):
+                target = {"title": candidate, "namespace": params["target_ns"], "timestamp": event.get("timestamp")}
+                target_key = self.inbox.add({"kind": "page_history", "title": candidate,
+                                             "moved_from": task["title"], "public_move_timestamp": event.get("timestamp")})
+        evidence = {"state": "public_title_unavailable", "title": task["title"], "versions": [],
+                    "independent_backup_claimed": False, "historical_backups_retained": True,
+                    "public_observation": {"namespace": page["ns"], "missing": True, "checked_at": utcnow()},
+                    "observed_move_target": target, "target_task_id": target_key,
+                    "continuation": "Existing namespace generations and RecentChanges rediscover recreated public titles; any observed move target has its own durable history task.",
+                    "completed_at": utcnow()}
+        self.inbox.complete(key, evidence)
+        return evidence
+
     def run(self, *, since=None, task_limit=100, seconds=1800) -> dict:
         deadline = time.monotonic() + seconds
         self.deadline = deadline
@@ -466,13 +508,14 @@ class Producer:
                 atomic_json(self.inbox.directory / (name + "-failure.json"),
                             {"state": "needs_reconciliation", "reason": type(error).__name__ + ": " + str(error),
                              "observed_at": utcnow(), "continuation": "retry discovery on next existing run; cursors were not advanced"})
-        completed, failures = 0, []
+        completed, unavailable, failures = 0, 0, []
         for key, task in self.due_tasks():
             if completed + len(failures) >= task_limit or time.monotonic() >= deadline:
                 break
             try:
-                self.task(key, task)
+                outcome = self.task(key, task)
                 completed += 1
+                unavailable += isinstance(outcome, dict) and outcome.get("state") == "public_title_unavailable"
             except Exception as error:
                 self.inbox.issue(key, type(error).__name__ + ": " + str(error))
                 failures.append({"task": key, "reason": type(error).__name__})
@@ -480,7 +523,7 @@ class Producer:
         counts = self.inbox.health_counts()
         progress = self.spool.directory / "backup-progress.json"
         last_verified = json.loads(progress.read_text(encoding="utf-8"))["last_actual_verified_backup_at"] if progress.exists() else None
-        status = {"completed_tasks": completed, "failed_tasks": failures,
+        status = {"completed_tasks": completed, "unavailable_public_title_tasks": unavailable, "failed_tasks": failures,
                   "discovery_failures": discovery_failures,
                   **self.pending_source_inventory(), **counts, **source_status,
                   "last_actual_verified_backup_at": last_verified,
