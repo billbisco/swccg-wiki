@@ -1,27 +1,294 @@
 [
-  {"name":"Printed JP mark is not a reference or product","query":{"symbol":"JP","role":"printed"},"ids":["6_160"]},
-  {"name":"JP references include two Seeking printings and Rendezvous","query":{"symbol":"Jabba's Palace","role":"referenced"},"ids":["112_7","decipher-reflections-iii-seeking-an-audience-foil-en","5_66"]},
-  {"name":"Sealed and foil Seeking both carry Premium","query":{"symbol":"premium","role":"printed"},"ids":["112_7","decipher-reflections-iii-seeking-an-audience-foil-en"]},
-  {"name":"JP alias text lookup","query":{"text":"JP"},"ids":["112_7","decipher-reflections-iii-seeking-an-audience-foil-en","5_66","6_160"]},
-  {"name":"JP full-name text lookup","query":{"text":"Jabba’s Palace"},"ids":["112_7","decipher-reflections-iii-seeking-an-audience-foil-en","5_66","6_160"]},
-  {"name":"Hoth printed symbols","query":{"symbol":"Hoth","role":"printed"},"ids":["3_54","3_32o","3_82o"]},
-  {"name":"Hoth symbol referenced in text","query":{"symbol":"Hoth","role":"referenced"},"ids":["3_54"]},
-  {"name":"Cloud City is not Hoth Captain Han","query":{"symbol":"CC","role":"printed"},"ids":["5_66","5_1o"]},
-  {"name":"No printed expansion mark is explicit Premiere","query":{"symbol":"None (Premiere)"},"ids":["1_227o","1_30o","1_19o","1_168o","1_105o"]},
-  {"name":"Two-dot categories","query":{"uniqueness":"restricted-2"},"ids":["1_227o","2_103o","12_148"]},
-  {"name":"Three dots","query":{"uniqueness":"restricted-3"},"ids":["1_30o"]},
-  {"name":"Diamond category","query":{"uniqueness":"diamond-1"},"ids":["12_185"]},
-  {"name":"Unrestricted is a known category","query":{"uniqueness":"unrestricted"},"ids":["3_54","5_66","9_137","1_105o","2_50o","2_132o"]},
-  {"name":"Unknown category has no current sample","query":{"uniqueness":"unknown"},"ids":[]},
-  {"name":"Officer Evax occurs in two real main decks","query":{"mode":"decks","contains":"2_98o"},"ids":["wiki:17176","wiki:78887"],"counts":{"wiki:17176":1,"wiki:78887":1}},
-  {"name":"Ghhhk family must not match a different combo card","query":{"mode":"decks","contains":"2_132o"},"ids":["wiki:17176"],"counts":{"wiki:17176":2}},
-  {"name":"Rebel Barrier count in the real Hidden Base list","query":{"mode":"decks","contains":"1_105o"},"ids":["wiki:17252"],"counts":{"wiki:17252":2}},
-  {"name":"Houjix count in the real Diplo list","query":{"mode":"decks","contains":"2_50o"},"ids":["wiki:78896"],"counts":{"wiki:78896":2}},
-  {"name":"Exact o state is not the bare recorded import ID","query":{"mode":"decks","contains":"3_82o","identity":"recorded"},"ids":[]},
-  {"name":"Family matching retains Ozzel across recorded state","query":{"mode":"decks","contains":"3_82o","identity":"family"},"ids":["wiki:78887"],"counts":{"wiki:78887":1}},
-  {"name":"Player filter searches public deck metadata","query":{"mode":"decks","text":"Timo"},"ids":["wiki:17176","wiki:17252"]},
-  {"name":"Invalid symbol is not an empty successful query","query":{"symbol":"not-a-real-set"},"error":"Unknown set symbol"},
-  {"name":"Unsupported uniqueness category fails clearly","query":{"uniqueness":"all-the-same"},"error":"Unknown uniqueness"},
-  {"name":"Foil exact-ID mapping is not invented","query":{"mode":"decks","contains":"decipher-reflections-iii-seeking-an-audience-foil-en","identity":"recorded"},"error":"no verified exact import ID"},
-  {"name":"Deck symbol filters have no inferred hidden join","query":{"mode":"decks","symbol":"JP"},"error":"filters apply to Cards"}
+  {
+    "name": "Printed JP mark is not a reference or product",
+    "query": {
+      "symbol": "JP",
+      "role": "printed"
+    },
+    "ids": [
+      "6_160"
+    ]
+  },
+  {
+    "name": "JP references include two Seeking printings and Rendezvous",
+    "query": {
+      "symbol": "Jabba's Palace",
+      "role": "referenced"
+    },
+    "ids": [
+      "112_7",
+      "decipher-reflections-iii-seeking-an-audience-foil-en",
+      "5_66"
+    ]
+  },
+  {
+    "name": "Sealed and foil Seeking both carry Premium",
+    "query": {
+      "symbol": "premium",
+      "role": "printed"
+    },
+    "ids": [
+      "112_7",
+      "decipher-reflections-iii-seeking-an-audience-foil-en"
+    ]
+  },
+  {
+    "name": "JP alias text lookup",
+    "query": {
+      "text": "JP"
+    },
+    "ids": [
+      "112_7",
+      "decipher-reflections-iii-seeking-an-audience-foil-en",
+      "5_66",
+      "6_160"
+    ]
+  },
+  {
+    "name": "JP full-name text lookup",
+    "query": {
+      "text": "Jabba’s Palace"
+    },
+    "ids": [
+      "112_7",
+      "decipher-reflections-iii-seeking-an-audience-foil-en",
+      "5_66",
+      "6_160"
+    ]
+  },
+  {
+    "name": "Hoth printed symbols",
+    "query": {
+      "symbol": "Hoth",
+      "role": "printed"
+    },
+    "ids": [
+      "3_54",
+      "3_32o",
+      "3_82o"
+    ]
+  },
+  {
+    "name": "Hoth symbol referenced in text",
+    "query": {
+      "symbol": "Hoth",
+      "role": "referenced"
+    },
+    "ids": [
+      "3_54"
+    ]
+  },
+  {
+    "name": "Cloud City is not Hoth Captain Han",
+    "query": {
+      "symbol": "CC",
+      "role": "printed"
+    },
+    "ids": [
+      "5_66",
+      "5_1o"
+    ]
+  },
+  {
+    "name": "No printed expansion mark is explicit Premiere",
+    "query": {
+      "symbol": "None (Premiere)"
+    },
+    "ids": [
+      "1_227o",
+      "1_30o",
+      "1_19o",
+      "1_168o",
+      "1_105o"
+    ]
+  },
+  {
+    "name": "Two-dot categories",
+    "query": {
+      "uniqueness": "restricted-2"
+    },
+    "ids": [
+      "1_227o",
+      "2_103o",
+      "12_148"
+    ]
+  },
+  {
+    "name": "Three dots",
+    "query": {
+      "uniqueness": "restricted-3"
+    },
+    "ids": [
+      "1_30o"
+    ]
+  },
+  {
+    "name": "Diamond category",
+    "query": {
+      "uniqueness": "diamond-1"
+    },
+    "ids": [
+      "12_185"
+    ]
+  },
+  {
+    "name": "Unrestricted is a known category",
+    "query": {
+      "uniqueness": "unrestricted"
+    },
+    "ids": [
+      "3_54",
+      "5_66",
+      "9_137",
+      "1_105o",
+      "2_50o",
+      "2_132o"
+    ]
+  },
+  {
+    "name": "Unknown category has no current sample",
+    "query": {
+      "uniqueness": "unknown"
+    },
+    "ids": []
+  },
+  {
+    "name": "Officer Evax occurs in two real main decks",
+    "query": {
+      "mode": "decks",
+      "contains": "2_98o"
+    },
+    "ids": [
+      "wiki:17176",
+      "wiki:78887"
+    ],
+    "counts": {
+      "wiki:17176": 1,
+      "wiki:78887": 1
+    }
+  },
+  {
+    "name": "Ghhhk family must not match a different combo card",
+    "query": {
+      "mode": "decks",
+      "contains": "2_132o"
+    },
+    "ids": [
+      "wiki:17176"
+    ],
+    "counts": {
+      "wiki:17176": 2
+    }
+  },
+  {
+    "name": "Rebel Barrier count in the real Hidden Base list",
+    "query": {
+      "mode": "decks",
+      "contains": "1_105o"
+    },
+    "ids": [
+      "wiki:17252"
+    ],
+    "counts": {
+      "wiki:17252": 2
+    }
+  },
+  {
+    "name": "Houjix count in the real Diplo list",
+    "query": {
+      "mode": "decks",
+      "contains": "2_50o"
+    },
+    "ids": [
+      "wiki:78896"
+    ],
+    "counts": {
+      "wiki:78896": 2
+    }
+  },
+  {
+    "name": "Exact o state is not the bare recorded import ID",
+    "query": {
+      "mode": "decks",
+      "contains": "3_82o",
+      "identity": "recorded"
+    },
+    "ids": []
+  },
+  {
+    "name": "Family matching retains Ozzel across recorded state",
+    "query": {
+      "mode": "decks",
+      "contains": "3_82o",
+      "identity": "family"
+    },
+    "ids": [
+      "wiki:78887"
+    ],
+    "counts": {
+      "wiki:78887": 1
+    }
+  },
+  {
+    "name": "Player filter searches public deck metadata",
+    "query": {
+      "mode": "decks",
+      "text": "Timo"
+    },
+    "ids": [
+      "wiki:17176",
+      "wiki:17252"
+    ]
+  },
+  {
+    "name": "Invalid symbol is not an empty successful query",
+    "query": {
+      "symbol": "not-a-real-set"
+    },
+    "error": "Unknown set symbol"
+  },
+  {
+    "name": "Unsupported uniqueness category fails clearly",
+    "query": {
+      "uniqueness": "all-the-same"
+    },
+    "error": "Unknown uniqueness"
+  },
+  {
+    "name": "Foil exact-ID mapping is not invented",
+    "query": {
+      "mode": "decks",
+      "contains": "decipher-reflections-iii-seeking-an-audience-foil-en",
+      "identity": "recorded"
+    },
+    "error": "no verified exact import ID"
+  },
+  {
+    "name": "Deck symbol filters have no inferred hidden join",
+    "query": {
+      "mode": "decks",
+      "symbol": "JP"
+    },
+    "error": "filters apply to Cards"
+  },
+  {
+    "name": "One dot is the explicit unique category",
+    "query": {
+      "uniqueness": "unique"
+    },
+    "ids": [
+      "112_7",
+      "decipher-reflections-iii-seeking-an-audience-foil-en",
+      "11_12",
+      "1_19o",
+      "1_168o",
+      "9_6",
+      "3_32o",
+      "5_1o",
+      "3_82o",
+      "10_51",
+      "6_160",
+      "2_98o"
+    ]
+  }
 ]

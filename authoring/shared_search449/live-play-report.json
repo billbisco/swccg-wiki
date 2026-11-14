@@ -1,0 +1,42 @@
+{
+  "phase": "play",
+  "snapshotId": "449-6b358f28bac5",
+  "urls": {
+    "wiki": "https://wiki.swccg.com/wiki/SWCCG_Wiki:Samples/Shared_search_pilot",
+    "scomp": "https://swccg.com/snapshots/review/shared-search-449/scomp.html",
+    "play": "https://play.swccg.com/gemp-swccg/searchPilot.html"
+  },
+  "results": [
+    {
+      "adapter": "wiki",
+      "golden_cases": 25,
+      "widths": [
+        1280,
+        390
+      ],
+      "display_copy_share_labels_empty_invalid": "PASS",
+      "browser_errors": []
+    },
+    {
+      "adapter": "scomp",
+      "golden_cases": 25,
+      "widths": [
+        1280,
+        390
+      ],
+      "display_copy_share_labels_empty_invalid": "PASS",
+      "browser_errors": []
+    },
+    {
+      "adapter": "play",
+      "golden_cases": 25,
+      "widths": [
+        1280,
+        390
+      ],
+      "display_copy_share_labels_empty_invalid": "PASS",
+      "browser_errors": []
+    }
+  ],
+  "archive_requests": 0
+}

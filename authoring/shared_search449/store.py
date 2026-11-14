@@ -18,8 +18,9 @@ else:
         files['wiki/SwccgChrome.php']=(p/'product/SwccgChrome.php').read_bytes()
         for name in [manifest['js'],manifest['css']]:files['chrome/'+name]=(p/'product'/name).read_bytes()
         files['authoring/shared_search449/product/query.js']=(p/'product/query.js').read_bytes();files['authoring/shared_search449/product/data.json']=(p/'product/data.json').read_bytes()
-        if (p/'wiki-published.json').exists():
-            j=json.loads((p/'wiki-published.json').read_bytes());h=j['page'];title=h['title'];source=h['revisions'][0]['slots']['main']['content']
+        for published in ['wiki-published.json','talk-published.json']:
+            if not (p/published).exists():continue
+            j=json.loads((p/published).read_bytes());h=j['page'];title=h['title'];source=h['revisions'][0]['slots']['main']['content']
             # Preserve the existing ordering convention and only add our own page mapping.
             old=subprocess.check_output(['git','-C',repo,'show',base+':pages/INDEX.tsv']).decode();index=dict(s.split('\t',1) for s in old.splitlines() if '\t' in s)
             sys.path.insert(0,'work/wiki-tools');from dump_live import wiki_fname
