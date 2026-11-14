@@ -26,8 +26,10 @@ jobs:
           python-version: "3.12"
       - name: Verify concurrent-writer handling with local Git fixtures
         run: python -m unittest discover -s tests -p test_push_wiki_dump.py -v
-      - name: Dump wikitext from wiki.swccg.com
-        run: python tools/dump_live.py
+      - name: Verify exact public export and resume fixtures
+        run: python -m unittest discover -s tests -p test_dump_public_current.py -v
+      - name: Export exact revisions from all public wiki namespaces
+        run: python tools/dump_public_current.py
       - name: Commit and push dump with concurrent-writer retries
         run: |
           git config user.name "swccg-wiki-sync"

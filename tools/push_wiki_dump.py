@@ -10,6 +10,8 @@ the dump's existing namespace/content coverage is unchanged.
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import os
 from pathlib import Path
 import subprocess
@@ -56,14 +58,19 @@ def index_rows(text: str) -> dict[str, str]:
 
 
 def live_page(title: str) -> str:
-    # Reuse the legacy export's API and text normalization. It only contacts
-    # wiki.swccg.com; no preservation/provider calls are made by this module.
-    from dump_live import api, page_text
+    # This refresh only changes compatibility aliases; authoritative numeric
+    # payloads and cutoff metadata belong to the completed public exporter.
+    from dump_public_current import request_api
 
-    response = api({"action": "query", "titles": title, "prop": "revisions",
+    response = request_api({"action": "query", "titles": title, "prop": "revisions",
                     "rvprop": "content", "rvslots": "main"})
     pages = response.get("query", {}).get("pages", [])
-    if len(pages) != 1 or (text := page_text(pages[0])) is None:
+    revisions = pages[0].get("revisions", []) if len(pages) == 1 else []
+    if len(revisions) != 1 or "texthidden" in revisions[0]:
+        raise SyncError("Conflicting page could not be read from the live wiki")
+    slot = revisions[0].get("slots", {}).get("main", {})
+    text = slot.get("content") if "content" in slot else revisions[0].get("content")
+    if not isinstance(text, str) or "texthidden" in slot:
         raise SyncError("Conflicting page could not be read from the live wiki")
     return text
 
@@ -76,19 +83,39 @@ def refresh_conflicts(repo: Path, paths: list[str], snapshot: str, read_live=Non
     A title changing its canonical path needs manual reconciliation, not a guess.
     """
     read_live = read_live or live_page
+    manifest_path = repo / "pages/public-current/manifest.json"
+    full_manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else None
+    if full_manifest is not None and full_manifest.get("schema_version") != 1:
+        raise SyncError("Unknown full export manifest; refusing automatic resolution")
+    if any(path.startswith(("pages/by-id/", "pages/public-current/")) for path in paths):
+        raise SyncError("Authoritative public-export payload/metadata conflict; rerun the full exporter")
     remote = index_rows(checked(repo, "show", "refs/remotes/origin/main:pages/INDEX.tsv").stdout)
     dumped = index_rows(checked(repo, "show", f"{snapshot}:pages/INDEX.tsv").stdout)
+    canonical_overrides = {}
     for title in remote.keys() & dumped.keys():
         if remote[title] != dumped[title]:
-            raise SyncError("Concurrent canonical page path changed; refusing automatic resolution")
+            if full_manifest is None:
+                raise SyncError("Concurrent canonical page path changed; refusing automatic resolution")
+            canonical_overrides[title] = {"snapshot": dumped[title], "upstream": remote[title]}
     merged = {**dumped, **remote}
     by_path: dict[str, list[str]] = {}
     for title, path in merged.items():
         by_path.setdefault(path, []).append(title)
+    canonical_paths = set(remote.values()) | set(dumped.values())
     updates = {}
+    retained_aliases = []
     for path in paths:
         if path == "pages/INDEX.tsv":
             updates[path] = "".join(f"{title}\t{merged[title]}\n" for title in sorted(merged, key=str.casefold))
+        elif full_manifest is not None and path in canonical_paths and path.endswith(".wiki"):
+            # Compatibility aliases may be repathed or ambiguous. Keeping the
+            # upstream alias/deletion cannot alter the numeric cutoff payloads.
+            if git(repo, "cat-file", "-e", f"refs/remotes/origin/main:{path}").returncode == 0:
+                checked(repo, "checkout", "--ours", "--", path)
+                checked(repo, "add", "--", path)
+            else:
+                checked(repo, "rm", "--", path)
+            retained_aliases.append(path)
         elif path.startswith("pages/") and path.endswith(".wiki") and len(by_path.get(path, [])) == 1:
             updates[path] = read_live(by_path[path][0])
         else:
@@ -100,7 +127,46 @@ def refresh_conflicts(repo: Path, paths: list[str], snapshot: str, read_live=Non
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(text, encoding="utf-8", newline="\n")
         checked(repo, "add", "--", path)
-    print(f"Refreshed {len(paths)} conflicting generated file(s) from live wiki/index mappings", flush=True)
+    if full_manifest is not None:
+        if "pages/INDEX.tsv" in updates:
+            full_manifest["index_sha256"] = hashlib.sha256(updates["pages/INDEX.tsv"].encode("utf-8")).hexdigest()
+            full_manifest["compatibility_index_entries"] = len(merged)
+        if retained_aliases:
+            full_manifest["compatibility_alias_conflicts_kept_from_upstream"] = sorted(set(
+                full_manifest.get("compatibility_alias_conflicts_kept_from_upstream", []) + retained_aliases))
+        if canonical_overrides:
+            full_manifest["compatibility_canonical_overrides"] = {
+                **full_manifest.get("compatibility_canonical_overrides", {}), **canonical_overrides}
+        manifest_path.write_text(json.dumps(full_manifest, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8", newline="\n")
+        checked(repo, "add", "--", "pages/public-current/manifest.json")
+    mode = "upstream compatibility views; authoritative snapshot unchanged" if full_manifest is not None else "live wiki/index mappings"
+    print(f"Reconciled {len(paths)} conflicting generated file(s) using {mode}", flush=True)
+
+
+def reconcile_compatibility_index(repo: Path) -> None:
+    """An automatic Git merge can also change INDEX without a conflict."""
+    manifest_path = repo / "pages/public-current/manifest.json"
+    if not manifest_path.exists():
+        return
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("schema_version") != 1:
+        raise SyncError("Unknown public export manifest")
+    index = (repo / "pages/INDEX.tsv").read_bytes()
+    digest = hashlib.sha256(index).hexdigest()
+    if digest == manifest.get("index_sha256"):
+        return
+    manifest["index_sha256"] = digest
+    manifest["compatibility_index_entries"] = len(index_rows(index.decode("utf-8")))
+    manifest["compatibility_index_reconciled_after_rebase"] = True
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n", encoding="utf-8", newline="\n")
+    checked(repo, "add", "--", "pages/public-current/manifest.json")
+    head = checked(repo, "rev-parse", "HEAD").stdout.strip()
+    upstream = checked(repo, "rev-parse", "refs/remotes/origin/main").stdout.strip()
+    if head != upstream:
+        checked(repo, "merge-base", "--is-ancestor", upstream, head)
+        checked(repo, "commit", "--amend", "--no-edit")
+    else:
+        checked(repo, "commit", "-m", "Reconcile wiki backup compatibility index digest")
 
 
 def push_dump(repo: Path, attempts: int = 5, retry_seconds: float = 3) -> dict:
@@ -142,6 +208,7 @@ def push_dump(repo: Path, attempts: int = 5, retry_seconds: float = 3) -> dict:
                 if aborted.returncode:
                     raise SyncError("Rebase failed and could not be aborted; no push performed") from exc
                 raise SyncError(f"{exc}; no push performed. Local dump snapshot: {snapshot}") from exc
+        reconcile_compatibility_index(repo)
         pushed = git(repo, "push", "origin", "HEAD:refs/heads/main")
         if pushed.returncode == 0:
             current = checked(repo, "rev-parse", "HEAD").stdout.strip()
