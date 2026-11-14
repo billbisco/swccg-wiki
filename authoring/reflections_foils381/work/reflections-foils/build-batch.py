@@ -1,7 +1,7 @@
 import hashlib,json,re,sys
 from pathlib import Path
 sys.path.insert(0,'work/japanese-infobox287/vendor');import mwparserfromhell as mw
-sys.path.insert(0,'work/wiki-tools');from style_lint import lint
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
 root=Path(__file__).parent;stage=sys.argv[1]
 from source_registry import provenance
 from navigation import new_navigation
@@ -64,12 +64,14 @@ for r,f in zip(readings,files):
     flags=lint(text,title)[0];checks.append(dict(title=title,lint=flags));assert not flags,(title,flags)
     packets.append(dict(title=title,text=text,new=True,section=0,summary='Document the verified original Reflections foil printing and printed fields (#381)'))
     for sibling in families[r['title']]:
+        if sibling in {row['article'] for row in readings}:continue
         old=old_drafts.get(sibling,source(sibling));code=mw.parse(old);t=next(t for t in code.filter_templates(recursive=False) if str(t.name).strip()=='Card')
         if any(t.has(k) and '{{Card versions/' in str(t.get(k).value) for k in ['versions','printings']):continue
         for k in ['versions','printings']:
             if t.has(k):
-                value=str(t.get(k).value);assert r['article'] not in value,(sibling,'Foil already present; refresh baseline')
-                t.get(k).value=insert(value.strip(),entry(r))+'\n'
+                value=str(t.get(k).value);
+                if r['article'] not in value:t.get(k).value=insert(value.strip(),entry(r))+'\n'
+                else:assert value.count(r['article'])==1,(sibling,'Duplicate foil link')
         old_drafts[sibling]=str(code)
 (root/(stage+'-new-packet.json')).write_text(json.dumps(packets,ensure_ascii=False,indent=2),encoding='utf8')
 family=[]

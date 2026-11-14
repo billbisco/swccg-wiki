@@ -35,7 +35,8 @@ def new_navigation(r,heads,families,readings):
         assert len(navigators)==1
         return str(navigators[0])
     order=[root_title]+[canonical(str(w.title).strip(),heads) for w in mw.parse(oldvalue).filter_wikilinks()]+families[r['title']]
-    order=list(dict.fromkeys(t for t in order if t in families[r['title']]))
+    current_batch={row['article'] for row in readings}
+    order=list(dict.fromkeys(t for t in order if t in families[r['title']] and t not in current_batch))
     entries=[]
     for i,title in enumerate(order):
         t=card(heads[title]['revisions'][0]['slots']['main']['content']);prefix=label(title,t)

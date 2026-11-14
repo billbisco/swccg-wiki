@@ -6,7 +6,7 @@ from urllib.parse import quote,unquote
 import requests
 from bs4 import BeautifulSoup
 sys.path.insert(0,'work/japanese-infobox287/vendor');import mwparserfromhell as mw
-sys.path.insert(0,'work/wiki-tools');from style_lint import lint
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
 root=Path(__file__).parent;stage=sys.argv[1];expected={}
 for kind in ['new','family-final','shared-nav','set','file-preservation','correction']:
     p=root/(stage+'-'+kind+'-packet.json')
@@ -61,6 +61,7 @@ for r in readings:
     settext=heads[r['product']]['revisions'][0]['slots']['main']['content'];assert settext.count('[['+r['article']+'|'+r['printed_title']+']]')==1,(r['article'],'Direct checklist target missing')
     value=values(text);shared='{{Card versions/' in value
     for sibling in families[r['title']]:
+        if sibling==r['article']:continue
         old=baseline[sibling]['revisions'][0]['slots']['main']['content']
         if shared and '{{Card versions/' in values(old):continue
         new=heads[sibling]['revisions'][0]['slots']['main']['content'];ok=conserved(old)==conserved(new);assert ok,sibling
@@ -81,7 +82,8 @@ def public(title):
     if reading:
         boxes=body.select('table.card-infobox');assert len(boxes)==1,title
         links={unquote(a.get('href','').split('/wiki/',1)[1].split('#')[0]).replace('_',' ') for a in boxes[0].select('a[href]') if '/wiki/' in a['href']}
-        assert set(families[reading['title']])<=links,(title,'Missing family destinations',set(families[reading['title']])-links)
+        required=set(families[reading['title']])-{title}
+        assert required<=links,(title,'Missing family destinations',required-links)
         row['infoboxes']=1;row['family_links_verified']=len(families[reading['title']])
     return row
 with ThreadPoolExecutor(max_workers=4) as pool:public_report=list(pool.map(public,titles))

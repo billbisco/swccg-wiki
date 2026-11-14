@@ -2,6 +2,10 @@
 import base64,gzip,json,subprocess,sys
 from pathlib import Path
 root=Path(__file__).parent;stage=sys.argv[1];rows=json.loads((root/(stage+'-packet.json')).read_bytes())
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
+for row in rows:
+    flags=lint(row['text'],row['title'])[0]
+    assert not flags,(row['title'],flags)
 if len(sys.argv)>2:rows=rows[int(sys.argv[2]):int(sys.argv[2])+int(sys.argv[3])]
 suffix='''
 import hashlib

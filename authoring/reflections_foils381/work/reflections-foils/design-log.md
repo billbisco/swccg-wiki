@@ -11,3 +11,9 @@
 - Why: Save Page Now stopped working: GET520 on both routes, explicit POST429 throttling, documented authenticated401; an ordinary cooldown retry still520. Missing photographs are not the blocker. Core lint/image rules prohibit claiming unpreserved work done.
 - Alternatives: Do not bypass throttling, weaken ARCHIVE lint, invent replay URLs, recreate an existing printing, substitute generic foil renders or label drafts as publication. No new approval is required from Bill.
 - Who/status: MemoryCoreChatGPT; all physical faces/drafts ready, whole story remains In Progress pending external archival recovery and publication. RESUME.md supplies the exact next step. Source backup checkpoint does not close story381.
+
+## 14 November2026 — Bill authorizes publication with preservation queued
+- Decision: Publish the remaining217 foil articles and complete batch8 now; defer external captures to linked task412.
+- Why: Bill explicitly instructed “Please don’t let Wayback block this. Queue the preservation requests for later and proceed with publishing the remaining217 foil articles and finishing the ten incomplete ones.”
+- Alternatives: Do not wait for archival recovery, weaken non-archive validation, invent replay URLs or label queued captures verified. Standard linter unchanged; task-scoped wrapper records deferred ARCHIVE flags.
+- Who/status: Bill authorizes; MemoryCoreChatGPT executes. R5/AC4 archival prerequisite is amended for this publication only; all content, image-hash, review, navigation, conservation and public/visual checks remain.

@@ -2,7 +2,7 @@ import hashlib,json,re,sys
 from pathlib import Path
 import requests
 from source_registry import provenance
-sys.path.insert(0,'work/wiki-tools');from style_lint import lint
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
 root=Path(__file__).parent;stage=sys.argv[1]
 readings=json.loads((root/(stage+'-readings.json')).read_bytes());files=json.loads((root/(stage+'-files-payload.json')).read_bytes())
 products=list(dict.fromkeys(r['product'] for r in readings));packets=[];heads={};talk=[]

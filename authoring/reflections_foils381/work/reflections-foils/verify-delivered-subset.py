@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.parse import quote
 import requests
 from bs4 import BeautifulSoup
-sys.path.insert(0,'work/wiki-tools');from style_lint import lint
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
 root=Path(__file__).parent;stage=sys.argv[1];expected={};talk={}
 for kind in ['new','set']:
     expected.update({r['title']:r['text'] for r in json.loads((root/(stage+'-'+kind+'-packet.json')).read_bytes())})

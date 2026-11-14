@@ -1,3 +1,7 @@
+# Current authorization —14 November2026
+
+Bill explicitly superseded the archive publication gate: publish all217 drafts and finish the ten incomplete cards now; queue preservation for later under task412. Use publication-authorization.json and publication_policy.py. The standard linter remains unchanged; only ARCHIVE findings are deferred, recorded and queued. Historical blocked-state instructions below are superseded where they require waiting for Wayback. All other guard/QA requirements remain.
+
 # Resume story381
 
 Read the current shared AI-team checkout and story381 before editing. Bill authorized completing the regular foil articles; no policy/permission question is open. Use Memory Core ChatGPT on the wiki and the assigned MemoryCoreChatGPT2 board reviewer, signed MemoryCoreChatGPT. Do not use Admin, disclose credentials or ask Bill the same settled questions.

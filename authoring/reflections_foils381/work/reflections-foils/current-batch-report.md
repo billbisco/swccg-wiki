@@ -29,7 +29,7 @@ Inherited family citations are separately inventoried:211 distinct URLs,27 reusa
 
 ## External preservation blocker
 
-Wayback anonymous GET saves on both VPS and Bill's PC returned HTTP520 / “Job failed”. The public POST route returned HTTP429 explicitly identifying automated-traffic throttling, so submissions stopped. The documented authenticated VPS route returned HTTP401. One ordinary retry after an extended cooldown still returned520. No credentials were exposed, no requests were rotated to bypass throttling, and no failed capture was certified.
+Wayback anonymous GET saves on both VPS and Bill's PC returned HTTP520 / “Job failed”. The public POST route returned HTTP429 explicitly identifying automated-traffic throttling, so submissions stopped. The documented authenticated VPS route returned HTTP401. Ordinary retries after extended cooldowns still returned520; the final check is recorded in archive-service-final-check.json. No credentials were exposed, no requests were rotated to bypass throttling, and no failed capture was certified.
 
 Core rules require “Never save with open flags.” Unpreserved File descriptions and inherited citations fail ARCHIVE lint; exact public image versions also need their own byte-verified replay. The general access fallback does not authorize weakening the explicit lint/image rules. No further permission question is outstanding. Service recovery or maintenance of the existing authenticated credential is required for complete publication.
 

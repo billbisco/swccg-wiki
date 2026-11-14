@@ -3,7 +3,7 @@ import hashlib,json,os,subprocess,sys
 from pathlib import Path
 root=Path(__file__).parent;mode=sys.argv[1]
 repo={'wiki':'work/wiki-source','evidence':'work/japanese-preservation/evidence-repo','images':'work/japanese-files-backup.git','sources':'work/japanese-files-backup.git'}[mode]
-branch='codex/reflections-foil-articles-381' if mode=='wiki' else 'main'
+branch='codex/reflections-foil-publication-381' if mode=='wiki' else 'main'
 env=dict(os.environ,GIT_INDEX_FILE=str((root/(mode+'.index')).resolve()),GIT_NO_LAZY_FETCH='1')
 def git(*args,data=None):
     e=dict(env)
@@ -84,6 +84,10 @@ else:
                     if r.get('verify') and r.get('status')=='verified':
                         url=r.get('preserved_url',r['url']);done[url]=dict(status='verified',capture=r['capture'],last=now,verify=r['verify'],note='Inherited foil-family citation preserved and verified (#381)')
                         if url not in queue:queue.append(url)
+            pending=root/'preservation-queue.json'
+            if pending.exists():
+                for item in json.loads(pending.read_bytes()).values():
+                    if item.get('worker_url') and item['worker_url'] not in queue:queue.append(item['worker_url'])
             files['ops/wayback/done.json']=(json.dumps(done,ensure_ascii=False,indent=2,sort_keys=True)+'\n').encode()
             files['ops/wayback/queue.txt']=('\n'.join(queue).rstrip()+'\n').encode()
 git('read-tree',base);updates=[]

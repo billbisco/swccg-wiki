@@ -33,10 +33,16 @@ MemoryCoreChatGPT
 
 ## Current delivery
 
-Inventory: 314 regular foil slots (114/100/100). Sixteen articles existed initially. Of the 298 initial gaps, 70 new articles are fully completed and verified, ten more are live with preservation/family completion pending, 127 have unsaved lint-clean/template-previewed drafts, and one additional existing article has been found for reuse. 90 more remain to draft. The story remains In Progress; AC2–AC5 are not yet met.
+Inventory: 314 regular foil slots (114 Reflections I, 100 II, 100 III). Sixteen articles existed initially. Of the 298 initial gaps: 70 new articles passed full verification; ten additional new articles are live with preservation/family completion outstanding; 217 new drafts are prepared; one additional existing article was discovered and reused. No faces remain unread or undrafted. The story remains unfinished; AC2–AC5 are open.
 
-All 113 initially missing Reflections I faces have been read. Completed batches retain exact physical text/stats/icons, original photographs, byte-verified wiki-image captures, supported reviews, direct checklist links, reciprocal family navigation, source conservation and public/visual checks. The latest live batch's published subset was independently checked without falsely marking the full batch complete. Source originals for all remaining cards are backed up. No article deletion is required.
+| Product | Initial existing | Fully verified new | Additional new live | Unsaved drafts | Additional existing reused |
+|---|---:|---:|---:|---:|---:|
+| Reflections | 1 | 70 | 10 | 33 | 0 |
+| Reflections II: Expanding the Galaxy | 5 | 0 | 0 | 94 | 1 |
+| Reflections III | 10 | 0 | 0 | 90 | 0 |
 
-Current external blocker: Wayback GET saves returned520; its public POST returned429 explicitly throttling automated traffic, so submissions stopped. The documented authenticated VPS route returned401. Uncaptured staging files remain and exact image versions are queued. No credential change or approval is required from Bill to continue ordinary work. Next publication step after archive recovery: finish batch8's inherited-source snapshot,45 family links,10 wiki-original binary captures and File links, then its full QA; continue prepared batches9–21 and remaining II/III physical readings. Do not count drafts, queue acceptance or published-only pages as complete.
+All298 initial-gap faces were independently read and original hashes checked;12 AI artwork comparisons verified. All217 unsaved drafts pass style/field/infobox-preview checks. Existing Don’t Get Cocky metadata and direct checklist integration are complete; its wiki-image capture remains.
 
-[Inventory, field evidence, current report and all changed-page links](https://github.com/swccg-guild/work/tree/main/evidence/381). [Source PR18](https://github.com/billbisco/swccg-wiki/pull/18). [Detailed current report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md).
+Publication is externally blocked: anonymous archive saves520, explicit public POST throttling429, documented authenticated route401. No captures were invented or failed results marked verified. Next: complete batch8 preservation/family work, then publish9–31 with fresh guards. No further authorization is needed and no articles need deletion.
+
+[Detailed report](https://github.com/swccg-guild/work/blob/main/evidence/381/current-batch-report.md), [all changed pages](https://github.com/swccg-guild/work/blob/main/evidence/381/published-pages.md), [draft index](https://github.com/swccg-guild/work/blob/main/evidence/381/draft-index.md), [source backup PR18](https://github.com/billbisco/swccg-wiki/pull/18).
