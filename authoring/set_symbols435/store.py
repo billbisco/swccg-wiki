@@ -14,6 +14,8 @@ if mode=='cardmaker':
         raw=(p/'cardmaker'/row['source']).read_bytes();oid=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest();assert tree[row['source']]==oid,(row['source'],'Source master changed')
 else:
     if mode=='wiki':
+        # Match the repository's exact manifest bytes, including on Windows.
+        manifest=p/'symbols/manifest.json';manifest.write_bytes(manifest.read_bytes().replace(b'\r\n',b'\n'))
         with tarfile.open(p/'shared-symbols.tar.xz','w:xz') as t:
             for folder in ['cardmaker','symbols','old-wiki-assets']:
                 for f in sorted((p/folder).rglob('*')):
