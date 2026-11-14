@@ -4,12 +4,15 @@ The existing `wayback_worker.run` creates the adapter only after `Control.begin`
 and recovery reconciliation. Prepare deltas enter the shared in-memory ledger
 and changed transaction, then the durable checkpoint, before queue reload or
 submission. Reload reads only URLs so a queue Git reset cannot discard those
-deltas or recovered accepted jobs. Auth-blocked starts never create an adapter.
+deltas or recovered accepted jobs. Auth-blocked starts never create an adapter. Auxiliary cohort/constructor/prepare
+errors record repair and allow independent legacy captures to continue, with all
+pruning disabled for that run. Prepare pauses still stop immediately.
 
 Finalization calls the existing adapter under the still-active Control lock,
 even after prepare/provider pauses. A finish failure preserves the primary
 pause/failure and checkpoints accepted receipts; `registry-repair.json` records
-only exception type, phase and Story 410. A previously successful run becomes
+only exception type, phase, owner, timestamp and Story 410. The same successful
+phase resolves its prior repair; failures retain an explicit next owner attempt. A previously successful run becomes
 failed if finish fails. Storage failures are reported by sanitized type while
 preserving the original pause/failure.
 

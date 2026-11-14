@@ -1054,11 +1054,24 @@ def reconcile_recovery_probe(control: Control, done: dict, changed: dict, deadli
 def registry_repair(control: Control, phase: str, error: Exception) -> None:
     """Persist only metadata; exception messages can contain private URLs/keys."""
     repair = {"schema": 1, "status": "open", "repair_issue": 410,
+              "owner": "server-wayback-owner", "updated_at": iso(now()),
+              "continuation": "existing owner retries this phase on its next eligible run",
               "phase": phase, "error_type": type(error).__name__}
     atomic_json(control.directory / "registry-repair.json", repair)
 
 
+def registry_recovered(control: Control, phase: str) -> None:
+    path = control.directory / "registry-repair.json"
+    if path.exists():
+        repair = json.loads(path.read_text(encoding="utf-8"))
+        if repair.get("phase") == phase and repair.get("status") == "open":
+            repair.update(status="resolved", updated_at=iso(now()))
+            atomic_json(path, repair)
+
+
 def prune_legacy_snapshots(control: Control, done: dict) -> None:
+    if getattr(control, "registry_prepare_failed", False):
+        return
     try:
         protected = {snapshot_file(url) for url in control.registry_adapter.protected_snapshot_urls()}
         protected.discard(None)
@@ -1068,6 +1081,7 @@ def prune_legacy_snapshots(control: Control, done: dict) -> None:
         # An incomplete inventory must never authorize even legacy deletions.
         registry_repair(control, "prune-inventory", error)
         return
+    registry_recovered(control, "prune-inventory")
     prune_verified_snapshots(candidates)
 
 
@@ -1086,12 +1100,20 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     # Recovery is not stranded behind the ordinary2h pending-confirm cutoff.
     reconcile_recovery_probe(control, done, changed, deadline)
     control.registry_deadline = deadline
-    adapter = OwnerAdapter(sys.modules[__name__], repo, control,
-                           load_allowed_objects(control.directory / "registry"))
-    control.registry_adapter = adapter
-    prepared = adapter.prepare(deadline)
-    done.update(prepared["ledger_updates"])
-    changed.update(prepared["ledger_updates"])
+    control.registry_prepare_failed = False
+    try:
+        adapter = OwnerAdapter(sys.modules[__name__], repo, control,
+                               load_allowed_objects(control.directory / "registry"))
+        control.registry_adapter = adapter
+        prepared = adapter.prepare(deadline)
+        done.update(prepared["ledger_updates"])
+        changed.update(prepared["ledger_updates"])
+        registry_recovered(control, "prepare")
+    except Paused:
+        raise
+    except Exception as error:
+        control.registry_prepare_failed = True
+        registry_repair(control, "prepare", error)
     control.checkpoint(done, control.initial_done)
     # Queue appends may reset the shared checkout; keep our journal-backed ledger.
     urls = load(repo)[0]
@@ -1284,6 +1306,7 @@ def run(repo: Path, minutes: float) -> None:
                 if adapter is not None:
                     try:
                         adapter.finish(control.registry_deadline)
+                        registry_recovered(control, "finish")
                     except Exception as error:
                         finish_error = error
                         # Recreate/preserve acknowledged-job recovery even if Git saved.

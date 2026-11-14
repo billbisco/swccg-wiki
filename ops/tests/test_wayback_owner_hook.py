@@ -74,6 +74,38 @@ class OwnerHook(unittest.TestCase):
         self.assertLess(events.index("checkpoint"), events.index("submit"))
         self.adapter.finish.assert_called_once()
 
+    def test_prepare_error_keeps_legacy_accepted_job_and_finish_but_skips_pruning(self):
+        self.adapter.prepare.side_effect = ValueError("private bad metadata")
+        (self.repo / W.QUEUE).write_text(URL + "\n")
+        self.stack.enter_context(patch.object(W, "submit_capture", return_value={"job_id": "legacy-accepted"}))
+        self.stack.enter_context(patch.object(W, "confirm", return_value=False))
+        # End polling after one check without pausing the whole run.
+        def confirm(url, entry):
+            entry["status"] = "failed"
+            return True
+        self.stack.enter_context(patch.object(W, "confirm", side_effect=confirm))
+        def finish(deadline):
+            self.assertEqual(W.ACTIVE_CONTROL.done[URL]["job_id"], "legacy-accepted")
+            self.assertFalse(W.ACTIVE_CONTROL.lock.closed)
+        self.adapter.finish.side_effect = finish
+        W.run(self.repo, 3)
+        self.adapter.finish.assert_called_once()
+        W.prune_verified_snapshots.assert_not_called()
+        repair = json.loads((W.control_directory(self.repo) / "registry-repair.json").read_text())
+        self.assertEqual(repair["phase"], "prepare")
+        self.assertEqual(repair["status"], "open")
+        self.assertNotIn("private bad", json.dumps(repair))
+
+    def test_successful_phase_resolves_its_existing_repair(self):
+        directory = self.repo / "control"
+        directory.mkdir()
+        control = SimpleNamespace(directory=directory)
+        W.registry_repair(control, "prepare", ValueError("fixture"))
+        W.registry_recovered(control, "finish")
+        self.assertEqual(json.loads((directory / "registry-repair.json").read_text())["status"], "open")
+        W.registry_recovered(control, "prepare")
+        self.assertEqual(json.loads((directory / "registry-repair.json").read_text())["status"], "resolved")
+
     def test_auth_blocked_does_zero_adapter_provider_queue_work(self):
         directory = W.control_directory(self.repo)
         with Control(directory, W.AUTH) as control:
@@ -111,6 +143,8 @@ class OwnerHook(unittest.TestCase):
         def prepare(deadline):
             W.ACTIVE_CONTROL.done[URL] = {"status": "pending", "job_id": "actual-accepted-id"}
             raise primary
+        self.stack.enter_context(patch.object(W, "pending_confirm_urls", side_effect=primary))
+        (self.repo / W.QUEUE).write_text(URL + "\n")
         self.adapter.prepare.side_effect = prepare
         self.adapter.finish.side_effect = ValueError("private secret must not be recorded")
         with self.assertRaises(RuntimeError) as raised: W.run(self.repo, 1)
@@ -118,7 +152,9 @@ class OwnerHook(unittest.TestCase):
         directory = W.control_directory(self.repo)
         self.assertIn("actual-accepted-id", (directory / "pending-updates.json").read_text())
         repair = json.loads((directory / "registry-repair.json").read_text())
-        self.assertEqual(repair, {"schema": 1, "status": "open", "repair_issue": 410, "phase": "finish", "error_type": "ValueError"})
+        self.assertEqual({k: repair[k] for k in ("schema", "status", "repair_issue", "phase", "error_type")},
+                         {"schema": 1, "status": "open", "repair_issue": 410, "phase": "finish", "error_type": "ValueError"})
+        self.assertNotIn("private secret", json.dumps(repair))
         self.assertIsNone(W.ACTIVE_CONTROL)
 
     def test_finish_failure_preserves_pause_and_reports_repair(self):
@@ -140,7 +176,7 @@ class OwnerHook(unittest.TestCase):
         entry = {"status": "verified", "capture": "old historical body"}
         unrelated = "https://swccg.com/snapshots/other.html"
         done = {URL: entry, ALIAS: entry, unrelated: entry}
-        W.prune_legacy_snapshots(SimpleNamespace(registry_adapter=self.adapter), done)
+        W.prune_legacy_snapshots(SimpleNamespace(registry_adapter=self.adapter, directory=self.repo), done)
         candidates = W.prune_verified_snapshots.call_args.args[0]
         self.assertEqual(set(candidates), {unrelated})
         self.assertIs(candidates[unrelated], entry)
@@ -156,13 +192,13 @@ class OwnerHook(unittest.TestCase):
         with patch.dict(W.os.environ, {"SWCCG_SNAPSHOT_ROOT": str(root)}), \
              patch.object(W, "prune_verified_snapshots", self.real_prune), \
              patch.object(W, "wiki_snapshot_wayback_paths", return_value={"fixture.html"}):
-            W.prune_legacy_snapshots(SimpleNamespace(registry_adapter=self.adapter),
+            W.prune_legacy_snapshots(SimpleNamespace(registry_adapter=self.adapter, directory=self.repo),
                                     {ALIAS: {"status": "verified", "capture": "https://web.archive.org/web/20200101000000/" + ALIAS}})
         self.assertEqual(staged.read_text(), "newly staged approved payload")
 
     def test_empty_unapproved_cohort_preserves_legacy_candidates(self):
         done = {URL: {"status": "verified"}}
-        W.prune_legacy_snapshots(SimpleNamespace(registry_adapter=self.adapter), done)
+        W.prune_legacy_snapshots(SimpleNamespace(registry_adapter=self.adapter, directory=self.repo), done)
         self.assertEqual(W.prune_verified_snapshots.call_args.args[0], done)
 
     def test_inventory_failure_skips_all_deletions_and_records_repair(self):
