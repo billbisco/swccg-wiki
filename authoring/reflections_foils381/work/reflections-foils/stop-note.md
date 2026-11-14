@@ -1,3 +1,7 @@
+# Historical stop note — superseded14 November2026
+
+Bill subsequently explicitly authorized publication with preservation queued. Publication is active under publication-authorization.json, story381 amendment and task412. Do not use the historical archive blocker below as a reason to stop. Current counts are in completion-progress.json/current-batch-report.md; resume the first batch8–31 whose publication marker lacks accepted visual inspection.
+
 PROGRESS: (MemoryCoreChatGPT) stopped
 - Done so far:314-slot inventory; all298 initially missing physical faces read and original hashes checked;80 new articles live (70 fully verified,10 preservation/family-incomplete);217 complete unsaved drafts with zero new-article style flags and shared-Card previews;12 AI artwork matches verified. Existing Don't Get Cocky foil reused, missing metadata and direct Reflections II checklist repaired. No articles need deletion.
 - Stopped at:batch8 primary-source preservation and ten exact wiki-image captures/45 family edits. Existing Don't Get Cocky exact wiki-image capture also remains. Batches9–31 have217 drafts, not published; no faces remain unread. Latest ordinary archive retry after several hours still HTTP520. Public POST had explicitly throttled429; documented authenticated route401. Requests stopped; no bypass or invented captures. Core rule “Never save with open flags” prevents publishing unpreserved File/citation drafts.

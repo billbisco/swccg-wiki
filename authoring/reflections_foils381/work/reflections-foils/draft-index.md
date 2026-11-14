@@ -1,36 +1,9 @@
 # Remaining unpublished foil drafts — story381
 
-145 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
+118 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
 
 | Article | Stage | Reading | Draft |
 |---|---|---|---|
-| Dengar With Blaster Carbine (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| Dreadnaught-Class Heavy Cruiser (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| Flagship Executor (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| Force Lightning (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| IG-88 With Riot Gun (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| Jodo Kast (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| Mara Jade's Lightsaber (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| Moff Jerjerrod (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| Outer Rim Scout (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| Tempest Scout 1 (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
-| The Emperor's Shield (Reflections II Foil) | batch17 | [batch17-readings.json](batch17-readings.json) | [batch17-new-packet.json](batch17-new-packet.json) |
-| The Emperor's Sword (Reflections II Foil) | batch17 | [batch17-readings.json](batch17-readings.json) | [batch17-new-packet.json](batch17-new-packet.json) |
-| Walker Garrison (Reflections II Foil) | batch17 | [batch17-readings.json](batch17-readings.json) | [batch17-new-packet.json](batch17-new-packet.json) |
-| Zuckuss In Mist Hunter (Reflections II Foil) | batch17 | [batch17-readings.json](batch17-readings.json) | [batch17-new-packet.json](batch17-new-packet.json) |
-| IG-88 In IG-2000 (Reflections II Foil) | batch17 | [batch17-readings.json](batch17-readings.json) | [batch17-new-packet.json](batch17-new-packet.json) |
-| Myn Kyneugh (Reflections II Foil) | batch17 | [batch17-readings.json](batch17-readings.json) | [batch17-new-packet.json](batch17-new-packet.json) |
-| Vader's Obsession (Reflections II Foil) | batch17 | [batch17-readings.json](batch17-readings.json) | [batch17-new-packet.json](batch17-new-packet.json) |
-| Baron Soontir Fel (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Dengar In Punishing One (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Djas Puhr (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Trample (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Bad Feeling Have I (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Black Squadron TIE (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Boelo (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Chall Bekan (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Commander Igar (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
-| Death Star II: Throne Room (Reflections II Foil) | batch18 | [batch18-readings.json](batch18-readings.json) | [batch18-new-packet.json](batch18-new-packet.json) |
 | Executor: Holotheatre (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
 | Executor: Meditation Chamber (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
 | Fighters Coming In (Reflections II Foil) | batch19 | [batch19-readings.json](batch19-readings.json) | [batch19-new-packet.json](batch19-new-packet.json) |
