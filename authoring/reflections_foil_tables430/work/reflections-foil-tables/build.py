@@ -74,9 +74,16 @@ for product in products:
             if r['language']=='Japanese' and val(t,'printed_title'):card_label+='<br />'+clean(val(t,'printed_title'))
             game=val(t,'printed_game_text') or val(t,'game_text')
             assert game,(title,'No verified printed game text available')
+            if val(t,'type')=='Location':
+                if "'''Light Side:'''" not in game and "'''Dark Side:'''" not in game:
+                    assert title=='Death Star (Japanese Reflections II Foil)'
+                    game="'''Light Side:''' <br />'''Dark Side:''' "+game
+                else:
+                    if "'''Light Side:'''" not in game:game="'''Light Side:''' <br />"+game
+                    if "'''Dark Side:'''" not in game:game+="<br />'''Dark Side:'''"
             fields=[image,card_label,r['language'],kind,val(t,'rarity'),val(t,'destiny'),clean(game)]
             foil+='|-\n'+('| '+' || '.join(fields)).rstrip()+'\n'
-            inventory.append(dict(product=product,side=side,article=title,publication_id=val(t,'publication_id'),language=r['language'],alternate_image=r.get('alternate_image',False),image=val(t,'image'),image_available=available,source_revid=heads[title]['revisions'][0]['revid'],destiny=val(t,'destiny'),game_text_present=bool(game)))
+            inventory.append(dict(product=product,side=side,type=val(t,'type'),article=title,publication_id=val(t,'publication_id'),language=r['language'],alternate_image=r.get('alternate_image',False),image=val(t,'image'),image_available=available,source_revid=heads[title]['revisions'][0]['revid'],destiny=val(t,'destiny'),game_text_present=bool(game)))
         foil+='|}\n</div>\n\n'
     # Existing exclusive tables are whole-section moved, with only the heading changed.
     other=old[:match.start()]+old[match.end():];exclusive=''
