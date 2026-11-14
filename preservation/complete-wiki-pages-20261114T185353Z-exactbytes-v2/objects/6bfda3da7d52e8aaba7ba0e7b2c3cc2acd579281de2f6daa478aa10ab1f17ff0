@@ -1,0 +1,76 @@
+from __future__ import annotations
+import datetime,gzip,hashlib,json,os,sqlite3,subprocess,time,xml.etree.ElementTree as ET
+from pathlib import Path
+import export_current as e
+HERE=Path(__file__).resolve().parent
+NS=e.NS
+def parse_stub(source):
+ rows={}
+ with gzip.open(source,'rb') as f:
+  for event,page in ET.iterparse(f,events=('end',)):
+   if page.tag!=NS+'page':continue
+   rev=page.find(NS+'revision');text=rev.find(NS+'text');pid=int(page.findtext(NS+'id'));sha=text.get('sha1',rev.findtext(NS+'sha1',''))
+   row={'page_id':pid,'title':page.findtext(NS+'title'),'namespace':int(page.findtext(NS+'ns')),'revision_id':int(rev.findtext(NS+'id')),'timestamp':rev.findtext(NS+'timestamp'),'model':rev.findtext(NS+'model'),'bytes':int(text.get('bytes','0')),'sha1':f'{int(sha,36):040x}' if sha else None,'text_deleted':int('deleted' in text.attrib)}
+   if pid in rows:raise RuntimeError('Duplicate target page ID')
+   rows[pid]=row;page.clear()
+ return rows
+def collect_stub():
+ target=HERE/'closing-current-stub.xml.gz';started=e.now()
+ with (HERE/'closing-export-stderr.txt').open('wb') as err,target.open('wb') as out,gzip.GzipFile(filename='',mode='wb',fileobj=out,mtime=0) as gz:
+  p=subprocess.Popen(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','gemp','docker exec -u www-data swccg_wiki nice -n 10 php maintenance/run.php dumpBackup --current --stub --quiet'],stdout=subprocess.PIPE,stderr=err)
+  try:
+   while b:=p.stdout.read(1024**2):gz.write(b)
+   if p.wait(timeout=60):raise RuntimeError('Closing public metadata export failed')
+  except BaseException:p.kill();p.wait();raise
+ return target,started,e.now()
+def read_delta(targets):
+ result={};needed=list(targets.values())
+ for offset in range(0,len(needed),20):
+  batch=needed[offset:offset+20];byrev={row['revision_id']:row for row in batch}
+  j=e.api({'action':'query','prop':'revisions','revids':'|'.join(str(x) for x in byrev),'rvprop':'ids|timestamp|content|sha1|size|contentmodel','rvslots':'main'})
+  for page in j.get('query',{}).get('pages',[]):
+   for rev in page.get('revisions',[]):
+    row=byrev.get(rev['revid'])
+    if row is None:continue
+    slot=rev.get('slots',{}).get('main',{});text=slot.get('content')
+    if text is None or any(key in rev for key in ('texthidden','suppressed')):raise RuntimeError('Exact target revision is no longer public')
+    raw=text.encode('utf8');sha1=hashlib.sha1(raw).hexdigest()
+    if len(raw)!=row['bytes'] or sha1!=row['sha1']:raise RuntimeError('Closing revision identity/bytes mismatch '+str(row['page_id']))
+    result[row['page_id']]={**row,'sha256':hashlib.sha256(raw).hexdigest(),'text':text}
+ if set(result)!=set(targets):raise RuntimeError('Some exact closing revisions were not fetched')
+ return result
+def verify_bundle(base,delta_path,target_path):
+ delta={row['page_id']:row for row in map(json.loads,gzip.open(delta_path,'rt',encoding='utf8'))};targets={row['page_id']:row for row in map(json.loads,target_path.open(encoding='utf8'))};seen=set();matched=0;payloadbytes=0
+ with gzip.open(base,'rb') as f:
+  for event,page in ET.iterparse(f,events=('end',)):
+   if page.tag!=NS+'page':continue
+   pid=int(page.findtext(NS+'id'));target=targets.get(pid)
+   if target is None:page.clear();continue
+   seen.add(pid)
+   if pid in delta:row=delta[pid];raw=row['text'].encode('utf8');rid=row['revision_id'];title=row['title']
+   else:
+    rev=page.find(NS+'revision');raw=(rev.findtext(NS+'text','')).encode('utf8');rid=int(rev.findtext(NS+'id'));title=target['title']
+   if rid!=target['revision_id'] or len(raw)!=target['bytes'] or hashlib.sha256(raw).hexdigest()!=target['sha256']:raise RuntimeError('Bundle restore failed page '+str(pid))
+   matched+=1;payloadbytes+=len(raw);page.clear()
+ for pid in set(targets)-seen:
+  row=delta.get(pid);target=targets[pid]
+  if row is None:raise RuntimeError('New target page lacks supplemental payload')
+  raw=row['text'].encode('utf8')
+  if row['revision_id']!=target['revision_id'] or len(raw)!=target['bytes'] or hashlib.sha256(raw).hexdigest()!=target['sha256']:raise RuntimeError('Supplemental restore failed')
+  matched+=1;payloadbytes+=len(raw)
+ return {'target_pages':len(targets),'restored_target_pages':matched,'restored_text_bytes':payloadbytes,'base_pages_excluded_as_no_longer_current':None,'all_target_bytes_and_sha256_verified':True}
+def main():
+ base={row['page_id']:row for row in map(json.loads,(HERE/'pages-manifest.jsonl').open(encoding='utf8'))}
+ source,started,finished=collect_stub();targets=parse_stub(source)
+ if any(row['text_deleted'] for row in targets.values()):raise RuntimeError('Suppressed current text requires explicit exclusion audit')
+ need={pid:row for pid,row in targets.items() if pid not in base or base[pid]['revision_id']!=row['revision_id'] or base[pid]['sha1']!=row['sha1'] or base[pid]['bytes']!=row['bytes']}
+ changed=read_delta(need)
+ with gzip.open(HERE/'closing-delta-pages.jsonl.gz','wt',encoding='utf8',newline='\n') as out:
+  for pid in sorted(changed):out.write(json.dumps(changed[pid],ensure_ascii=False,separators=(',',':'))+'\n')
+ with (HERE/'target-pages-manifest.jsonl').open('w',encoding='utf8',newline='\n') as out:
+  for pid,row in targets.items():
+   row['sha256']=(changed[pid] if pid in changed else base[pid])['sha256'];row['payload_source']='delta' if pid in changed else 'base';out.write(json.dumps(row,ensure_ascii=False,separators=(',',':'))+'\n')
+ verification=verify_bundle(HERE/'wiki-current.xml.gz',HERE/'closing-delta-pages.jsonl.gz',HERE/'target-pages-manifest.jsonl')
+ receipt={'schema_version':1,'source':'MediaWiki public dumpBackup --current --stub','target_inventory_started_at':started,'target_inventory_finished_at':finished,'closure_finished_at':e.now(),'scope':'Every public page current revision returned by closing public export across all namespaces','consistency_limit':'Target enumeration is an observed interval, not a frozen database instant. Exact target revision IDs remain immutable; later edits are outside this checkpoint.','base_pages':len(base),'closing_pages':len(targets),'changed_or_new_payloads':len(changed),'removed_base_page_ids':sorted(set(base)-set(targets)),'archive_org_requests':0,'local_bundle_restore':verification}
+ e.atomic(HERE/'closing-receipt.json',receipt);print(json.dumps(receipt,indent=2))
+if __name__=='__main__':main()
