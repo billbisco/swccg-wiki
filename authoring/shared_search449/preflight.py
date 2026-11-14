@@ -20,7 +20,11 @@ with sync_playwright() as pw:
             page.route('https://wiki.swccg.com/chrome/'+m['js'],lambda route:route.fulfill(body=(product/m['js']).read_bytes(),content_type='application/javascript'))
             page.route('https://wiki.swccg.com/chrome/'+m['css'],lambda route:route.fulfill(body=(product/m['css']).read_bytes(),content_type='text/css'))
             document=(product/'scomp.html').read_text(encoding='utf8').replace('data-swccg-search-pilot="scomp"','data-swccg-search-pilot="'+context+'"')
-            page.set_content(document,wait_until='networkidle');page.wait_for_function('window.SharedSearchPilot && window.SharedSearchPilot.last')
+            page.route('https://pilot.invalid/'+context+'.html',lambda route:route.fulfill(body=document,content_type='text/html'))
+            page.goto('https://pilot.invalid/'+context+'.html',wait_until='networkidle')
+            try:page.wait_for_function('window.SharedSearchPilot && window.SharedSearchPilot.last')
+            except Exception:
+                print('PREVIEW FAILURE',context,errors,page.locator('body').inner_text()[:1500],flush=True);raise
             assert page.locator('[data-result-id]').count()==23,context
             assert page.locator('.ssp-symbol img').evaluate_all('xs=>xs.every(x=>x.complete&&x.naturalWidth)'),context
             page.get_by_role('button',name='Mentions JP',exact=True).click();assert page.locator('[data-result-id]').count()==3,context

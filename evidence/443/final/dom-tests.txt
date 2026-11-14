@@ -1,0 +1,27 @@
+
+> test:card-images
+> node --test tests/card-images.test.cjs
+
+✔ availability matrix excludes other state/card/language and duplicate assets (1.003ms)
+✔ browser entry waits for asynchronous MediaWiki startup before reading config (54.7301ms)
+✔ buttons follow stage and publisher slip and precede Info; no duplicate initialization (12.1104ms)
+✔ per-card choice changes only presentation, not text, slip or saved default (10.3352ms)
+✔ keyboard keys move focus and selection (9.3375ms)
+✔ explicit guest default affects future views, preserving current per-card choice (16.3847ms)
+✔ blocked guest storage and invalid values remain usable (15.8463ms)
+✔ account overrides guest; account save never modifies guest storage (12.2187ms)
+✔ account read/write failures and invalid account values fail usefully (20.4484ms)
+✔ MediaWiki-style thenables without catch/finally save and re-enable the form (4.7123ms)
+✔ image failure hides the pair and falls back, retaining preference (5.1538ms)
+✔ single rendition has no visible pair and unknown markers retain native fallback (7.8016ms)
+✔ interface localization is independent of English image language (3.7418ms)
+✔ phone viewport adjustment is limited to allowlisted pilot script activation (9.8424ms)
+✔ replacing selected card/language recomputes availability without duplicate controls (5.2485ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1070.6051

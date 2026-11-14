@@ -116,7 +116,7 @@ window.SharedSearchPilotData={"schemaVersion":1,"snapshotId":"449-6b358f28bac5",
         field('role', 'Symbol meaning', select('', [['printed', 'Printed on this card'], ['referenced', 'Referenced in game text']]));
         field('uniqueness', 'Printed uniqueness', select('', Object.entries(labels)));
         field('contains', 'Decklists containing', select('', [['', 'Any card in the four lists']].concat(data.cards.slice().sort((a,b) => a.title.localeCompare(b.title)).map(c => [c.id, c.title]))));
-        field('identity', 'Match the selected card by', select('', [['family', 'Card family (any recorded text state)'], ['recorded', 'Exact blueprint ID in the import']]));
+        field('identity', 'Match the selected card by', select('', [['family', 'Any text version of this card'], ['recorded', 'Exact catalog text version in the import']]));
         field('zone', 'Count in', select('', [['main', 'Main deck only'], ['all', 'Main + recorded outside cards']]));
         field('display', 'Read card text as', select('', [['symbols', 'Symbols with accessible names'], ['readable', 'Written symbol names']]));
         form.append(grid);
@@ -164,8 +164,8 @@ window.SharedSearchPilotData={"schemaVersion":1,"snapshotId":"449-6b358f28bac5",
         }
         function syncControls() {
             const decks=controls.mode.value==='decks';
-            ['symbol','role','uniqueness','display'].forEach(k=>controls[k].disabled=decks);
-            ['contains','identity','zone'].forEach(k=>controls[k].disabled=!decks);
+            ['symbol','role','uniqueness','display'].forEach(k=>{controls[k].disabled=decks;controls[k].closest('label').hidden=decks;});
+            ['contains','identity','zone'].forEach(k=>{controls[k].disabled=!decks;controls[k].closest('label').hidden=!decks;});
             controls.text.placeholder=decks?'Player, event or deck title':'Try JP, Ghhhk, or a title';
         }
         function symbolNode(id) {
@@ -205,7 +205,8 @@ window.SharedSearchPilotData={"schemaVersion":1,"snapshotId":"449-6b358f28bac5",
                 const send=element('button','Search title in builder',{type:'button'});
                 send.addEventListener('click',()=>{window.opener.postMessage({type:'swccg-search-pilot-title',title:card.gameTitle},location.origin);window.opener.focus();});actions.append(send);
             }
-            article.append(actions,element('p','Card family '+card.familyId+' · Wiki revision '+card.sourceRevision,{class:'ssp-details'}));return article;
+            const details=element('details',null,{class:'ssp-details'});details.append(element('summary','Source and identity'),element('p','Card family '+card.familyId+' · Wiki revision '+card.sourceRevision));
+            article.append(actions,details);return article;
         }
         function deckResult(deck) {
             const article=element('article',null,{class:'ssp-result','data-result-id':deck.id});const h=element('h2');h.append(link(deck.title,deck.wiki));article.append(h);
