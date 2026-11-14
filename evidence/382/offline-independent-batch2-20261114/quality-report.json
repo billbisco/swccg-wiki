@@ -1,0 +1,66 @@
+{
+  "observed_at": "2026-11-14T17:46:57.475042+00:00",
+  "archive_org_requests": 0,
+  "source_ledger_writes": 0,
+  "snapshot": {
+    "sha1": "46c7ada92cf7118194ac16d8d7e94ea6f8ff3495",
+    "sha256": "07d1c34c5af35ec1ef5d3a867712848374d423e8ef4b6165cb1a8594f718af71",
+    "bytes": 117198848
+  },
+  "snapshot_integrity_check": "ok",
+  "image_version_rows": 36617,
+  "current_image_filenames": 31379,
+  "current_flagged_image_rows": 31380,
+  "historical_flagged_image_rows": 5237,
+  "non_image_version_rows": 11109,
+  "image_type_counts": {
+    "image/png": 16621,
+    "image/jpeg": 5084,
+    "image/gif": 7297,
+    "image/webp": 7615
+  },
+  "raw_archive_status_counts": {
+    "pending": 36414,
+    "verified": 199,
+    "retry": 4
+  },
+  "local_backup_status_counts": {
+    "backed_up": 692
+  },
+  "problem_counts": {},
+  "problems": {},
+  "same_upload_url_alias_candidates": [
+    {
+      "title": "File:Premiere-D-5d6ra7-decipher-archive.gif",
+      "timestamp": "2026-09-25T03:41:04Z",
+      "sha1": "6010d0b9cdfabfcbec6958f66fd6a4f0228bf9d0",
+      "rows": [
+        {
+          "id": "0a47b5832b0d5c6662e887c44402d6d6f10ddc9757383c657975486d1d402cc9",
+          "url": "https://wiki.swccg.com/images/c/c4/Premiere-D-5d6ra7-decipher-archive.gif",
+          "current": 1
+        },
+        {
+          "id": "3e55464012b0b887551334cb1abc28904e6d685b3559dfd9992a947813cb3fde",
+          "url": "https://wiki.swccg.com/images/archive/c/c4/20260925034104%21Premiere-D-5d6ra7-decipher-archive.gif",
+          "current": 1
+        }
+      ]
+    }
+  ],
+  "newly_rehashed_versions": 478,
+  "previously_checked_exact_mappings": 214,
+  "inventory_compressed": {
+    "sha1": "0fb1aa7d4e2c2a9d1b48427869b783692dba7ebc",
+    "sha256": "9e8224266a9154e921ea7795cc6ec0fc171db5a52f59122ec633b61059f7a855",
+    "bytes": 3629884
+  },
+  "pc_free_bytes": 345869557760,
+  "pc_reserve_bytes": 21474836480,
+  "coverage_complete": false,
+  "limitations": [
+    "Read-only frozen checkpoint; ongoing owner may subsequently correct mappings or add backups",
+    "No final Wiki delta; no fresh Archive.org request or verification",
+    "Snapshot includes File descriptions for local recovery; raw DB is retained on PC, not published as shared evidence"
+  ]
+}
