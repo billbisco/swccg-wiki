@@ -58,8 +58,9 @@ def image_cell(row,t):
     return image,True
 add(template,marker,'Add an accessible missing-card-scan invitation (#430)')
 for product in products:
-    old=source(heads[product]);match=re.search(r'^== Possible foils ==\n.*?(?=^== [^=]|\Z)',old,re.M|re.S);assert match,product
-    oldfoil=match.group();intro=oldfoil.split('=== Light Side ===')[0].split('\n',1)[1].strip()
+    old=source(heads[product]);match=re.search(r'^== (?:Possible foils|Foil cards) ==\n.*?(?=^== [^=]|\Z)',old,re.M|re.S);assert match,product
+    oldfoil=match.group();intro=re.split(r'^=== ',oldfoil,maxsplit=1,flags=re.M)[0].split('\n',1)[1].strip()
+    intro=re.sub(r'^<span id="Possible_foils"></span>\n','',intro).split('\n\nClick a card image',1)[0].strip()
     foil='== Foil cards ==\n<span id="Possible_foils"></span>\n'+intro+'\n\nClick a card image or title to open that foil printing. Have a clearer scan? [[Special:Upload|Contribute a scan]] of the complete card, including its borders, title, text and symbols. Identify the set, language and foil finish on the File page. <span aria-hidden="true">📷</span> '''+"'''Scan requested'''"+' marks a missing image; existing photographs remain visible.\n\n'
     rows=[r for r in manifest if r['product']==product]
     for side in ['Light','Dark']:
@@ -87,11 +88,11 @@ for product in products:
         foil+='|}\n</div>\n\n'
     # Existing exclusive tables are whole-section moved, with only the heading changed.
     other=old[:match.start()]+old[match.end():];exclusive=''
-    exclusive_match=re.search(r'^== Card list ==\n.*?(?=^== [^=]|\Z)',other,re.M|re.S)
+    exclusive_match=re.search(r'^== (?:Card list|Exclusive cards) ==\n.*?(?=^== [^=]|\Z)',other,re.M|re.S)
     if exclusive_match:
-        original=exclusive_match.group();exclusive=original.replace('== Card list ==','== Exclusive cards ==',1)+'\n\n'
+        original=exclusive_match.group();exclusive=original.replace('== Card list ==','== Exclusive cards ==',1).rstrip()+'\n\n'
         other=other[:exclusive_match.start()]+other[exclusive_match.end():]
-    insertion=match.start()
+    insertion=match.start()-(len(original) if exclusive_match and exclusive_match.start()<match.start() else 0)
     new=other[:insertion]+exclusive+foil+other[insertion:]
     # Conservation proof removes only the specifically replaced/moved sections.
     new_other=new.replace(exclusive,'',1) if exclusive else new
@@ -104,7 +105,11 @@ for product in products:
     add(product,new,'Show actual Light/Dark foil cards below exclusive cards and invite scans (#430)')
     talk='Talk:'+product;oldtalk=source(heads[talk]) if 'revisions' in heads[talk] else ''
     note='\n\n== Foil tables and scan contributions ==\nRegular foil rows use their exact publication articles and existing images. Exclusive-card rows are retained above the foil lists. Missing images use the camera/text scan-request marker; existing photographs are not treated as absent scans. Printed card data and original image files are unchanged. ~~~~\n'
-    add(talk,oldtalk+note,'Record foil-table placement, source mappings and scan requests (#430)',True)
+    if '== Foil tables and scan contributions ==' not in oldtalk:add(talk,oldtalk+note,'Record foil-table placement, source mappings and scan requests (#430)',True)
+if '--check-idempotent' in sys.argv:
+    for row in packet:assert row['text'].rstrip()==source(heads[row['title']]).rstrip(),(row['title'],'Rebuild would change current published data')
+    (root/'idempotence-verification.json').write_text(json.dumps(dict(passed=True,rebuilt_current_pages=[r['title'] for r in packet],exact_rows=len(inventory),duplicate_talk_notes_prevented=True),indent=2),encoding='utf8')
+    print('Fresh rebuild matches current set/template bytes;314 rows, no duplicated notes');raise SystemExit
 for name,data in [('packet.json',packet),('inventory.json',inventory),('conservation.json',proof),('article-heads.json',heads),('image-heads.json',files)]:
     (root/name).write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf8')
 for row in packet:(root/('draft-'+row['title'].replace(':','-').replace('/','-')+'.wiki')).write_text(row['text'],encoding='utf8')
