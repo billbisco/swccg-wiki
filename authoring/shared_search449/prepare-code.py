@@ -10,14 +10,14 @@ addition='''
         // Shared-search pilot449: public read-only lookup, preserving builder context.
         if (typeof window !== 'undefined' && /\\/deckBuild\\.html$/.test(window.location.pathname)) {
             var sharedPilotWindow = null;
-            var sharedPilotButton = $("<button type='button' id='sharedSearchPilot449'>Symbols, uniqueness &amp; decklists (pilot)</button>");
-            sharedPilotButton.click(function () {
+            var sharedPilotLink = $("<a href='searchPilot.html' id='sharedSearchPilot449' style='color:#8fc8ff'>Symbols, uniqueness &amp; decklists (pilot)</a>");
+            sharedPilotLink.click(function (event) {
+                event.preventDefault();
                 var sharedPilotUrl = new URL('searchPilot.html', window.location.href);
                 var existingTitle = $('#nameInput').val();
                 if (existingTitle) sharedPilotUrl.searchParams.set('sp_text', existingTitle);
                 sharedPilotWindow = window.open(sharedPilotUrl.href, 'swccgSharedSearchPilot449');
             });
-            filterTable.append($('<tr><td colspan="4"></td></tr>').find('td').append(sharedPilotButton).end());
             window.addEventListener('message', function (event) {
                 if (event.origin !== window.location.origin || event.source !== sharedPilotWindow || !sharedPilotWindow) return;
                 if (!event.data || event.data.type !== 'swccg-search-pilot-title' || typeof event.data.title !== 'string') return;
@@ -26,7 +26,10 @@ addition='''
             });
         }
 '''
-native=native.replace(anchor,anchor+addition);(product/'CardFilter.js').write_text(native,encoding='utf8',newline='\n')
+native=native.replace(anchor,anchor+addition)
+# Reuse the existing heading line: an extra row would overlap the fixed card pane.
+native=native.replace('        this.fullFilterDiv.append(filterTable);', "        if (typeof sharedPilotLink !== 'undefined') filterTable.find('.cardFilterText').append(' · ', sharedPilotLink);\n        this.fullFilterDiv.append(filterTable);")
+(product/'CardFilter.js').write_text(native,encoding='utf8',newline='\n')
 digest=hashlib.sha256(native.encode()).hexdigest()[:12]
 html,n=re.subn(r'(js/gemp-016/cards/CardFilter\.js)(?:\?v=[^"\']*)?',r'\1?v=search449-'+digest,html);assert n==1
 (product/'deckBuild.html').write_text(html,encoding='utf8',newline='\n')

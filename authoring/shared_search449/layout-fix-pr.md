@@ -1,0 +1,3 @@
+The pilot's added filter row pushed the classic builder's reset buttons under its fixed card pane. Move the native pilot entry into the existing Advanced filters heading so the table retains its original height. The link still opens the real pilot and preserves the title handoff and other filters.
+
+Baseline comparison reproduced the overlap with the extra row. Verify the correction against that same native page, including an actual pointer click on Reset, popup title roundtrip, and format/set/side/product preservation. Existing Node format-filter regression passes. No engine, gameplay, or deck-data changes. Refs swccg-guild/work#449; follow-up to #886.

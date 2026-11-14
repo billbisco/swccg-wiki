@@ -31,11 +31,11 @@ with sync_playwright() as pw:
     assert page.locator('#formatSelect,#setSelect,#sideSelect,#productSelect').evaluate_all('xs=>xs.map(x=>[x.id,x.value])')==before
     assert page.locator('#filterTable').count()==1
     png=p/f'builder-{phase}.png';page.screenshot(path=str(png));Image.open(png).save(png.with_suffix('.webp'),quality=83);png.unlink()
-    child.close();page.locator('#resetAllFiltersButton').evaluate('x=>x.click()')
+    child.close();page.locator('#resetAllFiltersButton').click()
     assert page.locator('#formatSelect').input_value()=='anything_goes'
     assert page.locator('#nameInput').input_value()==''
     assert not [r for r in requests if any(x in r['url'].lower() for x in ['/savedeck','/decks/save','/decks/delete'])],requests
-    report={'phase':phase,'native_url':page.url,'auth':'public unauthenticated page; real backend requests, no mocks','native_button_and_popup':'PASS','title_roundtrip':'Officer Evax to popup / Rebel Barrier to builder','format_set_side_product_preserved':before,'wrong_source_and_overlength_message_rejected':True,'reset_to_anything_goes':'PASS via DOM click; pre-existing collection pane overlaps reset button at this viewport','requests':requests}
+    report={'phase':phase,'native_url':page.url,'auth':'public unauthenticated page; real backend requests, no mocks','native_button_and_popup':'PASS','title_roundtrip':'Officer Evax to popup / Rebel Barrier to builder','format_set_side_product_preserved':before,'wrong_source_and_overlength_message_rejected':True,'reset_to_anything_goes':'PASS via actual pointer click','requests':requests}
     (p/f'builder-{phase}-report.json').write_text(json.dumps(report,indent=2),encoding='utf8')
     b.close()
 print(phase,'native builder entry, real popup, title roundtrip, filter preservation, guards and reset PASS')

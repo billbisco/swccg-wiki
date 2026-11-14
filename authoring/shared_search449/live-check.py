@@ -51,7 +51,8 @@ with sync_playwright() as pw:
                 root.get_by_role('button',name='Decks with Officer Evax',exact=True).click();assert page.locator('[data-result-id]').count()==2
                 assert root.get_by_label('Set symbol').is_hidden()
                 assert root.locator('.ssp-result').filter(has_text='1 matching main-deck copies').count()==2
-                shot=p/f'live-{kind}-{width}.webp';png=shot.with_suffix('.png');root.screenshot(path=str(png));Image.open(png).save(shot,quality=86);png.unlink()
+                root.locator('.ssp-summary').scroll_into_view_if_needed()
+                shot=p/f'live-{kind}-{width}.webp';png=shot.with_suffix('.png');page.screenshot(path=str(png));Image.open(png).save(shot,quality=86);png.unlink()
                 root.get_by_role('button',name='Reset',exact=True).click();assert page.locator('[data-result-id]').count()==23
                 root.get_by_label('Title or text',exact=True).fill('zzzz-no-card-match')
                 root.get_by_role('button',name='Search',exact=True).click();assert page.locator('[data-result-id]').count()==0
@@ -61,6 +62,11 @@ with sync_playwright() as pw:
                 page.goto(url+'?'+urlencode({'sp_'+k:v for k,v in query.items()}),wait_until='networkidle')
                 assert expected in page.locator('[data-swccg-search-pilot] [role=alert]').inner_text()
                 assert page.locator('[data-result-id]').count()==0
+            root.get_by_role('button',name='Reset',exact=True).focus();page.keyboard.press('Enter')
+            assert page.locator('[data-result-id]').count()==23
+            root.get_by_role('button',name='Mentions JP',exact=True).click()
+            page.locator('[data-result-id]').first.scroll_into_view_if_needed()
+            png=p/f'live-{kind}-symbols.png';page.screenshot(path=str(png));Image.open(png).save(png.with_suffix('.webp'),quality=88);png.unlink()
             assert not errors,(kind,errors)
             report['results'].append({'adapter':kind,'golden_cases':len(cases),'widths':[1280,390],'display_copy_share_labels_empty_invalid':'PASS','browser_errors':errors})
             page.close()
