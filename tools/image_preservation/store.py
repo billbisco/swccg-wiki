@@ -29,8 +29,7 @@ def now():
 
 def connect(directory):
     root=Path(directory);root.mkdir(parents=True,exist_ok=True)
-    if shutil.disk_usage(root).free < 20*1024**3:
-        raise RuntimeError('PC disk reserve reached: less than 20 GiB free')
+    ensure_space(root)
     db=sqlite3.connect(root/'inventory.sqlite',timeout=30)
     db.row_factory=sqlite3.Row
     db.executescript('''
@@ -45,6 +44,10 @@ def connect(directory):
       CREATE TABLE IF NOT EXISTS events(time TEXT,event TEXT,data TEXT);
     ''')
     return db
+
+def ensure_space(directory):
+    if shutil.disk_usage(directory).free < 20*1024**3:
+        raise RuntimeError('PC disk reserve reached: less than 20 GiB free')
 
 def getmeta(db,key,default=None):
     r=db.execute('SELECT value FROM meta WHERE key=?',(key,)).fetchone()
