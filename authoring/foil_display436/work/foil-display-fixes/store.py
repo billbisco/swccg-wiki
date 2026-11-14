@@ -24,7 +24,7 @@ if mode=='wiki' and (root/'published-heads.json').exists():
     for title,h in json.loads((root/'published-heads.json').read_bytes()).items():
         path=index.get(title,'pages/'+wiki_fname(title));assert not any(t!=title and p.casefold()==path.casefold() for t,p in index.items());index[title]=path
         files[path]=(h['revisions'][0]['slots']['main']['content'].rstrip()+'\n').encode()
-    files['pages/INDEX.tsv']=''.join(t+'\t'+p+'\n' for t,p in sorted(index.items(),key=lambda v:(v[0].casefold(),v[0]))).encode()
+    files['pages/INDEX.tsv']=''.join(t+'\t'+p+'\n' for t,p in sorted(index.items())).encode()
 for path,data in list(files.items()):
     if path.endswith(('.py','.md','.txt','.wiki')):files[path]=data.rstrip()+b'\n'
 git('read-tree',base);updates=[]
