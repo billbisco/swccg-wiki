@@ -643,6 +643,30 @@ class ServiceAttachedRole(unittest.TestCase):
         self.assertEqual(kinds(self.flags(lead)), ["SERVICE"])
 
 
+class StyleGuideEditorialContext(unittest.TestCase):
+    GUIDE = "SWCCG Wiki:Style guide"
+
+    def test_canonical_guide_can_name_terms_that_article_prose_cannot(self):
+        text = "The words pending and research appear in these editorial rules."
+        self.assertEqual(L.lint(text, self.GUIDE)[0], [])
+        self.assertIn("BANNED", kinds(L.lint(text, "Example article")[0]))
+
+    def test_exception_does_not_cover_subpages_or_other_project_pages(self):
+        for title in (None, "Style guide", "SWCCG Wiki:Other rules", self.GUIDE + "/Examples"):
+            with self.subTest(title=title):
+                self.assertIn("BANNED", kinds(L.lint("pending", title)[0]))
+
+    def test_guide_keeps_all_non_banned_privacy_and_editorial_findings(self):
+        text = ("pending person123@example.net\n<ref></ref>\n"
+                "[https://example.org/source Source]\n== Research ==\n"
+                "[[File:Example.png|thumb|This shows a subject.]]")
+        article = L.lint(text, "Example article")[0]
+        guide = L.lint(text, self.GUIDE)[0]
+        self.assertEqual(guide, [flag for flag in article if not flag.startswith("BANNED")])
+        for expected in ("EMAIL", "REF", "ARCHIVE", "HEADING", "CAPTION"):
+            self.assertIn(expected, kinds(guide))
+
+
 class BlockquoteSkipsBannedWords(unittest.TestCase):
     """Verbatim text in <blockquote> is the source's words: BANNED skips it; EMAIL and ARCHIVE still run."""
 
