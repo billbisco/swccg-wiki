@@ -1,32 +1,9 @@
-# Unpublished foil drafts — story381
+# Remaining unpublished foil drafts — story381
 
-217 new articles remain unpublished. Each draft links to its exact physical reading and source hash. Images are draft identities, not uploaded or preserved assets. Rebuild from fresh family/set heads before publication.
+194 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
 
-| Article | Stage | Physical reading | Draft |
+| Article | Stage | Reading | Draft |
 |---|---|---|---|
-| Anakin's Lightsaber (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Obi-Wan's Lightsaber (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Boba Fett's Blaster Rifle (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Vader's Lightsaber (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Superlaser (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Landing Claw (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Skywalkers (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Expand The Empire (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Slip Sliding Away (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| The Circle Is Now Complete (Reflections Foil) | batch9 | [batch9-readings.json](batch9-readings.json) | [batch9-new-packet.json](batch9-new-packet.json) |
-| Cloud City: Guest Quarters (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Dagobah: Yoda's Hut (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Death Star: Trench (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| It Is The Future You See (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Rendezvous Point (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Blizzard 1 (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Blizzard 2 (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Blizzard Scout 1 (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Bossk In Hound's Tooth (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Commence Primary Ignition (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Epic Duel (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Jabba's Sail Barge (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
-| Vengeance (Reflections Foil) | batch10 | [batch10-readings.json](batch10-readings.json) | [batch10-new-packet.json](batch10-new-packet.json) |
 | Death Star (Dark) (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
 | Lando Calrissian (Dark) (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
 | Lobot (Dark) (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
