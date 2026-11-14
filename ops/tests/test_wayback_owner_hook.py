@@ -106,6 +106,29 @@ class OwnerHook(unittest.TestCase):
         W.registry_recovered(control, "prepare")
         self.assertEqual(json.loads((directory / "registry-repair.json").read_text())["status"], "resolved")
 
+    def test_registry_epoch_markers_and_tries_survive_all_submission_outcomes(self):
+        markers = {"registered_payload_sha256": "a" * 64, "registry_job_id": "b" * 64,
+                   "previous_capture": "https://web.archive.org/web/20200101000000/" + URL,
+                   "recapture": True}
+        cases = {"recent": {"recent": markers["previous_capture"]},
+                 "accepted": {"job_id": "actual-accepted-id"},
+                 "anonymous": {"anonymous_capture": markers["previous_capture"]},
+                 "error": ValueError("offline fixture")}
+        for name, result in cases.items():
+            with self.subTest(outcome=name), \
+                 patch.object(W, "control_directory", return_value=self.repo / name), \
+                 patch.object(W, "try_verify"), patch.object(W, "verify_entry", return_value=False), \
+                 patch.object(W, "confirm", side_effect=lambda url, entry: entry.update(status="failed") or True), \
+                 patch.object(W, "submit_capture", side_effect=result if isinstance(result, Exception) else None,
+                              return_value=result):
+                old = dict(markers, status="retry", last="2000-01-01T00:00:00Z", tries=2)
+                (self.repo / W.DONE).write_text(json.dumps({URL: old}))
+                (self.repo / W.QUEUE).write_text(URL + "\n")
+                W.run(self.repo, 3)
+                entry = json.loads((self.repo / W.DONE).read_text())[URL]
+                self.assertEqual({key: entry[key] for key in markers}, markers)
+                self.assertEqual(entry["tries"], 3)
+
     def test_auth_blocked_does_zero_adapter_provider_queue_work(self):
         directory = W.control_directory(self.repo)
         with Control(directory, W.AUTH) as control:

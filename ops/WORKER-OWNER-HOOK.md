@@ -3,7 +3,11 @@
 The existing `wayback_worker.run` creates the adapter only after `Control.begin`
 and recovery reconciliation. Prepare deltas enter the shared in-memory ledger
 and changed transaction, then the durable checkpoint, before queue reload or
-submission. Reload reads only URLs so a queue Git reset cannot discard those
+submission. Submission results retain only the registry epoch fields
+`registered_payload_sha256`, `registry_job_id`, `previous_capture` and `recapture`,
+including recent-capture, accepted-job, anonymous and error outcomes. This keeps
+the existing recapture knob and retry count attached to the same epoch.
+Reload reads only URLs so a queue Git reset cannot discard those
 deltas or recovered accepted jobs. Auth-blocked starts never create an adapter. Auxiliary cohort/constructor/prepare
 errors record repair and allow independent legacy captures to continue, with all
 pruning disabled for that run. Prepare pauses still stop immediately.

@@ -1154,6 +1154,9 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
             print("STALE", e["status"], url, flush=True)
             if e["status"] == "failed":
                 e = dict(e, tries=0)
+        registry_epoch = {field: e[field] for field in
+                          ("registered_payload_sha256", "registry_job_id", "previous_capture", "recapture")
+                          if e and field in e}
         tries = (e or {}).get("tries", 0) + 1
         try:
             control.submitting(url)
@@ -1162,6 +1165,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
                 if j.get("recent"):
                     e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
                          "note": "already archived within 30d"}
+                    e.update(registry_epoch)
                     print("RECENT", url, j["recent"], flush=True)
                     try_verify(url, e)
                     done[url] = e
@@ -1190,6 +1194,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
             errors_in_row += 1
             print("ERROR", url, str(ex)[:120], flush=True)
+        e.update(registry_epoch)
         done[url] = e
         changed[url] = e
         control.checkpoint(done, control.initial_done)
