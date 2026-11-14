@@ -1,6 +1,9 @@
 import hashlib,io,json,sqlite3,tempfile,unittest
 from pathlib import Path
 from unittest.mock import patch
+import sys
+repo_tools=Path(__file__).resolve().parents[1]/'tools'
+sys.path.insert(0,str(repo_tools if repo_tools.is_dir() else Path(__file__).resolve().parent))
 from image_preservation.store import connect,add_version,version_id
 from image_preservation.ssh_backup import run
 class FakeSource:

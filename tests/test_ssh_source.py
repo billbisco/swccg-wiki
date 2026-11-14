@@ -1,6 +1,9 @@
 import io,tempfile,unittest
 from pathlib import Path
 from types import SimpleNamespace
+import sys
+repo_tools=Path(__file__).resolve().parents[1]/'tools'
+sys.path.insert(0,str(repo_tools if repo_tools.is_dir() else Path(__file__).resolve().parent))
 from image_preservation.ssh_source import request_item,receive
 class SourceStreamTests(unittest.TestCase):
     def info(self,url='https://wiki.swccg.com/images/a/ab/Scan.png'):

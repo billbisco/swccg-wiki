@@ -11,11 +11,23 @@ API='https://wiki.swccg.com/api.php'
 class Throttled(RuntimeError):
     def __init__(self,retry_after):
         self.retry_after=retry_after
-        super().__init__('Archive service throttled; retry after '+str(retry_after)+' seconds')
+        super().__init__('Source service throttled; retry after '+str(retry_after)+' seconds')
+
+def client_url(url):
+    p=urllib.parse.urlsplit(url)
+    if p.scheme!='https' or p.netloc!='wiki.swccg.com' or p.fragment or not (p.path=='/api.php' or p.path.startswith('/images/')):
+        raise ValueError('PC transport permits only public Wiki API/images; Archive.org traffic belongs to the central server owner and is held')
+    return url
+
+class WikiClientRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self,req,fp,code,msg,headers,newurl):
+        client_url(newurl)
+        return super().redirect_request(req,fp,code,msg,headers,newurl)
 
 def open_url(url):
+    client_url(url)
     try:
-        return urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':UA,'Accept-Encoding':'identity'}),timeout=60)
+        return urllib.request.build_opener(WikiClientRedirect()).open(urllib.request.Request(url,headers={'User-Agent':UA,'Accept-Encoding':'identity'}),timeout=60)
     except urllib.error.HTTPError as e:
         if e.code==429 or e.code>=500:
             try:delay=int(e.headers.get('Retry-After','120'))
