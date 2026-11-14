@@ -5,6 +5,7 @@ import os
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import urllib.error
 from pathlib import Path
 
@@ -13,6 +14,16 @@ import wayback_worker as W  # noqa: E402
 
 REAL_STRICT, REAL_DELETE_CHECK = W.strict_check, W.delete_check
 W.strict_check = lambda capture: (True, "ok")  # network check; exercised in StrictCheck below
+
+
+def setUpModule():
+    global control_patch
+    control_patch = patch.object(W, "control_directory", lambda repo: repo / ".test-control")
+    control_patch.start()
+
+
+def tearDownModule():
+    control_patch.stop()
 
 CAP = "https://web.archive.org/web/20261020174512/https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf"
 PDF = b"%PDF-1.4 fake pdf bytes " * 100
@@ -126,7 +137,7 @@ class RunLoop(unittest.TestCase):
                                                                 "last": "2026-10-19T00:00:00Z"}}))
         self.pushed = []
         W.reset_to_origin = lambda repo: None
-        W.commit_and_push = lambda repo, paths, msg, redo: self.pushed.append(msg) or True
+        W.commit_and_push = lambda repo, paths, msg, redo: bool(redo()) and (self.pushed.append(msg) or True)
         W.AUTH = "LOW test:test"
         W.GAP_S = 0
         W.spn2_submit = lambda url: {"job_id": "spn2-test"}
@@ -330,7 +341,7 @@ class SnapshotDelete(unittest.TestCase):
         (repo / W.DONE).write_text(json.dumps({self.url: self.e}))
         pushed = []
         W.reset_to_origin = lambda repo: None
-        W.commit_and_push = lambda repo, paths, msg, redo: pushed.append(msg) or True
+        W.commit_and_push = lambda repo, paths, msg, redo: bool(redo()) and (pushed.append(msg) or True)
         W.wiki_snapshot_wayback_paths = lambda: {"pc/wrap.html"}
         W.AUTH = "LOW test:test"
         W.GAP_S = 0
@@ -358,7 +369,7 @@ class SnapshotDelete(unittest.TestCase):
         (repo / W.QUEUE).write_text(self.url + "\n")
         (repo / W.DONE).write_text(json.dumps({self.url: self.e}))
         W.reset_to_origin = lambda repo: None
-        W.commit_and_push = lambda repo, paths, msg, redo: True
+        W.commit_and_push = lambda repo, paths, msg, redo: bool(redo())
         W.wiki_snapshot_wayback_paths = lambda: set()
         W.AUTH = "LOW test:test"
         W.GAP_S = 0
@@ -557,7 +568,7 @@ class PendingConfirm(unittest.TestCase):
         }))
         polled = []
         W.reset_to_origin = lambda repo: None
-        W.commit_and_push = lambda repo, paths, msg, redo: True
+        W.commit_and_push = lambda repo, paths, msg, redo: bool(redo())
         W.wiki_snapshot_wayback_paths = lambda: set()
         W.AUTH = "LOW test:test"
         W.GAP_S = 0
@@ -581,7 +592,7 @@ class PendingConfirm(unittest.TestCase):
         self.assertNotIn("spn2-stale", polled)
         self.assertIn("spn2-new", polled)
 
-    def test_run_stops_pending_walk_on_status_retry_and_still_submits(self):
+    def test_run_stops_pending_walk_and_new_submissions_on_provider_failure(self):
         from datetime import datetime, timezone
 
         saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "spn2_submit", "spn2_status",
@@ -606,7 +617,7 @@ class PendingConfirm(unittest.TestCase):
         submitted = []
         W.now = lambda: datetime(2026, 10, 25, 1, 0, 0, tzinfo=timezone.utc)
         W.reset_to_origin = lambda repo: None
-        W.commit_and_push = lambda repo, paths, msg, redo: True
+        W.commit_and_push = lambda repo, paths, msg, redo: bool(redo())
         W.wiki_snapshot_wayback_paths = lambda: set()
         W.AUTH = "LOW test:test"
         W.GAP_S = 0
@@ -629,7 +640,7 @@ class PendingConfirm(unittest.TestCase):
             W.time.sleep = sleep
             tmp.cleanup()
         self.assertEqual(polled, ["spn2-y1"])
-        self.assertEqual(submitted, [src])
+        self.assertEqual(submitted, [])
 
 
 if __name__ == "__main__":

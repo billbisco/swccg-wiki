@@ -20,4 +20,69 @@ Setup/repair: `ops/install-vps.sh` (idempotent; run as root on the VPS).
 
 No Wayback access is needed from the bot's own machine.
 
+## Persistent preservation owner and failures (Story #407)
+
+All producers add approved public URLs to the existing queue. They do not run
+independent Save Page Now fallbacks on their own PCs or accounts. The worker
+holds an OS advisory lock for its full run and keeps its circuit, acknowledged-job
+journal and health outside the Git working tree. Git resets cannot erase a pause.
+
+The default control directory is `~/.local/state/swccg-wayback`, for the operating
+system account running the existing service. `WAYBACK_CONTROL_DIR` can point to
+an explicitly coordinated directory. Every instance must use the same account
+and directory. A filesystem lock does **not** coordinate other hosts, users, or
+programs that ignore this owner; those clients must enqueue work here.
+
+* A rejected credential pauses authenticated submissions; the worker never
+  automatically retries anonymously. Subsequent timer starts make no Archive.org
+  request with the same rejected credential. An authorized credential change
+  allows one recovery canary. The opaque credential fingerprint stays only in
+  the private control file, never health, Git, logs or reports.
+* Provider throttling, service failures and transport errors open a persistent
+  circuit. `Retry-After` is honored; otherwise the conservative starting pause is
+  15 minutes, doubling on repeated failures up to 24 hours. These are local safety
+  choices, not a claimed official Archive.org allowance. A later timer invocation
+  exits without network work while the cooldown remains active.
+* Recovery submits at most one canary, retaining its job identity across runs.
+  A submission acknowledgment or HTTP200 cannot close the circuit; the existing
+  strict replay/content verifier must mark that canary verified first. Source
+  failures remain distinct from a provider/account failure.
+* Accepted jobs and partial ledger updates are checkpointed atomically before
+  waiting. After interruption they are reconciled against the fresh Git ledger.
+  A different newer receipt causes a guarded stop, never an overwrite. Unknown
+  request outcomes before an acknowledgment are still subject to SPN2's existing
+  `if_not_archived_within` behavior; this does not claim transactional exactly-once
+  delivery across an HTTP connection failure.
+
+`control.json` and `pending-updates.json` are private runtime state, not repository
+files. `health.json` exposes the actual mode, pause reason, next eligible attempt,
+ledger counts, oldest pending activity and last newly verified progress.
+`repair.json` records a deduplicated open/recovered incident, owning account and
+repair issue407. Service exit0 is explicitly **not** proof of a new capture.
+No new notification destination, systemd unit, credential or timer is installed.
+
+Read health without contacting Git or Archive.org:
+
+```sh
+python3 ops/wayback_worker.py /path/to/job/repo --health
+```
+
+Do not delete the control directory to bypass throttling. A corrupt control or
+conflicting pending-job journal fails closed and needs reconciliation. Capture
+verification and the existing snapshot citation/age/delete checks are unchanged.
+Content publication and independent backup may continue under the approved
+publication policy while external preservation remains pending; a queue or a
+healthy process is never a verified archive receipt.
+
+Offline regressions run with fixture credentials and loopback-only sockets:
+
+```sh
+python3 ops/tests/run_offline.py --temp-root /path/to/isolated/test-temp
+```
+
+This lock protects the archive owner, not another service's Git index. The
+installer historically points the nightly backup and archive jobs at the same
+checkout; deployments must verify their working-copy isolation/coordination
+separately. Do not infer that this change serializes unrelated backup writers.
+
 Rollback of the verify change: `/opt/swccg-backups/wayback-worker-<date>/rollback.sh` on the VPS (pins the previous worker with a systemd drop-in and maps verified/unverified back to ok), or revert the merge commit on GitHub.

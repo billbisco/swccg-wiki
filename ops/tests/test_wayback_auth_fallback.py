@@ -1,4 +1,4 @@
-"""Authentication fallback must not suppress rate limits or source-policy failures."""
+"""Rejected authentication must stop rather than create another submission lane."""
 import sys
 import tempfile
 import unittest
@@ -18,14 +18,15 @@ class SubmissionFallback(unittest.TestCase):
             (root/W.QUEUE).write_text('# note\n'+URL+'\nhttps://example.org/b.png\n'+URL+'\n\n')
             urls,done=W.load(root)
             self.assertEqual([URL,'https://example.org/b.png'],urls);self.assertEqual({},done)
-    def test_auth_401_falls_back_once_for_whole_run(self):
+    def test_auth_401_never_falls_back(self):
         state={'authenticated':True}
         error=urllib.error.HTTPError('https://web.archive.org/save',401,'Unauthorized',{},None)
         with patch.object(W,'spn2_submit',side_effect=error) as spn,patch.object(W,'save_anon',return_value=CAP) as anon:
-            self.assertEqual({'anonymous_capture':CAP},W.submit_capture(URL,None,state))
-            self.assertFalse(state['authenticated'])
-            W.submit_capture(URL,None,state)
-            self.assertEqual(1,spn.call_count);self.assertEqual(2,anon.call_count)
+            with self.assertRaises(urllib.error.HTTPError):
+                W.submit_capture(URL,None,state)
+            self.assertTrue(state['authenticated'])
+            spn.assert_called_once()
+            anon.assert_not_called()
     def test_permission_denial_is_not_treated_as_bad_auth(self):
         error=urllib.error.HTTPError('https://web.archive.org/save',403,'Forbidden',{},None)
         with patch.object(W,'spn2_submit',side_effect=error),patch.object(W,'save_anon') as anon:
