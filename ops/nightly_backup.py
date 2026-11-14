@@ -22,7 +22,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gitsync import commit_and_push, reset_to_origin  # noqa: E402
+from gitsync import commit_and_push  # noqa: E402
 
 API = "https://wiki.swccg.com/api.php"
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; nightly backup)"
@@ -80,8 +80,10 @@ def backup_pages(repo: Path, titles: set[str]) -> int:
     keep = sorted(titles)
     if not keep:
         return 0
+    n = 0
 
     def write() -> list[str]:
+        nonlocal n
         existing = dl.index_existing()
         idx = {}
         if dl.INDEX.exists():
@@ -95,11 +97,10 @@ def backup_pages(repo: Path, titles: set[str]) -> int:
         dl.dump_from_tsv(tsv, existing, written)   # deleted pages come back "missing": skipped, old copy kept
         tsv.unlink()
         dl.write_index(dl._merge_index(written, keep_old=True))
+        n = len({rel for _, rel in written})
         return sorted({rel for _, rel in written} | {"pages/INDEX.tsv"})
 
-    paths = write()
-    n = len(paths) - 1
-    commit_and_push(repo, paths, f"nightly backup: {n} pages from wiki.swccg.com", write)
+    commit_and_push(repo, [], f"nightly backup: {len(keep)} requested pages from wiki.swccg.com", write)
     return n
 
 
@@ -169,8 +170,7 @@ def backup_files(repo: Path, titles: set[str]) -> int:
         use_p.write_text("\n".join(sorted(set(use))) + "\n", encoding="utf-8")
         return paths
 
-    paths = write()
-    commit_and_push(repo, paths, f"nightly backup: {len(blobs)} files from wiki.swccg.com", write)
+    commit_and_push(repo, [], f"nightly backup: {len(blobs)} files from wiki.swccg.com", write)
     return len(blobs)
 
 
@@ -186,8 +186,6 @@ def main() -> int:
     since = a.since or state.get("last") or (started - timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%SZ")
     pages, files = changed_since(since)
     print(f"since {since}: {len(pages)} pages, {len(files)} files changed")
-    for repo in (a.pages_repo, a.files_repo):
-        reset_to_origin(repo)
     np_ = backup_pages(a.pages_repo.resolve(), pages)
     nf = backup_files(a.files_repo.resolve(), files)
     a.state.parent.mkdir(parents=True, exist_ok=True)

@@ -20,8 +20,8 @@ activity is within PENDING_CONFIRM_MAX_AGE (default 40 jobs / 2 hours). Older
 pending rows are not polled; after STALE_PENDING_AGE they are resubmitted (SPN2
 answers with the recent capture if the dead job did finish). Entries that failed on a
 transient archive.org error are retried after FAILED_RETRY_AGE. Connection refused / 429 / 5xx
-during confirm stops that walk (and this-run job polling) so the run can still
-submit new URLs instead of hammering web.archive.org. Stalled jobs are poked
+during confirm opens a persistent shared circuit, stopping submissions and
+further Archive.org checks until the cooldown expires. Stalled jobs are poked
 with ?copy=2, not by polling a dead job_id forever.
 
 Verified https://swccg.com/snapshots/… URLs: after verify, delete the staging file under
@@ -37,7 +37,9 @@ No Wayback access from the bot's own machine is needed.
 
 Auth: archive.org S3-style keys, IA_S3_ACCESS / IA_S3_SECRET, read from the environment or
 from KEYS_FILE (root-only, chmod 600, outside any git repo). They are never logged or committed.
-Without keys the worker falls back to the old anonymous GET /save/<url>.
+Without keys the worker uses anonymous GET /save/<url>. A rejected credential
+never falls back to anonymous submissions: it pauses until an authorized key
+change, followed by one verified recovery canary. All producers use this owner.
 
 Never queue live forum.starwarsccg.org / www.starwarsccg.org URLs: the worker skips them.
 
@@ -64,15 +66,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gitsync import commit_and_push, reset_to_origin  # noqa: E402
+from wayback_control import Busy, Control, Paused  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
 QUEUE = "ops/wayback/queue.txt"
 DONE = "ops/wayback/done.json"
 KEYS_FILE = Path(os.environ.get("IA_KEYS_FILE", "/etc/swccg-ops/archive-org-s3.env"))
 MAX_TRIES = 6
-GAP_S = 10            # ~6 saves/min
-BACKOFF_START = 30    # seconds; doubles on each 429/5xx, capped
-BACKOFF_MAX = 600
+GAP_S = Control.SUBMISSION_GAP  # minimum gap also survives owner restarts
 RETRY_AFTER = timedelta(minutes=30)
 CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
 PENDING_CONFIRM_MAX_AGE = timedelta(hours=2)  # skip stalled pending job_ids
@@ -121,7 +122,33 @@ OPENER = urllib.request.build_opener(NoRedirect)
 
 
 class Throttled(Exception):
-    pass
+    def __init__(self, message, status=None, retry_after=None):
+        super().__init__(message)
+        self.status, self.retry_after = status, retry_after
+
+
+ACTIVE_CONTROL = None
+
+
+def control_directory(repo: Path) -> Path:
+    """Shared by every checkout run as the same server account, outside Git resets."""
+    return Path(os.environ.get("WAYBACK_CONTROL_DIR", str(Path.home() / ".local/state/swccg-wayback")))
+
+
+def archive_response(url: str, status: int, headers=None):
+    if ACTIVE_CONTROL and urllib.parse.urlsplit(url).hostname in {"web.archive.org", "archive.org"}:
+        path = urllib.parse.urlsplit(url).path
+        if status == 401 and (path == "/save" or path.startswith("/save/")):
+            ACTIVE_CONTROL.authentication_failed()
+        if status == 403 and (path == "/save" or path.startswith("/save/")):
+            ACTIVE_CONTROL.provider_failed(status)
+        if status == 429 or status >= 500:
+            ACTIVE_CONTROL.provider_failed(status, (headers or {}).get("Retry-After"))
+
+
+def archive_transport_failed(url: str):
+    if ACTIVE_CONTROL and urllib.parse.urlsplit(url).hostname in {"web.archive.org", "archive.org"}:
+        ACTIVE_CONTROL.provider_failed()
 
 
 def now() -> datetime:
@@ -163,10 +190,15 @@ def banned(url: str) -> bool:
 def _json(req: urllib.request.Request) -> dict:
     try:
         with urllib.request.urlopen(req, timeout=90) as resp:
+            archive_response(req.full_url, resp.status, resp.headers)
             return json.loads(resp.read().decode("utf-8", "replace") or "{}")
     except urllib.error.HTTPError as e:
+        archive_response(req.full_url, e.code, e.headers)
         if e.code == 429 or e.code >= 500:
-            raise Throttled(f"HTTP {e.code}") from e
+            raise Throttled(f"HTTP {e.code}", e.code, (e.headers or {}).get("Retry-After")) from e
+        raise
+    except (urllib.error.URLError, TimeoutError, ConnectionError):
+        archive_transport_failed(req.full_url)
         raise
 
 
@@ -193,7 +225,16 @@ def latest_capture(url: str) -> str:
     q = "https://archive.org/wayback/available?url=" + urllib.parse.quote(url, safe="")
     try:
         with urllib.request.urlopen(urllib.request.Request(q, headers={"User-Agent": UA}), timeout=60) as r:
+            archive_response(q, r.status, r.headers)
             snap = json.loads(r.read().decode()).get("archived_snapshots", {}).get("closest") or {}
+    except Paused:
+        raise
+    except urllib.error.HTTPError as error:
+        archive_response(q, error.code, error.headers)
+        return ""
+    except (urllib.error.URLError, TimeoutError, ConnectionError):
+        archive_transport_failed(q)
+        return ""
     except Exception:  # noqa: BLE001
         return ""
     cap = snap.get("url", "")
@@ -210,12 +251,14 @@ def save_anon(url: str) -> str:
     req = urllib.request.Request("https://web.archive.org/save/" + url, headers={"User-Agent": UA})
     try:
         resp = OPENER.open(req, timeout=90)
+        archive_response(req.full_url, resp.status, resp.headers)
         loc = resp.headers.get("Location") or resp.geturl()
     except urllib.error.HTTPError as e:
+        archive_response(req.full_url, e.code, e.headers)
         if e.code in (301, 302, 303, 307, 308) and e.headers.get("Location"):
             loc = e.headers["Location"]
         elif e.code == 429 or e.code >= 500:
-            raise Throttled(f"HTTP {e.code}") from e
+            raise Throttled(f"HTTP {e.code}", e.code, (e.headers or {}).get("Retry-After")) from e
         else:
             raise
     if "/web/" not in loc:
@@ -226,15 +269,16 @@ def save_anon(url: str) -> str:
 
 
 def submit_capture(url: str, entry: dict | None, session: dict) -> dict:
-    """Use the public anonymous route if SPN rejects authentication; keep rate limits intact."""
+    """Rejected authentication requires repair, never a new anonymous retry lane."""
     if session["authenticated"]:
         try:
             return spn2_submit(url, force=True) if (entry or {}).get("recapture") else spn2_submit(url)
         except urllib.error.HTTPError as ex:
             if ex.code != 401:
                 raise
-            session["authenticated"] = False
-            print("AUTH-UNAVAILABLE SPN2 returned401; using anonymous saves for this run", flush=True)
+            if ACTIVE_CONTROL:
+                ACTIVE_CONTROL.authentication_failed()
+            raise
     return {"anonymous_capture": save_anon(url)}
 
 
@@ -242,8 +286,13 @@ def capture_ok(capture: str) -> bool:
     req = urllib.request.Request(capture, headers={"User-Agent": UA})
     try:
         with urllib.request.urlopen(req, timeout=90) as resp:
+            archive_response(capture, resp.status, resp.headers)
             return resp.status == 200
-    except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError):
+    except urllib.error.HTTPError as error:
+        archive_response(capture, error.code, error.headers)
+        return False
+    except (urllib.error.URLError, TimeoutError):
+        archive_transport_failed(capture)
         return False
 
 
@@ -322,6 +371,7 @@ def _raw_get(url: str, limit: int = 1 << 16) -> tuple[int, dict, bytes]:
     try:
         resp = OPENER.open(req, timeout=120)
     except urllib.error.HTTPError as e:
+        archive_response(url, e.code, e.headers)
         body = b""
         try:
             body = e.read(limit) or b""
@@ -329,8 +379,10 @@ def _raw_get(url: str, limit: int = 1 << 16) -> tuple[int, dict, bytes]:
             pass
         return e.code, dict(e.headers or {}), body
     except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+        archive_transport_failed(url)
         raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}", side="capture") from e
     with resp:
+        archive_response(url, resp.status, resp.headers)
         return resp.status, dict(resp.headers), resp.read(limit)
 
 
@@ -505,6 +557,7 @@ def fetch(url: str) -> dict:
     h, size, head = hashlib.sha256(), 0, bytearray()
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
+            archive_response(url, resp.status, resp.headers)
             status, ctype = resp.status, resp.headers.get("Content-Type", "")
             dec = _decoder(resp.headers.get("Content-Encoding", ""))
             while True:
@@ -522,9 +575,11 @@ def fetch(url: str) -> dict:
                 if size > MAX_FETCH:
                     raise VerifyRetry(f"larger than {MAX_FETCH} bytes: {url[:80]}")
     except urllib.error.HTTPError as e:
+        archive_response(url, e.code, e.headers)
         return {"status": e.code, "ctype": e.headers.get("Content-Type", "") if e.headers else "", "sha256": "",
                 "size": 0, "body": b""}
     except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, zlib.error) as e:
+        archive_transport_failed(url)
         raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}") from e
     return {"status": status, "ctype": ctype, "sha256": h.hexdigest(), "size": size, "body": bytes(head)}
 
@@ -616,8 +671,9 @@ def try_verify(url: str, e: dict) -> None:
     """Verify right after a capture loads; archive.org errors leave it "ok" for the backlog pass."""
     try:
         verify_entry(url, e)
-    except VerifyRetry:
-        pass
+    except VerifyRetry as error:
+        if ACTIVE_CONTROL and error.side == "capture":
+            ACTIVE_CONTROL.provider_failed()
 
 
 def load(repo: Path) -> tuple[list[str], dict]:
@@ -921,7 +977,7 @@ def confirm(url: str, e: dict) -> bool:
     if e.get("job_id") and AUTH:
         try:
             st = spn2_status(e["job_id"])
-        except StatusRetry:
+        except (StatusRetry, Paused):
             raise
         except Exception as ex:  # noqa: BLE001
             print("STATUS-ERR", url, str(ex)[:80], flush=True)
@@ -953,19 +1009,63 @@ def confirm(url: str, e: dict) -> bool:
     return True
 
 
-def run(repo: Path, minutes: float) -> None:
+def reconcile_recovery_probe(control: Control, done: dict, changed: dict, deadline: float) -> None:
+    """One accepted canary bypasses the ordinary pending-job age window.
+
+    Never resubmit an acknowledged probe merely because it was offline. Poll or
+    verify it once per run; an unresolved24h outcome becomes an explicit repair.
+    """
+    probe = control.state.get("probe_url")
+    if control.state["mode"] != "half_open" or not probe:
+        return
+    entry = done.get(probe)
+    if not entry or not (entry.get("job_id") or entry.get("capture")):
+        control.probe_needs_repair("accepted canary receipt is missing")
+    if time.monotonic() > deadline - 60:
+        return
+    if control.state.get("probe_started_at") is None:
+        try:
+            value = control.state.get("last_submission_attempt_at") or entry["last"]
+            date = datetime.fromisoformat(value.replace("Z", "+00:00"))
+            if date.tzinfo is None:
+                raise ValueError("canary time has no timezone")
+            started = date.timestamp()
+        except (KeyError, ValueError):
+            control.probe_needs_repair("accepted canary age cannot be established")
+        control.state["probe_started_at"] = started
+        control.save()
+    try:
+        if entry.get("status") == "pending":
+            if confirm(probe, entry):
+                changed[probe] = entry
+        elif entry.get("status") == "ok":
+            try_verify(probe, entry)
+            changed[probe] = entry
+    except StatusRetry:
+        control.provider_failed()
+    control.checkpoint(done, control.initial_done)
+    if (entry.get("status") != "verified" and
+            control.clock() - control.state["probe_started_at"] >= Control.PROBE_DEADLINE):
+        control.probe_needs_repair("accepted canary unresolved after24hours")
+
+
+def _run(repo: Path, minutes: float, control: Control) -> None:
     reset_to_origin(repo)
     urls, done = load(repo)
+    control.done = done
+    control.initial_done = json.loads(json.dumps(done))
+    restored = control.restore_updates(done)
     deadline = time.monotonic() + minutes * 60
-    changed: dict[str, dict] = {}
+    changed: dict[str, dict] = dict(restored)
     errors_in_row = 0
-    backoff = BACKOFF_START
     print("auth:", "SPN2 authenticated" if AUTH else "anonymous", flush=True)
     submission_session = {"authenticated": bool(AUTH)}
 
+    # Recovery is not stranded behind the ordinary2h pending-confirm cutoff.
+    reconcile_recovery_probe(control, done, changed, deadline)
+
     # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
-    ia_up = True
-    confirm_urls = pending_confirm_urls(done)
+    confirm_urls = [url for url in pending_confirm_urls(done) if url != control.state.get("probe_url")]
     print(
         f"pending-confirm {len(confirm_urls)} cap={PENDING_CONFIRM_CAP} "
         f"max_age_s={int(PENDING_CONFIRM_MAX_AGE.total_seconds())}",
@@ -977,11 +1077,10 @@ def run(repo: Path, minutes: float) -> None:
         try:
             if confirm(url, done[url]):
                 changed[url] = done[url]
+                control.checkpoint(done, control.initial_done)
                 time.sleep(1)
         except StatusRetry as ex:
-            ia_up = False
-            print("archive.org not answering; pending confirm stops for this run", ex, flush=True)
-            break
+            control.provider_failed()
 
     # 2. save what is new or due a retry
     submitted: list[str] = []
@@ -990,6 +1089,8 @@ def run(repo: Path, minutes: float) -> None:
             break
         if banned(url):
             continue
+        if not control.may_submit(url):
+            break
         e = done.get(url)
         is_stale = bool(e) and stale(e)
         if e and not is_stale and (e["status"] in ("ok", "verified", "unverified", "pending", "failed")
@@ -1001,6 +1102,7 @@ def run(repo: Path, minutes: float) -> None:
                 e = dict(e, tries=0)
         tries = (e or {}).get("tries", 0) + 1
         try:
+            control.submitting(url)
             j = submit_capture(url, e, submission_session)
             if "anonymous_capture" not in j:
                 if j.get("recent"):
@@ -1010,6 +1112,7 @@ def run(repo: Path, minutes: float) -> None:
                     try_verify(url, e)
                     done[url] = e
                     changed[url] = e
+                    control.checkpoint(done, control.initial_done)
                     errors_in_row = 0
                     time.sleep(GAP_S)
                     continue
@@ -1022,38 +1125,33 @@ def run(repo: Path, minutes: float) -> None:
                 e = {"capture": cap, "status": "pending", "tries": tries, "last": iso(now())}
                 print("SAVED", url, cap, flush=True)
             errors_in_row = 0
-            backoff = BACKOFF_START
+        except Paused:
+            raise
         except Throttled as ex:
-            print("THROTTLED", url, str(ex)[:80], f"backing off {backoff}s", flush=True)
-            time.sleep(min(backoff, max(0, deadline - time.monotonic() - 90)))
-            backoff = min(backoff * 2, BACKOFF_MAX)
-            errors_in_row += 1
-            continue  # not counted as a try
+            control.provider_failed(ex.status, ex.retry_after)
         except Exception as ex:  # noqa: BLE001
+            if archive_unreachable(ex):
+                control.provider_failed()
             e = {"capture": (e or {}).get("capture", ""), "status": "retry" if tries < MAX_TRIES else "failed",
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
             errors_in_row += 1
             print("ERROR", url, str(ex)[:120], flush=True)
         done[url] = e
         changed[url] = e
+        control.checkpoint(done, control.initial_done)
         time.sleep(GAP_S)
 
     # 3. poll this run's jobs until done or out of time
-    while ia_up and submitted and time.monotonic() < deadline:
-        stop_poll = False
+    while submitted and time.monotonic() < deadline:
         for url in list(submitted):
             try:
                 if confirm(url, done[url]):
                     changed[url] = done[url]
             except StatusRetry as ex:
-                print("archive.org not answering; this-run poll stops", ex, flush=True)
-                stop_poll = True
-                break
+                control.provider_failed()
             if done[url]["status"] != "pending" or "job_id" not in done[url]:
                 submitted.remove(url)
             time.sleep(1)
-        if stop_poll:
-            break
         if submitted:
             time.sleep(15)
 
@@ -1085,29 +1183,90 @@ def run(repo: Path, minutes: float) -> None:
     prune_verified_snapshots(done)
     changed.update(DEMOTED)
 
+    control.checkpoint(done, control.initial_done)
+    persist_changes(repo, done, changed, control.initial_done)
+    control.ledger_saved()
+
+
+def persist_changes(repo: Path, done: dict, changed: dict, baseline: dict) -> None:
     if not changed:
         print("nothing to do")
         return
 
+    callback_ran = False
+
     def redo() -> list[str]:
+        nonlocal callback_ran
         _, fresh = load(repo)
+        for url, entry in changed.items():
+            if fresh.get(url) != baseline.get(url) and fresh.get(url) != entry:
+                raise RuntimeError("Ledger receipt advanced; preserve journal and reconcile before overwrite")
         fresh.update(changed)
         write_done(repo, fresh)
+        done.clear()
+        done.update(fresh)
+        callback_ran = True
         return [DONE]
 
-    write_done(repo, done)
+    # gitsync invokes redo under its short repository lock, including attempt1.
+    # Do not write tracked files before that lock or hold it during capture waits.
     ver = sum(1 for e in changed.values() if e["status"] == "verified")
     ok = sum(1 for e in changed.values() if e["status"] in ("ok", "pending"))
     bad = len(changed) - ver - ok
     commit_and_push(repo, [DONE], f"wayback: {ver} verified, {ok} saved/confirmed, {bad} unverified or to retry", redo)
+    if not callback_ran:
+        raise RuntimeError("Compatible locked-redo Git helper required; pending-job journal retained")
     print("pushed", len(changed), "updates")
+
+
+
+def run(repo: Path, minutes: float) -> None:
+    """One exclusive owner; provider/auth pauses survive Git resets and restarts."""
+    global ACTIVE_CONTROL
+    try:
+        with Control(control_directory(repo), AUTH) as control:
+            outcome = "completed"
+            control.done = load(repo)[1]
+            control.initial_done = json.loads(json.dumps(control.done))
+            control.restore_updates(control.done)
+            try:
+                control.begin()
+                ACTIVE_CONTROL = control
+                _run(repo, minutes, control)
+            except Paused as error:
+                outcome = "paused"
+                changed = {u:e for u,e in control.done.items()
+                           if e != control.initial_done.get(u)}
+                control.checkpoint(control.done, control.initial_done)
+                persist_changes(repo, control.done, changed, control.initial_done)
+                control.ledger_saved()
+                print("WAYBACK-PAUSED", str(error), flush=True)
+            except BaseException:
+                outcome = "failed"
+                control.checkpoint(control.done, control.initial_done)
+                # Keep the journal even if Git or this process is unavailable.
+                raise
+            finally:
+                ACTIVE_CONTROL = None
+                previously_verified = {u for u,e in control.initial_done.items()
+                                       if e.get("status") == "verified"}
+                control.reconcile(control.done, previously_verified)
+                health = control.health(control.done, outcome)
+                print("WAYBACK-HEALTH", json.dumps(health, sort_keys=True), flush=True)
+    except Busy:
+        print("WAYBACK-BUSY existing owner active; no network request made", flush=True)
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("repo", type=Path)
     ap.add_argument("--minutes", type=float, default=10)
+    ap.add_argument("--health", action="store_true", help="Read saved health; no Git or Archive.org request")
     a = ap.parse_args()
+    if a.health:
+        path = control_directory(a.repo) / "health.json"
+        print(path.read_text(encoding="utf-8") if path.exists() else '{"outcome":"not_recorded"}')
+        return 0
     run(a.repo.resolve(), a.minutes)
     return 0
 

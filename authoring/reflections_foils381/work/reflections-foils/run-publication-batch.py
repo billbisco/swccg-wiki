@@ -24,15 +24,13 @@ if stage=='batch8':
         row.update(text=str(code),new=False,before_revid=rev['revid'],before_sha256=hashlib.sha256(old.encode()).hexdigest(),section=0,summary='Complete foil family navigation, retaining printed fields and original image (#381)')
     (root/(stage+'-new-packet.json')).write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf8')
 run('build-batch-set-talk.py',stage)
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
+for kind in ['new','family-final','shared-nav','set','talk']:
+    for row in json.loads((root/(stage+'-'+kind+'-packet.json')).read_bytes()):
+        assert not lint(row['text'],row['title'])[0],(row['title'],lint(row['text'],row['title'])[0])
 for kind in ['new','family-final']:
     run('preview.py',stage+'-'+kind,'--sandbox')
 for kind in ['new','family-final','shared-nav','set']:
     run('publish.py',stage+'-'+kind)
 if stage!='batch8':run('publish.py',stage+'-talk')
-run('verify-batch.py',stage)
-run('capture-batch.py',stage)
-marker=dict(stage=stage,at=datetime.datetime.now(datetime.timezone.utc).isoformat(),publication_verified=True,original_images_sha_checked=True,archive_deferred=True,preservation_task=412,visual_inspection='screenshots captured; inspect before accepting this stage',authorization='publication-authorization.json')
-(root/(stage+'-publication-verification.json')).write_text(json.dumps(marker,indent=2),encoding='utf8')
-run('update-inventory-progress.py')
-run('update-publication-report.py')
-print('READY_FOR_VISUAL_INSPECTION',stage,flush=True)
+run('finalize-publication-batch.py',stage)

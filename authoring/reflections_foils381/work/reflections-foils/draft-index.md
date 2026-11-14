@@ -1,39 +1,9 @@
 # Remaining unpublished foil drafts — story381
 
-90 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
+60 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
 
 | Article | Stage | Reading | Draft |
 |---|---|---|---|
-| Qui-Gon Jinn (AI) (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Threepio With His Parts Showing (AI) (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Corran Horn (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Dash Rendar (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Harvest (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Luke Skywalker, Rebel Scout (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Mace Windu (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Master Qui-Gon (AI) (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Mirax Terrik (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Obi-Wan Kenobi, Padawan Learner (AI) (Reflections III Foil) | batch22 | [batch22-readings.json](batch22-readings.json) | [batch22-new-packet.json](batch22-new-packet.json) |
-| Owen Lars & Beru Lars (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Padmé Naberrie (AI) (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Qui-Gon Jinn's Lightsaber (AI) (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Talon Karrde (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Captain Panaka (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Coruscant: Jedi Council Chamber (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Jar Jar Binks (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Prisoner 2187 (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Pulsar Skate (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Queen's Royal Starship (Reflections III Foil) | batch23 | [batch23-readings.json](batch23-readings.json) | [batch23-new-packet.json](batch23-new-packet.json) |
-| Radiant VII (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| Rebel Artillery (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| Shmi Skywalker (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| Supreme Chancellor Valorum (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| Yoda, Senior Council Member (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| Darth Maul, Young Apprentice (AI) (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| P-59 (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| Arica (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| Aurra Sing (AI) (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
-| Darth Maul (AI) (Reflections III Foil) | batch24 | [batch24-readings.json](batch24-readings.json) | [batch24-new-packet.json](batch24-new-packet.json) |
 | Destroyer Droid (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
 | Dr. Evazan & Ponda Baba (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |
 | Grand Admiral Thrawn (Reflections III Foil) | batch25 | [batch25-readings.json](batch25-readings.json) | [batch25-new-packet.json](batch25-new-packet.json) |

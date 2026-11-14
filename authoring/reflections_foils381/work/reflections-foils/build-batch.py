@@ -31,7 +31,7 @@ for r,f in zip(readings,files):
     fields=dict(title=r['printed_title'],publication_id=pid,image=f['name'],image_note=caption,side=r['side'],type=r['type'])
     if r.get('alternate_image'):
         assert r.get('artwork_verification',{}).get('verified'),title
-        fields['ai_mark']='1'
+        # ai_mark denotes a PC stamp; Decipher alternate art has no PC stamp.
     for k in ['image_rotation','image_rotated_height']:
         if k in r:fields[k]=r[k]
     for k in ['subtype','type_display','model']:
@@ -53,6 +53,7 @@ for r,f in zip(readings,files):
     if r.get('printed_extra_stats'):fields['extra_info']=''.join('<tr><th>'+k+'</th><td>'+v+'</td></tr>' for k,v in r['printed_extra_stats'].items())+fields['extra_info']
     root_title=canonical(r['title'],heads)
     earlier_label='Card family' if root_title!=r['title'] else 'Earlier non-foil printing'
+    if r.get('alternate_image'):fields['extra_info']='<tr><th>Image variant</th><td>Alternate image</td></tr>'+fields['extra_info']
     fields['version_label']=product_label+' foil';fields['set_band']='Decipher';fields['navigation']='[['+product+']] · [['+root_title+'|'+earlier_label+']]'
     fields['lead']="'''"+r['printed_title']+"''' is a [["+r['side']+']] [['+r['type']+']] released as a '+{'VR':'very-rare','SR':'super-rare','UR':'ultra-rare'}[r['rarity']]+' foil in [['+product+']] in '+release+'.<ref name="checklist">'+check+'</ref><ref name="encyc">'+encyc+'</ref> It is a foil printing of the '+expansion_link(r['original_set'])+' card.'+face
     if r['lore'] is not None:fields['lore']=r['lore']+'<ref name="foil-face" />'

@@ -21,6 +21,7 @@ for row in manifest:
     revision=head['revisions'][0];text=revision['slots']['main']['content'];cards=[t for t in mw.parse(text).filter_templates(recursive=False) if str(t.name).strip()=='Card']
     if len(cards)!=1:problems.append(dict(title=title,problem='expected one shared Card template'));continue
     card=cards[0];flags=lint(text,title)[0]
+    if card.has('ai_mark') and str(card.get('ai_mark').value).strip():problems.append(dict(title=title,problem='Decipher foil incorrectly displays a PC alternate-image stamp'))
     if flags:problems.append(dict(title=title,problem='non-archive style flags',flags=flags))
     if title not in sets[row['product']]:problems.append(dict(title=title,problem='set lacks direct article link',product=row['product']))
     if not card.has('image') or not str(card.get('image').value).strip():problems.append(dict(title=title,problem='missing image'))

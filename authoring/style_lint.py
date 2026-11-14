@@ -4,7 +4,9 @@
 Usage:
   style_lint.py "Page title"            # lint current revision, compare to previous
   style_lint.py page.wiki [--title T]   # lint a local draft; with --title, compare to live page
-Exit 1 if any flag is raised.
+Exit 1 if any flag is raised by default. An explicitly approved publication
+manifest can admit registered preservation-pending objects; raw flags remain in
+the report and unrelated lint errors still block. See docs/publication-preservation.md.
 
 No sentence- or quote-length limit (Bill, 2026-10-26): "If we need more words, do more words."
 Clarity and full understanding come first; long sentences and quotes are fine when needed.
@@ -43,6 +45,7 @@ Talk pages (Chief, 2026-10-20): signed comments by other accounts are their auth
            page and on the pages that transclude it (Chief, 2026-10-20).
 """
 import json, re, sys, urllib.parse, urllib.request, argparse, os
+from pathlib import Path
 
 API = "https://wiki.swccg.com/api.php"
 BANNED = ["note", "research", "this pass", "not found", "no source", "unverified", "soft", "reportedly",
@@ -538,16 +541,27 @@ def fetch_categories(title):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("target"); ap.add_argument("--title")
+    ap.add_argument("--publication-manifest", type=Path)
+    ap.add_argument("--approved-manifest-sha256")
+    ap.add_argument("--report-json", type=Path)
     a = ap.parse_args()
+    if bool(a.publication_manifest) != bool(a.approved_manifest_sha256):
+        ap.error("publication manifest and its explicitly approved SHA-256 are required together")
+    if a.publication_manifest and os.path.isfile(a.target) and not a.title:
+        ap.error("a local publication draft requires its exact --title")
+    if a.publication_manifest and not os.path.isfile(a.target) and a.title:
+        ap.error("a live publication target supplies its own title; omit --title")
     prev = None
+    revision_id = None
     if os.path.isfile(a.target):
-        text = open(a.target, encoding="utf-8").read()
+        text = Path(a.target).read_bytes().decode("utf-8")
         if a.title:
             r = fetch(a.title, 1); prev = r[0][1] if r else None
     else:
         r = fetch(a.target, 2)
         if not r: sys.exit(f"no such page: {a.target}")
         text = r[0][1]; prev = r[1][1] if len(r) > 1 else None
+        revision_id = r[0][0]
     title = a.title or (None if os.path.isfile(a.target) else a.target)
     cats = fetch_categories(title) if title else None
     flags, n = lint(text, title, cats)
@@ -556,6 +570,18 @@ def main():
         pn = lint(prev, title, cats)[1]; print(f"WORDS    body {n} (previous {pn}, {n-pn:+d})")
     else: print(f"WORDS    body {n}")
     print(f"{len(flags)} flag(s)")
+    if a.publication_manifest:
+        from publication_gate import publication_report
+        sources = {clean_url(raw) for _, unit in cited_units(text) for raw in URL_RX.findall(unit)
+                   if not SKIP_URL_RX.match(clean_url(raw))} if not archive_exempt(title) else set()
+        report = publication_report(text, title, flags, sources, a.publication_manifest,
+                                    a.approved_manifest_sha256, revision_id)
+        if a.report_json:
+            a.report_json.write_text(json.dumps(report, indent=2), encoding="utf8")
+        print("PUBLICATION " + json.dumps(report, sort_keys=True))
+        sys.exit(0 if report["publication_eligible"] else 1)
+    if a.report_json:
+        a.report_json.write_text(json.dumps({"raw_flags": flags, "strict_lint_pass": not flags}, indent=2), encoding="utf8")
     sys.exit(1 if flags else 0)
 
 if __name__ == "__main__": main()
