@@ -1,58 +1,9 @@
 # Remaining unpublished foil drafts — story381
 
-194 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
+145 new articles remain unpublished. Printed/source evidence is retained in the corresponding stage readings. Preservation is queued separately under Bill’s authorization.
 
 | Article | Stage | Reading | Draft |
 |---|---|---|---|
-| Death Star (Dark) (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Lando Calrissian (Dark) (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Lobot (Dark) (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Visage Of The Emperor (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Zuckuss (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Cloud City: Downtown Plaza (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Death Star (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Lobot (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Spiral (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Lando Calrissian (Reflections Foil) | batch11 | [batch11-readings.json](batch11-readings.json) | [batch11-new-packet.json](batch11-new-packet.json) |
-| Luke Skywalker, Jedi Knight (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| Admiral Ackbar (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| Artoo-Detoo In Red 5 (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| B-wing Attack Squadron (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| Bacta Tank (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| Capital Support (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| Chewie With Blaster Rifle (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| Chief Chirpa (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| General Calrissian (Reflections II Foil) | batch12 | [batch12-readings.json](batch12-readings.json) | [batch12-new-packet.json](batch12-new-packet.json) |
-| General Crix Madine (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Gold Squadron 1 (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Home One (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Independence (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Kessel Run (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Lando In Millennium Falcon (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Luke With Lightsaber (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Luke's Lightsaber (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Melas (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| Red Squadron 1 (Reflections II Foil) | batch13 | [batch13-readings.json](batch13-readings.json) | [batch13-new-packet.json](batch13-new-packet.json) |
-| See-Threepio (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Smoke Screen (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Wedge Antilles, Red Squadron Leader (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| X-wing Assault Squadron (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Yavin 4: Massassi Throne Room (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Frozen Assets (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Gold Leader In Gold 1 (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Liberty (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Mantellian Savrip (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Emperor Palpatine (Reflections II Foil) | batch14 | [batch14-readings.json](batch14-readings.json) | [batch14-new-packet.json](batch14-new-packet.json) |
-| Lord Vader (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| Mara Jade, The Emperor's Hand (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| 4-LOM With Concussion Rifle (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| Admiral Piett (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| Boba Fett In Slave I (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| Bossk With Mortar Gun (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| Chimaera (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| Darth Vader With Lightsaber (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| Darth Vader's Lightsaber (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
-| Death Star II (Dark) (Reflections II Foil) | batch15 | [batch15-readings.json](batch15-readings.json) | [batch15-new-packet.json](batch15-new-packet.json) |
 | Dengar With Blaster Carbine (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
 | Dreadnaught-Class Heavy Cruiser (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |
 | Flagship Executor (Reflections II Foil) | batch16 | [batch16-readings.json](batch16-readings.json) | [batch16-new-packet.json](batch16-new-packet.json) |

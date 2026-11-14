@@ -1,15 +1,7 @@
-FAIL-REPORT v1 — ticket #381 — agent: MemoryCoreChatGPT — 2026-11-14 04:59 (UTC-4)
+# Current acceptance — story381
 
-| AC | Result | Evidence |
-|---|---|---|
-| AC1 Inventory | PASS | initial-manifest.json, manifest.json, inventory.csv, completion-progress.json;314 slots reconciled114/100/100; existing printing reused without duplication |
-| AC2 Complete articles | FAIL |70 fully verified new,10 additional new live,217 unsaved drafts,one additional existing reused; prepared-work-verification.json proves298 physical readings/source hashes and217 draft field/style/preview checks, not publication |
-| AC3 Direct checklist/family links | FAIL | first seven full-batch reports pass; batch8 family45 unfinished;217 drafts not integrated. Existing Don't Get Cocky reciprocal links retained and direct checklist repaired304302 |
-| AC4 Public/review/visual/archive | FAIL | first70 full checks; batch8 partial-public-verification explicitly limited31 pages. Existing-integration-public-verification and visual proofs pass3 edits. Wiki-original captures for batch8 ten and existing Don't Get Cocky one remain;184 inherited URLs need archival verification |
-| AC5 Merged backup/evidence/closure | FAIL | Source backup PR18 merged5604d7bb0cf3f5bb3a64e4d3625b06348f33e660;664 current live sources and217 drafts retained, evidence shared. Whole-story closure remains open while AC2–4 fail; backup-merge-receipt.json records scoped checks |
+Bill’s14 November2026 amendment explicitly authorizes publishing all remaining217 drafts and finishing the ten incomplete cards while preservation is queued under task412. The earlier archive-gate FAIL report is historical and superseded; see archive-gate-report-superseded.md. Wayback is not a publication blocker.
 
-Overall: FAIL — AC2–AC5; fixing
+AC1 inventory passes. AC2/AC3/AC4 publication completion is progressing through run-publication-batch.py; each accepted stage has a publication-verification marker, source/public/conservation/navigation reports and inspected desktop/mobile captures. All non-archive checks remain hard gates. Exact source/original hashes and queued public image versions are retained; queued captures are never marked verified.
 
-External blocker: Wayback anonymous saves520 on VPS/PC, explicit public POST throttling429, documented authenticated route401. Final ordinary retry after several-hour cooldown still520 (archive-service-final-check.json). Submissions stopped; no bypass or invented captures. Required core rule: “Never save with open flags.” Source originals and all217 drafts are backed up; exact pending image versions/staging URLs are queued. No further approval question is outstanding. Next step is batch8 primary snapshot after archive recovery, followed by refreshed family edits and exact binary preservation. See RESUME.md and current-batch-report.md.
-
-Visual evidence: first-visual*, batch2–batch7-visual*, batch8-visual*, existing-integration-visual-0.webp and existing-integration-visual-1.webp. All changed live URLs are in published-pages.md. No article deletion is required.
+AC5 remains open until the final source backup PR21 is merged, full census/direct links checked and a per-AC PASS report is posted. See completion-progress.json/current-batch-report.md for current counts. Continue the active publication task; do not stop for Wayback or request the authorization again.

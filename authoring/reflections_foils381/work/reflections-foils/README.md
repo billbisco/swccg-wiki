@@ -1,22 +1,22 @@
 # Story381 — publication with preservation queued
 
-The314 regular foil slots reconcile as114 Reflections I,100 II and100 III. Seventeen existing articles are reused (sixteen at the initial census, plus Don't Get Cocky discovered afterwards). 103 new articles are live; 103 have completed publication checks, including 33 accepted with preservation queued. 0 live new articles are still being checked. 194 new articles remain drafted. No physical faces remain unread; all298 initial-gap original photographs were checked independently and hashed.
+The314 regular foil slots reconcile as114 Reflections I,100 II and100 III. Seventeen existing articles are reused (sixteen at the initial census, plus Don't Get Cocky discovered afterwards). 152 new articles are live; 152 have completed publication checks, including 82 accepted with preservation queued. 0 live new articles are still being checked. 145 new articles remain drafted. No physical faces remain unread; all298 initial-gap original photographs were checked independently and hashed.
 
 | Product | New publication complete | New live/checks underway | New drafts | Existing reused |
 |---|---:|---:|---:|---:|
-| Reflections | 103 | 0 | 10 | 1 |
-| Reflections II: Expanding the Galaxy | 0 | 0 | 94 | 6 |
+| Reflections | 113 | 0 | 0 | 1 |
+| Reflections II: Expanding the Galaxy | 39 | 0 | 55 | 6 |
 | Reflections III | 0 | 0 | 90 | 10 |
 
 ## Authorization and checks
 
 On14 November2026 Bill explicitly instructed us not to let Wayback block publication, to queue preservation for later and publish the remaining217 drafts/finish the ten incomplete cards. This supersedes the prior archive gate for this story. The standard linter is unchanged; a task-scoped wrapper records ARCHIVE findings as deferred while rejecting every other finding. Exact original image hashes, supported reviews, guarded current revisions, source conservation, direct checklist/family links, public current revision/Cite and representative desktop/mobile checks remain required.
 
-All217 original drafts passed physical field/style/template checks;12 Reflections III AI images matched their alternate-art references. Existing family templates and independent Conquest/Red5 navigation changes are retained. Current live-source backup includes 924 pages, listed in published-pages.md. No article deletion is required.
+All217 original drafts passed physical field/style/template checks;12 Reflections III AI images matched their alternate-art references. Existing family templates and independent Conquest/Red5 navigation changes are retained. Current live-source backup includes 1222 pages, listed in published-pages.md. No article deletion is required.
 
 ## Preservation follow-up
 
-Task412 retains the separate archival work: 736 distinct source/citation/image queue entries, including 34 exact wiki-image versions recorded so far. Queue entries are not capture receipts. Existing verified captures remain usable; no failed/unchecked replay is labeled verified. Live forum/www.starwarsccg.org URLs are routed to staged snapshots, not submitted directly. No new Save Page Now requests are made by the publication pipeline.
+Task412 retains the separate archival work: 785 distinct source/citation/image queue entries, including 83 exact wiki-image versions recorded so far. Queue entries are not capture receipts. Existing verified captures remain usable; no failed/unchecked replay is labeled verified. Live forum/www.starwarsccg.org URLs are routed to staged snapshots, not submitted directly. No new Save Page Now requests are made by the publication pipeline.
 
 The first70 new cards completed strict preservation before the exception. Subsequent publication markers explicitly say archive_deferred:true. Original photographs are backed up unchanged. The exact outstanding public image timestamps/SHA1/SHA256 and source URLs are in preservation-queue.json, also carried into source ops/wayback/queue.txt where supported.
 

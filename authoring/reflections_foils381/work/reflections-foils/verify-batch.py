@@ -6,7 +6,7 @@ from urllib.parse import quote,unquote
 import requests
 from bs4 import BeautifulSoup
 sys.path.insert(0,'work/japanese-infobox287/vendor');import mwparserfromhell as mw
-sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
+sys.path.insert(0,'work/wiki-tools');from publication_policy import lint,standard_lint
 root=Path(__file__).parent;stage=sys.argv[1];expected={}
 for kind in ['new','family-final','shared-nav','set','file-preservation','correction']:
     p=root/(stage+'-'+kind+'-packet.json')
@@ -39,7 +39,8 @@ for title,p in heads.items():
     rev=p['revisions'][0];text=rev['slots']['main']['content'];flags=lint(text,title)[0]
     exact=text.rstrip()==expected[title].rstrip() if title in expected else hashlib.sha256(text.encode()).hexdigest()==receipts[title]['sha256']
     reviewed=p.get('flagged',{}).get('stable_revid')==rev['revid'] if p['ns']%2==0 else None
-    row=dict(title=title,revid=rev['revid'],exact=exact,lint=flags,reviewed=reviewed);report.append(row);assert exact and not flags and reviewed is not False,row
+    deferred=[flag for flag in standard_lint(text,title)[0] if flag.startswith('ARCHIVE')]
+    row=dict(title=title,revid=rev['revid'],exact=exact,lint=flags,deferred_archive_flags=deferred,reviewed=reviewed);report.append(row);assert exact and not flags and reviewed is not False,row
 for f in files:assert heads[f['title']]['imageinfo'][0]['sha1']==f['sha1'],f['title']
 families=json.loads((root/(stage+'-families.json')).read_bytes());readings=json.loads((root/(stage+'-readings.json')).read_bytes());baseline=json.loads((root/(stage+'-family-heads.json')).read_bytes())
 archives=json.loads((root/(stage+'-citation-final.json')).read_bytes());corrections=json.loads((root/(stage+'-citation-corrections.json')).read_bytes())
@@ -70,7 +71,7 @@ for r in readings:
             if current.has(k):assert str(current.get(k).value).count('[['+r['article']+'|')==1,(sibling,k)
         conservation.append(dict(title=sibling,non_navigation_content_conserved=True))
     nav.append(dict(article=r['article'],family_members=len(families[r['title']]),shared_navigator=shared,no_invented_playable_id=True))
-print(len(heads),'exact sources; lint 0, reviewed; original image hashes match',flush=True)
+print(len(heads),'exact sources; non-archive lint 0, reviewed; original image hashes match; archive findings retained separately',flush=True)
 def public(title):
     url='https://wiki.swccg.com/wiki/'+quote(title.replace(' ','_'),safe='');response=requests.get(url,timeout=60);response.raise_for_status();html=response.text;soup=BeautifulSoup(html,'html.parser');body=soup.select_one('#mw-content-text');assert body,title
     rev=heads[title]['revisions'][0]['revid'];m=re.search(r'"wgRevisionId":(\d+)',html);initial=int(m[1]) if m else None

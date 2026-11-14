@@ -90,6 +90,7 @@ else:
                     if item.get('worker_url') and item['worker_url'] not in queue:queue.append(item['worker_url'])
             files['ops/wayback/done.json']=(json.dumps(done,ensure_ascii=False,indent=2,sort_keys=True)+'\n').encode()
             files['ops/wayback/queue.txt']=('\n'.join(queue).rstrip()+'\n').encode()
+print(mode,len(files),'scoped paths prepared',flush=True)
 git('read-tree',base);updates=[]
 # Most large evidence blobs already exist after the previous checkpoint. Check
 # all object identities together; write only new blobs, keeping updates scoped.

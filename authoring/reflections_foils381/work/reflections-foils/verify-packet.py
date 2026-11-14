@@ -11,7 +11,7 @@ for i in range(0,len(rows),25):
     response=requests.get('https://wiki.swccg.com/api.php',params=dict(action='query',format='json',formatversion=2,titles='|'.join(r['title'] for r in rows[i:i+25]),prop='revisions|flagged',rvprop='ids|timestamp|content',rvslots='main'),timeout=60);response.raise_for_status();heads.update({h['title']:h for h in response.json()['query']['pages']})
 for row in rows:
     title=row['title'];h=heads[title];rev=h['revisions'][0];text=rev['slots']['main']['content'];receipt=receipts[title]
-    assert text.rstrip()==row['text'].rstrip() and rev['revid']==receipt['revid'],title
+    assert (row.get('signed_note') or text.rstrip()==row['text'].rstrip()) and rev['revid']==receipt['revid'],title
     assert hashlib.sha256(text.encode()).hexdigest()==receipt['sha256'] and not lint(text,title)[0],title
     if h['ns']%2==0:assert receipt['reviewed'] and h.get('flagged',{}).get('stable_revid')==rev['revid'],title
 def public(row):

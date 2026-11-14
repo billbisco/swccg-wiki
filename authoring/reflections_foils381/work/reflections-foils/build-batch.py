@@ -4,7 +4,7 @@ sys.path.insert(0,'work/japanese-infobox287/vendor');import mwparserfromhell as 
 sys.path.insert(0,'work/wiki-tools');from publication_policy import lint
 root=Path(__file__).parent;stage=sys.argv[1]
 from source_registry import provenance
-from navigation import new_navigation
+from navigation import new_navigation,canonical
 from publication_identity import publication_id
 readings=json.loads((root/(stage+'-readings.json')).read_bytes());files=json.loads((root/(stage+'-files-payload.json')).read_bytes())
 heads=json.loads((root/(stage+'-family-heads.json')).read_bytes());families=json.loads((root/(stage+'-families.json')).read_bytes())
@@ -51,7 +51,9 @@ for r,f in zip(readings,files):
     if r['type']=='Character':fields.setdefault('landspeed','1')
     fields['extra_info']='<tr><th>Original expansion</th><td>'+expansion_link(r['original_set'])+'</td></tr><tr><th>Publication ID</th><td><code>'+pid+'</code></td></tr>'
     if r.get('printed_extra_stats'):fields['extra_info']=''.join('<tr><th>'+k+'</th><td>'+v+'</td></tr>' for k,v in r['printed_extra_stats'].items())+fields['extra_info']
-    fields['version_label']=product_label+' foil';fields['set_band']='Decipher';fields['navigation']='[['+product+']] · [['+r['title']+'|Earlier non-foil printing]]'
+    root_title=canonical(r['title'],heads)
+    earlier_label='Card family' if root_title!=r['title'] else 'Earlier non-foil printing'
+    fields['version_label']=product_label+' foil';fields['set_band']='Decipher';fields['navigation']='[['+product+']] · [['+root_title+'|'+earlier_label+']]'
     fields['lead']="'''"+r['printed_title']+"''' is a [["+r['side']+']] [['+r['type']+']] released as a '+{'VR':'very-rare','SR':'super-rare','UR':'ultra-rare'}[r['rarity']]+' foil in [['+product+']] in '+release+'.<ref name="checklist">'+check+'</ref><ref name="encyc">'+encyc+'</ref> It is a foil printing of the '+expansion_link(r['original_set'])+' card.'+face
     if r['lore'] is not None:fields['lore']=r['lore']+'<ref name="foil-face" />'
     game=r['game_text']
