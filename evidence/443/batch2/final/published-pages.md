@@ -1,0 +1,57 @@
+# Story 443: Original Virtual Set1 cohort delivery
+
+All changed pages, independently checked against the exact saved revisions:
+
+- [File:Holotable-OVS1-BoShek-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-BoShek-v17.gif) — revision 307286
+- [File:OVS1-01-BoShek-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-01-BoShek-remaster.webp) — revision 307287
+- [File:VS1O-01-Bo Shek.png](https://wiki.swccg.com/wiki/File:VS1O-01-Bo_Shek.png) — revision 307288
+- [BoShek (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/BoShek_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307289
+- [SWCCG Wiki:Samples/Original Virtual BoShek card images](https://wiki.swccg.com/wiki/SWCCG_Wiki:Samples/Original_Virtual_BoShek_card_images) — revision 307290
+- [File:Holotable-OVS1-Fusion-Generator-Supply-Tanks-Light-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Fusion-Generator-Supply-Tanks-Light-v17.gif) — revision 307278
+- [File:OVS1-02-Fusion Generator Supply Tanks-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-02-Fusion_Generator_Supply_Tanks-remaster.webp) — revision 307291
+- [File:VS1O-02-Fusion Generator Supply Tanks.png](https://wiki.swccg.com/wiki/File:VS1O-02-Fusion_Generator_Supply_Tanks.png) — revision 307292
+- [Fusion Generator Supply Tanks (V) (Light) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Fusion_Generator_Supply_Tanks_(V)_(Light)_(Virtual_Set_1)_(Errata_2)) — revision 307293
+- [File:Holotable-OVS1-Gold-1-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Gold-1-v17.gif) — revision 307279
+- [File:OVS1-03-Gold 1-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-03-Gold_1-remaster.webp) — revision 307294
+- [File:VS1O-03-Gold 1.png](https://wiki.swccg.com/wiki/File:VS1O-03-Gold_1.png) — revision 307295
+- [Gold 1 (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Gold_1_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307296
+- [File:Holotable-OVS1-Hans-Heavy-Blaster-Pistol-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Hans-Heavy-Blaster-Pistol-v17.gif) — revision 307280
+- [File:OVS1-04-Han s Heavy Blaster Pistol-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-04-Han_s_Heavy_Blaster_Pistol-remaster.webp) — revision 307297
+- [File:VS1O-04-Hans Heavy Blaster Pistol.png](https://wiki.swccg.com/wiki/File:VS1O-04-Hans_Heavy_Blaster_Pistol.png) — revision 307298
+- [Han's Heavy Blaster Pistol (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Han's_Heavy_Blaster_Pistol_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307299
+- [File:Holotable-OVS1-Luke-Skywalker-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Luke-Skywalker-v17.gif) — revision 307300
+- [File:OVS1-05-Luke Skywalker-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-05-Luke_Skywalker-remaster.webp) — revision 307301
+- [File:VS1O-05-Luke Skywalker.png](https://wiki.swccg.com/wiki/File:VS1O-05-Luke_Skywalker.png) — revision 307302
+- [Luke Skywalker (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Luke_Skywalker_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307303
+- [File:Holotable-OVS1-Saitorr-Kal-Fas-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Saitorr-Kal-Fas-v17.gif) — revision 307281
+- [File:OVS1-06-Sai torr Kal Fas-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-06-Sai_torr_Kal_Fas-remaster.webp) — revision 307304
+- [File:VS1O-06-Saitorr Kal Fas.png](https://wiki.swccg.com/wiki/File:VS1O-06-Saitorr_Kal_Fas.png) — revision 307305
+- [Sai'torr Kal Fas (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Sai'torr_Kal_Fas_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307306
+- [File:Holotable-OVS1-Assault-Rifle-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Assault-Rifle-v17.gif) — revision 307282
+- [File:OVS1-07-Assault Rifle-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-07-Assault_Rifle-remaster.webp) — revision 307307
+- [File:VS1O-07-Assault Rifle.png](https://wiki.swccg.com/wiki/File:VS1O-07-Assault_Rifle.png) — revision 307308
+- [Assault Rifle (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Assault_Rifle_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307309
+- [File:Holotable-OVS1-Black-2-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Black-2-v17.gif) — revision 307283
+- [File:OVS1-08-Black 2-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-08-Black_2-remaster.webp) — revision 307310
+- [File:VS1O-08-Black 2.png](https://wiki.swccg.com/wiki/File:VS1O-08-Black_2.png) — revision 307311
+- [Black 2 (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Black_2_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307312
+- [File:Holotable-OVS1-Blaster-Rack-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Blaster-Rack-v17.gif) — revision 307313
+- [File:OVS1-09-Blaster Rack-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-09-Blaster_Rack-remaster.webp) — revision 307314
+- [File:VS1O-09-Blaster Rack.png](https://wiki.swccg.com/wiki/File:VS1O-09-Blaster_Rack.png) — revision 307315
+- [Blaster Rack (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Blaster_Rack_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307316
+- [SWCCG Wiki:Samples/Original Virtual Blaster Rack card images](https://wiki.swccg.com/wiki/SWCCG_Wiki:Samples/Original_Virtual_Blaster_Rack_card_images) — revision 307317
+- [File:Holotable-OVS1-Darth-Vader-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Darth-Vader-v17.gif) — revision 307318
+- [File:OVS1-10-Darth Vader-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-10-Darth_Vader-remaster.webp) — revision 307319
+- [File:VS1O-10-Darth Vader.png](https://wiki.swccg.com/wiki/File:VS1O-10-Darth_Vader.png) — revision 307320
+- [Darth Vader (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Darth_Vader_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307321
+- [SWCCG Wiki:Samples/Original Virtual Darth Vader image viewer](https://wiki.swccg.com/wiki/SWCCG_Wiki:Samples/Original_Virtual_Darth_Vader_image_viewer) — revision 307322
+- [File:Holotable-OVS1-Fusion-Generator-Supply-Tanks-Dark-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Fusion-Generator-Supply-Tanks-Dark-v17.gif) — revision 307284
+- [File:OVS1-11-Fusion Generator Supply Tanks-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-11-Fusion_Generator_Supply_Tanks-remaster.webp) — revision 307323
+- [File:VS1O-11-Fusion Generator Supply Tanks.png](https://wiki.swccg.com/wiki/File:VS1O-11-Fusion_Generator_Supply_Tanks.png) — revision 307324
+- [Fusion Generator Supply Tanks (V) (Dark) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Fusion_Generator_Supply_Tanks_(V)_(Dark)_(Virtual_Set_1)_(Errata_2)) — revision 307325
+- [File:Holotable-OVS1-Prophetess-v17.gif](https://wiki.swccg.com/wiki/File:Holotable-OVS1-Prophetess-v17.gif) — revision 307285
+- [File:OVS1-12-Prophetess-remaster.webp](https://wiki.swccg.com/wiki/File:OVS1-12-Prophetess-remaster.webp) — revision 307326
+- [File:VS1O-12-Prophetess.png](https://wiki.swccg.com/wiki/File:VS1O-12-Prophetess.png) — revision 307327
+- [Prophetess (V) (Virtual Set 1) (Errata 2)](https://wiki.swccg.com/wiki/Prophetess_(V)_(Virtual_Set_1)_(Errata_2)) — revision 307328
+- [SWCCG Wiki:Samples/Original Virtual card images](https://wiki.swccg.com/wiki/SWCCG_Wiki:Samples/Original_Virtual_card_images) — revision 307329
+- [SWCCG Wiki talk:Samples/Original Virtual card images](https://wiki.swccg.com/wiki/SWCCG_Wiki_talk:Samples/Original_Virtual_card_images) — revision 307330
