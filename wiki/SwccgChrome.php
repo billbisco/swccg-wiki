@@ -18,6 +18,18 @@ class SwccgChrome {
 		// Foil photograph framing and intrinsic inline-symbol sizes (work#436).
 		$out->addInlineStyle( '.mw-parser-output table.card-thumbs td:not(:first-child) img{width:auto;height:auto;max-width:none;vertical-align:middle;} .mw-parser-output .card-photo-source img{width:100%!important;max-width:none!important;height:auto;display:block;} .mw-parser-output .card-photo-source a,.mw-parser-output .card-photo-source>span{display:block;width:100%;}' );
 		SwccgCardImages::addPilot( $out );
+		// Bounded review pilot: no resources or behavior on ordinary card pages.
+		$title = $out->getTitle();
+		if ( $title && in_array( $title->getPrefixedText(), [
+			'SWCCG Wiki:Samples/Original Virtual Darth Vader image viewer',
+			'SWCCG Wiki:Samples/Original Virtual Luke Skywalker image viewer',
+		], true ) ) {
+			$assets = '/swccg-chrome/';
+			if ( is_readable( $assets . 'vader-image-viewer.css' ) && is_readable( $assets . 'vader-image-viewer.js' ) ) {
+				$out->addInlineStyle( file_get_contents( $assets . 'vader-image-viewer.css' ) );
+				$out->addInlineScript( file_get_contents( $assets . 'vader-image-viewer.js' ) );
+			}
+		}
 		try {
 			self::addOpenGraph( $out );
 		} catch ( Throwable $e ) {
