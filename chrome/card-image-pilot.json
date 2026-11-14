@@ -1,0 +1,76 @@
+{
+  "pages": {
+    "SWCCG Wiki:Samples/Original Virtual card images": true,
+    "SWCCG Wiki:Samples/Original Virtual Darth Vader image viewer": true,
+    "SWCCG Wiki:Samples/Original Virtual BoShek card images": true,
+    "SWCCG Wiki:Samples/Original Virtual Blaster Rack card images": true
+  },
+  "cards": {
+    "vader": {
+      "label": "Darth Vader",
+      "state": "1101_10:PC-E2",
+      "language": "en",
+      "slip": "VS1O-10-Darth_Vader.png",
+      "renditions": [
+        {
+          "kind": "original",
+          "state": "1101_10:PC-E2",
+          "language": "en",
+          "file": "Holotable-OVS1-Darth-Vader-v17.gif",
+          "sha256": "c31b05390fbcf6626aa36096c7b07a9914c1ce7fc406df687ea0710981fe0043"
+        },
+        {
+          "kind": "remastered",
+          "state": "1101_10:PC-E2",
+          "language": "en",
+          "file": "OVS1-10-Darth_Vader-remaster.webp",
+          "sha256": "9ff20ead00756bbd816575ac6c01fa3e2b4fb29b1892f6c4bca700ca4e887e82"
+        }
+      ]
+    },
+    "boshek": {
+      "label": "BoShek",
+      "state": "1101_1:PC-E2",
+      "language": "en",
+      "slip": "VS1O-01-Bo_Shek.png",
+      "renditions": [
+        {
+          "kind": "original",
+          "state": "1101_1:PC-E2",
+          "language": "en",
+          "file": "Holotable-OVS1-BoShek-v17.gif",
+          "sha256": "10ebc338992e718dfbc801678b4162d694b5d46b9552a45aa7115326116d4a10"
+        },
+        {
+          "kind": "remastered",
+          "state": "1101_1:PC-E2",
+          "language": "en",
+          "file": "OVS1-01-BoShek-remaster.webp",
+          "sha256": "e3cc3f78d560cfd7c785d965be7455ffeda5228f4a632ee659dbbb5478c1ad23"
+        }
+      ]
+    },
+    "blaster-rack": {
+      "label": "Blaster Rack",
+      "state": "1101_9:PC-E2",
+      "language": "en",
+      "slip": "VS1O-09-Blaster_Rack.png",
+      "renditions": [
+        {
+          "kind": "original",
+          "state": "1101_9:PC-E2",
+          "language": "en",
+          "file": "Holotable-OVS1-Blaster-Rack-v17.gif",
+          "sha256": "ba326023436d5c7121e96406fd1d21eaee3c53f3ebad0940a7109c8816dd5bf0"
+        },
+        {
+          "kind": "remastered",
+          "state": "1101_9:PC-E2",
+          "language": "en",
+          "file": "OVS1-09-Blaster_Rack-remaster.webp",
+          "sha256": "aaf3cc6625e0aba1f05f0b3d52b8b920919b9eab60e4b65f9bf2fcd5422d44fa"
+        }
+      ]
+    }
+  }
+}
