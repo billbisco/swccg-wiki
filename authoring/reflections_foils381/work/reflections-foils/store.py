@@ -55,6 +55,15 @@ else:
                 if preserve_file.exists():
                     r=json.loads(preserve_file.read_bytes())
                     if r.get('verified'):captures.append(r)
+                    elif r.get('url'):
+                        if r['url'] not in queue:queue.append(r['url'])
+                        if done.get(r['url'],{}).get('status')!='verified':done[r['url']]=dict(status='retry',last=now,note='Story381 source snapshot capture pending: '+r.get('error','not captured'),staging_path=r.get('staging_path'))
+            for gallery_file in root.glob('batch*-image-gallery-results.json'):
+                results=json.loads(gallery_file.read_bytes())
+                if isinstance(results,dict):results=[results]
+                for r in results:
+                    if r.get('kind')=='gallery' and r.get('url') and not r.get('verified'):
+                        if r['url'] not in queue:queue.append(r['url'])
             for capture_file in [root/'first-image-captures.jsonl',*root.glob('batch*-image-captures.jsonl')]:
                 if not capture_file.exists():continue
                 latest={r['url']:r for r in map(json.loads,capture_file.read_text().splitlines())}

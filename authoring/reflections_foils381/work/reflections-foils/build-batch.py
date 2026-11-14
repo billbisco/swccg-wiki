@@ -36,9 +36,9 @@ for r,f in zip(readings,files):
     fields.update(set=product,language='en',language_display='English',border_finish='Foil',release=release,publisher='[[Decipher]]',era='[[Decipher era]]',rarity=r['rarity'],rarity_link='Rarity',uniqueness=r['uniqueness'])
     if r['set_icon'] is None:fields['set_icon']='None ([[Premiere]])'
     else:
-        icon={'A New Hope':'A-New-Hope','Cloud City':'Cloud-City',"Jabba's Palace":'Jabbas-Palace','Special Edition':'Special-Edition'}.get(r['set_icon'],r['set_icon'])
+        icon={'A New Hope':'A-New-Hope','Cloud City':'Cloud-City',"Jabba's Palace":'Jabbas-Palace','Special Edition':'Special-Edition','Death Star II':'Death-Star-II'}.get(r['set_icon'],r['set_icon'])
         fields['set_icon']='[[File:Icon-set-'+icon+'.png|20px|link='+r['original_set']+']] [['+r['original_set']+']]'
-    for k in ['destiny','power','ability','armor','maneuver','hyperspeed','landspeed','deploy','forfeit','printed_label']:
+    for k in ['destiny','power','ability','armor','maneuver','hyperspeed','landspeed','deploy','forfeit','printed_label','parsec','light_icons','dark_icons']:
         if k in r:fields[k]=r[k]
     fields['icons']=' '.join('[['+x+']]' for x in r['icons'])
     if r['type']=='Character':fields['landspeed']='1'

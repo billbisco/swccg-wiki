@@ -19,6 +19,22 @@ for stage in stages:
 fields=['product','checklist_number','side','rarity','label','language','alternate_image','status','existing_article','existing_revid','proposed_article','evidence_status']
 with (root/'inventory.csv').open('w',encoding='utf8',newline='') as f:
     w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(manifest)
+additional=root/'additional-existing-foils.json'
+if additional.exists():
+    for found in json.loads(additional.read_bytes()):
+        row=next(r for r in manifest if r['proposed_article']==found['article'])
+        if row['status']=='missing':row.update(status='existing_pending_integration_audit',existing_article=found['article'],existing_revid=found['revid'],evidence_status='Discovered after initial census; reuse existing article, independently read foil, full integration audit pending')
+    (root/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
+    with (root/'inventory.csv').open('w',encoding='utf8',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(manifest)
+for packet in root.glob('batch*-new-packet.json'):
+    for draft in json.loads(packet.read_bytes()):
+        row=next((r for r in manifest if r['proposed_article']==draft['title']),None)
+        if row and row['status'] in ['missing','draft_prepared_awaiting_preservation']:
+            row.update(status='draft_prepared_awaiting_preservation',evidence_status='Independent physical foil reading and lint-clean shared Card draft; not published, original-image preservation and family citation completion pending')
+(root/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf8')
+with (root/'inventory.csv').open('w',encoding='utf8',newline='') as f:
+    w=csv.DictWriter(f,fieldnames=fields,extrasaction='ignore');w.writeheader();w.writerows(manifest)
 counts=collections.Counter(r['status'] for r in manifest);per_product={p:dict(collections.Counter(r['status'] for r in manifest if r['product']==p)) for p in dict.fromkeys(r['product'] for r in manifest)}
 report=dict(total=len(manifest),initially_missing=298,remaining_to_complete=298-len(completed),counts=dict(counts),per_product=per_product,verified_new_articles=completed,published_pending_batch_verification=pending)
 (root/'completion-progress.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8');print(json.dumps(report['counts']))

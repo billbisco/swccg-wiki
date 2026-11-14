@@ -1,23 +1,27 @@
 {
   "total": 314,
   "initially_missing": 298,
-  "remaining_to_complete": 238,
+  "remaining_to_complete": 228,
   "counts": {
     "existing": 16,
-    "created": 60,
-    "missing": 218,
-    "published_pending_batch_verification": 20
+    "created": 70,
+    "draft_prepared_awaiting_preservation": 52,
+    "published_pending_batch_verification": 10,
+    "existing_pending_integration_audit": 1,
+    "missing": 165
   },
   "per_product": {
     "Reflections": {
       "existing": 1,
-      "created": 60,
-      "missing": 33,
-      "published_pending_batch_verification": 20
+      "created": 70,
+      "draft_prepared_awaiting_preservation": 33,
+      "published_pending_batch_verification": 10
     },
     "Reflections II: Expanding the Galaxy": {
-      "missing": 95,
-      "existing": 5
+      "draft_prepared_awaiting_preservation": 19,
+      "existing": 5,
+      "existing_pending_integration_audit": 1,
+      "missing": 75
     },
     "Reflections III": {
       "missing": 90,
@@ -84,9 +88,7 @@
     "Death Squadron Star Destroyer (Reflections Foil)",
     "IG-2000 (Reflections Foil)",
     "Mist Hunter (Reflections Foil)",
-    "Punishing One (Reflections Foil)"
-  ],
-  "published_pending_batch_verification": [
+    "Punishing One (Reflections Foil)",
     "Red 2 (Reflections Foil)",
     "Red 5 (Reflections Foil)",
     "Redemption (Reflections Foil)",
@@ -96,7 +98,9 @@
     "Obsidian 7 (Reflections Foil)",
     "Obsidian 8 (Reflections Foil)",
     "Stalker (Reflections Foil)",
-    "Tyrant (Reflections Foil)",
+    "Tyrant (Reflections Foil)"
+  ],
+  "published_pending_batch_verification": [
     "DS-61-3 (Reflections Foil)",
     "IG-88 (Reflections Foil)",
     "IT-O (Eyetee-Oh) (Reflections Foil)",
