@@ -10,7 +10,7 @@
 .swccg-card-image-choices button[aria-pressed="true"] { background:#eaf3ff; border-color:#36c; font-weight:bold; }
 .swccg-card-image-choices button:focus-visible,.swccg-card-image-settings :focus-visible { outline:3px solid #36c; outline-offset:2px; }
 .swccg-card-images [hidden] { display:none!important; }
-.swccg-card-image-settings { display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin:0 0 1em; padding:8px; border:1px solid #a2a9b1; }
+.swccg-card-image-settings { display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin:1em 0; }
 .swccg-card-image-settings select,.swccg-card-image-settings button { font:inherit; min-height:32px; }
 .swccg-card-image-status { font-size:90%; }
 @media(max-width:520px) {

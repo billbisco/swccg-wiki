@@ -80,8 +80,9 @@
       catch (error) { return Promise.reject(error); }
     }
     function settings() {
+      if (!config.settingsPage) return;
       if (doc.querySelector('.swccg-card-image-settings')) return;
-      var content = doc.querySelector('.mw-parser-output');
+      var content = doc.querySelector('.swccg-card-image-preferences-target');
       if (!content) return;
       var box = node('form', 'swccg-card-image-settings');
       var label = node('label', '', words.setting);
@@ -100,7 +101,7 @@
           .catch(function () { select.value = saved; status.textContent = words.failed; })
           .finally(function () { save.disabled = false; });
       });
-      content.prepend(box);
+      content.append(box);
     }
     function attach(marker) {
       var card = config.cards[marker.dataset.cardImageKey];
