@@ -17,7 +17,8 @@ even after prepare/provider pauses. A finish failure preserves the primary
 pause/failure and checkpoints accepted receipts; `registry-repair.json` records
 only exception type, phase, owner, timestamp and Story 410. The same successful
 phase resolves its prior repair; failures retain an explicit next owner attempt. A previously successful run becomes
-failed if finish fails. Storage failures are reported by sanitized type while
+failed if finish fails; a provider pause during finish reports paused without
+further provider calls. Storage failures are reported by sanitized type while
 preserving the original pause/failure.
 
 Legacy pruning excludes every staged filesystem target returned by

@@ -1330,10 +1330,10 @@ def run(repo: Path, minutes: float) -> None:
                 control.reconcile(control.done, previously_verified)
                 primary_completed = outcome == "completed"
                 if finish_error is not None and primary_completed:
-                    outcome = "failed"
+                    outcome = "paused" if isinstance(finish_error, Paused) else "failed"
                 health = control.health(control.done, outcome)
                 print("WAYBACK-HEALTH", json.dumps(health, sort_keys=True), flush=True)
-                if finish_error is not None and primary_completed:
+                if finish_error is not None and primary_completed and not isinstance(finish_error, Paused):
                     raise finish_error
     except Busy:
         print("WAYBACK-BUSY existing owner active; no network request made", flush=True)

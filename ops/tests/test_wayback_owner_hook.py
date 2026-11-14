@@ -188,6 +188,17 @@ class OwnerHook(unittest.TestCase):
         self.assertEqual(health["outcome"], "paused")
         self.assertTrue((W.control_directory(self.repo) / "registry-repair.json").exists())
 
+    def test_finish_pause_on_completed_run_reports_pause_without_more_provider_work(self):
+        self.adapter.finish.side_effect = Paused("fixture provider circuit pause")
+        with patch.object(W, "submit_capture") as submit, patch.object(W, "confirm") as confirm:
+            W.run(self.repo, 1)
+        self.adapter.finish.assert_called_once()
+        submit.assert_not_called()
+        confirm.assert_not_called()
+        health = json.loads((W.control_directory(self.repo) / "health.json").read_text())
+        self.assertEqual(health["outcome"], "paused")
+        self.assertIsNone(W.ACTIVE_CONTROL)
+
     def test_finish_failure_on_completed_run_is_failure(self):
         self.adapter.finish.side_effect = ValueError("finish fixture")
         with self.assertRaises(ValueError): W.run(self.repo, 1)
