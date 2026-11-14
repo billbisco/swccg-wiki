@@ -282,6 +282,44 @@ class ProducerTests(unittest.TestCase):
         self.assertEqual(existing, json.loads(path.read_text()))
         self.assertEqual(1, len(list(producer.inbox.pending())))
 
+    def test_source_inventory_retry_remains_visible_during_backoff(self):
+        producer = self.producer(lambda query: {"query": {"pages": [{"title": "Test", "revisions": [revision()]}]}})
+        task = {"kind": "revision", "title": "Test", "revision_id": 42}
+        producer.task(producer.inbox.add(task), task)
+        marker = next(producer.source_inventory.glob("*.json"))
+        issue = producer.source_inventory / "consumer-issues" / marker.name
+        issue.parent.mkdir()
+        issue.write_text(json.dumps({"state": "source_inventory_retry", "retry_after": 99999999999}))
+        counts = producer.pending_source_inventory()
+        self.assertEqual(1, counts["source_inventory_failed_pending"])
+        self.assertEqual(1, counts["source_inventory_required"])
+        self.assertFalse(counts["source_inventory_count_partial"])
+
+    def test_held_sources_and_peer_review_progress_are_pending_not_failed(self):
+        producer = self.producer(lambda query: {"query": {"pages": [{"title": "Test", "revisions": [revision()]}]}})
+        task = {"kind": "revision", "title": "Test", "revision_id": 42}
+        producer.task(producer.inbox.add(task), task)
+        marker = next(producer.source_inventory.glob("*.json"))
+        row = json.loads(marker.read_text())
+        row.update(state="source_inventory_review_required", unresolved_source_count=3)
+        marker.write_text(json.dumps(row))
+        issue = producer.source_inventory / "consumer-issues" / marker.name
+        issue.parent.mkdir()
+        issue.write_text(json.dumps({"state": "old_retry_marker"}))
+        counts = producer.pending_source_inventory()
+        self.assertEqual(0, counts["source_inventory_failed_pending"])
+        self.assertEqual(1, counts["source_inventory_review_required"])
+        self.assertEqual(3, counts["source_inventory_pending_sources"])
+
+    def test_source_inventory_health_deadline_marks_counts_partial(self):
+        producer = self.producer(lambda query: {"query": {"pages": [{"title": "Test", "revisions": [revision()]}]}})
+        task = {"kind": "revision", "title": "Test", "revision_id": 42}
+        producer.task(producer.inbox.add(task), task)
+        with patch("backup_versions.time.monotonic", side_effect=[0, 3]):
+            counts = producer.pending_source_inventory()
+        self.assertTrue(counts["source_inventory_count_partial"])
+        self.assertEqual(0, counts["source_inventory_failed_pending"])
+
     def test_failed_readback_keeps_item_pending_and_spooled(self):
         producer = self.producer(lambda query: {"query": {"pages": [{"title": "Test", "revisions": [revision()]}]}})
         producer.readback = lambda subject, storage: (_ for _ in ()).throw(ValueError("remote mismatch"))
