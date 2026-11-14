@@ -1,0 +1,265 @@
+{
+  "phase": "play",
+  "native_url": "https://play.swccg.com/deckBuild.html",
+  "auth": "public unauthenticated page; real backend requests, no mocks",
+  "native_button_and_popup": "PASS",
+  "title_roundtrip": "Officer Evax to popup / Rebel Barrier to builder",
+  "format_set_side_product_preserved": [
+    [
+      "productSelect",
+      "card"
+    ],
+    [
+      "sideSelect",
+      ""
+    ],
+    [
+      "formatSelect",
+      "premiere"
+    ],
+    [
+      "setSelect",
+      "2"
+    ]
+  ],
+  "wrong_source_and_overlength_message_rejected": true,
+  "reset_to_anything_goes": "PASS via DOM click; pre-existing collection pane overlaps reset button at this viewport",
+  "requests": [
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg/deckBuild.html"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/deckBuild.html"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/dark-hive/jquery-ui-1.8.16.custom.css"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/gemp-001/deckBuild.css?v=20261006h"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/gemp-001/delivery.css?v=20261006h"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/jquery.contextMenu.css"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/jquery/styles/jquery.spinnercontrol.css"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/gemp-001/autoZoom.css"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/gemp-001/hallPages.css?v=20261019a"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/jquery/jquery-1.6.2.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/jquery/jquery-ui-1.8.16.custom.min.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/jquery/jquery.cookie.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/jquery/jquery.spinnercontrol.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/jquery/jquery.layout.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/jquery/jquery.touchSwipe.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/jquery/jQueryRotate.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/inheritance.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/common.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/logging.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/swccg-names.js?v=20261111-u15"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/playerMenu.js?v=20261112-invite"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/chat.js?v=20261112-invite"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/communication.js?v=20261112-221-222"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/deliveryService.js?v=20261006h"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/commonUi.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/cards/CardFilter.js?v=search449-fe269ffe9766"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/cards/CardGroup.js?v=20261006d"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/cards/Card.js?v=20261005f"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/cards/CardDisplay.js?v=20261005f"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/cards/CardInfoDialog.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/cards/CardImages.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/cards/PackImages.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/gameOptionsForm.js?v=20261103-135"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/hallUi.js?v=20261112-221-222"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/leagueResultsUi.js?v=20261111-nf"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/tournamentResultsUi.js?v=20261111-nf"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/statsUi.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/playerStatsUi.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/gameHistoryUi.js?v=20261111-pid"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/autoZoomHandler.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/deckDraftHistory.js?v=20261112-221"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/deckBuildingUi.js?v=20261112-221"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/gameUi.js?v=20261111-pid"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/gameAnimations.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/js/gemp-016/merchantUi.js"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection/default?participantId=null&filter=format%3Aanything_goes+sort%3Aname%2Cset%2CcardType+product%3Acard&start=0&count=12&_=1794696442112"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/dark-hive/images/ui-bg_highlight-soft_35_222222_1x100.png"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/dark-hive/images/ui-icons_cccccc_256x240.png"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/css/dark-hive/images/ui-bg_loop_25_000000_21x21.png"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection/default?participantId=null&filter=format%3Aanything_goes+sort%3Aname%2Cset%2CcardType+product%3Acard&start=0&count=12&_=1794696442136"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection?participantId=null&_=1794696442136"
+    },
+    {
+      "method": "GET",
+      "url": "https://swccg.com/cards/holo.jpg"
+    },
+    {
+      "method": "GET",
+      "url": "https://swccg.com/gemp/pixel.png"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection/default?participantId=null&filter=format%3Apremiere+sort%3Aname%2Cset%2CcardType+product%3Acard&start=0&count=12&_=1794696443616"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection/default?participantId=null&filter=format%3Apremiere+set%3A2+sort%3Aname%2Cset%2CcardType+product%3Acard&start=0&count=12&_=1794696443628"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection/default?participantId=null&filter=format%3Apremiere+set%3A2+sort%3Aname%2Cset%2CcardType+product%3Acard+name%3AOfficer+name%3AEvax&start=0&count=12&_=1794696443652"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection/default?participantId=null&filter=format%3Apremiere+set%3A2+sort%3Aname%2Cset%2CcardType+product%3Acard+name%3ARebel+name%3ABarrier&start=0&count=12&_=1794696445465"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection/default?participantId=null&filter=format%3Apremiere+sort%3Aname%2Cset%2CcardType+product%3Acard&start=0&count=12&_=1794696445966"
+    },
+    {
+      "method": "GET",
+      "url": "https://play.swccg.com/gemp-swccg-server/collection/default?participantId=null&filter=format%3Aanything_goes+sort%3Aname%2Cset%2CcardType+product%3Acard&start=0&count=12&_=1794696445998"
+    }
+  ]
+}
