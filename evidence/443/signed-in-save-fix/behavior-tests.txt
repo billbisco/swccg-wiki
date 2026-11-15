@@ -1,0 +1,31 @@
+
+> test:card-images
+> node --test tests/card-images.test.cjs
+
+✔ availability matrix excludes other state/card/language and duplicate assets (1.1372ms)
+✔ browser entry waits for asynchronous MediaWiki startup before reading config (69.3218ms)
+✔ buttons follow stage and publisher slip and precede Info; no duplicate initialization (13.9297ms)
+✔ signed-in browser entry waits past early mw.config until the base loader is ready (13.5959ms)
+✔ per-card choice changes only presentation, not text, slip or saved default (7.7657ms)
+✔ keyboard keys move focus and selection (8.0388ms)
+✔ explicit guest default affects future views, preserving current per-card choice (10.1235ms)
+✔ blocked guest storage and invalid values remain usable (15.612ms)
+✔ account overrides guest; account save never modifies guest storage (15.4707ms)
+✔ account read/write failures and invalid account values fail usefully (17.0623ms)
+✔ MediaWiki-style thenables without catch/finally save and re-enable the form (4.771ms)
+✔ image failure hides the pair and falls back, retaining preference (3.9684ms)
+✔ single rendition has no visible pair and unknown markers retain native fallback (7.4639ms)
+✔ interface localization is independent of English image language (4.0711ms)
+✔ phone viewport adjustment is limited to allowlisted pilot script activation (9.8822ms)
+✔ replacing selected card/language recomputes availability without duplicate controls (4.3735ms)
+✔ card pages never receive saved-default controls, even with an unrelated target (3.5715ms)
+✔ dedicated settings page contains one default form and no card selector (3.6991ms)
+✔ a settings page without its native target does not prepend a form to article content (4.3117ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1349.8701
