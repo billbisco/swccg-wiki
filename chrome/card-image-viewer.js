@@ -4,8 +4,8 @@
   var api = factory();
   if (typeof module === 'object' && module.exports) module.exports = api;
   // mw.config exists during startup before mediawiki.base installs loader.using.
-  // RLQ runs after the base module is ready, including for signed-in readers.
-  else (root.RLQ = root.RLQ || []).push(function () { api.start(root); });
+  // Plain RLQ callbacks also run early; dependency entries wait for the base module.
+  else (root.RLQ = root.RLQ || []).push([['mediawiki.base'], function () { api.start(root); }]);
 }(typeof window === 'undefined' ? globalThis : window, function () {
   'use strict';
   var OPTION = 'swccg-card-images';

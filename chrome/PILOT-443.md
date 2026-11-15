@@ -6,7 +6,7 @@ The existing Luke Skywalker review sample already had a deployed legacy hook whe
 
 Use `npm ci --ignore-scripts` then `npm run test:card-images` for the19 behavioral checks. PHP is syntax-checked against the deployed MediaWiki PHP runtime. Native API persistence and live browser geometry/cache checks follow controlled deployment.
 
-Browser entry always goes through MediaWiki's RLQ. During startup `mw.config` already exists before `mediawiki.base` supplies `mw.loader.using`; bypassing RLQ then silently loses signed-in preference initialization. A direct HTTP API test does not cover this timing. Include a real signed-in browser Save default/reload/card flow, with account restoration, as well as the partial-startup regression fixture.
+Browser entry always goes through MediaWiki's dependency-aware RLQ entry: `[['mediawiki.base'], callback]`. During startup `mw.config` already exists before `mediawiki.base` supplies `mw.loader.using`; plain RLQ callbacks also execute at that early stage. Both the early direct-start shortcut and plain-function RLQ can silently lose signed-in preference initialization. The installed startup/base implementations and regression fixture cover that distinction. A direct HTTP API test does not cover browser timing. Include a real signed-in Save default/reload/card flow and independent session, with account restoration.
 
 Account preference: swccg-card-images through core GetPreferences/UserGetDefaultOptions and API options. Guest preference: the same key in browser localStorage. Page config contains only public image mappings and localized labels; account options are fetched through authenticated private API requests. Explicit Save default affects future panel initialization; per-card buttons do not write preferences.
 

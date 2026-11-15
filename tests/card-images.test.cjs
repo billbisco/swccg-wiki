@@ -37,7 +37,7 @@ test('browser entry waits for asynchronous MediaWiki startup before reading conf
  w.eval(fs.readFileSync(require.resolve('../chrome/card-image-viewer.js'),'utf8'));
  assert.equal(w.RLQ.length,1);assert.equal(w.swccgCardImages,undefined);
  const cfg={wgUserName:null,swccgCardImagePilot:{cards:{example:card},messages}};w.mw={config:{get:k=>cfg[k]},hook:()=>({add(){}})};
- for(const ready of w.RLQ)ready();await w.swccgCardImages.initialize();assert.equal(w.document.querySelectorAll('.swccg-card-image-choices button').length,2);dom.window.close();
+ for(const ready of w.RLQ){assert.deepEqual(Array.from(ready[0]),['mediawiki.base']);ready[1]();}await w.swccgCardImages.initialize();assert.equal(w.document.querySelectorAll('.swccg-card-image-choices button').length,2);dom.window.close();
 });
 test('buttons follow stage and publisher slip and precede Info; no duplicate initialization',async()=>{
  const f=await fixture();const rail=f.doc.querySelector('.card-rail');const stage=rail.querySelector('.swccg-card-image-stage');const slip=[...rail.children].find(p=>p.querySelector('img[src="/images/slip.png"]'));const controls=rail.querySelector('.swccg-card-image-choices');
@@ -48,11 +48,13 @@ test('buttons follow stage and publisher slip and precede Info; no duplicate ini
 test('signed-in browser entry waits past early mw.config until the base loader is ready',async()=>{
  const dom=new JSDOM('<div class="mw-parser-output"><div class="swccg-card-image-preferences-target"></div></div>',{url:'https://wiki.swccg.com/wiki/Settings',runScripts:'outside-only'});const w=dom.window;let stored='remastered';
  const cfg={wgUserName:'TestBot',swccgCardImagePilot:{cards:{},messages,settingsPage:true}};
- w.mw={config:{get:k=>cfg[k]},loader:{}};
+ w.mw={config:{get:k=>cfg[k]},loader:{}};const pending=[];
+ // Match installed startup.js: plain callbacks execute immediately, dependency entries wait.
+ w.RLQ={push(entry){if(typeof entry==='function')entry();else pending.push(entry);}};
  w.eval(fs.readFileSync(require.resolve('../chrome/card-image-viewer.js'),'utf8'));
- assert.equal(w.swccgCardImages,undefined);assert.equal(w.RLQ.length,1);assert.equal(w.document.querySelectorAll('form').length,0);
+ assert.equal(w.swccgCardImages,undefined);assert.equal(pending.length,1);assert.deepEqual(Array.from(pending[0][0]),['mediawiki.base']);assert.equal(w.document.querySelectorAll('form').length,0);
  w.mw.loader.using=async()=>{};w.mw.Api=function(){this.get=async()=>({query:{userinfo:{options:{'swccg-card-images':stored}}}});this.postWithToken=async(t,p)=>{stored=p.change.split('=')[1];return{options:'success'};};};w.mw.hook=()=>({add(){}});
- for(const run of w.RLQ)run();await w.swccgCardImages.initialize();assert.equal(w.document.querySelector('select').value,'remastered');w.document.querySelector('select').value='original';w.document.querySelector('form').dispatchEvent(new w.Event('submit',{cancelable:true}));await new Promise(setImmediate);assert.equal(stored,'original');assert.equal(w.document.querySelector('[role="status"]').textContent,'Saved');dom.window.close();
+ for(const run of pending)run[1]();await w.swccgCardImages.initialize();assert.equal(w.document.querySelector('select').value,'remastered');w.document.querySelector('select').value='original';w.document.querySelector('form').dispatchEvent(new w.Event('submit',{cancelable:true}));await new Promise(setImmediate);assert.equal(stored,'original');assert.equal(w.document.querySelector('[role="status"]').textContent,'Saved');dom.window.close();
 });
 test('per-card choice changes only presentation, not text, slip or saved default',async()=>{
  const f=await fixture();const text=f.doc.querySelector('.game-text').textContent;const slip=f.doc.querySelector('img[src="/images/slip.png"]');button(f,'Remastered').click();assert.equal(selected(f),'/images/remaster.webp');assert.equal(button(f,'Remastered').getAttribute('aria-pressed'),'true');assert.equal(f.guestValue(),'original');assert.equal(f.doc.querySelector('.game-text').textContent,text);assert.equal(f.doc.querySelector('img[src="/images/slip.png"]'),slip);f.close();
