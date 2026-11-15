@@ -4,7 +4,9 @@ The initial three review pages and their hub remain allowlisted in card-image-pi
 
 The existing Luke Skywalker review sample already had a deployed legacy hook when this work began. Preserve that hook and its assets unchanged; it is not activated by the new pilot manifest. New markers and legacy Vader markers are distinct, so the old viewer cannot initialize the three updated panels. This is compatibility preservation, not another rollout example or ownership transfer.
 
-Use `npm ci --ignore-scripts` then `npm run test:card-images` for the18 behavioral checks. PHP is syntax-checked against the deployed MediaWiki PHP runtime. Native API persistence and live browser geometry/cache checks follow controlled deployment.
+Use `npm ci --ignore-scripts` then `npm run test:card-images` for the19 behavioral checks. PHP is syntax-checked against the deployed MediaWiki PHP runtime. Native API persistence and live browser geometry/cache checks follow controlled deployment.
+
+Browser entry always goes through MediaWiki's RLQ. During startup `mw.config` already exists before `mediawiki.base` supplies `mw.loader.using`; bypassing RLQ then silently loses signed-in preference initialization. A direct HTTP API test does not cover this timing. Include a real signed-in browser Save default/reload/card flow, with account restoration, as well as the partial-startup regression fixture.
 
 Account preference: swccg-card-images through core GetPreferences/UserGetDefaultOptions and API options. Guest preference: the same key in browser localStorage. Page config contains only public image mappings and localized labels; account options are fetched through authenticated private API requests. Explicit Save default affects future panel initialization; per-card buttons do not write preferences.
 
