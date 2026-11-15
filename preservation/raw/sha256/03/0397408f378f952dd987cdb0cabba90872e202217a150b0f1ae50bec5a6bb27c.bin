@@ -1,0 +1,37 @@
+Comparison of the physical Decipher scan and five Players Committee image versions of [[Captain Needa]]. Components, left to right, top to bottom:
+* [[:File:Dagobah-D-captainneeda-hires.webp|Physical Decipher scan]].
+* [[:File:Dagobah-D-Captain-Needa-PC-gallery-20071216200322.gif|PC gallery: captured 16 Dec 2007]].
+* [[:File:Dagobah-D-Captain-Needa-June-2017-partial.png|PC partial: June 2017 edition]].
+* [[:File:Dagobah-D-captainneeda-E-2018-07-08.gif|PC full: 8 July 2018 import]].
+* [[:File:Dagobah-D-Captain-Needa-PC-E2-2022-12-23.png|PC full: record 23 Dec 2022]].
+* [[:File:Dagobah-D-captainneeda.gif|PC full: record 19 Feb 2023]].
+
+The 2007 source is the [https://web.archive.org/web/20071216200322id_/http://www.swccgpc.com/cards/dagobah/ds/captainneeda.gif PC gallery capture]. The partial comes from [[:File:PC-Decipher-Errata-June-2017.pdf]], PDF page 2. Later full faces are recorded in the PC Holotable repository in July 2018, December 2022 and February 2023; those records are not established first publication dates. The physical scan retains its original [[Strangewayes|strangewayes]] credit and TIFF provenance on its File page.
+
+Pinned full-image sources:
+* [https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Dagobah-Dark/large/captainneeda.gif July 2018 repository import].
+* [https://raw.githubusercontent.com/swccgpc/holotable/8690453b331b89dd6111d91f82829fbce8818cad/Images-HT/starwars/Dagobah-Dark/hires/captainneeda.png December 2022 PNG].
+* [https://raw.githubusercontent.com/swccgpc/holotable/68f360e2267b93314bec3b27e3797d5b355171d8/Images-HT/starwars/Dagobah-Dark/hires/captainneeda.png February 2023 PNG].
+The final two panels use those PNGs; each has identical decoded RGBA pixels to its linked Wiki face, although the file encodings differ.
+
+Only proportional resizing and labelled placement on a white canvas were used; source text and marks remain unchanged. The partial is shown as published, without invented artwork or upper fields. Comparison SHA-256 <code style="overflow-wrap:anywhere; word-break:break-all;">8f4964004a722ef6a91c92f8b036610f841efab741ce7410ffa29f6803bf759a</code>.
+
+[[Category:Card images]]
+
+== Component provenance ==
+This is a Wiki comparison composite assembled by Memory Core ChatGPT; it is not a PC-published sheet. The compositor supplied the labels and arrangement, not the underlying card artwork.
+* Physical card panel: [https://wiki.swccg.com/images/a/ae/Dagobah-D-captainneeda-hires.webp exact Wiki WebP reused], [[:File:Dagobah-D-captainneeda-hires.webp|credited scan description]]. Upstream native identity: <code>Captain Needa.tif</code>, member <code>Dagobah/Dagobah Dark/Captain Needa.tif</code> in strangewayes’ credited HiRez collection; 9,341,480 bytes, SHA-256 <code style="overflow-wrap:anywhere;word-break:break-all;">f8bc6c1f50409df9fc6df23f78c684f9ef62b8e026e72884efb3be767f7b6085</code>. That identity has been verified against the retained complete TIFF. The actual input used for this panel remains the linked Wiki WebP, not the TIFF.
+* June 2017 panel: [[Media:PC-Decipher-Errata-June-2017.pdf|complete official source PDF]], [[:File:PC-Decipher-Errata-June-2017.pdf|document identity]], PDF page 2, Captain Needa panel; rectangle <code>(398,361,577,445)</code> points, rasterized at 3 pixels/point. The cover says “Official text as of June 1, 2017”; its edition date is not an established publication day.
+* December 2007 gallery and the three later Git image panels: direct immutable replay/full-commit image links in the source list above. Internal Git members are <code>Images-HT/starwars/Dagobah-Dark/large/captainneeda.gif</code> (2018) and <code>Images-HT/starwars/Dagobah-Dark/hires/captainneeda.png</code> (2022 and 2023). Each complete source is linked; no installer membership is asserted.
+All six panels use their complete image or documented published partial, proportionally resized on the labelled canvas. Complete published PC source files and the reused Wiki originals are linked above.
+
+== Composition recipe ==
+The canvas is 1,140 × 1,120 pixels, RGB, with a white background. Six cells are arranged in three columns and two rows, each 380 × 560 pixels. Labels use Arial at 17 pixels, in black. Image placement preserves proportions within a 367 × 515-pixel fit box using Pillow’s <code>Image.Resampling.LANCZOS</code> thumbnail operation, which does not enlarge smaller inputs. RGBA thumbnails are pasted through their own alpha mask; no underlying text or artwork is reconstructed.
+
+Coordinates are in canvas pixels, measured from the upper-left. In the component order listed above, label origins are <code style="overflow-wrap:anywhere;word-break:break-all;">(6,8), (386,8), (766,8), (6,568), (386,568), (766,568)</code>. Image origins and actual fitted dimensions are:
+* Physical Wiki WebP: <code>(6,38)</code>, 367 × 508 pixels.
+* December 2007 gallery GIF: <code>(386,38)</code>, 367 × 506 pixels.
+* June 2017 published partial: <code>(766,38)</code>, 367 × 172 pixels.
+* July 2018 full face: <code>(6,598)</code>, 348 × 487 pixels.
+* December 2022 full face: <code>(386,598)</code>, 367 × 512 pixels.
+* February 2023 full face: <code>(766,598)</code>, 367 × 512 pixels.
