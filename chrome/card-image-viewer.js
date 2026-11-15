@@ -3,7 +3,8 @@
   'use strict';
   var api = factory();
   if (typeof module === 'object' && module.exports) module.exports = api;
-  else if (root.mw && root.mw.config) api.start(root);
+  // mw.config exists during startup before mediawiki.base installs loader.using.
+  // RLQ runs after the base module is ready, including for signed-in readers.
   else (root.RLQ = root.RLQ || []).push(function () { api.start(root); });
 }(typeof window === 'undefined' ? globalThis : window, function () {
   'use strict';
