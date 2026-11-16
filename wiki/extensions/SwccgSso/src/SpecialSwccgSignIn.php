@@ -153,9 +153,14 @@ class SpecialSwccgSignIn extends SpecialPage {
 		$id = (int)$claims['sub'];
 		$user = $this->userFactory->newFromId( $id );
 		$user->load();
+		if ( self::faultNoRow( $id ) ) {
+			$user = $this->userFactory->newAnonymous(); // #516 test-only fault switch (off unless the file exists)
+		}
 		if ( !$user->isRegistered() || $user->getId() !== $id ) {
-			$this->log()->warning( 'no wiki row for membership {id}', [ 'id' => $id ] );
-			$this->getOutput()->addWikiMsg( 'swccgsso-noaccount', $id );
+			// #516: the sign-in service makes the missing wiki row when the wiki asks for a token.
+			// If there is still none, go back quietly to the page asked for, signed out.
+			$this->log()->warning( 'no wiki row for membership {id} after sign-in; returned signed out', [ 'id' => $id ] );
+			$this->getOutput()->redirect( $this->returnUrl( (string)$flow['returnto'] ) );
 			return;
 		}
 		if ( isset( $claims['preferred_username'] ) && $claims['preferred_username'] !== $user->getName() ) {
@@ -165,6 +170,9 @@ class SpecialSwccgSignIn extends SpecialPage {
 		$session = $this->getRequest()->getSession();
 		$session->set( 'swccgsso-sid-tail', Hooks::siteSessionTail( $this->getRequest() ) );
 		$session->set( 'swccgsso-id-token', (string)$tok['id_token'] );
+		if ( isset( $claims['sid'] ) && is_string( $claims['sid'] ) && $claims['sid'] !== '' ) {
+			$session->set( 'swccgsso-sid', $claims['sid'] ); // #507 back-channel match
+		}
 		$session->save();
 		$this->log()->info( 'membership {id} signed in to the wiki', [ 'id' => $id ] );
 		$this->getOutput()->redirect( $this->returnUrl( (string)$flow['returnto'] ) );
@@ -254,6 +262,19 @@ class SpecialSwccgSignIn extends SpecialPage {
 			$t = Title::newMainPage();
 		}
 		return $t->getFullURL();
+	}
+
+	/**
+	 * #516 test-only fault switch, off by default: membership ids listed one per line in
+	 * extensions/SwccgSso/.fault-no-row are treated as having no wiki row. Delete the file to turn it off.
+	 */
+	private static function faultNoRow( int $id ): bool {
+		$f = dirname( __DIR__ ) . '/.fault-no-row';
+		if ( !is_file( $f ) ) {
+			return false;
+		}
+		$ids = preg_split( '/\s+/', trim( (string)file_get_contents( $f ) ) );
+		return in_array( (string)$id, $ids, true );
 	}
 
 	/**

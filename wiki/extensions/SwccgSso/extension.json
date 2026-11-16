@@ -1,6 +1,6 @@
 {
 	"name": "SwccgSso",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": [
 		"SWCCG site team"
 	],
@@ -32,6 +32,20 @@
 			]
 		}
 	},
+	"RestRoutes": [
+		{
+			"path": "/swccgsso/v1/backchannel-logout",
+			"method": "POST",
+			"class": "MediaWiki\\Extension\\SwccgSso\\BackchannelLogoutHandler",
+			"services": [
+				"MainConfig",
+				"HttpRequestFactory",
+				"MainWANObjectCache",
+				"MainObjectStash",
+				"UserFactory"
+			]
+		}
+	],
 	"HookHandlers": {
 		"main": {
 			"class": "MediaWiki\\Extension\\SwccgSso\\Hooks"

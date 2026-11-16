@@ -7,6 +7,7 @@ use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -38,11 +39,22 @@ class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__Uni
 		if ( !is_string( $tail ) || $tail === '' ) {
 			return; // local wiki password, BotPassword or older session: not ours to end
 		}
-		if ( self::siteSessionTail( $request ) === $tail ) {
+		// #507: the sign-in service said (back-channel) that this site session ended
+		$sid = $session->get( 'swccgsso-sid' );
+		if ( is_string( $sid ) && $sid !== '' ) {
+			$stash = MediaWikiServices::getInstance()->getMainObjectStash();
+			if ( $stash->get( BackchannelLogoutHandler::sidKey( $stash, $sid ) ) !== false ) {
+				$why = 'back-channel';
+			}
+		}
+		// second line of defence: the site cookie changed or is gone
+		if ( !isset( $why ) && self::siteSessionTail( $request ) === $tail ) {
 			return;
 		}
-		LoggerFactory::getInstance( 'SwccgSso' )->info( 'site session ended: wiki sign-out of {id}', [ 'id' => $user->getId() ] );
+		LoggerFactory::getInstance( 'SwccgSso' )->info( 'site session ended ({why}): wiki sign-out of {id}',
+			[ 'why' => $why ?? 'cookie', 'id' => $user->getId() ] );
 		$session->remove( 'swccgsso-sid-tail' );
+		$session->remove( 'swccgsso-sid' );
 		$session->remove( 'swccgsso-id-token' );
 		$user->logout();
 		$output->redirect( $request->getFullRequestURL() );
