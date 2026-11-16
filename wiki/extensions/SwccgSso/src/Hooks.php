@@ -4,6 +4,8 @@ namespace MediaWiki\Extension\SwccgSso;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Hook\BeforeInitializeHook;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
+use MediaWiki\Cache\Hook\HTMLFileCache__useFileCacheHook;
+use HTMLFileCache;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\Html\Html;
@@ -15,7 +17,16 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\Hook\UserLogoutHook;
 
 class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__UniversalHook,
-	BeforeInitializeHook, UserLogoutHook, UserLogoutCompleteHook, BeforePageDisplayHook {
+	BeforeInitializeHook, UserLogoutHook, UserLogoutCompleteHook, BeforePageDisplayHook,
+	HTMLFileCache__useFileCacheHook {
+
+	/**
+	 * #510: anonymous page copies saved in the wiki's HTML file cache before this time lack the
+	 * tab-sync script tag. Such a copy is dropped (MediaWiki's own per-page invalidation, as after
+	 * an edit) the first time it would be served, so the page is rendered and cached again.
+	 */
+	private const FILE_CACHE_EPOCH = '20261116012130';
+
 
 	/** id_token of the session being logged out (captured before the session is reset). */
 	private static ?string $logoutIdToken = null;
@@ -141,10 +152,60 @@ class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__Uni
 	 * instead of core's API logout, which ends only the wiki session.
 	 */
 	public function onBeforePageDisplay( $out, $skin ): void {
-		if ( (string)$out->getConfig()->get( 'SwccgSsoIssuer' ) === '' || !$out->getUser()->isRegistered() ) {
+		if ( (string)$out->getConfig()->get( 'SwccgSsoIssuer' ) === '' ) {
+			return;
+		}
+		$out->addHeadItem( 'swccgsso-auth-sync', self::authSyncTag( $out ) );
+		if ( !$out->getUser()->isRegistered() ) {
 			return;
 		}
 		$out->addModuleStyles( 'ext.swccgSso.signout.styles' );
 		$out->addModules( 'ext.swccgSso.signout' );
+	}
+
+	/**
+	 * #510: every wiki page loads the site's shared tab-sync script (same origin, no inline JS),
+	 * so an open wiki tab notices a sign-out in another tab. data-state:
+	 *  - "in"  signed in through the site session: also checks /login/session/check when the tab
+	 *          comes back into view;
+	 *  - "out" anonymous: nothing to sign out of, so the page never reloads;
+	 *  - none  signed in with a wiki password (bots, staff): reacts to a sign-out elsewhere, no check.
+	 */
+	public static function authSyncTag( $out ): string {
+		$attrs = [
+			'src' => '/login/static/auth-sync.js',
+			'defer' => true,
+			'data-check' => '/login/session/check',
+			'data-cookie' => '__Host-swccg_out',
+		];
+		if ( !$out->getUser()->isRegistered() ) {
+			$attrs['data-state'] = 'out';
+		} elseif ( self::siteSessionTail( $out->getRequest() ) !== '' ) {
+			$attrs['data-state'] = 'in';
+		}
+		return Html::element( 'script', $attrs );
+	}
+
+	/** Drop a file-cached page saved before FILE_CACHE_EPOCH (see the constant). Never blocks caching. */
+	public function onHTMLFileCache__useFileCache( $context ) {
+		static $seen = [];
+		$title = $context->getTitle();
+		if ( !$title || !$title->canExist() ) {
+			return true;
+		}
+		$key = $title->getPrefixedDBkey();
+		if ( isset( $seen[$key] ) ) {
+			return true;
+		}
+		$seen[$key] = true;
+		$cache = new HTMLFileCache( $title, 'view' );
+		if ( !$cache->isCached() ) {
+			return true;
+		}
+		$ts = $cache->cacheTimestamp();
+		if ( $ts && $ts < self::FILE_CACHE_EPOCH ) {
+			$cache->clearCache();
+		}
+		return true;
 	}
 }
