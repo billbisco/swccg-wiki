@@ -14,6 +14,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use WANObjectCache;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 class SpecialSwccgSignIn extends SpecialPage {
 	private const SESSION_KEY = 'swccgsso-flow';
@@ -160,6 +161,15 @@ class SpecialSwccgSignIn extends SpecialPage {
 		$id = (int)$claims['sub'];
 		$user = $this->userFactory->newFromId( $id );
 		$user->load();
+		if ( !$user->isRegistered() ) {
+			// #516: the sign-in service may have just made the row; the shared user cache can still
+			// hold "no such user" from an earlier try, so read the database and drop the stale entry.
+			$user = $this->userFactory->newFromId( $id );
+			$user->load( IDBAccessObject::READ_LATEST );
+			if ( $user->isRegistered() ) {
+				$user->clearSharedCache( 'refresh' );
+			}
+		}
 		if ( self::faultNoRow( $id ) ) {
 			$user = $this->userFactory->newAnonymous(); // #516 test-only fault switch (off unless the file exists)
 		}
