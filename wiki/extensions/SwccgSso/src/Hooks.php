@@ -3,6 +3,7 @@ namespace MediaWiki\Extension\SwccgSso;
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Hook\BeforeInitializeHook;
+use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\Html\Html;
@@ -14,7 +15,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\Hook\UserLogoutHook;
 
 class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__UniversalHook,
-	BeforeInitializeHook, UserLogoutHook, UserLogoutCompleteHook {
+	BeforeInitializeHook, UserLogoutHook, UserLogoutCompleteHook, BeforePageDisplayHook {
 
 	/** id_token of the session being logged out (captured before the session is reset). */
 	private static ?string $logoutIdToken = null;
@@ -111,7 +112,16 @@ class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__Uni
 
 	/** Personal tools: "Log in" goes to the site sign-in; the wiki password form stays at Special:UserLogin. */
 	public function onSkinTemplateNavigation__Universal( $sktemplate, &$links ): void {
-		if ( $sktemplate->getUser()->isRegistered() || (string)$sktemplate->getConfig()->get( 'SwccgSsoIssuer' ) === '' ) {
+		if ( (string)$sktemplate->getConfig()->get( 'SwccgSsoIssuer' ) === '' ) {
+			return;
+		}
+		if ( $sktemplate->getUser()->isRegistered() ) {
+			// #508: the wiki's Log out reads "Sign out" and is styled as a plain button (signout.css).
+			if ( isset( $links['user-menu']['logout'] ) ) {
+				$links['user-menu']['logout']['text'] = $sktemplate->msg( 'swccgsso-signout' )->text();
+				$links['user-menu']['logout']['title'] = $sktemplate->msg( 'swccgsso-signout-tooltip' )->text();
+				$links['user-menu']['logout']['class'] = trim( ( $links['user-menu']['logout']['class'] ?? '' ) . ' swccgsso-signout' );
+			}
 			return;
 		}
 		if ( isset( $links['user-menu']['login'] ) ) {
@@ -122,5 +132,19 @@ class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__Uni
 			}
 			$links['user-menu']['login']['href'] = SpecialPage::getTitleFor( 'SwccgSignIn' )->getLocalURL( $q );
 		}
+	}
+
+	/**
+	 * #508: load the Sign out styles and the one-click handler for signed-in readers.
+	 * The handler posts Special:UserLogout's own form (CSRF token included), so the sign-out goes
+	 * through onUserLogoutComplete and on to the sign-in service with id_token_hint (#507),
+	 * instead of core's API logout, which ends only the wiki session.
+	 */
+	public function onBeforePageDisplay( $out, $skin ): void {
+		if ( (string)$out->getConfig()->get( 'SwccgSsoIssuer' ) === '' || !$out->getUser()->isRegistered() ) {
+			return;
+		}
+		$out->addModuleStyles( 'ext.swccgSso.signout.styles' );
+		$out->addModules( 'ext.swccgSso.signout' );
 	}
 }
