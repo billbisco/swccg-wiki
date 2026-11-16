@@ -1,6 +1,6 @@
 {
 	"name": "SwccgSso",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"author": [
 		"SWCCG site team"
 	],
@@ -56,7 +56,8 @@
 		"SkinTemplateNavigation::Universal": "main",
 		"BeforeInitialize": "main",
 		"UserLogout": "main",
-		"UserLogoutComplete": "main"
+		"UserLogoutComplete": "main",
+		"BeforePageDisplay": "main"
 	},
 	"config": {
 		"SwccgSsoIssuer": {
@@ -74,6 +75,29 @@
 		"SwccgSsoRedirectUri": {
 			"value": "",
 			"description": "Registered redirect URI, e.g. https://swccg.com/wiki/Special:SwccgSignIn"
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "SwccgSso/modules"
+	},
+	"ResourceModules": {
+		"ext.swccgSso.signout.styles": {
+			"styles": [
+				"signout.css"
+			]
+		},
+		"ext.swccgSso.signout": {
+			"packageFiles": [
+				"signout.js"
+			],
+			"dependencies": [
+				"user.options",
+				"mediawiki.util"
+			],
+			"messages": [
+				"swccgsso-signout"
+			]
 		}
 	},
 	"manifest_version": 2

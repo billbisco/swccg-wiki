@@ -1,0 +1,23 @@
+/* #508: Sign out is plainly visible at every width. */
+#pt-logout a,
+a.swccgsso-signout {
+	display: inline-block;
+	padding: 2px 10px;
+	border: 1px solid #a2a9b1;
+	border-radius: 3px;
+	background: #f8f9fa;
+	color: #202122 !important;
+	font-weight: bold;
+	white-space: nowrap;
+}
+#pt-logout a:hover,
+a.swccgsso-signout:hover {
+	background: #eaecf0;
+	text-decoration: none;
+}
+/* Vector 2022 keeps the user menu in a dropdown; there, show a copy beside it. */
+.swccgsso-signout-bar {
+	display: inline-block;
+	margin: 0 6px;
+	vertical-align: middle;
+}
