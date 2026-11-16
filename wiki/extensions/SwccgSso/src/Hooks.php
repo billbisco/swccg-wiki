@@ -4,6 +4,8 @@ namespace MediaWiki\Extension\SwccgSso;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Hook\BeforeInitializeHook;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
+use MediaWiki\Cache\Hook\HTMLFileCache__useFileCacheHook;
+use HTMLFileCache;
 use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Hook\UserLogoutCompleteHook;
 use MediaWiki\Html\Html;
@@ -15,7 +17,16 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\Hook\UserLogoutHook;
 
 class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__UniversalHook,
-	BeforeInitializeHook, UserLogoutHook, UserLogoutCompleteHook, BeforePageDisplayHook {
+	BeforeInitializeHook, UserLogoutHook, UserLogoutCompleteHook, BeforePageDisplayHook,
+	HTMLFileCache__useFileCacheHook {
+
+	/**
+	 * #510: anonymous page copies saved in the wiki's HTML file cache before this time lack the
+	 * tab-sync script tag. Such a copy is dropped (MediaWiki's own per-page invalidation, as after
+	 * an edit) the first time it would be served, so the page is rendered and cached again.
+	 */
+	private const FILE_CACHE_EPOCH = '20261116012130';
+
 
 	/** id_token of the session being logged out (captured before the session is reset). */
 	private static ?string $logoutIdToken = null;
@@ -173,5 +184,28 @@ class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__Uni
 			$attrs['data-state'] = 'in';
 		}
 		return Html::element( 'script', $attrs );
+	}
+
+	/** Drop a file-cached page saved before FILE_CACHE_EPOCH (see the constant). Never blocks caching. */
+	public function onHTMLFileCache__useFileCache( $context ) {
+		static $seen = [];
+		$title = $context->getTitle();
+		if ( !$title || !$title->canExist() ) {
+			return true;
+		}
+		$key = $title->getPrefixedDBkey();
+		if ( isset( $seen[$key] ) ) {
+			return true;
+		}
+		$seen[$key] = true;
+		$cache = new HTMLFileCache( $title, 'view' );
+		if ( !$cache->isCached() ) {
+			return true;
+		}
+		$ts = $cache->cacheTimestamp();
+		if ( $ts && $ts < self::FILE_CACHE_EPOCH ) {
+			$cache->clearCache();
+		}
+		return true;
 	}
 }
