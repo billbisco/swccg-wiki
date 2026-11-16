@@ -1,0 +1,80 @@
+{
+	"name": "SwccgSso",
+	"version": "0.2.0",
+	"author": [
+		"SWCCG site team"
+	],
+	"descriptionmsg": "swccgsso-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "auth",
+	"requires": {
+		"MediaWiki": ">= 1.43.0"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\SwccgSso\\": "src/"
+	},
+	"MessagesDirs": {
+		"SwccgSso": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"SwccgSsoAlias": "SwccgSso.alias.php"
+	},
+	"SpecialPages": {
+		"SwccgSignIn": {
+			"class": "MediaWiki\\Extension\\SwccgSso\\SpecialSwccgSignIn",
+			"services": [
+				"UserFactory",
+				"AuthManager",
+				"HttpRequestFactory",
+				"MainWANObjectCache"
+			]
+		}
+	},
+	"RestRoutes": [
+		{
+			"path": "/swccgsso/v1/backchannel-logout",
+			"method": "POST",
+			"class": "MediaWiki\\Extension\\SwccgSso\\BackchannelLogoutHandler",
+			"services": [
+				"MainConfig",
+				"HttpRequestFactory",
+				"MainWANObjectCache",
+				"MainObjectStash",
+				"UserFactory"
+			]
+		}
+	],
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\SwccgSso\\Hooks"
+		}
+	},
+	"Hooks": {
+		"SpecialPageBeforeExecute": "main",
+		"SkinTemplateNavigation::Universal": "main",
+		"BeforeInitialize": "main",
+		"UserLogout": "main",
+		"UserLogoutComplete": "main"
+	},
+	"config": {
+		"SwccgSsoIssuer": {
+			"value": "",
+			"description": "Sign-in service issuer, e.g. https://swccg.com/login. Empty disables."
+		},
+		"SwccgSsoClientId": {
+			"value": "wiki",
+			"description": "OIDC client id."
+		},
+		"SwccgSsoClientSecret": {
+			"value": "",
+			"description": "OIDC client secret; set from an untracked root-only file."
+		},
+		"SwccgSsoRedirectUri": {
+			"value": "",
+			"description": "Registered redirect URI, e.g. https://swccg.com/wiki/Special:SwccgSignIn"
+		}
+	},
+	"manifest_version": 2
+}
