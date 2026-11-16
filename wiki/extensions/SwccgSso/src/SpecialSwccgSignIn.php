@@ -17,6 +17,10 @@ use WANObjectCache;
 
 class SpecialSwccgSignIn extends SpecialPage {
 	private const SESSION_KEY = 'swccgsso-flow';
+	private const FAIL_KEY = 'swccgsso-failed';
+
+	/** returnto of the flow being finished, for the failure page. */
+	private string $failReturnto = '';
 
 	public function __construct(
 		private UserFactory $userFactory,
@@ -46,6 +50,10 @@ class SpecialSwccgSignIn extends SpecialPage {
 			return;
 		}
 		$req = $this->getRequest();
+		if ( $req->getVal( 'failed' ) !== null ) {
+			$this->showFailure();
+			return;
+		}
 		if ( $req->getVal( 'code' ) !== null || $req->getVal( 'error' ) !== null ) {
 			$this->callback( $issuer );
 			return;
@@ -92,6 +100,7 @@ class SpecialSwccgSignIn extends SpecialPage {
 		$session = $req->getSession();
 		$flow = $session->get( self::SESSION_KEY );
 		$session->remove( self::SESSION_KEY );
+		$this->failReturnto = is_array( $flow ) ? (string)( $flow['returnto'] ?? '' ) : '';
 		if ( !is_array( $flow ) || !hash_equals( (string)$flow['state'], (string)$req->getVal( 'state', '' ) )
 			|| time() - (int)$flow['at'] > 900 ) {
 			$this->fail( 'the sign-in request expired or did not match' );
@@ -247,8 +256,45 @@ class SpecialSwccgSignIn extends SpecialPage {
 		return $t->getFullURL();
 	}
 
+	/**
+	 * A failed sign-in (#511): when the request carries the service's answer (code, state or error),
+	 * keep the reason in the session and redirect to a clean URL, so no used code or state stays in
+	 * the address bar, the history or the page's links. The clean page shows what happened and what to do.
+	 */
 	private function fail( string $why ): void {
+		$req = $this->getRequest();
+		if ( $req->getVal( 'code' ) === null && $req->getVal( 'state' ) === null && $req->getVal( 'error' ) === null ) {
+			$this->getOutput()->addWikiMsg( 'swccgsso-error', $why );
+			$this->addNextSteps( '' );
+			return;
+		}
+		$session = $req->getSession();
+		$session->persist();
+		$session->set( self::FAIL_KEY, [ 'why' => $why, 'returnto' => $this->failReturnto ] );
+		$session->save();
+		$this->getOutput()->redirect( $this->getPageTitle()->getFullURL( [ 'failed' => 1 ] ) );
+	}
+
+	/** The clean page a failed sign-in lands on. */
+	private function showFailure(): void {
+		$session = $this->getRequest()->getSession();
+		$f = $session->get( self::FAIL_KEY );
+		$session->remove( self::FAIL_KEY );
+		$why = is_array( $f ) && is_string( $f['why'] ?? null ) ? $f['why'] : 'the sign-in did not finish';
+		$returnto = is_array( $f ) && is_string( $f['returnto'] ?? null ) ? $f['returnto'] : '';
 		$this->getOutput()->addWikiMsg( 'swccgsso-error', $why );
+		$this->addNextSteps( $returnto );
+	}
+
+	/** "Try again" (a fresh sign-in back to the same page) and a link back to that page. */
+	private function addNextSteps( string $returnto ): void {
+		$q = [];
+		$t = $returnto !== '' ? Title::newFromText( $returnto ) : null;
+		if ( $t && !$t->isExternal() && !$t->isSpecial( 'Userlogout' ) && !$t->isSpecial( 'SwccgSignIn' ) ) {
+			$q['returnto'] = $t->getPrefixedText();
+		}
+		$this->getOutput()->addWikiMsg( 'swccgsso-error-next',
+			$this->getPageTitle()->getFullURL( $q ), $this->returnUrl( $returnto ) );
 	}
 
 	private function log() {
