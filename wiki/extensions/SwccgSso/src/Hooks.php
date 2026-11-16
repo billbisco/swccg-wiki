@@ -141,10 +141,37 @@ class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__Uni
 	 * instead of core's API logout, which ends only the wiki session.
 	 */
 	public function onBeforePageDisplay( $out, $skin ): void {
-		if ( (string)$out->getConfig()->get( 'SwccgSsoIssuer' ) === '' || !$out->getUser()->isRegistered() ) {
+		if ( (string)$out->getConfig()->get( 'SwccgSsoIssuer' ) === '' ) {
+			return;
+		}
+		$out->addHeadItem( 'swccgsso-auth-sync', self::authSyncTag( $out ) );
+		if ( !$out->getUser()->isRegistered() ) {
 			return;
 		}
 		$out->addModuleStyles( 'ext.swccgSso.signout.styles' );
 		$out->addModules( 'ext.swccgSso.signout' );
+	}
+
+	/**
+	 * #510: every wiki page loads the site's shared tab-sync script (same origin, no inline JS),
+	 * so an open wiki tab notices a sign-out in another tab. data-state:
+	 *  - "in"  signed in through the site session: also checks /login/session/check when the tab
+	 *          comes back into view;
+	 *  - "out" anonymous: nothing to sign out of, so the page never reloads;
+	 *  - none  signed in with a wiki password (bots, staff): reacts to a sign-out elsewhere, no check.
+	 */
+	public static function authSyncTag( $out ): string {
+		$attrs = [
+			'src' => '/login/static/auth-sync.js',
+			'defer' => true,
+			'data-check' => '/login/session/check',
+			'data-cookie' => '__Host-swccg_out',
+		];
+		if ( !$out->getUser()->isRegistered() ) {
+			$attrs['data-state'] = 'out';
+		} elseif ( self::siteSessionTail( $out->getRequest() ) !== '' ) {
+			$attrs['data-state'] = 'in';
+		}
+		return Html::element( 'script', $attrs );
 	}
 }
