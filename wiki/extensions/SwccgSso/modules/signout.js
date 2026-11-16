@@ -8,17 +8,10 @@
 ( function () {
 	'use strict';
 
-	function signOut( href ) {
+	function post( action, fields ) {
 		var form = document.createElement( 'form' );
 		form.method = 'post';
-		form.action = mw.util.getUrl( 'Special:UserLogout' );
-		var fields = { wpEditToken: mw.user.tokens.get( 'csrfToken' ), title: 'Special:UserLogout' };
-		try {
-			var rt = new URL( href, location.href ).searchParams.get( 'returnto' );
-			if ( rt ) {
-				fields.returnto = rt;
-			}
-		} catch ( e ) {}
+		form.action = action;
 		Object.keys( fields ).forEach( function ( k ) {
 			var i = document.createElement( 'input' );
 			i.type = 'hidden';
@@ -28,6 +21,29 @@
 		} );
 		document.body.appendChild( form );
 		form.submit();
+	}
+
+	// Special:UserLogout's form carries its own token, so read the form and post it as is.
+	function signOut( href ) {
+		var url = mw.util.getUrl( 'Special:UserLogout' );
+		fetch( url, { credentials: 'same-origin' } ).then( function ( r ) {
+			return r.text();
+		} ).then( function ( html ) {
+			var doc = new DOMParser().parseFromString( html, 'text/html' );
+			var f = doc.querySelector( '#mw-content-text form[method="post"], #mw-content-text form' );
+			var tok = f && f.querySelector( '[name="wpEditToken"]' );
+			if ( !tok ) {
+				location.href = href;
+				return;
+			}
+			var fields = {};
+			Array.prototype.forEach.call( f.querySelectorAll( 'input[name]' ), function ( i ) {
+				fields[ i.name ] = i.value;
+			} );
+			post( f.getAttribute( 'action' ) || url, fields );
+		} ).catch( function () {
+			location.href = href;
+		} );
 	}
 
 	function isSignOutLink( el ) {
