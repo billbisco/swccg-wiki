@@ -18,6 +18,7 @@ use WANObjectCache;
 class SpecialSwccgSignIn extends SpecialPage {
 	private const SESSION_KEY = 'swccgsso-flow';
 	private const FAIL_KEY = 'swccgsso-failed';
+	private const NOROW_ERROR = 'swccgsso_norow';
 
 	/** returnto of the flow being finished, for the failure page. */
 	private string $failReturnto = '';
@@ -52,6 +53,12 @@ class SpecialSwccgSignIn extends SpecialPage {
 		$req = $this->getRequest();
 		if ( $req->getVal( 'failed' ) !== null ) {
 			$this->showFailure();
+			return;
+		}
+		if ( $req->getVal( 'error' ) === self::NOROW_ERROR && $req->getVal( 'code' ) === null ) {
+			// #516: landing after a sign-in that found no wiki row. Coming through here with an error
+			// lets nginx set its 10-minute "checked" marker, so silent sign-in doesn't loop.
+			$out->redirect( $this->returnUrl( (string)$req->getVal( 'returnto', '' ) ) );
 			return;
 		}
 		if ( $req->getVal( 'code' ) !== null || $req->getVal( 'error' ) !== null ) {
@@ -160,7 +167,12 @@ class SpecialSwccgSignIn extends SpecialPage {
 			// #516: the sign-in service makes the missing wiki row when the wiki asks for a token.
 			// If there is still none, go back quietly to the page asked for, signed out.
 			$this->log()->warning( 'no wiki row for membership {id} after sign-in; returned signed out', [ 'id' => $id ] );
-			$this->getOutput()->redirect( $this->returnUrl( (string)$flow['returnto'] ) );
+			$q = [ 'error' => self::NOROW_ERROR ];
+			if ( (string)$flow['returnto'] !== '' ) {
+				$q['returnto'] = (string)$flow['returnto'];
+			}
+			// the pretty path (not index.php?title=) so nginx's Special:SwccgSignIn location sets the marker
+			$this->getOutput()->redirect( $this->getPageTitle()->getFullURL() . '?' . http_build_query( $q, '', '&', PHP_QUERY_RFC3986 ) );
 			return;
 		}
 		if ( isset( $claims['preferred_username'] ) && $claims['preferred_username'] !== $user->getName() ) {
