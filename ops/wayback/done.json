@@ -72098,9 +72098,14 @@
  },
  "https://res.starwarsccg.org/virtual/Errata-102023.pdf": {
   "capture": "https://web.archive.org/web/20261117213100/https://res.starwarsccg.org/virtual/Errata-102023.pdf",
-  "last": "2026-11-17T21:33:08Z",
-  "status": "pending",
-  "tries": 4
+  "last": "2026-11-17T21:43:08Z",
+  "status": "ok",
+  "tries": 4,
+  "verify": {
+   "at": "2026-11-17T21:43:09Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://res.starwarsccg.org/virtual/Errata-12-2023.pdf": {
   "capture": "",
