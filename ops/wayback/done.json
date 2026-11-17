@@ -72035,9 +72035,18 @@
  "https://res.starwarsccg.org/virtual/DShieldUpdateKit_2024_July.pdf": {
   "capture": "https://web.archive.org/web/20261117142132/https://res.starwarsccg.org/virtual/DShieldUpdateKit_2024_July.pdf",
   "job_id": "spn2-59e79b37df612d3b8736784a45f2c9b8ecbe5211",
-  "last": "2026-11-17T14:21:31Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-17T18:43:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-17T18:33:39Z",
+   "bytes": 3617306,
+   "capture_id": "https://web.archive.org/web/20261117142132id_/https://res.starwarsccg.org/virtual/DShieldUpdateKit_2024_July.pdf",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "577e58ae04429a569525406f0ea274a383cf8ab9b22eee36a8e0cf78e0f7e85a"
+  }
  },
  "https://res.starwarsccg.org/virtual/Errata-032023.pdf": {
   "capture": "https://web.archive.org/web/20261117181043/https://res.starwarsccg.org/virtual/Errata-032023.pdf",
@@ -72048,28 +72057,32 @@
  "https://res.starwarsccg.org/virtual/Errata-042022.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:11:43Z",
+  "last": "2026-11-17T18:43:02Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://res.starwarsccg.org/virtual/Errata-072022.pdf": {
   "capture": "https://web.archive.org/web/20261021002244/https://res.starwarsccg.org/virtual/Errata-072022.pdf",
-  "last": "2026-11-17T18:12:54Z",
+  "last": "2026-11-17T18:43:00Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-17T18:12:55Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-17T18:33:00Z",
+   "bytes": 1647336,
+   "capture_id": "https://web.archive.org/web/20261021002244id_/https://res.starwarsccg.org/virtual/Errata-072022.pdf",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "6b4c433ac813328e2fe8edbc9386375dbf1f69d33ccc0da659b4f9b20a88f54c"
   }
  },
  "https://res.starwarsccg.org/virtual/Errata-072023.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:13:55Z",
+  "last": "2026-11-17T18:44:02Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://res.starwarsccg.org/virtual/Errata-082022.pdf": {
   "capture": "https://web.archive.org/web/20261117181501/https://res.starwarsccg.org/virtual/Errata-082022.pdf",
@@ -72119,14 +72132,18 @@
  },
  "https://res.starwarsccg.org/virtual/Errata_2025_12_26.pdf": {
   "capture": "https://web.archive.org/web/20261113170736/https://res.starwarsccg.org/virtual/Errata_2025_12_26.pdf",
-  "last": "2026-11-17T18:23:57Z",
+  "last": "2026-11-17T18:43:00Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-17T18:23:57Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-17T18:33:22Z",
+   "bytes": 1807678,
+   "capture_id": "https://web.archive.org/web/20261113170736id_/https://res.starwarsccg.org/virtual/Errata_2025_12_26.pdf",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "9458d896030e390b91c5c0e711c0c1920c74ccae6eaecaef8e2c5f2f6c278721"
   }
  },
  "https://res.starwarsccg.org/virtual/Errata_2026_03_09.pdf": {
@@ -72241,9 +72258,8 @@
   "tries": 1
  },
  "https://res.starwarsccg.org/virtual/updated_flip_cards.pdf": {
-  "capture": "",
-  "job_id": "spn2-a311c6811720597879f2e4e22958b1c03192a15e",
-  "last": "2026-11-17T18:39:04Z",
+  "capture": "https://web.archive.org/web/20261117183904/https://res.starwarsccg.org/virtual/updated_flip_cards.pdf",
+  "last": "2026-11-17T18:43:01Z",
   "status": "pending",
   "tries": 1
  },
@@ -72315,6 +72331,12 @@
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-11-17T18:40:04Z",
   "status": "retry",
+  "tries": 1
+ },
+ "https://res.starwarsccg.org/wp/wp-content/uploads/2019/12/december2019errata.pdf": {
+  "capture": "https://web.archive.org/web/20261117184508/https://res.starwarsccg.org/wp/wp-content/uploads/2019/12/december2019errata.pdf",
+  "last": "2026-11-17T18:49:15Z",
+  "status": "pending",
   "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/hayes-bfred-egp2020-2.jpg": {
@@ -88184,6 +88206,13 @@
    "sha256": "f97516346cd04bf02615eef16ae259e6c2caf3cc47fbede00bd68c9f6b162202"
   }
  },
+ "https://swccg.com/snapshots/forum/t36574.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-17T18:46:08Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t37391.html": {
   "capture": "https://web.archive.org/web/20261027033429/https://swccg.com/snapshots/forum/t37391.html",
   "last": "2026-11-05T02:43:34Z",
@@ -88323,6 +88352,13 @@
   "status": "failed",
   "tries": 6
  },
+ "https://swccg.com/snapshots/forum/t60205.html": {
+  "capture": "",
+  "job_id": "spn2-9e8849025eb1fbb534315944652879fe7b757048",
+  "last": "2026-11-17T18:47:14Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t61620.html": {
   "capture": "https://web.archive.org/web/20261012180720/https://swccg.com/snapshots/forum/t61620.html",
   "last": "2026-10-12T18:44:53Z",
@@ -88334,6 +88370,13 @@
    "method": "strict",
    "reason": "capture HTTP 404"
   }
+ },
+ "https://swccg.com/snapshots/forum/t63705.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-17T18:48:14Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/t73616.html": {
   "capture": "https://web.archive.org/web/20261022033430/https://swccg.com/snapshots/forum/t73616.html",
