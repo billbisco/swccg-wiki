@@ -19,9 +19,11 @@ Each run confirms only the newest PENDING_CONFIRM_CAP pending jobs whose last
 activity is within PENDING_CONFIRM_MAX_AGE (default 40 jobs / 2 hours). Older
 pending rows are not polled; after STALE_PENDING_AGE they are resubmitted (SPN2
 answers with the recent capture if the dead job did finish). Entries that failed on a
-transient archive.org error are retried after FAILED_RETRY_AGE. Connection refused / 429 / 5xx
-during confirm opens a persistent shared circuit, stopping submissions and
-further Archive.org checks until the cooldown expires. Stalled jobs are poked
+transient archive.org error are retried after FAILED_RETRY_AGE. Two verify lanes:
+the VPS worker tries to open the capture (lane 1); a connection refused / timeout
+there is a confirm miss, not a save pause — this PC (manpc) retries (lane 2) via
+`ops/wayback_verify_manpc.py` dropping receipts in verify-inbox. HTTP 401/429/5xx
+on the Save Page Now API still opens the provider circuit. Stalled jobs are poked
 with ?copy=2, not by polling a dead job_id forever.
 
 Verified https://swccg.com/snapshots/… URLs: after verify, delete the staging file under
@@ -139,20 +141,48 @@ def control_directory(repo: Path) -> Path:
     return Path(os.environ.get("WAYBACK_CONTROL_DIR", str(Path.home() / ".local/state/swccg-wayback")))
 
 
+def save_api_url(url: str) -> bool:
+    try:
+        parts = urllib.parse.urlsplit(url)
+    except ValueError:
+        return False
+    host = (parts.hostname or "").lower()
+    path = parts.path or ""
+    return host in {"web.archive.org", "archive.org"} and (path == "/save" or path.startswith("/save/"))
+
+
+def availability_api_url(url: str) -> bool:
+    try:
+        parts = urllib.parse.urlsplit(url)
+    except ValueError:
+        return False
+    host = (parts.hostname or "").lower()
+    path = parts.path or ""
+    return host == "archive.org" and path.startswith("/wayback/available")
+
+
 def archive_response(url: str, status: int, headers=None):
-    if ACTIVE_CONTROL and urllib.parse.urlsplit(url).hostname in {"web.archive.org", "archive.org"}:
-        path = urllib.parse.urlsplit(url).path
-        if status == 401 and (path == "/save" or path.startswith("/save/")):
-            ACTIVE_CONTROL.authentication_failed()
-        if status == 403 and (path == "/save" or path.startswith("/save/")):
-            ACTIVE_CONTROL.provider_failed(status)
-        if status == 429 or status >= 500:
+    """Pause new saves on Save Page Now / availability HTTP throttle or auth failure.
+
+    Opening a replay page (web.archive.org/web/...) is lane-1 confirm. HTTP there
+    does not pause submissions; manpc is lane 2.
+    """
+    if not ACTIVE_CONTROL:
+        return
+    if status == 401 and save_api_url(url):
+        ACTIVE_CONTROL.authentication_failed()
+        return
+    if status in {403, 429} or status >= 500:
+        if save_api_url(url) or availability_api_url(url):
             ACTIVE_CONTROL.provider_failed(status, (headers or {}).get("Retry-After"))
 
 
 def archive_transport_failed(url: str):
-    if ACTIVE_CONTROL and urllib.parse.urlsplit(url).hostname in {"web.archive.org", "archive.org"}:
-        ACTIVE_CONTROL.provider_failed()
+    """TCP/DNS miss reaching Wayback. Lane 1 skips confirm/verify; lane 2 retries.
+
+    Does not pause new Save Page Now submits.
+    """
+    return
 
 
 def now() -> datetime:
@@ -671,13 +701,88 @@ def verify_entry(url: str, e: dict, get=None) -> bool:
     return True
 
 
+def mark_verify_deferred(e: dict, reason: str) -> None:
+    """Lane 1 could not open Wayback; leave the capture for manpc (lane 2)."""
+    info = dict(e.get("verify") or {})
+    info.update(at=iso(now()), defer="manpc", error=reason[:120])
+    e["verify"] = info
+
+
 def try_verify(url: str, e: dict) -> None:
-    """Verify right after a capture loads; archive.org errors leave it "ok" for the backlog pass."""
+    """Verify right after a capture loads; replay misses leave it ok for lane 2."""
     try:
         verify_entry(url, e)
     except VerifyRetry as error:
-        if ACTIVE_CONTROL and error.side == "capture":
-            ACTIVE_CONTROL.provider_failed()
+        if error.side == "capture":
+            mark_verify_deferred(e, str(error))
+            print("VERIFY-DEFER", url, str(error)[:80], flush=True)
+
+
+def verify_inbox_dir(control: Control) -> Path:
+    path = control.directory / "verify-inbox"
+    path.mkdir(parents=True, exist_ok=True)
+    return path
+
+
+def verify_candidates(done: dict, *, limit: int = 40) -> list[dict]:
+    """URLs lane 2 should try: pending/ok/unverified with a capture or job_id."""
+    rows = []
+    for url, entry in done.items():
+        if entry.get("status") not in {"ok", "pending", "unverified"}:
+            continue
+        if not (entry.get("capture") or entry.get("job_id")):
+            continue
+        rows.append({
+            "url": url,
+            "status": entry.get("status"),
+            "capture": entry.get("capture") or "",
+            "job_id": entry.get("job_id") or "",
+            "defer": (entry.get("verify") or {}).get("defer") or "",
+        })
+    rows.sort(key=lambda row: (0 if row["defer"] == "manpc" else 1, row["url"]))
+    return rows[:limit]
+
+
+def apply_verify_inbox(control: Control, done: dict, changed: dict) -> int:
+    """Merge manpc (lane 2) verified receipts. Does not overwrite a different capture."""
+    applied = 0
+    for path in sorted(verify_inbox_dir(control).glob("*.json")):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except Exception as error:  # noqa: BLE001
+            print("VERIFY-INBOX-ERR", path.name, type(error).__name__, flush=True)
+            continue
+        updates = data.get("updates")
+        if data.get("schema") != 1 or not isinstance(updates, dict):
+            print("VERIFY-INBOX-ERR", path.name, "invalid", flush=True)
+            continue
+        lane = data.get("lane") or "manpc"
+        n = 0
+        for url, receipt in updates.items():
+            if not isinstance(receipt, dict) or receipt.get("status") != "verified":
+                continue
+            cap = receipt.get("capture")
+            cur = done.get(url)
+            if not cur or not cap:
+                continue
+            if cur.get("status") == "verified":
+                continue
+            if cur.get("capture") and cur["capture"] != cap:
+                print("VERIFY-INBOX-SKIP", url, "capture mismatch", flush=True)
+                continue
+            info = dict(receipt.get("verify") or {})
+            info["lane"] = lane
+            cur["capture"] = cap
+            cur["status"] = "verified"
+            cur["verify"] = info
+            cur["last"] = iso(now())
+            done[url] = cur
+            changed[url] = cur
+            n += 1
+        print("VERIFY-INBOX", path.name, n, "applied", flush=True)
+        path.unlink()
+        applied += n
+    return applied
 
 
 def load(repo: Path) -> tuple[list[str], dict]:
@@ -1045,8 +1150,8 @@ def reconcile_recovery_probe(control: Control, done: dict, changed: dict, deadli
         elif entry.get("status") == "ok":
             try_verify(probe, entry)
             changed[probe] = entry
-    except StatusRetry:
-        control.provider_failed()
+    except StatusRetry as ex:
+        print("CONFIRM-DEFER", probe, str(ex)[:80], flush=True)
     control.checkpoint(done, control.initial_done)
     if (entry.get("status") != "verified" and
             control.clock() - control.state["probe_started_at"] >= Control.PROBE_DEADLINE):
@@ -1095,6 +1200,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     restored = control.restore_updates(done)
     deadline = time.monotonic() + minutes * 60
     changed: dict[str, dict] = dict(restored)
+    apply_verify_inbox(control, done, changed)
     errors_in_row = 0
     print("auth:", "SPN2 authenticated" if AUTH else "anonymous", flush=True)
     print(
@@ -1140,7 +1246,8 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
                 control.checkpoint(done, control.initial_done)
                 time.sleep(1)
         except StatusRetry as ex:
-            control.provider_failed()
+            print("CONFIRM-DEFER pending walk", str(ex)[:80], flush=True)
+            break
 
     # 2. save what is new or due a retry
     submitted: list[str] = []
@@ -1199,8 +1306,6 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
         except Throttled as ex:
             control.provider_failed(ex.status, ex.retry_after)
         except Exception as ex:  # noqa: BLE001
-            if archive_unreachable(ex):
-                control.provider_failed()
             e = {"capture": (e or {}).get("capture", ""), "status": "retry" if tries < MAX_TRIES else "failed",
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
             errors_in_row += 1
@@ -1218,7 +1323,9 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
                 if confirm(url, done[url]):
                     changed[url] = done[url]
             except StatusRetry as ex:
-                control.provider_failed()
+                print("CONFIRM-DEFER", url, str(ex)[:80], flush=True)
+                submitted.clear()
+                break
             if done[url]["status"] != "pending" or "job_id" not in done[url]:
                 submitted.remove(url)
             time.sleep(1)
@@ -1238,8 +1345,11 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
         try:
             if verify_entry(url, done[url]):
                 changed[url] = done[url]
-        except VerifyRetry:
-            print("archive.org not answering; backlog stops for this run", flush=True)
+        except VerifyRetry as ex:
+            if ex.side == "capture":
+                mark_verify_deferred(done[url], str(ex))
+                changed[url] = done[url]
+            print("VERIFY-DEFER backlog", url, str(ex)[:80], flush=True)
             break
         time.sleep(VERIFY_GAP_S)
 

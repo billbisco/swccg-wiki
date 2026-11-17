@@ -85,15 +85,19 @@ class RecoveryPaths(unittest.TestCase):
         self.assertGreater(self.state()["next_attempt"]-time.time(),7190)
         self.assertFalse((self.repo/W.DONE).exists())
 
-    def test_availability_provider_and_transport_errors_are_not_swallowed(self):
-        for suffix,error in [
-            ("http",urllib.error.HTTPError("https://archive.org/wayback/available",520,"unavailable",{},None)),
-            ("transport",urllib.error.URLError("offline fixture")),
-        ]:
-            with self.subTest(suffix=suffix), Control(self.repo/suffix,W.AUTH) as c:
-                with patch.object(W,"ACTIVE_CONTROL",c), patch.object(W.urllib.request,"urlopen",side_effect=error):
-                    with self.assertRaises(Paused):W.latest_capture(URL)
-                self.assertEqual("open",c.state["mode"])
+    def test_availability_http_5xx_pauses_saves(self):
+        error=urllib.error.HTTPError("https://archive.org/wayback/available",520,"unavailable",{},None)
+        with Control(self.repo/"http",W.AUTH) as c:
+            with patch.object(W,"ACTIVE_CONTROL",c), patch.object(W.urllib.request,"urlopen",side_effect=error):
+                with self.assertRaises(Paused):W.latest_capture(URL)
+            self.assertEqual("open",c.state["mode"])
+
+    def test_availability_transport_error_does_not_pause_saves(self):
+        error=urllib.error.URLError("offline fixture")
+        with Control(self.repo/"transport",W.AUTH) as c:
+            with patch.object(W,"ACTIVE_CONTROL",c), patch.object(W.urllib.request,"urlopen",side_effect=error):
+                self.assertEqual("", W.latest_capture(URL))
+            self.assertNotEqual("open", c.state.get("mode"))
 
     def test_anonymous_save401_persists_repair_and_never_repeats_on_next_timer(self):
         address="https://web.archive.org/save/"+URL
@@ -166,7 +170,7 @@ class RecoveryPaths(unittest.TestCase):
             W.run(self.repo,5)
         submit.assert_not_called()
         self.assertEqual(original,self.saved()[URL])
-        self.assertEqual("open",self.state()["mode"])
+        self.assertEqual("half_open",self.state()["mode"])
         self.assertEqual(URL,self.state()["probe_url"])
         with Control(self.directory,W.AUTH) as c:
             c.state["next_attempt"]=0;c.save()

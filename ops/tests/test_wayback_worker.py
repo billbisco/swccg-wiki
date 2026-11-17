@@ -546,6 +546,64 @@ class PendingConfirm(unittest.TestCase):
         self.assertTrue(W.archive_unreachable(ex))
         self.assertFalse(W.archive_unreachable(RuntimeError("no job_id: not-found")))
 
+    def test_apply_verify_inbox_marks_ok_verified(self):
+        tmp = tempfile.TemporaryDirectory()
+        root = Path(tmp.name)
+        inbox = root / "verify-inbox"
+        inbox.mkdir()
+        url = "https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf"
+        cap = "https://web.archive.org/web/20261020193000/" + url
+        done = {url: {"capture": cap, "status": "ok", "tries": 1, "last": "2026-10-20T00:00:00Z"}}
+        (inbox / "manpc-1.json").write_text(json.dumps({
+            "schema": 1, "lane": "manpc",
+            "updates": {url: {"capture": cap, "status": "verified",
+                              "verify": {"method": "sha256", "sha256": "abc"}}},
+        }))
+        control = type("C", (), {"directory": root})()
+        changed = {}
+        n = W.apply_verify_inbox(control, done, changed)
+        self.assertEqual(1, n)
+        self.assertEqual("verified", done[url]["status"])
+        self.assertEqual("manpc", done[url]["verify"]["lane"])
+        self.assertFalse(list(inbox.glob("*.json")))
+        tmp.cleanup()
+
+    def test_run_keeps_saving_when_confirm_connection_refused(self):
+        saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "spn2_submit", "spn2_status",
+                                            "capture_ok", "fetch", "AUTH", "GAP_S", "MAX_SUBMITS_PER_RUN",
+                                            "wiki_snapshot_wayback_paths")}
+        sleep = W.time.sleep
+        W.time.sleep = lambda s: None
+        tmp = tempfile.TemporaryDirectory()
+        repo = Path(tmp.name)
+        (repo / "ops/wayback").mkdir(parents=True)
+        src = "https://res.starwarsccg.org/legacyblocks/VirtualBlock7_1.pdf"
+        (repo / W.QUEUE).write_text(src + "\n")
+        (repo / W.DONE).write_text("{}")
+        submitted = []
+        W.reset_to_origin = lambda repo: None
+        W.commit_and_push = lambda repo, paths, msg, redo: bool(redo())
+        W.wiki_snapshot_wayback_paths = lambda: set()
+        W.AUTH = "LOW test:test"
+        W.GAP_S = 0
+        W.MAX_SUBMITS_PER_RUN = 0
+        W.spn2_submit = lambda url: submitted.append(url) or {"job_id": "spn2-new"}
+        W.spn2_status = lambda job: (_ for _ in ()).throw(
+            urllib.error.URLError(ConnectionRefusedError(111, "Connection refused"))
+        )
+        W.capture_ok = lambda cap: True
+        try:
+            W.run(repo, minutes=5)
+            self.assertEqual(submitted, [src])
+            mode = json.loads((repo / ".test-control" / "control.json").read_text())["mode"]
+            self.assertNotEqual("open", mode)
+            self.assertNotEqual("auth_blocked", mode)
+        finally:
+            for k, v in saved.items():
+                setattr(W, k, v)
+            W.time.sleep = sleep
+            tmp.cleanup()
+
     def test_confirm_raises_status_retry_on_connection_refused(self):
         saved = {k: getattr(W, k) for k in ("AUTH", "spn2_status")}
         W.AUTH = "LOW test:test"
@@ -603,7 +661,7 @@ class PendingConfirm(unittest.TestCase):
         self.assertNotIn("spn2-stale", polled)
         self.assertIn("spn2-new", polled)
 
-    def test_run_stops_pending_walk_and_new_submissions_on_provider_failure(self):
+    def test_run_stops_pending_walk_but_keeps_saving_on_confirm_miss(self):
         from datetime import datetime, timezone
 
         saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "spn2_submit", "spn2_status",
@@ -650,8 +708,9 @@ class PendingConfirm(unittest.TestCase):
                 setattr(W, k, v)
             W.time.sleep = sleep
             tmp.cleanup()
-        self.assertEqual(polled, ["spn2-y1"])
-        self.assertEqual(submitted, [])
+        self.assertEqual(polled[0], "spn2-y1")
+        self.assertNotIn("spn2-y2", polled)
+        self.assertEqual(submitted, [src])
 
 
 if __name__ == "__main__":
