@@ -12,7 +12,7 @@
 <tr><th>Side</th><td>[[{{{side}}}]]</td></tr>
 <tr><th>{{{label_type|Type}}}</th><td>{{#if:{{{type_display|}}}|{{{type_display|}}}|[[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>— [[{{{subtype_link}}}{{!}}{{{subtype}}}]]}}{{#if:{{{model|}}}|<nowiki> </nowiki>({{{model}}})}}}}</td></tr>
 <tr><th>Set</th><td>{{#if:{{{set_display|}}}|{{{set_display|}}}|[[{{Set page|{{{set}}}}}|{{{set}}}]]}}</td></tr>
-{{#if:{{{language|}}}|{{#if:{{{language|}}}|<tr><th>{{{label_language|Printed language}}}</th><td>{{{language_display|{{#language:{{{language|en}}}|en}}}}}</td></tr>|}}{{#if:{{{edition|}}}|<tr><th>Edition</th><td>{{{edition|}}}</td></tr>|}}{{#if:{{{border_finish|}}}|<tr><th>Border / finish</th><td>{{{border_finish|}}}</td></tr>|}}{{#if:{{{release|}}}|<tr><th>Release</th><td>{{{release|}}}</td></tr>|}}{{#if:{{{size|}}}|<tr><th>Size</th><td>{{{size|}}}</td></tr>|}}{{#if:{{{year|}}}|<tr><th>Year</th><td>{{{year|}}}</td></tr>|}}|}}<tr><th>Set icon</th><td>{{#if:{{{set_icon|{{{expansion_icon|}}}}}}|{{{set_icon|{{{expansion_icon|}}}}}}|{{#switch:{{{set|}}}|Premiere Limited|Premiere Unlimited|Premiere Two-Player|Premiere Two-Player Introductory Game|Premiere|Japanese Premiere|Japanese Premiere Two-Player|ESB Two-Player=none|#default=}}}}</td></tr>
+{{#if:{{{language|}}}|{{#if:{{{language|}}}|<tr><th>{{{label_language|Printed language}}}</th><td>{{{language_display|{{#language:{{{language|en}}}|en}}}}}</td></tr>|}}{{#if:{{{edition|}}}|<tr><th>Edition</th><td>{{{edition|}}}</td></tr>|}}{{#if:{{{border_finish|}}}|<tr><th>Border / finish</th><td>{{{border_finish|}}}</td></tr>|}}{{#if:{{{release|}}}|<tr><th>Release</th><td>{{{release|}}}</td></tr>|}}{{#if:{{{size|}}}|<tr><th>Size</th><td>{{{size|}}}</td></tr>|}}{{#if:{{{year|}}}|<tr><th>Year</th><td>{{{year|}}}</td></tr>|}}|}}<tr><th>Set icon</th><td>{{#if:{{{set_icon|{{{expansion_icon|}}}}}}|{{Set icon|{{{set_icon|{{{expansion_icon|}}}}}}}}|{{Set icon|{{{set|}}}}}}}</td></tr>
 {{#if:{{{also_in|{{{products|}}}}}}|<tr><th>Also in</th><td>{{{also_in|{{{products|}}}}}}</td></tr>}}
 {{#if:{{{publisher|}}}|<tr><th>Publisher</th><td>{{{publisher}}}</td></tr>}}
 {{#if:{{{era|}}}|<tr><th>Era</th><td>{{{era}}}</td></tr>}}
@@ -41,7 +41,6 @@
 {{#if:{{{dark_icons|}}}|<tr><th>{{{label_dark_icons|Dark Side Icons}}}</th><td>{{{dark_icons}}}</td></tr>}}
 {{#if:{{{light_icons|}}}|<tr><th>{{{label_light_icons|Light Side Icons}}}</th><td>{{{light_icons}}}</td></tr>}}
 {{#if:{{{icons|}}}|<tr><th>{{{label_icons|Icons}}}</th><td>{{{icons}}}</td></tr>}}
-{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>{{{label_versions|Versions}}}</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
 {{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}
 {{#if:{{{version_code|}}}|<tr><th>Errata version</th><td>{{{version_code}}}</td></tr>}}
 {{#if:{{{errata_mark|}}}|<tr><th>Errata mark</th><td>{{{errata_mark}}}</td></tr>}}
@@ -51,7 +50,9 @@
 {{#if:{{{dedication|}}}|<tr><th>Dedication</th><td>{{{dedication}}}</td></tr>}}
 {{#if:{{{printed_label|}}}|<tr><th>Other printed label</th><td>{{{printed_label}}}</td></tr>}}
 {{#if:{{{copyright_line|}}}|<tr><th>Copyright line</th><td><small>{{{copyright_line}}}</small></td></tr>}}
-{{#if:{{{extra_info|}}}|{{{extra_info|}}}|}}</table>
+{{#if:{{{extra_info|}}}|{{{extra_info|}}}|}}
+{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>{{{label_versions|Versions}}}</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
+</table>
 </div>{{#if:{{{hatnote|}}}|<div class="card-hatnote">''{{{hatnote}}}''</div>}}
 <div class="card-body">
 {{#if:{{{lead|}}}|{{{lead|}}}|'''{{{title}}}''' is a [[{{{side}}}]] [[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>([[{{{subtype_link}}}{{!}}{{{subtype}}}]])}} from [[{{Set page|{{{set}}}}}|{{{set}}}]].}}
