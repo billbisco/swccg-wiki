@@ -72099,16 +72099,16 @@
  "https://res.starwarsccg.org/virtual/Errata-102023.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:51:01Z",
+  "last": "2026-11-17T19:22:58Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://res.starwarsccg.org/virtual/Errata-12-2023.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:52:01Z",
+  "last": "2026-11-17T19:23:58Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://res.starwarsccg.org/virtual/Errata-122022.pdf": {
   "capture": "https://web.archive.org/web/20261117185308/https://res.starwarsccg.org/virtual/Errata-122022.pdf",
@@ -72123,11 +72123,10 @@
   "tries": 1
  },
  "https://res.starwarsccg.org/virtual/Errata_2024_12_30.pdf": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:54:08Z",
-  "status": "retry",
-  "tries": 2
+  "capture": "https://web.archive.org/web/20261117192504/https://res.starwarsccg.org/virtual/Errata_2024_12_30.pdf",
+  "last": "2026-11-17T19:29:06Z",
+  "status": "pending",
+  "tries": 3
  },
  "https://res.starwarsccg.org/virtual/Errata_2025_08_08.pdf": {
   "capture": "https://web.archive.org/web/20261117182250/https://res.starwarsccg.org/virtual/Errata_2025_08_08.pdf",
@@ -72230,9 +72229,10 @@
  },
  "https://res.starwarsccg.org/virtual/errata_062321.pdf": {
   "capture": "https://web.archive.org/web/20261117183200/https://res.starwarsccg.org/virtual/errata_062321.pdf",
-  "last": "2026-11-17T18:51:00Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-17T19:26:04Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://res.starwarsccg.org/virtual/errata_102020.pdf": {
   "capture": "",
@@ -88380,10 +88380,10 @@
  },
  "https://swccg.com/snapshots/forum/t63705.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:48:14Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ca6c97f26041a5469c82cac60564eaf1e189c990",
+  "last": "2026-11-17T19:27:05Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t73616.html": {
   "capture": "https://web.archive.org/web/20261022033430/https://swccg.com/snapshots/forum/t73616.html",
@@ -88543,9 +88543,9 @@
  "https://swccg.com/snapshots/forum/t77226.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:56:14Z",
+  "last": "2026-11-17T19:28:06Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t77430.html": {
   "capture": "https://web.archive.org/web/20261027012115/https://swccg.com/snapshots/forum/t77430.html",
@@ -89347,9 +89347,8 @@
   }
  },
  "https://swccg.com/snapshots/forum/t86937.html": {
-  "capture": "",
-  "job_id": "spn2-1ca6da2a41dae15b3ce519d46be351283a2eaf8c",
-  "last": "2026-11-17T19:19:15Z",
+  "capture": "https://web.archive.org/web/20261117191918/https://swccg.com/snapshots/forum/t86937.html",
+  "last": "2026-11-17T19:22:56Z",
   "status": "pending",
   "tries": 1
  },
