@@ -72237,16 +72237,16 @@
  "https://res.starwarsccg.org/virtual/errata_102020.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:34:52Z",
+  "last": "2026-11-17T19:07:09Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://res.starwarsccg.org/virtual/errata_122021.pdf": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:35:52Z",
+  "last": "2026-11-17T19:08:09Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://res.starwarsccg.org/virtual/errata_2019-a.pdf": {
   "capture": "https://web.archive.org/web/20261117183745/https://res.starwarsccg.org/virtual/errata_2019-a.pdf",
@@ -72255,11 +72255,16 @@
   "tries": 1
  },
  "https://res.starwarsccg.org/virtual/errata_2019.pdf": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:37:58Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261113170736/https://res.starwarsccg.org/virtual/errata_2019.pdf",
+  "last": "2026-11-17T19:09:21Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-17T19:09:21Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://res.starwarsccg.org/virtual/updated_flip_cards.pdf": {
   "capture": "https://web.archive.org/web/20261117183904/https://res.starwarsccg.org/virtual/updated_flip_cards.pdf",
@@ -72332,15 +72337,15 @@
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2019/12/Errata-Fall-2019.pdf": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T18:40:04Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-c3d0c83fee1ea9467119ac7a83fa2db1ab129136",
+  "last": "2026-11-17T19:10:27Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2019/12/december2019errata.pdf": {
   "capture": "https://web.archive.org/web/20261117184508/https://res.starwarsccg.org/wp/wp-content/uploads/2019/12/december2019errata.pdf",
-  "last": "2026-11-17T18:49:15Z",
-  "status": "pending",
+  "last": "2026-11-17T19:07:07Z",
+  "status": "retry",
   "tries": 1
  },
  "https://res.starwarsccg.org/wp/wp-content/uploads/2020/01/hayes-bfred-egp2020-2.jpg": {
@@ -88358,8 +88363,8 @@
  },
  "https://swccg.com/snapshots/forum/t60205.html": {
   "capture": "https://web.archive.org/web/20261117184721/https://swccg.com/snapshots/forum/t60205.html",
-  "last": "2026-11-17T18:50:59Z",
-  "status": "pending",
+  "last": "2026-11-17T19:07:06Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/t61620.html": {
@@ -88855,9 +88860,8 @@
   }
  },
  "https://swccg.com/snapshots/forum/t83345.html": {
-  "capture": "",
-  "job_id": "spn2-5457970146bd1abed35f643f2bc52b143efe3c65",
-  "last": "2026-11-17T19:03:29Z",
+  "capture": "https://web.archive.org/web/20261117190423/https://swccg.com/snapshots/forum/t83345.html",
+  "last": "2026-11-17T19:07:05Z",
   "status": "pending",
   "tries": 1
  },
@@ -89114,6 +89118,13 @@
   "status": "failed",
   "tries": 6
  },
+ "https://swccg.com/snapshots/forum/t86335.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-17T19:11:27Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/t86377.html": {
   "capture": "https://web.archive.org/web/20261025070900/https://swccg.com/snapshots/forum/t86377.html",
   "job_id": "spn2-ea3ac0f14d04e7efd8929cc26da1c766064d9d9b",
@@ -89149,6 +89160,13 @@
   "last": "2026-11-04T18:32:47Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://swccg.com/snapshots/forum/t86508.html": {
+  "capture": "",
+  "job_id": "spn2-435b7a52cb1b581db08afe6b8c0b3f6abdd20341",
+  "last": "2026-11-17T19:12:34Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/t86534.html": {
   "capture": "https://web.archive.org/web/20261026204621/https://swccg.com/snapshots/forum/t86534.html",
