@@ -16,6 +16,15 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 
+def env_positive_int(name: str, default: int) -> int:
+    raw = os.environ.get(name, "")
+    try:
+        value = int(raw) if raw else default
+    except ValueError:
+        value = default
+    return value if value > 0 else default
+
+
 class Paused(Exception):
     """The durable control record explains when or how work can resume."""
 
@@ -61,7 +70,8 @@ def atomic_json(path: Path, data: dict) -> None:
 class Control:
     MIN_PAUSE = 15 * 60
     MAX_PAUSE = 24 * 60 * 60
-    SUBMISSION_GAP = 10
+    # Tests keep the historic 10s default. Production sets WAYBACK_GAP_S=60.
+    SUBMISSION_GAP = env_positive_int("WAYBACK_GAP_S", 10)
     PROBE_DEADLINE = 24 * 60 * 60
 
     def __init__(self, directory: Path, credential: str | None, clock=time.time):
@@ -257,6 +267,24 @@ class Control:
             "occurrences": old.get("occurrences", 0) + 1 if same else 1,
             "next_eligible_attempt_at": timestamp(self.state["next_attempt"]),
         })
+
+    def mark_recovered(self, reason: str):
+        """Authorized operator recovery after a verified canary with the current keys."""
+        self.state.update(
+            mode="healthy",
+            failure_count=0,
+            next_attempt=0,
+            next_submission_at=0,
+            probe_url=None,
+            reason=reason,
+            http_status=200,
+        )
+        self.save()
+        repair = self.directory / "repair.json"
+        if repair.exists():
+            data = json.loads(repair.read_text(encoding="utf-8"))
+            data.update(status="recovered", recovered_at=timestamp(self.clock()), reason=reason)
+            atomic_json(repair, data)
 
     def reconcile(self, done: dict, previously_verified: set[str]):
         newly_verified = [u for u, e in done.items() if e.get("status") == "verified"

@@ -76,6 +76,8 @@ DONE = "ops/wayback/done.json"
 KEYS_FILE = Path(os.environ.get("IA_KEYS_FILE", "/etc/swccg-ops/archive-org-s3.env"))
 MAX_TRIES = 6
 GAP_S = Control.SUBMISSION_GAP  # minimum gap also survives owner restarts
+# 0 = uncapped (tests). Production systemd sets WAYBACK_MAX_SUBMITS=6.
+MAX_SUBMITS_PER_RUN = int(os.environ.get("WAYBACK_MAX_SUBMITS") or "0")
 RETRY_AFTER = timedelta(minutes=30)
 CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
 PENDING_CONFIRM_MAX_AGE = timedelta(hours=2)  # skip stalled pending job_ids
@@ -1095,6 +1097,10 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     changed: dict[str, dict] = dict(restored)
     errors_in_row = 0
     print("auth:", "SPN2 authenticated" if AUTH else "anonymous", flush=True)
+    print(
+        f"pace: gap={GAP_S}s max_submits={MAX_SUBMITS_PER_RUN or 'uncapped'}",
+        flush=True,
+    )
     submission_session = {"authenticated": bool(AUTH)}
 
     # Recovery is not stranded behind the ordinary2h pending-confirm cutoff.
@@ -1138,11 +1144,15 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
 
     # 2. save what is new or due a retry
     submitted: list[str] = []
+    save_attempts = 0
     for url in urls:
         if time.monotonic() > deadline - 90 or errors_in_row >= 5:
             break
         if banned(url):
             continue
+        if MAX_SUBMITS_PER_RUN and save_attempts >= MAX_SUBMITS_PER_RUN:
+            print("PACE-CAP", MAX_SUBMITS_PER_RUN, "Save Page Now attempts this run", flush=True)
+            break
         if not control.may_submit(url):
             break
         e = done.get(url)
@@ -1160,6 +1170,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
         tries = (e or {}).get("tries", 0) + 1
         try:
             control.submitting(url)
+            save_attempts += 1
             j = submit_capture(url, e, submission_session)
             if "anonymous_capture" not in j:
                 if j.get("recent"):

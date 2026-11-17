@@ -121,7 +121,7 @@ class RunLoop(unittest.TestCase):
 
     def setUp(self):
         self.saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "spn2_submit", "spn2_status",
-                                                  "capture_ok", "fetch", "AUTH", "GAP_S",
+                                                  "capture_ok", "fetch", "AUTH", "GAP_S", "MAX_SUBMITS_PER_RUN",
                                                   "wiki_snapshot_wayback_paths")}
         W.wiki_snapshot_wayback_paths = lambda: set()
         self.sleep = W.time.sleep
@@ -168,6 +168,17 @@ class RunLoop(unittest.TestCase):
         self.pushed.clear()
         W.run(self.repo, minutes=5)
         self.assertEqual(self.pushed, [])
+
+    def test_max_submits_per_run_caps_new_saves(self):
+        extra = "https://res.starwarsccg.org/legacyblocks/VirtualBlock8.pdf"
+        (self.repo / W.QUEUE).write_text(self.src + "\n" + extra + "\n")
+        submitted = []
+        W.MAX_SUBMITS_PER_RUN = 1
+        W.spn2_submit = lambda url: submitted.append(url) or {"job_id": "spn2-test"}
+        W.run(self.repo, minutes=5)
+        self.assertEqual(submitted, [self.src])
+        done = json.loads((self.repo / W.DONE).read_text())
+        self.assertNotIn(extra, done)
 
 
 class Fetch(unittest.TestCase):

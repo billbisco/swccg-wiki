@@ -41,6 +41,24 @@ class Circuit(unittest.TestCase):
             repaired.submitting(URL)
             self.assertFalse(repaired.may_submit("https://example.org/other.png"))
 
+    def test_mark_recovered_clears_auth_block_for_same_keys(self):
+        with self.controller() as c:
+            c.begin()
+            with self.assertRaises(Paused):
+                c.authentication_failed()
+            (self.root / "control" / "repair.json").write_text(json.dumps({
+                "schema": 1, "status": "open", "incident_id": "x",
+            }))
+            c.mark_recovered("verified recovery canary")
+            self.assertEqual("healthy", c.state["mode"])
+            self.assertEqual(0, c.state["failure_count"])
+        with self.controller() as restarted:
+            restarted.begin()
+            self.assertEqual("healthy", restarted.state["mode"])
+            self.assertTrue(restarted.may_submit(URL))
+            repair = json.loads((self.root / "control" / "repair.json").read_text())
+            self.assertEqual("recovered", repair["status"])
+
     def test_cooldown_and_failures_survive_restart_and_timer_boundaries(self):
         with self.controller() as c:
             with self.assertRaises(Paused): c.provider_failed(520)
