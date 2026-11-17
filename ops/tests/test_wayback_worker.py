@@ -546,6 +546,19 @@ class PendingConfirm(unittest.TestCase):
         self.assertTrue(W.archive_unreachable(ex))
         self.assertFalse(W.archive_unreachable(RuntimeError("no job_id: not-found")))
 
+    def test_verify_candidates_prefers_deferred_and_our_hosts(self):
+        done = {
+            "http://decipher.com/old.jpg": {"status": "unverified", "capture": "https://web.archive.org/web/1/http://decipher.com/old.jpg"},
+            "https://example.org/x": {"status": "ok", "capture": "https://web.archive.org/web/1/https://example.org/x"},
+            "https://res.starwarsccg.org/a.pdf": {"status": "ok", "capture": "https://web.archive.org/web/1/https://res.starwarsccg.org/a.pdf"},
+            "https://swccg.com/robots.txt": {"status": "pending", "job_id": "spn2-x", "capture": "",
+                                            "verify": {"defer": "manpc"}},
+        }
+        got = [row["url"] for row in W.verify_candidates(done, limit=4)]
+        self.assertEqual(got[0], "https://swccg.com/robots.txt")
+        self.assertEqual(got[1], "https://res.starwarsccg.org/a.pdf")
+        self.assertEqual(got[-1], "http://decipher.com/old.jpg")
+
     def test_apply_verify_inbox_marks_ok_verified(self):
         tmp = tempfile.TemporaryDirectory()
         root = Path(tmp.name)

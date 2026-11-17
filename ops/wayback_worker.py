@@ -725,7 +725,12 @@ def verify_inbox_dir(control: Control) -> Path:
 
 
 def verify_candidates(done: dict, *, limit: int = 40) -> list[dict]:
-    """URLs lane 2 should try: pending/ok/unverified with a capture or job_id."""
+    """URLs lane 2 should try: pending/ok/unverified with a capture or job_id.
+
+    Prefer manpc-deferred rows, then live swccg.com / res.starwarsccg.org saves,
+    then other https captures. Dead http://decipher.com sources go last.
+    """
+    ours = ("swccg.com", "res.starwarsccg.org", "wiki.swccg.com")
     rows = []
     for url, entry in done.items():
         if entry.get("status") not in {"ok", "pending", "unverified"}:
@@ -739,7 +744,16 @@ def verify_candidates(done: dict, *, limit: int = 40) -> list[dict]:
             "job_id": entry.get("job_id") or "",
             "defer": (entry.get("verify") or {}).get("defer") or "",
         })
-    rows.sort(key=lambda row: (0 if row["defer"] == "manpc" else 1, row["url"]))
+
+    def rank(row: dict) -> tuple:
+        url = row["url"]
+        defer = 0 if row["defer"] == "manpc" else 1
+        our = 0 if any(host in url for host in ours) else 1
+        has_capture = 0 if row["capture"] else 1
+        dead = 1 if url.startswith("http://decipher.com") else 0
+        return (defer, dead, our, has_capture, url)
+
+    rows.sort(key=rank)
     return rows[:limit]
 
 

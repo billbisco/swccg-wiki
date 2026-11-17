@@ -63,7 +63,11 @@ def confirm_pending(row: dict) -> dict | None:
     job = row.get("job_id")
     if not job:
         return None
-    st = W.spn2_status(job)
+    try:
+        st = W.spn2_status(job)
+    except Exception as error:  # noqa: BLE001
+        print("STATUS-ERR", row["url"], str(error)[:80], flush=True)
+        return None
     if st.get("status") == "success" and st.get("timestamp"):
         url = row["url"]
         row = dict(row)
