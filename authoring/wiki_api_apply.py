@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Apply a batch to wiki.swccg.com through the web API as Holocron Claude — no SSH, no PC.
 
-Reads the bot password from the environment (cloud environment variables, never a file in git):
-    WIKI_BOT_USER="Holocron Claude@claude"   WIKI_BOT_PASS=...
+Reads the bot's swccg.com sign-in from the environment (cloud environment variables, never a file in git):
+    WIKI_BOT_USER="Holocron Claude"   WIKI_BOT_PASS=...
+and signs in through swccg.com/login (swccg_signin.py); the wiki has no password sign-in of its own.
 The account has autoreview, so FlaggedRevs marks these edits reviewed.
 
     python3 wiki_api_apply.py y-dt-batch-06.tsv [--files gemp-import-dt-batch-06/*.txt] [--summary ...]
@@ -24,21 +25,19 @@ import urllib.request
 import uuid
 from pathlib import Path
 
-API = "https://wiki.swccg.com/api.php"
+API = "https://swccg.com/wiki/api.php"
 UA = "swccg-wiki-dest/1.0 (Holocron Claude; https://github.com/billbisco/swccg-wiki)"
 
 
 class Wiki:
     def __init__(self) -> None:
-        user, pw = os.environ.get("WIKI_BOT_USER"), os.environ.get("WIKI_BOT_PASS")
-        if not user or not pw:
-            raise SystemExit("WIKI_BOT_USER / WIKI_BOT_PASS not set (cloud environment variables)")
-        self.op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
-        self.op.addheaders = [("User-Agent", UA)]
-        t = self.get(action="query", meta="tokens", type="login")["query"]["tokens"]["logintoken"]
-        r = self.post(action="login", lgname=user, lgpassword=pw, lgtoken=t)["login"]
-        if r.get("result") != "Success":
-            raise SystemExit(f"login failed: {r.get('result')} {r.get('reason', '')}")
+        # #266 AC8: no wiki password sign-in; sign in at swccg.com like everyone else
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from swccg_signin import SignInError, sign_in
+        try:
+            self.op = sign_in(ua=UA)
+        except SignInError as e:
+            raise SystemExit(f"sign-in failed: {e}")
         self.csrf = self.get(action="query", meta="tokens")["query"]["tokens"]["csrftoken"]
 
     def _open(self, req, tries: int = 5) -> dict:
