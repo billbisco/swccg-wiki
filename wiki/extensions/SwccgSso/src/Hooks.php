@@ -123,7 +123,8 @@ class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__Uni
 
 	/** Personal tools: "Log in" goes to the site sign-in; the wiki password form stays at Special:UserLogin. */
 	public function onSkinTemplateNavigation__Universal( $sktemplate, &$links ): void {
-		if ( (string)$sktemplate->getConfig()->get( 'SwccgSsoIssuer' ) === '' ) {
+		$issuer = rtrim( (string)$sktemplate->getConfig()->get( 'SwccgSsoIssuer' ), '/' );
+		if ( $issuer === '' ) {
 			return;
 		}
 		if ( $sktemplate->getUser()->isRegistered() ) {
@@ -133,16 +134,50 @@ class Hooks implements SpecialPageBeforeExecuteHook, SkinTemplateNavigation__Uni
 				$links['user-menu']['logout']['title'] = $sktemplate->msg( 'swccgsso-signout-tooltip' )->text();
 				$links['user-menu']['logout']['class'] = trim( ( $links['user-menu']['logout']['class'] ?? '' ) . ' swccgsso-signout' );
 			}
+			// #587: an Account link to the swccg.com account page, just before Sign out.
+			$account = [ 'swccgsso-account' => [
+				'text' => $sktemplate->msg( 'swccgsso-account' )->text(),
+				'title' => $sktemplate->msg( 'swccgsso-account-tooltip' )->text(),
+				'href' => $issuer . '/account',
+				'icon' => 'settings',
+			] ];
+			$links['user-menu'] = self::insertBefore( $links['user-menu'] ?? [], 'logout', $account );
 			return;
 		}
-		if ( isset( $links['user-menu']['login'] ) ) {
-			$title = $sktemplate->getTitle();
-			$q = [];
-			if ( $title && !$title->isSpecialPage() ) {
-				$q['returnto'] = $title->getPrefixedText();
-			}
-			$links['user-menu']['login']['href'] = SpecialPage::getTitleFor( 'SwccgSignIn' )->getLocalURL( $q );
+		$title = $sktemplate->getTitle();
+		$q = [];
+		if ( $title && !$title->isSpecialPage() ) {
+			$q['returnto'] = $title->getPrefixedText();
 		}
+		$signIn = SpecialPage::getTitleFor( 'SwccgSignIn' )->getLocalURL( $q );
+		if ( isset( $links['user-menu']['login'] ) ) {
+			$links['user-menu']['login']['href'] = $signIn;
+		}
+		// #586: anonymous wiki account creation is off; "Create account" goes to the swccg.com sign-in
+		// page (through Special:SwccgSignIn, so it comes back here), which has "Create a swccg.com account".
+		$create = [
+			'text' => $sktemplate->msg( 'swccgsso-createaccount' )->text(),
+			'title' => $sktemplate->msg( 'swccgsso-createaccount-tooltip' )->text(),
+			'href' => $signIn,
+			'icon' => 'userAdd',
+		];
+		if ( isset( $links['user-menu']['createaccount'] ) ) {
+			$links['user-menu']['createaccount'] = array_merge( $links['user-menu']['createaccount'], $create );
+		} else {
+			$links['user-menu'] = self::insertBefore( $links['user-menu'] ?? [], 'login', [ 'createaccount' => $create ] );
+		}
+	}
+
+	/** Puts $add into $menu just before $key (or at the end when $key is missing). */
+	private static function insertBefore( array $menu, string $key, array $add ): array {
+		$out = [];
+		foreach ( $menu as $k => $v ) {
+			if ( $k === $key ) {
+				$out += $add;
+			}
+			$out[$k] = $v;
+		}
+		return $out + $add;
 	}
 
 	/**
