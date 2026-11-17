@@ -41,7 +41,6 @@
 {{#if:{{{dark_icons|}}}|<tr><th>{{{label_dark_icons|Dark Side Icons}}}</th><td>{{{dark_icons}}}</td></tr>}}
 {{#if:{{{light_icons|}}}|<tr><th>{{{label_light_icons|Light Side Icons}}}</th><td>{{{light_icons}}}</td></tr>}}
 {{#if:{{{icons|}}}|<tr><th>{{{label_icons|Icons}}}</th><td>{{{icons}}}</td></tr>}}
-{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>{{{label_versions|Versions}}}</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
 {{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}
 {{#if:{{{version_code|}}}|<tr><th>Errata version</th><td>{{{version_code}}}</td></tr>}}
 {{#if:{{{errata_mark|}}}|<tr><th>Errata mark</th><td>{{{errata_mark}}}</td></tr>}}
@@ -51,7 +50,9 @@
 {{#if:{{{dedication|}}}|<tr><th>Dedication</th><td>{{{dedication}}}</td></tr>}}
 {{#if:{{{printed_label|}}}|<tr><th>Other printed label</th><td>{{{printed_label}}}</td></tr>}}
 {{#if:{{{copyright_line|}}}|<tr><th>Copyright line</th><td><small>{{{copyright_line}}}</small></td></tr>}}
-{{#if:{{{extra_info|}}}|{{{extra_info|}}}|}}</table>
+{{#if:{{{extra_info|}}}|{{{extra_info|}}}|}}
+{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>{{{label_versions|Versions}}}</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
+</table>
 </div>{{#if:{{{hatnote|}}}|<div class="card-hatnote">''{{{hatnote}}}''</div>}}
 <div class="card-body">
 {{#if:{{{lead|}}}|{{{lead|}}}|'''{{{title}}}''' is a [[{{{side}}}]] [[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>([[{{{subtype_link}}}{{!}}{{{subtype}}}]])}} from [[{{Set page|{{{set}}}}}|{{{set}}}]].}}
