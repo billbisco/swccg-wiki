@@ -1,0 +1,20 @@
+{
+  "base_commit": "640013b21a7a684d8de689e39b112371450ce54a",
+  "tested_at": "2026-11-18T18:11:12.120875+00:00",
+  "tested_module_sha256": "ff962a378b74c5da144687201d1c9ce643bf009a6b2fdb6babece335ca5a50ed",
+  "tests": 163,
+  "failures": 0,
+  "errors": 0,
+  "successful": true,
+  "test_files": {
+    "test_publication_gate.py": "e18239ab434c1a547d66398b75fa1efdc8466451f3be469f60090ea17a47e968",
+    "test_publication_gate_section_fragments.py": "804c6ae6cbf03351418e3485ecb35851eb68dd34f99008cdc7809bea08b13104",
+    "test_raw_evidence_uri.py": "51b4f5c2e57da8bd50081be6e28d0d76a15a25eb5a22b2a26f35396f723adea3",
+    "test_style_lint.py": "158bc020b1915c0afe56d24a8350d33cb3acacbb4f61fcb106d9c357caf3efa3"
+  },
+  "source_contracts": {
+    "preservation_contracts.py": "ffe488e05ed1f37f7189559aecece1d4c8ddae31faed8ab9dd0aec988312a3d1",
+    "preservation_backups.py": "db6fc22c47c1f5ba736e27e601d4bfc4b8fed0bd79531f7a1e0e569a7ee07a6b"
+  },
+  "review": "Only literal file-section fragments are removed after existing masked extraction; empty targets excluded. Peer comment/literal behavior, exact URL/evidence/backup identity checks, registry/source preservation and capture-pending rules unchanged."
+}
