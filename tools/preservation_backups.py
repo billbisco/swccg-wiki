@@ -178,8 +178,11 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
 
 
 def _fetch(url: str):
-    request = urllib.request.Request(url, headers={
-        "User-Agent": "SWCCG-Preservation-Recovery/1.0", "Accept-Encoding": "identity"})
+    headers = {"User-Agent": "SWCCG-Preservation-Recovery/1.0", "Accept-Encoding": "identity"}
+    if url.startswith("https://api.github.com/repos/"):
+        # Contents metadata for 1–100 MB requires the object custom media type.
+        headers["Accept"] = "application/vnd.github.object+json"
+    request = urllib.request.Request(url, headers=headers)
     return urllib.request.build_opener(_NoRedirect()).open(request, timeout=60)
 
 
@@ -226,7 +229,8 @@ def _readback(url: str, expected_bytes: int, *, fetch, destination: Path | None 
         raise
 
 
-def independent_receipt(subject: dict, storage: dict, *, fetch=None, restore_to: Path | None = None) -> dict:
+def independent_receipt(subject: dict, storage: dict, *, fetch=None, restore_to: Path | None = None,
+                        chunk_max_total_bytes: int = MAX_READBACK_BYTES) -> dict:
     """Recover from the immutable independent repository, not the live Wiki.
 
     A receipt is returned only after exact remote payload verification. Optional
@@ -236,6 +240,10 @@ def independent_receipt(subject: dict, storage: dict, *, fetch=None, restore_to:
     errors = subject_errors(subject)
     if errors:
         raise ValueError("; ".join(errors))
+    if storage.get("kind") == "git_raw_chunks_v1":
+        from preservation_chunks import independent_receipt as chunk_receipt
+        return chunk_receipt(subject, storage, fetch=fetch or _fetch, restore_to=restore_to,
+                             max_total_bytes=chunk_max_total_bytes)
     container_proof = {}
     if storage.get("container") is not None:
         sha, recovered, container_proof = _container_readback(subject, storage, fetch=fetch or _fetch, destination=restore_to)

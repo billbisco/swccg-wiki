@@ -208,7 +208,8 @@ def validate_backup_receipt(receipt: object, subject: dict) -> list[str]:
     if not isinstance(storage, dict):
         errors.append("backup receipt storage is required")
     else:
-        if storage.get("kind") != "git" or storage.get("repository") not in BACKUP_REPOSITORIES:
+        if (not isinstance(storage.get("kind"), str) or storage.get("kind") not in {"git", "git_raw_chunks_v1"}
+                or not isinstance(storage.get("repository"), str) or storage.get("repository") not in BACKUP_REPOSITORIES):
             errors.append("backup must identify an existing independent backup repository")
         if not isinstance(storage.get("commit"), str) or not re.fullmatch(r"[0-9a-f]{40}", storage["commit"]):
             errors.append("backup storage commit must be immutable")
@@ -228,7 +229,14 @@ def validate_backup_receipt(receipt: object, subject: dict) -> list[str]:
         errors.append("restored backup byte count does not match the exact subject")
     if not is_utc_timestamp(verification.get("verified_at")):
         errors.append("restore/readback verification needs a UTC timestamp")
-    if isinstance(storage, dict) and storage.get("container") is not None:
+    if isinstance(storage, dict) and storage.get("kind") == "git_raw_chunks_v1":
+        try:
+            from preservation_chunk_profile import receipt_errors
+        except ImportError:
+            errors.append("chunk profile implementation is unavailable; integration is incomplete")
+        else:
+            errors.extend(receipt_errors(receipt, subject))
+    elif isinstance(storage, dict) and storage.get("container") is not None:
         if storage["container"] != "tar.xz":
             errors.append("backup container type is unsupported")
         member = storage.get("member")
