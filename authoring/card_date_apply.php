@@ -25,6 +25,14 @@ foreach ($plan['pages'] as $item) {
     $content = $parent ? $parent->getContent(\MediaWiki\Revision\SlotRecord::MAIN,\MediaWiki\Revision\RevisionRecord::FOR_PUBLIC) : null;
     $before = $content ? $content->serialize() : '';
     if (!hash_equals($item['before_sha256'],hash('sha256',$before))) { echo "PAGE597 ".json_encode(['title'=>$item['title'],'status'=>'content-conflict'])."\n"; continue; }
+    $updater->setOriginalRevisionId(intval($item['baserevid']));
+    $updater->setContent(\MediaWiki\Revision\SlotRecord::MAIN,\MediaWiki\Content\ContentHandler::makeContent($draft,$title));
+    $prepared = $updater->prepareUpdate(EDIT_FORCE_BOT);
+    $normalized = $prepared->getRevision()->getContent(\MediaWiki\Revision\SlotRecord::MAIN)->serialize();
+    if (!hash_equals($item['after_sha256'],hash('sha256',$normalized))) {
+        echo "PAGE597 ".json_encode(['title'=>$item['title'],'status'=>'normalization-required','base'=>$item['baserevid'],'desired_sha256'=>$item['after_sha256'],'normalized_sha256'=>hash('sha256',$normalized),'normalized_bytes'=>strlen($normalized),'normalized_text'=>$normalized,'saved'=>false])."\n";
+        continue;
+    }
     if ($plan['mode'] === 'preview') {
         $parsed = $services->getParser()->parse($draft,$title,\MediaWiki\Parser\ParserOptions::newFromUser($user));
         $html = $parsed->getRawText();
@@ -36,8 +44,6 @@ foreach ($plan['pages'] as $item) {
         continue;
     }
     if ($before === $draft) { echo "PAGE597 ".json_encode(['title'=>$item['title'],'status'=>'nochange','revid'=>$parent->getId()])."\n"; continue; }
-    $updater->setOriginalRevisionId(intval($item['baserevid']));
-    $updater->setContent(\MediaWiki\Revision\SlotRecord::MAIN,\MediaWiki\Content\ContentHandler::makeContent($draft,$title));
     $updater->saveRevision(\MediaWiki\CommentStore\CommentStoreComment::newUnsavedComment($plan['summary']),EDIT_FORCE_BOT);
     if (!$updater->getStatus()->isOK()) { echo "PAGE597 ".json_encode(['title'=>$item['title'],'status'=>'save-failed','errors'=>$updater->getStatus()->getErrorsArray()])."\n"; continue; }
     $revision = $updater->getNewRevision();
