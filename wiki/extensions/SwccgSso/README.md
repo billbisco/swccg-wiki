@@ -14,3 +14,7 @@ MediaWiki client of the swccg.com sign-in service (#267, #249). Deployed at
 - Test-only fault switch (#516 AC2), off by default: membership ids listed one per line in
   `extensions/SwccgSso/.fault-no-row` are treated as having no wiki row. Delete the file to turn it off.
 - Tests: `echo 'require "extensions/SwccgSso/tests/claims_check.php";' | php maintenance/run.php eval` in the wiki container.
+
+## Sign-in log (#631)
+
+One JSON line per sign-in callback in `/var/log/wiki-sso/sso-signin-YYYY-MM-DD.log` (mounted from the data volume), kept 30 days: `wiki_signin` (account number, `tid` from the ID token, `sfp`, nginx `rid`) or `wiki_signin_refused` (reason key, `sfp`, `rid`). No names, emails, addresses, codes, tokens or states. `swccg-signin-trace --tid` reads it. Tests: `php extensions/SwccgSso/tests/signin_log_check.php` in the wiki container.
