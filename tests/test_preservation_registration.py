@@ -116,6 +116,16 @@ class RegistrationTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
 
+    def test_private_work_receipt_registers_without_submitting(self):
+        request = fixture()
+        request["backup_receipt"]["storage"]["repository"] = "https://github.com/swccg-guild/work"
+        result = register(self.root, request)
+        self.assertTrue(result["created"])
+        self.assertFalse(result["submitted"])
+        row = export_records(self.root)["objects"][0]
+        self.assertEqual(request["backup_receipt"], row["backup_receipt"])
+        self.assertEqual("ready", row["state"])
+
     def test_repeat_reconciliation_deduplicates_without_submitting(self):
         request = fixture()
         first = register(self.root, request)
