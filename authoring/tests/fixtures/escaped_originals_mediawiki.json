@@ -1,0 +1,112 @@
+{
+  "api": "https://swccg.com/wiki/api.php",
+  "operation": "read-only action=parse, no Wiki save or Archive requests",
+  "cases": {
+    "nowiki-closed": {
+      "wikitext": "<nowiki>[[File:QA-Literal-Only.jpg]]</nowiki>",
+      "images": []
+    },
+    "nowiki-unclosed": {
+      "wikitext": "<nowiki>[[File:QA-Literal-Only.jpg]]",
+      "images": [
+        "QA-Literal-Only.jpg"
+      ]
+    },
+    "nowiki-selfclosing": {
+      "wikitext": "<nowiki/>[[File:QA-Actual-Reference.jpg]]",
+      "images": [
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "nowiki-nested": {
+      "wikitext": "<nowiki><nowiki>[[File:QA-Literal-Only.jpg]]</nowiki>[[File:QA-Actual-Reference.jpg]]</nowiki>",
+      "images": [
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "pre-closed": {
+      "wikitext": "<pre>[[File:QA-Literal-Only.jpg]]</pre>",
+      "images": []
+    },
+    "pre-unclosed": {
+      "wikitext": "<pre>[[File:QA-Literal-Only.jpg]]",
+      "images": [
+        "QA-Literal-Only.jpg"
+      ]
+    },
+    "pre-selfclosing": {
+      "wikitext": "<pre/>[[File:QA-Actual-Reference.jpg]]",
+      "images": [
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "pre-nested": {
+      "wikitext": "<pre><pre>[[File:QA-Literal-Only.jpg]]</pre>[[File:QA-Actual-Reference.jpg]]</pre>",
+      "images": [
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "source-closed": {
+      "wikitext": "<source>[[File:QA-Literal-Only.jpg]]</source>",
+      "images": [
+        "QA-Literal-Only.jpg"
+      ]
+    },
+    "source-unclosed": {
+      "wikitext": "<source>[[File:QA-Literal-Only.jpg]]",
+      "images": [
+        "QA-Literal-Only.jpg"
+      ]
+    },
+    "source-selfclosing": {
+      "wikitext": "<source/>[[File:QA-Actual-Reference.jpg]]",
+      "images": [
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "source-nested": {
+      "wikitext": "<source><source>[[File:QA-Literal-Only.jpg]]</source>[[File:QA-Actual-Reference.jpg]]</source>",
+      "images": [
+        "QA-Literal-Only.jpg",
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "syntaxhighlight-closed": {
+      "wikitext": "<syntaxhighlight>[[File:QA-Literal-Only.jpg]]</syntaxhighlight>",
+      "images": [
+        "QA-Literal-Only.jpg"
+      ]
+    },
+    "syntaxhighlight-unclosed": {
+      "wikitext": "<syntaxhighlight>[[File:QA-Literal-Only.jpg]]",
+      "images": [
+        "QA-Literal-Only.jpg"
+      ]
+    },
+    "syntaxhighlight-selfclosing": {
+      "wikitext": "<syntaxhighlight/>[[File:QA-Actual-Reference.jpg]]",
+      "images": [
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "syntaxhighlight-nested": {
+      "wikitext": "<syntaxhighlight><syntaxhighlight>[[File:QA-Literal-Only.jpg]]</syntaxhighlight>[[File:QA-Actual-Reference.jpg]]</syntaxhighlight>",
+      "images": [
+        "QA-Literal-Only.jpg",
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "code": {
+      "wikitext": " <code>[[File:QA-Actual-Reference.jpg]]</code>",
+      "images": [
+        "QA-Actual-Reference.jpg"
+      ]
+    },
+    "nowiki-unknown-unicode": {
+      "wikitext": "<nowİki>[[File:QA-Actual-Reference.jpg]]</nowİki>",
+      "images": [
+        "QA-Actual-Reference.jpg"
+      ]
+    }
+  }
+}

@@ -64,6 +64,57 @@ class LivePageFixtures(unittest.TestCase):
         self.assertEqual(good.returncode, 0, good.stdout)
 
 
+class CaptionIdentificationPositions(unittest.TestCase):
+    def caption_flags(self, caption, gallery=True):
+        text = (f"<gallery>\nFile:Group.jpg|{caption}\n</gallery>" if gallery else
+                f"[[File:Group.jpg|thumb|{caption}]]")
+        return [flag for flag in L.lint(text, "Photograph")[0]
+                if flag.startswith("CAPTION ")]
+
+    def test_linked_subject_positions_in_galleries_and_file_captions(self):
+        for position in ("fourth from left", "7th from the left", "2 from right",
+                         "11th from left", "22nd from right", "left", "right"):
+            for gallery in (True, False):
+                with self.subTest(position=position, gallery=gallery):
+                    self.assertEqual([], self.caption_flags(
+                        f"[[Jonas Hagen Nørregaard|Jonas]] ({position}) at Worlds",
+                        gallery=gallery))
+
+    def test_position_matching_is_case_insensitive(self):
+        self.assertEqual([], self.caption_flags("[[Eric Hunter]] (Seventh From Left)"))
+
+    def test_positions_must_be_complete_qualifiers_next_to_a_named_subject_link(self):
+        for caption in ("Eric Hunter (seventh from left)",
+                        "[[Eric Hunter]] seventh from left",
+                        "[[Eric Hunter]] at Worlds (left)",
+                        "[[Eric Hunter]] (standing on left)",
+                        "[[Eric Hunter]] (left background)",
+                        "[[Eric Hunter]] (0th from left)",
+                        "[[Eric Hunter]] (2th from left)",
+                        "[[:File:Group.jpg|Eric]] (left)",
+                        "[[Category:People|Eric]] (left)",
+                        "[[ ]] (left)",
+                        "[[Eric Hunter| ]] (left)"):
+            with self.subTest(caption=caption):
+                self.assertTrue(any("('left')" in flag for flag in self.caption_flags(caption)))
+
+    def test_other_description_words_and_positions_outside_qualifier_still_warn(self):
+        flags = self.caption_flags("[[Eric Hunter]] (seventh from left), pictured on right")
+        self.assertTrue(any("('pictured')" in flag for flag in flags))
+        self.assertTrue(any("('right')" in flag for flag in flags))
+        self.assertFalse(any("('left')" in flag for flag in flags))
+
+    def test_qualifier_words_still_count_toward_twelve_word_limit(self):
+        flags = self.caption_flags(
+            "[[Jonas Hagen Nørregaard]] (fourth from left) at the 2024 World Championship ceremony today")
+        self.assertTrue(any("13 words (> 12)" in flag for flag in flags))
+        self.assertFalse(any("('left')" in flag for flag in flags))
+
+    def test_oversized_numeric_qualifier_does_not_crash_lint(self):
+        caption = "[[Eric Hunter]] (" + "1" * 5000 + "st from left)"
+        self.assertTrue(any("('left')" in flag for flag in self.caption_flags(caption)))
+
+
 class ArchiveCheck(unittest.TestCase):
     def test_ref_with_copy_passes(self):
         t = f'Fact.<ref>[https://example.com/a Title], site. Preserved copy: [{WB}https://example.com/a Internet Archive]</ref>'

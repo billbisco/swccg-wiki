@@ -57,6 +57,42 @@ CAPTION_WORDS = ["shows", "showing", "visible", "left", "right", "pictured", "de
                  "foreground", "top", "bottom", "behind"]
 MAX_CAPTION = 12
 
+IDENTIFICATION_POSITION = re.compile(
+    r"\[\[(?P<target>[^\[\]|\n]+)(?:\|(?P<label>[^\[\]|\n]+))?\]\]\s*"
+    r"\((?:(?P<ordinal>first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|"
+    r"tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|"
+    r"eighteenth|nineteenth|twentieth|[1-9]\d*(?:st|nd|rd|th)?)\s+from\s+(?:the\s+)?)?"
+    r"(?P<side>left|right)\)", re.I)
+
+
+def plain_caption(caption):
+    return re.sub(r"\[\[[^|\]]*\|([^\]]*)\]\]|\[\[([^\]]*)\]\]",
+                  lambda m: m.group(1) or m.group(2), caption)
+
+
+def caption_description_text(caption):
+    """Exclude only a linked subject's parenthesized identification side.
+
+    Word limits still use the complete caption; source accuracy is checked by
+    the publisher, not inferred from this syntactic allowance.
+    """
+    def mask_side(match):
+        target = match.group('target').strip()
+        label = match.group('label')
+        if not target or ':' in target or target.startswith('#') or (label is not None and not label.strip()):
+            return match.group(0)
+        ordinal = match.group('ordinal') or ''
+        number = re.fullmatch(r'([1-9]\d*)(st|nd|rd|th)?', ordinal, re.I)
+        if number and number.group(2):
+            n = int(number.group(1)[-2:])
+            suffix = 'th' if 11 <= n % 100 <= 13 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+            if number.group(2).lower() != suffix:
+                return match.group(0)
+        start, end = (offset - match.start() for offset in match.span('side'))
+        return match.group(0)[:start] + ' ' * (end - start) + match.group(0)[end:]
+
+    return plain_caption(IDENTIFICATION_POSITION.sub(mask_side, caption))
+
 def fetch(title, n=2):
     q = urllib.parse.urlencode({"action": "query", "titles": title, "prop": "revisions", "rvprop": "content|ids",
                                 "rvslots": "main", "rvlimit": n, "format": "json", "formatversion": 2})
@@ -507,11 +543,12 @@ def lint(text, title=None, cats=None):
             continue
         if hl in BAD_HEADINGS: flags.append(f"HEADING  '{h}' is not allowed")
     for c in captions(text):
-        plain = re.sub(r"\[\[[^|\]]*\|([^\]]*)\]\]|\[\[([^\]]*)\]\]", lambda m: m.group(1) or m.group(2), c)
+        plain = plain_caption(c)
         n = len(plain.split())
         if n > MAX_CAPTION: flags.append(f"CAPTION  {n} words (> {MAX_CAPTION}): {plain[:90]}")
+        description = caption_description_text(c)
         for wd in CAPTION_WORDS:
-            if re.search(rf"\b{wd}\b", plain, re.I): flags.append(f"CAPTION  describes image ('{wd}'): {plain[:90]}")
+            if re.search(rf"\b{wd}\b", description, re.I): flags.append(f"CAPTION  describes image ('{wd}'): {plain[:90]}")
     b = body(text)
     own = mask_speech(text) if is_transcript_page(title, text, cats) else text   # transcripts: skip speech
     talk = is_talk_page(title)
