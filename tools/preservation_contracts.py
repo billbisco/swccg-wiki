@@ -67,7 +67,11 @@ def subject_errors(subject: object) -> list[str]:
         original = subject.get("original_version_url")
         try:
             url = urllib.parse.urlsplit(original) if isinstance(original, str) else None
-            valid_original = url and url.scheme == "https" and url.hostname == "wiki.swccg.com" and not url.username and not url.password and url.path.startswith("/images/") and "/thumb/" not in url.path and not url.fragment
+            wiki_upload = url and (
+                (url.hostname == "wiki.swccg.com" and url.path.startswith("/images/"))
+                or (url.hostname == "swccg.com" and url.path.startswith("/wiki/images/"))
+            )
+            valid_original = url and url.scheme == "https" and wiki_upload and not url.username and not url.password and "/thumb/" not in url.path and not url.fragment
         except ValueError:
             valid_original = False
         if not valid_original:
