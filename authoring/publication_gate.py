@@ -47,14 +47,20 @@ def _immutable_evidence_uri(uri: object, repositories: set[str]) -> bool:
         parsed = urllib.parse.urlsplit(uri)
     except ValueError:
         return False
-    if (parsed.scheme != 'https' or parsed.netloc != 'github.com'
-            or parsed.query or parsed.fragment):
+    if parsed.scheme != 'https' or parsed.query or parsed.fragment:
         return False
     parts = parsed.path.split('/')
-    return (len(parts) >= 6 and parts[0] == '' and parts[3] == 'blob'
+    if parsed.netloc == 'github.com' and len(parts) >= 6 and parts[3] == 'blob':
+        revision_index = 4
+    elif parsed.netloc == 'raw.githubusercontent.com' and len(parts) >= 5:
+        revision_index = 3
+    else:
+        return False
+    return (parts[0] == ''
             and 'https://github.com/' + '/'.join(parts[1:3]) in repositories
-            and re.fullmatch(r'[0-9a-f]{40}', parts[4]) is not None
-            and all(part not in {'', '.', '..'} and ':' not in part for part in parts[5:]))
+            and re.fullmatch(r'[0-9a-f]{40}', parts[revision_index]) is not None
+            and all(part not in {'', '.', '..'} and ':' not in part
+                    for part in parts[revision_index + 1:]))
 
 
 def _evidence_files(root, entries, contracts, errors):
