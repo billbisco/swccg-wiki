@@ -257,7 +257,9 @@ def referenced_originals(text: str) -> set[str]:
     names.update(re.findall(r'^\|\s*(?:image|hires_image)\s*=\s*([^\n|{}]+)', text, re.M))
     for gallery in re.findall(r'<gallery\b[^>]*>(.*?)</gallery>', text, re.S | re.I):
         names.update(re.findall(r'^(?:File:|Image:)?([^|\n]+)', gallery, re.M))
-    return {_title('File:' + name.strip()) for name in names if name.strip()}
+    # A file-description section selects the same original, not a filename suffix.
+    names = {name.split('#', 1)[0].strip() for name in names}
+    return {_title('File:' + name) for name in names if name}
 
 
 def publication_report(text: str, title: str, flags: list[str], required_sources: set[str],
