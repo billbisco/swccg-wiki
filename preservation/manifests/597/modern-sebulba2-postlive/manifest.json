@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "group": "modern-sebulba2-rollout-post-live",
+  "artifact_local_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\qa\\modern-sebulba2-rollout-independent\\597-modern-sebulba2-rollout-post-live.tar.xz",
+  "artifact_sha256": "d2830246e10d06c62a190e4e6b7a0302c690f5d2d7eb77af7d55268f5ac3ccc5",
+  "artifact_bytes": 14020,
+  "uncompressed_bytes": 141097,
+  "member_count": 12,
+  "rows": 2,
+  "subjects": [
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Sebulba (V) (ALT)",
+        "content_sha256": "e7c42972a1bbdcdbb0eb5ff6d3aeded7a7320c7705429acd9e344d8755f7b483",
+        "bytes": 5481,
+        "revision_id": 333570
+      },
+      "member": "native/live/12017-333570-e7c42972a1bb.wiki",
+      "object_id": "e0e2d1ccfdd9bd1c90aa308788443e0bc5ae6ce221b41cd9a9e534a83aaaa15e",
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Sebulba (V) (ALT) (Errata)",
+        "content_sha256": "528c2c2ea2567ef1da95cbf29b1444c10d3f8094757fa4174f49b4d8d9fbccd9",
+        "bytes": 5565,
+        "revision_id": 333571
+      },
+      "member": "native/live/104159-333571-528c2c2ea256.wiki",
+      "object_id": "703ce16ec4f92981d9725d28e90523ad7d026296402004019a00395704609ea0",
+      "role": "exact-live-wiki-revision"
+    }
+  ],
+  "members": [
+    {
+      "name": "manifest/index.json",
+      "sha256": "a6e86eb629eddd290b1aae0ad7f1e8f68637758c3d545198624ac929bdd42b6f",
+      "bytes": 4290,
+      "role": "subject-and-QA-index"
+    },
+    {
+      "name": "native/live/104159-333571-528c2c2ea256.wiki",
+      "sha256": "528c2c2ea2567ef1da95cbf29b1444c10d3f8094757fa4174f49b4d8d9fbccd9",
+      "bytes": 5565,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "native/live/12017-333570-e7c42972a1bb.wiki",
+      "sha256": "e7c42972a1bbdcdbb0eb5ff6d3aeded7a7320c7705429acd9e344d8755f7b483",
+      "bytes": 5481,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "qa/actual-apply-receipts/sebulba2-01-apply-receipt.json",
+      "sha256": "079ed6af1ff8849b7bedbe312a2c7970c8d7c26f96e6b73d8a893ce5e50b9c94",
+      "bytes": 1278,
+      "role": "actual-native-guarded-save-receipt"
+    },
+    {
+      "name": "qa/checkpoint.json",
+      "sha256": "9a4d2bbe5bab7649ff953669fd156a2b909f25c2c00256118477a2b4244fd4b5",
+      "bytes": 55854,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/html/104159-333571.html",
+      "sha256": "32e8dd2a6aa08f46ed061581618877ce0a4e0a08c92c096a7ec36e32c1a92388",
+      "bytes": 29913,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/12017-333570.html",
+      "sha256": "d11950fcd06d72d63814eaa3ac6811e6e9524594ea0c2f26079da53887daa38b",
+      "bytes": 29152,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/input-saved-scope.json",
+      "sha256": "74c5f87afa013d53acf60652352b90ad10a4e2d3b6b40c7df07a49e0fbe670d2",
+      "bytes": 456,
+      "role": "derived-scope-bound-to-actual-receipt-hashes"
+    },
+    {
+      "name": "qa/read_only_review_check.php",
+      "sha256": "1f03c3a3d1a6cc1fccf3ca57d6f6149a219da41bc22992f1695eb12d0747736f",
+      "bytes": 2491,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/records/333570.json",
+      "sha256": "f833601f814523948097315945ef3a4d6f654edf8e9707d5a5b06b5cf52b3df5",
+      "bytes": 2545,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/records/333571.json",
+      "sha256": "b73e7c4a60e71a2fe84220dfc12e2cba4936858cd973af0aee8bcd5f6cfd7488",
+      "bytes": 2568,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/review/sebulba2-01.json",
+      "sha256": "16116dec2351e44a54f4acb33f8858d2947d2e855fb519890ad40478154263ed",
+      "bytes": 1504,
+      "role": "actual-DB-native-review-proof"
+    }
+  ],
+  "source_keys": [],
+  "held_source_keys": [],
+  "native_holds": [],
+  "privacy_holds": [],
+  "storage_template": {
+    "kind": "git",
+    "repository": "https://github.com/billbisco/swccg-wiki",
+    "path": "preservation/bundles/597/597-modern-sebulba2-rollout-post-live.tar.xz",
+    "container": "tar.xz",
+    "artifact_sha256": "d2830246e10d06c62a190e4e6b7a0302c690f5d2d7eb77af7d55268f5ac3ccc5",
+    "artifact_bytes": 14020,
+    "uncompressed_bytes": 141097
+  },
+  "commit_required_before_remote_readback": true,
+  "independent_verified": false
+}
