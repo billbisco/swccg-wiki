@@ -1,0 +1,631 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "subject": {
+        "bytes": 315358312,
+        "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+        "kind": "source_snapshot",
+        "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+        "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+      },
+      "source": {
+        "url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+        "sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+        "bytes": 315358312,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/577e298d86e9627c1af99642634baff42f69a88e/evidence/362/premium-set/external/source-ledger.json",
+          "sha256": "073bbd492c0d4783a08df83d0364be603e359779c2a0872e7492585489d1cb5c"
+        }
+      },
+      "readiness": {
+        "ready": true,
+        "reason": "Exact public response bytes independently backed up; central owner must recheck bytes before any capture submission",
+        "stage_bytes": 0
+      },
+      "owner": "server-wayback-owner",
+      "continuation": "Existing central owner only. Respect provider control, verify source identity, then capture if ready. This record is metadata registration, never a submission. Exact public response bytes independently backed up; central owner must recheck bytes before any capture submission",
+      "approval_scope": {
+        "authorization": "Bill authorized Premium Set1 family/wiki source documentation in chat; cited unchanged family sources are preserved without new claim endorsement",
+        "publisher": "MemoryCoreChatGPT",
+        "scope": "Cited source payload preservation and explicitly held rendered evidence; no capture submission delegation",
+        "ticket": 362
+      },
+      "object_id": "0092f6026e6db0b101867d02d56be2cce1d97e792c1d4b83eea0a226fb90d8bf",
+      "subject_id": "f2e0e7cd547ea2206bc8bd41b30a301edd7197aec9bc50120290f538889e5b1b",
+      "job_id": "payload:07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+      "request_id": "b258c54cf3b28cd8b13c4cc7a4cf7bd1b5ef38d065501ab37e32b5db0c5f0461",
+      "generation": 0,
+      "record_sha256": "75697574b0e61aa17b19793968fc4e77eea886e6e0ff458dc2bc29942e196892",
+      "record": "requests/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/0092f6026e6db0b101867d02d56be2cce1d97e792c1d4b83eea0a226fb90d8bf/b258c54cf3b28cd8b13c4cc7a4cf7bd1b5ef38d065501ab37e32b5db0c5f0461.json",
+      "state": "ready",
+      "reason": "Exact public response bytes independently backed up; central owner must recheck bytes before any capture submission",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "666b3cdffe2a2a27026c6a14323a300e26a011b9",
+          "kind": "git",
+          "lfs": {
+            "attributes_blob_sha1": "9b5ae29171caffed6797b547da10544e2f184fcd",
+            "oid_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+            "pointer_blob_sha1": "f4cb682213e30384a17fb9d317388efc90521fa9",
+            "pointer_sha256": "b48af9048db463c5dd2fdfc74c95625e82e964304332f8c2036c843d6ae8cfe5",
+            "size": 315358312,
+            "version": "https://git-lfs.github.com/spec/v1"
+          },
+          "path": "sources/362/lfs/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/Encyc3_2.pdf",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 315358312,
+          "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+          "kind": "source_snapshot",
+          "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+          "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Fresh independent Git commit/path resolution and standard LFS basic-transfer HTTP download, streamed and fully hashed; no original source or local object cache used",
+          "pdf_signature": true,
+          "restored_bytes": 315358312,
+          "restored_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+          "status": "verified",
+          "verified_at": "2026-11-14T14:46:24.850241+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "666b3cdffe2a2a27026c6a14323a300e26a011b9",
+          "kind": "git",
+          "lfs": {
+            "attributes_blob_sha1": "9b5ae29171caffed6797b547da10544e2f184fcd",
+            "oid_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+            "pointer_blob_sha1": "f4cb682213e30384a17fb9d317388efc90521fa9",
+            "pointer_sha256": "b48af9048db463c5dd2fdfc74c95625e82e964304332f8c2036c843d6ae8cfe5",
+            "size": 315358312,
+            "version": "https://git-lfs.github.com/spec/v1"
+          },
+          "path": "sources/362/lfs/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/Encyc3_2.pdf",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 315358312,
+          "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+          "kind": "source_snapshot",
+          "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+          "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Fresh independent Git commit/path resolution and standard LFS basic-transfer HTTP download, streamed and fully hashed; no original source or local object cache used",
+          "pdf_signature": true,
+          "restored_bytes": 315358312,
+          "restored_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+          "status": "verified",
+          "verified_at": "2026-11-14T14:46:24.850241+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 76462,
+        "content_sha256": "3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+        "kind": "source_snapshot",
+        "original_version_url": "https://i.ebayimg.com/images/g/AE0AAeSwj3lqHxLu/s-l1600.jpg",
+        "title": "https://i.ebayimg.com/images/g/AE0AAeSwj3lqHxLu/s-l1600.jpg"
+      },
+      "source": {
+        "url": "https://i.ebayimg.com/images/g/AE0AAeSwj3lqHxLu/s-l1600.jpg",
+        "sha256": "3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+        "bytes": 76462,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8516437a990a04540edf7c3020eb95558a927992/preservation/bundles/597/597-unlimited-wioslea-verified-publisher-year.tar.xz",
+          "sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact guarded field-only publication; retain all authoritative existing evidence/observations/capture owner. No config/budget/archive writes.",
+      "approval_scope": {
+        "scope": "ExactlyWioslea (Unlimited) sourced ownOriginal1996date plus root-reviewed physical full-state publisher correction. Existing article identities/UID/otherfields preserved; complete allcited native sources andcurrent originals. Metadata-only; rootalonepublishes.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "bd88e1f2a90966607aaa3ae0663c01e8276b968f25d4b8e0896bbc6a683705f7",
+      "subject_id": "37c28ad0cfdf2671300438f3af04ec403333bd39dfdc1d29f4a876082a34a8fd",
+      "job_id": "payload:3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+      "request_id": "11323e0e463a8366ad9ebf37531c19c72355692b90df2e22fab7fb2b4b3be1fc",
+      "generation": 0,
+      "record_sha256": "a7ac2c32ce9e5a2a334e0eb8171292bf323a347b064662313f32090559ec6a84",
+      "record": "requests/3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553/bd88e1f2a90966607aaa3ae0663c01e8276b968f25d4b8e0896bbc6a683705f7/11323e0e463a8366ad9ebf37531c19c72355692b90df2e22fab7fb2b4b3be1fc.json",
+      "state": "awaiting_stage",
+      "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 553076,
+          "artifact_sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source_snapshot/3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+          "path": "preservation/bundles/597/597-unlimited-wioslea-verified-publisher-year.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 592087
+        },
+        "subject": {
+          "bytes": 76462,
+          "content_sha256": "3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+          "kind": "source_snapshot",
+          "original_version_url": "https://i.ebayimg.com/images/g/AE0AAeSwj3lqHxLu/s-l1600.jpg",
+          "title": "https://i.ebayimg.com/images/g/AE0AAeSwj3lqHxLu/s-l1600.jpg"
+        },
+        "verification": {
+          "container_member": "native/source_snapshot/3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+          "container_payload_tally": 592087,
+          "independent": true,
+          "restored_bytes": 76462,
+          "restored_container_bytes": 553076,
+          "restored_container_sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666",
+          "restored_sha256": "3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:34.864000+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 553076,
+          "artifact_sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source_snapshot/3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+          "path": "preservation/bundles/597/597-unlimited-wioslea-verified-publisher-year.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 592087
+        },
+        "subject": {
+          "bytes": 76462,
+          "content_sha256": "3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+          "kind": "source_snapshot",
+          "original_version_url": "https://i.ebayimg.com/images/g/AE0AAeSwj3lqHxLu/s-l1600.jpg",
+          "title": "https://i.ebayimg.com/images/g/AE0AAeSwj3lqHxLu/s-l1600.jpg"
+        },
+        "verification": {
+          "container_member": "native/source_snapshot/3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+          "container_payload_tally": 592087,
+          "independent": true,
+          "restored_bytes": 76462,
+          "restored_container_bytes": 553076,
+          "restored_container_sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666",
+          "restored_sha256": "3cb96f0af4c3724c4012e4c8cd03f669569e6b610582629a197ecc8b799e4553",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:34.864000+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 348782,
+        "content_sha256": "3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://swccg.com/wiki/images/7/71/Premiere-U-L-wioslea.png",
+        "title": "File:Premiere-U-L-wioslea.png",
+        "upload_timestamp": "2026-11-11T21:29:56Z"
+      },
+      "source": {
+        "url": "https://swccg.com/wiki/images/7/71/Premiere-U-L-wioslea.png",
+        "sha256": "3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+        "bytes": 348782,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8516437a990a04540edf7c3020eb95558a927992/preservation/bundles/597/597-unlimited-wioslea-verified-publisher-year.tar.xz",
+          "sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact guarded field-only publication; retain all authoritative existing evidence/observations/capture owner. No config/budget/archive writes.",
+      "approval_scope": {
+        "scope": "ExactlyWioslea (Unlimited) sourced ownOriginal1996date plus root-reviewed physical full-state publisher correction. Existing article identities/UID/otherfields preserved; complete allcited native sources andcurrent originals. Metadata-only; rootalonepublishes.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "a542e11f7aeb3e9a4fc7abbc7a86407cab8fb3f47141193b0f3ee7f09911f38c",
+      "subject_id": "67f252153bd0f7cb4cf2d33927afdfff94a98912c35d79a9d59ab21b726e2e65",
+      "job_id": "payload:3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+      "request_id": "24edb6f1eb63ab7dbe8f3cb562738e1f0f3e88bc1f6eb249c0d2b4dddb135c3a",
+      "generation": 0,
+      "record_sha256": "d8dbedad4817c40610204dfe986d8ba4b66202d5a33df210de5b47b4aaa733a6",
+      "record": "requests/3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b/a542e11f7aeb3e9a4fc7abbc7a86407cab8fb3f47141193b0f3ee7f09911f38c/24edb6f1eb63ab7dbe8f3cb562738e1f0f3e88bc1f6eb249c0d2b4dddb135c3a.json",
+      "state": "awaiting_stage",
+      "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 553076,
+          "artifact_sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/wiki_file_version/3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+          "path": "preservation/bundles/597/597-unlimited-wioslea-verified-publisher-year.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 592087
+        },
+        "subject": {
+          "bytes": 348782,
+          "content_sha256": "3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://swccg.com/wiki/images/7/71/Premiere-U-L-wioslea.png",
+          "title": "File:Premiere-U-L-wioslea.png",
+          "upload_timestamp": "2026-11-11T21:29:56Z"
+        },
+        "verification": {
+          "container_member": "native/wiki_file_version/3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+          "container_payload_tally": 592087,
+          "independent": true,
+          "restored_bytes": 348782,
+          "restored_container_bytes": 553076,
+          "restored_container_sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666",
+          "restored_sha256": "3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:34.864000+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 553076,
+          "artifact_sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/wiki_file_version/3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+          "path": "preservation/bundles/597/597-unlimited-wioslea-verified-publisher-year.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 592087
+        },
+        "subject": {
+          "bytes": 348782,
+          "content_sha256": "3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://swccg.com/wiki/images/7/71/Premiere-U-L-wioslea.png",
+          "title": "File:Premiere-U-L-wioslea.png",
+          "upload_timestamp": "2026-11-11T21:29:56Z"
+        },
+        "verification": {
+          "container_member": "native/wiki_file_version/3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+          "container_payload_tally": 592087,
+          "independent": true,
+          "restored_bytes": 348782,
+          "restored_container_bytes": 553076,
+          "restored_container_sha256": "7a2b11c4b8e45ba5128aaab77ce80f97eae1942ae8bd270c065d269321880666",
+          "restored_sha256": "3d55892e7aef49350a613fb0545b27ec8c2f857a12a091db9a913bfb89a99c4b",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:34.864000+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 21560,
+        "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+        "kind": "source_snapshot",
+        "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+        "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+      },
+      "source": {
+        "url": "http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+        "sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+        "bytes": 21560,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/7e524ad9197065d053832d5b8f3db87ba4dfd3f3/preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact3article baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly3 strict-lint baseline article date corrections (Luke original, Decipher Errata, first Original VS1). Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "4c20d25d969868c9aeb99e4f9c932ec5e381886b19a5c3a424281c497f6b2bd8",
+      "subject_id": "48bb69f8e4ad0c328987c4b44ce1444feee34c989117284da526542b14f15996",
+      "job_id": "payload:5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+      "request_id": "18761c6461294a8cce041dd26744f1b63e9c90e599a7baaeeea53ad7a3d47d51",
+      "generation": 0,
+      "record_sha256": "6d574b0047c4298a848c3408831fbabe57502482588b93b81ce9cc32a0a4da2e",
+      "record": "requests/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49/4c20d25d969868c9aeb99e4f9c932ec5e381886b19a5c3a424281c497f6b2bd8/18761c6461294a8cce041dd26744f1b63e9c90e599a7baaeeea53ad7a3d47d51.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 78288,
+          "artifact_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "commit": "7e524ad9197065d053832d5b8f3db87ba4dfd3f3",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "path": "preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1070119
+        },
+        "subject": {
+          "bytes": 21560,
+          "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "kind": "source_snapshot",
+          "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+          "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+        },
+        "verification": {
+          "container_member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "container_payload_tally": 1070119,
+          "independent": true,
+          "restored_bytes": 21560,
+          "restored_container_bytes": 78288,
+          "restored_container_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "restored_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "status": "verified",
+          "verified_at": "2026-11-18T14:50:14.520271+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 78288,
+          "artifact_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "commit": "7e524ad9197065d053832d5b8f3db87ba4dfd3f3",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "path": "preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1070119
+        },
+        "subject": {
+          "bytes": 21560,
+          "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "kind": "source_snapshot",
+          "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+          "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+        },
+        "verification": {
+          "container_member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "container_payload_tally": 1070119,
+          "independent": true,
+          "restored_bytes": 21560,
+          "restored_container_bytes": 78288,
+          "restored_container_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "restored_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "status": "verified",
+          "verified_at": "2026-11-18T14:50:14.520271+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 164372,
+        "content_sha256": "693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+        "kind": "source_snapshot",
+        "original_version_url": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Light.json",
+        "title": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Light.json"
+      },
+      "source": {
+        "url": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Light.json",
+        "sha256": "693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+        "bytes": 164372,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/96557a307c2bcd4af36ac133d11f01ff310ea65b/preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "4d9db8b07408f39c5a20d71a1bcc6e66be48710dfaf617d79d2113db2d36718f",
+      "subject_id": "dd8c712356c1ac301a78506c21a1a66583317f745ed34e811b86c6fdb24df65c",
+      "job_id": "payload:693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+      "request_id": "df757cf2c447346a513a7a3d5c8f3626614a4ec42a53ce56ab90f1b9cba9a485",
+      "generation": 0,
+      "record_sha256": "44679391f49383a136d411287c1148f138669a0f5ece1f9bb57065fed736fd72",
+      "record": "requests/693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e/4d9db8b07408f39c5a20d71a1bcc6e66be48710dfaf617d79d2113db2d36718f/df757cf2c447346a513a7a3d5c8f3626614a4ec42a53ce56ab90f1b9cba9a485.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 4997304,
+          "artifact_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "commit": "96557a307c2bcd4af36ac133d11f01ff310ea65b",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source_snapshot/693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+          "path": "preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 25248025
+        },
+        "subject": {
+          "bytes": 164372,
+          "content_sha256": "693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Light.json",
+          "title": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Light.json"
+        },
+        "verification": {
+          "container_member": "native/source_snapshot/693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+          "container_payload_tally": 25248025,
+          "independent": true,
+          "restored_bytes": 164372,
+          "restored_container_bytes": 4997304,
+          "restored_container_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "restored_sha256": "693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+          "status": "verified",
+          "verified_at": "2026-11-18T16:29:34.643236+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 4997304,
+          "artifact_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "commit": "96557a307c2bcd4af36ac133d11f01ff310ea65b",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source_snapshot/693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+          "path": "preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 25248025
+        },
+        "subject": {
+          "bytes": 164372,
+          "content_sha256": "693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Light.json",
+          "title": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Light.json"
+        },
+        "verification": {
+          "container_member": "native/source_snapshot/693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+          "container_payload_tally": 25248025,
+          "independent": true,
+          "restored_bytes": 164372,
+          "restored_container_bytes": 4997304,
+          "restored_container_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "restored_sha256": "693b1d6873fe811ff57278560c995678dcb13202209e8b875986ad965432b25e",
+          "status": "verified",
+          "verified_at": "2026-11-18T16:29:34.643236+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 39486,
+        "content_sha256": "74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+        "kind": "source_snapshot",
+        "original_version_url": "https://scomp.starwarsccg.org/?s=Wioslea",
+        "title": "https://scomp.starwarsccg.org/?s=Wioslea"
+      },
+      "source": {
+        "url": "https://scomp.starwarsccg.org/?s=Wioslea",
+        "sha256": "74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+        "bytes": 39486,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/a8aaf146042db2be595940b91ecd81a93f1d3705/preservation/bundles/597/597-wioslea-unlimited-complete-scomp-native.tar.xz",
+          "sha256": "c8239bffa8ba0923709c1a9827d75eaa181d61470b08583482ae6d3565c019bd"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact guarded field-only publication; retain all authoritative existing evidence/observations/capture owner. No config/budget/archive writes.",
+      "approval_scope": {
+        "scope": "ExactlyWioslea (Unlimited) sourced ownOriginal1996date plus root-reviewed physical full-state publisher correction. Existing article identities/UID/otherfields preserved; complete allcited native sources andcurrent originals. Metadata-only; rootalonepublishes.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "836ba970b4b44e43d0fca684f323211826bd1c8ce40b9dd67ebf8b4479a6ea70",
+      "subject_id": "bc9aecd36052749d1d995d64271cc18f4a2a54cfe262284a7638ad0181c25db0",
+      "job_id": "payload:74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+      "request_id": "3a6ba97daafb3f81d1a71555d2fcef1f974229765f194305691be195e9c732e8",
+      "generation": 0,
+      "record_sha256": "66c08f6aa58608d05e0545ca357dd9c8b670b26eced4f95c50dc1d8138d62f63",
+      "record": "requests/74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd/836ba970b4b44e43d0fca684f323211826bd1c8ce40b9dd67ebf8b4479a6ea70/3a6ba97daafb3f81d1a71555d2fcef1f974229765f194305691be195e9c732e8.json",
+      "state": "awaiting_stage",
+      "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 8184,
+          "artifact_sha256": "c8239bffa8ba0923709c1a9827d75eaa181d61470b08583482ae6d3565c019bd",
+          "commit": "a8aaf146042db2be595940b91ecd81a93f1d3705",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source/74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+          "path": "preservation/bundles/597/597-wioslea-unlimited-complete-scomp-native.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 41498
+        },
+        "subject": {
+          "bytes": 39486,
+          "content_sha256": "74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+          "kind": "source_snapshot",
+          "original_version_url": "https://scomp.starwarsccg.org/?s=Wioslea",
+          "title": "https://scomp.starwarsccg.org/?s=Wioslea"
+        },
+        "verification": {
+          "container_member": "native/source/74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+          "container_payload_tally": 41498,
+          "independent": true,
+          "restored_bytes": 39486,
+          "restored_container_bytes": 8184,
+          "restored_container_sha256": "c8239bffa8ba0923709c1a9827d75eaa181d61470b08583482ae6d3565c019bd",
+          "restored_sha256": "74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+          "status": "verified",
+          "verified_at": "2026-11-18T18:20:06.093324+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 8184,
+          "artifact_sha256": "c8239bffa8ba0923709c1a9827d75eaa181d61470b08583482ae6d3565c019bd",
+          "commit": "a8aaf146042db2be595940b91ecd81a93f1d3705",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source/74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+          "path": "preservation/bundles/597/597-wioslea-unlimited-complete-scomp-native.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 41498
+        },
+        "subject": {
+          "bytes": 39486,
+          "content_sha256": "74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+          "kind": "source_snapshot",
+          "original_version_url": "https://scomp.starwarsccg.org/?s=Wioslea",
+          "title": "https://scomp.starwarsccg.org/?s=Wioslea"
+        },
+        "verification": {
+          "container_member": "native/source/74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+          "container_payload_tally": 41498,
+          "independent": true,
+          "restored_bytes": 39486,
+          "restored_container_bytes": 8184,
+          "restored_container_sha256": "c8239bffa8ba0923709c1a9827d75eaa181d61470b08583482ae6d3565c019bd",
+          "restored_sha256": "74d2a656f47c51e3ad2ad7ac384d08371d94f27d83f8a691f5d9304a8cb3bebd",
+          "status": "verified",
+          "verified_at": "2026-11-18T18:20:06.093324+00:00"
+        }
+      }
+    }
+  ],
+  "submission_owner": "server-wayback-owner"
+}

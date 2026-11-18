@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "subject": {
+        "bytes": 315358312,
+        "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+        "kind": "source_snapshot",
+        "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+        "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+      },
+      "source": {
+        "url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+        "sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+        "bytes": 315358312,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/577e298d86e9627c1af99642634baff42f69a88e/evidence/362/premium-set/external/source-ledger.json",
+          "sha256": "073bbd492c0d4783a08df83d0364be603e359779c2a0872e7492585489d1cb5c"
+        }
+      },
+      "readiness": {
+        "ready": true,
+        "reason": "Exact public response bytes independently backed up; central owner must recheck bytes before any capture submission",
+        "stage_bytes": 0
+      },
+      "owner": "server-wayback-owner",
+      "continuation": "Existing central owner only. Respect provider control, verify source identity, then capture if ready. This record is metadata registration, never a submission. Exact public response bytes independently backed up; central owner must recheck bytes before any capture submission",
+      "approval_scope": {
+        "authorization": "Bill authorized Premium Set1 family/wiki source documentation in chat; cited unchanged family sources are preserved without new claim endorsement",
+        "publisher": "MemoryCoreChatGPT",
+        "scope": "Cited source payload preservation and explicitly held rendered evidence; no capture submission delegation",
+        "ticket": 362
+      },
+      "object_id": "0092f6026e6db0b101867d02d56be2cce1d97e792c1d4b83eea0a226fb90d8bf",
+      "subject_id": "f2e0e7cd547ea2206bc8bd41b30a301edd7197aec9bc50120290f538889e5b1b",
+      "job_id": "payload:07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+      "request_id": "b258c54cf3b28cd8b13c4cc7a4cf7bd1b5ef38d065501ab37e32b5db0c5f0461",
+      "generation": 0,
+      "record_sha256": "75697574b0e61aa17b19793968fc4e77eea886e6e0ff458dc2bc29942e196892",
+      "record": "requests/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/0092f6026e6db0b101867d02d56be2cce1d97e792c1d4b83eea0a226fb90d8bf/b258c54cf3b28cd8b13c4cc7a4cf7bd1b5ef38d065501ab37e32b5db0c5f0461.json",
+      "state": "ready",
+      "reason": "Exact public response bytes independently backed up; central owner must recheck bytes before any capture submission",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "666b3cdffe2a2a27026c6a14323a300e26a011b9",
+          "kind": "git",
+          "lfs": {
+            "attributes_blob_sha1": "9b5ae29171caffed6797b547da10544e2f184fcd",
+            "oid_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+            "pointer_blob_sha1": "f4cb682213e30384a17fb9d317388efc90521fa9",
+            "pointer_sha256": "b48af9048db463c5dd2fdfc74c95625e82e964304332f8c2036c843d6ae8cfe5",
+            "size": 315358312,
+            "version": "https://git-lfs.github.com/spec/v1"
+          },
+          "path": "sources/362/lfs/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/Encyc3_2.pdf",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 315358312,
+          "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+          "kind": "source_snapshot",
+          "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+          "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Fresh independent Git commit/path resolution and standard LFS basic-transfer HTTP download, streamed and fully hashed; no original source or local object cache used",
+          "pdf_signature": true,
+          "restored_bytes": 315358312,
+          "restored_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+          "status": "verified",
+          "verified_at": "2026-11-14T14:46:24.850241+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "666b3cdffe2a2a27026c6a14323a300e26a011b9",
+          "kind": "git",
+          "lfs": {
+            "attributes_blob_sha1": "9b5ae29171caffed6797b547da10544e2f184fcd",
+            "oid_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+            "pointer_blob_sha1": "f4cb682213e30384a17fb9d317388efc90521fa9",
+            "pointer_sha256": "b48af9048db463c5dd2fdfc74c95625e82e964304332f8c2036c843d6ae8cfe5",
+            "size": 315358312,
+            "version": "https://git-lfs.github.com/spec/v1"
+          },
+          "path": "sources/362/lfs/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/Encyc3_2.pdf",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 315358312,
+          "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+          "kind": "source_snapshot",
+          "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+          "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Fresh independent Git commit/path resolution and standard LFS basic-transfer HTTP download, streamed and fully hashed; no original source or local object cache used",
+          "pdf_signature": true,
+          "restored_bytes": 315358312,
+          "restored_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+          "status": "verified",
+          "verified_at": "2026-11-14T14:46:24.850241+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 21560,
+        "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+        "kind": "source_snapshot",
+        "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+        "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+      },
+      "source": {
+        "url": "http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+        "sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+        "bytes": 21560,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/7e524ad9197065d053832d5b8f3db87ba4dfd3f3/preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact3article baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly3 strict-lint baseline article date corrections (Luke original, Decipher Errata, first Original VS1). Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "4c20d25d969868c9aeb99e4f9c932ec5e381886b19a5c3a424281c497f6b2bd8",
+      "subject_id": "48bb69f8e4ad0c328987c4b44ce1444feee34c989117284da526542b14f15996",
+      "job_id": "payload:5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+      "request_id": "18761c6461294a8cce041dd26744f1b63e9c90e599a7baaeeea53ad7a3d47d51",
+      "generation": 0,
+      "record_sha256": "6d574b0047c4298a848c3408831fbabe57502482588b93b81ce9cc32a0a4da2e",
+      "record": "requests/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49/4c20d25d969868c9aeb99e4f9c932ec5e381886b19a5c3a424281c497f6b2bd8/18761c6461294a8cce041dd26744f1b63e9c90e599a7baaeeea53ad7a3d47d51.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 78288,
+          "artifact_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "commit": "7e524ad9197065d053832d5b8f3db87ba4dfd3f3",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "path": "preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1070119
+        },
+        "subject": {
+          "bytes": 21560,
+          "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "kind": "source_snapshot",
+          "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+          "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+        },
+        "verification": {
+          "container_member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "container_payload_tally": 1070119,
+          "independent": true,
+          "restored_bytes": 21560,
+          "restored_container_bytes": 78288,
+          "restored_container_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "restored_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "status": "verified",
+          "verified_at": "2026-11-18T14:50:14.520271+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 78288,
+          "artifact_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "commit": "7e524ad9197065d053832d5b8f3db87ba4dfd3f3",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "path": "preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1070119
+        },
+        "subject": {
+          "bytes": 21560,
+          "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "kind": "source_snapshot",
+          "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+          "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+        },
+        "verification": {
+          "container_member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "container_payload_tally": 1070119,
+          "independent": true,
+          "restored_bytes": 21560,
+          "restored_container_bytes": 78288,
+          "restored_container_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "restored_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "status": "verified",
+          "verified_at": "2026-11-18T14:50:14.520271+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 164277,
+        "content_sha256": "5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+        "kind": "source_snapshot",
+        "original_version_url": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Dark.json",
+        "title": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Dark.json"
+      },
+      "source": {
+        "url": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Dark.json",
+        "sha256": "5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+        "bytes": 164277,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8516437a990a04540edf7c3020eb95558a927992/preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact guarded field-only publication; retain all authoritative existing evidence/observations/capture owner. No config/budget/archive writes.",
+      "approval_scope": {
+        "scope": "ExactlyDantooine (Dark) (Unlimited) sourced ownOriginal1996date. Existing article identities/UID/otherfields preserved; complete allcited native sources andcurrent originals. Metadata-only; rootalonepublishes.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "c258158f737d4e2ba77069a7898a5a28ec9c210863702523f2ba3c43d297e16f",
+      "subject_id": "bc38f8c4f0bd136a4bae819a326e00122ca7556d393720b599976160fbbe64a5",
+      "job_id": "payload:5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+      "request_id": "e9b399e1ffa398d0e69cfcdf86200eb58cc7b03ec12db1ed43ec830870e83c48",
+      "generation": 0,
+      "record_sha256": "df54caad188daf5a6bc39be244f7cee51747861046243722e00213dd03a524d8",
+      "record": "requests/5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b/c258158f737d4e2ba77069a7898a5a28ec9c210863702523f2ba3c43d297e16f/e9b399e1ffa398d0e69cfcdf86200eb58cc7b03ec12db1ed43ec830870e83c48.json",
+      "state": "awaiting_stage",
+      "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 476100,
+          "artifact_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source/5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+          "path": "preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 2812143
+        },
+        "subject": {
+          "bytes": 164277,
+          "content_sha256": "5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Dark.json",
+          "title": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Dark.json"
+        },
+        "verification": {
+          "container_member": "native/source/5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+          "container_payload_tally": 2812143,
+          "independent": true,
+          "restored_bytes": 164277,
+          "restored_container_bytes": 476100,
+          "restored_container_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "restored_sha256": "5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:33.974913+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 476100,
+          "artifact_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source/5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+          "path": "preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 2812143
+        },
+        "subject": {
+          "bytes": 164277,
+          "content_sha256": "5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Dark.json",
+          "title": "https://github.com/swccgpc/swccg-card-json/blob/d4e661ec/Dark.json"
+        },
+        "verification": {
+          "container_member": "native/source/5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+          "container_payload_tally": 2812143,
+          "independent": true,
+          "restored_bytes": 164277,
+          "restored_container_bytes": 476100,
+          "restored_container_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "restored_sha256": "5e632c6dd3cf87831b586f32baa0a3b14ee7835acb6e8223abce7a9998b1543b",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:33.974913+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 2609864,
+        "content_sha256": "84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/d4e661ec/Dark.json",
+        "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/d4e661ec/Dark.json"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/d4e661ec/Dark.json",
+        "sha256": "84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+        "bytes": 2609864,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8516437a990a04540edf7c3020eb95558a927992/preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact guarded field-only publication; retain all authoritative existing evidence/observations/capture owner. No config/budget/archive writes.",
+      "approval_scope": {
+        "scope": "ExactlyDantooine (Dark) (Unlimited) sourced ownOriginal1996date. Existing article identities/UID/otherfields preserved; complete allcited native sources andcurrent originals. Metadata-only; rootalonepublishes.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "083d83a1bce20e06423c393f436ddf177f42a009d5984e19c2df59f1248c2e4f",
+      "subject_id": "e95b8d33d6a4fdf2c3a626f66b4dfedd13aacc22ef0906021085627f1ba90e5a",
+      "job_id": "payload:84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+      "request_id": "27874b2019ef2aabc1bfd302a1d24658f3a06d72f8883d6e49c6dd5eb02df2da",
+      "generation": 0,
+      "record_sha256": "c928719f4aaf51cbbbc31f8eb4ca6dc0a16b141a7d87c621fc563b095c2739d5",
+      "record": "requests/84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c/083d83a1bce20e06423c393f436ddf177f42a009d5984e19c2df59f1248c2e4f/27874b2019ef2aabc1bfd302a1d24658f3a06d72f8883d6e49c6dd5eb02df2da.json",
+      "state": "awaiting_stage",
+      "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 476100,
+          "artifact_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source/84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+          "path": "preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 2812143
+        },
+        "subject": {
+          "bytes": 2609864,
+          "content_sha256": "84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/d4e661ec/Dark.json",
+          "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/d4e661ec/Dark.json"
+        },
+        "verification": {
+          "container_member": "native/source/84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+          "container_payload_tally": 2812143,
+          "independent": true,
+          "restored_bytes": 2609864,
+          "restored_container_bytes": 476100,
+          "restored_container_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "restored_sha256": "84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:33.974913+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 476100,
+          "artifact_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source/84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+          "path": "preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 2812143
+        },
+        "subject": {
+          "bytes": 2609864,
+          "content_sha256": "84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/d4e661ec/Dark.json",
+          "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/d4e661ec/Dark.json"
+        },
+        "verification": {
+          "container_member": "native/source/84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+          "container_payload_tally": 2812143,
+          "independent": true,
+          "restored_bytes": 2609864,
+          "restored_container_bytes": 476100,
+          "restored_container_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "restored_sha256": "84355780eed6580c374d8b2226c3d806cc062d9bb4482776026d4d0c51dd654c",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:33.974913+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 32318,
+        "content_sha256": "b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+        "kind": "source_snapshot",
+        "original_version_url": "https://scomp.starwarsccg.org/?s=Dantooine",
+        "title": "https://scomp.starwarsccg.org/?s=Dantooine"
+      },
+      "source": {
+        "url": "https://scomp.starwarsccg.org/?s=Dantooine",
+        "sha256": "b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+        "bytes": 32318,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8516437a990a04540edf7c3020eb95558a927992/preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact guarded field-only publication; retain all authoritative existing evidence/observations/capture owner. No config/budget/archive writes.",
+      "approval_scope": {
+        "scope": "ExactlyDantooine (Dark) (Unlimited) sourced ownOriginal1996date. Existing article identities/UID/otherfields preserved; complete allcited native sources andcurrent originals. Metadata-only; rootalonepublishes.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "bca4dcf364466fbc04a592b8efe1158fdf1ab056454a13360d98e9a7814166ef",
+      "subject_id": "4fb183269213d263c7074f73dba2f411842c4cd0eddb7c044653b98336c0d566",
+      "job_id": "payload:b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+      "request_id": "77f3a1b2ffc22f744671ebd159f6a2ad538533716d0a9c95144aeb54f1a37b2d",
+      "generation": 0,
+      "record_sha256": "2785de87b15dca9ed47f7e29bf6cb60cbbcec32a2a520bdd2decb0a0b9a6f644",
+      "record": "requests/b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a/bca4dcf364466fbc04a592b8efe1158fdf1ab056454a13360d98e9a7814166ef/77f3a1b2ffc22f744671ebd159f6a2ad538533716d0a9c95144aeb54f1a37b2d.json",
+      "state": "awaiting_stage",
+      "reason": "Complete actual native sources/current original independently restored. Metadata-only pending; no stage/promotion/capture requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 476100,
+          "artifact_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source/b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+          "path": "preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 2812143
+        },
+        "subject": {
+          "bytes": 32318,
+          "content_sha256": "b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+          "kind": "source_snapshot",
+          "original_version_url": "https://scomp.starwarsccg.org/?s=Dantooine",
+          "title": "https://scomp.starwarsccg.org/?s=Dantooine"
+        },
+        "verification": {
+          "container_member": "native/source/b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+          "container_payload_tally": 2812143,
+          "independent": true,
+          "restored_bytes": 32318,
+          "restored_container_bytes": 476100,
+          "restored_container_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "restored_sha256": "b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:33.974913+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 476100,
+          "artifact_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "commit": "8516437a990a04540edf7c3020eb95558a927992",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source/b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+          "path": "preservation/bundles/597/597-dantooine-unlimited-complete-cited-native-sources.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 2812143
+        },
+        "subject": {
+          "bytes": 32318,
+          "content_sha256": "b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+          "kind": "source_snapshot",
+          "original_version_url": "https://scomp.starwarsccg.org/?s=Dantooine",
+          "title": "https://scomp.starwarsccg.org/?s=Dantooine"
+        },
+        "verification": {
+          "container_member": "native/source/b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+          "container_payload_tally": 2812143,
+          "independent": true,
+          "restored_bytes": 32318,
+          "restored_container_bytes": 476100,
+          "restored_container_sha256": "946b739bb0f25e32b3376bab30e43d370696502ba1da4bb739b6aa96ef66e58d",
+          "restored_sha256": "b9a5b6804d2bf7c3237c76d40079bfec6450b5dc0d69cadefa920fb305ae062a",
+          "status": "verified",
+          "verified_at": "2026-11-18T17:34:33.974913+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 234677,
+        "content_sha256": "dc6588c7c9db4b5d2eddd0d23ee43a1745f1b551917357fb85b065e8771bd90c",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/0/07/Premiere-U-D-dantooinedark.png",
+        "title": "File:Premiere-U-D-dantooinedark.png",
+        "upload_timestamp": "2026-11-11T23:19:48Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/0/07/Premiere-U-D-dantooinedark.png",
+        "sha256": "dc6588c7c9db4b5d2eddd0d23ee43a1745f1b551917357fb85b065e8771bd90c",
+        "bytes": 234677,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/c1ef0e5d7e2248c00e4833368605733e66d9fed1/evidence/382/offline/existing-git-restores-20261114-213501/all-imported-receipts.json.gz",
+          "sha256": "e398e029829af6ed2cf8864387fe9aee573f72ffa96ab8478e8b339a6134f44f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT / Story382",
+      "continuation": "Keep provider traffic held. Central deployed server owner alone registers/reconciles this exact image version and submits only after Bill explicitly resumes; verify replay bytes before any preservation claim.",
+      "approval_scope": {
+        "offline_backups": "Bill explicitly authorized PC backups and inventory",
+        "provider_hold": "https://github.com/billbisco/ai-team-skills/blob/56adf36/AGENTS.md#active-archiveorg-hold--bill-2026-11-14",
+        "ticket": "https://github.com/swccg-guild/work/issues/382"
+      },
+      "object_id": "7b065a4dad994d5093217d7e456cb7ba8c92dec3826509246ec275d824869972",
+      "subject_id": "742aead7eef84fd665a9ed77b19d6bfadb4687779eae3c62d95793a1273a57fd",
+      "job_id": "payload:dc6588c7c9db4b5d2eddd0d23ee43a1745f1b551917357fb85b065e8771bd90c",
+      "request_id": "d9b35caa15ae1985c43e6c94a1ef420cdeb81768bc567a7bde0c2487a32295a8",
+      "generation": 0,
+      "record_sha256": "1110274286f2716506e944b0a8e2db7f9f76c0e5635251f1f3ceac28f15c9dc0",
+      "record": "requests/dc6588c7c9db4b5d2eddd0d23ee43a1745f1b551917357fb85b065e8771bd90c/7b065a4dad994d5093217d7e456cb7ba8c92dec3826509246ec275d824869972/d9b35caa15ae1985c43e6c94a1ef420cdeb81768bc567a7bde0c2487a32295a8.json",
+      "state": "awaiting_stage",
+      "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+      "submitted": false,
+      "backup_receipt": {
+        "inventory_version_id": "181b9fe80e04c33889562dbae5c23f6375e9951f71b3e6aa041acfac25a9843c",
+        "schema_version": 1,
+        "storage": {
+          "commit": "30955482ca04674e0f7358071429d6364fa24a66",
+          "kind": "git",
+          "path": "files/Premiere-U-D-dantooinedark.png",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 234677,
+          "content_sha256": "dc6588c7c9db4b5d2eddd0d23ee43a1745f1b551917357fb85b065e8771bd90c",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/0/07/Premiere-U-D-dantooinedark.png",
+          "title": "File:Premiere-U-D-dantooinedark.png",
+          "upload_timestamp": "2026-11-11T23:19:48Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 234677,
+          "restored_sha256": "dc6588c7c9db4b5d2eddd0d23ee43a1745f1b551917357fb85b065e8771bd90c",
+          "status": "verified",
+          "verified_at": "2026-11-14T21:14:11.026012+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "inventory_version_id": "181b9fe80e04c33889562dbae5c23f6375e9951f71b3e6aa041acfac25a9843c",
+        "schema_version": 1,
+        "storage": {
+          "commit": "30955482ca04674e0f7358071429d6364fa24a66",
+          "kind": "git",
+          "path": "files/Premiere-U-D-dantooinedark.png",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 234677,
+          "content_sha256": "dc6588c7c9db4b5d2eddd0d23ee43a1745f1b551917357fb85b065e8771bd90c",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/0/07/Premiere-U-D-dantooinedark.png",
+          "title": "File:Premiere-U-D-dantooinedark.png",
+          "upload_timestamp": "2026-11-11T23:19:48Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 234677,
+          "restored_sha256": "dc6588c7c9db4b5d2eddd0d23ee43a1745f1b551917357fb85b065e8771bd90c",
+          "status": "verified",
+          "verified_at": "2026-11-14T21:14:11.026012+00:00"
+        }
+      }
+    }
+  ],
+  "submission_owner": "server-wayback-owner"
+}

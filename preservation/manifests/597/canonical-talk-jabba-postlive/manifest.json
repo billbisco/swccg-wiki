@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "group": "final-small4-rollout-post-live",
+  "artifact_local_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\qa\\final-small4-rollout-independent\\597-final-small4-rollout-post-live.tar.xz",
+  "artifact_sha256": "d27c7ba44a0f957b3656ead3cb17a68fbb6e204a05a17c6b5dbe050e19cb3494",
+  "artifact_bytes": 17280,
+  "uncompressed_bytes": 201118,
+  "member_count": 19,
+  "rows": 4,
+  "subjects": [
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Talk:The First Order Was Just The Beginning",
+        "content_sha256": "9c6dc5e6b1ff36a88c5d1dcfd6db3ee1c35c8fe5a5f9734f26977dff936eefdf",
+        "bytes": 68,
+        "revision_id": 332480
+      },
+      "member": "native/live/109765-332480-9c6dc5e6b1ff.wiki",
+      "object_id": "d1729e98efc9915aaf088a9ccab145cd63815885f372c072a4e2d6dcc3017eed",
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Talk:The First Order Was Just The Beginning (Errata 2)",
+        "content_sha256": "f550dc2d1ca6465d7648d02a92dc54568d44bbd1bf524c25984f83e5ff4d2139",
+        "bytes": 1040,
+        "revision_id": 332481
+      },
+      "member": "native/live/74931-332481-f550dc2d1ca6.wiki",
+      "object_id": "f5afa8335c67636eaa76fa7fd14c5a0fca0fabffe61a9b2b0460b7341f319077",
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Jabba's Prize (V)",
+        "content_sha256": "d99a17da405801e58a3307db4e30a4dd74ccf353c240c8cc5c431a12c90b0094",
+        "bytes": 7834,
+        "revision_id": 332478
+      },
+      "member": "native/live/105103-332478-d99a17da4058.wiki",
+      "object_id": "489a89eba6fb7ee27147d6a311a5251d4543d2a21a2cade3a8dd3a5f2c2ed06c",
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Talk:Jabba's Prize (V)",
+        "content_sha256": "79dc65d7d16c3943a799617690298cc0ed1b2334aeab81f876f4a9c8c0566520",
+        "bytes": 538,
+        "revision_id": 332479
+      },
+      "member": "native/live/120244-332479-79dc65d7d16c.wiki",
+      "object_id": "dce426587bb0a6c4ef78c32ce2e9da9c5b73bf1752e55639fe0d2153be2626e8",
+      "role": "exact-live-wiki-revision"
+    }
+  ],
+  "members": [
+    {
+      "name": "manifest/index.json",
+      "sha256": "3985ef13c9f4698de188f2e818a4f757ba2723b4ae217e5b272a2fe160e4020a",
+      "bytes": 6876,
+      "role": "subject-and-QA-index"
+    },
+    {
+      "name": "native/live/105103-332478-d99a17da4058.wiki",
+      "sha256": "d99a17da405801e58a3307db4e30a4dd74ccf353c240c8cc5c431a12c90b0094",
+      "bytes": 7834,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "native/live/109765-332480-9c6dc5e6b1ff.wiki",
+      "sha256": "9c6dc5e6b1ff36a88c5d1dcfd6db3ee1c35c8fe5a5f9734f26977dff936eefdf",
+      "bytes": 68,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "native/live/120244-332479-79dc65d7d16c.wiki",
+      "sha256": "79dc65d7d16c3943a799617690298cc0ed1b2334aeab81f876f4a9c8c0566520",
+      "bytes": 538,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "native/live/74931-332481-f550dc2d1ca6.wiki",
+      "sha256": "f550dc2d1ca6465d7648d02a92dc54568d44bbd1bf524c25984f83e5ff4d2139",
+      "bytes": 1040,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "qa/checkpoint.json",
+      "sha256": "683e0fbf114e1842f8cd57f7ceb78f8f3d21342db6bd77da4a086cf19097c21f",
+      "bytes": 55859,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/html/105103-332478.html",
+      "sha256": "e63a86dcdc68416228954e59cc4cab5d8709a469df2f0ea28cbdb8694b982152",
+      "bytes": 34207,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/109765-332480.html",
+      "sha256": "ec0912c5dbb711e5fbe9cd7d2c5337471042f1a89476352d7dab515c228cdbfe",
+      "bytes": 19523,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/120244-332479.html",
+      "sha256": "c277610dd1550b58721405a473c015ced428362558e934e9e6281b8565464e24",
+      "bytes": 19335,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/74931-332481.html",
+      "sha256": "79ad5ccb6b59298992e65fca01154341f8a5949591202527a4e35a3a047aeded",
+      "bytes": 21319,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/normal-redirect-destination-332481.html",
+      "sha256": "7c8e2a649b912a02023b4fefeaefa0ee9ac00870d8475285a97e22d58866b928",
+      "bytes": 22025,
+      "role": "actual-normal-reader-redirect-destination"
+    },
+    {
+      "name": "qa/read_only_review_check.php",
+      "sha256": "1f03c3a3d1a6cc1fccf3ca57d6f6149a219da41bc22992f1695eb12d0747736f",
+      "bytes": 2491,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/records/332478.json",
+      "sha256": "b58fda5504e594b2361da412fd18a747cdc323a9008fa2a7e353604260e406e4",
+      "bytes": 2348,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/records/332479.json",
+      "sha256": "5dae5d278f994b281cb3a1a8704605308806dc7811923d632a15c8b9669f6913",
+      "bytes": 1415,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/records/332480.json",
+      "sha256": "3c48c7ac12f7f8b125c9322c26cd421002bfb79c899826b1734ac3439adc9345",
+      "bytes": 1783,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/records/332481.json",
+      "sha256": "725cfad87a2874c1e3e877cdae6576da2700fcc9efdf14b1004783c2bda7623a",
+      "bytes": 1541,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/review/canonical-talk2.json",
+      "sha256": "a424dcd6a8468fb849c8a1e94627e379359b948a82104501d6721d4d96d6207f",
+      "bytes": 1292,
+      "role": "actual-DB-native-review-proof"
+    },
+    {
+      "name": "qa/review/jabba-article.json",
+      "sha256": "c97dbbab227086cd096d35132f54ab3a8bed9851f9d9c0262fa8ebbedaab69d0",
+      "bytes": 876,
+      "role": "actual-DB-native-review-proof"
+    },
+    {
+      "name": "qa/review/jabba-talk.json",
+      "sha256": "e187fead96f65f1a8819e95e2407a66a7590007dd7b35f21c21fbad307a01a0f",
+      "bytes": 748,
+      "role": "actual-DB-native-review-proof"
+    }
+  ],
+  "source_keys": [],
+  "held_source_keys": [],
+  "native_holds": [],
+  "privacy_holds": [],
+  "storage_template": {
+    "kind": "git",
+    "repository": "https://github.com/billbisco/swccg-wiki",
+    "path": "preservation/bundles/597/597-final-small4-rollout-post-live.tar.xz",
+    "container": "tar.xz",
+    "artifact_sha256": "d27c7ba44a0f957b3656ead3cb17a68fbb6e204a05a17c6b5dbe050e19cb3494",
+    "artifact_bytes": 17280,
+    "uncompressed_bytes": 201118
+  },
+  "commit_required_before_remote_readback": true,
+  "independent_verified": false
+}

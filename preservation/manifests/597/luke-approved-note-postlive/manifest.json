@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "group": "luke-talk1-rollout-post-live",
+  "artifact_local_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\qa\\luke-talk1-rollout-independent\\597-luke-talk1-rollout-post-live.tar.xz",
+  "artifact_sha256": "c68be51cf937235a690ebfa0a197fe4a5de737cee2210f9de9e033efe73e4c7c",
+  "artifact_bytes": 12872,
+  "uncompressed_bytes": 100987,
+  "member_count": 6,
+  "rows": 1,
+  "subjects": [
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Talk:Luke Skywalker (Errata)",
+        "content_sha256": "61e0dfbd5c359e04cc7c54bc91025c41c7752cbcd9ecb0aaa7ddb67636d95505",
+        "bytes": 7613,
+        "revision_id": 332470
+      },
+      "member": "native/live/69142-332470-61e0dfbd5c35.wiki",
+      "object_id": "64b4d1723960f0474408af2dc0f95b38f53f4f165ddf159a70d442b31721865b",
+      "role": "exact-live-wiki-revision"
+    }
+  ],
+  "members": [
+    {
+      "name": "manifest/index.json",
+      "sha256": "57258d5b627952639a16091c8c8ae462dcee71ab548e93f63d583fa299807eb8",
+      "bytes": 2159,
+      "role": "subject-and-QA-index"
+    },
+    {
+      "name": "native/live/69142-332470-61e0dfbd5c35.wiki",
+      "sha256": "61e0dfbd5c359e04cc7c54bc91025c41c7752cbcd9ecb0aaa7ddb67636d95505",
+      "bytes": 7613,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "qa/checkpoint.json",
+      "sha256": "ec54e6e3e68966993111903a73dd7c5953a79a91a4ac356f99074e9513d6c82a",
+      "bytes": 55860,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/html/69142-332470.html",
+      "sha256": "f6219481c7d45d4a38c7d6dce76e934127f40ba06b2f1d326d62cf87e2c60dbf",
+      "bytes": 32110,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/read_only_review_check.php",
+      "sha256": "1f03c3a3d1a6cc1fccf3ca57d6f6149a219da41bc22992f1695eb12d0747736f",
+      "bytes": 2491,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/review/luke-talk1.json",
+      "sha256": "0eed9a154db679ba1fa8b3bd11ab8e638efd0035fb0963401ae21a64fa55483e",
+      "bytes": 754,
+      "role": "actual-DB-native-review-proof"
+    }
+  ],
+  "source_keys": [],
+  "held_source_keys": [],
+  "native_holds": [],
+  "privacy_holds": [],
+  "storage_template": {
+    "kind": "git",
+    "repository": "https://github.com/billbisco/swccg-wiki",
+    "path": "preservation/bundles/597/597-luke-talk1-rollout-post-live.tar.xz",
+    "container": "tar.xz",
+    "artifact_sha256": "c68be51cf937235a690ebfa0a197fe4a5de737cee2210f9de9e033efe73e4c7c",
+    "artifact_bytes": 12872,
+    "uncompressed_bytes": 100987
+  },
+  "commit_required_before_remote_readback": true,
+  "independent_verified": false
+}
