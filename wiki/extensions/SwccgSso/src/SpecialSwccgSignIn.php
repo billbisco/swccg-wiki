@@ -111,10 +111,13 @@ class SpecialSwccgSignIn extends SpecialPage {
 		$this->failReturnto = is_array( $flow ) ? (string)( $flow['returnto'] ?? '' ) : '';
 		if ( !is_array( $flow ) || !hash_equals( (string)$flow['state'], (string)$req->getVal( 'state', '' ) )
 			|| time() - (int)$flow['at'] > 900 ) {
+			$this->logRefused( 'bad_state' );
 			$this->fail( 'the sign-in request expired or did not match' );
 			return;
 		}
 		if ( $req->getVal( 'error' ) !== null ) {
+			$silent = in_array( $req->getVal( 'error' ), [ 'login_required', 'interaction_required', 'consent_required', 'account_selection_required' ], true );
+			$this->logRefused( ( $silent ? 'silent:' : 'error:' ) . (string)$req->getVal( 'error' ) );
 			if ( in_array( $req->getVal( 'error' ), [ 'login_required', 'interaction_required', 'consent_required', 'account_selection_required' ], true ) ) {
 				// silent (prompt=none) check found no usable site session: go back quietly
 				$this->getOutput()->redirect( $this->returnUrl( (string)$flow['returnto'] ) );
@@ -125,11 +128,13 @@ class SpecialSwccgSignIn extends SpecialPage {
 		}
 		$iss = $req->getVal( 'iss' );
 		if ( $iss !== null && rtrim( $iss, '/' ) !== $issuer ) {
+			$this->logRefused( 'iss_mismatch' );
 			$this->fail( 'unexpected issuer' );
 			return;
 		}
 		$disc = $this->discovery( $issuer );
 		if ( !$disc ) {
+			$this->logRefused( 'discovery' );
 			$this->fail( 'the sign-in service is unavailable' );
 			return;
 		}
@@ -150,11 +155,13 @@ class SpecialSwccgSignIn extends SpecialPage {
 		$tok = json_decode( (string)$tr->getContent(), true );
 		if ( !$st->isOK() || !is_array( $tok ) || empty( $tok['id_token'] ) ) {
 			$this->log()->warning( 'token exchange failed: {status}', [ 'status' => $tr->getStatus() ] );
+			$this->logRefused( 'token_exchange' );
 			$this->fail( 'the code could not be exchanged' );
 			return;
 		}
 		$claims = $this->verifyIdToken( (string)$tok['id_token'], $disc, $issuer, $cid, (string)$flow['nonce'] );
 		if ( !$claims ) {
+			$this->logRefused( 'id_token' );
 			$this->fail( 'the sign-in token was not valid' );
 			return;
 		}
@@ -177,6 +184,7 @@ class SpecialSwccgSignIn extends SpecialPage {
 			// #516: the sign-in service makes the missing wiki row when the wiki asks for a token.
 			// If there is still none, go back quietly to the page asked for, signed out.
 			$this->log()->warning( 'no wiki row for membership {id} after sign-in; returned signed out', [ 'id' => $id ] );
+			$this->logRefused( 'no_wiki_row', $claims['swccg_tid'] ?? null );
 			$q = [ 'error' => self::NOROW_ERROR ];
 			if ( (string)$flow['returnto'] !== '' ) {
 				$q['returnto'] = (string)$flow['returnto'];
@@ -197,6 +205,8 @@ class SpecialSwccgSignIn extends SpecialPage {
 		}
 		$session->save();
 		$this->log()->info( 'membership {id} signed in to the wiki', [ 'id' => $id ] );
+		// #631: the tracking id from swccg-login and this request's id from nginx.
+		SigninLog::ok( $id, $claims['swccg_tid'] ?? null, (string)$req->getVal( 'state', '' ), (string)$req->getHeader( 'X-Request-Id' ) );
 		$this->getOutput()->redirect( $this->returnUrl( (string)$flow['returnto'] ) );
 	}
 
@@ -338,6 +348,12 @@ class SpecialSwccgSignIn extends SpecialPage {
 		}
 		$this->getOutput()->addWikiMsg( 'swccgsso-error-next',
 			$this->getPageTitle()->getFullURL( $q ), $this->returnUrl( $returnto ) );
+	}
+
+	/** #631: why a callback was refused, with the state fingerprint and nginx's request id (no personal data). */
+	private function logRefused( string $reason, $tid = null ): void {
+		$req = $this->getRequest();
+		SigninLog::refused( $reason, $tid, (string)$req->getVal( 'state', '' ), (string)$req->getHeader( 'X-Request-Id' ) );
 	}
 
 	private function log() {
