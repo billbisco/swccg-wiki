@@ -1,0 +1,2455 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "subject": {
+        "bytes": 318119,
+        "content_sha256": "05f9445d20dae68ac776547c9f3278e304fb8df36c197d928ba1202a1905dd63",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/9/9b/VS1O-05-Luke_Skywalker.png",
+        "title": "File:VS1O-05-Luke_Skywalker.png",
+        "upload_timestamp": "2026-10-12T21:06:03Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/9/9b/VS1O-05-Luke_Skywalker.png",
+        "sha256": "05f9445d20dae68ac776547c9f3278e304fb8df36c197d928ba1202a1905dd63",
+        "bytes": 318119,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/c1ef0e5d7e2248c00e4833368605733e66d9fed1/evidence/382/offline/existing-git-restores-20261114-213501/all-imported-receipts.json.gz",
+          "sha256": "e398e029829af6ed2cf8864387fe9aee573f72ffa96ab8478e8b339a6134f44f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT / Story382",
+      "continuation": "Keep provider traffic held. Central deployed server owner alone registers/reconciles this exact image version and submits only after Bill explicitly resumes; verify replay bytes before any preservation claim.",
+      "approval_scope": {
+        "offline_backups": "Bill explicitly authorized PC backups and inventory",
+        "provider_hold": "https://github.com/billbisco/ai-team-skills/blob/56adf36/AGENTS.md#active-archiveorg-hold--bill-2026-11-14",
+        "ticket": "https://github.com/swccg-guild/work/issues/382"
+      },
+      "object_id": "d17e5390a22d717b5270c405ef78f5a1110258578612f365684ddb889dc00306",
+      "subject_id": "bb5a910cd6197025a8f42d40c6d44121c1a387fc155fc3bd45e3d3993ea4caf0",
+      "job_id": "payload:05f9445d20dae68ac776547c9f3278e304fb8df36c197d928ba1202a1905dd63",
+      "request_id": "9b2d7bc516a21bfcb1c152b359b7a5c1b28de34de4f7e5f644a69dec3a3c2811",
+      "generation": 0,
+      "record_sha256": "d0505e535e479592c2edbda6e8064c5f46e7bc0021545776f9eb65d82090a335",
+      "record": "requests/05f9445d20dae68ac776547c9f3278e304fb8df36c197d928ba1202a1905dd63/d17e5390a22d717b5270c405ef78f5a1110258578612f365684ddb889dc00306/9b2d7bc516a21bfcb1c152b359b7a5c1b28de34de4f7e5f644a69dec3a3c2811.json",
+      "state": "awaiting_stage",
+      "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+      "submitted": false,
+      "backup_receipt": {
+        "inventory_version_id": "3ae3a8b6764a68505acf8de3d69b2d75ce3e3eae37516475f105bbc8677ddcad",
+        "schema_version": 1,
+        "storage": {
+          "commit": "30955482ca04674e0f7358071429d6364fa24a66",
+          "kind": "git",
+          "path": "files/VS1O-05-Luke_Skywalker.png",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 318119,
+          "content_sha256": "05f9445d20dae68ac776547c9f3278e304fb8df36c197d928ba1202a1905dd63",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/9/9b/VS1O-05-Luke_Skywalker.png",
+          "title": "File:VS1O-05-Luke_Skywalker.png",
+          "upload_timestamp": "2026-10-12T21:06:03Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 318119,
+          "restored_sha256": "05f9445d20dae68ac776547c9f3278e304fb8df36c197d928ba1202a1905dd63",
+          "status": "verified",
+          "verified_at": "2026-11-14T20:30:31.577430+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "inventory_version_id": "3ae3a8b6764a68505acf8de3d69b2d75ce3e3eae37516475f105bbc8677ddcad",
+        "schema_version": 1,
+        "storage": {
+          "commit": "30955482ca04674e0f7358071429d6364fa24a66",
+          "kind": "git",
+          "path": "files/VS1O-05-Luke_Skywalker.png",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 318119,
+          "content_sha256": "05f9445d20dae68ac776547c9f3278e304fb8df36c197d928ba1202a1905dd63",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/9/9b/VS1O-05-Luke_Skywalker.png",
+          "title": "File:VS1O-05-Luke_Skywalker.png",
+          "upload_timestamp": "2026-10-12T21:06:03Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 318119,
+          "restored_sha256": "05f9445d20dae68ac776547c9f3278e304fb8df36c197d928ba1202a1905dd63",
+          "status": "verified",
+          "verified_at": "2026-11-14T20:30:31.577430+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 329084,
+        "content_sha256": "07c1442924f5db38d9a0309e5c35af847450c24c193b9859c0112df3d30ebe2f",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/c/c6/V13-L-kessel.gif",
+        "title": "File:V13-L-kessel.gif",
+        "upload_timestamp": "2026-09-23T13:02:11Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/c/c6/V13-L-kessel.gif",
+        "sha256": "07c1442924f5db38d9a0309e5c35af847450c24c193b9859c0112df3d30ebe2f",
+        "bytes": 329084,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/c1ef0e5d7e2248c00e4833368605733e66d9fed1/evidence/382/offline/existing-git-restores-20261114-213501/all-imported-receipts.json.gz",
+          "sha256": "e398e029829af6ed2cf8864387fe9aee573f72ffa96ab8478e8b339a6134f44f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT / Story382",
+      "continuation": "Keep provider traffic held. Central deployed server owner alone registers/reconciles this exact image version and submits only after Bill explicitly resumes; verify replay bytes before any preservation claim.",
+      "approval_scope": {
+        "offline_backups": "Bill explicitly authorized PC backups and inventory",
+        "provider_hold": "https://github.com/billbisco/ai-team-skills/blob/56adf36/AGENTS.md#active-archiveorg-hold--bill-2026-11-14",
+        "ticket": "https://github.com/swccg-guild/work/issues/382"
+      },
+      "object_id": "a7d84520a9de08fc90ff73d2a3aaa16b5a14775ae06a44c42a7806bef25fb287",
+      "subject_id": "50525751d7bddf3bccab3d5ac9f53c8d84c2115145f763d739d8be2be783c2a1",
+      "job_id": "payload:07c1442924f5db38d9a0309e5c35af847450c24c193b9859c0112df3d30ebe2f",
+      "request_id": "b886233f9123e6f7add5bbb61985c6ffd8e4f55edb7aa0064e7881f97b74063c",
+      "generation": 0,
+      "record_sha256": "5abbd9a60c798a8f0186f54e0573ab6ea3c865cd09182b9ae294c9a540d341a5",
+      "record": "requests/07c1442924f5db38d9a0309e5c35af847450c24c193b9859c0112df3d30ebe2f/a7d84520a9de08fc90ff73d2a3aaa16b5a14775ae06a44c42a7806bef25fb287/b886233f9123e6f7add5bbb61985c6ffd8e4f55edb7aa0064e7881f97b74063c.json",
+      "state": "awaiting_stage",
+      "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+      "submitted": false,
+      "backup_receipt": {
+        "inventory_version_id": "de381786bd7121723608ab0837c8a99115dfb507658234630c6b00e4b51e1c38",
+        "schema_version": 1,
+        "storage": {
+          "commit": "30955482ca04674e0f7358071429d6364fa24a66",
+          "kind": "git",
+          "path": "files/V13-L-kessel.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 329084,
+          "content_sha256": "07c1442924f5db38d9a0309e5c35af847450c24c193b9859c0112df3d30ebe2f",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/c/c6/V13-L-kessel.gif",
+          "title": "File:V13-L-kessel.gif",
+          "upload_timestamp": "2026-09-23T13:02:11Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 329084,
+          "restored_sha256": "07c1442924f5db38d9a0309e5c35af847450c24c193b9859c0112df3d30ebe2f",
+          "status": "verified",
+          "verified_at": "2026-11-14T20:30:31.766911+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "inventory_version_id": "de381786bd7121723608ab0837c8a99115dfb507658234630c6b00e4b51e1c38",
+        "schema_version": 1,
+        "storage": {
+          "commit": "30955482ca04674e0f7358071429d6364fa24a66",
+          "kind": "git",
+          "path": "files/V13-L-kessel.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 329084,
+          "content_sha256": "07c1442924f5db38d9a0309e5c35af847450c24c193b9859c0112df3d30ebe2f",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/c/c6/V13-L-kessel.gif",
+          "title": "File:V13-L-kessel.gif",
+          "upload_timestamp": "2026-09-23T13:02:11Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 329084,
+          "restored_sha256": "07c1442924f5db38d9a0309e5c35af847450c24c193b9859c0112df3d30ebe2f",
+          "status": "verified",
+          "verified_at": "2026-11-14T20:30:31.766911+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 86310,
+        "content_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Dark/large/imperialjustice.gif",
+        "title": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Dark/large/imperialjustice.gif"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Dark/large/imperialjustice.gif",
+        "sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+        "bytes": 86310,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8ca94c701e52946c177786a7a6a3d1e16b948275/preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "3206da284f46f71e24b9e41511f46e41ba9b5e71f4ca3a6660b4a253a6964f14",
+      "subject_id": "9c02612869df673e10811c735e6e89fc5bc686518a6d796dad24b5cca3626deb",
+      "job_id": "payload:19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+      "request_id": "74b1cb4f94ae1022ee368bf2b7dca20a243c1b978af6f4667fde66ea6ec377fa",
+      "generation": 0,
+      "record_sha256": "37c8852cddb038dff72d6f67893c823dbb2fa69e4070bc53c8cbd72146c20c4f",
+      "record": "requests/19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac/3206da284f46f71e24b9e41511f46e41ba9b5e71f4ca3a6660b4a253a6964f14/74b1cb4f94ae1022ee368bf2b7dca20a243c1b978af6f4667fde66ea6ec377fa.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 86310,
+          "content_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Dark/large/imperialjustice.gif",
+          "title": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Dark/large/imperialjustice.gif"
+        },
+        "verification": {
+          "container_member": "payloads/19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 86310,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 86310,
+          "content_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Dark/large/imperialjustice.gif",
+          "title": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Dark/large/imperialjustice.gif"
+        },
+        "verification": {
+          "container_member": "payloads/19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 86310,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 86310,
+        "content_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/9/93/V0-D-imperialjustice-2018-07-08.gif",
+        "title": "File:V0-D-imperialjustice-2018-07-08.gif",
+        "upload_timestamp": "2026-11-13T01:28:07Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/9/93/V0-D-imperialjustice-2018-07-08.gif",
+        "sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+        "bytes": 86310,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki-files/blob/75ed0c315e96cd8286f31ac8ec75d65081edf69b/preservation/issue-414-replacement-lead-20261114/checked-lead-evidence.json",
+          "sha256": "3f6f77d230a8f9521508133439bff3c39d4ea41f39ac6c7e9ac0c371bb1a000f"
+        }
+      },
+      "readiness": {
+        "ready": true,
+        "reason": "Complete Modern printing visually checked against its article and blanking notice; exact public original API SHA-1/size checked and independent immutable Git restore matched SHA-256/bytes. External replay still unverified.",
+        "stage_bytes": 0
+      },
+      "owner": "server-wayback-owner",
+      "continuation": "Story #414 replacement lead: existing central owner preserves exact original, verifies replay bytes and reconciles File preservation link. No client submission or worker changes.",
+      "approval_scope": {
+        "request": "Bill asked to finish remaining archive verification and replace the repeated A Brave Resistance lead with another blanked card. Existing backup/publication workflow applies.",
+        "story": "https://github.com/swccg-guild/work/issues/414"
+      },
+      "object_id": "a76fb042d7a55e73401594d7e920596fbec863eb1f93beece7e3f52455902c02",
+      "subject_id": "051ddf44dfff17c68cde7ecac14328cf7d4294c16764e2a58f1708282f104df4",
+      "job_id": "payload:19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+      "request_id": "e6d7add6cfcae40686cab31e852d35a2608a58eda40c19a1f2d896c08945734d",
+      "generation": 0,
+      "record_sha256": "9833d9d2a69e03f773be9971446a5418a6e8f958a8bd18b4a3dbf6f732e2e995",
+      "record": "requests/19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac/a76fb042d7a55e73401594d7e920596fbec863eb1f93beece7e3f52455902c02/e6d7add6cfcae40686cab31e852d35a2608a58eda40c19a1f2d896c08945734d.json",
+      "state": "ready",
+      "reason": "Complete Modern printing visually checked against its article and blanking notice; exact public original API SHA-1/size checked and independent immutable Git restore matched SHA-256/bytes. External replay still unverified.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "75ed0c315e96cd8286f31ac8ec75d65081edf69b",
+          "kind": "git",
+          "path": "preservation/issue-414-replacement-lead-20261114/V0-D-imperialjustice-2018-07-08.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 86310,
+          "content_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/9/93/V0-D-imperialjustice-2018-07-08.gif",
+          "title": "File:V0-D-imperialjustice-2018-07-08.gif",
+          "upload_timestamp": "2026-11-13T01:28:07Z"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 86310,
+          "restored_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "status": "verified",
+          "verified_at": "2026-11-14T16:51:28.654641+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "75ed0c315e96cd8286f31ac8ec75d65081edf69b",
+          "kind": "git",
+          "path": "preservation/issue-414-replacement-lead-20261114/V0-D-imperialjustice-2018-07-08.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 86310,
+          "content_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/9/93/V0-D-imperialjustice-2018-07-08.gif",
+          "title": "File:V0-D-imperialjustice-2018-07-08.gif",
+          "upload_timestamp": "2026-11-13T01:28:07Z"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 86310,
+          "restored_sha256": "19f62ef9c06557a90056a5bd7700ef2de3deea609426e67c8f797a1b3342f6ac",
+          "status": "verified",
+          "verified_at": "2026-11-14T16:51:28.654641+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 1794620,
+        "content_sha256": "1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/2a5e530f35e8b889d4dc48fc401fd1ddf1710277/Dark.json",
+        "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/2a5e530f35e8b889d4dc48fc401fd1ddf1710277/Dark.json"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/2a5e530f35e8b889d4dc48fc401fd1ddf1710277/Dark.json",
+        "sha256": "1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+        "bytes": 1794620,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8ca94c701e52946c177786a7a6a3d1e16b948275/preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "978449c673d01d604ec952626a20f03edb4796b4182a59c1162aa7399ceae823",
+      "subject_id": "74bb38701077d3ad891b4d5f88561277f986f98562de2df8cb5f2b6b273bc08a",
+      "job_id": "payload:1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+      "request_id": "b69c2ff4cb0de69bae5cf67261b17ae4f1772cfc769334ab803f05746dace28e",
+      "generation": 0,
+      "record_sha256": "74c88fc8a93cbadc354c70d3a98ad7c3cb0b3a9b1a269dc9fecf4a4a7024b5bb",
+      "record": "requests/1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0/978449c673d01d604ec952626a20f03edb4796b4182a59c1162aa7399ceae823/b69c2ff4cb0de69bae5cf67261b17ae4f1772cfc769334ab803f05746dace28e.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 1794620,
+          "content_sha256": "1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/2a5e530f35e8b889d4dc48fc401fd1ddf1710277/Dark.json",
+          "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/2a5e530f35e8b889d4dc48fc401fd1ddf1710277/Dark.json"
+        },
+        "verification": {
+          "container_member": "payloads/1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 1794620,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 1794620,
+          "content_sha256": "1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/2a5e530f35e8b889d4dc48fc401fd1ddf1710277/Dark.json",
+          "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/2a5e530f35e8b889d4dc48fc401fd1ddf1710277/Dark.json"
+        },
+        "verification": {
+          "container_member": "payloads/1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 1794620,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "1b673ce6c7d0b4f8115a6656697a3a238f59821986f1c3cf5724fe694c974ae0",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 114640,
+        "content_sha256": "1d119bbdf6c0a73dcdba2ef7303132b383b4f683380fa98815368a35dae6d7c8",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/8/89/Holotable-OVS1-Luke-Skywalker-v17.gif",
+        "title": "File:Holotable-OVS1-Luke-Skywalker-v17.gif",
+        "upload_timestamp": "2026-11-14T21:12:16Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/8/89/Holotable-OVS1-Luke-Skywalker-v17.gif",
+        "sha256": "1d119bbdf6c0a73dcdba2ef7303132b383b4f683380fa98815368a35dae6d7c8",
+        "bytes": 114640,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/a01dcbc510630c15aa4dab8928e3dd36ff4ada3d/authoring/pilots/443/batch2/source-accuracy.json",
+          "sha256": "9da1d16cd3dc24959a1abed5701826cf5c60a810a7de9df3a486473667858cce"
+        }
+      },
+      "readiness": {
+        "ready": true,
+        "reason": "Exact source/version and independent GitHub readback checked; Archive.org uploads and Save Page Now remain paused; reading/downloading allowed",
+        "stage_bytes": 0
+      },
+      "owner": "server-wayback-owner",
+      "continuation": "Story443: Bill explicitly allows Archive.org reads/downloads. Keep uploads, Save Page Now and saver/timer restarts paused. Existing central owner completes original-image replay verification and File Preservation links under the applicable read policy; submits preservation writes only after explicit resumption. No client staging/promotion.",
+      "approval_scope": {
+        "approval": "Bill approved the remaining nine OVS1 cards with exact text checks and repaired primary source references; viewing/downloading Archive.org explicitly allowed; preservation uploads remain paused",
+        "ticket": 443
+      },
+      "object_id": "c226fad626271f982665b2870e509e9980d229acc4ff79fa890b2fa0046a47b5",
+      "subject_id": "03e669acec5199e27487ba3ae03b2c273e0dd5801ecf00c6331e3bc956e4d432",
+      "job_id": "payload:1d119bbdf6c0a73dcdba2ef7303132b383b4f683380fa98815368a35dae6d7c8",
+      "request_id": "4cb6653b6ec508702c9f6e04f9c879a4bd43f49a4e396c5b03925f8e5d535f1e",
+      "generation": 5,
+      "record_sha256": "8197a16de0c4cd8faf4322203036bbf0f87693406317477f86db4e3df3b45d55",
+      "record": "requests/1d119bbdf6c0a73dcdba2ef7303132b383b4f683380fa98815368a35dae6d7c8/c226fad626271f982665b2870e509e9980d229acc4ff79fa890b2fa0046a47b5/4cb6653b6ec508702c9f6e04f9c879a4bd43f49a4e396c5b03925f8e5d535f1e.json",
+      "state": "ready",
+      "reason": "Exact source/version and independent GitHub readback checked; Archive.org uploads and Save Page Now remain paused; reading/downloading allowed",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "12b729417382d407a085f77ee7cd023d99f3ded3",
+          "kind": "git",
+          "path": "preservation/443/batch2/assets/05-historical.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 114640,
+          "content_sha256": "1d119bbdf6c0a73dcdba2ef7303132b383b4f683380fa98815368a35dae6d7c8",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/8/89/Holotable-OVS1-Luke-Skywalker-v17.gif",
+          "title": "File:Holotable-OVS1-Luke-Skywalker-v17.gif",
+          "upload_timestamp": "2026-11-14T21:12:16Z"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 114640,
+          "restored_sha256": "1d119bbdf6c0a73dcdba2ef7303132b383b4f683380fa98815368a35dae6d7c8",
+          "status": "verified",
+          "verified_at": "2026-11-14T22:57:27.928341+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "12b729417382d407a085f77ee7cd023d99f3ded3",
+          "kind": "git",
+          "path": "preservation/443/batch2/assets/05-historical.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 114640,
+          "content_sha256": "1d119bbdf6c0a73dcdba2ef7303132b383b4f683380fa98815368a35dae6d7c8",
+          "kind": "source_snapshot",
+          "original_version_url": "https://wiki.swccg.com/images/8/89/Holotable-OVS1-Luke-Skywalker-v17.gif",
+          "title": "https://wiki.swccg.com/images/8/89/Holotable-OVS1-Luke-Skywalker-v17.gif"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 114640,
+          "restored_sha256": "1d119bbdf6c0a73dcdba2ef7303132b383b4f683380fa98815368a35dae6d7c8",
+          "status": "verified",
+          "verified_at": "2026-11-14T22:57:27.928341+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 168842,
+        "content_sha256": "363a42f80745485a1f514e19d4ef5eeb28f89f5c78b697a016777a17e969a7d5",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/f/f5/OVS1-05-Luke_Skywalker-remaster.webp",
+        "title": "File:OVS1-05-Luke_Skywalker-remaster.webp",
+        "upload_timestamp": "2026-11-02T22:37:48Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/f/f5/OVS1-05-Luke_Skywalker-remaster.webp",
+        "sha256": "363a42f80745485a1f514e19d4ef5eeb28f89f5c78b697a016777a17e969a7d5",
+        "bytes": 168842,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/c1ef0e5d7e2248c00e4833368605733e66d9fed1/evidence/382/offline/existing-git-restores-20261114-213501/all-imported-receipts.json.gz",
+          "sha256": "e398e029829af6ed2cf8864387fe9aee573f72ffa96ab8478e8b339a6134f44f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT / Story382",
+      "continuation": "Keep provider traffic held. Central deployed server owner alone registers/reconciles this exact image version and submits only after Bill explicitly resumes; verify replay bytes before any preservation claim.",
+      "approval_scope": {
+        "offline_backups": "Bill explicitly authorized PC backups and inventory",
+        "provider_hold": "https://github.com/billbisco/ai-team-skills/blob/56adf36/AGENTS.md#active-archiveorg-hold--bill-2026-11-14",
+        "ticket": "https://github.com/swccg-guild/work/issues/382"
+      },
+      "object_id": "308c267f15cc2e2082d72bad8fd13cf0e58f84b7ddd0a188aaea4eb1ef30fe24",
+      "subject_id": "78b58a98409898e27b5510eeff4e739a7c8bd881912e1e5d86bbb4c339429b62",
+      "job_id": "payload:363a42f80745485a1f514e19d4ef5eeb28f89f5c78b697a016777a17e969a7d5",
+      "request_id": "a4d005ee0da7ca850b26178122d3dc76e141fae5a71f3af8657fdf10514950fc",
+      "generation": 0,
+      "record_sha256": "fc1bd9ecbecac81cc909d3ed1df2240b29b04d79aa7476aeb7fcdbbada7fb000",
+      "record": "requests/363a42f80745485a1f514e19d4ef5eeb28f89f5c78b697a016777a17e969a7d5/308c267f15cc2e2082d72bad8fd13cf0e58f84b7ddd0a188aaea4eb1ef30fe24/a4d005ee0da7ca850b26178122d3dc76e141fae5a71f3af8657fdf10514950fc.json",
+      "state": "awaiting_stage",
+      "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+      "submitted": false,
+      "backup_receipt": {
+        "inventory_version_id": "59ddd228cdb07a552c165219394bc2615c1e5586d2e381236526ac47affff6bc",
+        "schema_version": 1,
+        "storage": {
+          "commit": "30955482ca04674e0f7358071429d6364fa24a66",
+          "kind": "git",
+          "path": "files/OVS1-05-Luke_Skywalker-remaster.webp",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 168842,
+          "content_sha256": "363a42f80745485a1f514e19d4ef5eeb28f89f5c78b697a016777a17e969a7d5",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/f/f5/OVS1-05-Luke_Skywalker-remaster.webp",
+          "title": "File:OVS1-05-Luke_Skywalker-remaster.webp",
+          "upload_timestamp": "2026-11-02T22:37:48Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 168842,
+          "restored_sha256": "363a42f80745485a1f514e19d4ef5eeb28f89f5c78b697a016777a17e969a7d5",
+          "status": "verified",
+          "verified_at": "2026-11-14T20:39:11.336589+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "inventory_version_id": "59ddd228cdb07a552c165219394bc2615c1e5586d2e381236526ac47affff6bc",
+        "schema_version": 1,
+        "storage": {
+          "commit": "30955482ca04674e0f7358071429d6364fa24a66",
+          "kind": "git",
+          "path": "files/OVS1-05-Luke_Skywalker-remaster.webp",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 168842,
+          "content_sha256": "363a42f80745485a1f514e19d4ef5eeb28f89f5c78b697a016777a17e969a7d5",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/f/f5/OVS1-05-Luke_Skywalker-remaster.webp",
+          "title": "File:OVS1-05-Luke_Skywalker-remaster.webp",
+          "upload_timestamp": "2026-11-02T22:37:48Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 168842,
+          "restored_sha256": "363a42f80745485a1f514e19d4ef5eeb28f89f5c78b697a016777a17e969a7d5",
+          "status": "verified",
+          "verified_at": "2026-11-14T20:39:11.336589+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 414168,
+        "content_sha256": "37cc485d5e817e94f6844c329a1a53a25b66d9bb3177f7b2cac838f720141111",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/4/49/Premiere-L-lukeskywalker.gif",
+        "title": "File:Premiere-L-lukeskywalker.gif",
+        "upload_timestamp": "2026-09-21T00:04:43Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/4/49/Premiere-L-lukeskywalker.gif",
+        "sha256": "37cc485d5e817e94f6844c329a1a53a25b66d9bb3177f7b2cac838f720141111",
+        "bytes": 414168,
+        "checked_evidence": {
+          "path": "originals/694e8ee27634c24da52f6fb22a0a823dae26b7f14bd9b3ad535a0500515b1618.json",
+          "sha256": "ca4862dc7789214521df764294be8e365f958179f5c19e27b961646ccb179a14"
+        }
+      },
+      "readiness": {
+        "ready": true,
+        "reason": "Exact current or retained public original bytes match recorded Wiki SHA1/size and independently restored immutable Git backup. This is publisher metadata readiness, not capture or replay verification.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT / swccg-guild/work#309",
+      "continuation": "Existing server-wayback-owner alone reconciles equal-payload jobs and promotes/submits under its pinned approval check, fresh public-byte check and durable authentication/provider circuit. Verify exact original replay bytes before File preservation links. Root retains Wiki publication QA/manifest duties; no alternate saver or client queue writer.",
+      "approval_scope": {
+        "authorization": "Bill: Put #309 on the board and start working on it. Follow Claude’s handoff and continue between batches without waiting for me. Also, use lots of agents to get this done quicker.",
+        "evidence": "https://github.com/swccg-guild/work/issues/309#issuecomment-6852699807",
+        "evidence_commit": "0ddf769c38a3199933bb2608e1173efcf35477f8",
+        "evidence_path": "evidence/309/publication-registration-164/MANIFEST.json",
+        "evidence_pr": "https://github.com/swccg-guild/work/pull/428",
+        "evidence_repository": "https://github.com/swccg-guild/work",
+        "publisher": "MemoryCoreChatGPT",
+        "scope": "1124 actual checked public Wiki original-version source and backup metadata registrations in existing central inbox. No root capture calls, worker, configuration, private research contents or publication-eligibility claim. Existing server owner alone promotes/submits under its approval checks and durable circuit.",
+        "story": 309
+      },
+      "object_id": "5091dbcf2ad5104fff0e7987f55a8dd303f27e1c2324fa5a88dc728c09811957",
+      "subject_id": "694e8ee27634c24da52f6fb22a0a823dae26b7f14bd9b3ad535a0500515b1618",
+      "job_id": "payload:37cc485d5e817e94f6844c329a1a53a25b66d9bb3177f7b2cac838f720141111",
+      "request_id": "471a307ed2761fa8a3b5600e399150690ffcb0db5588a28dfdb732f81d2e3c5a",
+      "generation": 0,
+      "record_sha256": "54dedf097d03c11928f65dbb50d76c43cc10ebf7d1b6c882a8b0737e10c1c76d",
+      "record": "requests/37cc485d5e817e94f6844c329a1a53a25b66d9bb3177f7b2cac838f720141111/5091dbcf2ad5104fff0e7987f55a8dd303f27e1c2324fa5a88dc728c09811957/471a307ed2761fa8a3b5600e399150690ffcb0db5588a28dfdb732f81d2e3c5a.json",
+      "state": "ready",
+      "reason": "Exact current or retained public original bytes match recorded Wiki SHA1/size and independently restored immutable Git backup. This is publisher metadata readiness, not capture or replay verification.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "441df649ae1169236c28fdf47b9f6ee3b01d8a92",
+          "kind": "git",
+          "path": "files/Premiere-L-lukeskywalker.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 414168,
+          "content_sha256": "37cc485d5e817e94f6844c329a1a53a25b66d9bb3177f7b2cac838f720141111",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/4/49/Premiere-L-lukeskywalker.gif",
+          "title": "File:Premiere-L-lukeskywalker.gif",
+          "upload_timestamp": "2026-09-21T00:04:43Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Anonymous GET of immutable raw Git path; computed Git blob SHA1; exact raw SHA256/size and byte comparison with independently fetched public Wiki original matching its recorded SHA1/size",
+          "restored_bytes": 414168,
+          "restored_sha256": "37cc485d5e817e94f6844c329a1a53a25b66d9bb3177f7b2cac838f720141111",
+          "status": "verified",
+          "verified_at": "2026-11-14T15:24:45.568905+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "441df649ae1169236c28fdf47b9f6ee3b01d8a92",
+          "kind": "git",
+          "path": "files/Premiere-L-lukeskywalker.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 414168,
+          "content_sha256": "37cc485d5e817e94f6844c329a1a53a25b66d9bb3177f7b2cac838f720141111",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/4/49/Premiere-L-lukeskywalker.gif",
+          "title": "File:Premiere-L-lukeskywalker.gif",
+          "upload_timestamp": "2026-09-21T00:04:43Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Anonymous GET of immutable raw Git path; computed Git blob SHA1; exact raw SHA256/size and byte comparison with independently fetched public Wiki original matching its recorded SHA1/size",
+          "restored_bytes": 414168,
+          "restored_sha256": "37cc485d5e817e94f6844c329a1a53a25b66d9bb3177f7b2cac838f720141111",
+          "status": "verified",
+          "verified_at": "2026-11-14T15:24:45.568905+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 58066,
+        "content_sha256": "4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+        "kind": "source_snapshot",
+        "original_version_url": "https://github.com/swccgpc/swccg-card-json/commit/2a5e530f35e8b889d4dc48fc401fd1ddf1710277.patch",
+        "title": "https://github.com/swccgpc/swccg-card-json/commit/2a5e530f35e8b889d4dc48fc401fd1ddf1710277.patch"
+      },
+      "source": {
+        "url": "https://github.com/swccgpc/swccg-card-json/commit/2a5e530f35e8b889d4dc48fc401fd1ddf1710277.patch",
+        "sha256": "4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+        "bytes": 58066,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8ca94c701e52946c177786a7a6a3d1e16b948275/preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "de8ae0634bd7ba54e3e581bccae8c71460d935fc433b1597f5b3c47f40912bf2",
+      "subject_id": "328243da276144be03cdc19db4b9f2300aebf285d857ddf7d0f361ae2dd8c255",
+      "job_id": "payload:4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+      "request_id": "69fdb4128979c2ac20cda595027c5b6c60cc479273c55494e47553d5f401a58b",
+      "generation": 0,
+      "record_sha256": "8abac9e428bd0835d55bacbdb8300268f8cb64e36ff428afe0e525873ee40899",
+      "record": "requests/4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7/de8ae0634bd7ba54e3e581bccae8c71460d935fc433b1597f5b3c47f40912bf2/69fdb4128979c2ac20cda595027c5b6c60cc479273c55494e47553d5f401a58b.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 58066,
+          "content_sha256": "4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/swccg-card-json/commit/2a5e530f35e8b889d4dc48fc401fd1ddf1710277.patch",
+          "title": "https://github.com/swccgpc/swccg-card-json/commit/2a5e530f35e8b889d4dc48fc401fd1ddf1710277.patch"
+        },
+        "verification": {
+          "container_member": "payloads/4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 58066,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 58066,
+          "content_sha256": "4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/swccg-card-json/commit/2a5e530f35e8b889d4dc48fc401fd1ddf1710277.patch",
+          "title": "https://github.com/swccgpc/swccg-card-json/commit/2a5e530f35e8b889d4dc48fc401fd1ddf1710277.patch"
+        },
+        "verification": {
+          "container_member": "payloads/4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 58066,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "4858603ce9b7481ad999a31d1566565e1b3f11d11ecdaf8b79ebba6548850eb7",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 433227,
+        "content_sha256": "497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/2/2b/VD-L-clumsyandstupid-2023-01-03.png",
+        "title": "File:VD-L-clumsyandstupid-2023-01-03.png",
+        "upload_timestamp": "2026-11-12T23:26:05Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/2/2b/VD-L-clumsyandstupid-2023-01-03.png",
+        "sha256": "497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+        "bytes": 433227,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/2f5cfb71fdddde07e74846ef29763228dedf4503/evidence/382/offline/existing-git-restores-20261114-224323/all-imported-receipts.json.gz",
+          "sha256": "1fc0d9aaf3d9f742cad3ad38957e7afaad159e85914ce6e90a9115ce568e9b20"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT / Story382",
+      "continuation": "Keep provider traffic held. Central deployed server owner alone registers/reconciles this exact image version and submits only after Bill explicitly resumes; verify replay bytes before any preservation claim.",
+      "approval_scope": {
+        "offline_backups": "Bill explicitly authorized PC backups and inventory",
+        "provider_hold": "https://github.com/billbisco/ai-team-skills/blob/56adf36/AGENTS.md#active-archiveorg-hold--bill-2026-11-14",
+        "ticket": "https://github.com/swccg-guild/work/issues/382"
+      },
+      "object_id": "e3a8a8321cd200aae2075c7f05b77cd47febf39688307be26d3abf95be3bf9c2",
+      "subject_id": "74c4ddf256a7aedbbad1233525fe7c7c9a0854a14fe6a82811804d9006dd1283",
+      "job_id": "payload:497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+      "request_id": "82524e235905121c51699aaf1db190e251039690f2d620dfae16c46018782582",
+      "generation": 0,
+      "record_sha256": "465edf4a3302a9f9c34aca4e8fea2c6165e5cc25e0ff900d9ad31c3028b55d0e",
+      "record": "requests/497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f/e3a8a8321cd200aae2075c7f05b77cd47febf39688307be26d3abf95be3bf9c2/82524e235905121c51699aaf1db190e251039690f2d620dfae16c46018782582.json",
+      "state": "awaiting_stage",
+      "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+      "submitted": false,
+      "backup_receipt": {
+        "inventory_version_id": "c67365de58ac5582ec263512779ad45cff7c76e66a75f210d9d9fe9a3337b22c",
+        "schema_version": 1,
+        "storage": {
+          "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+          "kind": "git",
+          "path": "preservation/complete-image-part2-20261114T185600Z/objects/497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 433227,
+          "content_sha256": "497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/2/2b/VD-L-clumsyandstupid-2023-01-03.png",
+          "title": "File:VD-L-clumsyandstupid-2023-01-03.png",
+          "upload_timestamp": "2026-11-12T23:26:05Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 433227,
+          "restored_sha256": "497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+          "status": "verified",
+          "verified_at": "2026-11-14T22:15:57.205378+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "inventory_version_id": "c67365de58ac5582ec263512779ad45cff7c76e66a75f210d9d9fe9a3337b22c",
+        "schema_version": 1,
+        "storage": {
+          "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+          "kind": "git",
+          "path": "preservation/complete-image-part2-20261114T185600Z/objects/497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 433227,
+          "content_sha256": "497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/2/2b/VD-L-clumsyandstupid-2023-01-03.png",
+          "title": "File:VD-L-clumsyandstupid-2023-01-03.png",
+          "upload_timestamp": "2026-11-12T23:26:05Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 433227,
+          "restored_sha256": "497e7514f1ca2c4d8a5e4531697b388154346b3fa84491612a29c881ce95266f",
+          "status": "verified",
+          "verified_at": "2026-11-14T22:15:57.205378+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 505781,
+        "content_sha256": "4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+        "kind": "source_snapshot",
+        "original_version_url": "https://github.com/swccgpc/holotable/commit/fba281da7873c693aa3b08139e44ccee3e2042b6",
+        "title": "https://github.com/swccgpc/holotable/commit/fba281da7873c693aa3b08139e44ccee3e2042b6"
+      },
+      "source": {
+        "url": "https://github.com/swccgpc/holotable/commit/fba281da7873c693aa3b08139e44ccee3e2042b6",
+        "sha256": "4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+        "bytes": 505781,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/96557a307c2bcd4af36ac133d11f01ff310ea65b/preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "803aa8efd29f990d870a0e9fe6967ff756662964043d3a729077ef88ef14e752",
+      "subject_id": "0ef249355583521403eaef2d10455818e4abeaf4adc0139d8cca9318e64b8c69",
+      "job_id": "payload:4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+      "request_id": "10a8d68f7cf170360093327b65c4e2df5b3f5450fa4721c96c036599a44394f3",
+      "generation": 0,
+      "record_sha256": "4b02aeb8a84c370fa2206a98469ed011e3c42a3235d7e3f83c68afb138bd81cf",
+      "record": "requests/4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9/803aa8efd29f990d870a0e9fe6967ff756662964043d3a729077ef88ef14e752/10a8d68f7cf170360093327b65c4e2df5b3f5450fa4721c96c036599a44394f3.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 4997304,
+          "artifact_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "commit": "96557a307c2bcd4af36ac133d11f01ff310ea65b",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source_snapshot/4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+          "path": "preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 25248025
+        },
+        "subject": {
+          "bytes": 505781,
+          "content_sha256": "4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/holotable/commit/fba281da7873c693aa3b08139e44ccee3e2042b6",
+          "title": "https://github.com/swccgpc/holotable/commit/fba281da7873c693aa3b08139e44ccee3e2042b6"
+        },
+        "verification": {
+          "container_member": "native/source_snapshot/4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+          "container_payload_tally": 25248025,
+          "independent": true,
+          "restored_bytes": 505781,
+          "restored_container_bytes": 4997304,
+          "restored_container_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "restored_sha256": "4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+          "status": "verified",
+          "verified_at": "2026-11-18T16:29:34.643236+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 4997304,
+          "artifact_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "commit": "96557a307c2bcd4af36ac133d11f01ff310ea65b",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source_snapshot/4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+          "path": "preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 25248025
+        },
+        "subject": {
+          "bytes": 505781,
+          "content_sha256": "4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/holotable/commit/fba281da7873c693aa3b08139e44ccee3e2042b6",
+          "title": "https://github.com/swccgpc/holotable/commit/fba281da7873c693aa3b08139e44ccee3e2042b6"
+        },
+        "verification": {
+          "container_member": "native/source_snapshot/4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+          "container_payload_tally": 25248025,
+          "independent": true,
+          "restored_bytes": 505781,
+          "restored_container_bytes": 4997304,
+          "restored_container_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "restored_sha256": "4ca738f9da305aee2016321a4c3cde8279990de1c9bd816dedc11316124c43d9",
+          "status": "verified",
+          "verified_at": "2026-11-18T16:29:34.643236+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 21560,
+        "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+        "kind": "source_snapshot",
+        "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+        "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+      },
+      "source": {
+        "url": "http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+        "sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+        "bytes": 21560,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/7e524ad9197065d053832d5b8f3db87ba4dfd3f3/preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact3article baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly3 strict-lint baseline article date corrections (Luke original, Decipher Errata, first Original VS1). Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "4c20d25d969868c9aeb99e4f9c932ec5e381886b19a5c3a424281c497f6b2bd8",
+      "subject_id": "48bb69f8e4ad0c328987c4b44ce1444feee34c989117284da526542b14f15996",
+      "job_id": "payload:5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+      "request_id": "18761c6461294a8cce041dd26744f1b63e9c90e599a7baaeeea53ad7a3d47d51",
+      "generation": 0,
+      "record_sha256": "6d574b0047c4298a848c3408831fbabe57502482588b93b81ce9cc32a0a4da2e",
+      "record": "requests/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49/4c20d25d969868c9aeb99e4f9c932ec5e381886b19a5c3a424281c497f6b2bd8/18761c6461294a8cce041dd26744f1b63e9c90e599a7baaeeea53ad7a3d47d51.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 78288,
+          "artifact_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "commit": "7e524ad9197065d053832d5b8f3db87ba4dfd3f3",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "path": "preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1070119
+        },
+        "subject": {
+          "bytes": 21560,
+          "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "kind": "source_snapshot",
+          "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+          "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+        },
+        "verification": {
+          "container_member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "container_payload_tally": 1070119,
+          "independent": true,
+          "restored_bytes": 21560,
+          "restored_container_bytes": 78288,
+          "restored_container_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "restored_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "status": "verified",
+          "verified_at": "2026-11-18T14:50:14.520271+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 78288,
+          "artifact_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "commit": "7e524ad9197065d053832d5b8f3db87ba4dfd3f3",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "path": "preservation/bundles/597/597-privacy69-date-and-contact-cleanup.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1070119
+        },
+        "subject": {
+          "bytes": 21560,
+          "content_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "kind": "source_snapshot",
+          "original_version_url": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html",
+          "title": "https://web.archive.org/web/19990504174938id_/http://www.decipher.com/starwars/productlibrary/thecollection/index.html"
+        },
+        "verification": {
+          "container_member": "sources/5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49.html",
+          "container_payload_tally": 1070119,
+          "independent": true,
+          "restored_bytes": 21560,
+          "restored_container_bytes": 78288,
+          "restored_container_sha256": "3c89162693cbf01cc82368812354ae85a2539d1576513682c5725c86c09e42dd",
+          "restored_sha256": "5544cd9012a8ea618abafb58478afc03d070670392a2a3edfaba5002f88f4d49",
+          "status": "verified",
+          "verified_at": "2026-11-18T14:50:14.520271+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 88801,
+        "content_sha256": "731bb13f718343836caba5dc2647905ea3e6cf88e627f94edaf28c0bdca360fd",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/3/36/Premiere-L-lukeskywalker-decipher-archive.gif",
+        "title": "File:Premiere-L-lukeskywalker-decipher-archive.gif",
+        "upload_timestamp": "2026-09-25T20:24:37Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/3/36/Premiere-L-lukeskywalker-decipher-archive.gif",
+        "sha256": "731bb13f718343836caba5dc2647905ea3e6cf88e627f94edaf28c0bdca360fd",
+        "bytes": 88801,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/8607d6a409ee9cb395987c661e94cf60b20676ad/evidence/362/premium-set/additional-assets/source-accuracy.json",
+          "sha256": "be6cc0cbdd38b7e4285233ea53b28e39584481336683328c7d1cb5ed35fcea5f"
+        }
+      },
+      "readiness": {
+        "ready": true,
+        "reason": "Exact public original/source is already accessible and independently backed up; server owner must recheck bytes and obey provider control before capture work",
+        "stage_bytes": 0
+      },
+      "owner": "server-wayback-owner",
+      "continuation": "When the existing server owner permits capture work, recheck these exact public bytes, enqueue using the central owner only, verify replay, and update the matching File preservation/version mapping. Registration is not submission.",
+      "approval_scope": {
+        "authorization": "Bill explicitly authorized Premium Edition source, all twelve card articles, version navigators and Set1 tables in this chat on 14 November 2026",
+        "publisher": "MemoryCoreChatGPT",
+        "scope": "Exact source and public original versions referenced by the reviewed Set1/Premium publication packet; no capture submission authority delegated",
+        "ticket": 362
+      },
+      "object_id": "120dcc8fdf5d6b73325554a7b037f1f00b808fe06ebef5697c45487ed2fd89c7",
+      "subject_id": "885ff639842c507d3f2c151753605732316777e62aba08f255324e7441d21102",
+      "job_id": "payload:731bb13f718343836caba5dc2647905ea3e6cf88e627f94edaf28c0bdca360fd",
+      "request_id": "f03755ae61610b1e813785d4d26761f41f6f66f8663d349aa0754abc0192ef0b",
+      "generation": 0,
+      "record_sha256": "6b018d9e88ce0eebf985fc6d68d2c6d5c88d2beab073f4ccb940024970346ff9",
+      "record": "requests/731bb13f718343836caba5dc2647905ea3e6cf88e627f94edaf28c0bdca360fd/120dcc8fdf5d6b73325554a7b037f1f00b808fe06ebef5697c45487ed2fd89c7/f03755ae61610b1e813785d4d26761f41f6f66f8663d349aa0754abc0192ef0b.json",
+      "state": "ready",
+      "reason": "Exact public original/source is already accessible and independently backed up; server owner must recheck bytes and obey provider control before capture work",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "d77fe6a30fa4145aac4961739d44b8dc7b47adb4",
+          "kind": "git",
+          "path": "files/Premiere-L-lukeskywalker-decipher-archive.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 88801,
+          "content_sha256": "731bb13f718343836caba5dc2647905ea3e6cf88e627f94edaf28c0bdca360fd",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/3/36/Premiere-L-lukeskywalker-decipher-archive.gif",
+          "title": "File:Premiere-L-lukeskywalker-decipher-archive.gif",
+          "upload_timestamp": "2026-09-25T20:24:37Z"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 88801,
+          "restored_sha256": "731bb13f718343836caba5dc2647905ea3e6cf88e627f94edaf28c0bdca360fd",
+          "status": "verified",
+          "verified_at": "2026-11-14T14:32:37.184907+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "d77fe6a30fa4145aac4961739d44b8dc7b47adb4",
+          "kind": "git",
+          "path": "files/Premiere-L-lukeskywalker-decipher-archive.gif",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 88801,
+          "content_sha256": "731bb13f718343836caba5dc2647905ea3e6cf88e627f94edaf28c0bdca360fd",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/3/36/Premiere-L-lukeskywalker-decipher-archive.gif",
+          "title": "File:Premiere-L-lukeskywalker-decipher-archive.gif",
+          "upload_timestamp": "2026-09-25T20:24:37Z"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 88801,
+          "restored_sha256": "731bb13f718343836caba5dc2647905ea3e6cf88e627f94edaf28c0bdca360fd",
+          "status": "verified",
+          "verified_at": "2026-11-14T14:32:37.184907+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 485683,
+        "content_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/1fa635b23d66bed54656874f534e547183562cd7/Images-HT/starwars/Virtual13-Light/Large/Clumsy%20And%20Stupid.gif",
+        "title": "https://raw.githubusercontent.com/swccgpc/holotable/1fa635b23d66bed54656874f534e547183562cd7/Images-HT/starwars/Virtual13-Light/Large/Clumsy%20And%20Stupid.gif"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/swccgpc/holotable/1fa635b23d66bed54656874f534e547183562cd7/Images-HT/starwars/Virtual13-Light/Large/Clumsy%20And%20Stupid.gif",
+        "sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+        "bytes": 485683,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8ca94c701e52946c177786a7a6a3d1e16b948275/preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "3cb2b5b6fc7eae693699663384475cdefd122d14f62ee1ba74d17b3308817ab4",
+      "subject_id": "565a5323cab91dd4e3409aa041223ba6932e42edf1ec504476ef368611bf7cb5",
+      "job_id": "payload:7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+      "request_id": "d035e30a64447584039bc738912cb56ef19f56c88195ee748a817cb0b6c77ee4",
+      "generation": 0,
+      "record_sha256": "433bc83d160df14cd345cbb23c6a358cca9b79c115d8e1bcdb9bd137e3a37ba8",
+      "record": "requests/7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a/3cb2b5b6fc7eae693699663384475cdefd122d14f62ee1ba74d17b3308817ab4/d035e30a64447584039bc738912cb56ef19f56c88195ee748a817cb0b6c77ee4.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 485683,
+          "content_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/1fa635b23d66bed54656874f534e547183562cd7/Images-HT/starwars/Virtual13-Light/Large/Clumsy%20And%20Stupid.gif",
+          "title": "https://raw.githubusercontent.com/swccgpc/holotable/1fa635b23d66bed54656874f534e547183562cd7/Images-HT/starwars/Virtual13-Light/Large/Clumsy%20And%20Stupid.gif"
+        },
+        "verification": {
+          "container_member": "payloads/7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 485683,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 485683,
+          "content_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/1fa635b23d66bed54656874f534e547183562cd7/Images-HT/starwars/Virtual13-Light/Large/Clumsy%20And%20Stupid.gif",
+          "title": "https://raw.githubusercontent.com/swccgpc/holotable/1fa635b23d66bed54656874f534e547183562cd7/Images-HT/starwars/Virtual13-Light/Large/Clumsy%20And%20Stupid.gif"
+        },
+        "verification": {
+          "container_member": "payloads/7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 485683,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 485683,
+        "content_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/3/36/VD-L-clumsyandstupid-2020-11-09.gif",
+        "title": "File:VD-L-clumsyandstupid-2020-11-09.gif",
+        "upload_timestamp": "2026-11-12T23:23:51Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/3/36/VD-L-clumsyandstupid-2020-11-09.gif",
+        "sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+        "bytes": 485683,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/2f5cfb71fdddde07e74846ef29763228dedf4503/evidence/382/offline/existing-git-restores-20261114-224323/all-imported-receipts.json.gz",
+          "sha256": "1fc0d9aaf3d9f742cad3ad38957e7afaad159e85914ce6e90a9115ce568e9b20"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT / Story382",
+      "continuation": "Keep provider traffic held. Central deployed server owner alone registers/reconciles this exact image version and submits only after Bill explicitly resumes; verify replay bytes before any preservation claim.",
+      "approval_scope": {
+        "offline_backups": "Bill explicitly authorized PC backups and inventory",
+        "provider_hold": "https://github.com/billbisco/ai-team-skills/blob/56adf36/AGENTS.md#active-archiveorg-hold--bill-2026-11-14",
+        "ticket": "https://github.com/swccg-guild/work/issues/382"
+      },
+      "object_id": "c657e4361588ca9ad4cf942815a8d1b0a2f76964ced02502de44a82fa1a4c8ab",
+      "subject_id": "38fdb4528c862ddf95daa79471a72181f405726588628fc78f7a7026adae0e34",
+      "job_id": "payload:7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+      "request_id": "664a512364bdd48e81822c429c6a0db5cbae01494eb28169cef5021cee807cb0",
+      "generation": 0,
+      "record_sha256": "f6270531cfdba865145ab4421355df3bd4d5f0cc0f83f2a9330fcb04d65c47c7",
+      "record": "requests/7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a/c657e4361588ca9ad4cf942815a8d1b0a2f76964ced02502de44a82fa1a4c8ab/664a512364bdd48e81822c429c6a0db5cbae01494eb28169cef5021cee807cb0.json",
+      "state": "awaiting_stage",
+      "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+      "submitted": false,
+      "backup_receipt": {
+        "inventory_version_id": "e01afa20f743cf811f880b019c32eecdca3e9751583f2850ab8f9cf17720bd24",
+        "schema_version": 1,
+        "storage": {
+          "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+          "kind": "git",
+          "path": "preservation/complete-image-part2-20261114T185600Z/objects/7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 485683,
+          "content_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/3/36/VD-L-clumsyandstupid-2020-11-09.gif",
+          "title": "File:VD-L-clumsyandstupid-2020-11-09.gif",
+          "upload_timestamp": "2026-11-12T23:23:51Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 485683,
+          "restored_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "status": "verified",
+          "verified_at": "2026-11-14T22:24:21.764008+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "inventory_version_id": "e01afa20f743cf811f880b019c32eecdca3e9751583f2850ab8f9cf17720bd24",
+        "schema_version": 1,
+        "storage": {
+          "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+          "kind": "git",
+          "path": "preservation/complete-image-part2-20261114T185600Z/objects/7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 485683,
+          "content_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/3/36/VD-L-clumsyandstupid-2020-11-09.gif",
+          "title": "File:VD-L-clumsyandstupid-2020-11-09.gif",
+          "upload_timestamp": "2026-11-12T23:23:51Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 485683,
+          "restored_sha256": "7a578b8886cd56997341f04fe75bae3b84b126c70e98f84b731928859137579a",
+          "status": "verified",
+          "verified_at": "2026-11-14T22:24:21.764008+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 8003740,
+        "content_sha256": "7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+        "kind": "source_snapshot",
+        "original_version_url": "https://github.com/swccgpc/holotable/commit/022435b7929e4de26dafbcb1de2ec1d6d04d2153",
+        "title": "https://github.com/swccgpc/holotable/commit/022435b7929e4de26dafbcb1de2ec1d6d04d2153"
+      },
+      "source": {
+        "url": "https://github.com/swccgpc/holotable/commit/022435b7929e4de26dafbcb1de2ec1d6d04d2153",
+        "sha256": "7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+        "bytes": 8003740,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/96557a307c2bcd4af36ac133d11f01ff310ea65b/preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "2fac41ca22e417fb291b0e9fe96ee416c02cbca326d5d382b6ec4395d0381dba",
+      "subject_id": "46528f8a14d2599767c0f0d86af26db19b4bd3fe016ab7a00156af2a2e2b7458",
+      "job_id": "payload:7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+      "request_id": "acf8706594d9733f190282294835dce19f5d32f10e17b17da80f3c94a5a55496",
+      "generation": 0,
+      "record_sha256": "8235fa3e4fc8189a556e293f4f09ad1ced66db60e1bd8aea7364eaeac0ee1aa9",
+      "record": "requests/7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915/2fac41ca22e417fb291b0e9fe96ee416c02cbca326d5d382b6ec4395d0381dba/acf8706594d9733f190282294835dce19f5d32f10e17b17da80f3c94a5a55496.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 4997304,
+          "artifact_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "commit": "96557a307c2bcd4af36ac133d11f01ff310ea65b",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source_snapshot/7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+          "path": "preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 25248025
+        },
+        "subject": {
+          "bytes": 8003740,
+          "content_sha256": "7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/holotable/commit/022435b7929e4de26dafbcb1de2ec1d6d04d2153",
+          "title": "https://github.com/swccgpc/holotable/commit/022435b7929e4de26dafbcb1de2ec1d6d04d2153"
+        },
+        "verification": {
+          "container_member": "native/source_snapshot/7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+          "container_payload_tally": 25248025,
+          "independent": true,
+          "restored_bytes": 8003740,
+          "restored_container_bytes": 4997304,
+          "restored_container_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "restored_sha256": "7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+          "status": "verified",
+          "verified_at": "2026-11-18T16:29:34.643236+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 4997304,
+          "artifact_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "commit": "96557a307c2bcd4af36ac133d11f01ff310ea65b",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "native/source_snapshot/7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+          "path": "preservation/bundles/597/597-baseline-remaining-full-native-cited-sources-originals.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 25248025
+        },
+        "subject": {
+          "bytes": 8003740,
+          "content_sha256": "7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+          "kind": "source_snapshot",
+          "original_version_url": "https://github.com/swccgpc/holotable/commit/022435b7929e4de26dafbcb1de2ec1d6d04d2153",
+          "title": "https://github.com/swccgpc/holotable/commit/022435b7929e4de26dafbcb1de2ec1d6d04d2153"
+        },
+        "verification": {
+          "container_member": "native/source_snapshot/7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+          "container_payload_tally": 25248025,
+          "independent": true,
+          "restored_bytes": 8003740,
+          "restored_container_bytes": 4997304,
+          "restored_container_sha256": "d09d5cc5a6a631befb53145bc6117a292d59f9f8c09b18d6d44b96f4dc092461",
+          "restored_sha256": "7d0178fc24a691141899b10255455e69bbcd0099c2884f94261b7c67a007e915",
+          "status": "verified",
+          "verified_at": "2026-11-18T16:29:34.643236+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 1257463,
+        "content_sha256": "9af0cafcd4bb8b921f5e587c8472174001319415aa4d1a3ca9a08a525ee1cfc7",
+        "kind": "source_snapshot",
+        "original_version_url": "http://decipher.com/starwars/rules/pdf/swccgglossary.pdf",
+        "title": "http://decipher.com/starwars/rules/pdf/swccgglossary.pdf"
+      },
+      "source": {
+        "url": "http://decipher.com/starwars/rules/pdf/swccgglossary.pdf",
+        "sha256": "9af0cafcd4bb8b921f5e587c8472174001319415aa4d1a3ca9a08a525ee1cfc7",
+        "bytes": 1257463,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/0a4442eaa2983ffa7a735e68368ba35e4e103030/evidence/362/premium-set/external/source-ledger.json",
+          "sha256": "cacaa6a6b14ac7ce139cf408dbe921142a51cefd2d94369444527bc5f1013a55"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Historical source cache exists but live original URL no longer returns it; verify preserved source URL and do not submit dead primary URL",
+        "stage_bytes": 0
+      },
+      "owner": "server-wayback-owner",
+      "continuation": "Existing central owner only. Respect provider control, verify source identity, then capture if ready. This record is metadata registration, never a submission. Historical source cache exists but live original URL no longer returns it; verify preserved source URL and do not submit dead primary URL",
+      "approval_scope": {
+        "authorization": "Bill authorized Premium Set1 family/wiki source documentation in chat; cited unchanged family sources are preserved without new claim endorsement",
+        "publisher": "MemoryCoreChatGPT",
+        "scope": "Cited source payload preservation and explicitly held rendered evidence; no capture submission delegation",
+        "ticket": 362
+      },
+      "object_id": "0212dc023090c231696484e240e2cedbf96927d0bfaabed9d873d6ce8ab39e3c",
+      "subject_id": "e1aaf9853624dfe47ee5e63792b666fe39b448bd7a4a8919aa8248823189d9aa",
+      "job_id": "payload:9af0cafcd4bb8b921f5e587c8472174001319415aa4d1a3ca9a08a525ee1cfc7",
+      "request_id": "c794bf83dbf979b86f632ede11461abf80d21dfad6c422f5cd7bf3773354b30f",
+      "generation": 0,
+      "record_sha256": "4371dd2d94883102dfcc9fcc80c8fabe1be1914ced290c34b93bf9e5bc1e09f7",
+      "record": "requests/9af0cafcd4bb8b921f5e587c8472174001319415aa4d1a3ca9a08a525ee1cfc7/0212dc023090c231696484e240e2cedbf96927d0bfaabed9d873d6ce8ab39e3c/c794bf83dbf979b86f632ede11461abf80d21dfad6c422f5cd7bf3773354b30f.json",
+      "state": "awaiting_stage",
+      "reason": "Historical source cache exists but live original URL no longer returns it; verify preserved source URL and do not submit dead primary URL",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "5acb75bb7724aea4496803f7511500b7a89c1687",
+          "kind": "git",
+          "path": "files/Decipher_Glossary_1998.pdf",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 1257463,
+          "content_sha256": "9af0cafcd4bb8b921f5e587c8472174001319415aa4d1a3ca9a08a525ee1cfc7",
+          "kind": "source_snapshot",
+          "original_version_url": "http://decipher.com/starwars/rules/pdf/swccgglossary.pdf",
+          "title": "http://decipher.com/starwars/rules/pdf/swccgglossary.pdf"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 1257463,
+          "restored_sha256": "9af0cafcd4bb8b921f5e587c8472174001319415aa4d1a3ca9a08a525ee1cfc7",
+          "status": "verified",
+          "verified_at": "2026-11-14T14:44:09.112970+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "commit": "5acb75bb7724aea4496803f7511500b7a89c1687",
+          "kind": "git",
+          "path": "files/Decipher_Glossary_1998.pdf",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 1257463,
+          "content_sha256": "9af0cafcd4bb8b921f5e587c8472174001319415aa4d1a3ca9a08a525ee1cfc7",
+          "kind": "source_snapshot",
+          "original_version_url": "http://decipher.com/starwars/rules/pdf/swccgglossary.pdf",
+          "title": "http://decipher.com/starwars/rules/pdf/swccgglossary.pdf"
+        },
+        "verification": {
+          "independent": true,
+          "restored_bytes": 1257463,
+          "restored_sha256": "9af0cafcd4bb8b921f5e587c8472174001319415aa4d1a3ca9a08a525ee1cfc7",
+          "status": "verified",
+          "verified_at": "2026-11-14T14:44:09.112970+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 204613,
+        "content_sha256": "9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightPreErrata.json",
+        "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightPreErrata.json"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightPreErrata.json",
+        "sha256": "9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf",
+        "bytes": 204613,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8ca94c701e52946c177786a7a6a3d1e16b948275/preservation/bundles/597/597-seven-shield-blanking-date-citations.tar.xz",
+          "sha256": "0d0437a54eb30cd56be597f401d54ee5c852e3c5e25f4ad324bcf86eaf90d138"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "0aa3786a086a1d2ae10af6e16c9ea5f4cfa9be8a25d8b03228a74b87efed4e24",
+      "subject_id": "0e40ab1a11bbb2ea3920335f96154c396a7b33b0e14410b0145b8ac61710b349",
+      "job_id": "payload:9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf",
+      "request_id": "e79184f7cf9d59b7d4829d4aa3fbaef71cfb3287110c3149e0d5dd87342f7d7a",
+      "generation": 0,
+      "record_sha256": "1777e5f4cf5d8f0ac03b53d919ff99b9e7688364b4f8b9f43b2165a123915e08",
+      "record": "requests/9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf/0aa3786a086a1d2ae10af6e16c9ea5f4cfa9be8a25d8b03228a74b87efed4e24/e79184f7cf9d59b7d4829d4aa3fbaef71cfb3287110c3149e0d5dd87342f7d7a.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 2884932,
+          "artifact_sha256": "0d0437a54eb30cd56be597f401d54ee5c852e3c5e25f4ad324bcf86eaf90d138",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf.json",
+          "path": "preservation/bundles/597/597-seven-shield-blanking-date-citations.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 3331356
+        },
+        "subject": {
+          "bytes": 204613,
+          "content_sha256": "9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightPreErrata.json",
+          "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightPreErrata.json"
+        },
+        "verification": {
+          "container_member": "sources/9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf.json",
+          "container_payload_tally": 3331356,
+          "independent": true,
+          "restored_bytes": 204613,
+          "restored_container_bytes": 2884932,
+          "restored_container_sha256": "0d0437a54eb30cd56be597f401d54ee5c852e3c5e25f4ad324bcf86eaf90d138",
+          "restored_sha256": "9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:13.247999+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 2884932,
+          "artifact_sha256": "0d0437a54eb30cd56be597f401d54ee5c852e3c5e25f4ad324bcf86eaf90d138",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf.json",
+          "path": "preservation/bundles/597/597-seven-shield-blanking-date-citations.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 3331356
+        },
+        "subject": {
+          "bytes": 204613,
+          "content_sha256": "9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightPreErrata.json",
+          "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/65cd150d20634447a5499d763ac324436158c7a8/LightPreErrata.json"
+        },
+        "verification": {
+          "container_member": "sources/9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf.json",
+          "container_payload_tally": 3331356,
+          "independent": true,
+          "restored_bytes": 204613,
+          "restored_container_bytes": 2884932,
+          "restored_container_sha256": "0d0437a54eb30cd56be597f401d54ee5c852e3c5e25f4ad324bcf86eaf90d138",
+          "restored_sha256": "9c698756276356b4cc2848e3b4850f61f6c030b86c536733eb5f8df247599edf",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:13.247999+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 430382,
+        "content_sha256": "abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/fba281da7873c693aa3b08139e44ccee3e2042b6/Images-HT/starwars/Virtual13-Light/hires/clumsyandstupid.png",
+        "title": "https://raw.githubusercontent.com/swccgpc/holotable/fba281da7873c693aa3b08139e44ccee3e2042b6/Images-HT/starwars/Virtual13-Light/hires/clumsyandstupid.png"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/swccgpc/holotable/fba281da7873c693aa3b08139e44ccee3e2042b6/Images-HT/starwars/Virtual13-Light/hires/clumsyandstupid.png",
+        "sha256": "abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+        "bytes": 430382,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8ca94c701e52946c177786a7a6a3d1e16b948275/preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "2c3bbc1543323120cadff33ba70a1ea6bb847c6ad44dc41a8c25febd210db068",
+      "subject_id": "bd85597265668bcd74f6005b20c903488e58df0126ac575cd6d07bdbffd5d78a",
+      "job_id": "payload:abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+      "request_id": "70e93cfaee828cca8d3d2db9333ffed96b31b366d5bf39a8a7bd13d3089c1ef4",
+      "generation": 0,
+      "record_sha256": "b1fd1049cc85a223551d3d8c065872574cd32e101703d1372820cf79fdaab05f",
+      "record": "requests/abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58/2c3bbc1543323120cadff33ba70a1ea6bb847c6ad44dc41a8c25febd210db068/70e93cfaee828cca8d3d2db9333ffed96b31b366d5bf39a8a7bd13d3089c1ef4.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 430382,
+          "content_sha256": "abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/fba281da7873c693aa3b08139e44ccee3e2042b6/Images-HT/starwars/Virtual13-Light/hires/clumsyandstupid.png",
+          "title": "https://raw.githubusercontent.com/swccgpc/holotable/fba281da7873c693aa3b08139e44ccee3e2042b6/Images-HT/starwars/Virtual13-Light/hires/clumsyandstupid.png"
+        },
+        "verification": {
+          "container_member": "payloads/abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 430382,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 430382,
+          "content_sha256": "abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/fba281da7873c693aa3b08139e44ccee3e2042b6/Images-HT/starwars/Virtual13-Light/hires/clumsyandstupid.png",
+          "title": "https://raw.githubusercontent.com/swccgpc/holotable/fba281da7873c693aa3b08139e44ccee3e2042b6/Images-HT/starwars/Virtual13-Light/hires/clumsyandstupid.png"
+        },
+        "verification": {
+          "container_member": "payloads/abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 430382,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "abfb39a3fa419ce8e9430486e05733082bf0d3e2ce8b0a459f46a597a42c3f58",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 282568,
+        "content_sha256": "ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6",
+        "kind": "source_snapshot",
+        "original_version_url": "https://forum.starwarsccg.org/viewtopic.php?p=1385077#p1385077",
+        "title": "https://forum.starwarsccg.org/viewtopic.php?p=1385077#p1385077"
+      },
+      "source": {
+        "url": "https://forum.starwarsccg.org/viewtopic.php?p=1385077",
+        "sha256": "ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6",
+        "bytes": 282568,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/96557a307c2bcd4af36ac133d11f01ff310ea65b/preservation/metadata/597/modern318/checked-source-accuracy-index.json",
+          "sha256": "f3430d7cdd274c5bcb3bb01831d5f11ab3cabe8182376afe4d2c80dd4de109aa"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact primary document/original version independently restored from immutable existing Git storage. Metadata-only pending registration. No new capture/staging/promotion/resave requested; no unverified replay implied.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns #597 publication and installed registry operations. Reuse existing exact valid subject/source observations without changing generations/readiness/owner/scope; otherwise register this pending metadata only. Retain any actual existing checked_evidence URI/hash and export real installed records. Existing capture/saver owner alone controls submissions; no resave requested.",
+      "approval_scope": {
+        "scope": "318 Modern native-prepared source-only citation improvements plus actual-state edition dates;887 exact source snapshots and456 exact current/literal/expanded originals. No upload replacement, no new source facts beyond verified date fields, no unrelated rules mutation. Root owns hash approval/native preview/publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "cdcde820532c1df9fd2d60cb17f344019717997bc9e75551a276222e787894b3",
+      "subject_id": "635ae5fd6b574bd49b3fa4e4669f11607d70aa919e46a006cb10fb3b580ba5b7",
+      "job_id": "payload:ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6",
+      "request_id": "d0866a4831fc91df2d97b31e90d7f3c352e5671fb552987de9d9405471c3b187",
+      "generation": 0,
+      "record_sha256": "3d356630e9b5cb227ddfdafc87d42319b41a7f728a4e37c611dbe97be7d8c154",
+      "record": "requests/ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6/cdcde820532c1df9fd2d60cb17f344019717997bc9e75551a276222e787894b3/d0866a4831fc91df2d97b31e90d7f3c352e5671fb552987de9d9405471c3b187.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact primary document/original version independently restored from immutable existing Git storage. Metadata-only pending registration. No new capture/staging/promotion/resave requested; no unverified replay implied.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 74428480,
+          "artifact_sha256": "f34badda2cce23cb04df89326e3b1a1dcd74808cce48987ebdb6fa404351a336",
+          "commit": "cc1e2833a664f58e0fff2c3df00330d7b3fe91a8",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6.html",
+          "path": "preservation/bundles/597/597-modern-explicit-release-dates.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 79674210
+        },
+        "subject": {
+          "bytes": 282568,
+          "content_sha256": "ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6",
+          "kind": "source_snapshot",
+          "original_version_url": "https://forum.starwarsccg.org/viewtopic.php?p=1385077#p1385077",
+          "title": "https://forum.starwarsccg.org/viewtopic.php?p=1385077#p1385077"
+        },
+        "verification": {
+          "container_member": "sources/ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6.html",
+          "container_payload_tally": 79674210,
+          "independent": true,
+          "restored_bytes": 282568,
+          "restored_container_bytes": 74428480,
+          "restored_container_sha256": "f34badda2cce23cb04df89326e3b1a1dcd74808cce48987ebdb6fa404351a336",
+          "restored_sha256": "ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6",
+          "status": "verified",
+          "verified_at": "2026-11-18T14:21:10.117225+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 74428480,
+          "artifact_sha256": "f34badda2cce23cb04df89326e3b1a1dcd74808cce48987ebdb6fa404351a336",
+          "commit": "cc1e2833a664f58e0fff2c3df00330d7b3fe91a8",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6.html",
+          "path": "preservation/bundles/597/597-modern-explicit-release-dates.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 79674210
+        },
+        "subject": {
+          "bytes": 282568,
+          "content_sha256": "ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6",
+          "kind": "source_snapshot",
+          "original_version_url": "https://forum.starwarsccg.org/viewtopic.php?p=1385077#p1385077",
+          "title": "https://forum.starwarsccg.org/viewtopic.php?p=1385077#p1385077"
+        },
+        "verification": {
+          "container_member": "sources/ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6.html",
+          "container_payload_tally": 79674210,
+          "independent": true,
+          "restored_bytes": 282568,
+          "restored_container_bytes": 74428480,
+          "restored_container_sha256": "f34badda2cce23cb04df89326e3b1a1dcd74808cce48987ebdb6fa404351a336",
+          "restored_sha256": "ac3f37f3a43582ee4e76e7e7eeede76fd32e9f09c27251e3e753b2b719ff18f6",
+          "status": "verified",
+          "verified_at": "2026-11-18T14:21:10.117225+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 1783329,
+        "content_sha256": "b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/c3143abe7ca393f9e6f791799a9abe219112dd28/Dark.json",
+        "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/c3143abe7ca393f9e6f791799a9abe219112dd28/Dark.json"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/c3143abe7ca393f9e6f791799a9abe219112dd28/Dark.json",
+        "sha256": "b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+        "bytes": 1783329,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8ca94c701e52946c177786a7a6a3d1e16b948275/preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "4d7c2a45992cda66dd3d2fee87382087565a11ec0a110e61b9c765f0e3b7513b",
+      "subject_id": "9778562c007702aa9518bca9c426f040e293aabc264aea51e4770f5d3f9404da",
+      "job_id": "payload:b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+      "request_id": "6d18a813bc715b49622f0759aa04d411e10a33bed4c2b390455191a3bdc424da",
+      "generation": 0,
+      "record_sha256": "aff5b5a557f2fa3c7cd5b3bf1f9133011a48a72e7cd5857eb8a77151b71e3e1a",
+      "record": "requests/b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e/4d7c2a45992cda66dd3d2fee87382087565a11ec0a110e61b9c765f0e3b7513b/6d18a813bc715b49622f0759aa04d411e10a33bed4c2b390455191a3bdc424da.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 1783329,
+          "content_sha256": "b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/c3143abe7ca393f9e6f791799a9abe219112dd28/Dark.json",
+          "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/c3143abe7ca393f9e6f791799a9abe219112dd28/Dark.json"
+        },
+        "verification": {
+          "container_member": "payloads/b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 1783329,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 1783329,
+          "content_sha256": "b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/c3143abe7ca393f9e6f791799a9abe219112dd28/Dark.json",
+          "title": "https://raw.githubusercontent.com/swccgpc/swccg-card-json/c3143abe7ca393f9e6f791799a9abe219112dd28/Dark.json"
+        },
+        "verification": {
+          "container_member": "payloads/b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 1783329,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "b97956c421effe150bd26ccb36bbb479a09b33788ede4316de2f2eafcbea658e",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 8702,
+        "content_sha256": "e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+        "kind": "source_snapshot",
+        "original_version_url": "https://web.archive.org/web/20020610072829/http://www.decipher.com/starwars/playerscommittee/virtualcardset1.html",
+        "title": "https://web.archive.org/web/20020610072829/http://www.decipher.com/starwars/playerscommittee/virtualcardset1.html"
+      },
+      "source": {
+        "url": "http://www.decipher.com/starwars/playerscommittee/virtualcardset1.html",
+        "sha256": "e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+        "bytes": 8702,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8ca94c701e52946c177786a7a6a3d1e16b948275/preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact3article baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly3 strict-lint baseline article date corrections (Luke original, Decipher Errata, first Original VS1). Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "889869b82b10dd1667867a00bd83734a238dfc246eb7b20c23f4cdee0fa48597",
+      "subject_id": "9d5cd42758e5427a91be67486d9ed8da20e1e70d6e33a28e8668cf63861f7558",
+      "job_id": "payload:e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+      "request_id": "b5e79add833209e712a5900cc7445c275581bc86b58427d1864b167b4e07319e",
+      "generation": 0,
+      "record_sha256": "d941ca70f2ab238777db7519809ca6b3ac9862d315580fb163c4f6f2a7e79fe3",
+      "record": "requests/e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33/889869b82b10dd1667867a00bd83734a238dfc246eb7b20c23f4cdee0fa48597/b5e79add833209e712a5900cc7445c275581bc86b58427d1864b167b4e07319e.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 8702,
+          "content_sha256": "e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+          "kind": "source_snapshot",
+          "original_version_url": "https://web.archive.org/web/20020610072829/http://www.decipher.com/starwars/playerscommittee/virtualcardset1.html",
+          "title": "https://web.archive.org/web/20020610072829/http://www.decipher.com/starwars/playerscommittee/virtualcardset1.html"
+        },
+        "verification": {
+          "container_member": "payloads/e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 8702,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 7028336,
+          "artifact_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "commit": "8ca94c701e52946c177786a7a6a3d1e16b948275",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "payloads/e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+          "path": "preservation/bundles/597/597-baseline-date-source-corrections.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 22502777
+        },
+        "subject": {
+          "bytes": 8702,
+          "content_sha256": "e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+          "kind": "source_snapshot",
+          "original_version_url": "https://web.archive.org/web/20020610072829/http://www.decipher.com/starwars/playerscommittee/virtualcardset1.html",
+          "title": "https://web.archive.org/web/20020610072829/http://www.decipher.com/starwars/playerscommittee/virtualcardset1.html"
+        },
+        "verification": {
+          "container_member": "payloads/e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+          "container_payload_tally": 22502777,
+          "independent": true,
+          "restored_bytes": 8702,
+          "restored_container_bytes": 7028336,
+          "restored_container_sha256": "9bd62034fc145cd5d5323edbeceb3c469801a9e67b79646ed8c5c7b466326570",
+          "restored_sha256": "e935fe0f31998ae4487c4fa3825c05ac09130d08b272c96d03c4ef6db5305b33",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:06:14.326640+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 37631,
+        "content_sha256": "f394fa81bcfba4d4c9a008f678172f3677a982041896f1fbac3f67226fe7d814",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://wiki.swccg.com/images/9/9b/VS1a-20020305-1-Luke_Skywalker.png",
+        "title": "File:VS1a-20020305-1-Luke_Skywalker.png",
+        "upload_timestamp": "2026-11-12T17:08:45Z"
+      },
+      "source": {
+        "url": "https://wiki.swccg.com/images/9/9b/VS1a-20020305-1-Luke_Skywalker.png",
+        "sha256": "f394fa81bcfba4d4c9a008f678172f3677a982041896f1fbac3f67226fe7d814",
+        "bytes": 37631,
+        "checked_evidence": {
+          "path": "https://github.com/swccg-guild/work/blob/446fa2829fa6496c056bc302a020a2abebfd7752/evidence/382/offline/existing-git-restores-20261114-215907/all-imported-receipts.json.gz",
+          "sha256": "2b9493364d0ee508f28fb57ec03fc3399e8b914f8f4898855c473810991139a9"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT / Story382",
+      "continuation": "Keep provider traffic held. Central deployed server owner alone registers/reconciles this exact image version and submits only after Bill explicitly resumes; verify replay bytes before any preservation claim.",
+      "approval_scope": {
+        "offline_backups": "Bill explicitly authorized PC backups and inventory",
+        "provider_hold": "https://github.com/billbisco/ai-team-skills/blob/56adf36/AGENTS.md#active-archiveorg-hold--bill-2026-11-14",
+        "ticket": "https://github.com/swccg-guild/work/issues/382"
+      },
+      "object_id": "9be785c30a7c3ab02ae20c2c06036d0163d6243d4d1c20cd96b429575b2c1c38",
+      "subject_id": "401b44bebc6130b519df5702b8d5c2ee8b1dbe3d883127a046db428258a26b0f",
+      "job_id": "payload:f394fa81bcfba4d4c9a008f678172f3677a982041896f1fbac3f67226fe7d814",
+      "request_id": "f27f7897acaa20f48ca9daee5d2233c90e40c16d890022c42cd3c987170c40f7",
+      "generation": 0,
+      "record_sha256": "26bb8d8b83fd5cfb69084e12bdfa057117286d1d277c67a454904a6a9c75bf9c",
+      "record": "requests/f394fa81bcfba4d4c9a008f678172f3677a982041896f1fbac3f67226fe7d814/9be785c30a7c3ab02ae20c2c06036d0163d6243d4d1c20cd96b429575b2c1c38/f27f7897acaa20f48ca9daee5d2233c90e40c16d890022c42cd3c987170c40f7.json",
+      "state": "awaiting_stage",
+      "reason": "Bill all-agent Archive.org hold 2026-11-14; do not submit or make provider checks until explicit resumption after response",
+      "submitted": false,
+      "backup_receipt": {
+        "inventory_version_id": "0185e94ae70c4aa3e5352d6f2df7178a1a38d1be712d55d208078913941d0988",
+        "schema_version": 1,
+        "storage": {
+          "commit": "b2b298fc0296662b09874ff18713e50c040ab4a8",
+          "kind": "git",
+          "path": "files/VS1a-20020305-1-Luke_Skywalker.png",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 37631,
+          "content_sha256": "f394fa81bcfba4d4c9a008f678172f3677a982041896f1fbac3f67226fe7d814",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/9/9b/VS1a-20020305-1-Luke_Skywalker.png",
+          "title": "File:VS1a-20020305-1-Luke_Skywalker.png",
+          "upload_timestamp": "2026-11-12T17:08:45Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 37631,
+          "restored_sha256": "f394fa81bcfba4d4c9a008f678172f3677a982041896f1fbac3f67226fe7d814",
+          "status": "verified",
+          "verified_at": "2026-11-14T21:54:25.859808+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "inventory_version_id": "0185e94ae70c4aa3e5352d6f2df7178a1a38d1be712d55d208078913941d0988",
+        "schema_version": 1,
+        "storage": {
+          "commit": "b2b298fc0296662b09874ff18713e50c040ab4a8",
+          "kind": "git",
+          "path": "files/VS1a-20020305-1-Luke_Skywalker.png",
+          "repository": "https://github.com/billbisco/swccg-wiki-files"
+        },
+        "subject": {
+          "bytes": 37631,
+          "content_sha256": "f394fa81bcfba4d4c9a008f678172f3677a982041896f1fbac3f67226fe7d814",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://wiki.swccg.com/images/9/9b/VS1a-20020305-1-Luke_Skywalker.png",
+          "title": "File:VS1a-20020305-1-Luke_Skywalker.png",
+          "upload_timestamp": "2026-11-12T17:08:45Z"
+        },
+        "verification": {
+          "independent": true,
+          "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+          "restored_bytes": 37631,
+          "restored_sha256": "f394fa81bcfba4d4c9a008f678172f3677a982041896f1fbac3f67226fe7d814",
+          "status": "verified",
+          "verified_at": "2026-11-14T21:54:25.859808+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 100744,
+        "content_sha256": "f7a1d41aeb7dcdb82c62cb301abadf5cea4eb273d9386e84620259c956a1faa9",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/billbisco/swccg-holotable/4c96e17e10ccdee9201e9b437b17355398f68b8a/historical-recovery/419/metadata/archive-original-virtual-cdx.json",
+        "title": "https://raw.githubusercontent.com/billbisco/swccg-holotable/4c96e17e10ccdee9201e9b437b17355398f68b8a/historical-recovery/419/metadata/archive-original-virtual-cdx.json"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/billbisco/swccg-holotable/4c96e17e10ccdee9201e9b437b17355398f68b8a/historical-recovery/419/metadata/archive-original-virtual-cdx.json",
+        "sha256": "f7a1d41aeb7dcdb82c62cb301abadf5cea4eb273d9386e84620259c956a1faa9",
+        "bytes": 100744,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/2cc9687fe994cfd8905afa805a862cd8405cae13/preservation/bundles/597/597-luke-remaster-digest-proved-publication-bound.tar.xz",
+          "sha256": "95cf5237729c5ad66c4781542d6d25f01630973c642229255f74329b69efa57c"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns exact24page baseline publication; retain authoritative existing source evidence/observations and pending archive owner. No new capture/config/budget changes. Canonical Decipher URLs with retained historical capture subjects explicitly recover complete original source bytes; this is not a new origin or replay-verification claim.",
+      "approval_scope": {
+        "scope": "Exactly24 remaining baseline pages:16 factual article corrections and8 public date-source notes, including Bill-approved seven exact notes with authorized narrower factual Clumsy/Luke changes and normal Imperial source note. Existing intended identities/current edits preserved. Exact all-cited native sources and literal/template-derived current originals; metadata-only pending registration. Root alone performs guarded publication.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "dca1a8cbd892688e902a12a6310b5c1da6a2e13b8e7ae876abe59f7fcae272c7",
+      "subject_id": "b19faea2e3dfbbd44f6946d21dcbb19653881a0cc933316a299238e1238d015c",
+      "job_id": "payload:f7a1d41aeb7dcdb82c62cb301abadf5cea4eb273d9386e84620259c956a1faa9",
+      "request_id": "41925874ff8cf35fe72ac1b7758ca9921c17faa141f0b8935bf60ea0c4b2db54",
+      "generation": 0,
+      "record_sha256": "d4c9518f8a4c1543d645850a43d3455f70da00785e282782b1d2feb494e046c4",
+      "record": "requests/f7a1d41aeb7dcdb82c62cb301abadf5cea4eb273d9386e84620259c956a1faa9/dca1a8cbd892688e902a12a6310b5c1da6a2e13b8e7ae876abe59f7fcae272c7/41925874ff8cf35fe72ac1b7758ca9921c17faa141f0b8935bf60ea0c4b2db54.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact native source/current Wiki original independently restored; metadata-only pending, no resave/stage/promotion requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1054848,
+          "artifact_sha256": "95cf5237729c5ad66c4781542d6d25f01630973c642229255f74329b69efa57c",
+          "commit": "2cc9687fe994cfd8905afa805a862cd8405cae13",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/complete-archive-index",
+          "path": "preservation/bundles/597/597-luke-remaster-digest-proved-publication-bound.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1159452
+        },
+        "subject": {
+          "bytes": 100744,
+          "content_sha256": "f7a1d41aeb7dcdb82c62cb301abadf5cea4eb273d9386e84620259c956a1faa9",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/billbisco/swccg-holotable/4c96e17e10ccdee9201e9b437b17355398f68b8a/historical-recovery/419/metadata/archive-original-virtual-cdx.json",
+          "title": "https://raw.githubusercontent.com/billbisco/swccg-holotable/4c96e17e10ccdee9201e9b437b17355398f68b8a/historical-recovery/419/metadata/archive-original-virtual-cdx.json"
+        },
+        "verification": {
+          "container_member": "sources/complete-archive-index",
+          "container_payload_tally": 1159452,
+          "independent": true,
+          "restored_bytes": 100744,
+          "restored_container_bytes": 1054848,
+          "restored_container_sha256": "95cf5237729c5ad66c4781542d6d25f01630973c642229255f74329b69efa57c",
+          "restored_sha256": "f7a1d41aeb7dcdb82c62cb301abadf5cea4eb273d9386e84620259c956a1faa9",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:17:50.455732+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1054848,
+          "artifact_sha256": "95cf5237729c5ad66c4781542d6d25f01630973c642229255f74329b69efa57c",
+          "commit": "2cc9687fe994cfd8905afa805a862cd8405cae13",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/complete-archive-index",
+          "path": "preservation/bundles/597/597-luke-remaster-digest-proved-publication-bound.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1159452
+        },
+        "subject": {
+          "bytes": 100744,
+          "content_sha256": "f7a1d41aeb7dcdb82c62cb301abadf5cea4eb273d9386e84620259c956a1faa9",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/billbisco/swccg-holotable/4c96e17e10ccdee9201e9b437b17355398f68b8a/historical-recovery/419/metadata/archive-original-virtual-cdx.json",
+          "title": "https://raw.githubusercontent.com/billbisco/swccg-holotable/4c96e17e10ccdee9201e9b437b17355398f68b8a/historical-recovery/419/metadata/archive-original-virtual-cdx.json"
+        },
+        "verification": {
+          "container_member": "sources/complete-archive-index",
+          "container_payload_tally": 1159452,
+          "independent": true,
+          "restored_bytes": 100744,
+          "restored_container_bytes": 1054848,
+          "restored_container_sha256": "95cf5237729c5ad66c4781542d6d25f01630973c642229255f74329b69efa57c",
+          "restored_sha256": "f7a1d41aeb7dcdb82c62cb301abadf5cea4eb273d9386e84620259c956a1faa9",
+          "status": "verified",
+          "verified_at": "2026-11-18T15:17:50.455732+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 109559,
+        "content_sha256": "fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec",
+        "kind": "source_snapshot",
+        "original_version_url": "https://www.starwarsccg.org/resources/virtual-slips/",
+        "title": "https://www.starwarsccg.org/resources/virtual-slips/"
+      },
+      "source": {
+        "url": "https://www.starwarsccg.org/resources/virtual-slips/",
+        "sha256": "fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec",
+        "bytes": 109559,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/bd2e122d3bb1b382c0d1764af391456e6db720cb/preservation/bundles/597/597-blanked-complete-cited-sources.tar.xz",
+          "sha256": "3969d43529f9e0d102494507f44435556ceaab7f54aa2eac019a0634cedc4a73"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete exact source or original is independently backed and checked. Metadata-only pending registration; no resave, promotion or archive submission requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns #597. Keep this exact object pending metadata; do not promote or resave. Real server export and exact approved publication hash must pass the current gate before Wiki apply. Existing server-wayback-owner alone controls capture operations.",
+      "approval_scope": {
+        "scope": "Exact 20 frozen Blanked version-scope repair drafts and cited sources/current originals. Metadata registration only; pending Archive status is explicit. Root approves actual publication subset and manifest hash.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "b74a417a4b41dc3cfc5fe55f58e4a6620f1dd280256e583c1a358d66ef8fc2fd",
+      "subject_id": "9c63890c8c1b6181e3fb0362de398cec436686d0554487e48db06b1584a9c474",
+      "job_id": "payload:fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec",
+      "request_id": "8dcdb7ec904d9754c257caba64e3368a0937b6d2f0458d8f9ea20849cffb54d0",
+      "generation": 0,
+      "record_sha256": "6a853da916385439617b1cc60b1985843b5c11df0961e4f4bf77684c957990f8",
+      "record": "requests/fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec/b74a417a4b41dc3cfc5fe55f58e4a6620f1dd280256e583c1a358d66ef8fc2fd/8dcdb7ec904d9754c257caba64e3368a0937b6d2f0458d8f9ea20849cffb54d0.json",
+      "state": "awaiting_stage",
+      "reason": "Complete exact source or original is independently backed and checked. Metadata-only pending registration; no resave, promotion or archive submission requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1120936,
+          "artifact_sha256": "3969d43529f9e0d102494507f44435556ceaab7f54aa2eac019a0634cedc4a73",
+          "commit": "bd2e122d3bb1b382c0d1764af391456e6db720cb",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec.bin",
+          "path": "preservation/bundles/597/597-blanked-complete-cited-sources.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 20791688
+        },
+        "subject": {
+          "bytes": 109559,
+          "content_sha256": "fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec",
+          "kind": "source_snapshot",
+          "original_version_url": "https://www.starwarsccg.org/resources/virtual-slips/",
+          "title": "https://www.starwarsccg.org/resources/virtual-slips/"
+        },
+        "verification": {
+          "container_member": "sources/fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec.bin",
+          "container_payload_tally": 20791688,
+          "independent": true,
+          "restored_bytes": 109559,
+          "restored_container_bytes": 1120936,
+          "restored_container_sha256": "3969d43529f9e0d102494507f44435556ceaab7f54aa2eac019a0634cedc4a73",
+          "restored_sha256": "fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec",
+          "status": "verified",
+          "verified_at": "2026-11-18T13:07:14.711051+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1120936,
+          "artifact_sha256": "3969d43529f9e0d102494507f44435556ceaab7f54aa2eac019a0634cedc4a73",
+          "commit": "bd2e122d3bb1b382c0d1764af391456e6db720cb",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec.bin",
+          "path": "preservation/bundles/597/597-blanked-complete-cited-sources.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 20791688
+        },
+        "subject": {
+          "bytes": 109559,
+          "content_sha256": "fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec",
+          "kind": "source_snapshot",
+          "original_version_url": "https://www.starwarsccg.org/resources/virtual-slips/",
+          "title": "https://www.starwarsccg.org/resources/virtual-slips/"
+        },
+        "verification": {
+          "container_member": "sources/fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec.bin",
+          "container_payload_tally": 20791688,
+          "independent": true,
+          "restored_bytes": 109559,
+          "restored_container_bytes": 1120936,
+          "restored_container_sha256": "3969d43529f9e0d102494507f44435556ceaab7f54aa2eac019a0634cedc4a73",
+          "restored_sha256": "fc475eb900c68ea6a02f22cc961eaffdf6a7b153f17b0c61a6f79bc04cccc3ec",
+          "status": "verified",
+          "verified_at": "2026-11-18T13:07:14.711051+00:00"
+        }
+      }
+    }
+  ],
+  "submission_owner": "server-wayback-owner"
+}
