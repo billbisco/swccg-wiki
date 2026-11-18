@@ -21,7 +21,7 @@ use Wikimedia\ObjectCache\BagOStuff;
 class BackchannelLogoutHandler extends Handler {
 	public const EVENT = 'http://schemas.openid.net/event/backchannel-logout';
 	/** How long a revoked sid is remembered: as long as a wiki session can live. */
-	private const SID_TTL = 180 * 86400;
+	private const SID_TTL = 400 * 86400; // #632 was 180 days (Alpha7 OK)
 
 	public function __construct(
 		private Config $config,
