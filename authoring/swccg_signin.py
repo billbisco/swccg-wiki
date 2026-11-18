@@ -7,7 +7,7 @@ clientlogin and bot passwords are off. A bot signs in exactly like a person does
 The returned urllib opener carries the wiki session cookie; call the API with it as usual
 (meta=tokens for the CSRF token, then action=edit ...).
 
-Credentials come from WIKI_BOT_USER / WIKI_BOT_PASS (or arguments), or from the file named by
+Credentials come from WIKI_BOT_USER / WIKI_BOT_PASS (or WIKI_USER / WIKI_PASS, or arguments), or from the file named by
 WIKI_ENV_FILE (keys WIKI_BOT_USER/WIKI_BOT_PASS or WIKI_USER/WIKI_PASS), read inside the process. An old bot-password login
 name such as "Holocron Claude@claude" is accepted: the "@app" part is dropped. Nothing secret is
 printed or logged. Standard library only; normal TLS verification.
@@ -98,10 +98,10 @@ def read_env_file(path: str) -> tuple[str, str]:
 def sign_in(user: str | None = None, password: str | None = None, ua: str = "swccg-wiki-bot/1.0"):
     if not (user and password) and os.environ.get("WIKI_ENV_FILE"):
         user, password = read_env_file(os.environ["WIKI_ENV_FILE"])
-    user = user or os.environ.get("WIKI_BOT_USER") or ""
-    password = password or os.environ.get("WIKI_BOT_PASS") or ""
+    user = user or os.environ.get("WIKI_BOT_USER") or os.environ.get("WIKI_USER") or ""
+    password = password or os.environ.get("WIKI_BOT_PASS") or os.environ.get("WIKI_PASS") or ""
     if not user or not password:
-        raise SignInError("WIKI_BOT_USER / WIKI_BOT_PASS not set")
+        raise SignInError("WIKI_BOT_USER / WIKI_BOT_PASS (or WIKI_USER / WIKI_PASS, or WIKI_ENV_FILE) not set")
     name = user.split("@", 1)[0].strip()
     path = jar_path(name)
     jar = http.cookiejar.MozillaCookieJar()
