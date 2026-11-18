@@ -240,9 +240,19 @@ def _checked_object(binding, objects, root, contracts, errors, citation_url=None
     return row
 
 
+LITERAL_OR_COMMENT = re.compile(
+    r'''<!--.*?-->|<(?P<tag>nowiki|pre)(?=[\s/>])'''
+    r'''(?:"[^"]*"|'[^']*'|[^<>"'])*(?<!/)>.*?</(?P=tag)\s*>''', re.S | re.I | re.A)
+
+
 def referenced_originals(text: str) -> set[str]:
     """Literal originals; publishers also provide expanded-template inventories."""
-    text = re.sub(r'<!--.*?-->', '', text, flags=re.S)
+    # Only closed nowiki/pre blocks escape links on the installed Wiki. Comments
+    # and literal blocks are matched together: tags inside comments and comment
+    # markers inside literal text must not hide genuine links outside the span.
+    # Unknown source/syntaxhighlight tags and code alone still render Wiki links.
+    text = LITERAL_OR_COMMENT.sub(
+        lambda match: re.sub(r'[^\r\n]', ' ', match.group(0)) if match.group('tag') else '', text)
     names = set(re.findall(r'\[\[\s*:?(?:File|Image)\s*:\s*([^\]|]+)', text, re.I))
     names.update(re.findall(r'^\|\s*(?:image|hires_image)\s*=\s*([^\n|{}]+)', text, re.M))
     for gallery in re.findall(r'<gallery\b[^>]*>(.*?)</gallery>', text, re.S | re.I):

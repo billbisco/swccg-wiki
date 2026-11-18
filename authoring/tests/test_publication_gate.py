@@ -220,6 +220,55 @@ class PublicationGateTests(unittest.TestCase):
         self.assertEqual({'File:A.png', 'File:B.png', 'File:C.png'}, referenced_originals(
             '[[File:A.png|thumb]]\n|image=B.png\n<gallery>\nFile:C.png|caption\n</gallery>'))
 
+    def test_original_inventory_matches_observed_native_parser_cases(self):
+        fixture = Path(__file__).parent / 'fixtures' / 'escaped_originals_mediawiki.json'
+        cases = json.loads(fixture.read_text(encoding='utf-8'))['cases']
+        for name, case in cases.items():
+            with self.subTest(name=name):
+                self.assertEqual({'File:' + image for image in case['images']},
+                                 referenced_originals(case['wikitext']))
+
+    def test_escaped_blocks_mask_every_inventory_syntax_with_attributes(self):
+        for tag in ('NOWIKI', 'pre'):
+            with self.subTest(tag=tag):
+                text = (f'<{tag} class="example" title=">">[[File:Name.jpg]]\n'
+                        '|image=Example.png\n<gallery>\nImage:…\n</gallery>'
+                        f'</{tag}>[[File:Real.png]]')
+                self.assertEqual({'File:Real.png'}, referenced_originals(text))
+
+    def test_literal_and_comment_boundaries_do_not_hide_real_links(self):
+        for text in ('<!-- <nowiki> -->[[File:Real.png]]</nowiki>',
+                     '<nowiki><!-- </nowiki>[[File:Real.png]] -->',
+                     '<nowiki class="example"/>[[File:Real.png]]</nowiki>',
+                     '<nowikified>[[File:Real.png]]</nowikified>'):
+            with self.subTest(text=text):
+                self.assertEqual({'File:Real.png'}, referenced_originals(text))
+
+    def test_literal_mask_does_not_join_syntax_but_comments_stay_invisible(self):
+        self.assertEqual(set(), referenced_originals(
+            '[[Fi<nowiki>literal</nowiki>le:Not a file.png]]'))
+        self.assertEqual({'File:Real.png'}, referenced_originals(
+            '{{Card\n<!-- comment -->|image=Real.png\n}}'))
+
+    def test_escaped_examples_do_not_require_fake_original_backups(self):
+        self.text += '<nowiki>[[File:Name.jpg]] and [[File:…]]</nowiki>'
+        self.page['subject'].update(content_sha256=sha(self.text.encode()), bytes=len(self.text.encode()))
+        self.page['backup_receipt'] = receipt(self.page['subject'])
+        result = self.run_gate()
+        self.assertTrue(result['publication_eligible'], result['errors'])
+        self.assertFalse(result['preservation_complete'])
+
+    def test_real_originals_in_code_and_unknown_tags_still_need_backups(self):
+        original = self.text
+        for tag in ('code', 'source', 'syntaxhighlight'):
+            with self.subTest(tag=tag):
+                self.text = original + f'<{tag}>[[File:Actual card.png]]</{tag}>'
+                self.page['subject'].update(content_sha256=sha(self.text.encode()), bytes=len(self.text.encode()))
+                self.page['backup_receipt'] = receipt(self.page['subject'])
+                result = self.run_gate()
+                self.assertFalse(result['publication_eligible'])
+                self.assertIn('referenced original version is not registered/backed up', result['errors'])
+
     def test_exact_original_version_can_pass_but_other_version_cannot(self):
         subject = {'kind': 'wiki_file_version', 'title': 'File:Actual card.png',
                    'content_sha256': sha(b'png'), 'bytes': 3,
