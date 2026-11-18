@@ -7,7 +7,8 @@ clientlogin and bot passwords are off. A bot signs in exactly like a person does
 The returned urllib opener carries the wiki session cookie; call the API with it as usual
 (meta=tokens for the CSRF token, then action=edit ...).
 
-Credentials come from WIKI_BOT_USER / WIKI_BOT_PASS (or arguments). An old bot-password login
+Credentials come from WIKI_BOT_USER / WIKI_BOT_PASS (or arguments), or from the file named by
+WIKI_ENV_FILE (keys WIKI_BOT_USER/WIKI_BOT_PASS or WIKI_USER/WIKI_PASS), read inside the process. An old bot-password login
 name such as "Holocron Claude@claude" is accepted: the "@app" part is dropped. Nothing secret is
 printed or logged. Standard library only; normal TLS verification.
 
@@ -74,7 +75,29 @@ def _save(jar, path: str | None) -> None:
     os.chmod(path, 0o600)
 
 
+def read_env_file(path: str) -> tuple[str, str]:
+    """(user, password) from a KEY=value file: WIKI_BOT_USER/WIKI_BOT_PASS or WIKI_USER/WIKI_PASS.
+    The whole value is kept (account names contain a space). Nothing is printed."""
+    vals = {}
+    with open(os.path.expanduser(path), encoding="utf-8-sig") as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("export "):
+                line = line[7:].lstrip()
+            if "=" not in line or line.startswith("#"):
+                continue
+            k, v = line.split("=", 1)
+            v = v.strip()
+            if len(v) >= 2 and v[0] == v[-1] and v[0] in "'\"":
+                v = v[1:-1]
+            vals[k.strip()] = v
+    return (vals.get("WIKI_BOT_USER") or vals.get("WIKI_USER") or "",
+            vals.get("WIKI_BOT_PASS") or vals.get("WIKI_PASS") or "")
+
+
 def sign_in(user: str | None = None, password: str | None = None, ua: str = "swccg-wiki-bot/1.0"):
+    if not (user and password) and os.environ.get("WIKI_ENV_FILE"):
+        user, password = read_env_file(os.environ["WIKI_ENV_FILE"])
     user = user or os.environ.get("WIKI_BOT_USER") or ""
     password = password or os.environ.get("WIKI_BOT_PASS") or ""
     if not user or not password:
