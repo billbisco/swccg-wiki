@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "group": "gold-pilot3-remastered-rollout-post-live",
+  "artifact_local_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\qa\\gold-pilot3-remastered-rollout-independent\\597-gold-pilot3-remastered-rollout-post-live.tar.xz",
+  "artifact_sha256": "d3278eb8273d0d48e2ad691f3f7005bfdd51a5b1cd5bc76d200edf835d9e8f99",
+  "artifact_bytes": 13056,
+  "uncompressed_bytes": 147576,
+  "member_count": 10,
+  "rows": 3,
+  "subjects": [
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "2-1B (Reflections Gold Remastered)",
+        "content_sha256": "fad853f3645c93a269e74aaa5396f5e2bbd3b55137fa627f28fa76f74232f9c2",
+        "bytes": 1805,
+        "revision_id": 332590
+      },
+      "member": "native/live/81450-332590-fad853f3645c.wiki",
+      "object_id": "aea3a4ad89a041f5ad3057ebb95ef9486722a0b29597d5804f9a6db79e232751",
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Beggar & Revolution (Reflections Gold Remastered)",
+        "content_sha256": "8463e3e3f75659eac16b08feeafc7495bd38b34051d46b3bde8ef1e9b5f3f116",
+        "bytes": 1507,
+        "revision_id": 332591
+      },
+      "member": "native/live/81493-332591-8463e3e3f756.wiki",
+      "object_id": "8d6dcb3b552ad25465b9654f15bcfcd72ed08ef41dacadd5bfbba74c3a01beb2",
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Disciplinary Actions (Reflections Gold Remastered)",
+        "content_sha256": "5e38a78f97f19eaa21ef66234a994026a2800cd2d3aced442cef011959f811b8",
+        "bytes": 1229,
+        "revision_id": 332592
+      },
+      "member": "native/live/81906-332592-5e38a78f97f1.wiki",
+      "object_id": "5ba6a20f35039dadc02f5970b642c0cb679b911dd8a794a513807075cb52c9a7",
+      "role": "exact-live-wiki-revision"
+    }
+  ],
+  "members": [
+    {
+      "name": "manifest/index.json",
+      "sha256": "39ecf51a7cd7cc37c1be6048928c01f0b93cadc940fa6f3279497766a44ee4ae",
+      "bytes": 6654,
+      "role": "subject-and-QA-index"
+    },
+    {
+      "name": "native/live/81450-332590-fad853f3645c.wiki",
+      "sha256": "fad853f3645c93a269e74aaa5396f5e2bbd3b55137fa627f28fa76f74232f9c2",
+      "bytes": 1805,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "native/live/81493-332591-8463e3e3f756.wiki",
+      "sha256": "8463e3e3f75659eac16b08feeafc7495bd38b34051d46b3bde8ef1e9b5f3f116",
+      "bytes": 1507,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "native/live/81906-332592-5e38a78f97f1.wiki",
+      "sha256": "5e38a78f97f19eaa21ef66234a994026a2800cd2d3aced442cef011959f811b8",
+      "bytes": 1229,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "qa/checkpoint.json",
+      "sha256": "cd30dfd100ddfe7df8b6551a7abba64455de961158f41716f35e1bc591d02d74",
+      "bytes": 55860,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/html/81450-332590.html",
+      "sha256": "3a282058cc28aa6e357710178549aa2ec2af728406bafd02be13b63f7a82ff38",
+      "bytes": 25366,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/81493-332591.html",
+      "sha256": "84f4166dee0fe0e15d953810efe07672ae2bce46ec2cc6982cfc35ab6b01f4ee",
+      "bytes": 25289,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/81906-332592.html",
+      "sha256": "8cc30cd41de52747f57b74684cf0edf8c2e83f3b6f6ba3c48bb2e9d1718444ce",
+      "bytes": 25180,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/read_only_review_check.php",
+      "sha256": "1f03c3a3d1a6cc1fccf3ca57d6f6149a219da41bc22992f1695eb12d0747736f",
+      "bytes": 2491,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/review/gold-pilot3-remastered.json",
+      "sha256": "49c4f4d658a5c5bfd55ce1c5e2c3a1107b63b571edf72124c8aab8281a58dd82",
+      "bytes": 2195,
+      "role": "actual-DB-native-review-proof"
+    }
+  ],
+  "source_keys": [],
+  "held_source_keys": [],
+  "native_holds": [],
+  "privacy_holds": [],
+  "storage_template": {
+    "kind": "git",
+    "repository": "https://github.com/billbisco/swccg-wiki",
+    "path": "preservation/bundles/597/597-gold-pilot3-remastered-rollout-post-live.tar.xz",
+    "container": "tar.xz",
+    "artifact_sha256": "d3278eb8273d0d48e2ad691f3f7005bfdd51a5b1cd5bc76d200edf835d9e8f99",
+    "artifact_bytes": 13056,
+    "uncompressed_bytes": 147576
+  },
+  "commit_required_before_remote_readback": true,
+  "independent_verified": false
+}
