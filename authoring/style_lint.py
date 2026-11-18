@@ -63,6 +63,11 @@ IDENTIFICATION_POSITION = re.compile(
     r"tenth|eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|seventeenth|"
     r"eighteenth|nineteenth|twentieth|[1-9]\d*(?:st|nd|rd|th)?)\s+from\s+(?:the\s+)?)?"
     r"(?P<side>left|right)\)", re.I)
+ORDERED_GROUP_INTRO = re.compile(
+    r"\A[ \t]*(?P<top>Top)[ \t]+(?P<count>[1-9][0-9]*),[ \t]+"
+    r"from[ \t]+(?P<side>left|right):[ \t]*", re.I)
+IDENTIFICATION_SUBJECT = re.compile(
+    r"\[\[(?P<target>[^\[\]|\n]+)(?:\|(?P<label>[^\[\]|\n]+))?\]\]")
 
 
 def plain_caption(caption):
@@ -70,16 +75,47 @@ def plain_caption(caption):
                   lambda m: m.group(1) or m.group(2), caption)
 
 
+def _is_identification_subject(target, label):
+    target = target.strip()
+    return bool(target and ':' not in target and not target.startswith('#')
+                and (label is None or label.strip()))
+
+
+def _mask_ordered_group_intro(caption):
+    """Mask an identification intro only for a complete, counted link list."""
+    intro = ORDERED_GROUP_INTRO.match(caption)
+    if not intro:
+        return caption
+    subjects = caption[intro.end():]
+    links = list(IDENTIFICATION_SUBJECT.finditer(subjects))
+    # Compare decimal strings instead of parsing an arbitrarily large integer.
+    if len(links) < 2 or intro.group('count') != str(len(links)):
+        return caption
+    end = 0
+    for index, link in enumerate(links):
+        separator = r"[ \t]*" if index == 0 else r"[ \t]*,[ \t]*"
+        if not re.fullmatch(separator, subjects[end:link.start()]):
+            return caption
+        if not _is_identification_subject(link.group('target'), link.group('label')):
+            return caption
+        end = link.end()
+    if not re.fullmatch(r"[ \t]*\.?[ \t]*", subjects[end:]):
+        return caption
+    masked = list(caption)
+    for token in ('top', 'side'):
+        start, end = intro.span(token)
+        masked[start:end] = ' ' * (end - start)
+    return ''.join(masked)
+
+
 def caption_description_text(caption):
-    """Exclude only a linked subject's parenthesized identification side.
+    """Exclude a subject position or a counted, linked group identification intro.
 
     Word limits still use the complete caption; source accuracy is checked by
     the publisher, not inferred from this syntactic allowance.
     """
     def mask_side(match):
-        target = match.group('target').strip()
-        label = match.group('label')
-        if not target or ':' in target or target.startswith('#') or (label is not None and not label.strip()):
+        if not _is_identification_subject(match.group('target'), match.group('label')):
             return match.group(0)
         ordinal = match.group('ordinal') or ''
         number = re.fullmatch(r'([1-9]\d*)(st|nd|rd|th)?', ordinal, re.I)
@@ -91,7 +127,7 @@ def caption_description_text(caption):
         start, end = (offset - match.start() for offset in match.span('side'))
         return match.group(0)[:start] + ' ' * (end - start) + match.group(0)[end:]
 
-    return plain_caption(IDENTIFICATION_POSITION.sub(mask_side, caption))
+    return plain_caption(IDENTIFICATION_POSITION.sub(mask_side, _mask_ordered_group_intro(caption)))
 
 def fetch(title, n=2):
     q = urllib.parse.urlencode({"action": "query", "titles": title, "prop": "revisions", "rvprop": "content|ids",
