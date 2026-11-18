@@ -5,6 +5,7 @@
  */
 
 require_once '/swccg-chrome/card-image-preferences.php';
+require_once '/swccg-chrome/photograph-presentation.php';
 
 class SwccgChrome {
 
@@ -18,13 +19,9 @@ class SwccgChrome {
 		// Foil photograph framing and intrinsic inline-symbol sizes (work#436).
 		$out->addInlineStyle( '.mw-parser-output table.card-thumbs td:not(:first-child) img{width:auto;height:auto;max-width:none;vertical-align:middle;} .mw-parser-output .card-photo-source img{width:100%!important;max-width:none!important;height:auto;display:block;} .mw-parser-output .card-photo-source a,.mw-parser-output .card-photo-source>span{display:block;width:100%;}' );
 		SwccgCardImages::addPilot( $out );
+		SwccgPhotographPresentation::addStyles( $out );
 		// Bounded review pilot: no resources or behavior on ordinary card pages.
 		$title = $out->getTitle();
-        // Photo File-page presentation sample (work#756): image click opens the original.
-        if ( $title && $title->getPrefixedText() === 'File:2023 World Championship Masago lunch 14 August.jpg' ) {
-            $out->addInlineStyle( '.mw-filepage-resolutioninfo,.fullMedia{display:none!important;}' );
-        }
-
         // Bounded public shared-search pilot449; ordinary Wiki pages load no resources.
         if ( $title && $title->getPrefixedText() === 'SWCCG Wiki:Samples/Shared search pilot' ) {
             $out->addInlineStyle( file_get_contents( '/swccg-chrome/shared-search-449.ef40c6e80858.css' ) );
