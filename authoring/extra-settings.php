@@ -85,41 +85,30 @@ $wgSessionCacheType = CACHE_DB;
 # a browser that is signed in (sends a wikiUserID cookie) gets 400 days, renewed on use like the
 # swccg.com sign-in service; anonymous sessions (bots on Special:UserLogin, the SSO state that
 # Special:SwccgSignIn keeps for ~10 minutes) expire after 1 hour. Was 180 days for every session.
-# Agent accounts (Bill 2026-11-18 10:31 "Yes, go ahead with all three session fixes") get 1 day.
-# Rollback: /mnt/HC_Volume_107153504/work/alpha12-wikiperf/sessions/rollback.sh (all of #632)
-# or rollback-632b.sh (agent 1-day rule only).
-$wgSwccgAgentAccounts = [ 'Datacard Grok', 'Comlink Cursor', 'Memory Core ChatGPT', 'Holocron Claude' ]; # #632
+# Rollback: /mnt/HC_Volume_107153504/work/alpha12-wikiperf/sessions/rollback.sh
+# Agent accounts (Bill 2026-11-18 10:31 "Yes, go ahead with all three session fixes") get 1-day
+# sessions; decided from the request's wikiUserName cookie, so no session lookup is needed here.
+# Rollback of this rule only: rollback-632b.sh.
+$wgSwccgAgentAccounts = [ 'datacardgrok', 'comlinkcursor', 'memorycorechatgpt', 'holocronclaude' ]; # #632 user_name without spaces, lower case
 $wgObjectCacheSessionExpiry = ( isset( $_COOKIE['wikiUserID'] ) && preg_match( '/^[1-9][0-9]*$/', (string)$_COOKIE['wikiUserID'] ) )
-	? ( in_array( str_replace( '_', ' ', (string)( $_COOKIE['wikiUserName'] ?? '' ) ), $wgSwccgAgentAccounts, true )
+	? ( in_array( strtolower( str_replace( [ '_', ' ' ], '', (string)( $_COOKIE['wikiUserName'] ?? '' ) ) ), $wgSwccgAgentAccounts, true )
 		? 24 * 3600 : 400 * 24 * 3600 )
 	: 3600; # #632
 $wgExtendedLoginCookieExpiration = 400 * 24 * 3600; # #632 was 180 days
 $wgCookieExpiration = 400 * 24 * 3600; # #632 was 30 days
 # #632: core sends wiki_session as a browser-session cookie; for a signed-in session make it last
 # 400 days (renewed whenever MediaWiki renews the session). Anonymous sessions are unchanged.
-# Agent accounts: wiki_session, UserID and UserName cookies last 1 day, so a stale UserID cookie
-# never hides the silent sign-in after their session ends.
 $wgHooks['WebResponseSetCookie'][] = static function ( &$name, &$value, &$expire, &$options ) { # #632
-	global $wgSwccgAgentAccounts;
-	if ( !in_array( $name, [ 'wiki_session', 'UserID', 'UserName' ], true ) ) {
+	if ( $name !== 'wiki_session' || (int)$expire !== 0 ) {
 		return true;
 	}
 	try {
 		$s = \MediaWiki\Session\SessionManager::getGlobalSession();
-		$u = $s->getUser();
-		if ( !$u->isRegistered() ) {
-			return true;
-		}
-		$agent = in_array( $u->getName(), $wgSwccgAgentAccounts, true );
-		if ( $name === 'wiki_session' ) {
-			if ( (int)$expire === 0 && $s->getId() === (string)$value ) {
-				$expire = time() + ( $agent ? 24 * 3600 : 400 * 24 * 3600 );
-			}
-		} elseif ( $agent && (int)$expire > time() ) {
-			$expire = min( (int)$expire, time() + 24 * 3600 );
+		if ( $s->getId() === (string)$value && $s->getUser()->isRegistered() ) {
+			$expire = time() + 400 * 24 * 3600;
 		}
 	} catch ( \Throwable $e ) {
-		// keep the cookie as core set it
+		// keep the browser-session cookie
 	}
 	return true;
 }; # #632 end
