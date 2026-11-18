@@ -16,6 +16,7 @@ SCHEMA_VERSION = 1
 BACKUP_REPOSITORIES = frozenset({
     "https://github.com/billbisco/swccg-wiki",
     "https://github.com/billbisco/swccg-wiki-files",
+    "https://github.com/swccg-guild/work",
 })
 SUBJECT_KINDS = frozenset({"wiki_revision", "wiki_draft", "wiki_file_version", "source_snapshot"})
 

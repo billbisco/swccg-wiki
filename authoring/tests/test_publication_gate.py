@@ -72,6 +72,15 @@ class PublicationGateTests(unittest.TestCase):
         return publication_report(self.text, 'Example', flags or ['ARCHIVE  missing capture'],
                                   sources or {'https://example.org/source'}, path, sha(data), revision_id)
 
+    def test_private_work_backups_pass_without_claiming_capture_completion(self):
+        for holder in (self.row, self.page):
+            holder['backup_receipt']['storage']['repository'] = 'https://github.com/swccg-guild/work'
+        result = self.run_gate()
+        self.assertEqual([], result['errors'])
+        self.assertTrue(result['publication_eligible'])
+        self.assertFalse(result['preservation_complete'])
+        self.assertEqual(['ARCHIVE  missing capture'], result['raw_flags'])
+
     def test_pending_is_eligible_but_never_complete_or_zero_flags(self):
         result = self.run_gate()
         self.assertEqual([], result['errors'])
@@ -371,6 +380,82 @@ class PublicationGateTests(unittest.TestCase):
         proof['snapshot_html_sha256'] = self.row['source']['sha256']
         proof['evidence_path'] = 'missing-proof.json'
         self.assertFalse(self.run_gate()['publication_eligible'])
+
+
+class PrivateWorkBackupContractTests(unittest.TestCase):
+    repository = 'https://github.com/swccg-guild/work'
+
+    def source_subject(self):
+        return {'kind': 'source_snapshot', 'title': 'https://example.org/source',
+                'content_sha256': sha(b'exact bytes'), 'bytes': len(b'exact bytes')}
+
+    def work_receipt(self, subject):
+        value = receipt(subject)
+        value['storage']['repository'] = self.repository
+        return value
+
+    def test_exact_private_work_receipts_cover_all_subject_kinds(self):
+        source = self.source_subject()
+        subjects = [source,
+                    {**source, 'kind': 'wiki_draft', 'title': 'Example'},
+                    {**source, 'kind': 'wiki_revision', 'title': 'Example', 'revision_id': 42},
+                    {**source, 'kind': 'wiki_file_version', 'title': 'File:Example.png',
+                     'upload_timestamp': '2026-11-18T12:00:00Z',
+                     'original_version_url': 'https://wiki.swccg.com/images/a/ab/Example.png'}]
+        for subject in subjects:
+            with self.subTest(kind=subject['kind']):
+                self.assertEqual([], contracts.validate_backup_receipt(self.work_receipt(subject), subject))
+        for repository in ('https://github.com/billbisco/swccg-wiki',
+                           'https://github.com/billbisco/swccg-wiki-files'):
+            with self.subTest(repository=repository):
+                value = self.work_receipt(source)
+                value['storage']['repository'] = repository
+                self.assertEqual([], contracts.validate_backup_receipt(value, source))
+
+    def test_private_work_does_not_relax_exact_identity_or_readback(self):
+        subject = self.source_subject()
+        cases = [
+            ('subject', 'content_sha256', '0' * 64, 'exact object/version/hash'),
+            ('storage', 'repository', 'https://github.com/stranger/work', 'independent backup repository'),
+            ('storage', 'repository', self.repository + '-other', 'independent backup repository'),
+            ('storage', 'repository', self.repository + '?ref=main', 'independent backup repository'),
+            ('storage', 'commit', 'main', 'commit must be immutable'),
+            ('storage', 'path', '../payload.txt', 'safe repository-relative path'),
+            ('verification', 'status', 'queued', 'not verified'),
+            ('verification', 'independent', False, 'not an independent backup'),
+            ('verification', 'restored_sha256', '0' * 64, 'SHA-256 does not match'),
+            ('verification', 'restored_bytes', subject['bytes'] + 1, 'byte count does not match'),
+            ('verification', 'restored_bytes', True, 'byte count does not match'),
+            ('verification', 'verified_at', '2026-11-18T12:00:00-04:00', 'UTC timestamp'),
+        ]
+        for section, field, value, expected in cases:
+            with self.subTest(section=section, field=field, value=value):
+                candidate = self.work_receipt(subject)
+                candidate[section][field] = value
+                self.assertTrue(any(expected in error for error in
+                                    contracts.validate_backup_receipt(candidate, subject)))
+
+    def test_private_work_container_retains_exact_member_and_artifact_checks(self):
+        subject = self.source_subject()
+        value = self.work_receipt(subject)
+        value['storage'].update(container='tar.xz', member='raw/source.json',
+                                artifact_sha256='b' * 64, artifact_bytes=128,
+                                uncompressed_bytes=subject['bytes'] + 100)
+        value['verification'].update(restored_container_sha256='b' * 64,
+                                     restored_container_bytes=128)
+        self.assertEqual([], contracts.validate_backup_receipt(value, subject))
+        cases = [('storage', 'member', '../source.json', 'safe relative path'),
+                 ('storage', 'artifact_sha256', '', 'compressed artifact SHA-256'),
+                 ('storage', 'artifact_bytes', 0, 'compressed artifact byte count'),
+                 ('storage', 'uncompressed_bytes', subject['bytes'] - 1, 'complete member-payload'),
+                 ('verification', 'restored_container_sha256', 'c' * 64, 'container readback SHA-256'),
+                 ('verification', 'restored_container_bytes', 129, 'container readback byte count')]
+        for section, field, changed, expected in cases:
+            with self.subTest(section=section, field=field):
+                candidate = copy.deepcopy(value)
+                candidate[section][field] = changed
+                self.assertTrue(any(expected in error for error in
+                                    contracts.validate_backup_receipt(candidate, subject)))
 
 
 if __name__ == '__main__':
