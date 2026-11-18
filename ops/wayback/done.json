@@ -72119,7 +72119,7 @@
   "status": "ok",
   "tries": 4,
   "verify": {
-   "at": "2026-11-18T15:48:34Z",
+   "at": "2026-11-18T16:18:43Z",
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
@@ -89122,9 +89122,8 @@
   }
  },
  "https://swccg.com/snapshots/forum/t86206.html": {
-  "capture": "",
-  "job_id": "spn2-7b1330a79760c875de234a1ec77754d7c582c83a",
-  "last": "2026-11-18T16:09:45Z",
+  "capture": "https://web.archive.org/web/20261118160948/https://swccg.com/snapshots/forum/t86206.html",
+  "last": "2026-11-18T16:12:26Z",
   "status": "pending",
   "tries": 2
  },
@@ -89151,9 +89150,9 @@
  "https://swccg.com/snapshots/forum/t86335.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T19:11:27Z",
+  "last": "2026-11-18T16:12:27Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t86377.html": {
   "capture": "https://web.archive.org/web/20261025070900/https://swccg.com/snapshots/forum/t86377.html",
@@ -89193,9 +89192,10 @@
  },
  "https://swccg.com/snapshots/forum/t86508.html": {
   "capture": "https://web.archive.org/web/20261117191331/https://swccg.com/snapshots/forum/t86508.html",
-  "last": "2026-11-17T20:23:12Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-18T16:13:28Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t86534.html": {
   "capture": "https://web.archive.org/web/20261026204621/https://swccg.com/snapshots/forum/t86534.html",
@@ -89298,11 +89298,10 @@
   }
  },
  "https://swccg.com/snapshots/forum/t86675.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T19:18:09Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261118161519/https://swccg.com/snapshots/forum/t86675.html",
+  "last": "2026-11-18T16:18:42Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t86770.html": {
   "capture": "https://web.archive.org/web/20261026200625/https://swccg.com/snapshots/forum/t86770.html",
@@ -89379,9 +89378,10 @@
  },
  "https://swccg.com/snapshots/forum/t86937.html": {
   "capture": "https://web.archive.org/web/20261117191918/https://swccg.com/snapshots/forum/t86937.html",
-  "last": "2026-11-17T20:23:10Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-18T16:15:34Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/t86962.html": {
   "capture": "https://web.archive.org/web/20261025071708/https://swccg.com/snapshots/forum/t86962.html",
@@ -89414,10 +89414,10 @@
  },
  "https://swccg.com/snapshots/forum/t87000.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-17T19:20:15Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-321083e9aa569f806907ae399fea2aa33794accd",
+  "last": "2026-11-18T16:16:41Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/github/billbisco/swccg-gemp/e0fb37f2/GameOptions.java.html": {
   "capture": "https://web.archive.org/web/20261103212856/https://swccg.com/snapshots/github/billbisco/swccg-gemp/e0fb37f2/GameOptions.java.html",
@@ -134723,6 +134723,13 @@
    "method": "sha256",
    "sha256": "30723367c78519bb8fbfb961ac042d47f53aea0ff356324c430359f095d4e938"
   }
+ },
+ "https://swccg.com/snapshots/pc/competitive-balance-set-12-preview-cards-released.html": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-18T16:17:41Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/snapshots/pc/conor-britain-captures-the-third-biennial-jawa-cup-crown-bf.html": {
   "capture": "",
