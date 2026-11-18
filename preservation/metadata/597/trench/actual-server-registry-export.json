@@ -1,0 +1,527 @@
+{
+  "schema_version": 1,
+  "objects": [
+    {
+      "subject": {
+        "bytes": 113581,
+        "content_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+        "kind": "source_snapshot",
+        "original_version_url": "http://decipher.com/starwars/cardlists/anewhope/light/images/deathstartrench.gif",
+        "title": "http://decipher.com/starwars/cardlists/anewhope/light/images/deathstartrench.gif"
+      },
+      "source": {
+        "url": "http://decipher.com/starwars/cardlists/anewhope/light/images/deathstartrench.gif",
+        "sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+        "bytes": 113581,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8d03a4e21e20c9445648389140d200b1c29032bc/preservation/bundles/597/597-trench-primary.tar.xz",
+          "sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns #597. Reuse any existing exact valid registered observation without generation/readiness/owner/scope changes; otherwise register metadata only. Export actual5object registry records for the File provenance gate; actual native canonical draft backup is separate. Existing server owner alone controls captures. No resave requested.",
+      "approval_scope": {
+        "scope": "Trench File provenance append only;3exact citation snapshots, current displayed original and literal linked Decipher original. No original upload replacement. Root owns publication after gate/native preview.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "44d34ffaa1dd263b13fcd1386961e8353f21f206f4143904f6b70edc1e6ce960",
+      "subject_id": "f82ad743f9f3ba60088036b2fe69987838a7a773326eaaf5940b10d4425342f1",
+      "job_id": "payload:7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+      "request_id": "6dc2418c6c6d52ac58252009167ebabb4b4a4657a009b8a4a8087386fab2c66e",
+      "generation": 0,
+      "record_sha256": "9951feb38ce1e8e6895b4fd24331245c8b62c2afbb1df991110a56bf529403c1",
+      "record": "requests/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27/44d34ffaa1dd263b13fcd1386961e8353f21f206f4143904f6b70edc1e6ce960/6dc2418c6c6d52ac58252009167ebabb4b4a4657a009b8a4a8087386fab2c66e.json",
+      "state": "awaiting_stage",
+      "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 113581,
+          "content_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+          "kind": "source_snapshot",
+          "original_version_url": "http://decipher.com/starwars/cardlists/anewhope/light/images/deathstartrench.gif",
+          "title": "http://decipher.com/starwars/cardlists/anewhope/light/images/deathstartrench.gif"
+        },
+        "verification": {
+          "container_member": "sources/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 113581,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 113581,
+          "content_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+          "kind": "source_snapshot",
+          "original_version_url": "http://decipher.com/starwars/cardlists/anewhope/light/images/deathstartrench.gif",
+          "title": "http://decipher.com/starwars/cardlists/anewhope/light/images/deathstartrench.gif"
+        },
+        "verification": {
+          "container_member": "sources/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 113581,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 113581,
+        "content_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://swccg.com/wiki/images/7/7f/ANH-L-deathstartrench-decipher-archive.gif",
+        "title": "File:ANH-L-deathstartrench-decipher-archive.gif",
+        "upload_timestamp": "2026-11-12T00:39:36Z"
+      },
+      "source": {
+        "url": "https://swccg.com/wiki/images/7/7f/ANH-L-deathstartrench-decipher-archive.gif",
+        "sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+        "bytes": 113581,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8d03a4e21e20c9445648389140d200b1c29032bc/preservation/bundles/597/597-trench-primary.tar.xz",
+          "sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns #597. Reuse any existing exact valid registered observation without generation/readiness/owner/scope changes; otherwise register metadata only. Export actual5object registry records for the File provenance gate; actual native canonical draft backup is separate. Existing server owner alone controls captures. No resave requested.",
+      "approval_scope": {
+        "scope": "Trench File provenance append only;3exact citation snapshots, current displayed original and literal linked Decipher original. No original upload replacement. Root owns publication after gate/native preview.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "a52399f873383a24518bab0999593e07f0910d49c1f2b628abcbbd0b8ccd794e",
+      "subject_id": "7d82e8045f0f12c1ebe0cce2a5966e701777893669b259c868169d64bcc6d1ca",
+      "job_id": "payload:7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+      "request_id": "baad15e0f7dc8d744c578138ef9af13cb5bdfaed8c70d7e9ed3eb73a0e2f1bde",
+      "generation": 0,
+      "record_sha256": "56bf68c028b474501ae081ee8b2b7e12a88d8f3e7d5fecf64d53dc4b25e86e4a",
+      "record": "requests/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27/a52399f873383a24518bab0999593e07f0910d49c1f2b628abcbbd0b8ccd794e/baad15e0f7dc8d744c578138ef9af13cb5bdfaed8c70d7e9ed3eb73a0e2f1bde.json",
+      "state": "awaiting_stage",
+      "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 113581,
+          "content_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://swccg.com/wiki/images/7/7f/ANH-L-deathstartrench-decipher-archive.gif",
+          "title": "File:ANH-L-deathstartrench-decipher-archive.gif",
+          "upload_timestamp": "2026-11-12T00:39:36Z"
+        },
+        "verification": {
+          "container_member": "sources/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 113581,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 113581,
+          "content_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://swccg.com/wiki/images/7/7f/ANH-L-deathstartrench-decipher-archive.gif",
+          "title": "File:ANH-L-deathstartrench-decipher-archive.gif",
+          "upload_timestamp": "2026-11-12T00:39:36Z"
+        },
+        "verification": {
+          "container_member": "sources/7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 113581,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "7cc05ffc75b51267b6392e190c035d3298223c661819dd49951482f6a6fd6d27",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 105599,
+        "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+        "kind": "wiki_file_version",
+        "original_version_url": "https://swccg.com/wiki/images/b/b2/ANH-L-deathstartrench.gif",
+        "title": "File:ANH-L-deathstartrench.gif",
+        "upload_timestamp": "2026-09-22T14:51:13Z"
+      },
+      "source": {
+        "url": "https://swccg.com/wiki/images/b/b2/ANH-L-deathstartrench.gif",
+        "sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+        "bytes": 105599,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8d03a4e21e20c9445648389140d200b1c29032bc/preservation/bundles/597/597-trench-primary.tar.xz",
+          "sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns #597. Reuse any existing exact valid registered observation without generation/readiness/owner/scope changes; otherwise register metadata only. Export actual5object registry records for the File provenance gate; actual native canonical draft backup is separate. Existing server owner alone controls captures. No resave requested.",
+      "approval_scope": {
+        "scope": "Trench File provenance append only;3exact citation snapshots, current displayed original and literal linked Decipher original. No original upload replacement. Root owns publication after gate/native preview.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "0ac5d5c21565e574e89a0336dfcd290efc6be656750778988e0ae59fd4225d35",
+      "subject_id": "7b18453dfd3444730c8c1f9d12653757488867e68b723abcdcc3c6847877d5d9",
+      "job_id": "payload:b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+      "request_id": "f558425eb346e34780e482848d3953df73b003e32da3c3a6cfa7838e8d83520d",
+      "generation": 0,
+      "record_sha256": "763dfe3a079b47df2aef28e597574eeb8cce8bdd3b7bfe0e2a2cc12ec40520da",
+      "record": "requests/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5/0ac5d5c21565e574e89a0336dfcd290efc6be656750778988e0ae59fd4225d35/f558425eb346e34780e482848d3953df73b003e32da3c3a6cfa7838e8d83520d.json",
+      "state": "awaiting_stage",
+      "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 105599,
+          "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://swccg.com/wiki/images/b/b2/ANH-L-deathstartrench.gif",
+          "title": "File:ANH-L-deathstartrench.gif",
+          "upload_timestamp": "2026-09-22T14:51:13Z"
+        },
+        "verification": {
+          "container_member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 105599,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 105599,
+          "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "kind": "wiki_file_version",
+          "original_version_url": "https://swccg.com/wiki/images/b/b2/ANH-L-deathstartrench.gif",
+          "title": "File:ANH-L-deathstartrench.gif",
+          "upload_timestamp": "2026-09-22T14:51:13Z"
+        },
+        "verification": {
+          "container_member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 105599,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 105599,
+        "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+        "kind": "source_snapshot",
+        "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif",
+        "title": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif"
+      },
+      "source": {
+        "url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif",
+        "sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+        "bytes": 105599,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8d03a4e21e20c9445648389140d200b1c29032bc/preservation/bundles/597/597-trench-primary.tar.xz",
+          "sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns #597. Reuse any existing exact valid registered observation without generation/readiness/owner/scope changes; otherwise register metadata only. Export actual5object registry records for the File provenance gate; actual native canonical draft backup is separate. Existing server owner alone controls captures. No resave requested.",
+      "approval_scope": {
+        "scope": "Trench File provenance append only;3exact citation snapshots, current displayed original and literal linked Decipher original. No original upload replacement. Root owns publication after gate/native preview.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "a9d9e4a19795e744ef116deb970f7c1751c6cddea81f61b2d5dfdf379f39b73a",
+      "subject_id": "1f588d21d76bd0baa9f57189ff4fdbb3cb7337440114326120968b4f22d45e25",
+      "job_id": "payload:b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+      "request_id": "f2981aca293e6b10a1ee61952ac16d30d95165c252d69aab63c96c9ce4c6e9b4",
+      "generation": 0,
+      "record_sha256": "3e833026e5e9ddf85ee658eb4f214e19c24f886248013f27048f85c4c33e61ce",
+      "record": "requests/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5/a9d9e4a19795e744ef116deb970f7c1751c6cddea81f61b2d5dfdf379f39b73a/f2981aca293e6b10a1ee61952ac16d30d95165c252d69aab63c96c9ce4c6e9b4.json",
+      "state": "awaiting_stage",
+      "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 105599,
+          "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif",
+          "title": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif"
+        },
+        "verification": {
+          "container_member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 105599,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 105599,
+          "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "kind": "source_snapshot",
+          "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif",
+          "title": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif"
+        },
+        "verification": {
+          "container_member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 105599,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      }
+    },
+    {
+      "subject": {
+        "bytes": 105599,
+        "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+        "kind": "source_snapshot",
+        "original_version_url": "https://res.starwarsccg.org/cards/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif",
+        "title": "https://res.starwarsccg.org/cards/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif"
+      },
+      "source": {
+        "url": "https://res.starwarsccg.org/cards/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif",
+        "sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+        "bytes": 105599,
+        "checked_evidence": {
+          "path": "https://github.com/billbisco/swccg-wiki/blob/8d03a4e21e20c9445648389140d200b1c29032bc/preservation/bundles/597/597-trench-primary.tar.xz",
+          "sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f"
+        }
+      },
+      "readiness": {
+        "ready": false,
+        "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+        "stage_bytes": 0
+      },
+      "owner": "MemoryCoreChatGPT",
+      "continuation": "Root owns #597. Reuse any existing exact valid registered observation without generation/readiness/owner/scope changes; otherwise register metadata only. Export actual5object registry records for the File provenance gate; actual native canonical draft backup is separate. Existing server owner alone controls captures. No resave requested.",
+      "approval_scope": {
+        "scope": "Trench File provenance append only;3exact citation snapshots, current displayed original and literal linked Decipher original. No original upload replacement. Root owns publication after gate/native preview.",
+        "ticket": "https://github.com/swccg-guild/work/issues/597"
+      },
+      "object_id": "de9d785c6e93defbb89bc17d8dd03ba5f7a13b930ed7474aefe3802ca0fa520b",
+      "subject_id": "ac6deeb57847e32155cfd546755dfd9ae80715ce20f3cdd6d0cd74c7bf06396d",
+      "job_id": "payload:b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+      "request_id": "9ccf1294f62e4347a4abcab99d36f7774596399ff6bd5f28c4839e26a17c6fca",
+      "generation": 0,
+      "record_sha256": "4ffbba05b3dfc919782ef0b3121852cfe4a3b541bb112d7b3282b439635fd308",
+      "record": "requests/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5/de9d785c6e93defbb89bc17d8dd03ba5f7a13b930ed7474aefe3802ca0fa520b/9ccf1294f62e4347a4abcab99d36f7774596399ff6bd5f28c4839e26a17c6fca.json",
+      "state": "awaiting_stage",
+      "reason": "Complete source/original independently backed in existing22subject Trench primary bundle and exact crop/source accuracy checked. Metadata-only pending registration; no new capture, stage, promotion or resave requested.",
+      "submitted": false,
+      "backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 105599,
+          "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "kind": "source_snapshot",
+          "original_version_url": "https://res.starwarsccg.org/cards/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif",
+          "title": "https://res.starwarsccg.org/cards/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif"
+        },
+        "verification": {
+          "container_member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 105599,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      },
+      "source_backup_receipt": {
+        "schema_version": 1,
+        "storage": {
+          "artifact_bytes": 1318712,
+          "artifact_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "commit": "8d03a4e21e20c9445648389140d200b1c29032bc",
+          "container": "tar.xz",
+          "kind": "git",
+          "member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "path": "preservation/bundles/597/597-trench-primary.tar.xz",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "uncompressed_bytes": 1362278
+        },
+        "subject": {
+          "bytes": 105599,
+          "content_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "kind": "source_snapshot",
+          "original_version_url": "https://res.starwarsccg.org/cards/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif",
+          "title": "https://res.starwarsccg.org/cards/Images-HT/starwars/ANewHope-Light/large/deathstartrench.gif"
+        },
+        "verification": {
+          "container_member": "sources/b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5.bin",
+          "container_payload_tally": 1362278,
+          "independent": true,
+          "restored_bytes": 105599,
+          "restored_container_bytes": 1318712,
+          "restored_container_sha256": "6e201cca23199e424870f028232b4b893eddb5115fb159018b44361611b2e07f",
+          "restored_sha256": "b2d17eb8a16168213ad74ea8e1b0335261df9924addf4111d75b3c38ab43c0a5",
+          "status": "verified",
+          "verified_at": "2026-11-18T12:38:50.684165+00:00"
+        }
+      }
+    }
+  ],
+  "submission_owner": "server-wayback-owner"
+}
