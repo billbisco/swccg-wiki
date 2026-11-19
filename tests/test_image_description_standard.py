@@ -32,6 +32,22 @@ class SourcePreservingMigration(unittest.TestCase):
         self.assertIn("== Source and credit ==\n\nSource:", result["text"])
         self.assertEqual(result["issues_after"], [])
 
+    def test_bold_bulleted_source_within_summary_keeps_exact_source_line(self):
+        line = "* '''Source:''' [https://example.org/event Event publication]."
+        result = normalize("== Summary ==\nEvent logo.\n\n" + line)
+        self.assertIn("== Source and credit ==\n\n" + line, result["text"])
+        self.assertEqual(result["issues_after"], [])
+
+    def test_source_and_credit_label_and_outside_colon_are_explicit_boundaries(self):
+        for line in ["'''Source and credit:''' Shared by UserX.", "* '''Source''': https://example.org", "Source and credit: A named collection."]:
+            with self.subTest(line=line):
+                result = normalize("Existing subject.\n\n" + line)
+                self.assertIn("== Source and credit ==\n\n" + line, result["text"])
+
+    def test_empty_bold_source_field_does_not_become_a_subject(self):
+        before = "* '''Source:'''\n[[Category:Logos]]"
+        self.assertEqual(normalize(before)["text"], before)
+
     def test_poster_is_not_upgraded_to_photographer(self):
         result = normalize("Dinner group.\n\nPhoto provided by UserX on7May2020.")
         self.assertIn("Photo provided by UserX on7May2020.", result["text"])

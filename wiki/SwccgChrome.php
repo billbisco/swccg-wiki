@@ -156,3 +156,8 @@ class SwccgChrome {
 		}
 	}
 }
+
+require_once "/swccg-chrome/image-file-description.php";
+$wgHooks['ContentGetParserOutput'][] = [ SwccgImageFileDescription::class, 'render' ];
+$wgHooks['RejectParserCacheValue'][] = [ SwccgImageFileDescription::class, 'acceptCached' ];
+$wgHooks['SkinEditSectionLinks'][] = [ SwccgImageFileDescription::class, 'editLinks' ];
