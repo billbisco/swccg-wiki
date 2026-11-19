@@ -1,0 +1,131 @@
+{
+  "URI_equivalence_asserted": false,
+  "actual_public_native_backup_receipt": {
+    "inventory_version_id": "9e9bc7974e074ea22f8456a89bc733067a2c7a0e8f57d3c25a6cdefec66ce377",
+    "schema_version": 1,
+    "storage": {
+      "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+      "kind": "git",
+      "path": "preservation/complete-image-part2-20261114T185600Z/objects/57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 95488,
+      "content_sha256": "57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://wiki.swccg.com/images/8/87/V0-L-commandercody-2018-07-08.gif",
+      "title": "File:V0-L-commandercody-2018-07-08.gif",
+      "upload_timestamp": "2026-11-12T23:20:29Z"
+    },
+    "verification": {
+      "independent": true,
+      "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+      "restored_bytes": 95488,
+      "restored_sha256": "57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+      "status": "verified",
+      "verified_at": "2026-11-14T22:15:58.020548+00:00"
+    }
+  },
+  "actual_public_source_backup_receipt": {
+    "inventory_version_id": "9e9bc7974e074ea22f8456a89bc733067a2c7a0e8f57d3c25a6cdefec66ce377",
+    "schema_version": 1,
+    "storage": {
+      "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+      "kind": "git",
+      "path": "preservation/complete-image-part2-20261114T185600Z/objects/57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 95488,
+      "content_sha256": "57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://wiki.swccg.com/images/8/87/V0-L-commandercody-2018-07-08.gif",
+      "title": "File:V0-L-commandercody-2018-07-08.gif",
+      "upload_timestamp": "2026-11-12T23:20:29Z"
+    },
+    "verification": {
+      "independent": true,
+      "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+      "restored_bytes": 95488,
+      "restored_sha256": "57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+      "status": "verified",
+      "verified_at": "2026-11-14T22:15:58.020548+00:00"
+    }
+  },
+  "actual_typed_receipt_identities_validated": true,
+  "additional_whole_native_chunk_provenance": null,
+  "format_and_completeness": {
+    "card_face_semantic_accuracy_checked": false,
+    "format": "GIF",
+    "frames_decoded": 1,
+    "method": "Pillow verifies complete retained image container, then decodes each frame; no visual card-face or semantic text review claimed.",
+    "pixel_dimensions": [
+      350,
+      490
+    ],
+    "whole_image_verified_and_all_frames_decoded": true
+  },
+  "fresh_Wiki_version_evidence": {
+    "URI_equivalence_asserted": false,
+    "URI_string_equal": false,
+    "actual_API_receipt": {
+      "batch": 0,
+      "method": "actual complete anonymous public Wiki API GET",
+      "pagination": 0,
+      "request_url": "https://swccg.com/api.php?action=query&format=json&formatversion=2&prop=imageinfo&titles=File%3AV0-L-captainrex501stlegion-2018-07-08-hires.webp%7CFile%3AV0-L-blasterrifle-2018-07-08.gif%7CFile%3AV0-L-altercoruscant-2018-07-08-hires.webp%7CFile%3AV0-L-anakinskywalkerpadawanlearner-2018-07-08.gif%7CFile%3AV0-L-bravofighter-2018-07-08-hires.webp%7CFile%3AV0-L-boosterinpulsarskate-2018-07-08.gif%7CFile%3AV0-L-carefulplanning-2018-07-08-hires.webp%7CFile%3AV0-L-captainyutaniwithblastercannon-2018-07-08.gif%7CFile%3AV0-L-anakinskywalkerpadawanlearner-2018-07-08-hires.webp%7CFile%3AV0-L-carefulplanning-2018-07-08.gif%7CFile%3AV0-L-antillesmaneuver-2018-07-08.gif%7CFile%3AV0-L-commandercody-2018-07-08.gif%7CFile%3AV0-L-blasterrifle-2018-07-08-hires.webp%7CFile%3AV0-L-agoodblasteratyourside-2018-07-08.gif%7CFile%3AV0-L-aaylasecura-2018-07-08.gif%7CFile%3AV0-L-bravofighter-2018-07-08.gif&iiprop=url%7Ctimestamp%7Csha1%7Csize%7Cmime&iilimit=50",
+      "response_bytes": 8208,
+      "response_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\completion\\public-native-source-verification36\\actual-public-WikiAPI-versions-00-00.json",
+      "response_sha256": "cc0ecb25ea72ec04ceb8d8565862905fc0e92814246f4c82b957e4adf04616e6",
+      "status": 200
+    },
+    "exact_title_timestamp_SHA1_size_match": true,
+    "expected_title": "File:V0-L-commandercody-2018-07-08.gif",
+    "expected_upload_timestamp": "2026-11-12T23:20:29Z",
+    "fresh_API_reported_serving_URI": "https://swccg.com/wiki/images/8/87/V0-L-commandercody-2018-07-08.gif",
+    "fresh_actual_version_metadata": {
+      "descriptionshorturl": "https://swccg.com/wiki/index.php?curid=102346",
+      "descriptionurl": "https://swccg.com/wiki/File:V0-L-commandercody-2018-07-08.gif",
+      "height": 490,
+      "mime": "image/gif",
+      "sha1": "0b6b3d25df4d5b5b034b9d9a91fd986b1e6db5d6",
+      "size": 95488,
+      "timestamp": "2026-11-12T23:20:29Z",
+      "url": "https://swccg.com/wiki/images/8/87/V0-L-commandercody-2018-07-08.gif",
+      "width": 350
+    },
+    "identity_basis": "Exact typed prior independent receipt plus complete local native body hashes and fresh title/timestamp/SHA1/size version metadata; historical URI is retained verbatim, serving URI is recorded separately.",
+    "registered_historical_URI": "https://wiki.swccg.com/images/8/87/V0-L-commandercody-2018-07-08.gif",
+    "serving_URI_HTTP_GET_performed_in_this_run": false
+  },
+  "full_body": {
+    "bytes": 95488,
+    "complete_original_rehashed": true,
+    "fragment_or_excerpt_used": false,
+    "local_public_native_path": "C:\\Users\\gythe\\Documents\\Codex\\2026-11-06\\implement-legacy-lane-d-block-5\\work\\image382\\data\\offline-originals\\objects\\57\\57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+    "sha1": "0b6b3d25df4d5b5b034b9d9a91fd986b1e6db5d6",
+    "sha256": "57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5"
+  },
+  "generated_at_UTC": "2026-11-19T03:09:12.395978+00:00",
+  "network_body_fetch_performed_in_this_run": false,
+  "per_card_semantic_checks_separate": true,
+  "private_proofs_or_registry_records_read": false,
+  "public_input_whitelist_sha256": "7b8bccf16c847896008de0a325bc9c82c9baebc474a996978272628bb96e97a3",
+  "schema_version": 1,
+  "source": {
+    "bytes": 95488,
+    "sha256": "57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+    "url": "https://wiki.swccg.com/images/8/87/V0-L-commandercody-2018-07-08.gif"
+  },
+  "source_snapshot_URI_identity_basis": null,
+  "status": "verified_public_native_source_identity",
+  "subject": {
+    "bytes": 95488,
+    "content_sha256": "57f69ce4858ef7f130530bf456d177e76d93c37977af0cad6842e43e00ac84a5",
+    "kind": "wiki_file_version",
+    "original_version_url": "https://wiki.swccg.com/images/8/87/V0-L-commandercody-2018-07-08.gif",
+    "title": "File:V0-L-commandercody-2018-07-08.gif",
+    "upload_timestamp": "2026-11-12T23:20:29Z"
+  },
+  "verification_kind": "independent public-native source/version verification",
+  "whitelisted_registration_object_id": "792c47c91dc5c04d8f1af25ddfcc4f2baec44fa8743f41823d1c4c62b93bda0a"
+}

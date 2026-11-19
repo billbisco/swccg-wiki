@@ -1,0 +1,131 @@
+{
+  "URI_equivalence_asserted": false,
+  "actual_public_native_backup_receipt": {
+    "inventory_version_id": "247a27521fabe6846b7d81c96962f704ac5dee7767fa2f7bcadf08662af9f6f8",
+    "schema_version": 1,
+    "storage": {
+      "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+      "kind": "git",
+      "path": "preservation/complete-image-part2-20261114T185600Z/objects/cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 611674,
+      "content_sha256": "cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://wiki.swccg.com/images/f/f9/V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+      "title": "File:V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+      "upload_timestamp": "2026-11-13T06:17:54Z"
+    },
+    "verification": {
+      "independent": true,
+      "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+      "restored_bytes": 611674,
+      "restored_sha256": "cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+      "status": "verified",
+      "verified_at": "2026-11-14T22:32:31.308693+00:00"
+    }
+  },
+  "actual_public_source_backup_receipt": {
+    "inventory_version_id": "247a27521fabe6846b7d81c96962f704ac5dee7767fa2f7bcadf08662af9f6f8",
+    "schema_version": 1,
+    "storage": {
+      "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+      "kind": "git",
+      "path": "preservation/complete-image-part2-20261114T185600Z/objects/cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 611674,
+      "content_sha256": "cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://wiki.swccg.com/images/f/f9/V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+      "title": "File:V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+      "upload_timestamp": "2026-11-13T06:17:54Z"
+    },
+    "verification": {
+      "independent": true,
+      "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+      "restored_bytes": 611674,
+      "restored_sha256": "cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+      "status": "verified",
+      "verified_at": "2026-11-14T22:32:31.308693+00:00"
+    }
+  },
+  "actual_typed_receipt_identities_validated": true,
+  "additional_whole_native_chunk_provenance": null,
+  "format_and_completeness": {
+    "card_face_semantic_accuracy_checked": false,
+    "format": "WEBP",
+    "frames_decoded": 1,
+    "method": "Pillow verifies complete retained image container, then decodes each frame; no visual card-face or semantic text review claimed.",
+    "pixel_dimensions": [
+      1497,
+      2073
+    ],
+    "whole_image_verified_and_all_frames_decoded": true
+  },
+  "fresh_Wiki_version_evidence": {
+    "URI_equivalence_asserted": false,
+    "URI_string_equal": false,
+    "actual_API_receipt": {
+      "batch": 1,
+      "method": "actual complete anonymous public Wiki API GET",
+      "pagination": 0,
+      "request_url": "https://swccg.com/api.php?action=query&format=json&formatversion=2&prop=imageinfo&titles=File%3AV0-L-chewie-2018-07-08.gif%7CFile%3AV0-L-alterpremiere-2018-07-08.gif%7CFile%3AV0-L-acclamatorclassassaultship-2018-07-08.gif%7CFile%3AV0-L-agoodblasteratyourside-2018-07-08-hires.webp%7CFile%3AV0-L-alterpremiere-2018-07-08-hires.webp%7CFile%3AV0-L-beldonseye-2018-07-08.gif%7CFile%3AV0-L-boosterinpulsarskate-2018-07-08-hires.webp%7CFile%3AV0-L-altercoruscant-2018-07-08.gif%7CFile%3AV0-L-beldonseye-2018-07-08-hires.webp%7CFile%3AV0-L-captainrex501stlegion-2018-07-08.gif%7CFile%3ASWCCG+2023+AdvancedRulebook.pdf%7CFile%3ADecipher+Glossary+Supplement.pdf%7CFile%3AIcon-set-Hoth.png%7CFile%3APremiere-D-tuskenraider-hires.webp%7CFile%3ADecipher+Glossary+1998.pdf%7CFile%3AHoth-L-k3pokaythreepio-hires.webp&iiprop=url%7Ctimestamp%7Csha1%7Csize%7Cmime&iilimit=50",
+      "response_bytes": 8660,
+      "response_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\completion\\public-native-source-verification36\\actual-public-WikiAPI-versions-01-00.json",
+      "response_sha256": "daeaff0450ec957fb7a96ee7797f630aa96ab71c8772a863a8e1c2240a3350b8",
+      "status": 200
+    },
+    "exact_title_timestamp_SHA1_size_match": true,
+    "expected_title": "File:V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+    "expected_upload_timestamp": "2026-11-13T06:17:54Z",
+    "fresh_API_reported_serving_URI": "https://swccg.com/wiki/images/f/f9/V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+    "fresh_actual_version_metadata": {
+      "descriptionshorturl": "https://swccg.com/wiki/index.php?curid=109231",
+      "descriptionurl": "https://swccg.com/wiki/File:V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+      "height": 2073,
+      "mime": "image/webp",
+      "sha1": "d327c6cd396e8e7a47b03d1a8b5d33141b09dc4a",
+      "size": 611674,
+      "timestamp": "2026-11-13T06:17:54Z",
+      "url": "https://swccg.com/wiki/images/f/f9/V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+      "width": 1497
+    },
+    "identity_basis": "Exact typed prior independent receipt plus complete local native body hashes and fresh title/timestamp/SHA1/size version metadata; historical URI is retained verbatim, serving URI is recorded separately.",
+    "registered_historical_URI": "https://wiki.swccg.com/images/f/f9/V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+    "serving_URI_HTTP_GET_performed_in_this_run": false
+  },
+  "full_body": {
+    "bytes": 611674,
+    "complete_original_rehashed": true,
+    "fragment_or_excerpt_used": false,
+    "local_public_native_path": "C:\\Users\\gythe\\Documents\\Codex\\2026-11-06\\implement-legacy-lane-d-block-5\\work\\image382\\data\\offline-originals\\objects\\cc\\cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+    "sha1": "d327c6cd396e8e7a47b03d1a8b5d33141b09dc4a",
+    "sha256": "cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f"
+  },
+  "generated_at_UTC": "2026-11-19T03:09:12.395978+00:00",
+  "network_body_fetch_performed_in_this_run": false,
+  "per_card_semantic_checks_separate": true,
+  "private_proofs_or_registry_records_read": false,
+  "public_input_whitelist_sha256": "7b8bccf16c847896008de0a325bc9c82c9baebc474a996978272628bb96e97a3",
+  "schema_version": 1,
+  "source": {
+    "bytes": 611674,
+    "sha256": "cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+    "url": "https://wiki.swccg.com/images/f/f9/V0-L-boosterinpulsarskate-2018-07-08-hires.webp"
+  },
+  "source_snapshot_URI_identity_basis": null,
+  "status": "verified_public_native_source_identity",
+  "subject": {
+    "bytes": 611674,
+    "content_sha256": "cc8326fdd0bd3fc726fb5b7ec1cfa3bfb537c54efa8c7872d91e0addfb6bbd1f",
+    "kind": "wiki_file_version",
+    "original_version_url": "https://wiki.swccg.com/images/f/f9/V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+    "title": "File:V0-L-boosterinpulsarskate-2018-07-08-hires.webp",
+    "upload_timestamp": "2026-11-13T06:17:54Z"
+  },
+  "verification_kind": "independent public-native source/version verification",
+  "whitelisted_registration_object_id": "0ee669e8fb680f74e2e48845af74b5a352521435ccaa1779a45123fa35f98fee"
+}
