@@ -461,6 +461,8 @@ def strip_attached_roles(text, title):
     return text
 
 def service_flags(text, title=None):
+    # File captions can identify a role; the Service table belongs on the person's article.
+    if title and title.split(":", 1)[0].strip().casefold() in {"file", "image"}: return []
     if not is_person_page(text): return []
     m = re.search(r"^==\s*Service\s*==\s*$(.*?)(?=^==[^=]|\Z)", text, re.M | re.S)
     svc = body(m.group(1)) + " " + (m.group(1) if m else "") if m else ""
