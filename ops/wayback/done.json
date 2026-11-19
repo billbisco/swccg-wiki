@@ -72164,10 +72164,17 @@
   "tries": 6
  },
  "https://res.starwarsccg.org/virtual/Errata_090321.pdf": {
-  "capture": "https://web.archive.org/web/20261117182044/https://res.starwarsccg.org/virtual/Errata_090321.pdf",
-  "last": "2026-11-17T18:24:58Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261119002640/https://res.starwarsccg.org/virtual/Errata_090321.pdf",
+  "job_id": "spn2-99b2cd546cab673e4b73bfa92fd853b0f3a5599f",
+  "last": "2026-11-19T00:32:47Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-19T00:32:47Z",
+   "capture_id": "https://web.archive.org/web/20261119002640id_/https://res.starwarsccg.org/virtual/Errata_090321.pdf",
+   "method": "strict",
+   "reason": "redirects to another capture 20261117182044 (no capture at 20261119002640)"
+  }
  },
  "https://res.starwarsccg.org/virtual/Errata_2024_12_30.pdf": {
   "capture": "https://web.archive.org/web/20261118155134/https://res.starwarsccg.org/virtual/Errata_2024_12_30.pdf",
@@ -72176,10 +72183,17 @@
   "tries": 4
  },
  "https://res.starwarsccg.org/virtual/Errata_2025_08_08.pdf": {
-  "capture": "https://web.archive.org/web/20261117182250/https://res.starwarsccg.org/virtual/Errata_2025_08_08.pdf",
-  "last": "2026-11-17T18:26:40Z",
-  "status": "pending",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261119002741/https://res.starwarsccg.org/virtual/Errata_2025_08_08.pdf",
+  "job_id": "spn2-ea96782d69657e90ac808d8af178d9d97c882501",
+  "last": "2026-11-19T00:32:50Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-19T00:32:50Z",
+   "capture_id": "https://web.archive.org/web/20261119002741id_/https://res.starwarsccg.org/virtual/Errata_2025_08_08.pdf",
+   "method": "strict",
+   "reason": "redirects to another capture 20261117182250 (no capture at 20261119002741)"
+  }
  },
  "https://res.starwarsccg.org/virtual/Errata_2025_12_26.pdf": {
   "capture": "https://web.archive.org/web/20261113170736/https://res.starwarsccg.org/virtual/Errata_2025_12_26.pdf",
@@ -72219,11 +72233,17 @@
   }
  },
  "https://res.starwarsccg.org/virtual/Errata_2026_09_08.pdf": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261119002841/https://res.starwarsccg.org/virtual/Errata_2026_09_08.pdf",
   "job_id": "spn2-951d922be1b498f205e22826eca455478e68d8b2",
-  "last": "2026-11-17T18:28:47Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-19T00:32:54Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-19T00:32:54Z",
+   "capture_id": "https://web.archive.org/web/20261119002841id_/https://res.starwarsccg.org/virtual/Errata_2026_09_08.pdf",
+   "method": "strict",
+   "reason": "redirects to another capture 20261117182847 (no capture at 20261119002841)"
+  }
  },
  "https://res.starwarsccg.org/virtual/March 2020 Errata.pdf": {
   "capture": "https://web.archive.org/web/20261118155246/https://res.starwarsccg.org/virtual/March%202020%20Errata.pdf",
@@ -72275,24 +72295,36 @@
   }
  },
  "https://res.starwarsccg.org/virtual/errata_032021.pdf": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261119002942/https://res.starwarsccg.org/virtual/errata_032021.pdf",
   "job_id": "spn2-7e16df7c0451384ff2e00d6d7f983f67a2a7105d",
-  "last": "2026-11-17T18:30:54Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-19T00:32:57Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-19T00:32:57Z",
+   "capture_id": "https://web.archive.org/web/20261119002942id_/https://res.starwarsccg.org/virtual/errata_032021.pdf",
+   "method": "strict",
+   "reason": "redirects to another capture 20261117183054 (no capture at 20261119002942)"
+  }
  },
  "https://res.starwarsccg.org/virtual/errata_062321.pdf": {
-  "capture": "https://web.archive.org/web/20261117183200/https://res.starwarsccg.org/virtual/errata_062321.pdf",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-18T17:57:14Z",
-  "status": "retry",
-  "tries": 5
+  "capture": "https://web.archive.org/web/20261119003043/https://res.starwarsccg.org/virtual/errata_062321.pdf",
+  "job_id": "spn2-9497aac1f45f81b4c9ec959645d684cd0daddcdc",
+  "last": "2026-11-19T00:33:01Z",
+  "status": "ok",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-19T00:33:01Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://res.starwarsccg.org/virtual/errata_102020.pdf": {
   "capture": "https://web.archive.org/web/20261118181451/https://res.starwarsccg.org/virtual/errata_102020.pdf",
-  "last": "2026-11-18T18:28:00Z",
-  "status": "retry",
-  "tries": 5
+  "job_id": "spn2-2ec4d2cccd2c40fb61884e186d5bab388d21760b",
+  "last": "2026-11-19T00:31:43Z",
+  "status": "pending",
+  "tries": 6
  },
  "https://res.starwarsccg.org/virtual/errata_122021.pdf": {
   "capture": "",
