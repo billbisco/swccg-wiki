@@ -1,0 +1,594 @@
+[
+  {
+    "title": "source/rights/changes retained",
+    "kind": "regression",
+    "text": "== Summary ==\nA card scan.\n== Sources ==\n[https://example.org/book.pdf Book], page3.\n== Changes ==\nCropped from [[:File:Full.png]].\n== Rights ==\nOriginal credit: A.B.\n",
+    "expected_sha256": "68ef9abe933f9d0c865b5e16b0333603a00e7af55b132123fa749d81716d6be3",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "rename_heading:Summary->Description",
+        "rename_heading:Sources->Source and credit"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "explicit prelude source",
+    "kind": "regression",
+    "text": "A historic event photo.\n\nSource: https://example.org/post\n[[Category:Photographs]]",
+    "expected_sha256": "bfe38cc796bbdc8497e62a067a6f0fb9d443a3a4d6885e0fc6d4d81e1e930fed",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "insert_source_heading_at_explicit_boundary",
+        "insert_description_heading_over_existing_subject"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "explicit source within Summary",
+    "kind": "regression",
+    "text": "== Summary ==\nScreenshot of an event listing.\n\nSource: https://example.org/event\n",
+    "expected_sha256": "f9d528fe5ebed255120ab5506037e25c8e7f22d0b24839da101cf8b1d41825a5",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "rename_heading:Summary->Description",
+        "insert_source_heading_at_explicit_boundary"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "poster credit",
+    "kind": "regression",
+    "text": "Dinner group.\n\nPhoto provided by UserX on7May2020.",
+    "expected_sha256": "fbe6c013b7969c5dc6a87513d41c6077a6d96f8d7103296f6cf61ad4ae3c539d",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "insert_source_heading_at_explicit_boundary",
+        "insert_description_heading_over_existing_subject"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "embedded source held",
+    "kind": "regression",
+    "text": "A tournament photo. Photo provided by UserX from https://example.org/source.",
+    "expected_sha256": "cfae80ff3135b117eeed5cf01af115539769e701753f98e417d05c187c7d4cc3",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "insert_description_heading_over_existing_subject"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "source only",
+    "kind": "regression",
+    "text": "Source: https://example.org/source\n[[Category:Logos]]",
+    "expected_sha256": "551bd25de5b0f5f5e9fc270b4dc688025fa14aad3061034038d62a899db0d01a",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "insert_source_heading_at_explicit_boundary"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [
+        "missing_description_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "categories only",
+    "kind": "regression",
+    "text": "[[Category:Scans]]",
+    "expected_sha256": "3e278ddc7a34c003e071abad09b586f6088efaab4600d93ba7bf155fc37acd65",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "empty legacy heading",
+    "kind": "regression",
+    "text": "== Summary ==\n[[Category:Scans]]",
+    "expected_sha256": "2d03065a2b850c923cfc37334af9321dfbe5ccf03b372a359f68d781394fb35c",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading",
+        "empty_section"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading",
+        "empty_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "opaque information template",
+    "kind": "regression",
+    "text": "{{Information|description=A portrait|source={{Cite|url=https://example.org}}}}\n[[Category:Photographs]]",
+    "expected_sha256": "fdfdc8c1d3049ff3668c564e43a215b0cde73bad79a91d0f4b0d857a9569c608",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "opaque_template_description"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "opaque_template_description"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "protected headings",
+    "kind": "regression",
+    "text": "<!--\n== Source ==\n--><!-- comment -->\n<nowiki>\n== Summary ==\n</nowiki>\n{{Template|text=\n== Sources ==\n}}\n== Summary ==\nAn actual subject.\n",
+    "expected_sha256": "6314bb3cac6c772f05d5b4f048d4114048ed78f9f0dffe0f39340c3447c5d938",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "rename_heading:Summary->Description"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "competing source sections",
+    "kind": "regression",
+    "text": "== Source ==\nA.\n== Source and credit ==\nB.\n",
+    "expected_sha256": "96845b94142f9790743548c929894e534bc14295c04e431e4d111d032bca6408",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "legacy_section_heading"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "recreation and capture",
+    "kind": "regression",
+    "text": "== Summary ==\nRecreation of a missing printing.\n== Source ==\nhttps://example.org/base.gif\n== Preservation ==\n[https://web.archive.org/web/20200101000000/https://example.org/base.gif Checked copy].",
+    "expected_sha256": "9eec32c33c7a8ad856edb61a4f3ed1eb6ff7fbd3ddb2c6ee16d91f0a0ccc276b",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "rename_heading:Summary->Description",
+        "rename_heading:Source->Source and credit"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "redirect",
+    "kind": "regression",
+    "text": "#REDIRECT [[File:Existing original.png]]",
+    "expected_sha256": "53f1f02c58ed186652ca091b4d7e546f1b2392bcac6c97fb76c78fb1321749b4",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "file_redirect_not_a_description"
+    }
+  },
+  {
+    "title": "Unicode byte offsets",
+    "kind": "regression",
+    "text": "<!-- 日本語\n== Summary ==\n-->\n{{A|β={{B|値}}}}\n== Summary ==\nCafé 日本語.\n\nSource: https://example.org/é\n",
+    "expected_sha256": "c20f5ff34b99184dd4123794fc4cef6f23eee264a3739041f369118dac3d3c0a",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "rename_heading:Summary->Description",
+        "insert_source_heading_at_explicit_boundary"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "Unicode whitespace only",
+    "kind": "regression",
+    "text": "   ",
+    "expected_sha256": "a40703d0304d5cda4a728a7f5ecdd1ac39b1c0f4222ad27bc37dd1115b3b793d",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "Unicode category whitespace",
+    "kind": "regression",
+    "text": " [[Category:Scans]] ",
+    "expected_sha256": "c4bc68931dde3afbcfed66cf6ee334fe340d6e01c95310d4579d2ca440f5316a",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "Unicode heading case folding",
+    "kind": "regression",
+    "text": "== ſOURCE ==\nA source.\n== SUMMARY ==\nA subject.\n",
+    "expected_sha256": "dab88476e42d1d4a2993ff5a7dc44e624969d849a98fd71c4dfb4cc8ceab8687",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "rename_heading:ſOURCE->Source and credit",
+        "rename_heading:SUMMARY->Description"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "unclosed nested template",
+    "kind": "regression",
+    "text": "{{A|x={{B|é\n== Summary ==\n",
+    "expected_sha256": "00e648492fc730a95ca29f234e9896325729b2962b87c764321bcd1c9616370f",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "opaque_template_description"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "opaque_template_description"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "template triple braces",
+    "kind": "regression",
+    "text": "{{{A|β}}}\n== Summary ==\nA subject.",
+    "expected_sha256": "a174a213925e943dfca645b7378f330852ef9c85bcff3691e097221ef85db1c8",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "rename_heading:Summary->Description"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "CRLF parity",
+    "kind": "regression",
+    "text": "== Summary ==\r\nA subject.\r\n\r\nSource: https://example.org\r\n",
+    "expected_sha256": "d0fafaa7f3f6bfabf8f22ddb53ffa74481d6c650d82baad62645adf06f0a4711",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "insert_source_heading_at_explicit_boundary",
+        "insert_description_heading_over_existing_subject"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "control whitespace parity",
+    "kind": "regression",
+    "text": "\u001c\u001d\u001e\u001f",
+    "expected_sha256": "0b88077a5d93f6b2bbb955f75571c8f65f4027e61078fef7fa1032bf2bc62327",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  },
+  {
+    "title": "bold source within Summary",
+    "kind": "regression",
+    "text": "== Summary ==\nEvent logo.\n\n* '''Source:''' [https://example.org/event Event publication].",
+    "expected_sha256": "626db479c810be6bf21bd064e2e3e86a1ba726d247486a751a98dca01d078c04",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "rename_heading:Summary->Description",
+        "insert_source_heading_at_explicit_boundary"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section",
+        "legacy_section_heading"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "bold Source and credit",
+    "kind": "regression",
+    "text": "Existing subject.\n\n'''Source and credit:''' Shared by UserX.",
+    "expected_sha256": "2bec667ee35b845d0b4e07da71a089c2d0552152d6ba683d9c348aa0227346ba",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "insert_source_heading_at_explicit_boundary",
+        "insert_description_heading_over_existing_subject"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "bold source colon outside",
+    "kind": "regression",
+    "text": "Existing subject.\n\n* '''Source''': https://example.org",
+    "expected_sha256": "1013af7ed2d090dac84a88385063347143803fafeadc254c11e68c5e91133bd2",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "insert_source_heading_at_explicit_boundary",
+        "insert_description_heading_over_existing_subject"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "plain Source and credit",
+    "kind": "regression",
+    "text": "Existing subject.\n\nSource and credit: A named collection.",
+    "expected_sha256": "789bd740ba4c88d0be26c37f025bebdb4c1a11238d1e05cf86171d5ad193dd12",
+    "expected_meta": {
+      "changed": true,
+      "operations": [
+        "insert_source_heading_at_explicit_boundary",
+        "insert_description_heading_over_existing_subject"
+      ],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "standard_section_present"
+    }
+  },
+  {
+    "title": "empty bold source field",
+    "kind": "regression",
+    "text": "* '''Source:'''\n[[Category:Logos]]",
+    "expected_sha256": "4cf1411fe5fb4a3fb0a95fc5aa5b9f2c92f3d3ea12d0881accfc3abfffb594d6",
+    "expected_meta": {
+      "changed": false,
+      "operations": [],
+      "issues_before": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "issues_after": [
+        "missing_description_section",
+        "missing_source_and_credit_section"
+      ],
+      "new_issues": [],
+      "all_payload_characters_retained": true,
+      "all_urls_retained_in_order": true,
+      "source_disposition": "source_boundary_or_missing_information_needs_review"
+    }
+  }
+]

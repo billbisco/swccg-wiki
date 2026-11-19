@@ -15,7 +15,8 @@ from pathlib import Path
 HEADING = re.compile(r"^(?P<marks>={2,6})[ \t]*(?P<label>.*?)[ \t]*(?P=marks)[ \t]*$", re.M)
 CATEGORY = re.compile(r"\[\[Category:[^\]]*\]\]", re.I)
 PROTECTED = re.compile(r"<!--[\s\S]*?-->|<(nowiki|pre|syntaxhighlight|source)\b[^>]*>[\s\S]*?</\1\s*>|<nowiki\s*/>", re.I)
-SOURCE_BOUNDARY = re.compile(r"^[ \t]*(?:\*[ \t]*)?(?:Source:[ \t]*\S|Photo provided by[ \t]+\S)", re.I | re.M)
+SOURCE_PREFIX = r"(?:Source(?:[ \t]+and[ \t]+credit)?[ \t]*:|'''Source(?:[ \t]+and[ \t]+credit)?[ \t]*(?::'''|'''[ \t]*:))"
+SOURCE_BOUNDARY = re.compile(r"^[ \t]*(?:\*[ \t]*)?(?:" + SOURCE_PREFIX + r"[ \t]*\S|Photo provided by[ \t]+\S)", re.I | re.M)
 RENAMES = {"summary": "Description", "source": "Source and credit", "sources": "Source and credit"}
 
 
@@ -148,7 +149,7 @@ def normalize(text: str) -> dict:
     if "description" not in names and _substantive(prelude):
         # Bare URLs and source-only labels are not descriptions of an image's subject.
         visible = CATEGORY.sub("", _masked(prelude)).strip()
-        if not re.match(r"(?:https?://|Source:|Photo provided by\b)", visible, re.I):
+        if not re.match(r"(?:https?://|(?:\*[ \t]*)?" + SOURCE_PREFIX + r"|Photo provided by\b)", visible, re.I):
             text = "== Description ==\n\n" + text
             operations.append("insert_description_heading_over_existing_subject")
 
