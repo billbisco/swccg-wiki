@@ -1,0 +1,237 @@
+{
+  "actual_native_revision_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "artifact_bytes": 52836,
+      "artifact_sha256": "a8cc27e3a3debbd85c456c019b02ef21b68af1c7b8f1bde7ef60dbe38cf04d41",
+      "commit": "f28c7a5674d5e897abe4d01d19d4f729d4d9abd3",
+      "container": "tar.xz",
+      "kind": "git",
+      "member": "native/current/13202-334601.wiki",
+      "path": "preservation/bundles/597/597-first16-concise-postlive-native16-oldid12-transport-holds.tar.xz",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "uncompressed_bytes": 993750
+    },
+    "subject": {
+      "bytes": 6938,
+      "content_sha256": "15c524c104eab5b5c46a3cae6325d6acaa18d67f2a134a50345fa2c955a69992",
+      "kind": "wiki_revision",
+      "revision_id": 334601,
+      "title": "Anakin Skywalker, Padawan Learner"
+    },
+    "verification": {
+      "container_member": "native/current/13202-334601.wiki",
+      "container_payload_tally": 993750,
+      "independent": true,
+      "restored_bytes": 6938,
+      "restored_container_bytes": 52836,
+      "restored_container_sha256": "a8cc27e3a3debbd85c456c019b02ef21b68af1c7b8f1bde7ef60dbe38cf04d41",
+      "restored_sha256": "15c524c104eab5b5c46a3cae6325d6acaa18d67f2a134a50345fa2c955a69992",
+      "status": "verified",
+      "verified_at": "2026-11-19T03:50:04.381726+00:00"
+    }
+  },
+  "actual_primary_source_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+      "kind": "git",
+      "path": "preservation/complete-image-part2-20261114T185600Z/objects/16a80d1005e127ab3db651b07b8aeb202b6ad9f30e2d3cff7599ea230d931ab1",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 101240,
+      "content_sha256": "16a80d1005e127ab3db651b07b8aeb202b6ad9f30e2d3cff7599ea230d931ab1",
+      "kind": "source_snapshot",
+      "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Light/large/anakinskywalkerpadawanlearner.gif",
+      "title": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Light/large/anakinskywalkerpadawanlearner.gif"
+    },
+    "verification": {
+      "independent": true,
+      "restored_bytes": 101240,
+      "restored_sha256": "16a80d1005e127ab3db651b07b8aeb202b6ad9f30e2d3cff7599ea230d931ab1",
+      "status": "verified",
+      "verified_at": "2026-11-18T22:48:46.264360+00:00"
+    }
+  },
+  "actual_primary_tree_member": {
+    "mode": "100644",
+    "path": "anakinskywalkerpadawanlearner.gif",
+    "sha": "ff1498971f558cf2500702e9e9073dd0da0096e4",
+    "size": 101240,
+    "type": "blob",
+    "url": "https://api.github.com/repos/swccgpc/holotable/git/blobs/ff1498971f558cf2500702e9e9073dd0da0096e4"
+  },
+  "anonymous_canonical_verification": {
+    "checked_utc": "2026-11-19T03:34:31.742588+00:00",
+    "cite_errors": false,
+    "date_order": [
+      "Released",
+      "Versions"
+    ],
+    "date_rows": {
+      "Released": "Released by 8 July 2018 [ 1 ]",
+      "Versions": "Versions Virtual Legacy — Anakin Skywalker, Padawan Learner (Virtual Block 9) ( 1291_34 ) Virtual Modern — this page Virtual Modern Errata — Anakin Skywalker, Padawan Learner (Errata) ( 200_2 ) — current Virtual Modern (ALT) — Anakin Skywalker, Padawan Learner (ALT) Virtual Modern (ALT) Errata — Anakin Skywalker, Padawan Learner (ALT) (Errata) Virtual Modern (ALT) Errata 2 — Anakin Skywalker, Padawan Learner (ALT) (Errata 2) Virtual Modern (ALT) Errata 3 — Anakin Skywalker, Padawan Learner (ALT) (Errata 3) Virtual Modern (ALT) Errata 4 — Anakin Skywalker, Padawan Learner (ALT) (Errata 4) ( 200_2^ ) — current"
+    },
+    "final_url": "https://swccg.com/wiki/Anakin_Skywalker%2C_Padawan_Learner",
+    "html_file": "html/13202-334601-canonical.html",
+    "html_sha256": "e31cae4911134374c2fbe6942339cf25fef4446359246a3e4bed41050374c196",
+    "image_markup_checks": {
+      "empty_srcs": 0,
+      "image_tags": 3,
+      "intentional_missing_faces_not_fabricated": true,
+      "thumbnail_errors": false
+    },
+    "native_review_record": {
+      "actual_current_review_record": true,
+      "actual_flaggedpages_record": {
+        "fp_page_id": "13202",
+        "fp_pending_since": null,
+        "fp_quality": "0",
+        "fp_reviewed": "1",
+        "fp_stable": "334601"
+      },
+      "actual_flaggedpages_stable_revid": 334601,
+      "bytes": 6938,
+      "content_hash_verified": true,
+      "current_review_metadata": {
+        "fr_rev_id": "334601",
+        "fr_tags": "accuracy:1",
+        "fr_timestamp": "20261119032902",
+        "fr_user": "3852"
+      },
+      "existing_review_record": true,
+      "native_FlaggedRevision": true,
+      "pageid": 13202,
+      "revid": 334601,
+      "review_namespace": true,
+      "review_required": true,
+      "sha256": "15c524c104eab5b5c46a3cae6325d6acaa18d67f2a134a50345fa2c955a69992",
+      "status": "PASS",
+      "title": "Anakin Skywalker, Padawan Learner"
+    },
+    "pageid": 13202,
+    "public_current_revision": 334601,
+    "public_revision": 334601,
+    "public_stable": 334601,
+    "render_mode": "canonical",
+    "revid": 334601,
+    "sha256": "15c524c104eab5b5c46a3cae6325d6acaa18d67f2a134a50345fa2c955a69992",
+    "source_citation_checks": [
+      {
+        "exact_date_prefix": "by 8 July 2018",
+        "field": "released",
+        "rendered_footnotes": 1,
+        "source_urls_verified": [
+          "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Light/large/anakinskywalkerpadawanlearner.gif",
+          "https://api.github.com/repos/swccgpc/holotable/git/commits/022435b7929e4de26dafbcb1de2ec1d6d04d2153"
+        ]
+      }
+    ],
+    "status": "PASS",
+    "thumbnail_errors": false,
+    "title": "Anakin Skywalker, Padawan Learner",
+    "url": "https://swccg.com/wiki/Anakin_Skywalker%2C_Padawan_Learner",
+    "versions_last": true
+  },
+  "full_current_Wiki_bytes_rehashed": true,
+  "full_pinned_Git_commit_and_all_tree_documents": [
+    {
+      "bytes": 915,
+      "full_commit": "022435b7929e4de26dafbcb1de2ec1d6d04d2153",
+      "sha256": "36601fe5a0f458c181efb8f0b4b2c2b2e12a654ca7ef67e4552e12f43d34c5fd",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/commits/022435b7929e4de26dafbcb1de2ec1d6d04d2153"
+    },
+    {
+      "bytes": 838,
+      "complete_nonrecursive_tree": true,
+      "sha256": "24cecfe4fb04632f3b1d2b02c21daaeb33b1b1f0f8acc0004e5ebab9d2bbf825",
+      "tree_oid": "76e1c635992ce87cccf7c8dac4bf80faf9d6821a",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/76e1c635992ce87cccf7c8dac4bf80faf9d6821a"
+    },
+    {
+      "bytes": 820,
+      "complete_nonrecursive_tree": true,
+      "sha256": "43512e90669870a4c005243fab57d1e22892a0b520920cf2bf98869649543938",
+      "tree_oid": "a449aa045c6dca603a6985abdf579f60dd901bf5",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/a449aa045c6dca603a6985abdf579f60dd901bf5"
+    },
+    {
+      "bytes": 15853,
+      "complete_nonrecursive_tree": true,
+      "sha256": "2b8bfad156ac565f2a4c323cd3a2c84e6f9b011b5c074fca4fcab77adec32fde",
+      "tree_oid": "db4b066d134329a24864f76edbfaba0d9a5abf14",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/db4b066d134329a24864f76edbfaba0d9a5abf14"
+    },
+    {
+      "bytes": 15793,
+      "complete_nonrecursive_tree": true,
+      "sha256": "dcc02bd4a21efa3c054f902a9534074f08da2282f42c35eea756adc627702d51",
+      "tree_oid": "0ab9d2ed2bf812a300b0d6be080a406ba9c17970",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/0ab9d2ed2bf812a300b0d6be080a406ba9c17970"
+    },
+    {
+      "bytes": 15569,
+      "complete_nonrecursive_tree": true,
+      "sha256": "905d312e9a8ffb2a181429ad17bbb4a552007007e3d78faeafc79d6d4720ffa1",
+      "tree_oid": "9c6a9385d74a51ec046009895429f55d5a2dcec7",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/9c6a9385d74a51ec046009895429f55d5a2dcec7"
+    }
+  ],
+  "native_actual_review_and_stable": {
+    "actual_current_review_record": true,
+    "actual_flaggedpages_record": {
+      "fp_page_id": "13202",
+      "fp_pending_since": null,
+      "fp_quality": "0",
+      "fp_reviewed": "1",
+      "fp_stable": "334601"
+    },
+    "actual_flaggedpages_stable_revid": 334601,
+    "bytes": 6938,
+    "content_hash_verified": true,
+    "current_review_metadata": {
+      "fr_rev_id": "334601",
+      "fr_tags": "accuracy:1",
+      "fr_timestamp": "20261119032902",
+      "fr_user": "3852"
+    },
+    "existing_review_record": true,
+    "native_FlaggedRevision": true,
+    "pageid": 13202,
+    "revid": 334601,
+    "review_namespace": true,
+    "review_required": true,
+    "sha256": "15c524c104eab5b5c46a3cae6325d6acaa18d67f2a134a50345fa2c955a69992",
+    "status": "PASS",
+    "title": "Anakin Skywalker, Padawan Learner"
+  },
+  "no_oldid_HTML_or_Wiki_source_byte_equivalence_asserted": true,
+  "no_primary_source_HTTP_GET_performed_in_this_check": true,
+  "no_private_proofs_exports_registry_or_Wiki_mutations": true,
+  "registration_object_id": "9cc87ced6c62b6683b1f51dc706552d2c36fa1fe1296326ead43265735f81acf",
+  "required_postpublication_QA": "PASS; see owner-acceptance-reconciliation.json",
+  "schema_version": 1,
+  "scope": "Native live WikiRevision is the publication subject; exact already-backed publisher card-image SourceSnapshot is its primary source payload. These are separate byte identities with actual distinct native/source receipts. Per-card publication semantics were approved earlier; this proof rechecks the full immutable source/Git identity and exact published native/current/canonical state.",
+  "source": {
+    "bytes": 101240,
+    "sha256": "16a80d1005e127ab3db651b07b8aeb202b6ad9f30e2d3cff7599ea230d931ab1",
+    "url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Light/large/anakinskywalkerpadawanlearner.gif"
+  },
+  "source_exact_URI_retained": true,
+  "subject": {
+    "bytes": 6938,
+    "content_sha256": "15c524c104eab5b5c46a3cae6325d6acaa18d67f2a134a50345fa2c955a69992",
+    "kind": "wiki_revision",
+    "revision_id": 334601,
+    "title": "Anakin Skywalker, Padawan Learner"
+  },
+  "supplemental_oldid_protection_diagnostics_not_source_accuracy_failure": true,
+  "whole_source_body": {
+    "Git_blob_SHA1": "ff1498971f558cf2500702e9e9073dd0da0096e4",
+    "bytes": 101240,
+    "full_image_container_verified": true,
+    "sha256": "16a80d1005e127ab3db651b07b8aeb202b6ad9f30e2d3cff7599ea230d931ab1",
+    "whole_body_rehashed": true
+  }
+}

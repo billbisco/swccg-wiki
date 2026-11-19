@@ -1,0 +1,237 @@
+{
+  "actual_native_revision_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "artifact_bytes": 52836,
+      "artifact_sha256": "a8cc27e3a3debbd85c456c019b02ef21b68af1c7b8f1bde7ef60dbe38cf04d41",
+      "commit": "f28c7a5674d5e897abe4d01d19d4f729d4d9abd3",
+      "container": "tar.xz",
+      "kind": "git",
+      "member": "native/current/13209-334606.wiki",
+      "path": "preservation/bundles/597/597-first16-concise-postlive-native16-oldid12-transport-holds.tar.xz",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "uncompressed_bytes": 993750
+    },
+    "subject": {
+      "bytes": 6692,
+      "content_sha256": "e750551fe2d031d1da4958ca6096658d4e2ba9622e8d6e252924a66f55f29841",
+      "kind": "wiki_revision",
+      "revision_id": 334606,
+      "title": "Bravo Fighter (V)"
+    },
+    "verification": {
+      "container_member": "native/current/13209-334606.wiki",
+      "container_payload_tally": 993750,
+      "independent": true,
+      "restored_bytes": 6692,
+      "restored_container_bytes": 52836,
+      "restored_container_sha256": "a8cc27e3a3debbd85c456c019b02ef21b68af1c7b8f1bde7ef60dbe38cf04d41",
+      "restored_sha256": "e750551fe2d031d1da4958ca6096658d4e2ba9622e8d6e252924a66f55f29841",
+      "status": "verified",
+      "verified_at": "2026-11-19T03:50:04.381726+00:00"
+    }
+  },
+  "actual_primary_source_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+      "kind": "git",
+      "path": "preservation/complete-image-part2-20261114T185600Z/objects/7afad34552c87620fd02ddde3f87410a0172fb46e14bbc671c425f928d26edfb",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 106124,
+      "content_sha256": "7afad34552c87620fd02ddde3f87410a0172fb46e14bbc671c425f928d26edfb",
+      "kind": "source_snapshot",
+      "original_version_url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Light/large/bravofighter.gif",
+      "title": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Light/large/bravofighter.gif"
+    },
+    "verification": {
+      "independent": true,
+      "restored_bytes": 106124,
+      "restored_sha256": "7afad34552c87620fd02ddde3f87410a0172fb46e14bbc671c425f928d26edfb",
+      "status": "verified",
+      "verified_at": "2026-11-18T22:48:59.038085+00:00"
+    }
+  },
+  "actual_primary_tree_member": {
+    "mode": "100644",
+    "path": "bravofighter.gif",
+    "sha": "d3f172f8551dcf8d9ef4da9d47abe4ebf7b9f40f",
+    "size": 106124,
+    "type": "blob",
+    "url": "https://api.github.com/repos/swccgpc/holotable/git/blobs/d3f172f8551dcf8d9ef4da9d47abe4ebf7b9f40f"
+  },
+  "anonymous_canonical_verification": {
+    "checked_utc": "2026-11-19T03:35:59.845825+00:00",
+    "cite_errors": false,
+    "date_order": [
+      "Released",
+      "Versions"
+    ],
+    "date_rows": {
+      "Released": "Released by 8 July 2018 [ 1 ]",
+      "Versions": "Versions Decipher — Bravo Fighter ( 14_58 ) Virtual Original — Bravo Fighter (V) (Virtual Set 16: Revenge Of The Sith) ( 1116_26 ) Virtual Legacy — Bravo Fighter (V) (Virtual Block 5) ( 1250_80o ) Virtual Legacy Errata — Bravo Fighter (V) (Virtual Block 5) (Errata) ( 2250_1080 ) Virtual Legacy Errata 2 — Bravo Fighter (V) (Virtual Block 5) (Errata 2) ( 2250_2080 ) Virtual Legacy Errata 3 — Bravo Fighter (V) (Virtual Block 5) (Errata 3) ( 1250_80 ) Virtual Modern — this page Virtual Modern Errata — Bravo Fighter (V) (Errata) ( 200_61 ) — current"
+    },
+    "final_url": "https://swccg.com/wiki/Bravo_Fighter_(V)",
+    "html_file": "html/13209-334606-canonical.html",
+    "html_sha256": "4be407c9daf2f31f753ac83efa82b62b4339d2923a905bb59ec71ccfce4be5e2",
+    "image_markup_checks": {
+      "empty_srcs": 0,
+      "image_tags": 3,
+      "intentional_missing_faces_not_fabricated": true,
+      "thumbnail_errors": false
+    },
+    "native_review_record": {
+      "actual_current_review_record": true,
+      "actual_flaggedpages_record": {
+        "fp_page_id": "13209",
+        "fp_pending_since": null,
+        "fp_quality": "0",
+        "fp_reviewed": "1",
+        "fp_stable": "334606"
+      },
+      "actual_flaggedpages_stable_revid": 334606,
+      "bytes": 6692,
+      "content_hash_verified": true,
+      "current_review_metadata": {
+        "fr_rev_id": "334606",
+        "fr_tags": "accuracy:1",
+        "fr_timestamp": "20261119032906",
+        "fr_user": "3852"
+      },
+      "existing_review_record": true,
+      "native_FlaggedRevision": true,
+      "pageid": 13209,
+      "revid": 334606,
+      "review_namespace": true,
+      "review_required": true,
+      "sha256": "e750551fe2d031d1da4958ca6096658d4e2ba9622e8d6e252924a66f55f29841",
+      "status": "PASS",
+      "title": "Bravo Fighter (V)"
+    },
+    "pageid": 13209,
+    "public_current_revision": 334606,
+    "public_revision": 334606,
+    "public_stable": 334606,
+    "render_mode": "canonical",
+    "revid": 334606,
+    "sha256": "e750551fe2d031d1da4958ca6096658d4e2ba9622e8d6e252924a66f55f29841",
+    "source_citation_checks": [
+      {
+        "exact_date_prefix": "by 8 July 2018",
+        "field": "released",
+        "rendered_footnotes": 1,
+        "source_urls_verified": [
+          "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Light/large/bravofighter.gif",
+          "https://api.github.com/repos/swccgpc/holotable/git/commits/022435b7929e4de26dafbcb1de2ec1d6d04d2153"
+        ]
+      }
+    ],
+    "status": "PASS",
+    "thumbnail_errors": false,
+    "title": "Bravo Fighter (V)",
+    "url": "https://swccg.com/wiki/Bravo_Fighter_(V)",
+    "versions_last": true
+  },
+  "full_current_Wiki_bytes_rehashed": true,
+  "full_pinned_Git_commit_and_all_tree_documents": [
+    {
+      "bytes": 915,
+      "full_commit": "022435b7929e4de26dafbcb1de2ec1d6d04d2153",
+      "sha256": "36601fe5a0f458c181efb8f0b4b2c2b2e12a654ca7ef67e4552e12f43d34c5fd",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/commits/022435b7929e4de26dafbcb1de2ec1d6d04d2153"
+    },
+    {
+      "bytes": 838,
+      "complete_nonrecursive_tree": true,
+      "sha256": "24cecfe4fb04632f3b1d2b02c21daaeb33b1b1f0f8acc0004e5ebab9d2bbf825",
+      "tree_oid": "76e1c635992ce87cccf7c8dac4bf80faf9d6821a",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/76e1c635992ce87cccf7c8dac4bf80faf9d6821a"
+    },
+    {
+      "bytes": 820,
+      "complete_nonrecursive_tree": true,
+      "sha256": "43512e90669870a4c005243fab57d1e22892a0b520920cf2bf98869649543938",
+      "tree_oid": "a449aa045c6dca603a6985abdf579f60dd901bf5",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/a449aa045c6dca603a6985abdf579f60dd901bf5"
+    },
+    {
+      "bytes": 15853,
+      "complete_nonrecursive_tree": true,
+      "sha256": "2b8bfad156ac565f2a4c323cd3a2c84e6f9b011b5c074fca4fcab77adec32fde",
+      "tree_oid": "db4b066d134329a24864f76edbfaba0d9a5abf14",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/db4b066d134329a24864f76edbfaba0d9a5abf14"
+    },
+    {
+      "bytes": 15793,
+      "complete_nonrecursive_tree": true,
+      "sha256": "dcc02bd4a21efa3c054f902a9534074f08da2282f42c35eea756adc627702d51",
+      "tree_oid": "0ab9d2ed2bf812a300b0d6be080a406ba9c17970",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/0ab9d2ed2bf812a300b0d6be080a406ba9c17970"
+    },
+    {
+      "bytes": 15569,
+      "complete_nonrecursive_tree": true,
+      "sha256": "905d312e9a8ffb2a181429ad17bbb4a552007007e3d78faeafc79d6d4720ffa1",
+      "tree_oid": "9c6a9385d74a51ec046009895429f55d5a2dcec7",
+      "url": "https://api.github.com/repos/swccgpc/holotable/git/trees/9c6a9385d74a51ec046009895429f55d5a2dcec7"
+    }
+  ],
+  "native_actual_review_and_stable": {
+    "actual_current_review_record": true,
+    "actual_flaggedpages_record": {
+      "fp_page_id": "13209",
+      "fp_pending_since": null,
+      "fp_quality": "0",
+      "fp_reviewed": "1",
+      "fp_stable": "334606"
+    },
+    "actual_flaggedpages_stable_revid": 334606,
+    "bytes": 6692,
+    "content_hash_verified": true,
+    "current_review_metadata": {
+      "fr_rev_id": "334606",
+      "fr_tags": "accuracy:1",
+      "fr_timestamp": "20261119032906",
+      "fr_user": "3852"
+    },
+    "existing_review_record": true,
+    "native_FlaggedRevision": true,
+    "pageid": 13209,
+    "revid": 334606,
+    "review_namespace": true,
+    "review_required": true,
+    "sha256": "e750551fe2d031d1da4958ca6096658d4e2ba9622e8d6e252924a66f55f29841",
+    "status": "PASS",
+    "title": "Bravo Fighter (V)"
+  },
+  "no_oldid_HTML_or_Wiki_source_byte_equivalence_asserted": true,
+  "no_primary_source_HTTP_GET_performed_in_this_check": true,
+  "no_private_proofs_exports_registry_or_Wiki_mutations": true,
+  "registration_object_id": "1ad80eb27cbd3c8fb0b1e9de985c72856534ae27fea881934d929e2f91891503",
+  "required_postpublication_QA": "PASS; see owner-acceptance-reconciliation.json",
+  "schema_version": 1,
+  "scope": "Native live WikiRevision is the publication subject; exact already-backed publisher card-image SourceSnapshot is its primary source payload. These are separate byte identities with actual distinct native/source receipts. Per-card publication semantics were approved earlier; this proof rechecks the full immutable source/Git identity and exact published native/current/canonical state.",
+  "source": {
+    "bytes": 106124,
+    "sha256": "7afad34552c87620fd02ddde3f87410a0172fb46e14bbc671c425f928d26edfb",
+    "url": "https://raw.githubusercontent.com/swccgpc/holotable/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/Virtual0-Light/large/bravofighter.gif"
+  },
+  "source_exact_URI_retained": true,
+  "subject": {
+    "bytes": 6692,
+    "content_sha256": "e750551fe2d031d1da4958ca6096658d4e2ba9622e8d6e252924a66f55f29841",
+    "kind": "wiki_revision",
+    "revision_id": 334606,
+    "title": "Bravo Fighter (V)"
+  },
+  "supplemental_oldid_protection_diagnostics_not_source_accuracy_failure": true,
+  "whole_source_body": {
+    "Git_blob_SHA1": "d3f172f8551dcf8d9ef4da9d47abe4ebf7b9f40f",
+    "bytes": 106124,
+    "full_image_container_verified": true,
+    "sha256": "7afad34552c87620fd02ddde3f87410a0172fb46e14bbc671c425f928d26edfb",
+    "whole_body_rehashed": true
+  }
+}

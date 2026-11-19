@@ -1,0 +1,143 @@
+{
+  "URI_equivalence_asserted": false,
+  "actual_public_native_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "artifact_bytes": 612996,
+      "artifact_sha256": "ace2f4edf4eef3faaaeaa58027f253fe7193bb81567e6144f1b4088ee894132a",
+      "commit": "fb2595dc740a3cc09fa7905ed6d935ed59bff05d",
+      "container": "tar.xz",
+      "kind": "git",
+      "member": "native/wiki_file_version/84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "path": "preservation/bundles/597/597-OVS9-next6-current-Holotable-native-originals.tar.xz",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "uncompressed_bytes": 621128
+    },
+    "subject": {
+      "bytes": 119334,
+      "content_sha256": "84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://swccg.com/wiki/images/a/ac/Holotable-OVS9-Entrenchment-v17.gif",
+      "title": "File:Holotable-OVS9-Entrenchment-v17.gif",
+      "upload_timestamp": "2026-11-17T19:56:04Z"
+    },
+    "verification": {
+      "container_member": "native/wiki_file_version/84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "container_payload_tally": 621128,
+      "independent": true,
+      "restored_bytes": 119334,
+      "restored_container_bytes": 612996,
+      "restored_container_sha256": "ace2f4edf4eef3faaaeaa58027f253fe7193bb81567e6144f1b4088ee894132a",
+      "restored_sha256": "84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "status": "verified",
+      "verified_at": "2026-11-19T00:58:29.157139+00:00"
+    }
+  },
+  "actual_public_source_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "artifact_bytes": 612996,
+      "artifact_sha256": "ace2f4edf4eef3faaaeaa58027f253fe7193bb81567e6144f1b4088ee894132a",
+      "commit": "fb2595dc740a3cc09fa7905ed6d935ed59bff05d",
+      "container": "tar.xz",
+      "kind": "git",
+      "member": "native/wiki_file_version/84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "path": "preservation/bundles/597/597-OVS9-next6-current-Holotable-native-originals.tar.xz",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "uncompressed_bytes": 621128
+    },
+    "subject": {
+      "bytes": 119334,
+      "content_sha256": "84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://swccg.com/wiki/images/a/ac/Holotable-OVS9-Entrenchment-v17.gif",
+      "title": "File:Holotable-OVS9-Entrenchment-v17.gif",
+      "upload_timestamp": "2026-11-17T19:56:04Z"
+    },
+    "verification": {
+      "container_member": "native/wiki_file_version/84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "container_payload_tally": 621128,
+      "independent": true,
+      "restored_bytes": 119334,
+      "restored_container_bytes": 612996,
+      "restored_container_sha256": "ace2f4edf4eef3faaaeaa58027f253fe7193bb81567e6144f1b4088ee894132a",
+      "restored_sha256": "84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "status": "verified",
+      "verified_at": "2026-11-19T00:58:29.157139+00:00"
+    }
+  },
+  "format_and_completeness": {
+    "format": "GIF",
+    "frames_fully_decoded": 1,
+    "pixel_dimensions": [
+      350,
+      490
+    ],
+    "semantic_face_accuracy_checked": false
+  },
+  "fresh_Wiki_version_evidence": {
+    "URI_equivalence_asserted": false,
+    "actual_API_receipt": {
+      "batch": 0,
+      "method": "actual complete anonymous public Wiki API GET",
+      "pagination": 0,
+      "request_url": "https://swccg.com/api.php?action=query&format=json&formatversion=2&prop=imageinfo&titles=File%3AHolotable-OVS16-Bowcaster-v17.gif%7CFile%3AOVS16-12-Bowcaster-remaster.webp%7CFile%3AVS16O-12-Bowcaster.png%7CFile%3AVS16O-set-symbol.png%7CFile%3AHolotable-OVS16-Wookiee-Guide-v17.gif%7CFile%3AOVS16-19-Wookiee_Guide-remaster.webp%7CFile%3AVS16O-19-Wookiee_Guide.png%7CFile%3AHolotable-OVS16-Wookiee-Roar-v17.gif%7CFile%3AOVS16-20-Wookiee_Roar-remaster.webp%7CFile%3AVS16O-20-Wookiee_Roar.png%7CFile%3AHolotable-OVS9-Count-Me-In-v17.gif%7CFile%3AOVS9-05-Count_Me_In-remaster.webp%7CFile%3AVS9O-05-Count_Me_In.png%7CFile%3AVS9O-set-symbol.png%7CFile%3AHolotable-OVS9-Entrenchment-v17.gif%7CFile%3AOVS9-08-Entrenchment-remaster.webp&iiprop=url%7Ctimestamp%7Csha1%7Csize%7Cmime&iilimit=50",
+      "response_bytes": 16564,
+      "response_path": "api/actual-public-WikiAPI-versions-00-00.json",
+      "response_sha256": "74f1d6ab541d102ca9133582a428f60f003392fdc9b96301f53f28f64cd72a1c",
+      "status": 200
+    },
+    "exact_title_timestamp_SHA1_size_match": true,
+    "fresh_API_reported_serving_URI": "https://swccg.com/wiki/images/a/ac/Holotable-OVS9-Entrenchment-v17.gif",
+    "metadata": {
+      "descriptionshorturl": "https://swccg.com/wiki/index.php?curid=119152",
+      "descriptionurl": "https://swccg.com/wiki/File:Holotable-OVS9-Entrenchment-v17.gif",
+      "height": 490,
+      "mime": "image/gif",
+      "sha1": "3e599c83a997df8c2955ae233c830855c7fdfaa8",
+      "size": 119334,
+      "timestamp": "2026-11-17T19:56:04Z",
+      "url": "https://swccg.com/wiki/images/a/ac/Holotable-OVS9-Entrenchment-v17.gif",
+      "width": 350
+    },
+    "registered_historical_URI": "https://swccg.com/wiki/images/a/ac/Holotable-OVS9-Entrenchment-v17.gif",
+    "serving_URI_HTTP_GET_performed_in_this_run": false
+  },
+  "full_body": {
+    "actual_public_backup_storage": {
+      "artifact_bytes": 612996,
+      "artifact_sha256": "ace2f4edf4eef3faaaeaa58027f253fe7193bb81567e6144f1b4088ee894132a",
+      "commit": "fb2595dc740a3cc09fa7905ed6d935ed59bff05d",
+      "container": "tar.xz",
+      "kind": "git",
+      "member": "native/wiki_file_version/84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+      "path": "preservation/bundles/597/597-OVS9-next6-current-Holotable-native-originals.tar.xz",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "uncompressed_bytes": 621128
+    },
+    "bytes": 119334,
+    "complete_original_rehashed": true,
+    "sha1": "3e599c83a997df8c2955ae233c830855c7fdfaa8",
+    "sha256": "84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271"
+  },
+  "generated_at_UTC": "2026-11-19T04:08:47.934987+00:00",
+  "network_body_fetch_performed_in_this_run": false,
+  "own_state_date_accuracy_evidence": "Actual backed final OVS28 per-row/source proof; separate from this native identity verification",
+  "private_registry_or_excluded_proofs_read": false,
+  "schema_version": 1,
+  "source": {
+    "bytes": 119334,
+    "sha256": "84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+    "url": "https://swccg.com/wiki/images/a/ac/Holotable-OVS9-Entrenchment-v17.gif"
+  },
+  "source_date_or_own_state_accuracy_checked_by_this_proof": false,
+  "status": "verified_public_native_source_identity",
+  "subject": {
+    "bytes": 119334,
+    "content_sha256": "84bf12dc8bbe6aa85d7ec323bdf820e555e40d8257e20e47868a06501e6a4271",
+    "kind": "wiki_file_version",
+    "original_version_url": "https://swccg.com/wiki/images/a/ac/Holotable-OVS9-Entrenchment-v17.gif",
+    "title": "File:Holotable-OVS9-Entrenchment-v17.gif",
+    "upload_timestamp": "2026-11-17T19:56:04Z"
+  }
+}
