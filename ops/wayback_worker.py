@@ -758,44 +758,74 @@ def verify_candidates(done: dict, *, limit: int = 40) -> list[dict]:
 
 
 def apply_verify_inbox(control: Control, done: dict, changed: dict) -> int:
-    """Merge manpc (lane 2) verified receipts. Does not overwrite a different capture."""
+    """Consume schema-1 receipts without losing unresolved or malformed evidence."""
+    import base64
     applied = 0
     for path in sorted(verify_inbox_dir(control).glob("*.json")):
+        if path.stat().st_size > 8 * 1024 * 1024:
+            report_dir = control.directory / "verify-receipts" / ("oversize-" + hashlib.sha256(path.name.encode("utf-8")).hexdigest())
+            report_dir.mkdir(parents=True, exist_ok=True)
+            atomic_json(report_dir / "disposition.json", {"inbox_name":path.name,
+                        "bytes":path.stat().st_size, "reason":"over metadata budget; original retained in inbox"})
+            print("VERIFY-INBOX-ERR", path.name, "over metadata budget; retained", flush=True)
+            continue
+        with path.open("rb") as stream:
+            raw = stream.read(8 * 1024 * 1024 + 1)
+        if len(raw) > 8 * 1024 * 1024:
+            print("VERIFY-INBOX-ERR", path.name, "grew over metadata budget; retained", flush=True)
+            continue
+        original_done = json.loads(json.dumps(done))
+        digest = hashlib.sha256(raw).hexdigest()
+        retained = control.directory / "verify-receipts" / digest
+        retained.mkdir(parents=True, exist_ok=True)
+        # Exact original bytes remain retrievable even after a fully consumed
+        # inbox file is removed. Unresolved inputs also stay in the inbox.
+        atomic_json(retained / "original.json", {
+            "sha256":digest, "bytes":len(raw),
+            "original_base64":base64.b64encode(raw).decode("ascii"),
+        })
+        dispositions, pending, updates = {}, {}, {}
         try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except Exception as error:  # noqa: BLE001
-            print("VERIFY-INBOX-ERR", path.name, type(error).__name__, flush=True)
-            continue
-        updates = data.get("updates")
-        if data.get("schema") != 1 or not isinstance(updates, dict):
-            print("VERIFY-INBOX-ERR", path.name, "invalid", flush=True)
-            continue
-        lane = data.get("lane") or "manpc"
-        n = 0
-        for url, receipt in updates.items():
-            if not isinstance(receipt, dict) or receipt.get("status") != "verified":
-                continue
-            cap = receipt.get("capture")
-            cur = done.get(url)
-            if not cur or not cap:
-                continue
-            if cur.get("status") == "verified":
-                continue
-            if cur.get("capture") and cur["capture"] != cap:
-                print("VERIFY-INBOX-SKIP", url, "capture mismatch", flush=True)
-                continue
-            info = dict(receipt.get("verify") or {})
-            info["lane"] = lane
-            cur["capture"] = cap
-            cur["status"] = "verified"
-            cur["verify"] = info
-            cur["last"] = iso(now())
-            done[url] = cur
-            changed[url] = cur
-            n += 1
-        print("VERIFY-INBOX", path.name, n, "applied", flush=True)
-        path.unlink()
-        applied += n
+            data = json.loads(raw)
+            if data.get("schema") != 1 or not isinstance(data.get("updates"), dict):
+                raise ValueError("unsupported receipt schema")
+            updates = data["updates"]
+            lane = data.get("lane") or "manpc"
+            for url, receipt in updates.items():
+                if not isinstance(receipt, dict) or receipt.get("status") != "verified":
+                    dispositions[url] = "unsupported_receipt"
+                    continue
+                cap, cur = receipt.get("capture"), done.get(url)
+                if not cur or not cap:
+                    dispositions[url] = "missing_prior_done_or_capture"
+                    continue
+                if cur.get("capture") and cur["capture"] != cap:
+                    dispositions[url] = "capture_conflict"
+                    continue
+                if cur.get("status") == "verified":
+                    dispositions[url] = "already_verified"
+                    continue
+                entry = dict(cur)
+                info = dict(receipt.get("verify") or {})
+                info["lane"] = lane
+                entry.update(capture=cap, status="verified", verify=info, last=iso(now()))
+                pending[url] = entry
+                dispositions[url] = "applied"
+        except (ValueError, TypeError, AttributeError):
+            dispositions = {"$receipt":"malformed_or_unsupported"}
+            pending = {}
+        report = {"original_sha256":digest, "dispositions":dispositions}
+        report_hash = hashlib.sha256(json.dumps(report, sort_keys=True).encode("utf-8")).hexdigest()
+        atomic_json(retained / (report_hash + ".json"), report)
+        done.update(pending)
+        changed.update(pending)
+        complete = bool(dispositions) and all(v in {"applied", "already_verified"}
+                                             for v in dispositions.values())
+        if complete:
+            control.checkpoint(done, getattr(control, "initial_done", original_done))
+            path.unlink()
+        applied += len(pending)
+        print("VERIFY-INBOX", path.name, len(pending), "applied", "complete" if complete else "retained", flush=True)
     return applied
 
 
@@ -1478,8 +1508,22 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("repo", type=Path)
     ap.add_argument("--minutes", type=float, default=10)
+    ap.add_argument("--adopt-native-receipt", type=Path,
+                    help="Offline owner-locked adoption of a checked native capture bundle")
+    ap.add_argument("--approved-receipt-sha256", help="Explicit approval hash of the adoption manifest")
     ap.add_argument("--health", action="store_true", help="Read saved health; no Git or Archive.org request")
     a = ap.parse_args()
+    if a.adopt_native_receipt:
+        if a.health or not a.approved_receipt_sha256:
+            ap.error("adoption requires its approval hash and cannot be combined with health")
+        from preservation_capture_adoption import adopt
+        with Control(control_directory(a.repo.resolve()), AUTH) as control:
+            print(json.dumps(adopt(sys.modules[__name__], a.repo.resolve(), control,
+                                   a.adopt_native_receipt.absolute(), a.approved_receipt_sha256),
+                             sort_keys=True))
+        return 0
+    if a.approved_receipt_sha256:
+        ap.error("approval hash requires --adopt-native-receipt")
     if a.health:
         path = control_directory(a.repo) / "health.json"
         print(path.read_text(encoding="utf-8") if path.exists() else '{"outcome":"not_recorded"}')
