@@ -71,6 +71,7 @@ from gitsync import commit_and_push, reset_to_origin  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from preservation_owner import OwnerAdapter, load_allowed_objects  # noqa: E402
 from preservation_suppression import suppressed_url  # noqa: E402
+from preservation_native import is_native_capture_url  # noqa: E402
 from wayback_control import Busy, Control, Paused, atomic_json  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
@@ -665,9 +666,10 @@ def verify(url: str, capture: str, get=None) -> tuple[str, dict]:
     if src["status"] != 200:
         raise VerifyRetry(f"source HTTP {src['status']}")
     info = {"at": iso(now()), "capture_id": id_url(capture), "index": "cdx" if why == "ok" else "pending"}
-    if cap["sha256"] == src["sha256"]:
+    native = is_native_capture_url(url)
+    if cap["sha256"] == src["sha256"] and (not native or cap["size"] == src["size"]):
         return "verified", {**info, "method": "sha256", "sha256": src["sha256"], "bytes": src["size"]}
-    if not (is_html(src) and is_html(cap)):
+    if native or not (is_html(src) and is_html(cap)):
         return "unverified", {**info, "method": "sha256", "reason": "file differs from the source",
                               "sha256": src["sha256"], "capture_sha256": cap["sha256"]}
     cap_text = cap["body"].decode("utf-8", "replace")
