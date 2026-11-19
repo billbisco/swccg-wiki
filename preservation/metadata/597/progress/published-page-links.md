@@ -1,6 +1,6 @@
 # Story597 changed Wiki pages
 
-6840 distinct changed pages; 6856 delivered revisions. Work ongoing; review index only.
+6845 distinct changed pages; 6861 delivered revisions. Work ongoing; review index only.
 
 - [2-1B (Reflections Gold Remastered)](https://wiki.swccg.com/wiki/index.php?title=2-1B%20%28Reflections%20Gold%20Remastered%29) — [revision332590](https://swccg.com/wiki/index.php?oldid=332590)
 - [2-1B (Too-Onebee)](https://wiki.swccg.com/wiki/index.php?title=2-1B%20%28Too-Onebee%29) — [revision331512](https://swccg.com/wiki/index.php?oldid=331512)
@@ -1134,6 +1134,7 @@
 - [Concussion Missiles](https://wiki.swccg.com/wiki/index.php?title=Concussion%20Missiles) — [revision329055](https://swccg.com/wiki/index.php?oldid=329055)
 - [Concussion Missiles (Dark)](https://wiki.swccg.com/wiki/index.php?title=Concussion%20Missiles%20%28Dark%29) — [revision329145](https://swccg.com/wiki/index.php?oldid=329145)
 - [Concussion Missiles (V)](https://wiki.swccg.com/wiki/index.php?title=Concussion%20Missiles%20%28V%29) — [revision333558](https://swccg.com/wiki/index.php?oldid=333558)
+- [Concussion Missiles (V) (Virtual Set 16: Revenge Of The Sith) (Original)](https://wiki.swccg.com/wiki/index.php?title=Concussion%20Missiles%20%28V%29%20%28Virtual%20Set%2016%3A%20Revenge%20Of%20The%20Sith%29%20%28Original%29) — [revision335214](https://swccg.com/wiki/index.php?oldid=335214)
 - [Conduct Your Search](https://wiki.swccg.com/wiki/index.php?title=Conduct%20Your%20Search) — [revision329706](https://swccg.com/wiki/index.php?oldid=329706)
 - [Conduct Your Search (Errata)](https://wiki.swccg.com/wiki/index.php?title=Conduct%20Your%20Search%20%28Errata%29) — [revision331814](https://swccg.com/wiki/index.php?oldid=331814)
 - [Congratulations (Reflections Gold Remastered)](https://wiki.swccg.com/wiki/index.php?title=Congratulations%20%28Reflections%20Gold%20Remastered%29) — [revision332797](https://swccg.com/wiki/index.php?oldid=332797)
@@ -1824,6 +1825,7 @@
 - [Elis Helrot (Unlimited)](https://wiki.swccg.com/wiki/index.php?title=Elis%20Helrot%20%28Unlimited%29) — [revision332281](https://swccg.com/wiki/index.php?oldid=332281)
 - [Elis In Hinthra](https://wiki.swccg.com/wiki/index.php?title=Elis%20In%20Hinthra) — [revision335063](https://swccg.com/wiki/index.php?oldid=335063)
 - [Elite Squadron Stormtrooper](https://wiki.swccg.com/wiki/index.php?title=Elite%20Squadron%20Stormtrooper) — [revision331594](https://swccg.com/wiki/index.php?oldid=331594)
+- [Elite Squadron Stormtrooper (V) (Virtual Set 16: Revenge Of The Sith) (Original)](https://wiki.swccg.com/wiki/index.php?title=Elite%20Squadron%20Stormtrooper%20%28V%29%20%28Virtual%20Set%2016%3A%20Revenge%20Of%20The%20Sith%29%20%28Original%29) — [revision335212](https://swccg.com/wiki/index.php?oldid=335212)
 - [Ellorrs Madak](https://wiki.swccg.com/wiki/index.php?title=Ellorrs%20Madak) — [revision327086](https://swccg.com/wiki/index.php?oldid=327086)
 - [Ellorrs Madak (Japanese)](https://wiki.swccg.com/wiki/index.php?title=Ellorrs%20Madak%20%28Japanese%29) — [revision330156](https://swccg.com/wiki/index.php?oldid=330156)
 - [Ellorrs Madak (PC Errata)](https://wiki.swccg.com/wiki/index.php?title=Ellorrs%20Madak%20%28PC%20Errata%29) — [revision331417](https://swccg.com/wiki/index.php?oldid=331417)
@@ -3619,6 +3621,7 @@
 - [Malastare](https://wiki.swccg.com/wiki/index.php?title=Malastare) — [revision329326](https://swccg.com/wiki/index.php?oldid=329326)
 - [Malastare (Dark)](https://wiki.swccg.com/wiki/index.php?title=Malastare%20%28Dark%29) — [revision329411](https://swccg.com/wiki/index.php?oldid=329411)
 - [Mandalorian Armor](https://wiki.swccg.com/wiki/index.php?title=Mandalorian%20Armor) — [revision327875](https://swccg.com/wiki/index.php?oldid=327875)
+- [Mandalorian Armor (V) (Virtual Set 16: Revenge Of The Sith) (Original)](https://wiki.swccg.com/wiki/index.php?title=Mandalorian%20Armor%20%28V%29%20%28Virtual%20Set%2016%3A%20Revenge%20Of%20The%20Sith%29%20%28Original%29) — [revision335215](https://swccg.com/wiki/index.php?oldid=335215)
 - [Mandalorian Mishap](https://wiki.swccg.com/wiki/index.php?title=Mandalorian%20Mishap) — [revision328776](https://swccg.com/wiki/index.php?oldid=328776)
 - [Mandalorian Mishap (V) (Virtual Block 3)](https://wiki.swccg.com/wiki/index.php?title=Mandalorian%20Mishap%20%28V%29%20%28Virtual%20Block%203%29) — [revision333547](https://swccg.com/wiki/index.php?oldid=333547)
 - [Maneuver Check](https://wiki.swccg.com/wiki/index.php?title=Maneuver%20Check) — [revision327441](https://swccg.com/wiki/index.php?oldid=327441)
@@ -5210,6 +5213,7 @@
 - [Strangle](https://wiki.swccg.com/wiki/index.php?title=Strangle) — [revision328796](https://swccg.com/wiki/index.php?oldid=328796)
 - [Strangle (Reflections Gold Remastered)](https://wiki.swccg.com/wiki/index.php?title=Strangle%20%28Reflections%20Gold%20Remastered%29) — [revision332961](https://swccg.com/wiki/index.php?oldid=332961)
 - [Strategic Reserves](https://wiki.swccg.com/wiki/index.php?title=Strategic%20Reserves) — [revision328201](https://swccg.com/wiki/index.php?oldid=328201)
+- [Strategic Reserves (V) (Virtual Set 16: Revenge Of The Sith) (Original)](https://wiki.swccg.com/wiki/index.php?title=Strategic%20Reserves%20%28V%29%20%28Virtual%20Set%2016%3A%20Revenge%20Of%20The%20Sith%29%20%28Original%29) — [revision335213](https://swccg.com/wiki/index.php?oldid=335213)
 - [Strike Blocked](https://wiki.swccg.com/wiki/index.php?title=Strike%20Blocked) — [revision329688](https://swccg.com/wiki/index.php?oldid=329688)
 - [Strike Blocked (Reflections Gold Remastered)](https://wiki.swccg.com/wiki/index.php?title=Strike%20Blocked%20%28Reflections%20Gold%20Remastered%29) — [revision332963](https://swccg.com/wiki/index.php?oldid=332963)
 - [Strike Planning](https://wiki.swccg.com/wiki/index.php?title=Strike%20Planning) — [revision329114](https://swccg.com/wiki/index.php?oldid=329114)
@@ -6634,6 +6638,7 @@
 - [Worry (Reflections Gold Remastered)](https://wiki.swccg.com/wiki/index.php?title=Worry%20%28Reflections%20Gold%20Remastered%29) — [revision333312](https://swccg.com/wiki/index.php?oldid=333312)
 - [Wounded Warrior](https://wiki.swccg.com/wiki/index.php?title=Wounded%20Warrior) — [revision329038](https://swccg.com/wiki/index.php?oldid=329038)
 - [Wounded Wookiee](https://wiki.swccg.com/wiki/index.php?title=Wounded%20Wookiee) — [revision328892](https://swccg.com/wiki/index.php?oldid=328892)
+- [Wounded Wookiee (V) (Virtual Set 16: Revenge Of The Sith) (Original)](https://wiki.swccg.com/wiki/index.php?title=Wounded%20Wookiee%20%28V%29%20%28Virtual%20Set%2016%3A%20Revenge%20Of%20The%20Sith%29%20%28Original%29) — [revision335216](https://swccg.com/wiki/index.php?oldid=335216)
 - [Wrist Comlink](https://wiki.swccg.com/wiki/index.php?title=Wrist%20Comlink) — [revision328061](https://swccg.com/wiki/index.php?oldid=328061)
 - [Wrong Turn](https://wiki.swccg.com/wiki/index.php?title=Wrong%20Turn) — [revision327242](https://swccg.com/wiki/index.php?oldid=327242)
 - [Wrong Turn (Japanese)](https://wiki.swccg.com/wiki/index.php?title=Wrong%20Turn%20%28Japanese%29) — [revision330245](https://swccg.com/wiki/index.php?oldid=330245)
