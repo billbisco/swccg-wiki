@@ -1,0 +1,128 @@
+{
+  "URI_equivalence_asserted": false,
+  "actual_public_native_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "commit": "934264299ffc48ea1a8eaee6423a00f185b355a5",
+      "kind": "git",
+      "path": "preservation/615/originals/3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6.png",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 7113,
+      "content_sha256": "3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://swccg.com/wiki/images/1/18/Icon-set-Hoth.png",
+      "title": "File:Icon-set-Hoth.png",
+      "upload_timestamp": "2026-11-17T07:07:48Z"
+    },
+    "verification": {
+      "independent": true,
+      "method": "Immutable Git contents/blob independent readback",
+      "restored_bytes": 7113,
+      "restored_sha256": "3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6",
+      "status": "verified",
+      "verified_at": "2026-11-18T11:51:59Z"
+    }
+  },
+  "actual_public_source_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "commit": "934264299ffc48ea1a8eaee6423a00f185b355a5",
+      "kind": "git",
+      "path": "preservation/615/originals/3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6.png",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 7113,
+      "content_sha256": "3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6",
+      "kind": "source_snapshot",
+      "original_version_url": "https://swccg.com/wiki/images/1/18/Icon-set-Hoth.png",
+      "title": "https://swccg.com/wiki/images/1/18/Icon-set-Hoth.png"
+    },
+    "verification": {
+      "independent": true,
+      "method": "Immutable Git contents/blob independent readback",
+      "restored_bytes": 7113,
+      "restored_sha256": "3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6",
+      "status": "verified",
+      "verified_at": "2026-11-18T11:51:59Z"
+    }
+  },
+  "actual_typed_receipt_identities_validated": true,
+  "additional_whole_native_chunk_provenance": null,
+  "format_and_completeness": {
+    "card_face_semantic_accuracy_checked": false,
+    "format": "PNG",
+    "frames_decoded": 1,
+    "method": "Pillow verifies complete retained image container, then decodes each frame; no visual card-face or semantic text review claimed.",
+    "pixel_dimensions": [
+      128,
+      128
+    ],
+    "whole_image_verified_and_all_frames_decoded": true
+  },
+  "fresh_Wiki_version_evidence": {
+    "URI_equivalence_asserted": false,
+    "URI_string_equal": true,
+    "actual_API_receipt": {
+      "batch": 1,
+      "method": "actual complete anonymous public Wiki API GET",
+      "pagination": 0,
+      "request_url": "https://swccg.com/api.php?action=query&format=json&formatversion=2&prop=imageinfo&titles=File%3AV0-L-chewie-2018-07-08.gif%7CFile%3AV0-L-alterpremiere-2018-07-08.gif%7CFile%3AV0-L-acclamatorclassassaultship-2018-07-08.gif%7CFile%3AV0-L-agoodblasteratyourside-2018-07-08-hires.webp%7CFile%3AV0-L-alterpremiere-2018-07-08-hires.webp%7CFile%3AV0-L-beldonseye-2018-07-08.gif%7CFile%3AV0-L-boosterinpulsarskate-2018-07-08-hires.webp%7CFile%3AV0-L-altercoruscant-2018-07-08.gif%7CFile%3AV0-L-beldonseye-2018-07-08-hires.webp%7CFile%3AV0-L-captainrex501stlegion-2018-07-08.gif%7CFile%3ASWCCG+2023+AdvancedRulebook.pdf%7CFile%3ADecipher+Glossary+Supplement.pdf%7CFile%3AIcon-set-Hoth.png%7CFile%3APremiere-D-tuskenraider-hires.webp%7CFile%3ADecipher+Glossary+1998.pdf%7CFile%3AHoth-L-k3pokaythreepio-hires.webp&iiprop=url%7Ctimestamp%7Csha1%7Csize%7Cmime&iilimit=50",
+      "response_bytes": 8660,
+      "response_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\completion\\public-native-source-verification36\\actual-public-WikiAPI-versions-01-00.json",
+      "response_sha256": "daeaff0450ec957fb7a96ee7797f630aa96ab71c8772a863a8e1c2240a3350b8",
+      "status": 200
+    },
+    "exact_title_timestamp_SHA1_size_match": true,
+    "expected_title": "File:Icon-set-Hoth.png",
+    "expected_upload_timestamp": "2026-11-17T07:07:48Z",
+    "fresh_API_reported_serving_URI": "https://swccg.com/wiki/images/1/18/Icon-set-Hoth.png",
+    "fresh_actual_version_metadata": {
+      "descriptionshorturl": "https://swccg.com/wiki/index.php?curid=8110",
+      "descriptionurl": "https://swccg.com/wiki/File:Icon-set-Hoth.png",
+      "height": 128,
+      "mime": "image/png",
+      "sha1": "c90e927f57587c7f88b1e1ca009e2e8cbb9afd21",
+      "size": 7113,
+      "timestamp": "2026-11-17T07:07:48Z",
+      "url": "https://swccg.com/wiki/images/1/18/Icon-set-Hoth.png",
+      "width": 128
+    },
+    "identity_basis": "Exact typed prior independent receipt plus complete local native body hashes and fresh title/timestamp/SHA1/size version metadata; historical URI is retained verbatim, serving URI is recorded separately.",
+    "registered_historical_URI": "https://swccg.com/wiki/images/1/18/Icon-set-Hoth.png",
+    "serving_URI_HTTP_GET_performed_in_this_run": false
+  },
+  "full_body": {
+    "bytes": 7113,
+    "complete_original_rehashed": true,
+    "fragment_or_excerpt_used": false,
+    "local_public_native_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\backup-preparation\\archive66\\originals\\3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6",
+    "sha1": "c90e927f57587c7f88b1e1ca009e2e8cbb9afd21",
+    "sha256": "3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6"
+  },
+  "generated_at_UTC": "2026-11-19T03:09:12.395978+00:00",
+  "network_body_fetch_performed_in_this_run": false,
+  "per_card_semantic_checks_separate": true,
+  "private_proofs_or_registry_records_read": false,
+  "public_input_whitelist_sha256": "7b8bccf16c847896008de0a325bc9c82c9baebc474a996978272628bb96e97a3",
+  "schema_version": 1,
+  "source": {
+    "bytes": 7113,
+    "sha256": "3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6",
+    "url": "https://swccg.com/wiki/images/1/18/Icon-set-Hoth.png"
+  },
+  "source_snapshot_URI_identity_basis": null,
+  "status": "verified_public_native_source_identity",
+  "subject": {
+    "bytes": 7113,
+    "content_sha256": "3869b673187fc3a20acffe8b276f16adb5874d7c705bad996c24ae8009a407f6",
+    "kind": "wiki_file_version",
+    "original_version_url": "https://swccg.com/wiki/images/1/18/Icon-set-Hoth.png",
+    "title": "File:Icon-set-Hoth.png",
+    "upload_timestamp": "2026-11-17T07:07:48Z"
+  },
+  "verification_kind": "independent public-native source/version verification",
+  "whitelisted_registration_object_id": "3e2df8b3c19eb086a27b5dd67434596ae3aef29000de08c3268df8c875d91faf"
+}

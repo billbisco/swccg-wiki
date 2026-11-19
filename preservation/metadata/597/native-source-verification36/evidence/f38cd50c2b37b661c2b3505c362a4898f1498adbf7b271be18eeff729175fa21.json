@@ -1,0 +1,131 @@
+{
+  "URI_equivalence_asserted": false,
+  "actual_public_native_backup_receipt": {
+    "inventory_version_id": "6cb59cbcc2e5cefefa3ea189d1be95dbba48724dac8a9ba745e67178abbdd5ac",
+    "schema_version": 1,
+    "storage": {
+      "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+      "kind": "git",
+      "path": "preservation/complete-image-part2-20261114T185600Z/objects/adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 110052,
+      "content_sha256": "adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://wiki.swccg.com/images/9/98/V0-L-beldonseye-2018-07-08.gif",
+      "title": "File:V0-L-beldonseye-2018-07-08.gif",
+      "upload_timestamp": "2026-11-12T23:23:02Z"
+    },
+    "verification": {
+      "independent": true,
+      "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+      "restored_bytes": 110052,
+      "restored_sha256": "adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+      "status": "verified",
+      "verified_at": "2026-11-14T22:29:08.777637+00:00"
+    }
+  },
+  "actual_public_source_backup_receipt": {
+    "inventory_version_id": "6cb59cbcc2e5cefefa3ea189d1be95dbba48724dac8a9ba745e67178abbdd5ac",
+    "schema_version": 1,
+    "storage": {
+      "commit": "8385a3061e09d37ff86cc476e25b158ee766115a",
+      "kind": "git",
+      "path": "preservation/complete-image-part2-20261114T185600Z/objects/adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+      "repository": "https://github.com/billbisco/swccg-wiki-files"
+    },
+    "subject": {
+      "bytes": 110052,
+      "content_sha256": "adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://wiki.swccg.com/images/9/98/V0-L-beldonseye-2018-07-08.gif",
+      "title": "File:V0-L-beldonseye-2018-07-08.gif",
+      "upload_timestamp": "2026-11-12T23:23:02Z"
+    },
+    "verification": {
+      "independent": true,
+      "method": "Explicit GitHub fetch into separate unshared reader, raw object disk readback with lazy fetch disabled; source SHA1/SHA256/bytes match",
+      "restored_bytes": 110052,
+      "restored_sha256": "adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+      "status": "verified",
+      "verified_at": "2026-11-14T22:29:08.777637+00:00"
+    }
+  },
+  "actual_typed_receipt_identities_validated": true,
+  "additional_whole_native_chunk_provenance": null,
+  "format_and_completeness": {
+    "card_face_semantic_accuracy_checked": false,
+    "format": "GIF",
+    "frames_decoded": 1,
+    "method": "Pillow verifies complete retained image container, then decodes each frame; no visual card-face or semantic text review claimed.",
+    "pixel_dimensions": [
+      350,
+      490
+    ],
+    "whole_image_verified_and_all_frames_decoded": true
+  },
+  "fresh_Wiki_version_evidence": {
+    "URI_equivalence_asserted": false,
+    "URI_string_equal": false,
+    "actual_API_receipt": {
+      "batch": 1,
+      "method": "actual complete anonymous public Wiki API GET",
+      "pagination": 0,
+      "request_url": "https://swccg.com/api.php?action=query&format=json&formatversion=2&prop=imageinfo&titles=File%3AV0-L-chewie-2018-07-08.gif%7CFile%3AV0-L-alterpremiere-2018-07-08.gif%7CFile%3AV0-L-acclamatorclassassaultship-2018-07-08.gif%7CFile%3AV0-L-agoodblasteratyourside-2018-07-08-hires.webp%7CFile%3AV0-L-alterpremiere-2018-07-08-hires.webp%7CFile%3AV0-L-beldonseye-2018-07-08.gif%7CFile%3AV0-L-boosterinpulsarskate-2018-07-08-hires.webp%7CFile%3AV0-L-altercoruscant-2018-07-08.gif%7CFile%3AV0-L-beldonseye-2018-07-08-hires.webp%7CFile%3AV0-L-captainrex501stlegion-2018-07-08.gif%7CFile%3ASWCCG+2023+AdvancedRulebook.pdf%7CFile%3ADecipher+Glossary+Supplement.pdf%7CFile%3AIcon-set-Hoth.png%7CFile%3APremiere-D-tuskenraider-hires.webp%7CFile%3ADecipher+Glossary+1998.pdf%7CFile%3AHoth-L-k3pokaythreepio-hires.webp&iiprop=url%7Ctimestamp%7Csha1%7Csize%7Cmime&iilimit=50",
+      "response_bytes": 8660,
+      "response_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\completion\\public-native-source-verification36\\actual-public-WikiAPI-versions-01-00.json",
+      "response_sha256": "daeaff0450ec957fb7a96ee7797f630aa96ab71c8772a863a8e1c2240a3350b8",
+      "status": 200
+    },
+    "exact_title_timestamp_SHA1_size_match": true,
+    "expected_title": "File:V0-L-beldonseye-2018-07-08.gif",
+    "expected_upload_timestamp": "2026-11-12T23:23:02Z",
+    "fresh_API_reported_serving_URI": "https://swccg.com/wiki/images/9/98/V0-L-beldonseye-2018-07-08.gif",
+    "fresh_actual_version_metadata": {
+      "descriptionshorturl": "https://swccg.com/wiki/index.php?curid=102407",
+      "descriptionurl": "https://swccg.com/wiki/File:V0-L-beldonseye-2018-07-08.gif",
+      "height": 490,
+      "mime": "image/gif",
+      "sha1": "39fa694d9f6fccf2cd1e07c82cb2ead63505a92b",
+      "size": 110052,
+      "timestamp": "2026-11-12T23:23:02Z",
+      "url": "https://swccg.com/wiki/images/9/98/V0-L-beldonseye-2018-07-08.gif",
+      "width": 350
+    },
+    "identity_basis": "Exact typed prior independent receipt plus complete local native body hashes and fresh title/timestamp/SHA1/size version metadata; historical URI is retained verbatim, serving URI is recorded separately.",
+    "registered_historical_URI": "https://wiki.swccg.com/images/9/98/V0-L-beldonseye-2018-07-08.gif",
+    "serving_URI_HTTP_GET_performed_in_this_run": false
+  },
+  "full_body": {
+    "bytes": 110052,
+    "complete_original_rehashed": true,
+    "fragment_or_excerpt_used": false,
+    "local_public_native_path": "C:\\Users\\gythe\\Documents\\Codex\\2026-11-06\\implement-legacy-lane-d-block-5\\work\\image382\\data\\offline-originals\\objects\\ad\\adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+    "sha1": "39fa694d9f6fccf2cd1e07c82cb2ead63505a92b",
+    "sha256": "adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701"
+  },
+  "generated_at_UTC": "2026-11-19T03:09:12.395978+00:00",
+  "network_body_fetch_performed_in_this_run": false,
+  "per_card_semantic_checks_separate": true,
+  "private_proofs_or_registry_records_read": false,
+  "public_input_whitelist_sha256": "7b8bccf16c847896008de0a325bc9c82c9baebc474a996978272628bb96e97a3",
+  "schema_version": 1,
+  "source": {
+    "bytes": 110052,
+    "sha256": "adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+    "url": "https://wiki.swccg.com/images/9/98/V0-L-beldonseye-2018-07-08.gif"
+  },
+  "source_snapshot_URI_identity_basis": null,
+  "status": "verified_public_native_source_identity",
+  "subject": {
+    "bytes": 110052,
+    "content_sha256": "adb275658405a5c156976d0b365cd7519602f7d3ca0f89652b5fc94eb1947701",
+    "kind": "wiki_file_version",
+    "original_version_url": "https://wiki.swccg.com/images/9/98/V0-L-beldonseye-2018-07-08.gif",
+    "title": "File:V0-L-beldonseye-2018-07-08.gif",
+    "upload_timestamp": "2026-11-12T23:23:02Z"
+  },
+  "verification_kind": "independent public-native source/version verification",
+  "whitelisted_registration_object_id": "f38cd50c2b37b661c2b3505c362a4898f1498adbf7b271be18eeff729175fa21"
+}
