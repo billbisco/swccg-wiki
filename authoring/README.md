@@ -6,6 +6,29 @@ The public backup of encyclopedia text is `../pages/`. Refresh that from product
 
 `generate_decktech.py`, `generate_gpn_decks.py` and their inputs (`scomp-*.json`, `pc-cardlists/`, `card_title_map.json`, `decktech-inventory.json`, `decktech-posts/`, `gpn-decks/`, `gemp-import-gpn/`) live here. Verified 2026-10-10: running `python generate_decktech.py` from this folder reproduces the live 22701 pages byte-for-byte. Outputs go to `pages/` (the backup copy of live pages is `../pages/`). Apply on the VPS with `apply-tsv.sh` (scp the TSV + pages first). Keep this folder in sync with the Windows worktree `code-swccg1/wiki` when either side changes a generator.
 
+## New photographs: literal descriptions and deferred review
+
+For a new photograph, use `Wiki.upload_new(path, filename, text, comment, review=False)`
+from `wiki_api_apply.py`. It sends the approved File description through the upload
+API's `text` parameter, preserving a `== Description ==` opening without an added
+heading. The default `review=True` keeps existing callers' behavior. Both modes
+refuse an existing title and leave upload warnings intact; neither permits overwrite.
+
+Use your own verified account and the canonical persistent-cookie sign-in helper.
+Before uploading, check the exact native bytes, description, source and independent
+backup against the approved publication scope. With `review=False`, a successful
+upload is **not completed publication**: verify the actual native version and saved
+text, independently back them up, register the originals, run the live publication
+gates, then explicitly review the exact revision and verify its public rendering.
+Only the explicit review step is deferred; the other upload safeguards remain.
+
+The official `maintenance/run.php importImages` always passes descriptions through
+`SpecialUpload::getInitialPageText`. On this wiki that prepends `== Summary ==`
+unless the exact header already occurs. Neither `--comment-ext`, `--comment-file`
+nor `--summary` disables it; the dry run prints the description before that
+transformation. Use the existing literal-text API route for Description-first photo
+pages, without changing MediaWiki messages/core or inserting hidden header tricks.
+
 ## Style lint (run before saving any article)
 
 `authoring/style_lint.py` checks wikitext against [[SWCCG Wiki:Style guide]]. Prose checks read the body only (refs, templates, files, galleries, categories, See also/References are stripped; External links is checked, minus its link titles). Citation checks read the whole page.

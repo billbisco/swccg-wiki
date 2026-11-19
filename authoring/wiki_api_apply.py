@@ -111,8 +111,13 @@ class Wiki:
         u = d["upload"]
         return u.get("result", "?") + (" (unchanged)" if "duplicate" in json.dumps(u.get("warnings", {})) else "")
 
-    def upload_new(self, path: Path, filename: str, text: str, comment: str) -> str:
-        """Upload under a NEW name only: no ignorewarnings, refuses if the file exists."""
+    def upload_new(self, path: Path, filename: str, text: str, comment: str, *,
+                   review: bool = True) -> str:
+        """Upload literal text under a NEW name only; never ignore warnings.
+
+        Pass review=False when the uploaded original must be verified and registered
+        before the caller runs its publication gate and explicitly reviews the File.
+        """
         p = self.get(action="query", titles="File:" + filename)["query"]["pages"][0]
         if not p.get("missing"):
             return "ERROR exists: refusing to overwrite"
@@ -131,7 +136,7 @@ class Wiki:
         if u.get("result") != "Success":
             return f"ERROR {u.get('result')}: {json.dumps(u.get('warnings', {}))[:200]}"
         self.post(action="purge", titles="File:" + filename, forcelinkupdate="1")
-        return "Success" + self.review("File:" + filename)
+        return "Success" + (self.review("File:" + filename) if review else "")
 
     def purge(self, *titles: str) -> dict:
         return self.post(action="purge", titles="|".join(titles), forcelinkupdate="1")
