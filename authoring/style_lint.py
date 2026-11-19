@@ -108,8 +108,40 @@ def _mask_ordered_group_intro(caption):
     return ''.join(masked)
 
 
+def _mask_tournament_stages(caption):
+    """Treat Top N at a dated event link as a stage, not a location."""
+    protected = [m.span() for m in re.finditer(
+        r'<!--.*?(?:-->|\Z)|<nowiki\b(?![^>]*?/\s*>)[^>]*>.*?(?:</nowiki\s*>|\Z)',
+        caption, re.I | re.S)]
+    masked = list(caption)
+    for link in IDENTIFICATION_SUBJECT.finditer(caption):
+        target, label = link.group('target', 'label')
+        if (not re.match(r'(?:19|20)[0-9]{2}[ _]+\S', target.strip())
+                or re.search(r'[<>{}]', target)
+                or (label is not None and not label.strip())
+                or (label is not None and re.search(r'[<>{}]', label))
+                or any(start <= link.start() < end for start, end in protected)
+                or (link.start() and caption[link.start() - 1] == '[')
+                or (link.end() < len(caption) and caption[link.end()] == ']')):
+            continue
+        # A descriptive link label (or its displayed article title) may end in
+        # the stage; alternatively, the stage can follow the event link.
+        start, end = link.span('label' if label is not None else 'target')
+        stage = re.search(r'\b(?P<top>Top)[ \t]+[1-9][0-9]*[ \t]*\.?[ \t]*\Z',
+                          caption[start:end], re.I)
+        if stage:
+            a, b = stage.span('top')
+            masked[start + a:start + b] = ' ' * (b - a)
+        stage = re.match(r'[ \t]+(?P<top>Top)[ \t]+[1-9][0-9]*\b(?!\.[0-9])',
+                         caption[link.end():], re.I)
+        if stage:
+            a, b = stage.span('top')
+            masked[link.end() + a:link.end() + b] = ' ' * (b - a)
+    return ''.join(masked)
+
+
 def caption_description_text(caption):
-    """Exclude a subject position or a counted, linked group identification intro.
+    """Exclude linked positions, counted group intros and dated-event stages.
 
     Word limits still use the complete caption; source accuracy is checked by
     the publisher, not inferred from this syntactic allowance.
@@ -127,7 +159,8 @@ def caption_description_text(caption):
         start, end = (offset - match.start() for offset in match.span('side'))
         return match.group(0)[:start] + ' ' * (end - start) + match.group(0)[end:]
 
-    return plain_caption(IDENTIFICATION_POSITION.sub(mask_side, _mask_ordered_group_intro(caption)))
+    identification = _mask_ordered_group_intro(_mask_tournament_stages(caption))
+    return plain_caption(IDENTIFICATION_POSITION.sub(mask_side, identification))
 
 def fetch(title, n=2):
     q = urllib.parse.urlencode({"action": "query", "titles": title, "prop": "revisions", "rvprop": "content|ids",
