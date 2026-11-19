@@ -10,6 +10,29 @@ For every image upload or description edit, follow the [Style guide — Image Fi
 
 `generate_decktech.py`, `generate_gpn_decks.py` and their inputs (`scomp-*.json`, `pc-cardlists/`, `card_title_map.json`, `decktech-inventory.json`, `decktech-posts/`, `gpn-decks/`, `gemp-import-gpn/`) live here. Verified 2026-10-10: running `python generate_decktech.py` from this folder reproduces the live 22701 pages byte-for-byte. Outputs go to `pages/` (the backup copy of live pages is `../pages/`). Apply on the VPS with `apply-tsv.sh` (scp the TSV + pages first). Keep this folder in sync with the Windows worktree `code-swccg1/wiki` when either side changes a generator.
 
+## New photographs: literal descriptions and deferred review
+
+For a new photograph, use `Wiki.upload_new(path, filename, text, comment, review=False)`
+from `wiki_api_apply.py`. It sends the approved File description through the upload
+API's `text` parameter, preserving a `== Description ==` opening without an added
+heading. The default `review=True` keeps existing callers' behavior. Both modes
+refuse an existing title and leave upload warnings intact; neither permits overwrite.
+
+Use your own verified account and the canonical persistent-cookie sign-in helper.
+Before uploading, check the exact native bytes, description, source and independent
+backup against the approved publication scope. With `review=False`, a successful
+upload is **not completed publication**: verify the actual native version and saved
+text, independently back them up, register the originals, run the live publication
+gates, then explicitly review the exact revision and verify its public rendering.
+Only the explicit review step is deferred; the other upload safeguards remain.
+
+The official `maintenance/run.php importImages` always passes descriptions through
+`SpecialUpload::getInitialPageText`. On this wiki that prepends `== Summary ==`
+unless the exact header already occurs. Neither `--comment-ext`, `--comment-file`
+nor `--summary` disables it; the dry run prints the description before that
+transformation. Use the existing literal-text API route for Description-first photo
+pages, without changing MediaWiki messages/core or inserting hidden header tricks.
+
 ## Style lint (run before saving any article)
 
 `authoring/style_lint.py` checks wikitext against [[SWCCG Wiki:Style guide]]. Prose checks read the body only (refs, templates, files, galleries, categories, See also/References are stripped; External links is checked, minus its link titles). Citation checks read the whole page.
@@ -19,15 +42,15 @@ python3 authoring/style_lint.py "Page title"                 # live page vs its 
 python3 authoring/style_lint.py draft.wiki --title "Page"     # local draft vs live page
 ```
 
-Flags: banned hedge/meta words (note, research, pending, inferred, reportedly, appears to, probably, unclear, â€¦), headings named Gaps/Notes/Research/Open questions/Sources, captions over 12 words or describing the image (shows, visible, left, right, pictured, â€¦). No sentence- or quote-length limit (Bill, 2026-10-26): clarity and full understanding come first. Prints body word count vs previous revision. Exits 1 on any flag; fix all flags before saving. No login needed.
+Flags: banned hedge/meta words (note, research, pending, inferred, reportedly, appears to, probably, unclear, …), headings named Gaps/Notes/Research/Open questions/Sources, captions over 12 words or describing the image (shows, visible, left, right, pictured, …). No sentence- or quote-length limit (Bill, 2026-10-26): clarity and full understanding come first. Prints body word count vs previous revision. Exits 1 on any flag; fix all flags before saving. No login needed.
 
 Exemptions (2026-10-14): `{| |}` tables are stripped before the banned-word and word-count checks; quoted speech is not scanned for banned words; list/sub-pages (title contains `/` or body starts "This page lists") may say "this page"/"we"; `== Sources ==` is allowed on decklist, event, card and set-table pages only.
 
 Citation checks (Bill, 2026-10-20):
 - `ARCHIVE`: every external URL on the page (`<ref>`, list items, body, tables, External links) needs a Preserved copy, a `https://web.archive.org/web/<14 digits>/<url>` or `https://archive.org/details/...` link. A URL inside a `<ref>` needs the copy inside that same `<ref>`. A URL elsewhere passes if its own line has a copy or the same URL has a Wayback copy anywhere on the page. Skipped: `wiki.swccg.com`, `swccg.com/images/` and archive links. **Exempt: the Main Page** (Chief, 2026-10-20): its body links are navigation to live resources, not citations, and Preserved copies stay out of body text. Lint it by title (`style_lint.py "Main Page"` or `--title "Main Page"`); a draft file without `--title` is still checked. Its URLs are still queued in `ops/wayback/queue.txt` (Cloudflare hosts via an existing capture or route C) so copies exist.
-- `EMAIL`: personal email addresses anywhere in the page text, including `mailto:`. Passes: `@decipher.com`, Players Committee role addresses (`rules@starwarsccg.org`, â€¦), and a line carrying an `<!-- email-ok: reason -->` comment for a defunct address Bill wants kept.
+- `EMAIL`: personal email addresses anywhere in the page text, including `mailto:`. Passes: `@decipher.com`, Players Committee role addresses (`rules@starwarsccg.org`, …), and a line carrying an `<!-- email-ok: reason -->` comment for a defunct address Bill wants kept.
 - `REF`: a `<ref>` with no URL and fewer than two words of source text (e.g. `<ref>None</ref>`).
-- `HEADING 'Sources'`: deck/event pages are detected by category, from the wikitext plus the live page's categories when linting by title: Decklists, Dark Side decks, Light Side decks, GEMP importable decklists, Tournaments, Championships, World Championships, Events, Retro League. Card pages (pages using `{{Card}}`, or in Category:Cards) and set-table pages (Category:Sets or any `â€¦ sets` category such as Decipher sets, Virtual Legacy sets, Current Virtual sets) may also keep Sources (Bill, 2026-10-20: a Sources list is only for pages that transcribe a single source; References are for specific claims on every page, and a source already cited as a reference is not repeated in Sources unless it is the source for the whole page). Every other page cites in References. Only a heading written in the page's own wikitext fails (Chief, 2026-10-20): a heading inside a template's `<includeonly>` (e.g. `== Sources ==` in [[Template:Card]]) is template output, so it is exempt on the template page, and card pages that only pass `|sources=` to the template pass.
+- `HEADING 'Sources'`: deck/event pages are detected by category, from the wikitext plus the live page's categories when linting by title: Decklists, Dark Side decks, Light Side decks, GEMP importable decklists, Tournaments, Championships, World Championships, Events, Retro League. Card pages (pages using `{{Card}}`, or in Category:Cards) and set-table pages (Category:Sets or any `… sets` category such as Decipher sets, Virtual Legacy sets, Current Virtual sets) may also keep Sources (Bill, 2026-10-20: a Sources list is only for pages that transcribe a single source; References are for specific claims on every page, and a source already cited as a reference is not repeated in Sources unless it is the source for the whole page). Every other page cites in References. Only a heading written in the page's own wikitext fails (Chief, 2026-10-20): a heading inside a template's `<includeonly>` (e.g. `== Sources ==` in [[Template:Card]]) is template output, so it is exempt on the template page, and card pages that only pass `|sources=` to the template pass.
 
 Banned words skip names (Chief, 2026-10-20): `[[link text]]`, `[url link titles]`, templates such as `{{CardLink|...}}` and printed card titles from `authoring/card_title_map.json` (each half of a combo or Objective, with `(V)`/`(Dark)`-style qualifiers dropped) are not scanned, so a card like *We Have A Prisoner* is not read as "we". The editor's own prose around them is still checked. The page's own bold name is skipped too (Chief, 2026-10-20): the bold name opening the lead (two or more words, or equal to the page title), any bold span equal to the page title, and the title on a decklist title line (`'''Deck title:''' ...`, `deck title '''...'''`), so `'''2007 Worlds Day 1 Adam Howland LS We'll Handle This'''` is not read as "we"; a lone bold word and ordinary prose are still checked.
 
