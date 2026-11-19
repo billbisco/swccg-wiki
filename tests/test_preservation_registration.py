@@ -1,5 +1,6 @@
 import copy
 import hashlib
+import io
 import json
 import sys
 import tempfile
@@ -14,7 +15,7 @@ from preservation_contracts import (object_id, registration_job_id, registration
                                     source_backup_subject, validate_backup_receipt,
                                     validate_registration_identity, validate_source_representation)
 from preservation_enqueue import deliver
-from preservation_registry import SERVER_OWNER, export_records, promote_ready, register
+from preservation_registry import SERVER_OWNER, export_records, main, promote_ready, register
 
 
 def fixture(title="File:one.png", timestamp="2026-11-14T00:00:00Z", ready=True):
@@ -115,6 +116,100 @@ class RegistrationTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
+
+    def test_scoped_export_matches_full_rows_with_latest_generation_and_promotion(self):
+        first = register(self.root, fixture())
+        second = register(self.root, fixture("File:two.png"))
+        revised = fixture(ready=False)
+        revised["generation"] = 1
+        register(self.root, revised)
+        promote_ready(self.root, queued_urls=set(), stage_budget_bytes=1000,
+                      limit=1, owner=SERVER_OWNER, check_public=lambda _: True,
+                      check_approval=lambda _: True,
+                      enqueue=lambda url, job: dict(queued=True, url=url, job_id=job))
+        full = export_records(self.root)
+        self.assertEqual(full, export_records(self.root, object_ids=[first["object_id"], second["object_id"]]))
+        for key in (first["object_id"], second["object_id"]):
+            scoped = export_records(self.root, object_ids=(item for item in [key, key]))
+            self.assertEqual(dict(full, objects=[row for row in full["objects"] if row["object_id"] == key]), scoped)
+        self.assertEqual({"awaiting_stage", "queued"}, {row["state"] for row in full["objects"]})
+        self.assertEqual([1], [row["generation"] for row in full["objects"] if row["object_id"] == first["object_id"]])
+
+    def test_scoped_export_never_opens_unrelated_malformed_records_or_receipts(self):
+        selected = register(self.root, fixture())
+        expected = export_records(self.root)
+        unrelated = register(self.root, fixture("File:unrelated.png"))
+        # A different payload also gives the unrelated object its own receipt paths.
+        broken = self.root / "requests" / ("c" * 64) / ("d" * 64) / "broken.json"
+        broken.parent.mkdir(parents=True)
+        broken.write_text("not JSON", encoding="utf-8")
+        other = self.root / unrelated["record"]
+        other.write_text("not JSON", encoding="utf-8")
+        owner = self.root / "owner-jobs" / (("c" * 64) + ".json")
+        owner.parent.mkdir(parents=True)
+        owner.write_text("not JSON", encoding="utf-8")
+        promotion = self.root / "promotions" / (("c" * 64) + ".json")
+        promotion.parent.mkdir(parents=True)
+        promotion.write_text("not JSON", encoding="utf-8")
+        real_open = Path.open
+        opened = []
+
+        def track_open(path, *args, **kwargs):
+            opened.append(path)
+            self.assertNotIn(path, (broken, other, owner, promotion))
+            return real_open(path, *args, **kwargs)
+
+        with patch.object(Path, "open", track_open):
+            self.assertEqual(expected, export_records(self.root, object_ids=[selected["object_id"]]))
+            self.assertEqual(dict(expected, objects=[]), export_records(self.root, object_ids=[]))
+        self.assertIn(self.root / selected["record"], opened)
+        with self.assertRaises(ValueError):
+            export_records(self.root)
+
+    def test_scoped_export_preserves_actual_owner_receipt_application(self):
+        from preservation_owner_receipts import store_event
+        request = fixture()
+        selected = register(self.root, request)
+        register(self.root, fixture("File:two.png"))
+        event = dict(source_sha256=request["source"]["sha256"],
+                     source_bytes=request["source"]["bytes"], job_id=selected["job_id"],
+                     approved_object_ids=[selected["object_id"]], state="submitted",
+                     reason="synthetic owner submission", accepted_job_id="fixture-job")
+        store_event(self.root, event)
+        full = export_records(self.root)
+        expected = next(row for row in full["objects"] if row["object_id"] == selected["object_id"])
+        self.assertTrue(expected["submitted"])
+        self.assertEqual(event, expected["owner_job_receipt"])
+        self.assertEqual(dict(full, objects=[expected]), export_records(self.root, object_ids=[selected["object_id"]]))
+
+    def test_export_scope_validation_happens_before_any_record_read(self):
+        for ids in ("a" * 64, ["a" * 63], ["A" * 64], ["g" * 64],
+                    ["../" + "a" * 64], [None], [True], ["a" * 64 + "\n"]):
+            with self.subTest(ids=ids), patch.object(Path, "open", side_effect=AssertionError("unexpected read")):
+                with self.assertRaises(ValueError):
+                    export_records(self.root, object_ids=ids)
+        self.assertEqual([], export_records(self.root, object_ids=[])["objects"])
+        found = register(self.root, fixture())
+        for ids in (["f" * 64], [found["object_id"], "f" * 64]):
+            with self.subTest(ids=ids), self.assertRaisesRegex(ValueError, "requested object IDs not found: " + "f" * 64):
+                export_records(self.root, object_ids=ids)
+
+    def test_cli_scoped_export_and_missing_scope_fail_without_partial_output(self):
+        key = register(self.root, fixture())["object_id"]
+        argv = ["preservation_registry.py", "export", "--registry", str(self.root)]
+        for scope in ([], ["--object-id", key, "--object-id", key]):
+            with patch.object(sys, "argv", argv + scope), patch.object(sys, "stdout", io.StringIO()) as output:
+                self.assertEqual(0, main())
+                self.assertEqual(export_records(self.root), json.loads(output.getvalue()))
+        for scope in (["--object-id", "f" * 64], ["--object-id", key, "--object-id", "invalid"]):
+            with patch.object(sys, "argv", argv + scope), patch.object(sys, "stdout", io.StringIO()) as output:
+                with self.assertRaises(ValueError):
+                    main()
+                self.assertEqual("", output.getvalue())
+        with patch.object(sys, "argv", [argv[0], "register", *argv[2:], "--object-id", key]), patch.object(sys, "stderr", io.StringIO()):
+            with self.assertRaises(SystemExit) as error:
+                main()
+            self.assertEqual(2, error.exception.code)
 
     def test_private_work_receipt_registers_without_submitting(self):
         request = fixture()

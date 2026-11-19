@@ -56,7 +56,18 @@ registration program; it has no archive submission endpoint. The server CLI is:
 ```
 python3 ops/preservation_registry.py register --registry PATH < REQUEST.json
 python3 ops/preservation_registry.py export --registry PATH
+python3 ops/preservation_registry.py export --registry PATH --object-id EXACT_ID --object-id ANOTHER_ID
 ```
+
+For a minimum-scope export, repeat `--object-id` for each required registration
+object ID (exactly 64 lowercase hexadecimal characters). The Python API accepts
+`export_records(registry, object_ids=...)`. Filtering occurs before opening
+unrelated request records or their receipts; selected rows retain the same
+schema, ordering and owner state as a full export. Duplicate IDs are deduplicated.
+Invalid IDs or any missing requested ID fail the export without printing a
+partial result. An explicitly empty API scope returns no objects. Omitting the
+scope retains the existing full export behavior. This option does not change
+registration, approval or queue promotion.
 
 Each request has `schema_version: 1`, subject, source, readiness, owner,
 continuation, approval_scope, backup_receipt and, where needed, a separate
