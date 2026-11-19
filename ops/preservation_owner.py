@@ -19,6 +19,7 @@ from preservation_registry import (SERVER_OWNER, advance_readiness, atomic_json,
                                    iter_records, object_state, source_receipt)
 from preservation_owner_receipts import load_event, store_event
 from wayback_control import Paused
+from preservation_suppression import suppressed_source, suppressed_url
 
 PUBLIC_STAGE_BUDGET = 32 * 1024 * 1024
 STAGE_SCAN_LIMIT = 50000
@@ -66,6 +67,8 @@ class OwnerAdapter:
     def _eligible(self, entry):
         request = entry["request"]
         key = registration_object_id(request["subject"], request["source"])
+        if suppressed_source(self.registry, request["source"]):
+            return False
         # Registration owner names the client's continuation owner. Capture
         # authority is the active Control lock plus the exact approved cohort.
         adopted = load_event(self.registry, request["source"], object_id=key,
@@ -120,6 +123,8 @@ class OwnerAdapter:
     def _stage(self, entry, deadline):
         request = entry["request"]
         source = request["source"]
+        if suppressed_source(self.registry, source):
+            return False
         if source.get("representation") != "checked_self_contained_snapshot":
             if source.get("representation", "original") != "original" or not self._check_public(source):
                 return False
@@ -177,11 +182,15 @@ class OwnerAdapter:
         return advanced["state"] == "ready"
 
     def _check_public(self, source):
+        if suppressed_source(self.registry, source):
+            return False
         actual = self.worker.fetch(source["url"])
         return (actual.get("status") == 200 and actual.get("sha256") == source["sha256"] and
                 actual.get("size") == source["bytes"])
 
     def _enqueue(self, url):
+        if suppressed_url(self.registry, url):
+            raise PermissionError("exact withdrawn source cannot be queued")
         def write():
             path = self.repository / self.worker.QUEUE
             text = path.read_text(encoding="utf-8") if path.exists() else ""

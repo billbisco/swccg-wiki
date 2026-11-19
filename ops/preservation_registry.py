@@ -305,6 +305,8 @@ def export_records(registry: Path, *, object_ids=None) -> dict:
                 row["queue_receipt"] = promotion["queue_receipt"]
         from preservation_owner_receipts import apply_export
         apply_export(row, registry)
+        from preservation_suppression import apply_suppression_export
+        apply_suppression_export(row, registry)
         rows.append(row)
     if object_ids is not None:
         missing = object_ids - {row["object_id"] for row in rows}
@@ -333,6 +335,9 @@ def promote_ready(
     used = 0
     for entry in records(registry):
         request = entry["request"]
+        from preservation_suppression import suppressed_source
+        if suppressed_source(registry, request["source"]):
+            continue
         if object_state(request) != "ready":
             continue
         if not check_approval(request):
