@@ -69355,10 +69355,10 @@
  },
  "https://github.com/swccgpc/holotable/blob/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/CloudCity-Light/large/haven.gif": {
   "capture": "https://web.archive.org/web/20261119012127/https://github.com/swccgpc/holotable/blob/022435b7929e4de26dafbcb1de2ec1d6d04d2153/Images-HT/starwars/CloudCity-Light/large/haven.gif",
-  "error": "<urlopen error [Errno 104] Connection reset by peer>",
-  "last": "2026-11-19T10:05:31Z",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-19T15:22:31Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://github.com/swccgpc/holotable/blob/48d57c17d760f4bb25b4d55459f709eef5f8cb82/Images-HT/starwars/CloudCity-Light/hires/haven.png": {
   "capture": "https://web.archive.org/web/20261119012141/https://github.com/swccgpc/holotable/blob/48d57c17d760f4bb25b4d55459f709eef5f8cb82/Images-HT/starwars/CloudCity-Light/hires/haven.png",
@@ -90098,39 +90098,67 @@
   }
  },
  "https://swccg.com/snapshots/native/5a5298ce088133471e53d7d04225880689f8dde1fdd5e02302ebae2a9b1582e8.txt": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261119150117/https://swccg.com/snapshots/native/5a5298ce088133471e53d7d04225880689f8dde1fdd5e02302ebae2a9b1582e8.txt",
   "job_id": "spn2-44a1f6460674b26951f3443d551b783424346f69",
-  "last": "2026-11-19T15:01:03Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-19T15:22:30Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-19T15:22:30Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://swccg.com/snapshots/native/a23538c0cd10ddaa0e7547742806c3bdd314016f5385eb4b2fe5385a403d4882.doc": {
-  "capture": "",
-  "job_id": "spn2-1a2358f3c97c267bb23253a884212159f549adde",
-  "last": "2026-11-19T15:02:03Z",
+  "capture": "https://web.archive.org/web/20261119150228/https://swccg.com/snapshots/native/a23538c0cd10ddaa0e7547742806c3bdd314016f5385eb4b2fe5385a403d4882.doc",
+  "last": "2026-11-19T15:22:27Z",
   "status": "pending",
   "tries": 1
  },
  "https://swccg.com/snapshots/native/bacfa72313c9f56db91b2c62d0d8798cff1ba9f0db8172afb0818c87ab092f56.txt": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261119150305/https://swccg.com/snapshots/native/bacfa72313c9f56db91b2c62d0d8798cff1ba9f0db8172afb0818c87ab092f56.txt",
   "job_id": "spn2-43af09cf11ee701b291f0252853ab185fc35e3fc",
-  "last": "2026-11-19T15:03:04Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-19T15:22:24Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-19T15:22:24Z",
+   "bytes": 5109,
+   "capture_id": "https://web.archive.org/web/20261119150305id_/https://swccg.com/snapshots/native/bacfa72313c9f56db91b2c62d0d8798cff1ba9f0db8172afb0818c87ab092f56.txt",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bacfa72313c9f56db91b2c62d0d8798cff1ba9f0db8172afb0818c87ab092f56"
+  }
  },
  "https://swccg.com/snapshots/native/e30bb97d8c226c35e31d82856249bb250d8a894112ab9d1938abb76818151951.txt": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261119150406/https://swccg.com/snapshots/native/e30bb97d8c226c35e31d82856249bb250d8a894112ab9d1938abb76818151951.txt",
   "job_id": "spn2-0b14aa51d9eb6a00a27af99838e6a471f6114176",
-  "last": "2026-11-19T15:04:05Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-19T15:22:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-19T15:22:17Z",
+   "bytes": 5227,
+   "capture_id": "https://web.archive.org/web/20261119150406id_/https://swccg.com/snapshots/native/e30bb97d8c226c35e31d82856249bb250d8a894112ab9d1938abb76818151951.txt",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e30bb97d8c226c35e31d82856249bb250d8a894112ab9d1938abb76818151951"
+  }
  },
  "https://swccg.com/snapshots/native/e80ebfb1b29530ae9eccd9c19c4f4943d042c8c96b8c0019dce15410748aa675.txt": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261119150518/https://swccg.com/snapshots/native/e80ebfb1b29530ae9eccd9c19c4f4943d042c8c96b8c0019dce15410748aa675.txt",
   "job_id": "spn2-c8d05959e27314bb3da11a5216b6af68a96759ef",
-  "last": "2026-11-19T15:05:08Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-19T15:22:13Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-19T15:22:13Z",
+   "bytes": 5008,
+   "capture_id": "https://web.archive.org/web/20261119150518id_/https://swccg.com/snapshots/native/e80ebfb1b29530ae9eccd9c19c4f4943d042c8c96b8c0019dce15410748aa675.txt",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e80ebfb1b29530ae9eccd9c19c4f4943d042c8c96b8c0019dce15410748aa675"
+  }
  },
  "https://swccg.com/snapshots/pc/100card.html": {
   "capture": "https://web.archive.org/web/20261025112200/https://swccg.com/snapshots/pc/100card.html",
