@@ -70,6 +70,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gitsync import commit_and_push, reset_to_origin  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from preservation_owner import OwnerAdapter, load_allowed_objects  # noqa: E402
+from preservation_suppression import suppressed_url  # noqa: E402
 from wayback_control import Busy, Control, Paused, atomic_json  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
@@ -304,6 +305,8 @@ def save_anon(url: str) -> str:
 
 def submit_capture(url: str, entry: dict | None, session: dict) -> dict:
     """Rejected authentication requires repair, never a new anonymous retry lane."""
+    if ACTIVE_CONTROL and suppressed_url(ACTIVE_CONTROL.directory / "registry", url):
+        raise PermissionError("exact withdrawn source cannot be submitted")
     if session["authenticated"]:
         try:
             return spn2_submit(url, force=True) if (entry or {}).get("recapture") else spn2_submit(url)
@@ -1299,6 +1302,8 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     for url in urls:
         if time.monotonic() > deadline - 90 or errors_in_row >= 5:
             break
+        if suppressed_url(control.directory / "registry", url):
+            continue
         if banned(url):
             continue
         if MAX_SUBMITS_PER_RUN and save_attempts >= MAX_SUBMITS_PER_RUN:
