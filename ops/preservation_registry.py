@@ -268,10 +268,17 @@ def records(registry: Path) -> list[dict]:
     return list(iter_records(registry))
 
 
-def export_records(registry: Path) -> dict:
+def export_records(registry: Path, *, object_ids=None) -> dict:
     """A caller may Git-pin this bounded metadata export; private staging stays private."""
+    if object_ids is not None:
+        if isinstance(object_ids, (str, bytes)):
+            raise ValueError("object_ids must be an iterable of exact SHA-256 object IDs")
+        object_ids = tuple(object_ids)
+        if any(not is_sha256(key) for key in object_ids):
+            raise ValueError("object IDs must be exact lowercase 64-character hex strings")
+        object_ids = set(object_ids)
     rows = []
-    for entry in records(registry):
+    for entry in iter_records(registry, object_ids=object_ids):
         request = entry["request"]
         row = {key: request[key] for key in (
             "subject", "source", "readiness", "owner", "continuation", "approval_scope")}
@@ -299,6 +306,10 @@ def export_records(registry: Path) -> dict:
         from preservation_owner_receipts import apply_export
         apply_export(row, registry)
         rows.append(row)
+    if object_ids is not None:
+        missing = object_ids - {row["object_id"] for row in rows}
+        if missing:
+            raise ValueError("requested object IDs not found: " + ", ".join(sorted(missing)))
     return {"schema_version": 1, "objects": rows, "submission_owner": SERVER_OWNER}
 
 
@@ -359,14 +370,18 @@ def main() -> int:
     parser.add_argument("command", choices=("register", "export"))
     parser.add_argument("--registry", type=Path, required=True,
                         help="existing server-local control/inbox directory, outside Git")
+    parser.add_argument("--object-id", action="append", dest="object_ids",
+                        help="export only this exact object ID; repeat for multiple objects")
     args = parser.parse_args()
+    if args.command != "export" and args.object_ids is not None:
+        parser.error("--object-id is only supported for export")
     if args.command == "register":
         raw = sys.stdin.buffer.read(MAX_REQUEST_BYTES + 1)
         if len(raw) > MAX_REQUEST_BYTES:
             raise ValueError("registration exceeds 1 MiB metadata cap")
         result = register(args.registry, json.loads(raw))
     else:
-        result = export_records(args.registry)
+        result = export_records(args.registry, object_ids=args.object_ids)
     print(json.dumps(result, ensure_ascii=False, sort_keys=True))
     return 0
 
