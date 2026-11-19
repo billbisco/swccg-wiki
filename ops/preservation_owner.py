@@ -10,16 +10,19 @@ import json
 import os
 import shutil
 import time
+import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 
 from preservation_backups import independent_receipt, payload_hashes
-from preservation_contracts import canonical_bytes, registration_object_id, registration_job_id
+from preservation_contracts import (canonical_bytes, registration_object_id, registration_job_id,
+                                    validate_backup_receipt)
 from preservation_registry import (SERVER_OWNER, advance_readiness, atomic_json,
                                    iter_records, object_state, source_receipt)
 from preservation_owner_receipts import load_event, store_event
 from wayback_control import Paused
 from preservation_suppression import suppressed_source, suppressed_url
+from preservation_native import NATIVE_REPRESENTATION, validate_native_mirror, validate_native_payload
 
 PUBLIC_STAGE_BUDGET = 32 * 1024 * 1024
 STAGE_SCAN_LIMIT = 50000
@@ -106,48 +109,85 @@ class OwnerAdapter:
                 "approved_object_ids": approved_object_ids or [registration_object_id(row["request"]["subject"], row["request"]["source"]) for row in entries],
                 "state": state, "reason": reason, "owner": SERVER_OWNER, **details}
 
-    def _stage_usage(self):
+    def _stage_inventory(self, *, details=False):
         total, count = 0, 0
+        rows = []
         root = self.worker.snapshot_root()
         if not root.exists():
-            return 0
+            return {"files": 0, "bytes": 0, "records": []}
         for parent, directories, files in os.walk(root, followlinks=False):
             directories[:] = [name for name in directories if not (Path(parent) / name).is_symlink()]
             for name in files:
                 count += 1
                 if count > STAGE_SCAN_LIMIT:
                     raise ValueError("public staging inventory exceeds its bounded scan budget")
-                total += (Path(parent) / name).stat().st_size
-        return total
+                path = Path(parent) / name
+                info = path.stat()
+                total += info.st_size
+                if details:
+                    rows.append({"path": path.relative_to(root).as_posix(), "bytes": info.st_size,
+                                 "mtime_ns": info.st_mtime_ns, "inode": info.st_ino})
+        return {"files": count, "bytes": total, "records": sorted(rows, key=lambda row: row["path"])}
 
-    def _stage(self, entry, deadline):
+    def _stage_usage(self):
+        return self._stage_inventory()["bytes"]
+
+    def _native_target_path(self, source):
+        errors = validate_native_mirror(source)
+        if errors:
+            raise ValueError("; ".join(errors))
+        relative = urllib.parse.urlsplit(source["url"]).path.removeprefix("/snapshots/")
+        namespace = self.worker.snapshot_root() / "native"
+        raw_target = self.worker.snapshot_root() / relative
+        if namespace.is_symlink() or raw_target.is_symlink():
+            raise ValueError("native public target cannot be a symlink")
+        target = self.worker.snapshot_file(source["url"])
+        if target is None:
+            raise ValueError("native target is outside the approved snapshot root")
+        return target
+
+    def _stage(self, entry, deadline, *, native_maintenance=False, advance=True,
+               native_stage_limit=None):
         request = entry["request"]
         source = request["source"]
         if suppressed_source(self.registry, source):
             return False
-        if source.get("representation") != "checked_self_contained_snapshot":
+        native = source.get("representation") == NATIVE_REPRESENTATION
+        if native_maintenance and not native:
+            raise ValueError("provider-paused maintenance is limited to checked native mirrors")
+        if native_stage_limit is not None and not (native and native_maintenance):
+            raise ValueError("one-shot stage allowance is limited to native maintenance")
+        if native:
+            native_target = self._native_target_path(source)
+        if source.get("representation") not in {"checked_self_contained_snapshot", NATIVE_REPRESENTATION}:
             if source.get("representation", "original") != "original" or not self._check_public(source):
                 return False
             advanced = advance_readiness(self.registry, entry,
                                          {"ready": True, "reason": "owner checked the already-public exact original payload", "stage_bytes": 0},
                                          owner=SERVER_OWNER)
             return advanced["state"] == "ready"
-        target = self.worker.snapshot_file(source["url"])
+        target = native_target if native else self.worker.snapshot_file(source["url"])
         if target is None:
             raise ValueError("capture target is not an approved snapshot path")
         if target.exists():
-            hashes = payload_hashes(target)
-            if hashes["sha256"] != source["sha256"] or hashes["bytes"] != source["bytes"]:
-                raise ValueError("existing public target has different bytes; do not overwrite peer staging")
+            if native:
+                validate_native_payload(source, target)
+                self.last_native_restore = {"method": "existing exact checked public target"}
+            else:
+                hashes = payload_hashes(target)
+                if hashes["sha256"] != source["sha256"] or hashes["bytes"] != source["bytes"]:
+                    raise ValueError("existing public target has different bytes; do not overwrite peer staging")
         else:
             if self.work == DEFAULT_WORK and not os.path.ismount(DEFAULT_WORK.parents[1]):
                 raise ValueError("approved persistent owner volume is not mounted; refusing root-disk fallback")
-            if self._stage_usage() + source["bytes"] > self.stage_budget:
+            budget = self.stage_budget if native_stage_limit is None else native_stage_limit
+            if self._stage_usage() + source["bytes"] > budget:
                 return False
             if time.monotonic() > deadline - 90:
                 return False
             self.work.mkdir(parents=True, exist_ok=True)
-            if shutil.disk_usage(self.work).free < source["bytes"] + DISK_RESERVE:
+            reserve = 50 * 1024 ** 3 if native else DISK_RESERVE
+            if shutil.disk_usage(self.work).free < source["bytes"] + reserve:
                 return False
             private = self.work / (source["sha256"] + ".restored")
             backup = source_receipt(request)
@@ -155,11 +195,18 @@ class OwnerAdapter:
             # validated source-payload receipt, never the wikitext receipt.
             temporary = None
             try:
-                self.readback(backup["subject"], backup["storage"], restore_to=private)
-                hashes = payload_hashes(private)
-                if hashes["sha256"] != source["sha256"] or hashes["bytes"] != source["bytes"]:
-                    raise ValueError("restored source differs from its approved capture payload")
-                if not self.healthy() or time.monotonic() > deadline - 60:
+                restored = self.readback(backup["subject"], backup["storage"], restore_to=private)
+                if native:
+                    if (validate_backup_receipt(restored, backup["subject"]) or
+                            restored["storage"] != backup["storage"]):
+                        raise ValueError("native mirror needs a genuine exact independent restore receipt")
+                    self.last_native_restore = {"method": "independent immutable backup restore", "receipt": restored}
+                    validate_native_payload(source, private)
+                else:
+                    hashes = payload_hashes(private)
+                    if hashes["sha256"] != source["sha256"] or hashes["bytes"] != source["bytes"]:
+                        raise ValueError("restored source differs from its approved capture payload")
+                if (not native_maintenance and not self.healthy()) or time.monotonic() > deadline - 60:
                     return False
                 target.parent.mkdir(parents=True, exist_ok=True)
                 # Publish a fully fsynced sibling across volumes without
@@ -176,14 +223,108 @@ class OwnerAdapter:
                 if temporary is not None:
                     temporary.unlink(missing_ok=True)
                 private.unlink(missing_ok=True)
+        if not advance:
+            return True
         readiness = {"ready": True, "reason": "owner restored the independently backed exact approved snapshot",
                      "stage_bytes": source["bytes"]}
         advanced = advance_readiness(self.registry, entry, readiness, owner=SERVER_OWNER)
         return advanced["state"] == "ready"
 
+    def _native_public_receipt(self, source):
+        """Only the approved native URL; no redirect or archive-provider request."""
+        errors = validate_native_mirror(source)
+        if errors:
+            raise ValueError("; ".join(errors))
+        status, headers, raw = self.worker._raw_get(source["url"], limit=source["bytes"] + 1)
+        headers = {key.lower(): value for key, value in headers.items()}
+        content_type = headers.get("content-type", "").split(";", 1)[0].strip().lower()
+        kind = source["provenance_equivalence"]["native_kind"]
+        allowed = {"application/octet-stream", "text/plain", "application/xml", "text/xml"} if kind == "gemp_deck_xml" else {"application/octet-stream", "application/msword"}
+        receipt = {"url": source["url"], "status": status, "content_type": content_type,
+                   "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw),
+                   "redirects_followed": False}
+        receipt["matches"] = (status == 200 and len(raw) == source["bytes"] and
+                              receipt["sha256"] == source["sha256"] and content_type in allowed)
+        return receipt
+
+    def stage_native_only(self, deadline, *, maintenance_allowance=None):
+        """Maintenance under the existing owner lock: stage/check, never enqueue/save.
+
+        Provider cooldowns remain unchanged. Only independently backed checked
+        native mirrors are eligible; ordinary paused prepare behavior is intact.
+        """
+        before = canonical_bytes(self.control.state)
+        entries = list(iter_records(self.registry, object_ids=self.allowed))
+        if any(entry["request"]["source"].get("representation") != NATIVE_REPRESENTATION for entry in entries):
+            raise ValueError("native-only maintenance cohort contains another representation")
+        for entry in entries:
+            self._native_target_path(entry["request"]["source"])
+        inventory_before = self._stage_inventory(details=True)
+        stage_limit = None
+        if maintenance_allowance is not None:
+            if not isinstance(maintenance_allowance, dict):
+                raise ValueError("one-shot native allowance must be an exact manifest")
+            a = maintenance_allowance
+            expected = {registration_object_id(entry["request"]["subject"], entry["request"]["source"]):
+                        {"sha256": entry["request"]["source"]["sha256"], "bytes": entry["request"]["source"]["bytes"],
+                         "url": entry["request"]["source"]["url"]} for entry in entries}
+            limit = a.get("new_bytes_limit")
+            if (a.get("schema_version") != 1 or not a.get("approval_scope") or
+                    a.get("objects") != expected or set(expected) != self.allowed or
+                    type(limit) is not int or not 0 < limit <= PUBLIC_STAGE_BUDGET or
+                    limit != sum(row["bytes"] for row in expected.values()) or
+                    a.get("legacy_baseline") != {key: inventory_before[key] for key in ("files", "bytes")}):
+                raise ValueError("one-shot native allowance differs from its exact frozen cohort/baseline/cap")
+            stage_limit = inventory_before["bytes"] + limit
+        results = []
+        for entry in entries:
+            if len(results) >= self.limit or time.monotonic() > deadline - 90:
+                break
+            source = entry["request"]["source"]
+            if not self._eligible(entry):
+                results.append({"url": source["url"], "staged": False, "reason": "ineligible or withdrawn exact object"})
+                continue
+            if not self._stage(entry, deadline, native_maintenance=True, advance=False,
+                               native_stage_limit=stage_limit):
+                results.append({"url": source["url"], "staged": False, "reason": "existing stage budget, volume or deadline prevents staging"})
+                continue
+            public = self._native_public_receipt(source)
+            if not public["matches"]:
+                results.append({"url": source["url"], "staged": False, "public_readback": public})
+                continue
+            if object_state(entry["request"]) == "ready":
+                ready = {"state": "ready", "request_id": entry["request_id"]}
+            else:
+                ready = advance_readiness(self.registry, entry,
+                    {"ready": True, "reason": "owner restored/inertly checked the exact native mirror and full public HTTP payload", "stage_bytes": source["bytes"]},
+                    owner=SERVER_OWNER)
+            results.append({"url": source["url"], "staged": True,
+                            "public_readback": public, "readiness_receipt": ready,
+                            "independent_restore": self.last_native_restore})
+        if canonical_bytes(self.control.state) != before:
+            raise ValueError("stage-only maintenance changed provider state")
+        inventory_after = self._stage_inventory(details=True)
+        prior = {row["path"]: row for row in inventory_before["records"]}
+        after = {row["path"]: row for row in inventory_after["records"]}
+        allowed_paths = {urllib.parse.urlsplit(entry["request"]["source"]["url"]).path.removeprefix("/snapshots/") for entry in entries}
+        additions = set(after) - set(prior)
+        if (not set(prior).issubset(after) or any(prior[path] != after[path] for path in prior) or
+                not additions.issubset(allowed_paths)):
+            raise ValueError("native maintenance changed unrelated pre-existing staging")
+        new_bytes = sum(after[path]["bytes"] for path in additions)
+        if maintenance_allowance is not None and new_bytes > maintenance_allowance["new_bytes_limit"]:
+            raise ValueError("native maintenance exceeded its exact new-byte allowance")
+        return {"staged": sum(row["staged"] for row in results), "results": results,
+                "capture_submissions": 0, "queue_appends": 0, "provider_state_unchanged": True,
+                "stage_inventory_before": inventory_before, "stage_inventory_after": inventory_after,
+                "new_stage_bytes": new_bytes, "new_stage_paths": sorted(additions),
+                "preexisting_staging_metadata_unchanged": True, "global_stage_budget": self.stage_budget}
+
     def _check_public(self, source):
         if suppressed_source(self.registry, source):
             return False
+        if source.get("representation") == NATIVE_REPRESENTATION:
+            return self._native_public_receipt(source)["matches"]
         actual = self.worker.fetch(source["url"])
         return (actual.get("status") == 200 and actual.get("sha256") == source["sha256"] and
                 actual.get("size") == source["bytes"])
