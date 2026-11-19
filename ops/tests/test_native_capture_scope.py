@@ -14,7 +14,7 @@ import wayback_worker as W
 from test_preservation_native import XML, source_for
 from test_preservation_registration import fixture
 from preservation_registry import register, SERVER_OWNER
-from preservation_suppression import suppress_objects
+from preservation_suppression import suppress_objects, suppressed_url
 
 
 class NativeCaptureScopeTests(unittest.TestCase):
@@ -95,6 +95,41 @@ class NativeCaptureScopeTests(unittest.TestCase):
                          reason="fixture withdrawal", approval_scope={"ticket": 994})
         with self.assertRaises(PermissionError):
             W.native_capture_scope(self.control, {key})
+
+    def test_cancelled_payload_cannot_return_through_new_native_mirror_alias(self):
+        source = source_for(XML + b" ")
+        primary = source["primary_url"]
+        old = fixture(ready=True)
+        subject = dict(kind="source_snapshot", title=primary,
+                       original_version_url=primary, content_sha256=source["sha256"],
+                       bytes=source["bytes"])
+        old.update(subject=subject, source=dict(url=primary, sha256=source["sha256"],
+                   bytes=source["bytes"], checked_evidence=source["checked_evidence"]))
+        old["backup_receipt"]["subject"] = copy.deepcopy(subject)
+        old["backup_receipt"]["verification"].update(
+            restored_sha256=source["sha256"], restored_bytes=source["bytes"])
+        original = register(self.registry, old)
+        suppress_objects(self.registry, {original["object_id"]}, owner=SERVER_OWNER,
+                         reason="fixture exact payload withdrawal", approval_scope={"ticket": 994})
+        key, mirror = self.add_native()
+        self.assertNotEqual(original["object_id"], key)
+        self.assertEqual(old["source"]["sha256"], self.requests[-1]["source"]["sha256"])
+        self.assertTrue(self.requests[-1]["readiness"]["ready"])
+        self.assertIsNotNone(suppressed_url(self.registry, primary))
+        self.assertIsNone(suppressed_url(self.registry, mirror))
+        before = copy.deepcopy(self.control.state)
+        with self.assertRaises(PermissionError):
+            W.native_capture_scope(self.control, {key})
+        manager = MagicMock()
+        manager.__enter__.return_value = self.control
+        with patch.object(W, "Control", return_value=manager), patch.object(W, "AUTH", "fixture-auth"), \
+                patch.object(W, "_run") as runner, patch.object(W, "_json") as provider:
+            with self.assertRaises(PermissionError):
+                W.run(self.root, 2, native_object_ids={key})
+        self.control.begin.assert_not_called()
+        runner.assert_not_called()
+        provider.assert_not_called()
+        self.assertEqual(before, self.control.state)
 
     def test_ordinary_image_registration_is_not_native(self):
         result = register(self.registry, fixture())

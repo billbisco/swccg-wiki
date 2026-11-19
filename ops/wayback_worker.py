@@ -70,7 +70,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gitsync import commit_and_push, reset_to_origin  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from preservation_owner import OwnerAdapter, load_allowed_objects  # noqa: E402
-from preservation_suppression import suppressed_url  # noqa: E402
+from preservation_suppression import suppressed_source, suppressed_url  # noqa: E402
 from preservation_native import is_native_capture_url, NATIVE_REPRESENTATION, validate_native_mirror
 from preservation_registry import iter_records, object_state
 from preservation_contracts import registration_object_id  # noqa: E402
@@ -1274,7 +1274,7 @@ def native_capture_scope(control: Control, object_ids) -> set[str] | None:
         key = registration_object_id(request["subject"], source)
         if (source.get("representation") != NATIVE_REPRESENTATION or
                 validate_native_mirror(source) or object_state(request) != "ready" or
-                suppressed_url(registry, source["url"])):
+                suppressed_source(registry, source) or suppressed_url(registry, source["url"])):
             raise PermissionError("native cohort requires checked, ready, non-withdrawn originals")
         found.add(key)
         urls.add(source["url"])
