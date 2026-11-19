@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "group": "modern-next3-rollout-post-live",
+  "artifact_local_path": "C:\\Users\\gythe\\Documents\\Codex\\wiki-dates-597-20261118\\qa\\modern-next3-rollout-independent\\597-modern-next3-rollout-post-live.tar.xz",
+  "artifact_sha256": "0a77124d4881b8871f1d5509446d61dd29fc7c3ff1547d6a290c4b01e98f93fb",
+  "artifact_bytes": 18920,
+  "uncompressed_bytes": 198631,
+  "member_count": 15,
+  "rows": 3,
+  "subjects": [
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Ancient Watering Hole (Errata 2)",
+        "content_sha256": "19157b71baead95fedc5df085980e5e5489c5aa1f800817a58ae5ceb9a0b7652",
+        "bytes": 6527,
+        "revision_id": 333771
+      },
+      "member": "native/live/13745-333771-19157b71baea.wiki",
+      "object_id": "29a6fd7afb37a15ae26d6742d2cd01123e0f3068ecf2a83b1e89fdf1e2eb9a08",
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Tracked Fleet (Errata 2)",
+        "content_sha256": "9a0f85cfbcdec21756092df72d793e9f7334d4f324f9367cfeec037cb6501610",
+        "bytes": 8689,
+        "revision_id": 333772
+      },
+      "member": "native/live/96981-333772-9a0f85cfbcde.wiki",
+      "object_id": "dda6a89998a916ac35c5869b56a8d3c1e9d7f90f242c5c4c945bb805df710901",
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "subject": {
+        "kind": "wiki_revision",
+        "title": "Bodhi Rook (Errata 2)",
+        "content_sha256": "1df7f2ff61fe49d890d57b8ce73b39e0ff86b204240a2e7010ec1f74a914306e",
+        "bytes": 6726,
+        "revision_id": 333773
+      },
+      "member": "native/live/103515-333773-1df7f2ff61fe.wiki",
+      "object_id": "22d077d8dd55b40d02febfe78b08275aa667abdba74f5100d56ca05ea962a482",
+      "role": "exact-live-wiki-revision"
+    }
+  ],
+  "members": [
+    {
+      "name": "manifest/index.json",
+      "sha256": "e7d08659f9922a6826432cb114f49ced46955db50d8bf1bf7d81ae9032f21163",
+      "bytes": 6226,
+      "role": "subject-and-QA-index"
+    },
+    {
+      "name": "native/live/103515-333773-1df7f2ff61fe.wiki",
+      "sha256": "1df7f2ff61fe49d890d57b8ce73b39e0ff86b204240a2e7010ec1f74a914306e",
+      "bytes": 6726,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "native/live/13745-333771-19157b71baea.wiki",
+      "sha256": "19157b71baead95fedc5df085980e5e5489c5aa1f800817a58ae5ceb9a0b7652",
+      "bytes": 6527,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "native/live/96981-333772-9a0f85cfbcde.wiki",
+      "sha256": "9a0f85cfbcdec21756092df72d793e9f7334d4f324f9367cfeec037cb6501610",
+      "bytes": 8689,
+      "role": "exact-live-wiki-revision"
+    },
+    {
+      "name": "qa/actual-apply-receipts/modern-next3-apply-receipt.json",
+      "sha256": "5b1038c9ba0aa62959117f14a4628e9ba43e95758281b9e6b66a725e76981cfd",
+      "bytes": 1663,
+      "role": "actual-native-guarded-save-receipt"
+    },
+    {
+      "name": "qa/checkpoint.json",
+      "sha256": "e07eb7d097c102df7a6d2dfa8c9a09b97fa7cb49551b557db2ea9037a5d33db4",
+      "bytes": 55854,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/html/103515-333773.html",
+      "sha256": "7b368514635cb2b3f5c3671da71fd154c33ff3f8fd6ca4e73b54e26780425352",
+      "bytes": 33282,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/13745-333771.html",
+      "sha256": "570492fd92b3f4beea1c03200003c15f9704715a62e8a8b599c571f235c0ad3a",
+      "bytes": 31588,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/html/96981-333772.html",
+      "sha256": "42d0f5a9c6b4866e9e33c7ea77edaf971d55252ef068ed8aae653c5f4fa27314",
+      "bytes": 36424,
+      "role": "anonymous-public-render"
+    },
+    {
+      "name": "qa/input-saved-scope.json",
+      "sha256": "15cee03d8e0139c337f3ed1a6a0ebdebd41f644cf2969c2e2982d1fe9c4d2e21",
+      "bytes": 453,
+      "role": "derived-scope-bound-to-actual-receipt-hashes"
+    },
+    {
+      "name": "qa/read_only_review_check.php",
+      "sha256": "1f03c3a3d1a6cc1fccf3ca57d6f6149a219da41bc22992f1695eb12d0747736f",
+      "bytes": 2491,
+      "role": "read-only-live-QA-evidence"
+    },
+    {
+      "name": "qa/records/333771.json",
+      "sha256": "75328663e2ee5dbb9c23a188ce9891cf5a4df3c0eed2f9d51481f4048f1a2d59",
+      "bytes": 2218,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/records/333772.json",
+      "sha256": "fe31e6692352a55bbac83b201e347b51bf56a709de3f5195df838b775def2a90",
+      "bytes": 2206,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/records/333773.json",
+      "sha256": "a151c995442136702904253758f3b46c0b12150c03bb0b5ed064395bffd4a121",
+      "bytes": 2144,
+      "role": "full-actual-public-and-native-QA-record"
+    },
+    {
+      "name": "qa/review/modern-next3.json",
+      "sha256": "5ebb0b45298e4ad2761ebca1d807295a00587816de08a446b19cd27d790df34c",
+      "bytes": 2140,
+      "role": "actual-DB-native-review-proof"
+    }
+  ],
+  "source_keys": [],
+  "held_source_keys": [],
+  "native_holds": [],
+  "privacy_holds": [],
+  "storage_template": {
+    "kind": "git",
+    "repository": "https://github.com/billbisco/swccg-wiki",
+    "path": "preservation/bundles/597/597-modern-next3-rollout-post-live.tar.xz",
+    "container": "tar.xz",
+    "artifact_sha256": "0a77124d4881b8871f1d5509446d61dd29fc7c3ff1547d6a290c4b01e98f93fb",
+    "artifact_bytes": 18920,
+    "uncompressed_bytes": 198631
+  },
+  "commit_required_before_remote_readback": true,
+  "independent_verified": false
+}
