@@ -1,0 +1,143 @@
+{
+  "URI_equivalence_asserted": false,
+  "actual_public_native_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "artifact_bytes": 687356,
+      "artifact_sha256": "9fd6be28e8529f7332cea63b8d8fc92cfbe9da32695bd85604d6cb5fee490168",
+      "commit": "acb2b60cc5ecec6c5fada2fb52ce859e031ed186",
+      "container": "tar.xz",
+      "kind": "git",
+      "member": "native/wiki_file_version/dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "path": "preservation/bundles/597/597-OVS6-original6-current-Holotable-native-originals.tar.xz",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "uncompressed_bytes": 716124
+    },
+    "subject": {
+      "bytes": 118512,
+      "content_sha256": "dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://swccg.com/wiki/images/4/40/OVS6-21-Surreptitious_Glance-original-slip-2004-10-12.png",
+      "title": "File:OVS6-21-Surreptitious Glance-original-slip-2004-10-12.png",
+      "upload_timestamp": "2026-11-12T21:31:47Z"
+    },
+    "verification": {
+      "container_member": "native/wiki_file_version/dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "container_payload_tally": 716124,
+      "independent": true,
+      "restored_bytes": 118512,
+      "restored_container_bytes": 687356,
+      "restored_container_sha256": "9fd6be28e8529f7332cea63b8d8fc92cfbe9da32695bd85604d6cb5fee490168",
+      "restored_sha256": "dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "status": "verified",
+      "verified_at": "2026-11-19T01:17:54.941214+00:00"
+    }
+  },
+  "actual_public_source_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "artifact_bytes": 687356,
+      "artifact_sha256": "9fd6be28e8529f7332cea63b8d8fc92cfbe9da32695bd85604d6cb5fee490168",
+      "commit": "acb2b60cc5ecec6c5fada2fb52ce859e031ed186",
+      "container": "tar.xz",
+      "kind": "git",
+      "member": "native/wiki_file_version/dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "path": "preservation/bundles/597/597-OVS6-original6-current-Holotable-native-originals.tar.xz",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "uncompressed_bytes": 716124
+    },
+    "subject": {
+      "bytes": 118512,
+      "content_sha256": "dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "kind": "wiki_file_version",
+      "original_version_url": "https://swccg.com/wiki/images/4/40/OVS6-21-Surreptitious_Glance-original-slip-2004-10-12.png",
+      "title": "File:OVS6-21-Surreptitious Glance-original-slip-2004-10-12.png",
+      "upload_timestamp": "2026-11-12T21:31:47Z"
+    },
+    "verification": {
+      "container_member": "native/wiki_file_version/dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "container_payload_tally": 716124,
+      "independent": true,
+      "restored_bytes": 118512,
+      "restored_container_bytes": 687356,
+      "restored_container_sha256": "9fd6be28e8529f7332cea63b8d8fc92cfbe9da32695bd85604d6cb5fee490168",
+      "restored_sha256": "dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "status": "verified",
+      "verified_at": "2026-11-19T01:17:54.941214+00:00"
+    }
+  },
+  "format_and_completeness": {
+    "format": "PNG",
+    "frames_fully_decoded": 1,
+    "pixel_dimensions": [
+      497,
+      307
+    ],
+    "semantic_face_accuracy_checked": false
+  },
+  "fresh_Wiki_version_evidence": {
+    "URI_equivalence_asserted": false,
+    "actual_API_receipt": {
+      "batch": 5,
+      "method": "actual complete anonymous public Wiki API GET",
+      "pagination": 0,
+      "request_url": "https://swccg.com/api.php?action=query&format=json&formatversion=2&prop=imageinfo&titles=File%3AOVS6-13-Keep+Your+Eyes+Open-original-slip-2004-10-12.png%7CFile%3AOVS6-21-Surreptitious+Glance-original-slip-2004-01-12.png%7CFile%3AOVS6-21-Surreptitious+Glance-original-slip-2004-10-12.png%7CFile%3AOVS6-25-Wookiee+Strangle-original-slip-2004-01-12.png%7CFile%3AOVS6-25-Wookiee+Strangle-original-slip-2004-10-12.png%7CFile%3AOVS6-07-Computer+Interface-original-slip-2004-01-12.png%7CFile%3AOVS6-50-We+re+The+Bait-remaster.webp%7CFile%3AVS6O-50-Were+The+Bait.png&iiprop=url%7Ctimestamp%7Csha1%7Csize%7Cmime&iilimit=50",
+      "response_bytes": 6725,
+      "response_path": "api/actual-public-WikiAPI-versions-05-00.json",
+      "response_sha256": "de07f1bfcb8e9eafeddc24951827052d7f08f4eed4e3fc13fdd475d37415a7c6",
+      "status": 200
+    },
+    "exact_title_timestamp_SHA1_size_match": true,
+    "fresh_API_reported_serving_URI": "https://swccg.com/wiki/images/4/40/OVS6-21-Surreptitious_Glance-original-slip-2004-10-12.png",
+    "metadata": {
+      "descriptionshorturl": "https://swccg.com/wiki/index.php?curid=100583",
+      "descriptionurl": "https://swccg.com/wiki/File:OVS6-21-Surreptitious_Glance-original-slip-2004-10-12.png",
+      "height": 307,
+      "mime": "image/png",
+      "sha1": "2dff90e22d6b0a07dc3a2d9d4b06dd62002719e4",
+      "size": 118512,
+      "timestamp": "2026-11-12T21:31:47Z",
+      "url": "https://swccg.com/wiki/images/4/40/OVS6-21-Surreptitious_Glance-original-slip-2004-10-12.png",
+      "width": 497
+    },
+    "registered_historical_URI": "https://swccg.com/wiki/images/4/40/OVS6-21-Surreptitious_Glance-original-slip-2004-10-12.png",
+    "serving_URI_HTTP_GET_performed_in_this_run": false
+  },
+  "full_body": {
+    "actual_public_backup_storage": {
+      "artifact_bytes": 687356,
+      "artifact_sha256": "9fd6be28e8529f7332cea63b8d8fc92cfbe9da32695bd85604d6cb5fee490168",
+      "commit": "acb2b60cc5ecec6c5fada2fb52ce859e031ed186",
+      "container": "tar.xz",
+      "kind": "git",
+      "member": "native/wiki_file_version/dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+      "path": "preservation/bundles/597/597-OVS6-original6-current-Holotable-native-originals.tar.xz",
+      "repository": "https://github.com/billbisco/swccg-wiki",
+      "uncompressed_bytes": 716124
+    },
+    "bytes": 118512,
+    "complete_original_rehashed": true,
+    "sha1": "2dff90e22d6b0a07dc3a2d9d4b06dd62002719e4",
+    "sha256": "dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d"
+  },
+  "generated_at_UTC": "2026-11-19T04:08:50.444392+00:00",
+  "network_body_fetch_performed_in_this_run": false,
+  "own_state_date_accuracy_evidence": "Actual backed final OVS28 per-row/source proof; separate from this native identity verification",
+  "private_registry_or_excluded_proofs_read": false,
+  "schema_version": 1,
+  "source": {
+    "bytes": 118512,
+    "sha256": "dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+    "url": "https://swccg.com/wiki/images/4/40/OVS6-21-Surreptitious_Glance-original-slip-2004-10-12.png"
+  },
+  "source_date_or_own_state_accuracy_checked_by_this_proof": false,
+  "status": "verified_public_native_source_identity",
+  "subject": {
+    "bytes": 118512,
+    "content_sha256": "dc53121d5c5222511fc93b11b84e9c7c5cf454f81542ab7266c8e7a0c676943d",
+    "kind": "wiki_file_version",
+    "original_version_url": "https://swccg.com/wiki/images/4/40/OVS6-21-Surreptitious_Glance-original-slip-2004-10-12.png",
+    "title": "File:OVS6-21-Surreptitious Glance-original-slip-2004-10-12.png",
+    "upload_timestamp": "2026-11-12T21:31:47Z"
+  }
+}
