@@ -68261,9 +68261,18 @@
  },
  "https://drive.google.com/drive/folders/12i00KRLriVraozX2i8MVLKHm4HJnQPB0": {
   "capture": "https://web.archive.org/web/20261118162530/https://drive.google.com/drive/folders/12i00KRLriVraozX2i8MVLKHm4HJnQPB0",
-  "last": "2026-11-18T16:46:45Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-ea2efd42437ef0f70df3e6703b88e66b51b46bda",
+  "last": "2026-11-19T01:08:25Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-19T01:08:25Z",
+   "capture_id": "https://web.archive.org/web/20261118162530id_/https://drive.google.com/drive/folders/12i00KRLriVraozX2i8MVLKHm4HJnQPB0",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 61% (< 85%)",
+   "text_match": 0.605
+  }
  },
  "https://drive.google.com/drive/folders/15RQtNOwsJHPpc8Iw8A4Q4ofOryln5eXv": {
   "capture": "https://web.archive.org/web/20240906210602/https://drive.google.com/drive/folders/15RQtNOwsJHPpc8Iw8A4Q4ofOryln5eXv",
@@ -68308,11 +68317,19 @@
   }
  },
  "https://drive.google.com/file/d/12gm6kO5Fi1xF8aVYC4u3As5it2-JCgv8/view": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-18T16:25:29Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261119010751/https://drive.google.com/file/d/12gm6kO5Fi1xF8aVYC4u3As5it2-JCgv8/view",
+  "job_id": "spn2-b1fb3e84ea29f392ad99bbeb4417b8780a52a73c",
+  "last": "2026-11-19T01:08:36Z",
+  "status": "unverified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-19T01:08:36Z",
+   "capture_id": "https://web.archive.org/web/20261119010751id_/https://drive.google.com/file/d/12gm6kO5Fi1xF8aVYC4u3As5it2-JCgv8/view",
+   "index": "cdx",
+   "method": "text",
+   "reason": "page text matches 67% (< 85%)",
+   "text_match": 0.667
+  }
  },
  "https://drive.google.com/file/d/15SPjO_q5-O6E4T8BH8FPAxiC2dYOLD3S/view": {
   "capture": "https://web.archive.org/web/20261105094018/https://drive.google.com/file/d/15SPjO_q5-O6E4T8BH8FPAxiC2dYOLD3S/view",
@@ -68426,6 +68443,20 @@
   "verify": {
    "at": "2026-10-22T18:34:18Z",
    "capture_id": "https://web.archive.org/web/20261016121021id_/https://en.wikipedia.org/wiki/Star_Wars_Customizable_Card_Game",
+   "method": "text",
+   "text_match": 1.0
+  }
+ },
+ "https://en.wikipedia.org/wiki/The_Empire_Strikes_Back": {
+  "capture": "https://web.archive.org/web/20261117105127/https://en.wikipedia.org/wiki/The_Empire_Strikes_Back",
+  "last": "2026-11-19T01:04:42Z",
+  "note": "already archived within 30d",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-19T01:04:49Z",
+   "capture_id": "https://web.archive.org/web/20261117105127id_/https://en.wikipedia.org/wiki/The_Empire_Strikes_Back",
+   "index": "cdx",
    "method": "text",
    "text_match": 1.0
   }
@@ -68657,6 +68688,22 @@
    "method": "text",
    "text_match": 0.944
   }
+ },
+ "https://github.com/billbisco/ai-team-skills/blob/824fa96288aca451da401df7d4cd1aa51c831baa/shared/gemp-legacy-cards/RULINGS.md": {
+  "capture": "",
+  "error": "error:not-found",
+  "job_id": "spn2-d588b1c9b64684d654d6999aa59e5dad688af5d4",
+  "last": "2026-11-19T01:09:14Z",
+  "status": "retry",
+  "tries": 1
+ },
+ "https://github.com/billbisco/ai-team-skills/blob/824fa96288aca451da401df7d4cd1aa51c831baa/shared/gemp-legacy-cards/SLIP-TEXT-AUDIT-2026-11-07.md": {
+  "capture": "",
+  "error": "error:not-found",
+  "job_id": "spn2-81d7119d788f63b6e83835ae0cb4a01541e3d84c",
+  "last": "2026-11-19T01:09:48Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://github.com/billbisco/swccg-cardmaker": {
   "capture": "https://web.archive.org/web/20261027032316/https://github.com/billbisco/swccg-cardmaker",
@@ -72317,12 +72364,13 @@
   "capture": "https://web.archive.org/web/20261119003043/https://res.starwarsccg.org/virtual/errata_062321.pdf",
   "job_id": "spn2-9497aac1f45f81b4c9ec959645d684cd0daddcdc",
   "last": "2026-11-19T00:33:01Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 6,
   "verify": {
-   "at": "2026-11-19T00:33:01Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-19T01:09:50Z",
+   "capture_id": "https://web.archive.org/web/20261119003043id_/https://res.starwarsccg.org/virtual/errata_062321.pdf",
+   "method": "strict",
+   "reason": "redirects to another capture 20261117183200 (no capture at 20261119003043)"
   }
  },
  "https://res.starwarsccg.org/virtual/errata_102020.pdf": {
@@ -89353,11 +89401,17 @@
   "tries": 6
  },
  "https://swccg.com/snapshots/forum/t86508.html": {
-  "capture": "https://web.archive.org/web/20261117191331/https://swccg.com/snapshots/forum/t86508.html",
+  "capture": "https://web.archive.org/web/20261119005200/https://swccg.com/snapshots/forum/t86508.html",
   "job_id": "spn2-435b7a52cb1b581db08afe6b8c0b3f6abdd20341",
-  "last": "2026-11-19T00:48:27Z",
-  "status": "pending",
-  "tries": 3
+  "last": "2026-11-19T01:01:32Z",
+  "status": "unverified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-19T01:01:32Z",
+   "capture_id": "https://web.archive.org/web/20261119005200id_/https://swccg.com/snapshots/forum/t86508.html",
+   "method": "strict",
+   "reason": "redirects to another capture 20261117191331 (no capture at 20261119005200)"
+  }
  },
  "https://swccg.com/snapshots/forum/t86534.html": {
   "capture": "https://web.archive.org/web/20261026204621/https://swccg.com/snapshots/forum/t86534.html",
@@ -135097,9 +135151,17 @@
  "https://swccg.com/snapshots/pc/errata-to-imperial-decree-v.html": {
   "capture": "https://web.archive.org/web/20261118162316/https://swccg.com/snapshots/pc/errata-to-imperial-decree-v.html",
   "job_id": "spn2-8150945513ead288ae11f81d50a025e09a0de3be",
-  "last": "2026-11-19T00:57:40Z",
-  "status": "pending",
-  "tries": 2
+  "last": "2026-11-19T01:01:23Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-19T01:01:23Z",
+   "bytes": 6458474,
+   "capture_id": "https://web.archive.org/web/20261118162316id_/https://swccg.com/snapshots/pc/errata-to-imperial-decree-v.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "eece117d93bd1823a904e48aa42abeb2bfb32a588207d53ab5ab7baf53666e73"
+  }
  },
  "https://swccg.com/snapshots/pc/gemp-announcements-request-for-applications-for-new-team.html": {
   "capture": "https://web.archive.org/web/20261022035219/https://swccg.com/snapshots/pc/gemp-announcements-request-for-applications-for-new-team.html",
@@ -135561,11 +135623,19 @@
   }
  },
  "https://swccg.com/snapshots/pc/out-of-the-shadows.html": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-18T16:23:23Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261119010515/https://swccg.com/snapshots/pc/out-of-the-shadows.html",
+  "job_id": "spn2-1e7221236a707d1b0b54c2603d64a2020c32d4ca",
+  "last": "2026-11-19T01:08:09Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-19T01:08:09Z",
+   "bytes": 6470552,
+   "capture_id": "https://web.archive.org/web/20261119010515id_/https://swccg.com/snapshots/pc/out-of-the-shadows.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6bd31d1df510ad9ad44df13c0b288faf2bcf1607ae1720bd8d72159d730bd30c"
+  }
  },
  "https://swccg.com/snapshots/pc/outrider-cup-ii.html": {
   "capture": "https://web.archive.org/web/20261013141331/https://swccg.com/snapshots/pc/outrider-cup-ii.html",
