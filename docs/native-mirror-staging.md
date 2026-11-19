@@ -56,3 +56,23 @@ verification evidence. Staged, ready, queued and submitted are not verified.
 
 Withdrawn exact-payload tombstones take precedence over this path. No native or
 photo payload is republished merely because a historical registration exists.
+
+For an explicitly prioritized bounded cohort of at most six installed-approved,
+ready native originals, use the same worker and owner lock:
+
+```sh
+python3 ops/wayback_worker.py /opt/swccg-ops/repos/swccg-wiki --minutes 12 --native-cohort-file approved-native-cohort.json
+```
+
+The file has the same `object_ids` list. This mode requires existing authenticated
+owner credentials, never starts a second saver, and honors the saved provider
+cooldown and authentication stop. It clamps submission pacing to at least 60
+seconds and at most six attempts per run. An existing recovery probe outside the
+cohort prevents the run before any provider request or probe mutation.
+
+Only the selected URLs can be submitted, confirmed, checked from the backlog or
+rechecked. Unrelated verification inbox entries remain unconsumed; mixed entries
+retain their original bytes while eligible selected updates are applied. Staging
+pruning is entirely disabled in this mode. The complete shared ledger remains
+intact and unrelated queue entries retain their relative order. Default timer
+behavior is unchanged when no native cohort is supplied.
