@@ -1,5 +1,5 @@
 <?php
-/** Standard presentation for explicitly categorized bitmap photographs. */
+/** Standard image File presentation; class name retained for maintenance compatibility. */
 class SwccgPhotographPresentation {
     public static function addStyles( $out ): void {
         $title = $out->getTitle();
@@ -14,17 +14,9 @@ class SwccgPhotographPresentation {
         }
         $services = \MediaWiki\MediaWikiServices::getInstance();
         $file = $services->getRepoGroup()->findFile( $title );
-        if ( !$file || $file->getMediaType() !== MEDIATYPE_BITMAP ) {
-            return false;
-        }
-        $photographCategories = self::categoryKeys();
-        foreach ( array_keys( $title->getParentCategories() ) as $name ) {
-            $category = Title::newFromText( $name );
-            if ( $category && isset( $photographCategories[$category->getDBkey()] ) ) {
-                return true;
-            }
-        }
-        return false;
+        return $file
+            && in_array( $file->getMediaType(), [ MEDIATYPE_BITMAP, MEDIATYPE_DRAWING ], true )
+            && str_starts_with( $file->getMimeType(), 'image/' );
     }
 
     /** Cached category subtree; also used by bounded maintenance inventories. */
