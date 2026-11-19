@@ -71,7 +71,9 @@ from gitsync import commit_and_push, reset_to_origin  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from preservation_owner import OwnerAdapter, load_allowed_objects  # noqa: E402
 from preservation_suppression import suppressed_url  # noqa: E402
-from preservation_native import is_native_capture_url  # noqa: E402
+from preservation_native import is_native_capture_url, NATIVE_REPRESENTATION, validate_native_mirror
+from preservation_registry import iter_records, object_state
+from preservation_contracts import registration_object_id  # noqa: E402
 from wayback_control import Busy, Control, Paused, atomic_json  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
@@ -762,11 +764,13 @@ def verify_candidates(done: dict, *, limit: int = 40) -> list[dict]:
     return rows[:limit]
 
 
-def apply_verify_inbox(control: Control, done: dict, changed: dict) -> int:
+def apply_verify_inbox(control: Control, done: dict, changed: dict, *, allowed_urls=None) -> int:
     """Consume schema-1 receipts without losing unresolved or malformed evidence."""
     import base64
     applied = 0
     for path in sorted(verify_inbox_dir(control).glob("*.json")):
+        if allowed_urls is not None and path.stat().st_size > 8 * 1024 * 1024:
+            continue  # A scoped run does not consume unrelated/oversize evidence.
         if path.stat().st_size > 8 * 1024 * 1024:
             report_dir = control.directory / "verify-receipts" / ("oversize-" + hashlib.sha256(path.name.encode("utf-8")).hexdigest())
             report_dir.mkdir(parents=True, exist_ok=True)
@@ -779,6 +783,13 @@ def apply_verify_inbox(control: Control, done: dict, changed: dict) -> int:
         if len(raw) > 8 * 1024 * 1024:
             print("VERIFY-INBOX-ERR", path.name, "grew over metadata budget; retained", flush=True)
             continue
+        if allowed_urls is not None:
+            try:
+                peek = json.loads(raw)
+                if not isinstance(peek, dict) or not isinstance(peek.get("updates"), dict) or not (set(peek["updates"]) & allowed_urls):
+                    continue
+            except (ValueError, TypeError):
+                continue
         original_done = json.loads(json.dumps(done))
         digest = hashlib.sha256(raw).hexdigest()
         retained = control.directory / "verify-receipts" / digest
@@ -797,6 +808,9 @@ def apply_verify_inbox(control: Control, done: dict, changed: dict) -> int:
             updates = data["updates"]
             lane = data.get("lane") or "manpc"
             for url, receipt in updates.items():
+                if allowed_urls is not None and url not in allowed_urls:
+                    dispositions[url] = "outside_native_cohort"
+                    continue
                 if not isinstance(receipt, dict) or receipt.get("status") != "verified":
                     dispositions[url] = "unsupported_receipt"
                     continue
@@ -1241,7 +1255,40 @@ def prune_legacy_snapshots(control: Control, done: dict) -> None:
     prune_verified_snapshots(candidates)
 
 
-def _run(repo: Path, minutes: float, control: Control) -> None:
+def native_capture_scope(control: Control, object_ids) -> set[str] | None:
+    """Resolve a bounded installed approval without changing the owner or provider."""
+    if object_ids is None:
+        return None
+    if isinstance(object_ids, (str, bytes)):
+        raise ValueError("native cohort must list exact object identities")
+    keys = set(object_ids)
+    if not 1 <= len(keys) <= 6 or any(not isinstance(k, str) or not re.fullmatch(r"[0-9a-f]{64}", k) for k in keys):
+        raise ValueError("native capture requires one to six exact object identities")
+    registry = control.directory / "registry"
+    if not keys <= load_allowed_objects(registry):
+        raise PermissionError("native cohort lacks installed owner approval")
+    found, urls = set(), set()
+    for entry in iter_records(registry, object_ids=keys):
+        request = entry["request"]
+        source = request["source"]
+        key = registration_object_id(request["subject"], source)
+        if (source.get("representation") != NATIVE_REPRESENTATION or
+                validate_native_mirror(source) or object_state(request) != "ready" or
+                suppressed_url(registry, source["url"])):
+            raise PermissionError("native cohort requires checked, ready, non-withdrawn originals")
+        found.add(key)
+        urls.add(source["url"])
+    if found != keys or len(urls) != len(keys):
+        raise ValueError("native cohort has missing or duplicate capture identities")
+    if control.state.get("probe_url") and control.state["probe_url"] not in urls:
+        raise Paused("existing recovery probe is outside the bounded native cohort")
+    return urls
+
+
+def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None) -> None:
+    scope = native_capture_scope(control, native_object_ids)
+    gap = max(GAP_S, 60) if scope is not None else GAP_S
+    submit_limit = min(MAX_SUBMITS_PER_RUN or 6, 6) if scope is not None else MAX_SUBMITS_PER_RUN
     reset_to_origin(repo)
     urls, done = load(repo)
     control.done = done
@@ -1249,11 +1296,11 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     restored = control.restore_updates(done)
     deadline = time.monotonic() + minutes * 60
     changed: dict[str, dict] = dict(restored)
-    apply_verify_inbox(control, done, changed)
+    apply_verify_inbox(control, done, changed, allowed_urls=scope)
     errors_in_row = 0
     print("auth:", "SPN2 authenticated" if AUTH else "anonymous", flush=True)
     print(
-        f"pace: gap={GAP_S}s max_submits={MAX_SUBMITS_PER_RUN or 'uncapped'}",
+        f"pace: gap={gap}s max_submits={submit_limit or 'uncapped'}",
         flush=True,
     )
     submission_session = {"authenticated": bool(AUTH)}
@@ -1263,8 +1310,9 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     control.registry_deadline = deadline
     control.registry_prepare_failed = False
     try:
-        adapter = OwnerAdapter(sys.modules[__name__], repo, control,
-                               load_allowed_objects(control.directory / "registry"))
+        allowed = load_allowed_objects(control.directory / "registry") if scope is None else set(native_object_ids)
+        adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed,
+                               limit=2 if scope is None else len(allowed))
         control.registry_adapter = adapter
         prepared = adapter.prepare(deadline)
         done.update(prepared["ledger_updates"])
@@ -1278,9 +1326,12 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     control.checkpoint(done, control.initial_done)
     # Queue appends may reset the shared checkout; keep our journal-backed ledger.
     urls = load(repo)[0]
+    if scope is not None:
+        urls = [url for url in urls if url in scope]
 
     # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
-    confirm_urls = [url for url in pending_confirm_urls(done) if url != control.state.get("probe_url")]
+    confirm_done = done if scope is None else {u: e for u, e in done.items() if u in scope}
+    confirm_urls = [url for url in pending_confirm_urls(confirm_done) if url != control.state.get("probe_url")]
     print(
         f"pending-confirm {len(confirm_urls)} cap={PENDING_CONFIRM_CAP} "
         f"max_age_s={int(PENDING_CONFIRM_MAX_AGE.total_seconds())}",
@@ -1308,8 +1359,8 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
             continue
         if banned(url):
             continue
-        if MAX_SUBMITS_PER_RUN and save_attempts >= MAX_SUBMITS_PER_RUN:
-            print("PACE-CAP", MAX_SUBMITS_PER_RUN, "Save Page Now attempts this run", flush=True)
+        if submit_limit and save_attempts >= submit_limit:
+            print("PACE-CAP", submit_limit, "Save Page Now attempts this run", flush=True)
             break
         if not control.may_submit(url):
             break
@@ -1341,7 +1392,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
                     changed[url] = e
                     control.checkpoint(done, control.initial_done)
                     errors_in_row = 0
-                    time.sleep(GAP_S)
+                    time.sleep(gap)
                     continue
                 e = {"capture": (e or {}).get("capture", ""), "status": "pending", "tries": tries,
                      "last": iso(now()), "job_id": j["job_id"]}
@@ -1365,7 +1416,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
         done[url] = e
         changed[url] = e
         control.checkpoint(done, control.initial_done)
-        time.sleep(GAP_S)
+        time.sleep(gap)
 
     # 3. poll this run's jobs until done or out of time
     while submitted and time.monotonic() < deadline:
@@ -1388,7 +1439,7 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
     def due(e: dict) -> bool:  # transient verify errors wait RETRY_AFTER before the next try
         v = e.get("verify") or {}
         return not (v.get("error") and v.get("at") and now() - parse(v["at"]) < RETRY_AFTER)
-    backlog = sorted((u for u, e in done.items() if e.get("status") == "ok" and e.get("capture") and due(e)),
+    backlog = sorted((u for u, e in done.items() if (scope is None or u in scope) and e.get("status") == "ok" and e.get("capture") and due(e)),
                      key=lambda u: done[u].get("last", ""), reverse=True)
     for url in backlog:
         if time.monotonic() > stop:
@@ -1405,14 +1456,16 @@ def _run(repo: Path, minutes: float, control: Control) -> None:
         time.sleep(VERIFY_GAP_S)
 
     # 4b. re-check verified captures that CDX did not list yet
-    recheck_replay_only(done, changed, min(deadline - 45, time.monotonic() + 60))
+    selected_done = done if scope is None else {u: e for u, e in done.items() if u in scope}
+    recheck_replay_only(selected_done, changed, min(deadline - 45, time.monotonic() + 60))
 
     # 5. drop staging files whose Wayback capture already matched (Bill 2026-10-14), after a
     #    fresh strict check; entries that fail it are demoted to unverified and pushed
     DEMOTED.clear()
     DeleteBudget.left = DELETE_CHECKS_PER_RUN
-    prune_legacy_snapshots(control, done)
-    changed.update(DEMOTED)
+    if scope is None:
+        prune_legacy_snapshots(control, done)
+        changed.update(DEMOTED)
 
     control.checkpoint(done, control.initial_done)
     persist_changes(repo, done, changed, control.initial_done)
@@ -1451,11 +1504,23 @@ def persist_changes(repo: Path, done: dict, changed: dict, baseline: dict) -> No
 
 
 
-def run(repo: Path, minutes: float) -> None:
+def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
     """One exclusive owner; provider/auth pauses survive Git resets and restarts."""
     global ACTIVE_CONTROL
     try:
         with Control(control_directory(repo), AUTH) as control:
+            if native_object_ids is not None:
+                if not AUTH:
+                    raise PermissionError("bounded native capture requires existing authenticated owner credentials")
+                native_object_ids = frozenset(native_object_ids)
+                try:
+                    native_capture_scope(control, native_object_ids)
+                except Paused as error:
+                    # An unrelated recovery probe remains exclusively owned by
+                    # its existing workflow. Do not begin, reconcile or clear it.
+                    print("WAYBACK-PAUSED", str(error), flush=True)
+                    return
+                control.SUBMISSION_GAP = max(control.SUBMISSION_GAP, 60)
             outcome = "completed"
             control.done = load(repo)[1]
             control.initial_done = json.loads(json.dumps(control.done))
@@ -1463,7 +1528,10 @@ def run(repo: Path, minutes: float) -> None:
             try:
                 control.begin()
                 ACTIVE_CONTROL = control
-                _run(repo, minutes, control)
+                if native_object_ids is None:
+                    _run(repo, minutes, control)
+                else:
+                    _run(repo, minutes, control, native_object_ids=native_object_ids)
             except Paused as error:
                 outcome = "paused"
                 changed = {u:e for u,e in control.done.items()
@@ -1519,7 +1587,21 @@ def main() -> int:
                     help="Offline owner-locked adoption of a checked native capture bundle")
     ap.add_argument("--approved-receipt-sha256", help="Explicit approval hash of the adoption manifest")
     ap.add_argument("--health", action="store_true", help="Read saved health; no Git or Archive.org request")
+    ap.add_argument("--native-cohort-file", type=Path,
+                    help="Only installed-approved ready native objects; preserves unrelated jobs and skips pruning")
     a = ap.parse_args()
+    native_ids = None
+    if a.native_cohort_file:
+        if a.health or a.adopt_native_receipt:
+            ap.error("native capture cannot be combined with health or adoption")
+        with a.native_cohort_file.open("rb") as stream:
+            raw = stream.read(65537)
+        if len(raw) > 65536:
+            ap.error("native cohort metadata exceeds its budget")
+        document = json.loads(raw)
+        if not isinstance(document, dict) or not isinstance(document.get("object_ids"), list):
+            ap.error("native cohort must contain object_ids")
+        native_ids = document["object_ids"]
     if a.adopt_native_receipt:
         if a.health or not a.approved_receipt_sha256:
             ap.error("adoption requires its approval hash and cannot be combined with health")
@@ -1535,7 +1617,7 @@ def main() -> int:
         path = control_directory(a.repo) / "health.json"
         print(path.read_text(encoding="utf-8") if path.exists() else '{"outcome":"not_recorded"}')
         return 0
-    run(a.repo.resolve(), a.minutes)
+    run(a.repo.resolve(), a.minutes, native_object_ids=native_ids)
     return 0
 
 
