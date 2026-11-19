@@ -1,0 +1,327 @@
+{
+  "URI_equivalence_asserted": false,
+  "actual_public_native_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+      "kind": "git_raw_chunks_v1",
+      "manifest_bytes": 1564,
+      "manifest_sha256": "b253ad9b3c1a8cbaff9041f1ee9b42f67b8db6bd612894593c84f0c19be4a54d",
+      "parts": [
+        {
+          "bytes": 67108864,
+          "index": 0,
+          "offset": 0,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00000.bin",
+          "sha256": "32dab76e4114fb9746432652365833f93499267216a920463c551b94b4b6c41c"
+        },
+        {
+          "bytes": 67108864,
+          "index": 1,
+          "offset": 67108864,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00001.bin",
+          "sha256": "f075fb05b7d42f46cce9af1b417d383f017ab53eb1ae51a8964827e039239725"
+        },
+        {
+          "bytes": 67108864,
+          "index": 2,
+          "offset": 134217728,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00002.bin",
+          "sha256": "b05bcb57a8628b0cef706a798269612cf0b7404bd60d0ed912789eb4ab08a002"
+        },
+        {
+          "bytes": 67108864,
+          "index": 3,
+          "offset": 201326592,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00003.bin",
+          "sha256": "78c8cb23004a91ad960ccd1ffcdb2358b322c28e8436fed11fc00c5032eca533"
+        },
+        {
+          "bytes": 46922856,
+          "index": 4,
+          "offset": 268435456,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00004.bin",
+          "sha256": "26434479d7ee770accc4434d6dceb41ace1157a880ac0acaa739d91cba8bd07f"
+        }
+      ],
+      "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/manifest.json",
+      "repository": "https://github.com/billbisco/swccg-wiki"
+    },
+    "subject": {
+      "bytes": 315358312,
+      "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+      "kind": "source_snapshot",
+      "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+      "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+    },
+    "verification": {
+      "independent": true,
+      "manifest_readback": {
+        "bytes": 1564,
+        "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+        "git_blob_sha1": "208eec07b03ea1846e32e8cdf32c77f76a66204b",
+        "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/manifest.json",
+        "repository": "https://github.com/billbisco/swccg-wiki",
+        "sha256": "b253ad9b3c1a8cbaff9041f1ee9b42f67b8db6bd612894593c84f0c19be4a54d"
+      },
+      "method": "immutable-git-metadata-and-streamed-parts-v1",
+      "part_readbacks": [
+        {
+          "bytes": 67108864,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "09f10087e07e99c352b0a2a04aebdd69a33dffcb",
+          "index": 0,
+          "offset": 0,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00000.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "32dab76e4114fb9746432652365833f93499267216a920463c551b94b4b6c41c"
+        },
+        {
+          "bytes": 67108864,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "7e29eef9eea79ed88818c30f424b0cfe96841b42",
+          "index": 1,
+          "offset": 67108864,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00001.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "f075fb05b7d42f46cce9af1b417d383f017ab53eb1ae51a8964827e039239725"
+        },
+        {
+          "bytes": 67108864,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "b4fea6604daa89c4bbcb2b03c1e41fbcc053a8ca",
+          "index": 2,
+          "offset": 134217728,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00002.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "b05bcb57a8628b0cef706a798269612cf0b7404bd60d0ed912789eb4ab08a002"
+        },
+        {
+          "bytes": 67108864,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "5dc0fc35079161796fd93287793e51f6d0608693",
+          "index": 3,
+          "offset": 201326592,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00003.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "78c8cb23004a91ad960ccd1ffcdb2358b322c28e8436fed11fc00c5032eca533"
+        },
+        {
+          "bytes": 46922856,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "435d10d56220d51d24c785ede669b4058a4b96b0",
+          "index": 4,
+          "offset": 268435456,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00004.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "26434479d7ee770accc4434d6dceb41ace1157a880ac0acaa739d91cba8bd07f"
+        }
+      ],
+      "restored_bytes": 315358312,
+      "restored_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+      "status": "verified",
+      "verified_at": "2026-11-18T12:46:28.148544+00:00"
+    }
+  },
+  "actual_public_source_backup_receipt": {
+    "schema_version": 1,
+    "storage": {
+      "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+      "kind": "git_raw_chunks_v1",
+      "manifest_bytes": 1564,
+      "manifest_sha256": "b253ad9b3c1a8cbaff9041f1ee9b42f67b8db6bd612894593c84f0c19be4a54d",
+      "parts": [
+        {
+          "bytes": 67108864,
+          "index": 0,
+          "offset": 0,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00000.bin",
+          "sha256": "32dab76e4114fb9746432652365833f93499267216a920463c551b94b4b6c41c"
+        },
+        {
+          "bytes": 67108864,
+          "index": 1,
+          "offset": 67108864,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00001.bin",
+          "sha256": "f075fb05b7d42f46cce9af1b417d383f017ab53eb1ae51a8964827e039239725"
+        },
+        {
+          "bytes": 67108864,
+          "index": 2,
+          "offset": 134217728,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00002.bin",
+          "sha256": "b05bcb57a8628b0cef706a798269612cf0b7404bd60d0ed912789eb4ab08a002"
+        },
+        {
+          "bytes": 67108864,
+          "index": 3,
+          "offset": 201326592,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00003.bin",
+          "sha256": "78c8cb23004a91ad960ccd1ffcdb2358b322c28e8436fed11fc00c5032eca533"
+        },
+        {
+          "bytes": 46922856,
+          "index": 4,
+          "offset": 268435456,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00004.bin",
+          "sha256": "26434479d7ee770accc4434d6dceb41ace1157a880ac0acaa739d91cba8bd07f"
+        }
+      ],
+      "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/manifest.json",
+      "repository": "https://github.com/billbisco/swccg-wiki"
+    },
+    "subject": {
+      "bytes": 315358312,
+      "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+      "kind": "source_snapshot",
+      "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+      "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+    },
+    "verification": {
+      "independent": true,
+      "manifest_readback": {
+        "bytes": 1564,
+        "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+        "git_blob_sha1": "208eec07b03ea1846e32e8cdf32c77f76a66204b",
+        "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/manifest.json",
+        "repository": "https://github.com/billbisco/swccg-wiki",
+        "sha256": "b253ad9b3c1a8cbaff9041f1ee9b42f67b8db6bd612894593c84f0c19be4a54d"
+      },
+      "method": "immutable-git-metadata-and-streamed-parts-v1",
+      "part_readbacks": [
+        {
+          "bytes": 67108864,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "09f10087e07e99c352b0a2a04aebdd69a33dffcb",
+          "index": 0,
+          "offset": 0,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00000.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "32dab76e4114fb9746432652365833f93499267216a920463c551b94b4b6c41c"
+        },
+        {
+          "bytes": 67108864,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "7e29eef9eea79ed88818c30f424b0cfe96841b42",
+          "index": 1,
+          "offset": 67108864,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00001.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "f075fb05b7d42f46cce9af1b417d383f017ab53eb1ae51a8964827e039239725"
+        },
+        {
+          "bytes": 67108864,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "b4fea6604daa89c4bbcb2b03c1e41fbcc053a8ca",
+          "index": 2,
+          "offset": 134217728,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00002.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "b05bcb57a8628b0cef706a798269612cf0b7404bd60d0ed912789eb4ab08a002"
+        },
+        {
+          "bytes": 67108864,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "5dc0fc35079161796fd93287793e51f6d0608693",
+          "index": 3,
+          "offset": 201326592,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00003.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "78c8cb23004a91ad960ccd1ffcdb2358b322c28e8436fed11fc00c5032eca533"
+        },
+        {
+          "bytes": 46922856,
+          "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+          "git_blob_sha1": "435d10d56220d51d24c785ede669b4058a4b96b0",
+          "index": 4,
+          "offset": 268435456,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00004.bin",
+          "repository": "https://github.com/billbisco/swccg-wiki",
+          "sha256": "26434479d7ee770accc4434d6dceb41ace1157a880ac0acaa739d91cba8bd07f"
+        }
+      ],
+      "restored_bytes": 315358312,
+      "restored_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+      "status": "verified",
+      "verified_at": "2026-11-18T12:46:28.148544+00:00"
+    }
+  },
+  "format_and_completeness": {
+    "all_pages_semantically_read": false,
+    "format": "PDF",
+    "full_page_tree_loaded": true,
+    "pages": 303,
+    "whole_bytes_hashed": true
+  },
+  "fresh_Wiki_version_evidence": null,
+  "full_body": {
+    "actual_public_backup_storage": {
+      "commit": "fdc583f2a0e6252553b5b50febc0adc802188d40",
+      "kind": "git_raw_chunks_v1",
+      "manifest_bytes": 1564,
+      "manifest_sha256": "b253ad9b3c1a8cbaff9041f1ee9b42f67b8db6bd612894593c84f0c19be4a54d",
+      "parts": [
+        {
+          "bytes": 67108864,
+          "index": 0,
+          "offset": 0,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00000.bin",
+          "sha256": "32dab76e4114fb9746432652365833f93499267216a920463c551b94b4b6c41c"
+        },
+        {
+          "bytes": 67108864,
+          "index": 1,
+          "offset": 67108864,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00001.bin",
+          "sha256": "f075fb05b7d42f46cce9af1b417d383f017ab53eb1ae51a8964827e039239725"
+        },
+        {
+          "bytes": 67108864,
+          "index": 2,
+          "offset": 134217728,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00002.bin",
+          "sha256": "b05bcb57a8628b0cef706a798269612cf0b7404bd60d0ed912789eb4ab08a002"
+        },
+        {
+          "bytes": 67108864,
+          "index": 3,
+          "offset": 201326592,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00003.bin",
+          "sha256": "78c8cb23004a91ad960ccd1ffcdb2358b322c28e8436fed11fc00c5032eca533"
+        },
+        {
+          "bytes": 46922856,
+          "index": 4,
+          "offset": 268435456,
+          "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/parts/00004.bin",
+          "sha256": "26434479d7ee770accc4434d6dceb41ace1157a880ac0acaa739d91cba8bd07f"
+        }
+      ],
+      "path": "preservation/chunks/07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665/manifest.json",
+      "repository": "https://github.com/billbisco/swccg-wiki"
+    },
+    "bytes": 315358312,
+    "complete_original_rehashed": true,
+    "sha1": "a7cfc7e4ac4a7264a48ddf3ac00cd1894c5efeb9",
+    "sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665"
+  },
+  "generated_at_UTC": "2026-11-19T04:51:19.679624+00:00",
+  "network_body_fetch_performed_in_this_run": false,
+  "own_state_date_accuracy_evidence": "Actual backed final physical15 per-row/source proof; separate from this native identity verification",
+  "private_registry_or_excluded_proofs_read": false,
+  "schema_version": 1,
+  "source": {
+    "bytes": 315358312,
+    "sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+    "url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+  },
+  "source_date_or_own_state_accuracy_checked_by_this_proof": false,
+  "status": "verified_public_native_source_identity",
+  "subject": {
+    "bytes": 315358312,
+    "content_sha256": "07bb3a1fbdd1a65f6cafdff1fca821108ff8210c82da70a10b988ea7539d1665",
+    "kind": "source_snapshot",
+    "original_version_url": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf",
+    "title": "https://res.starwarsccg.org/Resources/Star_Wars_CCG_Collecting_Encyclopedia_3.2.pdf"
+  }
+}
