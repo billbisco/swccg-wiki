@@ -1,6 +1,6 @@
 # Story597 changed Wiki pages
 
-6834 distinct changed pages; 6850 delivered revisions. Work ongoing; review index only.
+6840 distinct changed pages; 6856 delivered revisions. Work ongoing; review index only.
 
 - [2-1B (Reflections Gold Remastered)](https://wiki.swccg.com/wiki/index.php?title=2-1B%20%28Reflections%20Gold%20Remastered%29) — [revision332590](https://swccg.com/wiki/index.php?oldid=332590)
 - [2-1B (Too-Onebee)](https://wiki.swccg.com/wiki/index.php?title=2-1B%20%28Too-Onebee%29) — [revision331512](https://swccg.com/wiki/index.php?oldid=331512)
@@ -112,6 +112,7 @@
 - [A-wing Cannon](https://wiki.swccg.com/wiki/index.php?title=A-wing%20Cannon) — [revision329041](https://swccg.com/wiki/index.php?oldid=329041)
 - [A280 Sharpshooter Rifle](https://wiki.swccg.com/wiki/index.php?title=A280%20Sharpshooter%20Rifle) — [revision328896](https://swccg.com/wiki/index.php?oldid=328896)
 - [A280 Sharpshooter Rifle (V)](https://wiki.swccg.com/wiki/index.php?title=A280%20Sharpshooter%20Rifle%20%28V%29) — [revision333539](https://swccg.com/wiki/index.php?oldid=333539)
+- [A280 Sharpshooter Rifle (V) (Virtual Set 9: Sanctuary Moon) (Original)](https://wiki.swccg.com/wiki/index.php?title=A280%20Sharpshooter%20Rifle%20%28V%29%20%28Virtual%20Set%209%3A%20Sanctuary%20Moon%29%20%28Original%29) — [revision335150](https://swccg.com/wiki/index.php?oldid=335150)
 - [AAT Assault Leader](https://wiki.swccg.com/wiki/index.php?title=AAT%20Assault%20Leader) — [revision329523](https://swccg.com/wiki/index.php?oldid=329523)
 - [AAT Laser Cannon](https://wiki.swccg.com/wiki/index.php?title=AAT%20Laser%20Cannon) — [revision329524](https://swccg.com/wiki/index.php?oldid=329524)
 - [ARC-170 Starfighter](https://wiki.swccg.com/wiki/index.php?title=ARC-170%20Starfighter) — [revision331915](https://swccg.com/wiki/index.php?oldid=331915)
@@ -902,6 +903,7 @@
 - [Chewie With Blaster Rifle (Reflections II Foil)](https://wiki.swccg.com/wiki/index.php?title=Chewie%20With%20Blaster%20Rifle%20%28Reflections%20II%20Foil%29) — [revision330862](https://swccg.com/wiki/index.php?oldid=330862)
 - [Chewie With Blaster Rifle (V)](https://wiki.swccg.com/wiki/index.php?title=Chewie%20With%20Blaster%20Rifle%20%28V%29) — [revision331962](https://swccg.com/wiki/index.php?oldid=331962)
 - [Chewie's AT-ST](https://wiki.swccg.com/wiki/index.php?title=Chewie%27s%20AT-ST) — [revision328902](https://swccg.com/wiki/index.php?oldid=328902)
+- [Chewie's AT-ST (V) (Virtual Set 9: Sanctuary Moon) (Original)](https://wiki.swccg.com/wiki/index.php?title=Chewie%27s%20AT-ST%20%28V%29%20%28Virtual%20Set%209%3A%20Sanctuary%20Moon%29%20%28Original%29) — [revision335151](https://swccg.com/wiki/index.php?oldid=335151)
 - [Chewie, Enraged](https://wiki.swccg.com/wiki/index.php?title=Chewie%2C%20Enraged) — [revision329655](https://swccg.com/wiki/index.php?oldid=329655)
 - [Chief Bast](https://wiki.swccg.com/wiki/index.php?title=Chief%20Bast) — [revision327184](https://swccg.com/wiki/index.php?oldid=327184)
 - [Chief Bast (Japanese)](https://wiki.swccg.com/wiki/index.php?title=Chief%20Bast%20%28Japanese%29) — [revision329935](https://swccg.com/wiki/index.php?oldid=329935)
@@ -3381,6 +3383,7 @@
 - [Lieutenant Naytaan](https://wiki.swccg.com/wiki/index.php?title=Lieutenant%20Naytaan) — [revision327985](https://swccg.com/wiki/index.php?oldid=327985)
 - [Lieutenant Page](https://wiki.swccg.com/wiki/index.php?title=Lieutenant%20Page) — [revision328941](https://swccg.com/wiki/index.php?oldid=328941)
 - [Lieutenant Renz](https://wiki.swccg.com/wiki/index.php?title=Lieutenant%20Renz) — [revision329008](https://swccg.com/wiki/index.php?oldid=329008)
+- [Lieutenant Renz (V) (Virtual Set 9: Sanctuary Moon) (Original)](https://wiki.swccg.com/wiki/index.php?title=Lieutenant%20Renz%20%28V%29%20%28Virtual%20Set%209%3A%20Sanctuary%20Moon%29%20%28Original%29) — [revision335153](https://swccg.com/wiki/index.php?oldid=335153)
 - [Lieutenant Rya Kirsch](https://wiki.swccg.com/wiki/index.php?title=Lieutenant%20Rya%20Kirsch) — [revision329493](https://swccg.com/wiki/index.php?oldid=329493)
 - [Lieutenant Sheckil](https://wiki.swccg.com/wiki/index.php?title=Lieutenant%20Sheckil) — [revision327874](https://swccg.com/wiki/index.php?oldid=327874)
 - [Lieutenant Sheckil (PC Errata)](https://wiki.swccg.com/wiki/index.php?title=Lieutenant%20Sheckil%20%28PC%20Errata%29) — [revision331793](https://swccg.com/wiki/index.php?oldid=331793)
@@ -3600,6 +3603,7 @@
 - [Major Bren Derlin (Revised)](https://wiki.swccg.com/wiki/index.php?title=Major%20Bren%20Derlin%20%28Revised%29) — [revision328457](https://swccg.com/wiki/index.php?oldid=328457)
 - [Major Haash'n](https://wiki.swccg.com/wiki/index.php?title=Major%20Haash%27n) — [revision329097](https://swccg.com/wiki/index.php?oldid=329097)
 - [Major Hewex](https://wiki.swccg.com/wiki/index.php?title=Major%20Hewex) — [revision329010](https://swccg.com/wiki/index.php?oldid=329010)
+- [Major Hewex (V) (Virtual Set 9: Sanctuary Moon) (Original)](https://wiki.swccg.com/wiki/index.php?title=Major%20Hewex%20%28V%29%20%28Virtual%20Set%209%3A%20Sanctuary%20Moon%29%20%28Original%29) — [revision335154](https://swccg.com/wiki/index.php?oldid=335154)
 - [Major Marquand](https://wiki.swccg.com/wiki/index.php?title=Major%20Marquand) — [revision329011](https://swccg.com/wiki/index.php?oldid=329011)
 - [Major Mianda](https://wiki.swccg.com/wiki/index.php?title=Major%20Mianda) — [revision329177](https://swccg.com/wiki/index.php?oldid=329177)
 - [Major Olander Brit](https://wiki.swccg.com/wiki/index.php?title=Major%20Olander%20Brit) — [revision329098](https://swccg.com/wiki/index.php?oldid=329098)
@@ -4966,6 +4970,7 @@
 - [Sergeant Tarl (V)](https://wiki.swccg.com/wiki/index.php?title=Sergeant%20Tarl%20%28V%29) — [revision332374](https://swccg.com/wiki/index.php?oldid=332374)
 - [Sergeant Torent](https://wiki.swccg.com/wiki/index.php?title=Sergeant%20Torent) — [revision328193](https://swccg.com/wiki/index.php?oldid=328193)
 - [Sergeant Wallen](https://wiki.swccg.com/wiki/index.php?title=Sergeant%20Wallen) — [revision329026](https://swccg.com/wiki/index.php?oldid=329026)
+- [Sergeant Wallen (V) (Virtual Set 9: Sanctuary Moon) (Original)](https://wiki.swccg.com/wiki/index.php?title=Sergeant%20Wallen%20%28V%29%20%28Virtual%20Set%209%3A%20Sanctuary%20Moon%29%20%28Original%29) — [revision335155](https://swccg.com/wiki/index.php?oldid=335155)
 - [Set For Stun](https://wiki.swccg.com/wiki/index.php?title=Set%20For%20Stun) — [revision327273](https://swccg.com/wiki/index.php?oldid=327273)
 - [Set For Stun (Japanese Premiere Two-Player)](https://wiki.swccg.com/wiki/index.php?title=Set%20For%20Stun%20%28Japanese%20Premiere%20Two-Player%29) — [revision330520](https://swccg.com/wiki/index.php?oldid=330520)
 - [Set For Stun (Japanese)](https://wiki.swccg.com/wiki/index.php?title=Set%20For%20Stun%20%28Japanese%29) — [revision329884](https://swccg.com/wiki/index.php?oldid=329884)
@@ -6267,6 +6272,7 @@
 - [Tydirium](https://wiki.swccg.com/wiki/index.php?title=Tydirium) — [revision331585](https://swccg.com/wiki/index.php?oldid=331585)
 - [Tydirium (V) (ALT) (Errata)](https://wiki.swccg.com/wiki/index.php?title=Tydirium%20%28V%29%20%28ALT%29%20%28Errata%29) — [revision333948](https://swccg.com/wiki/index.php?oldid=333948)
 - [Tydirium (V) (Virtual Block 3) (Errata)](https://wiki.swccg.com/wiki/index.php?title=Tydirium%20%28V%29%20%28Virtual%20Block%203%29%20%28Errata%29) — [revision333669](https://swccg.com/wiki/index.php?oldid=333669)
+- [Tydirium (V) (Virtual Set 9: Sanctuary Moon) (Original)](https://wiki.swccg.com/wiki/index.php?title=Tydirium%20%28V%29%20%28Virtual%20Set%209%3A%20Sanctuary%20Moon%29%20%28Original%29) — [revision335152](https://swccg.com/wiki/index.php?oldid=335152)
 - [Tyrant](https://wiki.swccg.com/wiki/index.php?title=Tyrant) — [revision327556](https://swccg.com/wiki/index.php?oldid=327556)
 - [Tyrant (Japanese)](https://wiki.swccg.com/wiki/index.php?title=Tyrant%20%28Japanese%29) — [revision330344](https://swccg.com/wiki/index.php?oldid=330344)
 - [Tyrant (Reflections Foil)](https://wiki.swccg.com/wiki/index.php?title=Tyrant%20%28Reflections%20Foil%29) — [revision330812](https://swccg.com/wiki/index.php?oldid=330812)
