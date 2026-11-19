@@ -132,3 +132,77 @@ The offline fixtures cover exact receipts, false recovery claims, filename and
 history mappings, distinct page/source hashes, multiple citations, interruption,
 idempotent replay, approval/public-byte/stage-budget gates and fixed-host enqueue.
 
+
+## Adopt an already checked native PDF capture
+
+When a client has already opened an exact indexed PDF capture, the existing
+owner can adopt that observation without repeating the Archive.org request:
+
+```text
+python3 ops/wayback_worker.py REPO_DIR --adopt-native-receipt BUNDLE/manifest.json --approved-receipt-sha256 APPROVED_MANIFEST_SHA256
+```
+
+This is an offline operation under the same exclusive `Control` lock. It does
+not call provider begin/recovery/reconcile, submit a save, poll a job, fetch a
+replay, change credentials, or change cooldown/canary/pacing state. A busy owner
+fails closed. Ordinary Git ledger persistence still uses the existing short
+writer transaction and its concurrent-update guard.
+
+The schema-1 manifest has kind `checked_native_capture_adoption`, a traceable
+`approval_scope.ticket`, exact source `{url, sha256, bytes}`, and a bounded
+`bindings` array. Every binding supplies the actual latest `object_id`,
+`subject_id`, `request_id` and complete `subject`. `capture` supplies the normal
+replay `url`, fourteen-digit `timestamp` and literal `capture_original_url`.
+`payload` and `proof` each supply a safe bundle-relative `path`, `sha256`,
+`bytes` and independently restored immutable `backup_receipt`.
+
+`payload` contains the complete unchanged native PDF, bounded to 512 MiB.
+`proof` is a checked-observation JSON, bounded to 4 MiB. It records `target`,
+`cdx_parameters`, `cdx_requested_url`, `cdx_status`, `rows`,
+`selected_candidate`, `capture_verified`, `replay_url`, `replay_status`,
+`redirects_followed`, `replay_sha256`, `replay_bytes`, and `replay_headers`.
+The exact CDX query must target the registered URI, request JSON, filter
+status 200, collapse digest, and limit 10. The selected row must occur in those
+rows and bind timestamp, literal original URI, PDF MIME, status 200 and the
+native payload's base32 SHA-1 digest. The raw `id_` replay observation must be
+HTTP 200/PDF with no followed redirects, exact SHA-256/size and the matching
+`Memento-Datetime`. HTML wrappers cannot satisfy the native checks.
+
+The approved manifest hash is an operator trust boundary: it approves a
+previously inspected and independently backed client observation, not a fresh
+server network verification or an Archive.org signature. The owner recomputes
+all supplied file hashes, validates the backup receipts and current registry
+bindings, and requires the payload's backup storage to match the registered
+source receipt. Keep the actual bundle and private evidence in their approved
+private backup; generic source tests contain no real private source payloads.
+
+Registered URI and capture-original spelling are kept separately. A CDX result
+may explicitly return different escaping; the observation must prove the exact
+registered query and returned original. No inferred source alias is added.
+
+All bindings validate before writes. Conflicting captures, pending accepted
+provider jobs, contradictory payload metadata, stale requests and different
+prior object adoptions require explicit reconciliation. The ledger checkpoint
+precedes Git persistence; object-scoped immutable owner receipts appear only
+after the ledger is durable. Private backup receipts stay in the owner
+object evidence; the tracked ledger includes only the manifest/object/request
+identifiers, native verification and public capture. Interrupted executions resume with the same
+manifest hash. The operation never replaces a shared payload-job pointer:
+other URL/version mappings with identical bytes retain their own state.
+Normal prepare/finish skips only an exact current object with this verified
+adoption. Export labels it verified with `submitted:false`; reuse did not
+submit a new provider job. Final dispositions live in
+`capture-adoptions/<manifest-sha256>.json` outside Git resets.
+
+The older schema-1 `verify-inbox` route remains compatible for existing done
+entries. Its exact original bytes and per-entry dispositions are retained
+under `verify-receipts/<original-sha256>/`. Missing prior entries, malformed
+receipts and capture conflicts stay in the inbox for reconciliation instead
+of being silently deleted. Fully consumed receipts are removed only after a
+durable owner checkpoint. Inputs over 8 MiB remain untouched in the inbox.
+
+Run the full offline owner suite (external sockets are forbidden):
+
+```text
+python3 ops/tests/run_offline.py --temp-root /DISK_WORK/TEST_TMP
+```

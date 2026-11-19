@@ -68,6 +68,10 @@ class OwnerAdapter:
         key = registration_object_id(request["subject"], request["source"])
         # Registration owner names the client's continuation owner. Capture
         # authority is the active Control lock plus the exact approved cohort.
+        adopted = load_event(self.registry, request["source"], object_id=key,
+                             request_id=entry["request_id"], subject=request["subject"])
+        if adopted and adopted.get("adoption") and adopted.get("state") == "verified":
+            return False
         return (key in self.allowed and
                 object_state(request) in {"ready", "awaiting_stage"})
 

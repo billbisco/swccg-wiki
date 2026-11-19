@@ -572,7 +572,8 @@ class PendingConfirm(unittest.TestCase):
             "updates": {url: {"capture": cap, "status": "verified",
                               "verify": {"method": "sha256", "sha256": "abc"}}},
         }))
-        control = type("C", (), {"directory": root})()
+        control = W.Control(root, None)
+        control.initial_done = json.loads(json.dumps(done))
         changed = {}
         n = W.apply_verify_inbox(control, done, changed)
         self.assertEqual(1, n)
