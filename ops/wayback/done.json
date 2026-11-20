@@ -70126,17 +70126,33 @@
   }
  },
  "https://i.ebayimg.com/images/g/g-wAAeSwXBNp~5Fp/s-l1600.webp": {
-  "capture": "",
-  "error": "<urlopen error [Errno 104] Connection reset by peer>",
-  "last": "2026-11-20T22:24:16Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261120230213/https://i.ebayimg.com/images/g/g-wAAeSwXBNp~5Fp/s-l1600.webp",
+  "job_id": "spn2-84465c7a5d3eb23c6ce7b5799f5ac6fc67d86c5b",
+  "last": "2026-11-20T23:07:41Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-20T23:07:41Z",
+   "bytes": 596262,
+   "capture_id": "https://web.archive.org/web/20261120230213id_/https://i.ebayimg.com/images/g/g-wAAeSwXBNp~5Fp/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "39bd8c848f8351cca6160fb123209af5ba14196aa119a67154d376aa27d9816c"
+  }
  },
  "https://i.ebayimg.com/images/g/hrwAAeSwlKlp~6DC/s-l1600.webp": {
   "capture": "https://web.archive.org/web/20261120224837/https://i.ebayimg.com/images/g/hrwAAeSwlKlp~6DC/s-l1600.webp",
-  "last": "2026-11-20T22:51:05Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-20T23:01:18Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T23:01:27Z",
+   "bytes": 574868,
+   "capture_id": "https://web.archive.org/web/20261120224837id_/https://i.ebayimg.com/images/g/hrwAAeSwlKlp~6DC/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4735b349bd2e4ddf2877f0b5d277e547a9d6f73f0d31f7567b661e1c2e965af9"
+  }
  },
  "https://i.ebayimg.com/images/g/koAAAeSwt~tqxW07/s-l1600.jpg": {
   "capture": "https://web.archive.org/web/20261014165153/https://i.ebayimg.com/images/g/koAAAeSwt~tqxW07/s-l1600.jpg",
@@ -70255,6 +70271,18 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "0219fee870ffcf5d48efdba49b96b75a6032ee03cf510a969ee04a55f993930a"
+  }
+ },
+ "https://i.ebayimg.com/images/g/u6gAAOSwmnlgtGTQ/s-l1600.webp": {
+  "capture": "https://web.archive.org/web/20261120230441/https://i.ebayimg.com/images/g/u6gAAOSwmnlgtGTQ/s-l1600.webp",
+  "job_id": "spn2-3a5b95c1ff1a06f06cf6050a4846c9d1696498df",
+  "last": "2026-11-20T23:07:54Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T23:07:54Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://i.ebayimg.com/images/g/u9oAAeSwZeRp~6E1/s-l1600.webp": {
@@ -164517,11 +164545,34 @@
   }
  },
  "https://swccg.com/wiki/images/2/2f/Dagobah-Revised-D-brokenconcentration-physical-source.png": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261120225813/https://swccg.com/wiki/images/2/2f/Dagobah-Revised-D-brokenconcentration-physical-source.png",
   "job_id": "spn2-1af338e153eafd861e4b5535364fc66c6f93e342",
-  "last": "2026-11-20T22:58:12Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-20T23:01:15Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T23:01:15Z",
+   "bytes": 274899,
+   "capture_id": "https://web.archive.org/web/20261120225813id_/https://swccg.com/wiki/images/2/2f/Dagobah-Revised-D-brokenconcentration-physical-source.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4bc4c2e4f2801bed5c7b737ddf5154ff4347f0294b157119d3704327f7f24dd0"
+  }
+ },
+ "https://swccg.com/wiki/images/3/3f/Dagobah-Revised-L-tunnelvision-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261120230332/https://swccg.com/wiki/images/3/3f/Dagobah-Revised-L-tunnelvision-physical-photo.png",
+  "job_id": "spn2-97e41125de949cc50e252de42bc5ed4f99569a52",
+  "last": "2026-11-20T23:07:52Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T23:07:52Z",
+   "bytes": 245496,
+   "capture_id": "https://web.archive.org/web/20261120230332id_/https://swccg.com/wiki/images/3/3f/Dagobah-Revised-L-tunnelvision-physical-photo.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4e1e76416a9ab3148e25ec6287ae8d308372dcca4ade04a99f40c7f9bc0e8b78"
+  }
  },
  "https://swccg.com/wiki/images/4/40/Dagobah-Revised-L-recoilinfear-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120214221/https://swccg.com/wiki/images/4/40/Dagobah-Revised-L-recoilinfear-physical-photo.png",
@@ -164593,6 +164644,28 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "38b84cec8465f2d40214b0e363a3fb08205dbd8bf4526b1cffcb1a89149667b8"
+  }
+ },
+ "https://swccg.com/wiki/images/4/4a/Dagobah-Revised-L-egregiouspiloterror-physical-browser-photo.png": {
+  "capture": "",
+  "job_id": "spn2-e83e1cbef635577beb52c66cab892a6a266fda2e",
+  "last": "2026-11-20T23:05:34Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/wiki/images/4/4f/Dagobah-Revised-L-lostrelay-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261120230230/https://swccg.com/wiki/images/4/4f/Dagobah-Revised-L-lostrelay-physical-photo.png",
+  "job_id": "spn2-1f4cda293133c932dd76e17d9f1e860dbb4773ac",
+  "last": "2026-11-20T23:07:47Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T23:07:47Z",
+   "bytes": 227788,
+   "capture_id": "https://web.archive.org/web/20261120230230id_/https://swccg.com/wiki/images/4/4f/Dagobah-Revised-L-lostrelay-physical-photo.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4bfca47f121f258a1b186278134e5811af99996b6d3b893dba45ecd1bc01df8e"
   }
  },
  "https://swccg.com/wiki/images/5/50/Dagobah-Revised-L-lightmaneuvers-physical-browser-photo.png": {
@@ -164989,9 +165062,9 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-20T22:33:47Z",
+   "at": "2026-11-20T23:07:55Z",
    "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://swccg.com/wiki/images/archive/f/f6/20261116121319%21Icon-set-Dagobah.png": {
@@ -165128,6 +165201,13 @@
    "method": "sha256",
    "sha256": "027c7a9a246bb742566c838c13058a2dd00717d1b3dea3166e26d67499dc4bd0"
   }
+ },
+ "https://swccg.com/wiki/images/d/d8/Dagobah-Revised-L-groundedstarfighter-physical-photo.png": {
+  "capture": "",
+  "job_id": "spn2-40e5386ba70153bb2e952a7f6c7a6564c27568ca",
+  "last": "2026-11-20T23:06:35Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/images/d/dc/Dagobah-Revised-L-reporttolordvader-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120213452/https://swccg.com/wiki/images/d/dc/Dagobah-Revised-L-reporttolordvader-physical-photo.png",
