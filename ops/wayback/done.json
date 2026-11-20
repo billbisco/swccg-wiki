@@ -69709,6 +69709,13 @@
    "sha256": "238c622a40602ee9477f251479911921318833e852b9a3bb3d57589dc9d5e217"
   }
  },
+ "https://i.ebayimg.com/images/g/8poAAOSwiyRlxnNP/s-l1600.webp": {
+  "capture": "",
+  "error": "<urlopen error [Errno 104] Connection reset by peer>",
+  "last": "2026-11-20T22:13:36Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://i.ebayimg.com/images/g/8rkAAOSwwPtcmGcr/s-l1600.webp": {
   "capture": "https://web.archive.org/web/20261120193421/https://i.ebayimg.com/images/g/8rkAAOSwwPtcmGcr/s-l1600.webp",
   "job_id": "spn2-93b423b0fc4274dcb4448e2cf484b5954eacb633",
@@ -69725,11 +69732,19 @@
   }
  },
  "https://i.ebayimg.com/images/g/A7EAAOSwoTVlxcQ3/s-l1600.webp": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261120220608/https://i.ebayimg.com/images/g/A7EAAOSwoTVlxcQ3/s-l1600.webp",
   "job_id": "spn2-d21b101713aed6489648ddc29f65e897c716ae2c",
-  "last": "2026-11-20T22:06:08Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-20T22:10:26Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T22:10:26Z",
+   "bytes": 144166,
+   "capture_id": "https://web.archive.org/web/20261120220608id_/https://i.ebayimg.com/images/g/A7EAAOSwoTVlxcQ3/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "32e3f4132828e0c89d2f94092a45692a9317bf6d5a0896f07d0cf3bffee9333c"
+  }
  },
  "https://i.ebayimg.com/images/g/AroAAeSwnUZp~6Di/s-l1600.webp": {
   "capture": "https://web.archive.org/web/20261120202840/https://i.ebayimg.com/images/g/AroAAeSwnUZp~6Di/s-l1600.webp",
@@ -69753,9 +69768,24 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-20T21:36:16Z",
+   "at": "2026-11-20T22:17:10Z",
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+ },
+ "https://i.ebayimg.com/images/g/BUUAAeSwDt5o5-Xf/s-l1600.webp": {
+  "capture": "https://web.archive.org/web/20261120221036/https://i.ebayimg.com/images/g/BUUAAeSwDt5o5-Xf/s-l1600.webp",
+  "job_id": "spn2-c52202d1d6c827f4a2dcbc43b171c40bed42f268",
+  "last": "2026-11-20T22:16:47Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T22:16:47Z",
+   "bytes": 435638,
+   "capture_id": "https://web.archive.org/web/20261120221036id_/https://i.ebayimg.com/images/g/BUUAAeSwDt5o5-Xf/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "33dd5252a4a08dfe81c88a3190f75417189d97d78337941b318dad937aa9b450"
   }
  },
  "https://i.ebayimg.com/images/g/Bq0AAOSwHklgs8WQ/s-l1600.webp": {
@@ -69995,11 +70025,34 @@
   }
  },
  "https://i.ebayimg.com/images/g/m3kAAOSwHIRgtHIe/s-l1600.webp": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261120220255/https://i.ebayimg.com/images/g/m3kAAOSwHIRgtHIe/s-l1600.webp",
   "job_id": "spn2-df1641ce646bac04a952a6696cb7c2a99a61ed91",
-  "last": "2026-11-20T21:02:11Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-20T22:10:32Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T22:10:32Z",
+   "bytes": 543550,
+   "capture_id": "https://web.archive.org/web/20261120220255id_/https://i.ebayimg.com/images/g/m3kAAOSwHIRgtHIe/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "228da46a7cf41dd68f7537a1d9d439e64fa5fe27b64e98c61363b72a00e6cd67"
+  }
+ },
+ "https://i.ebayimg.com/images/g/mscAAOSwPEtcma3Q/s-l1600.webp": {
+  "capture": "https://web.archive.org/web/20261120221536/https://i.ebayimg.com/images/g/mscAAOSwPEtcma3Q/s-l1600.webp",
+  "job_id": "spn2-dde61c41d697e1d2d476773cc4f06992800b4fff",
+  "last": "2026-11-20T22:17:09Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T22:17:09Z",
+   "bytes": 226784,
+   "capture_id": "https://web.archive.org/web/20261120221536id_/https://i.ebayimg.com/images/g/mscAAOSwPEtcma3Q/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "36f52868c2afb35604ec72f543ebab50bb9861719f9799223abaf54d6369eca5"
+  }
  },
  "https://i.ebayimg.com/images/g/nmwAAOSwAPBlxnYq/s-l1600.webp": {
   "capture": "https://web.archive.org/web/20261120205113/https://i.ebayimg.com/images/g/nmwAAOSwAPBlxnYq/s-l1600.webp",
@@ -164293,6 +164346,21 @@
    "sha256": "2e6fbdee7aa55da4786c5c235a9cfcf727d0d01de78f411d98cfe65b55013b83"
   }
  },
+ "https://swccg.com/wiki/images/4/46/Dagobah-Revised-L-bogwing-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261120221136/https://swccg.com/wiki/images/4/46/Dagobah-Revised-L-bogwing-physical-photo.png",
+  "job_id": "spn2-b37dd366a49aa5552306cb67763f59faa55799be",
+  "last": "2026-11-20T22:16:53Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T22:16:53Z",
+   "bytes": 214027,
+   "capture_id": "https://web.archive.org/web/20261120221136id_/https://swccg.com/wiki/images/4/46/Dagobah-Revised-L-bogwing-physical-photo.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3462bae6dfb336540dfcc0bebbc490245a5fd0ecc7ce77bd54fa54332f1ef0f0"
+  }
+ },
  "https://swccg.com/wiki/images/4/47/Dagobah-Revised-L-domainofevil-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120213250/https://swccg.com/wiki/images/4/47/Dagobah-Revised-L-domainofevil-physical-photo.png",
   "job_id": "spn2-6981caa584fe969cf90c0701aee85e94cae12c81",
@@ -164618,11 +164686,19 @@
   }
  },
  "https://swccg.com/wiki/images/c/cf/Dagobah-Revised-L-yodasgimerstick-physical-photo.png": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261120220802/https://swccg.com/wiki/images/c/cf/Dagobah-Revised-L-yodasgimerstick-physical-photo.png",
   "job_id": "spn2-974ceb48e44f71a531b6002cc2d45a2caf6700a4",
-  "last": "2026-11-20T22:07:09Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-20T22:10:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T22:10:12Z",
+   "bytes": 269280,
+   "capture_id": "https://web.archive.org/web/20261120220802id_/https://swccg.com/wiki/images/c/cf/Dagobah-Revised-L-yodasgimerstick-physical-photo.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "333609ac8255c1e626a826015c133e36a3def9cd0af965bc496bd67121935d10"
+  }
  },
  "https://swccg.com/wiki/images/d/d1/Dagobah-Revised-D-bogwing-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120195031/https://swccg.com/wiki/images/d/d1/Dagobah-Revised-D-bogwing-physical-photo.png",
@@ -164724,6 +164800,28 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "2ff65c1146ff120815d9287b2713ad9637c8526b887a696acdb7b525e6992fbc"
+  }
+ },
+ "https://swccg.com/wiki/images/e/e8/Dagobah-Revised-L-throughtheforcethingsyouwillsee-physical-photo.png": {
+  "capture": "",
+  "job_id": "spn2-1b89508d720a6b94e3e98e80de2ab981f03e4040",
+  "last": "2026-11-20T22:15:37Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/wiki/images/e/ec/Dagobah-Revised-L-effectiverepairs-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261120221327/https://swccg.com/wiki/images/e/ec/Dagobah-Revised-L-effectiverepairs-physical-photo.png",
+  "job_id": "spn2-09bfeee302b90cb6a5b480aac482f321b9a31d43",
+  "last": "2026-11-20T22:17:03Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T22:17:03Z",
+   "bytes": 276159,
+   "capture_id": "https://web.archive.org/web/20261120221327id_/https://swccg.com/wiki/images/e/ec/Dagobah-Revised-L-effectiverepairs-physical-photo.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "34ab7644af4f30ac023741c93d15ef9133d246d7e7a2e0c789e58eabbbef5d1b"
   }
  },
  "https://swccg.com/wiki/images/e/ef/Dagobah-Revised-L-whatisthybiddingmymaster-physical-photo.png": {
