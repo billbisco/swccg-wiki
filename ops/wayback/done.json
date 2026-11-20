@@ -163746,6 +163746,33 @@
    "sha256": "fa0b8c01d50b644f34b38d77db9a7cfd9ac69b144aee3ec7e1607edf708ee109"
   }
  },
+ "https://swccg.com/wiki/images/c/c2/Dagobah-Revised-L-thisismorelikeit-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261120191712/https://swccg.com/wiki/images/c/c2/Dagobah-Revised-L-thisismorelikeit-physical-photo.png",
+  "job_id": "spn2-b6f9900f3900878cb8c6135dfcaad0d293229b8e",
+  "last": "2026-11-20T19:19:29Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T19:19:29Z",
+   "bytes": 262967,
+   "capture_id": "https://web.archive.org/web/20261120191712id_/https://swccg.com/wiki/images/c/c2/Dagobah-Revised-L-thisismorelikeit-physical-photo.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "004c23bf77968b88e8776233c856a2b1b8e3298e5c3f8800391c1761437d67ce"
+  }
+ },
+ "https://swccg.com/wiki/images/e/e5/Dagobah-Revised-D-executormeditationchamber-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261120191813/https://swccg.com/wiki/images/e/e5/Dagobah-Revised-D-executormeditationchamber-physical-photo.png",
+  "job_id": "spn2-c61d38805c870c3b164c6f3a246e508e1069a6e5",
+  "last": "2026-11-20T19:19:33Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T19:19:33Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+ },
  "https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0": {
   "capture": "https://web.archive.org/web/20260929063927/https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0",
   "last": "2026-10-22T21:16:25Z",
@@ -164422,6 +164449,21 @@
    "title": "File:Reflections-Foil-L-Revolution-PSA-photo-158980015-original.jpg"
   }
  },
+ "https://wiki.swccg.com/images/2/2d/Set-V0-title.jpg": {
+  "capture": "https://web.archive.org/web/20261120191603/https://swccg.com/wiki/images/2/2d/Set-V0-title.jpg",
+  "job_id": "spn2-f0ad61abc01f5a14e87001b6288ac14b1a95303e",
+  "last": "2026-11-20T19:19:18Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T19:19:18Z",
+   "bytes": 19090,
+   "capture_id": "https://web.archive.org/web/20261120191603id_/https://swccg.com/wiki/images/2/2d/Set-V0-title.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a838289b0d7f65cc696b33cea369e6d7b84e24ddfd3f88f4a0fb897f60f64291"
+  }
+ },
  "https://wiki.swccg.com/images/2/2e/Japanese-Premiere-1301-158o-SWCA.jpg": {
   "capture": "https://web.archive.org/web/20261113122408/https://wiki.swccg.com/images/2/2e/Japanese-Premiere-1301-158o-SWCA.jpg",
   "last": "2026-11-13T12:34:31Z",
@@ -164446,6 +164488,21 @@
    "capture_id": "https://web.archive.org/web/20261114003101id_/https://wiki.swccg.com/images/3/31/Promo-Foil-L-rebelbarrier-T24-Duncan-Jenkins.jpg",
    "method": "sha256",
    "sha256": "26c68feea0bc883ce240b6ea930e1e54248abcf24f3b8e1d22b2413f244b62c8"
+  }
+ },
+ "https://wiki.swccg.com/images/3/32/PC_logo_modern.png": {
+  "capture": "https://web.archive.org/web/20261120191611/https://swccg.com/wiki/images/3/32/PC_logo_modern.png",
+  "job_id": "spn2-5f8fa28fae94044fa75bcdf2f705fb8741059d5b",
+  "last": "2026-11-20T19:19:23Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T19:19:23Z",
+   "bytes": 29822,
+   "capture_id": "https://web.archive.org/web/20261120191611id_/https://swccg.com/wiki/images/3/32/PC_logo_modern.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3e727368fcdc96e278ac7d430fbbc08186b1a85dec6fabaa16dd9ab8c8f84195"
   }
  },
  "https://wiki.swccg.com/images/3/33/Japanese-Hoth-FX-7-PSA-148375102-original.jpg": {
@@ -165584,16 +165641,11 @@
   }
  },
  "https://wiki.swccg.com/images/c/cd/Reflections-Foil-D-Rancor-PSA-photo-155135610-original.jpg": {
-  "expected_sha256": "4a1ba4d93d6533a214a4c90a577c3d65c142f05775f1e7f638f42519a8114b52",
-  "last": "2026-11-14T14:29:49.413003+00:00",
-  "note": "Story381 exact original-image version awaiting a byte-verified replay: HTTP 520",
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 14 minutes ago. You can make new capture of this URL after 720 hours.",
+  "last": "2026-11-20T19:13:06Z",
   "status": "retry",
-  "wiki_image_version": {
-   "mime": "image/jpeg",
-   "sha1": "5a6e711c8be4d461cffacb528f37267d8a27f599",
-   "timestamp": "2026-11-14T03:41:25Z",
-   "title": "File:Reflections-Foil-D-Rancor-PSA-photo-155135610-original.jpg"
-  }
+  "tries": 1
  },
  "https://wiki.swccg.com/images/c/cf/Reflections-Foil-L-Attack-Run-PSA-72605733-original.jpg": {
   "capture": "https://web.archive.org/web/20261114005742/https://wiki.swccg.com/images/c/cf/Reflections-Foil-L-Attack-Run-PSA-72605733-original.jpg",
@@ -165874,16 +165926,11 @@
   "tries": 1
  },
  "https://wiki.swccg.com/images/e/ef/Reflections-Foil-D-Wampa-PSA-photo-181170634-original.jpg": {
-  "expected_sha256": "0ed2af83f2e5ad619a24598e01fd3dbed420da0a31ed79eae6b67a3586259673",
-  "last": "2026-11-14T14:29:49.413003+00:00",
-  "note": "Story381 exact original-image version awaiting a byte-verified replay: HTTP 520",
+  "capture": "",
+  "error": "no job_id: The same snapshot had been made 15 minutes ago. You can make new capture of this URL after 720 hours.",
+  "last": "2026-11-20T19:14:08Z",
   "status": "retry",
-  "wiki_image_version": {
-   "mime": "image/jpeg",
-   "sha1": "e69cbca38edd311983cd2b1530e6ad9545e47106",
-   "timestamp": "2026-11-14T03:41:25Z",
-   "title": "File:Reflections-Foil-D-Wampa-PSA-photo-181170634-original.jpg"
-  }
+  "tries": 1
  },
  "https://wiki.swccg.com/images/f/f2/Reflections-Foil-L-Ben-Kenobi-PSA-75985154-original.jpg": {
   "capture": "https://web.archive.org/web/20261114005800/https://wiki.swccg.com/images/f/f2/Reflections-Foil-L-Ben-Kenobi-PSA-75985154-original.jpg",
