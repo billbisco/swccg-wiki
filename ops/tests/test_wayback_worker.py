@@ -7,6 +7,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 import urllib.error
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -45,6 +46,33 @@ def fake_get(table):
             raise r
         return r
     return get
+
+
+class LedgerTimestamps(unittest.TestCase):
+    def test_aware_iso_forms_normalize_to_the_same_utc_instant(self):
+        expected = datetime(2026, 11, 14, 14, 29, 49, 413003, timezone.utc)
+        for value in ("2026-11-14T14:29:49.413003Z",
+                      "2026-11-14T14:29:49.413003+00:00",
+                      "2026-11-14T10:29:49.413003-04:00",
+                      "2026-11-14T20:14:49.413003+05:45"):
+            with self.subTest(value=value):
+                self.assertEqual(expected, W.parse(value))
+                self.assertIs(timezone.utc, W.parse(value).tzinfo)
+        self.assertEqual(expected.replace(microsecond=0), W.parse("2026-11-14T14:29:49Z"))
+        self.assertEqual(expected.replace(microsecond=0), W.parse("2026-11-14T14:29:49+00:00"))
+
+    def test_naive_and_invalid_timestamps_are_not_assigned_a_local_timezone(self):
+        for value in ("2026-11-14T14:29:49", "2026-11-14", "", "not-a-timestamp"):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                W.parse(value)
+        self.assertIsNone(W.pending_age({"last": "not-a-timestamp"}))
+
+    def test_pending_cap_uses_instants_not_offset_or_fraction_string_order(self):
+        now = datetime(2026, 11, 20, 14, 0, tzinfo=timezone.utc)
+        rows = {"older": {"status": "pending", "last": "2026-11-20T18:30:00+05:45"},
+                "whole": {"status": "pending", "last": "2026-11-20T13:00:00Z"},
+                "fraction": {"status": "pending", "last": "2026-11-20T09:00:00.000001-04:00"}}
+        self.assertEqual(["fraction", "whole"], W.pending_confirm_urls(rows, now_t=now, cap=2))
 
 
 class IdUrl(unittest.TestCase):
@@ -152,6 +180,39 @@ class RunLoop(unittest.TestCase):
             setattr(W, k, v)
         W.time.sleep = self.sleep
         self.tmp.cleanup()
+
+    def test_retry_with_persisted_fractional_offset_timestamp_reaches_submission(self):
+        done = json.loads((self.repo / W.DONE).read_text())
+        done[self.src] = {"status": "retry", "tries": 1, "last": "2026-11-14T14:29:49.413003+00:00"}
+        (self.repo / W.DONE).write_text(json.dumps(done))
+        with patch.object(W, "now", return_value=datetime(2026, 11, 20, 12, tzinfo=timezone.utc)), \
+             patch.object(W, "spn2_submit", return_value={"job_id": "spn2-test"}) as submit:
+            W.run(self.repo, minutes=5)
+        submit.assert_called_once_with(self.src)
+        saved = json.loads((self.repo / W.DONE).read_text())
+        self.assertEqual("verified", saved[self.src]["status"])
+        self.assertEqual("sha256", saved[self.src]["verify"]["method"])
+        self.assertEqual(done[self.old]["capture"], saved[self.old]["capture"])
+
+    def test_fractional_retry_boundary_preserves_cooldown_and_due_work(self):
+        clock = datetime(2026, 11, 20, 12, tzinfo=timezone.utc)
+        (self.repo / W.QUEUE).write_text(self.src + "\n")
+        for remaining in (timedelta(microseconds=1), timedelta(0)):
+            with self.subTest(remaining=remaining):
+                entry = {"status": "retry", "tries": 1,
+                         "last": (clock - W.RETRY_AFTER + remaining).astimezone(timezone(timedelta(hours=-4))).isoformat()}
+                (self.repo / W.DONE).write_text(json.dumps({self.src: entry}))
+                with patch.object(W, "now", return_value=clock), \
+                     patch.object(W, "control_directory", return_value=self.repo / ("boundary-" + str(remaining.microseconds))), \
+                     patch.object(W, "spn2_submit", return_value={"job_id": "spn2-test"}) as submit:
+                    W.run(self.repo, minutes=5)
+                saved = json.loads((self.repo / W.DONE).read_text())
+                if remaining:
+                    submit.assert_not_called()
+                    self.assertEqual(entry, saved[self.src])
+                else:
+                    submit.assert_called_once_with(self.src)
+                    self.assertEqual("verified", saved[self.src]["status"])
 
     def test_new_url_and_backlog_end_verified(self):
         W.run(self.repo, minutes=5)

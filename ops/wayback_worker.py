@@ -198,7 +198,11 @@ def iso(t: datetime) -> str:
 
 
 def parse(s: str) -> datetime:
-    return datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    """Read aware persisted ISO 8601 timestamps without losing their precision."""
+    value = datetime.fromisoformat(s)
+    if value.tzinfo is None:
+        raise ValueError("ledger timestamp requires an explicit UTC offset")
+    return value.astimezone(timezone.utc)
 
 
 def load_keys() -> str | None:
@@ -555,14 +559,14 @@ def pending_confirm_urls(
     max_age = PENDING_CONFIRM_MAX_AGE if max_age is None else max_age
     cap = PENDING_CONFIRM_CAP if cap is None else cap
     now_t = now_t or now()
-    rows: list[tuple[str, str]] = []
+    rows: list[tuple[datetime, str]] = []
     for url, e in done.items():
         if not isinstance(e, dict) or e.get("status") != "pending":
             continue
         age = pending_age(e, now_t)
         if age is None or age > max_age:
             continue
-        rows.append((str(e.get("last") or ""), url))
+        rows.append((now_t - age, url))
     rows.sort(reverse=True)
     return [u for _, u in rows[:cap]]
 
