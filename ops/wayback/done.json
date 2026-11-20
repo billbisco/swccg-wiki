@@ -69746,9 +69746,9 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-20T21:04:16Z",
+   "at": "2026-11-20T21:36:16Z",
    "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://i.ebayimg.com/images/g/Bq0AAOSwHklgs8WQ/s-l1600.webp": {
@@ -69809,6 +69809,21 @@
    "reason": "capture HTTP 404"
   }
  },
+ "https://i.ebayimg.com/images/g/IBwAAOSwvPtlxc62/s-l1600.webp": {
+  "capture": "https://web.archive.org/web/20261120212944/https://i.ebayimg.com/images/g/IBwAAOSwvPtlxc62/s-l1600.webp",
+  "job_id": "spn2-5641618c997b7608b456de8a8e89ced7a7e05385",
+  "last": "2026-11-20T21:35:56Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T21:35:56Z",
+   "bytes": 222806,
+   "capture_id": "https://web.archive.org/web/20261120212944id_/https://i.ebayimg.com/images/g/IBwAAOSwvPtlxc62/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2625ec8a3eda5c92ddd6f2514b179b0dbb6e965c919574b731149d511c9d694c"
+  }
+ },
  "https://i.ebayimg.com/images/g/IZ0AAeSwHNFp~6Im/s-l1600.webp": {
   "capture": "https://web.archive.org/web/20261120194727/https://i.ebayimg.com/images/g/IZ0AAeSwHNFp~6Im/s-l1600.webp",
   "job_id": "spn2-d059f8231ca9f8c8648f036d4b8159094f244f1c",
@@ -69851,6 +69866,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "1858f4cc41a1a45eaab26dedba580e3ddf3ffa4e2745a6d00f287a5e94da8e08"
+  }
+ },
+ "https://i.ebayimg.com/images/g/QRwAAeSwcSpp~6Hg/s-l1600.webp": {
+  "capture": "https://web.archive.org/web/20261120213120/https://i.ebayimg.com/images/g/QRwAAeSwcSpp~6Hg/s-l1600.webp",
+  "job_id": "spn2-2974655018a78719afc027d731ea47235ef7e38a",
+  "last": "2026-11-20T21:36:04Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T21:36:04Z",
+   "bytes": 440440,
+   "capture_id": "https://web.archive.org/web/20261120213120id_/https://i.ebayimg.com/images/g/QRwAAeSwcSpp~6Hg/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "268109d8012c2bead93894a7267eb79f1342b8bedf1b88b3f53f73254f385f67"
   }
  },
  "https://i.ebayimg.com/images/g/XUYAAeSw~6pqxW1B/s-l1600.png": {
@@ -164193,6 +164223,18 @@
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
+ "https://swccg.com/wiki/images/4/47/Dagobah-Revised-L-domainofevil-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261120213250/https://swccg.com/wiki/images/4/47/Dagobah-Revised-L-domainofevil-physical-photo.png",
+  "job_id": "spn2-6981caa584fe969cf90c0701aee85e94cae12c81",
+  "last": "2026-11-20T21:36:15Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T21:36:15Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+ },
  "https://swccg.com/wiki/images/5/5a/Dagobah-Revised-L-yoda-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120205359/https://swccg.com/wiki/images/5/5a/Dagobah-Revised-L-yoda-physical-photo.png",
   "job_id": "spn2-ba67435d6601a68e84e854a8ce494e409f7db839",
@@ -164279,6 +164321,13 @@
    "method": "sha256",
    "sha256": "1a0c9932f88d48e83d79412863775dfd81bc6dbb103c83fc6aa59014391dbbd6"
   }
+ },
+ "https://swccg.com/wiki/images/7/76/Dagobah-Revised-L-droidsensorscope-physical-photo.png": {
+  "capture": "",
+  "job_id": "spn2-11de81873926eacb7b385c71a79297e4f487fcf1",
+  "last": "2026-11-20T21:33:50Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/images/7/79/Dagobah-Revised-L-sizemattersnot-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120202121/https://swccg.com/wiki/images/7/79/Dagobah-Revised-L-sizemattersnot-physical-photo.png",
@@ -164370,6 +164419,21 @@
    "sha256": "106e9de4a5286eba97b94c3fe87f7653f9b266edf3e893d8a13ee2b81d482a7d"
   }
  },
+ "https://swccg.com/wiki/images/b/b1/Dagobah-Revised-L-jedilevitation-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261120213149/https://swccg.com/wiki/images/b/b1/Dagobah-Revised-L-jedilevitation-physical-photo.png",
+  "job_id": "spn2-6a09bde82b8d2b1ba0395edc0ef7e9afb9b9fecf",
+  "last": "2026-11-20T21:36:10Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-20T21:36:10Z",
+   "bytes": 266984,
+   "capture_id": "https://web.archive.org/web/20261120213149id_/https://swccg.com/wiki/images/b/b1/Dagobah-Revised-L-jedilevitation-physical-photo.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "270a4607b65499352eb13eea54db3f67254ccfb136ada62a4c1a7ca4a29aad8a"
+  }
+ },
  "https://swccg.com/wiki/images/b/b6/Dagobah-Revised-D-warrantofficermkae-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120193523/https://swccg.com/wiki/images/b/b6/Dagobah-Revised-D-warrantofficermkae-physical-photo.png",
   "job_id": "spn2-63b2358f6f28f4b457c90a410499946276f912be",
@@ -164444,6 +164508,13 @@
    "method": "sha256",
    "sha256": "027c7a9a246bb742566c838c13058a2dd00717d1b3dea3166e26d67499dc4bd0"
   }
+ },
+ "https://swccg.com/wiki/images/d/dc/Dagobah-Revised-L-reporttolordvader-physical-photo.png": {
+  "capture": "",
+  "job_id": "spn2-26672f9a75f3e854bd4ea4de1fc635852d67e42d",
+  "last": "2026-11-20T21:34:51Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/images/d/de/Dagobah-Revised-D-commanderbrandei-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120192202/https://swccg.com/wiki/images/d/de/Dagobah-Revised-D-commanderbrandei-physical-photo.png",
