@@ -328,7 +328,7 @@ class Control:
         probe = self.state.get("probe_url")
         if self.state["mode"] in {"half_open", "probe_blocked"} and probe:
             entry = done.get(probe, {})
-            if (entry.get("status") == "verified" and self.state.get('probe_accepted') is not False
+            if (entry.get("status") == "verified" and entry.get('capture') and self.state.get('probe_accepted') is not False
                     and (not self.state.get('probe_previous_capture') or entry.get('capture')!=self.state.get('probe_previous_capture'))):
                 self.state.update(mode="healthy", failure_count=0, next_attempt=0,
                                   probe_url=None, reason="verified recovery canary")

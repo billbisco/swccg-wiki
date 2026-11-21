@@ -94,7 +94,15 @@ def reconcile_stale(w,control,data,done,changed,urls,deadline):
             if phase=='success' and status.get('timestamp'):
                 capture=f"https://web.archive.org/web/{status['timestamp']}/{status.get('original_url') or url}"
                 if not recovery.matches_capture(w,url,capture): row['state']='review'; return
-            elif phase=='error': terminal=True
+            elif phase=='error':
+                terminal=True
+                event=classify(status)
+                if event in {'url_daily_limit','target_host_limit','target_redirects'}:
+                    control.defer_source(url,event,status.get('_response_retry_after'))
+                elif event in {'account_sessions','unknown_limit'}:
+                    # Keep the acknowledged receipt; capacity/unknown holds
+                    # are not evidence that this URL should be submitted again.
+                    return
             else: return # uncertain status is never permission to resubmit
         if not capture: capture=recovery.lookup(w,url)
         if capture:

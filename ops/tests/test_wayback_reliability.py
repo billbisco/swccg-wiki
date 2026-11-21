@@ -64,6 +64,18 @@ class ReliabilityTests(unittest.TestCase):
             R.reconcile_stale(W,self.c,m,d,{},[],time.monotonic()+600)
         self.assertEqual('verified',d[URL]['status']);self.assertEqual('old',d[URL]['job_id']);self.assertEqual(1,R.stale_counts(m,d)['verified'])
 
+    def test_terminal_stale_requeues_only_active_request(self):
+        e={'status':'pending','job_id':'old','last':'2026-01-01T00:00:00Z','tries':1};d={URL:e};self.c.done=d;self.c.initial_done=dict(d)
+        m=R.initialize_stale(W,self.root,d,self.time)
+        with patch.object(W,'spn2_status',return_value={'status':'error'}),patch.object(W.recovery,'lookup',return_value=None):
+            R.reconcile_stale(W,self.c,m,d,{},[URL],time.monotonic()+600)
+        self.assertEqual('retry',d[URL]['status']);self.assertNotIn('job_id',d[URL]);self.assertEqual('old',R.load_stale(self.root)['rows'][URL]['original']['job_id'])
+
+    def test_old_verified_capture_does_not_certify_new_canary(self):
+        self.c.state['mode']='half_open';self.c.done={URL:{'capture':CAP,'status':'retry'}};self.c.submitting(URL);self.c.accepted_submission()
+        self.c.reconcile({URL:{'status':'verified','capture':CAP}},set())
+        self.assertEqual('half_open',self.c.state['mode'])
+
     def test_canary_requires_new_accepted_capture_and_no_hold(self):
         self.c.state['mode']='half_open';self.c.done={URL:{'capture':CAP,'status':'retry'}};self.c.submitting(URL)
         self.assertIsNone(self.c.accepted_probe());self.c.accepted_submission()
