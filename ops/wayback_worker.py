@@ -1340,7 +1340,7 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     urls = load(repo)[0]
     if scope is not None:
         urls = [url for url in urls if url in scope]
-    elif getattr(control, 'failed_recovery', None) is not None:
+    elif isinstance(getattr(control, 'failed_recovery', None), dict):
         recovery.reconcile_one(sys.modules[__name__], control, control.failed_recovery, done, changed, urls, deadline)
 
     # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
