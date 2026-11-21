@@ -76,6 +76,7 @@ from preservation_registry import iter_records, object_state
 from preservation_contracts import registration_object_id  # noqa: E402
 from wayback_control import Busy, Control, Paused, atomic_json  # noqa: E402
 import failed_capture_recovery as recovery  # noqa: E402
+import wayback_reliability as reliability  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
 QUEUE = "ops/wayback/queue.txt"
@@ -133,9 +134,14 @@ OPENER = urllib.request.build_opener(NoRedirect)
 
 
 class Throttled(Exception):
-    def __init__(self, message, status=None, retry_after=None):
+    def __init__(self, message, status=None, retry_after=None, event=None):
         super().__init__(message)
         self.status, self.retry_after = status, retry_after
+        self.event=event
+
+
+class ScopedLimit(Exception):
+    def __init__(self,event,retry_after=None):self.event,self.retry_after=event,retry_after
 
 
 ACTIVE_CONTROL = None
@@ -234,7 +240,10 @@ def _json(req: urllib.request.Request) -> dict:
     try:
         with urllib.request.urlopen(req, timeout=90) as resp:
             archive_response(req.full_url, resp.status, resp.headers)
-            return json.loads(resp.read().decode("utf-8", "replace") or "{}")
+            payload=json.loads(resp.read().decode("utf-8", "replace") or "{}")
+            if isinstance(payload,dict) and resp.headers.get('Retry-After'):
+                payload['_response_retry_after']=resp.headers.get('Retry-After')
+            return payload
     except urllib.error.HTTPError as e:
         archive_response(req.full_url, e.code, e.headers)
         if e.code == 429 or e.code >= 500:
@@ -256,11 +265,40 @@ def spn2_submit(url: str, force: bool = False) -> dict:
         if j["recent"]:
             return j
     if not j.get("job_id"):
-        msg = str(j.get("message") or j.get("status_ext") or j)[:120]
-        if "too many" in msg.lower() or "limit" in msg.lower():
-            raise Throttled(msg)
-        raise RuntimeError(f"no job_id: {msg}")
+        event=reliability.classify(j)
+        retry_after=j.get('_response_retry_after')
+        if event in {'url_daily_limit','target_host_limit','target_redirects'}:raise ScopedLimit(event,retry_after)
+        if event:raise Throttled(event,retry_after=retry_after,event=event)
+        recent='same snapshot had been made' in str(j.get('message','')).lower()
+        raise RuntimeError('no job_id: already archived' if recent else 'no job_id: unclassified response')
     return j
+
+
+def spn2_user_status():
+    req=urllib.request.Request('https://web.archive.org/save/status/user?_t='+str(int(time.time())),headers={'User-Agent':UA,'Accept':'application/json','Authorization':AUTH})
+    return reliability.capacity(_json(req))
+
+
+def ensure_capacity(control):
+    """One fresh account check per bounded submission window; never guess capacity."""
+    if not AUTH:return
+    checked=control.state.get('capacity_checked_at',0)
+    cached=control.state.get('account_capacity')
+    if not cached or not 0<=control.clock()-checked<300:
+        try: cached=spn2_user_status()
+        except Paused:raise
+        except (OSError,ValueError,TypeError):cached=None
+        control.state.update(capacity_checked_at=control.clock(),account_capacity=cached,capacity_remaining=cached['available'] if cached else None)
+        control.save()
+    if cached is None:control.capacity_wait('capacity_unknown')
+    if 'daily_captures_limit' in cached and 'daily_captures' in cached and cached['daily_captures']>=cached['daily_captures_limit']:control.capacity_wait('account_daily_limit','86400')
+    if control.state.get('capacity_remaining',cached['available'])<=0:control.capacity_wait('account_sessions')
+
+
+def consume_capacity(control):
+    if AUTH and control.state.get('account_capacity'):
+        control.state['capacity_remaining']=max(0,control.state.get('capacity_remaining',control.state['account_capacity']['available'])-1)
+        control.save()
 
 
 def latest_capture(url: str) -> str:
@@ -836,6 +874,12 @@ def apply_verify_inbox(control: Control, done: dict, changed: dict, *, allowed_u
                             or not recovery.proof_matches(cohort['rows'][url]['original'], receipt.get('verify') or {})):
                         dispositions[url] = 'recovery_proof_conflict'
                         continue
+                stale_cohort=getattr(control,'stale_jobs',None)
+                if isinstance(stale_cohort,dict) and url in stale_cohort['rows']:
+                    if (not recovery.eligible(sys.modules[__name__],control.directory,url)
+                        or not recovery.matches_capture(sys.modules[__name__],url,cap)
+                        or not recovery.proof_matches(stale_cohort['rows'][url]['original'],receipt.get('verify') or {})):
+                        dispositions[url]='stale_job_proof_conflict'; continue
                 entry = dict(cur)
                 info = dict(receipt.get("verify") or {})
                 info["lane"] = lane
@@ -1342,6 +1386,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         urls = [url for url in urls if url in scope]
     elif isinstance(getattr(control, 'failed_recovery', None), dict):
         recovery.reconcile_one(sys.modules[__name__], control, control.failed_recovery, done, changed, urls, deadline)
+    if scope is None and isinstance(getattr(control,'stale_jobs',None),dict):
+        reliability.reconcile_stale(sys.modules[__name__],control,control.stale_jobs,done,changed,urls,deadline)
 
     # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
     confirm_done = done if scope is None else {u: e for u, e in done.items() if u in scope}
@@ -1366,6 +1412,10 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     # 2. save what is new or due a retry
     submitted: list[str] = []
     save_attempts = 0
+    # A half-open probe should prefer an already requested, uncomplicated source
+    # with no previous failed or pending receipt, not an arbitrary historic retry.
+    if isinstance(control,Control) and control.state.get('mode')=='half_open':
+        urls=sorted(urls,key=lambda u:(u in done,not u.startswith('https://swccg.com/')))
     for url in urls:
         if time.monotonic() > deadline - 90 or errors_in_row >= 5:
             break
@@ -1373,6 +1423,7 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             continue
         if banned(url):
             continue
+        if isinstance(control,Control) and not control.source_allowed(url):continue
         if submit_limit and save_attempts >= submit_limit:
             print("PACE-CAP", submit_limit, "Save Page Now attempts this run", flush=True)
             break
@@ -1380,6 +1431,9 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             break
         e = done.get(url)
         is_stale = bool(e) and stale(e)
+        if e and e.get('status')=='pending' and is_stale:
+            # An acknowledged historical job must first be reconciled, not resubmitted.
+            continue
         if e and not is_stale and (e["status"] in ("ok", "verified", "unverified", "pending", "failed")
                                    or now() - parse(e["last"]) < RETRY_AFTER):
             continue
@@ -1392,9 +1446,12 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
                           if e and field in e}
         tries = (e or {}).get("tries", 0) + 1
         try:
+            if isinstance(control,Control):ensure_capacity(control)
             control.submitting(url)
             save_attempts += 1
             j = submit_capture(url, e, submission_session)
+            if isinstance(control,Control):
+                consume_capacity(control)
             if "anonymous_capture" not in j:
                 if j.get("recent"):
                     e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
@@ -1419,8 +1476,13 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             errors_in_row = 0
         except Paused:
             raise
+        except ScopedLimit as ex:
+            control.defer_source(url,ex.event,ex.retry_after)
+            if control.state.get('mode')=='half_open':break
+            time.sleep(gap); continue
         except Throttled as ex:
-            control.provider_failed(ex.status, ex.retry_after)
+            if ex.event=='account_sessions':control.capacity_wait(ex.event,ex.retry_after)
+            control.provider_failed(ex.status, ex.retry_after, ex.event)
         except Exception as ex:  # noqa: BLE001
             e = {"capture": (e or {}).get("capture", ""), "status": "retry" if tries < MAX_TRIES else "failed",
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
@@ -1430,6 +1492,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         done[url] = e
         changed[url] = e
         control.checkpoint(done, control.initial_done)
+        if isinstance(control,Control) and e.get('status')=='pending' and ('job_id' in e or e.get('capture')):
+            control.accepted_submission()
         time.sleep(gap)
 
     # 3. poll this run's jobs until done or out of time
@@ -1541,6 +1605,7 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
             control.restore_updates(control.done)
             if native_object_ids is None:
                 control.failed_recovery = recovery.initialize(control.directory, control.done, control.clock())
+                control.stale_jobs = reliability.initialize_stale(sys.modules[__name__],control.directory,control.done,control.clock())
             try:
                 control.begin()
                 ACTIVE_CONTROL = control
@@ -1587,7 +1652,7 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                 primary_completed = outcome == "completed"
                 if finish_error is not None and primary_completed:
                     outcome = "paused" if isinstance(finish_error, Paused) else "failed"
-                health = control.health(control.done, outcome, recovery_counts=recovery.health(getattr(control, 'failed_recovery', None), control.done))
+                health = control.health(control.done, outcome, recovery_counts=recovery.health(getattr(control, 'failed_recovery', None), control.done), stale_counts=reliability.stale_counts(getattr(control,'stale_jobs',None),control.done))
                 print("WAYBACK-HEALTH", json.dumps(health, sort_keys=True), flush=True)
                 if finish_error is not None and primary_completed and not isinstance(finish_error, Paused):
                     raise finish_error
