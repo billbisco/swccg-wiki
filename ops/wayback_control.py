@@ -308,7 +308,7 @@ class Control:
                                   reason="canary unverified; next bounded probe deferred")
         self.save()
 
-    def health(self, done: dict, outcome: str):
+    def health(self, done: dict, outcome: str, recovery_counts=None):
         counts = Counter(e.get("status", "unknown") for e in done.values())
         pending = [e.get("last") for e in done.values()
                    if e.get("status") in {"pending", "retry"} and e.get("last")]
@@ -327,5 +327,7 @@ class Control:
             "repair_issue": 407 if self.state["mode"] != "healthy" else None,
             "process_success_is_capture_success": False,
         }
+        if recovery_counts is not None:
+            health['failed_recovery_counts'] = recovery_counts
         atomic_json(self.directory / "health.json", health)
         return health

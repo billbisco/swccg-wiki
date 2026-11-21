@@ -75,6 +75,7 @@ from preservation_native import is_native_capture_url, NATIVE_REPRESENTATION, va
 from preservation_registry import iter_records, object_state
 from preservation_contracts import registration_object_id  # noqa: E402
 from wayback_control import Busy, Control, Paused, atomic_json  # noqa: E402
+import failed_capture_recovery as recovery  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
 QUEUE = "ops/wayback/queue.txt"
@@ -828,6 +829,13 @@ def apply_verify_inbox(control: Control, done: dict, changed: dict, *, allowed_u
                 if cur.get("status") == "verified":
                     dispositions[url] = "already_verified"
                     continue
+                cohort = getattr(control, 'failed_recovery', None)
+                if cohort and url in cohort['rows']:
+                    if (not recovery.eligible(sys.modules[__name__], control.directory, url)
+                            or not recovery.matches_capture(sys.modules[__name__], url, cap)
+                            or not recovery.proof_matches(cohort['rows'][url]['original'], receipt.get('verify') or {})):
+                        dispositions[url] = 'recovery_proof_conflict'
+                        continue
                 entry = dict(cur)
                 info = dict(receipt.get("verify") or {})
                 info["lane"] = lane
@@ -1332,6 +1340,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     urls = load(repo)[0]
     if scope is not None:
         urls = [url for url in urls if url in scope]
+    elif getattr(control, 'failed_recovery', None) is not None:
+        recovery.reconcile_one(sys.modules[__name__], control, control.failed_recovery, done, changed, urls, deadline)
 
     # 1. confirm earlier captures (recent pending only; stop if Wayback is down)
     confirm_done = done if scope is None else {u: e for u, e in done.items() if u in scope}
@@ -1529,6 +1539,8 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
             control.done = load(repo)[1]
             control.initial_done = json.loads(json.dumps(control.done))
             control.restore_updates(control.done)
+            if native_object_ids is None:
+                control.failed_recovery = recovery.initialize(control.directory, control.done, control.clock())
             try:
                 control.begin()
                 ACTIVE_CONTROL = control
@@ -1575,7 +1587,7 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                 primary_completed = outcome == "completed"
                 if finish_error is not None and primary_completed:
                     outcome = "paused" if isinstance(finish_error, Paused) else "failed"
-                health = control.health(control.done, outcome)
+                health = control.health(control.done, outcome, recovery_counts=recovery.health(getattr(control, 'failed_recovery', None), control.done))
                 print("WAYBACK-HEALTH", json.dumps(health, sort_keys=True), flush=True)
                 if finish_error is not None and primary_completed and not isinstance(finish_error, Paused):
                     raise finish_error
