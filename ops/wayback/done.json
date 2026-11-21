@@ -69710,9 +69710,18 @@
  },
  "https://i.ebayimg.com/images/g/-tQAAeSwXbZp~6DQ/s-l1600.webp": {
   "capture": "https://web.archive.org/web/20261120231152/https://i.ebayimg.com/images/g/-tQAAeSwXbZp~6DQ/s-l1600.webp",
-  "last": "2026-11-20T23:35:14Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-9e3e238d0cbffa192e7e98662fe947b6f805e68f",
+  "last": "2026-11-21T00:15:17Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-21T00:15:17Z",
+   "bytes": 537682,
+   "capture_id": "https://web.archive.org/web/20261120231152id_/https://i.ebayimg.com/images/g/-tQAAeSwXbZp~6DQ/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "52177a69aafb180bd6e71083fbac8d8cf8913978f703e7db6576a34dcb528f0f"
+  }
  },
  "https://i.ebayimg.com/images/g/0AsAAOSwovplxcps/s-l1600.webp": {
   "capture": "https://web.archive.org/web/20261120224532/https://i.ebayimg.com/images/g/0AsAAOSwovplxcps/s-l1600.webp",
@@ -70048,6 +70057,13 @@
    "method": "sha256",
    "sha256": "07378920281e85dc8c5a1765eca54d6d058982ae5542c731f94774875b1b4115"
   }
+ },
+ "https://i.ebayimg.com/images/g/IrwAAeSwvsRp~6EC/s-l1600.webp": {
+  "capture": "",
+  "job_id": "spn2-c1e935a479baa74295144d58737b025367f4348b",
+  "last": "2026-11-21T00:13:08Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://i.ebayimg.com/images/g/JY0AAOSwSV1lxnbL/s-l1600.webp": {
   "capture": "https://web.archive.org/web/20261120202020/https://i.ebayimg.com/images/g/JY0AAOSwSV1lxnbL/s-l1600.webp",
@@ -70465,6 +70481,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "0219fee870ffcf5d48efdba49b96b75a6032ee03cf510a969ee04a55f993930a"
+  }
+ },
+ "https://i.ebayimg.com/images/g/tC0AAOSwKY9gsz2x/s-l1600.webp": {
+  "capture": "https://web.archive.org/web/20261121001141/https://i.ebayimg.com/images/g/tC0AAOSwKY9gsz2x/s-l1600.webp",
+  "job_id": "spn2-6eba26fbbc1fe721c0f656e4faf24187fa272768",
+  "last": "2026-11-21T00:15:29Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-21T00:15:29Z",
+   "bytes": 488798,
+   "capture_id": "https://web.archive.org/web/20261121001141id_/https://i.ebayimg.com/images/g/tC0AAOSwKY9gsz2x/s-l1600.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6c1d86c6ec42f55a278923900ff5c45c685de1cf679442b45c1de006a69d9f67"
   }
  },
  "https://i.ebayimg.com/images/g/u6gAAOSwmnlgtGTQ/s-l1600.webp": {
@@ -164768,6 +164799,13 @@
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
+ "https://swccg.com/wiki/images/1/1d/Dagobah-Revised-L-mynock-physical-photo.png": {
+  "capture": "",
+  "job_id": "spn2-7c6e6c5205bc31320978617ed40de2bda68ffd72",
+  "last": "2026-11-21T00:14:09Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/images/2/20/Dagobah-Revised-D-spaceslug-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120235423/https://swccg.com/wiki/images/2/20/Dagobah-Revised-D-spaceslug-physical-photo.png",
   "job_id": "spn2-3ec413493987346ad383a28de86b36420208b5fb",
@@ -164946,6 +164984,18 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "2e6fbdee7aa55da4786c5c235a9cfcf727d0d01de78f411d98cfe65b55013b83"
+  }
+ },
+ "https://swccg.com/wiki/images/4/44/Dagobah-Revised-L-nevertellmetheodds-physical-photo.png": {
+  "capture": "https://web.archive.org/web/20261121001208/https://swccg.com/wiki/images/4/44/Dagobah-Revised-L-nevertellmetheodds-physical-photo.png",
+  "job_id": "spn2-62c035f180c8a6d2d9132774bd0e806e45d13c8c",
+  "last": "2026-11-21T00:15:33Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-21T00:15:33Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://swccg.com/wiki/images/4/46/Dagobah-Revised-L-bogwing-physical-photo.png": {
@@ -165321,11 +165371,19 @@
   }
  },
  "https://swccg.com/wiki/images/8/82/Dagobah-Revised-D-landosystem-physical-photo.png": {
-  "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-20T23:35:15Z",
-  "status": "retry",
-  "tries": 1
+  "capture": "https://web.archive.org/web/20261121001006/https://swccg.com/wiki/images/8/82/Dagobah-Revised-D-landosystem-physical-photo.png",
+  "job_id": "spn2-3592b6dfce51278a43450e197766a3bb635153d3",
+  "last": "2026-11-21T00:15:22Z",
+  "status": "verified",
+  "tries": 2,
+  "verify": {
+   "at": "2026-11-21T00:15:22Z",
+   "bytes": 250221,
+   "capture_id": "https://web.archive.org/web/20261121001006id_/https://swccg.com/wiki/images/8/82/Dagobah-Revised-D-landosystem-physical-photo.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5e4fae962907894fef8055b277cd3e028cfc29bffeaec35a7d963c18fdf2a2cb"
+  }
  },
  "https://swccg.com/wiki/images/8/82/Dagobah-Revised-L-dagobahtrainingarea-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120203705/https://swccg.com/wiki/images/8/82/Dagobah-Revised-L-dagobahtrainingarea-physical-photo.png",
@@ -165370,9 +165428,9 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-20T23:41:37Z",
+   "at": "2026-11-21T00:15:34Z",
    "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://swccg.com/wiki/images/8/8b/Dagobah-Revised-D-vinesnake-physical-photo.png": {
