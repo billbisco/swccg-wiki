@@ -10,6 +10,7 @@ import json
 import math
 import os
 import time
+from urllib.parse import urlsplit
 from collections import Counter
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
@@ -183,8 +184,9 @@ class Control:
     def begin(self):
         s = self.state
         if s["mode"] == "probe_blocked":
-            if self.done.get(s.get("probe_url"), {}).get("status") == "verified":
+            if self.done.get(s.get("probe_url"), {}).get("status") == "verified" and self.accepted_probe():
                 self.reconcile(self.done, set())
+                if s['mode']=='probe_blocked':raise Paused('accepted recovery canary still unresolved')
             else:
                 raise Paused("accepted recovery canary needs reconciliation; no request made")
         if s["mode"] == "auth_blocked":
@@ -212,8 +214,37 @@ class Control:
         if self.state["mode"] == "half_open":
             self.state["probe_url"] = url
             self.state["probe_started_at"] = self.clock()
+            self.state["probe_accepted"] = False
+            self.state["probe_previous_capture"] = self.done.get(url,{}).get('capture') or None
         self.state["last_submission_attempt_at"] = timestamp(self.clock())
         self.state["next_submission_at"] = self.clock() + self.SUBMISSION_GAP
+        self.save()
+
+    def accepted_submission(self):
+        if self.state.get('mode')=='half_open':
+            self.state['probe_accepted']=True
+            self.save()
+
+    def capacity_wait(self, reason, retry_after=None):
+        self.state.update(reason='account capacity unavailable', provider_event=reason,
+                          next_attempt=max(self.state.get('next_attempt',0),self.clock()+max(self.MIN_PAUSE,retry_seconds(retry_after,self.clock()))))
+        if self.state.get('mode')=='half_open' and not self.accepted_probe():self.state['probe_url']=None
+        self.save(); raise Paused('account capacity unavailable; bounded wait')
+
+    def source_allowed(self,url):
+        limits=self.state.get('source_limits',{})
+        keys=[hashlib.sha256(x.encode()).hexdigest() for x in (url, urlsplit(url).hostname or '')]
+        return not any(limits.get(k,0)>self.clock() for k in keys)
+
+    def defer_source(self,url,event,retry_after=None):
+        scope=(urlsplit(url).hostname or '') if event=='target_host_limit' else url
+        key=hashlib.sha256(scope.encode()).hexdigest()
+        limits={k:v for k,v in self.state.get('source_limits',{}).items() if v>self.clock()}
+        delay=86400 if event in {'url_daily_limit','target_redirects'} else self.MIN_PAUSE
+        limits[key]=max(limits.get(key,0),self.clock()+max(delay,retry_seconds(retry_after,self.clock())))
+        self.state.update(source_limits=limits,provider_event=event)
+        if self.state.get('mode')=='half_open':
+            self.state.update(probe_url=None,probe_accepted=False,next_attempt=self.clock()+self.MIN_PAUSE,reason='canary source limited')
         self.save()
 
     def authentication_failed(self):
@@ -221,24 +252,27 @@ class Control:
         self.state.update(mode="auth_blocked", reason="authentication rejected",
                           http_status=401, rejected_credential=self.credential,
                           next_attempt=0, probe_url=accepted)
+        self.state['provider_event']='http_auth'
         self.save()
         self._pause_with_repair("authentication rejected; authorized account repair required",
                                "authentication rejected; no anonymous fallback")
 
-    def provider_failed(self, status: int | None = None, retry_after: str | None = None):
+    def provider_failed(self, status: int | None = None, retry_after: str | None = None, event=None):
         count = self.state["failure_count"] + 1
         delay = min(self.MAX_PAUSE, self.MIN_PAUSE * 2 ** min(count - 1, 7))
         delay = max(delay, retry_seconds(retry_after, self.clock()))
         self.state.update(mode="open", failure_count=count,
                           reason="provider throttled" if status == 429 else "provider unavailable",
                           http_status=status, next_attempt=self.clock() + delay, probe_url=self.accepted_probe())
+        self.state['provider_event']=event or ('http_throttled' if status==429 else 'http_unavailable')
         self.save()
         self._pause_with_repair(self.state["reason"], "provider circuit opened; shared cooldown persisted")
 
     def accepted_probe(self):
         probe = self.state.get("probe_url")
         entry = self.done.get(probe, {})
-        return probe if entry.get("job_id") or entry.get("capture") else None
+        accepted=self.state.get('probe_accepted')
+        return probe if accepted is not False and (entry.get("job_id") or entry.get("capture")) else None
 
     def probe_needs_repair(self, reason: str):
         # Keep probe_url and its accepted job/capture in the ledger and journal.
@@ -294,7 +328,8 @@ class Control:
         probe = self.state.get("probe_url")
         if self.state["mode"] in {"half_open", "probe_blocked"} and probe:
             entry = done.get(probe, {})
-            if entry.get("status") == "verified":
+            if (entry.get("status") == "verified" and entry.get('capture') and self.state.get('probe_accepted') is not False
+                    and (not self.state.get('probe_previous_capture') or entry.get('capture')!=self.state.get('probe_previous_capture'))):
                 self.state.update(mode="healthy", failure_count=0, next_attempt=0,
                                   probe_url=None, reason="verified recovery canary")
                 repair = self.directory / "repair.json"
@@ -302,17 +337,17 @@ class Control:
                     data = json.loads(repair.read_text(encoding="utf-8"))
                     data.update(status="recovered", recovered_at=timestamp(self.clock()))
                     atomic_json(repair, data)
-            elif self.state["mode"] == "half_open" and entry.get("status") in {"retry", "failed", "unverified"}:
+            elif self.state["mode"] == "half_open" and entry.get("status") in {"retry", "failed", "unverified", "verified"}:
                 # A source-specific rejection does not certify provider recovery.
                 self.state.update(probe_url=None, next_attempt=self.clock() + self.MIN_PAUSE,
                                   reason="canary unverified; next bounded probe deferred")
         self.save()
 
-    def health(self, done: dict, outcome: str, recovery_counts=None):
+    def health(self, done: dict, outcome: str, recovery_counts=None, stale_counts=None):
         counts = Counter(e.get("status", "unknown") for e in done.values())
         pending = [e.get("last") for e in done.values()
                    if e.get("status") in {"pending", "retry"} and e.get("last")]
-        awaiting = bool(self.state["mode"] == "half_open" and self.state.get("probe_url"))
+        awaiting = bool(self.state["mode"] == "half_open" and self.accepted_probe())
         health = {
             "schema": 1, "checked_at": timestamp(self.clock()), "owner": "server-wayback-queue",
             "outcome": outcome, "mode": self.state["mode"],
@@ -329,5 +364,11 @@ class Control:
         }
         if recovery_counts is not None:
             health['failed_recovery_counts'] = recovery_counts
+        if stale_counts is not None:health['stale_job_counts']=stale_counts
+        health['provider_event']=self.state.get('provider_event')
+        health['provider_failure_count']=self.state['failure_count']
+        health['account_capacity']=self.state.get('account_capacity')
+        health['capacity_checked_at']=timestamp(self.state.get('capacity_checked_at'))
+        health['source_limits_active']=sum(v>self.clock() for v in self.state.get('source_limits',{}).values())
         atomic_json(self.directory / "health.json", health)
         return health

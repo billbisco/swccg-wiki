@@ -87,11 +87,12 @@ class Circuit(unittest.TestCase):
             with self.assertRaises(Paused): c.provider_failed(503)
             self.clock = c.state["next_attempt"]
             c.begin(); c.submitting(URL)
+            c.accepted_submission() # provider acknowledged this new submission
             for status in ["pending", "ok"]:
                 c.reconcile({URL:{"status":status}}, set())
                 self.assertEqual("half_open", c.state["mode"])
                 self.assertFalse(c.may_submit("another"))
-            c.reconcile({URL:{"status":"verified"}}, set())
+            c.reconcile({URL:{"status":"verified","capture":"https://web.archive.org/web/20261021120000/"+URL}}, set())
             self.assertEqual("healthy", c.state["mode"])
             self.clock += Control.SUBMISSION_GAP
             self.assertTrue(c.may_submit("another"))

@@ -9,6 +9,7 @@ import os
 import socket
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 
@@ -47,8 +48,11 @@ def main():
     socket.create_connection = loopback_connection
     socket.socket.connect = loopback_connect
     try:
-        result = unittest.TextTestRunner(verbosity=2).run(
-            unittest.defaultTestLoader.discover(str(Path(__file__).parent)))
+        suite=unittest.defaultTestLoader.discover(str(Path(__file__).parent))
+        # Existing integration fixtures simulate the provider. Supply an
+        # explicit synthetic account receipt; targeted capacity tests override it.
+        with patch('wayback_worker.spn2_user_status',return_value={'available':1000,'processing':0}):
+            result = unittest.TextTestRunner(verbosity=2).run(suite)
         return 0 if result.wasSuccessful() else 1
     finally:
         socket.create_connection = create_connection

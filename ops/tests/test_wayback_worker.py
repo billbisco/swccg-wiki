@@ -694,7 +694,7 @@ class PendingConfirm(unittest.TestCase):
             for k, v in saved.items():
                 setattr(W, k, v)
 
-    def test_run_does_not_poll_stale_pending(self):
+    def test_run_reconciles_one_stale_pending_without_resubmitting(self):
         saved = {k: getattr(W, k) for k in ("reset_to_origin", "commit_and_push", "spn2_submit", "spn2_status",
                                             "capture_ok", "fetch", "AUTH", "GAP_S",
                                             "wiki_snapshot_wayback_paths")}
@@ -720,7 +720,7 @@ class PendingConfirm(unittest.TestCase):
         def status(job):
             polled.append(job)
             if job == "spn2-stale":
-                raise AssertionError("polled stale pending job_id")
+                return {"status":"pending"}
             return {"status": "success", "timestamp": "20261020193000", "original_url": src}
         W.spn2_status = status
         W.capture_ok = lambda cap: True
@@ -733,7 +733,7 @@ class PendingConfirm(unittest.TestCase):
                 setattr(W, k, v)
             W.time.sleep = sleep
             tmp.cleanup()
-        self.assertNotIn("spn2-stale", polled)
+        self.assertEqual(1,polled.count("spn2-stale"))
         self.assertIn("spn2-new", polled)
 
     def test_run_stops_pending_walk_but_keeps_saving_on_confirm_miss(self):
