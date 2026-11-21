@@ -76,6 +76,14 @@ class ReliabilityTests(unittest.TestCase):
         self.c.reconcile({URL:{'status':'verified','capture':CAP}},set())
         self.assertEqual('half_open',self.c.state['mode'])
 
+    def test_known_canary_capture_survives_vps_replay_failure(self):
+        self.c.state['mode']='half_open';self.c.submitting(URL);self.c.accepted_submission()
+        self.c.done={URL:{'status':'pending','capture':CAP,'last':'2026-01-01T00:00:00Z'}};self.c.initial_done={}
+        with patch.object(W,'verify',side_effect=W.VerifyRetry('fixture',side='capture')),patch.object(W,'confirm',side_effect=AssertionError('must retain acknowledged capture')):
+            W.reconcile_recovery_probe(self.c,self.c.done,{},time.monotonic()+600)
+        self.assertEqual('pending',self.c.done[URL]['status']);self.assertEqual('manpc',self.c.done[URL]['verify']['defer'])
+        self.assertEqual(CAP,self.c.done[URL]['capture'])
+
     def test_canary_requires_new_accepted_capture_and_no_hold(self):
         self.c.state['mode']='half_open';self.c.done={URL:{'capture':CAP,'status':'retry'}};self.c.submitting(URL)
         self.assertIsNone(self.c.accepted_probe());self.c.accepted_submission()

@@ -1263,7 +1263,19 @@ def reconcile_recovery_probe(control: Control, done: dict, changed: dict, deadli
         control.state["probe_started_at"] = started
         control.save()
     try:
-        if entry.get("status") == "pending":
+        if (entry.get('status')=='pending' and control.state.get('probe_accepted')
+                and entry.get('capture') and entry['capture']!=control.state.get('probe_previous_capture')):
+            # The provider already returned a new timestamp. A VPS replay
+            # outage must not turn that acknowledged capture into a new save.
+            try:
+                status,proof=verify(probe,entry['capture'])
+                if status=='verified' and recovery.proof_matches(entry,proof):
+                    entry.update(status='verified',verify=proof,last=iso(now()))
+                else:entry.update(status='unverified',verify=proof,last=iso(now()))
+            except VerifyRetry as error:
+                mark_verify_deferred(entry,'accepted canary replay unavailable')
+            changed[probe]=entry
+        elif entry.get("status") == "pending":
             if confirm(probe, entry):
                 changed[probe] = entry
         elif entry.get("status") == "ok":

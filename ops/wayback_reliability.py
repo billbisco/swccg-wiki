@@ -134,3 +134,15 @@ def canary_candidate(w,directory,done,health):
     if not state.get('probe_accepted') or not cap or cap==state.get('probe_previous_capture') or not recovery.eligible(w,directory,url) or not recovery.matches_capture(w,url,cap):return None
     if e.get('status') not in {'ok','pending','unverified'}:return None
     return {'url':url,'capture':cap,'job_id':e.get('job_id') or '', 'status':e['status'],'defer':'canary'}
+
+
+def manual_stale_candidates(w,directory,done):
+    data=load_stale(directory)
+    if not data:return []
+    rows=[]
+    for url,old in data['rows'].items():
+        e=done.get(url) or {}; cap=e.get('capture')
+        if old['state']=='review' or e.get('status') not in {'pending','ok','unverified'} or not cap:continue
+        if recovery.eligible(w,directory,url) and recovery.matches_capture(w,url,cap):
+            rows.append({'url':url,'capture':cap,'job_id':e.get('job_id') or '', 'status':e['status'],'defer':'stale'})
+    return rows
