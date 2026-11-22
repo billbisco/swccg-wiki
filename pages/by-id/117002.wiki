@@ -1,0 +1,3 @@
+<includeonly>{{#ifeq:{{{current|{{FULLPAGENAME}}}}}|{{{page}}}|<strong>This ({{{label}}})</strong>|[[{{{page}}}|{{{label}}}]]}}<br /><span style="font-weight:normal;font-size:90%">{{{date}}}</span>{{{ref|}}}</includeonly><noinclude>
+Header cell for a [[SWCCG Wiki:Style guide#Errata comparison table|card Errata table]]. Pass <code>page</code>, <code>label</code>, <code>date</code>, and optional <code>ref</code>. The viewed article shows '''This (label)'''.
+</noinclude>

@@ -16,8 +16,7 @@
 {{#if:{{{also_in|{{{products|}}}}}}|<tr><th>Also in</th><td>{{{also_in|{{{products|}}}}}}</td></tr>}}
 {{#if:{{{publisher|}}}|<tr><th>Publisher</th><td>{{{publisher}}}</td></tr>}}
 {{#if:{{{era|}}}|<tr><th>Era</th><td>{{{era}}}</td></tr>}}
-{{#if:{{{blanked|}}}|<tr><th>Blanked</th><td>{{{blanked}}}</td></tr>}}
-{{#if:{{{gemp_id|{{{card_uid|}}}}}}|<tr><th>{{{label_gemp_id|GEMP ID}}}</th><td><code>{{{gemp_id|{{{card_uid|}}}}}}</code>{{#if:{{{gemp_id2|}}}| <code>{{{gemp_id2}}}</code>}}</td></tr>}}
+{{#if:{{{gemp_id|{{{card_uid|}}}}}}|<tr><th>{{{label_gemp_id|GEMP ID}}}</th><td><code>{{{gemp_id|{{{card_uid|}}}}}}</code>{{#if:{{{gemp_id2|}}}| <code>{{{gemp_id2}}}</code>}}{{#if:{{{gemp_id_note|}}}| {{{gemp_id_note}}}}}</td></tr>}}{{#if:{{{former_pc_id|}}}|<tr><th>Former PC ID</th><td>{{{former_pc_id}}}</td></tr>}}
 {{#if:{{{pc_alias|}}}|<tr><th>PC alias</th><td><code>{{{pc_alias}}}</code></td></tr>}}
 {{#if:{{{slip|}}}|<tr><th>Slip</th><td>{{{slip}}}</td></tr>}}
 {{#if:{{{rarity|}}}|<tr><th>Rarity</th><td>{{#if:{{{rarity_display|}}}|{{{rarity_display|}}}|[[{{{rarity_link|Rarity}}}|{{{rarity}}}]]}}</td></tr>}}
@@ -41,7 +40,6 @@
 {{#if:{{{dark_icons|}}}|<tr><th>{{{label_dark_icons|Dark Side Icons}}}</th><td>{{{dark_icons}}}</td></tr>}}
 {{#if:{{{light_icons|}}}|<tr><th>{{{label_light_icons|Light Side Icons}}}</th><td>{{{light_icons}}}</td></tr>}}
 {{#if:{{{icons|}}}|<tr><th>{{{label_icons|Icons}}}</th><td>{{{icons}}}</td></tr>}}
-{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>{{{label_versions|Versions}}}</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
 {{#if:{{{likeness|}}}|<tr><th>Likeness</th><td>{{{likeness}}}</td></tr>}}
 {{#if:{{{version_code|}}}|<tr><th>Errata version</th><td>{{{version_code}}}</td></tr>}}
 {{#if:{{{errata_mark|}}}|<tr><th>Errata mark</th><td>{{{errata_mark}}}</td></tr>}}
@@ -51,7 +49,10 @@
 {{#if:{{{dedication|}}}|<tr><th>Dedication</th><td>{{{dedication}}}</td></tr>}}
 {{#if:{{{printed_label|}}}|<tr><th>Other printed label</th><td>{{{printed_label}}}</td></tr>}}
 {{#if:{{{copyright_line|}}}|<tr><th>Copyright line</th><td><small>{{{copyright_line}}}</small></td></tr>}}
-{{#if:{{{extra_info|}}}|{{{extra_info|}}}|}}</table>
+{{#if:{{{extra_info|}}}|{{{extra_info|}}}|}}
+{{#if:{{{released|}}}|<tr><th>Released</th><td>{{{released}}}</td></tr>}}{{#if:{{{effective|}}}|<tr><th>Effective</th><td>{{{effective}}}</td></tr>}}{{#if:{{{remastered|}}}|<tr><th>Remastered</th><td>{{{remastered}}}</td></tr>}}{{#if:{{{blanked|}}}|<tr><th>Blanked</th><td>{{{blanked}}}</td></tr>}}{{#if:{{{retired|}}}|<tr><th>Retired</th><td>{{{retired}}}</td></tr>}}
+{{#if:{{{versions|{{{printings|}}}}}}|<tr><th>{{{label_versions|Versions}}}</th><td>{{{versions|{{{printings}}}}}}</td></tr>}}
+</table>
 </div>{{#if:{{{hatnote|}}}|<div class="card-hatnote">''{{{hatnote}}}''</div>}}
 <div class="card-body">
 {{#if:{{{lead|}}}|{{{lead|}}}|'''{{{title}}}''' is a [[{{{side}}}]] [[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>([[{{{subtype_link}}}{{!}}{{{subtype}}}]])}} from [[{{Set page|{{{set}}}}}|{{{set}}}]].}}
@@ -127,5 +128,5 @@
 <h2>References</h2>
 <references />}}
 </div>
-{{#if:{{{category_override|}}}|{{{category_override|}}}|[[Category:Cards]][[Category:{{{set}}}]][[Category:{{{side}}}]][[Category:{{{type}}}]]}}{{#if:{{{anagram|}}}|[[Category:Anagrams]]}}{{#if:{{{joke|}}}|[[Category:Jokes]]}}{{#if:{{{easter_egg|}}}|[[Category:Easter eggs]]}}{{#if:{{{blanked|}}}|[[Category:Blanked cards]]}}{{#if:{{{hires_image|}}}|[[Category:Cards with high-res scans]]}}
+{{#if:{{{category_override|}}}|{{{category_override|}}}|[[Category:Cards]][[Category:{{{set}}}]][[Category:{{{side}}}]][[Category:{{{type}}}]]}}{{#if:{{{anagram|}}}|[[Category:Anagrams]]}}{{#if:{{{joke|}}}|[[Category:Jokes]]}}{{#if:{{{easter_egg|}}}|[[Category:Easter eggs]]}}{{#if:{{{category_override|}}}||{{#if:{{{blanked|}}}|[[Category:Blanked cards]]}}{{#if:{{{hires_image|}}}|[[Category:Cards with high-res scans]]}}}}
 </includeonly><noinclude>[[Category:Templates]]</noinclude>

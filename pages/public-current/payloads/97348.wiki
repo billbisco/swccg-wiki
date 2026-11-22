@@ -103,8 +103,9 @@ For some cards the PC card image prints the release-sheet text while the Master 
 |}
 On these cards the image and sheet text is treated as the original version and the Master List text as a later errata, which is the current text. An image is therefore not proof of a card's current text, and neither is a Master List entry on its own (see [[#The Master List prints older text|above]]). The shields [[Anger, Fear, Aggression (V) (Virtual Block 4)|Anger, Fear, Aggression (V)]] and [[Knowledge And Defense (V) (Virtual Block 4)|Knowledge And Defense (V)]] are a similar case: the sheet and the images allow up to 12 cards under the shield, the Master List 15.
 
-== Errata marks that do not match the version (Virtual Modern) ==
-Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right. On some re-made images the PC did not update the mark, so the printed mark does not match the card's version. The wiki numbers the versions by release order and records the printed mark (Bill, 12 November 2026).<ref name="ht-sla">Players Committee card images in the PC's Holotable image repository: [https://github.com/swccgpc/holotable/blob/a324c4e1f244362a7211644a9d5ec6f816d78ccb/Images-HT/starwars/Virtual23-Light/large/scomplinkaccess.gif Scomp Link Access (V), July 2024] and [https://github.com/swccgpc/holotable/blob/b3853e63328481978b065262318c0dc4e88b44b6/Images-HT/starwars/Virtual23-Light/large/scomplinkaccess.gif March 2026]; [https://github.com/swccgpc/holotable/blob/937f50b401597ac4bd6031307ab412324907e814/Images-HT/starwars/Virtual23-Light/large/passagetothealderaansystem.gif Passage To The Alderaan System, 25 July 2024] and [https://github.com/swccgpc/holotable/blob/9d2c01ed1603f793dc8a0569c99d4b544378da9b/Images-HT/starwars/Virtual23-Light/large/passagetothealderaansystem.gif 30 December 2024].</ref> The PC prints an errata mark (“E”, “E1”, “E2”…) in the bottom right corner of some changed [[Virtual Modern]] cards; the marks do not always follow the order in which the PC published the card's versions: some cards print the same mark on two different texts, some restart the count after a remaster, some changed cards print no mark, and alternate-image (AI/ALT) cards print the mark of the base card's errata.<ref name="vmmarks">Players Committee card images in the PC's Holotable image set ([https://github.com/swccgpc/holotable swccgpc/holotable], <code>Images-HT/starwars/Virtual1x-*</code>), each version dated by the commit that published it; see the source links on each card article.</ref>
+<span id="Errata_marks_that_do_not_match_the_version_(Virtual_Modern)"></span>
+== Printed marks and publication images (Virtual Modern) ==
+Some [[Virtual Modern]] card images print an errata mark such as E1 or E2. The literal mark and a sequence of published image files identify different things. A change in resolution, layout, orientation or file format does not by itself establish another Errata state. Official alternate-image cards may carry their parent card's existing mark. The [[SWCCG Wiki:Style guide|style guide]] distinguishes changed wording and statistics from same-version image formats.<ref name="ht-sla">Players Committee card images in the PC's Holotable image repository: [https://github.com/swccgpc/holotable/blob/a324c4e1f244362a7211644a9d5ec6f816d78ccb/Images-HT/starwars/Virtual23-Light/large/scomplinkaccess.gif Scomp Link Access (V), July 2024] and [https://github.com/swccgpc/holotable/blob/b3853e63328481978b065262318c0dc4e88b44b6/Images-HT/starwars/Virtual23-Light/large/scomplinkaccess.gif March 2026]; [https://github.com/swccgpc/holotable/blob/937f50b401597ac4bd6031307ab412324907e814/Images-HT/starwars/Virtual23-Light/large/passagetothealderaansystem.gif Passage To The Alderaan System, 25 July 2024] and [https://github.com/swccgpc/holotable/blob/9d2c01ed1603f793dc8a0569c99d4b544378da9b/Images-HT/starwars/Virtual23-Light/large/passagetothealderaansystem.gif 30 December 2024].</ref><ref name="vmmarks">Players Committee card images in the PC's Holotable image set ([https://github.com/swccgpc/holotable swccgpc/holotable], <code>Images-HT/starwars/Virtual1x-*</code>), each version dated by the commit that published it; see the source links on each card article.</ref>
 
 {| class="wikitable"
 ! Card !! Version !! Printed mark !! What happened
@@ -168,11 +169,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC Errata 2 (second PC image)
 | D-E1
 | The second documented PC face prints D-E1. Its printed numeric mark and the PC image-version ordinal differ.<ref>[[:File:ANH-L-lukescape-holotable-2024-04-04.png|Published source image]].</ref>
-|-
-| [[Lieutenant Telsij (PC Errata)]]
-| PC Errata (first PC image)
-| (none)
-| The first documented PC face prints no errata mark. The mark is absent.<ref>[[:File:DS2-L-lieutenanttelsij-holotable-by-2018-07-08.gif|Published source image]].</ref>
 |-
 | [[4-LOM With Concussion Rifle (V) (ALT) (Errata)|4-LOM With Concussion Rifle (V) (ALT)]]
 | PC-E1 (12 December 2022)
@@ -239,11 +235,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this Virtual Set 27 release-sheet slip prints no errata mark at all.
 |-
-| [[A New Secret Base (V) (Errata)|A New Secret Base (V)]]
-| PC-E1 (3 October 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
 | [[A Remote Planet (V) (Errata)|A Remote Planet (V)]]
 | PC-E1 (17 June 2023)
 | (none)
@@ -291,11 +282,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 |-
 | [[According To My Design (Errata)|According To My Design]]
 | PC-E1 (3 October 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
-| [[Admiral Ackbar (V) (Errata)|Admiral Ackbar (V)]]
-| PC-E1 (1 December 2022)
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
@@ -402,12 +388,7 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | [[Anger, Fear, Aggression (V)|Anger, Fear, Aggression (V)]]
 | original (8 July 2018)
 | E
-| The first image found already prints a mark (the card had been errata'd before the PC image repository began, 8 July 2018).
-|-
-| [[Anoat (V) (Errata)|Anoat (V)]]
-| PC-E1 (3 October 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
+| The located source image prints E. The repository import date does not establish first publication.
 |-
 | [[Antilles Maneuver (V) (Errata)|Antilles Maneuver (V)]]
 | PC-E1 (31 July 2022)
@@ -454,11 +435,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this Virtual Set 21 release sheet, June 2023 edition slip prints no errata mark at all.
 |-
-| [[At Peace (V) (Errata)|At Peace (V)]]
-| PC-E1 (17 June 2023)
-| (none)
-| Errata 1 in release order; this Virtual Set 21 release sheet, June 2023 edition slip prints no errata mark at all.
-|-
 | [[AT-AT Cannon (V) (Errata)|AT-AT Cannon (V)]]
 | PC-E1 (6 October 2023)
 | (none)
@@ -500,11 +476,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | Errata 1 in release order; this Virtual Set 27 release-sheet slip prints no errata mark at all.
 |-
 | [[Balanced Attack & •Darklighter Spin (Errata)|Balanced Attack & •Darklighter Spin]]
-| PC-E1 (2 February 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 24 release sheet slip prints no errata mark at all.
-|-
-| [[Baron Soontir Fel (V) (Errata)|Baron Soontir Fel (V)]]
 | PC-E1 (2 February 2025)
 | (none)
 | Errata 1 in release order; this Virtual Set 24 release sheet slip prints no errata mark at all.
@@ -634,17 +605,7 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
-| [[Boba Fett With Blaster Rifle (V) (Errata)|Boba Fett With Blaster Rifle (V)]]
-| PC-E1 (6 October 2023)
-| (none)
-| Errata 1 in release order; this Virtual Set 22 release-sheet slip prints no errata mark at all.
-|-
 | [[Booster In Pulsar Skate (Errata)|Booster In Pulsar Skate]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
-| [[Bossk (V) (Errata)|Bossk (V)]]
 | PC-E1 (31 July 2022)
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
@@ -653,11 +614,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (31 July 2022)
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
-| [[Boushh (V) (Errata)|Boushh (V)]]
-| PC-E1 (2 August 2024)
-| (none)
-| Errata 1 in release order; this Virtual Set 23 release sheet with errata slip prints no errata mark at all.
 |-
 | [[Bravo Fighter (V) (Errata)|Bravo Fighter (V)]]
 | PC-E1 (31 July 2022)
@@ -754,11 +710,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
-| [[Chewie With Blaster Rifle (V) (Errata)|Chewie With Blaster Rifle (V)]]
-| PC-E1 (10 August 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
-|-
 | [[Choke (V) (Errata)|Choke (V)]]
 | PC-E1 (2 August 2024)
 | (none)
@@ -783,11 +734,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (17 June 2023)
 | (none)
 | Errata 1 in release order; this Virtual Set 21 release sheet, June 2023 edition slip prints no errata mark at all.
-|-
-| [[Close Call (V) (Errata)|Close Call (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
 | [[Cloud City: Beldon's Corridor (Errata)|Cloud City: Beldon's Corridor]]
 | PC-E1 (10 August 2025)
@@ -849,11 +795,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
-| [[Combat Response (V) (Errata)|Combat Response (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
 | [[Come Here You Big Coward (Reflections III) (V) (Errata)|Come Here You Big Coward (Reflections III) (V)]]
 | PC-E1 (10 August 2025)
 | (none)
@@ -881,11 +822,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 |-
 | [[Commander Narra (Errata)|Commander Narra]]
 | PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
-| [[Commander Nemet (V) (Errata)|Commander Nemet (V)]]
-| PC-E1 (1 December 2022)
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
@@ -933,11 +869,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (2 February 2025)
 | (none)
 | Errata 1 in release order; this Virtual Set 24 release sheet slip prints no errata mark at all.
-|-
-| [[Corporal Vandolay (V) (Errata)|Corporal Vandolay (V)]]
-| PC-E1 (3 October 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
 | [[Corran Horn In Rogue 9 (Errata)|Corran Horn In Rogue 9]]
 | PC-E1 (26 October 2022)
@@ -1044,11 +975,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this Virtual Set 21 release sheet, June 2023 edition slip prints no errata mark at all.
 |-
-| [[Critical Error Revealed (V) (Errata)|Critical Error Revealed (V)]]
-| PC-E1 (10 August 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
-|-
 | [[CT-5555 (Fives) (ALT) (Errata 2)|CT-5555 (Fives) (ALT)]]
 | PC-E2 (12 December 2022)
 | (none)
@@ -1153,11 +1079,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (2 August 2024)
 | (none)
 | Errata 1 in release order; this Virtual Set 23 release sheet with errata slip prints no errata mark at all.
-|-
-| [[Defensive Fire (V) (Errata)|Defensive Fire (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
 | [[Deflector Shield Generators (V) (Errata 2)|Deflector Shield Generators (V)]]
 | PC-E2 (12 December 2022)
@@ -1329,11 +1250,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
-| [[Endor Shield (V) (Errata)|Endor Shield (V)]]
-| PC-E1 (3 October 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
 | [[Endor: Rebel Landing Site (Forest) (V) (Errata)|Endor: Rebel Landing Site (Forest) (V)]]
 | PC-E1 (10 August 2025)
 | (none)
@@ -1363,16 +1279,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (2 August 2024)
 | (none)
 | Errata 1 in release order; this Virtual Set 23 release sheet with errata slip prints no errata mark at all.
-|-
-| [[Failure At The Cave (V) (Errata 2)|Failure At The Cave (V)]]
-| PC-E2 (22 July 2024)
-| E1
-| A wording errata whose mark counts only the PC's wording errata; earlier re-rendered images count as versions, so the printed mark trails the version number.
-|-
-| [[Failure At The Cave (V) (Errata)|Failure At The Cave (V)]]
-| PC-E1 (3 January 2023)
-| none
-| A re-rendered image (same words) that prints no errata mark; it is the card's first change after the original.
 |-
 | [[Falleen's Fist (Errata)|Falleen's Fist]]
 | PC-E1 (1 December 2022)
@@ -1415,11 +1321,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | Errata 2 in release order; earlier images that changed only the mark, the margin, the resolution or a typo count as versions, so the printed mark trails the version number.
 |-
 | [[Force Push (V) (Errata)|Force Push (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
-| [[Found Someone You Have (V) (Errata)|Found Someone You Have (V)]]
 | PC-E1 (31 July 2022)
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
@@ -1644,11 +1545,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this Virtual Set 22 release-sheet slip prints no errata mark at all.
 |-
-| [[Hound's Tooth (V) (Errata)|Hound's Tooth (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
 | [[How Liberty Dies (Errata)|How Liberty Dies]]
 | PC-E1 (10 August 2025)
 | (none)
@@ -1709,16 +1605,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this Virtual Set 22 release-sheet slip prints no errata mark at all.
 |-
-| [[IG-88 (V) (Errata)|IG-88 (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
-| [[IG-88's Pulse Cannon (V) (Errata)|IG-88's Pulse Cannon (V)]]
-| PC-E1 (10 August 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
-|-
 | [[Image Of The Dark Lord (V) (Errata)|Image Of The Dark Lord (V)]]
 | PC-E1 (31 July 2022)
 | (none)
@@ -1758,11 +1644,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (13 October 2026)
 | (none)
 | Errata 1 in release order; this Virtual Set 27 release-sheet slip prints no errata mark at all.
-|-
-| [[It Is The Future You See (V) (Errata)|It Is The Future You See (V)]]
-| PC-E1 (10 August 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
 |-
 | [[Jabba The Hutt (V) (Errata 2)|Jabba The Hutt (V)]]
 | PC-E2 (30 December 2024)
@@ -1834,16 +1715,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 2 in release order; this Virtual Set 24 release sheet slip prints no errata mark at all.
 |-
-| [[Jedi Levitation (V) (Errata 2)|Jedi Levitation (V)]]
-| PC-E2 (12 December 2022)
-| E1
-| Errata 2 in release order; earlier images that changed only the mark, the margin, the resolution or a typo count as versions, so the printed mark trails the version number.
-|-
-| [[Jedi Levitation (V) (Errata)|Jedi Levitation (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
 | [[Jedi Marshal Avar Kriss (Errata)|Jedi Marshal Avar Kriss]]
 | PC-E1 (2 February 2025)
 | (none)
@@ -1894,11 +1765,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
-| [[Knowledge And Defense (V) (Errata 3)|Knowledge And Defense (V)]]
-| PC-E3 (31 July 2022)
-| E1
-| The fourth documented image state prints “E1”. The earlier states are the 2016 slip, 2017 slip and 2018 full-card image. The chronological wiki code is PC-E3.
-|-
 | [[Kuat Drive Yards (V) (Errata)|Kuat Drive Yards (V)]]
 | PC-E1 (31 July 2022)
 | (none)
@@ -1920,11 +1786,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
 |-
 | [[Leesub Sirln (V) (Errata)|Leesub Sirln (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
-| [[Leia (V) (Errata)|Leia (V)]]
 | PC-E1 (31 July 2022)
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
@@ -2064,11 +1925,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
-| [[Major Panno (V) (Errata)|Major Panno (V)]]
-| PC-E1 (10 August 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
-|-
 | [[Major Partagaz (Errata)|Major Partagaz]]
 | PC-E1 (17 June 2023)
 | (none)
@@ -2204,22 +2060,12 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | E
 | The first image found already prints a mark (the card had been errata'd before the PC image repository began, 8 July 2018).
 |-
-| [[Nien Nunb, Sullustan Smuggler (Errata)|Nien Nunb, Sullustan Smuggler]]
-| PC-E1 (6 October 2023)
-| (none)
-| Errata 1 in release order; this Virtual Set 22 release-sheet slip prints no errata mark at all.
-|-
 | [[Night Buzzard (Errata)|Night Buzzard]]
 | PC-E1 (6 October 2023)
 | (none)
 | Errata 1 in release order; this Virtual Set 22 release-sheet slip prints no errata mark at all.
 |-
 | [[No Civility, Only Politics (V) (Errata)|No Civility, Only Politics (V)]]
-| PC-E1 (10 August 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
-|-
-| [[No Disintegrations! (V) (Errata)|No Disintegrations! (V)]]
 | PC-E1 (10 August 2025)
 | (none)
 | Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
@@ -2263,11 +2109,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (17 June 2023)
 | (none)
 | Errata 1 in release order; this Virtual Set 21 release sheet, June 2023 edition slip prints no errata mark at all.
-|-
-| [[Onyx 2 (V) (Errata)|Onyx 2 (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
 | [[Orbital Bombardment (Errata)|Orbital Bombardment]]
 | PC-E1 (10 August 2025)
@@ -2464,11 +2305,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this Virtual Set 23 release sheet with errata slip prints no errata mark at all.
 |-
-| [[Rebel Leadership (V) (Errata)|Rebel Leadership (V)]]
-| PC-E1 (1 December 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
 | [[Rebel Trooper Reinforcements (Errata)|Rebel Trooper Reinforcements]]
 | PC-E1 (29 March 2023)
 | (none)
@@ -2484,11 +2320,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
-| [[Reflection (V) (Errata)|Reflection (V)]]
-| PC-E1 (6 October 2023)
-| (none)
-| Errata 1 in release order; this Virtual Set 22 release-sheet slip prints no errata mark at all.
-|-
 | [[Resolute (Errata)|Resolute]]
 | PC-E1 (17 June 2023)
 | (none)
@@ -2498,11 +2329,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (2 August 2024)
 | (none)
 | Errata 1 in release order; this Virtual Set 23 release sheet with errata slip prints no errata mark at all.
-|-
-| [[Royal Escort (V) (Errata)|Royal Escort (V)]]
-| PC-E1 (17 June 2023)
-| (none)
-| Errata 1 in release order; this Virtual Set 21 release sheet, June 2023 edition slip prints no errata mark at all.
 |-
 | [[Run'heb Voend (Errata 2)|Run'heb Voend]]
 | PC-E2 (13 October 2026)
@@ -2634,20 +2460,10 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
-| [[Son Of Skywalker (V) (Errata)|Son Of Skywalker (V)]]
-| PC-E1 (2 February 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 24 release sheet slip prints no errata mark at all.
-|-
 | [[Stalker (V) (Errata 2)|Stalker (V)]]
 | PC-E2 (5 July 2022)
 | E
 | Errata 2 in release order; earlier images that changed only the mark, the margin, the resolution or a typo count as versions, so the printed mark trails the version number.
-|-
-| [[Starship Levitation (V) (Errata)|Starship Levitation (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
 | [[StarSpeeder 1000 (Errata)|StarSpeeder 1000]]
 | PC-E1 (2 February 2025)
@@ -2688,16 +2504,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (10 August 2025)
 | (none)
 | Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
-|-
-| [[Strike Planning (V) (Errata)|Strike Planning (V)]]
-| PC-E1 (17 June 2023)
-| (none)
-| Errata 1 in release order; this Virtual Set 21 release sheet, June 2023 edition slip prints no errata mark at all.
-|-
-| [[Strikeforce (V) (Errata)|Strikeforce (V)]]
-| PC-E1 (31 July 2022)
-| (none)
-| Errata 1 in release order; this re-made image prints no errata mark at all.
 |-
 | [[Supply Route (Errata)|Supply Route]]
 | PC-E1 (17 June 2023)
@@ -2944,11 +2750,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
 |-
-| [[Transmission Terminated (V) (Errata)|Transmission Terminated (V)]]
-| PC-E1 (2 August 2024)
-| (none)
-| Errata 1 in release order; this Virtual Set 23 release sheet with errata slip prints no errata mark at all.
-|-
 | [[Turn It Off! Turn It Off! (V) (Errata 2)|Turn It Off! Turn It Off! (V)]]
 | PC-E2 (17 February 2023)
 | (none)
@@ -2963,11 +2764,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (29 March 2023)
 | (none)
 | Errata 1 in release order; the words changed but the image prints no errata mark at all.
-|-
-| [[Twilight Is Upon Me (V) (Errata)|Twilight Is Upon Me (V)]]
-| PC-E1 (6 October 2023)
-| (none)
-| Errata 1 in release order; this Virtual Set 22 release-sheet slip prints no errata mark at all.
 |-
 | [[Utapau (Republic Controlled) / Utapau (Separatist Controlled) (Errata)|Utapau (Republic Controlled) / Utapau (Separatist Controlled)]]
 | PC-E1 (13 October 2026)
@@ -3124,11 +2920,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this July 2024 Defensive Shield Update Kit slip prints no errata mark at all.
 |-
-| [[Yoda's Hope (V) (Errata)|Yoda's Hope (V)]]
-| PC-E1 (10 August 2025)
-| (none)
-| Errata 1 in release order; this Virtual Set 25 release sheet slip prints no errata mark at all.
-|-
 | [[Yoda, Keeper Of The Peace (Errata 2)|Yoda, Keeper Of The Peace]]
 | PC-E2 (26 October 2022)
 | E1
@@ -3153,11 +2944,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (31 July 2022)
 | (none)
 | Errata 1 in release order; this re-made image prints no errata mark at all.
-|-
-| [[Young Fool (V) (Errata)|Young Fool (V)]]
-| PC-E1 (2 August 2024)
-| (none)
-| Errata 1 in release order; this Virtual Set 23 release sheet with errata slip prints no errata mark at all.
 |-
 | [[Young Skywalker (Errata)|Young Skywalker]]
 | PC-E1 (6 October 2023)
@@ -3304,11 +3090,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | E1
 | Errata 2 in release order (the second errata (9 March 2026); both sides print “E1”), but the card prints “E1”, the mark of the first errata.
 |-
-| [[Chimaera (V) (ALT) (Errata)|Chimaera (V) (ALT)]]
-| PC-E1 (24 January 2025)
-| (none)
-| Errata 1 of this alternate-image card in release order (an image change only, same words); the image prints no errata mark.
-|-
 | [[Coruscant: The Works (ALT)|Coruscant: The Works (ALT)]]
 | Original (13 July 2023)
 | E1
@@ -3368,11 +3149,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | Original (13 July 2023)
 | E1
 | First image of this alternate-image card, but it prints “E1”: the alternate image reprints the errata text of [[Dagobah: Yoda's Hut (V)]] and carries that card's mark, not a count of the alternate image's own versions.
-|-
-| [[Dagobah: Yoda's Hut (V) (ALT) (Errata 2)|Dagobah: Yoda's Hut (V) (ALT)]]
-| PC-E2 (24 January 2025)
-| E1
-| Errata 2 of this alternate-image card in release order (an image change only, same words); the mark “E1” follows the base card [[Dagobah: Yoda's Hut (V)]], not the alternate image's versions.
 |-
 | [[Tatooine: Obi-Wan's Hut (V) (ALT)|Tatooine: Obi-Wan's Hut (V) (ALT)]]
 | Original (13 July 2023)
@@ -3573,11 +3349,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (11 June 2022)
 | (none)
 | Errata 1 in release order (the 11 June 2022 GIF re-make at a larger size, otherwise unchanged); the image prints no errata mark at all.
-|-
-| [[Failure At The Cave (V) (Errata 3)|Failure At The Cave (V)]]
-| PC-E3 (2 August 2024)
-| E1
-| Errata 3 in release order (the partial slip of the July 2024 Defensive Shield Update Kit, same words as the 22 July 2024 card image); the slip prints “E1”, so the printed mark trails the version number.
 |-
 | [[Drop! (V) (Errata 2)|Drop! (V)]]
 | PC-E2 (2 August 2024)
@@ -3944,21 +3715,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | E1
 | Errata 2 in release order; the card prints “E1”, so the printed mark trails the version number.
 |-
-| [[Kin Kian (V) (Errata)|Kin Kian (V)]]
-| PC-E1 (bottom-only face known by October 2021)
-| (none)
-| The complete source is unnumbered: [[:File:V7-L-kinkian-Set7-known-by-2021-10-05-bottom-only.png]]. No printed number or executable ID is invented.
-|-
-| [[Kin Kian (V) (Errata 2)|Kin Kian (V)]]
-| PC-E2 (November 2022 repository copy)
-| (none)
-| PC-E2 in the documented image sequence; this printing prints no errata mark at all.
-|-
-| [[Kin Kian (V) (Errata 3)]]
-| PC-E3 (fourth documented image; September 2023 edition)
-| (none)
-| The published bottom-only slip has no errata mark. Its fourth-image/PC-E3 ordinal is recorded separately from the absent printed mark.<ref>[[:File:Virtual-Set-7-September-2023.pdf|Official Set 7 sheet, September 2023 edition]], page 3.</ref>
-|-
 | [[Major Caluan Ematt (Errata)|Major Caluan Ematt]]
 | PC-E1 (art-cutout face known by October 2021)
 | (none)
@@ -3998,16 +3754,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E2 (11 September 2023)
 | (none)
 | Errata 2 in release order; this printing prints no errata mark at all.
-|-
-| [[Yoda (V) (Errata)|Yoda (V)]]
-| PC-E1 (4 November 2022)
-| (none)
-| Errata 1 in release order; this printing prints no errata mark at all.
-|-
-| [[Yoda (V) (Errata 2)]]
-| Errata 2 (third documented image; September 2023 edition)
-| (none)
-| The published bottom-only slip has no errata mark. Its third-image/Errata2 ordinal is recorded separately from the absent printed mark.<ref>[[:File:Virtual-Set-7-September-2023.pdf|Official Set7 sheet, September 2023 edition]], page 3.</ref>
 |-
 | [[Rebellions Are Built On Hope (Errata)|Rebellions Are Built On Hope]]
 | PC-E1 (4 November 2022)
@@ -4110,11 +3856,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | Errata 2 in release order; the card prints “E1”, so the printed mark trails the version number.
 |-
 | [[Meson Martinet (Errata)|Meson Martinet]]
-| PC-E1 (4 November 2022)
-| (none)
-| Errata 1 in release order; this printing prints no errata mark at all.
-|-
-| [[Punishing One (V) (Errata)|Punishing One (V)]]
 | PC-E1 (4 November 2022)
 | (none)
 | Errata 1 in release order; this printing prints no errata mark at all.
@@ -4289,11 +4030,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this printing prints no errata mark at all.
 |-
-| [[Myn Kyneugh (V) (Errata)|Myn Kyneugh (V)]]
-| PC-E1 (10 July 2022)
-| (none)
-| Errata 1 in release order; this printing prints no errata mark at all.
-|-
 | [[Captain Peavey|Captain Peavey]]
 | original (8 July 2018)
 | E
@@ -4330,11 +4066,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | Errata 1 in release order; this printing prints no errata mark at all.
 |-
 | [[Double Back (V) (Errata)|Double Back (V)]]
-| PC-E1 (10 July 2022)
-| (none)
-| Errata 1 in release order; this printing prints no errata mark at all.
-|-
-| [[Operational As Planned (V) (Errata)|Operational As Planned (V)]]
 | PC-E1 (10 July 2022)
 | (none)
 | Errata 1 in release order; this printing prints no errata mark at all.
@@ -4409,11 +4140,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this printing prints no errata mark at all.
 |-
-| [[Darth Vader's Lightsaber (V) (Errata 2)|Darth Vader's Lightsaber (V)]]
-| PC-E2 (10 July 2022)
-| E1
-| Errata 2 in release order; the card prints “E1”, so the printed mark trails the version number.
-|-
 | [[Admiral Raddus (Errata)|Admiral Raddus]]
 | PC-E1 (10 July 2022)
 | (none)
@@ -4448,11 +4174,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E1 (10 July 2022)
 | (none)
 | Errata 1 in release order; this printing prints no errata mark at all.
-|-
-| [[General Walex Blissex (V) (Errata)]]<br />[[General Walex Blissex (V) (Errata 2)]]<br />[[General Walex Blissex (V) (Errata 3)]]
-| Errata 1 (image 2); Errata 2 (image 3); Errata 3 (image 4)
-| (none on all three)
-| The earlier partial, later full face and later partial each have no errata mark. The printed marks are recorded separately from these image-version ordinals.<ref>[[:File:Virtual-Set-9-archive-2021-10-05-pages-1-3-5-extract.pdf|Official Set 9 PDF archived 5 October 2021]], original page 3 (lossless extract page 2). [[:File:Virtual-Set-9-October-2023.pdf|Official Set 9 sheet, October 2023 edition]], page 3.</ref>
 |-
 | [[Lak Sivrak (Errata)]]<br />[[Lak Sivrak (Errata 2)]]<br />[[Lak Sivrak (Errata 3)]]
 | Errata 1 (image 2); Errata 2 (image 3); Errata 3 (image 4)
@@ -4630,11 +4351,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | Errata 1 in release order; this printing prints no errata mark at all.
 |-
 | [[Commence Primary Ignition (V) (Errata)|Commence Primary Ignition (V)]]
-| PC-E1 (10 July 2022)
-| (none)
-| Errata 1 in release order; this printing prints no errata mark at all.
-|-
-| [[Apology Accepted (V) (Errata)|Apology Accepted (V)]]
 | PC-E1 (10 July 2022)
 | (none)
 | Errata 1 in release order; this printing prints no errata mark at all.
@@ -5154,16 +4870,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this printing shows no errata mark at all.
 |-
-| [[Dengar (V) (Errata 2)|Dengar (V)]]
-| PC-E2 (30 December 2024)
-| E1
-| Errata 2 in release order; the printing shows “E1”, so the printed mark does not match the version number.
-|-
-| [[Dengar (V) (Errata)|Dengar (V)]]
-| PC-E1 (16 August 2023)
-| (none)
-| Errata 1 in release order; this printing shows no errata mark at all.
-|-
 | [[Emperor Palpatine, Foreseer (Errata)|Emperor Palpatine, Foreseer]]
 | PC-E1 (16 August 2023)
 | (none)
@@ -5549,11 +5255,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this printing shows no errata mark at all.
 |-
-| [[Masanya (V) (Errata)|Masanya (V)]]
-| PC-E1 (1 June 2022)
-| (none)
-| Errata 1 in release order; this printing shows no errata mark at all.
-|-
 | [[Mindful Of The Future (V) (Errata)|Mindful Of The Future (V)]]
 | PC-E1 (1 June 2022)
 | (none)
@@ -5614,11 +5315,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | E2
 | Errata 8 in release order; the printing shows “E2”, so the printed mark does not match the version number.
 |-
-| [[Overseeing It Personally (V) (Errata 2)|Overseeing It Personally (V)]]
-| PC-E2 (16 August 2023)
-| E1
-| Errata 2 in release order; the printing shows “E1”, so the printed mark does not match the version number.
-|-
 | [[Poe Dameron (Errata)|Poe Dameron]]
 | PC-E1 (1 June 2022)
 | (none)
@@ -5630,11 +5326,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | Errata 1 in release order; this printing shows no errata mark at all.
 |-
 | [[Point Man (V) (Errata)|Point Man (V)]]
-| PC-E1 (16 August 2023)
-| (none)
-| Errata 1 in release order; this printing shows no errata mark at all.
-|-
-| [[Rebel Flight Suit (V) (Errata)|Rebel Flight Suit (V)]]
 | PC-E1 (16 August 2023)
 | (none)
 | Errata 1 in release order; this printing shows no errata mark at all.
@@ -5804,11 +5495,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this printing shows no errata mark at all.
 |-
-| [[Tycho Celchu (V) (Errata)|Tycho Celchu (V)]]
-| PC-E1 (16 August 2023)
-| (none)
-| Errata 1 in release order; this printing shows no errata mark at all.
-|-
 | [[Tycho In Green Squadron 3 (Errata)|Tycho In Green Squadron 3]]
 | PC-E1 (16 August 2023)
 | (none)
@@ -5854,11 +5540,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 1 in release order; this printing shows no errata mark at all.
 |-
-| [[You Do Have Your Moments (V) (Errata)|You Do Have Your Moments (V)]]
-| PC-E1 (1 June 2022)
-| (none)
-| Errata 1 in release order; this printing shows no errata mark at all.
-|-
 | [[Zam Wesell (Errata)|Zam Wesell]]
 | PC-E1 (1 June 2022)
 | (none)
@@ -5878,11 +5559,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | PC-E2 (2 January 2023)
 | (none)
 | Errata 2 in release order; the game text changed but the card prints no errata mark.
-|-
-| [[Anakin Skywalker (V) (Errata 2)|Anakin Skywalker (V)]]
-| PC-E2 (28 March 2021)
-| E
-| Errata 2 in release order; the card prints “E”, so the printed mark trails the version number.
 |-
 | [[Anakin Skywalker (V) (Errata 3)|Anakin Skywalker (V)]]
 | PC-E3 (20 December 2021)
@@ -6029,11 +5705,6 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 | (none)
 | Errata 2 in release order; the game text changed but the card prints no errata mark.
 |-
-| [[Our Only Hope (V) (Errata 2)|Our Only Hope (V)]]
-| PC-E2 (31 May 2022)
-| E1
-| Errata 2 in release order; the card prints “E1”, so the printed mark trails the version number.
-|-
 | [[A Power Loss (Errata 2)|A Power Loss]]
 | PC-E2 (29 December 2024)
 | E1
@@ -6066,10 +5737,10 @@ Modern Virtual card images print an errata mark ("E1", "E2"…) at bottom right.
 |}
 
 == Captain Needa: printed errata marks ==
-The June 2017 partial is [[Captain Needa (PC Errata)|image 1]] and prints <code>E</code>. The 2018 full is [[Captain Needa (PC Errata 2)|image 2]] and also prints <code>E</code>. The23 December 2022 face is [[Captain Needa (PC Errata 3)|image 3]] and the 19 February 2023 face is [[Captain Needa (PC Errata 4)|image 4]]; both print <code>D-E1</code>. Article numbers follow documented image order, preserving actual marks without inferring publisher intent. The 2017 document date and later first repository records do not establish original publication days. June 2017partial: [[File:Dagobah-D-Captain-Needa-June-2017-partial.png|frameless|300px]];2018text: [[File:Captain-Needa-PC-E1-2018-game-text.png|frameless|300px]];2022text: [[File:Captain-Needa-PC-E2-2022-game-text.png|frameless|300px]];2023text: [[File:Captain-Needa-PC-E3-2023-game-text.png|frameless|300px]].
+The June 2017 partial is [[Captain Needa (Errata)|image 1]] and prints <code>E</code>. The 2018 full is [[Captain Needa (Errata)|image 2]] and also prints <code>E</code>. The23 December 2022 face is [[Captain Needa (PC Errata)|image 3]] and the 19 February 2023 face is [[Captain Needa (PC Errata)|image 4]]; both print <code>D-E1</code>. Printed marks are retained literally; image sequence does not determine Errata numbering. The 2017 document date and later first repository records do not establish original publication days. June 2017partial: [[File:Dagobah-D-Captain-Needa-June-2017-partial.png|frameless|300px]];2018text: [[File:Captain-Needa-PC-E1-2018-game-text.png|frameless|300px]];2022text: [[File:Captain-Needa-PC-E2-2022-game-text.png|frameless|300px]];2023text: [[File:Captain-Needa-PC-E3-2023-game-text.png|frameless|300px]].
 
 == Flagship image marks ==
-The June 2017 partial is [[Flagship (PC Errata)|image 1]] and prints <code>E</code>. The [[Flagship (PC Errata 2)|2018 full face, image 2]], also prints <code>E</code>. [[Flagship (PC Errata 3)|March 2023, image 3]], and [[Flagship (PC Errata 4)|June 2023, image 4]], both print <code>D-E1</code>. [[Flagship (PC Errata 5)|July 2026, image 5]], prints <code>D-E2</code>. Image numbers follow dated source records; printed marks are retained without inferring publisher intent. The March face omits “your” from the Alter-immunity sentence, June restores it, and July 2026 changes “If starship lost” to “If starship about to be lost.” Actual original publication days are unknown. June 2017 partial: [[File:Dagobah-D-Flagship-June-2017-partial.png|frameless|300px]]. Later before/after word comparisons remain on each corresponding article.
+The June 2017 partial is [[Flagship (Remastered)|image 1]] and prints <code>E</code>. The [[Flagship (Remastered)|2018 full face, image 2]], also prints <code>E</code>. [[Flagship (PC Errata)|March 2023, image 3]], and [[Flagship (Remastered) (2023)|June 2023, image 4]], both print <code>D-E1</code>. [[Flagship (PC Errata 2)|July 2026, image 5]], prints <code>D-E2</code>. Image numbers follow dated source records; printed marks are retained without inferring publisher intent. The March face omits “your” from the Alter-immunity sentence, June restores it, and July 2026 changes “If starship lost” to “If starship about to be lost.” Actual original publication days are unknown. June 2017 partial: [[File:Dagobah-D-Flagship-June-2017-partial.png|frameless|300px]]. Later before/after word comparisons remain on each corresponding article.
 
 == E-web Blaster image marks ==
 The June 2017 partial is [[E-web Blaster (PC Errata)|image 1]] and prints <code>E</code>. The [[E-web Blaster (PC Errata 2)|2018 full face, image 2]], and [[E-web Blaster (PC Errata 3)|2021 full face, image 3]], also print <code>E</code>. The [[E-web Blaster (PC Errata 4)|2023 face, image 4]], prints <code>D-E1</code>. Image numbers follow dated source records; printed marks are retained without inferring publisher intent. The 2021 face prints plural “Your warriors present”; the 2017 partial, 2018 full face and 2023 full face use singular “warrior”. Both the 2021 and 2023 full faces show deploy 3 and forfeit 1, as does the original Decipher face. The 2017 partial and 2018 full PC face do not show that sidebar. Actual original publication days are unknown. June 2017 partial: [[File:Hoth-D-E-web-Blaster-June-2017-partial.png|frameless|300px]]. Sidebar in 2018: [[File:E-web-Blaster-2018-07-08-sidebar-detail.png|frameless|150px]]; in 2021: [[File:E-web-Blaster-2021-03-05-sidebar-detail.png|frameless|150px]]; in 2023: [[File:E-web-Blaster-2023-03-02-sidebar-detail.png|frameless|150px]]. Later before/after comparisons remain on their corresponding articles.
@@ -6102,7 +5773,7 @@ The June 2017 partial [[Astromech Shortage (PC Errata)]] is image 1 and prints <
 The June 2017 partial [[Besieged (PC Errata)]] is image 1 and prints <code>E</code>. The first located 2018 full [[Besieged (PC Errata 2)]] is image 2 and also prints <code>E</code>. The full first recorded 2022-11-12 [[Besieged (PC Errata 3)]] is image 3 and prints <code>D-E1</code>. Article ordinals count documented source states; actual marks are retained without inferring publisher intent. Source dates do not establish original publication days. Partial: [[File:ANH-D-Besieged-June-2017-partial.png|frameless|300px]].
 
 == Advosze image marks ==
-The June 2017 partial [[Advosze (PC Errata)]] is image 1 and prints <code>E</code>. The first located 2018 full face [[Advosze (PC Errata 2)]] is image 2 and also prints <code>E</code>. The later full face [[Advosze (PC Errata 3)]] (first located 2022-11-12) is image 3 and prints <code>D-E1</code>. Article ordinals follow the documented source sequence; actual marks are retained without inferring publisher intent. These records do not establish first publication days. Partial: [[File:ANH-D-Advosze-June-2017-partial.png|frameless|300px]].
+The June 2017 partial [[Advosze (PC Errata 2018 E card)]] is image 1 and prints <code>E</code>. The first located 2018 full face [[Advosze (PC 2022 D-E1 card)]] is image 2 and also prints <code>E</code>. The later full face [[Advosze (PC 2022 D-E1 card)]] (first located 2022-11-12) is image 3 and prints <code>D-E1</code>. Article ordinals follow the documented source sequence; actual marks are retained without inferring publisher intent. These records do not establish first publication days. Partial: [[File:ANH-D-Advosze-June-2017-partial.png|frameless|300px]].
 
 == Leia Seeker image marks ==
 The June 2017 partial [[Leia Seeker (PC Errata)]] is image 1 and prints <code>E</code>. The 2018 full [[Leia Seeker (PC Errata 2)]] is image 2 and also prints <code>E</code>. The full first located 2024-04-04 [[Leia Seeker (PC Errata 3)]] is image 3 and prints <code>D-E1</code>. Article ordinals count the documented official source sequence; actual marks are retained without guessing publisher intent. Encodings and undated fan renditions create no additional official ordinal. Actual partial: [[File:ANH-D-Leia-Seeker-June-2017-partial.png|frameless|300px]].
@@ -6154,7 +5825,7 @@ The 2017 partial [[I'm On The Leader (PC Errata)]] is image 1 and prints <code>E
 * '''Typos printed on Alternate Image cards (Virtual Modern, Sets 0–3).''' The PC printed these on its ALT card images and fixed them on a later image; each image is its own version and the wiki shows the words as printed: [[Conquest (V) (ALT)]] lore “Millemium Falcon” (fixed to “Millennium” on [[Conquest (V) (ALT) (Errata)]], 19 February 2023); [[Count Dooku (ALT)]] lore “Serennoian leader” (fixed to “Serennian” on [[Count Dooku (ALT) (Errata)]], 10 August 2022); [[Azure Angel (ALT)]] and [[Azure Angel (ALT) (Errata)]] concept credit “Original concept by Keivn Shannon” (fixed to “Kevin” on [[Azure Angel (ALT) (Errata 2)]], 15 January 2022).
 * '''A lost clause.''' The front of [[Infiltration / Unlikely Allies]] reads, on the Virtual Block 8.1 sheet and in the Master List, "While this side up, your Force drains at systems are -1. May use 1 Force to ▲ Imperial Navigation Charts. Flip this card if Imperial Navigation Charts is 'stolen.'"<ref name="vb81" /><ref name="ml" /> The PC card data leaves out the middle sentence and doubles a word: "Flip this card if If Imperial Navigation Charts is 'stolen'".<ref name="json2026" />
 * '''One side copied onto the other.''' [[Rebel Cell - Situation Room]] gives both sides the power bonus on the sheet ("For each of your characters here, your power is +1 at related system").<ref name="vb4" /> In the PC card data the Dark Side text is instead a copy of the Light Side's first sentence, "Deploys only to same planet system as Rebel Cell - Hidden Landing Site."<ref name="json2026" />
-* '''Typos.''' The 2012&ndash;2013 card list has typos found in no other PC document, among them "whever" ([[A Disturbance In The Force (V)]]), "damagethis" ([[Collateral Damage (V)]]), "retireved" ([[Away Put Your Weapon (V) (Errata 3)|Away Put Your Weapon (V)]]), "dpeloys" ([[So Be It, Jedi]]), "traget" ([[Evacuate? (V)]]) and "Epic Even" ([[Luke, Trust Me (Errata 2)|Luke, Trust Me]]).<ref name="cl" /> The sheets have their own: the Virtual Block 8.1 sheet's Infiltration says "For reminder of game".<ref name="vb81" /> Card articles on this wiki show each text exactly as published, typos included, and every published text is a version of its card.
+* '''Typos.''' The 2012&ndash;2013 card list has typos found in no other PC document, among them "whever" ([[A Disturbance In The Force (V)]]), "damagethis" ([[Collateral Damage (V)]]), "retireved" ([[Away Put Your Weapon (V) (Virtual Block 2) (Card list text)|Away Put Your Weapon (V)]]), "dpeloys" ([[So Be It, Jedi]]), "traget" ([[Evacuate? (V)]]) and "Epic Even" ([[Luke, Trust Me (Errata 2)|Luke, Trust Me]]).<ref name="cl" /> The sheets have their own: the Virtual Block 8.1 sheet's Infiltration says "For reminder of game".<ref name="vb81" /> Card articles on this wiki show each text exactly as published, typos included, and every published text is a version of its card.
 
 == Commence Recharging image mark ==
 The third PC image, [[Commence Recharging (PC Errata 3)]], prints D-E1. The fourth and fifth PC images, [[Commence Recharging (PC Errata 4)]] and [[Commence Recharging (PC Errata 5)]], both print D-E2. Their numeric printed marks differ from their PC image-version ordinals.<ref>[[:File:ANH-L-commencerecharging-holotable-2022-12-23.png|Third PC image]]; [[:File:ANH-L-commencerecharging-holotable-2023-02-19.png|Fourth PC image]]; [[:File:ANH-L-commencerecharging-holotable-2023-07-03.png|Fifth PC image]].</ref>
@@ -6170,16 +5841,16 @@ The 2017 composed partial, [[Commence Recharging (PC Errata)]], prints unnumbere
 [[Admiral Ozzel (PC Errata)]] is image 1 and prints E; [[Admiral Ozzel (PC Errata 2)]] is image 2 and also prints E; [[Admiral Ozzel (PC Errata 3)]] is image 3 and prints D-E1. Article ordinals follow source-image chronology rather than the literal printed number. Source cover/repository dates do not establish the first publication day. Before: [[File:Hoth-D-Admiral-Ozzel-June-2017-partial.png|frameless|300px]]. After: [[File:Hoth-D-admiralozzel.gif|frameless|300px]].
 
 == Arica image marks ==
-[[Arica (PC Errata)]] is image 1 and prints E; [[Arica (PC Errata 2)]] is image 2 and also prints E; [[Arica (PC Errata 3)]] is image 3 and prints D-E1. Article ordinals follow source-image chronology rather than the literal printed number. Source cover/repository dates do not establish the first publication day. Before: [[File:Ref2-D-Arica-June-2017-partial.png|frameless|300px]]. After: [[File:Ref2-D-arica.gif|frameless|300px]].
+[[Arica (PC 2022 D-E1 card)]] is image 1 and prints E; [[Arica (PC Errata 2)]] is image 2 and also prints E; [[Arica (PC Errata 3)]] is image 3 and prints D-E1. Article ordinals follow source-image chronology rather than the literal printed number. Source cover/repository dates do not establish the first publication day. Before: [[File:Ref2-D-Arica-June-2017-partial.png|frameless|300px]]. After: [[File:Ref2-D-arica.gif|frameless|300px]].
 
 == Set Your Course For Alderaan digital formula ==
 The physical [[Set Your Course For Alderaan / The Ultimate Power In The Universe]] has the correct +1/or+2 Imperial-or-Super formula. The published [[Set Your Course For Alderaan / The Ultimate Power In The Universe (Digital Image)]] prints the incorrect +2/or+1 Victory-class formula. [[Set Your Course For Alderaan / The Ultimate Power In The Universe (Digital Image 2)]] is the later corrected full digital design. The rulebook explicitly distinguishes the digital error from all physical copies; neither digital design is called a new physical printing.<ref>[[:File:SWCCG_2023_AdvancedRulebook.pdf|Advanced Rulebook (2023)]], page 152.</ref> Exact lower comparison — incorrect digital: [[File:TA-D-Ultimate-Power-digital-error-lower-native.png|frameless|300px]]; corrected digital: [[File:TA-D-Ultimate-Power-digital-corrected-lower-native.png|frameless|300px]]. Source occurrence dates are first located bounds, not established first publication days.
 
 == Beedo source-image marks ==
-[[Beedo (PC Errata)]] is image 1 and prints a bronze disc without E/D-E lettering; [[Beedo (PC Errata 2)]] is image 2 and prints E; [[Beedo (PC Errata 3)]] is image 3 and also prints E; [[Beedo (PC Errata 4)]] is image 4 and prints D-E1. Located chronology determines article numbers; literal marks remain unchanged without a claim about intended numbering. Before: [[File:JP-D-Beedo-PC-Gallery-2007-lower-native.png|frameless|300px]]; after: [[File:JP-D-Beedo-full-D-E1-later-lower-native.png|frameless|300px]].
+[[Beedo (PC Errata)]] is image 1 and prints a bronze disc without E/D-E lettering; [[Beedo (PC Errata 2)]] is image 2 and prints E; [[Beedo (PC Errata 3)]] is image 3 and also prints E; [[Beedo (PC Errata 4)]] is image 4 and prints D-E1. Printed marks are retained literally; image sequence does not determine Errata numbering. Before: [[File:JP-D-Beedo-PC-Gallery-2007-lower-native.png|frameless|300px]]; after: [[File:JP-D-Beedo-full-D-E1-later-lower-native.png|frameless|300px]].
 
 == Bossk source-image marks ==
-[[Bossk (PC Errata)]] is image 1 and prints a bronze disc without E/D-E lettering; [[Bossk (PC Errata 2)]] is image 2 and prints E; [[Bossk (PC Errata 3)]] is image 3 and also prints E; [[Bossk (PC Errata 4)]] is image 4 and prints D-E1. Located chronology determines article numbers; literal marks remain unchanged without a claim about intended numbering. Before: [[File:Dagobah-D-Bossk-PC-Gallery-2007-lower-native.png|frameless|300px]]; after: [[File:Dagobah-D-Bossk-full-D-E1-later-lower-native.png|frameless|300px]].
+[[Bossk (Remastered)]] is image 1 and prints a bronze disc without E/D-E lettering; [[Bossk (PC Errata)]] is image 2 and prints E; [[Bossk (PC Errata)]] is image 3 and also prints E; [[Bossk (PC Errata)]] is image 4 and prints D-E1. Located chronology determines article numbers; literal marks remain unchanged without a claim about intended numbering. Before: [[File:Dagobah-D-Bossk-PC-Gallery-2007-lower-native.png|frameless|300px]]; after: [[File:Dagobah-D-Bossk-full-D-E1-later-lower-native.png|frameless|300px]].
 
 == Commander Desanne source-image marks ==
 [[Commander Desanne (PC Errata)]] is image 1 and prints a bronze disc without E/D-E lettering; [[Commander Desanne (PC Errata 2)]] is image 2 and prints E; [[Commander Desanne (PC Errata 3)]] is image 3 and also prints E; [[Commander Desanne (PC Errata 4)]] is image 4 and prints D-E1. Located chronology determines article numbers; literal marks remain unchanged without a claim about intended numbering. Before: [[File:CC-D-Commander-Desanne-PC-Gallery-2007-lower-native.png|frameless|300px]]; after: [[File:CC-D-Commander-Desanne-full-D-E1-later-lower-native.png|frameless|300px]].

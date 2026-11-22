@@ -2,10 +2,12 @@ This is the documentation for [[Template:Card]], the card-page template.
 
 One page = one printing. Do '''not''' put empty errata sections on a card that was never errata'd.
 
+'''errata_history''' — the '''Errata''' section. Template:Card renders it immediately above Sources (See Also stays above Errata). Pass <code><nowiki>{{Card errata/Title}}</nowiki></code> (a shared per-card template with an Edit errata link, the same pattern as Versions). Transclude it on every article of that card in that era, including the Original. Use [[Template:Errata hl]] only on words or values that changed. See [[SWCCG Wiki:Style guide#Errata comparison table]]. Omit when the card was never errata'd.
+
 Optional '''card_status''' — a short status label for a printing that needs context outside the standard Decipher / Players Committee bands (for example, a cancelled design's community remaster). The label appears above the card template. Use only a sourced status; omit it for ordinary printings.
 
 
-Optional '''set_icon''' — printed expansion symbol. Always shown. Premiere = none (still shown). Pass <code>none</code> or a wikilink/file for the printed icon. Alias '''expansion_icon'''. When omitted, Premiere-family sets (Premiere Limited, Premiere Unlimited, Premiere Two-Player, Premiere Two-Player Introductory Game, Premiere, Japanese Premiere, Japanese Premiere Two-Player, ESB Two-Player) default to <code>none</code>; other sets show an empty cell until filled. Do not mass-restamp 24k articles.
+Optional '''set_icon''' — printed expansion symbol. Always shown via [[Template:Set icon]]. Omit it on ordinary cards; the template looks up <code>set</code>. Pass a short key for mixed products and AI gold-ring cards (<code>Hoth</code>, <code>Reflections III</code>, <code>none</code>, <code>Coruscant AI</code>, <code>Tatooine AI</code>, <code>Theed Palace AI</code>). Premiere-family printings with no symbol render None ([[Premiere|Premiere]]). ESB Two-Player is mixed and needs a per-card key. Alias '''expansion_icon'''.
 
 Optional '''also_in''' (alias '''products''') — leftover or extra products that shipped this same version (Enhanced Premiere boosters, First Anthology starters, Reflections I–III bulk). Named editions of the same cardboard stack in the article title instead. Omit when none.
 
@@ -25,7 +27,7 @@ Optional '''pc_alias''' — Players Committee GEMP alias (<code>601_x</code> / <
 
 Optional '''slip''' — printed slip number on the virtual sheet (for example <code>51E</code>). Data, not the id.
 
-'''Versions''' — family navigator (Option C, 26 October 2026; errata prefix 26 October 2026). Closed prefixes, oldest first: Decipher, Decipher (AI), Decipher Errata, PC Errata, Virtual Original, Virtual Legacy, Virtual Legacy (AI), Virtual Modern, Virtual Modern (ALT). Unmarked Decipher is the printed face. Decipher Errata is a later Decipher rewrite. PC Errata only when the Players Committee rewrote past Decipher. Full lineage both directions. Omit when this printing is the only one. Host twins that share one GEMP id use one line plus a hatnote. Pass '''versions''' or the older '''printings''' (alias). Bold the current-printing label and place its GEMP ID in <code><nowiki><code></nowiki></code>. Worked: [[Luke Skywalker]].
+'''Versions''' — last row of the infobox (after Errata mark, likeness, credits, and extra_info). Family navigator (Option C, 26 October 2026; errata prefix 26 October 2026). Closed prefixes, oldest first: Decipher, Decipher (AI), Decipher Errata, PC Errata, Virtual Original, Virtual Legacy, Virtual Legacy (AI), Virtual Modern, Virtual Modern (ALT). Unmarked Decipher is the printed face. Decipher Errata is a later Decipher rewrite. PC Errata only when the Players Committee rewrote past Decipher. Full lineage both directions. Omit when this printing is the only one. Host twins that share one GEMP id use one line plus a hatnote. Pass '''versions''' or the older '''printings''' (alias). Bold the current-printing label and place its GEMP ID in <code><nowiki><code></nowiki></code>. Worked: [[Luke Skywalker]].
 
 Do not pass '''version_label'''. The old Version row (printed / virtual) is dropped. Era and Versions already mark Players Committee printings as Virtual Original, Virtual Legacy, or Virtual Modern.
 
@@ -50,10 +52,18 @@ Optional '''image2''' — second portrait under '''image''' (same 280px width). 
 
 Optional '''image2_trim''' — display-only trim for excess padding on the second image. A value of <code>20</code> requests a 320px thumbnail and hides 20px on each edge inside a 280px-wide rounded window. Measure each image separately and preserve a normal black border, all text and all symbols. The source File and downloaded image are unchanged. Omit for ordinary images.
 
+For a second face photographed within a larger image, use '''image2''' for the original File and supply '''image2_source_width''', '''image2_crop_x''', '''image2_crop_y''', '''image2_crop_width''' and '''image2_crop_height''' in source pixels. The crop frames the entire card and links to the original photograph. Optional '''image2_rotation''', '''image2_crop_polygon''' and '''image2_alt''' work the same way as their primary-image counterparts.
+
 Optional '''image2_layout''' — how to place '''image2''' when set:
 * omit or '''stack''' — force stacked vertically (0 on top, 7 below); default when unset
 * '''right''' — force side-by-side always (0 left, 7 right); classes '''card-portraits-row''' + '''card-rail-dual'''
 * '''responsive''' — preferred Objective mode: wide viewport = side-by-side (0 left, 7 right); narrow viewport (max-width '''720px''') = stacked. Same row/dual markup plus '''card-rail-responsive''' / '''card-portraits-responsive''' so CSS media query can adapt.
+
+Optional '''play_image''' — the card drawn by the Players Committee for a page whose '''image''' is a source document rather than a card, e.g. a Decipher Errata page that shows the Glossary entry as '''image''' and the PC's D-E1 card here (swccg-guild/work#1297). Shown under the portraits at 280px, outside the image viewer's portraits. Use it only where the card's words match the page's text. Optional '''play_image_label''' — one line under it, e.g. <code>Card drawn by the Players Committee, 23 December 2022 — <nowiki>[[Collision! (D-E1 2022)]]</nowiki></code>.
+
+Optional '''image_caption''' — one short line directly under the main '''image''' (stacked layout), saying what the image is, e.g. on a Decipher Errata page <code>Decipher's errata as published: Glossary Version 2.0, November 1998, p. 38</code> (swccg-guild/work#1297).
+
+Optional '''format''' — an Info row "Format" saying what kind of publication the article shows: <code>Slip</code>, <code>Full card</code> or <code>Text only</code> (#1297). Omit on ordinary printed cards.
 
 Optional '''image3''', '''image4''', '''image5''', '''image6''' — further portraits, each 280px wide, with matching '''image3_trim''' … '''image6_trim''' (same rule as '''image2_trim'''). Used for the printed slip on [[Virtual Legacy]] card pages (swccg-guild/work#156), as '''image2''' shows the slip on [[Virtual Original]] pages.
 * Stacked layout (no '''image2_layout'''): they follow '''image2''' in order, top to bottom. A single-face card whose '''image2''' is free puts its slip in '''image2'''; a card whose '''image2''' is taken puts the slip in '''image3''' (a slip printed in two halves uses the next free slots, top half first).
@@ -159,7 +169,7 @@ Optional creature statistics: <code>ferocity</code> and <code>fangs</code> rende
 The optional <code>tentacles</code> parameter displays a creature’s printed tentacle count. Like <code>ferocity</code> and <code>fangs</code>, the row is omitted when the parameter is empty.
 
 == Blanked date (Bill, 10 November 2026) ==
-Optional '''blanked''' — the date the Players Committee blanked the card (in effect banned it), with a <code><nowiki><ref></nowiki></code> to the announcement, e.g. <code><nowiki>|blanked=26 April 2011<ref name="...">...</ref></nowiki></code>. It shows a ''Blanked'' row after ''Era'' and adds [[:Category:Blanked cards]]. Blanking is not a new version: the card stays in its set and is legal in period formats before that date. Leave it out on cards that were never blanked (no row is shown).
+Optional '''blanked''' — the sourced date on which this version was blanked or banned by the Players Committee. It shows a ''Blanked'' row in the date block immediately before Versions and adds [[:Category:Blanked cards]]. Set it only on the affected version; do not copy it to an earlier, superseded version in the same family. Preserve sourced historical bans. Blanking does not create a new printing. Leave this field empty on versions that were never blanked.
 
 == Language and printing metadata ==
 
@@ -189,6 +199,21 @@ Example of separate native and translated fields (an abridged language-field exa
 == Source-photo orientation ==
 
 Optional '''image_rotation''' — <code>left</code> displays the first portrait a quarter turn counterclockwise. Use it for an original source photograph whose card is sideways. The original File and downloaded photograph stay unchanged. Omit it for an upright photo. '''image_rotated_height''' is the displayed height in pixels after rotation; use the nearest integer to <code>280 × original image width / original image height</code> (default 167). The template scales the standard thumbnail inside its 280px rail. Works with the first portrait in stacked and two-column layouts. Do not use rotation to infer a different printing or to hide a cropped card edge.
+
+
+=== Dates (Bill, 2026-11-17) ===
+
+Optional rows, last before Versions. Empty omits. Named fields; the template does not copy a set date. The order is Released, Effective, Remastered, Blanked, Retired, then Versions. Use the best supported precision: day, month, year, range, or a source-qualified “by” date. A document’s official-text cutoff or file creation date does not establish a card’s release day.
+
+* '''released''' — when this version was published. Show on every version that has a sourced date, including remaster articles.
+* '''effective''' — only when the in-force day is later than Released.
+* '''remastered''' — only on a Remastered article.
+* '''blanked''' — only on the version that was cut from Open.
+* '''retired''' — GEMP-slot reuse for a different card.
+* '''successor''' — body section naming the card that replaced this one.
+* '''predecessor''' — body section on the replacement, naming the retired card.
+
+The printed card title never includes <code>(Remastered)</code>; that is a wiki qualifier. Infobox <code>|title=</code> is the printed title.
 
 === Framing source photographs ===
 For a photograph containing a grading holder, retain the original <code>image</code> filename and provide <code>image_source_width</code>, <code>image_crop_x</code>, <code>image_crop_y</code>, <code>image_crop_width</code> and <code>image_crop_height</code> in original source pixels. These optional fields frame the complete physical card for display without altering the uploaded source. <code>image_rotation</code> accepts <code>left</code>, <code>right</code> or <code>180</code> in this mode. An optional <code>image_crop_polygon</code> removes only background around a perspective photograph; preserve every card edge. The display includes an explicit link to the original photograph. Unframed photographs and secondary-image trim parameters keep their existing behavior.
