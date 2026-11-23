@@ -91389,6 +91389,27 @@
    "sha256": "7d650345de2a39162d9f524e35890aacffe32742a0501a2e807e20ce68361616"
   }
  },
+ "https://swccg.com/snapshots/forum/p646220.html": {
+  "capture": "",
+  "job_id": "spn2-0b7d5eff5702704d2ebb2dc588380a52ab9dcdf3",
+  "last": "2026-11-23T20:22:51Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p646235.html": {
+  "capture": "",
+  "job_id": "spn2-0059ee9e7229b9ceb3cf9b5b5e7b53ecc0d2439f",
+  "last": "2026-11-23T20:23:52Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p661780.html": {
+  "capture": "",
+  "job_id": "spn2-fe96de2eb4195a93610954c324b7eb62e503bc6f",
+  "last": "2026-11-23T20:24:53Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/p921494.html": {
   "capture": "https://web.archive.org/web/20261021003657/https://swccg.com/snapshots/forum/p921494.html",
   "last": "2026-11-05T05:08:30Z",
@@ -165188,11 +165209,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/keder-the-black.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025061337/https://swccg.com/snapshots/scomp/keder-the-black.html",
   "error": "no job_id: The same snapshot had been made 250 hours, 12 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T16:26:36Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-23T20:22:49Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-23T20:22:49Z",
+   "bytes": 282094,
+   "capture_id": "https://web.archive.org/web/20261025061337id_/https://swccg.com/snapshots/scomp/keder-the-black.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f918c4189d79afd5de13c386048f95e8404fce4152cfeefd33f70cd534ddcd8d"
+  }
  },
  "https://swccg.com/snapshots/scomp/keep-your-eyes-open-v.html": {
   "capture": "https://web.archive.org/web/20261024231119/https://swccg.com/snapshots/scomp/keep-your-eyes-open-v.html",
