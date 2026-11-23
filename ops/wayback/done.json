@@ -167570,12 +167570,15 @@
   "capture": "https://web.archive.org/web/20261123065431/https://swccg.com/wiki/images/1/15/2021_World_Championship_Players_Committee_banner_2.jpg",
   "job_id": "spn2-d1d814a2f457242f32276a505e1c9692a7231534",
   "last": "2026-11-23T07:13:59Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-23T07:13:59Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-23T18:17:54Z",
+   "bytes": 6289920,
+   "capture_id": "https://web.archive.org/web/20261123065431id_/https://swccg.com/wiki/images/1/15/2021_World_Championship_Players_Committee_banner_2.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d1dde5966263ca63b3e1b631480a77f07111b9ed3bc514efe86c0b8401624d5c"
   }
  },
  "https://swccg.com/wiki/images/1/15/Dagobah-Revised-L-movingtoattackposition-physical-photo.png": {
@@ -169743,9 +169746,9 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-23T06:14:36Z",
+   "at": "2026-11-23T18:18:00Z",
    "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://swccg.com/wiki/images/8/85/2021_World_Championship_feature_table_game_4.jpg": {
@@ -169975,12 +169978,15 @@
   "capture": "https://web.archive.org/web/20261123071502/https://swccg.com/wiki/images/8/8e/2021_World_Championship_long_table_10.jpg",
   "job_id": "spn2-5ddd8c783459572e9a281d97481ecd4d515baca5",
   "last": "2026-11-23T07:34:12Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-23T07:34:12Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-23T18:17:40Z",
+   "bytes": 6555648,
+   "capture_id": "https://web.archive.org/web/20261123071502id_/https://swccg.com/wiki/images/8/8e/2021_World_Championship_long_table_10.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d2a521571fd61e8a5719869df632164937bcc2e60b526753f62454ddb2f9fb7c"
   }
  },
  "https://swccg.com/wiki/images/9/91/Dagobah-Revised-L-starshiplevitation-physical-photo.png": {
@@ -171163,6 +171169,21 @@
    "sha256": "027c7a9a246bb742566c838c13058a2dd00717d1b3dea3166e26d67499dc4bd0"
   }
  },
+ "https://swccg.com/wiki/images/d/d4/2023_Hera_event_game_1.jpg": {
+  "capture": "https://web.archive.org/web/20261123181524/https://swccg.com/wiki/images/d/d4/2023_Hera_event_game_1.jpg",
+  "job_id": "spn2-d35dbd88aa943aafd8119c66ec75cb072e090a34",
+  "last": "2026-11-23T18:17:29Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T18:17:29Z",
+   "bytes": 104030,
+   "capture_id": "https://web.archive.org/web/20261123181524id_/https://swccg.com/wiki/images/d/d4/2023_Hera_event_game_1.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e7748c832f9ec0c793b03c58a624e7e0d673cc89365c1ed3b49d4f08564a76a5"
+  }
+ },
  "https://swccg.com/wiki/images/d/d4/Dagobah-Revised-D-corrosivedamage-physical-source.png": {
   "capture": "https://web.archive.org/web/20261121212650/https://swccg.com/wiki/images/d/d4/Dagobah-Revised-D-corrosivedamage-physical-source.png",
   "job_id": "spn2-87e1270a4aba34a8be8008e0c21b36efca0a15d2",
@@ -171701,6 +171722,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "bd0af006f5906cc7b9ba5f7a74ad9d8641efbde7f213d3fe5256171b499538af"
+  }
+ },
+ "https://swccg.com/wiki/images/f/f1/2017_Match_Play_Championship_art_print_Chewbacca%2C_Mynock_Hunt.jpg": {
+  "capture": "https://web.archive.org/web/20261123181625/https://swccg.com/wiki/images/f/f1/2017_Match_Play_Championship_art_print_Chewbacca%2C_Mynock_Hunt.jpg",
+  "job_id": "spn2-14256cb328f5dbcfe1b09f330087de226d9c5f8b",
+  "last": "2026-11-23T18:17:34Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T18:17:34Z",
+   "bytes": 246273,
+   "capture_id": "https://web.archive.org/web/20261123181625id_/https://swccg.com/wiki/images/f/f1/2017_Match_Play_Championship_art_print_Chewbacca%2C_Mynock_Hunt.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e7797c60a92f3f0ce528c45aaf6db00ac9955df6c15330494ee992c56ee7bdba"
   }
  },
  "https://swccg.com/wiki/images/f/f4/Dagobah-Revised-D-frustration-physical-photo.png": {
