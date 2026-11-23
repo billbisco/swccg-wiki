@@ -157187,11 +157187,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/fly-casual.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025064923/https://swccg.com/snapshots/scomp/fly-casual.html",
   "error": "no job_id: The same snapshot had been made 250 hours, 16 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-11-04T17:06:01Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-23T17:49:36Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-23T17:49:36Z",
+   "bytes": 396660,
+   "capture_id": "https://web.archive.org/web/20261025064923id_/https://swccg.com/snapshots/scomp/fly-casual.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "253d6bcb76bd8ccc260e671c0aee9068870c43f5ffa0e61440e6714509fca166"
+  }
  },
  "https://swccg.com/snapshots/scomp/fn-2003.html": {
   "capture": "https://web.archive.org/web/20261026224620/https://swccg.com/snapshots/scomp/fn-2003.html",
@@ -167520,6 +167528,21 @@
    "sha256": "d0e6070e517290ef7ad1954e42cd8bdd3096a0baf07ddd02db1ea56cfc44b5f2"
   }
  },
+ "https://swccg.com/wiki/images/1/12/2012_World_Championship_Day_1_decklists.pdf": {
+  "capture": "https://web.archive.org/web/20261123175310/https://swccg.com/wiki/images/1/12/2012_World_Championship_Day_1_decklists.pdf",
+  "job_id": "spn2-0783f7b752d79f11a53a822157ab02ef212291df",
+  "last": "2026-11-23T17:54:31Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T17:54:31Z",
+   "bytes": 4944658,
+   "capture_id": "https://web.archive.org/web/20261123175310id_/https://swccg.com/wiki/images/1/12/2012_World_Championship_Day_1_decklists.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e4a4740945363b95fe1efe36aad7b20cf6b230590db30b74f17075b088633002"
+  }
+ },
  "https://swccg.com/wiki/images/1/14/Dagobah-Revised-D-misthunter-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120234913/https://swccg.com/wiki/images/1/14/Dagobah-Revised-D-misthunter-physical-photo.png",
   "job_id": "spn2-7bd761cc22af3360d180f8ee927857d54dbbc8d5",
@@ -167756,6 +167779,13 @@
    "method": "sha256",
    "sha256": "c62fd87c25c0077321b8faee91e231376ec4f62641b0a1edec16a92f7bc4dd7a"
   }
+ },
+ "https://swccg.com/wiki/images/2/21/2023_Coruscant_Regionals_standings.jpg": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-23T17:50:02Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/wiki/images/2/22/Dagobah-Revised-D-executorcommstation-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120194954/https://swccg.com/wiki/images/2/22/Dagobah-Revised-D-executorcommstation-physical-photo.png",
@@ -168250,11 +168280,19 @@
   }
  },
  "https://swccg.com/wiki/images/3/3e/2023_Virtual_Set_21_Preview_Release_Party_final_standings_2.png": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261123173309/https://swccg.com/wiki/images/3/3e/2023_Virtual_Set_21_Preview_Release_Party_final_standings_2.png",
   "job_id": "spn2-3bedda0609601b79b5dd497fb4e21372cf24a6c5",
-  "last": "2026-11-23T17:33:08Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T17:49:41Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T17:49:41Z",
+   "bytes": 281273,
+   "capture_id": "https://web.archive.org/web/20261123173309id_/https://swccg.com/wiki/images/3/3e/2023_Virtual_Set_21_Preview_Release_Party_final_standings_2.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e36dfb400c04bfb69d0832d73223e8754823703b0c5d744748432260d4e7fb08"
+  }
  },
  "https://swccg.com/wiki/images/3/3f/2021_World_Championship_stream_setup_2.jpg": {
   "capture": "https://web.archive.org/web/20261123110854/https://swccg.com/wiki/images/3/3f/2021_World_Championship_stream_setup_2.jpg",
@@ -168572,9 +168610,9 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-23T14:29:30Z",
+   "at": "2026-11-23T17:54:32Z",
    "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 104] Connection reset by peer>"
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://swccg.com/wiki/images/4/4c/2024_Naboo_Regionals_round_3_pairings.png": {
@@ -169698,6 +169736,21 @@
    "sha256": "c27c12184370c536def7bbead8434770511b4c281df4da18d0e9e0c200c16315"
   }
  },
+ "https://swccg.com/wiki/images/8/86/2024_Champions_League_Top_8_seeds.png": {
+  "capture": "https://web.archive.org/web/20261123175104/https://swccg.com/wiki/images/8/86/2024_Champions_League_Top_8_seeds.png",
+  "job_id": "spn2-4c7c73c9d7b47b3efcee39541a68776388f791cd",
+  "last": "2026-11-23T17:54:18Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T17:54:18Z",
+   "bytes": 7138,
+   "capture_id": "https://web.archive.org/web/20261123175104id_/https://swccg.com/wiki/images/8/86/2024_Champions_League_Top_8_seeds.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e424a68d3088cfb980722060686082291e0de617c1ea3014b85a5233c34255cb"
+  }
+ },
  "https://swccg.com/wiki/images/8/86/Dagobah-Revised-D-thereisnotry-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261121000049/https://swccg.com/wiki/images/8/86/Dagobah-Revised-D-thereisnotry-physical-photo.png",
   "job_id": "spn2-24b199970fd2e2b3479599989901e18c159fcf34",
@@ -169816,11 +169869,19 @@
   }
  },
  "https://swccg.com/wiki/images/8/8d/2021_World_Championship_player_during_a_match_5.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261123173156/https://swccg.com/wiki/images/8/8d/2021_World_Championship_player_during_a_match_5.jpg",
   "job_id": "spn2-6b78393d883946cf119504c0c6e4747b0aa8d00a",
-  "last": "2026-11-23T17:31:07Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T17:50:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T17:50:00Z",
+   "bytes": 5733376,
+   "capture_id": "https://web.archive.org/web/20261123173156id_/https://swccg.com/wiki/images/8/8d/2021_World_Championship_player_during_a_match_5.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e2c1914b9619748f809fdf98bd2bb32bbbce28511c8eaed763d68119e1708c09"
+  }
  },
  "https://swccg.com/wiki/images/8/8d/Dagobah-Revised-D-4lomsconcussionrifle-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261121203003/https://swccg.com/wiki/images/8/8d/Dagobah-Revised-D-4lomsconcussionrifle-physical-photo.png",
@@ -170802,11 +170863,19 @@
   }
  },
  "https://swccg.com/wiki/images/c/c7/2022_Yavin_4_Regionals_prize_artwork.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261123173208/https://swccg.com/wiki/images/c/c7/2022_Yavin_4_Regionals_prize_artwork.jpg",
   "job_id": "spn2-40ca26facb9a9d91a38b848ba74870dae2ff1238",
-  "last": "2026-11-23T17:32:07Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T17:49:48Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T17:49:48Z",
+   "bytes": 1028191,
+   "capture_id": "https://web.archive.org/web/20261123173208id_/https://swccg.com/wiki/images/c/c7/2022_Yavin_4_Regionals_prize_artwork.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e33948df8803301babb6466cefcf569396fe3aeb1876376a864a0110b4143f21"
+  }
  },
  "https://swccg.com/wiki/images/c/c8/Dagobah-Revised-L-dagobahswamp-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261122000346/https://swccg.com/wiki/images/c/c8/Dagobah-Revised-L-dagobahswamp-physical-photo.png",
@@ -171256,6 +171325,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "d286ef7148d8aa65b8df4c0000cbe8645232d8ed5fe75b635e240429628d0b2c"
+  }
+ },
+ "https://swccg.com/wiki/images/e/e7/2024_Online_Championship_Series_March_game_count.png": {
+  "capture": "https://web.archive.org/web/20261123175205/https://swccg.com/wiki/images/e/e7/2024_Online_Championship_Series_March_game_count.png",
+  "job_id": "spn2-49c98896a4e3169fbb526c848274abe5cb742609",
+  "last": "2026-11-23T17:54:24Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T17:54:24Z",
+   "bytes": 20398,
+   "capture_id": "https://web.archive.org/web/20261123175205id_/https://swccg.com/wiki/images/e/e7/2024_Online_Championship_Series_March_game_count.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e461b3856bed6ac17155a260e9069c8e16dbbd0631447d98acf7c5cea67074ec"
   }
  },
  "https://swccg.com/wiki/images/e/e7/Dagobah-Revised-D-thedarkpath-physical-photo.png": {
