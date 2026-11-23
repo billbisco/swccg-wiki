@@ -91336,12 +91336,15 @@
   "capture": "https://web.archive.org/web/20261123194702/https://swccg.com/snapshots/forum/p617687.html",
   "job_id": "spn2-330e1b4aaa799d97337dcbcf12f5cacd4a09a5ae",
   "last": "2026-11-23T20:07:02Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-23T22:46:11Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-23T23:31:35Z",
+   "bytes": 2190276,
+   "capture_id": "https://web.archive.org/web/20261123194702id_/https://swccg.com/snapshots/forum/p617687.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4cb473aebcbf2c03c39f2f6cc0fdaf85bd34f9b5b224ced4cb62d52a71a18b87"
   }
  },
  "https://swccg.com/snapshots/forum/p640701.html": {
@@ -91704,11 +91707,19 @@
   }
  },
  "https://swccg.com/snapshots/forum/p912024.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261123224857/https://swccg.com/snapshots/forum/p912024.html",
   "job_id": "spn2-7a2a6b9f9fe4a5cbc798afece8555dca277e7d25",
-  "last": "2026-11-23T22:48:14Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T23:26:18Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T23:26:18Z",
+   "bytes": 2286136,
+   "capture_id": "https://web.archive.org/web/20261123224857id_/https://swccg.com/snapshots/forum/p912024.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "627ba6eabffce73426b2de4d6fb187434cb80410f8170842e4f9233a93898273"
+  }
  },
  "https://swccg.com/snapshots/forum/p912025.html": {
   "capture": "https://web.archive.org/web/20261123224919/https://swccg.com/snapshots/forum/p912025.html",
@@ -173293,9 +173304,9 @@
  "https://wiki.swccg.com/images/0/00/Reflections-Foil-D-Salacious-Crumb-PSA-photo-137870426-original.jpg": {
   "capture": "",
   "error": "no job_id: already archived",
-  "last": "2026-11-23T22:40:41Z",
+  "last": "2026-11-23T23:28:27Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://wiki.swccg.com/images/0/05/Reflections-Foil-D-Greedo-PSA-photo-148512023-original.jpg": {
   "capture": "https://web.archive.org/web/20261114020142/https://wiki.swccg.com/images/0/05/Reflections-Foil-D-Greedo-PSA-photo-148512023-original.jpg",
@@ -173336,9 +173347,9 @@
  "https://wiki.swccg.com/images/0/08/Reflections-Foil-D-U-3PO-Yoo-Threepio-PSA-photo-139298739-original.jpg": {
   "capture": "",
   "error": "no job_id: already archived",
-  "last": "2026-11-23T22:41:43Z",
+  "last": "2026-11-23T23:30:31Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://wiki.swccg.com/images/0/0a/Japanese-Premiere-1301-185o-SWCA.jpg": {
   "capture": "https://web.archive.org/web/20261113133148/https://wiki.swccg.com/images/0/0a/Japanese-Premiere-1301-185o-SWCA.jpg",
@@ -173480,9 +173491,9 @@
  "https://wiki.swccg.com/images/2/20/Reflections-Foil-D-IT-O-Eyetee-Oh-PSA-photo-165099239-original.jpg": {
   "capture": "",
   "error": "no job_id: already archived",
-  "last": "2026-11-23T22:39:39Z",
+  "last": "2026-11-23T23:27:26Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://wiki.swccg.com/images/2/29/Reflections-Foil-L-Revolution-PSA-photo-158980015-original.jpg": {
   "capture": "https://web.archive.org/web/20261114021318/https://wiki.swccg.com/images/2/29/Reflections-Foil-L-Revolution-PSA-photo-158980015-original.jpg",
@@ -174320,10 +174331,10 @@
  },
  "https://wiki.swccg.com/images/9/9a/Reflections-Foil-D-DS-61-3-PSA-photo-138963760-original.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 2 hours, 39 minutes ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-11-23T22:22:36Z",
+  "error": "no job_id: already archived",
+  "last": "2026-11-23T23:26:21Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "https://wiki.swccg.com/images/a/a0/Japanese-Hoth-2-1B-PSA-175224368.jpg": {
   "capture": "https://web.archive.org/web/20261113162139/https://wiki.swccg.com/images/a/a0/Japanese-Hoth-2-1B-PSA-175224368.jpg",
@@ -174663,10 +174674,10 @@
  },
  "https://wiki.swccg.com/images/c/c6/Reflections-Foil-D-Tonnika-Sisters-PSA-photo-148512011-original.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 2 hours, 49 minutes ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-11-23T22:39:29Z",
+  "error": "no job_id: already archived",
+  "last": "2026-11-23T23:29:29Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "https://wiki.swccg.com/images/c/cb/Reflections-Foil-D-Jabba-PSA-photo-149257422-original.jpg": {
   "capture": "",
@@ -174696,9 +174707,9 @@
  "https://wiki.swccg.com/images/c/cd/Reflections-Foil-D-Rancor-PSA-photo-155135610-original.jpg": {
   "capture": "",
   "error": "no job_id: The same snapshot had been made 2 hours, 54 minutes ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-11-20T21:53:30Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-23T23:26:07Z",
+  "status": "retry",
+  "tries": 0
  },
  "https://wiki.swccg.com/images/c/cf/Reflections-Foil-L-Attack-Run-PSA-72605733-original.jpg": {
   "capture": "https://web.archive.org/web/20261114005742/https://wiki.swccg.com/images/c/cf/Reflections-Foil-L-Attack-Run-PSA-72605733-original.jpg",
