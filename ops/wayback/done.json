@@ -167457,12 +167457,13 @@
   "capture": "https://web.archive.org/web/20261123093657/https://swccg.com/wiki/images/0/0b/Players_Committee_2022_Player_Survey_21.png",
   "job_id": "spn2-07d12d7fbc03745d99e06e333e3f8cae1823e179",
   "last": "2026-11-23T09:56:04Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-23T18:09:15Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-23T18:41:19Z",
+   "capture_id": "https://web.archive.org/web/20261123093657id_/https://swccg.com/wiki/images/0/0b/Players_Committee_2022_Player_Survey_21.png",
+   "method": "strict",
+   "reason": "capture HTTP 404"
   }
  },
  "https://swccg.com/wiki/images/0/0c/2026_San_Diego_Super_Open_Swiss_standings.png": {
@@ -167958,6 +167959,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "9b857ed29c35837be8f9d7ba7bbc7fe832faadd90507319adda00185319310c9"
+  }
+ },
+ "https://swccg.com/wiki/images/2/2a/2024_Naboo_Regionals_round_5_pairings.png": {
+  "capture": "https://web.archive.org/web/20261123184005/https://swccg.com/wiki/images/2/2a/2024_Naboo_Regionals_round_5_pairings.png",
+  "job_id": "spn2-5fd8b1e330d73177f3e26f539415284baedb8226",
+  "last": "2026-11-23T18:41:14Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T18:41:14Z",
+   "bytes": 289047,
+   "capture_id": "https://web.archive.org/web/20261123184005id_/https://swccg.com/wiki/images/2/2a/2024_Naboo_Regionals_round_5_pairings.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e9d74e1eb727590ae9ff269f2a012f771c3f2dbf87e9604ac7132af39b93675a"
   }
  },
  "https://swccg.com/wiki/images/2/2a/Dagobah-Revised-D-3720to1-physical-photo.png": {
@@ -171117,6 +171133,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "e33948df8803301babb6466cefcf569396fe3aeb1876376a864a0110b4143f21"
+  }
+ },
+ "https://swccg.com/wiki/images/c/c8/2021_World_Championship_Top_8_match_2.jpg": {
+  "capture": "https://web.archive.org/web/20261123183840/https://swccg.com/wiki/images/c/c8/2021_World_Championship_Top_8_match_2.jpg",
+  "job_id": "spn2-561b3188215b4b8fed237a19e1786a85dbaa3f55",
+  "last": "2026-11-23T18:41:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T18:41:00Z",
+   "bytes": 5557248,
+   "capture_id": "https://web.archive.org/web/20261123183840id_/https://swccg.com/wiki/images/c/c8/2021_World_Championship_Top_8_match_2.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e9ab360245ba77cc5a1c6f48a262f466e9a446e2e75d7a602326c94e8ab50d0f"
   }
  },
  "https://swccg.com/wiki/images/c/c8/Dagobah-Revised-L-dagobahswamp-physical-photo.png": {
