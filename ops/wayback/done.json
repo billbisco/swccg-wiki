@@ -91711,25 +91711,46 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/p912025.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261123224919/https://swccg.com/snapshots/forum/p912025.html",
   "job_id": "spn2-0966556ebd1a594915a45f7a35138c0d3bf4a458",
-  "last": "2026-11-23T22:49:15Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T23:10:08Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T23:10:08Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://swccg.com/snapshots/forum/p912027.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261123225020/https://swccg.com/snapshots/forum/p912027.html",
   "job_id": "spn2-855f1bbe4a219589b7dd4ecfd545a7d8d47bef7f",
-  "last": "2026-11-23T22:50:17Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T23:10:03Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T23:10:03Z",
+   "bytes": 2286136,
+   "capture_id": "https://web.archive.org/web/20261123225020id_/https://swccg.com/snapshots/forum/p912027.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "164944600cdd4348057e7f16fd464eff3450efce8be7fbbd408f94cf856ece5a"
+  }
  },
  "https://swccg.com/snapshots/forum/p920744.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261123225121/https://swccg.com/snapshots/forum/p920744.html",
   "job_id": "spn2-cb31c1549a731300c63d666537ca55f7162e2c28",
-  "last": "2026-11-23T22:51:17Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T23:09:57Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T23:09:57Z",
+   "bytes": 2215577,
+   "capture_id": "https://web.archive.org/web/20261123225121id_/https://swccg.com/snapshots/forum/p920744.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c15100b9f5935db4e21035301cb9d0a399433c984c9bbc1dbd0969fba13be653"
+  }
  },
  "https://swccg.com/snapshots/forum/p921494.html": {
   "capture": "https://web.archive.org/web/20261021003657/https://swccg.com/snapshots/forum/p921494.html",
@@ -91761,11 +91782,19 @@
   }
  },
  "https://swccg.com/snapshots/forum/p925441.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261123225259/https://swccg.com/snapshots/forum/p925441.html",
   "job_id": "spn2-555288ba38739a4897fc1f5e7b8b1b23cd3a418d",
-  "last": "2026-11-23T22:52:19Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T23:09:43Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T23:09:43Z",
+   "bytes": 1951890,
+   "capture_id": "https://web.archive.org/web/20261123225259id_/https://swccg.com/snapshots/forum/p925441.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ec203ae3c358b9a2694840e1ef4100c460e67102a6df0bed149128a9a9ccbadc"
+  }
  },
  "https://swccg.com/snapshots/forum/p954243.html": {
   "capture": "https://web.archive.org/web/20261122221058/https://swccg.com/snapshots/forum/p954243.html",
@@ -174642,9 +174671,9 @@
  "https://wiki.swccg.com/images/c/cb/Reflections-Foil-D-Jabba-PSA-photo-149257422-original.jpg": {
   "capture": "",
   "error": "no job_id: The same snapshot had been made 2 hours, 47 minutes ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-11-20T21:46:36Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-23T23:09:29Z",
+  "status": "retry",
+  "tries": 0
  },
  "https://wiki.swccg.com/images/c/cd/Reflections-Foil-D-Punishing-One-PSA-photo-155139319-original.jpg": {
   "capture": "https://web.archive.org/web/20261114024903/https://wiki.swccg.com/images/c/cd/Reflections-Foil-D-Punishing-One-PSA-photo-155139319-original.jpg",
