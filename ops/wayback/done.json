@@ -158771,11 +158771,19 @@
   }
  },
  "https://swccg.com/snapshots/scomp/gold-squadron-y-wing.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025065429/https://swccg.com/snapshots/scomp/gold-squadron-y-wing.html",
   "error": "no job_id: The same snapshot had been made 251 hours, 5 minutes ago. You can make new capture of this URL after 720 hour",
-  "last": "2026-11-04T18:00:06Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-23T18:34:18Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-23T18:34:18Z",
+   "bytes": 289933,
+   "capture_id": "https://web.archive.org/web/20261025065429id_/https://swccg.com/snapshots/scomp/gold-squadron-y-wing.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "993da2b3c75ff461d7595c8ec63a76e9502c79f0eb7d8227abcd946531d50a6d"
+  }
  },
  "https://swccg.com/snapshots/scomp/goo-nee-tay.html": {
   "capture": "https://web.archive.org/web/20261024061224/https://swccg.com/snapshots/scomp/goo-nee-tay.html",
@@ -168676,12 +168684,15 @@
   "capture": "https://web.archive.org/web/20261123110754/https://swccg.com/wiki/images/4/4b/2007_Match_Play_Championship_first_and_second_place_trophies.jpg",
   "job_id": "spn2-ed8016e46cec5dce6a745af63d77bfeba65e1eee",
   "last": "2026-11-23T11:27:13Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-23T18:04:36Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-23T18:36:55Z",
+   "bytes": 100514,
+   "capture_id": "https://web.archive.org/web/20261123110754id_/https://swccg.com/wiki/images/4/4b/2007_Match_Play_Championship_first_and_second_place_trophies.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d66c775cc56d3f3ad11cf1749ade3b27fbc4f19796850d05b26d92fa8a946a87"
   }
  },
  "https://swccg.com/wiki/images/4/4b/2017_European_Championship_Day_1_Cube_1_command_cards.pdf": {
@@ -170131,6 +170142,13 @@
    "sha256": "cadc1bb42e76a574a899ff35b5c38db5b9e4d4da3d079208ef43eacedfa37e3d"
   }
  },
+ "https://swccg.com/wiki/images/9/98/2021_World_Championship_announcements_4.jpg": {
+  "capture": "",
+  "error": "HTTP Error 404: NOT FOUND",
+  "last": "2026-11-23T18:35:21Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/wiki/images/9/99/2011_European_Championship_decklists_43-84.pdf": {
   "capture": "https://web.archive.org/web/20261123011243/https://swccg.com/wiki/images/9/99/2011_European_Championship_decklists_43-84.pdf",
   "job_id": "spn2-7576f1d88c1b0793ac93a13b6e5c10747a540cd2",
@@ -171519,6 +171537,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "57dde0b28c84755e795b17281ead76c33ca9d5441f957c5281591c5d97eefb10"
+  }
+ },
+ "https://swccg.com/wiki/images/e/e3/2021_World_Championship_Top_8_players_5.jpg": {
+  "capture": "https://web.archive.org/web/20261123183421/https://swccg.com/wiki/images/e/e3/2021_World_Championship_Top_8_players_5.jpg",
+  "job_id": "spn2-9c47e56ad46b106d5d018df0e51c71c6de358461",
+  "last": "2026-11-23T18:36:49Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T18:36:49Z",
+   "bytes": 6616064,
+   "capture_id": "https://web.archive.org/web/20261123183421id_/https://swccg.com/wiki/images/e/e3/2021_World_Championship_Top_8_players_5.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e8ed2ff5182618ced9d408c36fe02736ef36eaa201e393f1b17efcfcea2e1dc7"
   }
  },
  "https://swccg.com/wiki/images/e/e3/2024_Supreme_Southern_Showdown_Brian_Herold_Dark_Side_decklist.pdf": {
