@@ -91339,9 +91339,9 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-23T20:07:02Z",
+   "at": "2026-11-23T22:46:11Z",
    "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://swccg.com/snapshots/forum/p640701.html": {
@@ -91616,9 +91616,17 @@
  },
  "https://swccg.com/snapshots/forum/p807140.html": {
   "capture": "https://web.archive.org/web/20261123220416/https://swccg.com/snapshots/forum/p807140.html",
-  "last": "2026-11-23T22:23:04Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-23T22:39:31Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T22:39:35Z",
+   "bytes": 2256670,
+   "capture_id": "https://web.archive.org/web/20261123220416id_/https://swccg.com/snapshots/forum/p807140.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7ea5fd7a828b4df1ddb1fb5dfefc0bd9d1232d2a38ba769173f154f64582e21f"
+  }
  },
  "https://swccg.com/snapshots/forum/p808442.html": {
   "capture": "https://web.archive.org/web/20261123220414/https://swccg.com/snapshots/forum/p808442.html",
@@ -91648,6 +91656,51 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "80a3bc27618e7e990cca9fdd3869cbc68913f951e23dc891bc9928ddfc238c6e"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p838140.html": {
+  "capture": "https://web.archive.org/web/20261123224248/https://swccg.com/snapshots/forum/p838140.html",
+  "job_id": "spn2-c7f0f590656db49e59e9c26d64decca6d393ca48",
+  "last": "2026-11-23T22:45:54Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T22:45:54Z",
+   "bytes": 2279371,
+   "capture_id": "https://web.archive.org/web/20261123224248id_/https://swccg.com/snapshots/forum/p838140.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "45d40a98dfe60bcaa73e9007f7e8211648dbc6be6d58ffbeea0dddc0848eb5f3"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p884446.html": {
+  "capture": "https://web.archive.org/web/20261123224348/https://swccg.com/snapshots/forum/p884446.html",
+  "job_id": "spn2-a2dbb52ed8755ded7e74a53fd9bdc4a3e196456c",
+  "last": "2026-11-23T22:46:01Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T22:46:01Z",
+   "bytes": 1813386,
+   "capture_id": "https://web.archive.org/web/20261123224348id_/https://swccg.com/snapshots/forum/p884446.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "18f95492ee7b0d36a5967e8e3920f023fdb5f7b7490fbe34db4be0930e78e65d"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p903474.html": {
+  "capture": "https://web.archive.org/web/20261123224450/https://swccg.com/snapshots/forum/p903474.html",
+  "job_id": "spn2-b7c9fe9183504f743bcf4884f042f58b41ed0dce",
+  "last": "2026-11-23T22:46:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-23T22:46:07Z",
+   "bytes": 2226275,
+   "capture_id": "https://web.archive.org/web/20261123224450id_/https://swccg.com/snapshots/forum/p903474.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e2f9a3f6aad296a9cda80332445cdd0cb82ee77be7d09d9b6c8c1ef3578f5388"
   }
  },
  "https://swccg.com/snapshots/forum/p921494.html": {
@@ -173176,9 +173229,9 @@
  "https://wiki.swccg.com/images/0/00/Reflections-Foil-D-Salacious-Crumb-PSA-photo-137870426-original.jpg": {
   "capture": "",
   "error": "no job_id: already archived",
-  "last": "2026-11-23T22:02:04Z",
+  "last": "2026-11-23T22:40:41Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://wiki.swccg.com/images/0/05/Reflections-Foil-D-Greedo-PSA-photo-148512023-original.jpg": {
   "capture": "https://web.archive.org/web/20261114020142/https://wiki.swccg.com/images/0/05/Reflections-Foil-D-Greedo-PSA-photo-148512023-original.jpg",
@@ -173218,10 +173271,10 @@
  },
  "https://wiki.swccg.com/images/0/08/Reflections-Foil-D-U-3PO-Yoo-Threepio-PSA-photo-139298739-original.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 2 hours, 50 minutes ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-11-23T21:42:12Z",
+  "error": "no job_id: already archived",
+  "last": "2026-11-23T22:41:43Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "https://wiki.swccg.com/images/0/0a/Japanese-Premiere-1301-185o-SWCA.jpg": {
   "capture": "https://web.archive.org/web/20261113133148/https://wiki.swccg.com/images/0/0a/Japanese-Premiere-1301-185o-SWCA.jpg",
@@ -173362,10 +173415,10 @@
  },
  "https://wiki.swccg.com/images/2/20/Reflections-Foil-D-IT-O-Eyetee-Oh-PSA-photo-165099239-original.jpg": {
   "capture": "",
-  "error": "no job_id: The same snapshot had been made 2 hours, 41 minutes ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-11-23T22:01:39Z",
+  "error": "no job_id: already archived",
+  "last": "2026-11-23T22:39:39Z",
   "status": "retry",
-  "tries": 0
+  "tries": 1
  },
  "https://wiki.swccg.com/images/2/29/Reflections-Foil-L-Revolution-PSA-photo-158980015-original.jpg": {
   "capture": "https://web.archive.org/web/20261114021318/https://wiki.swccg.com/images/2/29/Reflections-Foil-L-Revolution-PSA-photo-158980015-original.jpg",
@@ -174547,9 +174600,9 @@
  "https://wiki.swccg.com/images/c/c6/Reflections-Foil-D-Tonnika-Sisters-PSA-photo-148512011-original.jpg": {
   "capture": "",
   "error": "no job_id: The same snapshot had been made 2 hours, 49 minutes ago. You can make new capture of this URL after 720 hours",
-  "last": "2026-11-20T21:48:40Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-23T22:39:29Z",
+  "status": "retry",
+  "tries": 0
  },
  "https://wiki.swccg.com/images/c/cb/Reflections-Foil-D-Jabba-PSA-photo-149257422-original.jpg": {
   "capture": "",
