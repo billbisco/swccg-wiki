@@ -26,5 +26,15 @@ class QueueOrderTests(unittest.TestCase):
         self.assertEqual(sorted(q), sorted(W.order_queue(q, {})))
 
 
+class RetryOldFailuresTests(unittest.TestCase):
+    def test_old_401_and_host_limit_failures_get_a_new_round(self):
+        from datetime import datetime, timezone
+        t = datetime(2026, 11, 25, tzinfo=timezone.utc)
+        for err in ("HTTP Error 401: UNAUTHORIZED", "no job_id: This host has been already captured 1000 times today",
+                    "no job_id: The same snapshot had been made 40 minutes ago"):
+            self.assertTrue(W.stale({"status": "failed", "error": err, "last": "2026-11-14T00:00:00Z"}, t), err)
+        self.assertFalse(W.stale({"status": "failed", "error": "error:not-found", "last": "2026-11-14T00:00:00Z"}, t))
+
+
 if __name__ == "__main__":
     unittest.main()
