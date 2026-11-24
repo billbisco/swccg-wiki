@@ -92621,8 +92621,8 @@
  },
  "https://swccg.com/snapshots/forum/p1309829.html": {
   "capture": "https://web.archive.org/web/20261124212841/https://swccg.com/snapshots/forum/p1309829.html",
-  "last": "2026-11-24T21:36:42Z",
-  "status": "pending",
+  "last": "2026-11-24T22:28:56Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/p1309852.html": {
@@ -92665,25 +92665,46 @@
   }
  },
  "https://swccg.com/snapshots/forum/p1309873.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261124214825/https://swccg.com/snapshots/forum/p1309873.html",
   "job_id": "spn2-b3d3ae5a85c19aa5996a27575584d08813a17870",
-  "last": "2026-11-24T21:48:22Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-24T22:28:55Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T22:28:55Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://swccg.com/snapshots/forum/p1309890.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261124214947/https://swccg.com/snapshots/forum/p1309890.html",
   "job_id": "spn2-429e2cf2034180e16b8165584f4efabf562c89b1",
-  "last": "2026-11-24T21:49:23Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-24T22:28:52Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T22:28:52Z",
+   "bytes": 2012259,
+   "capture_id": "https://web.archive.org/web/20261124214947id_/https://swccg.com/snapshots/forum/p1309890.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1250f2413d673b42c22305923c3361b03c9e2a062e131952c575daf7da7fcd68"
+  }
  },
  "https://swccg.com/snapshots/forum/p1309894.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261124215045/https://swccg.com/snapshots/forum/p1309894.html",
   "job_id": "spn2-2032abe39b0882388823cb0f07f712709892b381",
-  "last": "2026-11-24T21:50:24Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-24T22:28:43Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T22:28:43Z",
+   "bytes": 1703436,
+   "capture_id": "https://web.archive.org/web/20261124215045id_/https://swccg.com/snapshots/forum/p1309894.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bda681d3d1ebe486e4c93b342e7e70049e48e6c1768f9b01440a2a1cf2bd068d"
+  }
  },
  "https://swccg.com/snapshots/forum/p1309915.html": {
   "capture": "https://web.archive.org/web/20261124215128/https://swccg.com/snapshots/forum/p1309915.html",
