@@ -131,7 +131,7 @@ def settle(done: dict, prefixes, get=None, sha=None, now=None, pruned=None):
             print("CDX-SETTLE skip", p, str(ex)[:80], flush=True)
             stats["prefix_unavailable"] = stats.get("prefix_unavailable", 0) + len(urls)
             continue
-        time.sleep(GAP_S if get is None else 0)
+        if get is None: time.sleep(GAP_S)
         for url in urls:
             e = done[url]
             digest = sha(url)
@@ -169,13 +169,23 @@ def main() -> int:
     ap.add_argument("--repo", default="/opt/swccg-ops/repos/swccg-wiki")
     ap.add_argument("--prefix", action="append", help="URL prefix to settle (default: all known roots' subdirs)")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--cdx-dir", help="read CDX answers saved as <dir>/<prefix with / and : as _>.json "
+                    "(fetched from another host) instead of asking web.archive.org from here")
     a = ap.parse_args()
     done = json.loads((Path(a.repo) / "ops/wayback/done.json").read_text(encoding="utf-8"))
     prefixes = a.prefix
     if not prefixes:  # one request per first-level folder keeps each CDX answer small
         prefixes = sorted({m.group(0) for u in done
                            for m in [re.match(r"https://swccg\.com/snapshots/[^/]+/", u)] if m})
-    receipts, stats = settle(done, prefixes, pruned=prune_proofs())
+    get = None
+    if a.cdx_dir:
+        def get(url):
+            prefix = urllib.parse.parse_qs(urllib.parse.urlsplit(url).query)["url"][0][:-1]
+            f = Path(a.cdx_dir) / (re.sub(r"[/:]", "_", prefix) + ".json")
+            if not f.exists():
+                raise RuntimeError("no saved CDX answer " + f.name)
+            return f.read_bytes()
+    receipts, stats = settle(done, prefixes, get=get, pruned=prune_proofs())
     print("CDX-SETTLE", json.dumps(stats, sort_keys=True), flush=True)
     if receipts and not a.dry_run:
         INBOX.mkdir(parents=True, exist_ok=True)
