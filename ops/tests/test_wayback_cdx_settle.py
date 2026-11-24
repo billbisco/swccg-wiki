@@ -78,3 +78,27 @@ class SettleTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class WorkerBatchTests(unittest.TestCase):
+    def test_own_file_success_skips_replay_and_waits_for_batch(self):
+        from unittest.mock import patch
+        import wayback_worker as W
+        e = {"status": "pending", "job_id": "spn2-x", "tries": 1, "last": "2026-11-24T00:00:00Z"}
+        with patch.object(W, "AUTH", "fixture"), \
+             patch.object(W, "spn2_status", return_value={"status": "success", "timestamp": "20261124000000", "original_url": A}), \
+             patch.object(W, "capture_ok", side_effect=AssertionError("replay request")), \
+             patch.object(W, "verify_entry", side_effect=AssertionError("replay request")):
+            self.assertTrue(W.confirm(A, e))
+        self.assertEqual("ok", e["status"]); self.assertEqual("cdx-batch", e["verify"]["defer"])
+
+    def test_other_sites_still_checked_one_by_one(self):
+        from unittest.mock import patch
+        import wayback_worker as W
+        url = "https://example.com/x"
+        e = {"status": "pending", "job_id": "spn2-x", "tries": 1, "last": "2026-11-24T00:00:00Z"}
+        with patch.object(W, "AUTH", "fixture"), \
+             patch.object(W, "spn2_status", return_value={"status": "success", "timestamp": "20261124000000"}), \
+             patch.object(W, "capture_ok", return_value=True) as ok, patch.object(W, "verify_entry") as ve:
+            W.confirm(url, e)
+        ok.assert_called_once(); ve.assert_called_once()
