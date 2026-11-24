@@ -91913,10 +91913,10 @@
  },
  "https://swccg.com/snapshots/forum/p1245257.html": {
   "capture": "",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-24T15:37:03Z",
-  "status": "retry",
-  "tries": 1
+  "job_id": "spn2-8ff5111796192446950328c8d5f16c258b12b043",
+  "last": "2026-11-24T16:19:17Z",
+  "status": "pending",
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/p1245782.html": {
   "capture": "https://web.archive.org/web/20261124153808/https://swccg.com/snapshots/forum/p1245782.html",
@@ -91964,23 +91964,61 @@
   }
  },
  "https://swccg.com/snapshots/forum/p1255237.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261124155915/https://swccg.com/snapshots/forum/p1255237.html",
   "job_id": "spn2-f9f717e0acc5dfe13390e73de763b75fa2a96727",
-  "last": "2026-11-24T15:59:10Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-24T16:19:14Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T16:19:14Z",
+   "bytes": 1593098,
+   "capture_id": "https://web.archive.org/web/20261124155915id_/https://swccg.com/snapshots/forum/p1255237.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "ac3a3d3135a90c7265864693ff036b789734c80639c35d7a84a3abcf7468b078"
+  }
  },
  "https://swccg.com/snapshots/forum/p1255361.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261124160111/https://swccg.com/snapshots/forum/p1255361.html",
   "job_id": "spn2-2cff895f3990cef3f3ea332dce2850bd90a727e1",
-  "last": "2026-11-24T16:00:11Z",
+  "last": "2026-11-24T16:19:08Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T16:19:08Z",
+   "bytes": 1628976,
+   "capture_id": "https://web.archive.org/web/20261124160111id_/https://swccg.com/snapshots/forum/p1255361.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "dc97869f2eb8441e1e4a445ce88974a337f719b2fc3b9168cb3610396290ef54"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1257398.html": {
+  "capture": "https://web.archive.org/web/20261124160126/https://swccg.com/snapshots/forum/p1257398.html",
+  "job_id": "spn2-462456503dacee6619f041411e7a91c9eb3e90b5",
+  "last": "2026-11-24T16:19:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T16:19:00Z",
+   "bytes": 3229720,
+   "capture_id": "https://web.archive.org/web/20261124160126id_/https://swccg.com/snapshots/forum/p1257398.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5461befcaf8e84b484808031257d4760595b8b6c642db97389e6af8eb7cc74f7"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1260322.html": {
+  "capture": "",
+  "job_id": "spn2-d2fe172b928e4c4515cb59a1bda278666f31b076",
+  "last": "2026-11-24T16:20:18Z",
   "status": "pending",
   "tries": 1
  },
- "https://swccg.com/snapshots/forum/p1257398.html": {
+ "https://swccg.com/snapshots/forum/p1264499.html": {
   "capture": "",
-  "job_id": "spn2-462456503dacee6619f041411e7a91c9eb3e90b5",
-  "last": "2026-11-24T16:01:12Z",
+  "job_id": "spn2-1f683ea43930e1ff519e21d6250ca511520a12f1",
+  "last": "2026-11-24T16:21:19Z",
   "status": "pending",
   "tries": 1
  },
