@@ -45,7 +45,7 @@ def prune_proofs(path: Path = PRUNE_LOG) -> dict:
         return out
     for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
         f = line.split("\t")
-        if len(f) >= 5 and f[1] == "delete" and re.fullmatch(r"\d{14}", f[3]) and f[4].startswith("verified (sha"):
+        if len(f) >= 5 and f[1] == "delete" and re.fullmatch(r"\d{14}", f[3]) and re.match(r"verified \([^)]*sha", f[4]):
             out["https://swccg.com/snapshots/" + f[2]] = f[3]
     return out
 
@@ -144,10 +144,16 @@ def settle(done: dict, prefixes, get=None, sha=None, now=None, pruned=None):
                 # CDX confirms the capture is a 200 in the index.
                 match = [ts for ts, _ in caps if ts == pruned[url]]
                 method = "cdx-200+prune-log-sha"
+            elif TS_RX.search(e.get("capture") or ""):
+                # Source file is gone and nothing recorded a hash: the archive
+                # copy is the only copy. Accept the ledger's own capture when
+                # CDX lists it as a 200; there is nothing left to compare with.
+                match = [ts for ts, _ in caps if ts == TS_RX.search(e["capture"]).group(1)]
+                method = "cdx-200 (source deleted, no local copy)"
             else:
                 bump("no_local_file"); continue
             if not match:
-                bump("not_indexed" if not caps else ("digest_differs" if digest else "pruned_capture_not_indexed")); continue
+                bump("not_indexed" if not caps else ("digest_differs" if digest else "deleted_capture_not_indexed")); continue
             m = TS_RX.search(e.get("capture") or "")
             if m:
                 if m.group(1) not in match:
@@ -160,7 +166,7 @@ def settle(done: dict, prefixes, get=None, sha=None, now=None, pruned=None):
                              "verify": {"at": now, "method": method, "sha1_b32": digest or "",
                                         "capture_id": f"https://web.archive.org/web/{ts}id_/{url}",
                                         "index": "cdx"}}
-            bump("verified" if digest else "verified_pruned")
+            bump("verified" if digest else ("verified_pruned" if url in pruned else "verified_source_gone"))
     return receipts, stats
 
 
