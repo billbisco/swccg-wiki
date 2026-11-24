@@ -35,6 +35,19 @@ OPEN = {"pending", "ok", "unverified", "retry", "failed"}
 GAP_S = 5.0          # between CDX requests
 TRIES = 4            # per CDX request, with growing waits
 TS_RX = re.compile(r"/web/(\d{14})[a-z_]*/")
+PRUNE_LOG = Path("/opt/swccg-res/snapshots/DELETED-after-wayback.log")
+
+
+def prune_proofs(path: Path = PRUNE_LOG) -> dict:
+    """URL -> capture timestamp, for files the pruner deleted after a SHA check of that capture."""
+    out = {}
+    if not path.exists():
+        return out
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        f = line.split("\t")
+        if len(f) >= 5 and f[1] == "delete" and re.fullmatch(r"\d{14}", f[3]) and f[4].startswith("verified (sha"):
+            out["https://swccg.com/snapshots/" + f[2]] = f[3]
+    return out
 
 
 def norm(url: str) -> str:
@@ -97,10 +110,11 @@ def _get(url: str) -> bytes:
     raise RuntimeError("CDX unavailable: " + err)
 
 
-def settle(done: dict, prefixes, get=None, sha=None, now=None):
+def settle(done: dict, prefixes, get=None, sha=None, now=None, pruned=None):
     """Return (receipts, stats). Pure apart from get/sha."""
     sha = sha or (lambda url: (lambda p: sha1_b32(p) if p else None)(local_file(url)))
     now = now or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    pruned = {} if pruned is None else pruned
     receipts, stats = {}, {}
     def bump(k): stats[k] = stats.get(k, 0) + 1
     todo = {}
@@ -121,12 +135,19 @@ def settle(done: dict, prefixes, get=None, sha=None, now=None):
         for url in urls:
             e = done[url]
             digest = sha(url)
-            if not digest:
-                bump("no_local_file"); continue
             caps = index.get(norm(url), [])
-            match = [ts for ts, d in caps if d == digest]
+            method = "cdx-sha1"
+            if digest:
+                match = [ts for ts, d in caps if d == digest]
+            elif url in pruned:
+                # File was deleted after the pruner SHA-checked this capture;
+                # CDX confirms the capture is a 200 in the index.
+                match = [ts for ts, _ in caps if ts == pruned[url]]
+                method = "cdx-200+prune-log-sha"
+            else:
+                bump("no_local_file"); continue
             if not match:
-                bump("not_indexed" if not caps else "digest_differs"); continue
+                bump("not_indexed" if not caps else ("digest_differs" if digest else "pruned_capture_not_indexed")); continue
             m = TS_RX.search(e.get("capture") or "")
             if m:
                 if m.group(1) not in match:
@@ -136,10 +157,10 @@ def settle(done: dict, prefixes, get=None, sha=None, now=None):
                 ts = max(match)
             cap = e.get("capture") or f"https://web.archive.org/web/{ts}/{url}"
             receipts[url] = {"capture": cap, "status": "verified", "job_id": e.get("job_id") or "",
-                             "verify": {"at": now, "method": "cdx-sha1", "sha1_b32": digest,
+                             "verify": {"at": now, "method": method, "sha1_b32": digest or "",
                                         "capture_id": f"https://web.archive.org/web/{ts}id_/{url}",
                                         "index": "cdx"}}
-            bump("verified")
+            bump("verified" if digest else "verified_pruned")
     return receipts, stats
 
 
@@ -154,7 +175,7 @@ def main() -> int:
     if not prefixes:  # one request per first-level folder keeps each CDX answer small
         prefixes = sorted({m.group(0) for u in done
                            for m in [re.match(r"https://swccg\.com/snapshots/[^/]+/", u)] if m})
-    receipts, stats = settle(done, prefixes)
+    receipts, stats = settle(done, prefixes, pruned=prune_proofs())
     print("CDX-SETTLE", json.dumps(stats, sort_keys=True), flush=True)
     if receipts and not a.dry_run:
         INBOX.mkdir(parents=True, exist_ok=True)
