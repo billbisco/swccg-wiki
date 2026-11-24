@@ -61,8 +61,18 @@ class ReliabilityTests(unittest.TestCase):
         with self.assertRaises(Paused):self.c.capacity_wait('account_sessions','600')
         self.assertEqual(self.time+600,self.c.state['next_attempt'])
 
+    def test_unknown_capacity_rechecks_in_2min_without_submitting(self):
+        with patch.object(W,'spn2_user_status',side_effect=OSError('status timeout')):
+            with self.assertRaises(Paused):W.ensure_capacity(self.c)
+        self.assertEqual(self.time+120,self.c.state['next_attempt']);self.assertEqual('capacity_unknown',self.c.state['provider_event'])
+
+    def test_daily_limit_keeps_long_wait(self):
+        with patch.object(W,'spn2_user_status',return_value={'available':3,'processing':0,'daily_captures':30000,'daily_captures_limit':30000}):
+            with self.assertRaises(Paused):W.ensure_capacity(self.c)
+        self.assertEqual(self.time+86400,self.c.state['next_attempt'])
+
     def test_other_capacity_events_keep_15min_floor(self):
-        with self.assertRaises(Paused):self.c.capacity_wait('capacity_unknown')
+        with self.assertRaises(Paused):self.c.capacity_wait('provider_other')
         self.assertEqual(self.time+900,self.c.state['next_attempt'])
 
     def test_stale_pending_is_polled_not_resubmitted(self):

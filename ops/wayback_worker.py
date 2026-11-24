@@ -276,7 +276,9 @@ def spn2_submit(url: str, force: bool = False) -> dict:
 
 def spn2_user_status():
     req=urllib.request.Request('https://web.archive.org/save/status/user?_t='+str(int(time.time())),headers={'User-Agent':UA,'Accept':'application/json','Authorization':AUTH})
-    return reliability.capacity(_json(req))
+    payload=_json(req); cap=reliability.capacity(payload)
+    if cap is None: print('CAPACITY-ERR unreadable status keys',sorted(payload)[:12] if isinstance(payload,dict) else type(payload).__name__,flush=True)
+    return cap
 
 
 CAPACITY_RECHECK_S = 90
@@ -294,7 +296,8 @@ def ensure_capacity(control):
     if not cached or not 0<=age<(CAPACITY_RECHECK_S if spent else 300):
         try: cached=spn2_user_status()
         except Paused:raise
-        except (OSError,ValueError,TypeError):cached=None
+        except (OSError,ValueError,TypeError) as ex:
+            cached=None; print('CAPACITY-ERR',type(ex).__name__,str(ex)[:120],flush=True)
         control.state.update(capacity_checked_at=control.clock(),account_capacity=cached,capacity_remaining=cached['available'] if cached else None)
         control.save()
     if cached is None:control.capacity_wait('capacity_unknown')
