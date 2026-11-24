@@ -40,7 +40,7 @@ class ReliabilityTests(unittest.TestCase):
         with patch.object(W,'spn2_user_status',return_value={'available':0,'processing':3}):
             with self.assertRaises(Paused):W.ensure_capacity(self.c)
         self.assertEqual(6,self.c.state['failure_count']);self.assertEqual('account_sessions',self.c.state['provider_event'])
-        self.assertEqual(self.time+900,self.c.state['next_attempt'])
+        self.assertEqual(self.time+120,self.c.state['next_attempt'])
         self.assertIsNone(R.capacity({'available':True,'processing':0}))
 
     def test_capacity_cached_and_consumed(self):
@@ -48,6 +48,22 @@ class ReliabilityTests(unittest.TestCase):
             W.ensure_capacity(self.c);W.consume_capacity(self.c);W.ensure_capacity(self.c);self.assertEqual(1,call.call_count)
             W.consume_capacity(self.c)
             with self.assertRaises(Paused):W.ensure_capacity(self.c)
+        self.assertEqual(self.time+120,self.c.state['next_attempt'])
+
+    def test_spent_capacity_rechecks_after_90s_not_15min(self):
+        with patch.object(W,'spn2_user_status',return_value={'available':1,'processing':0}) as call:
+            W.ensure_capacity(self.c);W.consume_capacity(self.c)
+            self.time+=90
+            W.ensure_capacity(self.c);self.assertEqual(2,call.call_count)
+            self.assertEqual(1,self.c.state['capacity_remaining']);self.assertEqual(0,self.c.state.get('next_attempt',0))
+
+    def test_session_pause_honors_longer_retry_after(self):
+        with self.assertRaises(Paused):self.c.capacity_wait('account_sessions','600')
+        self.assertEqual(self.time+600,self.c.state['next_attempt'])
+
+    def test_other_capacity_events_keep_15min_floor(self):
+        with self.assertRaises(Paused):self.c.capacity_wait('capacity_unknown')
+        self.assertEqual(self.time+900,self.c.state['next_attempt'])
 
     def test_stale_pending_is_polled_not_resubmitted(self):
         e={'status':'pending','job_id':'old','last':'2026-01-01T00:00:00Z','tries':1};d={URL:e};self.c.done=d;self.c.initial_done={URL:dict(e)}

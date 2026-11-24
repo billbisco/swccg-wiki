@@ -70,6 +70,9 @@ def atomic_json(path: Path, data: dict) -> None:
 
 class Control:
     MIN_PAUSE = 15 * 60
+    # Busy SPN2 session slots free up within a minute or two, so an
+    # account_sessions wait is short. Retry-After still wins when longer.
+    SESSION_PAUSE = env_positive_int("WAYBACK_SESSION_PAUSE_S", 120)
     MAX_PAUSE = 24 * 60 * 60
     # Tests keep the historic 10s default. Production sets WAYBACK_GAP_S=60.
     SUBMISSION_GAP = env_positive_int("WAYBACK_GAP_S", 10)
@@ -226,8 +229,9 @@ class Control:
             self.save()
 
     def capacity_wait(self, reason, retry_after=None):
+        floor = self.SESSION_PAUSE if reason == 'account_sessions' else self.MIN_PAUSE
         self.state.update(reason='account capacity unavailable', provider_event=reason,
-                          next_attempt=max(self.state.get('next_attempt',0),self.clock()+max(self.MIN_PAUSE,retry_seconds(retry_after,self.clock()))))
+                          next_attempt=max(self.state.get('next_attempt',0),self.clock()+max(floor,retry_seconds(retry_after,self.clock()))))
         if self.state.get('mode')=='half_open' and not self.accepted_probe():self.state['probe_url']=None
         self.save(); raise Paused('account capacity unavailable; bounded wait')
 
