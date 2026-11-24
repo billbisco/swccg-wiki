@@ -66,6 +66,12 @@ class ReliabilityTests(unittest.TestCase):
             with self.assertRaises(Paused):W.ensure_capacity(self.c)
         self.assertEqual(self.time+120,self.c.state['next_attempt']);self.assertEqual('capacity_unknown',self.c.state['provider_event'])
 
+    def test_refused_connection_keeps_15min_wait(self):
+        import urllib.error
+        with patch.object(W,'spn2_user_status',side_effect=urllib.error.URLError(ConnectionRefusedError(111,'Connection refused'))):
+            with self.assertRaises(Paused):W.ensure_capacity(self.c)
+        self.assertEqual(self.time+900,self.c.state['next_attempt']);self.assertEqual('network_refused',self.c.state['provider_event'])
+
     def test_daily_limit_keeps_long_wait(self):
         with patch.object(W,'spn2_user_status',return_value={'available':3,'processing':0,'daily_captures':30000,'daily_captures_limit':30000}):
             with self.assertRaises(Paused):W.ensure_capacity(self.c)
