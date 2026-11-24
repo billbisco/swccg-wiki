@@ -229,7 +229,8 @@ class Control:
             self.save()
 
     def capacity_wait(self, reason, retry_after=None):
-        floor = self.SESSION_PAUSE if reason == 'account_sessions' else self.MIN_PAUSE
+        # Busy slots or a failed status read: ask again soon (no submit meanwhile).
+        floor = self.SESSION_PAUSE if reason in ('account_sessions', 'capacity_unknown') else self.MIN_PAUSE
         self.state.update(reason='account capacity unavailable', provider_event=reason,
                           next_attempt=max(self.state.get('next_attempt',0),self.clock()+max(floor,retry_seconds(retry_after,self.clock()))))
         if self.state.get('mode')=='half_open' and not self.accepted_probe():self.state['probe_url']=None
