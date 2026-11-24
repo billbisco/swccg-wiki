@@ -279,12 +279,19 @@ def spn2_user_status():
     return reliability.capacity(_json(req))
 
 
+CAPACITY_RECHECK_S = 90
+
+
 def ensure_capacity(control):
     """One fresh account check per bounded submission window; never guess capacity."""
     if not AUTH:return
     checked=control.state.get('capacity_checked_at',0)
     cached=control.state.get('account_capacity')
-    if not cached or not 0<=control.clock()-checked<300:
+    age=control.clock()-checked
+    # Local slots used up: ask the account again once the last check is a
+    # minute and a half old, since finished jobs free their slots.
+    spent=cached and control.state.get('capacity_remaining',cached.get('available',0))<=0
+    if not cached or not 0<=age<(CAPACITY_RECHECK_S if spent else 300):
         try: cached=spn2_user_status()
         except Paused:raise
         except (OSError,ValueError,TypeError):cached=None
