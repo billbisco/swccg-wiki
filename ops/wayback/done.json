@@ -91649,11 +91649,16 @@
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/p1201906.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261124074637/https://swccg.com/snapshots/forum/p1201906.html",
   "job_id": "spn2-b04517e04bd75519192238de64a7c757dbedc6e7",
-  "last": "2026-11-24T07:45:35Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-24T09:08:42Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T09:08:42Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://swccg.com/snapshots/forum/p1202007.html": {
   "capture": "https://web.archive.org/web/20261122224900/https://swccg.com/snapshots/forum/p1202007.html",
