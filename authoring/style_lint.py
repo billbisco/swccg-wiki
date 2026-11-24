@@ -6,6 +6,11 @@ Usage:
   style_lint.py page.wiki [--title T]   # lint a local draft; with --title, compare to live page
 Exit 1 if any flag is raised.
 
+No sentence- or quote-length limit (Bill, 2026-10-26): "If we need more words, do more words."
+Clarity and full understanding come first; long sentences and quotes are fine when needed.
+Verbatim text inside <blockquote>...</blockquote> (multi-line, nested) or <nowiki> is the source's own words:
+the banned-word check, the WORDS count and the SERVICE prose check skip it; ARCHIVE, EMAIL, REF and HEADING still run.
+
 Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
   ARCHIVE  every external URL cited on the page (<ref>, list items, body, External links) needs a
            Preserved copy: a web.archive.org/web/<14 digits>/<url> or archive.org/details link.
@@ -22,14 +27,14 @@ Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
            forum.starwarsccg.org viewtopic.php?t=NNNNN link, and of swccg.com/snapshots/pc/<slug>.html
            for a www.starwarsccg.org URL whose last path segment is <slug>.
 Talk pages (Chief, 2026-10-20): signed comments by other accounts are their authors' words. The
-  banned-word, hedge and long-sentence checks skip any comment whose signature is not the bot's own
+  banned-word and hedge checks skip any comment whose signature is not the bot's own
   (Comlink Cursor); the bot's comments, unsigned text and the other checks still apply.
   EMAIL    personal email addresses (decipher.com addresses and lines marked "email-ok" pass).
   REF      a <ref> with no URL and no source text.
-  HEADING  a == Sources == section on a page that is not a deck, event, card or set-table page. Deck/event pages
-           are detected by category: Decklists, Dark Side decks, Light Side decks, GEMP
+  HEADING  a == Sources == section on a page that is not a deck, event, card, set-table or tournament-report page.
+           Deck/event pages are detected by category: Decklists, Dark Side decks, Light Side decks, GEMP
            importable decklists, Tournaments, Championships, World Championships, Events,
-           Retro League (in the wikitext, plus the live page's categories when linting by title).
+           Retro League, Tournament reports (in the wikitext, plus the live page's categories when linting by title).
            Card pages ({{Card}} or Category:Cards) and set-table pages (Category:Sets or any
            "... sets" category) may also keep Sources (Bill, 2026-10-20).
            Only a heading written in the page's own wikitext fails. A heading a template generates
@@ -46,7 +51,6 @@ BANNED = ["note", "research", "this pass", "not found", "no source", "unverified
 BAD_HEADINGS = {"gaps", "notes", "research", "open questions", "sources", "research notes", "notes and gaps"}
 CAPTION_WORDS = ["shows", "showing", "visible", "left", "right", "pictured", "depicts", "seen", "background",
                  "foreground", "top", "bottom", "behind"]
-MAX_SENT = 30
 MAX_CAPTION = 12
 
 def fetch(title, n=2):
@@ -67,8 +71,30 @@ def captions(t):
             if "|" in line: out.append(line.split("|", 1)[1])
     return out
 
+BLOCKQUOTE_TAG = re.compile(r"<(/?)blockquote\b[^>]*>", re.I)
+
+def strip_blockquotes(t):
+    """Blank out each outermost <blockquote>...</blockquote>, nested ones included and across lines.
+    An opening tag with no matching close is left alone, so a broken tag never hides the rest of the page."""
+    out, depth, start, last = [], 0, 0, 0
+    for m in BLOCKQUOTE_TAG.finditer(t):
+        if not m.group(1):
+            if depth == 0: start = m.start()
+            depth += 1
+        elif depth:
+            depth -= 1
+            if depth == 0:
+                out.append(t[last:start] + " ")
+                last = m.end()
+    out.append(t[last:])
+    return "".join(out)
+
 def body(t):
     t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
+    # Verbatim text (Bill, 2026-10-20, via Chief 2026-10-26): quoted report text and interview quotes
+    # sit in <blockquote> or a <nowiki> block and are the source's own words, not the page's prose.
+    t = strip_blockquotes(t)
+    t = re.sub(r"<nowiki>.*?</nowiki>", " ", t, flags=re.S | re.I)
     t = re.sub(r"<ref[^>/]*/>", " ", t)
     t = re.sub(r"<ref[^>]*>.*?</ref>", " ", t, flags=re.S)
     t = re.sub(r"<references[^>]*>.*?</references>|<references\s*/>", " ", t, flags=re.S)
@@ -96,18 +122,11 @@ def unquote(t):
 def is_list_page(title, text):
     return bool(title and "/" in title) or body(text).lstrip().lower().startswith("this page lists")
 
-# Index pages are long runs of linked names, not prose (Chief, 2026-10-20): no sentence-length check
-# on People, People/<letter>, or any page in [[Category:Indexes]].
-INDEX_TITLE_RX = re.compile(r"^people(?:/[a-z0-9#])?$")
-
-def is_index_page(title, text, cats=None):
-    if INDEX_TITLE_RX.match(norm_title(title)): return True
-    names = page_categories(text) | {norm_title(re.sub(r"^\s*category\s*:", "", c, flags=re.I)) for c in (cats or ())}
-    return "indexes" in names
-
 # Deck and event pages keep a == Sources == list (decklist URL + Preserved copy); no other page does.
 SOURCES_CATEGORIES = {"decklists", "dark side decks", "light side decks", "gemp importable decklists",
-                      "tournaments", "championships", "world championships", "events", "retro league"}
+                      "tournaments", "championships", "world championships", "events", "retro league",
+                      # pages that transcribe one source whole (Bill, 2026-10-20, via Chief 2026-10-26)
+                      "tournament reports"}
 
 def page_categories(text):
     return {re.sub(r"[\s_]+", " ", c).strip().lower()
@@ -402,7 +421,7 @@ def mask_names(t, title=None):
 # Transcript pages (Chief, 2026-10-20): quoted speech is the speaker's words, not the editor's voice.
 # A page is a transcript when its title ends in "(transcript)" (or a "/Transcript" subpage) or it is in
 # Category:Transcripts; on such pages each speaker turn ('''[00:10] Henry Dunn:''' ... or '''Interviewer:''' ...)
-# is skipped by the banned-word and sentence-length checks. The page's own prose is still checked.
+# is skipped by the banned-word check. The page's own prose is still checked.
 TRANSCRIPT_TITLE_RX = re.compile(r"\(\s*transcripts?\s*\)\s*$|/\s*transcripts?\s*$", re.I)
 TRANSCRIPT_CATEGORIES = {"transcripts", "interview transcripts"}
 SPEECH_RX = re.compile(r"^[*:#]*[ \t]*'''[ \t]*(?:\[\d{1,2}(?::\d{2}){1,2}\][ \t]*)?[^'\n:\[\]]{1,60}:[ \t]*'''.*$", re.M)
@@ -424,7 +443,7 @@ def mask_speech(text):
     return SPEECH_RX.sub(blank, text)
 
 # Talk pages (Chief, 2026-10-20): other editors' signed comments are their own words, so the banned-word,
-# hedge and long-sentence checks skip them. A comment is the block of lines that ends with a signature
+# hedge checks skip them. A comment is the block of lines that ends with a signature
 # line ([[User:X|...]] followed by a "HH:MM, D Month YYYY (UTC)" timestamp) and starts after the previous
 # signature line or level-2 (== ==) heading; sub-headings (=== ===) inside it belong to the comment.
 # A block counts as the bot's own when any signer on its signature line is Comlink Cursor, or when it
@@ -483,21 +502,12 @@ def lint(text, title=None, cats=None):
     own = mask_speech(text) if is_transcript_page(title, text, cats) else text   # transcripts: skip speech
     talk = is_talk_page(title)
     if talk: own = mask_foreign_comments(own)                                   # Talk: skip others' comments
-    prose = re.sub(r"^=+.*?=+\s*$", "", body(own), flags=re.M)
     scan = unquote(re.sub(r"^=+.*?=+\s*$", "", body(mask_names(own, title)), flags=re.M))
     for wd in BANNED:
         if wd.strip() in ("this page", "we") and is_list_page(title, text): continue
         for m in re.finditer(rf"\b{re.escape(wd.strip())}\b", scan, re.I):
             ctx = " ".join(scan[max(0, m.start()-50):m.end()+50].split())
             flags.append(f"BANNED   '{wd.strip()}': …{ctx}…")
-    paras = prose.split("\n")  # list items and lines are separate units
-    sents = [x for para in paras for x in re.split(r"(?<=[.!?])[\"”’']?\s+(?=[A-Z\"“'])", " ".join(para.split()))]
-    for s in sents:
-        if is_list_page(title, text): break          # transcripts and lists: no sentence-length check
-        if is_index_page(title, text, cats): break   # People indexes and [[Category:Indexes]] pages
-        if s.count(",") >= 6: continue                # name lists (credits, playtesters)
-        n = len(s.split())
-        if n > MAX_SENT: flags.append(f"LONG     {n} words: {s[:100]}…")
     flags += service_flags(text, title)
     if not archive_exempt(title): flags += archive_flags(text, talk=talk)
     flags += email_flags(text)

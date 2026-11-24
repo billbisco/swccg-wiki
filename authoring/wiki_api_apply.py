@@ -61,6 +61,8 @@ class Wiki:
         return self._open(API + "?" + urllib.parse.urlencode(q))
 
     def post(self, **p) -> dict:
+        if p.get("action") == "edit":
+            p.setdefault("bot", "1")  # Bill 2026-10-27: bot accounts mark every edit as a bot edit (upload has no bot param)
         q = {"format": "json", "formatversion": "2", **p}
         return self._open(urllib.request.Request(API, urllib.parse.urlencode(q).encode("utf-8")))
 

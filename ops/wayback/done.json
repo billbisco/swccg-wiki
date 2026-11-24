@@ -73560,12 +73560,12 @@
   "capture": "https://web.archive.org/web/20261020195703/https://swccg.com/snapshots/pc/decipher-swccg-squadron-members.html",
   "job_id": "spn2-e2bf873540fa86438bd73853ed101d2b8756e4e9",
   "last": "2026-10-20T23:17:42Z",
-  "status": "unverified",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-21T16:16:12Z",
-   "error": "source HTTP 404",
-   "reason": "could not fetch after 3 tries"
+   "at": "2026-10-27T19:02:59Z",
+   "capture_id": "https://web.archive.org/web/20261020195703id_/https://swccg.com/snapshots/pc/decipher-swccg-squadron-members.html",
+   "how": "CDX 200 + id_ fetch contains Quesenberry (7.4 MB)"
   },
   "verify_tries": 3
  },
@@ -122888,5 +122888,29 @@
   "last": "2026-10-22T03:10:07Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://swccg.com/snapshots/reddit/r-starwarsccg-1n61y5w.html": {
+  "capture": "https://web.archive.org/web/20261027185849/https://swccg.com/snapshots/reddit/r-starwarsccg-1n61y5w.html",
+  "last": "2026-10-27T19:02:59Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T19:02:59Z",
+   "capture_id": "https://web.archive.org/web/20261027185849id_/https://swccg.com/snapshots/reddit/r-starwarsccg-1n61y5w.html",
+   "how": "CDX 200 + id_ fetch sha256 identical to source snapshot a3e63d6f49c19dda33998e2ddc40ec4686679b5e1a995fd4a6ef1fc37a98ae0b",
+   "snapshot_deleted": true
+  }
+ },
+ "https://swccg.com/snapshots/reddit/r-starwarsccg-kp6gt5.html": {
+  "capture": "https://web.archive.org/web/20261027185910/https://swccg.com/snapshots/reddit/r-starwarsccg-kp6gt5.html",
+  "last": "2026-10-27T19:02:59Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-10-27T19:02:59Z",
+   "capture_id": "https://web.archive.org/web/20261027185910id_/https://swccg.com/snapshots/reddit/r-starwarsccg-kp6gt5.html",
+   "how": "CDX 200 + id_ fetch sha256 identical to source snapshot f4784490e524f9b7ebb2adaac4d20d34bf14b508a576d408fcb2f9ae7904043d",
+   "snapshot_deleted": true
+  }
  }
 }
