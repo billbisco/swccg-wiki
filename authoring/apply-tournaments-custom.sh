@@ -1,11 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 ROOT=/opt/swccg-wiki
-# Preserve Bardez originals for /preserved/bardez/
-mkdir -p "$ROOT/encyclopedia/preserved/bardez"
-if [ -d "$ROOT/encyclopedia/bardez-templates" ]; then
-  cp -a "$ROOT/encyclopedia/bardez-templates/." "$ROOT/encyclopedia/preserved/bardez/" || true
-fi
+# Bardez originals: encyclopedia/preserved/bardez is the canonical source (no copy step).
+[ -d "$ROOT/encyclopedia/preserved/bardez" ] || echo "WARN: $ROOT/encyclopedia/preserved/bardez missing" >&2
 # Images
 docker exec swccg_wiki mkdir -p /tmp/tourney-custom
 for f in \
