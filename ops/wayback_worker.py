@@ -284,6 +284,12 @@ def spn2_user_status():
 CAPACITY_RECHECK_S = 90
 
 
+def _refused(ex):
+    import errno
+    r=getattr(ex,'reason',ex)
+    return isinstance(r,(ConnectionRefusedError,ConnectionResetError)) or getattr(r,'errno',None) in (errno.ECONNREFUSED,errno.ECONNRESET)
+
+
 def ensure_capacity(control):
     """One fresh account check per bounded submission window; never guess capacity."""
     if not AUTH:return
@@ -298,6 +304,9 @@ def ensure_capacity(control):
         except Paused:raise
         except (OSError,ValueError,TypeError) as ex:
             cached=None; print('CAPACITY-ERR',type(ex).__name__,str(ex)[:120],flush=True)
+            # web.archive.org refusing or resetting our connections is its own
+            # cooldown signal: keep the long wait rather than knocking again soon.
+            if _refused(ex):control.capacity_wait('network_refused')
         control.state.update(capacity_checked_at=control.clock(),account_capacity=cached,capacity_remaining=cached['available'] if cached else None)
         control.save()
     if cached is None:control.capacity_wait('capacity_unknown')
