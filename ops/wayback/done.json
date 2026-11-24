@@ -90866,6 +90866,13 @@
    "reason": "route C re-snapshot (Bill 2026-10-26); re-saving"
   }
  },
+ "https://swccg.com/snapshots/forum/p1030510.html": {
+  "capture": "",
+  "job_id": "spn2-09de151173072ed9586f2f077d97c138de40a2de",
+  "last": "2026-11-24T02:48:41Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/p1035291.html": {
   "capture": "https://web.archive.org/web/20261026213025/https://swccg.com/snapshots/forum/p1035291.html",
   "dead_capture": "https://web.archive.org/web/20261022033513/https://swccg.com/snapshots/forum/p1035291.html",
@@ -90897,6 +90904,13 @@
    "method": "sha256",
    "sha256": "ab17bcb039e89dfbf2ce240263483a50ff9cea5a3d95492d202d7d9aa4baf33b"
   }
+ },
+ "https://swccg.com/snapshots/forum/p1047092.html": {
+  "capture": "",
+  "job_id": "spn2-88c54e2529abd869fb2f35c96c376ae69df9dcf2",
+  "last": "2026-11-24T02:49:42Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/p1049285.html": {
   "capture": "https://web.archive.org/web/20261122222942/https://swccg.com/snapshots/forum/p1049285.html",
@@ -92271,6 +92285,13 @@
    "method": "sha256",
    "sha256": "3fdf1773bde75e683fb26bbe4f2fc42016eaa6e144caf143f3fe566de1465400"
   }
+ },
+ "https://swccg.com/snapshots/forum/p999135.html": {
+  "capture": "",
+  "job_id": "spn2-b419da8e5b76bb43e4282e14e20cd9c3dc4458ef",
+  "last": "2026-11-24T02:47:40Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/t11180.html": {
   "capture": "https://web.archive.org/web/20261027010543/https://swccg.com/snapshots/forum/t11180.html",
@@ -179642,9 +179663,18 @@
  "https://www.stephenskilton.com/decktech_archives/15358/": {
   "capture": "https://web.archive.org/web/20261023072449/https://www.stephenskilton.com/decktech_archives/15358/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-13T23:51:59Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-24T02:47:08Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-24T02:45:57Z",
+   "bytes": 12553,
+   "capture_id": "https://web.archive.org/web/20261023072449id_/https://www.stephenskilton.com/decktech_archives/15358/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "65bb0ff89c8bd302b8926c2f3bb80f4b312f1a0243b6bcadd731ba4da45ae2c6"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15359/": {
   "capture": "",
@@ -191807,11 +191837,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/24025/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261009151638/https://www.stephenskilton.com/decktech_archives/24025/",
   "error": "no job_id: The same snapshot had been made 390 hours, 31 minutes ago. You can make new capture of this URL after 720 hou",
-  "last": "2026-10-25T21:47:54Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-24T02:47:38Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-24T02:47:38Z",
+   "bytes": 12806,
+   "capture_id": "https://web.archive.org/web/20261009151638id_/https://www.stephenskilton.com/decktech_archives/24025/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2253b4694569b48237c760d8bfdbc8e72ada7527b5c259a1395eafd8fddbbc14"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/24026/": {
   "capture": "",
