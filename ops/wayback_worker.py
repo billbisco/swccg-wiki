@@ -948,6 +948,52 @@ def load(repo: Path) -> tuple[list[str], dict]:
     return urls, done
 
 
+# Hosts that only forward to another queued host: save the target once (#1340).
+ALIASES = {
+    "https://stevetotheizz0.github.io/decktech_archives/": "https://www.stephenskilton.com/decktech_archives/",
+}
+
+
+def alias_target(url: str) -> str | None:
+    for src, dst in ALIASES.items():
+        if url.startswith(src):
+            return dst + url[len(src):]
+    return None
+
+
+def order_queue(urls: list[str], done: dict) -> list[str]:
+    """Walk order for saves (swccg-guild/work#1340).
+
+    1. Never-saved URLs before retries, our own files first within that.
+    2. Round-robin across target hosts, so one site cannot use up its
+       per-host daily allowance at archive.org and stall the rest.
+    3. Skip a forwarding alias when its target is queued or saved.
+    Order within one host stays the queue.txt order.
+    """
+    queued = set(urls)
+    tiers: dict[int, dict[str, list[str]]] = {}
+    for url in urls:
+        target = alias_target(url)
+        if target and (target in queued or target in done):
+            continue
+        host = (urllib.parse.urlsplit(url).hostname or "").lower()
+        own = host in ("swccg.com", "wiki.swccg.com", "res.starwarsccg.org")
+        tier = (0 if url not in done else 2) + (0 if own else 1)
+        tiers.setdefault(tier, {}).setdefault(host, []).append(url)
+    out = []
+    for tier in sorted(tiers):
+        lanes = list(tiers[tier].values())
+        i = 0
+        while lanes:
+            lane = lanes[i % len(lanes)]
+            out.append(lane.pop(0))
+            if not lane:
+                lanes.remove(lane)
+            else:
+                i += 1
+    return out
+
+
 def write_done(repo: Path, done: dict) -> None:
     p = repo / DONE
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -1459,6 +1505,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     # with no previous failed or pending receipt, not an arbitrary historic retry.
     if isinstance(control,Control) and control.state.get('mode')=='half_open':
         urls=sorted(urls,key=lambda u:(u in done,not u.startswith('https://swccg.com/')))
+    elif scope is None:
+        urls=order_queue(urls,done)
     for url in urls:
         if time.monotonic() > deadline - 90 or errors_in_row >= 5:
             break
