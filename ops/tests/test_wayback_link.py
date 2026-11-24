@@ -52,7 +52,7 @@ class Pure(unittest.TestCase):
         new, n = L.add_preserved_copy(text, keys, CAP_SNAP, SNAP)
         self.assertEqual(n, 2)
         self.assertIn("Post], 2019. " + PC + "</ref>", new)
-        self.assertIn("Other] " + PC + "</ref>", new)
+        self.assertIn("Other]. " + PC + "</ref>", new)
         self.assertIn("12457070 Not this]</ref>", new)
         again, n2 = L.add_preserved_copy(new, keys, CAP_SNAP, SNAP)  # AC3
         self.assertEqual((again, n2), (new, 0))

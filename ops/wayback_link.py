@@ -155,6 +155,11 @@ def _link_end(text: str, m: re.Match) -> int:
     return m.end()
 
 
+def _sep(before: str) -> str:
+    """House style: '... source. Preserved copy: [...]'."""
+    return " " if before.endswith((".", "!", "?")) or not before else ". "
+
+
 def add_preserved_copy(text: str, keys: list[tuple[str, str]], capture: str, snap: str) -> tuple[str, int]:
     """Add the capture next to every cite of the keys that has no Wayback copy yet.
     Returns (new_text, number_of_places_changed)."""
@@ -177,8 +182,9 @@ def add_preserved_copy(text: str, keys: list[tuple[str, str]], capture: str, sna
                 if ph:
                     edits.append((span[0] + ph.start(), span[0] + ph.end(), pc))
                 else:
-                    body_end = span[0] + len(seg.rstrip())
-                    edits.append((body_end, body_end, " " + pc))
+                    body = seg.rstrip()
+                    body_end = span[0] + len(body)
+                    edits.append((body_end, body_end, _sep(body) + pc))
             else:
                 end = _link_end(text, m)
                 nl = text.find("\n", end)
@@ -197,7 +203,7 @@ def add_preserved_copy(text: str, keys: list[tuple[str, str]], capture: str, sna
                     edits.append((end, end, " " + pc))
                 else:
                     stop = bol + len(line.rstrip())
-                    edits.append((stop, stop, " " + pc))
+                    edits.append((stop, stop, _sep(line.rstrip()) + pc))
     if not edits:
         return text, 0
     out = text
