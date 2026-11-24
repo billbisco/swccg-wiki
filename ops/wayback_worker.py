@@ -93,7 +93,10 @@ PENDING_CONFIRM_MAX_AGE = timedelta(hours=2)  # skip stalled pending job_ids
 PENDING_CONFIRM_CAP = 40                      # max status polls per run (newest first)
 STALE_PENDING_AGE = timedelta(hours=24)       # a pending job this old is dead: resubmit it
 FAILED_RETRY_AGE = timedelta(days=7)          # failed on a transient error, retried once a week
-TRANSIENT_ERRORS = ("stalled spn2", "connection refused", "errno 111", "timed out", "429", "503", "502")
+# 401: the 14 Nov credential outage (fixed; a new 401 still sets auth_blocked before
+# any save). Host limit and "same snapshot" are per-day archive.org answers. (#1340)
+TRANSIENT_ERRORS = ("stalled spn2", "connection refused", "errno 111", "timed out", "429", "503", "502",
+                    "http error 401", "host has been already captured", "same snapshot had been made")
 BANNED_HOSTS = {"forum.starwarsccg.org", "www.starwarsccg.org", "starwarsccg.org"}
 SNAPSHOT_HOSTS = {"swccg.com", "www.swccg.com"}
 WIKI_API = "https://wiki.swccg.com/api.php"
