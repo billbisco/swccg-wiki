@@ -1,0 +1,8 @@
+[Unit]
+Description=Alert when the nightly wiki backup fails without completing work
+# Triggered by OnFailure of swccg-backup.service. Do not enable as a timer.
+
+[Service]
+Type=oneshot
+Nice=10
+ExecStart=/usr/local/sbin/swccg-backup-alert.sh

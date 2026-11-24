@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Download live wiki File: uploads (images, PDFs, GEMP importable decklists) into files/.
 
-    python tools/dump_images.py                       # everything, rewrite INDEX
+    python tools/dump_images.py --merge               # everything, keep existing INDEX rows
     python tools/dump_images.py --limit 20
     python tools/dump_images.py --mime application/xml --mime text/plain --merge --usage
+    python tools/dump_images.py --out /path/to/swccg-wiki-files/files --merge --push
 
 GEMP importable decklists (application/xml, text/plain) are kept: the wiki is a
 preservation archive and every File: upload is backed up (Bill, 2026-10-10).
@@ -11,6 +12,13 @@ preservation archive and every File: upload is backed up (Bill, 2026-10-10).
 Writes files/INDEX.tsv (title<TAB>path<TAB>mime<TAB>size). --merge keeps rows already
 in INDEX.tsv for files not in this run. --usage also writes files/USAGE.tsv
 (file title<TAB>article title) so each file stays tied to the article(s) that use it.
+
+The nightly VPS job (swccg-backup.timer / ops/nightly_backup.py) is the source of
+truth for image binaries on GitHub (billbisco/swccg-wiki-files). A local dump that
+is not committed and pushed will sit untracked on the machine (swccg-guild/work#1323).
+Use --push (implies --commit) after a same-sitting dump, or leave the upload to the
+nightly job and do not keep a second uncommitted copy. --push needs GH_TOKEN or
+GIT_ASKPASS_TOKEN; those values are never printed.
 """
 from __future__ import annotations
 
@@ -24,6 +32,8 @@ import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+
+from backup_git import GitError, commit_if_changed, git_root, push_head, redact  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ROOT / "files"
@@ -98,6 +108,8 @@ def main() -> int:
     ap.add_argument("--mime", action="append", default=[], help="only this MIME (prefix); repeatable")
     ap.add_argument("--merge", action="store_true", help="keep existing INDEX rows not in this run")
     ap.add_argument("--usage", action="store_true", help="write USAGE.tsv for every wiki file")
+    ap.add_argument("--commit", action="store_true", help="commit changed files in the files checkout")
+    ap.add_argument("--push", action="store_true", help="commit if needed, then push HEAD (needs a token)")
     args = ap.parse_args()
     out = args.out
     out.mkdir(parents=True, exist_ok=True)
@@ -160,6 +172,45 @@ def main() -> int:
     print(f"wrote {n} files skipped {skipped} index {index}")
     if args.usage:
         write_usage(index.parent / "USAGE.tsv")
+    if args.commit or args.push:
+        written_paths = [out / Path(rel).name for _, rel, _, _ in rows]
+        return _commit_and_maybe_push(out, index, args, written_paths)
+    return 0
+
+
+def _commit_and_maybe_push(out: Path, index: Path, args, written_paths: list[Path]) -> int:
+    try:
+        repo = git_root(out)
+    except GitError as exc:
+        print(redact(str(exc)), file=sys.stderr)
+        return 4
+    rels = [str(index.resolve().relative_to(repo))]
+    usage = index.parent / "USAGE.tsv"
+    if args.usage and usage.exists():
+        rels.append(str(usage.resolve().relative_to(repo)))
+    # Only files written or confirmed in this run, plus the index.
+    for path in written_paths:
+        if path.is_file():
+            rels.append(str(path.resolve().relative_to(repo)))
+    message = "Backup wiki File uploads from live wiki (dump_images.py)"
+    try:
+        committed = commit_if_changed(repo, rels, message)
+    except GitError as exc:
+        print(redact(str(exc)), file=sys.stderr)
+        return 4
+    if not committed:
+        print("no GitHub image changes to commit")
+        return 0
+    print(f"committed image backup in {repo}")
+    if not args.push:
+        print("commit is local only; pass --push to publish it", file=sys.stderr)
+        return 3
+    try:
+        push_head(repo)
+    except GitError as exc:
+        print(redact(str(exc)), file=sys.stderr)
+        return 3
+    print("pushed")
     return 0
 
 

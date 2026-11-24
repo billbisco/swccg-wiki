@@ -4,9 +4,11 @@
 Run from anywhere; writes into the clone that contains this script
 (C:\\Users\\gythe\\.grok\\swccg-wiki). After live QA:
 
-    python tools/sync_delta.py --from-tsv path/to/y2012-yavin-xerox-delta.tsv --push
+    python tools/sync_delta.py --from-tsv path/to/y2012-yavin-xerox-delta.tsv
 
---push needs GH_TOKEN or GIT_ASKPASS_TOKEN in the environment (leftover.token()).
+Pushes by default (swccg-guild/work#1323). Use --no-push only when you must leave
+the commit local. A local-only commit is a failure (exit 3) unless --no-push is
+set. --push needs GH_TOKEN or GIT_ASKPASS_TOKEN in the environment (leftover.token()).
 Do not print those values. Do not git status the whole tree.
 """
 from __future__ import annotations
@@ -101,7 +103,12 @@ def push() -> None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--from-tsv", type=Path, required=True)
-    ap.add_argument("--push", action="store_true")
+    ap.add_argument(
+        "--push",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="push after commit (default). Use --no-push to leave the commit local.",
+    )
     ap.add_argument(
         "--message",
         default="Sync leftover dest titles from wiki.swccg.com",
@@ -126,13 +133,15 @@ def main() -> int:
         return 0
     git(["commit", "-m", args.message])
     print(f"committed {len(written)} titles")
-    if args.push:
-        try:
-            push()
-        except GitError as exc:
-            print(redact(str(exc)), file=sys.stderr)
-            return 3
-        print("pushed")
+    if not args.push:
+        print("commit is local only (--no-push)")
+        return 0
+    try:
+        push()
+    except GitError as exc:
+        print(redact(str(exc)), file=sys.stderr)
+        return 3
+    print("pushed")
     return 0
 
 

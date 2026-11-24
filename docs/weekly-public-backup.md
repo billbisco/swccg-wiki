@@ -1,8 +1,17 @@
-# Weekly public wiki backup
+# Nightly public wiki backup
 
-The existing `Sync from live wiki` workflow exports current publicly readable
-page revisions from every nonnegative namespace, including Talk, User and File
-descriptions. It uses the anonymous wiki API, with no wiki credentials.
+The `Sync from live wiki` workflow runs every night at 08:17 UTC (04:17
+America/Caracas; GitHub may start the run later than the cron). It exports
+current publicly readable page revisions from every nonnegative namespace,
+including Talk, User and File descriptions. It uses the anonymous wiki API,
+with no wiki credentials, and it commits only when the export differs. This
+is the full page-text backstop (swccg-guild/work#1323). Incremental page and
+image backups are a separate VPS job: `swccg-backup.timer` at 07:15 UTC
+(03:15 America/Caracas) runs `ops/nightly_backup.py` and pushes to both
+`billbisco/swccg-wiki` and `billbisco/swccg-wiki-files`. If the GitHub Action
+fails, it opens or comments on a `Nightly wiki page backup failed` issue in
+this repository (no AI). GitHub also emails the workflow's last modifier on
+a failed scheduled run when Actions failure mail is enabled.
 
 Uploaded image/PDF binaries and their retained public versions remain the job of
 the existing VPS backup worker and `billbisco/swccg-wiki-files`. A File-description
@@ -66,4 +75,6 @@ inventory ID is accounted for and payloads are independently rehashed.
 
 API errors, inconsistent SHA1/size, missing visible content, unsafe mappings or a
 disk reserve below 1 GiB fail the job rather than producing a partial success.
-The existing weekly schedule, job concurrency and 120-minute limit are unchanged.
+The nightly schedule, job concurrency and 120-minute limit are set in
+`.github/workflows/sync-from-live.yml`. The job is idempotent and pushes only
+when the export changed.

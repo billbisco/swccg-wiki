@@ -1,12 +1,17 @@
 name: Sync from live wiki
 
+# Nightly full public page-text export (swccg-guild/work#1323).
+# 08:17 UTC = 04:17 America/Caracas. GitHub may start scheduled
+# runs later than the cron; the VPS incremental backup (swccg-backup.timer
+# at 07:15 UTC) is the punctual daily job for pages and images.
 on:
   schedule:
-    - cron: "17 6 * * 0"
+    - cron: "17 8 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: sync-from-live
@@ -35,3 +40,21 @@ jobs:
           git config user.name "swccg-wiki-sync"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           python tools/push_wiki_dump.py --attempts 5
+      - name: Open a GitHub issue on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          TITLE="Nightly wiki page backup failed"
+          BODY="The Sync from live wiki workflow failed (no AI). This is the nightly public page-text backup for billbisco/swccg-wiki.
+
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          Refs swccg-guild/work#1323."
+          NUM=$(gh issue list -R "${{ github.repository }}" --state open --search "in:title \"${TITLE}\"" --json number --jq '.[0].number // empty')
+          if [ -n "${NUM}" ]; then
+            gh issue comment "${NUM}" -R "${{ github.repository }}" --body "${BODY}"
+          else
+            gh issue create -R "${{ github.repository }}" --title "${TITLE}" --body "${BODY}"
+          fi

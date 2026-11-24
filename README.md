@@ -18,7 +18,7 @@ See `LICENSE` and `NOTICE`.
 | --- | --- |
 | `pages/` | Encyclopedia wikitext (the backup) |
 | `tools/dump_live.py` | Pulls current article text from wiki.swccg.com |
-| `.github/workflows/sync-from-live.yml` | Weekly (and on-demand) dump → commit |
+| `.github/workflows/sync-from-live.yml` | Nightly at 08:17 UTC / 04:17 America/Caracas (and on-demand) dump → commit |
 | `chrome/` | Shared site header/footer |
 | `encyclopedia/` | Championship 60 transcribes (sheet emails redacted) |
 | `authoring/` | Generators and apply helpers used to *build* the live wiki |
@@ -31,7 +31,7 @@ Card scans, PDFs, and other `File:` uploads live on the wiki and in the sibling 
 python tools/dump_live.py
 ```
 
-Pulls current article text from [wiki.swccg.com](https://wiki.swccg.com) into `pages/` and writes `pages/INDEX.tsv` (`title<TAB>path`). A GitHub Action does the same every Sunday and on **Actions → Sync from live wiki → Run workflow**.
+Pulls current article text from [wiki.swccg.com](https://wiki.swccg.com) into `pages/` and writes `pages/INDEX.tsv` (`title<TAB>path`). A GitHub Action does the same every night (08:17 UTC / 04:17 America/Caracas) and on **Actions → Sync from live wiki → Run workflow**.
 
 Title index only (no wikitext rewrite):
 
@@ -45,7 +45,7 @@ After a leftover dest (or any apply TSV) has landed on the live wiki and passed 
 python tools/sync_delta.py --from-tsv path/to/event-xerox-delta.tsv --push
 ```
 
-`--push` needs a GitHub token in `GH_TOKEN`. Do not dump the whole encyclopedia after every pair. The Sunday Action is the backstop.
+`sync_delta.py` pushes by default (`--no-push` to leave a local commit). It needs a GitHub token in `GH_TOKEN`. Do not dump the whole encyclopedia after every pair. The nightly Action `.github/workflows/sync-from-live.yml` is the full page-text backstop; `swccg-backup.timer` on the VPS is the incremental page and image backup. See `ops/UNPUSHED-WORK-GUARD.md`.
 
 ## Rebuild a wiki from this repo
 
