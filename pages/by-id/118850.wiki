@@ -1,16 +1,15 @@
-<includeonly>{| class="wikitable"
-! !! {{Errata col|page=Escape Pod|label=Original|date=December 1995|ref=<ref name="errata-ep-lim">[[:File:Premiere-L-escapepod-decipher-archive.gif|Original printed face]]. Original printed face: [https://web.archive.org/web/20010628231622/http://www.decipher.com:80/starwars/cardlists/premiere/light/small/escapepod.html Escape Pod], [[Decipher]] (archived 28 June 2001).</ref>}} !! {{Errata col|page=Escape Pod (PC Errata)|label=PC Errata|date=30 July 2023|ref=<ref name="errata-ep-pc">[[Media:SWCCG_2023_AdvancedRulebook.pdf|SWCCG 2023 Advanced Rulebook]] Appendix A, p. 111 (Escape Pod; PDF dated 30 July 2023). Holotable face [[:File:Premiere-L-escapepod.gif]].</ref>}}
-|-
-! Image
-| 350 × 490 || {{Errata hl|745 × 1039}}
+<includeonly><div class="errata-compare" style="overflow-x:auto;max-width:100%">
+{| class="wikitable"
+! !! {{Errata col|page=Escape Pod|label=Original|date=December 1995|ref=<ref name="escapepod-0">[[:File:Premiere-L-escapepod-decipher-archive.gif|Printed card face]].</ref>}} !! {{Errata col|page=Escape Pod (PC 2022 D-E1 card)|label=PC 2022 D-E1 card|date=5 March 2022|ref=<ref name="escapepod-1">[https://github.com/swccgpc/holotable/commit/79618fb53ef1e032f5503865e8edb70b8b58c7eb swccgpc/holotable commit 79618fb], 5 March 2022: card image <code>escapepod.gif</code>.</ref>}}
 |-
 ! Game text
-| Save all characters, weapons, and devices aboard any just-lost capital starship. Relocate them to any planet site. || {{Errata hl|If your capital starship is about to be lost, relocate your characters aboard to any one planet site.}}
+| Save all characters, weapons, and devices aboard any just-lost capital starship. Relocate them to any planet site. || {{Errata hl|1=If your capital starship is about to be lost, relocate your characters}} aboard to any {{Errata hl|1=one}} planet site.
 |-
 ! Stamp
-| [[File:Escape-Pod-Limited-stamp-crop.png|80px]] none || [[File:Escape-Pod-PC-Errata-stamp-crop.png|80px]] {{Errata hl|D-E1}}
+| none || {{Errata hl|1=D-E1}}
 |}
+</div>
 <div class="card-family-edit" style="font-size:90%;">[{{fullurl:Template:Card errata/Escape Pod|action=edit}} Edit errata] · [[Template:Card errata/Escape Pod#Editing|Help]]</div></includeonly><noinclude>
 == Editing ==
-This shared table is the '''Errata''' section on the English Decipher-era [[Escape Pod]] original and its real Errata / PC Errata article. Do not transclude it onto Japanese, Unlimited, Two-Player, foil, or Virtual articles. Use '''Edit errata''' on a member page. {{tl|Errata hl}} only the words or values that changed; an em dash if that field is unchanged from the previous filled cell. See [[SWCCG Wiki:Style guide#Errata comparison table]].
+English Decipher-era comparison for [[Escape Pod]]. One column per published text state, in date order: the printed card, and each Players Committee image. The stamp row describes the mark on each image. Yellow highlights mark words changed against the column before. Use explicit <code>1=</code> for <code><nowiki>{{Errata hl}}</nowiki></code> arguments.
 </noinclude>

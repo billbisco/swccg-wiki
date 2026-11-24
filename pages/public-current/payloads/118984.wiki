@@ -1,13 +1,15 @@
-<includeonly>{| class="wikitable"
-! !! {{Errata col|page=Warrior's Courage|label=Original|date=December 1995|ref=<ref name="errata-warriors-courage-o">[[:File:Premiere-L-warriorscourage-decipher-archive.gif|Original printed face]].</ref>}} !! {{Errata col|page=Warrior's Courage (PC Errata)|label=PC Errata|date=30 July 2023|ref=<ref name="errata-warriors-courage-pc">[[Media:SWCCG_2023_AdvancedRulebook.pdf|SWCCG 2023 Advanced Rulebook]] Appendix A, p. 133 (Warrior's Courage; PDF dated 30 July 2023).</ref>}}
+<includeonly><div class="errata-compare" style="overflow-x:auto;max-width:100%">
+{| class="wikitable"
+! !! {{Errata col|page=Warrior's Courage|label=Original|date=December 1995|ref=<ref name="warriorscour-0">[[:File:Premiere-L-warriorscourage-decipher-archive.gif|Printed card face]].</ref>}} !! {{Errata col|page=Warrior's Courage (PC 2022 D-E1 card)|label=PC 2022 D-E1 card|date=5 March 2022|ref=<ref name="warriorscour-1">[https://github.com/swccgpc/holotable/commit/79618fb53ef1e032f5503865e8edb70b8b58c7eb swccgpc/holotable commit 79618fb], 5 March 2022: card image <code>warriorscourage.gif</code>.</ref>}}
 |-
 ! Game text
-| If {{Errata hl|any}} warrior is defending a battle alone at a site, add one battle destiny. OR If Leia is defending a battle alone at a site, add two battle destiny. || If {{Errata hl|your}} warrior is defending a battle alone at a site, add one battle destiny. OR If Leia is defending a battle alone at a site, add two battle destiny.
+| If any warrior is defending a battle alone at a site, add one battle destiny. OR If Leia is defending a battle alone at a site, add two battle destiny. || If {{Errata hl|1=your}} warrior is defending a battle alone at a site, add one battle destiny. OR If Leia is defending a battle alone at a site, add two battle destiny.
 |-
 ! Stamp
-| [[File:Warriors-Courage-Limited-stamp-crop.png|80px]] none || [[File:Warriors-Courage-PC-Errata-stamp-crop.png|80px]] {{Errata hl|D-E1}}
+| none || {{Errata hl|1=D-E1}}
 |}
+</div>
 <div class="card-family-edit" style="font-size:90%;">[{{fullurl:Template:Card errata/Warrior's Courage|action=edit}} Edit errata] · [[Template:Card errata/Warrior's Courage#Editing|Help]]</div></includeonly><noinclude>
 == Editing ==
-This shared table is the '''Errata''' section on Decipher-era English [[Warrior's Courage]] and [[Warrior's Courage (PC Errata)]]. Use '''Edit errata''' on a member page. Columns are Original · PC Errata. {{tl|Errata hl}} only the words that changed; an em dash if unchanged. See [[SWCCG Wiki:Style guide#Errata comparison table]].
+English Decipher-era comparison for [[Warrior's Courage]]. One column per published text state, in date order: the printed card, and each Players Committee image. The stamp row describes the mark on each image. Yellow highlights mark words changed against the column before. Use explicit <code>1=</code> for <code><nowiki>{{Errata hl}}</nowiki></code> arguments.
 </noinclude>

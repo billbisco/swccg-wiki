@@ -59,11 +59,38 @@ Optional '''image2_layout''' — how to place '''image2''' when set:
 * '''right''' — force side-by-side always (0 left, 7 right); classes '''card-portraits-row''' + '''card-rail-dual'''
 * '''responsive''' — preferred Objective mode: wide viewport = side-by-side (0 left, 7 right); narrow viewport (max-width '''720px''') = stacked. Same row/dual markup plus '''card-rail-responsive''' / '''card-portraits-responsive''' so CSS media query can adapt.
 
-Optional '''play_image''' — the card drawn by the Players Committee for a page whose '''image''' is a source document rather than a card, e.g. a Decipher Errata page that shows the Glossary entry as '''image''' and the PC's D-E1 card here (swccg-guild/work#1297). Shown under the portraits at 280px, outside the image viewer's portraits. Use it only where the card's words match the page's text. Optional '''play_image_label''' — one line under it, e.g. <code>Card drawn by the Players Committee, 23 December 2022 — <nowiki>[[Collision! (D-E1 2022)]]</nowiki></code>.
+Optional '''play_image''' — the card drawn by the Players Committee (or a card built by swccg.com itself; see '''play_image_mark''' below) for a page whose '''image''' is a source document rather than a card, e.g. a Decipher Errata page that shows the Glossary entry as '''image''' and the PC's D-E1 card here (swccg-guild/work#1297). Shown under the portraits at 280px, outside the image viewer's portraits. Use it only where the card's words match the page's text. Optional '''play_image_label''' — one line under it, e.g. <code>Card drawn by the Players Committee, 23 December 2022 — <nowiki>[[Collision! (D-E1 2022)]]</nowiki></code>.
 
 Optional '''image_caption''' — one short line directly under the main '''image''' (stacked layout), saying what the image is, e.g. on a Decipher Errata page <code>Decipher's errata as published: Glossary Version 2.0, November 1998, p. 38</code> (swccg-guild/work#1297).
 
 Optional '''format''' — an Info row "Format" saying what kind of publication the article shows: <code>Slip</code>, <code>Full card</code> or <code>Text only</code> (#1297). Omit on ordinary printed cards.
+
+Optional '''maker_mark''' (swccg-guild/work#1306, Bill 22 November 2026) — our own maker's mark, printed at the end of the vertical legal line on a card image that swccg.com built itself, for example a black-bordered card of Decipher's errata that no one ever printed, or a translation. Write it as printed: <code>swccg.com 2026</code>; a translation adds its language code, <code>swccg.com 2026 · ES</code>. Shown as an Info row "Maker's mark" directly after Errata mark, only when set. It describes the page's main '''image''', so set it only when that image is a card we built. It is not '''errata_mark''': that field keeps recording the stamp Decipher or the Players Committee printed (E, D-E1); never put our mark there, and never put their stamps here.
+
+Optional '''play_image_mark''' — the same mark for the card shown in '''play_image''', when that card is one we built (for example a Decipher Errata page whose '''image''' is the Glossary entry and whose '''play_image''' is our black-bordered card of those words). It renders as one line, "Maker's mark on this card: …", under '''play_image_label''' inside the play-card box, so it says the play card carries our mark without implying the main image does. Leave '''maker_mark''' empty on such a page unless the main image itself carries our mark. Omit both on all other pages; ordinary pages render as before.
+
+Example (file names illustrative):
+<pre>
+{{Card
+|title=Blizzard 1
+|image=Hoth-D-blizzard1-Decipher-Errata-1998-glossary.png
+|image_caption=Decipher's errata as published: Glossary Version 2.0, November 1998, p. 27
+|play_image=Hoth-D-blizzard1-Decipher-Errata-1998-swccg.png
+|play_image_label=Card built by swccg.com, 2026, with Decipher's errata words
+|play_image_mark=swccg.com 2026
+|...
+}}
+</pre>
+A translated card whose main image is our own card:
+<pre>
+{{Card
+|title=Blizzard 1
+|image=Hoth-D-blizzard1-ES-swccg.png
+|language=es
+|maker_mark=swccg.com 2026 · ES
+|...
+}}
+</pre>
 
 Optional '''image3''', '''image4''', '''image5''', '''image6''' — further portraits, each 280px wide, with matching '''image3_trim''' … '''image6_trim''' (same rule as '''image2_trim'''). Used for the printed slip on [[Virtual Legacy]] card pages (swccg-guild/work#156), as '''image2''' shows the slip on [[Virtual Original]] pages.
 * Stacked layout (no '''image2_layout'''): they follow '''image2''' in order, top to bottom. A single-face card whose '''image2''' is free puts its slip in '''image2'''; a card whose '''image2''' is taken puts the slip in '''image3''' (a slip printed in two halves uses the next free slots, top half first).
