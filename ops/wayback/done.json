@@ -92584,7 +92584,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-24T21:07:54Z",
+   "at": "2026-11-24T21:52:39Z",
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
@@ -92636,6 +92636,61 @@
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
+ },
+ "https://swccg.com/snapshots/forum/p1309870.html": {
+  "capture": "https://web.archive.org/web/20261124214624/https://swccg.com/snapshots/forum/p1309870.html",
+  "job_id": "spn2-80d57983a1c92e1b691165383c2847a0418c5cb4",
+  "last": "2026-11-24T21:52:31Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T21:52:31Z",
+   "bytes": 1703436,
+   "capture_id": "https://web.archive.org/web/20261124214624id_/https://swccg.com/snapshots/forum/p1309870.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c0ac22e8145b8912fb4f4dad73280b7901a4648f1d714a586e064f5124efab7a"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1309872.html": {
+  "capture": "https://web.archive.org/web/20261124214725/https://swccg.com/snapshots/forum/p1309872.html",
+  "job_id": "spn2-a14405b8068e3c99e8b2b0231982c147864f5df1",
+  "last": "2026-11-24T21:52:37Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-24T21:52:37Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1309873.html": {
+  "capture": "",
+  "job_id": "spn2-b3d3ae5a85c19aa5996a27575584d08813a17870",
+  "last": "2026-11-24T21:48:22Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1309890.html": {
+  "capture": "",
+  "job_id": "spn2-429e2cf2034180e16b8165584f4efabf562c89b1",
+  "last": "2026-11-24T21:49:23Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1309894.html": {
+  "capture": "",
+  "job_id": "spn2-2032abe39b0882388823cb0f07f712709892b381",
+  "last": "2026-11-24T21:50:24Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1309915.html": {
+  "capture": "",
+  "job_id": "spn2-f9408487db62a5eb9d3ea771f41651cc69e61fdc",
+  "last": "2026-11-24T21:51:25Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/p1366567.html": {
   "capture": "https://web.archive.org/web/20261014113924/https://swccg.com/snapshots/forum/p1366567.html",
