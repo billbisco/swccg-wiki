@@ -1711,6 +1711,10 @@ def main() -> int:
         print(path.read_text(encoding="utf-8") if path.exists() else '{"outcome":"not_recorded"}')
         return 0
     run(a.repo.resolve(), a.minutes, native_object_ids=native_ids)
+    if native_ids is None and os.environ.get("WAYBACK_LINK", "1") != "0":
+        # Story #1320: add verified captures to the wiki. Never raises; time-boxed.
+        import wayback_link
+        wayback_link.run_safe(a.repo.resolve(), seconds=float(os.environ.get("WAYBACK_LINK_SECONDS", "90")))
     return 0
 
 
