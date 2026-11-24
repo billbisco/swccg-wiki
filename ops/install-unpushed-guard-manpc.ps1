@@ -11,7 +11,9 @@ $srcCandidates = @(
 New-Item -ItemType Directory -Force -Path $ops, $log | Out-Null
 $src = $srcCandidates | Where-Object { Test-Path $_ } | Select-Object -First 1
 if (-not $src) { throw "unpushed_work_guard.py not found" }
-Copy-Item -Force $src $dest
+if ((Resolve-Path $src).Path -ne (Resolve-Path $dest -ErrorAction SilentlyContinue).Path) {
+    Copy-Item -Force $src $dest
+}
 # Keep a local copy of the Git helper imported as tools/backup_git.py
 $tools = Join-Path $ops "tools"
 New-Item -ItemType Directory -Force -Path $tools | Out-Null

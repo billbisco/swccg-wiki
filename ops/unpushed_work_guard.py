@@ -417,8 +417,13 @@ def main() -> int:
                 f"skipped={r.get('skipped')} stale={r.get('stale')} "
                 f"actions={r.get('actions')} error={r.get('error')}"
             )
-    stale = [r for r in reports if r.get("stale") and (r.get("ahead") or r.get("untracked") or r.get("error"))]
-    if stale:
+    stale = [
+        r for r in reports
+        if r.get("stale")
+        and (r.get("ahead") or r.get("untracked") or r.get("error"))
+        and not str(r.get("skipped") or "").startswith("in-flight safety branch")
+    ]
+    if stale and not args.dry_run:
         result = open_or_comment_issue(issue_body(reports, host))
         print("issue:", result or "not opened")
         return 1
