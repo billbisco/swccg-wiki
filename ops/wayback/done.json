@@ -91655,7 +91655,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-24T09:08:42Z",
+   "at": "2026-11-24T13:08:22Z",
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
@@ -91689,42 +91689,62 @@
  },
  "https://swccg.com/snapshots/forum/p1220210.html": {
   "capture": "https://web.archive.org/web/20261124103004/https://swccg.com/snapshots/forum/p1220210.html",
-  "last": "2026-11-24T12:25:33Z",
-  "status": "pending",
+  "last": "2026-11-24T13:02:08Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/snapshots/forum/p1220468.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-24T12:25:35Z",
+  "last": "2026-11-24T13:02:09Z",
   "status": "retry",
-  "tries": 2
+  "tries": 3
  },
  "https://swccg.com/snapshots/forum/p1221078.html": {
   "capture": "https://web.archive.org/web/20261124103207/https://swccg.com/snapshots/forum/p1221078.html",
-  "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-24T12:26:35Z",
-  "status": "retry",
-  "tries": 2
+  "job_id": "spn2-f5d02a9af17d71616d99b39030db1281c60f6d83",
+  "last": "2026-11-24T13:08:19Z",
+  "status": "verified",
+  "tries": 3,
+  "verify": {
+   "at": "2026-11-24T13:08:19Z",
+   "bytes": 1582961,
+   "capture_id": "https://web.archive.org/web/20261124103207id_/https://swccg.com/snapshots/forum/p1221078.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "69adfe8d17d21045a2308049ca4f282fd544df7c039fb14f6e13d7a5fb937fa8"
+  }
  },
  "https://swccg.com/snapshots/forum/p1223729.html": {
   "capture": "https://web.archive.org/web/20261124103309/https://swccg.com/snapshots/forum/p1223729.html",
-  "job_id": "spn2-8e3e7685bfb500a7db701ab7d93cef458967379a",
-  "last": "2026-11-24T12:27:36Z",
+  "last": "2026-11-24T13:02:07Z",
   "status": "pending",
   "tries": 2
  },
  "https://swccg.com/snapshots/forum/p1224616.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-24T12:28:36Z",
+  "last": "2026-11-24T13:04:11Z",
   "status": "retry",
-  "tries": 1
+  "tries": 2
  },
  "https://swccg.com/snapshots/forum/p1231172.html": {
+  "capture": "https://web.archive.org/web/20261124130515/https://swccg.com/snapshots/forum/p1231172.html",
+  "last": "2026-11-24T13:08:21Z",
+  "status": "pending",
+  "tries": 2
+ },
+ "https://swccg.com/snapshots/forum/p1231747.html": {
+  "capture": "",
+  "job_id": "spn2-21740cfa2c209c173ad14a036482a6de544f4647",
+  "last": "2026-11-24T13:06:13Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1231926.html": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
-  "last": "2026-11-24T12:29:36Z",
+  "last": "2026-11-24T13:07:13Z",
   "status": "retry",
   "tries": 1
  },
