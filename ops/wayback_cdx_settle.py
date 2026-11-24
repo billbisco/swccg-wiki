@@ -30,7 +30,13 @@ INBOX = Path(os.environ.get("WAYBACK_STATE_DIR", "/root/.local/state/swccg-wayba
 # URL prefix -> directory on disk holding the same files
 ROOTS = {
     "https://swccg.com/snapshots/": Path("/opt/swccg-res/snapshots"),
+    "https://swccg.com/wiki/images/": Path("/mnt/HC_Volume_107153504/wiki_images"),
 }
+
+
+def batch_checked(url: str) -> bool:
+    """Our own files: checked in bulk from CDX digests, not one replay fetch each."""
+    return any(url.startswith(p) for p in ROOTS)
 OPEN = {"pending", "ok", "unverified", "retry", "failed"}
 GAP_S = 5.0          # between CDX requests
 TRIES = 4            # per CDX request, with growing waits
@@ -181,8 +187,8 @@ def main() -> int:
     done = json.loads((Path(a.repo) / "ops/wayback/done.json").read_text(encoding="utf-8"))
     prefixes = a.prefix
     if not prefixes:  # one request per first-level folder keeps each CDX answer small
-        prefixes = sorted({m.group(0) for u in done
-                           for m in [re.match(r"https://swccg\.com/snapshots/[^/]+/", u)] if m})
+        prefixes = sorted({m.group(0) for u, e in done.items() if e.get("status") in OPEN
+                           for m in [re.match(r"https://swccg\.com/(?:snapshots|wiki/images)/[^/]+/", u)] if m})
     get = None
     if a.cdx_dir:
         def get(url):

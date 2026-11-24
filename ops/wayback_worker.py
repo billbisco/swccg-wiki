@@ -69,6 +69,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gitsync import commit_and_push, reset_to_origin  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
+from wayback_cdx_settle import batch_checked  # noqa: E402
 from preservation_owner import OwnerAdapter, load_allowed_objects  # noqa: E402
 from preservation_suppression import suppressed_source, suppressed_url  # noqa: E402
 from preservation_native import is_native_capture_url, NATIVE_REPRESENTATION, validate_native_mirror
@@ -778,7 +779,16 @@ def mark_verify_deferred(e: dict, reason: str) -> None:
 
 
 def try_verify(url: str, e: dict) -> None:
-    """Verify right after a capture loads; replay misses leave it ok for lane 2."""
+    """Verify right after a capture loads; replay misses leave it ok for lane 2.
+
+    Our own files are left "ok" for the daily bulk CDX check
+    (ops/wayback_cdx_settle.py), which costs one request per folder instead of
+    several replay requests per file (swccg-guild/work#1340)."""
+    if batch_checked(url):
+        info = dict(e.get("verify") or {})
+        info.update(at=iso(now()), defer="cdx-batch")
+        e["verify"] = info
+        return
     try:
         verify_entry(url, e)
     except VerifyRetry as error:
@@ -1236,7 +1246,9 @@ def confirm(url: str, e: dict) -> bool:
             return False
         if s == "success" and st.get("timestamp"):
             e["capture"] = f"https://web.archive.org/web/{st['timestamp']}/{st.get('original_url') or url}"
-            e["status"] = "ok" if capture_ok(e["capture"]) else "pending"
+            # SPN2 reported success with a timestamp; for our own files the bulk
+            # CDX check confirms it later, so skip the extra replay request now.
+            e["status"] = "ok" if batch_checked(url) or capture_ok(e["capture"]) else "pending"
             if e["status"] == "pending":
                 e.pop("job_id", None)  # fall back to plain capture check next run
             else:
@@ -1548,7 +1560,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     def due(e: dict) -> bool:  # transient verify errors wait RETRY_AFTER before the next try
         v = e.get("verify") or {}
         return not (v.get("error") and v.get("at") and now() - parse(v["at"]) < RETRY_AFTER)
-    backlog = sorted((u for u, e in done.items() if (scope is None or u in scope) and e.get("status") == "ok" and e.get("capture") and due(e)),
+    backlog = sorted((u for u, e in done.items() if (scope is None or u in scope) and e.get("status") == "ok" and e.get("capture") and due(e)
+                      and not (batch_checked(u) and (e.get("verify") or {}).get("defer") == "cdx-batch")),
                      key=lambda u: done[u].get("last", ""), reverse=True)
     for url in backlog:
         if time.monotonic() > stop:
