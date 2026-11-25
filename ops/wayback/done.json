@@ -10407,14 +10407,17 @@
  "http://www.decktech.net/starwarsccg/deck/11221": {
   "capture": "https://web.archive.org/web/20261018103930/https://www.decktech.net/starwarsccg/deck/11221/",
   "job_id": "spn2-54d046439158ae352519eeb7c6bdbaf4c1c14da4",
-  "last": "2026-10-18T10:42:48Z",
-  "status": "unverified",
+  "last": "2026-11-25T10:22:40Z",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T06:57:19Z",
+   "at": "2026-11-25T10:16:05Z",
+   "bytes": 14370,
    "capture_id": "https://web.archive.org/web/20261018103930id_/https://www.decktech.net/starwarsccg/deck/11221/",
-   "method": "strict",
-   "reason": "capture HTTP 404"
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "62086c9af9e99023aeffff80ddac89c5cdd1dd959fed18ed4d6b4b938fd54c68"
   }
  },
  "http://www.decktech.net/starwarsccg/deck/11223": {
@@ -10567,14 +10570,17 @@
  },
  "http://www.decktech.net/starwarsccg/deck/11293": {
   "capture": "https://web.archive.org/web/20261018103733/https://www.decktech.net/starwarsccg/deck/11293/",
-  "last": "2026-10-18T10:56:41Z",
-  "status": "unverified",
+  "last": "2026-11-25T10:22:40Z",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T06:48:08Z",
+   "at": "2026-11-25T10:16:10Z",
+   "bytes": 15380,
    "capture_id": "https://web.archive.org/web/20261018103733id_/https://www.decktech.net/starwarsccg/deck/11293/",
-   "method": "strict",
-   "reason": "capture HTTP 404"
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "ccee3f25f2cad6c5f635b810ec143887ca2a40242b0caa1d6408d047789a2bca"
   }
  },
  "http://www.decktech.net/starwarsccg/deck/11297": {
@@ -175195,6 +175201,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/0/0b/Online_Play_Weekend_2019_holo_variants_2.jpg": {
+  "capture": "https://web.archive.org/web/20261125103309/https://swccg.com/wiki/images/0/0b/Online_Play_Weekend_2019_holo_variants_2.jpg",
+  "job_id": "spn2-196054d09e4c54229a30d8cd457e8751016df8d1",
+  "last": "2026-11-25T10:34:24Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:24Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/0/0b/Players_Committee_2022_Player_Survey_21.png": {
   "capture": "https://web.archive.org/web/20261123093657/https://swccg.com/wiki/images/0/0b/Players_Committee_2022_Player_Survey_21.png",
   "job_id": "spn2-07d12d7fbc03745d99e06e333e3f8cae1823e179",
@@ -175381,6 +175398,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "e7f2f87dfaf1215ab84820157d06319f29f08770b0c53c9d2535f8753a0b9acd"
+  }
+ },
+ "https://swccg.com/wiki/images/1/14/2023_Naboo_Regionals_28.jpg": {
+  "capture": "https://web.archive.org/web/20261125102804/https://swccg.com/wiki/images/1/14/2023_Naboo_Regionals_28.jpg",
+  "job_id": "spn2-1cf9ee5c0378f7389c00446e5ccd73db55cbfbfc",
+  "last": "2026-11-25T10:34:16Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:16Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/1/14/2023_San_Diego_Super_Open_final_Swiss_standings.png": {
@@ -177447,6 +177475,17 @@
    "sha256": "d57b45d30ab5c5d734d78d8cdb16313846c1e41b428dee244616df4e4090cdbf"
   }
  },
+ "https://swccg.com/wiki/images/5/54/2023_Naboo_Regionals_14.jpg": {
+  "capture": "https://web.archive.org/web/20261125102500/https://swccg.com/wiki/images/5/54/2023_Naboo_Regionals_14.jpg",
+  "job_id": "spn2-4d255d0ce03c7e7111f3c506e2c6424c87b2f418",
+  "last": "2026-11-25T10:34:12Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:12Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/5/55/2025_Online_Championship_Series_full-season_bids.png": {
   "capture": "https://web.archive.org/web/20261123165001/https://swccg.com/wiki/images/5/55/2025_Online_Championship_Series_full-season_bids.png",
   "job_id": "spn2-ab76b891c6d9fdda0e708622678be35cfe56337d",
@@ -177490,6 +177529,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "e7e0260d6aa01200446e263c60c9ceab79c4fbe70b5c9cd818d3c4d470c6c067"
+  }
+ },
+ "https://swccg.com/wiki/images/5/56/2014_European_Championship_Day_3_Reset_decklists.pdf": {
+  "capture": "https://web.archive.org/web/20261125102331/https://swccg.com/wiki/images/5/56/2014_European_Championship_Day_3_Reset_decklists.pdf",
+  "job_id": "spn2-691d2f0805bcb1ce2cb8e055456c5e173e99a44e",
+  "last": "2026-11-25T10:34:09Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:09Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/5/56/2014_Naboo_Regionals_decklists.pdf": {
@@ -177599,6 +177649,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/5/59/2026_Online_Championship_Series_season_pass_holders.png": {
+  "capture": "https://web.archive.org/web/20261125102359/https://swccg.com/wiki/images/5/59/2026_Online_Championship_Series_season_pass_holders.png",
+  "job_id": "spn2-cffdfb5a30836ad924a27d6d59c55ae290cd9e26",
+  "last": "2026-11-25T10:34:10Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:10Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/5/59/Dagobah-Revised-D-reslukraauf-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261122081258/https://swccg.com/wiki/images/5/59/Dagobah-Revised-D-reslukraauf-physical-photo.png",
   "job_id": "spn2-de7d4ee4196ddd34861003db442af599c6aaccec",
@@ -177705,6 +177766,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "644e6acfb5848b1842da21399afa32c7716355cf69c982ac6212cfed295c9db4"
+  }
+ },
+ "https://swccg.com/wiki/images/5/5d/2019_Online_Championship_Series_June_results.pdf": {
+  "capture": "https://web.archive.org/web/20261125103207/https://swccg.com/wiki/images/5/5d/2019_Online_Championship_Series_June_results.pdf",
+  "job_id": "spn2-67099ce3b08bb58195c3fbb8e19e56b1b98c4b2c",
+  "last": "2026-11-25T10:34:22Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:22Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/5/5d/2023_Naboo_Regionals_game_1_pairings.png": {
@@ -178653,6 +178725,17 @@
    "sha256": "0cc5cc58ceaf67e56f6d60c7e644a377a6eba0fd512fb463b18f78898dce3e17"
   }
  },
+ "https://swccg.com/wiki/images/7/7f/2017_Match_Play_Championship_art_print_Sarlacc.jpg": {
+  "capture": "https://web.archive.org/web/20261125102904/https://swccg.com/wiki/images/7/7f/2017_Match_Play_Championship_art_print_Sarlacc.jpg",
+  "job_id": "spn2-aa1c98a090ca00bfde28db178884e70521a888aa",
+  "last": "2026-11-25T10:34:18Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:18Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/8/80/2024_TPM_25_Darth_Jar_Jar_poster.jpg": {
   "capture": "https://web.archive.org/web/20261125050551/https://swccg.com/wiki/images/8/80/2024_TPM_25_Darth_Jar_Jar_poster.jpg",
   "job_id": "spn2-efee49b50f9c5b1f8d9f538d33bbecffd20979f2",
@@ -179572,6 +179655,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/9/9e/2024_World_Championship_Sunday_event_standings_after_game_2.png": {
+  "capture": "https://web.archive.org/web/20261125102601/https://swccg.com/wiki/images/9/9e/2024_World_Championship_Sunday_event_standings_after_game_2.png",
+  "job_id": "spn2-3b0ecb1ead9ec95b2e35e0e4fd4dae6c827545d5",
+  "last": "2026-11-25T10:34:13Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:13Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/9/9e/Dagobah-Revised-L-lukesbackpack-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120224024/https://swccg.com/wiki/images/9/9e/Dagobah-Revised-L-lukesbackpack-physical-photo.png",
   "job_id": "spn2-681cf54503f06794e9ce808b851429583535cf45",
@@ -179979,6 +180073,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "da7627915e3d849ff0e4e0cacbfb51925d9348e1a8d1afbcbde7543d7d898a01"
+  }
+ },
+ "https://swccg.com/wiki/images/a/aa/2017_Match_Play_Championship_art_print_Space_Slug_in_Asteroid_Cave.jpg": {
+  "capture": "https://web.archive.org/web/20261125103106/https://swccg.com/wiki/images/a/aa/2017_Match_Play_Championship_art_print_Space_Slug_in_Asteroid_Cave.jpg",
+  "job_id": "spn2-3a213b73e13ad13e8caf5c6cb05bf7d87828449a",
+  "last": "2026-11-25T10:34:21Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:21Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/a/aa/2024_Ohio_State_Championship_final_standings.png": {
@@ -181291,6 +181396,17 @@
    "sha256": "67142adb29d0725b763cd6263fe1c2cf028b3bc967fcd634de1fb8535516d48f"
   }
  },
+ "https://swccg.com/wiki/images/d/d2/2018_Match_Play_Championship_art_print_RA-7.jpg": {
+  "capture": "https://web.archive.org/web/20261125102703/https://swccg.com/wiki/images/d/d2/2018_Match_Play_Championship_art_print_RA-7.jpg",
+  "job_id": "spn2-3072dd0a4e5484f38dddab7f700196c324b50fad",
+  "last": "2026-11-25T10:34:15Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:15Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/d/d3/2025_World_Championship_blue_shirt_table_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125055042/https://swccg.com/wiki/images/d/d3/2025_World_Championship_blue_shirt_table_4_October_evening.jpg",
   "job_id": "spn2-34280433fb7d31afbd2374ececeb0d3036b13961",
@@ -182105,6 +182221,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T09:19:53Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/e/eb/2018_World_Championship_decklist_Entanglements_inspired.pdf": {
+  "capture": "https://web.archive.org/web/20261125103102/https://swccg.com/wiki/images/e/eb/2018_World_Championship_decklist_Entanglements_inspired.pdf",
+  "job_id": "spn2-7792126d84cb989ee2f25489544eac906166543e",
+  "last": "2026-11-25T10:34:19Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T10:34:19Z",
    "defer": "cdx-batch"
   }
  },
@@ -187398,9 +187525,17 @@
  "https://www.stephenskilton.com/decktech_archives/14808/": {
   "capture": "https://web.archive.org/web/20261023054614/https://www.stephenskilton.com/decktech_archives/14808/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-13T23:34:50Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T10:22:56Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T10:22:56Z",
+   "bytes": 12706,
+   "capture_id": "https://web.archive.org/web/20261023054614id_/https://www.stephenskilton.com/decktech_archives/14808/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "b163114562368f4f137de55144cbb8ec9ae1416687695fadc911db92b730ba9c"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/14811/": {
   "capture": "",
@@ -189059,9 +189194,18 @@
  "https://www.stephenskilton.com/decktech_archives/15298/": {
   "capture": "https://web.archive.org/web/20261023070029/https://www.stephenskilton.com/decktech_archives/15298/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-13T23:43:43Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T10:22:40Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T10:16:01Z",
+   "bytes": 13257,
+   "capture_id": "https://web.archive.org/web/20261023070029id_/https://www.stephenskilton.com/decktech_archives/15298/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "cc1f3d79aa8873d94851c908bfe4ac96339c5ea99aedaf9fc9572c5ea4d47f11"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15300/": {
   "capture": "https://web.archive.org/web/20261023072238/https://www.stephenskilton.com/decktech_archives/15300/",
