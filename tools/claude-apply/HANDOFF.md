@@ -9,8 +9,9 @@ Written by Claude on 25 Nov 2026 so another agent (Grok Build or anyone) can con
 | Ticket | What | State |
 |---|---|---|
 | #1350 | Small card-data fixes + 11 Dantooine decklist relinks | Done 25 Nov (closed) |
-| #1356 | #1350 follow-ups: fold 127 same-words slips, transcription-error wording, dated decklist relinks | Open: agents r1356a–d drafting |
-| #1351 | 274 version chains the errata generator refused | Open: about 1,100 saves done. The 25 Nov rerun (`errgen/rr2.sh`) cleared all but 41 families: 13 have redirect chain pages (agent r1351r1) and 28 have unsourced order (agent r1351u) |
+| #1356 | Fold 240 same-words slips, transcription-error wording, dated decklist relinks | Done 25 Nov (closed) |
+| #1361 | Leftovers: pixel-identical versions, Chewie's Hut move, Xizor dates, ~31 rows, (location) links, broken anchors, 20 blocked redirects, Colo Claw Fish/Hindsight for Bill | Open: agents r1361a, r1361b drafting |
+| #1351 | 274 version chains the errata generator refused | Done 25 Nov (closed): a rerun refuses nothing; 13 families keep a correct hand table |
 | #677 | Virtual Block 3 errata (ChatGPT) | Open, not ours |
 | #715, #716 | Planned/independent sets pilot; final errata reconcile | Open |
 | #1349 | Wiki 2 MB upload limit (server setting) | Bill |
@@ -46,6 +47,17 @@ Draft group format: `apply.tsv` (Title<TAB>drafts/<dir>/<file>), `base_revids.js
 - **Deletions:** the bot has no `delete` right. Run the MediaWiki maintenance script on the VPS from the PC VM. Copy `~/.grok/claude-agent/ssh/id_ed25519` to `/tmp/gk` (chmod 600), then:
   `scp -i /tmp/gk list.txt root@2.28.125.5:/tmp/x.txt && ssh -i /tmp/gk root@2.28.125.5 'docker cp /tmp/x.txt swccg_wiki:/tmp/x.txt && docker exec swccg_wiki php maintenance/run.php deleteBatch -u "Holocron Claude" -r "<reason, ticket>" /tmp/x.txt'`
   Only delete a page with zero remaining links (check its real wikitext, not just `list=backlinks`, which lags), and back up the deleted title's last content first.
+
+## Applying from the cloud container (25 Nov)
+
+PC VM calls are killed after about 3 minutes and background processes don't survive there, so big batches (the 12,615-page repoint) ran from the cloud container. The container reaches swccg.com directly.
+- Stage `~/.grok/claude-agent/wiki-bot-password.env` into the container's `/tmp` (never commit it), and set `WIKI_ENV_FILE` to it.
+- Copy `swccg_signin.py`, `wiki_api_apply.py` and `apply_guarded.py` next to the batch dirs, then run up to about 12 `apply_guarded.py` shards in parallel with nohup. That gives about 3 saves per second.
+- `rebase.py OUT GROUPS...` three-way merges every editconflict row onto the live text. Overlapping same-line edits stay unmerged. For link repoints, `redraft.py` re-runs the rredirx `edit()` on the live text, and it skips titles that are no longer redirects.
+- GitHub backups still go through the PC (`backup_api.py`; the PAT stays on the PC).
+- Deletions run on the VPS: `nohup docker exec swccg_wiki php maintenance/run.php deleteBatch …` survives the ssh session.
+
+**Redirect removal is done (25 Nov):** 5,921 deleted, record in `ops/redirects-deleted-2026-11-25.tsv`. Before deleting a title, check `prop=linkshere|transcludedin` in content namespaces.
 
 ## Rules learned the hard way
 
