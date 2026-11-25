@@ -71,6 +71,7 @@ from gitsync import commit_and_push, reset_to_origin  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from wayback_cdx_settle import batch_checked  # noqa: E402
 from preservation_owner import OwnerAdapter, load_allowed_objects  # noqa: E402
+import preservation_policy  # noqa: E402
 from preservation_suppression import suppressed_source, suppressed_url  # noqa: E402
 from preservation_native import is_native_capture_url, NATIVE_REPRESENTATION, validate_native_mirror
 from preservation_registry import iter_records, object_state
@@ -1433,6 +1434,25 @@ def native_capture_scope(control: Control, object_ids) -> set[str] | None:
     return urls
 
 
+def ticket_policy_window(control: Control, explicit: set[str], deadline: float) -> set[str]:
+    """Bill 2026-11-25 (#1359 Q1): ready registrations with a ticket are auto-approved.
+
+    The policy never changes the two-jobs-per-run promotion limit. Errors fall back
+    to the explicit operator approvals only.
+    """
+    try:
+        result = preservation_policy.apply(control.directory / "registry", explicit,
+                                           seconds_left=deadline - time.monotonic())
+    except Exception as error:
+        print(f"policy-approval error: {type(error).__name__}", flush=True)
+        return set()
+    tickets = ",".join(f"#{t}:{n}" for t, n in sorted(result["new_by_ticket"].items())) or "-"
+    print(f"policy-approval: scanned={result['scanned']} new={result['new']} tickets={tickets} "
+          f"approved_total={result['approved_total']} no_ticket={result['no_ticket']} "
+          f"window={len(result['window'])} cap={result['cap']}", flush=True)
+    return set(result["window"])
+
+
 def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None) -> None:
     scope = native_capture_scope(control, native_object_ids)
     gap = max(GAP_S, 60) if scope is not None else GAP_S
@@ -1459,6 +1479,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     control.registry_prepare_failed = False
     try:
         allowed = load_allowed_objects(control.directory / "registry") if scope is None else set(native_object_ids)
+        if scope is None:
+            allowed = allowed | ticket_policy_window(control, allowed, deadline)
         adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed,
                                limit=2 if scope is None else len(allowed))
         control.registry_adapter = adapter
