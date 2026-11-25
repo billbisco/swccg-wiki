@@ -50042,27 +50042,33 @@
  "http://www.decktech.net/starwarsccg/deck/4055": {
   "capture": "https://web.archive.org/web/20261018195247/https://www.decktech.net/starwarsccg/deck/4055/",
   "job_id": "spn2-2e0dc1a132b38f385c1ebd82de900885ee65c6cb",
-  "last": "2026-10-18T19:57:51Z",
-  "status": "unverified",
+  "last": "2026-11-25T02:16:23Z",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T00:57:16Z",
+   "at": "2026-11-25T02:16:00Z",
+   "bytes": 13545,
    "capture_id": "https://web.archive.org/web/20261018195247id_/https://www.decktech.net/starwarsccg/deck/4055/",
-   "method": "strict",
-   "reason": "capture HTTP 404"
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "f69bbfca163298b41591a5c2f230fc58f7340688ff56028bc2f651d90d266cf2"
   }
  },
  "http://www.decktech.net/starwarsccg/deck/4056": {
   "capture": "https://web.archive.org/web/20261018195228/https://www.decktech.net/starwarsccg/deck/4056/",
   "job_id": "spn2-eda45fdc56044ed9a67173a3290c4643047b964d",
-  "last": "2026-10-18T19:57:48Z",
-  "status": "unverified",
+  "last": "2026-11-25T02:16:23Z",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T00:57:21Z",
+   "at": "2026-11-25T02:16:05Z",
+   "bytes": 13704,
    "capture_id": "https://web.archive.org/web/20261018195228id_/https://www.decktech.net/starwarsccg/deck/4056/",
-   "method": "strict",
-   "reason": "capture HTTP 404"
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "bb4ed833bd8b3d4d48b5408d5b820269cb9c725922de515c4bb21b8b3636241a"
   }
  },
  "http://www.decktech.net/starwarsccg/deck/4075": {
@@ -74901,12 +74907,15 @@
   "capture": "https://web.archive.org/web/20261113170736/https://res.starwarsccg.org/virtual/Errata-072023.pdf",
   "last": "2026-11-24T21:24:48Z",
   "note": "already archived within 30d",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-24T21:24:49Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-25T02:27:07Z",
+   "bytes": 458213,
+   "capture_id": "https://web.archive.org/web/20261113170736id_/https://res.starwarsccg.org/virtual/Errata-072023.pdf",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2622ff689b8fd376e7ab136c3e5ec89fbe0f230fdda5b61783563dd0db94a8b8"
   }
  },
  "https://res.starwarsccg.org/virtual/Errata-082022.pdf": {
@@ -92401,12 +92410,15 @@
   "capture": "https://web.archive.org/web/20261124191535/https://swccg.com/snapshots/forum/p1286327.html",
   "job_id": "spn2-969eb5305936466a3f13f505219627fc94a1e141",
   "last": "2026-11-24T19:52:44Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-24T21:29:59Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-25T02:27:23Z",
+   "bytes": 1623695,
+   "capture_id": "https://web.archive.org/web/20261124191535id_/https://swccg.com/snapshots/forum/p1286327.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "b3e5f4977917d4aa29eca16dfbf7daa8ea1e83d8ed47a786f5324ea6f3a5e249"
   }
  },
  "https://swccg.com/snapshots/forum/p1286423.html": {
@@ -92593,12 +92605,15 @@
   "capture": "https://web.archive.org/web/20261124205044/https://swccg.com/snapshots/forum/p1309790.html",
   "job_id": "spn2-f08a190754925db143a06281e6241ba445074ad0",
   "last": "2026-11-24T21:07:54Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-24T21:52:39Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-25T02:27:15Z",
+   "bytes": 2027255,
+   "capture_id": "https://web.archive.org/web/20261124205044id_/https://swccg.com/snapshots/forum/p1309790.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "a643850d27a3dee3a7b2a8884e7b69888673152d3f4d824012c66247b8aeda3c"
   }
  },
  "https://swccg.com/snapshots/forum/p1309800.html": {
@@ -93951,6 +93966,92 @@
    "at": "2026-11-25T02:14:36Z",
    "defer": "cdx-batch"
   }
+ },
+ "https://swccg.com/snapshots/forum/p1409137.html": {
+  "capture": "https://web.archive.org/web/20261125021649/https://swccg.com/snapshots/forum/p1409137.html",
+  "job_id": "spn2-46807ede3a597b453551a3df2b818ab8b50bd2fc",
+  "last": "2026-11-25T02:26:57Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T02:26:57Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1409420.html": {
+  "capture": "https://web.archive.org/web/20261125021845/https://swccg.com/snapshots/forum/p1409420.html",
+  "job_id": "spn2-8006d0a94dce5ccf923ff281d1c00222e69770cf",
+  "last": "2026-11-25T02:26:59Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T02:26:59Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1409421.html": {
+  "capture": "https://web.archive.org/web/20261125021854/https://swccg.com/snapshots/forum/p1409421.html",
+  "job_id": "spn2-ba2a0b91a9b275c1780a860c0df7646c07a28150",
+  "last": "2026-11-25T02:27:00Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T02:27:00Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1410834.html": {
+  "capture": "https://web.archive.org/web/20261125021954/https://swccg.com/snapshots/forum/p1410834.html",
+  "job_id": "spn2-98af5d6445d2014b10458b4a11ec8bf2f758e1a4",
+  "last": "2026-11-25T02:27:02Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T02:27:02Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1412073.html": {
+  "capture": "",
+  "job_id": "spn2-0e14b912ad4235af521b35a0efc6976325ab393f",
+  "last": "2026-11-25T02:20:51Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1412266.html": {
+  "capture": "",
+  "job_id": "spn2-184564e0d931c40cec486ba0fcb816f55b190a7b",
+  "last": "2026-11-25T02:21:52Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1412430.html": {
+  "capture": "",
+  "job_id": "spn2-0b77893821d78eb36f79848f9fc3a50d7d7a033a",
+  "last": "2026-11-25T02:22:53Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1412663.html": {
+  "capture": "",
+  "job_id": "spn2-fa8847028025ed01f7c5e80c24c1c96d9b8c4e00",
+  "last": "2026-11-25T02:23:54Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1412689.html": {
+  "capture": "",
+  "job_id": "spn2-e7624f7d41dcccc6b3e43c122562e59151c4c691",
+  "last": "2026-11-25T02:24:56Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1413881.html": {
+  "capture": "",
+  "job_id": "spn2-8395f6446b0fe7dd823487f4a5c6fab5f0fba3f7",
+  "last": "2026-11-25T02:25:56Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/p1417683.html": {
   "capture": "https://web.archive.org/web/20261027023727/https://swccg.com/snapshots/forum/p1417683.html",
@@ -185411,9 +185512,18 @@
  "https://www.stephenskilton.com/decktech_archives/15582/": {
   "capture": "https://web.archive.org/web/20261023135258/https://www.stephenskilton.com/decktech_archives/15582/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T02:46:32Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T02:16:23Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T02:15:54Z",
+   "bytes": 20018,
+   "capture_id": "https://web.archive.org/web/20261023135258id_/https://www.stephenskilton.com/decktech_archives/15582/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "3a933e095c99bf15f58f41f2247ab8e7f671a1b58f68637cb91baf0a4ded8f6b"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15584/": {
   "capture": "https://web.archive.org/web/20261027121611/https://www.stephenskilton.com/decktech_archives/15584/",
