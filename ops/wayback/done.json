@@ -94504,12 +94504,17 @@
  "https://swccg.com/snapshots/forum/p1417428.html": {
   "capture": "https://web.archive.org/web/20261125024545/https://swccg.com/snapshots/forum/p1417428.html",
   "job_id": "spn2-c1ace262f666540444abe93e60680894a29f58b9",
-  "last": "2026-11-25T02:52:59Z",
-  "status": "ok",
+  "last": "2026-11-25T22:19:13Z",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T02:52:59Z",
-   "defer": "cdx-batch"
+   "at": "2026-11-25T22:16:09Z",
+   "bytes": 1851193,
+   "capture_id": "https://web.archive.org/web/20261125024545id_/https://swccg.com/snapshots/forum/p1417428.html",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "7cb0f0d7888ebb51693d4d3dd380c93093d5d029d11aa09c9b50ab5163c38112"
   }
  },
  "https://swccg.com/snapshots/forum/p1417545.html": {
@@ -175128,11 +175133,19 @@
   }
  },
  "https://swccg.com/wiki/Chris_Wirfs": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125221416/https://swccg.com/wiki/Chris_Wirfs",
   "job_id": "spn2-36e236904d27af65f1029c2cb921e2fbade055d9",
-  "last": "2026-11-25T22:14:13Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T22:19:48Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:19:48Z",
+   "bytes": 168700,
+   "capture_id": "https://web.archive.org/web/20261125221416id_/https://swccg.com/wiki/Chris_Wirfs",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "be9add9f4ff41a071447f2b6c12471d01e45ebddfd7d9f542e5e7b33e02e1a0f"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125180413/https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg",
@@ -175194,6 +175207,13 @@
    "sha256": "d02b8bc9132e5c89a7e91b9e380ff9580c25c9aec829929b7cd443b601916e7c"
   }
  },
+ "https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_handshake_flat_cap_4_October_evening.jpg": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-25T22:19:54Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_table_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125154351/https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_table_4_October.jpg",
   "job_id": "spn2-d7fd9c70bb3c07653804d153dda3e81f44fc0a8d",
@@ -175210,11 +175230,19 @@
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_table_4_October_evening.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125221616/https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_table_4_October_evening.jpg",
   "job_id": "spn2-4b93a87e41edf6e99881fd2f3d0bb858bd88538c",
-  "last": "2026-11-25T22:16:15Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T22:19:37Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:19:37Z",
+   "bytes": 26999,
+   "capture_id": "https://web.archive.org/web/20261125221616id_/https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_table_4_October_evening.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "516fb0b9ec117205c8468df84be86111c357200dc13f2b71c40b1c1e0b38ffcb"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Daniel_Amor_evening_game_3_October.jpg": {
   "capture": "https://web.archive.org/web/20261125122118/https://swccg.com/wiki/File:2025_World_Championship_Daniel_Amor_evening_game_3_October.jpg",
@@ -175535,6 +175563,25 @@
    "sha256": "74c5bd40f2bf1b6035100b5a7ca0cc7f9c9208ad3855d3899fc122c4edac67d7"
   }
  },
+ "https://swccg.com/wiki/File:2025_World_Championship_Summer_shirt_player_4_October_evening.jpg": {
+  "capture": "",
+  "job_id": "spn2-1db590a3b026bce72d1e35b8d2918fdeb0dadc55",
+  "last": "2026-11-25T22:26:00Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_Summer_shirt_table_4_October_evening.jpg": {
+  "capture": "https://web.archive.org/web/20261125222502/https://swccg.com/wiki/File:2025_World_Championship_Summer_shirt_table_4_October_evening.jpg",
+  "job_id": "spn2-60d1b626f5a1c1255b470d8f3eba1be85beefe96",
+  "last": "2026-11-25T22:30:27Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:30:27Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+ },
  "https://swccg.com/wiki/File:2025_World_Championship_Taylor_Gosiaco_table_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125214926/https://swccg.com/wiki/File:2025_World_Championship_Taylor_Gosiaco_table_4_October_evening.jpg",
   "job_id": "spn2-31f415ce6081d7ca7f497ea9f532fe55a31ad9c9",
@@ -175546,6 +175593,28 @@
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_between_rounds_4_October_evening.jpg": {
+  "capture": "https://web.archive.org/web/20261125222446/https://swccg.com/wiki/File:2025_World_Championship_between_rounds_4_October_evening.jpg",
+  "job_id": "spn2-0c4d4742e303c11589ee694d1ce145e8c701aedb",
+  "last": "2026-11-25T22:30:23Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:30:23Z",
+   "bytes": 29423,
+   "capture_id": "https://web.archive.org/web/20261125222446id_/https://swccg.com/wiki/File:2025_World_Championship_between_rounds_4_October_evening.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "24a027d623669238b9ad95a837eb5a4cb941ae5653413188f2e10f39cd58cde9"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_black_hoodie_player_4_October_evening.jpg": {
+  "capture": "",
+  "job_id": "spn2-fc128ac4d2d983fe1009cf3ce693f3346cbf3ad5",
+  "last": "2026-11-25T22:27:01Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/File:2025_World_Championship_black_hoodie_table_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125215932/https://swccg.com/wiki/File:2025_World_Championship_black_hoodie_table_4_October_evening.jpg",
@@ -175560,6 +175629,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "337fa903ad33e622b7953d2e70c4420c09ac4e3b658dd59ccf08167bb70fd372"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_crowd_4_October_evening.jpg": {
+  "capture": "https://web.archive.org/web/20261125222257/https://swccg.com/wiki/File:2025_World_Championship_crowd_4_October_evening.jpg",
+  "job_id": "spn2-49ead588107b2fca943f4e7dac26a1606721517b",
+  "last": "2026-11-25T22:30:17Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:30:17Z",
+   "bytes": 27457,
+   "capture_id": "https://web.archive.org/web/20261125222257id_/https://swccg.com/wiki/File:2025_World_Championship_crowd_4_October_evening.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "048c49bd7f67a6c33bbf52d128dedbfe9f479594d6fa147a0f0d69895c645498"
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_denim_jacket_player_4_October_evening.jpg": {
@@ -175781,7 +175865,22 @@
  },
  "https://swccg.com/wiki/File:2025_World_Championship_green_hoodie_table_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125220137/https://swccg.com/wiki/File:2025_World_Championship_green_hoodie_table_4_October_evening.jpg",
-  "last": "2026-11-25T22:05:04Z",
+  "last": "2026-11-25T22:19:50Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:19:52Z",
+   "bytes": 27158,
+   "capture_id": "https://web.archive.org/web/20261125220137id_/https://swccg.com/wiki/File:2025_World_Championship_green_hoodie_table_4_October_evening.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "98322c9fa11c9703db6ba656954dfd68f5697cdb2575d897fbed1b80e68d93ec"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_grey-haired_player_4_October_evening.jpg": {
+  "capture": "",
+  "job_id": "spn2-a6d1e6a08f052a4d3edda419cdf9a28d48a34eee",
+  "last": "2026-11-25T22:28:02Z",
   "status": "pending",
   "tries": 1
  },
@@ -175915,11 +176014,34 @@
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_hall_corner_4_October_evening.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125221516/https://swccg.com/wiki/File:2025_World_Championship_hall_corner_4_October_evening.jpg",
   "job_id": "spn2-5980d4ce0fdfe5d071d6fa3274c81ac3b4138eba",
-  "last": "2026-11-25T22:15:14Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T22:19:43Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:19:43Z",
+   "bytes": 27096,
+   "capture_id": "https://web.archive.org/web/20261125221516id_/https://swccg.com/wiki/File:2025_World_Championship_hall_corner_4_October_evening.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "474271add3fa9da66ca2e6cbdba7912dd63de9de725e820e4f2be43a9780d756"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_hall_selfie_4_October_evening.jpg": {
+  "capture": "https://web.archive.org/web/20261125222157/https://swccg.com/wiki/File:2025_World_Championship_hall_selfie_4_October_evening.jpg",
+  "job_id": "spn2-0d322753f48473520a762668f8f6f9e2f96d4ea6",
+  "last": "2026-11-25T22:30:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:30:12Z",
+   "bytes": 27608,
+   "capture_id": "https://web.archive.org/web/20261125222157id_/https://swccg.com/wiki/File:2025_World_Championship_hall_selfie_4_October_evening.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "56c81d2187ffdb0d5dc9c81f55e33d01b5cf9860574310ec95e2b9d60e1d84d8"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_hall_view_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125220808/https://swccg.com/wiki/File:2025_World_Championship_hall_view_4_October_evening.jpg",
@@ -175950,6 +176072,28 @@
    "method": "sha256",
    "sha256": "317f83b56a7b6b849e57eb1836bd3d5951de7037492637d0e79f2817f9ab603d"
   }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_late_table_4_October_evening.jpg": {
+  "capture": "https://web.archive.org/web/20261125222056/https://swccg.com/wiki/File:2025_World_Championship_late_table_4_October_evening.jpg",
+  "job_id": "spn2-613678b0ef182554b82ac6bdd90ac98d1e715b1c",
+  "last": "2026-11-25T22:30:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T22:30:07Z",
+   "bytes": 25972,
+   "capture_id": "https://web.archive.org/web/20261125222056id_/https://swccg.com/wiki/File:2025_World_Championship_late_table_4_October_evening.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6925699b8df324e25b8c70773d1b87f9ebec048ea25e14e1fefed02b43e7d04a"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_maroon_shirt_player_4_October_evening.jpg": {
+  "capture": "",
+  "job_id": "spn2-949d9d5a170c67c9cafb25d1b7685c41e432a3c0",
+  "last": "2026-11-25T22:29:03Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/File:2025_World_Championship_player_1972_cap_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125194131/https://swccg.com/wiki/File:2025_World_Championship_player_1972_cap_4_October.jpg",
@@ -196321,9 +196465,17 @@
  "https://www.stephenskilton.com/decktech_archives/15620/": {
   "capture": "https://web.archive.org/web/20261023085652/https://www.stephenskilton.com/decktech_archives/15620/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T02:57:51Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T22:19:32Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T22:19:32Z",
+   "bytes": 11612,
+   "capture_id": "https://web.archive.org/web/20261023085652id_/https://www.stephenskilton.com/decktech_archives/15620/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9e89f4862ab01d72b11b4559c5e2ea93fff69a8ea5a9cc7f3f78efc2ba410d19"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15621/": {
   "capture": "https://web.archive.org/web/20261023085745/https://www.stephenskilton.com/decktech_archives/15621/",
@@ -196657,9 +196809,18 @@
  "https://www.stephenskilton.com/decktech_archives/15680/": {
   "capture": "https://web.archive.org/web/20261023092536/https://www.stephenskilton.com/decktech_archives/15680/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T04:11:40Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T22:19:13Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T22:15:58Z",
+   "bytes": 11032,
+   "capture_id": "https://web.archive.org/web/20261023092536id_/https://www.stephenskilton.com/decktech_archives/15680/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "8556d0ddfa7c2853ee12a406d72cc4e77e01fe83ab0ee081b2be361f3dd18097"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15681/": {
   "capture": "https://web.archive.org/web/20261023093527/https://www.stephenskilton.com/decktech_archives/15681/",
