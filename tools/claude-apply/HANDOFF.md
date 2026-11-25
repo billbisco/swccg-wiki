@@ -2,22 +2,20 @@
 
 Written by Claude on 25 Nov 2026 so another agent (Grok Build or anyone) can continue without asking. Bill's three launch-critical wiki tracks are on his dashboard (link on [#1325](https://github.com/swccg-guild/work/issues/1325)). Track 2: every card family has a correct shared Versions navigator. Track 3: an Errata comparison table wherever it makes sense.
 
-## State (25 Nov 2026, 12:00 UTC)
+## State (25 Nov 2026, 12:50 UTC)
+
+**Track 2 is done:** the census (3,786 families) shows 0 open gaps ([evidence/1325 at b9dfa77](https://github.com/swccg-guild/work/tree/b9dfa77c6e9eab1189e946779ef2d0ac3c4d9c10/evidence/1325)). #1325, #1341–#1348, #576, #596 and #1353 are closed. Decided splits and rulings live in `rulings.tsv`, which census.py reads; add a row there for every new evidence-based ruling, so decided cases stay out of gaps.tsv.
 
 | Ticket | What | State |
 |---|---|---|
-| #1342–#1348 | Navigators for Virtual Modern, Reflections Gold and Virtual Legacy origin families, refused families, and Decipher ancillary products | Done, closed |
-| #576 | Decipher-only Premiere families (125), incl. Two-Player game cards like Luke | In progress: drafts by 4 agents → `r576p1..p4` |
-| #596 | Original Virtual Sets 2–17 families (96) | In progress: drafts by 3 agents → `r596p1..p3` |
-| #1353 | 34 residual gaps in closed set rollouts | In progress: drafts → `rres` |
-| #527 | Premiere Virtual Set 1 families (Grok Build) | Open |
-| #638 child set tickets #675–#714 | Errata tables for Virtual Sets 0–27, D, P, Blocks 1/2/4–9, Shields | Done: 483 tables (closed) |
-| #1351 | 274 version chains the errata generator refused | Open: needs page-data fixes, then rerun errgen per family |
-| #1350 | 5 small card-data fixes | Open |
+| #1350 | Small card-data fixes + 11 Dantooine decklist relinks | Open |
+| #1351 | 274 version chains the errata generator refused | Open: fix page data, then `errgen.py --family` |
 | #677 | Virtual Block 3 errata (ChatGPT) | Open, not ours |
-| #715, #716 | Planned/independent sets pilot; final reconcile | Open |
+| #715, #716 | Planned/independent sets pilot; final errata reconcile | Open |
+| #1349 | Wiki 2 MB upload limit (server setting) | Bill |
+| #527 | Premiere Virtual Set 1 navigators/edition names (Grok Build) | Census shows no navigator gaps; edition-name part not checked |
 
-Check the board for anything newer than this table.
+To keep track 2 at 0: re-run `census.py --refresh` after new card pages appear, and draft any gap with navgen plus the pipeline below.
 
 ## Tools (this folder; generators in ../errgen and ../navgen)
 
