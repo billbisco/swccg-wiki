@@ -20342,14 +20342,17 @@
  "http://www.decktech.net/starwarsccg/deck/13692": {
   "capture": "https://web.archive.org/web/20261018051227/https://www.decktech.net/starwarsccg/deck/13692/",
   "job_id": "spn2-09a62b3aeded3d8dc7ef417669911bf0a2c955c3",
-  "last": "2026-10-18T05:18:39Z",
-  "status": "unverified",
+  "last": "2026-11-25T07:27:06Z",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T10:21:44Z",
+   "at": "2026-11-25T07:16:02Z",
+   "bytes": 13067,
    "capture_id": "https://web.archive.org/web/20261018051227id_/https://www.decktech.net/starwarsccg/deck/13692/",
-   "method": "strict",
-   "reason": "redirects to another capture 20260511082933 (no capture at 20261018051227)"
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "c298e2e5e0275e1a551936537ceefd60be2db28fdbca172155e2d2f42c9274ee"
   }
  },
  "http://www.decktech.net/starwarsccg/deck/13693": {
@@ -20594,14 +20597,17 @@
  "http://www.decktech.net/starwarsccg/deck/13745": {
   "capture": "https://web.archive.org/web/20261018050054/https://www.decktech.net/starwarsccg/deck/13745/",
   "job_id": "spn2-a208c28e17c8e083f061988b434c7b9866254a38",
-  "last": "2026-10-18T06:12:34Z",
-  "status": "unverified",
+  "last": "2026-11-25T07:27:06Z",
+  "status": "verified",
   "tries": 2,
   "verify": {
-   "at": "2026-10-30T09:46:47Z",
+   "at": "2026-11-25T07:16:09Z",
+   "bytes": 16348,
    "capture_id": "https://web.archive.org/web/20261018050054id_/https://www.decktech.net/starwarsccg/deck/13745/",
-   "method": "strict",
-   "reason": "redirects to another capture 20261018060410 (no capture at 20261018050054)"
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "78f9a4826bbedc3ad8054f18939b6c7e3ada31ef6268715326b8e7eb52611645"
   }
  },
  "http://www.decktech.net/starwarsccg/deck/13752": {
@@ -90833,6 +90839,17 @@
    "sha256": "877cfe81bbe8dbff933d22bbc0a9b39dd45a2bf0930d874ab502238f0c7365ab"
   }
  },
+ "https://swccg.com/snapshots/forum/f1563.html": {
+  "capture": "https://web.archive.org/web/20261123222005/https://swccg.com/snapshots/forum/f1563.html",
+  "last": "2026-11-25T07:30:39Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:30:39Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/snapshots/forum/f1592.html": {
   "capture": "https://web.archive.org/web/20261023223500/https://swccg.com/snapshots/forum/f1592.html",
   "job_id": "spn2-e9dc8fa808ca938831c775467c63fc26ff6be20a",
@@ -97873,6 +97890,17 @@
    "capture_id": "https://web.archive.org/web/20261025070921id_/https://swccg.com/snapshots/forum/t85896.html",
    "method": "sha256",
    "sha256": "e479119474c436499d9f31d2b2bf1f4e55b381260ea35121df754d1d9cbfbd4e"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t86012.html": {
+  "capture": "https://web.archive.org/web/20261125073143/https://swccg.com/snapshots/forum/t86012.html",
+  "job_id": "spn2-ae6718421af20b2f35f3a898cc7efca2c979b21d",
+  "last": "2026-11-25T07:37:50Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:37:50Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/snapshots/forum/t86180.html": {
@@ -175290,6 +175318,17 @@
    "sha256": "0b627ac0e9fb1ee1fed0ec8b5373b62e1cdda56282d07d73675b61b94f9dcff2"
   }
  },
+ "https://swccg.com/wiki/images/1/15/Erich_Hawbaker_and_Jarad_Konsker_2007_Match_Play_Championship.jpg": {
+  "capture": "https://web.archive.org/web/20261125073434/https://swccg.com/wiki/images/1/15/Erich_Hawbaker_and_Jarad_Konsker_2007_Match_Play_Championship.jpg",
+  "job_id": "spn2-306c6976d2edf213ea4a254d83e30fd25277ec93",
+  "last": "2026-11-25T07:37:53Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:37:53Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/1/16/2015_Match_Play_Championship_Day_1_decklists_part_1.pdf": {
   "capture": "https://web.archive.org/web/20261123171251/https://swccg.com/wiki/images/1/16/2015_Match_Play_Championship_Day_1_decklists_part_1.pdf",
   "job_id": "spn2-3244f719e93fe1d1dc5f33d4567a85122346ae74",
@@ -175303,6 +175342,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "e23706b8453389252ab61cb39fa580a9fc59fdac2effc47c24b4bff9abefd784"
+  }
+ },
+ "https://swccg.com/wiki/images/1/16/2025_World_Championship_late_night_group_5_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125072906/https://swccg.com/wiki/images/1/16/2025_World_Championship_late_night_group_5_October.jpg",
+  "job_id": "spn2-f31058f642dd53960b4d2e57560d303dc408cf27",
+  "last": "2026-11-25T07:37:47Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:37:47Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/1/16/2025_World_Championship_maroon_shirt_player_4_October_evening.jpg": {
@@ -175359,6 +175409,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "f2c28cfc68739d9af7b905d82ca471cdfa07c1f6bdc12be9160256c35ff09aba"
+  }
+ },
+ "https://swccg.com/wiki/images/1/19/2018_Match_Play_Championship_art_print_location_cards_poster.jpg": {
+  "capture": "https://web.archive.org/web/20261125073738/https://swccg.com/wiki/images/1/19/2018_Match_Play_Championship_art_print_location_cards_poster.jpg",
+  "job_id": "spn2-edc47dc1b27df857477f1d4dcc6fbd322963e4f2",
+  "last": "2026-11-25T07:37:56Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:37:56Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/1/19/2025_World_Championship_Nathan_Davis_table_4_October_evening.jpg": {
@@ -175743,6 +175804,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "9b857ed29c35837be8f9d7ba7bbc7fe832faadd90507319adda00185319310c9"
+  }
+ },
+ "https://swccg.com/wiki/images/2/2a/2015_Tatooine_Regionals.pdf": {
+  "capture": "https://web.archive.org/web/20261125073242/https://swccg.com/wiki/images/2/2a/2015_Tatooine_Regionals.pdf",
+  "job_id": "spn2-460d36052103c0b19c7dc081f8a95476f3ab4471",
+  "last": "2026-11-25T07:37:52Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:37:52Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/2/2a/2024_Naboo_Regionals_round_5_pairings.png": {
@@ -176266,6 +176338,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "e36dfb400c04bfb69d0832d73223e8754823703b0c5d744748432260d4e7fb08"
+  }
+ },
+ "https://swccg.com/wiki/images/3/3e/2025_World_Championship_late_table_4_October_evening.jpg": {
+  "capture": "https://web.archive.org/web/20261125072735/https://swccg.com/wiki/images/3/3e/2025_World_Championship_late_table_4_October_evening.jpg",
+  "job_id": "spn2-562e03b54ebf9b4b35e77648050fdf2792af37c9",
+  "last": "2026-11-25T07:37:46Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:37:46Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/3/3e/Taylor_Gosiaco_2025_World_Championship_4_October_evening.jpg": {
@@ -177112,6 +177195,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T06:59:25Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/5/5c/2025_World_Championship_late_night_game_5_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125072937/https://swccg.com/wiki/images/5/5c/2025_World_Championship_late_night_game_5_October.jpg",
+  "job_id": "spn2-3e167684b7b5b95ede622a0f51a48b41e126996b",
+  "last": "2026-11-25T07:37:49Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:37:49Z",
    "defer": "cdx-batch"
   }
  },
@@ -178886,6 +178980,13 @@
    "sha256": "d5b7243ac74a627120d965035b3b557784e7e302f06103ebda3798dc42ecd7f4"
   }
  },
+ "https://swccg.com/wiki/images/a/a6/2021_World_Championship_game_in_progress_17.jpg": {
+  "capture": "",
+  "error": "<urlopen error [Errno 104] Connection reset by peer>",
+  "last": "2026-11-25T07:34:43Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/wiki/images/a/a6/Kyle_Kallin_2025_World_Championship_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125063142/https://swccg.com/wiki/images/a/a6/Kyle_Kallin_2025_World_Championship_4_October_evening.jpg",
   "job_id": "spn2-f0c308efd2e13bbd5dc290c0a4cee639e1a8ca81",
@@ -178910,6 +179011,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "e80323590f62455cb2826eceff69751468064bb202750a7138bb760d77e24e26"
+  }
+ },
+ "https://swccg.com/wiki/images/a/a7/2021_World_Championship_game_in_progress_29.jpg": {
+  "capture": "https://web.archive.org/web/20261125073544/https://swccg.com/wiki/images/a/a7/2021_World_Championship_game_in_progress_29.jpg",
+  "job_id": "spn2-393d9aea80f877b39d88efb76043d72ecb8455ce",
+  "last": "2026-11-25T07:37:55Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T07:37:55Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/a/a7/2025_World_Championship_Brian_Fred_table_4_October_evening.jpg": {
