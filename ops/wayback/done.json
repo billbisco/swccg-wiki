@@ -98120,17 +98120,16 @@
  },
  "https://swccg.com/snapshots/forum/t86206.html": {
   "capture": "https://web.archive.org/web/20261118160948/https://swccg.com/snapshots/forum/t86206.html",
+  "dead_capture": "https://web.archive.org/web/20261118160948/https://swccg.com/snapshots/forum/t86206.html",
   "job_id": "spn2-7b1330a79760c875de234a1ec77754d7c582c83a",
-  "last": "2026-11-19T00:50:21Z",
-  "status": "verified",
-  "tries": 3,
+  "last": "2026-11-25T18:01:45Z",
+  "recapture": true,
+  "status": "retry",
+  "tries": 0,
   "verify": {
-   "at": "2026-11-19T00:50:21Z",
-   "bytes": 524166,
-   "capture_id": "https://web.archive.org/web/20261118160948id_/https://swccg.com/snapshots/forum/t86206.html",
-   "index": "cdx",
-   "method": "sha256",
-   "sha256": "c691701abd68f7c560561f34f2ffbf1a8dcce037358005a97e090837cd8808ab"
+   "at": "2026-11-25T18:31:45Z",
+   "method": "strict",
+   "reason": "capture HTTP 404"
   }
  },
  "https://swccg.com/snapshots/forum/t86297.html": {
@@ -175040,6 +175039,13 @@
    "sha256": "07542bc6f125e3d9178b5bb355d6da074c4f09f02405d1ecb66cebc296fde078"
   }
  },
+ "https://swccg.com/wiki/Barry_Alperstein": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-25T18:21:01Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/wiki/Bill_Kafer": {
   "capture": "https://web.archive.org/web/20261125155103/https://swccg.com/wiki/Bill_Kafer",
   "job_id": "spn2-eb9f3802ddc505034efe336e5b685f03f86d7cd5",
@@ -175587,9 +175593,8 @@
   "tries": 1
  },
  "https://swccg.com/wiki/File:2025_World_Championship_player_4_October_1400.jpg": {
-  "capture": "",
-  "job_id": "spn2-4738a278f429ffed6cb438cf3b23d67d98221d49",
-  "last": "2026-11-25T18:16:43Z",
+  "capture": "https://web.archive.org/web/20261125181645/https://swccg.com/wiki/File:2025_World_Championship_player_4_October_1400.jpg",
+  "last": "2026-11-25T18:21:00Z",
   "status": "pending",
   "tries": 1
  },
@@ -177510,6 +177515,13 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/2/29/2025_World_Championship_player_Mariners_cap_4_October.jpg": {
+  "capture": "",
+  "job_id": "spn2-dbaaa0db7218c0b6e268090ed308a8bd00672aea",
+  "last": "2026-11-25T18:29:10Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/images/2/29/Virtual_Block_7.4_forum_copy_2022.pdf": {
   "capture": "https://web.archive.org/web/20261123004210/https://swccg.com/wiki/images/2/29/Virtual_Block_7.4_forum_copy_2022.pdf",
   "job_id": "spn2-3d834344847bb30e7e551693fc267cf7403afa53",
@@ -177690,6 +177702,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T09:44:34Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/2/2c/2025_World_Championship_Daniel_Amor_table_4_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125182506/https://swccg.com/wiki/images/2/2c/2025_World_Championship_Daniel_Amor_table_4_October.jpg",
+  "job_id": "spn2-8931b1848357b0c38762e18a45e817d6b42e217e",
+  "last": "2026-11-25T18:31:20Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T18:31:20Z",
    "defer": "cdx-batch"
   }
  },
@@ -179833,6 +179856,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T09:56:39Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/6/62/2025_World_Championship_Barry_Alperstein_game_4_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125182304/https://swccg.com/wiki/images/6/62/2025_World_Championship_Barry_Alperstein_game_4_October.jpg",
+  "job_id": "spn2-efb8bd4b88740e58dbd446d333a913f4b7b0cbfa",
+  "last": "2026-11-25T18:31:11Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T18:31:11Z",
    "defer": "cdx-batch"
   }
  },
@@ -182679,6 +182713,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "cfbd53b92d1331d6d5818728ad00177149c5ed9aa6d643e59f2ebf4e184283f6"
+  }
+ },
+ "https://swccg.com/wiki/images/b/b4/2025_World_Championship_Logan_Pietig_game_4_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125182708/https://swccg.com/wiki/images/b/b4/2025_World_Championship_Logan_Pietig_game_4_October.jpg",
+  "job_id": "spn2-9b4ffaacfe70e47af0f44890da2bf540d553280c",
+  "last": "2026-11-25T18:31:31Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T18:31:31Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/b/b4/2025_World_Championship_black_hoodie_player_4_October_evening.jpg": {
@@ -188543,11 +188588,56 @@
   }
  },
  "https://wiki.swccg.com/wiki/Hayes_Hunter": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125181748/https://swccg.com/wiki/Hayes_Hunter",
   "job_id": "spn2-c61b7ab57f8016a7df4ad238a06e9cbb2a0da2c5",
-  "last": "2026-11-25T18:17:44Z",
-  "status": "pending",
+  "last": "2026-11-25T18:20:58Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T18:20:58Z",
+   "bytes": 265160,
+   "capture_id": "https://web.archive.org/web/20261125181748id_/https://swccg.com/wiki/Hayes_Hunter",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "34fd4f63b04fbcd9ff0a87905fa3790171ab8e2fcf5134c6319042feaf028ad9"
+  }
+ },
+ "https://wiki.swccg.com/wiki/Jared_Napolitano": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-25T18:22:02Z",
+  "status": "retry",
   "tries": 1
+ },
+ "https://wiki.swccg.com/wiki/Joe_Olson": {
+  "capture": "https://web.archive.org/web/20261125182409/https://swccg.com/wiki/Joe_Olson",
+  "job_id": "spn2-411525fc9cf88fc3deea7afeef3f64286e698259",
+  "last": "2026-11-25T18:31:18Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T18:31:18Z",
+   "bytes": 300995,
+   "capture_id": "https://web.archive.org/web/20261125182409id_/https://swccg.com/wiki/Joe_Olson",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "72bb56e3758f2319258ec5bf4bb3853bf5e36123fc83c6c21d2fa83157bc25e1"
+  }
+ },
+ "https://wiki.swccg.com/wiki/Matt_Scott": {
+  "capture": "https://web.archive.org/web/20261125182611/https://swccg.com/wiki/Matt_Scott",
+  "job_id": "spn2-6936e8d6d1acc6a2bd8494a8fe73be71d128ab60",
+  "last": "2026-11-25T18:31:29Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T18:31:29Z",
+   "bytes": 136738,
+   "capture_id": "https://web.archive.org/web/20261125182611id_/https://swccg.com/wiki/Matt_Scott",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "162a327454af40f6be5b0e52d184c20861ade08b8705532c24d587b54edf47b4"
+  }
  },
  "https://wiki.swccg.com/wiki/Quirin_F%C3%BCrgut": {
   "capture": "https://web.archive.org/web/20261125145519/https://swccg.com/wiki/Quirin_F%C3%BCrgut",
@@ -188563,6 +188653,19 @@
    "method": "sha256",
    "sha256": "875f4956506ce4e884a0f1e7adef7a3ef98239a0749b088a4adf5ea1f36964af"
   }
+ },
+ "https://wiki.swccg.com/wiki/Robbie_Hendon": {
+  "capture": "https://web.archive.org/web/20261125182813/https://swccg.com/wiki/Robbie_Hendon",
+  "last": "2026-11-25T18:31:32Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://wiki.swccg.com/wiki/Sam_Tashima": {
+  "capture": "",
+  "job_id": "spn2-78ca422039c9085206479517da2e853bbef5aeb4",
+  "last": "2026-11-25T18:30:11Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://wiki.swccg.com/wiki/Unidentified_event_photographs": {
   "capture": "https://web.archive.org/web/20261125153518/https://swccg.com/wiki/Unidentified_event_photographs",
@@ -193341,9 +193444,17 @@
  "https://www.stephenskilton.com/decktech_archives/15469/": {
   "capture": "https://web.archive.org/web/20261023073915/https://www.stephenskilton.com/decktech_archives/15469/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T01:30:15Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T18:20:52Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T18:20:52Z",
+   "bytes": 9628,
+   "capture_id": "https://web.archive.org/web/20261023073915id_/https://www.stephenskilton.com/decktech_archives/15469/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4781b530af4939f17feaa53033108425ff4ac516a63c3bfb6a0f8f698d4cb0ee"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15471/": {
   "capture": "https://web.archive.org/web/20261023074914/https://www.stephenskilton.com/decktech_archives/15471/",
@@ -193457,9 +193568,18 @@
  "https://www.stephenskilton.com/decktech_archives/15498/": {
   "capture": "https://web.archive.org/web/20261023082843/https://www.stephenskilton.com/decktech_archives/15498/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T01:34:23Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T18:20:33Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T18:15:57Z",
+   "bytes": 10477,
+   "capture_id": "https://web.archive.org/web/20261023082843id_/https://www.stephenskilton.com/decktech_archives/15498/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "3965446481e955af7e5bfcd6669395e681677cbb2ac9c4fb2ee24b540c73f283"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15501/": {
   "capture": "https://web.archive.org/web/20261023075019/https://www.stephenskilton.com/decktech_archives/15501/",
