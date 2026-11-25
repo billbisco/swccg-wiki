@@ -30,6 +30,8 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+import threading
+from concurrent.futures import ThreadPoolExecutor
 
 UA = "swccg-ia-item-backup/1.0 (+https://swccg.com; Refs swccg-guild/work#1340)"
 S3 = "https://s3.us.archive.org"
@@ -191,6 +193,8 @@ def main() -> int:
     ap.add_argument("--group", choices=["snapshots", "images"])
     ap.add_argument("--minutes", type=float, default=50)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--workers", type=int, default=int(os.environ.get("IA_BACKUP_WORKERS", "4")),
+                    help="parallel uploads (archive.org's SlowDown / task-queue limit still stop the run)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--verify-only", action="store_true")
     a = ap.parse_args()
@@ -202,54 +206,76 @@ def main() -> int:
         return 0
     auth = keys()
     deadline = time.monotonic() + a.minutes * 60
-    sent = 0
-    stats = {}
-    for item, (root, title, desc) in items_for(a.group).items():
-        if not root.is_dir():
-            continue
-        meta = {"mediatype": "data", "collection": "opensource_media",  # Community Data
-                "title": title, "description": desc, "creator": "swccg.com", "subject": "Star Wars CCG",
-                "source": "https://swccg.com/"}
-        first = not any(r.get("item") == item for r in led.values())
-        if first and not a.dry_run and not item_owner_ok(item, auth):
-            print("IA-ITEM taken", item, flush=True); continue
-        for p in files_under(root):
-            if time.monotonic() > deadline or (a.limit and sent >= a.limit):
-                break
-            name = str(p.relative_to(root))
-            key = f"{item}/{name}"
-            st = p.stat()
-            row = led.get(key)
-            if row and row.get("size") == st.st_size and row.get("mtime") == int(st.st_mtime):
-                continue
-            md5hex, sha1hex = hashes(p)
-            if row and row.get("sha1") == sha1hex:
-                row.update(size=st.st_size, mtime=int(st.st_mtime)); continue
-            if a.dry_run:
-                stats["would_upload"] = stats.get("would_upload", 0) + 1
-                stats["bytes"] = stats.get("bytes", 0) + st.st_size
-                sent += 1; continue
-            if sent % 50 == 0 and over_limit(auth, item):
-                print("IA-PAUSE task queue over limit; stopping this run", flush=True)
-                deadline = 0; break
-            try:
-                put(auth, item, name, p, md5hex, meta, first)
-            except Stop as e:
-                print("IA-STOP", str(e), flush=True); deadline = 0; break
-            except RuntimeError as e:
-                print("IA-ERR", key, str(e)[:120], flush=True)
-                stats["errors"] = stats.get("errors", 0) + 1
-                continue
-            first = False
+    stop = threading.Event()
+    lock = threading.Lock()
+    stats: dict = {}
+    sent = [0]
+
+    def bump(k, n=1):
+        with lock:
+            stats[k] = stats.get(k, 0) + n
+
+    def upload(item, name, key, p, st, md5hex, sha1hex, meta, first):
+        if stop.is_set():
+            return
+        try:
+            put(auth, item, name, p, md5hex, meta, first)
+        except Stop as e:
+            print("IA-STOP", str(e), flush=True); stop.set(); return
+        except RuntimeError as e:
+            print("IA-ERR", key, str(e)[:120], flush=True); bump("errors"); return
+        with lock:
             led[key] = {"item": item, "name": name, "size": st.st_size, "mtime": int(st.st_mtime),
                         "sha1": sha1hex, "put": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
-            sent += 1; stats["uploaded"] = stats.get("uploaded", 0) + 1
+            stats["uploaded"] = stats.get("uploaded", 0) + 1
             stats["bytes"] = stats.get("bytes", 0) + st.st_size
-            if sent % 25 == 0:
+            if stats["uploaded"] % 25 == 0:
                 save_ledger(led)
-            time.sleep(GAP_S)
-        if deadline == 0:
-            break
+        time.sleep(GAP_S)
+
+    with ThreadPoolExecutor(max_workers=a.workers) as pool:
+        for item, (root, title, desc) in items_for(a.group).items():
+            if stop.is_set() or time.monotonic() > deadline:
+                break
+            if not root.is_dir():
+                continue
+            meta = {"mediatype": "data", "collection": "opensource_media",  # Community Data
+                    "title": title, "description": desc, "creator": "swccg.com", "subject": "Star Wars CCG",
+                    "source": "https://swccg.com/"}
+            with lock:
+                first = not any(r.get("item") == item for r in list(led.values()))
+            if first and not a.dry_run and not item_owner_ok(item, auth):
+                print("IA-ITEM taken", item, flush=True); continue
+            inflight = []
+            for p in files_under(root):
+                if stop.is_set() or time.monotonic() > deadline or (a.limit and sent[0] >= a.limit):
+                    break
+                name = str(p.relative_to(root))
+                key = f"{item}/{name}"
+                st = p.stat()
+                row = led.get(key)
+                if row and row.get("size") == st.st_size and row.get("mtime") == int(st.st_mtime):
+                    continue
+                md5hex, sha1hex = hashes(p)
+                if row and row.get("sha1") == sha1hex:
+                    with lock:
+                        row.update(size=st.st_size, mtime=int(st.st_mtime))
+                    continue
+                sent[0] += 1
+                if a.dry_run:
+                    bump("would_upload"); bump("bytes", st.st_size); continue
+                if sent[0] % 50 == 1 and over_limit(auth, item):
+                    print("IA-PAUSE task queue over limit; stopping this run", flush=True)
+                    stop.set(); break
+                if first:  # the first PUT creates the item; let it finish alone
+                    upload(item, name, key, p, st, md5hex, sha1hex, meta, True)
+                    first = False
+                    continue
+                inflight.append(pool.submit(upload, item, name, key, p, st, md5hex, sha1hex, meta, False))
+                if len(inflight) >= a.workers * 2:
+                    inflight[0].result(); inflight.pop(0)
+            for f in inflight:
+                f.result()
     save_ledger(led)
     total = {}
     for r in led.values():
