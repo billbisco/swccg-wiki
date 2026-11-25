@@ -150,6 +150,57 @@ class OwnerTests(unittest.TestCase):
         self.assertEqual(0, result["prepared"])
         self.assertEqual("awaiting_stage", export_records(self.registry)["objects"][0]["state"])
 
+    def test_stage_budget_ignores_preexisting_snapshot_tree_when_batch_fits(self):
+        stage = self.worker.snapshot_root()
+        stage.mkdir(parents=True, exist_ok=True)
+        legacy = stage / "legacy.html"
+        with legacy.open("wb") as stream:
+            stream.truncate(32 * 1024 ** 2 + 1)
+        original = legacy.stat()
+        request, _ = self.add(ready=False, snapshot=True)
+        def restore(subject, storage, *, restore_to):
+            restore_to.write_bytes(self.payload)
+        result = self.adapter(readback=restore).prepare(time.monotonic() + 300)
+        self.assertEqual(1, result["prepared"])
+        self.assertEqual(original.st_mtime_ns, legacy.stat().st_mtime_ns)
+        self.assertEqual(self.payload, self.worker.snapshot_file(request["source"]["url"]).read_bytes())
+
+    def test_stage_budget_caps_cumulative_bytes_in_one_batch(self):
+        r1, _ = self.add(title="File:batch-one.png", ready=False, snapshot=True)
+        payload2 = b"second exact snapshot byte"
+        sha2 = hashlib.sha256(payload2).hexdigest()
+        r2_req = fixture(title="File:batch-two.png", ready=False)
+        r2_req["owner"] = SERVER_OWNER
+        s2 = copy.deepcopy(r1["source"])
+        s2["url"] = "https://swccg.com/snapshots/pc/batch-two.html"
+        s2["primary_url"] = "https://www.starwarsccg.org/batch-two/"
+        s2["sha256"] = sha2
+        s2["bytes"] = len(payload2)
+        s2["provenance_equivalence"]["primary_url"] = s2["primary_url"]
+        s2["provenance_equivalence"]["snapshot_url"] = s2["url"]
+        s2["provenance_equivalence"]["snapshot_html_sha256"] = sha2
+        r2_req["source"] = s2
+        b2 = copy.deepcopy(r1["source_backup_receipt"])
+        b2["subject"] = source_backup_subject(s2)
+        b2["verification"]["restored_sha256"] = sha2
+        b2["verification"]["restored_bytes"] = len(payload2)
+        r2_req["source_backup_receipt"] = b2
+        res2 = register(self.registry, r2_req)
+        self.allowed.add(res2["object_id"])
+        self.responses[s2["url"]] = {"status": 200, "sha256": sha2, "size": len(payload2)}
+        restores = []
+        payloads = {r1["source"]["sha256"]: self.payload, sha2: payload2}
+        def restore(subject, storage, *, restore_to):
+            restores.append(subject)
+            restore_to.write_bytes(payloads[subject["content_sha256"]])
+        budget = len(self.payload) + 10
+        first = self.adapter(stage_budget=budget, limit=2, readback=restore).prepare(time.monotonic() + 300)
+        self.assertEqual(1, first["prepared"])
+        self.assertEqual(1, len(restores))
+        second = self.adapter(stage_budget=budget, limit=2, readback=restore).prepare(time.monotonic() + 300)
+        self.assertEqual(1, second["prepared"])
+        self.assertEqual(2, len(restores))
+
     def test_only_approved_snapshot_targets_are_protected_from_legacy_cleanup(self):
         approved, _ = self.add(ready=False, snapshot=True)
         self.add(title="File:original.png")

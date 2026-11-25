@@ -63,6 +63,7 @@ class OwnerAdapter:
         self.readback = readback
         self.observations = []
         self.last_capture_observation = None
+        self.last_stage_bytes = 0
 
     def healthy(self):
         return self.control.state.get("mode") == "healthy"
@@ -147,7 +148,8 @@ class OwnerAdapter:
         return target
 
     def _stage(self, entry, deadline, *, native_maintenance=False, advance=True,
-               native_stage_limit=None):
+               native_stage_limit=None, batch_staged_bytes=0):
+        self.last_stage_bytes = 0
         request = entry["request"]
         source = request["source"]
         if suppressed_source(self.registry, source):
@@ -181,7 +183,7 @@ class OwnerAdapter:
             if self.work == DEFAULT_WORK and not os.path.ismount(DEFAULT_WORK.parents[1]):
                 raise ValueError("approved persistent owner volume is not mounted; refusing root-disk fallback")
             budget = self.stage_budget if native_stage_limit is None else native_stage_limit
-            if self._stage_usage() + source["bytes"] > budget:
+            if batch_staged_bytes + source["bytes"] > budget:
                 return False
             if time.monotonic() > deadline - 90:
                 return False
@@ -219,6 +221,7 @@ class OwnerAdapter:
                     os.fsync(output.fileno())
                 os.chmod(temporary, 0o644)
                 os.link(temporary, target)
+                self.last_stage_bytes = source["bytes"]
             finally:
                 if temporary is not None:
                     temporary.unlink(missing_ok=True)
@@ -275,8 +278,9 @@ class OwnerAdapter:
                     limit != sum(row["bytes"] for row in expected.values()) or
                     a.get("legacy_baseline") != {key: inventory_before[key] for key in ("files", "bytes")}):
                 raise ValueError("one-shot native allowance differs from its exact frozen cohort/baseline/cap")
-            stage_limit = inventory_before["bytes"] + limit
+            stage_limit = limit
         results = []
+        batch_staged_bytes = 0
         for entry in entries:
             if len(results) >= self.limit or time.monotonic() > deadline - 90:
                 break
@@ -285,9 +289,11 @@ class OwnerAdapter:
                 results.append({"url": source["url"], "staged": False, "reason": "ineligible or withdrawn exact object"})
                 continue
             if not self._stage(entry, deadline, native_maintenance=True, advance=False,
-                               native_stage_limit=stage_limit):
+                               native_stage_limit=stage_limit,
+                               batch_staged_bytes=batch_staged_bytes):
                 results.append({"url": source["url"], "staged": False, "reason": "existing stage budget, volume or deadline prevents staging"})
                 continue
+            batch_staged_bytes += self.last_stage_bytes
             public = self._native_public_receipt(source)
             if not public["matches"]:
                 results.append({"url": source["url"], "staged": False, "public_readback": public})
@@ -379,6 +385,7 @@ class OwnerAdapter:
         if not self.healthy() or not self.allowed:
             return {"prepared": 0, "reason": "provider paused or no exact approved cohort supplied", "ledger_updates": {}}
         prepared = 0
+        batch_staged_bytes = 0
         attempted, ledger_updates = 0, {}
         cursor_path = self.registry / "owner-prepare-cursor.json"
         cursor = json.loads(cursor_path.read_text(encoding="utf-8")).get("after", "") if cursor_path.exists() else ""
@@ -418,8 +425,9 @@ class OwnerAdapter:
             atomic_json(cursor_path, {"after": job})
             try:
                 if object_state(request) == "awaiting_stage":
-                    if not self._stage(entry, deadline):
+                    if not self._stage(entry, deadline, batch_staged_bytes=batch_staged_bytes):
                         continue
+                    batch_staged_bytes += self.last_stage_bytes
                 if not self._check_public(source):
                     raise ValueError("public capture target does not match its registered exact payload")
                 # An existing accepted legacy job remains owned by the worker;

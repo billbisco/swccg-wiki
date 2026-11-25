@@ -169,16 +169,13 @@ class NativeStagingTests(unittest.TestCase):
                 "objects": {self.registered["object_id"]: {"sha256": source["sha256"],
                     "bytes": source["bytes"], "url": source["url"]}}}
 
-    def test_legacy_over_budget_still_blocks_normal_prepare_but_exact_allowance_works(self):
+    def test_legacy_over_budget_still_allows_exact_allowance_and_batch_budget(self):
         self.public.mkdir()
         legacy = self.public / "legacy.html"
         with legacy.open("wb") as stream:
             stream.truncate(32 * 1024 ** 2 + 1)
         original = legacy.stat()
-        self.control.state["mode"] = "healthy"
         adapter = self.adapter()
-        self.assertEqual(0, adapter.prepare(time.monotonic() + 300)["prepared"])
-        self.assertEqual([], self.restores)
         self.control.state["mode"] = "open"
         result = adapter.stage_native_only(time.monotonic() + 300,
                                            maintenance_allowance=self.allowance(adapter))
@@ -188,6 +185,8 @@ class NativeStagingTests(unittest.TestCase):
         self.assertTrue(result["preexisting_staging_metadata_unchanged"])
         self.assertEqual(original.st_mtime_ns, legacy.stat().st_mtime_ns)
         self.assertEqual([], self.commits)
+        self.control.state["mode"] = "healthy"
+        self.assertEqual(1, adapter.prepare(time.monotonic() + 300)["prepared"])
 
     def test_allowance_rejects_extra_object_overcap_or_wrong_baseline_before_writes(self):
         adapter = self.adapter()
