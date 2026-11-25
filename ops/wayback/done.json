@@ -174856,6 +174856,13 @@
    "sha256": "07542bc6f125e3d9178b5bb355d6da074c4f09f02405d1ecb66cebc296fde078"
   }
  },
+ "https://swccg.com/wiki/Brandon_Baity": {
+  "capture": "",
+  "job_id": "spn2-999a9b098753713b1481fa371918263c2406439e",
+  "last": "2026-11-25T14:55:28Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_and_Nathan_Davis_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125132834/https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_and_Nathan_Davis_4_October.jpg",
   "job_id": "spn2-428c23f1b219459480a27385b1d0b55b415ff566",
@@ -174902,11 +174909,19 @@
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Jacy_Smith_table_4_October.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125144245/https://swccg.com/wiki/File:2025_World_Championship_Jacy_Smith_table_4_October.jpg",
   "job_id": "spn2-d3573d8bc3474c15fdc5918337c08afbb071dc01",
-  "last": "2026-11-25T14:42:43Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T14:47:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:47:07Z",
+   "bytes": 26020,
+   "capture_id": "https://web.archive.org/web/20261125144245id_/https://swccg.com/wiki/File:2025_World_Championship_Jacy_Smith_table_4_October.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "edb23186aeaebda4c0bf1f1c7b4ecbd3111a8a9eac2d70651998d333afd2a776"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Kyle_Krueger_and_Karl_Koenig_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125133204/https://swccg.com/wiki/File:2025_World_Championship_Kyle_Krueger_and_Karl_Koenig_4_October.jpg",
@@ -175174,11 +175189,16 @@
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.13.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125144043/https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.13.jpg",
   "job_id": "spn2-109815fe2535865880774e8f10ff59e46eb9eb4f",
-  "last": "2026-11-25T14:40:41Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T14:47:17Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:47:17Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_player_in_denim_shirt.jpg": {
   "capture": "https://web.archive.org/web/20261125143437/https://swccg.com/wiki/File:2025_World_Championship_player_in_denim_shirt.jpg",
@@ -175197,8 +175217,8 @@
  },
  "https://swccg.com/wiki/File:2025_World_Championship_player_in_flat_cap.jpg": {
   "capture": "https://web.archive.org/web/20261125142900/https://swccg.com/wiki/File:2025_World_Championship_player_in_flat_cap.jpg",
-  "last": "2026-11-25T14:32:30Z",
-  "status": "pending",
+  "last": "2026-11-25T14:47:18Z",
+  "status": "retry",
   "tries": 1
  },
  "https://swccg.com/wiki/File:2025_World_Championship_sealed_table_3_October.jpg": {
@@ -175265,6 +175285,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "ecf7cd379f182fef529675441bef763c82e95f80e4409db60553df740a7d094c"
+  }
+ },
+ "https://swccg.com/wiki/Joe_Horbey": {
+  "capture": "https://web.archive.org/web/20261125144925/https://swccg.com/wiki/Joe_Horbey",
+  "job_id": "spn2-dfc2c6871dd5bb2c6c930531033daa4f2bcff6bc",
+  "last": "2026-11-25T14:57:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:57:44Z",
+   "bytes": 116143,
+   "capture_id": "https://web.archive.org/web/20261125144925id_/https://swccg.com/wiki/Joe_Horbey",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2851ce753534d9261f56756d4a7b09664f98d506ae90b9c811738f6c2711446d"
   }
  },
  "https://swccg.com/wiki/Joe_Phillips": {
@@ -175428,11 +175463,25 @@
    "sha256": "6db7c90fb30b8266c4bbaced86701375242a97a34d1d1fae75005c623e9372a2"
   }
  },
+ "https://swccg.com/wiki/Phil_Aasen": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-25T14:47:19Z",
+  "status": "retry",
+  "tries": 1
+ },
  "https://swccg.com/wiki/Randy_Scott": {
   "capture": "",
   "error": "<urlopen error [Errno 111] Connection refused>",
   "last": "2026-11-25T13:36:16Z",
   "status": "retry",
+  "tries": 1
+ },
+ "https://swccg.com/wiki/Ryan_French": {
+  "capture": "",
+  "job_id": "spn2-749a86348baa8628e5835c8bcaf7149c935061ab",
+  "last": "2026-11-25T14:53:26Z",
+  "status": "pending",
   "tries": 1
  },
  "https://swccg.com/wiki/Ryan_Jellison": {
@@ -175448,6 +175497,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "d43f3f7e97b164e99d9481be5642e2242d17e80b273ad7e28b2505cf98a5f20f"
+  }
+ },
+ "https://swccg.com/wiki/Sam_Tashima": {
+  "capture": "https://web.archive.org/web/20261125145217/https://swccg.com/wiki/Sam_Tashima",
+  "job_id": "spn2-49acd4e96a6697f45ae0f2fe92a4757e652f7037",
+  "last": "2026-11-25T14:57:56Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:57:56Z",
+   "bytes": 135754,
+   "capture_id": "https://web.archive.org/web/20261125145217id_/https://swccg.com/wiki/Sam_Tashima",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7caaeb44f187ba7e164b5ae97501ee95b99e3580e7337dac9b0a6fca2d2e7dea"
   }
  },
  "https://swccg.com/wiki/Scott_Lingrell": {
@@ -186996,11 +187060,19 @@
   "tries": 1
  },
  "https://wiki.swccg.com/wiki/Emil_Wallin": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125144232/https://swccg.com/wiki/Emil_Wallin",
   "job_id": "spn2-13cda345a82cfa67d064ebe1e1420f1f7c0dbc8d",
-  "last": "2026-11-25T14:41:42Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T14:47:13Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:47:13Z",
+   "bytes": 98435,
+   "capture_id": "https://web.archive.org/web/20261125144232id_/https://swccg.com/wiki/Emil_Wallin",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "123ffe7166549142499276e7274a6f73fb1cd696546dfbf04a19505b7d630189"
+  }
  },
  "https://wiki.swccg.com/wiki/File:2009_World_Championship_two_players.jpg": {
   "capture": "https://web.archive.org/web/20261125142300/https://swccg.com/wiki/File:2009_World_Championship_two_players.jpg",
@@ -187062,6 +187134,21 @@
    "sha256": "e6b2463759ff25f56d3c2bf2a8f376c2cde2982479268270ac2e30ccf092bbc8"
   }
  },
+ "https://wiki.swccg.com/wiki/File:2018_European_Championship_17.jpg": {
+  "capture": "https://web.archive.org/web/20261125145226/https://swccg.com/wiki/File:2018_European_Championship_17.jpg",
+  "job_id": "spn2-8375bfac856d53af9d953363b2ea07da33df60f5",
+  "last": "2026-11-25T14:58:01Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:58:01Z",
+   "bytes": 24891,
+   "capture_id": "https://web.archive.org/web/20261125145226id_/https://swccg.com/wiki/File:2018_European_Championship_17.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "25727a429ef22b06190e5c47a6504632f2020ebf5b58025b11dc948c313050e8"
+  }
+ },
  "https://wiki.swccg.com/wiki/File:2018_European_Championship_20.jpg": {
   "capture": "https://web.archive.org/web/20261125143739/https://swccg.com/wiki/File:2018_European_Championship_20.jpg",
   "job_id": "spn2-16ea0f2ee1dda6cdd5fb8d9b3988b6bbc62719e6",
@@ -187078,11 +187165,56 @@
   }
  },
  "https://wiki.swccg.com/wiki/File:2018_European_Championship_21.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125144349/https://swccg.com/wiki/File:2018_European_Championship_21.jpg",
   "job_id": "spn2-6bcb4783f9fcf819b77590db37da37b073ede2d8",
-  "last": "2026-11-25T14:43:44Z",
+  "last": "2026-11-25T14:47:01Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:47:01Z",
+   "bytes": 24844,
+   "capture_id": "https://web.archive.org/web/20261125144349id_/https://swccg.com/wiki/File:2018_European_Championship_21.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0e3ab6f8e3a91ebfc3a69555971621dd5388f4167450346cdfef6acdca952ad3"
+  }
+ },
+ "https://wiki.swccg.com/wiki/File:2018_European_Championship_22.jpg": {
+  "capture": "",
+  "job_id": "spn2-42a53b5bd9fe67a1ff6a18bee3363f56a5c42cbc",
+  "last": "2026-11-25T14:56:29Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://wiki.swccg.com/wiki/File:2018_European_Championship_23.jpg": {
+  "capture": "https://web.archive.org/web/20261125144822/https://swccg.com/wiki/File:2018_European_Championship_23.jpg",
+  "job_id": "spn2-bf0c8fe5ada945cfe95f71248105170850172816",
+  "last": "2026-11-25T14:57:34Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:57:34Z",
+   "bytes": 24845,
+   "capture_id": "https://web.archive.org/web/20261125144822id_/https://swccg.com/wiki/File:2018_European_Championship_23.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "56fd699cea945951916a80830d1b389a5cdea51504bd499577632aa8f19f91e9"
+  }
+ },
+ "https://wiki.swccg.com/wiki/File:2018_European_Championship_26.jpg": {
+  "capture": "https://web.archive.org/web/20261125145024/https://swccg.com/wiki/File:2018_European_Championship_26.jpg",
+  "job_id": "spn2-aba243845c334d5ec745cd106162b9b430aa6c3a",
+  "last": "2026-11-25T14:57:49Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T14:57:49Z",
+   "bytes": 24846,
+   "capture_id": "https://web.archive.org/web/20261125145024id_/https://swccg.com/wiki/File:2018_European_Championship_26.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e7e0990415396c5a27e03eba10a74165b5a66fcd344213f07b397776f4dc437c"
+  }
  },
  "https://wiki.swccg.com/wiki/Greg_Shaw": {
   "capture": "https://web.archive.org/web/20261125142558/https://swccg.com/wiki/Greg_Shaw",
@@ -187098,6 +187230,13 @@
    "method": "sha256",
    "sha256": "3910ac64387cf8b03af5479a00474cec1201291a75715d5d5daca93ec1f0838e"
   }
+ },
+ "https://wiki.swccg.com/wiki/Quirin_F%C3%BCrgut": {
+  "capture": "",
+  "job_id": "spn2-f19026f0e2f831f79bd2e6ea7cdba8fc818235c1",
+  "last": "2026-11-25T14:54:27Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://www.cardgamecollector.com/images/wars-tcg/WARS-TCG-Incursion-Rulebook.pdf": {
   "capture": "https://web.archive.org/web/20261008234817/https://www.cardgamecollector.com/images/wars-tcg/WARS-TCG-Incursion-Rulebook.pdf",
@@ -191390,9 +191529,17 @@
  "https://www.stephenskilton.com/decktech_archives/15323/": {
   "capture": "https://web.archive.org/web/20261023071034/https://www.stephenskilton.com/decktech_archives/15323/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T00:17:53Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T14:46:54Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T14:46:54Z",
+   "bytes": 9542,
+   "capture_id": "https://web.archive.org/web/20261023071034id_/https://www.stephenskilton.com/decktech_archives/15323/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "44dfa497430d22d0366a8a56c162fa39d00f0a26bbba280781bce7f4d72a3323"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15327/": {
   "capture": "https://web.archive.org/web/20261023071147/https://www.stephenskilton.com/decktech_archives/15327/",
@@ -194063,9 +194210,18 @@
  "https://www.stephenskilton.com/decktech_archives/16520/": {
   "capture": "https://web.archive.org/web/20261023105854/https://www.stephenskilton.com/decktech_archives/16520/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T07:58:28Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T14:46:36Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T14:46:00Z",
+   "bytes": 11366,
+   "capture_id": "https://web.archive.org/web/20261023105854id_/https://www.stephenskilton.com/decktech_archives/16520/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "06e9d26729465f04928b73982eb554af43835bc9835dafb05ca244632db60364"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16522/": {
   "capture": "https://web.archive.org/web/20261023105950/https://www.stephenskilton.com/decktech_archives/16522/",
