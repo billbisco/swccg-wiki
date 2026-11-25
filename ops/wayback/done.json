@@ -92560,12 +92560,15 @@
   "capture": "https://web.archive.org/web/20261124212553/https://swccg.com/snapshots/forum/p1309771.html",
   "job_id": "spn2-4f46ddb66041e3043a43894cb211ccef55506955",
   "last": "2026-11-24T21:43:04Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-24T21:43:04Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-25T01:59:58Z",
+   "bytes": 2026371,
+   "capture_id": "https://web.archive.org/web/20261124212553id_/https://swccg.com/snapshots/forum/p1309771.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "620b5f28668bf32b7f2e6c075b745dcecaed80c2b5e41a7abe4db790b2338da3"
   }
  },
  "https://swccg.com/snapshots/forum/p1309784.html": {
@@ -92644,12 +92647,15 @@
   "capture": "https://web.archive.org/web/20261124212856/https://swccg.com/snapshots/forum/p1309852.html",
   "job_id": "spn2-88cde87ac1e206c49a5a4a40725e7403ff85dcf0",
   "last": "2026-11-24T21:33:31Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-24T21:33:31Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-25T02:00:07Z",
+   "bytes": 2012450,
+   "capture_id": "https://web.archive.org/web/20261124212856id_/https://swccg.com/snapshots/forum/p1309852.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "684389a7b779487c4e411facbe46f8a8ebf42e2a92f611db8069e6a4e23c088c"
   }
  },
  "https://swccg.com/snapshots/forum/p1309870.html": {
@@ -92671,12 +92677,15 @@
   "capture": "https://web.archive.org/web/20261124214725/https://swccg.com/snapshots/forum/p1309872.html",
   "job_id": "spn2-a14405b8068e3c99e8b2b0231982c147864f5df1",
   "last": "2026-11-24T21:52:37Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-24T22:51:10Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-25T01:59:50Z",
+   "bytes": 1703436,
+   "capture_id": "https://web.archive.org/web/20261124214725id_/https://swccg.com/snapshots/forum/p1309872.html",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0f4354ae73e8fba6a86dc122e24e7f1d24065b48d180cd9c8147b215ec33641c"
   }
  },
  "https://swccg.com/snapshots/forum/p1309873.html": {
@@ -93705,6 +93714,64 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/snapshots/forum/p1402659.html": {
+  "capture": "https://web.archive.org/web/20261125014932/https://swccg.com/snapshots/forum/p1402659.html",
+  "job_id": "spn2-a21c7f2c54e50e524d8195c4eb19d2c1af385b12",
+  "last": "2026-11-25T01:59:41Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T01:59:41Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1403398.html": {
+  "capture": "https://web.archive.org/web/20261125015033/https://swccg.com/snapshots/forum/p1403398.html",
+  "job_id": "spn2-af14e7c46894898984f296dc693494f1ef6663c4",
+  "last": "2026-11-25T01:59:42Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T01:59:42Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1403577.html": {
+  "capture": "https://web.archive.org/web/20261125015135/https://swccg.com/snapshots/forum/p1403577.html",
+  "job_id": "spn2-face45bfa74444e5e7058618377932c112f1f6b2",
+  "last": "2026-11-25T01:59:44Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T01:59:44Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1403710.html": {
+  "capture": "https://web.archive.org/web/20261125015329/https://swccg.com/snapshots/forum/p1403710.html",
+  "job_id": "spn2-1e286050b72bfd5b2cc54f49783794567f406f8f",
+  "last": "2026-11-25T01:59:45Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T01:59:45Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/p1403712.html": {
+  "capture": "",
+  "job_id": "spn2-1f06ae6998b27a3e911ff7ee1d409b57886ff0cc",
+  "last": "2026-11-25T01:53:34Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1403781.html": {
+  "capture": "",
+  "job_id": "spn2-f2fb0107fc0742a3cbec4c171e33b1853497f575",
+  "last": "2026-11-25T01:54:35Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/forum/p1404368.html": {
   "capture": "https://web.archive.org/web/20261027030852/https://swccg.com/snapshots/forum/p1404368.html",
   "last": "2026-11-05T01:48:32Z",
@@ -93719,6 +93786,34 @@
    "method": "sha256",
    "sha256": "163d758ffea6b62624262596cf58f0b537f10bb0ecd4ce18a206d1a79d4b8e96"
   }
+ },
+ "https://swccg.com/snapshots/forum/p1404933.html": {
+  "capture": "",
+  "job_id": "spn2-165f37cb59a0f9a07d6f11c6d821ffe38814383a",
+  "last": "2026-11-25T01:55:36Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1406312.html": {
+  "capture": "",
+  "job_id": "spn2-dff4102ce40f86977cda17554981ae78d8988b65",
+  "last": "2026-11-25T01:56:37Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1406483.html": {
+  "capture": "",
+  "job_id": "spn2-7dccd968eb5f9f9cfb55b00c85c10bc2b6a594ea",
+  "last": "2026-11-25T01:57:39Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/p1406789.html": {
+  "capture": "",
+  "job_id": "spn2-aa45a1ef080bfb91d805e28212e37ec2e19fb488",
+  "last": "2026-11-25T01:58:40Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/snapshots/forum/p1417683.html": {
   "capture": "https://web.archive.org/web/20261027023727/https://swccg.com/snapshots/forum/p1417683.html",
@@ -187522,9 +187617,18 @@
  "https://www.stephenskilton.com/decktech_archives/16925/": {
   "capture": "https://web.archive.org/web/20261023123313/https://www.stephenskilton.com/decktech_archives/16925/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T09:20:27Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T01:49:07Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T01:45:55Z",
+   "bytes": 12141,
+   "capture_id": "https://web.archive.org/web/20261023123313id_/https://www.stephenskilton.com/decktech_archives/16925/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "27d5bc791a5f3f40725512b7a88a429306b2f0ad988907ce9214fceb7f2488cc"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16932/": {
   "capture": "https://web.archive.org/web/20261023115118/https://www.stephenskilton.com/decktech_archives/16932/",
