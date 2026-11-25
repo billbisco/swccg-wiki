@@ -195,8 +195,14 @@ def resolve(title: str, side: str, allowed: set[int] | None = None) -> tuple[dic
             hit = [c for c in pool if norm(c.get("title") or "") == norm(cand)]
             if not hit:
                 continue
-            printed = [c for c in hit if gi.set_num(c["cardId"]) < 200]
-            hit = printed or hit
+            if gi.is_virtual_title(title):
+                virt = [c for c in hit if c.get("hasVirtualSuffix") or gi.set_num(c["cardId"]) >= 200]
+                if not virt:
+                    continue
+                hit = virt
+            else:
+                printed = [c for c in hit if gi.set_num(c["cardId"]) < 200]
+                hit = printed or hit
             if hints:
                 h = [c for c in hit if gi.set_num(c["cardId"]) in hints]
                 if h:

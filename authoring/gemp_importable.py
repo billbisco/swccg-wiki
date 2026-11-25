@@ -859,6 +859,51 @@ def titles_to_try(title: str) -> list[str]:
     return out
 
 
+
+def is_virtual_title(title: str) -> bool:
+    """True when the requested wiki title is a Virtual printing, including (V) (Errata)."""
+    return bool(re.search(r"\(V\)", title or ""))
+
+
+def load_overrides() -> dict[tuple[str, str], str]:
+    path = ROOT / "gemp-card-overrides.tsv"
+    out: dict[tuple[str, str], str] = {}
+    if not path.exists():
+        return out
+    import csv
+    with path.open(encoding="utf-8") as fh:
+        for row in csv.DictReader(fh, delimiter="\t"):
+            side = (row.get("side") or "").upper()
+            title = row.get("wiki_title") or ""
+            gid = row.get("gemp_id") or ""
+            if side and title and gid:
+                out[(side, title)] = gid
+    return out
+
+
+def override_id(side: str, title: str) -> str | None:
+    """Exact (side, wiki title) override only; never match a stripped Decipher title."""
+    side_u = "LIGHT" if side.upper() in {"LS", "LIGHT"} else "DARK"
+    return load_overrides().get((side_u, title.strip()))
+
+
+def override_card(side: str, title: str, gid: str) -> dict:
+    """Blueprint row for an override id, including ids missing from the snapshot JSON."""
+    for c in load_cards():
+        if c.get("cardId") == gid:
+            return c
+    front = (title or "").split(" / ", 1)[0]
+    front = re.sub(r"\s*\((?:V|AI|Errata(?: 2)?)\)", "", front).strip()
+    return {
+        "cardId": gid,
+        "title": front or title,
+        "cardSubtype": "OBJECTIVE",
+        "cardCategory": "OBJECTIVE",
+        "side": "LIGHT" if side.upper() in {"LS", "LIGHT"} else "DARK",
+        "hasVirtualSuffix": is_virtual_title(title),
+    }
+
+
 def lookup(
     title: str,
     side: str,
@@ -869,6 +914,9 @@ def lookup(
         side_u = "LIGHT"
     elif side_u in {"DS", "DARK"}:
         side_u = "DARK"
+    ov = override_id(side_u, title)
+    if ov:
+        return override_card(side_u, title, ov)
     pool = [
         c
         for c in load_cards()
@@ -924,10 +972,13 @@ def lookup(
         if in_pool:
             cands = in_pool
     orig = title.strip()
-    if orig.endswith(" (V)"):
-        virt = [c for c in cands if c.get("hasVirtualSuffix") or set_num(c["cardId"]) >= 200]
+    if is_virtual_title(orig):
+        virt = [c for c in cands if c.get("hasVirtualSuffix") or set_num(c.get("cardId") or "0") >= 200]
         if virt:
             cands = virt
+        else:
+            # Never silently fall back from a requested (V) title to a Decipher id.
+            cands = []
     if orig.endswith(" (AI)"):
         ai = [c for c in cands if c.get("hasAlternateImageSuffix")]
         if ai:
@@ -953,7 +1004,16 @@ def xml_for(
     notes: list[str] = []
     for qty, title, hint in rows:
         use_side = hint or side
-        card = lookup(title, use_side, allowed)
+        try:
+            card = lookup(title, use_side, allowed)
+        except KeyError:
+            if is_virtual_title(title):
+                notes.append(f"omits {title}: not in GEMP")
+                continue
+            raise
+        if is_virtual_title(title) and set_num(card.get("cardId") or "0") < 200:
+            notes.append(f"omits {title}: not in GEMP")
+            continue
         if allowed and set_num(card["cardId"]) not in allowed:
             notes.append(f"OUT-OF-POOL {title} -> {card['cardId']}")
         for _ in range(qty):
