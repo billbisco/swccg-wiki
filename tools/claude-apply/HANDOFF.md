@@ -2,14 +2,15 @@
 
 Written by Claude on 25 Nov 2026 so another agent (Grok Build or anyone) can continue without asking. Bill's three launch-critical wiki tracks are on his dashboard (link on [#1325](https://github.com/swccg-guild/work/issues/1325)). Track 2: every card family has a correct shared Versions navigator. Track 3: an Errata comparison table wherever it makes sense.
 
-## State (25 Nov 2026, 12:50 UTC)
+## State (25 Nov 2026, evening UTC)
 
 **Track 2 is done:** the census (3,786 families) shows 0 open gaps ([evidence/1325 at b9dfa77](https://github.com/swccg-guild/work/tree/b9dfa77c6e9eab1189e946779ef2d0ac3c4d9c10/evidence/1325)). #1325, #1341–#1348, #576, #596 and #1353 are closed. Decided splits and rulings live in `rulings.tsv`, which census.py reads; add a row there for every new evidence-based ruling, so decided cases stay out of gaps.tsv.
 
 | Ticket | What | State |
 |---|---|---|
-| #1350 | Small card-data fixes + 11 Dantooine decklist relinks | Open |
-| #1351 | 274 version chains the errata generator refused | Open: fix page data, then `errgen.py --family` |
+| #1350 | Small card-data fixes + 11 Dantooine decklist relinks | Done 25 Nov (closed) |
+| #1356 | #1350 follow-ups: fold 127 same-words slips, transcription-error wording, dated decklist relinks | Open: agents r1356a–d drafting |
+| #1351 | 274 version chains the errata generator refused | Open: about 1,100 saves done. The 25 Nov rerun (`errgen/rr2.sh`) cleared all but 41 families: 13 have redirect chain pages (agent r1351r1) and 28 have unsourced order (agent r1351u) |
 | #677 | Virtual Block 3 errata (ChatGPT) | Open, not ours |
 | #715, #716 | Planned/independent sets pilot; final errata reconcile | Open |
 | #1349 | Wiki 2 MB upload limit (server setting) | Bill |
@@ -38,6 +39,13 @@ Draft group format: `apply.tsv` (Title<TAB>drafts/<dir>/<file>), `base_revids.js
 5. Backup: `backup_api.py <titles-file> "<msg>"` with GH_TOKEN from `~/.grok/claude-agent/github-token.env`. Use ≤130 titles per call. Template-heavy chunks are slow, so run them alone. It retries 422 (main moves because other sessions commit) up to 6 times.
 6. QA in the container: `python3 qa.py <dir>`. Fix every cite error before reporting.
 7. Report on the ticket with `~/ais/shared/swccg-guild-tickets/board_as_claude.py comment|status|close <n>` (posts as HolocronClaude; read SKILL.md there). Every list item is a link. Then close done tickets and update the dashboard (`~/w/index.html` → scp to gemp `/var/www/swccg.com/launch-UHuWqnjq8oS2hNTY7Kxfbjg0i9wJ/index.html`, keeping a .bak).
+
+## Moves and deletions (no redirects as a fix, Bill 25 Nov)
+
+- **Moves:** Holocron Claude has `move` and `suppressredirect`. Use `~/w/tools/mvpages.py <tsv old\tnew\texpected_revid> "<reason>"` (in this folder). It moves the Talk page too, leaves no redirect, refuses on drift, and prints the new latest revid. Use that revid as the base for any draft applied to the new title. A move onto an existing title only works if that title is a one-revision redirect back to the source; otherwise delete it first.
+- **Deletions:** the bot has no `delete` right. Run the MediaWiki maintenance script on the VPS from the PC VM. Copy `~/.grok/claude-agent/ssh/id_ed25519` to `/tmp/gk` (chmod 600), then:
+  `scp -i /tmp/gk list.txt root@2.28.125.5:/tmp/x.txt && ssh -i /tmp/gk root@2.28.125.5 'docker cp /tmp/x.txt swccg_wiki:/tmp/x.txt && docker exec swccg_wiki php maintenance/run.php deleteBatch -u "Holocron Claude" -r "<reason, ticket>" /tmp/x.txt'`
+  Only delete a page with zero remaining links (check its real wikitext, not just `list=backlinks`, which lags), and back up the deleted title's last content first.
 
 ## Rules learned the hard way
 
