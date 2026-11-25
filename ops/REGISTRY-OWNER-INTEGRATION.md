@@ -119,3 +119,23 @@ restoration, stage quota, wrong source bytes, accepted job identity, strict
 capture bytes, safe old-version retry, concurrent readiness CAS and receipt
 pointer tampering. No live registry, stage, queue, configuration or capture API
 is changed by those tests.
+
+## Ticket auto-approval policy (Bill, 2026-11-25, #1359 Q1)
+
+"Have the worker auto-approve every registered item that has a ticket number."
+`ops/preservation_policy.py` runs inside the owner run before `prepare`. An
+object is approved by policy when its latest observation is `ready` (valid
+backup receipts, source proof and readiness), `approval_scope.ticket` is a work
+ticket number (`123`, `"#123"` or a swccg-guild/work issue URL), and it is not
+suppressed and not stamped with the 14 Nov 2026 hold. Held, not-ready and
+`awaiting_stage` objects stay out; ready objects without a ticket are flagged in
+`registry/policy-unapproved.json`.
+
+Approvals are appended to `registry/policy-approvals.jsonl` (first record per
+object wins; hourly registry scan). `approved-objects.json` is not rewritten and
+keeps its operator role and 5,000-ID / 1 MiB guard. Each run the adapter gets the
+explicit approvals plus a first-approved-first window of policy objects that are
+still ready and not yet owner-verified, capped so the total stays within 5,000.
+The two-jobs-per-run promotion limit is unchanged. A policy error falls back to
+the explicit approvals only. AIs register with a ticket; they do not hand-write
+approvals.
