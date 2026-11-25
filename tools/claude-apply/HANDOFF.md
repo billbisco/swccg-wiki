@@ -11,7 +11,8 @@ Written by Claude on 25 Nov 2026 so another agent (Grok Build or anyone) can con
 | #1350 | Small card-data fixes + 11 Dantooine decklist relinks | Done 25 Nov (closed) |
 | #1356 | Fold 240 same-words slips, transcription-error wording, dated decklist relinks | Done 25 Nov (closed) |
 | #1361 | Leftovers from the 25 Nov cleanup | Done 25 Nov (closed) |
-| #1362 | Turned-image sweep, missing errata tables (11 families), E1 mark rows, Coruscant counterparts, deck pages | Open: agents r1362a, r1362b drafting |
+| #1362 | Turned-image sweep, 11 errata tables, E1 mark rows, counterparts, deck pages | Done 25 Nov (closed) |
+| #1363 | Resaved image pairs, partial slips, version gaps, 2012 deck lines, Mysteries write-up | Open: agents r1363a, r1363b drafting |
 | #1351 | 274 version chains the errata generator refused | Done 25 Nov (closed): a rerun refuses nothing; 13 families keep a correct hand table |
 | #677 | Virtual Block 3 errata (ChatGPT) | Open, not ours |
 | #715, #716 | Planned/independent sets pilot; final errata reconcile | Open |
@@ -68,3 +69,5 @@ PC VM calls are killed after about 3 minutes and background processes don't surv
 - A Virtual slip printed over two host cards goes in both hosts' navigators (Alter ruling, #1348).
 - Unknown dates: make the best evidence-based reading and log the question on [[Mysteries]] with {{Mystery}} (Bill's rule).
 - Bill approves doing what needs doing. Don't ask him step by step. File tickets for anything unfinished.
+
+- Moves: run them lowest number first, after the deletions. If mvpages.py reports `articleexists`, rerun the failed rows once their target is free.
