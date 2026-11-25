@@ -97406,17 +97406,16 @@
  },
  "https://swccg.com/snapshots/forum/t80314.html": {
   "capture": "https://web.archive.org/web/20261118160738/https://swccg.com/snapshots/forum/t80314.html",
+  "dead_capture": "https://web.archive.org/web/20261118160738/https://swccg.com/snapshots/forum/t80314.html",
   "job_id": "spn2-0bd9b8364952fb745ee62c82f071bd707aa1332d",
-  "last": "2026-11-19T00:49:55Z",
-  "status": "verified",
-  "tries": 3,
+  "last": "2026-11-25T16:13:41Z",
+  "recapture": true,
+  "status": "retry",
+  "tries": 0,
   "verify": {
-   "at": "2026-11-19T00:49:55Z",
-   "bytes": 1374518,
-   "capture_id": "https://web.archive.org/web/20261118160738id_/https://swccg.com/snapshots/forum/t80314.html",
-   "index": "cdx",
-   "method": "sha256",
-   "sha256": "fff29a88fd996c3196eb0f7f5df8d6228c364922e809c6223f2bbd0e88e3faae"
+   "at": "2026-11-25T16:43:41Z",
+   "method": "strict",
+   "reason": "capture HTTP 404"
   }
  },
  "https://swccg.com/snapshots/forum/t8037-start40.html": {
@@ -174916,11 +174915,19 @@
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Benji_Chu_grey_table_4_October.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125162807/https://swccg.com/wiki/File:2025_World_Championship_Benji_Chu_grey_table_4_October.jpg",
   "job_id": "spn2-13e4fb525f8e0ceb221d50ac42a7d5d116fd6300",
-  "last": "2026-11-25T16:28:04Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T16:32:42Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:32:42Z",
+   "bytes": 26543,
+   "capture_id": "https://web.archive.org/web/20261125162807id_/https://swccg.com/wiki/File:2025_World_Championship_Benji_Chu_grey_table_4_October.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d93242549df67f17abf0971df0605031c6495a2937e6fe2111c373742fa9f510"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_and_Nathan_Davis_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125132834/https://swccg.com/wiki/File:2025_World_Championship_Brian_Fred_and_Nathan_Davis_4_October.jpg",
@@ -175058,11 +175065,19 @@
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Matt_Thornton_table_4_October.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125162605/https://swccg.com/wiki/File:2025_World_Championship_Matt_Thornton_table_4_October.jpg",
   "job_id": "spn2-9b113cd473723924c8171f056c4f16e641314049",
-  "last": "2026-11-25T16:26:02Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T16:32:52Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:32:52Z",
+   "bytes": 26639,
+   "capture_id": "https://web.archive.org/web/20261125162605id_/https://swccg.com/wiki/File:2025_World_Championship_Matt_Thornton_table_4_October.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1041d672a9de26d5fed8135a59e7c1f4e38bacdb4b00ef9a0499489232d7be4f"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Mike_Kessling_table_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125154550/https://swccg.com/wiki/File:2025_World_Championship_Mike_Kessling_table_4_October.jpg",
@@ -175770,6 +175785,13 @@
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
+ },
+ "https://swccg.com/wiki/Spencer_Gosiaco": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-25T16:32:53Z",
+  "status": "retry",
+  "tries": 1
  },
  "https://swccg.com/wiki/Steve_Harpster": {
   "capture": "https://web.archive.org/web/20261125121636/https://swccg.com/wiki/Steve_Harpster",
@@ -177469,6 +177491,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/2/2d/2025_World_Championship_Barry_Alperstein_table_4_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125163901/https://swccg.com/wiki/images/2/2d/2025_World_Championship_Barry_Alperstein_table_4_October.jpg",
+  "job_id": "spn2-4b848d3e7af57779a1f6fb54f7135d9461ba054e",
+  "last": "2026-11-25T16:43:21Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:21Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/2/2e/2018_Match_Play_Championship_art_print_Arvel_Crynyd_%28A-Wing_Pilot%29.jpg": {
   "capture": "https://web.archive.org/web/20261125100141/https://swccg.com/wiki/images/2/2e/2018_Match_Play_Championship_art_print_Arvel_Crynyd_%28A-Wing_Pilot%29.jpg",
   "job_id": "spn2-ca9b1f1556b898e68bfe06cd6fb39aca18f801b8",
@@ -177737,6 +177770,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "e73a30e004e7bca535c37df26d4fd711abe1850f9d48dd96b1a3aa9131536576"
+  }
+ },
+ "https://swccg.com/wiki/images/3/35/2025_World_Championship_white_hoodie_table_4_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125163658/https://swccg.com/wiki/images/3/35/2025_World_Championship_white_hoodie_table_4_October.jpg",
+  "job_id": "spn2-b257e15c620b6b8a44930805951a19b8e7902613",
+  "last": "2026-11-25T16:43:13Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:13Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/3/36/2017_Match_Play_Championship_art_print_Emperor_Palpatine.jpg": {
@@ -183533,6 +183577,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/d/d2/2025_World_Championship_Randy_Scott_row_4_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125164103/https://swccg.com/wiki/images/d/d2/2025_World_Championship_Randy_Scott_row_4_October.jpg",
+  "job_id": "spn2-7e4c5f76d4ce76cc29a84d2852659d6e99906a41",
+  "last": "2026-11-25T16:43:27Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:27Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/d/d3/2025_World_Championship_blue_shirt_table_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125055042/https://swccg.com/wiki/images/d/d3/2025_World_Championship_blue_shirt_table_4_October_evening.jpg",
   "job_id": "spn2-34280433fb7d31afbd2374ececeb0d3036b13961",
@@ -184602,6 +184657,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T09:44:30Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/e/ef/2025_World_Championship_Randy_Scott_table_4_October.jpg": {
+  "capture": "https://web.archive.org/web/20261125163456/https://swccg.com/wiki/images/e/ef/2025_World_Championship_Randy_Scott_table_4_October.jpg",
+  "job_id": "spn2-00bdead74ec06f2f58c9ff9dd7f8f77aea5d991c",
+  "last": "2026-11-25T16:43:06Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:06Z",
    "defer": "cdx-batch"
   }
  },
@@ -187994,18 +188060,103 @@
   "tries": 1
  },
  "https://wiki.swccg.com/wiki/File:2021_World_Championship_long_table_12.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125162704/https://swccg.com/wiki/File:2021_World_Championship_long_table_12.jpg",
   "job_id": "spn2-bbf66668e271fd4a33e4bf4f88263e01ad1f7ab9",
-  "last": "2026-11-25T16:27:03Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T16:32:46Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:32:46Z",
+   "bytes": 29159,
+   "capture_id": "https://web.archive.org/web/20261125162704id_/https://swccg.com/wiki/File:2021_World_Championship_long_table_12.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0d251ae5ce2bbde19e18ceb37930a82339346b354cba30dfd98008b52325306e"
+  }
  },
  "https://wiki.swccg.com/wiki/File:2021_World_Championship_player_during_a_match_5.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261125162908/https://swccg.com/wiki/File:2021_World_Championship_player_during_a_match_5.jpg",
   "job_id": "spn2-6eed7fdeda7d5fee34897036cf550941a00e4fff",
-  "last": "2026-11-25T16:29:05Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-25T16:32:37Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:32:37Z",
+   "bytes": 28243,
+   "capture_id": "https://web.archive.org/web/20261125162908id_/https://swccg.com/wiki/File:2021_World_Championship_player_during_a_match_5.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "3557e650bc9a18478595cecfa5e839a64eb03619ee4479b04d978405ffe6de44"
+  }
+ },
+ "https://wiki.swccg.com/wiki/File:2021_World_Championship_player_during_a_match_6.jpg": {
+  "capture": "https://web.archive.org/web/20261125163447/https://swccg.com/wiki/File:2021_World_Championship_player_during_a_match_6.jpg",
+  "job_id": "spn2-2fa7a803a6214678566619bf37a5a130220d4d68",
+  "last": "2026-11-25T16:43:05Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:05Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+  }
+ },
+ "https://wiki.swccg.com/wiki/File:2021_World_Championship_spectators_2.jpg": {
+  "capture": "https://web.archive.org/web/20261125163708/https://swccg.com/wiki/File:2021_World_Championship_spectators_2.jpg",
+  "job_id": "spn2-41484f4b2f7f96e1fa25b37cac9bea9da76ff6a3",
+  "last": "2026-11-25T16:43:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:12Z",
+   "bytes": 27154,
+   "capture_id": "https://web.archive.org/web/20261125163708id_/https://swccg.com/wiki/File:2021_World_Championship_spectators_2.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "24e436de1918c8e0aab484f0d663989af1cc638ac83a0a5cd5344ad135d5c9e1"
+  }
+ },
+ "https://wiki.swccg.com/wiki/File:2021_World_Championship_spectators_3.jpg": {
+  "capture": "https://web.archive.org/web/20261125163801/https://swccg.com/wiki/File:2021_World_Championship_spectators_3.jpg",
+  "job_id": "spn2-cd04ffc3abc638f5a49fa411ee64e0c75fd421ce",
+  "last": "2026-11-25T16:43:19Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:19Z",
+   "bytes": 27182,
+   "capture_id": "https://web.archive.org/web/20261125163801id_/https://swccg.com/wiki/File:2021_World_Championship_spectators_3.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "aec162a975372ead53f016f2a3593a89990f3ccd20755805637b6b60734f208e"
+  }
+ },
+ "https://wiki.swccg.com/wiki/File:2021_World_Championship_spectators_4.jpg": {
+  "capture": "https://web.archive.org/web/20261125164002/https://swccg.com/wiki/File:2021_World_Championship_spectators_4.jpg",
+  "job_id": "spn2-200a280ab696585ac06faeccc0671531ededc233",
+  "last": "2026-11-25T16:43:26Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:26Z",
+   "bytes": 27191,
+   "capture_id": "https://web.archive.org/web/20261125164002id_/https://swccg.com/wiki/File:2021_World_Championship_spectators_4.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "25bff5b2925cec7d0d43cc81bb3340760d17dd2815236bb6c3cd8e9a808ea8a2"
+  }
+ },
+ "https://wiki.swccg.com/wiki/File:2021_World_Championship_spectators_5.jpg": {
+  "capture": "https://web.archive.org/web/20261125164206/https://swccg.com/wiki/File:2021_World_Championship_spectators_5.jpg",
+  "job_id": "spn2-c9a837cab0329045f494d8fa059e5ef190e72570",
+  "last": "2026-11-25T16:43:30Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-25T16:43:30Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://wiki.swccg.com/wiki/Greg_Shaw": {
   "capture": "https://web.archive.org/web/20261125142558/https://swccg.com/wiki/Greg_Shaw",
@@ -192474,9 +192625,17 @@
  "https://www.stephenskilton.com/decktech_archives/15354/": {
   "capture": "https://web.archive.org/web/20261023071252/https://www.stephenskilton.com/decktech_archives/15354/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T00:23:59Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-25T16:32:31Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-25T16:32:31Z",
+   "bytes": 12718,
+   "capture_id": "https://web.archive.org/web/20261023071252id_/https://www.stephenskilton.com/decktech_archives/15354/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bd4a41c01078192f867e1614f397d7dddcd7551a7dbc994c2b738bf426199756"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15358/": {
   "capture": "https://web.archive.org/web/20261023072449/https://www.stephenskilton.com/decktech_archives/15358/",
