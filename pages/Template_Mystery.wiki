@@ -1,10 +1,10 @@
-<span class="mystery-flag" style="font-size:85%; font-style:italic;">&#91;'''Mystery:''' {{#if:{{{question|{{{1|}}}}}}|{{{question|{{{1|}}}}}}?|not known.}} {{#if:{{{section|{{{2|}}}}}}|[[Mysteries#{{{section|{{{2|}}}}}}|Can you help?]]|[[Mysteries|Can you help?]]}}&#93;</span><includeonly>{{#if:{{{nocat|}}}||{{#ifeq:{{NAMESPACE}}|{{ns:0}}|[[Category:Mysteries]]}}}}</includeonly><noinclude>
+<span class="mystery-flag" style="font-size:85%; font-style:italic;">&#91;'''Mystery:''' {{#if:{{{question|{{{1|}}}}}}|{{{question|{{{1|}}}}}}?|not known.}} {{#if:{{{section|{{{2|}}}}}}|[[Mysteries#{{{section|{{{2|}}}}}}|Can you help?]]|[[Mysteries|Can you help?]]}}&#93;</span><includeonly>{{#if:{{{nocat|}}}||{{#ifeq:{{NAMESPACE}}|{{ns:0}}|[[Category:Mysteries]]{{#switch:{{lc:{{{type|}}}}}|result|results|winner=[[Category:Mysteries about results]]|date|place|when|where=[[Category:Mysteries about dates and places]]|deck|decklist=[[Category:Mysteries about decklists]]|people|person=[[Category:Mysteries about people]]|card|product|document=[[Category:Mysteries about cards and products]]}}}}}}</includeonly><noinclude>
 == Purpose ==
 Flags an open question at the spot in an article where the record has a gap: a result that sources disagree on, a document that was published but never preserved, or a fact no surviving source gives. The flag shows a short line in the text and links to the [[Mysteries]] page, where each question is written up with what is known, its sources, and what would settle it. Articles that use it are listed in [[:Category:Mysteries]].
 
 == Usage ==
 Put it right after the sentence or table cell where the gap is:
-<pre>{{Mystery|question=Who won the Atlanta qualifier|section=1997 qualifiers: Atlanta, Mobile, Denver and Origins}}</pre>
+<pre>{{Mystery|question=Who won the Atlanta qualifier|section=1997 qualifiers: Atlanta, Mobile, Denver and Origins|type=result}}</pre>
 renders as: {{Mystery|question=Who won the Atlanta qualifier|section=1997 qualifiers: Atlanta, Mobile, Denver and Origins|nocat=yes}}
 
 === Parameters ===
@@ -14,6 +14,8 @@ renders as: {{Mystery|question=Who won the Atlanta qualifier|section=1997 qualif
 | <code>question</code> (or the first unnamed parameter) || The open question, short, without the final question mark (the template adds it). Left out, the note reads "not known".
 |-
 | <code>section</code> (or the second unnamed parameter) || Optional. The heading of the entry on [[Mysteries]], so the link goes straight to it. Leave it out to link to the top of the page.
+|-
+| <code>type</code> || Optional. Sorts the flag into a case type for the cards on [[Help Complete the Archive]]: <code>result</code> (winners, standings, fields) → [[:Category:Mysteries about results]]; <code>date</code> or <code>place</code> (when or where something happened) → [[:Category:Mysteries about dates and places]]; <code>deck</code> (who played a decklist) → [[:Category:Mysteries about decklists]]; <code>people</code> (who someone was) → [[:Category:Mysteries about people]]; <code>card</code>, <code>product</code> or <code>document</code> → [[:Category:Mysteries about cards and products]].
 |-
 | <code>nocat</code> || Optional. Any value stops the category (for examples and documentation).
 |}

@@ -1,0 +1,27 @@
+<div class="help-wanted" style="border:1px solid #b8860b; border-left:6px solid #b8860b; background:#fffaf0; padding:0.5em 0.9em; margin:0.5em 0 1em 0;">
+'''Can you help?''' {{{text|This event has open cases in the archive.}}}{{#if:{{{photos|}}}|&#32;[[Unidentified event photographs#{{{photos}}}|Name people in its photographs]].}}{{#if:{{{mystery|}}}|&#32;[[Mysteries#{{{mystery}}}|See the open question]].}}{{#if:{{{decks|}}}|&#32;[[Unknown players#{{{decks}}}|Match its decklists to players]].}} More cases: [[Help Complete the Archive]]. Post on the [https://swccg.com/forum/viewforum.php?f=4 SWCCG Forum].
+</div><noinclude>
+== Purpose ==
+A small "Can you help?" box for an article (usually an event page) that has open cases: people still to be named in its photographs, an entry on [[Mysteries]], or decklists on [[Unknown players]]. It links to the exact list section and to [[Help Complete the Archive]].
+
+== Usage ==
+<pre>{{Help wanted|text=16 people in the group photograph are still to be named.|photos=2025 World Championship}}</pre>
+renders as:
+{{Help wanted|text=16 people in the group photograph are still to be named.|photos=2025 World Championship}}
+
+=== Parameters ===
+{| class="wikitable"
+! Parameter !! Meaning
+|-
+| <code>text</code> || One short sentence about what is open.
+|-
+| <code>photos</code> || Optional. Heading on [[Unidentified event photographs]] (usually the event name).
+|-
+| <code>mystery</code> || Optional. Heading of the entry on [[Mysteries]].
+|-
+| <code>decks</code> || Optional. Heading on [[Unknown players]].
+|}
+
+Place it under the infobox or at the top of the Photographs section. Remove it when every case it points to is solved.
+
+[[Category:Templates]]</noinclude>

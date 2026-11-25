@@ -1,0 +1,31 @@
+<div class="featured-mystery" style="display:flex; flex-wrap:wrap; gap:1em; align-items:flex-start; border:2px solid #b8860b; background:#fffaf0; border-radius:6px; padding:0.8em 1em; margin:0.5em 0 1em 0;">
+<div style="flex:0 0 auto;">[[File:{{{image|2023 World Championship group photo no. 20 crop.jpg}}}|{{{size|220px}}}|link=File:{{{image|2023 World Championship group photo no. 20 crop.jpg}}}|{{{alt|Featured mystery}}}]]</div>
+<div style="flex:1 1 280px; min-width:240px;">
+<div style="font-size:85%; text-transform:uppercase; letter-spacing:0.08em; color:#8b6508; font-weight:bold;">Featured mystery</div>
+<div style="font-size:150%; font-weight:bold; margin:0.2em 0 0.4em 0;">{{{question|Who is this?}}}</div>
+{{{clues|}}}
+
+{{#if:{{{answer_at|}}}|'''Answer on:''' {{{answer_at}}}|'''Answer on:''' the [https://swccg.com/forum/viewforum.php?f=4 General board] of the [https://swccg.com/forum/ SWCCG Forum], or [[Talk:Help Complete the Archive]]}}
+</div>
+</div><noinclude>
+== Purpose ==
+One open case shown large on [[Help Complete the Archive]]. To rotate it, edit the parameters of <code><nowiki>{{Featured mystery}}</nowiki></code> on the hub; when the case is answered, move it to [[Template:Recently solved]] and the Solved section of [[Mysteries]], with the answer and who supplied it.
+
+== Parameters ==
+{| class="wikitable"
+! Parameter !! Meaning
+|-
+| <code>image</code> || File name without <code>File:</code>. A crop that shows one person or one object works best.
+|-
+| <code>size</code> || Image width, default 220px.
+|-
+| <code>question</code> || The question, in large type.
+|-
+| <code>clues</code> || What is known so far: where the image comes from, what the person wears, who stands nearby, and links to the list or entry the case sits on.
+|-
+| <code>answer_at</code> || Where to answer. Default: the [https://swccg.com/forum/viewforum.php?f=4 General board] of the [https://swccg.com/forum/ SWCCG Forum], or [[Talk:Help Complete the Archive]].
+|}
+
+Choose only real open cases that are already on [[Unidentified event photographs]], [[Unknown players]] or [[Mysteries]].
+
+[[Category:Templates]]</noinclude>

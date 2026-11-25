@@ -1,0 +1,30 @@
+<includeonly>{{#switch:{{{1|}}}
+|photos=434
+|decks=64
+|players=3,348
+|players-all=3,658
+|worlds=4
+|updated=25 November 2026
+|#default=?
+}}</includeonly><noinclude>
+== Purpose ==
+Holds the open-case counts that come from lists rather than categories, so [[Help Complete the Archive]] and [[Mysteries]] show one number from one place. Counts that come from a category are live and stay on the hub as <code><nowiki>{{PAGESINCATEGORY:…}}</nowiki></code>.
+
+== Values ==
+{| class="wikitable"
+! Key !! Value !! Counted from
+|-
+| <code>photos</code> || {{Archive open cases|photos}} || Rows with a File on [[Unidentified event photographs]]
+|-
+| <code>decks</code> || {{Archive open cases|decks}} || Decklist links on [[Unknown players]]
+|-
+| <code>players</code> || {{Archive open cases|players}} || Pages in [[:Category:Players]] still waiting for a photograph (of {{Archive open cases|players-all}})
+|-
+| <code>worlds</code> || {{Archive open cases|worlds}} || [[:Category:World Championships]] pages still waiting for a photograph: [[2003 World Championship|2003]], [[2004 World Championship|2004]], [[2005 World Championship|2005]], [[2006 World Championship|2006]]
+|-
+| <code>updated</code> || {{Archive open cases|updated}} || Date of the last recount
+|}
+
+When you remove rows from one of those lists, or add a photograph to a player page, update the number here and the <code>updated</code> date.
+
+[[Category:Templates]]</noinclude>
