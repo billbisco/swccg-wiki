@@ -1,0 +1,179 @@
+#!/usr/bin/env python3
+"""Apply a batch to wiki.swccg.com through the web API as Holocron Claude — no SSH, no PC.
+
+Reads the bot's swccg.com sign-in from the environment (cloud environment variables, never a file in git):
+    WIKI_BOT_USER="Holocron Claude"   WIKI_BOT_PASS=...
+and signs in through swccg.com/login (swccg_signin.py); the wiki has no password sign-in of its own.
+The account has autoreview, so FlaggedRevs marks these edits reviewed.
+
+    python3 wiki_api_apply.py y-dt-batch-06.tsv [--files gemp-import-dt-batch-06/*.txt] [--summary ...]
+
+TSV rows: title<TAB>relative/path/to/page.wiki (the same TSV apply-tsv.sh takes). Files are
+uploaded (overwriting an existing file of that name) before the pages, so download links are
+live when the pages land. Pages whose text is unchanged are skipped (nochange).
+"""
+from __future__ import annotations
+
+import argparse
+import http.cookiejar
+import json
+import os
+import sys
+import time
+import urllib.parse
+import urllib.request
+import uuid
+from pathlib import Path
+
+API = "https://swccg.com/wiki/api.php"
+UA = "swccg-wiki-dest/1.0 (Holocron Claude; https://github.com/billbisco/swccg-wiki)"
+
+
+class Wiki:
+    def __init__(self) -> None:
+        # #266 AC8: no wiki password sign-in; sign in at swccg.com like everyone else
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from swccg_signin import SignInError, sign_in
+        try:
+            self.op = sign_in(ua=UA)
+        except SignInError as e:
+            raise SystemExit(f"sign-in failed: {e}")
+        self.csrf = self.get(action="query", meta="tokens")["query"]["tokens"]["csrftoken"]
+
+    def _open(self, req, tries: int = 5) -> dict:
+        for i in range(tries):
+            try:
+                with self.op.open(req, timeout=180) as r:
+                    d = json.loads(r.read().decode("utf-8"))
+                if d.get("error", {}).get("code") == "maxlag":
+                    time.sleep(5 * (i + 1))
+                    continue
+                return d
+            except urllib.error.URLError:
+                if i == tries - 1:
+                    raise
+                time.sleep(5 * (i + 1))
+        raise RuntimeError("API retries exhausted")
+
+    def get(self, **p) -> dict:
+        q = {"format": "json", "formatversion": "2", **p}
+        return self._open(API + "?" + urllib.parse.urlencode(q))
+
+    def post(self, **p) -> dict:
+        if p.get("action") == "edit":
+            p.setdefault("bot", "1")  # Bill 2026-10-27: bot accounts mark every edit as a bot edit (upload has no bot param)
+        q = {"format": "json", "formatversion": "2", **p}
+        return self._open(urllib.request.Request(API, urllib.parse.urlencode(q).encode("utf-8")))
+
+    def edit(self, title: str, text: str, summary: str) -> str:
+        for wait in (0, 20, 40, 60, 60, 60):  # the wiki rate-limits edits per account; wait it out
+            time.sleep(wait)
+            d = self.post(action="edit", title=title, text=text, summary=summary, bot="1",
+                          token=self.csrf, maxlag="5")
+            if d.get("error", {}).get("code") != "ratelimited":
+                break
+        if "error" in d:
+            return f"ERROR {d['error'].get('code')}: {d['error'].get('info', '')[:120]}"
+        e = d["edit"]
+        status = "nochange" if e.get("nochange") else ("created" if e.get("new") else "edited")
+        return status + self.review(title)
+
+    def review(self, title: str) -> str:
+        """FlaggedRevs autoreview skips new pages and edits on top of an unreviewed revision;
+        review the current revision explicitly (Holocron Claude has the review right)."""
+        p = self.get(action="query", titles=title, prop="flagged|revisions", rvprop="ids")["query"]["pages"][0]
+        f = p.get("flagged")
+        if p.get("missing") or "revisions" not in p:
+            return ""
+        if f is not None and not f.get("pending_since"):
+            return ""
+        d = self.post(action="review", revid=str(p["revisions"][0]["revid"]), flag_accuracy="1",
+                      comment="Holocron Claude batch apply", token=self.csrf)
+        if "error" in d:
+            return f" (review ERROR {d['error'].get('code')})"
+        return " (reviewed)"
+
+    def upload(self, path: Path, comment: str) -> str:
+        boundary = uuid.uuid4().hex
+        fields = {"action": "upload", "format": "json", "formatversion": "2", "filename": path.name,
+                  "comment": comment, "ignorewarnings": "1", "token": self.csrf}
+        body = b"".join(
+            f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
+            for k, v in fields.items())
+        body += (f"--{boundary}\r\nContent-Disposition: form-data; name=\"file\"; filename=\"{path.name}\"\r\n"
+                 f"Content-Type: text/plain\r\n\r\n").encode("utf-8") + path.read_bytes() + f"\r\n--{boundary}--\r\n".encode()
+        req = urllib.request.Request(API, body, {"Content-Type": f"multipart/form-data; boundary={boundary}"})
+        d = self._open(req)
+        if d.get("error", {}).get("code") == "fileexists-no-change":
+            return "unchanged"
+        if "error" in d:
+            return f"ERROR {d['error'].get('code')}: {d['error'].get('info', '')[:120]}"
+        u = d["upload"]
+        return u.get("result", "?") + (" (unchanged)" if "duplicate" in json.dumps(u.get("warnings", {})) else "")
+
+    def upload_new(self, path: Path, filename: str, text: str, comment: str, *,
+                   review: bool = True) -> str:
+        """Upload literal text under a NEW name only; never ignore warnings.
+
+        Pass review=False when the uploaded original must be verified and registered
+        before the caller runs its publication gate and explicitly reviews the File.
+        """
+        p = self.get(action="query", titles="File:" + filename)["query"]["pages"][0]
+        if not p.get("missing"):
+            return "ERROR exists: refusing to overwrite"
+        boundary = uuid.uuid4().hex
+        fields = {"action": "upload", "format": "json", "formatversion": "2", "filename": filename,
+                  "comment": comment, "text": text, "token": self.csrf}
+        body = b"".join(
+            f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n{v}\r\n".encode("utf-8")
+            for k, v in fields.items())
+        body += (f"--{boundary}\r\nContent-Disposition: form-data; name=\"file\"; filename=\"{path.name}\"\r\n"
+                 f"Content-Type: application/octet-stream\r\n\r\n").encode("utf-8") + path.read_bytes() + f"\r\n--{boundary}--\r\n".encode()
+        d = self._open(urllib.request.Request(API, body, {"Content-Type": f"multipart/form-data; boundary={boundary}"}))
+        if "error" in d:
+            return f"ERROR {d['error'].get('code')}: {d['error'].get('info', '')[:120]}"
+        u = d["upload"]
+        if u.get("result") != "Success":
+            return f"ERROR {u.get('result')}: {json.dumps(u.get('warnings', {}))[:200]}"
+        self.post(action="purge", titles="File:" + filename, forcelinkupdate="1")
+        return "Success" + (self.review("File:" + filename) if review else "")
+
+    def purge(self, *titles: str) -> dict:
+        return self.post(action="purge", titles="|".join(titles), forcelinkupdate="1")
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("tsv", type=Path)
+    ap.add_argument("--files", nargs="*", type=Path, default=[])
+    ap.add_argument("--summary", default="DeckTech dest (Holocron Claude)")
+    a = ap.parse_args()
+    base = a.tsv.resolve().parent
+    w = Wiki()
+    # since.txt (ISO UTC, written when the pages were built) turns on the edit-conflict guard
+    since = (base / "since.txt").read_text().strip() if (base / "since.txt").exists() else ""
+    bad = 0
+    for f in a.files:
+        r = w.upload(f, a.summary)
+        bad += r.startswith("ERROR")
+        print(f"FILE {f.name}: {r}", flush=True)
+    for line in a.tsv.read_text(encoding="utf-8").splitlines():
+        if "\t" not in line:
+            continue
+        title, rel = line.split("\t", 1)
+        if since:  # someone else edited after the build read the page: never overwrite their work
+            p = w.get(action="query", titles=title, prop="revisions", rvprop="timestamp|user")["query"]["pages"][0]
+            rv = (p.get("revisions") or [{}])[0]
+            if rv and rv["timestamp"] > since and rv["user"] != "Holocron Claude":
+                bad += 1
+                print(f"PAGE {title}: CONFLICT edited by {rv['user']} at {rv['timestamp']} after the build; rebuild", flush=True)
+                continue
+        r = w.edit(title, (base / rel).read_text(encoding="utf-8"), a.summary)
+        bad += r.startswith("ERROR")
+        print(f"PAGE {title}: {r}", flush=True)
+    print("DONE errors", bad)
+    return 1 if bad else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
