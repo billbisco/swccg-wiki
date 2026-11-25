@@ -10,7 +10,8 @@ Written by Claude on 25 Nov 2026 so another agent (Grok Build or anyone) can con
 |---|---|---|
 | #1350 | Small card-data fixes + 11 Dantooine decklist relinks | Done 25 Nov (closed) |
 | #1356 | Fold 240 same-words slips, transcription-error wording, dated decklist relinks | Done 25 Nov (closed) |
-| #1361 | Leftovers: pixel-identical versions, Chewie's Hut move, Xizor dates, ~31 rows, (location) links, broken anchors, 20 blocked redirects, Colo Claw Fish/Hindsight for Bill | Open: agents r1361a, r1361b drafting |
+| #1361 | Leftovers from the 25 Nov cleanup | Done 25 Nov (closed) |
+| #1362 | Turned-image sweep, missing errata tables (11 families), E1 mark rows, Coruscant counterparts, deck pages | Open: agents r1362a, r1362b drafting |
 | #1351 | 274 version chains the errata generator refused | Done 25 Nov (closed): a rerun refuses nothing; 13 families keep a correct hand table |
 | #677 | Virtual Block 3 errata (ChatGPT) | Open, not ours |
 | #715, #716 | Planned/independent sets pilot; final errata reconcile | Open |
@@ -57,7 +58,7 @@ PC VM calls are killed after about 3 minutes and background processes don't surv
 - GitHub backups still go through the PC (`backup_api.py`; the PAT stays on the PC).
 - Deletions run on the VPS: `nohup docker exec swccg_wiki php maintenance/run.php deleteBatch …` survives the ssh session.
 
-**Redirect removal is done (25 Nov):** 5,921 deleted, record in `ops/redirects-deleted-2026-11-25.tsv`. Before deleting a title, check `prop=linkshere|transcludedin` in content namespaces.
+**Redirect removal is done (25 Nov):** 5,921 deleted, record in `ops/redirects-deleted-2026-11-25.tsv`. Before deleting a title, check `prop=linkshere|transcludedin` in content namespaces, and repoint every link first. The 165 Grok #599 folds were deleted with their links never repointed; 194 red links were fixed afterwards.
 
 ## Rules learned the hard way
 
