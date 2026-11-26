@@ -63703,13 +63703,14 @@
   "capture": "https://web.archive.org/web/20261126211804/https://boardgamegeek.com/filepage/24812/2nd-annual-swccg-encyclopedia-of-decksdoc",
   "job_id": "spn2-58baa909ef85ff8d580231e43a2cafc362c436a9",
   "last": "2026-11-26T21:39:19Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T23:13:20Z",
-   "error": "source HTTP 403"
+   "at": "2026-11-26T23:44:21Z",
+   "error": "source HTTP 403",
+   "reason": "could not fetch after 3 tries"
   },
-  "verify_tries": 2
+  "verify_tries": 3
  },
  "https://boardgamegeek.com/filepage/33565/star-wars-ccg-complete-card-list-42": {
   "capture": "",
@@ -97460,7 +97461,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T23:41:17Z",
+   "at": "2026-11-26T23:44:17Z",
    "defer": "cdx-batch"
   }
  },
@@ -181426,12 +181427,14 @@
   "capture": "https://web.archive.org/web/20261125183742/https://swccg.com/wiki/File:Mike_French_2025_World_Championship_4_October.jpg",
   "job_id": "spn2-e158b1a16beae242c44631ae2fa677a6ee9d2f1a",
   "last": "2026-11-25T18:44:00Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T23:14:06Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:44:29Z",
+   "capture_id": "https://web.archive.org/web/20261125183742id_/https://swccg.com/wiki/File:Mike_French_2025_World_Championship_4_October.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.919
   }
  },
  "https://swccg.com/wiki/File:Mike_Kessling_2025_World_Championship_4_October_172928.jpg": {
