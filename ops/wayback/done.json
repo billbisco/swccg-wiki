@@ -68564,6 +68564,13 @@
    "text_match": 1.0
   }
  },
+ "https://drive.usercontent.google.com/uc?id=1w4VIRY-z6rf0M3aqnKzLJ2cDQXyGxiLx&export=download": {
+  "capture": "",
+  "job_id": "spn2-7067f9a89cafe8f6a128dbee995c43518ece532f",
+  "last": "2026-11-26T22:15:01Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://en.wikipedia.org/wiki/Decipher,_Inc.": {
   "capture": "https://web.archive.org/web/20261013234544/https://en.wikipedia.org/wiki/Decipher,_Inc.",
   "last": "2026-10-14T16:48:53Z",
@@ -72811,6 +72818,13 @@
    "method": "sha256",
    "sha256": "4da7c4bb4c31829031e410109880a3768ba8b77369158b3ebf463d3d2f41c25c"
   }
+ },
+ "https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/1ad9a92ad3044a16e7e0.wiki": {
+  "capture": "",
+  "job_id": "spn2-2d7104bfc2324ab96489e4ce4acf29346efbece3",
+  "last": "2026-11-26T22:12:33Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://raw.githubusercontent.com/ledwards/swccgvkit/5047de0/db/lightside.cdf": {
   "capture": "https://web.archive.org/web/20261114013824/https://raw.githubusercontent.com/ledwards/swccgvkit/5047de0/db/lightside.cdf",
@@ -197519,11 +197533,19 @@
   }
  },
  "https://swccg.com/wiki/index.php?oldid=326719&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126211204/https://swccg.com/wiki/index.php?oldid=326719&action=raw",
   "job_id": "spn2-b06fcb03de6783830ec86557e4385bcc78c049a2",
-  "last": "2026-11-26T20:13:14Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T22:12:30Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T22:12:30Z",
+   "bytes": 1090,
+   "capture_id": "https://web.archive.org/web/20261126211204id_/https://swccg.com/wiki/index.php?oldid=326719&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "57d933a9c3aa63189a0bf0a5a296b77210a0b58d8f6b32a39a57847851e88301"
+  }
  },
  "https://swccg.com/wiki/index.php?oldid=326742&action=raw": {
   "capture": "",
@@ -209904,9 +209926,17 @@
  "https://www.stephenskilton.com/decktech_archives/17033/": {
   "capture": "https://web.archive.org/web/20261023121537/https://www.stephenskilton.com/decktech_archives/17033/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T09:22:52Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-26T22:12:25Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-26T22:12:25Z",
+   "bytes": 11424,
+   "capture_id": "https://web.archive.org/web/20261023121537id_/https://www.stephenskilton.com/decktech_archives/17033/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e211f905a4491605c16ba6d177bbf87e5af53e675b49ef608196d0701d83f967"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/17038/": {
   "capture": "https://web.archive.org/web/20261023120621/https://www.stephenskilton.com/decktech_archives/17038/",
