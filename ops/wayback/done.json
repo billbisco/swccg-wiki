@@ -90849,12 +90849,14 @@
   "capture": "https://web.archive.org/web/20261126114656/https://swccg.com/forum/",
   "job_id": "spn2-14ba03dd2053dfb63299e652ac79cf450f583d97",
   "last": "2026-11-26T12:08:33Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T12:48:59Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:40:18Z",
+   "capture_id": "https://web.archive.org/web/20261126114656id_/https://swccg.com/forum/",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.96
   }
  },
  "https://swccg.com/forum/viewforum.php?f=4": {
@@ -97428,7 +97430,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T22:36:44Z",
+   "at": "2026-11-26T22:40:01Z",
    "defer": "cdx-batch"
   }
  },
@@ -177450,9 +177452,9 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T11:01:36Z",
+   "at": "2026-11-26T22:40:46Z",
    "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_23.jpg": {
@@ -177941,12 +177943,15 @@
   "capture": "https://web.archive.org/web/20261126112432/https://swccg.com/wiki/File:2025_European_Championship_17.jpg",
   "job_id": "spn2-442dd8417aad500698b8b9752fa3c2afc8fbfef6",
   "last": "2026-11-26T11:27:57Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T11:27:57Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:40:38Z",
+   "bytes": 27419,
+   "capture_id": "https://web.archive.org/web/20261126112432id_/https://swccg.com/wiki/File:2025_European_Championship_17.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c3a2a3197d4f2305db257e441937ec0621357673cd1d4c9639528c997dd0b7eb"
   }
  },
  "https://swccg.com/wiki/File:2025_European_Championship_18.jpg": {
@@ -178102,12 +178107,14 @@
   "capture": "https://web.archive.org/web/20261126114700/https://swccg.com/wiki/File:2025_Oregon_State_Championship_4.jpg",
   "job_id": "spn2-05cb03d88c22ed89cd0161ec4adece832f40c3e7",
   "last": "2026-11-26T11:53:28Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T11:53:28Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:40:32Z",
+   "capture_id": "https://web.archive.org/web/20261126114700id_/https://swccg.com/wiki/File:2025_Oregon_State_Championship_4.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.944
   }
  },
  "https://swccg.com/wiki/File:2025_Oregon_State_Championship_5.jpg": {
@@ -178143,12 +178150,15 @@
   "capture": "https://web.archive.org/web/20261126115004/https://swccg.com/wiki/File:2025_Oregon_State_Championship_7.jpg",
   "job_id": "spn2-49b42db3db1bc46c0407e810a96aaecb0fb671e2",
   "last": "2026-11-26T11:55:30Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T13:14:00Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:40:26Z",
+   "bytes": 28713,
+   "capture_id": "https://web.archive.org/web/20261126115004id_/https://swccg.com/wiki/File:2025_Oregon_State_Championship_7.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0988206fb88e1d5e85eb3573595877f09e9b4cd46de6e9dfec9ed37c78eb3b8e"
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg": {
@@ -197470,12 +197480,15 @@
   "capture": "https://web.archive.org/web/20261126210449/https://swccg.com/wiki/index.php?oldid=326365&action=raw",
   "job_id": "spn2-b0dc4dc63610ec124549ee3db669c2d3468f0c4f",
   "last": "2026-11-26T21:06:11Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T21:06:11Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:40:06Z",
+   "bytes": 1499,
+   "capture_id": "https://web.archive.org/web/20261126210449id_/https://swccg.com/wiki/index.php?oldid=326365&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "56d9a5a48ed6c01e100f9947dfa7014fa25749bec029c1eb0355147bc061d5a6"
   }
  },
  "https://swccg.com/wiki/index.php?oldid=326371&action=raw": {
@@ -200231,12 +200244,15 @@
   "capture": "https://web.archive.org/web/20261126203825/https://swccg.com/wiki/index.php?oldid=307452&action=raw",
   "job_id": "spn2-0b4c191f551d7f4ae32389b939b654066065ec87",
   "last": "2026-11-26T20:48:20Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T20:48:20Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:40:12Z",
+   "bytes": 4856,
+   "capture_id": "https://web.archive.org/web/20261126203825id_/https://swccg.com/wiki/index.php?oldid=307452&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "58b7017c4c3208cfd3245d82b38de91a37f9ab7ab0bfa7e49bc0f80fd9f29b93"
   }
  },
  "https://wiki.swccg.com/index.php?oldid=307460&action=raw": {
