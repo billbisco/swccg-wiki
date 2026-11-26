@@ -150,6 +150,9 @@ def validate_source_representation(source: dict) -> list[str]:
     if representation == "checked_byte_identical_native_mirror":
         from preservation_native import validate_native_mirror
         return validate_native_mirror(source)
+    if representation == "checked_github_git_object":
+        from preservation_github import validate_github_object
+        return validate_github_object(source)
     if representation == "original":
         return [] if primary == source.get("url") else ["different primary/capture URLs need a checked snapshot representation"]
     if representation != "checked_self_contained_snapshot":

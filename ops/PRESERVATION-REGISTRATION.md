@@ -206,3 +206,45 @@ Run the full offline owner suite (external sockets are forbidden):
 ```text
 python3 ops/tests/run_offline.py --temp-root /DISK_WORK/TEST_TMP
 ```
+
+
+## GitHub commit and blob pages (git-object identity, #1377)
+
+GitHub renders `github.com/<owner>/<repo>/commit/<sha>` and
+`github.com/<owner>/<repo>/blob/<sha>/<path>` fresh on every request, so a
+fresh fetch never repeats the backed-up HTML bytes and an `original` source of
+that kind can never be queued. Register such a page with
+`representation: "checked_github_git_object"` (validator:
+`tools/preservation_github.py`, called from `validate_source_representation`).
+
+The page stays the capture target (`source.url`; `primary_url`, if given, must
+equal it). `source.sha256`/`bytes` remain the independently backed-up page
+bytes and still bind the registration job and source backup receipt. The new
+`source.github_object` binds the git object:
+
+| field | commit page | blob page |
+|---|---|---|
+| `owner`, `repo`, `kind`, `ref`, `path` | as parsed from the URL (`path` null) | as parsed from the URL |
+| `commit` | full 40-hex SHA the cited ref resolves to | same |
+| `file_sha256`, `file_bytes` | absent | the raw file at that commit |
+
+Only lowercase hex refs of 7 to 40 characters are accepted; branch names,
+`commits/` history pages, queries and fragments are not.
+
+What the owner checks instead of the page bytes (`_check_public`):
+
+* commit: the page answers 200 and names the full bound commit SHA (GitHub
+  embeds it, e.g. `"oid":"<sha>"`; a short ref therefore proves which commit it
+  resolved to);
+* blob: `raw.githubusercontent.com/<owner>/<repo>/<commit>/<path>`, and the
+  same path at the cited short ref when the URL uses one, answer 200 with the
+  registered `file_sha256`/`file_bytes`. The page itself is not fetched.
+
+When it matches, the page URL is promoted to `ops/wayback/queue.txt` as usual
+(the owner alone submits). An `awaiting_stage` object is advanced to ready by
+the same check. A capture is verified when its strict indexed `id_` replay
+answers 200 and names the bound full commit SHA (`verification.method:
+github_commit_oid`); a replay that does not name it is a different payload and
+gets the normal one checked recapture. The export includes `github_object`.
+
+Tests: `ops/tests/test_github_object_owner.py` (part of `run_offline.py`).
