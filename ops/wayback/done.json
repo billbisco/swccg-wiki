@@ -175168,6 +175168,13 @@
    "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
+ "https://swccg.com/wiki/2024_World_Championship": {
+  "capture": "",
+  "job_id": "spn2-b187a2179d762b76af8aa7ec27541f4c995733b8",
+  "last": "2026-11-26T11:12:34Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/2025_World_Championship": {
   "capture": "https://web.archive.org/web/20261125124800/https://swccg.com/wiki/2025_World_Championship",
   "last": "2026-11-25T13:10:53Z",
@@ -176706,11 +176713,86 @@
   "tries": 1
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_24.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126105710/https://swccg.com/wiki/File:2023_Naboo_Regionals_24.jpg",
   "job_id": "spn2-430a69c93e9f4d49521871c652c76e907463d06f",
-  "last": "2026-11-26T10:57:09Z",
-  "status": "pending",
+  "last": "2026-11-26T11:04:14Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:04:14Z",
+   "bytes": 24872,
+   "capture_id": "https://web.archive.org/web/20261126105710id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_24.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "547f321e32bc47412508b183b5b4fe525cee8ae2331c9bfa03c40771c7ca10d8"
+  }
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_25.jpg": {
+  "capture": "",
+  "error": "<urlopen error [Errno 111] Connection refused>",
+  "last": "2026-11-26T11:04:23Z",
+  "status": "retry",
   "tries": 1
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_26.jpg": {
+  "capture": "https://web.archive.org/web/20261126110524/https://swccg.com/wiki/File:2023_Naboo_Regionals_26.jpg",
+  "job_id": "spn2-5f831eb09d7074596ea32be1d53bb19a69eefa0c",
+  "last": "2026-11-26T11:14:39Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:14:39Z",
+   "bytes": 26920,
+   "capture_id": "https://web.archive.org/web/20261126110524id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_26.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9cbfa8bf77db54889158d90f4e6a08eccbad98644bfb8816f5452ae3036218fb"
+  }
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_27.jpg": {
+  "capture": "https://web.archive.org/web/20261126110625/https://swccg.com/wiki/File:2023_Naboo_Regionals_27.jpg",
+  "job_id": "spn2-073e74f2c81499f4aa5a00b8afb23788570e5f59",
+  "last": "2026-11-26T11:14:44Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:14:44Z",
+   "bytes": 27028,
+   "capture_id": "https://web.archive.org/web/20261126110625id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_27.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4762d774a88a03ef9441c16586e41bdaab0dc6d9145d6681eb80a5b458ce3425"
+  }
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_28.jpg": {
+  "capture": "https://web.archive.org/web/20261126110726/https://swccg.com/wiki/File:2023_Naboo_Regionals_28.jpg",
+  "job_id": "spn2-7205c282d490ab144a4d14abc13d94a6130708ae",
+  "last": "2026-11-26T11:14:48Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:14:48Z",
+   "bytes": 26122,
+   "capture_id": "https://web.archive.org/web/20261126110726id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_28.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f2c59114ca54a3e67fff2c229d7ff4e2f5ea47a744ec7a42f51c7a5ffde00756"
+  }
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_29.jpg": {
+  "capture": "https://web.archive.org/web/20261126110828/https://swccg.com/wiki/File:2023_Naboo_Regionals_29.jpg",
+  "job_id": "spn2-6e0ae548c990f980a251b29b59afa92f59daea2f",
+  "last": "2026-11-26T11:14:54Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:14:54Z",
+   "bytes": 25164,
+   "capture_id": "https://web.archive.org/web/20261126110828id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_29.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "dbc5458fe5b9d07f34fb43d20c7ee7cbd2227e3333080df3bf98dc62efbc0d2f"
+  }
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_3.jpg": {
   "capture": "https://web.archive.org/web/20261126092957/https://swccg.com/wiki/File:2023_Naboo_Regionals_3.jpg",
@@ -176894,6 +176976,13 @@
    "method": "sha256",
    "sha256": "d2cbf70c96f1956af548ec00473b5104928a9a4663f40435b47829f46885a84c"
   }
+ },
+ "https://swccg.com/wiki/File:2024_World_Championship_Slack_22_September_01.jpg": {
+  "capture": "",
+  "job_id": "spn2-d63a4674077207c5bf1a84273f4d4a7498e86ca0",
+  "last": "2026-11-26T11:13:35Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125180413/https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg",
@@ -180124,6 +180213,13 @@
    "sha256": "9f2ace02c62a8c86cf7a43420629e3b5aefb8d94e9c35fefc006814022c653f6"
   }
  },
+ "https://swccg.com/wiki/Justin_Branch": {
+  "capture": "",
+  "job_id": "spn2-1c797c116ef4db677e19e1ad1568b0c61fbeeb95",
+  "last": "2026-11-26T11:09:30Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/Justin_Miyashiro": {
   "capture": "https://web.archive.org/web/20261125133924/https://swccg.com/wiki/Justin_Miyashiro",
   "job_id": "spn2-1c50625a00bcd611c3f22f2a354fbd2dad951520",
@@ -180242,11 +180338,19 @@
   }
  },
  "https://swccg.com/wiki/Lynden_Pater": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126110143/https://swccg.com/wiki/Lynden_Pater",
   "job_id": "spn2-67722dff434ba79a4d731b0fb26b9218256a06b5",
-  "last": "2026-11-26T09:40:04Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T11:04:21Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:04:21Z",
+   "bytes": 76470,
+   "capture_id": "https://web.archive.org/web/20261126110143id_/https://swccg.com/wiki/Lynden_Pater",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "096f866d639e72758342b3046ed15645bdba3f5a56951256157d771fa777e494"
+  }
  },
  "https://swccg.com/wiki/Mark_Billings": {
   "capture": "https://web.archive.org/web/20261125192158/https://swccg.com/wiki/Mark_Billings",
@@ -180810,6 +180914,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/0/03/2023_Naboo_Regionals_29.jpg": {
+  "capture": "https://web.archive.org/web/20261126111032/https://swccg.com/wiki/images/0/03/2023_Naboo_Regionals_29.jpg",
+  "job_id": "spn2-3dd46fb29487bdd778a598ac920da4e3a6787637",
+  "last": "2026-11-26T11:14:57Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:14:57Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/0/03/Dagobah-Revised-L-obiwansapparition-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261121181001/https://swccg.com/wiki/images/0/03/Dagobah-Revised-L-obiwansapparition-physical-photo.png",
   "job_id": "spn2-a3905bd65d0e2d8ca6fccb124d2af63b67a293f5",
@@ -180844,6 +180959,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T09:44:22Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/0/04/2023_Naboo_Regionals_26.jpg": {
+  "capture": "https://web.archive.org/web/20261126111134/https://swccg.com/wiki/images/0/04/2023_Naboo_Regionals_26.jpg",
+  "job_id": "spn2-6b687d8109d617fdcc3c8f97cb0f8bd96221a27d",
+  "last": "2026-11-26T11:14:59Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:14:59Z",
    "defer": "cdx-batch"
   }
  },
@@ -182898,11 +183024,15 @@
   }
  },
  "https://swccg.com/wiki/images/2/2e/2023_Naboo_Regionals_23.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126105811/https://swccg.com/wiki/images/2/2e/2023_Naboo_Regionals_23.jpg",
   "job_id": "spn2-f1e484c40d2974f02632b0ee936f393d9b426440",
-  "last": "2026-11-26T10:58:10Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T11:04:10Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:04:10Z",
+   "defer": "cdx-batch"
+  }
  },
  "https://swccg.com/wiki/images/2/2e/2025_World_Championship_Brian_Fred_and_Nathan_Davis_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125134426/https://swccg.com/wiki/images/2/2e/2025_World_Championship_Brian_Fred_and_Nathan_Davis_4_October.jpg",
@@ -184081,11 +184211,15 @@
   }
  },
  "https://swccg.com/wiki/images/4/44/2023_Naboo_Regionals_19.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126105912/https://swccg.com/wiki/images/4/44/2023_Naboo_Regionals_19.jpg",
   "job_id": "spn2-88dc85273ce2055260bf5b81c4b29d1e4e3eb9ed",
-  "last": "2026-11-26T10:59:11Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T11:04:08Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:04:08Z",
+   "defer": "cdx-batch"
+  }
  },
  "https://swccg.com/wiki/images/4/44/Dagobah-Revised-L-nevertellmetheodds-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261121001208/https://swccg.com/wiki/images/4/44/Dagobah-Revised-L-nevertellmetheodds-physical-photo.png",
@@ -185589,11 +185723,15 @@
   "tries": 1
  },
  "https://swccg.com/wiki/images/6/61/2023_Naboo_Regionals_20.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126110013/https://swccg.com/wiki/images/6/61/2023_Naboo_Regionals_20.jpg",
   "job_id": "spn2-2b40a30fe69d0aaa49b4ab27e59c4a29a035dd1f",
-  "last": "2026-11-26T11:00:12Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T11:04:06Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:04:06Z",
+   "defer": "cdx-batch"
+  }
  },
  "https://swccg.com/wiki/images/6/61/2026_EC_Dusel_DS_Thrawn.txt": {
   "capture": "https://web.archive.org/web/20261125095029/https://swccg.com/wiki/images/6/61/2026_EC_Dusel_DS_Thrawn.txt",
@@ -204001,9 +204139,17 @@
  "https://www.stephenskilton.com/decktech_archives/16445/": {
   "capture": "https://web.archive.org/web/20261023105627/https://www.stephenskilton.com/decktech_archives/16445/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T07:54:08Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-26T11:04:05Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-26T11:04:05Z",
+   "bytes": 14011,
+   "capture_id": "https://web.archive.org/web/20261023105627id_/https://www.stephenskilton.com/decktech_archives/16445/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "86920d6a98368a32d621f2352056182b122ac58e7da72933440ce7a9af6fd5ef"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16452/": {
   "capture": "https://web.archive.org/web/20261023105637/https://www.stephenskilton.com/decktech_archives/16452/",
