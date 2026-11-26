@@ -175261,11 +175261,16 @@
   }
  },
  "https://swccg.com/wiki/Chris_Schoenthal": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126070219/https://swccg.com/wiki/Chris_Schoenthal",
   "job_id": "spn2-a666ebaec771c7fae4f27e9a680f85984c372f21",
-  "last": "2026-11-26T06:17:25Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T07:08:08Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:08:08Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+  }
  },
  "https://swccg.com/wiki/Chris_Wirfs": {
   "capture": "https://web.archive.org/web/20261125221416/https://swccg.com/wiki/Chris_Wirfs",
@@ -175556,9 +175561,17 @@
  },
  "https://swccg.com/wiki/File:2021_World_Championship_game_in_progress_17.jpg": {
   "capture": "https://web.archive.org/web/20261126064346/https://swccg.com/wiki/File:2021_World_Championship_game_in_progress_17.jpg",
-  "last": "2026-11-26T06:48:13Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T07:07:53Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:08:05Z",
+   "bytes": 27706,
+   "capture_id": "https://web.archive.org/web/20261126064346id_/https://swccg.com/wiki/File:2021_World_Championship_game_in_progress_17.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "055a6da68893468f4798a72ff03b5d965340029c1957817ccfb000af2945446e"
+  }
  },
  "https://swccg.com/wiki/File:2021_World_Championship_game_in_progress_18.jpg": {
   "capture": "https://web.archive.org/web/20261126064447/https://swccg.com/wiki/File:2021_World_Championship_game_in_progress_18.jpg",
@@ -175636,9 +175649,32 @@
  },
  "https://swccg.com/wiki/File:2021_World_Championship_stream_setup_2.jpg": {
   "capture": "https://web.archive.org/web/20261126062942/https://swccg.com/wiki/File:2021_World_Championship_stream_setup_2.jpg",
-  "last": "2026-11-26T06:51:52Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T07:07:48Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:07:51Z",
+   "bytes": 27833,
+   "capture_id": "https://web.archive.org/web/20261126062942id_/https://swccg.com/wiki/File:2021_World_Championship_stream_setup_2.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2c852415288ac5b39f74820d9f0a138a7fd49005c1e293b3fa675f1a3fdd1d62"
+  }
+ },
+ "https://swccg.com/wiki/File:2021_World_Championship_tournament_desk_4.jpg": {
+  "capture": "https://web.archive.org/web/20261126070820/https://swccg.com/wiki/File:2021_World_Championship_tournament_desk_4.jpg",
+  "job_id": "spn2-41dd9d3f3befac0db2fef9a4e1ae27c1efe55de1",
+  "last": "2026-11-26T07:18:32Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:32Z",
+   "bytes": 27694,
+   "capture_id": "https://web.archive.org/web/20261126070820id_/https://swccg.com/wiki/File:2021_World_Championship_tournament_desk_4.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c8a5d318e9df4430fadded410413e71c65b96c2957ba86d251bd5ad047d15ac3"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125180413/https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg",
@@ -178747,11 +178783,19 @@
   }
  },
  "https://swccg.com/wiki/Jared_Napolitano": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126065604/https://swccg.com/wiki/Jared_Napolitano",
   "job_id": "spn2-b69f96265949fc4aa1bb4b5e2803af1c5337d2ee",
-  "last": "2026-11-26T06:13:04Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T07:08:16Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:08:16Z",
+   "bytes": 124900,
+   "capture_id": "https://web.archive.org/web/20261126065604id_/https://swccg.com/wiki/Jared_Napolitano",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "40b957e81bc3d42aef42d4171cd9a23612cc4ec2b49a66049f7052af3fa52075"
+  }
  },
  "https://swccg.com/wiki/Jeff_Lavigne": {
   "capture": "https://web.archive.org/web/20261126011928/https://swccg.com/wiki/Jeff_Lavigne",
@@ -179862,6 +179906,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "d8d3fb94b2e3b356a1fae2dbb0051bf54e7b35a143ad9e209f23c45332104c2c"
+  }
+ },
+ "https://swccg.com/wiki/images/0/0a/2017_Match_Play_Championship_art_print_Chopper.jpg": {
+  "capture": "https://web.archive.org/web/20261126071224/https://swccg.com/wiki/images/0/0a/2017_Match_Play_Championship_art_print_Chopper.jpg",
+  "job_id": "spn2-75abd8798957da97adf4ea899d6fb1e1db3c987f",
+  "last": "2026-11-26T07:18:38Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:38Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/0/0a/2021_World_Championship_tournament_room_2.jpg": {
@@ -183197,6 +183252,17 @@
   "status": "retry",
   "tries": 1
  },
+ "https://swccg.com/wiki/images/5/50/2026_EC_Jaap_LS_OA.txt": {
+  "capture": "https://web.archive.org/web/20261126071627/https://swccg.com/wiki/images/5/50/2026_EC_Jaap_LS_OA.txt",
+  "job_id": "spn2-d8e8e88ae5a7ced87dfd8e6d17d20383df9c2ed8",
+  "last": "2026-11-26T07:18:44Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:44Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/5/50/Dagobah-Revised-L-hidinginthegarbage-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261122004413/https://swccg.com/wiki/images/5/50/Dagobah-Revised-L-hidinginthegarbage-physical-photo.png",
   "job_id": "spn2-92d92609d574303871714db335e325674354a267",
@@ -183378,6 +183444,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T21:51:30Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/5/54/Virtual_Block_4_official_copy_2009.pdf": {
+  "capture": "https://web.archive.org/web/20261126071729/https://swccg.com/wiki/images/5/54/Virtual_Block_4_official_copy_2009.pdf",
+  "job_id": "spn2-c9d64547771770d051cb67bf54ffebbf8814915d",
+  "last": "2026-11-26T07:18:46Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:46Z",
    "defer": "cdx-batch"
   }
  },
@@ -183640,6 +183717,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-26T03:18:04Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/5/59/2002_Bespin_Regionals_Final_Confrontation_Tim_Anderson_vs_Josh_Kohman.jpg": {
+  "capture": "https://web.archive.org/web/20261126070921/https://swccg.com/wiki/images/5/59/2002_Bespin_Regionals_Final_Confrontation_Tim_Anderson_vs_Josh_Kohman.jpg",
+  "job_id": "spn2-b9dd1503dfbb803e4446f02e1bcf786d0e06e150",
+  "last": "2026-11-26T07:18:34Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:34Z",
    "defer": "cdx-batch"
   }
  },
@@ -184765,6 +184853,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/7/71/1_June_2003_Columbia_Heights_tournament_Rosemount_crew.jpg": {
+  "capture": "https://web.archive.org/web/20261126071325/https://swccg.com/wiki/images/7/71/1_June_2003_Columbia_Heights_tournament_Rosemount_crew.jpg",
+  "job_id": "spn2-ed5aa159f4aeada8fb0586dfdb09ee2f87ff4c65",
+  "last": "2026-11-26T07:18:40Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:40Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/7/71/2025_World_Championship_hall_view_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125055858/https://swccg.com/wiki/images/7/71/2025_World_Championship_hall_view_4_October_evening.jpg",
   "job_id": "spn2-e30a815fedf7adada85cae9aab016be99a8d29af",
@@ -185614,6 +185713,17 @@
    "sha256": "dd66d56e55f45e78ba94ed8a70cfeaa398028308d10ab82bf77fae0aa56944e9"
   }
  },
+ "https://swccg.com/wiki/images/8/84/2018_Match_Play_Championship_art_print_Chewbacca.jpg": {
+  "capture": "https://web.archive.org/web/20261126071527/https://swccg.com/wiki/images/8/84/2018_Match_Play_Championship_art_print_Chewbacca.jpg",
+  "job_id": "spn2-15bb3eaa15c3ddca4d9ec6661a0b7586c4f9ba7d",
+  "last": "2026-11-26T07:18:43Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:43Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/8/84/2025_World_Championship_Paul_Coggins_and_Matt_Thornton_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125070936/https://swccg.com/wiki/images/8/84/2025_World_Championship_Paul_Coggins_and_Matt_Thornton_4_October_evening.jpg",
   "job_id": "spn2-5458e1866868fb38ae5e3f5e686ca1d982caaedd",
@@ -185942,6 +186052,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T12:13:50Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/8/89/Corona_Cup_2020_Final_Confrontation_team_standings.png": {
+  "capture": "https://web.archive.org/web/20261126071426/https://swccg.com/wiki/images/8/89/Corona_Cup_2020_Final_Confrontation_team_standings.png",
+  "job_id": "spn2-1427236275f579617aa85fdb3a2e1ad82c265050",
+  "last": "2026-11-26T07:18:41Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:41Z",
    "defer": "cdx-batch"
   }
  },
@@ -188510,6 +188631,17 @@
    "sha256": "74ae0a29814ea44465505066149f075e0b670872d21faaa8e1955e4be0db75ee"
   }
  },
+ "https://swccg.com/wiki/images/c/c1/Players_Committee_2022_Player_Survey_23.png": {
+  "capture": "https://web.archive.org/web/20261126071123/https://swccg.com/wiki/images/c/c1/Players_Committee_2022_Player_Survey_23.png",
+  "job_id": "spn2-efe522b537a12cd7b68f2c72a82a72242866e988",
+  "last": "2026-11-26T07:18:37Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:37Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/c/c2/2014_European_Championship_Day_2_decklists_part_1.pdf": {
   "capture": "https://web.archive.org/web/20261123041521/https://swccg.com/wiki/images/c/c2/2014_European_Championship_Day_2_decklists_part_1.pdf",
   "job_id": "spn2-d7c929f71e77e88966c79b4339227f020e5db918",
@@ -189281,6 +189413,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T16:43:27Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/d/d2/Bespin_Season_2018-2019_Tournament_1_results.png": {
+  "capture": "https://web.archive.org/web/20261126071022/https://swccg.com/wiki/images/d/d2/Bespin_Season_2018-2019_Tournament_1_results.png",
+  "job_id": "spn2-60de89c6b7396240f8633271143ab06ab3691672",
+  "last": "2026-11-26T07:18:35Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T07:18:35Z",
    "defer": "cdx-batch"
   }
  },
@@ -201620,9 +201763,17 @@
  "https://www.stephenskilton.com/decktech_archives/16095/": {
   "capture": "https://web.archive.org/web/20261023102817/https://www.stephenskilton.com/decktech_archives/16095/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T06:03:51Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-26T07:07:46Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-26T07:07:46Z",
+   "bytes": 12571,
+   "capture_id": "https://web.archive.org/web/20261023102817id_/https://www.stephenskilton.com/decktech_archives/16095/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5b7df3701d1ca5942cbaa0cd2e05acb5f617af8d9f27bc2685cf8e320c0455a0"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16098/": {
   "capture": "",
