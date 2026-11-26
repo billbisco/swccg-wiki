@@ -97460,7 +97460,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T23:17:07Z",
+   "at": "2026-11-26T23:21:44Z",
    "defer": "cdx-batch"
   }
  },
@@ -175964,12 +175964,14 @@
   "capture": "https://web.archive.org/web/20261125130236/https://swccg.com/wiki/Anthony_Howard",
   "job_id": "spn2-11bb9dbf904831b04b15f603c210c02ba3051051",
   "last": "2026-11-25T13:08:05Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T13:08:05Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:22:23Z",
+   "capture_id": "https://web.archive.org/web/20261125130236id_/https://swccg.com/wiki/Anthony_Howard",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.957
   }
  },
  "https://swccg.com/wiki/Apollo_Chu": {
@@ -179283,12 +179285,14 @@
   "capture": "https://web.archive.org/web/20261125125405/https://swccg.com/wiki/File:2025_World_Championship_evening_game_3_October_22.00.jpg",
   "job_id": "spn2-8577f18accc692dfc33990201b998b73b7ba96ca",
   "last": "2026-11-25T12:57:17Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T12:57:17Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 104] Connection reset by peer>"
+   "at": "2026-11-26T23:22:30Z",
+   "capture_id": "https://web.archive.org/web/20261125125405id_/https://swccg.com/wiki/File:2025_World_Championship_evening_game_3_October_22.00.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.901
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_evening_game_3_October_22.05.jpg": {
@@ -179377,12 +179381,14 @@
   "capture": "https://web.archive.org/web/20261125131305/https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.08_b.jpg",
   "job_id": "spn2-a7caccb55b43b6f00609a8619f93c698a923ebb8",
   "last": "2026-11-25T14:05:13Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T14:05:13Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:22:03Z",
+   "capture_id": "https://web.archive.org/web/20261125131305id_/https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.08_b.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.902
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.09.jpg": {
@@ -179419,24 +179425,28 @@
   "capture": "https://web.archive.org/web/20261125143929/https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.09_c.jpg",
   "job_id": "spn2-3eece6b751af1ae0603a30cf2793b15667c9c9ca",
   "last": "2026-11-25T14:45:06Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T14:45:06Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:21:56Z",
+   "capture_id": "https://web.archive.org/web/20261125143929id_/https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.09_c.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.9
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.11.jpg": {
   "capture": "https://web.archive.org/web/20261125132947/https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.11.jpg",
   "job_id": "spn2-ded9dc83a324c7c077435822a17d25b5e8545a43",
   "last": "2026-11-25T13:36:15Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T13:36:15Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:22:16Z",
+   "capture_id": "https://web.archive.org/web/20261125132947id_/https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.11.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.903
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_game_4_October_10.12.jpg": {
@@ -180287,12 +180297,15 @@
   "capture": "https://web.archive.org/web/20261125202838/https://swccg.com/wiki/File:2025_World_Championship_player_4_October_1713.jpg",
   "job_id": "spn2-1a570a97b5ab771477829de689cd753843a20e28",
   "last": "2026-11-25T20:35:07Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T22:48:20Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:21:49Z",
+   "bytes": 25610,
+   "capture_id": "https://web.archive.org/web/20261125202838id_/https://swccg.com/wiki/File:2025_World_Championship_player_4_October_1713.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "de14832b4cec238d62bac38f8d8bf013dc98ee8132531de47efb88b5b7720a7c"
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_player_4_October_1718.jpg": {
@@ -181935,12 +181948,14 @@
   "capture": "https://web.archive.org/web/20261125134223/https://swccg.com/wiki/Kyle_Krueger",
   "job_id": "spn2-f20e3dfd2d11be5813abcbc2006681cff85e44ca",
   "last": "2026-11-25T13:46:50Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T13:46:50Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:22:10Z",
+   "capture_id": "https://web.archive.org/web/20261125134223id_/https://swccg.com/wiki/Kyle_Krueger",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.982
   }
  },
  "https://swccg.com/wiki/Logan_Pietig": {
@@ -182334,7 +182349,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T12:14:16Z",
+   "at": "2026-11-26T23:22:34Z",
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
