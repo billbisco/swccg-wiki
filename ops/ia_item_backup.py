@@ -23,6 +23,7 @@ import base64
 import hashlib
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -61,6 +62,70 @@ def items_for(group: str) -> dict[str, tuple[Path, str, str]]:
             "Earlier versions of files on the SWCCG Wiki (https://wiki.swccg.com/images/archive/…).")
         return out
     raise SystemExit("unknown group " + group)
+
+
+# ---------------------------------------------------------------- URL <-> item mapping (#1375)
+# Pure helpers shared with wayback_link.py (File-page lines) and wayback_worker.py (save order).
+
+DOWNLOAD = "https://archive.org/download"
+CURRENT_ITEM = re.compile(r"^swccg-wiki-images-([0-9a-f])$")
+ARCHIVE_ITEM = "swccg-wiki-images-archive"
+SNAPSHOT_ITEM = "swccg-com-snapshots"
+_WIKI_IMAGES = re.compile(r"^https?://(?:(?:www\.)?swccg\.com/wiki|wiki\.swccg\.com)/images/(.+)$")
+_SNAPSHOTS = re.compile(r"^https?://(?:www\.)?swccg\.com/snapshots/(.+)$")
+_HASH = re.compile(r"^[0-9a-f]$")
+_HASH2 = re.compile(r"^[0-9a-f]{2}$")
+
+
+def ledger_key_for_url(url: str) -> str | None:
+    """Ledger key "<item>/<name>" of one of our own file URLs, laid out as items_for() uploads them:
+      .../wiki/images/0/00/X              -> swccg-wiki-images-0/00/X
+      .../wiki/images/archive/0/00/<ts>!X -> swccg-wiki-images-archive/0/00/<ts>!X
+      https://swccg.com/snapshots/<rel>   -> swccg-com-snapshots/<rel>
+    The URL path is percent-decoded (names on disk are not). None for anything else."""
+    u = (url or "").strip().split("#", 1)[0]
+    if "?" in u:
+        return None
+    m = _WIKI_IMAGES.match(u)
+    if m:
+        # MediaWiki stores names with underscores, never spaces.
+        parts = urllib.parse.unquote(m.group(1)).replace(" ", "_").split("/")
+        archive = parts[0] == "archive"
+        if archive:
+            parts = parts[1:]
+        if len(parts) != 3 or not _HASH.match(parts[0]) or not _HASH2.match(parts[1]) \
+                or not parts[1].startswith(parts[0]) or not parts[2]:
+            return None
+        if archive:
+            return ARCHIVE_ITEM + "/" + "/".join(parts)
+        return "swccg-wiki-images-%s/%s/%s" % tuple(parts)
+    m = _SNAPSHOTS.match(u)
+    if m:
+        rel = urllib.parse.unquote(m.group(1))
+        parts = rel.split("/")
+        if rel.endswith("/") or ".." in parts or "" in parts:
+            return None
+        return SNAPSHOT_ITEM + "/" + rel
+    return None
+
+
+def download_url(item: str, name: str) -> str:
+    """Public archive.org download URL of one file in an item (safe inside a wiki [link])."""
+    return "%s/%s/%s" % (DOWNLOAD, item, urllib.parse.quote(name, safe="/"))
+
+
+def load_verified(path: Path | None = None) -> dict | None:
+    """Ledger rows whose SHA-1 archive.org confirmed, keyed "<item>/<name>".
+    None when the ledger is missing or unreadable (callers then behave as before #1375)."""
+    f = path or STATE / "ledger.json"
+    try:
+        led = json.loads(f.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    if not isinstance(led, dict):
+        return None
+    return {k: r for k, r in led.items()
+            if isinstance(r, dict) and r.get("verified") and r.get("item") and r.get("name") and r.get("sha1")}
 
 
 def keys() -> str:

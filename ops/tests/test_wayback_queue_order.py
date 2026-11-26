@@ -26,6 +26,49 @@ class QueueOrderTests(unittest.TestCase):
         self.assertEqual(sorted(q), sorted(W.order_queue(q, {})))
 
 
+class IACopyDemotionTests(unittest.TestCase):  # #1375 D3
+    OWN_IA = "https://swccg.com/wiki/images/0/00/Has_copy.png"
+    OWN = "https://swccg.com/wiki/images/a/ab/No_copy.png"
+    SNAP_IA = "https://swccg.com/snapshots/forum/p1.html"
+    OUT = ["https://a.com/1", "https://b.com/1"]
+
+    def test_own_with_verified_copy_goes_after_outside_and_own_without(self):
+        q = [self.OWN_IA, self.SNAP_IA, self.OUT[0], self.OWN, self.OUT[1], "https://c.com/old"]
+        done = {"https://c.com/old": {"status": "retry"}}
+        covered = {"swccg-wiki-images-0/00/Has_copy.png", "swccg-com-snapshots/forum/p1.html"}
+        self.assertEqual([self.OWN, self.OUT[0], self.OUT[1], self.OWN_IA, self.SNAP_IA, "https://c.com/old"],
+                         W.order_queue(q, done, covered))
+
+    def test_retries_stay_after_never_saved(self):
+        q = [self.OWN_IA, "https://c.com/old", self.OWN]
+        done = {self.OWN_IA: {"status": "retry"}, "https://c.com/old": {"status": "retry"}}
+        self.assertEqual([self.OWN, "https://c.com/old", self.OWN_IA],
+                         W.order_queue(q, done, {"swccg-wiki-images-0/00/Has_copy.png"}))
+
+    def test_encoded_url_matches_ledger_name(self):
+        url = "https://swccg.com/wiki/images/8/81/Beer_Wars_rules_%28Team_Wales%2C_2019%29.pdf"
+        self.assertEqual([self.OUT[0], url], W.order_queue(
+            [url, self.OUT[0]], {}, {"swccg-wiki-images-8/81/Beer_Wars_rules_(Team_Wales,_2019).pdf"}))
+
+    def test_missing_or_bad_ledger_is_todays_order(self):
+        q = [self.OWN_IA, self.OUT[0], self.OWN, self.SNAP_IA, self.OUT[1]]
+        before = W.order_queue(q, {})
+        self.assertEqual(before, W.order_queue(q, {}, None))
+        self.assertEqual(before, W.order_queue(q, {}, set()))
+        import tempfile
+        from unittest.mock import patch
+        import ia_item_backup
+        with tempfile.TemporaryDirectory() as d:
+            with patch.object(ia_item_backup, "STATE", Path(d)):
+                self.assertIsNone(W.ia_covered_keys())
+                (Path(d) / "ledger.json").write_text("[broken")
+                self.assertIsNone(W.ia_covered_keys())
+                (Path(d) / "ledger.json").write_text(
+                    '{"swccg-wiki-images-0/00/Has_copy.png": {"item": "swccg-wiki-images-0", "name": "00/Has_copy.png",'
+                    ' "sha1": "ab", "verified": "2026-11-25T00:48:24Z"}, "x/y": {"item": "x", "name": "y", "sha1": "c"}}')
+                self.assertEqual(W.ia_covered_keys(), {"swccg-wiki-images-0/00/Has_copy.png"})
+
+
 class RetryOldFailuresTests(unittest.TestCase):
     def test_old_401_and_host_limit_failures_get_a_new_round(self):
         from datetime import datetime, timezone
