@@ -200093,11 +200093,16 @@
   "tries": 1
  },
  "https://wiki.swccg.com/index.php?oldid=307452&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126203825/https://swccg.com/wiki/index.php?oldid=307452&action=raw",
   "job_id": "spn2-0b4c191f551d7f4ae32389b939b654066065ec87",
-  "last": "2026-11-26T18:53:28Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T20:48:20Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T20:48:20Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://wiki.swccg.com/index.php?oldid=307460&action=raw": {
   "capture": "",
@@ -209690,9 +209695,17 @@
  "https://www.stephenskilton.com/decktech_archives/16973/": {
   "capture": "https://web.archive.org/web/20261023120337/https://www.stephenskilton.com/decktech_archives/16973/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T09:38:12Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-26T20:48:10Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-26T20:48:10Z",
+   "bytes": 11137,
+   "capture_id": "https://web.archive.org/web/20261023120337id_/https://www.stephenskilton.com/decktech_archives/16973/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7d8effab819e60a082a98b236b85267703c5fdf25820ca6c26e6d7c211d51d99"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16975/": {
   "capture": "https://web.archive.org/web/20261023121611/https://www.stephenskilton.com/decktech_archives/16975/",
