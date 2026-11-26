@@ -97430,7 +97430,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T22:40:01Z",
+   "at": "2026-11-26T22:43:45Z",
    "defer": "cdx-batch"
   }
  },
@@ -175766,12 +175766,13 @@
   "capture": "https://web.archive.org/web/20261126092438/https://swccg.com/wiki/2022_European_Championship",
   "job_id": "spn2-ecef1a3df7273e2b80b8c6b8ad164a79088d6634",
   "last": "2026-11-26T09:38:00Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T09:38:00Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:44:07Z",
+   "capture_id": "https://web.archive.org/web/20261126092438id_/https://swccg.com/wiki/2022_European_Championship",
+   "method": "strict",
+   "reason": "capture HTTP 404"
   }
  },
  "https://swccg.com/wiki/2022_Ryloth_Regionals": {
@@ -175800,12 +175801,15 @@
   "capture": "https://web.archive.org/web/20261126095053/https://swccg.com/wiki/2023_World_Championship",
   "job_id": "spn2-3ac15177cc6d1ee43f3bce0b641c4327e969d1c7",
   "last": "2026-11-26T09:51:29Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T09:51:29Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:44:03Z",
+   "bytes": 136249,
+   "capture_id": "https://web.archive.org/web/20261126095053id_/https://swccg.com/wiki/2023_World_Championship",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "0b22f910e94134c1af75ea18cb32d583b834130d601ecc111d2e19f571e27b79"
   }
  },
  "https://swccg.com/wiki/2024_World_Championship": {
@@ -176842,7 +176846,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T07:56:52Z",
+   "at": "2026-11-26T22:44:37Z",
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
@@ -177201,23 +177205,29 @@
   "capture": "https://web.archive.org/web/20261126083030/https://swccg.com/wiki/File:2022_World_Championship_team_tournament_1.jpg",
   "job_id": "spn2-5fb729639f9960b5a066e65861cdfed2056ec8d0",
   "last": "2026-11-26T08:35:58Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T08:35:58Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:44:32Z",
+   "bytes": 26290,
+   "capture_id": "https://web.archive.org/web/20261126083030id_/https://swccg.com/wiki/File:2022_World_Championship_team_tournament_1.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "bc26449c6bf8ba52485c3f87fce31f30c5fc884f9e7a24f2f3fa19f3ffa8697f"
   }
  },
  "https://swccg.com/wiki/File:2023_Endor_Grand_Prix_Galaxy_Room.jpg": {
   "capture": "https://web.archive.org/web/20261126083131/https://swccg.com/wiki/File:2023_Endor_Grand_Prix_Galaxy_Room.jpg",
   "last": "2026-11-26T08:51:08Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T08:51:09Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:44:25Z",
+   "bytes": 24528,
+   "capture_id": "https://web.archive.org/web/20261126083131id_/https://swccg.com/wiki/File:2023_Endor_Grand_Prix_Galaxy_Room.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "13db066a5c5dfe060ba23b5a1ee9f1afeca2654cab85a084f77770d829b2b931"
   }
  },
  "https://swccg.com/wiki/File:2023_European_Championship_Team_Wales_3.jpg": {
@@ -177298,12 +177308,14 @@
   "capture": "https://web.archive.org/web/20261126103244/https://swccg.com/wiki/File:2023_Naboo_Regionals_12.jpg",
   "job_id": "spn2-61b0197ac7e639ef259f5a9f50405b40cc584133",
   "last": "2026-11-26T10:36:06Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T10:36:06Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:43:56Z",
+   "capture_id": "https://web.archive.org/web/20261126103244id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_12.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.931
   }
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_13.jpg": {
@@ -177377,12 +177389,15 @@
   "capture": "https://web.archive.org/web/20261126104727/https://swccg.com/wiki/File:2023_Naboo_Regionals_18.jpg",
   "job_id": "spn2-e3236da20e214cab9f4f240334b0e9f62d2f713c",
   "last": "2026-11-26T10:48:52Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T10:48:52Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:43:49Z",
+   "bytes": 26087,
+   "capture_id": "https://web.archive.org/web/20261126104727id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_18.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e81a8448e1d7f74eae8a645406b6217732290d6174efdbea67b8552daeea6b15"
   }
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_19.jpg": {
@@ -177602,12 +177617,14 @@
   "capture": "https://web.archive.org/web/20261126093300/https://swccg.com/wiki/File:2023_Naboo_Regionals_6.jpg",
   "job_id": "spn2-1c3cb4b7660cc66e664cc210dcc05d93e0ba7f57",
   "last": "2026-11-26T09:35:31Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T09:35:31Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:44:15Z",
+   "capture_id": "https://web.archive.org/web/20261126093300id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_6.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.925
   }
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_7.jpg": {
@@ -181590,12 +181607,13 @@
   "capture": "https://web.archive.org/web/20261126084852/https://swccg.com/wiki/Jacy_Smith",
   "job_id": "spn2-689a4d44cc464c415d8a6077e2ef80a868c48230",
   "last": "2026-11-26T09:09:02Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T09:09:02Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T22:44:19Z",
+   "capture_id": "https://web.archive.org/web/20261126084852id_/https://swccg.com/wiki/Jacy_Smith",
+   "method": "strict",
+   "reason": "capture HTTP 404"
   }
  },
  "https://swccg.com/wiki/Jarad_Konsker": {
