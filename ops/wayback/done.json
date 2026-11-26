@@ -90700,6 +90700,20 @@
    "sha256": "da0173abc6a358ecd15c71610a9ff1ead90cfa1fcfb849246beea981fb363f78"
   }
  },
+ "https://swccg.com/forum/": {
+  "capture": "",
+  "job_id": "spn2-14ba03dd2053dfb63299e652ac79cf450f583d97",
+  "last": "2026-11-26T10:28:39Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/forum/viewforum.php?f=4": {
+  "capture": "",
+  "job_id": "spn2-9b7830df878e1c19b374bbd68de6a60e8aa1f79d",
+  "last": "2026-11-26T10:29:40Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/snapshots/bgg/bgg-thread-2902121.html": {
   "capture": "https://web.archive.org/web/20261016162150/https://swccg.com/snapshots/bgg/bgg-thread-2902121.html",
   "job_id": "spn2-d94ffff69139f706970f58aaad12c5c36591bfae",
@@ -175296,11 +175310,19 @@
   }
  },
  "https://swccg.com/wiki/Brian_Avery": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126095155/https://swccg.com/wiki/Brian_Avery",
   "job_id": "spn2-5f058e64f72a4a932547de9d2d97a9e4946abb98",
-  "last": "2026-11-26T08:34:33Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T10:25:33Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T10:25:33Z",
+   "bytes": 56617,
+   "capture_id": "https://web.archive.org/web/20261126095155id_/https://swccg.com/wiki/Brian_Avery",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4262913f400479a86b2d63fd7b41d1627879735715fa7560e606363494816542"
+  }
  },
  "https://swccg.com/wiki/Brian_Fred": {
   "capture": "https://web.archive.org/web/20261125154248/https://swccg.com/wiki/Brian_Fred",
@@ -176467,6 +176489,62 @@
    "method": "sha256",
    "sha256": "5c02831ad4e10ba81f77c8422b63765667bba366086228eb28c7486ae7cd253c"
   }
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_10.jpg": {
+  "capture": "https://web.archive.org/web/20261126103042/https://swccg.com/wiki/File:2023_Naboo_Regionals_10.jpg",
+  "job_id": "spn2-fe0e405fa21f1803327816d8a4aa9f09426e7595",
+  "last": "2026-11-26T10:35:58Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T10:35:58Z",
+   "bytes": 25891,
+   "capture_id": "https://web.archive.org/web/20261126103042id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_10.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "89a173f3597d13f9dc0f7c7f923b17eb9d50e771c3b2942c548425104624826e"
+  }
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_11.jpg": {
+  "capture": "https://web.archive.org/web/20261126103143/https://swccg.com/wiki/File:2023_Naboo_Regionals_11.jpg",
+  "job_id": "spn2-8fb4bf678aa927fe0d1a119ac900c5d2d01bd63c",
+  "last": "2026-11-26T10:36:02Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T10:36:02Z",
+   "bytes": 25456,
+   "capture_id": "https://web.archive.org/web/20261126103143id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_11.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2089b9e47dc5ff68ea88e8824bafc8e2a26bd8b1819db6b17eb84ecae7a7d2cb"
+  }
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_12.jpg": {
+  "capture": "https://web.archive.org/web/20261126103244/https://swccg.com/wiki/File:2023_Naboo_Regionals_12.jpg",
+  "job_id": "spn2-61b0197ac7e639ef259f5a9f50405b40cc584133",
+  "last": "2026-11-26T10:36:06Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T10:36:06Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_13.jpg": {
+  "capture": "",
+  "job_id": "spn2-e25db251326b1007e81306fef130562d1d27bbea",
+  "last": "2026-11-26T10:33:44Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/wiki/File:2023_Naboo_Regionals_14.jpg": {
+  "capture": "",
+  "job_id": "spn2-dfdef5ef8e4fed9f7af87d7d00f0615af3c7af44",
+  "last": "2026-11-26T10:34:45Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_2.jpg": {
   "capture": "https://web.archive.org/web/20261126092856/https://swccg.com/wiki/File:2023_Naboo_Regionals_2.jpg",
@@ -187280,6 +187358,17 @@
    "sha256": "401a845dfdbafb9987e8519f426f41752d22616627d43f8f612d5108b15b4d4b"
   }
  },
+ "https://swccg.com/wiki/images/8/8c/2023_Naboo_Regionals_7.jpg": {
+  "capture": "https://web.archive.org/web/20261126102536/https://swccg.com/wiki/images/8/8c/2023_Naboo_Regionals_7.jpg",
+  "job_id": "spn2-85eff2d14a6d38869923d2e7052ad6b392d1b209",
+  "last": "2026-11-26T10:35:46Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T10:35:46Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/8/8c/Dagobah-Revised-L-rogueasteroid-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261121230711/https://swccg.com/wiki/images/8/8c/Dagobah-Revised-L-rogueasteroid-physical-photo.png",
   "job_id": "spn2-2d43b23def280dd0c94451d15b6a88e30a137328",
@@ -187617,6 +187706,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-25T08:54:02Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/9/94/2023_Naboo_Regionals_quiz_2.jpg": {
+  "capture": "https://web.archive.org/web/20261126102638/https://swccg.com/wiki/images/9/94/2023_Naboo_Regionals_quiz_2.jpg",
+  "job_id": "spn2-9463df7725c47088cc32dea802af523b9b6adb7f",
+  "last": "2026-11-26T10:35:48Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T10:35:48Z",
    "defer": "cdx-batch"
   }
  },
@@ -188100,6 +188200,17 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-26T07:31:03Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/wiki/images/9/9f/2023_Naboo_Regionals_8.jpg": {
+  "capture": "https://web.archive.org/web/20261126102738/https://swccg.com/wiki/images/9/9f/2023_Naboo_Regionals_8.jpg",
+  "job_id": "spn2-907a73fcf2098ed083a7860bcccaeacbc5ff3a84",
+  "last": "2026-11-26T10:35:49Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T10:35:49Z",
    "defer": "cdx-batch"
   }
  },
@@ -203466,9 +203577,17 @@
  "https://www.stephenskilton.com/decktech_archives/16386/": {
   "capture": "https://web.archive.org/web/20261023104549/https://www.stephenskilton.com/decktech_archives/16386/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T07:21:44Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-26T10:25:25Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-26T10:25:25Z",
+   "bytes": 13355,
+   "capture_id": "https://web.archive.org/web/20261023104549id_/https://www.stephenskilton.com/decktech_archives/16386/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6bce5be431c5f969ce17c8446bc202f32579b3a29dce8d75b08c9684513e93da"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16387/": {
   "capture": "https://web.archive.org/web/20261023105558/https://www.stephenskilton.com/decktech_archives/16387/",
