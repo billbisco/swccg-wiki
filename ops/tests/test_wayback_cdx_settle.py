@@ -96,7 +96,7 @@ class SharedCooldownTests(unittest.TestCase):
     def test_defaults_are_modest(self):
         self.assertEqual(500, S.EXACT_MAX)
         self.assertEqual(4.0, S.EXACT_GAP_S)
-        self.assertEqual(3600, S.REFUSED_HOLD_S)
+        self.assertEqual(900, S.REFUSED_HOLD_S)
 
     def test_control_blocked_reads_worker_state(self):
         self.assertIsNone(S.control_blocked(self.dir / "missing.json"))
@@ -153,17 +153,17 @@ class SharedCooldownTests(unittest.TestCase):
             _, st = S.settle(done, [self.FP], sha=lambda u: "X", now="T", exact_max=10, sleep=lambda s: None)
         self.assertTrue(st["refused"])
         hold = self.dir / "cdx-settle-hold.json"
-        self.assertEqual(3600, S.save_hold(st, hold, now=1000))
+        self.assertEqual(900, S.save_hold(st, hold, now=1000))
         saved = json.loads(hold.read_text())
-        self.assertEqual({"until": 4600, "refused": True}, {k: saved[k] for k in ("until", "refused")})
-        self.assertEqual(4600, S.hold_active(hold, now=1000))
+        self.assertEqual({"until": 1900, "refused": True}, {k: saved[k] for k in ("until", "refused")})
+        self.assertEqual(1900, S.hold_active(hold, now=1000))
         # The worker carries it into its shared cooldown before any request.
         saves = []
         control = SimpleNamespace(directory=self.dir, clock=lambda: 1000.0, state={"next_attempt": 0},
                                   save=lambda: saves.append(1))
         with patch("builtins.print"):
             W.cdx_hold_cooldown(control)
-        self.assertEqual(4600, control.state["next_attempt"])
+        self.assertEqual(1900, control.state["next_attempt"])
         self.assertEqual("cdx_network_refused", control.state["provider_event"])
         self.assertEqual([1], saves)
         # A 429-only hold (not refused) stays the CDX pass's own business.

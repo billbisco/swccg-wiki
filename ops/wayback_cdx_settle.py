@@ -16,7 +16,7 @@ its exact URL, newest ledger activity first, with the same acceptance rules.
 Bounded by --exact-max (default 500 lookups per run, 0 turns it off) and
 paced by --exact-gap (default 4.0 s between requests). A 429 or a refused /
 reset connection stops all CDX requests at once (no retry around a refusal);
-a 429's Retry-After, or a refusal (at least REFUSED_HOLD_S, 60 min), is kept in
+a 429's Retry-After, or a refusal (at least REFUSED_HOLD_S, 15 min, the same as the worker's own network_refused cooldown), is kept in
 <state>/cdx-settle-hold.json and later runs make no CDX request until it has
 passed. A refusal hold is marked "refused": the Wayback worker reads it too
 and carries it into its shared cooldown (wayback_worker.cdx_hold_cooldown).
@@ -88,7 +88,7 @@ GAP_S = 5.0          # between CDX requests
 TRIES = 4            # per CDX request, with growing waits
 EXACT_MAX = 500      # exact-URL lookups per run
 EXACT_GAP_S = 4.0    # between exact-URL lookups
-REFUSED_HOLD_S = 60 * 60  # a refused connection holds every later CDX request this long
+REFUSED_HOLD_S = 15 * 60  # a refusal holds later CDX requests (and, via the shared cooldown, saves) this long; same as the worker
 EXACT_ERRORS_STOP = 5  # consecutive failed exact lookups that end the pass
 TS_RX = re.compile(r"/web/(\d{14})[a-z_]*/")
 PRUNE_LOG = Path("/opt/swccg-res/snapshots/DELETED-after-wayback.log")
