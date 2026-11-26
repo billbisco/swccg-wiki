@@ -45,7 +45,7 @@ class OwnerTests(unittest.TestCase):
                                       snapshot_file=lambda url: stage / url.split("/snapshots/", 1)[1] if "/snapshots/" in url else None,
                                       capture_parts=lambda url: ("20261114000000", url.split("/20261114000000/", 1)[1]),
                                       id_url=lambda url: url.replace("/20261114000000/", "/20261114000000id_/"),
-                                      strict_check=lambda url: (True, "ok"))
+                                      strict_check=lambda url: (True, "ok"), VERIFY_GAP_S=0)
         self.registry = self.control.directory / "registry"
         self.allowed = set()
         self.payload = b"exact original image bytes"
@@ -421,6 +421,183 @@ class OwnerTests(unittest.TestCase):
         pointer.write_text(json.dumps(value), encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "escapes"):
             export_records(self.registry)
+
+
+    # --- #1375: batched queue appends and separate promotion / finish limits ---
+    def add_distinct(self, i):
+        payload = b"distinct exact payload %d" % i
+        sha = hashlib.sha256(payload).hexdigest()
+        request = fixture(title=f"File:p{i}.png")
+        request["owner"] = SERVER_OWNER
+        url = f"https://wiki.swccg.com/images/p{i}.png"
+        for subject in (request["subject"], request["backup_receipt"]["subject"]):
+            subject.update(original_version_url=url, content_sha256=sha, bytes=len(payload))
+        request["backup_receipt"]["storage"]["path"] = "preservation/objects/" + sha + ".bin"
+        request["backup_receipt"]["verification"].update(restored_sha256=sha, restored_bytes=len(payload))
+        request["source"].update(url=url, sha256=sha, bytes=len(payload))
+        request["readiness"]["stage_bytes"] = len(payload)
+        result = register(self.registry, request)
+        self.allowed.add(result["object_id"])
+        self.responses[url] = {"status": 200, "sha256": sha, "size": len(payload)}
+        return request
+
+    def test_batched_enqueue_makes_one_push_for_many_urls_and_keeps_order(self):
+        requests = [self.add_distinct(i) for i in range(5)]
+        queue = self.repo / self.worker.QUEUE
+        queue.parent.mkdir(parents=True)
+        queue.write_text("https://example.org/older\n" + requests[2]["source"]["url"] + "\n", encoding="utf-8")
+        result = self.adapter(limit=10).prepare(time.monotonic() + 300)
+        self.assertEqual(5, result["prepared"])
+        self.assertEqual(1, len(self.commits))
+        lines = queue.read_text().splitlines()
+        self.assertEqual(["https://example.org/older", requests[2]["source"]["url"]], lines[:2])
+        self.assertEqual(6, len(lines))
+        self.assertEqual(len(lines), len(set(lines)))
+        self.assertEqual(sorted(r["source"]["url"] for r in requests), sorted(lines[1:]))
+        for request in requests:
+            self.assertEqual("queued", load_event(self.registry, request["source"])["state"])
+
+    def test_failed_batch_push_stores_no_queued_events_and_rewinds_cursor(self):
+        requests = [self.add_distinct(i) for i in range(3)]
+        def reject(repo, paths, message, redo):
+            redo()
+            raise RuntimeError("push rejected")
+        self.worker.commit_and_push = reject
+        with patch("builtins.print"), self.assertRaisesRegex(RuntimeError, "push rejected"):
+            self.adapter(limit=10).prepare(time.monotonic() + 300)
+        for request in requests:
+            self.assertIsNone(load_event(self.registry, request["source"]))
+        cursor = json.loads((self.registry / "owner-prepare-cursor.json").read_text())
+        self.assertEqual("", cursor["after"])
+        # Next run with a working push queues all of them.
+        self.worker.commit_and_push = lambda repo, paths, message, redo: self.commits.append(redo())
+        self.assertEqual(3, self.adapter(limit=10).prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(1, len(self.commits))
+
+    def test_promotion_limit_and_time_budget_bound_prepare(self):
+        for i in range(5):
+            self.add_distinct(i)
+        self.assertEqual(2, self.adapter(limit=2).prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(1, len(self.commits))
+        self.assertEqual(0, self.adapter(limit=10, prepare_seconds=-1).prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(0, self.adapter(limit=0).prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(1, len(self.commits))
+
+    def test_finish_uses_its_own_limit(self):
+        for i in range(4):
+            request = self.add_distinct(i)
+            url = request["source"]["url"]
+            self.control.done[url] = {"status": "ok", "capture": "https://web.archive.org/web/20261114000000/" + url}
+        self.assertEqual(1, self.adapter(limit=0, finish_limit=1).finish(time.monotonic() + 300))
+        self.assertEqual(3, self.adapter(limit=200, finish_limit=3).finish(time.monotonic() + 300))
+        self.assertEqual(2, self.adapter(limit=2).finish(time.monotonic() + 300))
+
+    # --- #1375 review: archive.org observations share a paced per-run budget ---
+    def captured(self, i):
+        request = self.add_distinct(i)
+        url = request["source"]["url"]
+        self.control.done[url] = {"status": "ok", "capture": "https://web.archive.org/web/20261114000000/" + url}
+        return request
+
+    def count_checks(self):
+        checks = []
+        self.worker.strict_check = lambda url: checks.append(url) or (True, "ok")
+        return checks
+
+    def test_observation_budget_bounds_prepare_and_finish_while_fresh_jobs_fill_the_cap(self):
+        for i in range(12):
+            self.captured(i)
+        fresh = [self.add_distinct(100 + i) for i in range(5)]
+        checks = self.count_checks()
+        adapter = self.adapter(limit=5, finish_limit=6, observe_max=3)
+        result = adapter.prepare(time.monotonic() + 300)
+        self.assertEqual(3, len(checks))
+        self.assertEqual(3, result["archive_observations"])
+        self.assertGreater(result["observe_skipped"], 0)
+        # Every fresh, never-captured job was still promoted (cap 5).
+        self.assertEqual(5, result["prepared"])
+        for request in fresh:
+            self.assertEqual("queued", load_event(self.registry, request["source"])["state"])
+        # finish() shares the spent budget: no archive.org request at all.
+        self.assertEqual(0, adapter.finish(time.monotonic() + 300))
+        self.assertEqual(3, len(checks))
+
+    def test_finish_uses_what_prepare_left(self):
+        for i in range(6):
+            self.captured(i)
+        checks = self.count_checks()
+        adapter = self.adapter(limit=0, finish_limit=6, observe_max=4)
+        adapter.prepare(time.monotonic() + 300)
+        self.assertEqual(4, adapter.finish(time.monotonic() + 300))
+        self.assertEqual(4, len(checks))
+
+    def test_observations_keep_the_verify_gap(self):
+        for i in range(3):
+            self.captured(i)
+        self.count_checks()
+        self.worker.VERIFY_GAP_S = 4
+        sleeps = []
+        with patch("preservation_owner.time.sleep", side_effect=sleeps.append):
+            self.adapter(limit=0, finish_limit=3, observe_max=10).finish(time.monotonic() + 300)
+        self.assertEqual(2, len(sleeps))
+        self.assertTrue(all(3.9 < s <= 4 for s in sleeps), sleeps)
+
+    def test_default_observation_budget_comes_from_env(self):
+        with patch.dict("os.environ", {"WAYBACK_OWNER_OBSERVE_MAX": "2"}):
+            self.assertEqual(2, self.adapter().observe_left)
+        with patch.dict("os.environ", {"WAYBACK_OWNER_OBSERVE_MAX": ""}):
+            self.assertEqual(10, self.adapter().observe_left)
+
+    def test_shared_cooldown_means_no_observation(self):
+        for i in range(3):
+            self.captured(i)
+        checks = self.count_checks()
+        self.control.state["next_attempt"] = time.time() + 600
+        self.adapter(limit=5, finish_limit=5, observe_max=10).prepare(time.monotonic() + 300)
+        self.adapter(limit=5, finish_limit=5, observe_max=10).finish(time.monotonic() + 300)
+        self.assertEqual([], checks)
+
+    def throttle_control(self):
+        waits = []
+        def capacity_wait(reason, retry_after=None):
+            waits.append(reason)
+            raise Paused("account capacity unavailable; bounded wait")
+        self.control.capacity_wait = capacity_wait
+        return waits
+
+    def test_replay_or_cdx_429_records_cooldown_and_stops_archive_calls(self):
+        import wayback_worker as W
+        for i in range(4):
+            self.captured(i)
+        waits = self.throttle_control()
+        self.worker.VerifyRetry = W.VerifyRetry
+        calls = []
+        def throttled(url):
+            calls.append(url)
+            raise W.VerifyRetry("CDX HTTP 429", side="capture")
+        self.worker.strict_check = throttled
+        adapter = self.adapter(limit=5, finish_limit=5, observe_max=10)
+        with self.assertRaises(Paused):
+            adapter.prepare(time.monotonic() + 300)
+        self.assertEqual(["replay_throttled"], waits)
+        self.assertTrue(adapter.replay_deferred)
+        # finish() makes no further archive.org request and does not raise.
+        adapter.finish(time.monotonic() + 300)
+        self.assertEqual(1, len(calls))
+
+    def test_id_fetch_429_records_cooldown(self):
+        for i in range(2):
+            request = self.captured(i)
+            url = request["source"]["url"]
+            self.responses[url.replace("https://", "https://web.archive.org/web/20261114000000id_/https://", 1)] = \
+                {"status": 429, "sha256": "", "size": 0}
+        self.worker.id_url = lambda capture: capture.replace("/20261114000000/", "/20261114000000id_/")
+        waits = self.throttle_control()
+        checks = self.count_checks()
+        adapter = self.adapter(limit=0, finish_limit=5, observe_max=10)
+        self.assertEqual(0, adapter.finish(time.monotonic() + 300))
+        self.assertEqual(["replay_throttled"], waits)
+        self.assertEqual(1, len(checks))
 
 
 if __name__ == "__main__":

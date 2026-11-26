@@ -13,7 +13,8 @@ Approvals are recorded append-only in ``registry/policy-approvals.jsonl``
 keeps its 5,000-ID / 1 MiB guard for operator approvals. Each run the owner gets
 the explicit approvals plus a bounded first-approved-first window of policy
 objects that are still ready and not yet verified, so the adapter's existing
-5,000-object budget and its two-jobs-per-run promotion limit are unchanged.
+5,000-object budget is unchanged. How many jobs are promoted per run is the
+worker's adaptive queue-buffer cap (#1375), not this policy.
 
 No capture submission, queue write or network call lives here.
 """

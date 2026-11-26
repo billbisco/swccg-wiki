@@ -263,7 +263,10 @@ class NativeCaptureScopeTests(unittest.TestCase):
         mocks["prune_legacy_snapshots"].assert_called_once()
         self.assertIn("https://example.org/verified", mocks["recheck_replay_only"].call_args.args[0])
         self.assertIsNone(mocks["apply_verify_inbox"].call_args.kwargs["allowed_urls"])
-        self.assertTrue(any(call.args == (1,) for call in sleep.call_args_list))
+        # #1375: the ordinary path sleeps the self-tuned gap, never below its floor.
+        gap = self.control.pace_run["gap_s"]
+        self.assertGreaterEqual(gap, 15)
+        self.assertTrue(any(call.args == (gap,) for call in sleep.call_args_list))
 
 
 if __name__ == "__main__":

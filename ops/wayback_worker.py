@@ -24,7 +24,10 @@ the VPS worker tries to open the capture (lane 1); a connection refused / timeou
 there is a confirm miss, not a save pause — this PC (manpc) retries (lane 2) via
 `ops/wayback_verify_manpc.py` dropping receipts in verify-inbox. HTTP 401/429/5xx
 on the Save Page Now API still opens the provider circuit. Stalled jobs are poked
-with ?copy=2, not by polling a dead job_id forever.
+with ?copy=2, not by polling a dead job_id forever. A refusal that reaches the
+registry owner's capture check, or escapes a step (#1375), sets the shared
+"network_refused" cooldown, saves done.json and ends the run with exit 0. URLs
+go on the wire IRI-safe (wire_url); the ledger keeps them exactly as queued.
 
 Verified https://swccg.com/snapshots/… URLs: after verify, delete the staging file under
 /opt/swccg-res/snapshots/ only when a main-namespace wiki article already cites a Wayback
@@ -53,8 +56,11 @@ import argparse
 import collections
 import hashlib
 import html
+import http.client
 import json
+import math
 import re
+import socket
 import subprocess
 import zlib
 import os
@@ -79,14 +85,16 @@ from preservation_contracts import registration_object_id  # noqa: E402
 from wayback_control import Busy, Control, Paused, atomic_json  # noqa: E402
 import failed_capture_recovery as recovery  # noqa: E402
 import wayback_reliability as reliability  # noqa: E402
+import wayback_pace as pace  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
 QUEUE = "ops/wayback/queue.txt"
 DONE = "ops/wayback/done.json"
 KEYS_FILE = Path(os.environ.get("IA_KEYS_FILE", "/etc/swccg-ops/archive-org-s3.env"))
 MAX_TRIES = 6
-GAP_S = Control.SUBMISSION_GAP  # minimum gap also survives owner restarts
-# 0 = uncapped (tests). Production systemd sets WAYBACK_MAX_SUBMITS=6.
+GAP_S = Control.SUBMISSION_GAP  # initial gap floor before pace-state.json exists (#1375)
+# Initial submit allowance before pace-state.json exists; afterwards
+# wayback_pace tunes it per run (#1375). 0 = wayback_pace.DEFAULT_INITIAL.
 MAX_SUBMITS_PER_RUN = int(os.environ.get("WAYBACK_MAX_SUBMITS") or "0")
 RETRY_AFTER = timedelta(minutes=30)
 CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
@@ -199,6 +207,71 @@ def archive_transport_failed(url: str):
     Does not pause new Save Page Now submits.
     """
     return
+
+
+_URI_SAFE = "!#$%&'()*+,/:;=?@[]~"
+_NEEDS_QUOTE = re.compile(r"[^\x21-\x7e]")
+
+
+def wire_url(url: str) -> str:
+    """IRI -> URI for the request line only (#1375).
+
+    http.client encodes the request line as ASCII, so a queued URL with a
+    non-ASCII character (a wiki file name with "ø") raised UnicodeEncodeError
+    and crashed the run. Non-ASCII, spaces and control characters in the path,
+    query and fragment become UTF-8 %XX; existing %XX escapes and reserved
+    characters are kept as they are, and a non-ASCII host becomes IDNA.
+    done.json and queue.txt keep the URL exactly as queued; only the wire
+    form changes.
+    """
+    if not _NEEDS_QUOTE.search(url):
+        return url
+    quote = lambda v: urllib.parse.quote(v, safe=_URI_SAFE)  # noqa: E731
+    try:
+        parts = urllib.parse.urlsplit(url)
+        netloc = parts.netloc
+        if _NEEDS_QUOTE.search(netloc):
+            userinfo, at, hostport = netloc.rpartition("@")
+            host, colon, port = hostport.partition(":")
+            try:
+                host = host.encode("idna").decode("ascii")
+            except UnicodeError:
+                host = quote(host)
+            netloc = (quote(userinfo) + at if at else "") + host + colon + port
+        return urllib.parse.urlunsplit((parts.scheme, netloc, quote(parts.path),
+                                        quote(parts.query), quote(parts.fragment)))
+    except ValueError:
+        return quote(url)
+
+
+def refused(ex: BaseException | None) -> bool:
+    """True when ex, or an exception it was raised from, is a refused/reset connection."""
+    for _ in range(8):
+        if ex is None:
+            return False
+        if _refused(ex):
+            return True
+        ex = ex.__cause__ or ex.__context__
+    return False
+
+
+def provider_refused(control, error: BaseException | None = None, *, pause: bool = True) -> None:
+    """web.archive.org refused our connection: back off through the existing
+    capacity cooldown (provider_event "network_refused", next_attempt at least
+    Control.MIN_PAUSE ahead), the same one a refused account-status read sets.
+
+    Raises Paused (the normal "save state, stop this run, exit 0" path) unless
+    pause=False. Never retries: a refusal means back off (#1375 D5). Errors
+    that are not refusals (timeouts, replay 429/5xx) record nothing here."""
+    if error is not None and not refused(error):
+        return
+    if control is None or not hasattr(control, "capacity_wait"):
+        return
+    try:
+        control.capacity_wait("network_refused")
+    except Paused:
+        if pause:
+            raise
 
 
 def now() -> datetime:
@@ -353,7 +426,7 @@ def spn2_status(job_id: str) -> dict:
 
 
 def save_anon(url: str) -> str:
-    req = urllib.request.Request("https://web.archive.org/save/" + url, headers={"User-Agent": UA})
+    req = urllib.request.Request(wire_url("https://web.archive.org/save/" + url), headers={"User-Agent": UA})
     try:
         resp = OPENER.open(req, timeout=90)
         archive_response(req.full_url, resp.status, resp.headers)
@@ -390,7 +463,7 @@ def submit_capture(url: str, entry: dict | None, session: dict) -> dict:
 
 
 def capture_ok(capture: str) -> bool:
-    req = urllib.request.Request(capture, headers={"User-Agent": UA})
+    req = urllib.request.Request(wire_url(capture), headers={"User-Agent": UA})
     try:
         with urllib.request.urlopen(req, timeout=90) as resp:
             archive_response(capture, resp.status, resp.headers)
@@ -398,7 +471,7 @@ def capture_ok(capture: str) -> bool:
     except urllib.error.HTTPError as error:
         archive_response(capture, error.code, error.headers)
         return False
-    except (urllib.error.URLError, TimeoutError):
+    except (urllib.error.URLError, TimeoutError, OSError, http.client.HTTPException, ValueError):
         archive_transport_failed(capture)
         return False
 
@@ -421,6 +494,7 @@ MAX_BODY = 20 * 1024 * 1024  # bytes kept in memory for HTML comparison (files a
 MAX_FETCH = 300 * 1024 * 1024
 BACKLOG_SECONDS = 150        # time per run spent verifying older "ok" entries
 VERIFY_GAP_S = 4             # pause between backlog verifications (archive.org refuses bursts)
+STATUS_POLL_GAP_S = 3        # pause between SPN2 status polls of this run's jobs (#1375 review)
 # Strict capture check (2026-10-26 false-verify fix). A capture counts only when (a) its id_ URL
 # answers a real HTTP 200 at the SAME 14-digit timestamp (redirects followed only inside
 # web.archive.org for the same original URL), (b) the body is not a Wayback error page, and
@@ -474,7 +548,7 @@ def capture_age(capture: str, now_t: datetime | None = None) -> timedelta | None
 
 def _raw_get(url: str, limit: int = 1 << 16) -> tuple[int, dict, bytes]:
     """One GET without following redirects; returns (status, headers, first `limit` bytes)."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
+    req = urllib.request.Request(wire_url(url), headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
     try:
         resp = OPENER.open(req, timeout=120)
     except urllib.error.HTTPError as e:
@@ -485,12 +559,15 @@ def _raw_get(url: str, limit: int = 1 << 16) -> tuple[int, dict, bytes]:
         except Exception:  # noqa: BLE001
             pass
         return e.code, dict(e.headers or {}), body
-    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, http.client.HTTPException) as e:
         archive_transport_failed(url)
         raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}", side="capture") from e
     with resp:
         archive_response(url, resp.status, resp.headers)
-        return resp.status, dict(resp.headers), resp.read(limit)
+        try:
+            return resp.status, dict(resp.headers), resp.read(limit)
+        except (OSError, http.client.HTTPException) as e:
+            raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}", side="capture") from e
 
 
 def cdx_rows(original: str, ts: str) -> list[list[str]]:
@@ -660,7 +737,7 @@ def _decoder(encoding: str):
 def fetch(url: str) -> dict:
     """GET url; return status, content type, sha256 and size of the whole (decoded) body, and its
     first MAX_BODY bytes."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
+    req = urllib.request.Request(wire_url(url), headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
     h, size, head = hashlib.sha256(), 0, bytearray()
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
@@ -685,7 +762,8 @@ def fetch(url: str) -> dict:
         archive_response(url, e.code, e.headers)
         return {"status": e.code, "ctype": e.headers.get("Content-Type", "") if e.headers else "", "sha256": "",
                 "size": 0, "body": b""}
-    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, zlib.error) as e:
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, zlib.error,
+            http.client.HTTPException) as e:
         archive_transport_failed(url)
         raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}") from e
     return {"status": status, "ctype": ctype, "sha256": h.hexdigest(), "size": size, "body": bytes(head)}
@@ -758,13 +836,16 @@ def verify_entry(url: str, e: dict, get=None) -> bool:
         return False
     try:
         status, info = verify(url, e["capture"], get)
-    except VerifyRetry as ex:
-        print("VERIFY-ERR", url, str(ex)[:80], flush=True)
-        if ex.side == "capture":  # archive.org trouble: leave the entry alone, try next run
+    except (VerifyRetry, ValueError, http.client.HTTPException) as ex:
+        # ValueError: a malformed capture or a URL urllib cannot send. That row
+        # counts against its own VERIFY_TRIES; it never ends the run (#1375).
+        why = str(ex) if isinstance(ex, VerifyRetry) else f"{type(ex).__name__}: {ex}"
+        print("VERIFY-ERR", url, why[:80], flush=True)
+        if isinstance(ex, VerifyRetry) and ex.side == "capture":  # archive.org trouble: try next run
             raise
         n = e.get("verify_tries", 0) + 1
         e["verify_tries"] = n
-        e["verify"] = {"at": iso(now()), "error": str(ex)[:120]}
+        e["verify"] = {"at": iso(now()), "error": why[:120]}
         if n >= VERIFY_TRIES:
             e["status"] = "unverified"
             e["verify"]["reason"] = f"could not fetch after {n} tries"
@@ -780,6 +861,26 @@ def mark_verify_deferred(e: dict, reason: str) -> None:
     info = dict(e.get("verify") or {})
     info.update(at=iso(now()), defer="manpc", error=reason[:120])
     e["verify"] = info
+
+
+def item_error(url: str, e: dict, ex: BaseException, tag: str) -> None:
+    """Record an unexpected per-row error and move on (#1375).
+
+    The status stays as it was, so the existing rules decide what happens next:
+    an "ok" row counts the miss against VERIFY_TRIES (and becomes "unverified"
+    at the limit) and waits RETRY_AFTER; a pending row ages out of the confirm
+    window and is resubmitted after STALE_PENDING_AGE."""
+    why = f"{type(ex).__name__}: {ex}"[:120]
+    print(tag, url, why, flush=True)
+    if e.get("status") == "ok":
+        n = e.get("verify_tries", 0) + 1
+        e["verify_tries"] = n
+        e["verify"] = {"at": iso(now()), "error": why}
+        if n >= VERIFY_TRIES:
+            e["status"] = "unverified"
+            e["verify"]["reason"] = f"could not check after {n} tries"
+    else:
+        e["error"] = why
 
 
 def try_verify(url: str, e: dict) -> None:
@@ -965,10 +1066,25 @@ def alias_target(url: str) -> str | None:
     return None
 
 
-def order_queue(urls: list[str], done: dict) -> list[str]:
+def ia_covered_keys() -> set[str] | None:
+    """Ledger keys of own files with a SHA-1-verified archive.org item copy (#1375 D3).
+    None when the ia_item_backup ledger is missing or unreadable."""
+    try:
+        import ia_item_backup
+        rows = ia_item_backup.load_verified()
+    except Exception as ex:  # never let the backup ledger stop saves
+        print("IA-LEDGER unreadable", type(ex).__name__, flush=True)
+        return None
+    return set(rows) if rows is not None else None
+
+
+def order_queue(urls: list[str], done: dict, ia_covered: set[str] | None = None) -> list[str]:
     """Walk order for saves (swccg-guild/work#1340).
 
     1. Never-saved URLs before retries, our own files first within that.
+       #1375 D3: within each of those two groups, own files that already have
+       a verified archive.org item copy (ia_covered, ledger keys) go last,
+       after outside sources.
     2. Round-robin across target hosts, so one site cannot use up its
        per-host daily allowance at archive.org and stall the rest.
     3. Skip a forwarding alias when its target is queued or saved.
@@ -976,13 +1092,19 @@ def order_queue(urls: list[str], done: dict) -> list[str]:
     """
     queued = set(urls)
     tiers: dict[int, dict[str, list[str]]] = {}
+    key_for = None
+    if ia_covered:
+        from ia_item_backup import ledger_key_for_url as key_for
     for url in urls:
         target = alias_target(url)
         if target and (target in queued or target in done):
             continue
         host = (urllib.parse.urlsplit(url).hostname or "").lower()
         own = host in ("swccg.com", "wiki.swccg.com", "res.starwarsccg.org")
-        tier = (0 if url not in done else 2) + (0 if own else 1)
+        rank = 0 if own else 1
+        if own and key_for and key_for(url) in ia_covered:
+            rank = 2
+        tier = (0 if url not in done else 3) + rank
         tiers.setdefault(tier, {}).setdefault(host, []).append(url)
     out = []
     for tier in sorted(tiers):
@@ -1154,6 +1276,8 @@ def delete_check(url: str, e: dict) -> tuple[bool, str]:
         ok, why = strict_check(cap)
     except VerifyRetry as ex:
         return False, f"retry: {ex}"
+    except (ValueError, http.client.HTTPException) as ex:
+        return False, f"retry: {type(ex).__name__}: {str(ex)[:80]}"
     finally:
         time.sleep(VERIFY_GAP_S)
     if ok and why != "ok":
@@ -1245,6 +1369,9 @@ def recheck_replay_only(done: dict, changed: dict, deadline: float) -> None:
         except VerifyRetry:
             print("archive.org not answering; replay-only recheck stops", flush=True)
             break
+        except (ValueError, http.client.HTTPException) as ex:
+            print("RECHECK-ERR", url, type(ex).__name__, str(ex)[:80], flush=True)
+            continue
         if ok:
             e["verify"]["rechecked"] = iso(now())
             if why == "ok":
@@ -1437,7 +1564,8 @@ def native_capture_scope(control: Control, object_ids) -> set[str] | None:
 def ticket_policy_window(control: Control, explicit: set[str], deadline: float) -> set[str]:
     """Bill 2026-11-25 (#1359 Q1): ready registrations with a ticket are auto-approved.
 
-    The policy never changes the two-jobs-per-run promotion limit. Errors fall back
+    The policy only widens the approved cohort; how many of its jobs are promoted
+    per run is the adaptive queue-buffer cap in _run (#1375). Errors fall back
     to the explicit operator approvals only.
     """
     try:
@@ -1457,6 +1585,15 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     scope = native_capture_scope(control, native_object_ids)
     gap = max(GAP_S, 60) if scope is not None else GAP_S
     submit_limit = min(MAX_SUBMITS_PER_RUN or 6, 6) if scope is not None else MAX_SUBMITS_PER_RUN
+    stats = None
+    if scope is None:
+        # Self-tuning pace (#1375): the allowance comes from pace-state.json.
+        nominal = max(60.0, minutes * 60 - pace.SUBMIT_RESERVE_S)
+        plan = pace.load(control.directory, initial=MAX_SUBMITS_PER_RUN, initial_gap_s=GAP_S, usable_s=nominal)
+        submit_limit, gap = plan["allowance"], plan["gap_s"]
+        stats = control.pace_run = {"plan": plan, "allowance": submit_limit, "gap_s": gap, "submits": 0,
+                                    "refusals": 0, "pushback": 0, "scoped": 0, "accepted": 0,
+                                    "usable_s": nominal, "started": time.time()}
     reset_to_origin(repo)
     urls, done = load(repo)
     control.done = done
@@ -1481,10 +1618,28 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         allowed = load_allowed_objects(control.directory / "registry") if scope is None else set(native_object_ids)
         if scope is None:
             allowed = allowed | ticket_policy_window(control, allowed, deadline)
-        adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed,
-                               limit=2 if scope is None else len(allowed))
+            # Adaptive promotion (#1375): top queue.txt up to ~6 h of untried work.
+            buffer = pace.untried_buffer(urls, done)
+            target = pace.target_buffer(submit_limit, stats["plan"])
+            cap = pace.promotion_cap(buffer, target)
+            seconds = min(pace.promote_seconds(), max(0.0, deadline - 60 - time.monotonic()))
+            promotion = control.pace_promotion = {"target_buffer": target, "buffer_before": buffer,
+                                                  "promoted": 0, "cap": cap, "seconds": 0.0}
+            print(f"promotion: buffer={buffer} target={target} cap={cap} budget_s={seconds:.0f}", flush=True)
+            adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed, limit=cap,
+                                   finish_limit=pace.finish_checks(), prepare_seconds=seconds,
+                                   observe_max=pace.owner_observe_max())
+        else:
+            adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed, limit=len(allowed))
         control.registry_adapter = adapter
-        prepared = adapter.prepare(deadline)
+        started = time.monotonic()
+        try:
+            prepared = adapter.prepare(deadline)
+        finally:
+            if scope is None:
+                promotion["seconds"] = round(time.monotonic() - started, 1)
+        if scope is None:
+            promotion["promoted"] = prepared.get("prepared", 0)
         done.update(prepared["ledger_updates"])
         changed.update(prepared["ledger_updates"])
         registry_recovered(control, "prepare")
@@ -1522,16 +1677,33 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         except StatusRetry as ex:
             print("CONFIRM-DEFER pending walk", str(ex)[:80], flush=True)
             break
+        except Paused:
+            raise
+        except Exception as ex:  # noqa: BLE001 - one bad row never ends the run (#1375)
+            item_error(url, done[url], ex, "CONFIRM-ERR")
+            changed[url] = done[url]
+            control.checkpoint(done, control.initial_done)
 
     # 2. save what is new or due a retry
     submitted: list[str] = []
     save_attempts = 0
+    if stats is not None:
+        # Spread the allowance over the time actually left for submits. This is
+        # only our own spacing; provider cooldowns raise Paused before a submit.
+        gap = pace.plan_gap(submit_limit, deadline - pace.SUBMIT_RESERVE_S - time.monotonic(),
+                            stats["plan"]["bounds"]["gap_min_s"],
+                            GAP_S if stats["plan"].get("fresh") else 0.0)
+        stats["gap_s"] = gap
+        if isinstance(control, Control):
+            # Never longer than the sleep below, or may_submit would stop the loop.
+            control.SUBMISSION_GAP = max(1, math.floor(gap))
+        print(f"pace: allowance={submit_limit} gap={gap}s (self-tuned)", flush=True)
     # A half-open probe should prefer an already requested, uncomplicated source
     # with no previous failed or pending receipt, not an arbitrary historic retry.
     if isinstance(control,Control) and control.state.get('mode')=='half_open':
         urls=sorted(urls,key=lambda u:(u in done,not u.startswith('https://swccg.com/')))
     elif scope is None:
-        urls=order_queue(urls,done)
+        urls=order_queue(urls,done,ia_covered_keys())
     for url in urls:
         if time.monotonic() > deadline - 90 or errors_in_row >= 5:
             break
@@ -1565,9 +1737,13 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             if isinstance(control,Control):ensure_capacity(control)
             control.submitting(url)
             save_attempts += 1
+            if stats is not None:
+                stats["submits"] = save_attempts
             j = submit_capture(url, e, submission_session)
             if isinstance(control,Control):
                 consume_capacity(control)
+            if stats is not None and (j.get("job_id") or j.get("anonymous_capture")):
+                stats["accepted"] += 1
             if "anonymous_capture" not in j:
                 if j.get("recent"):
                     e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
@@ -1593,6 +1769,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         except Paused:
             raise
         except ScopedLimit as ex:
+            if stats is not None:
+                stats["scoped"] += 1  # neutral for pace: holds, never raises (#1375 review)
             control.defer_source(url,ex.event,ex.retry_after)
             if control.state.get('mode')=='half_open':break
             time.sleep(gap); continue
@@ -1600,10 +1778,20 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             if ex.event=='account_sessions':control.capacity_wait(ex.event,ex.retry_after)
             control.provider_failed(ex.status, ex.retry_after, ex.event)
         except Exception as ex:  # noqa: BLE001
+            print("ERROR", url, str(ex)[:120], flush=True)
+            is_refused = refused(ex) or "connection refused" in str(ex).lower()
+            if stats is not None and is_refused:
+                stats["refusals"] += 1
+            elif stats is not None and submit_pushback(ex):
+                stats["pushback"] += 1
+            if is_refused:
+                # web.archive.org refused the submit: record the shared cooldown
+                # and stop submitting (raises Paused; #1375 review). Nothing was
+                # accepted, so the entry keeps its previous receipt and tries.
+                provider_refused(control, ex if refused(ex) else None)
             e = {"capture": (e or {}).get("capture", ""), "status": "retry" if tries < MAX_TRIES else "failed",
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
             errors_in_row += 1
-            print("ERROR", url, str(ex)[:120], flush=True)
         e.update(registry_epoch)
         done[url] = e
         changed[url] = e
@@ -1621,10 +1809,22 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             except StatusRetry as ex:
                 print("CONFIRM-DEFER", url, str(ex)[:80], flush=True)
                 submitted.clear()
+                if stats is not None:
+                    stats["pushback"] += 1  # status refused / timed out: blocks a raise
+                # A refused status poll sets the shared cooldown (raises Paused).
+                provider_refused(control, ex)
                 break
+            except Paused:
+                raise
+            except Exception as ex:  # noqa: BLE001 - one bad row never ends the run (#1375)
+                item_error(url, done[url], ex, "CONFIRM-ERR")
+                changed[url] = done[url]
+                submitted.remove(url)
+                continue
             if done[url]["status"] != "pending" or "job_id" not in done[url]:
                 submitted.remove(url)
-            time.sleep(1)
+            # Paced per poll, not per allowance: 40 jobs take >= 2 min a round.
+            time.sleep(STATUS_POLL_GAP_S)
         if submitted:
             time.sleep(15)
 
@@ -1648,6 +1848,11 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
                 changed[url] = done[url]
             print("VERIFY-DEFER backlog", url, str(ex)[:80], flush=True)
             break
+        except Paused:
+            raise
+        except Exception as ex:  # noqa: BLE001 - one bad row never ends the run (#1375)
+            item_error(url, done[url], ex, "VERIFY-ERR")
+            changed[url] = done[url]
         time.sleep(VERIFY_GAP_S)
 
     # 4b. re-check verified captures that CDX did not list yet
@@ -1699,6 +1904,87 @@ def persist_changes(repo: Path, done: dict, changed: dict, baseline: dict) -> No
 
 
 
+# archive.org (or our own source) refusing, resetting or timing out. These end
+# the step that hit them; they never fail the systemd run (#1375).
+TRANSIENT_RUN_ERRORS = (VerifyRetry, StatusRetry, urllib.error.URLError, TimeoutError,
+                        ConnectionError, http.client.HTTPException)
+
+
+def save_partial(repo: Path, control: Control) -> None:
+    """Checkpoint and push what this run changed before it stops early."""
+    changed = {u: e for u, e in control.done.items() if e != control.initial_done.get(u)}
+    control.checkpoint(control.done, control.initial_done)
+    persist_changes(repo, control.done, changed, control.initial_done)
+    control.ledger_saved()
+
+
+def submit_pushback(ex: BaseException) -> bool:
+    """A submit that timed out or got an unclassified answer: pushback for pace."""
+    msg = str(ex).lower()
+    if "unclassified response" in msg:
+        return True
+    for _ in range(8):
+        if ex is None:
+            return False
+        reason = getattr(ex, "reason", None)
+        if isinstance(ex, (TimeoutError, socket.timeout)) or isinstance(reason, (TimeoutError, socket.timeout)):
+            return True
+        ex = ex.__cause__ or ex.__context__
+    return "timed out" in msg
+
+
+def cdx_hold_cooldown(control) -> None:
+    """A refusal seen by the exact-URL CDX pass (wayback_cdx_settle) is the same
+    web.archive.org refusing this IP: carry its hold into the shared cooldown so
+    the worker makes no request either until it passes (#1375 review)."""
+    try:
+        hold = json.loads((control.directory / "cdx-settle-hold.json").read_text(encoding="utf-8"))
+        until = float(hold.get("until", 0))
+    except (OSError, ValueError, TypeError, AttributeError):
+        return
+    if not hold.get("refused") or not math.isfinite(until) or until <= control.clock():
+        return
+    if until > control.state.get("next_attempt", 0):
+        control.state.update(next_attempt=until, provider_event="cdx_network_refused",
+                             reason="exact-URL CDX pass was refused; shared cooldown")
+        control.save()
+        try:
+            when = datetime.fromtimestamp(until, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except (OverflowError, OSError, ValueError):
+            when = str(until)
+        print("CDX-HOLD refused connection seen by the CDX pass; shared cooldown until", when, flush=True)
+
+
+def finish_pace(control, outcome: str) -> None:
+    """AIMD step after an ordinary run (#1375). Never raises into the owner."""
+    try:
+        stats = getattr(control, "pace_run", None)
+        signals = list(getattr(control, "pace_signals", []) or [])
+        if not stats:
+            # Paused before any work (e.g. shared cooldown still active): the cut,
+            # if any, was recorded by the run that met the pushback.
+            print(f"PACE held: no submit window this run ({outcome}); pace-state unchanged", flush=True)
+            return
+        allowance = stats["allowance"]
+        accepted = stats.get("accepted", stats["submits"])
+        new, reason, rate_limited = pace.decide(allowance, submits=stats["submits"], signals=signals,
+                                                refusals=stats["refusals"], outcome=outcome,
+                                                pushback=stats.get("pushback", 0),
+                                                scoped=stats.get("scoped", 0), accepted=accepted)
+        last_run = {"submits": stats["submits"], "accepted": accepted, "refusals": stats["refusals"] + sum(
+                        1 for s in signals if s.get("kind") == "capacity" and s.get("reason") == "network_refused"),
+                    "pushback": stats.get("pushback", 0), "scoped": stats.get("scoped", 0),
+                    "rate_limited": rate_limited, "used_full_allowance": accepted >= allowance,
+                    "ended": pace.iso()}
+        saved = pace.record(control.directory, stats["plan"], new_allowance=new, reason=reason,
+                            last_run=last_run, gap_used_s=stats["gap_s"], usable_s=stats["usable_s"],
+                            promotion=getattr(control, "pace_promotion", None), at=last_run["ended"],
+                            run_started=stats.get("started"))
+        print(pace.journal_line(allowance, new, stats["gap_s"], saved["gap_s"], last_run, reason), flush=True)
+    except Exception as error:  # noqa: BLE001
+        print(f"PACE-ERR {type(error).__name__}: {str(error)[:120]}", flush=True)
+
+
 def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
     """One exclusive owner; provider/auth pauses survive Git resets and restarts."""
     global ACTIVE_CONTROL
@@ -1724,6 +2010,7 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                 control.failed_recovery = recovery.initialize(control.directory, control.done, control.clock())
                 control.stale_jobs = reliability.initialize_stale(sys.modules[__name__],control.directory,control.done,control.clock())
             try:
+                cdx_hold_cooldown(control)
                 control.begin()
                 ACTIVE_CONTROL = control
                 if native_object_ids is None:
@@ -1732,12 +2019,16 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                     _run(repo, minutes, control, native_object_ids=native_object_ids)
             except Paused as error:
                 outcome = "paused"
-                changed = {u:e for u,e in control.done.items()
-                           if e != control.initial_done.get(u)}
-                control.checkpoint(control.done, control.initial_done)
-                persist_changes(repo, control.done, changed, control.initial_done)
-                control.ledger_saved()
+                save_partial(repo, control)
                 print("WAYBACK-PAUSED", str(error), flush=True)
+            except TRANSIENT_RUN_ERRORS as error:
+                # Backstop (#1375): archive.org refusing or timing out on a path
+                # that did not defer by itself ends this run like a pause: a
+                # refusal sets the shared cooldown, the ledger is saved, exit 0.
+                outcome = "paused"
+                provider_refused(control, error, pause=False)
+                save_partial(repo, control)
+                print("WAYBACK-DEFER", type(error).__name__, str(error)[:120], flush=True)
             except BaseException:
                 outcome = "failed"
                 control.checkpoint(control.done, control.initial_done)
@@ -1750,6 +2041,16 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                     try:
                         adapter.finish(control.registry_deadline)
                         registry_recovered(control, "finish")
+                    except TRANSIENT_RUN_ERRORS as error:
+                        # archive.org refused/timed out while the owner checked a
+                        # capture: defer, back off on a refusal, never fail the run.
+                        finish_error = Paused(f"owner finish deferred: {type(error).__name__}")
+                        print("REGISTRY-FINISH-DEFER", type(error).__name__, str(error)[:100], flush=True)
+                        provider_refused(control, error, pause=False)
+                        try:
+                            control.checkpoint(control.done, control.initial_done)
+                        except Exception as journal_error:
+                            print("REGISTRY-JOURNAL-ERR", type(journal_error).__name__, flush=True)
                     except Exception as error:
                         finish_error = error
                         # Recreate/preserve acknowledged-job recovery even if Git saved.
@@ -1769,6 +2070,8 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                 primary_completed = outcome == "completed"
                 if finish_error is not None and primary_completed:
                     outcome = "paused" if isinstance(finish_error, Paused) else "failed"
+                if native_object_ids is None:
+                    finish_pace(control, outcome)
                 health = control.health(control.done, outcome, recovery_counts=recovery.health(getattr(control, 'failed_recovery', None), control.done), stale_counts=reliability.stale_counts(getattr(control,'stale_jobs',None),control.done))
                 print("WAYBACK-HEALTH", json.dumps(health, sort_keys=True), flush=True)
                 if finish_error is not None and primary_completed and not isinstance(finish_error, Paused):

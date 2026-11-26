@@ -1,6 +1,7 @@
 """Tests for the capture verification in ops/wayback_worker.py. Run: python3 -m unittest discover -s ops/tests"""
 import hashlib
 import json
+import time
 import os
 import sys
 import tempfile
@@ -240,6 +241,161 @@ class RunLoop(unittest.TestCase):
         self.assertEqual(submitted, [self.src])
         done = json.loads((self.repo / W.DONE).read_text())
         self.assertNotIn(extra, done)
+
+    def pace_state(self):
+        return json.loads((self.repo / ".test-control" / "pace-state.json").read_text())
+
+    def test_run_writes_pace_state_and_sizes_promotion_from_buffer(self):
+        W.MAX_SUBMITS_PER_RUN = 0
+        seen = {}
+        real = W.OwnerAdapter
+        def adapter(*args, **kwargs):
+            seen.update(kwargs)
+            return real(*args, **kwargs)
+        with patch.object(W, "OwnerAdapter", side_effect=adapter):
+            W.run(self.repo, minutes=5)
+        state = self.pace_state()
+        # One submit of a 12 allowance: the queue ran out, so the pace holds.
+        self.assertEqual(12, state["allowance"])
+        self.assertEqual({"submits": 1, "refusals": 0, "rate_limited": False, "used_full_allowance": False},
+                         {k: state["last_run"][k] for k in ("submits", "refusals", "rate_limited",
+                                                            "used_full_allowance")})
+        self.assertEqual({"target_buffer": 333, "buffer_before": 1, "cap": 200},
+                         {k: state["promotion"][k] for k in ("target_buffer", "buffer_before", "cap")})
+        self.assertEqual(200, seen["limit"])
+        self.assertEqual(6, seen["finish_limit"])
+        self.assertEqual(10, seen["observe_max"])
+        self.assertLessEqual(seen["prepare_seconds"], 150)
+
+    def test_throttled_submit_halves_the_pace_and_keeps_the_cooldown(self):
+        W.MAX_SUBMITS_PER_RUN = 0
+        def throttled(url):
+            raise W.Throttled("HTTP 429", 429, "120")
+        W.spn2_submit = throttled
+        W.run(self.repo, minutes=5)
+        state = self.pace_state()
+        self.assertEqual(6, state["allowance"])
+        self.assertTrue(state["last_run"]["rate_limited"])
+        control = json.loads((self.repo / ".test-control" / "control.json").read_text())
+        self.assertEqual("open", control["mode"])
+        log = [json.loads(x) for x in (self.repo / ".test-control" / "pace-log.jsonl").read_text().splitlines()]
+        self.assertEqual((12, 6), (log[-1]["from"], log[-1]["to"]))
+
+    # --- #1375 review: refusals stop submitting, pushback blocks raises, paced polls ---
+    def fresh_queue(self, n, allowance):
+        import wayback_pace as pace
+        urls = [f"https://res.starwarsccg.org/legacyblocks/Review{i}.pdf" for i in range(n)]
+        (self.repo / W.QUEUE).write_text("".join(u + "\n" for u in urls))
+        control = self.repo / ".test-control"
+        control.mkdir(parents=True, exist_ok=True)
+        (control / "pace-state.json").write_text(json.dumps({"schema_version": pace.SCHEMA_VERSION,
+                                                             "allowance": allowance, "gap_s": 15.0}))
+        W.MAX_SUBMITS_PER_RUN = 0
+        W.spn2_status = lambda job: {"status": "error", "message": "fixture"}
+        # time.sleep is stubbed, so the real clock never passes the per-submit
+        # spacing; let several submits through (provider pauses still apply).
+        spacing = patch.object(W.Control, "may_submit",
+                               lambda control, url: control.state["mode"] in {"healthy", "half_open"})
+        spacing.start()
+        self.addCleanup(spacing.stop)
+        return urls
+
+    def control_state(self):
+        return json.loads((self.repo / ".test-control" / "control.json").read_text())
+
+    def test_refused_submit_records_cooldown_and_stops_submitting(self):
+        import urllib.error
+        self.fresh_queue(3, 6)
+        calls = []
+        def refused(url):
+            calls.append(url)
+            raise urllib.error.URLError(ConnectionRefusedError(111, "Connection refused"))
+        W.spn2_submit = refused
+        with patch.dict(os.environ, {"WAYBACK_PACE_MIN": "1"}), patch("builtins.print"):
+            W.run(self.repo, minutes=5)
+        self.assertEqual(1, len(calls))
+        control = self.control_state()
+        self.assertEqual("network_refused", control["provider_event"])
+        self.assertGreater(control["next_attempt"], time.time() + 600)
+        state = self.pace_state()
+        self.assertEqual(3, state["allowance"])
+        self.assertGreaterEqual(state["last_run"]["refusals"], 1)
+
+    def test_timeout_and_unclassified_submits_are_pushback(self):
+        for error in (TimeoutError("timed out"), RuntimeError("no job_id: unclassified response")):
+            with self.subTest(error=type(error).__name__):
+                (self.repo / ".test-control" / "control.json").unlink(missing_ok=True)
+                (self.repo / W.DONE).write_text("{}")
+                self.fresh_queue(4, 4)
+                def submit(url, error=error):
+                    if url.endswith("Review1.pdf"):
+                        raise error
+                    return {"job_id": "spn2-" + url[-5]}
+                W.spn2_submit = submit
+                with patch.dict(os.environ, {"WAYBACK_PACE_MIN": "1"}), patch("builtins.print"):
+                    W.run(self.repo, minutes=5)
+                state = self.pace_state()
+                self.assertEqual(2, state["allowance"])  # halved, never raised
+                self.assertEqual(1, state["last_run"]["pushback"])
+                self.assertEqual(3, state["last_run"]["accepted"])
+                self.assertFalse(state["last_run"]["used_full_allowance"])
+
+    def test_scoped_limit_and_answers_without_job_id_never_raise(self):
+        urls = self.fresh_queue(4, 4)
+        def submit(url):
+            if url == urls[1]:
+                raise W.ScopedLimit("url_daily_limit")  # per-URL, other URLs still go
+            return {"job_id": "spn2-x"}
+        W.spn2_submit = submit
+        with patch.dict(os.environ, {"WAYBACK_PACE_MIN": "1"}), patch("builtins.print"):
+            W.run(self.repo, minutes=5)
+        state = self.pace_state()
+        self.assertEqual(4, state["allowance"])  # 4 attempts but 3 accepted: hold
+        self.assertEqual(1, state["last_run"]["scoped"])
+        self.assertEqual(3, state["last_run"]["accepted"])
+
+    def test_status_polls_are_paced(self):
+        self.fresh_queue(1, 3)
+        answers = iter([{"status": "pending"}, {"status": "pending"}, {"status": "error", "message": "x"}])
+        W.spn2_status = lambda job: next(answers)
+        sleeps = []
+        W.time.sleep = sleeps.append
+        with patch("builtins.print"):
+            W.run(self.repo, minutes=5)
+        self.assertEqual(3, sleeps.count(W.STATUS_POLL_GAP_S))
+        self.assertGreaterEqual(W.STATUS_POLL_GAP_S, 3)
+        self.assertNotIn(1, sleeps)
+
+    def test_refused_status_poll_is_pushback_and_cooldown(self):
+        import urllib.error
+        self.fresh_queue(1, 6)
+        def refused(job):
+            raise urllib.error.URLError(ConnectionRefusedError(111, "Connection refused"))
+        W.spn2_status = refused
+        with patch.dict(os.environ, {"WAYBACK_PACE_MIN": "1"}), patch("builtins.print"):
+            W.run(self.repo, minutes=5)
+        self.assertEqual("network_refused", self.control_state()["provider_event"])
+        state = self.pace_state()
+        self.assertEqual(3, state["allowance"])
+        self.assertEqual(1, state["last_run"]["pushback"])
+
+    def test_pace_state_records_measured_run_starts(self):
+        self.fresh_queue(1, 3)
+        with patch("builtins.print"):
+            W.run(self.repo, minutes=5)
+            path = self.repo / ".test-control" / "control.json"
+            control = json.loads(path.read_text())
+            control["next_submission_at"] = 0  # stubbed sleep: lift our own spacing
+            path.write_text(json.dumps(control))
+            W.run(self.repo, minutes=5)
+        starts = self.pace_state()["run_starts"]
+        self.assertEqual(2, len(starts))
+        self.assertLessEqual(starts[0], starts[1])
+
+    def test_item_copy_phase_default_is_90_seconds(self):
+        import wayback_link
+        if not os.environ.get("SWCCG_LINK_IA_SECONDS"):
+            self.assertEqual(90.0, wayback_link.IA_SECONDS)
 
 
 class Fetch(unittest.TestCase):
