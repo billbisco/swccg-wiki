@@ -29,6 +29,19 @@ PUBLIC_STAGE_BUDGET = 32 * 1024 * 1024
 STAGE_SCAN_LIMIT = 50000
 DISK_RESERVE = 2 * 1024 * 1024 * 1024
 DEFAULT_WORK = Path("/mnt/HC_Volume_107153504/work/swccg-preservation-owner")
+# archive.org observations (replay id_ + CDX in strict_check + id_ fetch) per
+# run, prepare and finish together (#1375 review). WAYBACK_OWNER_OBSERVE_MAX.
+DEFAULT_OBSERVE_MAX = 10
+DEFAULT_OBSERVE_GAP_S = 4.0   # used when the worker has no VERIFY_GAP_S
+OBSERVE_STATUSES = {"verified", "ok", "unverified", "failed", "retry"}
+
+
+def _env_observe_max() -> int:
+    try:
+        value = int(os.environ.get("WAYBACK_OWNER_OBSERVE_MAX") or DEFAULT_OBSERVE_MAX)
+    except ValueError:
+        return DEFAULT_OBSERVE_MAX
+    return value if value >= 0 else DEFAULT_OBSERVE_MAX
 
 
 def load_allowed_objects(registry: Path) -> set[str]:
@@ -53,11 +66,14 @@ class OwnerAdapter:
     def __init__(self, worker, repository: Path, control, allowed_objects: set[str], *,
                  work=DEFAULT_WORK,
                  stage_budget=PUBLIC_STAGE_BUDGET, limit=2, readback=independent_receipt,
-                 finish_limit=None, prepare_seconds=None):
+                 finish_limit=None, prepare_seconds=None, observe_max=None):
         # limit: promotion attempts per prepare() (the worker sizes it from the
         # queue buffer, #1375). finish_limit: verification checks per finish();
         # it defaults to limit so a bare adapter keeps its historic behavior.
         # prepare_seconds: optional time budget for the promotion loop.
+        # observe_max: archive.org observations per run (prepare + finish),
+        # spaced by the worker's VERIFY_GAP_S; jobs needing one beyond it are
+        # skipped without using the promotion cap (#1375 review).
         self.worker, self.repository, self.control = worker, repository, control
         if getattr(worker, "ACTIVE_CONTROL", None) is not control or not getattr(control, "lock", None) or control.lock.closed:
             raise PermissionError("adapter requires the existing active Control owner; no client-local owner claim")
@@ -78,9 +94,63 @@ class OwnerAdapter:
         self.last_capture_observation = None
         self.last_stage_bytes = 0
         self.replay_deferred = False
+        self.observe_left = _env_observe_max() if observe_max is None else max(0, int(observe_max))
+        self.observe_gap = float(getattr(worker, "VERIFY_GAP_S", DEFAULT_OBSERVE_GAP_S))
+        self.observations_made = 0
+        self.observe_skipped = 0
+        self.finish_checked = 0
+        self._last_observe_at = None
 
     def healthy(self):
         return self.control.state.get("mode") == "healthy"
+
+    def _cooling_down(self):
+        state = self.control.state
+        clock = getattr(self.control, "clock", time.time)
+        try:
+            return float(state.get("next_attempt", 0) or 0) > clock()
+        except (TypeError, ValueError):
+            return True
+
+    def _observe_available(self):
+        """May this run still ask archive.org about an existing capture?"""
+        return (self.observe_left > 0 and not self.replay_deferred and self.healthy() and
+                not self._cooling_down())
+
+    @staticmethod
+    def _needs_observe(legacy):
+        return bool(legacy.get("capture")) and bool(
+            (legacy.get("job_id") and legacy.get("status") == "pending") or
+            legacy.get("status") in OBSERVE_STATUSES)
+
+    def _observe_slot(self):
+        """Spend one observation and keep VERIFY_GAP_S since the previous one."""
+        if self._last_observe_at is not None:
+            wait = self._last_observe_at + self.observe_gap - time.monotonic()
+            if wait > 0:
+                time.sleep(wait)
+        self.observe_left -= 1
+        self.observations_made += 1
+        self._last_observe_at = time.monotonic()
+
+    @staticmethod
+    def _throttled(error):
+        """Replay/CDX HTTP 429 seen through strict_check (VerifyRetry message)."""
+        return "HTTP 429" in str(error)
+
+    def _archive_pushback(self, error=None, status=None):
+        """archive.org refused or throttled an observation: no further
+        archive.org call from this adapter this run, and the worker's shared
+        cooldown is recorded (raises Paused, #1375 review)."""
+        self.replay_deferred = True
+        if status == 429 or (error is not None and self._throttled(error)):
+            wait = getattr(self.control, "capacity_wait", None)
+            if wait is not None:
+                wait("replay_throttled")
+            return
+        hook = getattr(self.worker, "provider_refused", None)
+        if hook is not None and error is not None:
+            hook(self.control, error)
 
     def _replay_unavailable(self, error):
         """Transient archive.org replay/index trouble, not a finding about the source."""
@@ -507,7 +577,16 @@ class OwnerAdapter:
                     except Exception as error:
                         self._attention(entry, object_ids, job, error)
                 continue
-            attempted += 1
+            legacy = self.control.done.get(source["url"], {})
+            observe = self._needs_observe(legacy)
+            if observe and not self._observe_available():
+                # Needs archive.org beyond this run's observation budget (or
+                # during a cooldown): skip it without using the promotion cap,
+                # so fresh never-captured jobs still fill it (#1375 review).
+                self.observe_skipped += 1
+                continue
+            if not observe:
+                attempted += 1
             atomic_json(cursor_path, {"after": job})
             try:
                 if object_state(request) == "awaiting_stage":
@@ -518,7 +597,6 @@ class OwnerAdapter:
                     raise ValueError("public capture target does not match its registered exact payload")
                 # An existing accepted legacy job remains owned by the worker;
                 # do not reset or duplicate it just to manufacture registry progress.
-                legacy = self.control.done.get(source["url"], {})
                 if legacy.get("job_id") and legacy.get("status") == "pending":
                     self._observe([entry], legacy, deadline, object_ids)
                     continue
@@ -556,7 +634,9 @@ class OwnerAdapter:
                 self._enqueue(source["url"], event=event)
             except Exception as error:
                 self._attention(entry, object_ids, job, error)
-        return {"prepared": 0, "attempted": attempted, "observations": self.observations, "ledger_updates": ledger_updates}
+        return {"prepared": 0, "attempted": attempted, "observations": self.observations,
+                "archive_observations": self.observations_made, "observe_skipped": self.observe_skipped,
+                "ledger_updates": ledger_updates}
 
     def _observe(self, entries, legacy, deadline, object_ids=None):
         source = entries[0]["request"]["source"]
@@ -566,12 +646,13 @@ class OwnerAdapter:
                         approved_object_ids=object_ids,
                         accepted_job_id=legacy["job_id"], worker_entry_sha256=hashlib.sha256(canonical_bytes(legacy)).hexdigest()))
         capture = legacy.get("capture")
-        if (not capture or not self.healthy() or self.replay_deferred or
+        if (not capture or not self._observe_available() or
                 time.monotonic() > deadline - 30):
             return "pending"
         _, original = self.worker.capture_parts(capture)
         if original != source["url"]:
             return "identity_mismatch"
+        self._observe_slot()
         try:
             good, why = self.worker.strict_check(capture)
             if not good or why != "ok":
@@ -582,13 +663,14 @@ class OwnerAdapter:
         except Exception as error:
             if not self._replay_unavailable(error):
                 raise
-            # archive.org refused, reset or timed out (#1375): this capture stays
-            # pending, no further replay request is made by this adapter, and a
-            # refusal sets the worker's shared cooldown (raises Paused there).
-            self.replay_deferred = True
-            hook = getattr(self.worker, "provider_refused", None)
-            if hook is not None:
-                hook(self.control, error)
+            # archive.org refused, reset, throttled or timed out (#1375): this
+            # capture stays pending, no further archive.org request is made by
+            # this adapter, and a refusal or 429 sets the worker's shared
+            # cooldown (raises Paused there).
+            self._archive_pushback(error)
+            return "pending"
+        if actual.get("status") == 429:
+            self._archive_pushback(status=429)
             return "pending"
         if actual.get("status") != 200:
             return "pending"
@@ -604,8 +686,19 @@ class OwnerAdapter:
         return "verified"
 
     def finish(self, deadline):
-        """Record real accepted jobs even while paused; verify only when healthy."""
-        checked = 0
+        """Record real accepted jobs even while paused; verify only when healthy.
+
+        Verification shares the run's observation budget with prepare(); once
+        it is spent (or archive.org pushed back) the pass stops and the cursor
+        stays, so the next run resumes there."""
+        try:
+            return self._finish(deadline)
+        except Paused:
+            # The cooldown is already recorded; finish never adds another stop.
+            return self.finish_checked
+
+    def _finish(self, deadline):
+        checked = self.finish_checked = 0
         cursor_path = self.registry / "owner-finish-cursor.json"
         cursor = json.loads(cursor_path.read_text(encoding="utf-8")).get("after", "") if cursor_path.exists() else ""
         groups = self._groups()
@@ -622,6 +715,8 @@ class OwnerAdapter:
                     continue
                 legacy = self.control.done.get(request["source"]["url"])
                 if legacy:
+                    if legacy.get("capture") and not self._observe_available():
+                        return checked
                     outcome = self._observe([entry], legacy, deadline, group["objects"])
                     if outcome == "different_payload" and self._epoch_applied(request["source"], legacy):
                         store_event(self.registry, self._event([entry], "needs_attention",
@@ -634,5 +729,6 @@ class OwnerAdapter:
                             "queued URL resolved to another payload; next prepare establishes a checked version epoch",
                             approved_object_ids=group["objects"], superseded_worker_receipt=legacy))
                     checked += 1
+                    self.finish_checked = checked
                     atomic_json(cursor_path, {"after": job})
         return checked

@@ -55,7 +55,8 @@ SUMMARY = "#1320: add verified Wayback copy"
 PACE = float(os.environ.get("SWCCG_LINK_PACE", "0.5"))
 IA_SUMMARY = "#1375: add verified archive.org item copy"
 IA_MAX = int(os.environ.get("SWCCG_LINK_IA_MAX", "150"))
-IA_SECONDS = float(os.environ.get("SWCCG_LINK_IA_SECONDS", "120"))
+# 90 s keeps worker (12 min) + Wayback links (90 s) + item copies near the timer (#1375 review).
+IA_SECONDS = float(os.environ.get("SWCCG_LINK_IA_SECONDS", "90"))
 IA_LINE = ("archive.org copy of this exact original (SHA-1 checked by archive.org): "
            "[%s Internet Archive item].")
 IA_DONE = {"edited", "already"}

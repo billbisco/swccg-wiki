@@ -58,7 +58,13 @@ deadline - 60). A bare adapter still defaults to two. An exact-cohort cursor
 keeps early failures from starving independent objects. All queue appends of
 one prepare are written with a single commit and push; their `queued` receipts
 are stored only after that push succeeds (a failed push stores none and rewinds
-the cursor). Finish rotates its own bounded checks (`WAYBACK_FINISH_CHECKS`, 20). Many filename/revision mappings share one exact SHA-256 payload
+the cursor). Finish rotates its own bounded checks (`WAYBACK_FINISH_CHECKS`, 6).
+Jobs whose URL already has a capture need an archive.org observation (replay,
+CDX, id_ fetch); prepare and finish share one budget of
+`WAYBACK_OWNER_OBSERVE_MAX` (10) observations per run, spaced by the worker's
+`VERIFY_GAP_S`. Jobs beyond it are skipped without using the promotion cap, so
+fresh never-captured jobs still fill it. A replay/CDX 429 or refusal records
+the shared cooldown and ends archive.org calls for the run. Many filename/revision mappings share one exact SHA-256 payload
 job; each mapping is retained, with actual capture-host provenance preserved.
 
 Checked self-contained snapshots can be independently restored from their

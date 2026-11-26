@@ -13,11 +13,20 @@ returned 0 rows while an exact `url=<file>&output=json` returned the capture).
 So every row the prefix pass leaves unsettled (not indexed, digest differs,
 other capture, prefix unavailable; not "no_local_file") is then looked up by
 its exact URL, newest ledger activity first, with the same acceptance rules.
-Bounded by --exact-max (default 2000 lookups per run, 0 turns it off) and
-paced by --exact-gap (default 1.5 s between requests). A 429 or a refused /
+Bounded by --exact-max (default 500 lookups per run, 0 turns it off) and
+paced by --exact-gap (default 4.0 s between requests). A 429 or a refused /
 reset connection stops all CDX requests at once (no retry around a refusal);
-a 429's Retry-After is kept in <state>/cdx-settle-hold.json and later runs
-make no CDX request until it has passed.
+a 429's Retry-After, or a refusal (at least REFUSED_HOLD_S, 60 min), is kept in
+<state>/cdx-settle-hold.json and later runs make no CDX request until it has
+passed. A refusal hold is marked "refused": the Wayback worker reads it too
+and carries it into its shared cooldown (wayback_worker.cdx_hold_cooldown).
+
+Shared cooldown (#1375 review): before any live CDX request, and again before
+each one, the worker's control state (<state>/control.json, written by
+wayback_control.Control) is read. A provider circuit that is not healthy
+(open / half_open / auth_blocked / probe_blocked), or a next_attempt still in
+the future (provider cooldown, capacity wait, refusal), means no CDX request
+from here either. --cdx-dir mode makes no network request and ignores this.
 
 --cdx-dir DIR (answers fetched elsewhere, e.g. on Bill's PC, and copied here):
   prefix answers:  DIR/<prefix with "/" and ":" replaced by "_">.json
@@ -40,7 +49,7 @@ make no CDX request until it has passed.
 
 Usage (on gemp):
   python3 ops/wayback_cdx_settle.py [--repo /opt/swccg-ops/repos/swccg-wiki] [--dry-run]
-      [--exact-max 2000] [--exact-gap 1.5] [--cdx-dir DIR] [--exact-list FILE]
+      [--exact-max 500] [--exact-gap 4.0] [--cdx-dir DIR] [--exact-list FILE]
 """
 import argparse
 import base64
@@ -63,6 +72,7 @@ CDX = "https://web.archive.org/cdx/search/cdx"
 STATE = Path(os.environ.get("WAYBACK_STATE_DIR", "/root/.local/state/swccg-wayback"))
 INBOX = STATE / "verify-inbox"
 HOLD = STATE / "cdx-settle-hold.json"
+CONTROL = STATE / "control.json"   # wayback_control.Control state file
 # URL prefix -> directory on disk holding the same files
 ROOTS = {
     "https://swccg.com/snapshots/": Path("/opt/swccg-res/snapshots"),
@@ -76,8 +86,9 @@ def batch_checked(url: str) -> bool:
 OPEN = {"pending", "ok", "unverified", "retry", "failed"}
 GAP_S = 5.0          # between CDX requests
 TRIES = 4            # per CDX request, with growing waits
-EXACT_MAX = 2000     # exact-URL lookups per run
-EXACT_GAP_S = 1.5    # between exact-URL lookups
+EXACT_MAX = 500      # exact-URL lookups per run
+EXACT_GAP_S = 4.0    # between exact-URL lookups
+REFUSED_HOLD_S = 60 * 60  # a refused connection holds every later CDX request this long
 EXACT_ERRORS_STOP = 5  # consecutive failed exact lookups that end the pass
 TS_RX = re.compile(r"/web/(\d{14})[a-z_]*/")
 PRUNE_LOG = Path("/opt/swccg-res/snapshots/DELETED-after-wayback.log")
@@ -86,9 +97,43 @@ PRUNE_LOG = Path("/opt/swccg-res/snapshots/DELETED-after-wayback.log")
 class CdxStop(Exception):
     """archive.org said stop (429) or refused the connection: no more CDX requests this run."""
 
-    def __init__(self, reason: str, retry_after=None):
+    def __init__(self, reason: str, retry_after=None, refused=False):
         super().__init__(reason)
         self.retry_after = retry_after
+        self.refused = refused
+
+
+def control_blocked(path: Path | None = None, now=None):
+    """Why the Wayback worker's shared state forbids archive.org requests, or None.
+
+    Reads the state file wayback_control.Control keeps: mode (healthy / open /
+    half_open / auth_blocked / probe_blocked) and next_attempt (epoch of the
+    end of the provider cooldown, capacity wait or refusal backoff). A missing
+    file means no worker state yet; an unreadable one blocks (fail closed)."""
+    path = CONTROL if path is None else path
+    try:
+        state = json.loads(path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return None
+    except (OSError, ValueError):
+        return "worker control state unreadable"
+    if not isinstance(state, dict):
+        return "worker control state unreadable"
+    mode = state.get("mode")
+    if mode != "healthy":
+        return f"worker circuit is {mode}" + (f" ({state.get('reason')})" if state.get("reason") else "")
+    try:
+        until = float(state.get("next_attempt") or 0)
+    except (TypeError, ValueError):
+        return "worker control state unreadable"
+    if until > (now or time.time()):
+        try:
+            when = datetime.fromtimestamp(until, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except (OverflowError, OSError, ValueError):
+            when = str(until)
+        return ("worker cooldown until " + when +
+                (f" ({state.get('provider_event')})" if state.get("provider_event") else ""))
+    return None
 
 
 def prune_proofs(path: Path = PRUNE_LOG) -> dict:
@@ -201,7 +246,7 @@ def _open(url: str) -> bytes:
         raise RuntimeError(f"HTTP {e.code}") from e
     except (OSError, http.client.HTTPException) as e:
         if _refused(e):
-            raise CdxStop(f"connection refused: {str(e)[:60]}") from e
+            raise CdxStop(f"connection refused: {str(e)[:60]}", refused=True) from e
         raise RuntimeError(str(e)[:80]) from e
 
 
@@ -261,13 +306,18 @@ def _verified_stat(digest, url, pruned):
 
 
 def settle(done: dict, prefixes, get=None, sha=None, now=None, pruned=None,
-           exact_get=None, exact_max=0, exact_gap=EXACT_GAP_S, sleep=time.sleep, exact_list=None):
+           exact_get=None, exact_max=0, exact_gap=EXACT_GAP_S, sleep=time.sleep, exact_list=None,
+           blocked=None):
     """Return (receipts, stats). Pure apart from get/exact_get/sha.
 
     get(query_url) -> bytes answers prefix queries; exact_get(url) -> bytes
     answers the exact lookup of a ledger URL (default: live CDX, paced by
     exact_gap). exact_max=0 turns the exact pass off. When exact_list is a
-    list, the URLs the exact pass would look up are appended to it instead."""
+    list, the URLs the exact pass would look up are appended to it instead.
+    blocked() -> reason | None is asked before every CDX request (main passes
+    the worker's shared cooldown for live runs, nothing for --cdx-dir); a
+    reason stops all CDX requests."""
+    blocked = blocked or (lambda: None)
     sha = sha or (lambda url: (lambda p: sha1_b32(p) if p else None)(local_file(url)))
     now = now or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     pruned = {} if pruned is None else pruned
@@ -280,7 +330,13 @@ def settle(done: dict, prefixes, get=None, sha=None, now=None, pruned=None,
             if url.startswith(p):
                 todo.setdefault(p, []).append(url)
     stopped = None
+    held = None
     for p, urls in todo.items():
+        if not stopped:
+            held = blocked()
+            if held:
+                stopped = CdxStop("shared cooldown: " + held)
+                print("CDX-SETTLE stop", str(stopped)[:120], flush=True)
         if stopped:
             outcome.update({u: "prefix_unavailable" for u in urls})
             continue
@@ -321,6 +377,11 @@ def settle(done: dict, prefixes, get=None, sha=None, now=None, pruned=None,
                 break
             if live and lookups:
                 sleep(exact_gap)
+            held = blocked()
+            if held:
+                stopped = CdxStop("shared cooldown: " + held)
+                print("CDX-SETTLE exact stop", str(stopped)[:120], flush=True)
+                break
             lookups += 1
             try:
                 caps = parse_exact(url, fetch(url))
@@ -359,7 +420,31 @@ def settle(done: dict, prefixes, get=None, sha=None, now=None, pruned=None,
         stats["stopped"] = str(stopped)[:80]
         if stopped.retry_after is not None:
             stats["retry_after"] = stopped.retry_after
+        if stopped.refused:
+            stats["refused"] = True
     return receipts, stats
+
+
+def save_hold(stats: dict, path: Path | None = None, now=None) -> float:
+    """Persist a stop: 429 Retry-After, or a refusal for at least REFUSED_HOLD_S.
+    Returns the hold length in seconds (0: nothing saved)."""
+    path = HOLD if path is None else path
+    now = now or time.time()
+    wait = retry_after_seconds(stats.get("retry_after"), now) if "retry_after" in stats else 0.0
+    if stats.get("refused"):
+        wait = max(wait, REFUSED_HOLD_S)
+    if wait <= 0:
+        return 0.0
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = path.with_name(path.name + ".part")
+        tmp.write_text(json.dumps({"until": now + wait, "reason": stats.get("stopped", ""),
+                                   "refused": bool(stats.get("refused"))}), encoding="utf-8")
+        os.replace(tmp, path)
+    except OSError as ex:
+        print("CDX-SETTLE hold not saved", ex, flush=True)
+        return 0.0
+    return wait
 
 
 def retry_after_seconds(value, now=None) -> float:
@@ -376,8 +461,9 @@ def retry_after_seconds(value, now=None) -> float:
         return 0.0
 
 
-def hold_active(path: Path = HOLD, now=None):
-    """Epoch until which a saved 429 Retry-After forbids CDX requests, or None."""
+def hold_active(path: Path | None = None, now=None):
+    """Epoch until which a saved 429 Retry-After or refusal forbids CDX requests, or None."""
+    path = HOLD if path is None else path
     try:
         until = float(json.loads(path.read_text(encoding="utf-8")).get("until", 0))
     except (OSError, ValueError, TypeError, AttributeError):
@@ -420,23 +506,23 @@ def main() -> int:
             print("CDX-SETTLE", json.dumps({"held_until": datetime.fromtimestamp(held, timezone.utc)
                                             .strftime("%Y-%m-%dT%H:%M:%SZ")}), "no CDX request made", flush=True)
             return 0
+        why = control_blocked()
+        if why:
+            print("CDX-SETTLE", json.dumps({"shared_cooldown": why}), "no CDX request made", flush=True)
+            return 0
     listing = [] if a.exact_list else None
     receipts, stats = settle(done, prefixes, get=get, pruned=prune_proofs(), exact_get=exact_get,
                              exact_max=max(0, a.exact_max), exact_gap=max(0.0, a.exact_gap),
-                             exact_list=listing)
+                             exact_list=listing, blocked=None if a.cdx_dir else control_blocked)
     print("CDX-SETTLE", json.dumps(stats, sort_keys=True), flush=True)
     if listing is not None:
         a.exact_list.write_text("".join(u + "\n" for u in listing), encoding="utf-8")
         print("exact-list", a.exact_list, len(listing), flush=True)
-    if "retry_after" in stats and not a.cdx_dir:
-        wait = retry_after_seconds(stats["retry_after"])
-        if wait > 0:
-            try:
-                HOLD.parent.mkdir(parents=True, exist_ok=True)
-                HOLD.write_text(json.dumps({"until": time.time() + wait, "reason": stats["stopped"]}),
-                                encoding="utf-8")
-            except OSError as ex:
-                print("CDX-SETTLE hold not saved", ex, flush=True)
+    if not a.cdx_dir and ("retry_after" in stats or stats.get("refused")):
+        wait = save_hold(stats)
+        if wait:
+            print("CDX-SETTLE hold saved", int(wait), "s", "(refused; the worker honours it)"
+                  if stats.get("refused") else "", flush=True)
     if receipts and not a.dry_run:
         INBOX.mkdir(parents=True, exist_ok=True)
         name = datetime.now(timezone.utc).strftime("cdx-settle-%Y%m%dT%H%M%SZ.json")

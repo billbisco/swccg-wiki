@@ -1,5 +1,6 @@
 import json
 import sys
+import time
 import unittest
 from pathlib import Path
 
@@ -74,6 +75,102 @@ class SettleTests(unittest.TestCase):
         def boom(url): raise RuntimeError("CDX unavailable")
         r, st = S.settle({A: {"status": "pending"}}, [P], get=boom, sha=lambda u: "X", now="T")
         self.assertEqual({}, r); self.assertEqual(1, st["prefix_unavailable"])
+
+
+class SharedCooldownTests(unittest.TestCase):
+    """#1375 review: the exact-URL CDX pass obeys the worker's shared cooldown."""
+    FP = "https://swccg.com/snapshots/forum/"
+
+    def setUp(self):
+        import tempfile
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = Path(self.tmp.name)
+
+    def control(self, **state):
+        path = self.dir / "control.json"
+        path.write_text(json.dumps(dict({"schema": 1, "mode": "healthy", "failure_count": 0,
+                                         "next_attempt": 0, "probe_url": None}, **state)))
+        return path
+
+    def test_defaults_are_modest(self):
+        self.assertEqual(500, S.EXACT_MAX)
+        self.assertEqual(4.0, S.EXACT_GAP_S)
+        self.assertEqual(3600, S.REFUSED_HOLD_S)
+
+    def test_control_blocked_reads_worker_state(self):
+        self.assertIsNone(S.control_blocked(self.dir / "missing.json"))
+        self.assertIsNone(S.control_blocked(self.control(next_attempt=500), now=1000))
+        self.assertIn("cooldown", S.control_blocked(self.control(next_attempt=2000, provider_event="network_refused"),
+                                                    now=1000))
+        for mode in ("open", "half_open", "auth_blocked", "probe_blocked"):
+            self.assertIn(mode, S.control_blocked(self.control(mode=mode), now=1000))
+        bad = self.dir / "bad.json"
+        bad.write_text("{not json")
+        self.assertIn("unreadable", S.control_blocked(bad))
+
+    def test_live_main_makes_no_request_during_cooldown(self):
+        from unittest.mock import patch
+        repo = self.dir / "repo"
+        (repo / "ops/wayback").mkdir(parents=True)
+        (repo / "ops/wayback/done.json").write_text(json.dumps({self.FP + "a.html": {"status": "ok"}}))
+        with patch.object(sys, "argv", ["settle", "--repo", str(repo)]), \
+             patch.object(S, "CONTROL", self.control(next_attempt=time.time() + 3600)), \
+             patch.object(S, "HOLD", self.dir / "hold.json"), \
+             patch.object(S, "settle", side_effect=AssertionError("no settle")), \
+             patch.object(S.urllib.request, "urlopen", side_effect=AssertionError("network")):
+            self.assertEqual(0, S.main())
+
+    def test_cooldown_appearing_mid_run_stops_the_exact_pass(self):
+        urls = [self.FP + f"p{i}.html" for i in range(4)]
+        done = {u: {"status": "ok", "last": f"2026-11-2{i}T00:00:00Z"} for i, u in enumerate(urls)}
+        calls, answers = [], iter([None, None, "worker cooldown until later"])
+        r, st = S.settle(done, [self.FP], get=lambda q: json.dumps([]).encode(), sha=lambda u: "X", now="T",
+                         exact_get=lambda u: calls.append(u) or json.dumps([]).encode(), exact_max=10,
+                         blocked=lambda: next(answers))
+        self.assertEqual(1, len(calls))
+        self.assertEqual(1, st["exact_lookups"])
+        self.assertIn("shared cooldown", st["stopped"])
+
+    def test_cooldown_before_prefix_makes_no_request(self):
+        done = {self.FP + "a.html": {"status": "ok"}}
+        r, st = S.settle(done, [self.FP], get=lambda q: self.fail("prefix request"), sha=lambda u: "X", now="T",
+                         exact_get=lambda u: self.fail("exact request"), exact_max=10,
+                         blocked=lambda: "worker circuit is open")
+        self.assertEqual({}, r)
+        self.assertEqual(1, st["prefix_unavailable"])
+
+    def test_refusal_saves_a_refused_hold_the_worker_honours(self):
+        import urllib.error
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        import wayback_worker as W
+
+        def urlopen(req, timeout=None):
+            raise urllib.error.URLError(ConnectionRefusedError(111, "Connection refused"))
+        done = {self.FP + "a.html": {"status": "ok"}}
+        with patch.object(S.urllib.request, "urlopen", side_effect=urlopen):
+            _, st = S.settle(done, [self.FP], sha=lambda u: "X", now="T", exact_max=10, sleep=lambda s: None)
+        self.assertTrue(st["refused"])
+        hold = self.dir / "cdx-settle-hold.json"
+        self.assertEqual(3600, S.save_hold(st, hold, now=1000))
+        saved = json.loads(hold.read_text())
+        self.assertEqual({"until": 4600, "refused": True}, {k: saved[k] for k in ("until", "refused")})
+        self.assertEqual(4600, S.hold_active(hold, now=1000))
+        # The worker carries it into its shared cooldown before any request.
+        saves = []
+        control = SimpleNamespace(directory=self.dir, clock=lambda: 1000.0, state={"next_attempt": 0},
+                                  save=lambda: saves.append(1))
+        with patch("builtins.print"):
+            W.cdx_hold_cooldown(control)
+        self.assertEqual(4600, control.state["next_attempt"])
+        self.assertEqual("cdx_network_refused", control.state["provider_event"])
+        self.assertEqual([1], saves)
+        # A 429-only hold (not refused) stays the CDX pass's own business.
+        hold.write_text(json.dumps({"until": 9000, "refused": False}))
+        control.state = {"next_attempt": 0}
+        W.cdx_hold_cooldown(control)
+        self.assertEqual(0, control.state["next_attempt"])
 
 
 if __name__ == "__main__":
@@ -235,7 +332,11 @@ class ExactTests(unittest.TestCase):
                  "https://swccg.com/wiki/images/a/ab/Bj%C3%B8rn.jpg", "image/jpeg", "200", digest, "10"]]))
             argv = ["settle", "--repo", str(repo), "--cdx-dir", str(cdx),
                     "--prefix", "https://swccg.com/wiki/images/a/"]
+            # --cdx-dir makes no network request, so a worker cooldown does not stop it.
+            blocked = tmp / "control.json"
+            blocked.write_text(json.dumps({"mode": "open", "next_attempt": 9e12}))
             with patch.object(sys, "argv", argv), patch.object(S, "INBOX", state / "verify-inbox"), \
+                 patch.object(S, "CONTROL", blocked), patch.object(S, "HOLD", tmp / "no-hold.json"), \
                  patch.object(S, "prune_proofs", return_value={}), \
                  patch.object(S, "local_file", side_effect=lambda u: image if u == iri else None), \
                  patch.object(S.urllib.request, "urlopen", side_effect=AssertionError("network")):

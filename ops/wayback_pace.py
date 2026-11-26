@@ -14,6 +14,10 @@ allowance, and tunes it with AIMD (additive increase, multiplicative decrease):
   cuts it; the existing short capacity wait already handles it.
 * A run that ended early (queue empty, deadline, half-open canary, cooldown)
   holds the allowance.
+* Submit timeouts and unclassified "no job_id" answers count as pushback
+  (halve, like a refusal); a per-source limit (target_host_limit and friends)
+  is neutral: it holds the allowance. "Used the full allowance" counts only
+  accepted submits (an SPN2 job id), never attempts that came back empty.
 
 The gap between submits spreads the allowance over the run's usable time
 (gap = max(WAYBACK_GAP_MIN_S, usable_seconds / allowance)). It only paces our
@@ -48,7 +52,9 @@ SUBMIT_RESERVE_S = 90     # the submit loop stops 90 s before the run deadline
 
 # Provider events that mean "slow down". capacity_wait reasons other than
 # network_refused are SPN2 concurrency / accounting and stay neutral.
-CUT_CAPACITY_REASONS = {"network_refused"}
+CUT_CAPACITY_REASONS = {"network_refused", "replay_throttled"}
+RUN_STARTS_KEPT = 8       # measured run starts kept in pace-state.json
+RUN_INTERVAL_MAX_S = 3 * 3600  # gaps longer than this (pauses, outages) are not a timer interval
 
 
 def _env_int(name: str, default: int, low: int = 1) -> int:
@@ -82,10 +88,36 @@ def promote_seconds() -> float:
 
 
 def finish_checks() -> int:
-    return _env_int("WAYBACK_FINISH_CHECKS", 20, 0)
+    return _env_int("WAYBACK_FINISH_CHECKS", 6, 0)
 
 
-def runs_per_hour() -> float:
+def owner_observe_max() -> int:
+    """archive.org observations (replay + CDX + id_ fetch) the owner adapter may
+    make per run, prepare and finish together (#1375 review)."""
+    return _env_int("WAYBACK_OWNER_OBSERVE_MAX", 10, 0)
+
+
+def measured_interval_s(starts) -> float | None:
+    """Median seconds between consecutive recorded run starts, or None."""
+    try:
+        values = sorted(float(x) for x in (starts or []) if math.isfinite(float(x)))
+    except (TypeError, ValueError):
+        return None
+    gaps = sorted(b - a for a, b in zip(values, values[1:]) if 60.0 <= b - a <= RUN_INTERVAL_MAX_S)
+    if not gaps:
+        return None
+    mid = len(gaps) // 2
+    return gaps[mid] if len(gaps) % 2 else (gaps[mid - 1] + gaps[mid]) / 2
+
+
+def runs_per_hour(state: dict | None = None) -> float:
+    """Runs per hour from the measured time between run starts (pace-state
+    run_starts); falls back to 60 / WAYBACK_RUN_INTERVAL_MIN (13 min on gemp).
+    A run longer than the timer delays the next start, so the measured value
+    is what actually happens."""
+    measured = measured_interval_s((state or {}).get("run_starts"))
+    if measured:
+        return 3600.0 / measured
     return 60.0 / _env_float("WAYBACK_RUN_INTERVAL_MIN", 13.0, 1.0)
 
 
@@ -124,53 +156,72 @@ def load(directory: Path, *, initial: int, initial_gap_s: float, usable_s: float
             "promotion": None, "fresh": True, "initial_gap_s": float(initial_gap_s or 0)}
 
 
-def classify(signals: list[dict], refusals: int) -> tuple[str | None, bool]:
-    """('cut' | 'hold' | None, rate_limited) from Control.pace_signals and submit refusals."""
+def classify(signals: list[dict], refusals: int, pushback: int = 0,
+             scoped: int = 0) -> tuple[str | None, bool]:
+    """('cut' | 'hold' | None, rate_limited) from Control.pace_signals, submit
+    refusals, other submit/status pushback (timeouts, unclassified answers) and
+    per-source limits (neutral hold)."""
     rate_limited = any(s.get("kind") == "provider" and (s.get("status") == 429 or s.get("retry_after"))
                        for s in signals)
-    cut = refusals > 0 or any(
+    cut = refusals > 0 or pushback > 0 or any(
         s.get("kind") in {"provider", "auth"} or
         (s.get("kind") == "capacity" and s.get("reason") in CUT_CAPACITY_REASONS) for s in signals)
     if cut:
         return "cut", rate_limited
-    if any(s.get("kind") == "capacity" for s in signals):
+    if scoped > 0 or any(s.get("kind") == "capacity" for s in signals):
         return "hold", rate_limited
     return None, rate_limited
 
 
 def decide(allowance: int, *, submits: int, signals: list[dict], refusals: int,
-           outcome: str, b: dict | None = None) -> tuple[int, str, bool]:
-    """AIMD step: (new_allowance, reason, rate_limited)."""
+           outcome: str, b: dict | None = None, pushback: int = 0, scoped: int = 0,
+           accepted: int | None = None) -> tuple[int, str, bool]:
+    """AIMD step: (new_allowance, reason, rate_limited).
+
+    accepted: submits that got an SPN2 job id (default: submits). Only those
+    count toward "used the full allowance"."""
     b = b or bounds()
-    verdict, rate_limited = classify(signals, refusals)
+    accepted = submits if accepted is None else accepted
+    verdict, rate_limited = classify(signals, refusals, pushback, scoped)
     if verdict == "cut":
         new = min(allowance, max(b["min"], allowance // CUT_DIVISOR))
         what = ", ".join(sorted({s.get("event") or s.get("reason") or s.get("kind") for s in signals} |
-                                ({"connection refused on submit"} if refusals else set())))
+                                ({"connection refused on submit"} if refusals else set()) |
+                                ({"submit/status timeout or unclassified answer"} if pushback else set())))
         return new, f"archive.org pushed back ({what}); halved and holding until a clean full run", rate_limited
     if verdict == "hold":
         what = ", ".join(sorted({s.get("reason") for s in signals if s.get("kind") == "capacity"}))
+        if scoped and not what:
+            return allowance, f"per-source limit on {scoped} submit(s) is neutral; holding", rate_limited
         return allowance, f"account capacity unavailable ({what}) is SPN2 concurrency, not a speed signal; holding", rate_limited
     if outcome != "completed":
         return allowance, f"run {outcome} without provider pushback; holding", rate_limited
-    if submits < allowance:
-        return allowance, f"run used {submits} of {allowance} submits (queue or time ran out); holding", rate_limited
+    if accepted < allowance:
+        return allowance, (f"run had {accepted} accepted of {allowance} submits ({submits} attempts; "
+                           f"queue or time ran out); holding"), rate_limited
     new = min(b["max"], max(b["min"], allowance + RAISE_STEP))
     if new == allowance:
         return allowance, f"clean full run at the {b['max']}-submit ceiling; holding", rate_limited
-    return new, f"clean full run ({submits} submits, no refusal or 429); raised by {RAISE_STEP}", rate_limited
+    return new, f"clean full run ({accepted} accepted submits, no refusal or 429); raised by {RAISE_STEP}", rate_limited
 
 
 def record(directory: Path, state: dict, *, new_allowance: int, reason: str, last_run: dict,
-           gap_used_s: float, usable_s: float, promotion: dict | None, at: str | None = None) -> dict:
-    """Persist the next pace atomically and append a log line if anything changed."""
+           gap_used_s: float, usable_s: float, promotion: dict | None, at: str | None = None,
+           run_started: float | None = None) -> dict:
+    """Persist the next pace atomically and append a log line if anything changed.
+
+    run_started (epoch seconds) is added to run_starts, the last
+    RUN_STARTS_KEPT measured run starts that runs_per_hour() reads."""
     directory = Path(directory)
     b = bounds()
     at = at or iso()
     new_gap = plan_gap(new_allowance, usable_s, b["gap_min_s"])
+    starts = [x for x in (state.get("run_starts") or []) if isinstance(x, (int, float))]
+    if run_started is not None:
+        starts.append(float(run_started))
     out = {"schema_version": SCHEMA_VERSION, "updated_at": at, "allowance": int(new_allowance),
            "gap_s": float(new_gap), "bounds": b, "last_run": last_run, "reason": reason,
-           "promotion": promotion}
+           "promotion": promotion, "run_starts": sorted(starts)[-RUN_STARTS_KEPT:]}
     atomic_json(directory / STATE_FILE, out)
     old = int(state.get("allowance", new_allowance))
     if old != new_allowance or abs(float(gap_used_s) - new_gap) >= 0.05 or state.get("fresh"):
@@ -187,13 +238,14 @@ def journal_line(old: int, new: int, gap_from: float, gap_to: float, last_run: d
             f"full={str(last_run['used_full_allowance']).lower()} reason={json.dumps(reason)}")
 
 
-def target_buffer(allowance: int) -> int:
+def target_buffer(allowance: int, state: dict | None = None) -> int:
     """About BUFFER_HOURS of submits at the current pace, never under BUFFER_FLOOR.
 
-    allowance submits per run x runs per hour (60 / WAYBACK_RUN_INTERVAL_MIN,
-    13 min on gemp) x 6 h. 12/run -> 333, 40/run -> 1108.
+    allowance submits per run x runs per hour (measured from pace-state
+    run_starts, else 60 / WAYBACK_RUN_INTERVAL_MIN, 13 min on gemp) x 6 h.
+    12/run at 13 min -> 333, 40/run -> 1108.
     """
-    return max(BUFFER_FLOOR, math.ceil(allowance * runs_per_hour() * BUFFER_HOURS))
+    return max(BUFFER_FLOOR, math.ceil(allowance * runs_per_hour(state) * BUFFER_HOURS))
 
 
 def untried_buffer(urls: list[str], done: dict) -> int:

@@ -60,6 +60,7 @@ import http.client
 import json
 import math
 import re
+import socket
 import subprocess
 import zlib
 import os
@@ -493,6 +494,7 @@ MAX_BODY = 20 * 1024 * 1024  # bytes kept in memory for HTML comparison (files a
 MAX_FETCH = 300 * 1024 * 1024
 BACKLOG_SECONDS = 150        # time per run spent verifying older "ok" entries
 VERIFY_GAP_S = 4             # pause between backlog verifications (archive.org refuses bursts)
+STATUS_POLL_GAP_S = 3        # pause between SPN2 status polls of this run's jobs (#1375 review)
 # Strict capture check (2026-10-26 false-verify fix). A capture counts only when (a) its id_ URL
 # answers a real HTTP 200 at the SAME 14-digit timestamp (redirects followed only inside
 # web.archive.org for the same original URL), (b) the body is not a Wayback error page, and
@@ -1590,7 +1592,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         plan = pace.load(control.directory, initial=MAX_SUBMITS_PER_RUN, initial_gap_s=GAP_S, usable_s=nominal)
         submit_limit, gap = plan["allowance"], plan["gap_s"]
         stats = control.pace_run = {"plan": plan, "allowance": submit_limit, "gap_s": gap, "submits": 0,
-                                    "refusals": 0, "usable_s": nominal}
+                                    "refusals": 0, "pushback": 0, "scoped": 0, "accepted": 0,
+                                    "usable_s": nominal, "started": time.time()}
     reset_to_origin(repo)
     urls, done = load(repo)
     control.done = done
@@ -1617,14 +1620,15 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             allowed = allowed | ticket_policy_window(control, allowed, deadline)
             # Adaptive promotion (#1375): top queue.txt up to ~6 h of untried work.
             buffer = pace.untried_buffer(urls, done)
-            target = pace.target_buffer(submit_limit)
+            target = pace.target_buffer(submit_limit, stats["plan"])
             cap = pace.promotion_cap(buffer, target)
             seconds = min(pace.promote_seconds(), max(0.0, deadline - 60 - time.monotonic()))
             promotion = control.pace_promotion = {"target_buffer": target, "buffer_before": buffer,
                                                   "promoted": 0, "cap": cap, "seconds": 0.0}
             print(f"promotion: buffer={buffer} target={target} cap={cap} budget_s={seconds:.0f}", flush=True)
             adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed, limit=cap,
-                                   finish_limit=pace.finish_checks(), prepare_seconds=seconds)
+                                   finish_limit=pace.finish_checks(), prepare_seconds=seconds,
+                                   observe_max=pace.owner_observe_max())
         else:
             adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed, limit=len(allowed))
         control.registry_adapter = adapter
@@ -1738,6 +1742,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             j = submit_capture(url, e, submission_session)
             if isinstance(control,Control):
                 consume_capacity(control)
+            if stats is not None and (j.get("job_id") or j.get("anonymous_capture")):
+                stats["accepted"] += 1
             if "anonymous_capture" not in j:
                 if j.get("recent"):
                     e = {"capture": j["recent"], "status": "ok", "tries": tries, "last": iso(now()),
@@ -1763,6 +1769,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         except Paused:
             raise
         except ScopedLimit as ex:
+            if stats is not None:
+                stats["scoped"] += 1  # neutral for pace: holds, never raises (#1375 review)
             control.defer_source(url,ex.event,ex.retry_after)
             if control.state.get('mode')=='half_open':break
             time.sleep(gap); continue
@@ -1770,12 +1778,20 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             if ex.event=='account_sessions':control.capacity_wait(ex.event,ex.retry_after)
             control.provider_failed(ex.status, ex.retry_after, ex.event)
         except Exception as ex:  # noqa: BLE001
+            print("ERROR", url, str(ex)[:120], flush=True)
+            is_refused = refused(ex) or "connection refused" in str(ex).lower()
+            if stats is not None and is_refused:
+                stats["refusals"] += 1
+            elif stats is not None and submit_pushback(ex):
+                stats["pushback"] += 1
+            if is_refused:
+                # web.archive.org refused the submit: record the shared cooldown
+                # and stop submitting (raises Paused; #1375 review). Nothing was
+                # accepted, so the entry keeps its previous receipt and tries.
+                provider_refused(control, ex if refused(ex) else None)
             e = {"capture": (e or {}).get("capture", ""), "status": "retry" if tries < MAX_TRIES else "failed",
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
             errors_in_row += 1
-            if stats is not None and (_refused(ex) or "connection refused" in str(ex).lower()):
-                stats["refusals"] += 1
-            print("ERROR", url, str(ex)[:120], flush=True)
         e.update(registry_epoch)
         done[url] = e
         changed[url] = e
@@ -1793,6 +1809,10 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             except StatusRetry as ex:
                 print("CONFIRM-DEFER", url, str(ex)[:80], flush=True)
                 submitted.clear()
+                if stats is not None:
+                    stats["pushback"] += 1  # status refused / timed out: blocks a raise
+                # A refused status poll sets the shared cooldown (raises Paused).
+                provider_refused(control, ex)
                 break
             except Paused:
                 raise
@@ -1803,7 +1823,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
                 continue
             if done[url]["status"] != "pending" or "job_id" not in done[url]:
                 submitted.remove(url)
-            time.sleep(1)
+            # Paced per poll, not per allowance: 40 jobs take >= 2 min a round.
+            time.sleep(STATUS_POLL_GAP_S)
         if submitted:
             time.sleep(15)
 
@@ -1897,6 +1918,43 @@ def save_partial(repo: Path, control: Control) -> None:
     control.ledger_saved()
 
 
+def submit_pushback(ex: BaseException) -> bool:
+    """A submit that timed out or got an unclassified answer: pushback for pace."""
+    msg = str(ex).lower()
+    if "unclassified response" in msg:
+        return True
+    for _ in range(8):
+        if ex is None:
+            return False
+        reason = getattr(ex, "reason", None)
+        if isinstance(ex, (TimeoutError, socket.timeout)) or isinstance(reason, (TimeoutError, socket.timeout)):
+            return True
+        ex = ex.__cause__ or ex.__context__
+    return "timed out" in msg
+
+
+def cdx_hold_cooldown(control) -> None:
+    """A refusal seen by the exact-URL CDX pass (wayback_cdx_settle) is the same
+    web.archive.org refusing this IP: carry its hold into the shared cooldown so
+    the worker makes no request either until it passes (#1375 review)."""
+    try:
+        hold = json.loads((control.directory / "cdx-settle-hold.json").read_text(encoding="utf-8"))
+        until = float(hold.get("until", 0))
+    except (OSError, ValueError, TypeError, AttributeError):
+        return
+    if not hold.get("refused") or not math.isfinite(until) or until <= control.clock():
+        return
+    if until > control.state.get("next_attempt", 0):
+        control.state.update(next_attempt=until, provider_event="cdx_network_refused",
+                             reason="exact-URL CDX pass was refused; shared cooldown")
+        control.save()
+        try:
+            when = datetime.fromtimestamp(until, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        except (OverflowError, OSError, ValueError):
+            when = str(until)
+        print("CDX-HOLD refused connection seen by the CDX pass; shared cooldown until", when, flush=True)
+
+
 def finish_pace(control, outcome: str) -> None:
     """AIMD step after an ordinary run (#1375). Never raises into the owner."""
     try:
@@ -1908,15 +1966,20 @@ def finish_pace(control, outcome: str) -> None:
             print(f"PACE held: no submit window this run ({outcome}); pace-state unchanged", flush=True)
             return
         allowance = stats["allowance"]
+        accepted = stats.get("accepted", stats["submits"])
         new, reason, rate_limited = pace.decide(allowance, submits=stats["submits"], signals=signals,
-                                                refusals=stats["refusals"], outcome=outcome)
-        last_run = {"submits": stats["submits"], "refusals": stats["refusals"] + sum(
+                                                refusals=stats["refusals"], outcome=outcome,
+                                                pushback=stats.get("pushback", 0),
+                                                scoped=stats.get("scoped", 0), accepted=accepted)
+        last_run = {"submits": stats["submits"], "accepted": accepted, "refusals": stats["refusals"] + sum(
                         1 for s in signals if s.get("kind") == "capacity" and s.get("reason") == "network_refused"),
-                    "rate_limited": rate_limited, "used_full_allowance": stats["submits"] >= allowance,
+                    "pushback": stats.get("pushback", 0), "scoped": stats.get("scoped", 0),
+                    "rate_limited": rate_limited, "used_full_allowance": accepted >= allowance,
                     "ended": pace.iso()}
         saved = pace.record(control.directory, stats["plan"], new_allowance=new, reason=reason,
                             last_run=last_run, gap_used_s=stats["gap_s"], usable_s=stats["usable_s"],
-                            promotion=getattr(control, "pace_promotion", None), at=last_run["ended"])
+                            promotion=getattr(control, "pace_promotion", None), at=last_run["ended"],
+                            run_started=stats.get("started"))
         print(pace.journal_line(allowance, new, stats["gap_s"], saved["gap_s"], last_run, reason), flush=True)
     except Exception as error:  # noqa: BLE001
         print(f"PACE-ERR {type(error).__name__}: {str(error)[:120]}", flush=True)
@@ -1947,6 +2010,7 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                 control.failed_recovery = recovery.initialize(control.directory, control.done, control.clock())
                 control.stale_jobs = reliability.initialize_stale(sys.modules[__name__],control.directory,control.done,control.clock())
             try:
+                cdx_hold_cooldown(control)
                 control.begin()
                 ACTIVE_CONTROL = control
                 if native_object_ids is None:

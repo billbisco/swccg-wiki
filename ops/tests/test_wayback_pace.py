@@ -17,7 +17,7 @@ from wayback_control import Control, Paused  # noqa: E402
 
 CLEAN_ENV = {k: v for k, v in os.environ.items() if not k.startswith(("WAYBACK_PACE", "WAYBACK_GAP_MIN",
                                                                        "WAYBACK_PROMOTE", "WAYBACK_RUN_INTERVAL",
-                                                                       "WAYBACK_FINISH"))}
+                                                                       "WAYBACK_FINISH", "WAYBACK_OWNER_OBSERVE"))}
 
 
 class Env(unittest.TestCase):
@@ -122,7 +122,8 @@ class StateFiles(Env):
         disk = json.loads((self.dir / pace.STATE_FILE).read_text())
         self.assertEqual(saved, disk)
         self.assertEqual({"schema_version", "updated_at", "allowance", "gap_s", "bounds", "last_run", "reason",
-                          "promotion"}, set(disk))
+                          "promotion", "run_starts"}, set(disk))
+        self.assertEqual([], disk["run_starts"])
         self.assertEqual(1, disk["schema_version"])
         self.assertEqual(14, disk["allowance"])
         self.assertEqual(45.0, disk["gap_s"])
@@ -138,6 +139,55 @@ class StateFiles(Env):
                     usable_s=630, promotion=promo)
         self.assertEqual(1, len((self.dir / pace.LOG_FILE).read_text().splitlines()))
         self.assertEqual("holding", json.loads((self.dir / pace.STATE_FILE).read_text())["reason"])
+
+
+class ReviewFixes(Env):
+    """#1375 review: pushback that is not a refusal, neutral scoped limits,
+    accepted-only full runs, measured run interval, modest finish budget."""
+
+    def test_timeout_or_unclassified_pushback_halves(self):
+        new, reason, _ = pace.decide(12, submits=12, signals=[], refusals=0, outcome="completed", pushback=1)
+        self.assertEqual(6, new)
+        self.assertIn("timeout or unclassified", reason)
+
+    def test_scoped_limit_holds_without_raising(self):
+        new, reason, _ = pace.decide(12, submits=12, signals=[], refusals=0, outcome="completed", scoped=2)
+        self.assertEqual(12, new)
+        self.assertIn("per-source limit", reason)
+
+    def test_full_allowance_counts_only_accepted_submits(self):
+        self.assertEqual(12, pace.decide(12, submits=12, signals=[], refusals=0, outcome="completed",
+                                         accepted=11)[0])
+        self.assertEqual(14, pace.decide(12, submits=12, signals=[], refusals=0, outcome="completed",
+                                         accepted=12)[0])
+
+    def test_replay_throttle_capacity_reason_halves(self):
+        self.assertEqual(6, pace.decide(12, submits=12, signals=[{"kind": "capacity", "reason": "replay_throttled"}],
+                                        refusals=0, outcome="paused")[0])
+
+    def test_runs_per_hour_uses_measured_starts(self):
+        # Runs actually start every ~15.5 min, not every 13.
+        starts = [1000.0 + i * 930 for i in range(5)]
+        self.assertAlmostEqual(3600 / 930, pace.runs_per_hour({"run_starts": starts}))
+        self.assertEqual(279, pace.target_buffer(12, {"run_starts": starts}))  # 12 x 3.871 x 6
+        # Outage gaps (> 3 h) and garbage are ignored; nothing usable -> env default.
+        self.assertAlmostEqual(60 / 13, pace.runs_per_hour({"run_starts": [0, 20000]}))
+        self.assertAlmostEqual(60 / 13, pace.runs_per_hour({"run_starts": ["x"]}))
+        self.assertAlmostEqual(60 / 13, pace.runs_per_hour(None))
+
+    def test_record_keeps_recent_run_starts(self):
+        state = pace.load(self.dir, initial=12, initial_gap_s=60, usable_s=630)
+        for i in range(10):
+            state = pace.record(self.dir, state, new_allowance=12, reason="r", last_run={}, gap_used_s=60,
+                                usable_s=630, promotion=None, run_started=100.0 * i)
+        saved = pace.load(self.dir, initial=12, initial_gap_s=60, usable_s=630)
+        self.assertEqual([100.0 * i for i in range(2, 10)], saved["run_starts"])
+
+    def test_defaults(self):
+        self.assertEqual(6, pace.finish_checks())
+        self.assertEqual(10, pace.owner_observe_max())
+        with patch.dict(os.environ, {"WAYBACK_OWNER_OBSERVE_MAX": "0"}):
+            self.assertEqual(0, pace.owner_observe_max())
 
 
 class Promotion(Env):
