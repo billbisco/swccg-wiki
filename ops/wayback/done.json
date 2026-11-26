@@ -63706,11 +63706,10 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T22:36:55Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 104] Connection reset by peer>"
+   "at": "2026-11-26T23:13:20Z",
+   "error": "source HTTP 403"
   },
-  "verify_tries": 1
+  "verify_tries": 2
  },
  "https://boardgamegeek.com/filepage/33565/star-wars-ccg-complete-card-list-42": {
   "capture": "",
@@ -72844,11 +72843,19 @@
   }
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/c34544b4f6dccabe1835.wiki": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126225138/https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/c34544b4f6dccabe1835.wiki",
   "job_id": "spn2-770651f838713b0b7554c9eb5c7b0dade490a33f",
-  "last": "2026-11-26T22:51:38Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T23:10:28Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T23:10:28Z",
+   "bytes": 821,
+   "capture_id": "https://web.archive.org/web/20261126225138id_/https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/c34544b4f6dccabe1835.wiki",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4ddc983c4f67eee6a1917380fe3f729dd33acc64579cc036143b5d26b79c7352"
+  }
  },
  "https://raw.githubusercontent.com/ledwards/swccgvkit/5047de0/db/lightside.cdf": {
   "capture": "https://web.archive.org/web/20261114013824/https://raw.githubusercontent.com/ledwards/swccgvkit/5047de0/db/lightside.cdf",
@@ -97444,6 +97451,17 @@
    "lane": "manpc",
    "method": "sha256",
    "sha256": "d4f970b2757b388856a5c0573df62050f849173182698e8f66ffb2b0fd849de4"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t11373-start220.html": {
+  "capture": "https://web.archive.org/web/20261125171520/https://swccg.com/snapshots/forum/t11373-start220.html",
+  "last": "2026-11-26T23:10:31Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T23:10:31Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/snapshots/forum/t11373.html": {
@@ -175987,12 +176005,14 @@
   "capture": "https://web.archive.org/web/20261125201518/https://swccg.com/wiki/Benji_Chu",
   "job_id": "spn2-82c23233cf72de8ec3c6d2edae1a7f60078a284e",
   "last": "2026-11-25T20:21:43Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T20:21:43Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:13:34Z",
+   "capture_id": "https://web.archive.org/web/20261125201518id_/https://swccg.com/wiki/Benji_Chu",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.988
   }
  },
  "https://swccg.com/wiki/Bill_Kafer": {
@@ -177485,12 +177505,14 @@
   "capture": "https://web.archive.org/web/20261126105507/https://swccg.com/wiki/File:2023_Naboo_Regionals_22.jpg",
   "job_id": "spn2-27b37d4c7e860d632d8642f8da116a31802f611f",
   "last": "2026-11-26T11:01:36Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T22:40:46Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:13:27Z",
+   "capture_id": "https://web.archive.org/web/20261126105507id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_22.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.938
   }
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_23.jpg": {
@@ -179564,12 +179586,14 @@
   "capture": "https://web.archive.org/web/20261125194956/https://swccg.com/wiki/File:2025_World_Championship_hall_4_October_1559.jpg",
   "job_id": "spn2-5dee083414091c7bd07564a9510824041ef1be61",
   "last": "2026-11-25T19:56:19Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T19:56:19Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:13:47Z",
+   "capture_id": "https://web.archive.org/web/20261125194956id_/https://swccg.com/wiki/File:2025_World_Championship_hall_4_October_1559.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.922
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_hall_4_October_1607.jpg": {
@@ -180128,12 +180152,14 @@
   "capture": "https://web.archive.org/web/20261125184050/https://swccg.com/wiki/File:2025_World_Championship_player_4_October_1404.jpg",
   "job_id": "spn2-cac248e07fc3d14e9362ba0cc36c198d6998abdf",
   "last": "2026-11-25T18:44:18Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T18:44:18Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:14:01Z",
+   "capture_id": "https://web.archive.org/web/20261125184050id_/https://swccg.com/wiki/File:2025_World_Championship_player_4_October_1404.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.913
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_player_4_October_1406.jpg": {
@@ -180712,12 +180738,14 @@
   "capture": "https://web.archive.org/web/20261125200753/https://swccg.com/wiki/File:2025_World_Championship_table_4_October_160335.jpg",
   "job_id": "spn2-40dd3004f5fcc77e982014ecc136a3bc7baa7738",
   "last": "2026-11-25T20:09:13Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T20:09:13Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:13:40Z",
+   "capture_id": "https://web.archive.org/web/20261125200753id_/https://swccg.com/wiki/File:2025_World_Championship_table_4_October_160335.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.925
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_table_4_October_160343.jpg": {
@@ -181383,7 +181411,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T18:44:00Z",
+   "at": "2026-11-26T23:14:06Z",
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
@@ -201347,12 +201375,14 @@
  "https://wiki.swccg.com/wiki/Robbie_Hendon": {
   "capture": "https://web.archive.org/web/20261125182813/https://swccg.com/wiki/Robbie_Hendon",
   "last": "2026-11-25T18:46:29Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T19:42:52Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:13:54Z",
+   "capture_id": "https://web.archive.org/web/20261125182813id_/https://swccg.com/wiki/Robbie_Hendon",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.86
   }
  },
  "https://wiki.swccg.com/wiki/Sam_Tashima": {
