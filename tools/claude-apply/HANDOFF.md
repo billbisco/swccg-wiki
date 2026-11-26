@@ -14,6 +14,9 @@ Written by Claude on 25 Nov 2026 so another agent (Grok Build or anyone) can con
 | #1362 | Turned-image sweep, 11 errata tables, E1 mark rows, counterparts, deck pages | Done 25 Nov (closed) |
 | #1363 | Re-saved pairs, slips, gaps, 2012 decks, Mysteries | Done 25 Nov (closed) |
 | #1376 | Printed card text instead of GEMP wording on every Virtual card page | Open 26 Nov: agents r1376a (VS 0–13) and r1376b (VS 14–27, D, P, Premium, Virtual Legacy) drafting. Drafts are written incrementally, so a partial apply.tsv is usable if the session stops. Apply them with the container route below. |
+| #1297 | Pre-D-E1 PC errata images | 26 Nov: agent r1297 drafting (uploads in r1297/uploads) |
+| #716 | Final errata reconcile | 26 Nov: agents r716a (Virtual Modern) and r716b (Virtual Legacy and Decipher/PC errata) drafting |
+| #527 | Premiere Virtual Set 1 navigators | 26 Nov: agent r527 checking; close it if nothing remains |
 | #1374 | Small leftovers: foil scans, unused crops, one mark row, deck questions, archive copies | Open |
 | #1351 | 274 version chains the errata generator refused | Done 25 Nov (closed): a rerun refuses nothing; 13 families keep a correct hand table |
 | #677 | Virtual Block 3 errata (ChatGPT) | Open, not ours |
