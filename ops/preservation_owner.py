@@ -51,7 +51,12 @@ def load_allowed_objects(registry: Path) -> set[str]:
 class OwnerAdapter:
     def __init__(self, worker, repository: Path, control, allowed_objects: set[str], *,
                  work=DEFAULT_WORK,
-                 stage_budget=PUBLIC_STAGE_BUDGET, limit=2, readback=independent_receipt):
+                 stage_budget=PUBLIC_STAGE_BUDGET, limit=2, readback=independent_receipt,
+                 finish_limit=None, prepare_seconds=None):
+        # limit: promotion attempts per prepare() (the worker sizes it from the
+        # queue buffer, #1375). finish_limit: verification checks per finish();
+        # it defaults to limit so a bare adapter keeps its historic behavior.
+        # prepare_seconds: optional time budget for the promotion loop.
         self.worker, self.repository, self.control = worker, repository, control
         if getattr(worker, "ACTIVE_CONTROL", None) is not control or not getattr(control, "lock", None) or control.lock.closed:
             raise PermissionError("adapter requires the existing active Control owner; no client-local owner claim")
@@ -60,6 +65,13 @@ class OwnerAdapter:
         if len(self.allowed) > 5000:
             raise ValueError("approved cohort exceeds its explicit mapping budget")
         self.work, self.stage_budget, self.limit = Path(work), stage_budget, limit
+        self.finish_limit = limit if finish_limit is None else finish_limit
+        self.prepare_seconds = prepare_seconds
+        # Batched queue appends (#1375): one commit_and_push per prepare().
+        self._queued_urls = []
+        self._queued_events = []
+        self._queued_deltas = {}
+        self._queued_units = 0
         self.readback = readback
         self.observations = []
         self.last_capture_observation = None
@@ -335,17 +347,47 @@ class OwnerAdapter:
         return (actual.get("status") == 200 and actual.get("sha256") == source["sha256"] and
                 actual.get("size") == source["bytes"])
 
-    def _enqueue(self, url):
+    def _enqueue(self, url, event=None, delta=None):
+        """Buffer one queue append; _flush_queue() writes the batch in one push.
+
+        The queued event and any retry delta are released only after the batch
+        is durably in queue.txt, so a failed push leaves no queued receipt.
+        """
         if suppressed_url(self.registry, url):
             raise PermissionError("exact withdrawn source cannot be queued")
+        if url not in self._queued_urls:
+            self._queued_urls.append(url)
+        self._queued_units += 1  # one prepared job, reported only after the push
+        if event is not None:
+            self._queued_events.append(event)
+        if delta:
+            self._queued_deltas[url] = delta
+
+    def _flush_queue(self):
+        """One commit_and_push for every buffered URL; returns (events, deltas).
+
+        Appends to the back in first-buffered order, idempotently, and never
+        reorders existing lines. Raises (and releases nothing) if the push fails.
+        """
+        urls, events, deltas = self._queued_urls, self._queued_events, self._queued_deltas
+        self._queued_urls, self._queued_events, self._queued_deltas = [], [], {}
+        if not urls:
+            return events, deltas
         def write():
             path = self.repository / self.worker.QUEUE
             text = path.read_text(encoding="utf-8") if path.exists() else ""
-            if url not in {line.strip() for line in text.splitlines()}:
+            present = {line.strip() for line in text.splitlines()}
+            new = [url for url in urls if url not in present]
+            if new:
                 path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text(text + ("\n" if text and not text.endswith("\n") else "") + url + "\n", encoding="utf-8")
+                path.write_text(text + ("\n" if text and not text.endswith("\n") else "") +
+                                "".join(url + "\n" for url in new), encoding="utf-8")
             return [self.worker.QUEUE]
-        self.worker.commit_and_push(self.repository, [], "register approved exact-payload capture target", write)
+        message = ("register approved exact-payload capture target" if len(urls) == 1 else
+                   f"register {len(urls)} approved exact-payload capture targets")
+        # False means nothing to commit: every URL is already durably queued.
+        self.worker.commit_and_push(self.repository, [], message, write)
+        return events, deltas
 
     @staticmethod
     def _retry_delta(source, previous):
@@ -384,15 +426,53 @@ class OwnerAdapter:
         """Stage/promote only the supplied cohort; never submit or reset jobs."""
         if not self.healthy() or not self.allowed:
             return {"prepared": 0, "reason": "provider paused or no exact approved cohort supplied", "ledger_updates": {}}
-        prepared = 0
-        batch_staged_bytes = 0
-        attempted, ledger_updates = 0, {}
         cursor_path = self.registry / "owner-prepare-cursor.json"
         cursor = json.loads(cursor_path.read_text(encoding="utf-8")).get("after", "") if cursor_path.exists() else ""
+        stop_at = deadline - 60
+        if self.prepare_seconds is not None:
+            stop_at = min(stop_at, time.monotonic() + self.prepare_seconds)
+        self._queued_urls, self._queued_events, self._queued_deltas = [], [], {}
+        self._queued_units = 0
+        try:
+            result = self._prepare(deadline, stop_at, cursor_path, cursor)
+        except Paused:
+            # Early exit: keep what was already checked, still in one push.
+            try:
+                self._release(*self._flush_queue())
+            except Exception as error:
+                self._flush_failed(cursor_path, cursor, error)
+            raise
+        except BaseException:
+            self._queued_urls, self._queued_events, self._queued_deltas = [], [], {}
+            raise
+        units = self._queued_units
+        try:
+            events, deltas = self._flush_queue()
+        except Exception as error:
+            self._flush_failed(cursor_path, cursor, error)
+            raise
+        self._release(events, deltas)
+        result["ledger_updates"].update(deltas)
+        result["prepared"] = units
+        return result
+
+    def _release(self, events, deltas):
+        for event in events:
+            store_event(self.registry, event)
+
+    def _flush_failed(self, cursor_path, cursor, error):
+        # Nothing was stored as queued; rewind the cursor so the same jobs are
+        # retried first next run instead of after a full round-robin cycle.
+        print(f"REGISTRY-QUEUE-PUSH-ERR {type(error).__name__}; no queued receipts stored", flush=True)
+        atomic_json(cursor_path, {"after": cursor})
+
+    def _prepare(self, deadline, stop_at, cursor_path, cursor):
+        batch_staged_bytes = 0
+        attempted, ledger_updates = 0, {}
         groups = self._groups()
         ordered = [(key, value) for key, value in groups.items() if key > cursor] + [(key, value) for key, value in groups.items() if key <= cursor]
         for job, group in ordered:
-            if attempted >= self.limit or time.monotonic() > deadline - 60 or not self.healthy():
+            if attempted >= self.limit or time.monotonic() > stop_at or not self.healthy():
                 break
             entry, object_ids = group["entry"], group["objects"]
             request = entry["request"]
@@ -415,9 +495,7 @@ class OwnerAdapter:
                             atomic_json(cursor_path, {"after": job})
                             if not self._check_public(source):
                                 raise ValueError("queued epoch source no longer matches its exact payload")
-                            self._enqueue(source["url"])
-                            ledger_updates[source["url"]] = delta
-                            prepared += 1
+                            self._enqueue(source["url"], delta=delta)
                     except Exception as error:
                         self._attention(entry, object_ids, job, error)
                 continue
@@ -448,15 +526,12 @@ class OwnerAdapter:
                             continue
                         # Preserve the complete prior URL receipt durably before
                         # asking the worker to retry this new exact payload.
-                        self._enqueue(source["url"])
                         event = self._event([entry], "queued", "different historical payload retained; current exact version queued for an owned retry",
                                            approved_object_ids=object_ids,
                                            superseded_worker_receipt=legacy,
                                            superseded_capture_raw=self.last_capture_observation,
                                            queue_receipt={"queued": True, "url": source["url"], "job_id": job})
-                        store_event(self.registry, event)
-                        ledger_updates[source["url"]] = self._retry_delta(source, legacy)
-                        prepared += 1
+                        self._enqueue(source["url"], event=event, delta=self._retry_delta(source, legacy))
                     elif outcome != "verified":
                         store_event(self.registry, self._event([entry], "capture_check_pending",
                                     "existing capture cannot yet establish this exact version; preserve its receipt and retry verification", approved_object_ids=object_ids))
@@ -467,15 +542,13 @@ class OwnerAdapter:
                                 approved_object_ids=object_ids, superseded_worker_receipt=legacy,
                                 continuation="existing owner reviews the terminal URL receipt; do not silently reset retries for the same payload"))
                     continue
-                self._enqueue(source["url"])
                 event = self._event([entry], "queued", "exact public payload registered with the existing ordered URL queue",
                                     approved_object_ids=object_ids,
                                     queue_receipt={"queued": True, "url": source["url"], "job_id": job})
-                store_event(self.registry, event)
-                prepared += 1
+                self._enqueue(source["url"], event=event)
             except Exception as error:
                 self._attention(entry, object_ids, job, error)
-        return {"prepared": prepared, "attempted": attempted, "observations": self.observations, "ledger_updates": ledger_updates}
+        return {"prepared": 0, "attempted": attempted, "observations": self.observations, "ledger_updates": ledger_updates}
 
     def _observe(self, entries, legacy, deadline, object_ids=None):
         source = entries[0]["request"]["source"]
@@ -515,7 +588,7 @@ class OwnerAdapter:
         groups = self._groups()
         for wrap in (False, True):
             for job, group in groups.items():
-                if checked >= self.limit or time.monotonic() >= deadline:
+                if checked >= self.finish_limit or time.monotonic() >= deadline:
                     return checked
                 if (job <= cursor) != wrap:
                     continue

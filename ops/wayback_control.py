@@ -74,7 +74,8 @@ class Control:
     # account_sessions wait is short. Retry-After still wins when longer.
     SESSION_PAUSE = env_positive_int("WAYBACK_SESSION_PAUSE_S", 120)
     MAX_PAUSE = 24 * 60 * 60
-    # Tests keep the historic 10s default. Production sets WAYBACK_GAP_S=60.
+    # Tests keep the historic 10s default. Since #1375 the worker replaces this
+    # per run with the self-tuned gap (wayback_pace); WAYBACK_GAP_S only seeds it.
     SUBMISSION_GAP = env_positive_int("WAYBACK_GAP_S", 10)
     PROBE_DEADLINE = 24 * 60 * 60
 
@@ -88,6 +89,9 @@ class Control:
         # Runtime ledger snapshots support crash recovery; not control.json data.
         self.done: dict = {}
         self.initial_done: dict = {}
+        # Provider pushback seen this run, read by wayback_pace (#1375). Only
+        # observes the existing pauses below; never changes their behavior.
+        self.pace_signals: list[dict] = []
 
     def __enter__(self):
         self.directory.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -230,6 +234,7 @@ class Control:
 
     def capacity_wait(self, reason, retry_after=None):
         # Busy slots or a failed status read: ask again soon (no submit meanwhile).
+        self.pace_signals.append({"kind": "capacity", "reason": reason, "retry_after": bool(retry_after)})
         floor = self.SESSION_PAUSE if reason in ('account_sessions', 'capacity_unknown') else self.MIN_PAUSE
         self.state.update(reason='account capacity unavailable', provider_event=reason,
                           next_attempt=max(self.state.get('next_attempt',0),self.clock()+max(floor,retry_seconds(retry_after,self.clock()))))
@@ -253,6 +258,7 @@ class Control:
         self.save()
 
     def authentication_failed(self):
+        self.pace_signals.append({"kind": "auth", "event": "http_auth", "status": 401})
         accepted = self.accepted_probe()
         self.state.update(mode="auth_blocked", reason="authentication rejected",
                           http_status=401, rejected_credential=self.credential,
@@ -263,6 +269,9 @@ class Control:
                                "authentication rejected; no anonymous fallback")
 
     def provider_failed(self, status: int | None = None, retry_after: str | None = None, event=None):
+        self.pace_signals.append({"kind": "provider", "status": status, "event": event or
+                                  ("http_throttled" if status == 429 else "http_unavailable"),
+                                  "retry_after": bool(retry_after)})
         count = self.state["failure_count"] + 1
         delay = min(self.MAX_PAUSE, self.MIN_PAUSE * 2 ** min(count - 1, 7))
         delay = max(delay, retry_seconds(retry_after, self.clock()))

@@ -241,6 +241,44 @@ class RunLoop(unittest.TestCase):
         done = json.loads((self.repo / W.DONE).read_text())
         self.assertNotIn(extra, done)
 
+    def pace_state(self):
+        return json.loads((self.repo / ".test-control" / "pace-state.json").read_text())
+
+    def test_run_writes_pace_state_and_sizes_promotion_from_buffer(self):
+        W.MAX_SUBMITS_PER_RUN = 0
+        seen = {}
+        real = W.OwnerAdapter
+        def adapter(*args, **kwargs):
+            seen.update(kwargs)
+            return real(*args, **kwargs)
+        with patch.object(W, "OwnerAdapter", side_effect=adapter):
+            W.run(self.repo, minutes=5)
+        state = self.pace_state()
+        # One submit of a 12 allowance: the queue ran out, so the pace holds.
+        self.assertEqual(12, state["allowance"])
+        self.assertEqual({"submits": 1, "refusals": 0, "rate_limited": False, "used_full_allowance": False},
+                         {k: state["last_run"][k] for k in ("submits", "refusals", "rate_limited",
+                                                            "used_full_allowance")})
+        self.assertEqual({"target_buffer": 333, "buffer_before": 1, "cap": 200},
+                         {k: state["promotion"][k] for k in ("target_buffer", "buffer_before", "cap")})
+        self.assertEqual(200, seen["limit"])
+        self.assertEqual(20, seen["finish_limit"])
+        self.assertLessEqual(seen["prepare_seconds"], 150)
+
+    def test_throttled_submit_halves_the_pace_and_keeps_the_cooldown(self):
+        W.MAX_SUBMITS_PER_RUN = 0
+        def throttled(url):
+            raise W.Throttled("HTTP 429", 429, "120")
+        W.spn2_submit = throttled
+        W.run(self.repo, minutes=5)
+        state = self.pace_state()
+        self.assertEqual(6, state["allowance"])
+        self.assertTrue(state["last_run"]["rate_limited"])
+        control = json.loads((self.repo / ".test-control" / "control.json").read_text())
+        self.assertEqual("open", control["mode"])
+        log = [json.loads(x) for x in (self.repo / ".test-control" / "pace-log.jsonl").read_text().splitlines()]
+        self.assertEqual((12, 6), (log[-1]["from"], log[-1]["to"]))
+
 
 class Fetch(unittest.TestCase):
     """fetch() decodes the Content-Encoding Wayback replays (gzip) before hashing."""
