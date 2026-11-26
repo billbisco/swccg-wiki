@@ -22,5 +22,17 @@ class LinkBudgetTests(unittest.TestCase):
                 self.assertLessEqual(elapsed + b[0] + b[1], 840 - 20)
 
 
+class SaveMinutesTests(unittest.TestCase):
+    def test_reserve_shortens_a_12_minute_run(self):
+        # 14-min wall, 3-min reserve, 1 min margin for prepare/finish overrun: 10 minutes of saving.
+        self.assertAlmostEqual(10.0, W.save_minutes(12, 0, wall=840, reserve=180))
+
+    def test_short_requests_unchanged(self):
+        self.assertEqual(5, W.save_minutes(5, 0, wall=840, reserve=180))
+
+    def test_never_below_one_minute(self):
+        self.assertEqual(1.0, W.save_minutes(12, 800, wall=840, reserve=180))
+
+
 if __name__ == "__main__":
     unittest.main()

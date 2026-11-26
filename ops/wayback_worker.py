@@ -2118,7 +2118,8 @@ def main() -> int:
         path = control_directory(a.repo) / "health.json"
         print(path.read_text(encoding="utf-8") if path.exists() else '{"outcome":"not_recorded"}')
         return 0
-    run(a.repo.resolve(), a.minutes, native_object_ids=native_ids)
+    minutes = a.minutes if native_ids is not None else save_minutes(a.minutes, time.monotonic() - PROCESS_START)
+    run(a.repo.resolve(), minutes, native_object_ids=native_ids)
     if native_ids is None and os.environ.get("WAYBACK_LINK", "1") != "0":
         # Story #1320: add verified captures to the wiki. Never raises; time-boxed.
         import wayback_link
@@ -2133,6 +2134,20 @@ def main() -> int:
 PROCESS_START = time.monotonic()
 # systemd TimeoutStartSec=15min kills the oneshot run; the linker gets only what is left (#1375).
 RUN_WALL_S = float(os.environ.get("WAYBACK_RUN_WALL_S", str(14 * 60)))
+
+
+LINK_RESERVE_S = float(os.environ.get("WAYBACK_LINK_RESERVE_S", "180"))
+
+
+def save_minutes(requested: float, elapsed: float, *, wall: float | None = None,
+                 reserve: float | None = None) -> float:
+    """Minutes the save run may use so the wiki linker keeps its reserve before the
+    unit timeout (#1375: full 12-minute runs left the item-link phase no time)."""
+    wall = RUN_WALL_S if wall is None else wall
+    reserve = LINK_RESERVE_S if reserve is None else reserve
+    if os.environ.get("WAYBACK_LINK", "1") == "0":
+        reserve = 0.0
+    return max(1.0, min(requested, (wall - reserve - elapsed - 60) / 60))
 
 
 def link_budget(elapsed: float, *, wall: float | None = None,
