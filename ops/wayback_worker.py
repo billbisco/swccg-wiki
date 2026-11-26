@@ -2122,8 +2122,34 @@ def main() -> int:
     if native_ids is None and os.environ.get("WAYBACK_LINK", "1") != "0":
         # Story #1320: add verified captures to the wiki. Never raises; time-boxed.
         import wayback_link
-        wayback_link.run_safe(a.repo.resolve(), seconds=float(os.environ.get("WAYBACK_LINK_SECONDS", "90")))
+        budget = link_budget(time.monotonic() - PROCESS_START)
+        if budget is None:
+            print("WAYBACK-LINK skipped: run used its time (unit start timeout)", flush=True)
+        else:
+            wayback_link.run_safe(a.repo.resolve(), seconds=budget[0], ia_seconds=budget[1])
     return 0
+
+
+PROCESS_START = time.monotonic()
+# systemd TimeoutStartSec=15min kills the oneshot run; the linker gets only what is left (#1375).
+RUN_WALL_S = float(os.environ.get("WAYBACK_RUN_WALL_S", str(14 * 60)))
+
+
+def link_budget(elapsed: float, *, wall: float | None = None,
+                wayback_s: float | None = None, ia_s: float | None = None):
+    """(Wayback-phase seconds, item-phase seconds) that fit before the unit timeout, or None.
+
+    The Wayback phase keeps priority; the archive.org item phase gets the rest. A few
+    seconds stay for the last edit, state save and exit."""
+    wall = RUN_WALL_S if wall is None else wall
+    wayback_s = float(os.environ.get("WAYBACK_LINK_SECONDS", "90")) if wayback_s is None else wayback_s
+    ia_s = float(os.environ.get("SWCCG_LINK_IA_SECONDS", "90")) if ia_s is None else ia_s
+    left = wall - elapsed - 20
+    if left < 15:
+        return None
+    first = min(wayback_s, left)
+    second = max(0.0, min(ia_s, left - first))
+    return first, second
 
 
 if __name__ == "__main__":
