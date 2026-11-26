@@ -12,7 +12,8 @@ Written by Claude on 25 Nov 2026 so another agent (Grok Build or anyone) can con
 | #1356 | Fold 240 same-words slips, transcription-error wording, dated decklist relinks | Done 25 Nov (closed) |
 | #1361 | Leftovers from the 25 Nov cleanup | Done 25 Nov (closed) |
 | #1362 | Turned-image sweep, 11 errata tables, E1 mark rows, counterparts, deck pages | Done 25 Nov (closed) |
-| #1363 | Resaved image pairs, partial slips, version gaps, 2012 deck lines, Mysteries write-up | Open: agents r1363a, r1363b drafting |
+| #1363 | Re-saved pairs, slips, gaps, 2012 decks, Mysteries | Done 25 Nov (closed) |
+| #1374 | Small leftovers: foil scans, unused crops, one mark row, deck questions, archive copies | Open |
 | #1351 | 274 version chains the errata generator refused | Done 25 Nov (closed): a rerun refuses nothing; 13 families keep a correct hand table |
 | #677 | Virtual Block 3 errata (ChatGPT) | Open, not ours |
 | #715, #716 | Planned/independent sets pilot; final errata reconcile | Open |
