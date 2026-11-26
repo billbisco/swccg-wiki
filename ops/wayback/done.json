@@ -97460,7 +97460,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T23:10:31Z",
+   "at": "2026-11-26T23:17:07Z",
    "defer": "cdx-batch"
   }
  },
@@ -176884,12 +176884,15 @@
   "capture": "https://web.archive.org/web/20261126075124/https://swccg.com/wiki/File:2022_Endor_Grand_Prix_52.jpg",
   "job_id": "spn2-4eb847d903a1a068ee4167b1560bdd4784ddcbef",
   "last": "2026-11-26T07:56:52Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T22:44:37Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:17:59Z",
+   "bytes": 24700,
+   "capture_id": "https://web.archive.org/web/20261126075124id_/https://swccg.com/wiki/File:2022_Endor_Grand_Prix_52.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2cba867c1c52ad762ae4cfe827869404a137ce788e999e94254ebb3753b2898c"
   }
  },
  "https://swccg.com/wiki/File:2022_Endor_Grand_Prix_55.jpg": {
@@ -179458,7 +179461,7 @@
   "status": "ok",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T15:39:40Z",
+   "at": "2026-11-26T23:18:47Z",
    "defer": "manpc",
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
@@ -180324,12 +180327,14 @@
  "https://swccg.com/wiki/File:2025_World_Championship_player_Mariners_cap_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125181236/https://swccg.com/wiki/File:2025_World_Championship_player_Mariners_cap_4_October.jpg",
   "last": "2026-11-25T18:33:31Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T18:33:32Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:18:06Z",
+   "capture_id": "https://web.archive.org/web/20261125181236id_/https://swccg.com/wiki/File:2025_World_Championship_player_Mariners_cap_4_October.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.912
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_player_black_jacket_4_October.jpg": {
@@ -200536,12 +200541,13 @@
   "capture": "https://web.archive.org/web/20261125153622/https://swccg.com/wiki/2021_World_Championship",
   "job_id": "spn2-17d4534f2372c1f1661f9630a0b1f806fbf8a679",
   "last": "2026-11-25T15:41:41Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T15:41:41Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:18:38Z",
+   "capture_id": "https://web.archive.org/web/20261125153622id_/https://swccg.com/wiki/2021_World_Championship",
+   "method": "strict",
+   "reason": "capture HTTP 404"
   }
  },
  "https://wiki.swccg.com/wiki/Barry_Alperstein": {
@@ -200608,12 +200614,14 @@
   "capture": "https://web.archive.org/web/20261125154654/https://swccg.com/wiki/Dan_Tartaglione",
   "job_id": "spn2-57b5ca5e415541416ef5079e608e4bd58332bbac",
   "last": "2026-11-25T15:52:18Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T15:52:18Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:18:33Z",
+   "capture_id": "https://web.archive.org/web/20261125154654id_/https://swccg.com/wiki/Dan_Tartaglione",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.971
   }
  },
  "https://wiki.swccg.com/wiki/Emil_Wallin": {
@@ -200852,12 +200860,14 @@
   "capture": "https://web.archive.org/web/20261125154854/https://swccg.com/wiki/File:2021_World_Championship_Casey_Anis_in_a_match_1.jpg",
   "job_id": "spn2-788ccd27d190821d80371f04896e4813019fdd2f",
   "last": "2026-11-25T15:53:47Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T15:53:47Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:18:26Z",
+   "capture_id": "https://web.archive.org/web/20261125154854id_/https://swccg.com/wiki/File:2021_World_Championship_Casey_Anis_in_a_match_1.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.934
   }
  },
  "https://wiki.swccg.com/wiki/File:2021_World_Championship_Joe_Olson_in_a_match_3.jpg": {
@@ -201151,12 +201161,14 @@
   "capture": "https://web.archive.org/web/20261125164206/https://swccg.com/wiki/File:2021_World_Championship_spectators_5.jpg",
   "job_id": "spn2-c9a837cab0329045f494d8fa059e5ef190e72570",
   "last": "2026-11-25T16:43:30Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T18:06:16Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:18:20Z",
+   "capture_id": "https://web.archive.org/web/20261125164206id_/https://swccg.com/wiki/File:2021_World_Championship_spectators_5.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.931
   }
  },
  "https://wiki.swccg.com/wiki/File:2021_World_Championship_spectators_6.jpg": {
@@ -201178,12 +201190,14 @@
   "capture": "https://web.archive.org/web/20261125175856/https://swccg.com/wiki/File:2021_World_Championship_stream_booth_5.jpg",
   "job_id": "spn2-a9bccd7c8e3506f36d32c668f5c7b08f7345dcfb",
   "last": "2026-11-25T18:06:14Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T18:06:14Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:18:13Z",
+   "capture_id": "https://web.archive.org/web/20261125175856id_/https://swccg.com/wiki/File:2021_World_Championship_stream_booth_5.jpg",
+   "index": "cdx",
+   "method": "text",
+   "text_match": 0.934
   }
  },
  "https://wiki.swccg.com/wiki/File:2021_World_Championship_stream_commentators_4.jpg": {
@@ -201419,12 +201433,13 @@
   "capture": "https://web.archive.org/web/20261125153518/https://swccg.com/wiki/Unidentified_event_photographs",
   "job_id": "spn2-54ece1a3d57a16ddc71ce5ba3816caffa064410f",
   "last": "2026-11-25T15:39:39Z",
-  "status": "ok",
+  "status": "unverified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-25T15:39:39Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T23:18:43Z",
+   "capture_id": "https://web.archive.org/web/20261125153518id_/https://swccg.com/wiki/Unidentified_event_photographs",
+   "method": "strict",
+   "reason": "capture HTTP 404"
   }
  },
  "https://www.cardgamecollector.com/images/wars-tcg/WARS-TCG-Incursion-Rulebook.pdf": {
