@@ -12446,14 +12446,17 @@
  "http://www.decktech.net/starwarsccg/deck/11811": {
   "capture": "https://web.archive.org/web/20261018094829/https://www.decktech.net/starwarsccg/deck/11811/",
   "job_id": "spn2-3c4fb9056fc98eafe14cac39df7fc69892612985",
-  "last": "2026-10-18T09:56:42Z",
-  "status": "unverified",
+  "last": "2026-11-26T11:16:31Z",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-10-30T07:29:02Z",
+   "at": "2026-11-26T11:16:08Z",
+   "bytes": 15232,
    "capture_id": "https://web.archive.org/web/20261018094829id_/https://www.decktech.net/starwarsccg/deck/11811/",
-   "method": "strict",
-   "reason": "capture HTTP 404"
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "a67397f991fe426ed1c856d28d83d1c27a8b8a96101c8a0a339f7cd1bad9ccb9"
   }
  },
  "http://www.decktech.net/starwarsccg/deck/11818": {
@@ -175175,6 +175178,13 @@
   "status": "pending",
   "tries": 1
  },
+ "https://swccg.com/wiki/2025_European_Championship": {
+  "capture": "",
+  "job_id": "spn2-5b530116ccc2455eac55275bc832d2a641a27e12",
+  "last": "2026-11-26T11:21:28Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/2025_World_Championship": {
   "capture": "https://web.archive.org/web/20261125124800/https://swccg.com/wiki/2025_World_Championship",
   "last": "2026-11-25T13:10:53Z",
@@ -176708,9 +176718,17 @@
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_23.jpg": {
   "capture": "https://web.archive.org/web/20261126105608/https://swccg.com/wiki/File:2023_Naboo_Regionals_23.jpg",
-  "last": "2026-11-26T11:01:37Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T11:18:18Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:18:22Z",
+   "bytes": 26006,
+   "capture_id": "https://web.archive.org/web/20261126105608id_/https://swccg.com/wiki/File:2023_Naboo_Regionals_23.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "70b46091429259b81167e9c22deb7f68e44ccb19d69c2f4949583ba2e748f60f"
+  }
  },
  "https://swccg.com/wiki/File:2023_Naboo_Regionals_24.jpg": {
   "capture": "https://web.archive.org/web/20261126105710/https://swccg.com/wiki/File:2023_Naboo_Regionals_24.jpg",
@@ -176978,9 +176996,88 @@
   }
  },
  "https://swccg.com/wiki/File:2024_World_Championship_Slack_22_September_01.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126111336/https://swccg.com/wiki/File:2024_World_Championship_Slack_22_September_01.jpg",
   "job_id": "spn2-d63a4674077207c5bf1a84273f4d4a7498e86ca0",
-  "last": "2026-11-26T11:13:35Z",
+  "last": "2026-11-26T11:18:15Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:18:15Z",
+   "bytes": 25935,
+   "capture_id": "https://web.archive.org/web/20261126111336id_/https://swccg.com/wiki/File:2024_World_Championship_Slack_22_September_01.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c055d3ebea73777966766de077ffdb4f5e15575179da4eb1fdf3cee1d5c26bd2"
+  }
+ },
+ "https://swccg.com/wiki/File:2024_World_Championship_group_photo.jpg": {
+  "capture": "https://web.archive.org/web/20261126111826/https://swccg.com/wiki/File:2024_World_Championship_group_photo.jpg",
+  "job_id": "spn2-72e95670f6e019b50cbd3c329e6593981a82a62c",
+  "last": "2026-11-26T11:27:37Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:27:37Z",
+   "bytes": 38173,
+   "capture_id": "https://web.archive.org/web/20261126111826id_/https://swccg.com/wiki/File:2024_World_Championship_group_photo.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "2381a6772748de399c0bc6681bbb8badd697f2c1af51a171f6a4b2f79d7dfe6a"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_European_Championship_15.jpg": {
+  "capture": "https://web.archive.org/web/20261126112230/https://swccg.com/wiki/File:2025_European_Championship_15.jpg",
+  "job_id": "spn2-f23064d592cdc5c0e9732fc62816fcead7b46f99",
+  "last": "2026-11-26T11:27:48Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:27:48Z",
+   "bytes": 25731,
+   "capture_id": "https://web.archive.org/web/20261126112230id_/https://swccg.com/wiki/File:2025_European_Championship_15.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "9cf5da0bc10942943e74d7c7f7a330ea03ef7f80220b1695a28036c99dfcba60"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_European_Championship_16.jpg": {
+  "capture": "https://web.archive.org/web/20261126112331/https://swccg.com/wiki/File:2025_European_Championship_16.jpg",
+  "job_id": "spn2-4bbe1cb973aa40ae429ac4f93f4524bee3b0759a",
+  "last": "2026-11-26T11:27:53Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:27:53Z",
+   "bytes": 27098,
+   "capture_id": "https://web.archive.org/web/20261126112331id_/https://swccg.com/wiki/File:2025_European_Championship_16.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d8a570b6636aae6a7484bd569408731eedf3dabbc0ef0f6715e31b2efa65e222"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_European_Championship_17.jpg": {
+  "capture": "https://web.archive.org/web/20261126112432/https://swccg.com/wiki/File:2025_European_Championship_17.jpg",
+  "job_id": "spn2-442dd8417aad500698b8b9752fa3c2afc8fbfef6",
+  "last": "2026-11-26T11:27:57Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:27:57Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_European_Championship_18.jpg": {
+  "capture": "",
+  "job_id": "spn2-c49067fe3546716b7be622507d36dba586a2b10d",
+  "last": "2026-11-26T11:25:33Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/wiki/File:2025_European_Championship_19.jpg": {
+  "capture": "",
+  "job_id": "spn2-0d02bdf85283cd5d2611dd5cccf4e0012ce10438",
+  "last": "2026-11-26T11:26:33Z",
   "status": "pending",
   "tries": 1
  },
@@ -185410,6 +185507,17 @@
    "sha256": "339eca459bba27236efec1eb92417f2b481d8ce38e90b6b35f0b1738eebea1d7"
   }
  },
+ "https://swccg.com/wiki/images/5/5b/2024_World_Championship_group_photo.jpg": {
+  "capture": "https://web.archive.org/web/20261126111927/https://swccg.com/wiki/images/5/5b/2024_World_Championship_group_photo.jpg",
+  "job_id": "spn2-f94ea91664c3b47baa8ba61fbfa6a4e962a91182",
+  "last": "2026-11-26T11:27:39Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:27:39Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/5/5b/Bespin_Season_2018-2019_Tournament_6_results.png": {
   "capture": "https://web.archive.org/web/20261126035815/https://swccg.com/wiki/images/5/5b/Bespin_Season_2018-2019_Tournament_6_results.png",
   "job_id": "spn2-af32b21ff1e5612625aa71c19c634c126cb3abe0",
@@ -192097,6 +192205,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "e461b3856bed6ac17155a260e9069c8e16dbbd0631447d98acf7c5cea67074ec"
+  }
+ },
+ "https://swccg.com/wiki/images/e/e7/2024_World_Championship_Slack_22_September_01.jpg": {
+  "capture": "https://web.archive.org/web/20261126112028/https://swccg.com/wiki/images/e/e7/2024_World_Championship_Slack_22_September_01.jpg",
+  "job_id": "spn2-30c52eb1041214a363d3da4022cd1fa59b7e2f4b",
+  "last": "2026-11-26T11:27:40Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T11:27:40Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/e/e7/2025_World_Championship_black_cap_table_4_October_evening.jpg": {
@@ -204219,9 +204338,17 @@
  "https://www.stephenskilton.com/decktech_archives/16487/": {
   "capture": "https://web.archive.org/web/20261023105751/https://www.stephenskilton.com/decktech_archives/16487/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T07:54:40Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-26T11:18:10Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-26T11:18:10Z",
+   "bytes": 13377,
+   "capture_id": "https://web.archive.org/web/20261023105751id_/https://www.stephenskilton.com/decktech_archives/16487/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1823c6584cc63a9118b2dc8be4bfe2f2a7b0bcfe5caf5f9adad430ff7b02d4e5"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16493/": {
   "capture": "https://web.archive.org/web/20261023111239/https://www.stephenskilton.com/decktech_archives/16493/",
