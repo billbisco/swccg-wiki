@@ -285,7 +285,7 @@ def export_records(registry: Path, *, object_ids=None) -> dict:
         # Only whitelisted public fields enter the shared evidence export.
         row["source"] = {key: request["source"][key] for key in (
             "url", "sha256", "bytes", "checked_evidence", "primary_url",
-            "representation", "provenance_equivalence") if key in request["source"]}
+            "representation", "provenance_equivalence", "github_object") if key in request["source"]}
         row["readiness"] = {key: request["readiness"][key] for key in ("ready", "reason", "stage_bytes")}
         row.update(object_id=registration_object_id(request["subject"], request["source"]),
                    subject_id=object_id(request["subject"]),

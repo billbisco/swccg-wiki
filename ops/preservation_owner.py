@@ -24,6 +24,8 @@ from preservation_owner_receipts import load_event, store_event
 from wayback_control import Paused
 from preservation_suppression import suppressed_source, suppressed_url
 from preservation_native import NATIVE_REPRESENTATION, validate_native_mirror, validate_native_payload
+import preservation_github
+from preservation_github import GITHUB_REPRESENTATION
 
 PUBLIC_STAGE_BUDGET = 32 * 1024 * 1024
 STAGE_SCAN_LIMIT = 50000
@@ -252,10 +254,14 @@ class OwnerAdapter:
         if native:
             native_target = self._native_target_path(source)
         if source.get("representation") not in {"checked_self_contained_snapshot", NATIVE_REPRESENTATION}:
-            if source.get("representation", "original") != "original" or not self._check_public(source):
+            representation = source.get("representation", "original")
+            if representation not in {"original", GITHUB_REPRESENTATION} or not self._check_public(source):
                 return False
+            reason = ("owner checked the bound GitHub git object of the public page"
+                      if representation == GITHUB_REPRESENTATION else
+                      "owner checked the already-public exact original payload")
             advanced = advance_readiness(self.registry, entry,
-                                         {"ready": True, "reason": "owner checked the already-public exact original payload", "stage_bytes": 0},
+                                         {"ready": True, "reason": reason, "stage_bytes": 0},
                                          owner=SERVER_OWNER)
             return advanced["state"] == "ready"
         target = native_target if native else self.worker.snapshot_file(source["url"])
@@ -421,6 +427,10 @@ class OwnerAdapter:
             return False
         if source.get("representation") == NATIVE_REPRESENTATION:
             return self._native_public_receipt(source)["matches"]
+        if source.get("representation") == GITHUB_REPRESENTATION:
+            # Dynamic GitHub HTML never repeats its bytes (#1377): check the
+            # bound commit SHA / raw blob file instead of the page bytes.
+            return preservation_github.check_public(self.worker.fetch, source)["matches"]
         actual = self.worker.fetch(source["url"])
         return (actual.get("status") == 200 and actual.get("sha256") == source["sha256"] and
                 actual.get("size") == source["bytes"])
@@ -676,6 +686,20 @@ class OwnerAdapter:
             return "pending"
         self.last_capture_observation = {"capture": capture, "capture_original_url": original,
                                          "strict_index": True, "raw_sha256": actual.get("sha256"), "raw_bytes": actual.get("size")}
+        if source.get("representation") == GITHUB_REPRESENTATION:
+            # The replayed page is dynamic HTML (#1377): it must name the bound
+            # full commit SHA; its bytes are never compared with the page backup.
+            commit = source["github_object"]["commit"]
+            if not preservation_github.names_commit(actual.get("body"), commit):
+                return "different_payload"
+            store_event(self.registry, self._event(entries, "verified",
+                        "strict indexed replay of the GitHub page names the exact bound commit",
+                        approved_object_ids=object_ids,
+                        capture=capture, capture_original_url=original,
+                        verified_at=datetime.now(timezone.utc).isoformat(),
+                        verification={"strict_index": True, "method": "github_commit_oid", "commit": commit,
+                                      "raw_sha256": actual["sha256"], "raw_bytes": actual["size"]}))
+            return "verified"
         if actual.get("sha256") != source["sha256"] or actual.get("size") != source["bytes"]:
             return "different_payload"
         store_event(self.registry, self._event(entries, "verified", "strict indexed replay matches the exact registered original bytes",
