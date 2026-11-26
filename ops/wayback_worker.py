@@ -965,10 +965,25 @@ def alias_target(url: str) -> str | None:
     return None
 
 
-def order_queue(urls: list[str], done: dict) -> list[str]:
+def ia_covered_keys() -> set[str] | None:
+    """Ledger keys of own files with a SHA-1-verified archive.org item copy (#1375 D3).
+    None when the ia_item_backup ledger is missing or unreadable."""
+    try:
+        import ia_item_backup
+        rows = ia_item_backup.load_verified()
+    except Exception as ex:  # never let the backup ledger stop saves
+        print("IA-LEDGER unreadable", type(ex).__name__, flush=True)
+        return None
+    return set(rows) if rows is not None else None
+
+
+def order_queue(urls: list[str], done: dict, ia_covered: set[str] | None = None) -> list[str]:
     """Walk order for saves (swccg-guild/work#1340).
 
     1. Never-saved URLs before retries, our own files first within that.
+       #1375 D3: within each of those two groups, own files that already have
+       a verified archive.org item copy (ia_covered, ledger keys) go last,
+       after outside sources.
     2. Round-robin across target hosts, so one site cannot use up its
        per-host daily allowance at archive.org and stall the rest.
     3. Skip a forwarding alias when its target is queued or saved.
@@ -976,13 +991,19 @@ def order_queue(urls: list[str], done: dict) -> list[str]:
     """
     queued = set(urls)
     tiers: dict[int, dict[str, list[str]]] = {}
+    key_for = None
+    if ia_covered:
+        from ia_item_backup import ledger_key_for_url as key_for
     for url in urls:
         target = alias_target(url)
         if target and (target in queued or target in done):
             continue
         host = (urllib.parse.urlsplit(url).hostname or "").lower()
         own = host in ("swccg.com", "wiki.swccg.com", "res.starwarsccg.org")
-        tier = (0 if url not in done else 2) + (0 if own else 1)
+        rank = 0 if own else 1
+        if own and key_for and key_for(url) in ia_covered:
+            rank = 2
+        tier = (0 if url not in done else 3) + rank
         tiers.setdefault(tier, {}).setdefault(host, []).append(url)
     out = []
     for tier in sorted(tiers):
@@ -1531,7 +1552,7 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     if isinstance(control,Control) and control.state.get('mode')=='half_open':
         urls=sorted(urls,key=lambda u:(u in done,not u.startswith('https://swccg.com/')))
     elif scope is None:
-        urls=order_queue(urls,done)
+        urls=order_queue(urls,done,ia_covered_keys())
     for url in urls:
         if time.monotonic() > deadline - 90 or errors_in_row >= 5:
             break
