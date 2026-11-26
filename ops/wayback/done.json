@@ -175089,11 +175089,19 @@
   }
  },
  "https://swccg.com/wiki/2022_Endor_Grand_Prix": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126085119/https://swccg.com/wiki/2022_Endor_Grand_Prix",
   "job_id": "spn2-1569d6d80083b6d39f7111938c819854bcce031c",
-  "last": "2026-11-26T07:41:35Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T09:08:59Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T09:08:59Z",
+   "bytes": 132516,
+   "capture_id": "https://web.archive.org/web/20261126085119id_/https://swccg.com/wiki/2022_Endor_Grand_Prix",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f23749e8ad517be182370d1077d679b863fa3d1e358e4ec6b6438379d0c8bfc3"
+  }
  },
  "https://swccg.com/wiki/2022_European_Championship": {
   "capture": "",
@@ -179562,11 +179570,16 @@
   }
  },
  "https://swccg.com/wiki/Jacy_Smith": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126084852/https://swccg.com/wiki/Jacy_Smith",
   "job_id": "spn2-689a4d44cc464c415d8a6077e2ef80a868c48230",
-  "last": "2026-11-26T07:39:33Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T09:09:02Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T09:09:02Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://swccg.com/wiki/Jarad_Konsker": {
   "capture": "https://web.archive.org/web/20261126051104/https://swccg.com/wiki/Jarad_Konsker",
@@ -202936,9 +202949,17 @@
  "https://www.stephenskilton.com/decktech_archives/16261/": {
   "capture": "https://web.archive.org/web/20261023104234/https://www.stephenskilton.com/decktech_archives/16261/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T06:44:41Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-26T09:08:47Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-26T09:08:47Z",
+   "bytes": 14185,
+   "capture_id": "https://web.archive.org/web/20261023104234id_/https://www.stephenskilton.com/decktech_archives/16261/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7a65f45a845f602133b8cf9da0dc8af429c5fe78ac53f9a6816e3dad6b1f71d0"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16262/": {
   "capture": "",
