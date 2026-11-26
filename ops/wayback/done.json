@@ -63700,11 +63700,16 @@
   "verify_tries": 3
  },
  "https://boardgamegeek.com/filepage/24812/2nd-annual-swccg-encyclopedia-of-decksdoc": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126211804/https://boardgamegeek.com/filepage/24812/2nd-annual-swccg-encyclopedia-of-decksdoc",
   "job_id": "spn2-58baa909ef85ff8d580231e43a2cafc362c436a9",
-  "last": "2026-11-26T20:26:32Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T21:39:19Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T21:39:19Z",
+   "error": "source HTTP 403"
+  },
+  "verify_tries": 1
  },
  "https://boardgamegeek.com/filepage/33565/star-wars-ccg-complete-card-list-42": {
   "capture": "",
@@ -72793,11 +72798,19 @@
   }
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/54d72299d9a981e3305d560df8c04b75a499819c/authoring/pilots/384/refine-2/drafts/f047e0b44730.wiki": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126211822/https://raw.githubusercontent.com/billbisco/swccg-wiki/54d72299d9a981e3305d560df8c04b75a499819c/authoring/pilots/384/refine-2/drafts/f047e0b44730.wiki",
   "job_id": "spn2-ab058279edc18258d92036b8443ea927c58e6d5f",
-  "last": "2026-11-26T20:27:18Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T21:39:12Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T21:39:12Z",
+   "bytes": 1367,
+   "capture_id": "https://web.archive.org/web/20261126211822id_/https://raw.githubusercontent.com/billbisco/swccg-wiki/54d72299d9a981e3305d560df8c04b75a499819c/authoring/pilots/384/refine-2/drafts/f047e0b44730.wiki",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4da7c4bb4c31829031e410109880a3768ba8b77369158b3ebf463d3d2f41c25c"
+  }
  },
  "https://raw.githubusercontent.com/ledwards/swccgvkit/5047de0/db/lightside.cdf": {
   "capture": "https://web.archive.org/web/20261114013824/https://raw.githubusercontent.com/ledwards/swccgvkit/5047de0/db/lightside.cdf",
@@ -197543,11 +197556,19 @@
   "tries": 1
  },
  "https://swccg.com/wiki/index.php?oldid=326877&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126211721/https://swccg.com/wiki/index.php?oldid=326877&action=raw",
   "job_id": "spn2-87b6c594550c2f1765ece08619dc6073e5ac8a6d",
-  "last": "2026-11-26T20:25:01Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T21:39:25Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T21:39:25Z",
+   "bytes": 2000,
+   "capture_id": "https://web.archive.org/web/20261126211721id_/https://swccg.com/wiki/index.php?oldid=326877&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "586cda7225c1f638eadf64061d83e2b57f0ecaa3429749a96cc460f0f6cf96e1"
+  }
  },
  "https://swccg.com/wiki/index.php?oldid=326889&action=raw": {
   "capture": "",
@@ -197578,9 +197599,8 @@
   "tries": 1
  },
  "https://swccg.com/wiki/index.php?oldid=331645&action=raw": {
-  "capture": "",
-  "job_id": "spn2-c38621dab2f39de77355557ea9528bc732b2f3d1",
-  "last": "2026-11-26T20:22:44Z",
+  "capture": "https://web.archive.org/web/20261126211627/https://swccg.com/wiki/index.php?oldid=331645&action=raw",
+  "last": "2026-11-26T21:39:27Z",
   "status": "pending",
   "tries": 1
  },
@@ -209787,9 +209807,17 @@
  "https://www.stephenskilton.com/decktech_archives/17016/": {
   "capture": "https://web.archive.org/web/20261023120345/https://www.stephenskilton.com/decktech_archives/17016/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T09:47:10Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-26T21:39:07Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-26T21:39:07Z",
+   "bytes": 12494,
+   "capture_id": "https://web.archive.org/web/20261023120345id_/https://www.stephenskilton.com/decktech_archives/17016/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e4dc2e0a9efb805a022f38f7cb468c4a7852f4b7c4da1bb5c6744932e708089a"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/17019/": {
   "capture": "https://web.archive.org/web/20261023121526/https://www.stephenskilton.com/decktech_archives/17019/",
