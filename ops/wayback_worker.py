@@ -24,7 +24,10 @@ the VPS worker tries to open the capture (lane 1); a connection refused / timeou
 there is a confirm miss, not a save pause — this PC (manpc) retries (lane 2) via
 `ops/wayback_verify_manpc.py` dropping receipts in verify-inbox. HTTP 401/429/5xx
 on the Save Page Now API still opens the provider circuit. Stalled jobs are poked
-with ?copy=2, not by polling a dead job_id forever.
+with ?copy=2, not by polling a dead job_id forever. A refusal that reaches the
+registry owner's capture check, or escapes a step (#1375), sets the shared
+"network_refused" cooldown, saves done.json and ends the run with exit 0. URLs
+go on the wire IRI-safe (wire_url); the ledger keeps them exactly as queued.
 
 Verified https://swccg.com/snapshots/… URLs: after verify, delete the staging file under
 /opt/swccg-res/snapshots/ only when a main-namespace wiki article already cites a Wayback
@@ -53,6 +56,7 @@ import argparse
 import collections
 import hashlib
 import html
+import http.client
 import json
 import re
 import subprocess
@@ -199,6 +203,71 @@ def archive_transport_failed(url: str):
     Does not pause new Save Page Now submits.
     """
     return
+
+
+_URI_SAFE = "!#$%&'()*+,/:;=?@[]~"
+_NEEDS_QUOTE = re.compile(r"[^\x21-\x7e]")
+
+
+def wire_url(url: str) -> str:
+    """IRI -> URI for the request line only (#1375).
+
+    http.client encodes the request line as ASCII, so a queued URL with a
+    non-ASCII character (a wiki file name with "ø") raised UnicodeEncodeError
+    and crashed the run. Non-ASCII, spaces and control characters in the path,
+    query and fragment become UTF-8 %XX; existing %XX escapes and reserved
+    characters are kept as they are, and a non-ASCII host becomes IDNA.
+    done.json and queue.txt keep the URL exactly as queued; only the wire
+    form changes.
+    """
+    if not _NEEDS_QUOTE.search(url):
+        return url
+    quote = lambda v: urllib.parse.quote(v, safe=_URI_SAFE)  # noqa: E731
+    try:
+        parts = urllib.parse.urlsplit(url)
+        netloc = parts.netloc
+        if _NEEDS_QUOTE.search(netloc):
+            userinfo, at, hostport = netloc.rpartition("@")
+            host, colon, port = hostport.partition(":")
+            try:
+                host = host.encode("idna").decode("ascii")
+            except UnicodeError:
+                host = quote(host)
+            netloc = (quote(userinfo) + at if at else "") + host + colon + port
+        return urllib.parse.urlunsplit((parts.scheme, netloc, quote(parts.path),
+                                        quote(parts.query), quote(parts.fragment)))
+    except ValueError:
+        return quote(url)
+
+
+def refused(ex: BaseException | None) -> bool:
+    """True when ex, or an exception it was raised from, is a refused/reset connection."""
+    for _ in range(8):
+        if ex is None:
+            return False
+        if _refused(ex):
+            return True
+        ex = ex.__cause__ or ex.__context__
+    return False
+
+
+def provider_refused(control, error: BaseException | None = None, *, pause: bool = True) -> None:
+    """web.archive.org refused our connection: back off through the existing
+    capacity cooldown (provider_event "network_refused", next_attempt at least
+    Control.MIN_PAUSE ahead), the same one a refused account-status read sets.
+
+    Raises Paused (the normal "save state, stop this run, exit 0" path) unless
+    pause=False. Never retries: a refusal means back off (#1375 D5). Errors
+    that are not refusals (timeouts, replay 429/5xx) record nothing here."""
+    if error is not None and not refused(error):
+        return
+    if control is None or not hasattr(control, "capacity_wait"):
+        return
+    try:
+        control.capacity_wait("network_refused")
+    except Paused:
+        if pause:
+            raise
 
 
 def now() -> datetime:
@@ -353,7 +422,7 @@ def spn2_status(job_id: str) -> dict:
 
 
 def save_anon(url: str) -> str:
-    req = urllib.request.Request("https://web.archive.org/save/" + url, headers={"User-Agent": UA})
+    req = urllib.request.Request(wire_url("https://web.archive.org/save/" + url), headers={"User-Agent": UA})
     try:
         resp = OPENER.open(req, timeout=90)
         archive_response(req.full_url, resp.status, resp.headers)
@@ -390,7 +459,7 @@ def submit_capture(url: str, entry: dict | None, session: dict) -> dict:
 
 
 def capture_ok(capture: str) -> bool:
-    req = urllib.request.Request(capture, headers={"User-Agent": UA})
+    req = urllib.request.Request(wire_url(capture), headers={"User-Agent": UA})
     try:
         with urllib.request.urlopen(req, timeout=90) as resp:
             archive_response(capture, resp.status, resp.headers)
@@ -398,7 +467,7 @@ def capture_ok(capture: str) -> bool:
     except urllib.error.HTTPError as error:
         archive_response(capture, error.code, error.headers)
         return False
-    except (urllib.error.URLError, TimeoutError):
+    except (urllib.error.URLError, TimeoutError, OSError, http.client.HTTPException, ValueError):
         archive_transport_failed(capture)
         return False
 
@@ -474,7 +543,7 @@ def capture_age(capture: str, now_t: datetime | None = None) -> timedelta | None
 
 def _raw_get(url: str, limit: int = 1 << 16) -> tuple[int, dict, bytes]:
     """One GET without following redirects; returns (status, headers, first `limit` bytes)."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
+    req = urllib.request.Request(wire_url(url), headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
     try:
         resp = OPENER.open(req, timeout=120)
     except urllib.error.HTTPError as e:
@@ -485,12 +554,15 @@ def _raw_get(url: str, limit: int = 1 << 16) -> tuple[int, dict, bytes]:
         except Exception:  # noqa: BLE001
             pass
         return e.code, dict(e.headers or {}), body
-    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, http.client.HTTPException) as e:
         archive_transport_failed(url)
         raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}", side="capture") from e
     with resp:
         archive_response(url, resp.status, resp.headers)
-        return resp.status, dict(resp.headers), resp.read(limit)
+        try:
+            return resp.status, dict(resp.headers), resp.read(limit)
+        except (OSError, http.client.HTTPException) as e:
+            raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}", side="capture") from e
 
 
 def cdx_rows(original: str, ts: str) -> list[list[str]]:
@@ -660,7 +732,7 @@ def _decoder(encoding: str):
 def fetch(url: str) -> dict:
     """GET url; return status, content type, sha256 and size of the whole (decoded) body, and its
     first MAX_BODY bytes."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
+    req = urllib.request.Request(wire_url(url), headers={"User-Agent": UA, "Accept": "*/*", "Accept-Encoding": "identity"})
     h, size, head = hashlib.sha256(), 0, bytearray()
     try:
         with urllib.request.urlopen(req, timeout=120) as resp:
@@ -685,7 +757,8 @@ def fetch(url: str) -> dict:
         archive_response(url, e.code, e.headers)
         return {"status": e.code, "ctype": e.headers.get("Content-Type", "") if e.headers else "", "sha256": "",
                 "size": 0, "body": b""}
-    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, zlib.error) as e:
+    except (urllib.error.URLError, TimeoutError, ConnectionError, OSError, zlib.error,
+            http.client.HTTPException) as e:
         archive_transport_failed(url)
         raise VerifyRetry(f"{type(e).__name__}: {str(e)[:80]}") from e
     return {"status": status, "ctype": ctype, "sha256": h.hexdigest(), "size": size, "body": bytes(head)}
@@ -758,13 +831,16 @@ def verify_entry(url: str, e: dict, get=None) -> bool:
         return False
     try:
         status, info = verify(url, e["capture"], get)
-    except VerifyRetry as ex:
-        print("VERIFY-ERR", url, str(ex)[:80], flush=True)
-        if ex.side == "capture":  # archive.org trouble: leave the entry alone, try next run
+    except (VerifyRetry, ValueError, http.client.HTTPException) as ex:
+        # ValueError: a malformed capture or a URL urllib cannot send. That row
+        # counts against its own VERIFY_TRIES; it never ends the run (#1375).
+        why = str(ex) if isinstance(ex, VerifyRetry) else f"{type(ex).__name__}: {ex}"
+        print("VERIFY-ERR", url, why[:80], flush=True)
+        if isinstance(ex, VerifyRetry) and ex.side == "capture":  # archive.org trouble: try next run
             raise
         n = e.get("verify_tries", 0) + 1
         e["verify_tries"] = n
-        e["verify"] = {"at": iso(now()), "error": str(ex)[:120]}
+        e["verify"] = {"at": iso(now()), "error": why[:120]}
         if n >= VERIFY_TRIES:
             e["status"] = "unverified"
             e["verify"]["reason"] = f"could not fetch after {n} tries"
@@ -780,6 +856,26 @@ def mark_verify_deferred(e: dict, reason: str) -> None:
     info = dict(e.get("verify") or {})
     info.update(at=iso(now()), defer="manpc", error=reason[:120])
     e["verify"] = info
+
+
+def item_error(url: str, e: dict, ex: BaseException, tag: str) -> None:
+    """Record an unexpected per-row error and move on (#1375).
+
+    The status stays as it was, so the existing rules decide what happens next:
+    an "ok" row counts the miss against VERIFY_TRIES (and becomes "unverified"
+    at the limit) and waits RETRY_AFTER; a pending row ages out of the confirm
+    window and is resubmitted after STALE_PENDING_AGE."""
+    why = f"{type(ex).__name__}: {ex}"[:120]
+    print(tag, url, why, flush=True)
+    if e.get("status") == "ok":
+        n = e.get("verify_tries", 0) + 1
+        e["verify_tries"] = n
+        e["verify"] = {"at": iso(now()), "error": why}
+        if n >= VERIFY_TRIES:
+            e["status"] = "unverified"
+            e["verify"]["reason"] = f"could not check after {n} tries"
+    else:
+        e["error"] = why
 
 
 def try_verify(url: str, e: dict) -> None:
@@ -1154,6 +1250,8 @@ def delete_check(url: str, e: dict) -> tuple[bool, str]:
         ok, why = strict_check(cap)
     except VerifyRetry as ex:
         return False, f"retry: {ex}"
+    except (ValueError, http.client.HTTPException) as ex:
+        return False, f"retry: {type(ex).__name__}: {str(ex)[:80]}"
     finally:
         time.sleep(VERIFY_GAP_S)
     if ok and why != "ok":
@@ -1245,6 +1343,9 @@ def recheck_replay_only(done: dict, changed: dict, deadline: float) -> None:
         except VerifyRetry:
             print("archive.org not answering; replay-only recheck stops", flush=True)
             break
+        except (ValueError, http.client.HTTPException) as ex:
+            print("RECHECK-ERR", url, type(ex).__name__, str(ex)[:80], flush=True)
+            continue
         if ok:
             e["verify"]["rechecked"] = iso(now())
             if why == "ok":
@@ -1522,6 +1623,12 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         except StatusRetry as ex:
             print("CONFIRM-DEFER pending walk", str(ex)[:80], flush=True)
             break
+        except Paused:
+            raise
+        except Exception as ex:  # noqa: BLE001 - one bad row never ends the run (#1375)
+            item_error(url, done[url], ex, "CONFIRM-ERR")
+            changed[url] = done[url]
+            control.checkpoint(done, control.initial_done)
 
     # 2. save what is new or due a retry
     submitted: list[str] = []
@@ -1622,6 +1729,13 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
                 print("CONFIRM-DEFER", url, str(ex)[:80], flush=True)
                 submitted.clear()
                 break
+            except Paused:
+                raise
+            except Exception as ex:  # noqa: BLE001 - one bad row never ends the run (#1375)
+                item_error(url, done[url], ex, "CONFIRM-ERR")
+                changed[url] = done[url]
+                submitted.remove(url)
+                continue
             if done[url]["status"] != "pending" or "job_id" not in done[url]:
                 submitted.remove(url)
             time.sleep(1)
@@ -1648,6 +1762,11 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
                 changed[url] = done[url]
             print("VERIFY-DEFER backlog", url, str(ex)[:80], flush=True)
             break
+        except Paused:
+            raise
+        except Exception as ex:  # noqa: BLE001 - one bad row never ends the run (#1375)
+            item_error(url, done[url], ex, "VERIFY-ERR")
+            changed[url] = done[url]
         time.sleep(VERIFY_GAP_S)
 
     # 4b. re-check verified captures that CDX did not list yet
@@ -1699,6 +1818,20 @@ def persist_changes(repo: Path, done: dict, changed: dict, baseline: dict) -> No
 
 
 
+# archive.org (or our own source) refusing, resetting or timing out. These end
+# the step that hit them; they never fail the systemd run (#1375).
+TRANSIENT_RUN_ERRORS = (VerifyRetry, StatusRetry, urllib.error.URLError, TimeoutError,
+                        ConnectionError, http.client.HTTPException)
+
+
+def save_partial(repo: Path, control: Control) -> None:
+    """Checkpoint and push what this run changed before it stops early."""
+    changed = {u: e for u, e in control.done.items() if e != control.initial_done.get(u)}
+    control.checkpoint(control.done, control.initial_done)
+    persist_changes(repo, control.done, changed, control.initial_done)
+    control.ledger_saved()
+
+
 def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
     """One exclusive owner; provider/auth pauses survive Git resets and restarts."""
     global ACTIVE_CONTROL
@@ -1732,12 +1865,16 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                     _run(repo, minutes, control, native_object_ids=native_object_ids)
             except Paused as error:
                 outcome = "paused"
-                changed = {u:e for u,e in control.done.items()
-                           if e != control.initial_done.get(u)}
-                control.checkpoint(control.done, control.initial_done)
-                persist_changes(repo, control.done, changed, control.initial_done)
-                control.ledger_saved()
+                save_partial(repo, control)
                 print("WAYBACK-PAUSED", str(error), flush=True)
+            except TRANSIENT_RUN_ERRORS as error:
+                # Backstop (#1375): archive.org refusing or timing out on a path
+                # that did not defer by itself ends this run like a pause: a
+                # refusal sets the shared cooldown, the ledger is saved, exit 0.
+                outcome = "paused"
+                provider_refused(control, error, pause=False)
+                save_partial(repo, control)
+                print("WAYBACK-DEFER", type(error).__name__, str(error)[:120], flush=True)
             except BaseException:
                 outcome = "failed"
                 control.checkpoint(control.done, control.initial_done)
@@ -1750,6 +1887,16 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                     try:
                         adapter.finish(control.registry_deadline)
                         registry_recovered(control, "finish")
+                    except TRANSIENT_RUN_ERRORS as error:
+                        # archive.org refused/timed out while the owner checked a
+                        # capture: defer, back off on a refusal, never fail the run.
+                        finish_error = Paused(f"owner finish deferred: {type(error).__name__}")
+                        print("REGISTRY-FINISH-DEFER", type(error).__name__, str(error)[:100], flush=True)
+                        provider_refused(control, error, pause=False)
+                        try:
+                            control.checkpoint(control.done, control.initial_done)
+                        except Exception as journal_error:
+                            print("REGISTRY-JOURNAL-ERR", type(journal_error).__name__, flush=True)
                     except Exception as error:
                         finish_error = error
                         # Recreate/preserve acknowledged-job recovery even if Git saved.

@@ -6,6 +6,7 @@ keeps its one Control lock, accepted-job journal, provider circuit and timer.
 from __future__ import annotations
 
 import hashlib
+import http.client
 import json
 import os
 import shutil
@@ -64,9 +65,16 @@ class OwnerAdapter:
         self.observations = []
         self.last_capture_observation = None
         self.last_stage_bytes = 0
+        self.replay_deferred = False
 
     def healthy(self):
         return self.control.state.get("mode") == "healthy"
+
+    def _replay_unavailable(self, error):
+        """Transient archive.org replay/index trouble, not a finding about the source."""
+        retry = getattr(self.worker, "VerifyRetry", None)
+        return (isinstance(error, (OSError, http.client.HTTPException)) or
+                (retry is not None and isinstance(error, retry)))
 
     def _eligible(self, entry):
         request = entry["request"]
@@ -485,15 +493,30 @@ class OwnerAdapter:
                         approved_object_ids=object_ids,
                         accepted_job_id=legacy["job_id"], worker_entry_sha256=hashlib.sha256(canonical_bytes(legacy)).hexdigest()))
         capture = legacy.get("capture")
-        if not capture or not self.healthy() or time.monotonic() > deadline - 30:
+        if (not capture or not self.healthy() or self.replay_deferred or
+                time.monotonic() > deadline - 30):
             return "pending"
         _, original = self.worker.capture_parts(capture)
         if original != source["url"]:
             return "identity_mismatch"
-        good, why = self.worker.strict_check(capture)
-        if not good or why != "ok":
+        try:
+            good, why = self.worker.strict_check(capture)
+            if not good or why != "ok":
+                return "pending"
+            actual = self.worker.fetch(self.worker.id_url(capture))
+        except Paused:
+            raise
+        except Exception as error:
+            if not self._replay_unavailable(error):
+                raise
+            # archive.org refused, reset or timed out (#1375): this capture stays
+            # pending, no further replay request is made by this adapter, and a
+            # refusal sets the worker's shared cooldown (raises Paused there).
+            self.replay_deferred = True
+            hook = getattr(self.worker, "provider_refused", None)
+            if hook is not None:
+                hook(self.control, error)
             return "pending"
-        actual = self.worker.fetch(self.worker.id_url(capture))
         if actual.get("status") != 200:
             return "pending"
         self.last_capture_observation = {"capture": capture, "capture_original_url": original,
