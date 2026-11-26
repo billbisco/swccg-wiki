@@ -58,6 +58,7 @@ import hashlib
 import html
 import http.client
 import json
+import math
 import re
 import subprocess
 import zlib
@@ -83,14 +84,16 @@ from preservation_contracts import registration_object_id  # noqa: E402
 from wayback_control import Busy, Control, Paused, atomic_json  # noqa: E402
 import failed_capture_recovery as recovery  # noqa: E402
 import wayback_reliability as reliability  # noqa: E402
+import wayback_pace as pace  # noqa: E402
 
 UA = "swccg-wiki-preservation/1.0 (https://github.com/billbisco/swccg-wiki; wayback queue)"
 QUEUE = "ops/wayback/queue.txt"
 DONE = "ops/wayback/done.json"
 KEYS_FILE = Path(os.environ.get("IA_KEYS_FILE", "/etc/swccg-ops/archive-org-s3.env"))
 MAX_TRIES = 6
-GAP_S = Control.SUBMISSION_GAP  # minimum gap also survives owner restarts
-# 0 = uncapped (tests). Production systemd sets WAYBACK_MAX_SUBMITS=6.
+GAP_S = Control.SUBMISSION_GAP  # initial gap floor before pace-state.json exists (#1375)
+# Initial submit allowance before pace-state.json exists; afterwards
+# wayback_pace tunes it per run (#1375). 0 = wayback_pace.DEFAULT_INITIAL.
 MAX_SUBMITS_PER_RUN = int(os.environ.get("WAYBACK_MAX_SUBMITS") or "0")
 RETRY_AFTER = timedelta(minutes=30)
 CHECK_AFTER = timedelta(minutes=10)   # anonymous captures only
@@ -1538,7 +1541,8 @@ def native_capture_scope(control: Control, object_ids) -> set[str] | None:
 def ticket_policy_window(control: Control, explicit: set[str], deadline: float) -> set[str]:
     """Bill 2026-11-25 (#1359 Q1): ready registrations with a ticket are auto-approved.
 
-    The policy never changes the two-jobs-per-run promotion limit. Errors fall back
+    The policy only widens the approved cohort; how many of its jobs are promoted
+    per run is the adaptive queue-buffer cap in _run (#1375). Errors fall back
     to the explicit operator approvals only.
     """
     try:
@@ -1558,6 +1562,14 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     scope = native_capture_scope(control, native_object_ids)
     gap = max(GAP_S, 60) if scope is not None else GAP_S
     submit_limit = min(MAX_SUBMITS_PER_RUN or 6, 6) if scope is not None else MAX_SUBMITS_PER_RUN
+    stats = None
+    if scope is None:
+        # Self-tuning pace (#1375): the allowance comes from pace-state.json.
+        nominal = max(60.0, minutes * 60 - pace.SUBMIT_RESERVE_S)
+        plan = pace.load(control.directory, initial=MAX_SUBMITS_PER_RUN, initial_gap_s=GAP_S, usable_s=nominal)
+        submit_limit, gap = plan["allowance"], plan["gap_s"]
+        stats = control.pace_run = {"plan": plan, "allowance": submit_limit, "gap_s": gap, "submits": 0,
+                                    "refusals": 0, "usable_s": nominal}
     reset_to_origin(repo)
     urls, done = load(repo)
     control.done = done
@@ -1582,10 +1594,27 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
         allowed = load_allowed_objects(control.directory / "registry") if scope is None else set(native_object_ids)
         if scope is None:
             allowed = allowed | ticket_policy_window(control, allowed, deadline)
-        adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed,
-                               limit=2 if scope is None else len(allowed))
+            # Adaptive promotion (#1375): top queue.txt up to ~6 h of untried work.
+            buffer = pace.untried_buffer(urls, done)
+            target = pace.target_buffer(submit_limit)
+            cap = pace.promotion_cap(buffer, target)
+            seconds = min(pace.promote_seconds(), max(0.0, deadline - 60 - time.monotonic()))
+            promotion = control.pace_promotion = {"target_buffer": target, "buffer_before": buffer,
+                                                  "promoted": 0, "cap": cap, "seconds": 0.0}
+            print(f"promotion: buffer={buffer} target={target} cap={cap} budget_s={seconds:.0f}", flush=True)
+            adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed, limit=cap,
+                                   finish_limit=pace.finish_checks(), prepare_seconds=seconds)
+        else:
+            adapter = OwnerAdapter(sys.modules[__name__], repo, control, allowed, limit=len(allowed))
         control.registry_adapter = adapter
-        prepared = adapter.prepare(deadline)
+        started = time.monotonic()
+        try:
+            prepared = adapter.prepare(deadline)
+        finally:
+            if scope is None:
+                promotion["seconds"] = round(time.monotonic() - started, 1)
+        if scope is None:
+            promotion["promoted"] = prepared.get("prepared", 0)
         done.update(prepared["ledger_updates"])
         changed.update(prepared["ledger_updates"])
         registry_recovered(control, "prepare")
@@ -1633,6 +1662,17 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
     # 2. save what is new or due a retry
     submitted: list[str] = []
     save_attempts = 0
+    if stats is not None:
+        # Spread the allowance over the time actually left for submits. This is
+        # only our own spacing; provider cooldowns raise Paused before a submit.
+        gap = pace.plan_gap(submit_limit, deadline - pace.SUBMIT_RESERVE_S - time.monotonic(),
+                            stats["plan"]["bounds"]["gap_min_s"],
+                            GAP_S if stats["plan"].get("fresh") else 0.0)
+        stats["gap_s"] = gap
+        if isinstance(control, Control):
+            # Never longer than the sleep below, or may_submit would stop the loop.
+            control.SUBMISSION_GAP = max(1, math.floor(gap))
+        print(f"pace: allowance={submit_limit} gap={gap}s (self-tuned)", flush=True)
     # A half-open probe should prefer an already requested, uncomplicated source
     # with no previous failed or pending receipt, not an arbitrary historic retry.
     if isinstance(control,Control) and control.state.get('mode')=='half_open':
@@ -1672,6 +1712,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             if isinstance(control,Control):ensure_capacity(control)
             control.submitting(url)
             save_attempts += 1
+            if stats is not None:
+                stats["submits"] = save_attempts
             j = submit_capture(url, e, submission_session)
             if isinstance(control,Control):
                 consume_capacity(control)
@@ -1710,6 +1752,8 @@ def _run(repo: Path, minutes: float, control: Control, *, native_object_ids=None
             e = {"capture": (e or {}).get("capture", ""), "status": "retry" if tries < MAX_TRIES else "failed",
                  "tries": tries, "last": iso(now()), "error": str(ex)[:120]}
             errors_in_row += 1
+            if stats is not None and (_refused(ex) or "connection refused" in str(ex).lower()):
+                stats["refusals"] += 1
             print("ERROR", url, str(ex)[:120], flush=True)
         e.update(registry_epoch)
         done[url] = e
@@ -1832,6 +1876,31 @@ def save_partial(repo: Path, control: Control) -> None:
     control.ledger_saved()
 
 
+def finish_pace(control, outcome: str) -> None:
+    """AIMD step after an ordinary run (#1375). Never raises into the owner."""
+    try:
+        stats = getattr(control, "pace_run", None)
+        signals = list(getattr(control, "pace_signals", []) or [])
+        if not stats:
+            # Paused before any work (e.g. shared cooldown still active): the cut,
+            # if any, was recorded by the run that met the pushback.
+            print(f"PACE held: no submit window this run ({outcome}); pace-state unchanged", flush=True)
+            return
+        allowance = stats["allowance"]
+        new, reason, rate_limited = pace.decide(allowance, submits=stats["submits"], signals=signals,
+                                                refusals=stats["refusals"], outcome=outcome)
+        last_run = {"submits": stats["submits"], "refusals": stats["refusals"] + sum(
+                        1 for s in signals if s.get("kind") == "capacity" and s.get("reason") == "network_refused"),
+                    "rate_limited": rate_limited, "used_full_allowance": stats["submits"] >= allowance,
+                    "ended": pace.iso()}
+        saved = pace.record(control.directory, stats["plan"], new_allowance=new, reason=reason,
+                            last_run=last_run, gap_used_s=stats["gap_s"], usable_s=stats["usable_s"],
+                            promotion=getattr(control, "pace_promotion", None), at=last_run["ended"])
+        print(pace.journal_line(allowance, new, stats["gap_s"], saved["gap_s"], last_run, reason), flush=True)
+    except Exception as error:  # noqa: BLE001
+        print(f"PACE-ERR {type(error).__name__}: {str(error)[:120]}", flush=True)
+
+
 def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
     """One exclusive owner; provider/auth pauses survive Git resets and restarts."""
     global ACTIVE_CONTROL
@@ -1916,6 +1985,8 @@ def run(repo: Path, minutes: float, *, native_object_ids=None) -> None:
                 primary_completed = outcome == "completed"
                 if finish_error is not None and primary_completed:
                     outcome = "paused" if isinstance(finish_error, Paused) else "failed"
+                if native_object_ids is None:
+                    finish_pace(control, outcome)
                 health = control.health(control.done, outcome, recovery_counts=recovery.health(getattr(control, 'failed_recovery', None), control.done), stale_counts=reliability.stale_counts(getattr(control,'stale_jobs',None),control.done))
                 print("WAYBACK-HEALTH", json.dumps(health, sort_keys=True), flush=True)
                 if finish_error is not None and primary_completed and not isinstance(finish_error, Paused):

@@ -50,9 +50,15 @@ finish can record real accepted job IDs from existing receipts without network.
 
 ## Bounded staging, queue and version lifecycle
 
-The default is two attempted prepare jobs per run, with an exact-cohort cursor
-so early failures do not starve independent objects. Finish also rotates its
-bounded checks. Many filename/revision mappings share one exact SHA-256 payload
+Prepare attempts are sized per run from the queue buffer (#1375): the worker
+keeps about six hours of untried URLs in queue.txt (at least 100; allowance x
+runs per hour x 6) and attempts up to `target - buffer` jobs, capped by
+`WAYBACK_PROMOTE_MAX` (200) and `WAYBACK_PROMOTE_SECONDS` (150 s, never past
+deadline - 60). A bare adapter still defaults to two. An exact-cohort cursor
+keeps early failures from starving independent objects. All queue appends of
+one prepare are written with a single commit and push; their `queued` receipts
+are stored only after that push succeeds (a failed push stores none and rewinds
+the cursor). Finish rotates its own bounded checks (`WAYBACK_FINISH_CHECKS`, 20). Many filename/revision mappings share one exact SHA-256 payload
 job; each mapping is retained, with actual capture-host provenance preserved.
 
 Checked self-contained snapshots can be independently restored from their
@@ -136,6 +142,7 @@ object wins; hourly registry scan). `approved-objects.json` is not rewritten and
 keeps its operator role and 5,000-ID / 1 MiB guard. Each run the adapter gets the
 explicit approvals plus a first-approved-first window of policy objects that are
 still ready and not yet owner-verified, capped so the total stays within 5,000.
-The two-jobs-per-run promotion limit is unchanged. A policy error falls back to
+How many approved jobs are promoted per run is the adaptive buffer cap above
+(#1375); the policy only widens the cohort. A policy error falls back to
 the explicit approvals only. AIs register with a ticket; they do not hand-write
 approvals.

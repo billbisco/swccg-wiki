@@ -423,5 +423,75 @@ class OwnerTests(unittest.TestCase):
             export_records(self.registry)
 
 
+    # --- #1375: batched queue appends and separate promotion / finish limits ---
+    def add_distinct(self, i):
+        payload = b"distinct exact payload %d" % i
+        sha = hashlib.sha256(payload).hexdigest()
+        request = fixture(title=f"File:p{i}.png")
+        request["owner"] = SERVER_OWNER
+        url = f"https://wiki.swccg.com/images/p{i}.png"
+        for subject in (request["subject"], request["backup_receipt"]["subject"]):
+            subject.update(original_version_url=url, content_sha256=sha, bytes=len(payload))
+        request["backup_receipt"]["storage"]["path"] = "preservation/objects/" + sha + ".bin"
+        request["backup_receipt"]["verification"].update(restored_sha256=sha, restored_bytes=len(payload))
+        request["source"].update(url=url, sha256=sha, bytes=len(payload))
+        request["readiness"]["stage_bytes"] = len(payload)
+        result = register(self.registry, request)
+        self.allowed.add(result["object_id"])
+        self.responses[url] = {"status": 200, "sha256": sha, "size": len(payload)}
+        return request
+
+    def test_batched_enqueue_makes_one_push_for_many_urls_and_keeps_order(self):
+        requests = [self.add_distinct(i) for i in range(5)]
+        queue = self.repo / self.worker.QUEUE
+        queue.parent.mkdir(parents=True)
+        queue.write_text("https://example.org/older\n" + requests[2]["source"]["url"] + "\n", encoding="utf-8")
+        result = self.adapter(limit=10).prepare(time.monotonic() + 300)
+        self.assertEqual(5, result["prepared"])
+        self.assertEqual(1, len(self.commits))
+        lines = queue.read_text().splitlines()
+        self.assertEqual(["https://example.org/older", requests[2]["source"]["url"]], lines[:2])
+        self.assertEqual(6, len(lines))
+        self.assertEqual(len(lines), len(set(lines)))
+        self.assertEqual(sorted(r["source"]["url"] for r in requests), sorted(lines[1:]))
+        for request in requests:
+            self.assertEqual("queued", load_event(self.registry, request["source"])["state"])
+
+    def test_failed_batch_push_stores_no_queued_events_and_rewinds_cursor(self):
+        requests = [self.add_distinct(i) for i in range(3)]
+        def reject(repo, paths, message, redo):
+            redo()
+            raise RuntimeError("push rejected")
+        self.worker.commit_and_push = reject
+        with patch("builtins.print"), self.assertRaisesRegex(RuntimeError, "push rejected"):
+            self.adapter(limit=10).prepare(time.monotonic() + 300)
+        for request in requests:
+            self.assertIsNone(load_event(self.registry, request["source"]))
+        cursor = json.loads((self.registry / "owner-prepare-cursor.json").read_text())
+        self.assertEqual("", cursor["after"])
+        # Next run with a working push queues all of them.
+        self.worker.commit_and_push = lambda repo, paths, message, redo: self.commits.append(redo())
+        self.assertEqual(3, self.adapter(limit=10).prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(1, len(self.commits))
+
+    def test_promotion_limit_and_time_budget_bound_prepare(self):
+        for i in range(5):
+            self.add_distinct(i)
+        self.assertEqual(2, self.adapter(limit=2).prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(1, len(self.commits))
+        self.assertEqual(0, self.adapter(limit=10, prepare_seconds=-1).prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(0, self.adapter(limit=0).prepare(time.monotonic() + 300)["prepared"])
+        self.assertEqual(1, len(self.commits))
+
+    def test_finish_uses_its_own_limit(self):
+        for i in range(4):
+            request = self.add_distinct(i)
+            url = request["source"]["url"]
+            self.control.done[url] = {"status": "ok", "capture": "https://web.archive.org/web/20261114000000/" + url}
+        self.assertEqual(1, self.adapter(limit=0, finish_limit=1).finish(time.monotonic() + 300))
+        self.assertEqual(3, self.adapter(limit=200, finish_limit=3).finish(time.monotonic() + 300))
+        self.assertEqual(2, self.adapter(limit=2).finish(time.monotonic() + 300))
+
+
 if __name__ == "__main__":
     unittest.main()
