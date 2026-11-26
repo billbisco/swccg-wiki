@@ -137707,14 +137707,17 @@
  "https://swccg.com/snapshots/pc/2025-corellia-regionals-kendall-halman-ls-rescue-the-princess-v.html": {
   "capture": "https://web.archive.org/web/20261104171340/https://swccg.com/snapshots/pc/2025-corellia-regionals-kendall-halman-ls-rescue-the-princess-v.html",
   "job_id": "spn2-82b0a97a4c6b3be7ff1df1f95bae23245f9a61c4",
-  "last": "2026-11-04T17:21:09Z",
-  "status": "unverified",
+  "last": "2026-11-26T01:26:45Z",
+  "status": "verified",
   "tries": 2,
   "verify": {
-   "at": "2026-11-04T17:21:09Z",
+   "at": "2026-11-26T01:16:27Z",
+   "bytes": 7121124,
    "capture_id": "https://web.archive.org/web/20261104171340id_/https://swccg.com/snapshots/pc/2025-corellia-regionals-kendall-halman-ls-rescue-the-princess-v.html",
-   "method": "strict",
-   "reason": "redirects to another capture 20261025074732 (no capture at 20261104171340)"
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "109ffeaff3c4755bfb2f4c1850b2fe2ef6c95e56a804bf5ab93fd20795d37c31"
   }
  },
  "https://swccg.com/snapshots/pc/2025-corellia-regionals-ryan-sersen-ds-cct.html": {
@@ -175172,6 +175175,13 @@
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
+ "https://swccg.com/wiki/Erik_Spijksma": {
+  "capture": "",
+  "job_id": "spn2-d63cc4a37d25dc642ebfcb7f1ba681beadf29a75",
+  "last": "2026-11-26T01:33:19Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125180413/https://swccg.com/wiki/File:2025_World_Championship_Barry_Alperstein_game_4_October.jpg",
   "job_id": "spn2-6378736d489d4526643dd858efa3210b0df26b55",
@@ -175200,6 +175210,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "d567c068963fafa738ecdd51b1bb4d843e09a0205a18ff37cb8e6d7d5da37b12"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_Benji_Chu_and_Brian_Fred_handshake.jpg": {
+  "capture": "https://web.archive.org/web/20261126013119/https://swccg.com/wiki/File:2025_World_Championship_Benji_Chu_and_Brian_Fred_handshake.jpg",
+  "job_id": "spn2-de88954fa37ac1b6ad50781cbc88ec01e864bcd5",
+  "last": "2026-11-26T01:37:32Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:37:32Z",
+   "bytes": 27240,
+   "capture_id": "https://web.archive.org/web/20261126013119id_/https://swccg.com/wiki/File:2025_World_Championship_Benji_Chu_and_Brian_Fred_handshake.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "30bff5527b4d62f0fa9167391645f96447e389943193e6d43551d4facd325603"
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_Benji_Chu_grey_table_4_October.jpg": {
@@ -175941,12 +175966,15 @@
   "capture": "https://web.archive.org/web/20261126005824/https://swccg.com/wiki/File:2025_World_Championship_board_game_5_October_1553.jpg",
   "job_id": "spn2-491b45ac33022e393c7e1c70be476bd1598bd799",
   "last": "2026-11-26T00:59:59Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-26T00:59:59Z",
-   "defer": "manpc",
-   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-26T01:37:40Z",
+   "bytes": 26019,
+   "capture_id": "https://web.archive.org/web/20261126005824id_/https://swccg.com/wiki/File:2025_World_Championship_board_game_5_October_1553.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "fbc21979486352f308e2e05dd64d2ef74b3e6f7ee2d95421c2881712ad9dfdf0"
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_crowd_4_October_evening.jpg": {
@@ -176211,6 +176239,13 @@
    "error": "URLError: <urlopen error [Errno 111] Connection refused>"
   }
  },
+ "https://swccg.com/wiki/File:2025_World_Championship_green_bottle_table_4_October_evening.jpg": {
+  "capture": "",
+  "job_id": "spn2-6e29bb7b46aa1e332efb3d7e65f5a214c89c0776",
+  "last": "2026-11-26T01:36:22Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/File:2025_World_Championship_green_hoodie_table_4_October_evening.jpg": {
   "capture": "https://web.archive.org/web/20261125220137/https://swccg.com/wiki/File:2025_World_Championship_green_hoodie_table_4_October_evening.jpg",
   "last": "2026-11-25T22:19:50Z",
@@ -176265,6 +176300,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "82e895086db536f9e38fbc2fdb3c3ee0d0ed262827d445a32f6b37ded27bcac7"
+  }
+ },
+ "https://swccg.com/wiki/File:2025_World_Championship_group_photograph.jpg": {
+  "capture": "https://web.archive.org/web/20261126013301/https://swccg.com/wiki/File:2025_World_Championship_group_photograph.jpg",
+  "job_id": "spn2-88107a54351e0328c31b353204f07c0b6f5a88ea",
+  "last": "2026-11-26T01:37:37Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:37:37Z",
+   "bytes": 38525,
+   "capture_id": "https://web.archive.org/web/20261126013301id_/https://swccg.com/wiki/File:2025_World_Championship_group_photograph.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "95b68ea375a23244e3baebc19b9574652adbf8adf46e531841d656be39fbce4c"
   }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_hall_4_October_1402.jpg": {
@@ -176416,9 +176466,17 @@
  },
  "https://swccg.com/wiki/File:2025_World_Championship_hall_Steve_Harpster_5_October.jpg": {
   "capture": "https://web.archive.org/web/20261126011010/https://swccg.com/wiki/File:2025_World_Championship_hall_Steve_Harpster_5_October.jpg",
-  "last": "2026-11-26T01:12:35Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T01:27:09Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:27:12Z",
+   "bytes": 27064,
+   "capture_id": "https://web.archive.org/web/20261126011010id_/https://swccg.com/wiki/File:2025_World_Championship_hall_Steve_Harpster_5_October.jpg",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "e3d03f154b382025be1cbde11fd734e6c475deb9a6f28f69873c57b99711d988"
+  }
  },
  "https://swccg.com/wiki/File:2025_World_Championship_hall_afternoon_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125181532/https://swccg.com/wiki/File:2025_World_Championship_hall_afternoon_4_October.jpg",
@@ -184187,11 +184245,15 @@
   }
  },
  "https://swccg.com/wiki/images/8/8b/2025_World_Championship_hall_black_polo_and_tan_jacket_5_October.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126012229/https://swccg.com/wiki/images/8/8b/2025_World_Championship_hall_black_polo_and_tan_jacket_5_October.jpg",
   "job_id": "spn2-614bd5ed75f7804b44cf4afc9acaf69764d0916a",
-  "last": "2026-11-26T01:21:47Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T01:27:08Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:27:08Z",
+   "defer": "cdx-batch"
+  }
  },
  "https://swccg.com/wiki/images/8/8b/Dagobah-Revised-D-vinesnake-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261120223819/https://swccg.com/wiki/images/8/8b/Dagobah-Revised-D-vinesnake-physical-photo.png",
@@ -184371,6 +184433,17 @@
   "status": "retry",
   "tries": 1
  },
+ "https://swccg.com/wiki/images/9/91/2025_World_Championship_hall_Steve_Harpster_5_October.jpg": {
+  "capture": "https://web.archive.org/web/20261126012714/https://swccg.com/wiki/images/9/91/2025_World_Championship_hall_Steve_Harpster_5_October.jpg",
+  "job_id": "spn2-56c3638c6c8b8fa91e5613568b745a89eeae878d",
+  "last": "2026-11-26T01:37:23Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:37:23Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/9/91/2026_EC_Wallin_DS_AOBS.txt": {
   "capture": "https://web.archive.org/web/20261125112441/https://swccg.com/wiki/images/9/91/2026_EC_Wallin_DS_AOBS.txt",
   "job_id": "spn2-075925daabe486ca29e28134119c93f5c0f9c86e",
@@ -184548,6 +184621,13 @@
    "at": "2026-11-25T10:47:26Z",
    "defer": "cdx-batch"
   }
+ },
+ "https://swccg.com/wiki/images/9/96/2025_World_Championship_Benji_Chu_and_Brian_Fred_handshake.jpg": {
+  "capture": "",
+  "job_id": "spn2-1a395e07acdb6d8d8a3e93647f742f80a301a176",
+  "last": "2026-11-26T01:34:21Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/images/9/96/2025_World_Championship_Mike_Turner_and_Jacy_Smith_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125134325/https://swccg.com/wiki/images/9/96/2025_World_Championship_Mike_Turner_and_Jacy_Smith_4_October.jpg",
@@ -185951,6 +186031,17 @@
    "sha256": "5ea10d91723a78941cdef6fa5ec2357d43b9d47cb19c493f163416e21ee5517e"
   }
  },
+ "https://swccg.com/wiki/images/b/b7/Greg_Shaw_2025_World_Championship_congratulated.jpg": {
+  "capture": "https://web.archive.org/web/20261126012816/https://swccg.com/wiki/images/b/b7/Greg_Shaw_2025_World_Championship_congratulated.jpg",
+  "job_id": "spn2-56b6fbee5d3774cfb68bcef24de5fa3f34dc3b2d",
+  "last": "2026-11-26T01:37:24Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:37:24Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/b/b7/Players_Committee_2023_Donations_Program_survey_4.png": {
   "capture": "https://web.archive.org/web/20261125081310/https://swccg.com/wiki/images/b/b7/Players_Committee_2023_Donations_Program_survey_4.png",
   "job_id": "spn2-7cf2987650b9ae39f8d9fb572166aca22642a3f3",
@@ -186673,11 +186764,15 @@
   }
  },
  "https://swccg.com/wiki/images/c/c7/2025_World_Championship_hall_black_T-shirt_5_October.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126012350/https://swccg.com/wiki/images/c/c7/2025_World_Championship_hall_black_T-shirt_5_October.jpg",
   "job_id": "spn2-59186148a6f59a30f417db7bd561f8e359909814",
-  "last": "2026-11-26T01:23:49Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T01:27:04Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:27:04Z",
+   "defer": "cdx-batch"
+  }
  },
  "https://swccg.com/wiki/images/c/c8/2015_Alderaan_Regionals.pdf": {
   "capture": "https://web.archive.org/web/20261125120543/https://swccg.com/wiki/images/c/c8/2015_Alderaan_Regionals.pdf",
@@ -186769,11 +186864,15 @@
   }
  },
  "https://swccg.com/wiki/images/c/c9/2025_World_Championship_hall_green_hoodie_5_October.jpg": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261126012249/https://swccg.com/wiki/images/c/c9/2025_World_Championship_hall_green_hoodie_5_October.jpg",
   "job_id": "spn2-86c53f793e992cf0e29071adfe8576eec4ab1727",
-  "last": "2026-11-26T01:22:48Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-26T01:27:06Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:27:06Z",
+   "defer": "cdx-batch"
+  }
  },
  "https://swccg.com/wiki/images/c/c9/Dagobah-Revised-D-commandergherant-physical-photo.png": {
   "capture": "https://web.archive.org/web/20261122081156/https://swccg.com/wiki/images/c/c9/Dagobah-Revised-D-commandergherant-physical-photo.png",
@@ -187608,6 +187707,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/d/df/Greg_Shaw_2025_World_Championship_congratulated_2.jpg": {
+  "capture": "https://web.archive.org/web/20261126012919/https://swccg.com/wiki/images/d/df/Greg_Shaw_2025_World_Championship_congratulated_2.jpg",
+  "job_id": "spn2-54c3d4ff05ab79ebdcd17985ba17bde1f3c8df09",
+  "last": "2026-11-26T01:37:26Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:37:26Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/d/df/Nick_Swedal_2025_World_Championship_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125202434/https://swccg.com/wiki/images/d/df/Nick_Swedal_2025_World_Championship_4_October.jpg",
   "job_id": "spn2-0a402d96346806aa1632a89a04efcfb9ed1ae511",
@@ -187763,6 +187873,13 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/e/e3/2025_World_Championship_group_photograph.jpg": {
+  "capture": "",
+  "job_id": "spn2-f772e5b4dc1b7da1e3e579a162aee84f2d8aeba0",
+  "last": "2026-11-26T01:35:22Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://swccg.com/wiki/images/e/e3/John_Anderson_memorial_scoreboard_2019_Twins_game.jpg": {
   "capture": "https://web.archive.org/web/20261125051259/https://swccg.com/wiki/images/e/e3/John_Anderson_memorial_scoreboard_2019_Twins_game.jpg",
   "job_id": "spn2-ba476e03510870275b1cad16efad40a1f964d751",
@@ -187857,6 +187974,17 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "2d0c1b200c77a20f8b03021821f760bfa60e9d12a071a4984a9729ba5740ee16"
+  }
+ },
+ "https://swccg.com/wiki/images/e/e5/Greg_Shaw_2025_World_Championship_celebration.jpg": {
+  "capture": "https://web.archive.org/web/20261126013017/https://swccg.com/wiki/images/e/e5/Greg_Shaw_2025_World_Championship_celebration.jpg",
+  "job_id": "spn2-6409b5b2f4601b40dab7589295418dc74a63d3de",
+  "last": "2026-11-26T01:37:28Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-26T01:37:28Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/e/e6/2021_World_Championship_crystal_awards_2.jpg": {
