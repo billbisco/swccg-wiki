@@ -108,6 +108,61 @@ _CARDLINK = re.compile(
 )
 _WIKILINK = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
 
+_NOWIKI_EMPTY = re.compile(r"<nowiki\s*/>", re.I)
+_NOWIKI_WRAP = re.compile(r"<nowiki>(.*?)</nowiki>", re.I | re.S)
+
+
+def strip_wiki_quotes(s):
+    """Plain text of a wikitext value without its italic/bold marks ('' ''' ''''') or <nowiki/>
+    separators, e.g. "''Executor''<nowiki/>'s" -> "Executor's", "''Executor'''s" -> "Executor's".
+    Card |title=, |model= and |subtype= carry italics as printed since swccg-guild/work#1379; strip
+    them before comparing or exporting (swccg-guild/work#1380). Apostrophe runs are read as
+    MediaWiki's doQuotes reads them; text inside <nowiki>...</nowiki> is kept as written."""
+    kept = []
+
+    def keep(m):
+        kept.append(m.group(1))
+        return "\x01%d\x02" % (len(kept) - 1)
+
+    s = _NOWIKI_WRAP.sub(keep, _NOWIKI_EMPTY.sub("", s or ""))
+    lines = []
+    for line in s.split("\n"):
+        parts = re.split(r"('{2,})", line)
+        n_it = n_b = 0
+        for i in range(1, len(parts), 2):
+            n = len(parts[i])
+            if n == 4:  # ' + bold
+                parts[i - 1] += "'"
+                n = 3
+            elif n > 5:  # extra apostrophes + bold italic
+                parts[i - 1] += "'" * (n - 5)
+                n = 5
+            parts[i] = "'" * n
+            n_it += n in (2, 5)
+            n_b += n in (3, 5)
+        if n_it % 2 and n_b % 2:
+            # one ''' is really an apostrophe + '' (MediaWiki: after a one-letter word, else after a
+            # longer word, else after a space)
+            single = multi = space = None
+            for i in range(1, len(parts), 2):
+                if len(parts[i]) != 3:
+                    continue
+                x1, x2 = parts[i - 1][-1:], parts[i - 1][-2:-1]
+                if x1 == " ":
+                    space = space or i
+                elif x2 == " ":
+                    single = i
+                    break
+                else:
+                    multi = multi or i
+            pick = single or multi or space
+            if pick:
+                parts[pick - 1] += "'"
+                parts[pick] = "''"
+        lines.append("".join(parts[0::2]))
+    return re.sub("\x01(\\d+)\x02", lambda m: kept[int(m.group(1))], "\n".join(lines))
+
+
 _INDEX: dict[tuple[str, str], list[dict]] | None = None
 
 
@@ -309,7 +364,7 @@ def page_card_fields(title: str) -> dict:
         if im:
             out["image"] = im.group(1).strip()
         if ti:
-            out["title"] = ti.group(1).strip()
+            out["title"] = strip_wiki_quotes(ti.group(1)).strip()  # #1380: |title= carries printed italics
     except Exception:
         out = {}
     _PAGE_CACHE[title] = out
