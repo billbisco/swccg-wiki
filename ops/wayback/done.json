@@ -198114,11 +198114,19 @@
   "tries": 1
  },
  "https://swccg.com/wiki/index.php?oldid=327050&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127033105/https://swccg.com/wiki/index.php?oldid=327050&action=raw",
   "job_id": "spn2-106e70ab733bce9a9e971af687f81a438bdf07d1",
-  "last": "2026-11-27T02:59:03Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T03:38:37Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T03:38:37Z",
+   "bytes": 1290,
+   "capture_id": "https://web.archive.org/web/20261127033105id_/https://swccg.com/wiki/index.php?oldid=327050&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5b35e30d040fa95a5c72cd7452f8f0e120175c2d17908298c786dab7bf26c07a"
+  }
  },
  "https://swccg.com/wiki/index.php?oldid=331645&action=raw": {
   "capture": "https://web.archive.org/web/20261126211627/https://swccg.com/wiki/index.php?oldid=331645&action=raw",
@@ -200760,11 +200768,16 @@
   }
  },
  "https://wiki.swccg.com/index.php?oldid=307236&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127032259/https://swccg.com/wiki/index.php?oldid=307236&action=raw",
   "job_id": "spn2-88886342a99b51abf4131a39d9970230e752e957",
-  "last": "2026-11-27T02:53:03Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T03:38:41Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T03:38:41Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://wiki.swccg.com/index.php?oldid=307240&action=raw": {
   "capture": "https://web.archive.org/web/20261127025915/https://swccg.com/wiki/index.php?oldid=307240&action=raw",
@@ -200817,11 +200830,19 @@
   "tries": 1
  },
  "https://wiki.swccg.com/index.php?oldid=307380&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127033457/https://swccg.com/wiki/index.php?oldid=307380&action=raw",
   "job_id": "spn2-6c67cb6836dc56c1f889baf5e7e9c90f85cd9197",
-  "last": "2026-11-27T03:01:50Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T03:38:32Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T03:38:32Z",
+   "bytes": 4164,
+   "capture_id": "https://web.archive.org/web/20261127033457id_/https://swccg.com/wiki/index.php?oldid=307380&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "5c04d3d2d7512082ba4a23d1aa5e28c54ae907fe3200e03706badb7d46c30129"
+  }
  },
  "https://wiki.swccg.com/index.php?oldid=307381&action=raw": {
   "capture": "",
@@ -210565,9 +210586,18 @@
  "https://www.stephenskilton.com/decktech_archives/17021/": {
   "capture": "https://web.archive.org/web/20261023120453/https://www.stephenskilton.com/decktech_archives/17021/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T09:16:59Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-27T03:37:27Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-27T03:15:54Z",
+   "bytes": 15711,
+   "capture_id": "https://web.archive.org/web/20261023120453id_/https://www.stephenskilton.com/decktech_archives/17021/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "e8b84350e312dae090c74e16eeb8bcf1d8e33c5d4178fba5e365769e2a8c2bdf"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/17025/": {
   "capture": "https://web.archive.org/web/20261023120509/https://www.stephenskilton.com/decktech_archives/17025/",
