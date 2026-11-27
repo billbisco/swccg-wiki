@@ -194051,6 +194051,17 @@
    "sha256": "b0cee61f739ce812b4391f30a8cb5820adcb0f0618eb25e05ccac690d2e1167e"
   }
  },
+ "https://swccg.com/wiki/images/b/bf/Obi-Wan-V-Errata2-stamp-crop.png": {
+  "capture": "https://web.archive.org/web/20261127134312/https://swccg.com/wiki/images/b/bf/Obi-Wan-V-Errata2-stamp-crop.png",
+  "job_id": "spn2-77f98a3c30cad2745fe413602cb5401e1e749885",
+  "last": "2026-11-27T13:45:49Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T13:45:49Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/b/bf/Original_Virtual_Set_6_card_slips.pdf": {
   "capture": "https://web.archive.org/web/20261127112850/https://swccg.com/wiki/images/b/bf/Original_Virtual_Set_6_card_slips.pdf",
   "job_id": "spn2-9851d91ec2dc1cd33a282ab633a557701b463be9",
@@ -194789,6 +194800,17 @@
    "lane": "cdx-sha1",
    "method": "cdx-sha1",
    "sha1_b32": "QIWQAYLCTBAVZ4VD4CSUM2VR7AEAKJ3I"
+  }
+ },
+ "https://swccg.com/wiki/images/c/cb/2012_North_American_Championship_Day_2_decklists.pdf": {
+  "capture": "https://web.archive.org/web/20261127134040/https://swccg.com/wiki/images/c/cb/2012_North_American_Championship_Day_2_decklists.pdf",
+  "job_id": "spn2-485cf4a876f2646070634abe954110190ad3bbcc",
+  "last": "2026-11-27T13:45:46Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T13:45:46Z",
+   "defer": "cdx-batch"
   }
  },
  "https://swccg.com/wiki/images/c/cb/2013_European_Championship_Day_2_decklists.pdf": {
@@ -198744,6 +198766,13 @@
    "at": "2026-11-27T12:00:36Z",
    "defer": "cdx-batch"
   }
+ },
+ "https://swccg.com/wiki/index.php?oldid=326356&action=raw": {
+  "capture": "",
+  "job_id": "spn2-d821d9e14417af3d50a8424e9adc84b2b6bbc412",
+  "last": "2026-11-27T13:38:08Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://swccg.com/wiki/index.php?oldid=326365&action=raw": {
   "capture": "https://web.archive.org/web/20261126210449/https://swccg.com/wiki/index.php?oldid=326365&action=raw",
@@ -208696,11 +208725,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/15450/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025223722/https://www.stephenskilton.com/decktech_archives/15450/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T01:53:02Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-27T13:38:06Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-27T13:38:06Z",
+   "bytes": 11535,
+   "capture_id": "https://web.archive.org/web/20261025223722id_/https://www.stephenskilton.com/decktech_archives/15450/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "c6c02d6123b4b31f46e1040669c0325c5128942f67a7bafeca7f4d0062a756e4"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15456/": {
   "capture": "",
