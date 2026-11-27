@@ -94,6 +94,8 @@ PC VM calls are killed after about 3 minutes and background processes don't surv
 
 ## Rules learned the hard way
 
+- Before deleting an alias or redirect as "unsourced", look for the evidence where the wiki keeps it: the File pages of images on the target (their Source lines), the redirect's own creation summary, and the target's talk page and history. If a creation note asserts a fact, verify it, or keep the name and ask Bill; don't call it unsourced. (27 Nov: Charyl Teal was deleted as unsourced, but the portrait's File page already cited her married name.)
+
 - Never let a shared template reuse a member page's `<ref name=…>`. Member pages define the same names with slightly different text, which causes "defined multiple times" cite errors. errgen now prefixes `errgen-`.
 - `card_params` must not split on `|` inside `<gallery>`/`<ref>`.
 - Playtest printings are not published text states (no Errata column). Some pages count them in "version N of M" and some don't.
