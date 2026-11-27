@@ -198977,11 +198977,19 @@
   "tries": 1
  },
  "https://swccg.com/wiki/index.php?oldid=326765&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127121046/https://swccg.com/wiki/index.php?oldid=326765&action=raw",
   "job_id": "spn2-e31fae462705f3dcc91f1257dc21533f300e2dab",
-  "last": "2026-11-27T11:23:06Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T12:15:57Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T12:15:57Z",
+   "bytes": 1093,
+   "capture_id": "https://web.archive.org/web/20261127121046id_/https://swccg.com/wiki/index.php?oldid=326765&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "65f9ab26f870d4ae3c726b0295d35b14b6c178352809a28873dfb35043d37381"
+  }
  },
  "https://swccg.com/wiki/index.php?oldid=326767&action=raw": {
   "capture": "https://web.archive.org/web/20261126211259/https://swccg.com/wiki/index.php?oldid=326767&action=raw",
@@ -199331,11 +199339,16 @@
   "tries": 1
  },
  "https://swccg.com/wiki/index.php?oldid=333693&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127120657/https://swccg.com/wiki/index.php?oldid=333693&action=raw",
   "job_id": "spn2-1229d862060632e7e69f26b107a4efd13f8250ea",
-  "last": "2026-11-27T11:18:09Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T12:16:00Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T12:16:00Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0": {
   "capture": "https://web.archive.org/web/20260929063927/https://swccgdb.com/decklist/view/1/1996-world-champion-light-1.0",
