@@ -69754,9 +69754,10 @@
  },
  "https://github.com/swccgpc/holotable/commit/9d2c01ed1603f793dc8a0569c99d4b544378da9b": {
   "capture": "",
+  "error": "error:not-found",
   "job_id": "spn2-61e63d4b6a1d9ecf110de7b2a656bc4631d8c379",
-  "last": "2026-11-27T14:41:16Z",
-  "status": "pending",
+  "last": "2026-11-27T15:35:54Z",
+  "status": "retry",
   "tries": 1
  },
  "https://github.com/swccgpc/holotable/commit/ab7441976d996222d5b7235219576492a00bd1e2": {
@@ -72944,11 +72945,19 @@
   }
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/4eae65c9866121593416.wiki": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127153414/https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/4eae65c9866121593416.wiki",
   "job_id": "spn2-c35b9aef9cc6bc58fa359b740a792d63559fb3a8",
-  "last": "2026-11-27T14:50:30Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T15:35:48Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T15:35:48Z",
+   "bytes": 2684,
+   "capture_id": "https://web.archive.org/web/20261127153414id_/https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/4eae65c9866121593416.wiki",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "4e4967cef0f020f4ea62a510b8f45662907f5be656e9d63494e500f7b095a494"
+  }
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/8b44414fddde68254ae8.wiki": {
   "capture": "",
@@ -72973,11 +72982,16 @@
   }
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/ebc9263e303ae33382e5ff49e641908363791ec3/authoring/pilots/611/review-gap/drafts/be2a3e84fb21bc944256.wiki": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127152156/https://raw.githubusercontent.com/billbisco/swccg-wiki/ebc9263e303ae33382e5ff49e641908363791ec3/authoring/pilots/611/review-gap/drafts/be2a3e84fb21bc944256.wiki",
   "job_id": "spn2-ad9041aa61ddac424585914380e7bc9f684b13d5",
-  "last": "2026-11-27T14:39:29Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T15:35:59Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T15:35:59Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/ebc9263e303ae33382e5ff49e641908363791ec3/authoring/pilots/611/review-gap/drafts/ca6ebdfa4eb281c032a2.wiki": {
   "capture": "https://web.archive.org/web/20261127145807/https://raw.githubusercontent.com/billbisco/swccg-wiki/ebc9263e303ae33382e5ff49e641908363791ec3/authoring/pilots/611/review-gap/drafts/ca6ebdfa4eb281c032a2.wiki",
@@ -209271,11 +209285,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/15495/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025224913/https://www.stephenskilton.com/decktech_archives/15495/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T02:05:29Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-27T15:35:37Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-27T15:35:37Z",
+   "bytes": 10578,
+   "capture_id": "https://web.archive.org/web/20261025224913id_/https://www.stephenskilton.com/decktech_archives/15495/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "7904c5a4e9c57fa7f33db9b3d72efdd98cf868e5a5a4660b204ccfc1e38131e5"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15498/": {
   "capture": "https://web.archive.org/web/20261023082843/https://www.stephenskilton.com/decktech_archives/15498/",
@@ -223522,11 +223544,17 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-11-05-coruscant-civil-war-2d1422/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127152739/https://www.stephenskilton.com/decktech_archives/reports/2000-11-05-coruscant-civil-war-2d1422/",
   "job_id": "spn2-44eb48968533f8ec06257975eb6143c8970b6cec",
-  "last": "2026-11-27T14:44:49Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T15:35:53Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T15:35:53Z",
+   "capture_id": "https://web.archive.org/web/20261127152739id_/https://www.stephenskilton.com/decktech_archives/reports/2000-11-05-coruscant-civil-war-2d1422/",
+   "method": "strict",
+   "reason": "redirects to another capture 20261025152205 (no capture at 20261127152739)"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/reports/2000-11-19-the-short-report-from-norm-11-18-00-aacd1473/": {
   "capture": "https://web.archive.org/web/20261027132659/https://www.stephenskilton.com/decktech_archives/reports/2000-11-19-the-short-report-from-norm-11-18-00-aacd1473/",
