@@ -9,7 +9,7 @@
 {{#if:{{{display_title|{{{original_title|}}}}}}|<tr><th>[[Virtual cards#Display Title|Display Title]]</th><td>{{#switch:{{{original_title_italic|}}}|yes=''{{{display_title|{{{original_title|}}}}}}''|#default={{{display_title|{{{original_title|}}}}}}{{#if:{{{original_title_italic|}}}|<br/><small>(italic: ''{{{original_title_italic}}}'')</small>}}}}</td></tr>}}
 {{#if:{{{margin_note|}}}|<tr><th>[[Virtual cards#Margin Note|Margin Note]]</th><td>{{{margin_note}}}</td></tr>}}
 {{#if:{{{underlying_card|}}}|<tr><th>[[Virtual cards#Underlying Card|Underlying Card]]</th><td>{{{underlying_card}}}</td></tr>}}
-<tr><th>Side</th><td>[[{{{side}}}]]</td></tr>
+<tr><th>Side</th><td>[[{{#switch:{{{side}}}|Dark=Dark Side|Light=Light Side|#default={{{side}}}}}|{{{side}}}]]</td></tr>
 <tr><th>{{{label_type|Type}}}</th><td>{{#if:{{{type_display|}}}|{{{type_display|}}}|[[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>— [[{{{subtype_link}}}{{!}}{{{subtype}}}]]}}{{#if:{{{model|}}}|<nowiki> </nowiki>({{{model}}})}}}}</td></tr>
 <tr><th>Set</th><td>{{#if:{{{set_display|}}}|{{{set_display|}}}|[[{{Set page|{{{set}}}}}|{{{set}}}]]}}</td></tr>
 {{#if:{{{language|}}}|{{#if:{{{language|}}}|<tr><th>{{{label_language|Printed language}}}</th><td>{{{language_display|{{#language:{{{language|en}}}|en}}}}}</td></tr>|}}{{#if:{{{edition|}}}|<tr><th>Edition</th><td>{{{edition|}}}</td></tr>|}}{{#if:{{{border_finish|}}}|<tr><th>Border / finish</th><td>{{{border_finish|}}}</td></tr>|}}{{#if:{{{release|}}}|<tr><th>Release</th><td>{{{release|}}}</td></tr>|}}{{#if:{{{size|}}}|<tr><th>Size</th><td>{{{size|}}}</td></tr>|}}{{#if:{{{year|}}}|<tr><th>Year</th><td>{{{year|}}}</td></tr>|}}|}}<tr><th>Set icon</th><td>{{#if:{{{set_icon|{{{expansion_icon|}}}}}}|{{{set_icon|{{{expansion_icon|}}}}}}|{{#switch:{{{set|}}}|Premiere Limited|Premiere Unlimited|Premiere Two-Player|Premiere Two-Player Introductory Game|Premiere|Japanese Premiere|Japanese Premiere Two-Player|ESB Two-Player=none|#default=}}}}</td></tr>
@@ -54,7 +54,7 @@
 {{#if:{{{extra_info|}}}|{{{extra_info|}}}|}}</table>
 </div>{{#if:{{{hatnote|}}}|<div class="card-hatnote">''{{{hatnote}}}''</div>}}
 <div class="card-body">
-{{#if:{{{lead|}}}|{{{lead|}}}|'''{{{title}}}''' is a [[{{{side}}}]] [[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>([[{{{subtype_link}}}{{!}}{{{subtype}}}]])}} from [[{{Set page|{{{set}}}}}|{{{set}}}]].}}
+{{#if:{{{lead|}}}|{{{lead|}}}|'''{{{title}}}''' is a [[{{#switch:{{{side}}}|Dark=Dark Side|Light=Light Side|#default={{{side}}}}}|{{{side}}}]] [[{{{type}}}]]{{#if:{{{subtype|}}}|<nowiki> </nowiki>([[{{{subtype_link}}}{{!}}{{{subtype}}}]])}} from [[{{Set page|{{{set}}}}}|{{{set}}}]].}}
 
 {{#if:{{{printed_title|}}}|<nowiki />
 <h2>Title</h2>
