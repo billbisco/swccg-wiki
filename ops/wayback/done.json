@@ -63608,9 +63608,18 @@
  },
  "https://api.github.com/repos/swccgpc/holotable/git/commits/12d0bca60d8b85645ae7a6604003ce24123ce97c": {
   "capture": "https://web.archive.org/web/20261127145403/https://api.github.com/repos/swccgpc/holotable/git/commits/12d0bca60d8b85645ae7a6604003ce24123ce97c",
-  "last": "2026-11-27T15:53:45Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T16:09:47Z",
+  "status": "unverified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T16:09:49Z",
+   "capture_id": "https://web.archive.org/web/20261127145403id_/https://api.github.com/repos/swccgpc/holotable/git/commits/12d0bca60d8b85645ae7a6604003ce24123ce97c",
+   "capture_sha256": "90e122668b95910306ac3ef445ea43b25aa3316eae284764b80330382dc69497",
+   "index": "cdx",
+   "method": "sha256",
+   "reason": "file differs from the source",
+   "sha256": "5271bbe266c5323d333500f50293a3732f3ab230f754eae34650cca609e9c2af"
+  }
  },
  "https://api.github.com/repos/swccgpc/holotable/git/commits/422d2ae00c7d5e8b247435ea650a8685714bc358": {
   "capture": "https://web.archive.org/web/20261127153701/https://api.github.com/repos/swccgpc/holotable/git/commits/422d2ae00c7d5e8b247435ea650a8685714bc358",
@@ -72915,6 +72924,13 @@
    "sha256": "4df20bf470ca56f8d39cf1ad7a98ebaa5dd54c839a1ee5aced930514b97c474f"
   }
  },
+ "https://raw.githubusercontent.com/billbisco/swccg-wiki/010124473d8434f3a745e6643c21b6782d44abcd/authoring/pilots/611/drafts/fb3adcfcdc64574fb3f4.wiki": {
+  "capture": "",
+  "job_id": "spn2-bbf84d6ef99ab8afdb5ce55f037bdc756cfc1cb0",
+  "last": "2026-11-27T16:12:32Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/3bf59012d8d3d3032cc282b080e974dbaae327d8/authoring/pilots/611/review-records/drafts/5fb330604b079d592d6f.wiki": {
   "capture": "https://web.archive.org/web/20261127154012/https://raw.githubusercontent.com/billbisco/swccg-wiki/3bf59012d8d3d3032cc282b080e974dbaae327d8/authoring/pilots/611/review-records/drafts/5fb330604b079d592d6f.wiki",
   "job_id": "spn2-6927d489cf54bcf7ddb6f71f2ac723fc9b821ad3",
@@ -72989,6 +73005,13 @@
    "method": "sha256",
    "sha256": "50815964a289eb5f2a2faa99d145d28b90f893f33b9246bd5649792633cc581f"
   }
+ },
+ "https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/b22a96eb3348c13605cc.wiki": {
+  "capture": "",
+  "job_id": "spn2-37d9fcbf69b2b9d1c7017312a5cf2bf92e66ffac",
+  "last": "2026-11-27T16:09:52Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/c34544b4f6dccabe1835.wiki": {
   "capture": "https://web.archive.org/web/20261126225138/https://raw.githubusercontent.com/billbisco/swccg-wiki/cfd5ae0666598422bdf5dcd381b75e8adf6eb795/authoring/pilots/615/prepublication/drafts/c34544b4f6dccabe1835.wiki",
@@ -73184,6 +73207,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "19c5d23cf7dcb1190e948836fb5d8b116cf7ddde3ebc9dd492eb426160d354fe"
+  }
+ },
+ "https://raw.githubusercontent.com/swccgpc/holotable/ab7441976d996222d5b7235219576492a00bd1e2/Images-HT/starwars/Virtual0-Light/large/klorslug.gif": {
+  "capture": "https://web.archive.org/web/20261127161513/https://raw.githubusercontent.com/swccgpc/holotable/ab7441976d996222d5b7235219576492a00bd1e2/Images-HT/starwars/Virtual0-Light/large/klorslug.gif",
+  "job_id": "spn2-2c0323d2ff1782c481455a5ec167ccae4d84fa2b",
+  "last": "2026-11-27T16:18:07Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T16:18:07Z",
+   "bytes": 403817,
+   "capture_id": "https://web.archive.org/web/20261127161513id_/https://raw.githubusercontent.com/swccgpc/holotable/ab7441976d996222d5b7235219576492a00bd1e2/Images-HT/starwars/Virtual0-Light/large/klorslug.gif",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "511a6e665171f17c9a9e70c6ce10d4587ca01e96df82bf2dc15db9c4b4025e18"
   }
  },
  "https://raw.githubusercontent.com/swccgpc/holotable/b4a011ace2799d9e188578c4043193ff94a7a06c/Images-HT/starwars/Virtual16-Dark/large/avenger.gif": {
@@ -209414,11 +209452,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/15523/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025224337/https://www.stephenskilton.com/decktech_archives/15523/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T02:07:37Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-27T16:09:45Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-27T16:09:45Z",
+   "bytes": 12294,
+   "capture_id": "https://web.archive.org/web/20261025224337id_/https://www.stephenskilton.com/decktech_archives/15523/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "713b6e3f1744a6ed231d484283f3a3ebf3392331f1b9796d40e8fcf04ca8bffb"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15524/": {
   "capture": "",
