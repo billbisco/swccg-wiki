@@ -73292,11 +73292,16 @@
   "tries": 1
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/eb7d96a599b1cd559d2ed99c3e4eadf992afbf73/authoring/pilots/384/set1-names/drafts/233ccf691a25.wiki": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127191442/https://raw.githubusercontent.com/billbisco/swccg-wiki/eb7d96a599b1cd559d2ed99c3e4eadf992afbf73/authoring/pilots/384/set1-names/drafts/233ccf691a25.wiki",
   "job_id": "spn2-fa8536580e1ba7b7d555be163438fd2e14e0fe56",
-  "last": "2026-11-27T18:30:01Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T19:16:29Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T19:16:29Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://raw.githubusercontent.com/billbisco/swccg-wiki/ebc9263e303ae33382e5ff49e641908363791ec3/authoring/pilots/611/review-gap/drafts/1a8536718a5779da13f7.wiki": {
   "capture": "https://web.archive.org/web/20261127171137/https://raw.githubusercontent.com/billbisco/swccg-wiki/ebc9263e303ae33382e5ff49e641908363791ec3/authoring/pilots/611/review-gap/drafts/1a8536718a5779da13f7.wiki",
@@ -210188,11 +210193,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/15572/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025225529/https://www.stephenskilton.com/decktech_archives/15572/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T02:46:00Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-27T19:16:19Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-27T19:16:19Z",
+   "bytes": 12442,
+   "capture_id": "https://web.archive.org/web/20261025225529id_/https://www.stephenskilton.com/decktech_archives/15572/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "1ac422bc6cf7917fa9b249608c1906da2562177f34f422b69478c70d75f77a50"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15573/": {
   "capture": "",
