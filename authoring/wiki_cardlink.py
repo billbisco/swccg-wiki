@@ -112,6 +112,17 @@ _NOWIKI_EMPTY = re.compile(r"<nowiki\s*/>", re.I)
 _NOWIKI_WRAP = re.compile(r"<nowiki>(.*?)</nowiki>", re.I | re.S)
 
 
+# swccg-guild/work#1382 (Bill, Option B): card |game_text= and |lore= keep apostrophes and quote marks
+# exactly as the card prints them, curly or straight. Comparisons treat the styles as one character.
+QUOTE_FOLD = str.maketrans({"\u2019": "'", "\u2018": "'", "\u201c": '"', "\u201d": '"'})
+
+
+def fold_quotes(s):
+    """Comparison key only: curly ’ ‘ -> ' and “ ” -> " (swccg-guild/work#1382). Never write the result
+    back to a wiki page; the page keeps the marks the card prints."""
+    return (s or "").translate(QUOTE_FOLD)
+
+
 def strip_wiki_quotes(s):
     """Plain text of a wikitext value without its italic/bold marks ('' ''' ''''') or <nowiki/>
     separators, e.g. "''Executor''<nowiki/>'s" -> "Executor's", "''Executor'''s" -> "Executor's".
@@ -189,7 +200,7 @@ def lookup_key(title: str) -> str:
     t = _VSH.sub("", t)
     t = _DARK.sub("", t)
     t = re.sub(r"\s+", " ", t).strip()
-    return t
+    return fold_quotes(t)  # #1382: curly and straight marks are the same key
 
 
 def wiki_file_name(card: dict) -> str | None:
@@ -216,7 +227,7 @@ def _index_card(out: dict[tuple[str, str], list[dict]], card: dict) -> None:
     title = strip_uniqueness(front.get("title") or "")
     if not title or not side:
         return
-    keys = {title, lookup_key(title)}
+    keys = {fold_quotes(title), lookup_key(title)}
     if " / " in title:
         keys.add(title.split(" / ", 1)[0])
     if "/" in title and " / " not in title:

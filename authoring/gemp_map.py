@@ -25,6 +25,7 @@ import sys
 from pathlib import Path
 
 import gemp_importable as gi
+from wiki_cardlink import fold_quotes
 
 ROOT = Path(__file__).resolve().parent
 OVERRIDES = ROOT / "gemp-card-overrides.tsv"
@@ -141,7 +142,7 @@ def in_target(card_id: str) -> bool:
 
 
 def _norm(t: str) -> str:
-    t = t.replace("•", "").replace("’", "'").replace("“", '"').replace("”", '"')
+    t = fold_quotes(t.replace("•", ""))  # #1382: ’ ‘ = ', “ ” = " (was missing ‘)
     return re.sub(r"\s+", " ", t).strip().casefold()
 
 

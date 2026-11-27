@@ -17,6 +17,8 @@ import unicodedata
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+from wiki_cardlink import fold_quotes
+
 ROOT = Path(__file__).resolve().parent
 GEMP_ROOT = ROOT.parent
 CARD_DB = (
@@ -933,6 +935,14 @@ def lookup(
         for t in titles_to_try(title):
             cf = t.casefold()
             exact = [c for c in pool if (c.get("title") or "").casefold() == cf]
+            if exact:
+                cands = exact
+                break
+    if not cands:
+        # swccg-guild/work#1382: the wiki keeps the card's own marks (’ or '); GEMP may store the other style
+        for t in titles_to_try(title):
+            cf = fold_quotes(t).casefold()
+            exact = [c for c in pool if fold_quotes(c.get("title") or "").casefold() == cf]
             if exact:
                 cands = exact
                 break
