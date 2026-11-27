@@ -66,6 +66,9 @@ def fetch(titles):
                 got[p["title"]] = (r["revid"], r["slots"]["main"]["content"])
         for t in chunk:
             out[t] = got.get(norm.get(t, t), (0, None))
+            ov = os.environ.get("ERRGEN_OVERLAY")
+            if ov and os.path.exists(os.path.join(ov, fname(t))):
+                out[t] = (out[t][0], open(os.path.join(ov, fname(t))).read())
     return out
 
 
@@ -164,6 +167,8 @@ def bullets(eh, self_title):
         # "version N of M" counts only published versions
         if re.search(r"\(Playtest(?: \d+)?\)$", page) or re.match(r"(?i)playtest", m.group(1).strip()):
             continue
+        if out and out[-1][1] == page:
+            continue  # a later publication bullet on the same article (same-words re-made image): same column
         out.append((m.group(1).strip(), page, body))
     return out
 
@@ -198,11 +203,66 @@ def bullet_ref(b, date, slug, idx):
 
 
 # ---------------------------------------------------------------- normalisation & diff
+_NOWIKI_EMPTY = re.compile(r"<nowiki\s*/>", re.I)
+_NOWIKI_WRAP = re.compile(r"<nowiki>(.*?)</nowiki>", re.I | re.S)
+
+
+def strip_wiki_quotes(s):
+    """Plain text of a wikitext value without its italic/bold marks ('' ''' ''''') or <nowiki/>
+    separators, e.g. "''Executor''<nowiki/>'s" -> "Executor's", "''Executor'''s" -> "Executor's".
+    Card |title=, |model= and |subtype= carry italics as printed since swccg-guild/work#1379; strip
+    them before comparing or exporting (swccg-guild/work#1380). Apostrophe runs are read as
+    MediaWiki's doQuotes reads them; text inside <nowiki>...</nowiki> is kept as written."""
+    kept = []
+
+    def keep(m):
+        kept.append(m.group(1))
+        return "\x01%d\x02" % (len(kept) - 1)
+
+    s = _NOWIKI_WRAP.sub(keep, _NOWIKI_EMPTY.sub("", s or ""))
+    lines = []
+    for line in s.split("\n"):
+        parts = re.split(r"('{2,})", line)
+        n_it = n_b = 0
+        for i in range(1, len(parts), 2):
+            n = len(parts[i])
+            if n == 4:  # ' + bold
+                parts[i - 1] += "'"
+                n = 3
+            elif n > 5:  # extra apostrophes + bold italic
+                parts[i - 1] += "'" * (n - 5)
+                n = 5
+            parts[i] = "'" * n
+            n_it += n in (2, 5)
+            n_b += n in (3, 5)
+        if n_it % 2 and n_b % 2:
+            # one ''' is really an apostrophe + '' (MediaWiki: after a one-letter word, else after a
+            # longer word, else after a space)
+            single = multi = space = None
+            for i in range(1, len(parts), 2):
+                if len(parts[i]) != 3:
+                    continue
+                x1, x2 = parts[i - 1][-1:], parts[i - 1][-2:-1]
+                if x1 == " ":
+                    space = space or i
+                elif x2 == " ":
+                    single = i
+                    break
+                else:
+                    multi = multi or i
+            pick = single or multi or space
+            if pick:
+                parts[pick - 1] += "'"
+                parts[pick] = "''"
+        lines.append("".join(parts[0::2]))
+    return re.sub("\x01(\\d+)\x02", lambda m: kept[int(m.group(1))], "\n".join(lines))
+
+
 def plain(s):
-    s = s or ""
+    s = (s or "").replace("{{!}}", "|")
     s = re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]", r"\1", s)
-    s = s.replace("'''", "").replace("''", "")
-    s = re.sub(r"<[^>]+>", " ", s)
+    s = strip_wiki_quotes(s)  # #1380: also drops <nowiki/> (was a space) and keeps the ' of ''X'''s
+    s = re.sub(r"</?[A-Za-z][^<>]*>", " ", s)  # PATCH-A only real tags: card text has "< 4", prose "--->"
     s = html.unescape(s)
     s = s.translate(str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"', "–": "-", "—": "-"}))
     return s
@@ -549,10 +609,18 @@ def main():
                 if k > 0:
                     k2 = b.find("Document:", k)
                     seg = b[:k] + (b[k2:] if k2 > 0 else "")
-            quoted = re.findall(r"“([^”]{15,})”", seg)
+            quoted = re.findall(r"“((?:[^“”]|“[^“”]*”){15,})”", seg)
+            quoted = [re.sub(r"<s>.*?</s>", "", qq) for qq in quoted]
             sides = [re.sub(r"^\s*'''[^'\n]{1,40}:'''\s*", "", s) for s in re.split(r"\n\s*\n", gt)
                      if s.strip() and not re.fullmatch(r"\s*'''[^'\n]+'''\s*", s)]
-            if quoted:
+            if quoted and re.search(r"drops icons|spelling of the [^.]{0,40}icon", b):
+                # PATCH-B: the prose says the card list wrote icons as words and the page restored the slip's icons
+                sides = [re.sub(r"\[(Immune to [A-Za-z ]+)\]", r"\1", s_) for s_ in sides]
+            # PATCH-C: prose says the quote differs from the page only in notation and nothing changed
+            notation_only = bool(re.search(r"which is notation|notation only", b)) and "What changed:''' nothing" in b
+            if quoted and notation_only:
+                notes.append("%s: prose says its quote differs only in notation; page game_text used" % pg)
+            elif quoted:
                 qhay = " \u00a6 ".join(quoted)
                 miss = [s for s in sides if not contained(s, qhay)]
                 # a side the prose does not quote at all is a partial quote, not a conflict:
@@ -575,7 +643,7 @@ def main():
             vals = {"__title": printed_title(x, p)}
             for f, _ in STAT_FIELDS + [("lore", ""), ("game_text", ""), ("errata_mark", "")]:
                 vals[f] = pval(x, p, f)
-            vers.append(dict(page=pg, label=label_of(pg), vlabel=bl[i][0], date=date, ref=ref,
+            vers.append(dict(page=pg, label=(bl[i][0] if (i > 0 and label_of(pg) == "Original") else label_of(pg)), vlabel=bl[i][0], date=date, ref=ref,
                              preserved=preserved, url=url, vals=vals))
         if cbad:
             refuse(key, fam, "conflicting text sources: " + "; ".join(cbad)); continue
@@ -588,6 +656,8 @@ def main():
                 if f in ("errata_mark",):
                     continue  # absent mark = no mark printed
                 partial.append("%s (%s)" % (lab, ", ".join(v["page"] for v, pr in zip(vers, pres) if not pr)))
+        _ok = set(z.strip() for z in os.environ.get("ERRGEN_ABSENT_OK", "").split(";") if z.strip())  # PATCH-D
+        partial = [pp for pp in partial if "%s|%s" % (fam, pp.split(" (")[0]) not in _ok]
         if partial:
             refuse(key, fam, "field present on some members only (cannot tell if it changed): " + "; ".join(partial)); continue
 
@@ -604,7 +674,7 @@ def main():
         folded = ["%s→%s" % (v["page"], s[0]["page"]) for s in states for v in s[1:]]
         # prose cross-check: a fold must not hide a described wording change, a column must not
         # contradict prose that says the words are unchanged
-        SAME = re.compile(r"words are unchanged|same words|[Ww]ords unchanged|words and mark are unchanged")
+        SAME = re.compile(r"words are unchanged|same words|[Ww]ords unchanged|words and mark are unchanged|words (?:of the game text )?are the same")
         pbad = []
         for j, s in enumerate(states):
             for k, v in enumerate(s):
@@ -614,9 +684,10 @@ def main():
                 b = [x for x in bullets(eh, v["page"]) if x[1] == v["page"]]
                 wc = b[0][2] if b else ""
                 wc = wc[wc.find("What changed"):] if "What changed" in wc else ""
+                wc = re.sub(r"<ref[^>]*?/>|<ref[^>]*>.*?</ref>", "", wc, flags=re.S)  # citation text is not prose about the words
                 if k > 0 and "became" in wc and not SAME.search(wc):
                     pbad.append("%s folded but its prose says text 'became' something else" % v["page"])
-                if k == 0 and SAME.search(wc) and not re.search(r"became|\(was |is gone|are gone|[Nn]ew: |removed|added", wc):
+                if k == 0 and SAME.search(wc) and not re.search(r"became|→|\(was |is gone|are gone|[Nn]ew: |removed|added", wc):
                     prev = states[j - 1][0]
                     if (prev["vals"].get("game_text") or "") != (v["vals"].get("game_text") or ""):
                         pbad.append("%s: game_text differs from the previous state but its prose says the words are unchanged" % v["page"])
@@ -680,6 +751,9 @@ def main():
                     prev = "none"
                 if re.sub(r"\s+", " ", plain(prev)).strip() == re.sub(r"\s+", " ", plain(cur)).strip():
                     cells.append("—")
+                elif not cur and f != "errata_mark":
+                    cells.append(hl("none"))  # PATCH-D: field printed before, absent now (approved via ERRGEN_ABSENT_OK)
+                    own[j] = True
                 elif f in NUMERIC or f in ("uniqueness", "errata_mark", "subtype", "model"):
                     cells.append(hl(cell(cur)) if cur else "—")
                     own[j] = True

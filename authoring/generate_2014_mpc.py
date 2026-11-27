@@ -18,6 +18,7 @@ import generate_2015_2016 as g15  # noqa: E402
 from generate_2019_2021 import tidy_player_page, wiki_fname  # noqa: E402
 from generate_2026_sdso import load_bp_simple  # noqa: E402
 import _parse_htd as htd  # noqa: E402
+from wiki_cardlink import strip_wiki_quotes  # noqa: E402
 
 PAGES = ROOT / "pages"
 STUBS = PAGES / "player-stubs"
@@ -351,7 +352,7 @@ def load_wiki_types() -> dict[str, str]:
         ty = re.search(r"\|type=([^\n]+)", head)
         if not tm or not ty:
             continue
-        title = tm.group(1).strip()
+        title = strip_wiki_quotes(tm.group(1)).strip()  # #1380: |title= carries printed italics
         typ = ty.group(1).strip()
         key = re.sub(r"\s+", " ", title.lower())
         idx.setdefault(key, typ)
