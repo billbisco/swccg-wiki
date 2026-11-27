@@ -198131,11 +198131,16 @@
   "tries": 1
  },
  "https://swccg.com/wiki/index.php?oldid=326677&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127052358/https://swccg.com/wiki/index.php?oldid=326677&action=raw",
   "job_id": "spn2-74d88e1452df92373d7a5b2f1cf8c1a4bc69ce43",
-  "last": "2026-11-27T04:32:45Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T05:45:12Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T05:45:12Z",
+   "defer": "manpc",
+   "error": "capture: URLError: <urlopen error [Errno 111] Connection refused>"
+  }
  },
  "https://swccg.com/wiki/index.php?oldid=326678&action=raw": {
   "capture": "https://web.archive.org/web/20261126211238/https://swccg.com/wiki/index.php?oldid=326678&action=raw",
@@ -198298,9 +198303,8 @@
   }
  },
  "https://swccg.com/wiki/index.php?oldid=331553&action=raw": {
-  "capture": "",
-  "job_id": "spn2-c2cb2d098fa5864cec4975f70753d25a1297f07a",
-  "last": "2026-11-27T04:41:08Z",
+  "capture": "https://web.archive.org/web/20261127053242/https://swccg.com/wiki/index.php?oldid=331553&action=raw",
+  "last": "2026-11-27T05:45:07Z",
   "status": "pending",
   "tries": 1
  },
@@ -201250,11 +201254,19 @@
   }
  },
  "https://wiki.swccg.com/index.php?title=Black_2_%28V%29_%28Errata%29&oldid=306888&action=raw": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261127053718/https://swccg.com/wiki/index.php?title=Black_2_%28V%29_%28Errata%29&oldid=306888&action=raw",
   "job_id": "spn2-eb28a3fdbd505d27de30e9b076f32eaebc65ae0b",
-  "last": "2026-11-27T04:45:37Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-27T05:45:05Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-27T05:45:05Z",
+   "bytes": 8408,
+   "capture_id": "https://web.archive.org/web/20261127053718id_/https://swccg.com/wiki/index.php?title=Black_2_%28V%29_%28Errata%29&oldid=306888&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6015a563d0ac8f786a86c0bc497a7fca20724b7679e783fa2170f0febbb2b516"
+  }
  },
  "https://wiki.swccg.com/index.php?title=Blaster_Rack&oldid=306893&action=raw": {
   "capture": "https://web.archive.org/web/20261126200922/https://swccg.com/wiki/index.php?title=Blaster_Rack&oldid=306893&action=raw",
@@ -204469,11 +204481,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/14714/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261027143149/https://www.stephenskilton.com/decktech_archives/14714/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-13T23:30:11Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-27T05:44:59Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-27T05:44:59Z",
+   "bytes": 12304,
+   "capture_id": "https://web.archive.org/web/20261027143149id_/https://www.stephenskilton.com/decktech_archives/14714/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "d34197b70ef8e049bb2be341a31970630e8400ea73b12083e050c128f8a5c690"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/14718/": {
   "capture": "",
