@@ -2,7 +2,33 @@
 
 Written by Claude on 25 Nov 2026 so another agent (Grok Build or anyone) can continue without asking. Bill's three launch-critical wiki tracks are on his dashboard (link on [#1325](https://github.com/swccg-guild/work/issues/1325)). Track 2: every card family has a correct shared Versions navigator. Track 3: an Errata comparison table wherever it makes sense.
 
-## State (25 Nov 2026, evening UTC)
+## State (27 Nov 2026, evening UTC)
+
+| Ticket | What | State |
+|---|---|---|
+| #1376 | Printed card text instead of GEMP wording | Done 27 Nov (closed). VS5/VS7 title scheme live (166 moves). Follow-ups in #1385, then #1387 |
+| #1379, #1380, #1381 | Card italics as printed; tools strip `''`; title capitals | Done (closed) |
+| #1382 | Quote marks/apostrophes **as printed** (Bill 27 Nov, Option B) | Live on 4,878 pages + 589 bold-lore fixes. Tools fold quotes (PR #205). Low-res pages listed in each `r1382-*/residual.json` |
+| #716 | Errata tables | Done 27 Nov (closed). Follow-ups in #1384 |
+| #1383 | CardMaker re-render (Dash/Bossk), low-res lore re-read | Open |
+| #1384 | Errata leftovers: scans, unreadable icons, Set 0 slips, Mystery lookups | Open (items 4 and 7 done) |
+| #1385 | VS9/VS11/VS13–17 title scheme + version labels | Done 27 Nov (closed) |
+| #1386 | Redirects left: 8,831 `Card:<id>` pages (D13), 125 search-only aliases | **Bill decides** |
+| #1387 | VS9–11 Remaster titles, 2007 re-edits, `version_label=virtual` | Agent r1387 drafting |
+
+**Redirect round 3 (27 Nov):** ~21,300 links repointed, then 5,232 redirects deleted. Records: `ops/redirects-deleted-2026-11-27.tsv` and `ops/redirects-kept-2026-11-27.tsv`. Template:Card's Side link now targets Dark Side/Light Side. Still waiting:
+- `Championships`: the swccg.com front page links it; no access to billbisco/swccg-frontpage.
+- `Reflections III: A Collector's Bounty`: GEMP #917 is on Test, and Play is not deployed (the auto-mode classifier blocked `vps-deploy.sh play`; Bill to run it).
+- `R2-D2 & •C-3PO`: a `Card:` chain, part of #1386.
+
+**Apply notes learned 27 Nov:**
+- MediaWiki merges non-overlapping edits by itself when baserevid is stale, so `apply_guarded` reports a conflict only on same-line clashes.
+- For same-line quote/fix clashes, a character-level `git merge-file` (one char per line) merges cleanly. Script is in the session's cm82v step; rebuild it if needed.
+- `backup_api.py` handles 1,000 titles in about 50 s, so the 125 cap is gone. It skips Talk pages.
+- The job queue on the wiki does not drain by itself after big template edits. Run `docker exec swccg_wiki php maintenance/run.php runJobs --type refreshLinks --maxtime 3000` on the VPS (nohup).
+- `mvpages.py` moves the talk page too. When a batch lists talk pages as separate rows, use a copy without `movetalk` (`mvpages_notalk.py`). moves.tsv must have exactly 3 columns.
+
+## Earlier state (25 Nov 2026, evening UTC)
 
 **Track 2 is done:** the census (3,786 families) shows 0 open gaps ([evidence/1325 at b9dfa77](https://github.com/swccg-guild/work/tree/b9dfa77c6e9eab1189e946779ef2d0ac3c4d9c10/evidence/1325)). #1325, #1341–#1348, #576, #596 and #1353 are closed. Decided splits and rulings live in `rulings.tsv`, which census.py reads; add a row there for every new evidence-based ruling, so decided cases stay out of gaps.tsv.
 
