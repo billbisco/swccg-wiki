@@ -73293,6 +73293,13 @@
    "sha256": "19c5d23cf7dcb1190e948836fb5d8b116cf7ddde3ebc9dd492eb426160d354fe"
   }
  },
+ "https://raw.githubusercontent.com/swccgpc/holotable/ab7441976d996222d5b7235219576492a00bd1e2/Images-HT/starwars/Virtual0-Dark/large/imperialdecree.gif": {
+  "capture": "",
+  "job_id": "spn2-37ea89efa1d4e64604c708e1dbc730d4b064b355",
+  "last": "2026-11-27T16:47:09Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://raw.githubusercontent.com/swccgpc/holotable/ab7441976d996222d5b7235219576492a00bd1e2/Images-HT/starwars/Virtual0-Light/large/klorslug.gif": {
   "capture": "https://web.archive.org/web/20261127161513/https://raw.githubusercontent.com/swccgpc/holotable/ab7441976d996222d5b7235219576492a00bd1e2/Images-HT/starwars/Virtual0-Light/large/klorslug.gif",
   "job_id": "spn2-2c0323d2ff1782c481455a5ec167ccae4d84fa2b",
@@ -198534,12 +198541,17 @@
  "https://swccg.com/wiki/images/f/f7/2021_World_Championship_feature_table_game_5.jpg": {
   "capture": "https://web.archive.org/web/20261127114409/https://swccg.com/wiki/images/f/f7/2021_World_Championship_feature_table_game_5.jpg",
   "job_id": "spn2-97483cb2c122fcf2e167ad60c10116658f89aff0",
-  "last": "2026-11-27T11:49:03Z",
-  "status": "ok",
+  "last": "2026-11-27T16:46:31Z",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-27T11:49:03Z",
-   "defer": "cdx-batch"
+   "at": "2026-11-27T16:46:05Z",
+   "bytes": 6148608,
+   "capture_id": "https://web.archive.org/web/20261127114409id_/https://swccg.com/wiki/images/f/f7/2021_World_Championship_feature_table_game_5.jpg",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "6708e0502f979aedbfa609129aa91534fbb312bc9f671f7bc727aa53c0b05f85"
   }
  },
  "https://swccg.com/wiki/images/f/f7/2024_Online_Championship_Series_July_game_count.png": {
@@ -206414,13 +206426,17 @@
  "https://www.stephenskilton.com/decktech_archives/14704/": {
   "capture": "https://web.archive.org/web/20261025203030/https://www.stephenskilton.com/decktech_archives/14704/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-27T05:32:03Z",
-  "status": "unverified",
+  "last": "2026-11-27T16:46:31Z",
+  "status": "verified",
   "tries": 6,
   "verify": {
-   "at": "2026-11-27T05:32:03Z",
-   "defer": "manpc",
-   "error": "recovery replay unavailable"
+   "at": "2026-11-27T16:45:56Z",
+   "bytes": 12089,
+   "capture_id": "https://web.archive.org/web/20261025203030id_/https://www.stephenskilton.com/decktech_archives/14704/",
+   "index": "cdx",
+   "lane": "manpc",
+   "method": "sha256",
+   "sha256": "b8c5a28c2925cde197a3d7fe9eb6e401108808125d59f829e2e157b0920e63be"
   }
  },
  "https://www.stephenskilton.com/decktech_archives/14711/": {
@@ -209587,11 +209603,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/15532/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025225027/https://www.stephenskilton.com/decktech_archives/15532/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T02:11:19Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-27T16:46:57Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-27T16:46:57Z",
+   "bytes": 11588,
+   "capture_id": "https://web.archive.org/web/20261025225027id_/https://www.stephenskilton.com/decktech_archives/15532/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "624aaf9862319bf2bb2e7cc938dcb0c5a5193fe7029f847fa8a82ad2ef6b748d"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15534/": {
   "capture": "",
