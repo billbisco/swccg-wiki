@@ -258,13 +258,25 @@ def strip_wiki_quotes(s):
     return re.sub("\x01(\\d+)\x02", lambda m: kept[int(m.group(1))], "\n".join(lines))
 
 
+# swccg-guild/work#1382 (Bill, Option B): |game_text= and |lore= keep apostrophes and quote marks as the
+# card prints them, curly (’ ‘ “ ”) or straight. Comparisons treat the two styles as one character; the
+# drafts always show each page's own text. A quote-style-only difference is real but cosmetic: never a
+# column and never an Errata hl, only a table note (quote_note).
+QUOTE_FOLD = str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"'})
+
+
+def fold_quotes(s):
+    """Comparison key only: ’ ‘ -> ', “ ” -> " (never written to a page)."""
+    return (s or "").translate(QUOTE_FOLD)
+
+
 def plain(s):
     s = (s or "").replace("{{!}}", "|")
     s = re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]", r"\1", s)
     s = strip_wiki_quotes(s)  # #1380: also drops <nowiki/> (was a space) and keeps the ' of ''X'''s
     s = re.sub(r"</?[A-Za-z][^<>]*>", " ", s)  # PATCH-A only real tags: card text has "< 4", prose "--->"
     s = html.unescape(s)
-    s = s.translate(str.maketrans({"’": "'", "‘": "'", "“": '"', "”": '"', "–": "-", "—": "-"}))
+    s = fold_quotes(s).translate(str.maketrans({"–": "-", "—": "-"}))
     return s
 
 
@@ -281,7 +293,9 @@ def contained(needle, hay):
     return any(h[i:i + L] == n for i in range(len(h) - L + 1))
 
 
-TOK = re.compile(r"\s+|\[\[.*?\]\]|\{\{.*?\}\}|<[^>]*>|'{2,5}|&[a-z#0-9]+;|[\w\[\]▲▼’'\-+=]+|[^\s\w]")
+# A word may hold a single ' (opponent's, Lars') but never a run of 2+: '' and ''' are italic/bold marks, so
+# "scout'''" is the word "scout" and a bold mark (otherwise the mark lands inside an Errata hl).
+TOK = re.compile(r"\s+|\[\[.*?\]\]|\{\{.*?\}\}|<[^>]*>|'{2,5}|&[a-z#0-9]+;|(?:[\w\[\]▲▼’‘\-+=]|(?<!')'(?!'))+|[^\s\w]")
 
 
 def toks(s):
@@ -299,11 +313,12 @@ def _ismark(t):
 def diff_hl(old, new):
     """Word-level diff: wrap only the changed/inserted words of `new` (vs `old`) in Errata hl. Runs of
     changed words separated only by whitespace become one highlight; bold/italic markers and tags are
-    never inside a highlight. Returns (wikitext, n_highlights, deleted_only)."""
-    a = [t for t in toks(old) if not t.isspace()]
+    never inside a highlight. Words that differ only by curly vs straight quote marks are the same word
+    (#1382); the output keeps `new`'s own marks. Returns (wikitext, n_highlights, deleted_only)."""
+    a = [fold_quotes(t) for t in toks(old) if not t.isspace()]
     bt = toks(new)
     bi = [i for i, t in enumerate(bt) if not t.isspace()]
-    b = [bt[i] for i in bi]
+    b = [fold_quotes(bt[i]) for i in bi]
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
     changed, dels = set(), False
     for op, i1, i2, j1, j2 in sm.get_opcodes():
@@ -318,14 +333,60 @@ def deleted_hl(old, new):
     """Old text with only its purely deleted words highlighted (for a column whose successor removed words)."""
     at = toks(old)
     ai = [i for i, t in enumerate(at) if not t.isspace()]
-    a = [at[i] for i in ai]
-    b = [t for t in toks(new) if not t.isspace()]
+    a = [fold_quotes(at[i]) for i in ai]
+    b = [fold_quotes(t) for t in toks(new) if not t.isspace()]
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
     gone = set()
     for op, i1, i2, j1, j2 in sm.get_opcodes():
         if op == "delete":
             gone.update(ai[i] for i in range(i1, i2) if not _ismark(at[ai[i]]))
     return _wrap(at, gone), len(_runs(at, gone))
+
+
+def quote_swaps(old, new):
+    """Quote marks that differ only in style between two texts whose words otherwise match (#1382), as
+    sorted (old_mark, new_mark) pairs, e.g. [("'", "’")]. Only aligned (unchanged) words are looked at, so
+    a real wording change elsewhere does not hide or fake a swap."""
+    at = [t for t in toks(old) if not t.isspace()]
+    bt = [t for t in toks(new) if not t.isspace()]
+    sm = difflib.SequenceMatcher(None, [fold_quotes(t) for t in at], [fold_quotes(t) for t in bt], autojunk=False)
+    swaps = set()
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op != "equal":
+            continue
+        for x, y in zip(at[i1:i2], bt[j1:j2]):
+            if x != y:
+                swaps.update((c, d) for c, d in zip(x, y) if c != d)
+    return sorted(swaps)
+
+
+QUOTE_FIELDS = ("game_text", "lore")
+
+
+def straight_quote_fields(v):
+    """Fields a card page records as printing straight ' or " (Template:Card |straight_quotes=, #1382):
+    "yes" = game_text and lore; otherwise a comma/space list of game_text, lore. Same rule as style_lint."""
+    v = re.sub(r"<!--.*?-->", "", v or "", flags=re.S).strip().lower()
+    if v in ("yes", "y", "1", "true", "all", "both"):
+        return set(QUOTE_FIELDS)
+    return {w for w in re.split(r"[\s,;]+", v) if w in QUOTE_FIELDS}
+
+
+def quote_verified(field, old_vals, new_vals, swaps):
+    """A straight mark in a quote-style swap counts as printed only if its page records it (#1382);
+    otherwise it may be an old transcription and gets no table note. Curly marks are typed on purpose."""
+    for c, d in swaps:
+        if c in "'\"" and field not in old_vals.get("__sq", ()):
+            return False
+        if d in "'\"" and field not in new_vals.get("__sq", ()):
+            return False
+    return True
+
+
+def quote_note(lab, old_label, new_label, swaps):
+    """One table-note sentence for a quote-style-only difference (#1382)."""
+    what = ", ".join("%s where %s prints %s" % (d, old_label, c) for c, d in swaps)
+    return "%s: %s prints %s; quote style only, not a text change." % (lab, new_label, what)
 
 
 def _runs(bt, changed):
@@ -640,7 +701,7 @@ def main():
                 notes.append("%s: prose quotes no text for this version; page game_text used" % pg)
             date = bullet_date(b)
             ref, preserved, url = bullet_ref(b, date, slug, i)
-            vals = {"__title": printed_title(x, p)}
+            vals = {"__title": printed_title(x, p), "__sq": straight_quote_fields(pval(x, p, "straight_quotes"))}
             for f, _ in STAT_FIELDS + [("lore", ""), ("game_text", ""), ("errata_mark", "")]:
                 vals[f] = pval(x, p, f)
             vers.append(dict(page=pg, label=(bl[i][0] if (i > 0 and label_of(pg) == "Original") else label_of(pg)), vlabel=bl[i][0], date=date, ref=ref,
@@ -689,7 +750,7 @@ def main():
                     pbad.append("%s folded but its prose says text 'became' something else" % v["page"])
                 if k == 0 and SAME.search(wc) and not re.search(r"became|→|\(was |is gone|are gone|[Nn]ew: |removed|added", wc):
                     prev = states[j - 1][0]
-                    if (prev["vals"].get("game_text") or "") != (v["vals"].get("game_text") or ""):
+                    if fold_quotes(prev["vals"].get("game_text") or "") != fold_quotes(v["vals"].get("game_text") or ""):
                         pbad.append("%s: game_text differs from the previous state but its prose says the words are unchanged" % v["page"])
         if pbad:
             refuse(key, fam, "conflicting text sources: " + "; ".join(pbad)); continue
@@ -722,6 +783,30 @@ def main():
             elif any(len(m) > 1 for m in marks):
                 notes.append("Stamp row omitted: a column's same-words members print different marks (%s)" % "; ".join(
                     "%s: %s" % (s[0]["label"], "/".join(sorted(m))) for s, m in zip(states, marks) if len(m) > 1))
+
+        # #1382: quote-style-only differences (adjacent columns, and members folded into one column) go in
+        # a table note, never in a highlight
+        # A straight mark counts only where the page records it as printed (|straight_quotes=); an
+        # unrecorded one may be an old transcription, so it is listed in families.tsv, not on the table.
+        qnotes, qunver = [], []
+
+        def _q(f, lab, ov, nv, old_label, new_label, new_page):
+            sw = quote_swaps(ov["vals"].get(f) or "", nv["vals"].get(f) or "")
+            if not sw:
+                return
+            if f in QUOTE_FIELDS and quote_verified(f, ov["vals"], nv["vals"], sw):
+                qnotes.append(quote_note(lab, old_label, new_label, sw))
+            else:
+                qunver.append("%s %s vs %s (%s)" % (lab, new_page, ov["page"], ", ".join("%s/%s" % x for x in sw)))
+
+        for f, lab in rows:
+            if f == "errata_mark":
+                continue
+            for j, s in enumerate(states):
+                if j > 0:
+                    _q(f, lab, states[j - 1][0], s[0], states[j - 1][0]["label"], s[0]["label"], s[0]["page"])
+                for w in s[1:]:
+                    _q(f, lab, s[0], w, s[0]["label"], "[[%s]] (same column)" % w["page"], w["page"])
 
         # header
         def colhdr(s):
@@ -777,6 +862,8 @@ def main():
             L.append("| " + " || ".join(cells))
         L.append("|}")
         L.append("</div>")
+        if qnotes:
+            L.append('<div class="errata-note" style="font-size:90%%;">Quote marks: %s</div>' % " ".join(qnotes))
         L.append('<div class="card-family-edit" style="font-size:90%%;">[{{fullurl:%s|action=edit}} Edit errata] · [[%s#Editing|Help]]</div></includeonly><noinclude>' % (tpl, tpl))
         L.append("== Editing ==")
         foldtxt = ""
@@ -791,6 +878,10 @@ def main():
         L.append("</noinclude>")
         twiki = "\n".join(L)
         notes += delnotes
+        notes += ["quote style only (table note): " + qq for qq in qnotes]
+        if qunver:
+            notes.append("quote style differs, straight marks not recorded as printed (no table note; check the card, "
+                         "then set |straight_quotes= or curl the marks): " + "; ".join(qunver))
         unpres = [s[0]["page"] for s in states if not s[0]["preserved"]]
         if unpres:
             notes.append("ARCHIVE pending: column ref without Preserved copy for " + ", ".join(unpres))

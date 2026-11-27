@@ -28,6 +28,13 @@ Citation checks (Bill, 2026-10-20; SWCCG Wiki:Style guide):
            on the page, including a Wayback capture of swccg.com/snapshots/forum/tNNNNN.html for a
            forum.starwarsccg.org viewtopic.php?t=NNNNN link, and of swccg.com/snapshots/pc/<slug>.html
            for a www.starwarsccg.org URL whose last path segment is <slug>.
+Information only (printed, never counted as a flag, never changes the exit code):
+  QUOTES   a straight ' or " in |game_text= or |lore= of a {{Card}} page (swccg-guild/work#1382, Bill's
+           Option B: game text and lore keep apostrophes and quote marks exactly as the card prints them,
+           curly ’ ‘ “ ” or straight). Check the card: type the curly marks it prints, or, when the card
+           really prints straight marks, record that on the page with |straight_quotes=yes (both fields)
+           or |straight_quotes=game_text / lore, and the field is skipped (see Template:Card/doc).
+           Not counted: '' and ''' italics/bold, tag attributes, comments, <ref>s, templates, link targets.
 Talk pages (Chief, 2026-10-20): signed comments by other accounts are their authors' words. The
   banned-word and hedge checks skip any comment whose signature is not the bot's own
   (Comlink Cursor); the bot's comments, unsigned text and the other checks still apply.
@@ -639,6 +646,110 @@ def lint(text, title=None, cats=None):
     flags += ref_flags(text)
     return flags, words(b)
 
+# ---------------------------------------------------------------- QUOTES (information only, #1382)
+QUOTE_FIELDS = ("game_text", "lore")
+
+
+def card_params(text):
+    """Top-level {name: value} of the first {{Card ...}} in text (nested templates, links and
+    <ref>/<nowiki> keep their pipes), or None when the page has no {{Card}}."""
+    m = re.search(r"\{\{\s*Card\s*(?=[|\n}])", text)
+    if not m:
+        return None
+    i, depth_t, depth_l, cur, params, n = m.end(), 1, 0, None, {}, len(text)
+
+    def add(a, b):
+        seg = text[a:b]
+        if "=" in seg:
+            k, v = seg.split("=", 1)
+            if "\n" not in k and k.strip():
+                params.setdefault(k.strip(), v.strip())
+
+    while i < n:
+        two = text[i:i + 2]
+        if two == "{{":
+            depth_t += 1; i += 2; continue
+        if two == "}}":
+            depth_t -= 1
+            if depth_t == 0:
+                if cur is not None:
+                    add(cur, i)
+                return params
+            i += 2; continue
+        if text[i] == "<":
+            mt = re.match(r"<(ref|nowiki|pre|gallery|math|poem)\b[^>]*?(/?)>", text[i:i + 300], re.I)
+            if mt:
+                if mt.group(2) == "/":
+                    i += mt.end(); continue
+                close = text.lower().find("</%s>" % mt.group(1).lower(), i + mt.end())
+                if close > 0:
+                    i = close + len(mt.group(1)) + 3; continue
+            if text.startswith("<!--", i):
+                close = text.find("-->", i + 4)
+                if close > 0:
+                    i = close + 3; continue
+        if two == "[[":
+            depth_l += 1; i += 2; continue
+        if two == "]]" and depth_l:
+            depth_l -= 1; i += 2; continue
+        if text[i] == "|" and depth_t == 1 and depth_l == 0:
+            if cur is not None:
+                add(cur, i)
+            cur = i + 1
+        i += 1
+    return None
+
+
+def straight_quote_fields(v):
+    """Fields a card page records as printing straight marks (|straight_quotes=): "yes" = game_text and
+    lore, otherwise a comma/space list of game_text, lore. tools/errgen/errgen.py reads it the same way."""
+    v = re.sub(r"<!--.*?-->", "", v or "", flags=re.S).strip().lower()
+    if v in ("yes", "y", "1", "true", "all", "both"):
+        return set(QUOTE_FIELDS)
+    return {w for w in re.split(r"[\s,;]+", v) if w in QUOTE_FIELDS}
+
+
+def printed_marks_text(v):
+    """The printed characters of a card text value, with the wiki markup that uses ' or " removed."""
+    from wiki_cardlink import strip_wiki_quotes
+    import html as _html
+    t = re.sub(r"<!--.*?-->", " ", v or "", flags=re.S)
+    t = re.sub(r"<ref[^>/]*/>|<ref[^>]*>.*?</ref>", " ", t, flags=re.S | re.I)
+    for _ in range(4):
+        t = re.sub(r"\{\{[^{}]*\}\}", " ", t)
+    t = re.sub(r"\[\[[^|\]]*\|([^\]]*)\]\]", r"\1", t)
+    t = re.sub(r"\[\[([^\]]*)\]\]", r"\1", t)
+    t = re.sub(r"\[https?://\S+\s([^\]]*)\]", r"\1", t)
+    t = strip_wiki_quotes(t)  # italic/bold runs and <nowiki/>; <nowiki>...</nowiki> text is kept as written
+    t = re.sub(r"</?[A-Za-z][^<>]*>", " ", t)  # tags and their attributes (style="...")
+    return _html.unescape(t)
+
+
+def quote_info(text, title=None):
+    """QUOTES lines for straight ' and " in a card page's game text and lore (information only)."""
+    if title and re.match(r"(?i)template\s*:", title):
+        return []
+    p = card_params(text)
+    if not p:
+        return []
+    skip = straight_quote_fields(p.get("straight_quotes"))
+    out = []
+    for f in QUOTE_FIELDS:
+        if f in skip or not p.get(f):
+            continue
+        t = printed_marks_text(p[f])
+        hits = list(re.finditer(r"['\"]", t))
+        if not hits:
+            continue
+        n1 = sum(1 for m in hits if m.group(0) == "'")
+        kinds = ", ".join(x for x in ("%d '" % n1 if n1 else "", '%d "' % (len(hits) - n1) if len(hits) > n1 else "") if x)
+        ctx = " | ".join(" ".join(t[max(0, m.start() - 25):m.end() + 25].split()) for m in hits[:3])
+        out.append("QUOTES   %s: %d straight mark(s) (%s): …%s… Check the card: type the curly marks it prints "
+                   "(’ ‘ “ ”), or if it prints straight ones add |straight_quotes=%s (information only)"
+                   % (f, len(hits), kinds, ctx, f))
+    return out
+
+
 def fetch_categories(title):
     q = urllib.parse.urlencode({"action": "query", "titles": title, "prop": "categories", "cllimit": "max",
                                 "format": "json", "formatversion": 2})
@@ -677,6 +788,8 @@ def main():
     cats = fetch_categories(title) if title else None
     flags, n = lint(text, title, cats)
     for f in flags: print(f)
+    info = quote_info(text, title)  # information only: not a flag, no effect on the exit code
+    for f in info: print(f)
     if prev is not None:
         pn = lint(prev, title, cats)[1]; print(f"WORDS    body {n} (previous {pn}, {n-pn:+d})")
     else: print(f"WORDS    body {n}")
@@ -687,12 +800,15 @@ def main():
                    if not SKIP_URL_RX.match(clean_url(raw))} if not archive_exempt(title) else set()
         report = publication_report(text, title, flags, sources, a.publication_manifest,
                                     a.approved_manifest_sha256, revision_id)
+        if info:
+            report["info"] = info
         if a.report_json:
             a.report_json.write_text(json.dumps(report, indent=2), encoding="utf8")
         print("PUBLICATION " + json.dumps(report, sort_keys=True))
         sys.exit(0 if report["publication_eligible"] else 1)
     if a.report_json:
-        a.report_json.write_text(json.dumps({"raw_flags": flags, "strict_lint_pass": not flags}, indent=2), encoding="utf8")
+        a.report_json.write_text(json.dumps({"raw_flags": flags, "strict_lint_pass": not flags, "info": info}, indent=2),
+                                 encoding="utf8")
     sys.exit(1 if flags else 0)
 
 if __name__ == "__main__": main()

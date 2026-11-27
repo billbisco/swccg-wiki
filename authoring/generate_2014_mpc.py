@@ -18,7 +18,7 @@ import generate_2015_2016 as g15  # noqa: E402
 from generate_2019_2021 import tidy_player_page, wiki_fname  # noqa: E402
 from generate_2026_sdso import load_bp_simple  # noqa: E402
 import _parse_htd as htd  # noqa: E402
-from wiki_cardlink import strip_wiki_quotes  # noqa: E402
+from wiki_cardlink import fold_quotes, strip_wiki_quotes  # noqa: E402
 
 PAGES = ROOT / "pages"
 STUBS = PAGES / "player-stubs"
@@ -337,7 +337,9 @@ def load_wiki_types() -> dict[str, str]:
         return WIKI_TYPES
     if TYPE_CACHE.exists():
         import json
-        WIKI_TYPES = json.loads(TYPE_CACHE.read_text(encoding="utf-8"))
+        WIKI_TYPES = {}
+        for k, v in json.loads(TYPE_CACHE.read_text(encoding="utf-8")).items():
+            WIKI_TYPES.setdefault(fold_quotes(k), v)  # #1382: an older cache may hold curly keys
         print("wiki types cache", len(WIKI_TYPES))
         return WIKI_TYPES
     idx: dict[str, str] = {}
@@ -354,11 +356,11 @@ def load_wiki_types() -> dict[str, str]:
             continue
         title = strip_wiki_quotes(tm.group(1)).strip()  # #1380: |title= carries printed italics
         typ = ty.group(1).strip()
-        key = re.sub(r"\s+", " ", title.lower())
+        key = fold_quotes(re.sub(r"\s+", " ", title.lower()))  # #1382: curly = straight when matching
         idx.setdefault(key, typ)
         idx.setdefault(re.sub(r"\s*\(V\)\s*$", "", key, flags=re.I).strip(), typ)
         if " / " in title:
-            a = title.split(" / ", 1)[0].strip().lower()
+            a = fold_quotes(title.split(" / ", 1)[0].strip().lower())
             idx.setdefault(a, typ)
     WIKI_TYPES = idx
     import json
@@ -423,7 +425,7 @@ def card_heading(
         cands.append(re.sub(r" \(Virtual Block \d+\)$", "", dest))
         cands.append(re.sub(r" \(Virtual Shields\)$", "", dest))
     for cand in cands:
-        k = re.sub(r"\s+", " ", (cand or "").lower())
+        k = fold_quotes(re.sub(r"\s+", " ", (cand or "").lower()))  # #1382 (the cache may hold either style)
         k = re.sub(r" \(dark\)$", "", k)
         hit = wiki.get(k)
         if not hit and not dest_has_v:
