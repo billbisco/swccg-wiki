@@ -99899,6 +99899,28 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/snapshots/forum/t20910-start60.html": {
+  "capture": "https://web.archive.org/web/20261128050841/https://swccg.com/snapshots/forum/t20910-start60.html",
+  "job_id": "spn2-e37dbd21166b9b75f92ceb20efcc055a38a930b0",
+  "last": "2026-11-28T05:15:49Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T05:15:49Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t20910-start80.html": {
+  "capture": "https://web.archive.org/web/20261128051006/https://swccg.com/snapshots/forum/t20910-start80.html",
+  "job_id": "spn2-fa69d2ba904a81739c208fce8831b4d2699e5b65",
+  "last": "2026-11-28T05:15:53Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T05:15:53Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/snapshots/forum/t20910.html": {
   "capture": "https://web.archive.org/web/20261128045529/https://swccg.com/snapshots/forum/t20910.html",
   "job_id": "spn2-ee25e6e77257c2f772034172c86c26660659687f",
@@ -99907,6 +99929,61 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-28T05:03:42Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t21008-start20.html": {
+  "capture": "https://web.archive.org/web/20261128051217/https://swccg.com/snapshots/forum/t21008-start20.html",
+  "job_id": "spn2-6a3d02317701f08ff9a4ff9e0881c6fa882d7809",
+  "last": "2026-11-28T05:16:00Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T05:16:00Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t21008-start40.html": {
+  "capture": "https://web.archive.org/web/20261128051316/https://swccg.com/snapshots/forum/t21008-start40.html",
+  "job_id": "spn2-51f43246eb99325dd199b3829556743b40337206",
+  "last": "2026-11-28T05:16:04Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T05:16:04Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t21008.html": {
+  "capture": "https://web.archive.org/web/20261128051101/https://swccg.com/snapshots/forum/t21008.html",
+  "job_id": "spn2-82b08fbda31cee6c30060187b8dfe95326d2fc7f",
+  "last": "2026-11-28T05:15:56Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T05:15:56Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t21075-start20.html": {
+  "capture": "https://web.archive.org/web/20261128051501/https://swccg.com/snapshots/forum/t21075-start20.html",
+  "job_id": "spn2-bb929d36fe2389858a66c5024b1e946ec5c3e07b",
+  "last": "2026-11-28T05:16:11Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T05:16:11Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t21075.html": {
+  "capture": "https://web.archive.org/web/20261128051400/https://swccg.com/snapshots/forum/t21075.html",
+  "job_id": "spn2-4f1c1e9f94066c67135b428c2108678da2c613e9",
+  "last": "2026-11-28T05:16:07Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T05:16:07Z",
    "defer": "cdx-batch"
   }
  },
@@ -214233,11 +214310,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/16063/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025235348/https://www.stephenskilton.com/decktech_archives/16063/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T05:31:22Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-28T05:08:10Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-28T05:08:10Z",
+   "bytes": 13839,
+   "capture_id": "https://web.archive.org/web/20261025235348id_/https://www.stephenskilton.com/decktech_archives/16063/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6dc70e2e717cd3ee2feb0a0d784d8abba419047421dbd669f0ac08a3029d17cf"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16064/": {
   "capture": "",
