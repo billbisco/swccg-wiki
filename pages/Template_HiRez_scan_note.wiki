@@ -1,0 +1,8 @@
+<includeonly>{{#ifeq:{{{context|}}}|card|{{{which|This picture}}} is [[Strangewayes|strangewayes]]' 600 dpi scan of the printed card, shown because no Decipher image shows this printing as printed. Its outer black border is a digital fill; the inside of the frame is the scanned card.|<div class="hirez-scan-note" style="margin:0.6em 0;padding:0.4em 0.7em;border-left:3px solid #888;">'''Border:''' the outer black border of this [[Strangewayes|strangewayes]] HiRez scan is a uniform digital fill, the same on every file of his project. The inside of the card's frame is the scanned card.</div>}}</includeonly><noinclude>
+Note for strangewayes' real card scans ([[:Category:High-res card scans]]).
+
+* On a File page: <code><nowiki>{{HiRez scan note}}</nowiki></code> — says the black border is a digital fill and the inside of the frame is the scanned card.
+* On a card article whose main picture is one of these scans (only where no Decipher image shows that printing as printed): <code><nowiki>|image_note={{HiRez scan note|context=card}}</nowiki></code>; <code>which=</code> names the picture when only one side is the scan (e.g. <code>which=The 7 side picture</code>).
+
+Decision of 28 November 2026 (swccg-guild/work#1396). See [[Strangewayes]].
+</noinclude>
