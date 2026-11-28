@@ -98906,11 +98906,15 @@
   }
  },
  "https://swccg.com/snapshots/forum/t14253-start20.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261128011259/https://swccg.com/snapshots/forum/t14253-start20.html",
   "job_id": "spn2-7b1729600390078f83f400056214b26e1b056600",
-  "last": "2026-11-28T01:05:38Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-28T01:25:39Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T01:25:39Z",
+   "defer": "cdx-batch"
+  }
  },
  "https://swccg.com/snapshots/forum/t14253-start40.html": {
   "capture": "https://web.archive.org/web/20261128012024/https://swccg.com/snapshots/forum/t14253-start40.html",
@@ -98924,11 +98928,15 @@
   }
  },
  "https://swccg.com/snapshots/forum/t14253-start60.html": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261128012323/https://swccg.com/snapshots/forum/t14253-start60.html",
   "job_id": "spn2-bf316b4df18a7d85aa2a2d41f8d76aefab1cb4c4",
-  "last": "2026-11-28T01:15:35Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-28T01:25:32Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T01:25:32Z",
+   "defer": "cdx-batch"
+  }
  },
  "https://swccg.com/snapshots/forum/t14253.html": {
   "capture": "https://web.archive.org/web/20261128011013/https://swccg.com/snapshots/forum/t14253.html",
@@ -98949,6 +98957,24 @@
   "tries": 1,
   "verify": {
    "at": "2026-11-28T01:18:53Z",
+   "defer": "cdx-batch"
+  }
+ },
+ "https://swccg.com/snapshots/forum/t14543-start40.html": {
+  "capture": "",
+  "job_id": "spn2-bdbc449336979481ad74c4044020074904851ab2",
+  "last": "2026-11-28T01:25:42Z",
+  "status": "pending",
+  "tries": 1
+ },
+ "https://swccg.com/snapshots/forum/t15832-start100.html": {
+  "capture": "https://web.archive.org/web/20261125172706/https://swccg.com/snapshots/forum/t15832-start100.html",
+  "last": "2026-11-28T01:28:55Z",
+  "note": "already archived within 30d",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T01:28:55Z",
    "defer": "cdx-batch"
   }
  },
@@ -201643,6 +201669,13 @@
   "status": "failed",
   "tries": 6
  },
+ "https://wiki.swccg.com/images/0/03/ANH-L-blastthedoorkid-PC-June-2017-composed.png": {
+  "capture": "",
+  "job_id": "spn2-2181ed047b9c9f28aaeff3e41be5dce56406eafc",
+  "last": "2026-11-28T01:30:32Z",
+  "status": "pending",
+  "tries": 1
+ },
  "https://wiki.swccg.com/images/0/05/Reflections-Foil-D-Greedo-PSA-photo-148512023-original.jpg": {
   "capture": "https://web.archive.org/web/20261114020142/https://wiki.swccg.com/images/0/05/Reflections-Foil-D-Greedo-PSA-photo-148512023-original.jpg",
   "last": "2026-11-14T14:29:49.413003+00:00",
@@ -201844,6 +201877,13 @@
   "last": "2026-11-24T02:03:17Z",
   "status": "failed",
   "tries": 6
+ },
+ "https://wiki.swccg.com/images/2/27/ANH-L-bluemilk-hires.webp": {
+  "capture": "",
+  "job_id": "spn2-b71b55118aa3fcfdcf21bb1983566cbe327ac1c3",
+  "last": "2026-11-28T01:27:18Z",
+  "status": "pending",
+  "tries": 1
  },
  "https://wiki.swccg.com/images/2/29/Reflections-Foil-L-Revolution-PSA-photo-158980015-original.jpg": {
   "capture": "https://web.archive.org/web/20261114021318/https://wiki.swccg.com/images/2/29/Reflections-Foil-L-Revolution-PSA-photo-158980015-original.jpg",
@@ -202453,9 +202493,17 @@
  },
  "https://wiki.swccg.com/images/7/71/OVS8-17-Tamtel_Skreej-original-slip-2004-11-24.png": {
   "capture": "https://web.archive.org/web/20261128010358/https://swccg.com/wiki/images/7/71/OVS8-17-Tamtel_Skreej-original-slip-2004-11-24.png",
-  "last": "2026-11-28T01:07:34Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-28T01:25:34Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T01:25:37Z",
+   "bytes": 143425,
+   "capture_id": "https://web.archive.org/web/20261128010358id_/https://swccg.com/wiki/images/7/71/OVS8-17-Tamtel_Skreej-original-slip-2004-11-24.png",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "57d7c9b87acc030c602a979d41d6041bf8e9c453f65b50bfb4bf06f6d8c78e24"
+  }
  },
  "https://wiki.swccg.com/images/7/74/Reflections-Foil-D-Obsidian-8-PSA-photo-154591377-original.jpg": {
   "capture": "https://web.archive.org/web/20261114033635/https://wiki.swccg.com/images/7/74/Reflections-Foil-D-Obsidian-8-PSA-photo-154591377-original.jpg",
@@ -212680,11 +212728,19 @@
   }
  },
  "https://www.stephenskilton.com/decktech_archives/15941/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025234218/https://www.stephenskilton.com/decktech_archives/15941/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T05:18:09Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-28T01:25:31Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-28T01:25:31Z",
+   "bytes": 10686,
+   "capture_id": "https://web.archive.org/web/20261025234218id_/https://www.stephenskilton.com/decktech_archives/15941/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "91922b1e2752073d3c60206b66c432b91af4814ede6b1c137f3eadbd49d6b945"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/15943/": {
   "capture": "",
