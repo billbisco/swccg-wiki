@@ -201439,6 +201439,17 @@
    "defer": "cdx-batch"
   }
  },
+ "https://swccg.com/wiki/images/e/ef/2018_Match_Play_Championship_art_print_Bomarr_Monk.jpg": {
+  "capture": "https://web.archive.org/web/20261128085515/https://swccg.com/wiki/images/e/ef/2018_Match_Play_Championship_art_print_Bomarr_Monk.jpg",
+  "job_id": "spn2-f89b1bd5cb5336770ace5215ee6f3560ac372de5",
+  "last": "2026-11-28T08:58:11Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T08:58:11Z",
+   "defer": "cdx-batch"
+  }
+ },
  "https://swccg.com/wiki/images/e/ef/2025_World_Championship_Randy_Scott_table_4_October.jpg": {
   "capture": "https://web.archive.org/web/20261125163456/https://swccg.com/wiki/images/e/ef/2025_World_Championship_Randy_Scott_table_4_October.jpg",
   "job_id": "spn2-00bdead74ec06f2f58c9ff9dd7f8f77aea5d991c",
@@ -202869,9 +202880,14 @@
  },
  "https://swccg.com/wiki/index.php?oldid=326447&action=raw": {
   "capture": "https://web.archive.org/web/20261128081101/https://swccg.com/wiki/index.php?oldid=326447&action=raw",
-  "last": "2026-11-28T08:33:19Z",
-  "status": "pending",
-  "tries": 1
+  "last": "2026-11-28T08:49:47Z",
+  "status": "ok",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T08:49:48Z",
+   "defer": "manpc",
+   "error": "URLError: <urlopen error [Errno 104] Connection reset by peer>"
+  }
  },
  "https://swccg.com/wiki/index.php?oldid=326451&action=raw": {
   "capture": "",
@@ -202915,6 +202931,21 @@
    "index": "cdx",
    "method": "sha256",
    "sha256": "63d27f8cef9a78e2a6594e1a1c0ae1d904e83a579f0d999330b689894d9171b3"
+  }
+ },
+ "https://swccg.com/wiki/index.php?oldid=326478&action=raw": {
+  "capture": "https://web.archive.org/web/20261128084954/https://swccg.com/wiki/index.php?oldid=326478&action=raw",
+  "job_id": "spn2-07b370d2daf314c480c0e93dba07aebfe341e74d",
+  "last": "2026-11-28T08:58:00Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T08:58:00Z",
+   "bytes": 1510,
+   "capture_id": "https://web.archive.org/web/20261128084954id_/https://swccg.com/wiki/index.php?oldid=326478&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6e112e08477b51a510969cc70b5309a4652ea66c946e6dfeabedc7ff650d61d5"
   }
  },
  "https://swccg.com/wiki/index.php?oldid=326481&action=raw": {
@@ -203288,6 +203319,21 @@
   "last": "2026-11-26T16:46:51Z",
   "status": "pending",
   "tries": 1
+ },
+ "https://swccg.com/wiki/index.php?oldid=326907&action=raw": {
+  "capture": "https://web.archive.org/web/20261128085304/https://swccg.com/wiki/index.php?oldid=326907&action=raw",
+  "job_id": "spn2-af40e937814e2d38fd9b162783e4e159524ffc46",
+  "last": "2026-11-28T08:58:08Z",
+  "status": "verified",
+  "tries": 1,
+  "verify": {
+   "at": "2026-11-28T08:58:08Z",
+   "bytes": 2709,
+   "capture_id": "https://web.archive.org/web/20261128085304id_/https://swccg.com/wiki/index.php?oldid=326907&action=raw",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6e1992f59c99b822ac5ea75ab61577e8d3bc5603227f6be088b3c915f2a299fc"
+  }
  },
  "https://swccg.com/wiki/index.php?oldid=326925&action=raw": {
   "capture": "https://web.archive.org/web/20261127111818/https://swccg.com/wiki/index.php?oldid=326925&action=raw",
@@ -205809,12 +205855,15 @@
   "capture": "https://web.archive.org/web/20261128081102/https://swccg.com/wiki/images/archive/0/09/20261013002439!OVS1-01-BoShek-remaster.webp",
   "job_id": "spn2-b80dc1d55d76f9af93ecf2426ca77ecfc263599c",
   "last": "2026-11-28T08:16:06Z",
-  "status": "ok",
+  "status": "verified",
   "tries": 1,
   "verify": {
-   "at": "2026-11-28T08:16:06Z",
-   "defer": "manpc",
-   "error": "URLError: <urlopen error [Errno 111] Connection refused>"
+   "at": "2026-11-28T08:58:19Z",
+   "bytes": 178602,
+   "capture_id": "https://web.archive.org/web/20261128081102id_/https://swccg.com/wiki/images/archive/0/09/20261013002439!OVS1-01-BoShek-remaster.webp",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "6e6a0abaac8104983f02ecb9d76fdd8e995945dffa59bdf3cca3116584965838"
   }
  },
  "https://wiki.swccg.com/images/archive/0/0a/20261012030143%21OVS3-37-IT_O_Eyetee_Oh-remaster.webp": {
@@ -216105,11 +216154,19 @@
   "tries": 6
  },
  "https://www.stephenskilton.com/decktech_archives/16256/": {
-  "capture": "",
+  "capture": "https://web.archive.org/web/20261025235854/https://www.stephenskilton.com/decktech_archives/16256/",
   "error": "HTTP Error 401: UNAUTHORIZED",
-  "last": "2026-11-14T06:44:19Z",
-  "status": "failed",
-  "tries": 6
+  "last": "2026-11-28T08:49:46Z",
+  "status": "verified",
+  "tries": 6,
+  "verify": {
+   "at": "2026-11-28T08:49:46Z",
+   "bytes": 13088,
+   "capture_id": "https://web.archive.org/web/20261025235854id_/https://www.stephenskilton.com/decktech_archives/16256/",
+   "index": "cdx",
+   "method": "sha256",
+   "sha256": "f8ab997831173b6c1b621ee1b1617c1c245c7eb487e3bbbb72bc35e844c3ef57"
+  }
  },
  "https://www.stephenskilton.com/decktech_archives/16258/": {
   "capture": "https://web.archive.org/web/20261023103043/https://www.stephenskilton.com/decktech_archives/16258/",
